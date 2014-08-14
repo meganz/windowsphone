@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>5fd0e509-b6ae-4f29-bd2a-4d2cc10f3aa0</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{5fee86b0-b474-4127-bb87-04202f9927db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bindings">
+      <UniqueIdentifier>{a8dc9cc3-04ef-4a67-8994-b931ecf9d30c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bindings\Sources">
+      <UniqueIdentifier>{a6adcb52-023a-4808-8889-0f37c45496fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bindings\Headers">
+      <UniqueIdentifier>{7632b5ca-4bfb-42b0-8585-9a9e87e27bbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{db2f7609-8991-4314-9e32-47964d73a5de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Sources">
+      <UniqueIdentifier>{3e68f7ad-1808-43f3-a241-0a6c939dec8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Headers">
+      <UniqueIdentifier>{e13333c6-5d96-4845-a757-0d1aaad25607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\3rdparty">
+      <UniqueIdentifier>{74b8b84f-0938-48c7-b9fb-5e0bb6bf93f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\WP8">
+      <UniqueIdentifier>{5f4020ef-0f40-4c44-87d0-76d5d22f73f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bindings\DelegateMGlobalListener.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\DelegateMListener.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\DelegateMRequestListener.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\DelegateMTransferListener.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MAccountDetails.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MegaSDK.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MError.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MNode.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MNodeList.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MRequest.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MShare.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MShareList.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MTransfer.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MTransferList.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MUser.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Bindings\MUserList.cpp">
+      <Filter>Bindings\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\attrmap.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\backofftimer.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\base64.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\command.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\commands.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\db.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\file.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\fileattributefetch.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\filefingerprint.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\filesystem.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\gfx.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\http.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\json.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\logging.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\megaclient.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\node.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\pubkeyaction.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\request.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\serialize64.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\share.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\sharenodekeys.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\sync.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\transfer.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\transferslot.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\treeproc.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\user.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\utils.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\waiterbase.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\crypto\cryptopp.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\src\db\sqlite.cpp">
+      <Filter>SDK\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\wp8\fs.cpp">
+      <Filter>SDK\WP8</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\wp8\megaapi.cpp">
+      <Filter>SDK\WP8</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\wp8\MegaProxySettings.cpp">
+      <Filter>SDK\WP8</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\wp8\net.cpp">
+      <Filter>SDK\WP8</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\wp8\waiter.cpp">
+      <Filter>SDK\WP8</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\sdk\third_party\utf8proc\utf8proc.cpp">
+      <Filter>SDK\3rdparty</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Headers\pch.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MAccountDetails.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MegaSDK.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MError.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MGlobalListenerInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MListenerInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MNode.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MNodeList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MRequest.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MRequestListenerInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MShare.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MShareList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MTransfer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MTransferList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MTransferListenerInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MTreeProcessorInterface.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MUser.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\MUserList.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\DelegateMGlobalListener.h">
+      <Filter>Bindings\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\DelegateMListener.h">
+      <Filter>Bindings\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\DelegateMRequestListener.h">
+      <Filter>Bindings\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Bindings\DelegateMTransferListener.h">
+      <Filter>Bindings\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\account.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\attrmap.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\backofftimer.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\base64.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\command.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\console.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\db.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\file.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\fileattributefetch.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\filefingerprint.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\filesystem.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\gfx.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\http.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\json.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\logging.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\megaapp.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\megaclient.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\node.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\pubkeyaction.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\request.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\serialize64.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\share.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\sharenodekeys.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\sync.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\transfer.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\transferslot.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\treeproc.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\types.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\user.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\utils.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\waiter.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\crypto\cryptopp.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega\db\sqlite.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\include\mega.h">
+      <Filter>SDK\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\megaapi.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\megafs.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\meganet.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\MegaProxySettings.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\megasys.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\wp8\megawaiter.h">
+      <Filter>SDK\WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\sdk\third_party\utf8proc\utf8proc.h">
+      <Filter>SDK\3rdparty</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libcurl.dll">
+      <Filter>Resources</Filter>
+    </Library>
+    <Library Include="libeay32.dll">
+      <Filter>Resources</Filter>
+    </Library>
+    <Library Include="ssleay32.dll">
+      <Filter>Resources</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
