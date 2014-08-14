@@ -35,7 +35,7 @@
                 <CheckBox x:Name="checkRemember" Content="Remember me" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding RememberMe, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <Button x:Name="btnLogin" Content="{Binding LocalizedUiResources.LoginText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding LoginCommand}" IsEnabled="{Binding ControlState}"/>
             </StackPanel>
-            <StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">
+            <StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0">
             	<TextBlock x:Name="txtNewAtMega" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.NewAtMega, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
             	<Button x:Name="btnCreateNewAccount" Content="{Binding LocalizedUiResources.CreateNewAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateCreateAccountCommand}"/>
             </StackPanel>

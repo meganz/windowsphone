@@ -52,7 +52,7 @@ namespace MegaApp.Models
             }
             else
             {
-                MessageBox.Show(AppMessages.RequiredFieldsSignUp, AppMessages.RequiredFieldsSignUp_Title,
+                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFieldsCreateAccount_Title,
                         MessageBoxButton.OK);
             }
             
@@ -165,11 +165,12 @@ namespace MegaApp.Models
 
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
-                    MessageBox.Show(AppMessages.SignUpSend, AppMessages.SignUpSend_Title, MessageBoxButton.OK);
+                    MessageBox.Show(AppMessages.ConfirmNeeded, AppMessages.ConfirmNeeded_Title, MessageBoxButton.OK);
+                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                 }
                 else
-                    MessageBox.Show(String.Format(AppMessages.SignUpFailed, e.getErrorString()),
-                        AppMessages.SignUpFailed_Title, MessageBoxButton.OK);
+                    MessageBox.Show(String.Format(AppMessages.CreateAccountFailed, e.getErrorString()),
+                        AppMessages.CreateAccountFailed_Title, MessageBoxButton.OK);
             });
         }
 
@@ -178,7 +179,7 @@ namespace MegaApp.Models
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, AppMessages.ProgressIndicator_SendingSignUp);
+                ProgessService.SetProgressIndicator(true, AppMessages.ProgressIndicator_CreatingAccount);
             });
         }
 
@@ -187,8 +188,8 @@ namespace MegaApp.Models
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 ProgessService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(AppMessages.SignUpFailed, e.getErrorString()),
-                    AppMessages.SignUpFailed_Title, MessageBoxButton.OK);
+                MessageBox.Show(String.Format(AppMessages.CreateAccountFailed, e.getErrorString()),
+                    AppMessages.CreateAccountFailed_Title, MessageBoxButton.OK);
             });
         }
 

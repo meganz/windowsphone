@@ -12,6 +12,7 @@ namespace MegaApp.Classes
         Login = 10,
         RememberedLogin = 20,
         PictureSelected = 30,
+        UriLaunch = 40,
         Unknown = 999
     }
 }
