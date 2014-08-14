@@ -1,0 +1,49 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:MegaApp.Converters"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives">
+
+    <!-- CONVERTERS -->
+    <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
+   
+    <!-- TEMPLATES -->
+    <DataTemplate x:Key="MegaNodeListItemExpanded">
+    	<Grid Margin="80,0,0,0">
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition/>
+    			<ColumnDefinition/>
+    		</Grid.ColumnDefinitions>
+    		<StackPanel x:Name="stackSize" Orientation="Horizontal">
+                <TextBlock x:Name="txtSizeLabel" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding LocalizedUiResources.Size, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock x:Name="txtSize" Margin="12,0,0,0" TextWrapping="NoWrap" Text="{Binding DisplaySize}"/>
+    		</StackPanel>
+    		<StackPanel x:Name="stackCreationTime" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock x:Name="txtCreatedLabel" HorizontalAlignment="Left" TextWrapping="NoWrap" Text="{Binding LocalizedUiResources.Created, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="NoWrap" Text="{Binding CreationTime}"/>
+    		</StackPanel>
+    	</Grid>
+    </DataTemplate>
+
+	<DataTemplate x:Key="MegaNodeListItemContent">
+		<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding Converter={StaticResource FileTypeToImageConverter}}"/>
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Grid.Column="1" TextTrimming="WordEllipsis"/>
+        </Grid>
+	</DataTemplate>
+   
+    
+    <DataTemplate x:Key="MegaNodeListItemTemplate">
+        <telerikPrimitives:RadExpanderControl
+                Content="{Binding}"
+                ExpandableContent="{Binding}"
+                IsExpanded="{Binding IsExpanded, Mode=TwoWay}" 
+				ContentTemplate="{StaticResource MegaNodeListItemContent}"
+				ExpandableContentTemplate="{StaticResource MegaNodeListItemExpanded}"/>                
+    </DataTemplate>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>

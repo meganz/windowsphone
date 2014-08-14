@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{a608acc5-40c3-48bd-abf6-ed0cf4b56879}</ProjectGuid>
+    <RootNamespace>mega</RootNamespace>
+    <DefaultLanguage>es-ES</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <WinMDAssembly>true</WinMDAssembly>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110_wp80</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <GenerateManifest>false</GenerateManifest>
+    <NuGetPackageImportStamp>12ff6209</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <IncludePath>SDK\wp8;SDK\sdk\include;SDK\3rdparty\include;SDK\sdk\third_party\utf8proc;$(IncludePath)</IncludePath>
+    <LibraryPath>SDK\3rdparty\libs\Debug\ARM;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\MEGA\MegaApp\Mega Runtime Component\SDK\wp8;C:\MEGA\MegaApp\Mega Runtime Component\SDK\sdk\include;C:\MEGA\MegaApp\Mega Runtime Component\SDK\3rdparty\include;C:\MEGA\MegaApp\Mega Runtime Component\SDK\sdk\third_party\utf8proc;C:\Users\Javi\Documents\Visual Studio 2013\Projects\megasdk\sdk\third_party\utf8proc;C:\Users\Javi\Documents\Visual Studio 2013\Projects\megasdk\3rdparty\include;C:\Users\Javi\Documents\Visual Studio 2013\Projects\megasdk\sdk\include;C:\Users\Javi\Documents\Visual Studio 2013\Projects\megasdk\wp8;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Javi\Documents\Visual Studio 2013\Projects\megasdk\3rdparty\libs\Debug\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;USE_CRYPTOPP;USE_SQLITE;_CRT_SECURE_NO_WARNINGS;D_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;advapi32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <AdditionalDependencies>sqlite3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;USE_CRYPTOPP;USE_SQLITE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;advapi32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+      <AdditionalDependencies>sqlite3.lib;cryptopp.lib;ws2_32.lib;libcurl.lib;ssleay32.lib;libeay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <PreprocessorDefinitions>_WINRT_DLL;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalUsingDirectories>$(WindowsSDK_MetadataPath);$(AdditionalUsingDirectories)</AdditionalUsingDirectories>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>ole32.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateWindowsMetadata>true</GenerateWindowsMetadata>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="platform.winmd">
+      <IsWinMDFile>true</IsWinMDFile>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bindings\DelegateMGlobalListener.cpp" />
+    <ClCompile Include="Bindings\DelegateMListener.cpp" />
+    <ClCompile Include="Bindings\DelegateMRequestListener.cpp" />
+    <ClCompile Include="Bindings\DelegateMTransferListener.cpp" />
+    <ClCompile Include="Bindings\MAccountDetails.cpp" />
+    <ClCompile Include="Bindings\MegaSDK.cpp" />
+    <ClCompile Include="Bindings\MError.cpp" />
+    <ClCompile Include="Bindings\MNode.cpp" />
+    <ClCompile Include="Bindings\MRequest.cpp" />
+    <ClCompile Include="Bindings\MShare.cpp" />
+    <ClCompile Include="Bindings\MTransfer.cpp" />
+    <ClCompile Include="Bindings\MUser.cpp" />
+    <ClCompile Include="Bindings\MNodeList.cpp" />
+    <ClCompile Include="Bindings\MShareList.cpp" />
+    <ClCompile Include="Bindings\MTransferList.cpp" />
+    <ClCompile Include="Bindings\MUserList.cpp" />
+    <ClCompile Include="SDK\sdk\src\attrmap.cpp" />
+    <ClCompile Include="SDK\sdk\src\backofftimer.cpp" />
+    <ClCompile Include="SDK\sdk\src\base64.cpp" />
+    <ClCompile Include="SDK\sdk\src\command.cpp" />
+    <ClCompile Include="SDK\sdk\src\commands.cpp" />
+    <ClCompile Include="SDK\sdk\src\crypto\cryptopp.cpp" />
+    <ClCompile Include="SDK\sdk\src\db.cpp" />
+    <ClCompile Include="SDK\sdk\src\db\sqlite.cpp" />
+    <ClCompile Include="SDK\sdk\src\file.cpp" />
+    <ClCompile Include="SDK\sdk\src\fileattributefetch.cpp" />
+    <ClCompile Include="SDK\sdk\src\filefingerprint.cpp" />
+    <ClCompile Include="SDK\sdk\src\filesystem.cpp" />
+    <ClCompile Include="SDK\sdk\src\gfx.cpp" />
+    <ClCompile Include="SDK\sdk\src\http.cpp" />
+    <ClCompile Include="SDK\sdk\src\json.cpp" />
+    <ClCompile Include="SDK\sdk\src\logging.cpp" />
+    <ClCompile Include="SDK\sdk\src\megaclient.cpp" />
+    <ClCompile Include="SDK\sdk\src\node.cpp" />
+    <ClCompile Include="SDK\sdk\src\pubkeyaction.cpp" />
+    <ClCompile Include="SDK\sdk\src\request.cpp" />
+    <ClCompile Include="SDK\sdk\src\serialize64.cpp" />
+    <ClCompile Include="SDK\sdk\src\share.cpp" />
+    <ClCompile Include="SDK\sdk\src\sharenodekeys.cpp" />
+    <ClCompile Include="SDK\sdk\src\sync.cpp" />
+    <ClCompile Include="SDK\sdk\src\transfer.cpp" />
+    <ClCompile Include="SDK\sdk\src\transferslot.cpp" />
+    <ClCompile Include="SDK\sdk\src\treeproc.cpp" />
+    <ClCompile Include="SDK\sdk\src\user.cpp" />
+    <ClCompile Include="SDK\sdk\src\utils.cpp" />
+    <ClCompile Include="SDK\sdk\src\waiterbase.cpp" />
+    <ClCompile Include="SDK\sdk\third_party\utf8proc\utf8proc.cpp" />
+    <ClCompile Include="SDK\wp8\fs.cpp" />
+    <ClCompile Include="SDK\wp8\megaapi.cpp" />
+    <ClCompile Include="SDK\wp8\MegaProxySettings.cpp" />
+    <ClCompile Include="SDK\wp8\net.cpp" />
+    <ClCompile Include="SDK\wp8\waiter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bindings\DelegateMGlobalListener.h" />
+    <ClInclude Include="Bindings\DelegateMListener.h" />
+    <ClInclude Include="Bindings\DelegateMRequestListener.h" />
+    <ClInclude Include="Bindings\DelegateMTransferListener.h" />
+    <ClInclude Include="Bindings\MAccountDetails.h" />
+    <ClInclude Include="Bindings\MegaSDK.h" />
+    <ClInclude Include="Bindings\MError.h" />
+    <ClInclude Include="Bindings\MGlobalListenerInterface.h" />
+    <ClInclude Include="Bindings\MListenerInterface.h" />
+    <ClInclude Include="Bindings\MNode.h" />
+    <ClInclude Include="Bindings\MRequest.h" />
+    <ClInclude Include="Bindings\MRequestListenerInterface.h" />
+    <ClInclude Include="Bindings\MShare.h" />
+    <ClInclude Include="Bindings\MTransfer.h" />
+    <ClInclude Include="Bindings\MTransferListenerInterface.h" />
+    <ClInclude Include="Bindings\MTreeProcessorInterface.h" />
+    <ClInclude Include="Bindings\MUser.h" />
+    <ClInclude Include="Bindings\MNodeList.h" />
+    <ClInclude Include="Headers\pch.h" />
+    <ClInclude Include="Bindings\MShareList.h" />
+    <ClInclude Include="Bindings\MTransferList.h" />
+    <ClInclude Include="Bindings\MUserList.h" />
+    <ClInclude Include="SDK\sdk\include\mega.h" />
+    <ClInclude Include="SDK\sdk\include\mega\account.h" />
+    <ClInclude Include="SDK\sdk\include\mega\attrmap.h" />
+    <ClInclude Include="SDK\sdk\include\mega\backofftimer.h" />
+    <ClInclude Include="SDK\sdk\include\mega\base64.h" />
+    <ClInclude Include="SDK\sdk\include\mega\command.h" />
+    <ClInclude Include="SDK\sdk\include\mega\console.h" />
+    <ClInclude Include="SDK\sdk\include\mega\crypto\cryptopp.h" />
+    <ClInclude Include="SDK\sdk\include\mega\db.h" />
+    <ClInclude Include="SDK\sdk\include\mega\db\sqlite.h" />
+    <ClInclude Include="SDK\sdk\include\mega\file.h" />
+    <ClInclude Include="SDK\sdk\include\mega\fileattributefetch.h" />
+    <ClInclude Include="SDK\sdk\include\mega\filefingerprint.h" />
+    <ClInclude Include="SDK\sdk\include\mega\filesystem.h" />
+    <ClInclude Include="SDK\sdk\include\mega\gfx.h" />
+    <ClInclude Include="SDK\sdk\include\mega\http.h" />
+    <ClInclude Include="SDK\sdk\include\mega\json.h" />
+    <ClInclude Include="SDK\sdk\include\mega\logging.h" />
+    <ClInclude Include="SDK\sdk\include\mega\megaapp.h" />
+    <ClInclude Include="SDK\sdk\include\mega\megaclient.h" />
+    <ClInclude Include="SDK\sdk\include\mega\node.h" />
+    <ClInclude Include="SDK\sdk\include\mega\pubkeyaction.h" />
+    <ClInclude Include="SDK\sdk\include\mega\request.h" />
+    <ClInclude Include="SDK\sdk\include\mega\serialize64.h" />
+    <ClInclude Include="SDK\sdk\include\mega\share.h" />
+    <ClInclude Include="SDK\sdk\include\mega\sharenodekeys.h" />
+    <ClInclude Include="SDK\sdk\include\mega\sync.h" />
+    <ClInclude Include="SDK\sdk\include\mega\transfer.h" />
+    <ClInclude Include="SDK\sdk\include\mega\transferslot.h" />
+    <ClInclude Include="SDK\sdk\include\mega\treeproc.h" />
+    <ClInclude Include="SDK\sdk\include\mega\types.h" />
+    <ClInclude Include="SDK\sdk\include\mega\user.h" />
+    <ClInclude Include="SDK\sdk\include\mega\utils.h" />
+    <ClInclude Include="SDK\sdk\include\mega\waiter.h" />
+    <ClInclude Include="SDK\sdk\third_party\utf8proc\utf8proc.h" />
+    <ClInclude Include="SDK\wp8\megaapi.h" />
+    <ClInclude Include="SDK\wp8\megafs.h" />
+    <ClInclude Include="SDK\wp8\meganet.h" />
+    <ClInclude Include="SDK\wp8\MegaProxySettings.h" />
+    <ClInclude Include="SDK\wp8\megasys.h" />
+    <ClInclude Include="SDK\wp8\megawaiter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.8.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libcurl.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="libeay32.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </Library>
+    <Library Include="ssleay32.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">true</DeploymentContent>
+      <FileType>Document</FileType>
+    </Library>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsPhone\v$(TargetPlatformVersion)\Microsoft.Cpp.WindowsPhone.$(TargetPlatformVersion).targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
