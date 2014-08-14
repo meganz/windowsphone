@@ -88,15 +88,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New at MEGA? Create a new account here.
-        /// </summary>
-        public static string CreateAccountText {
-            get {
-                return ResourceManager.GetString("CreateAccountText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to create account.
         /// </summary>
         public static string CreateAccountTitle {
@@ -111,6 +102,15 @@ namespace MegaApp.Resources {
         public static string Created {
             get {
                 return ResourceManager.GetString("Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to create a new account here.
+        /// </summary>
+        public static string CreateNewAccount {
+            get {
+                return ResourceManager.GetString("CreateNewAccount", resourceCulture);
             }
         }
         
@@ -147,6 +147,15 @@ namespace MegaApp.Resources {
         public static string NameWatermark {
             get {
                 return ResourceManager.GetString("NameWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New at MEGA? .
+        /// </summary>
+        public static string NewAtMega {
+            get {
+                return ResourceManager.GetString("NewAtMega", resourceCulture);
             }
         }
         
