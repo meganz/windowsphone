@@ -15,7 +15,7 @@ namespace MegaApp.Classes
         {
             string tempUri = System.Net.HttpUtility.UrlDecode(uri.ToString());
 
-            // URI association launch for contoso.
+            // URI association launch for MEGA.
             if (tempUri.Contains("mega:"))
             {
                 // TODO: Get the information to confirm account 
