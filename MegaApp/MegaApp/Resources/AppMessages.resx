@@ -118,10 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AgreeTermsOfUse" xml:space="preserve">
-    <value>You must agree with the terms of use</value>
+    <value>You must agree with our terms of use</value>
   </data>
   <data name="AgreeTermsOfUse_Title" xml:space="preserve">
-    <value>Terms of use not agreed</value>
+    <value>Terms of use</value>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>Check your e-mail and click the link to login and confirm your account</value>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>Confirmation needed</value>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>MEGA Cloud Drive account creation failed. Please try again. [{0}]</value>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>Account creation failed</value>
   </data>
   <data name="DeleteNodeFailed" xml:space="preserve">
     <value>Failed tot delete item. Please try again</value>
@@ -174,7 +186,7 @@
     <value>Move failed</value>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Your passwords do not match. Please retype them and make sure they are equal</value>
+    <value>Your passwords do not match. Please re-type them and make sure they are equal</value>
   </data>
   <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
     <value>Passwords do not match</value>
@@ -188,6 +200,9 @@
   <data name="ProgessIndicator_FetchingNodes" xml:space="preserve">
     <value>Fetching files &amp; folders...</value>
     <comment>Progress indicator message when loading nodes from MEGA web service</comment>
+  </data>
+  <data name="ProgressIndicator_CreatingAccount" xml:space="preserve">
+    <value>Creating account...</value>
   </data>
   <data name="ProgressIndicator_DeleteNode" xml:space="preserve">
     <value>Deleting '{0}'...</value>
@@ -207,11 +222,14 @@
     <value>Moving to Rubbish bin...</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
   </data>
-  <data name="ProgressIndicator_SendingSignUp" xml:space="preserve">
-    <value>Sending sign-up data...</value>
-  </data>
   <data name="ProgressIndictor_DownloadNode" xml:space="preserve">
     <value>Downloading '{0}'...</value>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>Please fill in your name, e-mail address and your new password</value>
+  </data>
+  <data name="RequiredFieldsCreateAccount_Title" xml:space="preserve">
+    <value>Fill in required fields</value>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
     <value>Please fill in your e-mail address and your MEGA password</value>
@@ -219,23 +237,5 @@
   </data>
   <data name="RequiredFieldsLogin_Title" xml:space="preserve">
     <value>Fill in required fields</value>
-  </data>
-  <data name="RequiredFieldsSignUp" xml:space="preserve">
-    <value>Please fill in your name, e-mail address and your new password</value>
-  </data>
-  <data name="RequiredFieldsSignUp_Title" xml:space="preserve">
-    <value>Fill in required fields</value>
-  </data>
-  <data name="SignUpFailed" xml:space="preserve">
-    <value>MEGA Cloud Drive sign up failed. Please try again. [{0}]</value>
-  </data>
-  <data name="SignUpFailed_Title" xml:space="preserve">
-    <value>Sign up failed</value>
-  </data>
-  <data name="SignUpSend" xml:space="preserve">
-    <value>Your sign up data has been send to MEGA. Please look in your mail to confirm your request.</value>
-  </data>
-  <data name="SignUpSend_Title" xml:space="preserve">
-    <value>Sign up send to MEGA</value>
   </data>
 </root>

@@ -24,7 +24,9 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
 
             // Remove the main page from the stack. If user presses back button it will then exit the application
-            NavigationService.RemoveBackEntry();
+            // Also removes the create account page after the user has created the account succesful
+            while (NavigationService.CanGoBack)
+                NavigationService.RemoveBackEntry();
         }
     }
 }

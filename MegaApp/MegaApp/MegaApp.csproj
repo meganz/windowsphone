@@ -94,6 +94,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\NavigationParameter.cs" />
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
     <Compile Include="LocalizedStrings.cs" />

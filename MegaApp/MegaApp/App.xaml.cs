@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using mega;
+using MegaApp.Classes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Resources;
@@ -124,6 +125,9 @@ namespace MegaApp
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+
+            // Assign the URI-mapper class to the application frame.
+            RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK();

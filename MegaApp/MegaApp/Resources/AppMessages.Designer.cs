@@ -61,7 +61,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must agree with the terms of use.
+        ///   Looks up a localized string similar to You must agree with our terms of use.
         /// </summary>
         internal static string AgreeTermsOfUse {
             get {
@@ -70,11 +70,47 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Terms of use not agreed.
+        ///   Looks up a localized string similar to Terms of use.
         /// </summary>
         internal static string AgreeTermsOfUse_Title {
             get {
                 return ResourceManager.GetString("AgreeTermsOfUse_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check your e-mail and click the link to login and confirm your account.
+        /// </summary>
+        internal static string ConfirmNeeded {
+            get {
+                return ResourceManager.GetString("ConfirmNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmation needed.
+        /// </summary>
+        internal static string ConfirmNeeded_Title {
+            get {
+                return ResourceManager.GetString("ConfirmNeeded_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEGA Cloud Drive account creation failed. Please try again. [{0}].
+        /// </summary>
+        internal static string CreateAccountFailed {
+            get {
+                return ResourceManager.GetString("CreateAccountFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account creation failed.
+        /// </summary>
+        internal static string CreateAccountFailed_Title {
+            get {
+                return ResourceManager.GetString("CreateAccountFailed_Title", resourceCulture);
             }
         }
         
@@ -223,7 +259,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your passwords do not match. Please retype them and make sure they are equal.
+        ///   Looks up a localized string similar to Your passwords do not match. Please re-type them and make sure they are equal.
         /// </summary>
         internal static string PasswordsDoNotMatch {
             get {
@@ -264,6 +300,15 @@ namespace MegaApp.Resources {
         internal static string ProgessIndicator_FetchingNodes {
             get {
                 return ResourceManager.GetString("ProgessIndicator_FetchingNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Creating account....
+        /// </summary>
+        internal static string ProgressIndicator_CreatingAccount {
+            get {
+                return ResourceManager.GetString("ProgressIndicator_CreatingAccount", resourceCulture);
             }
         }
         
@@ -313,20 +358,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sending sign-up data....
-        /// </summary>
-        internal static string ProgressIndicator_SendingSignUp {
-            get {
-                return ResourceManager.GetString("ProgressIndicator_SendingSignUp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Downloading &apos;{0}&apos;....
         /// </summary>
         internal static string ProgressIndictor_DownloadNode {
             get {
                 return ResourceManager.GetString("ProgressIndictor_DownloadNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in your name, e-mail address and your new password.
+        /// </summary>
+        internal static string RequiredFieldsCreateAccount {
+            get {
+                return ResourceManager.GetString("RequiredFieldsCreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill in required fields.
+        /// </summary>
+        internal static string RequiredFieldsCreateAccount_Title {
+            get {
+                return ResourceManager.GetString("RequiredFieldsCreateAccount_Title", resourceCulture);
             }
         }
         
@@ -345,60 +399,6 @@ namespace MegaApp.Resources {
         internal static string RequiredFieldsLogin_Title {
             get {
                 return ResourceManager.GetString("RequiredFieldsLogin_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Please fill in your name, e-mail address and your new password.
-        /// </summary>
-        internal static string RequiredFieldsSignUp {
-            get {
-                return ResourceManager.GetString("RequiredFieldsSignUp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fill in required fields.
-        /// </summary>
-        internal static string RequiredFieldsSignUp_Title {
-            get {
-                return ResourceManager.GetString("RequiredFieldsSignUp_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MEGA Cloud Drive sign up failed. Please try again. [{0}].
-        /// </summary>
-        internal static string SignUpFailed {
-            get {
-                return ResourceManager.GetString("SignUpFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign up failed.
-        /// </summary>
-        internal static string SignUpFailed_Title {
-            get {
-                return ResourceManager.GetString("SignUpFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Your sign up data has been send to MEGA. Please look in your mail to confirm your request..
-        /// </summary>
-        internal static string SignUpSend {
-            get {
-                return ResourceManager.GetString("SignUpSend", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign up send to MEGA.
-        /// </summary>
-        internal static string SignUpSend_Title {
-            get {
-                return ResourceManager.GetString("SignUpSend_Title", resourceCulture);
             }
         }
     }
