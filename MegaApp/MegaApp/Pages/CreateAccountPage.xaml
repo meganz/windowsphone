@@ -38,7 +38,7 @@
                 	<CheckBox x:Name="chkTermsOfUse" Content="{Binding LocalizedUiResources.AgreeCreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}"/>
                 	<HyperlinkButton x:Name="btnTermsOfUse" Content="{Binding LocalizedUiResources.TermsOfUse, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}"/>
                 </StackPanel>
-                <Button x:Name="btnCreateAccount" Content="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding CreateAccountCommand}" IsEnabled="{Binding ControlState}"/>
+                <Button x:Name="btnCreateAccount" Content="{Binding LocalizedUiResources.CreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding CreateAccountCommand}" IsEnabled="{Binding ControlState}"/>
             </StackPanel>
         </Grid>
 

@@ -90,6 +90,15 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to create account.
         /// </summary>
+        public static string CreateAccount {
+            get {
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to registration.
+        /// </summary>
         public static string CreateAccountTitle {
             get {
                 return ResourceManager.GetString("CreateAccountTitle", resourceCulture);
@@ -106,7 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to create a new account here.
+        ///   Looks up a localized string similar to Create a new account here.
         /// </summary>
         public static string CreateNewAccount {
             get {
