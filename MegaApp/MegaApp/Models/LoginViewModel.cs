@@ -58,8 +58,7 @@ namespace MegaApp.Models
         {
             SettingsService.SaveMegaLoginData(email, session);
         }
-
-
+        
         #endregion
 
         #region Commands

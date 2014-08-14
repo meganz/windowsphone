@@ -29,16 +29,16 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel x:Name="stackSignUp">
+            <StackPanel x:Name="stackCreateAccount">
                 <telerikPrimitives:RadTextBox x:Name="txtName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.NameWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Name, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType" Watermark="{Binding LocalizedUiResources.PasswordReTypeWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding PasswordReType, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
                 	<CheckBox x:Name="chkTermsOfUse" Content="{Binding LocalizedUiResources.AgreeCreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}"/>
                 	<HyperlinkButton x:Name="btnTermsOfUse" Content="{Binding LocalizedUiResources.TermsOfUse, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}"/>
                 </StackPanel>
-                <Button x:Name="btnSignUp" Content="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding CreateAccountCommand}" IsEnabled="{Binding ControlState}"/>
+                <Button x:Name="btnCreateAccount" Content="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding CreateAccountCommand}" IsEnabled="{Binding ControlState}"/>
             </StackPanel>
         </Grid>
 
