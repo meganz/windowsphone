@@ -11,12 +11,12 @@ using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
-    public partial class SignUpPage : PhoneApplicationPage
+    public partial class CreateAccountPage : PhoneApplicationPage
     {
-        public SignUpPage()
+        public CreateAccountPage()
         {
-            var signUpViewModel = new SignUpViewModel(App.MegaSdk);
-            this.DataContext = signUpViewModel;
+            var createAccountViewModelwModel = new CreateAccountViewModel(App.MegaSdk);
+            this.DataContext = createAccountViewModelwModel;
 
             InitializeComponent();
         }

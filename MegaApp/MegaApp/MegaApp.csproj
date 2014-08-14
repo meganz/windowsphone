@@ -104,15 +104,15 @@
     <Compile Include="Models\DelegateCommand.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\NodeViewModel.cs" />
-    <Compile Include="Models\SignUpViewModel.cs" />
+    <Compile Include="Models\CreateAccountViewModel.cs" />
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SignUpPage.xaml.cs">
-      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    <Compile Include="Pages\CreateAccountPage.xaml.cs">
+      <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppMessages.Designer.cs">
@@ -136,7 +136,7 @@
       <DependentUpon>UiResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\CryptoService.cs" />
-    <Compile Include="Services\NavigationUriBuilder.cs" />
+    <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
   </ItemGroup>
@@ -220,7 +220,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SignUpPage.xaml">
+    <Page Include="Pages\CreateAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

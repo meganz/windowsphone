@@ -61,6 +61,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must agree with the terms of use.
+        /// </summary>
+        internal static string AgreeTermsOfUse {
+            get {
+                return ResourceManager.GetString("AgreeTermsOfUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms of use not agreed.
+        /// </summary>
+        internal static string AgreeTermsOfUse_Title {
+            get {
+                return ResourceManager.GetString("AgreeTermsOfUse_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed tot delete item. Please try again.
         /// </summary>
         internal static string DeleteNodeFailed {

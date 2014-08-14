@@ -12,29 +12,37 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {
-    class SignUpViewModel : BaseViewModel, MRequestListenerInterface
+    class CreateAccountViewModel : BaseViewModel, MRequestListenerInterface
     {
         private readonly MegaSDK _megaSdk;
 
-        public SignUpViewModel(MegaSDK megaSdk)
+        public CreateAccountViewModel(MegaSDK megaSdk)
         {
             this._megaSdk = megaSdk;
             this.ControlState = true;
-            this.SignUpCommand = new DelegateCommand(this.DoSignUp);
+            this.CreateAccountCommand = new DelegateCommand(this.CreateAccount);
+            this.NavigateTermsOfUseCommand = new DelegateCommand(NavigateTermsOfUse);
         }
 
         #region Methods
 
-        private void DoSignUp(object obj)
+        private void CreateAccount(object obj)
         {
             if (CheckInputParameters())
             {
                 if (CheckPassword())
                 {
-                    this._megaSdk.createAccount(Email, Password, Name, this);
+                    if (TermOfUse)
+                    {
+                        this._megaSdk.createAccount(Email, Password, Name, this);
+                    }
+                    else
+                        MessageBox.Show(AppMessages.AgreeTermsOfUse, AppMessages.AgreeTermsOfUse_Title,
+                            MessageBoxButton.OK);
                 }
                 else
                 {
@@ -48,6 +56,11 @@ namespace MegaApp.Models
                         MessageBoxButton.OK);
             }
             
+        }
+        private static void NavigateTermsOfUse(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask {Uri = new Uri(AppResources.TermsOfUseUrl)};
+            webBrowserTask.Show();
         }
 
         private bool CheckInputParameters()
@@ -64,7 +77,9 @@ namespace MegaApp.Models
 
         #region Commands
 
-        public ICommand SignUpCommand { get; set; }
+        public ICommand CreateAccountCommand { get; set; }
+
+        public ICommand NavigateTermsOfUseCommand { get; set; }
 
         #endregion
 
@@ -114,6 +129,17 @@ namespace MegaApp.Models
             }
         }
 
+        private bool _termsOfUse;
+        public bool TermOfUse
+        {
+            get { return _termsOfUse; }
+            set
+            {
+                _termsOfUse = value;
+                OnPropertyChanged("TermOfUse");
+            }
+        }
+
         private bool _controlState;
         public bool ControlState
         {
@@ -126,7 +152,6 @@ namespace MegaApp.Models
         }
 
         #endregion
-     
 
         #region MRequestListenerInterface
 
