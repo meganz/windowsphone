@@ -35,7 +35,7 @@
                 <CheckBox x:Name="checkRemember" Content="Remember me" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding RememberMe, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <Button x:Name="btnLogin" Content="{Binding LocalizedUiResources.LoginText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding LoginCommand}" IsEnabled="{Binding ControlState}"/>
             </StackPanel>
-            <HyperlinkButton x:Name="btnSignUp" Content="{Binding LocalizedUiResources.SignUpText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0,0,0,40" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMedium}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateSignUpCommand}"/>
+            <HyperlinkButton x:Name="btnSignUp" Content="{Binding LocalizedUiResources.CreateAccountText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="0,0,0,40" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMedium}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateCreateAccountCommand}"/>
         </Grid>
     </Grid>
 

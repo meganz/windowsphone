@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I agree with the.
+        /// </summary>
+        public static string AgreeCreateAccount {
+            get {
+                return ResourceManager.GetString("AgreeCreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MEGA.
         /// </summary>
         public static string AppName {
@@ -75,6 +84,24 @@ namespace MegaApp.Resources {
         public static string CloudDriveName {
             get {
                 return ResourceManager.GetString("CloudDriveName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New at MEGA? Create a new account here.
+        /// </summary>
+        public static string CreateAccountText {
+            get {
+                return ResourceManager.GetString("CreateAccountText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to create account.
+        /// </summary>
+        public static string CreateAccountTitle {
+            get {
+                return ResourceManager.GetString("CreateAccountTitle", resourceCulture);
             }
         }
         
@@ -124,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to retype your password.
+        ///   Looks up a localized string similar to confirm your password.
         /// </summary>
         public static string PasswordReTypeWatermark {
             get {
@@ -151,29 +178,20 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No account yet? Sign up here..
-        /// </summary>
-        public static string SignUpText {
-            get {
-                return ResourceManager.GetString("SignUpText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to sign up.
-        /// </summary>
-        public static string SignUpTitle {
-            get {
-                return ResourceManager.GetString("SignUpTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Size:.
         /// </summary>
         public static string Size {
             get {
                 return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to terms of use.
+        /// </summary>
+        public static string TermsOfUse {
+            get {
+                return ResourceManager.GetString("TermsOfUse", resourceCulture);
             }
         }
         

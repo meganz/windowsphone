@@ -27,7 +27,7 @@ namespace MegaApp.Models
             this._megaSdk = megaSdk;
             this.ControlState = true;
             this.LoginCommand = new DelegateCommand(this.DoLogin);
-            this.NavigateSignUpCommand = new DelegateCommand(NavigateSignUpPage);
+            this.NavigateCreateAccountCommand = new DelegateCommand(NavigateCreateAccount);
         }
 
         #region Methods
@@ -44,10 +44,9 @@ namespace MegaApp.Models
                         MessageBoxButton.OK);
             }
         }
-        private static void NavigateSignUpPage(object obj)
+        private static void NavigateCreateAccount(object obj)
         {
-            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(NavigationUriBuilder.BuildNavigationUri(typeof(SignUpPage),
-                       NavigationParameter.Normal));
+            NavigateService.NavigateTo(typeof(CreateAccountPage), NavigationParameter.Normal);
         }
 
         private bool CheckInputParameters()
@@ -67,7 +66,7 @@ namespace MegaApp.Models
 
         public ICommand LoginCommand { get; set; }
 
-        public ICommand NavigateSignUpCommand { get; set; }
+        public ICommand NavigateCreateAccountCommand { get; set; }
 
         #endregion
 
@@ -134,8 +133,7 @@ namespace MegaApp.Models
                     if (RememberMe)
                         SaveLoginData(Email, api.dumpSession());
 
-                    ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(NavigationUriBuilder.BuildNavigationUri(typeof(MainPage),
-                        NavigationParameter.Login));
+                    NavigateService.NavigateTo(typeof(MainPage),NavigationParameter.Login);
                 }
                 else
                     MessageBox.Show(String.Format(AppMessages.LoginFailed, e.getErrorString()),

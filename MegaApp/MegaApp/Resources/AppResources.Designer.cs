@@ -113,5 +113,14 @@ namespace MegaApp.Resources {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://mega.co.nz/#terms.
+        /// </summary>
+        public static string TermsOfUseUrl {
+            get {
+                return ResourceManager.GetString("TermsOfUseUrl", resourceCulture);
+            }
+        }
     }
 }

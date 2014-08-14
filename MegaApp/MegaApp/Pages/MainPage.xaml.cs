@@ -26,13 +26,13 @@ namespace MegaApp.Pages
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            NavigationParameter navParam = NavigationUriBuilder.ProcessQueryString(NavigationContext.QueryString);
+            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
             if (navParam != NavigationParameter.Login)
             {
                 if (!SettingsService.LoadSetting<bool>(SettingsResources.RememberMe))
                 {
-                    NavigationService.Navigate(NavigationUriBuilder.BuildNavigationUri(typeof(LoginPage),
+                    NavigationService.Navigate(NavigateService.BuildNavigationUri(typeof(LoginPage),
                         NavigationParameter.Normal));
                     return;
                 }

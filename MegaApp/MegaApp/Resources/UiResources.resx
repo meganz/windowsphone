@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>I agree with the</value>
+  </data>
   <data name="AppName" xml:space="preserve">
     <value>MEGA</value>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
     <value>Cloud Drive</value>
+  </data>
+  <data name="CreateAccountText" xml:space="preserve">
+    <value>New at MEGA? Create a new account here</value>
+  </data>
+  <data name="CreateAccountTitle" xml:space="preserve">
+    <value>create account</value>
   </data>
   <data name="Created" xml:space="preserve">
     <value>Created:</value>
@@ -139,7 +148,7 @@
     <value>your name</value>
   </data>
   <data name="PasswordReTypeWatermark" xml:space="preserve">
-    <value>retype your password</value>
+    <value>confirm your password</value>
   </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>your password</value>
@@ -147,14 +156,11 @@
   <data name="RememberMeText" xml:space="preserve">
     <value>Remember me</value>
   </data>
-  <data name="SignUpText" xml:space="preserve">
-    <value>No account yet? Sign up here.</value>
-  </data>
-  <data name="SignUpTitle" xml:space="preserve">
-    <value>sign up</value>
-  </data>
   <data name="Size" xml:space="preserve">
     <value>Size:</value>
+  </data>
+  <data name="TermsOfUse" xml:space="preserve">
+    <value>terms of use</value>
   </data>
   <data name="TrashBinName" xml:space="preserve">
     <value>Rubbish Bin</value>

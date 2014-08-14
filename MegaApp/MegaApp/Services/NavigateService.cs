@@ -1,12 +1,20 @@
-﻿using MegaApp.Classes;
+﻿using System.Windows;
+using MegaApp.Classes;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using System;
 using System.Collections.Generic;
+using Microsoft.Phone.Controls;
 
 namespace MegaApp.Services
 {
-    public static class NavigationUriBuilder
+    public static class NavigateService
     {
+        public static void NavigateTo(Type navPage, NavigationParameter navParam)
+        {
+            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
+        }
+
         public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam)
         {
             if (navPage == null)
