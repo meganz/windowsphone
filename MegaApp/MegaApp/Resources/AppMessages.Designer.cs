@@ -79,6 +79,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to confirm account. Please try again. [{0}].
+        /// </summary>
+        internal static string ConfirmAccountFailed {
+            get {
+                return ResourceManager.GetString("ConfirmAccountFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm account failed.
+        /// </summary>
+        internal static string ConfirmAccountFailed_Title {
+            get {
+                return ResourceManager.GetString("ConfirmAccountFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account has been created, confirmed and activated. You can now login..
+        /// </summary>
+        internal static string ConfirmAccountSucces {
+            get {
+                return ResourceManager.GetString("ConfirmAccountSucces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account activated.
+        /// </summary>
+        internal static string ConfirmAccountSucces_Title {
+            get {
+                return ResourceManager.GetString("ConfirmAccountSucces_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check your e-mail and click the link to login and confirm your account.
         /// </summary>
         internal static string ConfirmNeeded {
@@ -300,6 +336,15 @@ namespace MegaApp.Resources {
         internal static string ProgessIndicator_FetchingNodes {
             get {
                 return ResourceManager.GetString("ProgessIndicator_FetchingNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirming account....
+        /// </summary>
+        internal static string ProgressIndicator_ConfirmAccount {
+            get {
+                return ResourceManager.GetString("ProgressIndicator_ConfirmAccount", resourceCulture);
             }
         }
         

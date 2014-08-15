@@ -31,7 +31,7 @@ namespace MegaApp.Pages
             if (NavigateService.ProcessQueryString(NavigationContext.QueryString) != NavigationParameter.UriLaunch) return;
 
             if (NavigationContext.QueryString.ContainsKey("confirm"))
-                _confirmAccountViewModel.ConfirmCode = NavigationContext.QueryString["confirm"];
+                _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
         }
     }
 }

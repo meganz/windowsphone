@@ -20,11 +20,11 @@ namespace MegaApp.Classes
             {
                 if (tempUri.Contains("confirm"))
                 {
-                    // Go the confirm account page and add the confirms string as parameter
+                    // Go the confirm account page and add the confirm string as parameter
 
                     var extraParams = new Dictionary<string, string>(1);
 
-                    extraParams.Add("confirm", tempUri);
+                    extraParams.Add("confirm", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
 
                     return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
                 }
