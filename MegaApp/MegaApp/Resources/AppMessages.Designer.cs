@@ -367,6 +367,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fill in required fields.
+        /// </summary>
+        internal static string RequiredFields_Title {
+            get {
+                return ResourceManager.GetString("RequiredFields_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill in your choosen password.
+        /// </summary>
+        internal static string RequiredFieldsConfirmAccount {
+            get {
+                return ResourceManager.GetString("RequiredFieldsConfirmAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill in your name, e-mail address and your new password.
         /// </summary>
         internal static string RequiredFieldsCreateAccount {
@@ -376,29 +394,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fill in required fields.
-        /// </summary>
-        internal static string RequiredFieldsCreateAccount_Title {
-            get {
-                return ResourceManager.GetString("RequiredFieldsCreateAccount_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Please fill in your e-mail address and your MEGA password.
         /// </summary>
         internal static string RequiredFieldsLogin {
             get {
                 return ResourceManager.GetString("RequiredFieldsLogin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fill in required fields.
-        /// </summary>
-        internal static string RequiredFieldsLogin_Title {
-            get {
-                return ResourceManager.GetString("RequiredFieldsLogin_Title", resourceCulture);
             }
         }
     }

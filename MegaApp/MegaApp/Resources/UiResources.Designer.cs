@@ -88,6 +88,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to confirm account.
+        /// </summary>
+        public static string ConfirmAccount {
+            get {
+                return ResourceManager.GetString("ConfirmAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to confirm your password.
+        /// </summary>
+        public static string ConfirmPasswordWatermark {
+            get {
+                return ResourceManager.GetString("ConfirmPasswordWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to create account.
         /// </summary>
         public static string CreateAccount {
@@ -165,15 +192,6 @@ namespace MegaApp.Resources {
         public static string NewAtMega {
             get {
                 return ResourceManager.GetString("NewAtMega", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to confirm your password.
-        /// </summary>
-        public static string PasswordReTypeWatermark {
-            get {
-                return ResourceManager.GetString("PasswordReTypeWatermark", resourceCulture);
             }
         }
         

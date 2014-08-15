@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using MegaApp.Classes;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -13,6 +14,18 @@ namespace MegaApp.Services
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
         {
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
+        }
+
+        public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
+        {
+            var resultUrl = BuildNavigationUri(navPage, navParam).ToString();
+            
+            foreach (var extraParam in extraParams)
+            {
+                resultUrl += String.Format(@"&{0}={1}", extraParam.Key, extraParam.Value);
+            }
+
+            return new Uri(resultUrl, UriKind.Relative);
         }
 
         public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam)

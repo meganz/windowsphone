@@ -9,6 +9,21 @@ namespace MegaApp.Models
 {
     class BaseViewModel : INotifyPropertyChanged
     {
+        #region Properties
+
+        private bool _controlState;
+        public bool ControlState
+        {
+            get { return _controlState; }
+            set
+            {
+                _controlState = value;
+                OnPropertyChanged("ControlState");
+            }
+        }
+
+        #endregion
+
         #region INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;

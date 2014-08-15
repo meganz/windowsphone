@@ -16,12 +16,18 @@ namespace MegaApp.Classes
             string tempUri = System.Net.HttpUtility.UrlDecode(uri.ToString());
 
             // URI association launch for MEGA.
-            if (tempUri.Contains("mega:"))
+            if (tempUri.Contains("mega://"))
             {
-                // TODO: Get the information to confirm account 
+                if (tempUri.Contains("confirm"))
+                {
+                    // Go the confirm account page and add the confirms string as parameter
 
-                // Map the show products request to ShowProducts.xaml
-                return NavigateService.BuildNavigationUri(typeof (LoginPage), NavigationParameter.UriLaunch);
+                    var extraParams = new Dictionary<string, string>(1);
+
+                    extraParams.Add("confirm", tempUri);
+
+                    return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
+                }
             }
 
             // Otherwise perform normal launch.

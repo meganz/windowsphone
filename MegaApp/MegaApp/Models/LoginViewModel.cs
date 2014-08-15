@@ -40,7 +40,7 @@ namespace MegaApp.Models
             }
             else
             {
-                MessageBox.Show(AppMessages.RequiredFieldsLogin, AppMessages.RequiredFieldsLogin_Title,
+                MessageBox.Show(AppMessages.RequiredFieldsLogin, AppMessages.RequiredFields_Title,
                         MessageBoxButton.OK);
             }
         }
@@ -71,49 +71,9 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private string _email;
-        public string Email
-        {
-            get { return _email; }
-            set
-            {
-                _email = value;
-                OnPropertyChanged("Email");
-            }
-        }
-
-        private string _password;
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                OnPropertyChanged("Password");
-            }
-        }
-
-        private bool _rememberMe;
-        public bool RememberMe
-        {
-            get { return _rememberMe; }
-            set
-            {
-                _rememberMe = value;
-                OnPropertyChanged("RememberMe");
-            }
-        }
-
-        private bool _controlState;
-        public bool ControlState
-        {
-            get { return _controlState; }
-            set
-            {
-                _controlState = value;
-                OnPropertyChanged("ControlState");
-            }
-        }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public bool RememberMe { get; set; }
 
         #endregion
 
