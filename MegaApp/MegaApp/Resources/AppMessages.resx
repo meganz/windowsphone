@@ -225,17 +225,17 @@
   <data name="ProgressIndictor_DownloadNode" xml:space="preserve">
     <value>Downloading '{0}'...</value>
   </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>Please fill in your choosen password</value>
+  </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
     <value>Please fill in your name, e-mail address and your new password</value>
-  </data>
-  <data name="RequiredFieldsCreateAccount_Title" xml:space="preserve">
-    <value>Fill in required fields</value>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
     <value>Please fill in your e-mail address and your MEGA password</value>
     <comment>Message when required fields for login are not filled in</comment>
   </data>
-  <data name="RequiredFieldsLogin_Title" xml:space="preserve">
+  <data name="RequiredFields_Title" xml:space="preserve">
     <value>Fill in required fields</value>
   </data>
 </root>

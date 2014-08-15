@@ -52,7 +52,7 @@ namespace MegaApp.Models
             }
             else
             {
-                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFieldsCreateAccount_Title,
+                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFields_Title,
                         MessageBoxButton.OK);
             }
             
@@ -65,12 +65,12 @@ namespace MegaApp.Models
 
         private bool CheckInputParameters()
         {
-            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(PasswordReType);
+            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(ConfirmPassword);
         }
 
         private bool CheckPassword()
         {
-            return Password.Equals(PasswordReType, StringComparison.InvariantCulture);
+            return Password.Equals(ConfirmPassword, StringComparison.InvariantCulture);
         }
 
         #endregion
@@ -85,71 +85,11 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private string _email;
-        public string Email
-        {
-            get { return _email; }
-            set
-            {
-                _email = value;
-                OnPropertyChanged("Email");
-            }
-        }
-
-        private string _password;
-        public string Password
-        {
-            get { return _password; }
-            set
-            {
-                _password = value;
-                OnPropertyChanged("Password");
-            }
-        }
-
-        private string _passwordReType;
-        public string PasswordReType
-        {
-            get { return _passwordReType; }
-            set
-            {
-                _passwordReType = value;
-                OnPropertyChanged("PasswordReType");
-            }
-        }
-
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
-        }
-
-        private bool _termsOfUse;
-        public bool TermOfUse
-        {
-            get { return _termsOfUse; }
-            set
-            {
-                _termsOfUse = value;
-                OnPropertyChanged("TermOfUse");
-            }
-        }
-
-        private bool _controlState;
-        public bool ControlState
-        {
-            get { return _controlState; }
-            set
-            {
-                _controlState = value;
-                OnPropertyChanged("ControlState");
-            }
-        }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
+        public string Name { get; set; }
+        public bool TermOfUse { get; set; }
 
         #endregion
 
