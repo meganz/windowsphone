@@ -123,6 +123,18 @@
   <data name="AgreeTermsOfUse_Title" xml:space="preserve">
     <value>Terms of use</value>
   </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>Failed to confirm account. Please try again. [{0}]</value>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>Confirm account failed</value>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>Your account has been created, confirmed and activated. You can now login.</value>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>Account activated</value>
+  </data>
   <data name="ConfirmNeeded" xml:space="preserve">
     <value>Check your e-mail and click the link to login and confirm your account</value>
   </data>
@@ -200,6 +212,9 @@
   <data name="ProgessIndicator_FetchingNodes" xml:space="preserve">
     <value>Fetching files &amp; folders...</value>
     <comment>Progress indicator message when loading nodes from MEGA web service</comment>
+  </data>
+  <data name="ProgressIndicator_ConfirmAccount" xml:space="preserve">
+    <value>Confirming account...</value>
   </data>
   <data name="ProgressIndicator_CreatingAccount" xml:space="preserve">
     <value>Creating account...</value>
