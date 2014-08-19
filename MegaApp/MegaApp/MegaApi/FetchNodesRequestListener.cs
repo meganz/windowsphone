@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
+using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
     class FetchNodesRequestListener: MRequestListenerInterface
     {
-        private CloudDriveViewModel model;
-        public FetchNodesRequestListener(CloudDriveViewModel model)
+        private readonly CloudDriveViewModel _cloudDriveViewModel;
+        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel)
         {
-            this.model = model;
+            this._cloudDriveViewModel = cloudDriveViewModel;
         }
 
         #region MRequestListenerInterface
@@ -23,27 +26,40 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                for (int i = 0; i < api.getChildren(api.getRootNode()).size(); i++)
+                if (e.getErrorCode() == MErrorType.API_OK)
                 {
-                    model.ChildNodes.Add(new NodeViewModel(api.getChildren(api.getRootNode()).get(i)));
+                    _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, api.getRootNode());
+                   _cloudDriveViewModel.GetNodes();
                 }
+                else
+                {
+                    MessageBox.Show(e.getErrorString());
+                }
+                ProgessService.SetProgressIndicator(false);
             });
 
         }
 
         public void onRequestStart(MegaSDK api, MRequest request)
         {
-            //throw new NotImplementedException();
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
+                String.Format("Fetching files & folders...[{0}/{1}]",
+                request.getTransferredBytes().ToStringAndSuffix(),
+                request.getTotalBytes().ToStringAndSuffix())));
         }
 
         public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            //throw new NotImplementedException();
+            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show(e.getErrorString()));
         }
 
         public void onRequestUpdate(MegaSDK api, MRequest request)
         {
-           // throw new NotImplementedException();
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, 
+                String.Format("Fetching files & folders...[{0}/{1}]", 
+                request.getTransferredBytes().ToStringAndSuffix(), 
+                request.getTotalBytes().ToStringAndSuffix())));
+           
         }
 
         #endregion

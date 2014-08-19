@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using mega;
+﻿using mega;
 using MegaApp.Classes;
 using MegaApp.Pages;
 using MegaApp.Resources;
-using MegaApp.Services;
-using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
+using System;
+using System.Windows;
+using System.Windows.Input;
 
 namespace MegaApp.Models
 {
-    class CreateAccountViewModel : BaseViewModel, MRequestListenerInterface
+    class CreateAccountViewModel : BaseRequestListenerViewModel 
     {
         private readonly MegaSDK _megaSdk;
 
@@ -90,54 +83,67 @@ namespace MegaApp.Models
         public string ConfirmPassword { get; set; }
         public string Name { get; set; }
         public bool TermOfUse { get; set; }
-
+        
         #endregion
 
-        #region MRequestListenerInterface
+        #region Base Properties
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override string ProgressMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-
-                this.ControlState = true;
-
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    MessageBox.Show(AppMessages.ConfirmNeeded, AppMessages.ConfirmNeeded_Title, MessageBoxButton.OK);
-                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-                }
-                else
-                    MessageBox.Show(String.Format(AppMessages.CreateAccountFailed, e.getErrorString()),
-                        AppMessages.CreateAccountFailed_Title, MessageBoxButton.OK);
-            });
+            get { return AppMessages.ProgressIndicator_CreatingAccount; }
         }
 
-        public void onRequestStart(MegaSDK api, MRequest request)
+        protected override string ErrorMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, AppMessages.ProgressIndicator_CreatingAccount);
-            });
+            get { return AppMessages.CreateAccountFailed; }
         }
 
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        protected override string ErrorMessageTitle
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(AppMessages.CreateAccountFailed, e.getErrorString()),
-                    AppMessages.CreateAccountFailed_Title, MessageBoxButton.OK);
-            });
+            get { return AppMessages.CreateAccountFailed_Title; }
         }
 
-        public void onRequestUpdate(MegaSDK api, MRequest request)
+        protected override string SuccessMessage
         {
-            // No update status necessary
+            get { return AppMessages.ConfirmNeeded; }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { return AppMessages.ConfirmNeeded_Title; }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return true; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override Action SuccesAction
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { return typeof (LoginPage); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { return NavigationParameter.Normal; }
         }
 
         #endregion
+        
     }
 }

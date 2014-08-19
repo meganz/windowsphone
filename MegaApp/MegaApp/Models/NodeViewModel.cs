@@ -6,43 +6,35 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using mega;
+using MegaApp.Extensions;
+using MegaApp.Resources;
 
 namespace MegaApp.Models
 {
     /// <summary>
     /// ViewModel of the main MEGA datatype (MNode)
     /// </summary>
-    class NodeViewModel : BaseViewModel
+    public class NodeViewModel : BaseViewModel
     {
+        private readonly MegaSDK _megaSdk;
         // Original MNode object from the MEGA SDK
         private readonly MNode _baseNode;
         // Offset DateTime value to calculate the correct creation and modification time
         private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="baseNode">Original MEGA node</param>
-        public NodeViewModel(MNode baseNode)
+        public NodeViewModel(MegaSDK megaSdk, MNode baseNode)
         {
-            _baseNode = baseNode;
+            this._megaSdk = megaSdk;
+            this._baseNode = baseNode;
             this.Name = baseNode.getName();
             this.Size = baseNode.getSize();
+            this.CreationTime = ConvertDateToString(_baseNode.getCreationTime()).ToString("dd MMM yyyy");
+            this.SizeAndSuffix = Size.ToStringAndSuffix();
+            this.Type = baseNode.getType();
+            this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getChildren(this._baseNode).size(), UiResources.Files);
         }
 
         #region Methods
-
-        /// <summary>
-        /// Convert the size to a readable string
-        /// </summary>
-        /// <param name="size">size in bytes</param>
-        /// <returns>The size in readable string with correct appendix</returns>
-        private static string ConvertSizeToString(ulong size)
-        {
-            double result = size/1024;
-
-            return result > 1024 ? String.Format("{0:F1} MB", (result/1024)) : String.Format("{0:F1} KB", result);
-        }
 
         /// <summary>
         /// Convert the MEGA time to a C# DateTime object in local time
@@ -58,57 +50,21 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
-        }
+        public string Name { get; private set;}
 
-        private ulong _size;
-        public ulong Size
-        {
-            get { return _size; }
-            set
-            {
-                _size = value;
-                OnPropertyChanged("Size");
-            }
-        }
-        
-        public MNodeType Type
-        {
-            get { return _baseNode.getType(); }
-        }
+        public ulong Size { get; private set; }
 
-        private bool _isExpanded;
-        public bool IsExpanded
-        {
-            get { return _isExpanded; }
-            set
-            {
-                _isExpanded = value;
-                OnPropertyChanged("IsExpanded");
-            }
-        }
-    
-        public string CreationTime
-        {
-            get { return ConvertDateToString(_baseNode.getCreationTime()).ToShortDateString(); }
-        }
+        public MNodeType Type { get; private set ; }
 
-        public string ModificationTime
-        {
-            get { return ConvertDateToString(_baseNode.getModificationTime()).ToShortDateString(); }
-        }
+        public string CreationTime { get; private set; }
 
-        public string DisplaySize
+        public string SizeAndSuffix { get; private set; }
+
+        public string NumberOfFiles { get; private set; }
+
+        public MNode GetBaseNode()
         {
-            get { return ConvertSizeToString(Size); }
+            return this._baseNode;
         }
 
         #endregion

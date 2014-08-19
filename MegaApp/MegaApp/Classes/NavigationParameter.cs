@@ -13,6 +13,7 @@ namespace MegaApp.Classes
         RememberedLogin = 20,
         PictureSelected = 30,
         UriLaunch = 40,
+        Browsing = 50,
         Unknown = 999
     }
 }
