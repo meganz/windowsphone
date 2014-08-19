@@ -13,7 +13,7 @@ using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class ConfirmAccountViewModel: BaseViewModel, MRequestListenerInterface
+    class ConfirmAccountViewModel: BaseRequestListenerViewModel
     {
         private readonly MegaSDK _megaSdk;
 
@@ -57,49 +57,61 @@ namespace MegaApp.Models
 
         #endregion
 
-        #region MRequestListenerInterface
+        #region Base Properties
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override string ProgressMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-              
-                this.ControlState = true;
-
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    MessageBox.Show(AppMessages.ConfirmAccountSucces, AppMessages.ConfirmAccountSucces_Title, MessageBoxButton.OK);
-                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-                }
-                else
-                    MessageBox.Show(String.Format(AppMessages.ConfirmAccountFailed, e.getErrorString()),
-                        AppMessages.ConfirmAccountFailed_Title, MessageBoxButton.OK);
-            });
+            get { return AppMessages.ProgressIndicator_ConfirmAccount; }
         }
 
-        public void onRequestStart(MegaSDK api, MRequest request)
+        protected override string ErrorMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, AppMessages.ProgressIndicator_ConfirmAccount);
-            });
+            get { return AppMessages.ConfirmAccountFailed; }
         }
 
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        protected override string ErrorMessageTitle
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(AppMessages.ConfirmAccountFailed, e.getErrorString()),
-                    AppMessages.ConfirmAccountFailed_Title, MessageBoxButton.OK);
-            });
+            get { return AppMessages.ConfirmAccountFailed_Title; }
         }
 
-        public void onRequestUpdate(MegaSDK api, MRequest request)
+        protected override string SuccessMessage
         {
-            // No update status necessary
+            get { return AppMessages.ConfirmAccountSucces; }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { return AppMessages.ConfirmAccountSucces_Title; }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return true; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override Action SuccesAction
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { return typeof(LoginPage); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { return NavigationParameter.Normal; }
         }
 
         #endregion

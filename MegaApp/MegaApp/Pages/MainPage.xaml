@@ -32,8 +32,10 @@
 
 			<telerikPrimitives:RadDataBoundListBox 
 				x:Name="lstNodes" 				
-				ItemsSource="{Binding ChildNodes}" 
-				ItemTemplate="{StaticResource MegaNodeListItemTemplate}"		
+				ItemsSource="{Binding ChildNodes}"
+                ItemTap="OnItemTap"
+				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
+				FontFamily="Portable User Interface"		
 			/>
 
 		</Grid>

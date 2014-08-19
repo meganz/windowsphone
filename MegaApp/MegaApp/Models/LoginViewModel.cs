@@ -18,7 +18,7 @@ using Microsoft.Phone.Controls;
 
 namespace MegaApp.Models
 {
-    class LoginViewModel : BaseViewModel, MRequestListenerInterface
+    class LoginViewModel : BaseRequestListenerViewModel
     {
         private readonly MegaSDK _megaSdk;
 
@@ -74,56 +74,80 @@ namespace MegaApp.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public bool RememberMe { get; set; }
+        public string SessionKey { get; private set; }
+
+        #endregion
+
+        #region  Base Properties
+
+        protected override string ProgressMessage
+        {
+            get { return AppMessages.ProgressIndicator_Login; }
+        }
+
+        protected override string ErrorMessage
+        {
+            get { return AppMessages.LoginFailed; }
+        }
+
+        protected override string ErrorMessageTitle
+        {
+            get { return AppMessages.LoginFailed_Title; }
+        }
+
+        protected override string SuccessMessage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return false; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return RememberMe; }
+        }
+
+        protected override Action SuccesAction
+        {
+            get { return new Action(() => SaveLoginData(Email, SessionKey)); }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { return typeof(MainPage); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { return NavigationParameter.Login; }
+        }
 
         #endregion
 
         #region MRequestListenerInterface
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
+            if (e.getErrorCode() == MErrorType.API_OK)
+                SessionKey = api.dumpSession();
 
-                this.ControlState = true;
-
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    if (RememberMe)
-                        SaveLoginData(Email, api.dumpSession());
-
-                    NavigateService.NavigateTo(typeof(MainPage),NavigationParameter.Login);
-                }
-                else
-                    MessageBox.Show(String.Format(AppMessages.LoginFailed, e.getErrorString()),
-                        AppMessages.LoginFailed_Title, MessageBoxButton.OK);
-            });
-        }
-       
-        public void onRequestStart(MegaSDK api, MRequest request)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, AppMessages.ProgressIndicator_Login);
-            });
-        }
-
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(AppMessages.LoginFailed, e.getErrorString()),
-                    AppMessages.LoginFailed_Title, MessageBoxButton.OK);
-            });
-        }
-
-        public void onRequestUpdate(MegaSDK api, MRequest request)
-        {
-            // No update status necessary
+            base.onRequestFinish(api, request, e);
         }
 
         #endregion
+        
     }
 }

@@ -96,10 +96,13 @@
     </Compile>
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\NavigationParameter.cs" />
+    <Compile Include="Classes\NodeTemplateSelector.cs" />
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
+    <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\FastLoginRequestListener.cs" />
     <Compile Include="MegaApi\FetchNodesRequestListener.cs" />
+    <Compile Include="Models\BaseRequestListenerViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\ConfirmAccountViewModel.cs" />

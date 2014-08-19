@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MegaApp.Models
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         #region Properties
 

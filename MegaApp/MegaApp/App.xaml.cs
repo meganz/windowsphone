@@ -6,6 +6,7 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Models;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Resources;
@@ -21,6 +22,7 @@ namespace MegaApp
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
         public static MegaSDK MegaSdk { get; set; }
+        public static CloudDriveViewModel CloudDrive { get; set; }
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -131,6 +133,7 @@ namespace MegaApp
 
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK();
+            CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
