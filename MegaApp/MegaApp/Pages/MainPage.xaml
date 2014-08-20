@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:Controls="clr-namespace:GoedWare.Windows.Phone.Controls;assembly=GoedWare.Windows.Phone.Controls"
     x:Class="MegaApp.Pages.MainPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -24,7 +25,7 @@
         <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock Text="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<Controls:BreadCrumb x:Name="BreadCrumb" DisplayMember="Name" ValueMember="Name" RootName="Cloud Drive" FontSize="{StaticResource PhoneFontSizeExtraLarge}" ItemsSource="{Binding BreadCrumbs}"/>
 		</StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -33,7 +34,7 @@
 			<telerikPrimitives:RadDataBoundListBox 
 				x:Name="lstNodes" 				
 				ItemsSource="{Binding ChildNodes}"
-                ItemTap="OnItemTap"
+				ItemTap="OnItemTap"
 				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
 				FontFamily="Portable User Interface"		
 			/>
