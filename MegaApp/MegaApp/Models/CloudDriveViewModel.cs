@@ -23,7 +23,6 @@ namespace MegaApp.Models
             this._megaSdk = megaSdk;
             this.CurrentRootNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
-            this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
         }
 
         #region Commands
@@ -56,7 +55,6 @@ namespace MegaApp.Models
         public void SelectFolder(NodeViewModel selectedNode)
         {
             this.CurrentRootNode = selectedNode;
-            this.BreadCrumbs.Add(selectedNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing);
         }
 
@@ -65,7 +63,6 @@ namespace MegaApp.Models
         #region Properties
 
         public ObservableCollection<NodeViewModel> ChildNodes { get; set; }
-        public ObservableCollection<NodeViewModel> BreadCrumbs { get; set; }
 
         public NodeViewModel CurrentRootNode { get; set; }
 
