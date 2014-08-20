@@ -273,10 +273,9 @@
     <Folder Include="Assets\Images\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mega Runtime Component\mega.vcxproj">
-      <Project>{a608acc5-40c3-48bd-abf6-ed0cf4b56879}</Project>
+    <ProjectReference Include="..\..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj">
+      <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
