@@ -110,6 +110,8 @@ namespace MegaApp
 
         // Avoid double-initialization
         private bool phoneApplicationInitialized = false;
+        private const String appKey = "12345678";
+        private const String userAgent = "MEGAWindowsPhone/1.0.0";
 
         // Do not add any additional code to this method
         private void InitializePhoneApplication()
@@ -132,7 +134,7 @@ namespace MegaApp
             RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK();
+            MegaSdk = new MegaSDK(appKey, userAgent);
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             // Ensure we don't initialize again

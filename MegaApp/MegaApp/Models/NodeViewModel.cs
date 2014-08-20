@@ -31,7 +31,7 @@ namespace MegaApp.Models
             this.CreationTime = ConvertDateToString(_baseNode.getCreationTime()).ToString("dd MMM yyyy");
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseNode.getType();
-            this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getChildren(this._baseNode).size(), UiResources.Files);
+            this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getNumChildren(this._baseNode), UiResources.Files);
         }
 
         #region Methods
