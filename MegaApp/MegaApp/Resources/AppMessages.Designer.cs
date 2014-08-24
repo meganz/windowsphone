@@ -151,6 +151,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to create folder.
+        /// </summary>
+        internal static string CreateFolderFailed {
+            get {
+                return ResourceManager.GetString("CreateFolderFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder creation failed.
+        /// </summary>
+        internal static string CreateFolderFailed_Title {
+            get {
+                return ResourceManager.GetString("CreateFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder created successful.
+        /// </summary>
+        internal static string CreateFolderSuccess {
+            get {
+                return ResourceManager.GetString("CreateFolderSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder created.
+        /// </summary>
+        internal static string CreateFolderSuccess_Title {
+            get {
+                return ResourceManager.GetString("CreateFolderSuccess_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed tot delete item. Please try again.
         /// </summary>
         internal static string DeleteNodeFailed {
@@ -327,6 +363,42 @@ namespace MegaApp.Resources {
         internal static string PictureSaved_Title {
             get {
                 return ResourceManager.GetString("PictureSaved_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to remove item.
+        /// </summary>
+        internal static string RemoveNodeFailed {
+            get {
+                return ResourceManager.GetString("RemoveNodeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove failed.
+        /// </summary>
+        internal static string RemoveNodeFailed_Title {
+            get {
+                return ResourceManager.GetString("RemoveNodeFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item successful removed to rubbish bin.
+        /// </summary>
+        internal static string RemoveNodeSucces {
+            get {
+                return ResourceManager.GetString("RemoveNodeSucces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item removed.
+        /// </summary>
+        internal static string RemoveNodeSuccess_Title {
+            get {
+                return ResourceManager.GetString("RemoveNodeSuccess_Title", resourceCulture);
             }
         }
         

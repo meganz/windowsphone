@@ -6,14 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class RemoveNodeRequestListener: MRequestListenerInterface
+    class RemoveNodeRequestListener: BaseRequestListener
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
         public RemoveNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
@@ -21,39 +23,61 @@ namespace MegaApp.MegaApi
             this._cloudDriveViewModel = cloudDriveViewModel;
         }
 
-        #region MRequestListenerInterface
+        #region Base Properties
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override string ProgressMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    _cloudDriveViewModel.LoadNodes();
-                }
-                else
-                {
-                    MessageBox.Show(e.getErrorString());
-                }
-
-                ProgessService.SetProgressIndicator(false);
-            });
-
+            get { return ProgressMessages.RemoveNode; }
         }
 
-        public void onRequestStart(MegaSDK api, MRequest request)
+        protected override string ErrorMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+            get { return AppMessages.RemoveNodeFailed; }
         }
 
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        protected override string ErrorMessageTitle
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show(e.getErrorString()));
+            get { return AppMessages.RemoveNodeFailed_Title; }
         }
 
-        public void onRequestUpdate(MegaSDK api, MRequest request)
+        protected override string SuccessMessage
         {
-           // No update message
+            get { return AppMessages.RemoveNodeSucces; }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { return AppMessages.RemoveNodeSuccess_Title; }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return true; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override Action SuccesAction
+        {
+            get { return ()=> _cloudDriveViewModel.LoadNodes(); }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { throw new NotImplementedException(); }
         }
 
         #endregion

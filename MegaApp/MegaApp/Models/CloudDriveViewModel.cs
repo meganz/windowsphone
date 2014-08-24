@@ -47,7 +47,7 @@ namespace MegaApp.Models
             if (MessageBox.Show("Are you sure you want to delete this item", "Delete item", MessageBoxButton.OKCancel) ==
                 MessageBoxResult.Cancel) return;
 
-            this._megaSdk.remove(FocusedNode.GetBaseNode(), new RemoveNodeRequestListener(this));
+            this._megaSdk.moveNode(FocusedNode.GetBaseNode(), this._megaSdk.getRubbishNode(), new RemoveNodeRequestListener(this));
         }
 
         public void GoFolderUp()
