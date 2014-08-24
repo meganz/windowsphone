@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -12,39 +13,67 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FastLoginRequestListener: MRequestListenerInterface
+    class FastLoginRequestListener: BaseRequestListener
     {
-        #region MRequestListenerInterface
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        #region Base Properties
+
+        protected override string ProgressMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                if (e.getErrorCode() != MErrorType.API_OK)
-                {
-                    MessageBox.Show(e.getErrorString());
-                }
-
-                ProgessService.SetProgressIndicator(false);
-            });
-
+            get { return ProgressMessages.Login; }
         }
 
-        public void onRequestStart(MegaSDK api, MRequest request)
+        protected override string ErrorMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.Login));
+            get { return AppMessages.LoginFailed; }
         }
 
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        protected override string ErrorMessageTitle
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show(e.getErrorString()));
+            get { return AppMessages.LoginFailed_Title; }
         }
 
-        public void onRequestUpdate(MegaSDK api, MRequest request)
+        protected override string SuccessMessage
         {
-           // No update message
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return false; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override Action SuccesAction
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { throw new NotImplementedException(); }
         }
 
         #endregion
+
     }
 }

@@ -100,6 +100,7 @@
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MegaApi\BaseRequestListener.cs" />
     <Compile Include="MegaApi\RemoveNodeRequestListener.cs" />
     <Compile Include="MegaApi\FastLoginRequestListener.cs" />
     <Compile Include="MegaApi\CreateFolderRequestListener.cs" />
