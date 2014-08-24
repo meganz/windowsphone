@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using mega;
 using MegaApp.Classes;
+using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -31,12 +32,7 @@ namespace MegaApp.Pages
 
             if (e.NavigationMode == NavigationMode.Back)
             {
-                NavigationService.RemoveBackEntry();
-                
-                MNode parent = App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetBaseNode());
-                if (parent.getType() == MNodeType.TYPE_UNKNOWN) parent = App.MegaSdk.getRootNode();
-                App.CloudDrive.CurrentRootNode = new NodeViewModel(App.MegaSdk, parent);
-                
+                App.CloudDrive.GoFolderUp();
                 navParam = NavigationParameter.Browsing;
             }
 
@@ -44,8 +40,7 @@ namespace MegaApp.Pages
             {
                 case NavigationParameter.Browsing:
                 {
-                    App.CloudDrive.GetNodes();
-                    return;
+                    App.CloudDrive.LoadNodes();
                     break;
                 }
                 case NavigationParameter.Login:
@@ -65,7 +60,8 @@ namespace MegaApp.Pages
                     }
                     else
                     {
-                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession));
+                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener());
+                        App.CloudDrive.FetchNodes();
                     }
                     break;
                 }
@@ -79,16 +75,30 @@ namespace MegaApp.Pages
             if(e.Item == null || e.Item.DataContext == null) return;
             if (e.Item.DataContext as NodeViewModel == null) return;
 
-            switch ((e.Item.DataContext as NodeViewModel).Type)
-            {
-                case MNodeType.TYPE_FOLDER:
-                {
-                    App.CloudDrive.SelectFolder(e.Item.DataContext as NodeViewModel);
-                    break;
-                }
-            }
+            App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
+        }
 
-            
+        private void AddFolderClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
+        }
+
+        private void OnMenuOpening(object sender, Telerik.Windows.Controls.ContextMenuOpeningEventArgs e)
+        {
+            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+            if (focusedListBoxItem == null || focusedListBoxItem.DataContext == null || !(focusedListBoxItem.DataContext is NodeViewModel))
+            {
+                // We don't want to open the menu if the focused element is not a list box item.
+                // If the list box is empty focusedItem will be null.
+                e.Cancel = true;
+            }
+            else
+            {
+                App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
+                var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
+                BtnGetPreviewLink.Visibility = visibility;
+                BtnDownloadItemCloud.Visibility = visibility;
+            }
         }
     }
 }

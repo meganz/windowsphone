@@ -117,35 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Confirming account...</value>
   </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Creating account...</value>
   </data>
-  <data name="ApplicationTitle" xml:space="preserve">
-    <value>MY APPLICATION</value>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Creating folder...</value>
   </data>
-  <data name="AppBarButtonText" xml:space="preserve">
-    <value>add</value>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Deleting '{0}'...</value>
   </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Retrieving download link...</value>
   </data>
-  <data name="PagesLocation" xml:space="preserve">
-    <value>/Pages/</value>
+  <data name="DownloadNode" xml:space="preserve">
+    <value>Downloading '{0}'...</value>
   </data>
-  <data name="TermsOfUseUrl" xml:space="preserve">
-    <value>https://mega.co.nz/#terms</value>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Fetching files &amp; folders...</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service</comment>
   </data>
-  <data name="AppKey" xml:space="preserve">
-    <value>Z5dGhQhL</value>
-    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</comment>
+  <data name="Login" xml:space="preserve">
+    <value>Logging in...</value>
+    <comment>Progress indicator message when logging in</comment>
   </data>
-  <data name="UserAgent" xml:space="preserve">
-    <value>MEGAWindowsPhone/1.0.0</value>
-    <comment>Agent to identify which client uses the SDK</comment>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Moving '{0}'...</value>
+    <comment>Progress indicator message when moving a node to a different parent</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Moving to Rubbish bin...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Removing...</value>
   </data>
 </root>

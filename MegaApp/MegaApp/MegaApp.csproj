@@ -100,7 +100,9 @@
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MegaApi\RemoveNodeRequestListener.cs" />
     <Compile Include="MegaApi\FastLoginRequestListener.cs" />
+    <Compile Include="MegaApi\CreateFolderRequestListener.cs" />
     <Compile Include="MegaApi\FetchNodesRequestListener.cs" />
     <Compile Include="Models\BaseRequestListenerViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
@@ -123,6 +125,11 @@
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ProgressMessages.Designer.cs">
+      <DependentUpon>ProgressMessages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\AppMessages.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\folder_add.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -202,6 +210,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\ProgressMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProgressMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>

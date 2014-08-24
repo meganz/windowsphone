@@ -90,7 +90,7 @@ namespace MegaApp.Models
 
         protected override string ProgressMessage
         {
-            get { return AppMessages.ProgressIndicator_CreatingAccount; }
+            get { return ProgressMessages.CreateAccount; }
         }
 
         protected override string ErrorMessage

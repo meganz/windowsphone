@@ -31,14 +31,29 @@
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
 			<telerikPrimitives:RadDataBoundListBox 
-				x:Name="lstNodes" 				
+				x:Name="LstNodes" 				
 				ItemsSource="{Binding ChildNodes}"
                 ItemTap="OnItemTap"
 				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
 				FontFamily="Portable User Interface"		
-			/>
+			>
+				<telerikPrimitives:RadContextMenu.ContextMenu>
+                            <telerikPrimitives:RadContextMenu OpenGesture="Hold" x:Name="CloudDriveMenu" Opening="OnMenuOpening">
+								<telerikPrimitives:RadContextMenuItem x:Name="BtnDownloadItemCloud" Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+								<telerikPrimitives:RadContextMenuItem x:Name="BtnGetPreviewLink" Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  />
+                                <telerikPrimitives:RadContextMenuItem x:Name="BtnMoveItemCloud" Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
+                                <telerikPrimitives:RadContextMenuItem x:Name="BtnRemoveToRubbish" Command="{Binding RemoveItemCommand}" Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />                                
+                            </telerikPrimitives:RadContextMenu>
+                        </telerikPrimitives:RadContextMenu.ContextMenu>
+			</telerikPrimitives:RadDataBoundListBox>
 
 		</Grid>
 	</Grid>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton x:Name="BtnAddFolder" IconUri="/Assets/AppBar/folder_add.png" Text="add folder" Click="AddFolderClick" />
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
