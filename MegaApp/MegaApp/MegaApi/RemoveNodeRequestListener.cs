@@ -8,14 +8,15 @@ using System.Windows;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FetchNodesRequestListener: MRequestListenerInterface
+    class RemoveNodeRequestListener: MRequestListenerInterface
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        public RemoveNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
         {
             this._cloudDriveViewModel = cloudDriveViewModel;
         }
@@ -28,8 +29,7 @@ namespace MegaApp.MegaApi
             {
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
-                    _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, api.getRootNode());
-                   _cloudDriveViewModel.LoadNodes();
+                    _cloudDriveViewModel.LoadNodes();
                 }
                 else
                 {
@@ -43,10 +43,7 @@ namespace MegaApp.MegaApi
 
         public void onRequestStart(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
-                String.Format("Fetching files & folders...[{0}/{1}]",
-                request.getTransferredBytes().ToStringAndSuffix(),
-                request.getTotalBytes().ToStringAndSuffix())));
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
         }
 
         public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
@@ -56,11 +53,7 @@ namespace MegaApp.MegaApi
 
         public void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, 
-                String.Format("Fetching files & folders...[{0}/{1}]", 
-                request.getTransferredBytes().ToStringAndSuffix(), 
-                request.getTotalBytes().ToStringAndSuffix())));
-           
+           // No update message
         }
 
         #endregion

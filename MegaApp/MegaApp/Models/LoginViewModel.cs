@@ -82,7 +82,7 @@ namespace MegaApp.Models
 
         protected override string ProgressMessage
         {
-            get { return AppMessages.ProgressIndicator_Login; }
+            get { return ProgressMessages.Login; }
         }
 
         protected override string ErrorMessage

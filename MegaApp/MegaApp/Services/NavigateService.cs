@@ -11,11 +11,16 @@ namespace MegaApp.Services
 {
     public static class NavigateService
     {
+        public static void NavigateTo(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
+        {
+            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
+        }
+        
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
         {
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
         }
-
+        
         public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
         {
             var resultUrl = BuildNavigationUri(navPage, navParam).ToString();

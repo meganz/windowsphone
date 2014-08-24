@@ -22,24 +22,24 @@ namespace MegaApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppResources {
+    internal class ProgressMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources() {
+        internal ProgressMessages() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MegaApp.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MegaApp.Resources.ProgressMessages", typeof(ProgressMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace MegaApp.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,83 +61,101 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to add.
+        ///   Looks up a localized string similar to Confirming account....
         /// </summary>
-        public static string AppBarButtonText {
+        internal static string ConfirmAccount {
             get {
-                return ResourceManager.GetString("AppBarButtonText", resourceCulture);
+                return ResourceManager.GetString("ConfirmAccount", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Menu Item.
+        ///   Looks up a localized string similar to Creating account....
         /// </summary>
-        public static string AppBarMenuItemText {
+        internal static string CreateAccount {
             get {
-                return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
+                return ResourceManager.GetString("CreateAccount", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Z5dGhQhL.
+        ///   Looks up a localized string similar to Creating folder....
         /// </summary>
-        public static string AppKey {
+        internal static string CreateFolder {
             get {
-                return ResourceManager.GetString("AppKey", resourceCulture);
+                return ResourceManager.GetString("CreateFolder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MY APPLICATION.
+        ///   Looks up a localized string similar to Deleting &apos;{0}&apos;....
         /// </summary>
-        public static string ApplicationTitle {
+        internal static string DeleteNode {
             get {
-                return ResourceManager.GetString("ApplicationTitle", resourceCulture);
+                return ResourceManager.GetString("DeleteNode", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /Pages/.
+        ///   Looks up a localized string similar to Retrieving download link....
         /// </summary>
-        public static string PagesLocation {
+        internal static string DownloadLink {
             get {
-                return ResourceManager.GetString("PagesLocation", resourceCulture);
+                return ResourceManager.GetString("DownloadLink", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LeftToRight.
+        ///   Looks up a localized string similar to Downloading &apos;{0}&apos;....
         /// </summary>
-        public static string ResourceFlowDirection {
+        internal static string DownloadNode {
             get {
-                return ResourceManager.GetString("ResourceFlowDirection", resourceCulture);
+                return ResourceManager.GetString("DownloadNode", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to en-US.
+        ///   Looks up a localized string similar to Fetching files &amp; folders....
         /// </summary>
-        public static string ResourceLanguage {
+        internal static string FetchingNodes {
             get {
-                return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+                return ResourceManager.GetString("FetchingNodes", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://mega.co.nz/#terms.
+        ///   Looks up a localized string similar to Logging in....
         /// </summary>
-        public static string TermsOfUseUrl {
+        internal static string Login {
             get {
-                return ResourceManager.GetString("TermsOfUseUrl", resourceCulture);
+                return ResourceManager.GetString("Login", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MEGAWindowsPhone/1.0.0.
+        ///   Looks up a localized string similar to Moving &apos;{0}&apos;....
         /// </summary>
-        public static string UserAgent {
+        internal static string MoveNode {
             get {
-                return ResourceManager.GetString("UserAgent", resourceCulture);
+                return ResourceManager.GetString("MoveNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moving to Rubbish bin....
+        /// </summary>
+        internal static string NodeToTrash {
+            get {
+                return ResourceManager.GetString("NodeToTrash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removing....
+        /// </summary>
+        internal static string RemoveNode {
+            get {
+                return ResourceManager.GetString("RemoveNode", resourceCulture);
             }
         }
     }

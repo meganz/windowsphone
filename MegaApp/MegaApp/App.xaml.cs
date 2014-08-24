@@ -4,6 +4,7 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Models;
@@ -110,8 +111,8 @@ namespace MegaApp
 
         // Avoid double-initialization
         private bool phoneApplicationInitialized = false;
-        private const String appKey = "12345678";
-        private const String userAgent = "MEGAWindowsPhone/1.0.0";
+       // private const String appKey = "Z5dGhQhL";
+        //private const String userAgent = "MEGAWindowsPhone/1.0.0";
 
         // Do not add any additional code to this method
         private void InitializePhoneApplication()
@@ -134,7 +135,7 @@ namespace MegaApp
             RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(appKey, userAgent);
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             // Ensure we don't initialize again
