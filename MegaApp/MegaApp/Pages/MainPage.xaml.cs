@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -20,29 +21,34 @@ namespace MegaApp.Pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private NavigationParameter _navParam;
+
         public MainPage()
         {
             this.DataContext = App.CloudDrive;
+
             InitializeComponent();
+
+            InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
+
+            // node tap item animation
+            var transition = new RadTileTransition();
+            this.SetValue(RadTransitionControl.TransitionProperty, transition);
+            this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstCloudDrive);
         }
-        
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
             if (e.NavigationMode == NavigationMode.Back)
             {
                 App.CloudDrive.GoFolderUp();
-                navParam = NavigationParameter.Browsing;
+                _navParam = NavigationParameter.Browsing;
             }
 
-            switch (navParam)
+            switch (_navParam)
             {
-                case NavigationParameter.Browsing:
-                {
-                    App.CloudDrive.LoadNodes();
-                    break;
-                }
                 case NavigationParameter.Login:
                 {
                     // Remove the login page from the stack. If user presses back button it will then exit the application
@@ -75,10 +81,12 @@ namespace MegaApp.Pages
             if(e.Item == null || e.Item.DataContext == null) return;
             if (e.Item.DataContext as NodeViewModel == null) return;
 
+            this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
+
             App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
         }
 
-        private void AddFolderClick(object sender, EventArgs e)
+        private void OnAddFolderClick(object sender, EventArgs e)
         {
             App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
         }
@@ -99,6 +107,18 @@ namespace MegaApp.Pages
                 BtnGetPreviewLink.Visibility = visibility;
                 BtnDownloadItemCloud.Visibility = visibility;
             }
+        }
+
+        private void OnRefreshClick(object sender, System.EventArgs e)
+        {
+        	App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
+        }
+
+        private void OnListLoaded(object sender, RoutedEventArgs e)
+        {
+            if (_navParam != NavigationParameter.Browsing) return;
+            // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
+            App.CloudDrive.LoadNodes();
         }
     }
 }

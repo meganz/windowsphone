@@ -45,6 +45,16 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="MegaNodeListEmptyContent">
+        <Grid>
+        	<Grid.Background>
+        		<ImageBrush Stretch="None" ImageSource="/Assets/Images/folder_empty.png" Opacity="0.3"/>
+        	</Grid.Background>
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+        </Grid>
+    </DataTemplate>
+    
+    
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
     

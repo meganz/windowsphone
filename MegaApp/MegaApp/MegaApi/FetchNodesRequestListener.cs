@@ -15,9 +15,11 @@ namespace MegaApp.MegaApi
     class FetchNodesRequestListener: MRequestListenerInterface
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        private readonly NodeViewModel _rootRefreshNode;
+        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel, NodeViewModel rootRefreshNode = null)
         {
             this._cloudDriveViewModel = cloudDriveViewModel;
+            this._rootRefreshNode = rootRefreshNode;
         }
 
         #region MRequestListenerInterface
@@ -28,8 +30,8 @@ namespace MegaApp.MegaApi
             {
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
-                    _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, api.getRootNode());
-                   _cloudDriveViewModel.LoadNodes();
+                    _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ?? new NodeViewModel(api, api.getRootNode());
+                    _cloudDriveViewModel.LoadNodes();
                 }
                 else
                 {

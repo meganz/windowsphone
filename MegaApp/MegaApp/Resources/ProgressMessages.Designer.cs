@@ -158,5 +158,14 @@ namespace MegaApp.Resources {
                 return ResourceManager.GetString("RemoveNode", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renaming....
+        /// </summary>
+        internal static string RenameNode {
+            get {
+                return ResourceManager.GetString("RenameNode", resourceCulture);
+            }
+        }
     }
 }

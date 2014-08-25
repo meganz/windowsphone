@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,19 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FastLoginRequestListener: BaseRequestListener
+    class RenameNodeRequestListener: BaseRequestListener
     {
+        private readonly CloudDriveViewModel _cloudDriveViewModel;
+        public RenameNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        {
+            this._cloudDriveViewModel = cloudDriveViewModel;
+        }
 
         #region Base Properties
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.Login; }
+            get { return ProgressMessages.RenameNode; }
         }
 
         protected override bool ShowProgressMessage
@@ -30,12 +36,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.LoginFailed; }
+            get { return AppMessages.RenameNodeFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title; }
+            get { return AppMessages.RenameNodeFailed_Title; }
         }
 
         protected override string SuccessMessage
@@ -60,12 +66,12 @@ namespace MegaApp.MegaApi
 
         protected override bool ActionOnSucces
         {
-            get { return false; }
+            get { return true; }
         }
 
         protected override Action SuccesAction
         {
-            get { throw new NotImplementedException(); }
+            get { return () => _cloudDriveViewModel.LoadNodes(); }
         }
 
         protected override Type NavigateToPage
@@ -79,6 +85,5 @@ namespace MegaApp.MegaApi
         }
 
         #endregion
-
     }
 }

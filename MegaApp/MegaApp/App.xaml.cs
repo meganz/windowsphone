@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
@@ -11,6 +12,7 @@ using MegaApp.Models;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Resources;
+using Telerik.Windows.Controls;
 
 namespace MegaApp
 {
@@ -20,7 +22,7 @@ namespace MegaApp
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
-        public static PhoneApplicationFrame RootFrame { get; private set; }
+        public static RadPhoneApplicationFrame RootFrame { get; private set; }
 
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
@@ -122,7 +124,7 @@ namespace MegaApp
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
-            RootFrame = new PhoneApplicationFrame();
+            RootFrame = new RadPhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures

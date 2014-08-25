@@ -367,6 +367,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove {0}?.
+        /// </summary>
+        internal static string RemoveItemQuestion {
+            get {
+                return ResourceManager.GetString("RemoveItemQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove?.
+        /// </summary>
+        internal static string RemoveItemQuestion_Title {
+            get {
+                return ResourceManager.GetString("RemoveItemQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to remove item.
         /// </summary>
         internal static string RemoveNodeFailed {
@@ -403,6 +421,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Renaming item failed.
+        /// </summary>
+        internal static string RenameNodeFailed {
+            get {
+                return ResourceManager.GetString("RenameNodeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename failed.
+        /// </summary>
+        internal static string RenameNodeFailed_Title {
+            get {
+                return ResourceManager.GetString("RenameNodeFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fill in required fields.
         /// </summary>
         internal static string RequiredFields_Title {
@@ -435,6 +471,24 @@ namespace MegaApp.Resources {
         internal static string RequiredFieldsLogin {
             get {
                 return ResourceManager.GetString("RequiredFieldsLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are not logged in at MEGA to do this action. Please re-login.
+        /// </summary>
+        internal static string UserNotOnline {
+            get {
+                return ResourceManager.GetString("UserNotOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not online.
+        /// </summary>
+        internal static string UserNotOnline_Title {
+            get {
+                return ResourceManager.GetString("UserNotOnline_Title", resourceCulture);
             }
         }
     }

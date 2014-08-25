@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to add.
+        /// </summary>
+        public static string AddButton {
+            get {
+                return ResourceManager.GetString("AddButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to I agree with the.
         /// </summary>
         public static string AgreeCreateAccount {
@@ -75,6 +84,15 @@ namespace MegaApp.Resources {
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cancel.
+        /// </summary>
+        public static string CancelButton {
+            get {
+                return ResourceManager.GetString("CancelButton", resourceCulture);
             }
         }
         
@@ -178,6 +196,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to empty folder.
+        /// </summary>
+        public static string EmptyFolder {
+            get {
+                return ResourceManager.GetString("EmptyFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to file(s).
         /// </summary>
         public static string Files {
@@ -264,6 +291,33 @@ namespace MegaApp.Resources {
         public static string Remove {
             get {
                 return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rename.
+        /// </summary>
+        public static string Rename {
+            get {
+                return ResourceManager.GetString("Rename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rename.
+        /// </summary>
+        public static string RenameButton {
+            get {
+                return ResourceManager.GetString("RenameButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type a new name:.
+        /// </summary>
+        public static string RenameItem {
+            get {
+                return ResourceManager.GetString("RenameItem", resourceCulture);
             }
         }
         

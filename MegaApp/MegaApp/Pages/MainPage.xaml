@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     x:Class="MegaApp.Pages.MainPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -31,18 +32,41 @@
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
 			<telerikPrimitives:RadDataBoundListBox 
-				x:Name="LstNodes" 				
+				x:Name="LstCloudDrive" 				
 				ItemsSource="{Binding ChildNodes}"
                 ItemTap="OnItemTap"
 				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
-				FontFamily="Portable User Interface"		
+				IsAsyncBalanceEnabled="True" 
+				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
+				telerik:InteractionEffectManager.IsInteractionEnabled="True" Loaded="OnListLoaded"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
-                            <telerikPrimitives:RadContextMenu OpenGesture="Hold" x:Name="CloudDriveMenu" Opening="OnMenuOpening">
-								<telerikPrimitives:RadContextMenuItem x:Name="BtnDownloadItemCloud" Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
-								<telerikPrimitives:RadContextMenuItem x:Name="BtnGetPreviewLink" Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  />
-                                <telerikPrimitives:RadContextMenuItem x:Name="BtnMoveItemCloud" Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />
-                                <telerikPrimitives:RadContextMenuItem x:Name="BtnRemoveToRubbish" Command="{Binding RemoveItemCommand}" Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}" />                                
+                            <telerikPrimitives:RadContextMenu 
+									OpenGesture="Hold" 
+									x:Name="CloudDriveMenu" 
+									Opening="OnMenuOpening">
+								<telerikPrimitives:RadContextMenuItem 
+									x:Name="BtnDownloadItemCloud" 
+									Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								/>
+								<telerikPrimitives:RadContextMenuItem 
+									x:Name="BtnGetPreviewLink" 
+									Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+								/>
+								<telerikPrimitives:RadContextMenuItem 
+									x:Name="BtnRenameItem" 
+									Command="{Binding RenameItemCommand}"
+									Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>
+                                <telerikPrimitives:RadContextMenuItem 
+									x:Name="BtnMoveItem" 
+									Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>
+                                <telerikPrimitives:RadContextMenuItem 
+									x:Name="BtnRemoveToRubbish" 
+									Command="{Binding RemoveItemCommand}" 
+									Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>                                
                             </telerikPrimitives:RadContextMenu>
                         </telerikPrimitives:RadContextMenu.ContextMenu>
 			</telerikPrimitives:RadDataBoundListBox>
@@ -52,7 +76,17 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton x:Name="BtnAddFolder" IconUri="/Assets/AppBar/folder_add.png" Text="add folder" Click="AddFolderClick" />
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnAddFolder" 
+				IconUri="/Assets/AppBar/folder_add.png" 
+				Text="add folder" 
+				Click="OnAddFolderClick" 
+			/>
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnRefresh" 
+				IconUri="/Assets/AppBar/refresh.png" 
+				Text="refresh" Click="OnRefreshClick" 				
+			/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

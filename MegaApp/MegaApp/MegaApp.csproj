@@ -101,6 +101,8 @@
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
+    <Compile Include="MegaApi\RenameNodeRequestListener.cs" />
+    <Compile Include="MegaApi\GetThumbnailRequestListener.cs" />
     <Compile Include="MegaApi\RemoveNodeRequestListener.cs" />
     <Compile Include="MegaApi\FastLoginRequestListener.cs" />
     <Compile Include="MegaApi\CreateFolderRequestListener.cs" />
@@ -152,6 +154,7 @@
       <DependentUpon>UiResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\CryptoService.cs" />
+    <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
@@ -169,6 +172,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\refresh.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\AppBar\folder_add.png" />
     <Content Include="Assets\ApplicationIcon.png">
@@ -194,6 +200,7 @@
     <Content Include="Assets\FileTypes\wav.png" />
     <Content Include="Assets\FileTypes\xls.png" />
     <Content Include="Assets\FileTypes\zip.png" />
+    <Content Include="Assets\Images\folder_empty.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -282,9 +289,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj">
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
