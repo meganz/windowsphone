@@ -221,6 +221,12 @@
   <data name="PictureSaved_Title" xml:space="preserve">
     <value>Picture saved</value>
   </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>Are you sure you want to remove {0}?</value>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>Remove?</value>
+  </data>
   <data name="RemoveNodeFailed" xml:space="preserve">
     <value>Failed to remove item</value>
   </data>
@@ -232,6 +238,12 @@
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
     <value>Item removed</value>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>Renaming item failed</value>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>Rename failed</value>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
     <value>Please fill in your choosen password</value>
@@ -245,5 +257,11 @@
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
     <value>Fill in required fields</value>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>You are not logged in at MEGA to do this action. Please re-login</value>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>Not online</value>
   </data>
 </root>

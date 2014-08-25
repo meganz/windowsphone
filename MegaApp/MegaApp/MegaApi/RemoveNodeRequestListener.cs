@@ -30,6 +30,11 @@ namespace MegaApp.MegaApi
             get { return ProgressMessages.RemoveNode; }
         }
 
+        protected override bool ShowProgressMessage
+        {
+            get { return true; }
+        }
+
         protected override string ErrorMessage
         {
             get { return AppMessages.RemoveNodeFailed; }

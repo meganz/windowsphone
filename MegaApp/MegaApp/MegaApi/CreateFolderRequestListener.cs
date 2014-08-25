@@ -29,6 +29,11 @@ namespace MegaApp.MegaApi
             get { return ProgressMessages.CreateFolder; }
         }
 
+        protected override bool ShowProgressMessage
+        {
+            get { return true; }
+        }
+
         protected override string ErrorMessage
         {
             get { return AppMessages.CreateFolderFailed; }

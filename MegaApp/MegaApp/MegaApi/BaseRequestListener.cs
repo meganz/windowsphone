@@ -15,6 +15,7 @@ namespace MegaApp.MegaApi
         #region Properties
 
         abstract protected string ProgressMessage { get; }
+        abstract protected bool ShowProgressMessage { get; }
         abstract protected string ErrorMessage { get; }
         abstract protected string ErrorMessageTitle { get; }
         abstract protected string SuccessMessage { get; }
@@ -56,11 +57,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                //this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, ProgressMessage);
-            });
+            if (!ShowProgressMessage) return;
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessage));
         }
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)

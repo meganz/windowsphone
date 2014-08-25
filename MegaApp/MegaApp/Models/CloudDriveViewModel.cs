@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using Windows.Security.Authentication.OnlineId;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
@@ -15,6 +17,7 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.InputPrompt;
 
 namespace MegaApp.Models
 {
@@ -29,6 +32,7 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
+            this.RenameItemCommand = new DelegateCommand(this.RenameItem);
         }
 
         #region Commands
@@ -37,18 +41,11 @@ namespace MegaApp.Models
         public ICommand MoveItemCommand { get; set; }
         public ICommand GetPreviewLinkItemCommand { get; set; }
         public ICommand DownloadItemCommand { get; set; }
+        public ICommand RenameItemCommand { get; set; }
 
         #endregion
 
         #region Public Methods
-
-        private void RemoveItem(object obj)
-        {
-            if (MessageBox.Show("Are you sure you want to delete this item", "Delete item", MessageBoxButton.OKCancel) ==
-                MessageBoxResult.Cancel) return;
-
-            this._megaSdk.moveNode(FocusedNode.GetBaseNode(), this._megaSdk.getRubbishNode(), new RemoveNodeRequestListener(this));
-        }
 
         public void GoFolderUp()
         {
@@ -86,22 +83,20 @@ namespace MegaApp.Models
 
         public async void AddFolder(NodeViewModel parentNode)
         {
-            if (IsUserOnline())
-            {
-                var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(UiResources.CreateFolder, MessageBoxButtons.OKCancel, vibrate: false);
+            if (!IsUserOnline()) return;
 
-                if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, vibrate: false);
 
-                this._megaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetBaseNode(), new CreateFolderRequestListener(this));
-            }
-                
+            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+            this._megaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetBaseNode(), new CreateFolderRequestListener(this));
         }
 
-        public void FetchNodes()
+        public void FetchNodes(NodeViewModel rootRefreshNode = null)
         {
             this.ChildNodes.Clear();
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this);
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode);
             this._megaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
@@ -116,9 +111,39 @@ namespace MegaApp.Models
 
         #region Private Methods
 
+        private void RemoveItem(object obj)
+        {
+            if (!IsUserOnline()) return;
+
+            if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, FocusedNode.Name), AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) ==
+                MessageBoxResult.Cancel) return;
+
+            this._megaSdk.moveNode(FocusedNode.GetBaseNode(), this._megaSdk.getRubbishNode(), new RemoveNodeRequestListener(this));
+        }
+
+        private async void RenameItem(object obj)
+        {
+            if (!IsUserOnline()) return;
+            
+            var textboxStyle = new Style(typeof(RadTextBox));
+            textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, FocusedNode.Name));
+
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.RenameButton, UiResources.CancelButton }, UiResources.RenameItem,
+                vibrate: false, inputStyle: textboxStyle);
+
+            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+            this._megaSdk.renameNode(FocusedNode.GetBaseNode(), inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
+        }
+
         private bool IsUserOnline()
         {
-            return Convert.ToBoolean(this._megaSdk.isLoggedIn());
+            bool isOnline = Convert.ToBoolean(this._megaSdk.isLoggedIn());
+
+            if (!isOnline)
+                MessageBox.Show(AppMessages.UserNotOnline, AppMessages.UserNotOnline_Title, MessageBoxButton.OK);
+
+            return isOnline;
         }
 
         #endregion
