@@ -30,6 +30,7 @@ namespace MegaApp.Models
             this._megaSdk = megaSdk;
             this.CurrentRootNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
+            this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
@@ -55,6 +56,14 @@ namespace MegaApp.Models
                 parentNode = this._megaSdk.getRootNode();
             
             this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode);
+            CalculateBreadCrumbs(this.CurrentRootNode);
+        }
+
+        public void GoToFolder(NodeViewModel folder)
+        {
+            this.CurrentRootNode = folder;
+            CalculateBreadCrumbs(this.CurrentRootNode);
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
 
         public void LoadNodes()
@@ -103,6 +112,7 @@ namespace MegaApp.Models
         public void SelectFolder(NodeViewModel selectedNode)
         {
             this.CurrentRootNode = selectedNode;
+            CalculateBreadCrumbs(this.CurrentRootNode);
             // Create unique uri string to navigate
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> {{"Id", Guid.NewGuid().ToString("N")}});
         }
@@ -110,6 +120,23 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
+
+        private void CalculateBreadCrumbs(NodeViewModel currentRootNode)
+        {
+            this.BreadCrumbs.Clear();
+
+            if (currentRootNode.Type == MNodeType.TYPE_ROOT) return;
+
+            this.BreadCrumbs.Add(currentRootNode);
+
+            MNode parentNode = currentRootNode.GetBaseNode();
+            while ((parentNode = this._megaSdk.getParentNode(parentNode)).getType() !=
+                   MNodeType.TYPE_ROOT)
+            {
+                this.BreadCrumbs.Insert(0, new NodeViewModel(this._megaSdk, parentNode));
+            }
+
+        }
 
         private void RemoveItem(object obj)
         {
@@ -151,10 +178,13 @@ namespace MegaApp.Models
         #region Properties
 
         public ObservableCollection<NodeViewModel> ChildNodes { get; set; }
+        public ObservableCollection<NodeViewModel> BreadCrumbs { get; set; }
 
         public NodeViewModel CurrentRootNode { get; set; }
 
         public NodeViewModel FocusedNode { get; set; }
+
+        public NodeViewModel BreadCrumbNode { get; set; }
 
         //private NodeViewModel _currentCloudDriveRootNode;
         //public NodeViewModel CurrentCloudDriveRootNode

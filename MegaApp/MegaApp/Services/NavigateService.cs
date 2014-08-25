@@ -15,7 +15,7 @@ namespace MegaApp.Services
         {
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
         }
-        
+
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
         {
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));

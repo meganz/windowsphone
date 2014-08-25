@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:Controls="clr-namespace:GoedWare.Windows.Phone.Controls;assembly=GoedWare.Windows.Phone.Controls"
     x:Class="MegaApp.Pages.MainPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,65 +15,6 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Transparent">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-
-        <!--TitlePanel contains the name of the application and page title-->
-		<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock Text="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-		</StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-			<telerikPrimitives:RadDataBoundListBox 
-				x:Name="LstCloudDrive" 				
-				ItemsSource="{Binding ChildNodes}"
-                ItemTap="OnItemTap"
-				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
-				IsAsyncBalanceEnabled="True" 
-				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
-				telerik:InteractionEffectManager.IsInteractionEnabled="True" Loaded="OnListLoaded"				
-			>
-				<telerikPrimitives:RadContextMenu.ContextMenu>
-                            <telerikPrimitives:RadContextMenu 
-									OpenGesture="Hold" 
-									x:Name="CloudDriveMenu" 
-									Opening="OnMenuOpening">
-								<telerikPrimitives:RadContextMenuItem 
-									x:Name="BtnDownloadItemCloud" 
-									Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								/>
-								<telerikPrimitives:RadContextMenuItem 
-									x:Name="BtnGetPreviewLink" 
-									Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								/>
-								<telerikPrimitives:RadContextMenuItem 
-									x:Name="BtnRenameItem" 
-									Command="{Binding RenameItemCommand}"
-									Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								/>
-                                <telerikPrimitives:RadContextMenuItem 
-									x:Name="BtnMoveItem" 
-									Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								/>
-                                <telerikPrimitives:RadContextMenuItem 
-									x:Name="BtnRemoveToRubbish" 
-									Command="{Binding RemoveItemCommand}" 
-									Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								/>                                
-                            </telerikPrimitives:RadContextMenu>
-                        </telerikPrimitives:RadContextMenu.ContextMenu>
-			</telerikPrimitives:RadDataBoundListBox>
-
-		</Grid>
-	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
@@ -89,5 +31,64 @@
 			/>
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
+
+<!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+		<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
+			<TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+			<Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeExtraLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}"/>
+		</StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+			<telerikPrimitives:RadDataBoundListBox 
+				x:Name="LstCloudDrive" 				
+				ItemsSource="{Binding ChildNodes}"
+				ItemTap="OnItemTap"
+				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
+				IsAsyncBalanceEnabled="True" 
+				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
+				telerik:InteractionEffectManager.IsInteractionEnabled="True" Loaded="OnListLoaded"				
+			>
+				<telerikPrimitives:RadContextMenu.ContextMenu>
+					<telerikPrimitives:RadContextMenu 
+						OpenGesture="Hold" 
+						x:Name="CloudDriveMenu" 
+						Opening="OnMenuOpening">
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnDownloadItemCloud" 
+							Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								/>
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnGetPreviewLink" 
+							Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+								/>
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnRenameItem" 
+							Command="{Binding RenameItemCommand}"
+							Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnMoveItem" 
+							Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnRemoveToRubbish" 
+							Command="{Binding RemoveItemCommand}" 
+							Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+								/>                                
+					</telerikPrimitives:RadContextMenu>
+				</telerikPrimitives:RadContextMenu.ContextMenu>
+			</telerikPrimitives:RadDataBoundListBox>
+
+		</Grid>
+	</Grid>
 
 </phone:PhoneApplicationPage>

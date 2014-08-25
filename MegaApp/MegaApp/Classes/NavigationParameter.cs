@@ -14,6 +14,7 @@ namespace MegaApp.Classes
         PictureSelected = 30,
         UriLaunch = 40,
         Browsing = 50,
+        BreadCrumb = 60,
         Unknown = 999
     }
 }
