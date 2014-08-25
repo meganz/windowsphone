@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using GoedWare.Windows.Phone.Controls;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
@@ -35,6 +36,13 @@ namespace MegaApp.Pages
             var transition = new RadTileTransition();
             this.SetValue(RadTransitionControl.TransitionProperty, transition);
             this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstCloudDrive);
+
+            BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+        }
+
+        private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
+        {
+            //App.CloudDrive.GoToFolder(e.Item as NodeViewModel);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
