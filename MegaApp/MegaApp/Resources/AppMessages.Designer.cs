@@ -277,6 +277,60 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to get link.
+        /// </summary>
+        internal static string GetLinkFailed {
+            get {
+                return ResourceManager.GetString("GetLinkFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Get link failed.
+        /// </summary>
+        internal static string GetLinkFailed_Title {
+            get {
+                return ResourceManager.GetString("GetLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Importing file failed.
+        /// </summary>
+        internal static string ImportFileFailed {
+            get {
+                return ResourceManager.GetString("ImportFileFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import file failed.
+        /// </summary>
+        internal static string ImportFileFailed_Title {
+            get {
+                return ResourceManager.GetString("ImportFileFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEGA link is copied to your clipboard.
+        /// </summary>
+        internal static string LinkCopiedToClipboard {
+            get {
+                return ResourceManager.GetString("LinkCopiedToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copied to clipboard.
+        /// </summary>
+        internal static string LinkCopiedToClipboard_Title {
+            get {
+                return ResourceManager.GetString("LinkCopiedToClipboard_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MEGA Cloud Drive login failed. Please try again. [{0}].
         /// </summary>
         internal static string LoginFailed {

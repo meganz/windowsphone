@@ -133,6 +133,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to copy.
+        /// </summary>
+        public static string CopyButton {
+            get {
+                return ResourceManager.GetString("CopyButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to create account.
         /// </summary>
         public static string CreateAccount {
@@ -241,6 +250,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MEGA link:.
+        /// </summary>
+        public static string MegaLinkTitle {
+            get {
+                return ResourceManager.GetString("MegaLinkTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I want to share this MEGA cloud service file with you.
+        /// </summary>
+        public static string MegaShareLinkMessage {
+            get {
+                return ResourceManager.GetString("MegaShareLinkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move.
         /// </summary>
         public static string Move {
@@ -264,6 +291,24 @@ namespace MegaApp.Resources {
         public static string NewAtMega {
             get {
                 return ResourceManager.GetString("NewAtMega", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to open.
+        /// </summary>
+        public static string OpenButton {
+            get {
+                return ResourceManager.GetString("OpenButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open MEGA download link:.
+        /// </summary>
+        public static string OpenLink {
+            get {
+                return ResourceManager.GetString("OpenLink", resourceCulture);
             }
         }
         
@@ -318,6 +363,15 @@ namespace MegaApp.Resources {
         public static string RenameItem {
             get {
                 return ResourceManager.GetString("RenameItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to share.
+        /// </summary>
+        public static string ShareButton {
+            get {
+                return ResourceManager.GetString("ShareButton", resourceCulture);
             }
         }
         

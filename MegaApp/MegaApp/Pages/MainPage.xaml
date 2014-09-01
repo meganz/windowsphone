@@ -16,8 +16,8 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
+	<phone:PhoneApplicationPage.Resources>
+		<shell:ApplicationBar x:Key="CloudDriveMenu">
 			<shell:ApplicationBarIconButton 
 				x:Name="BtnAddFolder" 
 				IconUri="/Assets/AppBar/folder_add.png" 
@@ -27,10 +27,32 @@
 			<shell:ApplicationBarIconButton 
 				x:Name="BtnRefresh" 
 				IconUri="/Assets/AppBar/refresh.png" 
-				Text="refresh" Click="OnRefreshClick" 				
+				Text="refresh" 
+				Click="OnRefreshClick" 				
+			/>
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnOpenLink" 
+				IconUri="/Assets/AppBar/open_link.png" 
+				Text="open link" 
+				Click="OnOpenLinkClick" 				
 			/>
 		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+
+		<shell:ApplicationBar x:Key="MoveItemMenu">
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnAcceptMove" 
+				IconUri="/Assets/AppBar/accept_move.png" 
+				Text="move" 
+				Click="OnAcceptMoveClick" 
+			/>
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnCancelMove" 
+				IconUri="/Assets/AppBar/cancel.png" 
+				Text="cancel" 
+				Click="OnCancelMoveClick" 				
+			/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.Resources>
 
 <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
@@ -55,7 +77,8 @@
 				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
 				IsAsyncBalanceEnabled="True" 
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
-				telerik:InteractionEffectManager.IsInteractionEnabled="True" Loaded="OnListLoaded"				
+				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+				Loaded="OnListLoaded"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 
@@ -68,6 +91,7 @@
 								/>
 						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnGetPreviewLink" 
+							Command="{Binding GetPreviewLinkItemCommand}"
 							Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								/>
 						<telerikPrimitives:RadContextMenuItem 
@@ -76,7 +100,8 @@
 							Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								/>
 						<telerikPrimitives:RadContextMenuItem 
-							x:Name="BtnMoveItem" 
+							x:Name="BtnMoveItem"
+                            Tapped="OnMoveItemTap"
 							Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								/>
 						<telerikPrimitives:RadContextMenuItem 

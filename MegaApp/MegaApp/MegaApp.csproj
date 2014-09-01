@@ -101,6 +101,10 @@
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
+    <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
+    <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
+    <Compile Include="MegaApi\MoveNodeRequestListener.cs" />
+    <Compile Include="MegaApi\ImportFileRequestListener.cs" />
     <Compile Include="MegaApi\RenameNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetThumbnailRequestListener.cs" />
     <Compile Include="MegaApi\RemoveNodeRequestListener.cs" />
@@ -154,6 +158,7 @@
       <DependentUpon>UiResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\CryptoService.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\ProgessService.cs" />
@@ -172,6 +177,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\accept_move.png" />
+    <Content Include="Assets\AppBar\cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\open_link.png" />
     <Content Include="Assets\AppBar\refresh.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -292,7 +302,6 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj">
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>

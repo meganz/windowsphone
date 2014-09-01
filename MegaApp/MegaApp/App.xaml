@@ -9,7 +9,7 @@
     <Application.Resources>
     	<ResourceDictionary>
     		<ResourceDictionary.MergedDictionaries>
-    			<ResourceDictionary Source="Resources/ResourceDictionaryMega.xaml"/>
+    			<ResourceDictionary Source="Resources/ResourceDictionaryMega.xaml" />
     		</ResourceDictionary.MergedDictionaries>
     		<local:LocalizedStrings xmlns:local="clr-namespace:MegaApp" x:Key="LocalizedStrings"/>
     	</ResourceDictionary>

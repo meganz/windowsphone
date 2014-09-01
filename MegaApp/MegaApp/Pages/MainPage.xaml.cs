@@ -47,6 +47,15 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (App.CloudDrive.MoveItemMode)
+            {
+                this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+            }
+            else
+            {
+                this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+            }
+
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
             if (e.NavigationMode == NavigationMode.Back)
@@ -94,11 +103,6 @@ namespace MegaApp.Pages
             App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
         }
 
-        private void OnAddFolderClick(object sender, EventArgs e)
-        {
-            App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
-        }
-
         private void OnMenuOpening(object sender, Telerik.Windows.Controls.ContextMenuOpeningEventArgs e)
         {
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
@@ -116,17 +120,43 @@ namespace MegaApp.Pages
                 BtnDownloadItemCloud.Visibility = visibility;
             }
         }
-
-        private void OnRefreshClick(object sender, System.EventArgs e)
-        {
-        	App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
-        }
-
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
             if (_navParam != NavigationParameter.Browsing) return;
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
+        private void OnRefreshClick(object sender, System.EventArgs e)
+        {
+            App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
+        }
+        private void OnAddFolderClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
+        }
+
+        private void OnOpenLinkClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.OpenLink();
+        }
+
+        private void OnCancelMoveClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.MoveItemMode = false;
+            App.CloudDrive.FocusedNode = null;
+            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+        }
+        private void OnAcceptMoveClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.MoveItem(App.CloudDrive.CurrentRootNode);
+            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+        }
+
+        private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
+        {
+            this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+            App.CloudDrive.MoveItemMode = true;
+        }
     }
+    
 }

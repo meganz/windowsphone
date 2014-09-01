@@ -27,6 +27,9 @@ namespace MegaApp.MegaApi
         abstract protected Type NavigateToPage { get; }
         abstract protected NavigationParameter NavigationParameter { get; }
 
+
+        protected MRequest Request { get; set; }
+        protected MError Error { get; set; }
         #endregion
 
         #region MRequestListenerInterface
@@ -38,6 +41,9 @@ namespace MegaApp.MegaApi
                 ProgessService.SetProgressIndicator(false);
 
                 //this.ControlState = true;
+
+                Request = request;
+                Error = e;
 
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
