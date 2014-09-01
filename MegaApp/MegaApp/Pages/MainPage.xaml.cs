@@ -74,6 +74,14 @@ namespace MegaApp.Pages
                     App.CloudDrive.FetchNodes();
                     break;
                 }
+                case NavigationParameter.ImportLinkLaunch:
+                {
+                    //App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener());
+                    //App.CloudDrive.FetchNodes();
+
+                    //App.CloudDrive.ImportLink(NavigationContext.QueryString["link"]);
+                    break;
+                }
                 case NavigationParameter.Unknown:
                 {
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.RememberMe))
@@ -149,6 +157,7 @@ namespace MegaApp.Pages
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             App.CloudDrive.MoveItem(App.CloudDrive.CurrentRootNode);
+            App.CloudDrive.MoveItemMode = false;
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
         }
 

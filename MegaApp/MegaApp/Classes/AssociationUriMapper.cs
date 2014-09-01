@@ -28,6 +28,14 @@ namespace MegaApp.Classes
 
                     return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
                 }
+                else
+                {
+                    var extraParams = new Dictionary<string, string>(1);
+
+                    extraParams.Add("link", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
+
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                }
             }
 
             // Otherwise perform normal launch.
