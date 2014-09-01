@@ -124,6 +124,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Getting link....
+        /// </summary>
+        internal static string GetLink {
+            get {
+                return ResourceManager.GetString("GetLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Importing file....
+        /// </summary>
+        internal static string ImportFile {
+            get {
+                return ResourceManager.GetString("ImportFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logging in....
         /// </summary>
         internal static string Login {
@@ -133,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Moving &apos;{0}&apos;....
+        ///   Looks up a localized string similar to Moving....
         /// </summary>
         internal static string MoveNode {
             get {

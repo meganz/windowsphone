@@ -189,6 +189,24 @@
   <data name="FolderCreateFailed_Title" xml:space="preserve">
     <value>Folder creation failed</value>
   </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>Failed to get link</value>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>Get link failed</value>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>Importing file failed</value>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>Import file failed</value>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>MEGA link is copied to your clipboard</value>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>Copied to clipboard</value>
+  </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>MEGA Cloud Drive login failed. Please try again. [{0}]</value>
     <comment>Message when login to the MEGA web service api failed</comment>

@@ -16,6 +16,7 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.InputPrompt;
 
@@ -28,18 +29,19 @@ namespace MegaApp.Models
         public CloudDriveViewModel(MegaSDK megaSdk)
         {
             this._megaSdk = megaSdk;
+            this.MoveItemMode = false;
             this.CurrentRootNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
+            this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
         }
 
         #region Commands
 
         public ICommand RemoveItemCommand { get; set; }
-        public ICommand MoveItemCommand { get; set; }
         public ICommand GetPreviewLinkItemCommand { get; set; }
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
@@ -64,6 +66,30 @@ namespace MegaApp.Models
             this.CurrentRootNode = folder;
             CalculateBreadCrumbs(this.CurrentRootNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
+        }
+
+        public void MoveItem(NodeViewModel selectedRootNode)
+        {
+            if (!IsUserOnline()) return;
+
+            if(this._megaSdk.checkMove(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode()).getErrorCode() == MErrorType.API_OK)
+                this._megaSdk.moveNode(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode(), new MoveNodeRequestListener(this));
+        }
+
+        public async void OpenLink()
+        {
+            if (!IsUserOnline()) return;
+
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink, vibrate: false);
+
+            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+            this._megaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
+        }
+
+        public void ImportLink(string link)
+        {
+            this._megaSdk.importFileLink(link, CurrentRootNode.GetBaseNode(), new ImportFileRequestListener(this));;
         }
 
         public void LoadNodes()
@@ -138,6 +164,14 @@ namespace MegaApp.Models
 
         }
 
+        private void GetPreviewLink(object obj)
+        {
+            if (!IsUserOnline()) return;
+            
+            this._megaSdk.exportNode(FocusedNode.GetBaseNode(), new ExportNodeRequestListener());
+
+        }
+
         private void RemoveItem(object obj)
         {
             if (!IsUserOnline()) return;
@@ -186,18 +220,16 @@ namespace MegaApp.Models
 
         public NodeViewModel BreadCrumbNode { get; set; }
 
-        //private NodeViewModel _currentCloudDriveRootNode;
-        //public NodeViewModel CurrentCloudDriveRootNode
-        //{
-        //    get { return _currentCloudDriveRootNode; }
-        //    set
-        //    {
-        //        _currentCloudDriveRootNode = value;
-        //        OnPropertyChanged("CurrentCloudDriveRootNode");
-        //    }
-
-        //}
-
+        private bool _moveItemMode;
+        public bool MoveItemMode
+        {
+            get { return _moveItemMode; }
+            set
+            {
+                _moveItemMode = value;
+                OnPropertyChanged("MoveItemMode");
+            }
+        }
         #endregion
       
     }

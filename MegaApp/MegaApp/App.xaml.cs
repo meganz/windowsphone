@@ -137,7 +137,8 @@ namespace MegaApp
             RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
+            // @"\" necessay to use cache
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path + @"\");
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             // Ensure we don't initialize again

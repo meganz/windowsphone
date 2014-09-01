@@ -139,12 +139,18 @@
     <value>Fetching files &amp; folders...</value>
     <comment>Progress indicator message when loading nodes from MEGA web service</comment>
   </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Getting link...</value>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Importing file...</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Logging in...</value>
     <comment>Progress indicator message when logging in</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
-    <value>Moving '{0}'...</value>
+    <value>Moving...</value>
     <comment>Progress indicator message when moving a node to a different parent</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">

@@ -3,7 +3,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:converters="clr-namespace:MegaApp.Converters"
     xmlns:selectors="clr-namespace:MegaApp.Classes"
-    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives">
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
 
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
@@ -53,8 +55,26 @@
             <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
         </Grid>
     </DataTemplate>
+
+    <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
+    <DataTemplate x:Key="ShowShareLinktButtons">
+        <telerikPrimitives:RadWrapPanel x:Name="PART_ButtonsPanel" ItemWidth="150" />
+    </DataTemplate>
     
-    
+    <!-- MOVE DIALOG CONTENT DATATEMPLATE -->
+    <DataTemplate x:Key="MoveDialogContent">
+        <StackPanel>
+            <telerikPrimitives:RadDataBoundListBox 
+                x:Name="LstFolders"
+                ItemsSource="{Binding ChildNodes}"
+				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
+				IsAsyncBalanceEnabled="True" 
+				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
+				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+            />
+        </StackPanel>
+    </DataTemplate>
+
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
     
