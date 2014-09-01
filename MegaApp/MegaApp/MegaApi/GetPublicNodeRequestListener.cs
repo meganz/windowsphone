@@ -73,7 +73,8 @@ namespace MegaApp.MegaApi
         {
             get
             {
-                return () => DialogService.ShowOpenLink("name", "Link", _cloudDriveViewModel);
+                MNode publicNode = Request.getPublicNode();
+                return () => DialogService.ShowOpenLink(publicNode.getName(), Request.getLink(), _cloudDriveViewModel);
             }
         }
 

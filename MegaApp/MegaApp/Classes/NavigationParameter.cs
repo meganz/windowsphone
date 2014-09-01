@@ -15,6 +15,7 @@ namespace MegaApp.Classes
         UriLaunch = 40,
         Browsing = 50,
         BreadCrumb = 60,
+        ImportLinkLaunch = 70,
         Unknown = 999
     }
 }
