@@ -138,7 +138,7 @@ namespace MegaApp
 
             // Initialize MegaSDK 
             // @"\" necessay to use cache
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path + @"\");
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             // Ensure we don't initialize again
