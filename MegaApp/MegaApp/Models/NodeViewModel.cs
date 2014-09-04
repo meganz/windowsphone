@@ -39,17 +39,20 @@ namespace MegaApp.Models
             this.Type = baseNode.getType();
             this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getNumChildren(this._baseNode), UiResources.Files);
 
-            //GetThumbnailIfImage(this.Name);
+            GetThumbnailIfImage(this.Name);
         }
 
         #region Methods
 
-        private async void GetThumbnailIfImage(string filename)
+        private void GetThumbnailIfImage(string filename)
         {
             if (!ImageService.IsImage(filename)) return;
             if (!this._baseNode.hasThumbnail()) return;
 
-            this._megaSdk.getThumbnail(this._baseNode, Path.Combine(ApplicationData.Current.LocalFolder.Path, "thumbnails\\"), new GetThumbnailRequestListener(this));
+            this._megaSdk.getThumbnail(
+                this._baseNode,
+                Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory, this._baseNode.getBase64Handle()),
+                new GetThumbnailRequestListener(this));
         }
 
         /// <summary>

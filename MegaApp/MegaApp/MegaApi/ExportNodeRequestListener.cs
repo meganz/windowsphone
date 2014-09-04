@@ -63,11 +63,6 @@ namespace MegaApp.MegaApi
             get { return true; }
         }
 
-        protected override Action SuccesAction
-        {
-            get { return () => DialogService.ShowShareLink(Request.getLink()); }
-        }
-
         protected override Type NavigateToPage
         {
             get { throw new NotImplementedException(); }
@@ -76,6 +71,15 @@ namespace MegaApp.MegaApi
         protected override NavigationParameter NavigationParameter
         {
             get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        protected override void OnSuccesAction(MRequest request)
+        {
+            DialogService.ShowShareLink(request.getLink());
         }
 
         #endregion

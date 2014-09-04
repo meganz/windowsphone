@@ -99,11 +99,6 @@ namespace MegaApp.Models
             get { return false; }
         }
 
-        protected override Action SuccesAction
-        {
-            get { throw new NotImplementedException(); }
-        }
-
         protected override Type NavigateToPage
         {
             get { return typeof(LoginPage); }

@@ -23,13 +23,9 @@ namespace MegaApp.MegaApi
         abstract protected bool ShowSuccesMessage { get; }
         abstract protected bool NavigateOnSucces { get; }
         abstract protected bool ActionOnSucces { get; }
-        abstract protected Action SuccesAction { get; }
         abstract protected Type NavigateToPage { get; }
         abstract protected NavigationParameter NavigationParameter { get; }
-
-
-        protected MRequest Request { get; set; }
-        protected MError Error { get; set; }
+        
         #endregion
 
         #region MRequestListenerInterface
@@ -40,18 +36,13 @@ namespace MegaApp.MegaApi
             {
                 ProgessService.SetProgressIndicator(false);
 
-                //this.ControlState = true;
-
-                Request = request;
-                Error = e;
-
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
                     if (ShowSuccesMessage)
                         MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
 
                     if (ActionOnSucces)
-                        SuccesAction.Invoke();
+                        OnSuccesAction(request);
 
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
@@ -79,6 +70,15 @@ namespace MegaApp.MegaApi
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
             // No update status necessary
+        }
+
+        #endregion
+
+        #region Virtual Methods
+
+        protected virtual void OnSuccesAction(MRequest request)
+        {
+            // No standard succes action
         }
 
         #endregion

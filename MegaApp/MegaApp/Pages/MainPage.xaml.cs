@@ -91,8 +91,7 @@ namespace MegaApp.Pages
                     }
                     else
                     {
-                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener());
-                        App.CloudDrive.FetchNodes();
+                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     }
                     break;
                 }

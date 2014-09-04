@@ -120,11 +120,6 @@ namespace MegaApp.Models
             get { return RememberMe; }
         }
 
-        protected override Action SuccesAction
-        {
-            get { return new Action(() => SaveLoginData(Email, SessionKey)); }
-        }
-
         protected override Type NavigateToPage
         {
             get { return typeof(MainPage); }
@@ -148,6 +143,16 @@ namespace MegaApp.Models
         }
 
         #endregion
+
+        #region Override Methods
+
+        protected override void OnSuccesAction(MRequest request)
+        {
+            SaveLoginData(Email, SessionKey);
+        }
+
+        #endregion
+        
         
     }
 }

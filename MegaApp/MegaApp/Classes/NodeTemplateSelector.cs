@@ -26,12 +26,10 @@ namespace MegaApp.Classes
                 case MNodeType.TYPE_FOLDER:
                 {
                     return FolderItemTemplate;
-                    break;
                 }
                 default:
                 {
                     return FileItemTemplate;
-                    break;
                 }
             }
         }
