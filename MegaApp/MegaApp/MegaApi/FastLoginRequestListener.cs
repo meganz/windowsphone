@@ -15,6 +15,12 @@ namespace MegaApp.MegaApi
 {
     class FastLoginRequestListener: BaseRequestListener
     {
+        private CloudDriveViewModel _cloudDriveViewModel;
+        
+        public FastLoginRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        {
+            _cloudDriveViewModel = cloudDriveViewModel;
+        }
 
         #region Base Properties
 
@@ -60,12 +66,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ActionOnSucces
         {
-            get { return false; }
-        }
-
-        protected override Action SuccesAction
-        {
-            get { throw new NotImplementedException(); }
+            get { return true; }
         }
 
         protected override Type NavigateToPage
@@ -80,5 +81,13 @@ namespace MegaApp.MegaApi
 
         #endregion
 
+        #region Override Methods
+
+        protected override void OnSuccesAction(MRequest request)
+        {
+            _cloudDriveViewModel.FetchNodes();
+        }
+
+        #endregion
     }
 }

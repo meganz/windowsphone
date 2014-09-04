@@ -133,6 +133,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to thumbnails\.
+        /// </summary>
+        public static string ThumbnailsDirectory {
+            get {
+                return ResourceManager.GetString("ThumbnailsDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MEGAWindowsPhone/1.0.0.
         /// </summary>
         public static string UserAgent {

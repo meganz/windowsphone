@@ -70,11 +70,6 @@ namespace MegaApp.MegaApi
             get { return true; }
         }
 
-        protected override Action SuccesAction
-        {
-            get { return ()=> _cloudDriveViewModel.LoadNodes(); }
-        }
-
         protected override Type NavigateToPage
         {
             get { throw new NotImplementedException(); }
@@ -83,6 +78,15 @@ namespace MegaApp.MegaApi
         protected override NavigationParameter NavigationParameter
         {
             get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        protected override void OnSuccesAction(MRequest request)
+        {
+            _cloudDriveViewModel.LoadNodes();
         }
 
         #endregion

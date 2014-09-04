@@ -12,21 +12,20 @@ using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    abstract class BaseRequestListenerViewModel: BaseViewModel, MRequestListenerInterface
+    internal abstract class BaseRequestListenerViewModel : BaseViewModel, MRequestListenerInterface
     {
         #region Properties
 
-        abstract protected string ProgressMessage { get; }
-        abstract protected string ErrorMessage { get; }
-        abstract protected string ErrorMessageTitle { get; }
-        abstract protected string SuccessMessage { get; }
-        abstract protected string SuccessMessageTitle { get; }
-        abstract protected bool ShowSuccesMessage { get; }
-        abstract protected bool NavigateOnSucces { get; }
-        abstract protected bool ActionOnSucces { get; }
-        abstract protected Action SuccesAction { get; }
-        abstract protected Type NavigateToPage { get;  }
-        abstract protected NavigationParameter NavigationParameter { get; }
+        protected abstract string ProgressMessage { get; }
+        protected abstract string ErrorMessage { get; }
+        protected abstract string ErrorMessageTitle { get; }
+        protected abstract string SuccessMessage { get; }
+        protected abstract string SuccessMessageTitle { get; }
+        protected abstract bool ShowSuccesMessage { get; }
+        protected abstract bool NavigateOnSucces { get; }
+        protected abstract bool ActionOnSucces { get; }
+        protected abstract Type NavigateToPage { get; }
+        protected abstract NavigationParameter NavigationParameter { get; }
 
         #endregion
 
@@ -46,13 +45,14 @@ namespace MegaApp.Models
                         MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
 
                     if (ActionOnSucces)
-                        SuccesAction.Invoke();
-                    
+                        OnSuccesAction(request);
+
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
                 }
                 else
-                    MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
+                    MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
+                        MessageBoxButton.OK);
             });
         }
 
@@ -77,6 +77,15 @@ namespace MegaApp.Models
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
             // No update status necessary
+        }
+
+        #endregion
+
+        #region Virtual Methods
+
+        protected virtual void OnSuccesAction(MRequest request)
+        {
+            // No standard succes action
         }
 
         #endregion

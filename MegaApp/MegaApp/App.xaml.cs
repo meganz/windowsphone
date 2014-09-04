@@ -141,6 +141,11 @@ namespace MegaApp
             MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
+            //Initialize Folders
+            string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
+            if (!Directory.Exists(thumbnailDir))
+                Directory.CreateDirectory(thumbnailDir);
+
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }

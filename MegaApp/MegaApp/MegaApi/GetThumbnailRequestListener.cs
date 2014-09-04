@@ -32,8 +32,15 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 if (e.getErrorCode() != MErrorType.API_OK) return;
+
+                string[] test = Directory.GetFiles(Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory));
+
+                string filename = request.getFile();
                 
-                //string[] test = Directory.GetFiles(Path.Combine(ApplicationData.Current.LocalFolder.Path, "thumbnails\\"));
+                if (test.Length > 0)
+                    MessageBox.Show(test[0]);
+
+                
 
                 //using (FileStream file = File.OpenRead(Path.Combine(ApplicationData.Current.LocalFolder.Path, "thumbnails", _node.Name)))
                 //{
