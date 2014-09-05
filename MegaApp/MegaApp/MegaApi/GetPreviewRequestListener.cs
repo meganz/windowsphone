@@ -17,10 +17,10 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetThumbnailRequestListener: MRequestListenerInterface
+    class GetPreviewRequestListener: MRequestListenerInterface
     {
         private readonly NodeViewModel _node;
-        public GetThumbnailRequestListener(NodeViewModel node)
+        public GetPreviewRequestListener(NodeViewModel node)
         {
             this._node = node;
         }
@@ -33,7 +33,7 @@ namespace MegaApp.MegaApi
             {
                 if (e.getErrorCode() != MErrorType.API_OK) return;
 
-                _node.LoadThumbnailImage(request.getFile());
+                _node.LoadPreviewImage(request.getFile());
             });
         }
 

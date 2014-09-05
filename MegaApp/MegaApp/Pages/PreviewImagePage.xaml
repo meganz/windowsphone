@@ -1,0 +1,31 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    x:Class="MegaApp.Pages.PreviewImagePage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+	<Grid x:Name="LayoutRoot" Background="Transparent">        
+        
+		<telerikPrimitives:RadSlideView 
+			x:Name="SlideViewAndFilmStrip" 
+			ItemTemplate="{StaticResource SlideViewItemContent}"
+			FilmstripModeItemTemplate="{StaticResource FilmStripContent}"
+			ItemsSource="{Binding PreviewItems}"
+			SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" 
+			IsFilmstripModeEnabled="True" 
+			IsLoopingEnabled="False"
+		/>        
+        
+	</Grid>
+
+</phone:PhoneApplicationPage>

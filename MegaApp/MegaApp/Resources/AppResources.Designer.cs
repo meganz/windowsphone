@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to previews\.
+        /// </summary>
+        public static string PreviewsDirectory {
+            get {
+                return ResourceManager.GetString("PreviewsDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {

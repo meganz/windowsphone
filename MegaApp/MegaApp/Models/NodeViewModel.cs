@@ -39,20 +39,199 @@ namespace MegaApp.Models
             this.Type = baseNode.getType();
             this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getNumChildren(this._baseNode), UiResources.Files);
 
-            GetThumbnailIfImage(this.Name);
+            SetThumbnailImage();
         }
 
         #region Methods
 
-        private void GetThumbnailIfImage(string filename)
+        private void SetThumbnailImage()
         {
-            if (!ImageService.IsImage(filename)) return;
-            if (!this._baseNode.hasThumbnail()) return;
+            switch (this.Type)
+            {
+                case MNodeType.TYPE_FOLDER:
+                    {
+                        this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/folder.png", UriKind.Relative));
+                        break;
+                    }
+                case MNodeType.TYPE_FILE:
+                    {
 
-            this._megaSdk.getThumbnail(
-                this._baseNode,
-                Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory, this._baseNode.getBase64Handle()),
-                new GetThumbnailRequestListener(this));
+                        if (this.IsImage)
+                        {
+                            if (this._baseNode.hasThumbnail())
+                            {
+                                GetThumbnail();
+                                break;
+                            }
+                        }
+
+                        var fileExtension = Path.GetExtension(this.Name);
+                        if (fileExtension == null)
+                        {
+                            this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                            break;
+                        }
+
+                        switch (fileExtension.ToLower())
+                        {
+                            case ".accdb":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/accdb.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".bmp":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/bmp.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".doc":
+                            case ".docx":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/doc.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".eps":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/eps.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".gif":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/gif.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".ico":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/ico.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".jpg":
+                            case ".jpeg":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/jpg.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".mp3":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/mp3.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".pdf":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/pdf.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".png":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/png.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".ppt":
+                            case ".pptx":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/ppt.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".swf":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/swf.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".tga":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/tga.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".tiff":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/tiff.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".txt":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/txt.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".wav":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/wav.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".xls":
+                            case ".xlsx":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/xls.png", UriKind.Relative));
+                                    break;
+                                }
+                            case ".zip":
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/zip.png", UriKind.Relative));
+                                    break;
+                                }
+                            default:
+                                {
+                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                        break;
+                    }
+            }
+        }
+
+        private void GetThumbnail()
+        {
+            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory, this._baseNode.getBase64Handle());
+
+            if (FileService.FileExists(filePath))
+            {
+                LoadThumbnailImage(filePath);
+            }
+            else
+            {
+                this._megaSdk.getThumbnail(this._baseNode, filePath, new GetThumbnailRequestListener(this));
+            }
+        }
+
+        public void SetPreviewImage()
+        {
+            if (!this.IsImage) return;
+            if (this.PreviewImage != null) return;
+            if (this._baseNode.hasPreview())
+            {
+                GetPreview();
+            }
+        }
+
+        private void GetPreview()
+        {
+            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory, this._baseNode.getBase64Handle());
+
+            if (FileService.FileExists(filePath))
+            {
+                LoadPreviewImage(filePath);
+            }
+            else
+            {
+                this._megaSdk.getPreview(this._baseNode, filePath, new GetPreviewRequestListener(this));
+            }
+        }
+
+        public void LoadThumbnailImage(string path)
+        {
+            var bitmapImage = new BitmapImage(new Uri(path));
+            this.ThumbnailImage = bitmapImage;
+        }
+
+        public void LoadPreviewImage(string path)
+        {
+            var bitmapImage = new BitmapImage(new Uri(path));
+            this.PreviewImage = bitmapImage;
         }
 
         /// <summary>
@@ -81,18 +260,32 @@ namespace MegaApp.Models
 
         public string NumberOfFiles { get; private set; }
 
-        private BitmapImage _image;
-
-        public BitmapImage Image
+        private BitmapImage _thumbnailImage;
+        public BitmapImage ThumbnailImage
         {
-            get { return _image; }
+            get { return _thumbnailImage; }
             set
             {
-                _image = value;
-                OnPropertyChanged("Image");
+                _thumbnailImage = value;
+                OnPropertyChanged("ThumbnailImage");
             }
         }
 
+        private BitmapImage _previewImage;
+        public BitmapImage PreviewImage
+        {
+            get { return _previewImage; }
+            set
+            {
+                _previewImage = value;
+                OnPropertyChanged("PreviewImage");
+            }
+        }
+
+        public bool IsImage
+        {
+            get { return ImageService.IsImage(this.Name); }
+        }
         public MNode GetBaseNode()
         {
             return this._baseNode;
