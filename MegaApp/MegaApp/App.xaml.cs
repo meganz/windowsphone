@@ -146,6 +146,10 @@ namespace MegaApp
             if (!Directory.Exists(thumbnailDir))
                 Directory.CreateDirectory(thumbnailDir);
 
+            string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
+            if (!Directory.Exists(previewDir))
+                Directory.CreateDirectory(previewDir);
+
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }

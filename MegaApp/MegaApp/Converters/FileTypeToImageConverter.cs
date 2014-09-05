@@ -14,6 +14,7 @@ namespace MegaApp.Converters
             if (value == null) return null;
 
             var node = (NodeViewModel)value;
+            
             switch (node.Type)
             {
                 case MNodeType.TYPE_FOLDER:

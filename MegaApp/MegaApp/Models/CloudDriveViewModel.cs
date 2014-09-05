@@ -37,6 +37,7 @@ namespace MegaApp.Models
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
+            this.PreviewItemCommand = new DelegateCommand(this.PreviewItem);
         }
 
         #region Commands
@@ -45,6 +46,8 @@ namespace MegaApp.Models
         public ICommand GetPreviewLinkItemCommand { get; set; }
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
+
+        public ICommand PreviewItemCommand { get; set; }
 
         #endregion
 
@@ -170,6 +173,11 @@ namespace MegaApp.Models
             
             this._megaSdk.exportNode(FocusedNode.GetBaseNode(), new ExportNodeRequestListener());
 
+        }
+
+        private void PreviewItem(object obj)
+        {
+            NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
         }
 
         private void RemoveItem(object obj)

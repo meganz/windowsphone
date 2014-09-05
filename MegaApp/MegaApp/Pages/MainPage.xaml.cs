@@ -124,7 +124,8 @@ namespace MegaApp.Pages
                 App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
                 BtnGetPreviewLink.Visibility = visibility;
-                BtnDownloadItemCloud.Visibility = visibility;
+                //BtnDownloadItemCloud.Visibility = visibility;
+                BtnPreviewItem.Visibility = visibility;
             }
         }
         private void OnListLoaded(object sender, RoutedEventArgs e)
