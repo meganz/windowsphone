@@ -13,12 +13,19 @@ namespace MegaApp.Pages
 {
     public partial class PreviewImagePage : PhoneApplicationPage
     {
+        private readonly PreviewImageViewModel _previewImageViewModel;
+
         public PreviewImagePage()
         {
-            var previewImageViewModel = new PreviewImageViewModel(App.CloudDrive);
-            this.DataContext = previewImageViewModel;
-            previewImageViewModel.SelectedPreview = App.CloudDrive.FocusedNode;
+            _previewImageViewModel = new PreviewImageViewModel(App.CloudDrive);
+            this.DataContext = _previewImageViewModel;
+            _previewImageViewModel.SelectedPreview = App.CloudDrive.FocusedNode;
             InitializeComponent();
+        }
+
+        private void OnSharePreviewClick(object sender, System.EventArgs e)
+        {
+        	_previewImageViewModel.SharePreview();
         }
     }
 }

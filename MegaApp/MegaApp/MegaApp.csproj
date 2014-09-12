@@ -187,6 +187,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\share.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AppBar\accept_move.png" />
     <Content Include="Assets\AppBar\cancel.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
