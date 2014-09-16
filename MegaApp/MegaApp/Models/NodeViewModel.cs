@@ -37,9 +37,20 @@ namespace MegaApp.Models
             this.CreationTime = ConvertDateToString(_baseNode.getCreationTime()).ToString("dd MMM yyyy");
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseNode.getType();
-            this.NumberOfFiles = this.Type != MNodeType.TYPE_FOLDER ? null : String.Format("{0} {1}", this._megaSdk.getNumChildren(this._baseNode), UiResources.Files);
+
+            if(this.Type == MNodeType.TYPE_FOLDER)
+                SetFolderInfo();
 
             SetThumbnailImage();
+        }
+
+        private void SetFolderInfo()
+        {
+            int childFolders = this._megaSdk.getNumChildFolders(this._baseNode);
+            int childFiles = this._megaSdk.getNumChildFiles(this._baseNode);
+            this.FolderInfo = String.Format("{0} {1} | {2} {3}",
+                childFolders, childFolders == 1 ? UiResources.SingleFolder : UiResources.MultipleFolders,
+                childFiles, childFiles == 1 ? UiResources.SingleFile : UiResources.MultipleFiles);
         }
 
         #region Methods
@@ -49,138 +60,27 @@ namespace MegaApp.Models
             switch (this.Type)
             {
                 case MNodeType.TYPE_FOLDER:
-                    {
-                        this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/folder.png", UriKind.Relative));
-                        break;
-                    }
+                {
+                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/folder.png", UriKind.Relative));
+                    break;
+                }
                 case MNodeType.TYPE_FILE:
+                {
+                    this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
+
+                    if (this.IsImage && this._baseNode.hasThumbnail())
                     {
-
-                        if (this.IsImage)
-                        {
-                            if (this._baseNode.hasThumbnail())
-                            {
-                                GetThumbnail();
-                                break;
-                            }
-                        }
-
-                        var fileExtension = Path.GetExtension(this.Name);
-                        if (fileExtension == null)
-                        {
-                            this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
-                            break;
-                        }
-
-                        switch (fileExtension.ToLower())
-                        {
-                            case ".accdb":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/accdb.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".bmp":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/bmp.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".doc":
-                            case ".docx":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/doc.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".eps":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/eps.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".gif":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/gif.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".ico":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/ico.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".jpg":
-                            case ".jpeg":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/jpg.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".mp3":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/mp3.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".pdf":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/pdf.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".png":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/png.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".ppt":
-                            case ".pptx":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/ppt.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".swf":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/swf.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".tga":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/tga.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".tiff":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/tiff.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".txt":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/txt.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".wav":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/wav.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".xls":
-                            case ".xlsx":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/xls.png", UriKind.Relative));
-                                    break;
-                                }
-                            case ".zip":
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/zip.png", UriKind.Relative));
-                                    break;
-                                }
-                            default:
-                                {
-                                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
-                                    break;
-                                }
-                        }
+                        GetThumbnail();
                         break;
                     }
+                    
+                    break;
+                }
                 default:
-                    {
-                        this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
-                        break;
-                    }
+                {
+                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                    break;
+                }
             }
         }
 
@@ -258,7 +158,7 @@ namespace MegaApp.Models
 
         public string SizeAndSuffix { get; private set; }
 
-        public string NumberOfFiles { get; private set; }
+        public string FolderInfo { get; private set; }
 
         private BitmapImage _thumbnailImage;
         public BitmapImage ThumbnailImage

@@ -133,6 +133,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Getting preview....
+        /// </summary>
+        internal static string GetPreview {
+            get {
+                return ResourceManager.GetString("GetPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Importing file....
         /// </summary>
         internal static string ImportFile {

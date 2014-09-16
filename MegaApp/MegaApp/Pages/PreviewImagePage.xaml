@@ -23,14 +23,15 @@
 			ItemsSource="{Binding PreviewItems}"
 			SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" 
 			IsFilmstripModeEnabled="True" 
-			IsLoopingEnabled="False"
+			IsLoopingEnabled="False" SelectionChanged="SlideViewSelectionChanged" Loaded="OnSlideViewLoaded"
 		/>        
         
 	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/share.png" Text="share" Click="OnSharePreviewClick"/>			
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

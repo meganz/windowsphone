@@ -295,6 +295,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve preview.
+        /// </summary>
+        internal static string GetPreviewFailed {
+            get {
+                return ResourceManager.GetString("GetPreviewFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting preview failed.
+        /// </summary>
+        internal static string GetPreviewFailed_Title {
+            get {
+                return ResourceManager.GetString("GetPreviewFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Importing file failed.
         /// </summary>
         internal static string ImportFileFailed {

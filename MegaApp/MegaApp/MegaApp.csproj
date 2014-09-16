@@ -187,6 +187,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\next.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AppBar\share.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -224,6 +230,7 @@
     <Content Include="Assets\FileTypes\xls.png" />
     <Content Include="Assets\FileTypes\zip.png" />
     <Content Include="Assets\Images\folder_empty.png" />
+    <Content Include="Assets\Images\preview_placeholder.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -177,8 +177,8 @@
   <data name="ConfirmAccount" xml:space="preserve">
     <value>confirm account</value>
   </data>
-  <data name="Files" xml:space="preserve">
-    <value>file(s)</value>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>folder</value>
   </data>
   <data name="CreateFolder" xml:space="preserve">
     <value>Folder name:</value>
@@ -234,5 +234,23 @@
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Preview</value>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>files</value>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>folders</value>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>file</value>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>Loading preview...</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>previous</value>
   </data>
 </root>

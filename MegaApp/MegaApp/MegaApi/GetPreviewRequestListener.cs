@@ -17,7 +17,7 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetPreviewRequestListener: MRequestListenerInterface
+    class GetPreviewRequestListener: BaseRequestListener
     {
         private readonly NodeViewModel _node;
         public GetPreviewRequestListener(NodeViewModel node)
@@ -25,36 +25,85 @@ namespace MegaApp.MegaApi
             this._node = node;
         }
 
-        #region MRequestListenerInterface
+        #region Base Properties
 
-        public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override string ProgressMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                if (e.getErrorCode() != MErrorType.API_OK) return;
-
-                _node.LoadPreviewImage(request.getFile());
-            });
+            get { throw new NotImplementedException(); }
         }
 
-        public virtual void onRequestStart(MegaSDK api, MRequest request)
+        protected override bool ShowProgressMessage
         {
-            // No status necessary
+            get { return false; }
         }
 
-        public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        protected override string ErrorMessage
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show(e.ToString()));
+            get { return AppMessages.GetPreviewFailed; }
         }
 
-        public virtual void onRequestUpdate(MegaSDK api, MRequest request)
+        protected override string ErrorMessageTitle
         {
-            // No update status necessary
+            get { return AppMessages.GetPreviewFailed_Title; }
+        }
+
+        protected override string SuccessMessage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return false; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { throw new NotImplementedException(); }
         }
 
         #endregion
+        
+        #region Override Methods
 
+        protected override void OnSuccesAction(MRequest request)
+        {
+            _node.LoadPreviewImage(request.getFile());
+        }
 
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {
+            base.onRequestStart(api, request);
+            Deployment.Current.Dispatcher.BeginInvoke(() => _node.IsBusy = true);
+        }
+
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() => _node.IsBusy = false);
+            base.onRequestFinish(api, request, e);
+        }
+
+        #endregion
 
     }
 }

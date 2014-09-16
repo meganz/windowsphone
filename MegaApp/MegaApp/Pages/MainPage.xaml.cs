@@ -125,7 +125,7 @@ namespace MegaApp.Pages
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
                 BtnGetPreviewLink.Visibility = visibility;
                 //BtnDownloadItemCloud.Visibility = visibility;
-                BtnPreviewItem.Visibility = visibility;
+                BtnPreviewItem.Visibility = App.CloudDrive.FocusedNode.GetBaseNode().hasPreview() ? visibility: Visibility.Collapsed;
             }
         }
         private void OnListLoaded(object sender, RoutedEventArgs e)
