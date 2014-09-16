@@ -9,6 +9,12 @@ namespace MegaApp.Models
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        public BaseViewModel()
+        {
+            this.ControlState = true;
+            this.IsBusy = false;
+        }
+
         #region Properties
 
         private bool _controlState;
@@ -19,6 +25,17 @@ namespace MegaApp.Models
             {
                 _controlState = value;
                 OnPropertyChanged("ControlState");
+            }
+        }
+
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged("IsBusy");
             }
         }
 

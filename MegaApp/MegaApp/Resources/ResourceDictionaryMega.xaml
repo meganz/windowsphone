@@ -43,7 +43,7 @@
             </Grid.ColumnDefinitions>
             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="\Assets\FileTypes\folder.png" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
             <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold"/>
-            <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NumberOfFiles}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+            <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
             <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
         </Grid>
     </DataTemplate>
@@ -59,12 +59,15 @@
 
 
     <DataTemplate x:Key="SlideViewItemContent">
-        <slideView:PanAndZoomImage Source="{Binding PreviewImage}"/>
+        <Grid>
+    		<slideView:PanAndZoomImage Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
+    		<telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.LoadingPreview, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold" Margin="0,0,0,40"/>
+    	</Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="FilmStripContent">
         <Grid>
-            <Image Source="{Binding PreviewImage}" Width="460"/>			
+            <Image Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="460"/>			
         </Grid>
     </DataTemplate>
 

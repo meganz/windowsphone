@@ -214,15 +214,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to file(s).
-        /// </summary>
-        public static string Files {
-            get {
-                return ResourceManager.GetString("Files", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Get link.
         /// </summary>
         public static string GetPreviewLink {
@@ -237,6 +228,15 @@ namespace MegaApp.Resources {
         public static string InboxName {
             get {
                 return ResourceManager.GetString("InboxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading preview....
+        /// </summary>
+        public static string LoadingPreview {
+            get {
+                return ResourceManager.GetString("LoadingPreview", resourceCulture);
             }
         }
         
@@ -277,6 +277,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to files.
+        /// </summary>
+        public static string MultipleFiles {
+            get {
+                return ResourceManager.GetString("MultipleFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to folders.
+        /// </summary>
+        public static string MultipleFolders {
+            get {
+                return ResourceManager.GetString("MultipleFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to your name.
         /// </summary>
         public static string NameWatermark {
@@ -291,6 +309,15 @@ namespace MegaApp.Resources {
         public static string NewAtMega {
             get {
                 return ResourceManager.GetString("NewAtMega", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to next.
+        /// </summary>
+        public static string Next {
+            get {
+                return ResourceManager.GetString("Next", resourceCulture);
             }
         }
         
@@ -327,6 +354,15 @@ namespace MegaApp.Resources {
         public static string Preview {
             get {
                 return ResourceManager.GetString("Preview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to previous.
+        /// </summary>
+        public static string Previous {
+            get {
+                return ResourceManager.GetString("Previous", resourceCulture);
             }
         }
         
@@ -381,6 +417,24 @@ namespace MegaApp.Resources {
         public static string ShareButton {
             get {
                 return ResourceManager.GetString("ShareButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to file.
+        /// </summary>
+        public static string SingleFile {
+            get {
+                return ResourceManager.GetString("SingleFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to folder.
+        /// </summary>
+        public static string SingleFolder {
+            get {
+                return ResourceManager.GetString("SingleFolder", resourceCulture);
             }
         }
         

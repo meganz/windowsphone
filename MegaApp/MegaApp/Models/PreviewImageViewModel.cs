@@ -41,7 +41,7 @@ namespace MegaApp.Models
 
         public List<NodeViewModel> PreviewItems
         {
-            get { return _cloudDriveViewModel.ChildNodes.Where(n => n.IsImage).ToList(); }
+            get { return _cloudDriveViewModel.ChildNodes.Where(n => n.IsImage && n.GetBaseNode().hasPreview()).ToList(); }
         }
 
         private NodeViewModel _selectedPreview;
