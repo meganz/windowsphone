@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="GoedWare" Description="MEGA Cloud Service application" Publisher="MEGA" PublisherID="{16956d05-6c01-4806-821a-8fab59cca3ce}">
+  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -26,10 +26,13 @@
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

@@ -30,6 +30,7 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.MoveItemMode = false;
+            this.NoFolderUpAction = false;
             this.CurrentRootNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
@@ -177,6 +178,7 @@ namespace MegaApp.Models
 
         private void PreviewItem(object obj)
         {
+            this.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
         }
 
@@ -228,6 +230,8 @@ namespace MegaApp.Models
 
         public NodeViewModel BreadCrumbNode { get; set; }
 
+        public bool NoFolderUpAction { get; set; }
+
         private bool _moveItemMode;
         public bool MoveItemMode
         {
@@ -238,6 +242,7 @@ namespace MegaApp.Models
                 OnPropertyChanged("MoveItemMode");
             }
         }
+
         #endregion
       
     }

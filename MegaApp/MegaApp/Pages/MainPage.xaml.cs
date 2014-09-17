@@ -57,12 +57,14 @@ namespace MegaApp.Pages
             }
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-
-            if (e.NavigationMode == NavigationMode.Back)
+            
+            if (e.NavigationMode == NavigationMode.Back && !App.CloudDrive.NoFolderUpAction)
             {
                 App.CloudDrive.GoFolderUp();
                 _navParam = NavigationParameter.Browsing;
             }
+
+            App.CloudDrive.NoFolderUpAction = false;
 
             switch (_navParam)
             {
