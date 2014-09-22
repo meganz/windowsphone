@@ -99,6 +99,7 @@
     <Compile Include="Classes\NodeTemplateSelector.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
+    <Compile Include="Extensions\BitmapExtensions.cs" />
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
@@ -196,6 +197,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\save.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AppBar\next.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

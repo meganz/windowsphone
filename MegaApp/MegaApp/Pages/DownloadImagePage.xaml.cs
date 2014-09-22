@@ -24,13 +24,15 @@ namespace MegaApp.Pages
             InitializeComponent();
 
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Previous;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Next;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Save;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.Next;
         }
 
         private void SetMoveButtons()
         {
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = SlideViewAndFilmStrip.PreviousItem != null;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = SlideViewAndFilmStrip.NextItem != null;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = SlideViewAndFilmStrip.SelectedItem != null;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).IsEnabled = SlideViewAndFilmStrip.NextItem != null;
         }
 
         private void OnNextClick(object sender, System.EventArgs e)
@@ -41,6 +43,11 @@ namespace MegaApp.Pages
         private void OnPreviousClick(object sender, System.EventArgs e)
         {
             SlideViewAndFilmStrip.MoveToPreviousItem();
+        }
+
+        private void OnSaveClick(object sender, System.EventArgs e)
+        {
+            _downloadImageViewModel.SelectedDownload.SaveImageToCameraRoll();
         }
 
         private void OnSlideViewLoaded(object sender, RoutedEventArgs e)

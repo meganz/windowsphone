@@ -39,6 +39,7 @@
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>	
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>

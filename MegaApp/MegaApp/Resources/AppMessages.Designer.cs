@@ -313,6 +313,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Image successful exported to camera roll.
+        /// </summary>
+        internal static string ImageSaved {
+            get {
+                return ResourceManager.GetString("ImageSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image saved.
+        /// </summary>
+        internal static string ImageSaved_Title {
+            get {
+                return ResourceManager.GetString("ImageSaved_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error exporting image to camera roll. Please try again.
+        /// </summary>
+        internal static string ImageSaveError {
+            get {
+                return ResourceManager.GetString("ImageSaveError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to save image.
+        /// </summary>
+        internal static string ImageSaveError_Title {
+            get {
+                return ResourceManager.GetString("ImageSaveError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Importing file failed.
         /// </summary>
         internal static string ImportFileFailed {
@@ -543,6 +579,24 @@ namespace MegaApp.Resources {
         internal static string RequiredFieldsLogin {
             get {
                 return ResourceManager.GetString("RequiredFieldsLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export current image to the camere roll?.
+        /// </summary>
+        internal static string SaveImageQuestion {
+            get {
+                return ResourceManager.GetString("SaveImageQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save image to photo&apos;s.
+        /// </summary>
+        internal static string SaveImageQuestion_Title {
+            get {
+                return ResourceManager.GetString("SaveImageQuestion_Title", resourceCulture);
             }
         }
         

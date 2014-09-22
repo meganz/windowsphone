@@ -201,6 +201,18 @@
   <data name="GetPreviewFailed_Title" xml:space="preserve">
     <value>Getting preview failed</value>
   </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Image successful exported to camera roll</value>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>Image saved</value>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>Error exporting image to camera roll. Please try again</value>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>Failed to save image</value>
+  </data>
   <data name="ImportFileFailed" xml:space="preserve">
     <value>Importing file failed</value>
   </data>
@@ -281,6 +293,12 @@
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
     <value>Fill in required fields</value>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>Export current image to the camere roll?</value>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>Save image to photo's</value>
   </data>
   <data name="UserNotOnline" xml:space="preserve">
     <value>You are not logged in at MEGA to do this action. Please re-login</value>
