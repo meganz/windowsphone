@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Windows.Storage;
 using GoedWare.Windows.Phone.Controls;
 using mega;
 using MegaApp.Classes;
@@ -108,7 +110,7 @@ namespace MegaApp.Pages
             if (e.Item.DataContext as NodeViewModel == null) return;
 
             this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
-
+            
             App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
         }
 
@@ -126,18 +128,21 @@ namespace MegaApp.Pages
                 App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
                 BtnGetPreviewLink.Visibility = visibility;
-                //BtnDownloadItemCloud.Visibility = visibility;
-                BtnPreviewItem.Visibility = App.CloudDrive.FocusedNode.GetBaseNode().hasPreview() ? visibility: Visibility.Collapsed;
+                BtnPreviewItem.Visibility = visibility;
             }
         }
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
             if (_navParam != NavigationParameter.Browsing) return;
+            
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
         private void OnRefreshClick(object sender, System.EventArgs e)
         {
+            FileService.ClearFiles(
+                NodeService.GetFiles(App.CloudDrive.ChildNodes,
+                Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory)));
             App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
         }
         private void OnAddFolderClick(object sender, EventArgs e)
@@ -167,6 +172,20 @@ namespace MegaApp.Pages
         {
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
             App.CloudDrive.MoveItemMode = true;
+        }
+
+        private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
+        {
+            switch (e.State)
+            {
+                case ItemState.Realizing:
+                {
+                    if (e.DataItem == null) return;
+
+                    ((NodeViewModel) e.DataItem).SetThumbnailImage();
+                    break;
+                }
+            }
         }
     }
     

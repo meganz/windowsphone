@@ -113,10 +113,18 @@ namespace MegaApp.Models
             switch (node.Type)
             {
                 case MNodeType.TYPE_FOLDER:
-                    {
-                        SelectFolder(node);
-                        break;
-                    }
+                {
+                    SelectFolder(node);
+                    break;
+                }
+                case MNodeType.TYPE_FILE:
+                {
+                    if (!node.IsImage) return;
+                    this.NoFolderUpAction = true;
+                    FocusedNode = node;
+                    NavigateService.NavigateTo(typeof(DownloadImagePage), NavigationParameter.Normal);
+                    break;
+                }
             }
         }
 

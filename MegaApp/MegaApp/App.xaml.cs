@@ -143,12 +143,13 @@ namespace MegaApp
 
             //Initialize Folders
             string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
-            if (!Directory.Exists(thumbnailDir))
-                Directory.CreateDirectory(thumbnailDir);
+            if (!Directory.Exists(thumbnailDir)) Directory.CreateDirectory(thumbnailDir);
 
             string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
-            if (!Directory.Exists(previewDir))
-                Directory.CreateDirectory(previewDir);
+            if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
+
+            string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
+            if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

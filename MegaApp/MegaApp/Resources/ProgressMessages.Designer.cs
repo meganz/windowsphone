@@ -106,16 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloading &apos;{0}&apos;....
-        /// </summary>
-        internal static string DownloadNode {
-            get {
-                return ResourceManager.GetString("DownloadNode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Fetching files &amp; folders....
+        ///   Looks up a localized string similar to Fetching files &amp; folders... [{0}].
         /// </summary>
         internal static string FetchingNodes {
             get {

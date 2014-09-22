@@ -34,16 +34,15 @@ namespace MegaApp.Models
             this._baseNode = baseNode;
             this.Name = baseNode.getName();
             this.Size = baseNode.getSize();
-            this.CreationTime = ConvertDateToString(_baseNode.getCreationTime()).ToString("dd MMM yyyy");
+            this.CreationTime = ConvertDateToString(baseNode.getCreationTime()).ToString("dd MMM yyyy");
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseNode.getType();
 
             if(this.Type == MNodeType.TYPE_FOLDER)
                 SetFolderInfo();
-
-            SetThumbnailImage();
         }
-
+        #region Methods
+        
         private void SetFolderInfo()
         {
             int childFolders = this._megaSdk.getNumChildFolders(this._baseNode);
@@ -53,34 +52,15 @@ namespace MegaApp.Models
                 childFiles, childFiles == 1 ? UiResources.SingleFile : UiResources.MultipleFiles);
         }
 
-        #region Methods
-
-        private void SetThumbnailImage()
+        public void SetThumbnailImage()
         {
-            switch (this.Type)
-            {
-                case MNodeType.TYPE_FOLDER:
-                {
-                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/folder.png", UriKind.Relative));
-                    break;
-                }
-                case MNodeType.TYPE_FILE:
-                {
-                    this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
+            if (this.Type == MNodeType.TYPE_FOLDER) return;
 
-                    if (this.IsImage && this._baseNode.hasThumbnail())
-                    {
-                        GetThumbnail();
-                        break;
-                    }
-                    
-                    break;
-                }
-                default:
-                {
-                    this.ThumbnailImage = new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
-                    break;
-                }
+            this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
+
+            if (this.IsImage && this.GetBaseNode().hasThumbnail())
+            {
+                GetThumbnail();
             }
         }
 
@@ -100,8 +80,9 @@ namespace MegaApp.Models
 
         public void SetPreviewImage()
         {
-            if (!this.IsImage) return;
             if (this.PreviewImage != null) return;
+            if (this.IsBusy) return;
+            if (!this.IsImage) return;
             if (this._baseNode.hasPreview())
             {
                 GetPreview();
@@ -122,16 +103,48 @@ namespace MegaApp.Models
             }
         }
 
+        public void SetImage()
+        {
+            if (this.Image != null) return;
+            if (this.IsBusy) return;
+            if (!this.IsImage) return;
+            GetImage();
+        }
+
+        private void GetImage()
+        {
+            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory, this._baseNode.getBase64Handle());
+
+            if (FileService.FileExists(filePath))
+            {
+                LoadImage(filePath);
+            }
+            else
+            {
+                this._megaSdk.startDownload(this._baseNode, filePath, new DownloadTransferListener(this));
+            }
+        }
+
         public void LoadThumbnailImage(string path)
         {
-            var bitmapImage = new BitmapImage(new Uri(path));
+            var bitmapImage = new BitmapImage();
+            bitmapImage.ImageFailed += ThumbnailImageOnImageFailed;
+            bitmapImage.UriSource = new Uri(path);
             this.ThumbnailImage = bitmapImage;
         }
 
         public void LoadPreviewImage(string path)
         {
-            var bitmapImage = new BitmapImage(new Uri(path));
+            var bitmapImage = new BitmapImage();
+            bitmapImage.ImageFailed += PreviewImageOnImageFailed;
+            bitmapImage.UriSource = new Uri(path);
             this.PreviewImage = bitmapImage;
+        }
+
+        public void LoadImage(string path)
+        {
+            var bitmapImage = new BitmapImage(new Uri(path));
+            this.Image = bitmapImage;
         }
 
         /// <summary>
@@ -142,6 +155,21 @@ namespace MegaApp.Models
         private static DateTime ConvertDateToString(ulong time)
         {
             return OriginalDateTime.AddSeconds(time).ToLocalTime();
+        }
+
+        #endregion
+
+        #region Events
+
+        private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        {
+            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png"));
+            this.PreviewImage = bitmapImage;
+        }
+
+        private void ThumbnailImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        {
+            this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
         }
 
         #endregion
@@ -182,10 +210,45 @@ namespace MegaApp.Models
             }
         }
 
+        private BitmapImage _image;
+        public BitmapImage Image
+        {
+            get { return _image; }
+            set
+            {
+                _image = value;
+                OnPropertyChanged("Image");
+            }
+        }
+
+        private ulong _totalBytes;
+        public ulong TotalBytes
+        {
+            get { return _totalBytes; }
+            set
+            {
+                _totalBytes = value;
+                OnPropertyChanged("TotalBytes");
+            }
+        }
+
+        private ulong _transferedBytes;
+        public ulong TransferedBytes
+        {
+            get { return _transferedBytes; }
+            set
+            {
+                _transferedBytes = value;
+                OnPropertyChanged("TransferedBytes");
+            }
+        }
+
+
         public bool IsImage
         {
             get { return ImageService.IsImage(this.Name); }
         }
+
         public MNode GetBaseNode()
         {
             return this._baseNode;

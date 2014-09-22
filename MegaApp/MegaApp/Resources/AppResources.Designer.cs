@@ -97,6 +97,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to downloads\.
+        /// </summary>
+        public static string DownloadsDirectory {
+            get {
+                return ResourceManager.GetString("DownloadsDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /Pages/.
         /// </summary>
         public static string PagesLocation {

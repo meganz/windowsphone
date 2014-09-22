@@ -24,18 +24,19 @@ namespace MegaApp.Models
 
         #region Methods
 
-        public void SharePreview()
-        {
-            //string path = SelectedPreview.PreviewImage.UriSource.ToString();
-            //var shareMediaTask = new ShareMediaTask
-            //{
-            //    FilePath = path // Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory, SelectedPreview.GetBaseNode().getBase64Handle())
-            //};
-            //shareMediaTask.Show();
-        }
-
+       
         #endregion
 
+        private void PreloadPreviews(NodeViewModel selectedPreview)
+        {
+            selectedPreview.SetPreviewImage();
+            int previousIndex = PreviewItems.IndexOf(selectedPreview) - 1;
+            if(previousIndex >= 0)
+                PreviewItems[previousIndex].SetPreviewImage();
+            int nextIndex = PreviewItems.IndexOf(selectedPreview) + 1;
+            if (nextIndex <= PreviewItems.Count-1)
+                PreviewItems[nextIndex].SetPreviewImage(); 
+        }
 
         #region Properties
 
@@ -52,7 +53,7 @@ namespace MegaApp.Models
             set
             {
                 _selectedPreview = value;
-                _selectedPreview.SetPreviewImage();
+                PreloadPreviews(_selectedPreview);
                 OnPropertyChanged("SelectedPreview");
             }
         }

@@ -78,7 +78,7 @@
 				IsAsyncBalanceEnabled="True" 
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-				Loaded="OnListLoaded"				
+				Loaded="OnListLoaded" ItemStateChanged="OnItemStateChanged"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 
