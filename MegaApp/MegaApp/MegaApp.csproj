@@ -97,10 +97,13 @@
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
     <Compile Include="Extensions\SizeExtensions.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
+    <Compile Include="MegaApi\BaseTransferListener.cs" />
+    <Compile Include="MegaApi\DownloadTransferListener.cs" />
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPreviewRequestListener.cs" />
@@ -117,6 +120,7 @@
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\ConfirmAccountViewModel.cs" />
     <Compile Include="Models\DelegateCommand.cs" />
+    <Compile Include="Models\DownloadImageViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MyAccountPageViewModel.cs" />
     <Compile Include="Models\NodeViewModel.cs" />
@@ -124,6 +128,9 @@
     <Compile Include="Models\PreviewImageViewModel.cs" />
     <Compile Include="Pages\ConfirmAccountPage.xaml.cs">
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DownloadImagePage.xaml.cs">
+      <DependentUpon>DownloadImagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -166,11 +173,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Services\AnimationService.cs" />
     <Compile Include="Services\CryptoService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\NavigateService.cs" />
+    <Compile Include="Services\NodeService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
   </ItemGroup>
@@ -230,6 +239,7 @@
     <Content Include="Assets\FileTypes\xls.png" />
     <Content Include="Assets\FileTypes\zip.png" />
     <Content Include="Assets\Images\folder_empty.png" />
+    <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
@@ -273,6 +283,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Pages\ConfirmAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DownloadImagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

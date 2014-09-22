@@ -196,6 +196,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Downloading....
+        /// </summary>
+        public static string DownloadNode {
+            get {
+                return ResourceManager.GetString("DownloadNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to your e-mail address.
         /// </summary>
         public static string EmailWatermark {

@@ -13,5 +13,13 @@ namespace MegaApp.Services
         {
             return File.Exists(path);
         }
+
+        public static void ClearFiles(IEnumerable<string> filesToDelete)
+        {
+            foreach (var file in filesToDelete)
+            {
+                File.Delete(file);
+            }
+        }   
     }
 }

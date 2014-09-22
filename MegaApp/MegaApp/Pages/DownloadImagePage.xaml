@@ -6,26 +6,32 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
-    x:Class="MegaApp.Pages.PreviewImagePage"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
+    x:Class="MegaApp.Pages.DownloadImagePage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-	<Grid x:Name="LayoutRoot" Background="Transparent">        
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,0,72">        
         
 		<telerikPrimitives:RadSlideView 
 			x:Name="SlideViewAndFilmStrip" 
-			ItemTemplate="{StaticResource PreviewSlideViewItemContent}"
-			FilmstripModeItemTemplate="{StaticResource PreviewFilmStripContent}"
-			ItemsSource="{Binding PreviewItems}"
-			SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" 
+			ItemTemplate="{StaticResource DownloadSlideViewItemContent}"
+			FilmstripModeItemTemplate="{StaticResource DownloadFilmStripContent}"
+			ItemsSource="{Binding DownloadItems}"
+			SelectedItem="{Binding SelectedDownload, Mode=TwoWay}" 
 			IsFilmstripModeEnabled="True" 
 			IsLoopingEnabled="False" 
 			SelectionChanged="SlideViewSelectionChanged" 
-			Loaded="OnSlideViewLoaded"
+			Loaded="OnSlideViewLoaded"			
 		/>        
         
 	</Grid>

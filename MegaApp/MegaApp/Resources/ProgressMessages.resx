@@ -132,11 +132,8 @@
   <data name="DownloadLink" xml:space="preserve">
     <value>Retrieving download link...</value>
   </data>
-  <data name="DownloadNode" xml:space="preserve">
-    <value>Downloading '{0}'...</value>
-  </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Fetching files &amp; folders...</value>
+    <value>Fetching files &amp; folders... [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service</comment>
   </data>
   <data name="GetLink" xml:space="preserve">

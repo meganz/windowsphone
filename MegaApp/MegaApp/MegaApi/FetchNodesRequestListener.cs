@@ -8,6 +8,7 @@ using System.Windows;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
@@ -46,9 +47,7 @@ namespace MegaApp.MegaApi
         public void onRequestStart(MegaSDK api, MRequest request)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
-                String.Format("Fetching files & folders...[{0}/{1}]",
-                request.getTransferredBytes().ToStringAndSuffix(),
-                request.getTotalBytes().ToStringAndSuffix())));
+                String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
         }
 
         public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
@@ -58,11 +57,8 @@ namespace MegaApp.MegaApi
 
         public void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, 
-                String.Format("Fetching files & folders...[{0}/{1}]", 
-                request.getTransferredBytes().ToStringAndSuffix(), 
-                request.getTotalBytes().ToStringAndSuffix())));
-           
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
+                String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
         }
 
         #endregion
