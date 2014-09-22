@@ -14,6 +14,8 @@ using MegaApp.Extensions;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Xna.Framework.Media;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {
@@ -55,6 +57,8 @@ namespace MegaApp.Models
         public void SetThumbnailImage()
         {
             if (this.Type == MNodeType.TYPE_FOLDER) return;
+
+            if (this.ThumbnailImage != null) return;
 
             this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
 
@@ -127,24 +131,37 @@ namespace MegaApp.Models
 
         public void LoadThumbnailImage(string path)
         {
-            var bitmapImage = new BitmapImage();
-            bitmapImage.ImageFailed += ThumbnailImageOnImageFailed;
-            bitmapImage.UriSource = new Uri(path);
-            this.ThumbnailImage = bitmapImage;
+            this.ThumbnailImage = null;
+            this.ThumbnailImage = new BitmapImage();
+            this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
+            this.ThumbnailImage.UriSource = new Uri(path);
         }
 
         public void LoadPreviewImage(string path)
         {
-            var bitmapImage = new BitmapImage();
-            bitmapImage.ImageFailed += PreviewImageOnImageFailed;
-            bitmapImage.UriSource = new Uri(path);
-            this.PreviewImage = bitmapImage;
+            this.PreviewImage = null;
+            this.PreviewImage = new BitmapImage();
+            this.PreviewImage.ImageFailed += PreviewImageOnImageFailed;
+            this.PreviewImage.UriSource = new Uri(path);
         }
 
         public void LoadImage(string path)
         {
             var bitmapImage = new BitmapImage(new Uri(path));
             this.Image = bitmapImage;
+        }
+
+        public void SaveImageToCameraRoll()
+        {
+            if (this.Image == null) return;
+
+            if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
+                    MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+
+            if (ImageService.SaveToCameraRoll(this.Name, this.Image))
+                MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
+            else
+                MessageBox.Show(AppMessages.ImageSaveError, AppMessages.ImageSaveError_Title, MessageBoxButton.OK);
         }
 
         /// <summary>

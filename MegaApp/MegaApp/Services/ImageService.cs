@@ -5,11 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using MegaApp.Extensions;
+using Microsoft.Xna.Framework.Media;
 
 namespace MegaApp.Services
 {
     class ImageService
     {
+        public static bool SaveToCameraRoll(string name, BitmapImage bitmapImage)
+        {
+            using (var mediaLibrary = new MediaLibrary())
+            {
+                try
+                {
+                    return mediaLibrary.SavePictureToCameraRoll(name, bitmapImage.ConvertToBytes()) != null;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+               
+            }
+        }
+
         public static bool IsImage(string filename)
         {
             string extension = Path.GetExtension(filename);

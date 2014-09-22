@@ -75,13 +75,13 @@
     <DataTemplate x:Key="DownloadSlideViewItemContent">
         <Grid>
             <slideView:PanAndZoomImage Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
-            <Grid Margin="0,0,0,40" VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,0,40">
             	<Grid.RowDefinitions>
             		<RowDefinition Height="Auto"/>
             		<RowDefinition Height="Auto"/>
             	</Grid.RowDefinitions>
             	<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}"/>
-            	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1"/>
+            	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
             </Grid>
         </Grid>
     </DataTemplate>
@@ -89,7 +89,14 @@
     <DataTemplate x:Key="DownloadFilmStripContent">
         <Grid>
             <Image Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="460"/>
-            <telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold" Margin="0,0,0,40"/>
+            <Grid VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" Margin="0"/>
+            </Grid>
         </Grid>
     </DataTemplate>
 

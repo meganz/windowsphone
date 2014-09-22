@@ -178,9 +178,10 @@ namespace MegaApp.Pages
         {
             switch (e.State)
             {
-                case ItemState.Realizing:
+                case ItemState.Realized:
                 {
-                    if (e.DataItem == null) return;
+                    //|| !LstCloudDrive.IsItemInViewport(e.DataItem)
+                    if (e.DataItem == null ) return;
 
                     ((NodeViewModel) e.DataItem).SetThumbnailImage();
                     break;
