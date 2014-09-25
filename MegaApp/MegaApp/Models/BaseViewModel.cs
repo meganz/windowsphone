@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MegaApp.Models
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
-        public BaseViewModel()
+        protected BaseViewModel()
         {
             this.ControlState = true;
             this.IsBusy = false;

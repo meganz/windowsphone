@@ -8,31 +8,26 @@ namespace MegaApp.Models
 {
     class DownloadImageViewModel : BaseViewModel
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public DownloadImageViewModel(CloudDriveViewModel cloudDriveViewModel)
+        public DownloadImageViewModel(NodeViewModel selectedNode)
         {
-            _cloudDriveViewModel = cloudDriveViewModel;
+            SelectedNode = selectedNode;
         }
 
         #region Properties
 
-        public List<NodeViewModel> DownloadItems
-        {
-            get { return _cloudDriveViewModel.ChildNodes.Where(n => n.IsImage).ToList(); }
-        }
+        private NodeViewModel _selectedNode;
 
-        private NodeViewModel _selectedDownload;
-
-        public NodeViewModel SelectedDownload
+        public NodeViewModel SelectedNode
         {
-            get { return _selectedDownload; }
+            get { return _selectedNode; }
             set
             {
-                _selectedDownload = value;
-                _selectedDownload.SetImage();
-                OnPropertyChanged("SelectedDownload");
+                _selectedNode = value;
+                _selectedNode.SetImage();
+                OnPropertyChanged("SelectedNode");
             }
         }
+
         #endregion
     }
 }

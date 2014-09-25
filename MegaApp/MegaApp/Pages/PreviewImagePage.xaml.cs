@@ -9,6 +9,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Pages
 {
@@ -18,25 +19,34 @@ namespace MegaApp.Pages
 
         public PreviewImagePage()
         {
-            _previewImageViewModel = new PreviewImageViewModel(App.CloudDrive);
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.CloudDrive);
             this.DataContext = _previewImageViewModel;
             _previewImageViewModel.SelectedPreview = App.CloudDrive.FocusedNode;
             
             InitializeComponent();
 
             ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).Text = UiResources.Previous;
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[1]).Text = UiResources.Next;
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[1]).Text = UiResources.GetPreviewLink;
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[2]).Text = UiResources.Next;
         }
         
-        private void SetMoveButtons()
+        private void SetMoveButtons(bool isSlideview = true)
         {
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled = SlideViewAndFilmStrip.PreviousItem != null;
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[1]).IsEnabled = SlideViewAndFilmStrip.NextItem != null;
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled =
+                SlideViewAndFilmStrip.PreviousItem != null && isSlideview;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = isSlideview;
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[2]).IsEnabled =
+                SlideViewAndFilmStrip.NextItem != null && isSlideview;
         }
 
         private void OnNextClick(object sender, System.EventArgs e)
         {
             SlideViewAndFilmStrip.MoveToNextItem();
+        }
+
+        private void OnGetLinkClick(object sender, System.EventArgs e)
+        {
+            _previewImageViewModel.GetPreviewLink();
         }
 
         private void OnPreviousClick(object sender, System.EventArgs e)
@@ -49,9 +59,14 @@ namespace MegaApp.Pages
             SetMoveButtons();
         }
 
-        private void SlideViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OnSlideViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SetMoveButtons();
+        }
+
+        private void OnSlideViewStateChanged(object sender, SlideViewStateChangedArgs e)
+        {
+            SetMoveButtons(e.NewState != SlideViewState.Filmstrip);
         }
         
     }

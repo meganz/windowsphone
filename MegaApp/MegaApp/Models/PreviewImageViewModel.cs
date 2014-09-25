@@ -8,23 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
+using mega;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
+using MegaApp.Services;
 using Microsoft.Phone.Reactive;
 using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {
-    class PreviewImageViewModel: BaseViewModel
+    class PreviewImageViewModel : BaseSdkViewModel
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public PreviewImageViewModel(CloudDriveViewModel cloudDriveViewModel)
+        public PreviewImageViewModel(MegaSDK megaSdk, CloudDriveViewModel cloudDriveViewModel)
+            : base(megaSdk)
         {
             _cloudDriveViewModel = cloudDriveViewModel;
+            GetPreviewsFromCache();
         }
 
         #region Methods
 
-       
+        public void GetPreviewLink()
+        {
+            if (!IsUserOnline()) return;
+
+            MegaService.GetPreviewLink(this.MegaSdk, SelectedPreview);
+        }
+
+        private void GetPreviewsFromCache()
+        {
+            foreach (var previewItem in PreviewItems.Where(p => p.HasPreviewInCache()))
+            {
+                previewItem.LoadPreviewImage(previewItem.PreviewPath);
+            }
+
+            foreach (var previewItem in PreviewItems.Where(p => p.PreviewImage == null && !p.ThumbnailIsDefaultImage))
+            {
+                previewItem.PreviewImage = previewItem.ThumbnailImage;
+            }
+        }
+
         #endregion
 
         private void PreloadPreviews(NodeViewModel selectedPreview)
@@ -42,7 +66,7 @@ namespace MegaApp.Models
 
         public List<NodeViewModel> PreviewItems
         {
-            get { return _cloudDriveViewModel.ChildNodes.Where(n => n.IsImage && n.GetBaseNode().hasPreview()).ToList(); }
+            get { return _cloudDriveViewModel.ChildNodes.Where(n => n.IsImage || n.GetBaseNode().hasPreview()).ToList(); }
         }
 
         private NodeViewModel _selectedPreview;

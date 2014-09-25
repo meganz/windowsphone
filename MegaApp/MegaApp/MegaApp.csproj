@@ -117,6 +117,7 @@
     <Compile Include="MegaApi\CreateFolderRequestListener.cs" />
     <Compile Include="MegaApi\FetchNodesRequestListener.cs" />
     <Compile Include="Models\BaseRequestListenerViewModel.cs" />
+    <Compile Include="Models\BaseSdkViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\ConfirmAccountViewModel.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\MegaService.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\NodeService.cs" />
     <Compile Include="Services\ProgessService.cs" />
