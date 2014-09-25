@@ -10,7 +10,8 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" 
+    Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -24,8 +25,9 @@
 			SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" 
 			IsFilmstripModeEnabled="True" 
 			IsLoopingEnabled="False" 
-			SelectionChanged="SlideViewSelectionChanged" 
-			Loaded="OnSlideViewLoaded"
+			SelectionChanged="OnSlideViewSelectionChanged" 
+			Loaded="OnSlideViewLoaded" 
+			SlideViewStateChanged="OnSlideViewStateChanged"
 		/>        
         
 	</Grid>
@@ -33,6 +35,7 @@
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>

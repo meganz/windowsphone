@@ -9,6 +9,7 @@ using System.Windows.Input;
 
 namespace MegaApp.Models
 {
+    ///mobile_terms.html and /mobile_privacy.html
     class CreateAccountViewModel : BaseRequestListenerViewModel 
     {
         private readonly MegaSDK _megaSdk;

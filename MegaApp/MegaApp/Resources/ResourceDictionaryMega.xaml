@@ -11,14 +11,14 @@
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-   
+
     <!-- TEMPLATES -->
-	<DataTemplate x:Key="MegaNodeListFileItemContent">
-		<Grid Margin="0,0,0,12">
-			<Grid.RowDefinitions>
-				<RowDefinition/>
-				<RowDefinition/>
-			</Grid.RowDefinitions>
+    <DataTemplate x:Key="MegaNodeListFileItemContent">
+        <Grid Margin="0,0,0,12">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
@@ -29,7 +29,7 @@
             <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SizeAndSuffix}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
             <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
         </Grid>
-	</DataTemplate>
+    </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListFolderItemContent">
         <Grid Margin="0,0,0,12">
@@ -51,44 +51,54 @@
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
-        	<Grid.Background>
-        		<ImageBrush Stretch="None" ImageSource="/Assets/Images/folder_empty.png" Opacity="0.3"/>
-        	</Grid.Background>
+            <Grid.Background>
+                <ImageBrush Stretch="None" ImageSource="/Assets/Images/folder_empty.png" Opacity="0.3"/>
+            </Grid.Background>
             <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="PreviewSlideViewItemContent">
         <Grid>
-    		<slideView:PanAndZoomImage Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
-    		<telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.LoadingPreview, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold" Margin="0,0,0,40"/>
-    	</Grid>
+            <slideView:PanAndZoomImage Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
+            <Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+                </Border.Background>
+                <telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.LoadingPreview, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontWeight="Bold" Height="Auto" Width="Auto"/>
+            </Border>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="PreviewFilmStripContent">
         <Grid>
             <Image Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="460"/>
-            <telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Bottom" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.LoadingPreview, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold" Margin="0,0,0,40"/>
+            <Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+                </Border.Background>
+                <telerikPrimitives:RadBusyIndicator HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Portable User Interface" Content="{Binding LocalizedUiResources.LoadingPreview, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsRunning="{Binding IsBusy}" AnimationStyle="AnimationStyle7" Canvas.ZIndex="1" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontWeight="Bold" Height="Auto" Width="Auto"/>
+            </Border>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="DownloadSlideViewItemContent">
         <Grid>
-            <slideView:PanAndZoomImage Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
+            <slideView:PanAndZoomImage Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface" ZoomMode="FitToPhysicalSize"/>
             <Grid VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,0,40">
-            	<Grid.RowDefinitions>
-            		<RowDefinition Height="Auto"/>
-            		<RowDefinition Height="Auto"/>
-            	</Grid.RowDefinitions>
-            	<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}"/>
-            	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}"/>
+                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
             </Grid>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="DownloadFilmStripContent">
         <Grid>
-            <Image Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="460"/>
+            <Image Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="Auto" Margin="10,0"/>
             <Grid VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -104,7 +114,7 @@
     <DataTemplate x:Key="ShowShareLinktButtons">
         <telerikPrimitives:RadWrapPanel x:Name="PART_ButtonsPanel" ItemWidth="150" />
     </DataTemplate>
-    
+
     <!-- MOVE DIALOG CONTENT DATATEMPLATE -->
     <DataTemplate x:Key="MoveDialogContent">
         <StackPanel>
@@ -121,6 +131,6 @@
 
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
-    
-	<!-- Resource dictionary entries should be defined here. -->
+
+    <!-- Resource dictionary entries should be defined here. -->
 </ResourceDictionary>

@@ -86,15 +86,16 @@
 						OpenGesture="Hold" 
 						x:Name="CloudDriveMenu" 
 						Opening="OnMenuOpening">
-						<telerikPrimitives:RadContextMenuItem 
+						<!--<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnPreviewItem" 
 							Command="{Binding PreviewItemCommand}"
 							Content="{Binding LocalizedUiResources.Preview, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								/>
-						<!--<telerikPrimitives:RadContextMenuItem 
-							x:Name="BtnDownloadItemCloud" 
-							Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								/>-->
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnDownloadItemCloud" 
+							Command="{Binding DownloadItemCommand}"
+							Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								/>
 						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnGetPreviewLink" 
 							Command="{Binding GetPreviewLinkItemCommand}"

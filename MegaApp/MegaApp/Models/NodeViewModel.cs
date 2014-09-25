@@ -44,7 +44,12 @@ namespace MegaApp.Models
                 SetFolderInfo();
         }
         #region Methods
-        
+
+        public bool HasPreviewInCache()
+        {
+            return FileService.FileExists(PreviewPath);
+        }
+
         private void SetFolderInfo()
         {
             int childFolders = this._megaSdk.getNumChildFolders(this._baseNode);
@@ -60,6 +65,7 @@ namespace MegaApp.Models
 
             if (this.ThumbnailImage != null) return;
 
+            ThumbnailIsDefaultImage = true;
             this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
 
             if (this.IsImage && this.GetBaseNode().hasThumbnail())
@@ -70,40 +76,40 @@ namespace MegaApp.Models
 
         private void GetThumbnail()
         {
-            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory, this._baseNode.getBase64Handle());
-
-            if (FileService.FileExists(filePath))
+            if (FileService.FileExists(ThumbnailPath))
             {
-                LoadThumbnailImage(filePath);
+                LoadThumbnailImage(ThumbnailPath);
             }
             else
             {
-                this._megaSdk.getThumbnail(this._baseNode, filePath, new GetThumbnailRequestListener(this));
+                this._megaSdk.getThumbnail(this._baseNode, ThumbnailPath, new GetThumbnailRequestListener(this));
             }
         }
 
         public void SetPreviewImage()
         {
-            if (this.PreviewImage != null) return;
+            if (this.PreviewImage != null && this.PreviewImage != this.ThumbnailImage) return;
             if (this.IsBusy) return;
             if (!this.IsImage) return;
             if (this._baseNode.hasPreview())
             {
                 GetPreview();
             }
+            else
+            {
+                GetImage();
+            }
         }
 
         private void GetPreview()
         {
-            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory, this._baseNode.getBase64Handle());
-
-            if (FileService.FileExists(filePath))
+            if (FileService.FileExists(PreviewPath))
             {
-                LoadPreviewImage(filePath);
+                LoadPreviewImage(PreviewPath);
             }
             else
             {
-                this._megaSdk.getPreview(this._baseNode, filePath, new GetPreviewRequestListener(this));
+                this._megaSdk.getPreview(this._baseNode, PreviewPath, new GetPreviewRequestListener(this));
             }
         }
 
@@ -117,24 +123,24 @@ namespace MegaApp.Models
 
         private void GetImage()
         {
-            string filePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory, this._baseNode.getBase64Handle());
-
-            if (FileService.FileExists(filePath))
+            if (FileService.FileExists(ImagePath))
             {
-                LoadImage(filePath);
+                LoadImage(ImagePath);
             }
             else
             {
-                this._megaSdk.startDownload(this._baseNode, filePath, new DownloadTransferListener(this));
+                this._megaSdk.startDownload(this._baseNode, ImagePath, new DownloadTransferListener(this));
             }
         }
 
         public void LoadThumbnailImage(string path)
         {
+            ThumbnailIsDefaultImage = false;
             this.ThumbnailImage = null;
             this.ThumbnailImage = new BitmapImage();
             this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
             this.ThumbnailImage.UriSource = new Uri(path);
+
         }
 
         public void LoadPreviewImage(string path)
@@ -147,8 +153,12 @@ namespace MegaApp.Models
 
         public void LoadImage(string path)
         {
-            var bitmapImage = new BitmapImage(new Uri(path));
-            this.Image = bitmapImage;
+            this.Image = null;
+            this.Image = new BitmapImage {UriSource = new Uri(path)};
+
+            if (this.GetBaseNode().hasPreview()) return;
+
+            LoadPreviewImage(path);
         }
 
         public void SaveImageToCameraRoll()
@@ -204,6 +214,8 @@ namespace MegaApp.Models
         public string SizeAndSuffix { get; private set; }
 
         public string FolderInfo { get; private set; }
+
+        public bool ThumbnailIsDefaultImage { get; set; }
 
         private BitmapImage _thumbnailImage;
         public BitmapImage ThumbnailImage
@@ -264,6 +276,33 @@ namespace MegaApp.Models
         public bool IsImage
         {
             get { return ImageService.IsImage(this.Name); }
+        }
+
+        public string ThumbnailPath
+        {
+            get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
+                                      AppResources.ThumbnailsDirectory, 
+                                      this.GetBaseNode().getBase64Handle()); }
+        }
+
+        public string PreviewPath
+        {
+            get
+            {
+                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                    AppResources.PreviewsDirectory,
+                                    this.GetBaseNode().getBase64Handle());
+            }
+        }
+
+        public string ImagePath
+        {
+            get
+            {
+                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                    AppResources.DownloadsDirectory,
+                                    this.GetBaseNode().getBase64Handle());
+            }
         }
 
         public MNode GetBaseNode()

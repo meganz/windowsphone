@@ -6,8 +6,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+	xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
     x:Class="MegaApp.Pages.DownloadImagePage"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" 
+    Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -20,27 +22,33 @@
 	<phone:PhoneApplicationPage.Foreground>
 		<StaticResource ResourceKey="PhoneForegroundBrush"/>
 	</phone:PhoneApplicationPage.Foreground>
-	<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,0,72">        
+	
+	<Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding SelectedNode}">        
         
-		<telerikPrimitives:RadSlideView 
-			x:Name="SlideViewAndFilmStrip" 
-			ItemTemplate="{StaticResource DownloadSlideViewItemContent}"
-			FilmstripModeItemTemplate="{StaticResource DownloadFilmStripContent}"
-			ItemsSource="{Binding DownloadItems}"
-			SelectedItem="{Binding SelectedDownload, Mode=TwoWay}" 
-			IsFilmstripModeEnabled="True" 
-			IsLoopingEnabled="False" 
-			SelectionChanged="SlideViewSelectionChanged" 
-			Loaded="OnSlideViewLoaded"			
-		/>        
+		<slideView:PanAndZoomImage 
+			x:Name="OriginalImage" 
+			Source="{Binding Image}"			
+		/>
+		<Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
+			<Border.Background>
+				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+			</Border.Background>  
+			<Grid VerticalAlignment="Center">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8"/>
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
+			</Grid>		    
+        
+		</Border>		    
         
 	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>	
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>	
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
+		<shell:ApplicationBar>				
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>							
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

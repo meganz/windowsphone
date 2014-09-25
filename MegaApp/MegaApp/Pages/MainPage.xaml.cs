@@ -60,10 +60,17 @@ namespace MegaApp.Pages
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             
-            if (e.NavigationMode == NavigationMode.Back && !App.CloudDrive.NoFolderUpAction)
+            if (e.NavigationMode == NavigationMode.Back)
             {
-                App.CloudDrive.GoFolderUp();
-                _navParam = NavigationParameter.Browsing;
+                if (!App.CloudDrive.NoFolderUpAction)
+                {
+                    App.CloudDrive.GoFolderUp();
+                    _navParam = NavigationParameter.Browsing;
+                }
+                else
+                {
+                    _navParam = NavigationParameter.Normal;
+                }
             }
 
             App.CloudDrive.NoFolderUpAction = false;
@@ -128,9 +135,10 @@ namespace MegaApp.Pages
                 App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
                 BtnGetPreviewLink.Visibility = visibility;
-                BtnPreviewItem.Visibility = visibility;
+                BtnDownloadItemCloud.Visibility = visibility;
             }
         }
+
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
             if (_navParam != NavigationParameter.Browsing) return;

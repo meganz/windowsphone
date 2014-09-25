@@ -22,13 +22,11 @@ using Telerik.Windows.Controls.InputPrompt;
 
 namespace MegaApp.Models
 {
-    public class CloudDriveViewModel : BaseViewModel
+    public class CloudDriveViewModel : BaseSdkViewModel
     {
-        private readonly MegaSDK _megaSdk;
-
         public CloudDriveViewModel(MegaSDK megaSdk)
+            : base(megaSdk)
         {
-            this._megaSdk = megaSdk;
             this.MoveItemMode = false;
             this.NoFolderUpAction = false;
             this.CurrentRootNode = null;
@@ -38,9 +36,9 @@ namespace MegaApp.Models
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
-            this.PreviewItemCommand = new DelegateCommand(this.PreviewItem);
+            this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
         }
-
+       
         #region Commands
 
         public ICommand RemoveItemCommand { get; set; }
@@ -48,18 +46,16 @@ namespace MegaApp.Models
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
 
-        public ICommand PreviewItemCommand { get; set; }
-
         #endregion
 
         #region Public Methods
 
         public void GoFolderUp()
         {
-            MNode parentNode = this._megaSdk.getParentNode(this.CurrentRootNode.GetBaseNode());
+            MNode parentNode = this.MegaSdk.getParentNode(this.CurrentRootNode.GetBaseNode());
 
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN )
-                parentNode = this._megaSdk.getRootNode();
+                parentNode = this.MegaSdk.getRootNode();
             
             this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode);
             CalculateBreadCrumbs(this.CurrentRootNode);
@@ -76,8 +72,8 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
 
-            if(this._megaSdk.checkMove(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode()).getErrorCode() == MErrorType.API_OK)
-                this._megaSdk.moveNode(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode(), new MoveNodeRequestListener(this));
+            if (this.MegaSdk.checkMove(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode()).getErrorCode() == MErrorType.API_OK)
+                this.MegaSdk.moveNode(FocusedNode.GetBaseNode(), selectedRootNode.GetBaseNode(), new MoveNodeRequestListener(this));
         }
 
         public async void OpenLink()
@@ -88,23 +84,23 @@ namespace MegaApp.Models
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
-            this._megaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
+            this.MegaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
         }
 
         public void ImportLink(string link)
         {
-            this._megaSdk.importFileLink(link, CurrentRootNode.GetBaseNode(), new ImportFileRequestListener(this));;
+            this.MegaSdk.importFileLink(link, CurrentRootNode.GetBaseNode(), new ImportFileRequestListener(this)); ;
         }
 
         public void LoadNodes()
         {
             this.ChildNodes.Clear();
 
-            MNodeList nodeList = this._megaSdk.getChildren(this.CurrentRootNode.GetBaseNode());
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetBaseNode());
 
             for (int i = 0; i < nodeList.size(); i++)
             {
-                ChildNodes.Add(new NodeViewModel(this._megaSdk, nodeList.get(i)));
+                ChildNodes.Add(new NodeViewModel(this.MegaSdk, nodeList.get(i)));
             }
         }
 
@@ -122,7 +118,7 @@ namespace MegaApp.Models
                     if (!node.IsImage) return;
                     this.NoFolderUpAction = true;
                     FocusedNode = node;
-                    NavigateService.NavigateTo(typeof(DownloadImagePage), NavigationParameter.Normal);
+                    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
                     break;
                 }
             }
@@ -136,7 +132,7 @@ namespace MegaApp.Models
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
-            this._megaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetBaseNode(), new CreateFolderRequestListener(this));
+            this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetBaseNode(), new CreateFolderRequestListener(this));
         }
 
         public void FetchNodes(NodeViewModel rootRefreshNode = null)
@@ -144,7 +140,7 @@ namespace MegaApp.Models
             this.ChildNodes.Clear();
 
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode);
-            this._megaSdk.fetchNodes(fetchNodesRequestListener);
+            this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
         public void SelectFolder(NodeViewModel selectedNode)
@@ -168,10 +164,10 @@ namespace MegaApp.Models
             this.BreadCrumbs.Add(currentRootNode);
 
             MNode parentNode = currentRootNode.GetBaseNode();
-            while ((parentNode = this._megaSdk.getParentNode(parentNode)).getType() !=
+            while ((parentNode = this.MegaSdk.getParentNode(parentNode)).getType() !=
                    MNodeType.TYPE_ROOT)
             {
-                this.BreadCrumbs.Insert(0, new NodeViewModel(this._megaSdk, parentNode));
+                this.BreadCrumbs.Insert(0, new NodeViewModel(this.MegaSdk, parentNode));
             }
 
         }
@@ -179,15 +175,14 @@ namespace MegaApp.Models
         private void GetPreviewLink(object obj)
         {
             if (!IsUserOnline()) return;
-            
-            this._megaSdk.exportNode(FocusedNode.GetBaseNode(), new ExportNodeRequestListener());
 
+            MegaService.GetPreviewLink(this.MegaSdk, FocusedNode);
         }
 
-        private void PreviewItem(object obj)
+        private void DownloadItem(object obj)
         {
             this.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
+            NavigateService.NavigateTo(typeof(DownloadImagePage), NavigationParameter.Normal);
         }
 
         private void RemoveItem(object obj)
@@ -197,7 +192,7 @@ namespace MegaApp.Models
             if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, FocusedNode.Name), AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) ==
                 MessageBoxResult.Cancel) return;
 
-            this._megaSdk.moveNode(FocusedNode.GetBaseNode(), this._megaSdk.getRubbishNode(), new RemoveNodeRequestListener(this));
+            this.MegaSdk.moveNode(FocusedNode.GetBaseNode(), this.MegaSdk.getRubbishNode(), new RemoveNodeRequestListener(this));
         }
 
         private async void RenameItem(object obj)
@@ -212,17 +207,7 @@ namespace MegaApp.Models
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
-            this._megaSdk.renameNode(FocusedNode.GetBaseNode(), inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
-        }
-
-        private bool IsUserOnline()
-        {
-            bool isOnline = Convert.ToBoolean(this._megaSdk.isLoggedIn());
-
-            if (!isOnline)
-                MessageBox.Show(AppMessages.UserNotOnline, AppMessages.UserNotOnline_Title, MessageBoxButton.OK);
-
-            return isOnline;
+            this.MegaSdk.renameNode(FocusedNode.GetBaseNode(), inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
         }
 
         #endregion

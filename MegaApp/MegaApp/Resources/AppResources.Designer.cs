@@ -142,7 +142,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://mega.co.nz/#terms.
+        ///   Looks up a localized string similar to https://mega.co.nz/mobile_terms.html.
         /// </summary>
         public static string TermsOfUseUrl {
             get {
