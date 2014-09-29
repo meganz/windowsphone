@@ -54,5 +54,12 @@ namespace MegaApp.MegaApi
                 _node.TransferedBytes = transfer.getTransferredBytes();
             });
         }
+
+        //Will be called only for transfers started by startStreaming
+        //Return true to continue getting data, false to stop the streaming
+        public virtual bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
+        {
+            return false;
+        }
     }
 }
