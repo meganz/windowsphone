@@ -9,6 +9,7 @@ using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Models;
+using MegaApp.MegaApi;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Resources;
@@ -137,8 +138,7 @@ namespace MegaApp
             RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
-            // @"\" necessay to use cache
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MEGARandomNumberProvider());
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             //Initialize Folders
