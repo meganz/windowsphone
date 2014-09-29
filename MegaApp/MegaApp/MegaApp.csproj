@@ -108,6 +108,7 @@
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPreviewRequestListener.cs" />
+    <Compile Include="MegaApi\MEGARandomNumberProvider.cs" />
     <Compile Include="MegaApi\MoveNodeRequestListener.cs" />
     <Compile Include="MegaApi\ImportFileRequestListener.cs" />
     <Compile Include="MegaApi\RenameNodeRequestListener.cs" />
