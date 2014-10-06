@@ -39,12 +39,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.GetPreviewFailed; }
+            get { return AppMessages.GetThumbnailFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.GetPreviewFailed_Title; }
+            get { return AppMessages.GetThumbnailFailed_Title; }
         }
 
         protected override string SuccessMessage

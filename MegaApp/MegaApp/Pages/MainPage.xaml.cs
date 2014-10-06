@@ -197,24 +197,35 @@ namespace MegaApp.Pages
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
         {
-            switch (e.State)
+            foreach (var item in LstCloudDrive.ViewportItems)
             {
-                case ItemState.Realized:
-                {
-                    if (e.DataItem == null ) return;
-                    if (!LstCloudDrive.IsItemInViewport(e.DataItem)) return;
+                ((NodeViewModel)item.DataContext).SetThumbnailImage();
+            }
+        }
 
-                    ((NodeViewModel) e.DataItem).SetThumbnailImage();
-                    break;
-                }
-                case ItemState.Recycled:
-                {
-                    if (e.DataItem == null) return;
-                    if (LstCloudDrive.IsItemInViewport(e.DataItem)) return;
+        private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
+        {
+            foreach (var item in LstCloudDrive.ViewportItems)
+            {
+                ((NodeViewModel)item.DataContext).SetThumbnailImage();
+            }
+        }
 
-                    ((NodeViewModel)e.DataItem).ReleaseThumbnailImage();
-                    break;
-                }
+        private void OnGoToTopTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            object item = App.CloudDrive.ChildNodes.FirstOrDefault();
+            if (item == null) return;
+            LstCloudDrive.BringIntoView(item);
+        }
+
+        private void OnGoToBottomTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            object item = App.CloudDrive.ChildNodes.LastOrDefault();
+            if (item == null) return;
+            LstCloudDrive.BringIntoView(item);
+            foreach (var viewItems in LstCloudDrive.ViewportItems)
+            {
+                ((NodeViewModel)viewItems.DataContext).SetThumbnailImage();
             }
         }
     }

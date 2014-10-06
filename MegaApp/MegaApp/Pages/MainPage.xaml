@@ -63,12 +63,16 @@
 
         <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeExtraLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}"/>
-		</StackPanel>
+			<TextBlock x:Name="TxtAppName" Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+			<Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
+			<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
+				<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" />
+				<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" />
+			</StackPanel>
+        </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-28,12,0">
 
 			<telerikPrimitives:RadDataBoundListBox 
 				x:Name="LstCloudDrive" 				
@@ -79,7 +83,7 @@
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 				Loaded="OnListLoaded" 
-                ItemStateChanged="OnItemStateChanged"				
+                ItemStateChanged="OnItemStateChanged" ScrollStateChanged="OnScrollStateChanged"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 

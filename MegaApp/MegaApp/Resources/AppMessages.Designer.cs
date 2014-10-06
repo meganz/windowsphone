@@ -313,6 +313,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve thumbnail [{0}].
+        /// </summary>
+        internal static string GetThumbnailFailed {
+            get {
+                return ResourceManager.GetString("GetThumbnailFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting thumbnail failed.
+        /// </summary>
+        internal static string GetThumbnailFailed_Title {
+            get {
+                return ResourceManager.GetString("GetThumbnailFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image successful exported to camera roll.
         /// </summary>
         internal static string ImageSaved {
