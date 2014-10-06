@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
@@ -61,9 +62,9 @@ namespace MegaApp.Models
 
         public void SetThumbnailImage()
         {
-            if (this.Type == MNodeType.TYPE_FOLDER) return;
-
             if (this.ThumbnailImage != null) return;
+
+            if (this.Type == MNodeType.TYPE_FOLDER) return;
 
             ThumbnailIsDefaultImage = true;
             this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
@@ -72,6 +73,11 @@ namespace MegaApp.Models
             {
                 GetThumbnail();
             }
+        }
+
+        public void ReleaseThumbnailImage()
+        {
+            this.ThumbnailImage = null;
         }
 
         private void GetThumbnail()
@@ -91,7 +97,8 @@ namespace MegaApp.Models
             if (this.PreviewImage != null && this.PreviewImage != this.ThumbnailImage) return;
             if (this.IsBusy) return;
             if (!this.IsImage) return;
-            if (this._baseNode.hasPreview())
+          
+            if (this.GetBaseNode().hasPreview())
             {
                 GetPreview();
             }
@@ -190,7 +197,7 @@ namespace MegaApp.Models
 
         private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
         {
-            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png"));
+            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
             this.PreviewImage = bitmapImage;
         }
 
