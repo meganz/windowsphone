@@ -188,10 +188,18 @@ namespace MegaApp.Pages
             {
                 case ItemState.Realized:
                 {
-                    //|| !LstCloudDrive.IsItemInViewport(e.DataItem)
                     if (e.DataItem == null ) return;
+                    if (!LstCloudDrive.IsItemInViewport(e.DataItem)) return;
 
                     ((NodeViewModel) e.DataItem).SetThumbnailImage();
+                    break;
+                }
+                case ItemState.Recycled:
+                {
+                    if (e.DataItem == null) return;
+                    if (LstCloudDrive.IsItemInViewport(e.DataItem)) return;
+
+                    ((NodeViewModel)e.DataItem).ReleaseThumbnailImage();
                     break;
                 }
             }

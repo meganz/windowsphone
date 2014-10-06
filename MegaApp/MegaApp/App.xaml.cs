@@ -5,10 +5,12 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Windows.ApplicationModel;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Models;
+using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Resources;
@@ -26,6 +28,7 @@ namespace MegaApp
 
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -63,18 +66,27 @@ namespace MegaApp
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+
+            var diagnostics = new RadDiagnostics
+            {
+                EmailTo = "megabeta@goedware.com"
+            };
+            diagnostics.Init();
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            // Initialize Telerik Diagnostics
+            ApplicationUsageHelper.Init(AppService.GetAppVersion());
         }
 
         // Code to execute when the application is activated (brought to foreground)
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            ApplicationUsageHelper.OnApplicationActivated();
         }
 
         // Code to execute when the application is deactivated (sent to background)

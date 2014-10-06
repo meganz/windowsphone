@@ -176,6 +176,7 @@
       <DependentUpon>UiResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\AnimationService.cs" />
+    <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\CryptoService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
