@@ -247,6 +247,8 @@
     <Content Include="Assets\FileTypes\xls.png" />
     <Content Include="Assets\FileTypes\zip.png" />
     <Content Include="Assets\Images\folder_empty.png" />
+    <Content Include="Assets\Images\go_to_bottom.png" />
+    <Content Include="Assets\Images\go_to_top.png" />
     <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
@@ -275,6 +277,7 @@
     <EmbeddedResource Include="Resources\AppMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

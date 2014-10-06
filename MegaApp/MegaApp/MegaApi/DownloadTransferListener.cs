@@ -22,12 +22,13 @@ namespace MegaApp.MegaApi
 
         public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
-             Deployment.Current.Dispatcher.BeginInvoke(() =>
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 _node.TotalBytes = transfer.getTotalBytes();
                 _node.TransferedBytes = transfer.getTransferredBytes();
                 _node.IsBusy = false;
-                _node.LoadImage(Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,transfer.getFileName()));
+                _node.IsNotTransferring = true;
+                _node.LoadImage(_node.ImagePath);
             });
         }
 
@@ -49,9 +50,12 @@ namespace MegaApp.MegaApi
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
              Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
+             {
                 _node.TotalBytes = transfer.getTotalBytes();
                 _node.TransferedBytes = transfer.getTransferredBytes();
+
+                 if(_node.TransferedBytes > 0)
+                     _node.IsNotTransferring = false;
             });
         }
 

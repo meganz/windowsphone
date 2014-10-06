@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using Windows.Storage;
+﻿using System.Threading;
+using Windows.Foundation.Metadata;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Xna.Framework.Media;
-using Telerik.Windows.Controls;
+using System;
+using System.IO;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using Windows.Storage;
 
 namespace MegaApp.Models
 {
@@ -43,6 +36,8 @@ namespace MegaApp.Models
 
             if(this.Type == MNodeType.TYPE_FOLDER)
                 SetFolderInfo();
+
+            this.IsNotTransferring = true;
         }
         #region Methods
 
@@ -68,16 +63,11 @@ namespace MegaApp.Models
 
             ThumbnailIsDefaultImage = true;
             this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
-
+            
             if (this.IsImage && this.GetBaseNode().hasThumbnail())
             {
                 GetThumbnail();
             }
-        }
-
-        public void ReleaseThumbnailImage()
-        {
-            this.ThumbnailImage = null;
         }
 
         private void GetThumbnail()
@@ -161,7 +151,9 @@ namespace MegaApp.Models
         public void LoadImage(string path)
         {
             this.Image = null;
-            this.Image = new BitmapImage {UriSource = new Uri(path)};
+            this.Image = new BitmapImage();
+            this.Image.ImageFailed += ImageOnImageFailed;
+            this.Image.UriSource = new Uri(path);
 
             if (this.GetBaseNode().hasPreview()) return;
 
@@ -195,8 +187,16 @@ namespace MegaApp.Models
 
         #region Events
 
+        private void ImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        {
+            MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
+            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
+            this.Image = bitmapImage;
+        }
+
         private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
         {
+            MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
             var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
             this.PreviewImage = bitmapImage;
         }
@@ -223,6 +223,17 @@ namespace MegaApp.Models
         public string FolderInfo { get; private set; }
 
         public bool ThumbnailIsDefaultImage { get; set; }
+
+        private bool _isNotTransferring;
+        public bool IsNotTransferring
+        {
+            get { return _isNotTransferring; }
+            set
+            {
+                _isNotTransferring = value;
+                OnPropertyChanged("IsNotTransferring");
+            }
+        }
 
         private BitmapImage _thumbnailImage;
         public BitmapImage ThumbnailImage
