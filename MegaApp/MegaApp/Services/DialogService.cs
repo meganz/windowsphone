@@ -36,7 +36,7 @@ namespace MegaApp.Services
                     shareLinkTask.Show();
                     break;
                 }
-                /// Copy button clicked
+                // Copy button clicked
                 case 1:
                 {
                     Clipboard.SetText(link);
@@ -62,7 +62,7 @@ namespace MegaApp.Services
                         cloudDrive.ImportLink(link);
                         break;
                     }
-                /// Download button clicked
+                // Download button clicked
                 case 1:
                     {
                         //cloudDrive.ImportLink(link);

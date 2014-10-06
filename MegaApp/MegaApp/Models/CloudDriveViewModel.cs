@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using Windows.Security.Authentication.OnlineId;
 using mega;
 using MegaApp.Classes;
@@ -30,9 +31,9 @@ namespace MegaApp.Models
             this.MoveItemMode = false;
             this.NoFolderUpAction = false;
             this.CurrentRootNode = null;
+            this.BreadCrumbNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
-
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
@@ -63,9 +64,31 @@ namespace MegaApp.Models
 
         public void GoToFolder(NodeViewModel folder)
         {
+            this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
             CalculateBreadCrumbs(this.CurrentRootNode);
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
+        }
+
+        public void GoToRoot()
+        {
+            GoToFolder(new NodeViewModel(this.MegaSdk, MegaSdk.getRootNode()));
+        }
+
+        public int CountBreadCrumbs()
+        {
+            int result = 0;
+            MNode parentNode = null;
+            MNode startNode = this.BreadCrumbNode.GetBaseNode();
+
+            while (parentNode == null || parentNode.getBase64Handle() != this.CurrentRootNode.GetBaseNode().getBase64Handle())
+            {
+                parentNode = this.MegaSdk.getParentNode(startNode);
+                startNode = parentNode;
+                result++;
+            }
+
+            return result;
         }
 
         public void MoveItem(NodeViewModel selectedRootNode)
