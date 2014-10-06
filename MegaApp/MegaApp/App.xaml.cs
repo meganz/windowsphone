@@ -1,20 +1,17 @@
-﻿using System;
+﻿using mega;
+using MegaApp.Classes;
+using MegaApp.Models;
+using MegaApp.Resources;
+using MegaApp.Services;
+using Microsoft.Phone.Shell;
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
-using Windows.ApplicationModel;
-using Windows.Storage;
-using mega;
-using MegaApp.Classes;
-using MegaApp.Models;
-using MegaApp.Services;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using MegaApp.Resources;
 using Telerik.Windows.Controls;
+using Windows.Storage;
 
 namespace MegaApp
 {

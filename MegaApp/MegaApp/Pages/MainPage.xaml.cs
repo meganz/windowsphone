@@ -40,11 +40,17 @@ namespace MegaApp.Pages
             this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstCloudDrive);
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+        }
+
+        private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
+        {
+            App.CloudDrive.GoToRoot();
         }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
-            //App.CloudDrive.GoToFolder(e.Item as NodeViewModel);
+            App.CloudDrive.GoToFolder(e.Item as NodeViewModel);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -83,6 +89,13 @@ namespace MegaApp.Pages
                     NavigationService.RemoveBackEntry();
                     
                     App.CloudDrive.FetchNodes();
+                    break;
+                }
+                case NavigationParameter.BreadCrumb:
+                {
+                    int breadCrumbs = App.CloudDrive.CountBreadCrumbs();
+                    for (int x = 0; x <= breadCrumbs; x++)
+                        NavigationService.RemoveBackEntry();
                     break;
                 }
                 case NavigationParameter.ImportLinkLaunch:
@@ -141,7 +154,7 @@ namespace MegaApp.Pages
 
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
-            if (_navParam != NavigationParameter.Browsing) return;
+            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
             
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
