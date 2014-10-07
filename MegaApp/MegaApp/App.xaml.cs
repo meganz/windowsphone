@@ -1,12 +1,12 @@
 ﻿using mega;
 using MegaApp.Classes;
+using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Shell;
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
@@ -63,10 +63,10 @@ namespace MegaApp
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
-
+            // Create Telerik Diagnostics with support e-mail address
             var diagnostics = new RadDiagnostics
             {
-                EmailTo = "megabeta@goedware.com"
+                EmailTo = AppResources.DiagnosticsEmailAddress
             };
             diagnostics.Init();
         }
@@ -75,7 +75,7 @@ namespace MegaApp
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
-            // Initialize Telerik Diagnostics
+            // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
         }
 
@@ -83,6 +83,7 @@ namespace MegaApp
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
         }
 
@@ -146,18 +147,11 @@ namespace MegaApp
             RootFrame.UriMapper = new AssociationUriMapper();
 
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path);
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             CloudDrive = new CloudDriveViewModel(MegaSdk);
 
             //Initialize Folders
-            string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
-            if (!Directory.Exists(thumbnailDir)) Directory.CreateDirectory(thumbnailDir);
-
-            string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
-            if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
-
-            string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
-            if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
+            AppService.InitializeAppFolders();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

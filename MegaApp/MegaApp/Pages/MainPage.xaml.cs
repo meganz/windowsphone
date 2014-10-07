@@ -134,7 +134,7 @@ namespace MegaApp.Pages
             App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
         }
 
-        private void OnMenuOpening(object sender, Telerik.Windows.Controls.ContextMenuOpeningEventArgs e)
+        private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
             if (focusedListBoxItem == null || focusedListBoxItem.DataContext == null || !(focusedListBoxItem.DataContext is NodeViewModel))
@@ -159,7 +159,7 @@ namespace MegaApp.Pages
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
-        private void OnRefreshClick(object sender, System.EventArgs e)
+        private void OnRefreshClick(object sender, EventArgs e)
         {
             FileService.ClearFiles(
                 NodeService.GetFiles(App.CloudDrive.ChildNodes,
@@ -197,36 +197,30 @@ namespace MegaApp.Pages
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
         {
-            foreach (var item in LstCloudDrive.ViewportItems)
-            {
-                ((NodeViewModel)item.DataContext).SetThumbnailImage();
-            }
+            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
 
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
-            foreach (var item in LstCloudDrive.ViewportItems)
-            {
-                ((NodeViewModel)item.DataContext).SetThumbnailImage();
-            }
+            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
 
         private void OnGoToTopTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            object item = App.CloudDrive.ChildNodes.FirstOrDefault();
-            if (item == null) return;
-            LstCloudDrive.BringIntoView(item);
+            if (!App.CloudDrive.HasChildNodes()) return;
+            
+            LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.First());
+            
+            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
 
         private void OnGoToBottomTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            object item = App.CloudDrive.ChildNodes.LastOrDefault();
-            if (item == null) return;
-            LstCloudDrive.BringIntoView(item);
-            foreach (var viewItems in LstCloudDrive.ViewportItems)
-            {
-                ((NodeViewModel)viewItems.DataContext).SetThumbnailImage();
-            }
+            if (!App.CloudDrive.HasChildNodes()) return;
+           
+            LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
+
+            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
     }
     

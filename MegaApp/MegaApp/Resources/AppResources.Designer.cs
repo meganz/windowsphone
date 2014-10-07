@@ -97,6 +97,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to megabeta@goedware.com.
+        /// </summary>
+        public static string DiagnosticsEmailAddress {
+            get {
+                return ResourceManager.GetString("DiagnosticsEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to downloads\.
         /// </summary>
         public static string DownloadsDirectory {
