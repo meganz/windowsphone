@@ -44,7 +44,7 @@ namespace MegaApp.MegaApi
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)

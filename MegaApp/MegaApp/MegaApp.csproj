@@ -101,6 +101,7 @@
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
     <Compile Include="Extensions\BitmapExtensions.cs" />
     <Compile Include="Extensions\SizeExtensions.cs" />
+    <Compile Include="Interfaces\IUiService.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
     <Compile Include="MegaApi\BaseTransferListener.cs" />
@@ -108,7 +109,7 @@
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPreviewRequestListener.cs" />
-    <Compile Include="MegaApi\MEGARandomNumberProvider.cs" />
+    <Compile Include="MegaApi\MegaRandomNumberProvider.cs" />
     <Compile Include="MegaApi\MoveNodeRequestListener.cs" />
     <Compile Include="MegaApi\ImportFileRequestListener.cs" />
     <Compile Include="MegaApi\RenameNodeRequestListener.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="Services\NodeService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Services\UiService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -369,6 +371,7 @@
       <Name>mega</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -9,7 +9,7 @@ using mega;
 
 namespace MegaApp.MegaApi
 {
-    class MegaRandomNumberProvider
+    class MegaRandomNumberProvider : MRandomNumberProvider
     {
         private static readonly RNGCryptoServiceProvider RngCsp = new RNGCryptoServiceProvider();
 

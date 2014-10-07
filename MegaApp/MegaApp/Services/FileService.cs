@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MegaApp.Services
 {
@@ -20,6 +16,6 @@ namespace MegaApp.Services
             {
                 File.Delete(file);
             }
-        }   
+        }
     }
 }

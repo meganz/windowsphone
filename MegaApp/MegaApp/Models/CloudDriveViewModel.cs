@@ -1,5 +1,6 @@
 ﻿using mega;
 using MegaApp.Classes;
+using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -25,10 +26,13 @@ namespace MegaApp.Models
             this.BreadCrumbNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
+
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+
+            this.UiService = new UiService();
         }
        
         #region Commands
@@ -40,7 +44,19 @@ namespace MegaApp.Models
 
         #endregion
 
+        #region Services
+
+        public IUiService UiService { get; set; }
+
+        #endregion
+
+
         #region Public Methods
+
+        public bool HasChildNodes()
+        {
+            return ChildNodes.Count > 0;
+        }
 
         public void GoFolderUp()
         {
