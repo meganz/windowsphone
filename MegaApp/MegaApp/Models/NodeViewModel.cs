@@ -135,6 +135,9 @@ namespace MegaApp.Models
             ThumbnailIsDefaultImage = false;
             this.ThumbnailImage = null;
             this.ThumbnailImage = new BitmapImage();
+            this.ThumbnailImage.DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight);
+            this.ThumbnailImage.DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth);
+            this.ThumbnailImage.DecodePixelType = DecodePixelType.Logical;
             this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
             this.ThumbnailImage.UriSource = new Uri(path);
 

@@ -160,11 +160,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 64.
+        /// </summary>
+        public static string ThumbnailHeight {
+            get {
+                return ResourceManager.GetString("ThumbnailHeight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to thumbnails\.
         /// </summary>
         public static string ThumbnailsDirectory {
             get {
                 return ResourceManager.GetString("ThumbnailsDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 64.
+        /// </summary>
+        public static string ThumbnailWidth {
+            get {
+                return ResourceManager.GetString("ThumbnailWidth", resourceCulture);
             }
         }
         
