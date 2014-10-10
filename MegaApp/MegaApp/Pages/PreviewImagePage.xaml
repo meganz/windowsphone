@@ -28,14 +28,25 @@
 			SelectionChanged="OnSlideViewSelectionChanged" 
 			Loaded="OnSlideViewLoaded" 
 			SlideViewStateChanged="OnSlideViewStateChanged"
-		/>        
+		/>
+		<Border VerticalAlignment="Top">			
+			<Border.Background>
+				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+			</Border.Background>
+			<TextBlock TextWrapping="Wrap" Text="{Binding SelectedPreview.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,10"/>
+		</Border>        
         
 	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>	
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
+				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
+			</shell:ApplicationBar.MenuItems>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>

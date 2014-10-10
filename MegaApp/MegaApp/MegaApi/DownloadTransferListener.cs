@@ -49,6 +49,7 @@ namespace MegaApp.MegaApi
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
+
              Deployment.Current.Dispatcher.BeginInvoke(() =>
              {
                 _node.TotalBytes = transfer.getTotalBytes();

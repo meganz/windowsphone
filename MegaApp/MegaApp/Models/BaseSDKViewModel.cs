@@ -11,8 +11,6 @@ namespace MegaApp.Models
 {
     public abstract class BaseSdkViewModel: BaseViewModel
     {
-        protected readonly MegaSDK MegaSdk;
-
         protected BaseSdkViewModel(MegaSDK megaSdk)
         {
             this.MegaSdk = megaSdk;
@@ -29,6 +27,12 @@ namespace MegaApp.Models
 
             return isOnline;
         }
+
+        #endregion
+
+        #region Properties
+
+        public MegaSDK MegaSdk { get; private set; }
 
         #endregion
     }

@@ -25,9 +25,7 @@ namespace MegaApp.Pages
             
             InitializeComponent();
 
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).Text = UiResources.Previous;
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[1]).Text = UiResources.GetPreviewLink;
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[2]).Text = UiResources.Next;
+            _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
         }
         
         private void SetMoveButtons(bool isSlideview = true)
@@ -35,7 +33,8 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled =
                 SlideViewAndFilmStrip.PreviousItem != null && isSlideview;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = isSlideview;
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[2]).IsEnabled =
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).IsEnabled = isSlideview;
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[3]).IsEnabled =
                 SlideViewAndFilmStrip.NextItem != null && isSlideview;
         }
 
@@ -44,9 +43,23 @@ namespace MegaApp.Pages
             SlideViewAndFilmStrip.MoveToNextItem();
         }
 
+        private void OnViewOriginalClick(object sender, System.EventArgs e)
+        {
+            _previewImageViewModel.SelectedPreview.ViewOriginal();
+        }
+
         private void OnGetLinkClick(object sender, System.EventArgs e)
         {
-            _previewImageViewModel.GetPreviewLink();
+            _previewImageViewModel.SelectedPreview.GetPreviewLink();
+        }
+
+        private void OnRenameItemClick(object sender, System.EventArgs e)
+        {
+            _previewImageViewModel.SelectedPreview.Rename();
+        }
+        private void OnRemoveClick(object sender, System.EventArgs e)
+        {
+            _previewImageViewModel.SelectedPreview.Remove();
         }
 
         private void OnPreviousClick(object sender, System.EventArgs e)
