@@ -13,7 +13,7 @@ namespace MegaApp.Services
     {
         public static IEnumerable<string> GetFiles(IEnumerable<NodeViewModel> nodes, string directory)
         {
-            return nodes.Select(node => Path.Combine(directory, node.GetBaseNode().getBase64Handle())).ToList();
+            return nodes.Select(node => Path.Combine(directory, node.GetMegaNode().getBase64Handle())).ToList();
         }
     }
 }

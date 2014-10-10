@@ -16,10 +16,11 @@ namespace MegaApp.MegaApi
 {
     class RenameNodeRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public RenameNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        private NodeViewModel _nodeViewModel;
+
+        public RenameNodeRequestListener(NodeViewModel nodeViewModel)
         {
-            this._cloudDriveViewModel = cloudDriveViewModel;
+            this._nodeViewModel = nodeViewModel;
         }
 
         #region Base Properties
@@ -85,7 +86,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _cloudDriveViewModel.LoadNodes();
+            _nodeViewModel.Name = request.getName();
         }
 
         #endregion

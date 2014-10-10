@@ -17,10 +17,10 @@ namespace MegaApp.MegaApi
 {
     class RemoveNodeRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public RemoveNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        private NodeViewModel _nodeViewModel;
+        public RemoveNodeRequestListener(NodeViewModel nodeViewModel)
         {
-            this._cloudDriveViewModel = cloudDriveViewModel;
+            this._nodeViewModel = nodeViewModel;
         }
 
         #region Base Properties
@@ -86,7 +86,12 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _cloudDriveViewModel.LoadNodes();
+            if (_nodeViewModel.ParentCollection != null)
+            {
+                if (_nodeViewModel.ParentCollection is ObservableCollection<NodeViewModel>)
+                    ((ObservableCollection<NodeViewModel>) _nodeViewModel.ParentCollection).Remove(_nodeViewModel);
+            }
+            _nodeViewModel = null;
         }
 
         #endregion

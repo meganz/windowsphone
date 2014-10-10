@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using MegaApp.Classes;
+using MegaApp.Extensions;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using System;
@@ -14,6 +15,11 @@ namespace MegaApp.Services
         public static void NavigateTo(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
         {
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
+        }
+
+        public static void NavigateTo(Type navPage, NavigationParameter navParam, object data)
+        {
+            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam), data);
         }
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
@@ -31,6 +37,11 @@ namespace MegaApp.Services
             }
 
             return new Uri(resultUrl, UriKind.Relative);
+        }
+
+        public static T GetNavigationData<T>()
+        {
+            return (T) ((PhoneApplicationFrame) Application.Current.RootVisual).GetNavigationData();
         }
 
         public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam)

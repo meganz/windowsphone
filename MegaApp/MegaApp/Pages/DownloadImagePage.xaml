@@ -42,6 +42,12 @@
 				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
 			</Grid>		    
         
+		</Border>
+		<Border VerticalAlignment="Top">			
+			<Border.Background>
+				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+			</Border.Background>
+			<TextBlock TextWrapping="Wrap" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,10"/>
 		</Border>		    
         
 	</Grid>
