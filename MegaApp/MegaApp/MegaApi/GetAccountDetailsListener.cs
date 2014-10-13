@@ -77,8 +77,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _accountDetails.TotalSpace = request.getMAccountDetails().getMaxStorage();
-            _accountDetails.UsedSpace = request.getMAccountDetails().getUsedStorage();
+            _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
+            _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
             _accountDetails.CreateDataPoints();
         }
 
