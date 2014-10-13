@@ -19,6 +19,12 @@
 	<phone:PhoneApplicationPage.Resources>
 		<shell:ApplicationBar x:Key="CloudDriveMenu">
 			<shell:ApplicationBarIconButton 
+				x:Name="BtnCloudUpload" 
+				IconUri="/Assets/AppBar/cloud.upload.png" 
+				Text="upload" 
+				Click="OnCloudUploadClick" 
+			/>
+			<shell:ApplicationBarIconButton 
 				x:Name="BtnAddFolder" 
 				IconUri="/Assets/AppBar/folder_add.png" 
 				Text="add folder" 
@@ -36,6 +42,13 @@
 				Text="open link" 
 				Click="OnOpenLinkClick" 				
 			/>
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem
+					x:Name="BtnMyAccount" 				
+					Text="my account"	
+					Click="OnMyAccountClick"			
+				/>
+			</shell:ApplicationBar.MenuItems>
 		</shell:ApplicationBar>
 
 		<shell:ApplicationBar x:Key="MoveItemMenu">

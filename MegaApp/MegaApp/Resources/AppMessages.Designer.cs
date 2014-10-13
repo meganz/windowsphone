@@ -223,7 +223,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to download file. Please try again.
+        ///   Looks up a localized string similar to Failed to download file. Please try again. [{0}].
         /// </summary>
         internal static string DownloadNodeFailed {
             get {
@@ -273,6 +273,24 @@ namespace MegaApp.Resources {
         internal static string FolderCreateFailed_Title {
             get {
                 return ResourceManager.GetString("FolderCreateFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to retrieve your account details. Please try again. [{0}].
+        /// </summary>
+        internal static string GetAccountDetailsFailed {
+            get {
+                return ResourceManager.GetString("GetAccountDetailsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retrieving account details failed.
+        /// </summary>
+        internal static string GetAccountDetailsFailed_Title {
+            get {
+                return ResourceManager.GetString("GetAccountDetailsFailed_Title", resourceCulture);
             }
         }
         

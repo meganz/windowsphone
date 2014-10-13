@@ -22,6 +22,8 @@ namespace MegaApp.Models
     /// </summary>
     public class NodeViewModel : BaseSdkViewModel
     {
+
+        public event EventHandler CancelingTransfer;
         // Original MNode object from the MEGA SDK
         private readonly MNode _baseMegaNode;
         // Offset DateTime value to calculate the correct creation and modification time
@@ -37,7 +39,6 @@ namespace MegaApp.Models
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseMegaNode.getType();
             this.ParentCollection = parentCollection;
-            this.CancelCurrentTransfer = false;
 
             this.MegaService = new MegaService();
 
@@ -66,8 +67,7 @@ namespace MegaApp.Models
             if (!IsUserOnline()) return;
             MegaService.Remove(this.MegaSdk, this);
         }
-
-
+        
         public void GetPreviewLink()
         {
             if (!IsUserOnline()) return;
@@ -83,6 +83,18 @@ namespace MegaApp.Models
         public bool HasPreviewInCache()
         {
             return FileService.FileExists(PreviewPath);
+        }
+
+        public void CancelTransfer()
+        {
+            OnCancelingTransfer();
+        }
+
+        protected virtual void OnCancelingTransfer()
+        {
+            if (CancelingTransfer == null) return;
+
+            CancelingTransfer(this, new EventArgs());
         }
 
         private void SetFolderInfo()
@@ -380,8 +392,6 @@ namespace MegaApp.Models
         {
             return this._baseMegaNode;
         }
-
-        public bool CancelCurrentTransfer { get; set; }
 
         #endregion
 

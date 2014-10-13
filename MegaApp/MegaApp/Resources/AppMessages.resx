@@ -172,7 +172,7 @@
     <value>Retrieving link failed</value>
   </data>
   <data name="DownloadNodeFailed" xml:space="preserve">
-    <value>Failed to download file. Please try again</value>
+    <value>Failed to download file. Please try again. [{0}]</value>
   </data>
   <data name="DownloadNodeFailed_Title" xml:space="preserve">
     <value>Download failed</value>
@@ -311,5 +311,11 @@
   </data>
   <data name="GetThumbnailFailed_Title" xml:space="preserve">
     <value>Getting thumbnail failed</value>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>Failed to retrieve your account details. Please try again. [{0}]</value>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>Retrieving account details failed</value>
   </data>
 </root>

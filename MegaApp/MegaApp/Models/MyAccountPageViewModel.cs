@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
+using MegaApp.Classes;
+using MegaApp.MegaApi;
 
 namespace MegaApp.Models
 {
-    class MyAccountPageViewModel:BaseViewModel
+    class MyAccountPageViewModel : BaseSdkViewModel
     {
-        public MyAccountPageViewModel()
+        public MyAccountPageViewModel(MegaSDK megaSdk)
+            :base(megaSdk)
         {
-            //
+            AccountDetails = new AccountDetailsModel {UserName = megaSdk.getMyEmail()};
+            MegaSdk.getAccountDetails(new GetAccountDetailsListener(AccountDetails));
         }
 
         #region Properties
 
-        private string _userName;
+        private AccountDetailsModel _accountDetails;
 
-        public string UserName
+        public AccountDetailsModel AccountDetails
         {
-            get { return _userName; }
+            get { return _accountDetails; }
             set
             {
-                _userName = value;
-                OnPropertyChanged("UserName");
+                _accountDetails = value;
+                OnPropertyChanged("AccountDetails");
             }
         }
 

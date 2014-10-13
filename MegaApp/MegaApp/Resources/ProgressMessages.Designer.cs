@@ -115,6 +115,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Getting account details....
+        /// </summary>
+        internal static string GetAccountDetails {
+            get {
+                return ResourceManager.GetString("GetAccountDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Getting link....
         /// </summary>
         internal static string GetLink {

@@ -29,7 +29,22 @@
 			<TextBlock Text="{Binding UserName}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
 		</StackPanel>
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-			<telerikChart:RadPieChart VerticalAlignment="Top" Height="250"/>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<telerikChart:RadPieChart Height="300">
+				<telerikChart:PieSeries ShowLabels="True" ItemsSource="{Binding AccountDetails.PieChartCollection}">
+					<telerikChart:PieSeries.SliceStyles>
+						<Style TargetType="Path">
+							<Setter Property="Fill" Value="Green"/>
+						</Style>
+						<Style TargetType="Path">
+							<Setter Property="Fill" Value="Red"/>
+						</Style>
+					</telerikChart:PieSeries.SliceStyles>					
+				</telerikChart:PieSeries>
+			</telerikChart:RadPieChart>
 		</Grid>
 
         <!--ContentPanel - place additional content here-->

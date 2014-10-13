@@ -29,6 +29,7 @@ namespace MegaApp.Pages
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
+            _downloadImageViewModel.SelectedNode.CancelTransfer();
         }
 
         private void OnSaveClick(object sender, System.EventArgs e)
