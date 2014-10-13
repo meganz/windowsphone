@@ -15,9 +15,22 @@ namespace MegaApp.MegaApi
     class DownloadTransferListener : MTransferListenerInterface
     {
         private readonly NodeViewModel _node;
+        private MTransfer _currentTransfer;
+        private MegaSDK _api;
+
         public DownloadTransferListener(NodeViewModel node)
         {
             _node = node;
+            _currentTransfer = null;
+            _api = null;
+            _node.CancelingTransfer += NodeOnCancelingTransfer;
+        }
+
+        private void NodeOnCancelingTransfer(object sender, EventArgs eventArgs)
+        {
+            if (_currentTransfer == null || _api == null) return;
+            _api.cancelTransfer((_currentTransfer));
+                
         }
 
         public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
@@ -28,12 +41,26 @@ namespace MegaApp.MegaApi
                 _node.TransferedBytes = transfer.getTransferredBytes();
                 _node.IsBusy = false;
                 _node.IsNotTransferring = true;
-                _node.LoadImage(_node.ImagePath);
             });
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => _node.LoadImage(_node.ImagePath));
+            }
+            else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => 
+                    MessageBox.Show(String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
+                    AppMessages.DownloadNodeFailed_Title, MessageBoxButton.OK));
+            }
+            
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)
         {
+            _currentTransfer = transfer;
+            _api = api;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 _node.IsBusy = true;

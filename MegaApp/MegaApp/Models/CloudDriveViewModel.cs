@@ -1,4 +1,5 @@
-﻿using mega;
+﻿using System.Collections;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
@@ -11,6 +12,8 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -53,9 +56,46 @@ namespace MegaApp.Models
 
         #region Public Methods
 
+        public void TranslateAppBar(IList iconButtons, IList menuItems, MenuType menuType)
+        {
+            switch (menuType)
+            {
+                case MenuType.CloudDriveMenu:
+                {
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Upload;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.AddFolder;
+                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
+                    ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
+
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MyAccount;
+                    break;
+                }
+                case MenuType.MoveMenu:
+                {
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Move;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                  
+                    break;
+                }
+            }
+           
+        }
+
         public bool HasChildNodes()
         {
             return ChildNodes.Count > 0;
+        }
+
+        public void CaptureCameraImage()
+        {
+            var cameraCaptureTask = new CameraCaptureTask();
+            cameraCaptureTask.Completed += CameraCaptureTaskOnCompleted;
+            cameraCaptureTask.Show();
+        }
+
+        private void CameraCaptureTaskOnCompleted(object sender, PhotoResult photoResult)
+        {
+            //
         }
 
         public void GoFolderUp()
@@ -80,6 +120,12 @@ namespace MegaApp.Models
         public void GoToRoot()
         {
             GoToFolder(new NodeViewModel(this.MegaSdk, MegaSdk.getRootNode()));
+        }
+
+        public void GoToAccountDetails()
+        {
+            this.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
 
         public int CountBreadCrumbs()

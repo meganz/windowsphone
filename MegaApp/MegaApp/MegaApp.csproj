@@ -94,7 +94,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AccountDetails.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
+    <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="MegaApi\BaseTransferListener.cs" />
     <Compile Include="MegaApi\DownloadTransferListener.cs" />
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
+    <Compile Include="MegaApi\GetAccountDetailsListener.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetPreviewRequestListener.cs" />
     <Compile Include="MegaApi\MegaRandomNumberProvider.cs" />
@@ -206,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AppBar\cloud.download.png" />
+    <Content Include="Assets\AppBar\cloud.upload.png" />
     <Content Include="Assets\AppBar\edit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

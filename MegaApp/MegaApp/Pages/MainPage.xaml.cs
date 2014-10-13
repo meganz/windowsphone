@@ -58,10 +58,12 @@ namespace MegaApp.Pages
             if (App.CloudDrive.MoveItemMode)
             {
                 this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
             }
             else
             {
                 this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
             }
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
@@ -175,23 +177,35 @@ namespace MegaApp.Pages
         {
             App.CloudDrive.OpenLink();
         }
+        private void OnMyAccountClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.GoToAccountDetails();
+        }
+
+        private void OnCloudUploadClick(object sender, EventArgs e)
+        {
+            DialogService.ShowUploadOptions(App.CloudDrive);
+        }
 
         private void OnCancelMoveClick(object sender, EventArgs e)
         {
             App.CloudDrive.MoveItemMode = false;
             App.CloudDrive.FocusedNode = null;
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             App.CloudDrive.MoveItem(App.CloudDrive.CurrentRootNode);
             App.CloudDrive.MoveItemMode = false;
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
 
         private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
             App.CloudDrive.MoveItemMode = true;
         }
 

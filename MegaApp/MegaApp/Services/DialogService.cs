@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
+using System.Net;
 using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,31 @@ namespace MegaApp.Services
                 case 0:
                     {
                         cloudDrive.ImportLink(link);
+                        break;
+                    }
+                // Download button clicked
+                case 1:
+                    {
+                        //cloudDrive.ImportLink(link);
+                        break;
+                    }
+            }
+        }
+
+        public static async void ShowUploadOptions(CloudDriveViewModel cloudDrive)
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: new string[] { "take photo" },
+                title: "What do you want to upload?",
+                message: "Upload options:"
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                // Import button clicked
+                case 0:
+                    {
+                        cloudDrive.CaptureCameraImage();
                         break;
                     }
                 // Download button clicked
