@@ -44,5 +44,39 @@ namespace MegaApp.Services
             string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
             if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
         }
+
+        public static void ClearAppCache()
+        {
+            ClearThumbnailCache();
+            ClearPreviewCache();
+            ClearDownloadCache();
+        }
+
+        public static void ClearThumbnailCache()
+        {
+            string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
+            if (!Directory.Exists(thumbnailDir))
+            {
+                FileService.ClearFiles(Directory.GetFiles(thumbnailDir));
+            }
+        }
+
+        public static void ClearPreviewCache()
+        {
+            string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
+            if (!Directory.Exists(previewDir))
+            {
+                FileService.ClearFiles(Directory.GetFiles(previewDir));
+            } 
+        }
+
+        public static void ClearDownloadCache()
+        {
+            string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
+            if (!Directory.Exists(downloadDir))
+            {
+                FileService.ClearFiles(Directory.GetFiles(downloadDir));
+            }
+        }
     }
 }

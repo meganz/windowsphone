@@ -29,11 +29,28 @@ namespace MegaApp.Services
                 return default(T);
         }
 
+        public static void DeleteSetting(string key)
+        {
+            var settings = IsolatedStorageSettings.ApplicationSettings;
+
+            if (!settings.Contains(key)) return;
+            
+            settings.Remove(key);
+            settings.Save();
+        }
+
         public static void SaveMegaLoginData(string email, string session)
         {
             SettingsService.SaveSetting(SettingsResources.RememberMe, true);
             SettingsService.SaveSetting(SettingsResources.UserMegaEmailAddress, email);
             SettingsService.SaveSetting(SettingsResources.UserMegaSession, session);
+        }
+
+        public static void ClearMegaLoginData()
+        {
+            SettingsService.DeleteSetting(SettingsResources.RememberMe);
+            SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
+            SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
         }
     }
 }

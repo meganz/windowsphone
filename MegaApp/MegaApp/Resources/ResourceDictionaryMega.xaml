@@ -111,8 +111,13 @@
     </DataTemplate>
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
-    <DataTemplate x:Key="ShowShareLinktButtons">
+    <DataTemplate x:Key="ShowShareLinkButtons">
         <telerikPrimitives:RadWrapPanel x:Name="PART_ButtonsPanel" ItemWidth="150" />
+    </DataTemplate>
+
+    <!-- SHOWUPLOADDIALOGG BUTTON DATATEMPLATE -->
+    <DataTemplate x:Key="ShowUploadButtons">
+        <StackPanel x:Name="PART_ButtonsPanel" Orientation="Vertical" />
     </DataTemplate>
 
     <!-- MOVE DIALOG CONTENT DATATEMPLATE -->

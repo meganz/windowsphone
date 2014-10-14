@@ -95,7 +95,7 @@ namespace MegaApp.Models
 
         private void CameraCaptureTaskOnCompleted(object sender, PhotoResult photoResult)
         {
-            //
+            MessageBox.Show("Upload not implemented yet", "TODO", MessageBoxButton.OK);
         }
 
         public void GoFolderUp()

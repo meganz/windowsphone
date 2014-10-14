@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Pages;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetAccountDetailsListener : BaseRequestListener
+    class LogOutRequestListener: BaseRequestListener
     {
-        private readonly AccountDetailsModel _accountDetails;
-
-        public GetAccountDetailsListener(AccountDetailsModel accountDetails)
-        {
-            _accountDetails = accountDetails;
-        }
-
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetAccountDetails; }
+            get { return ProgressMessages.Logout; }
         }
 
         protected override bool ShowProgressMessage
@@ -30,22 +26,22 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.GetAccountDetailsFailed; }
+            get { return AppMessages.LogoutFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.GetAccountDetailsFailed_Title; }
+            get { return AppMessages.LogoutFailed_Title; }
         }
 
         protected override string SuccessMessage
         {
-            get { throw new NotImplementedException(); }
+            get { return AppMessages.LoggedOut; }
         }
 
         protected override string SuccessMessageTitle
         {
-            get { throw new NotImplementedException(); }
+            get { return AppMessages.LoggedOut_Title; }
         }
 
         protected override bool ShowSuccesMessage
@@ -55,7 +51,7 @@ namespace MegaApp.MegaApi
 
         protected override bool NavigateOnSucces
         {
-            get { return false; }
+            get { return true; }
         }
 
         protected override bool ActionOnSucces
@@ -65,21 +61,20 @@ namespace MegaApp.MegaApi
 
         protected override Type NavigateToPage
         {
-            get { throw new NotImplementedException(); }
+            get { return typeof(LoginPage); }
         }
 
-        protected override NavigationParameter NavigationParameter
+        protected override Classes.NavigationParameter NavigationParameter
         {
-            get { throw new NotImplementedException(); }
+            get { return NavigationParameter.Normal; }
         }
 
         #region Override Methods
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
-            _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
-            _accountDetails.CreateDataPoints();
+            SettingsService.ClearMegaLoginData();
+            AppService.ClearAppCache();
         }
 
         #endregion
