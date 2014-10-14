@@ -15,8 +15,17 @@ namespace MegaApp.Models
             :base(megaSdk)
         {
             AccountDetails = new AccountDetailsModel {UserName = megaSdk.getMyEmail()};
-            MegaSdk.getAccountDetails(new GetAccountDetailsListener(AccountDetails));
+            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
         }
+
+        #region Methods
+
+        public void Logout()
+        {
+            MegaSdk.logout(new LogOutRequestListener());
+        }
+
+        #endregion
 
         #region Properties
 
@@ -33,5 +42,7 @@ namespace MegaApp.Models
         }
 
         #endregion
+
+
     }
 }

@@ -13,6 +13,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
+using Binding = System.Windows.Data.Binding;
 
 namespace MegaApp.Services
 {
@@ -20,7 +21,7 @@ namespace MegaApp.Services
     {
         public static async void ShowShareLink(string link)
         {
-            var buttonsDataTemplate = (DataTemplate)Application.Current.Resources["ShowShareLinktButtons"];
+            var buttonsDataTemplate = (DataTemplate)Application.Current.Resources["ShowShareLinkButtons"];
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsTemplate:buttonsDataTemplate,
                 buttonsContent: new string[] {UiResources.ShareButton, UiResources.CopyButton, UiResources.CancelButton},
@@ -72,29 +73,51 @@ namespace MegaApp.Services
             }
         }
 
-        public static async void ShowUploadOptions(CloudDriveViewModel cloudDrive)
+        public static void ShowUploadOptions(CloudDriveViewModel cloudDrive)
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new string[] { "take photo" },
-                title: "What do you want to upload?",
-                message: "Upload options:"
-                );
 
-            switch (closedEventArgs.ButtonIndex)
+            var uploadRadWindow = new RadWindow()
             {
-                // Import button clicked
-                case 0:
-                    {
-                        cloudDrive.CaptureCameraImage();
-                        break;
-                    }
-                // Download button clicked
-                case 1:
-                    {
-                        //cloudDrive.ImportLink(link);
-                        break;
-                    }
-            }
+                IsFullScreen = false,
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment= HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Top,
+            };
+
+            var buttonStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+            };
+
+            var headerText = new TextBlock()
+            {
+                Text = "Upload options",
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(20, 30, 20, 20)
+            };
+
+            var takePhotoButton = new Button()
+            {
+                Content = "take a photo",
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Margin = new Thickness(8, 0, 8, 20)
+                
+            };
+            takePhotoButton.Tap += (sender, args) => cloudDrive.CaptureCameraImage();
+
+            buttonStackPanel.Children.Add(headerText);
+            buttonStackPanel.Children.Add(takePhotoButton);
+
+            uploadRadWindow.Content = buttonStackPanel;
+
+            uploadRadWindow.IsOpen = true;
         }
     }
 }

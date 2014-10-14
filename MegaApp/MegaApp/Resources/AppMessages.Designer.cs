@@ -421,6 +421,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have successfully logged out.
+        /// </summary>
+        internal static string LoggedOut {
+            get {
+                return ResourceManager.GetString("LoggedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logged out.
+        /// </summary>
+        internal static string LoggedOut_Title {
+            get {
+                return ResourceManager.GetString("LoggedOut_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MEGA Cloud Drive login failed. Please try again. [{0}].
         /// </summary>
         internal static string LoginFailed {
@@ -435,6 +453,24 @@ namespace MegaApp.Resources {
         internal static string LoginFailed_Title {
             get {
                 return ResourceManager.GetString("LoginFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to logout. Please try again. [{0}].
+        /// </summary>
+        internal static string LogoutFailed {
+            get {
+                return ResourceManager.GetString("LogoutFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout failed.
+        /// </summary>
+        internal static string LogoutFailed_Title {
+            get {
+                return ResourceManager.GetString("LogoutFailed_Title", resourceCulture);
             }
         }
         

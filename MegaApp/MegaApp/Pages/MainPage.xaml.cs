@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Navigation;
-using Windows.Storage;
-using GoedWare.Windows.Phone.Controls;
+﻿using GoedWare.Windows.Phone.Controls;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
@@ -18,7 +7,13 @@ using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Navigation;
 using Telerik.Windows.Controls;
+using Windows.Storage;
 
 namespace MegaApp.Pages
 {

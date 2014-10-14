@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaApp.Extensions;
 using MegaApp.Models;
 using Telerik.Windows.Controls;
 
@@ -13,7 +14,7 @@ namespace MegaApp.Classes
     {
         public AccountDetailsModel()
         {
-            PieChartCollection = new ObservableCollection<ulong>();
+            
         }
 
         private string _userName;
@@ -70,12 +71,24 @@ namespace MegaApp.Classes
 
         public void CreateDataPoints()
         {
-            PieChartCollection.Clear();
-            PieChartCollection.Add(UsedSpace);
-            PieChartCollection.Add(FreeSpace);
+            var accountDataPoints = new List<AccountDataPoint>
+            {
+                new AccountDataPoint() {Label = "Free space", Value = FreeSpace},
+                new AccountDataPoint() {Label = "Used space", Value = UsedSpace}
+            };
+            PieChartCollection = accountDataPoints;
         }
 
-        private ObservableCollection<ulong> PieChartCollection { get; set; }
+        private IEnumerable<AccountDataPoint> _pieChartCollection;
+        public IEnumerable<AccountDataPoint> PieChartCollection
+        {
+            get { return _pieChartCollection; }
+            set
+            {
+                _pieChartCollection = value;
+                OnPropertyChanged("PieChartCollection");
+            }
+        }
        
     }
 }
