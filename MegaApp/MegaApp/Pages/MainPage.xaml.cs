@@ -66,14 +66,9 @@ namespace MegaApp.Pages
             if (e.NavigationMode == NavigationMode.Back)
             {
                 if (!App.CloudDrive.NoFolderUpAction)
-                {
                     App.CloudDrive.GoFolderUp();
-                    _navParam = NavigationParameter.Browsing;
-                }
-                else
-                {
-                    _navParam = NavigationParameter.Normal;
-                }
+                 
+                _navParam = NavigationParameter.Browsing;
             }
 
             App.CloudDrive.NoFolderUpAction = false;
@@ -175,6 +170,11 @@ namespace MegaApp.Pages
         private void OnMyAccountClick(object sender, EventArgs e)
         {
             App.CloudDrive.GoToAccountDetails();
+        }
+
+        private void OnTransfersClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.GoToTransfers();
         }
 
         private void OnCloudUploadClick(object sender, EventArgs e)

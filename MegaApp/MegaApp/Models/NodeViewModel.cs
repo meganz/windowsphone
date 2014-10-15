@@ -129,7 +129,8 @@ namespace MegaApp.Models
             }
             else
             {
-                this.MegaSdk.getThumbnail(this._baseMegaNode, ThumbnailPath, new GetThumbnailRequestListener(this));
+                if(Convert.ToBoolean(MegaSdk.isLoggedIn()))
+                    this.MegaSdk.getThumbnail(this.GetMegaNode(), ThumbnailPath, new GetThumbnailRequestListener(this));
             }
         }
 

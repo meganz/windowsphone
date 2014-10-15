@@ -1,4 +1,5 @@
-﻿using mega;
+﻿using System.Collections.ObjectModel;
+using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Models;
@@ -25,6 +26,8 @@ namespace MegaApp
 
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
+
+        public static ObservableCollection<TransferObjectModel> MegaTransfers { get; set; } 
 
         /// <summary>
         /// Constructor for the Application object.
@@ -149,6 +152,7 @@ namespace MegaApp
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             CloudDrive = new CloudDriveViewModel(MegaSdk);
+            MegaTransfers = new ObservableCollection<TransferObjectModel>();
 
             //Initialize Folders
             AppService.InitializeAppFolders();

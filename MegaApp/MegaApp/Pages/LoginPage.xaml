@@ -17,8 +17,8 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+        	<RowDefinition Height="Auto"/>
+        	<RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -33,7 +33,6 @@
             	<telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
                 <CheckBox x:Name="checkRemember" Content="Remember me" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding RememberMe, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-                <Button x:Name="btnLogin" Content="{Binding LocalizedUiResources.LoginText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Command="{Binding LoginCommand}" IsEnabled="{Binding ControlState}"/>
             </StackPanel>
             <StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">
             	<TextBlock x:Name="txtNewAtMega" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.NewAtMega, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
@@ -41,5 +40,11 @@
             </StackPanel>
         </Grid>
     </Grid>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton IconUri="\Assets\Appbar\login.png" Text="login" Click="OnLoginClick" />			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

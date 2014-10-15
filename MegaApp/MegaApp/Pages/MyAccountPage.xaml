@@ -124,7 +124,8 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton x:Name="BtnLogout" IconUri="\Assets\Appbar\logout.png" Text="logout" Click="OnLogoutClick" />						
+			<shell:ApplicationBarIconButton IconUri="\Assets\Appbar\logout.png" Text="logout" Click="OnLogoutClick" />
+			<shell:ApplicationBarIconButton IconUri="\Assets\Appbar\clear.cache.png" Text="clear cache" Click="OnClearCacheClick"/>						
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

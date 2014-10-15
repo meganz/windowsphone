@@ -76,9 +76,10 @@ namespace MegaApp.Services
         public static void ShowUploadOptions(CloudDriveViewModel cloudDrive)
         {
 
-            var uploadRadWindow = new RadWindow()
+            var uploadRadWindow = new RadModalWindow()
             {
-                IsFullScreen = false,
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(128,0,0,0)),
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
@@ -110,7 +111,12 @@ namespace MegaApp.Services
                 Margin = new Thickness(8, 0, 8, 20)
                 
             };
-            takePhotoButton.Tap += (sender, args) => cloudDrive.CaptureCameraImage();
+            takePhotoButton.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                cloudDrive.CaptureCameraImage();
+            };
+
 
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(takePhotoButton);

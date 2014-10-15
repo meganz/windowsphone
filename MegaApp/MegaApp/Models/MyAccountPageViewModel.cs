@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -23,6 +25,12 @@ namespace MegaApp.Models
         public void Logout()
         {
             MegaSdk.logout(new LogOutRequestListener());
+        }
+
+        public void ClearCache()
+        {
+            AppService.ClearAppCache();
+            MessageBox.Show("Cache has been succesfully cleared", "Cache cleared", MessageBoxButton.OK);
         }
 
         #endregion

@@ -35,14 +35,17 @@ namespace MegaApp.Services
         /// </summary>
         public static void InitializeAppFolders()
         {
-            string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
+            string thumbnailDir = GetThumbnailDirectoryPath();
             if (!Directory.Exists(thumbnailDir)) Directory.CreateDirectory(thumbnailDir);
 
-            string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
+            string previewDir = GetPreviewDirectoryPath();
             if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
 
-            string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
+            string downloadDir =GetDownloadDirectoryPath();
             if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
+
+            string uploadDir = GetUploadDirectoryPath();
+            if (!Directory.Exists(uploadDir)) Directory.CreateDirectory(uploadDir);
         }
 
         public static void ClearAppCache()
@@ -50,12 +53,13 @@ namespace MegaApp.Services
             ClearThumbnailCache();
             ClearPreviewCache();
             ClearDownloadCache();
+            ClearUploadCache();
         }
 
         public static void ClearThumbnailCache()
         {
-            string thumbnailDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
-            if (!Directory.Exists(thumbnailDir))
+            string thumbnailDir = GetThumbnailDirectoryPath();
+            if (Directory.Exists(thumbnailDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(thumbnailDir));
             }
@@ -63,8 +67,8 @@ namespace MegaApp.Services
 
         public static void ClearPreviewCache()
         {
-            string previewDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
-            if (!Directory.Exists(previewDir))
+            string previewDir = GetPreviewDirectoryPath();
+            if (Directory.Exists(previewDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(previewDir));
             } 
@@ -72,11 +76,39 @@ namespace MegaApp.Services
 
         public static void ClearDownloadCache()
         {
-            string downloadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
-            if (!Directory.Exists(downloadDir))
+            string downloadDir = GetDownloadDirectoryPath();
+            if (Directory.Exists(downloadDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(downloadDir));
             }
+        }
+        public static void ClearUploadCache()
+        {
+            string uploadDir = GetUploadDirectoryPath();
+            if (Directory.Exists(uploadDir))
+            {
+                FileService.ClearFiles(Directory.GetFiles(uploadDir));
+            }
+        }
+
+        public static string GetUploadDirectoryPath()
+        {
+            return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.UploadsDirectory);
+        }
+
+        public static string GetDownloadDirectoryPath()
+        {
+            return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory);
+        }
+
+        public static string GetPreviewDirectoryPath()
+        {
+            return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.PreviewsDirectory);
+        }
+
+        public static string GetThumbnailDirectoryPath()
+        {
+            return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
         }
     }
 }
