@@ -11,10 +11,12 @@ namespace MegaApp.Pages
 {
     public partial class LoginPage : PhoneApplicationPage
     {
+        private LoginViewModel _loginViewModel;
+
         public LoginPage()
         {
-            var loginViewModel = new LoginViewModel(App.MegaSdk);
-            this.DataContext = loginViewModel;
+            _loginViewModel = new LoginViewModel(App.MegaSdk);
+            this.DataContext = _loginViewModel;
 
             InitializeComponent();
         }
@@ -27,6 +29,11 @@ namespace MegaApp.Pages
             // Also removes the create account page after the user has created the account succesful
             while (NavigationService.CanGoBack)
                 NavigationService.RemoveBackEntry();
+        }
+
+        private void OnLoginClick(object sender, System.EventArgs e)
+        {
+            _loginViewModel.DoLogin();
         }
     }
 }

@@ -26,13 +26,12 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.ControlState = true;
-            this.LoginCommand = new DelegateCommand(this.DoLogin);
             this.NavigateCreateAccountCommand = new DelegateCommand(NavigateCreateAccount);
         }
 
         #region Methods
 
-        private void DoLogin(object obj)
+        public void DoLogin()
         {
             if (CheckInputParameters())
             {
@@ -62,8 +61,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Commands
-
-        public ICommand LoginCommand { get; set; }
 
         public ICommand NavigateCreateAccountCommand { get; set; }
 

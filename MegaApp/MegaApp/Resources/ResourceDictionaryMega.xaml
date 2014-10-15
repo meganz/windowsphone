@@ -58,6 +58,28 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="MegaTransferItemContent">
+        <Grid Margin="0,0,0,12">
+        	<Grid.RowDefinitions>
+        		<RowDefinition/>
+        		<RowDefinition/>
+				<RowDefinition/>
+        	</Grid.RowDefinitions>
+        	<TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis"/>
+			<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding IsNotTransferring, FallbackValue=True}" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UploadFile, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="2" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaTransferListEmptyContent">
+        <Grid>
+            <Grid.Background>
+                <ImageBrush Stretch="None" ImageSource="/Assets/Images/transfers_empty.png" Opacity="0.3"/>
+            </Grid.Background>
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+        </Grid>
+    </DataTemplate>
+
     <DataTemplate x:Key="PreviewSlideViewItemContent">
         <Grid>
             <slideView:PanAndZoomImage Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>

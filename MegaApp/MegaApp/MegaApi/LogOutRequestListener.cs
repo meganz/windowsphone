@@ -74,6 +74,7 @@ namespace MegaApp.MegaApi
         protected override void OnSuccesAction(MRequest request)
         {
             SettingsService.ClearMegaLoginData();
+            App.CloudDrive.ChildNodes.Clear();
             AppService.ClearAppCache();
         }
 

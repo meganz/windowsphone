@@ -33,5 +33,11 @@ namespace MegaApp.Pages
         {
         	_myAccountPageViewModel.Logout();
         }
+
+        private void OnClearCacheClick(object sender, System.EventArgs e)
+        {
+            App.CloudDrive.ChildNodes.Clear();
+            _myAccountPageViewModel.ClearCache();
+        }
     }
 }

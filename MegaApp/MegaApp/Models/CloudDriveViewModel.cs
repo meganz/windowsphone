@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.IO;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Interfaces;
@@ -67,7 +68,8 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
                     ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
 
-                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MyAccount;
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.Transfers;
+                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MyAccount;
                     break;
                 }
                 case MenuType.MoveMenu:
@@ -93,9 +95,21 @@ namespace MegaApp.Models
             cameraCaptureTask.Show();
         }
 
-        private void CameraCaptureTaskOnCompleted(object sender, PhotoResult photoResult)
+        private async void CameraCaptureTaskOnCompleted(object sender, PhotoResult photoResult)
         {
-            MessageBox.Show("Upload not implemented yet", "TODO", MessageBoxButton.OK);
+            if (photoResult.TaskResult != TaskResult.OK) return;
+
+            string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), Path.GetFileName(photoResult.OriginalFileName));
+            using (var fs = new FileStream(newFilePath, FileMode.CreateNew))
+            {
+                await photoResult.ChosenPhoto.CopyToAsync(fs);
+                await fs.FlushAsync();
+                fs.Close();
+            }
+
+            App.MegaTransfers.Add(new TransferObjectModel(Path.GetFileName(photoResult.OriginalFileName), newFilePath, CurrentRootNode, MegaSdk));
+            NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
         }
 
         public void GoFolderUp()
@@ -126,6 +140,12 @@ namespace MegaApp.Models
         {
             this.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
+
+        public void GoToTransfers()
+        {
+            this.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
         }
 
         public int CountBreadCrumbs()

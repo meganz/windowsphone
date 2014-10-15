@@ -100,6 +100,7 @@
     <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
+    <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\FileTypeToImageConverter.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
     <Compile Include="MegaApi\BaseTransferListener.cs" />
+    <Compile Include="MegaApi\UploadTransferListener.cs" />
     <Compile Include="MegaApi\DownloadTransferListener.cs" />
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetAccountDetailsRequestListener.cs" />
@@ -158,6 +160,9 @@
     </Compile>
     <Compile Include="Pages\PreviewImagePage.xaml.cs">
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TransferPage.xaml.cs">
+      <DependentUpon>TransferPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ProgressMessages.Designer.cs">
@@ -211,6 +216,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\clear.cache.png" />
     <Content Include="Assets\AppBar\cloud.download.png" />
     <Content Include="Assets\AppBar\cloud.upload.png" />
     <Content Include="Assets\AppBar\edit.png">
@@ -268,6 +274,7 @@
     <Content Include="Assets\Images\go_to_top.png" />
     <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
+    <Content Include="Assets\Images\transfers_empty.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -335,6 +342,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PreviewImagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TransferPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -187,6 +187,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to uploads\.
+        /// </summary>
+        public static string UploadsDirectory {
+            get {
+                return ResourceManager.GetString("UploadsDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MEGAWindowsPhone/1.0.0.
         /// </summary>
         public static string UserAgent {

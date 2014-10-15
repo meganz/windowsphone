@@ -44,6 +44,11 @@
 			/>
 			<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem
+					x:Name="BtnTransfers" 				
+					Text="transfers"	
+					Click="OnTransfersClick"			
+				/>
+				<shell:ApplicationBarMenuItem
 					x:Name="BtnMyAccount" 				
 					Text="my account"	
 					Click="OnMyAccountClick"			

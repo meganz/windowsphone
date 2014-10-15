@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace MegaApp.Services
@@ -16,6 +17,11 @@ namespace MegaApp.Services
             {
                 File.Delete(file);
             }
+        }
+
+        public static string CreateRandomFilePath(string path)
+        {
+            return Path.Combine(path, Guid.NewGuid().ToString("N"));
         }
     }
 }

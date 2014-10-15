@@ -232,6 +232,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No transfers.
+        /// </summary>
+        public static string EmptyTransfers {
+            get {
+                return ResourceManager.GetString("EmptyTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get link.
         /// </summary>
         public static string GetPreviewLink {
@@ -502,11 +511,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No transfers.
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to terms of use.
         /// </summary>
         public static string TermsOfUse {
             get {
                 return ResourceManager.GetString("TermsOfUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to transfers.
+        /// </summary>
+        public static string Transfers {
+            get {
+                return ResourceManager.GetString("Transfers", resourceCulture);
             }
         }
         
@@ -525,6 +552,15 @@ namespace MegaApp.Resources {
         public static string Upload {
             get {
                 return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading....
+        /// </summary>
+        public static string UploadFile {
+            get {
+                return ResourceManager.GetString("UploadFile", resourceCulture);
             }
         }
     }
