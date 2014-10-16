@@ -98,8 +98,13 @@
     <Compile Include="Classes\AccountDetails.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\MenuType.cs" />
-    <Compile Include="Classes\NavigationParameter.cs" />
+    <Compile Include="Classes\TransferQueu.cs" />
+    <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
+    <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
+    <Compile Include="Enums\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
+    <Compile Include="Enums\TransferStatus.cs" />
+    <Compile Include="Enums\TransferType.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -112,7 +117,6 @@
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MegaApi\BaseRequestListener.cs" />
     <Compile Include="MegaApi\BaseTransferListener.cs" />
-    <Compile Include="MegaApi\UploadTransferListener.cs" />
     <Compile Include="MegaApi\DownloadTransferListener.cs" />
     <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
     <Compile Include="MegaApi\GetAccountDetailsRequestListener.cs" />
@@ -216,6 +220,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\AppBar\clear.cache.png" />
     <Content Include="Assets\AppBar\cloud.download.png" />
     <Content Include="Assets\AppBar\cloud.upload.png" />
@@ -269,6 +276,7 @@
     <Content Include="Assets\FileTypes\wav.png" />
     <Content Include="Assets\FileTypes\xls.png" />
     <Content Include="Assets\FileTypes\zip.png" />
+    <Content Include="Assets\Images\cancel.png" />
     <Content Include="Assets\Images\folder_empty.png" />
     <Content Include="Assets\Images\go_to_bottom.png" />
     <Content Include="Assets\Images\go_to_top.png" />

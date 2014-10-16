@@ -23,8 +23,8 @@
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstUploads"
-						ItemsSource="{Binding}"
-						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						ItemsSource="{Binding Uploads}"
+						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" ItemTemplate="{StaticResource MegaTransferItemContent}" FontFamily="Portable User Interface" 
 					/>
 				</Grid>
 			</phone:PivotItem>

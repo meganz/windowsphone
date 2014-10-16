@@ -1,4 +1,5 @@
-﻿using MegaApp.Resources;
+﻿using System.Collections.Generic;
+using MegaApp.Resources;
 using System.IO;
 using System.Xml;
 using Windows.Storage;
@@ -46,6 +47,25 @@ namespace MegaApp.Services
 
             string uploadDir = GetUploadDirectoryPath();
             if (!Directory.Exists(uploadDir)) Directory.CreateDirectory(uploadDir);
+        }
+
+        public static ulong GetAppCacheSize()
+        {
+            var files = new List<string>();
+            //files.AddRange(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
+            files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath()));
+            files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));
+            files.AddRange(Directory.GetFiles(GetDownloadDirectoryPath()));
+            files.AddRange(Directory.GetFiles(GetUploadDirectoryPath()));
+
+            ulong totalSize = 0;
+            foreach (var file in files)
+            {
+                var fileInfo = new FileInfo(file);
+                totalSize += (ulong)fileInfo.Length;
+            }
+
+            return totalSize;
         }
 
         public static void ClearAppCache()

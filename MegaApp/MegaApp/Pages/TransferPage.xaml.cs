@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Pages
 {
@@ -16,6 +17,8 @@ namespace MegaApp.Pages
         {
             this.DataContext = App.MegaTransfers;
             InitializeComponent();
+
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
     }
 }

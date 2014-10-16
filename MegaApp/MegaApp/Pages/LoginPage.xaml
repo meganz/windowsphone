@@ -10,7 +10,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -26,19 +26,21 @@
             <TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="{Binding LocalizedUiResources.LoginText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
+        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<Grid>
+        		<StackPanel x:Name="stackLogin" VerticalAlignment="Top">
+        			<telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
+        			<telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
+        			<CheckBox x:Name="checkRemember" Content="Remember me" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding RememberMe, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
+        		</StackPanel>
+        		<StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">
+        			<TextBlock x:Name="txtNewAtMega" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.NewAtMega, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+        			<HyperlinkButton x:Name="btnCreateNewAccount" Content="{Binding LocalizedUiResources.CreateNewAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateCreateAccountCommand}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HorizontalAlignment="Center"/>
+        		</StackPanel>
+        	</Grid>
+        </ScrollViewer>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel x:Name="stackLogin" VerticalAlignment="Top">
-            	<telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-                <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-                <CheckBox x:Name="checkRemember" Content="Remember me" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding RememberMe, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-            </StackPanel>
-            <StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">
-            	<TextBlock x:Name="txtNewAtMega" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.NewAtMega, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-            	<HyperlinkButton x:Name="btnCreateNewAccount" Content="{Binding LocalizedUiResources.CreateNewAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateCreateAccountCommand}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
     </Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>

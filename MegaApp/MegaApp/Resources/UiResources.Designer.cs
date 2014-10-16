@@ -529,6 +529,78 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canceled.
+        /// </summary>
+        public static string Transfer_Canceled {
+            get {
+                return ResourceManager.GetString("Transfer_Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canceling....
+        /// </summary>
+        public static string Transfer_Canceling {
+            get {
+                return ResourceManager.GetString("Transfer_Canceling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connecting server....
+        /// </summary>
+        public static string Transfer_Connecting {
+            get {
+                return ResourceManager.GetString("Transfer_Connecting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Downloading....
+        /// </summary>
+        public static string Transfer_Download {
+            get {
+                return ResourceManager.GetString("Transfer_Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error on transfer.
+        /// </summary>
+        public static string Transfer_Error {
+            get {
+                return ResourceManager.GetString("Transfer_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string Transfer_Finished {
+            get {
+                return ResourceManager.GetString("Transfer_Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready.
+        /// </summary>
+        public static string Transfer_NotStarted {
+            get {
+                return ResourceManager.GetString("Transfer_NotStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading....
+        /// </summary>
+        public static string Transfer_Upload {
+            get {
+                return ResourceManager.GetString("Transfer_Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to transfers.
         /// </summary>
         public static string Transfers {

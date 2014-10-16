@@ -1,5 +1,6 @@
 ﻿using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
@@ -18,13 +19,12 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.ControlState = true;
-            this.CreateAccountCommand = new DelegateCommand(this.CreateAccount);
             this.NavigateTermsOfUseCommand = new DelegateCommand(NavigateTermsOfUse);
         }
 
         #region Methods
 
-        private void CreateAccount(object obj)
+        public void CreateAccount()
         {
             if (CheckInputParameters())
             {
@@ -70,8 +70,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Commands
-
-        public ICommand CreateAccountCommand { get; set; }
 
         public ICommand NavigateTermsOfUseCommand { get; set; }
 

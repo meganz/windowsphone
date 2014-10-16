@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
@@ -47,7 +48,7 @@ namespace MegaApp.MegaApi
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
                 }
-                else
+                else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
                     MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
             });
         }

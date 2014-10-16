@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Services;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Classes
@@ -14,7 +16,7 @@ namespace MegaApp.Classes
     {
         public AccountDetailsModel()
         {
-            
+            CacheSize = AppService.GetAppCacheSize();
         }
 
         private string _userName;
@@ -62,6 +64,18 @@ namespace MegaApp.Classes
                 OnPropertyChanged("FreeSpace");
             }
         }
+
+        private ulong _cacheSize;
+        public ulong CacheSize
+        {
+            get { return _cacheSize; }
+            set
+            {
+                _cacheSize = value;
+                OnPropertyChanged("CacheSize");
+            }
+        }
+        
 
         private void CalculateFreeSpace()
         {

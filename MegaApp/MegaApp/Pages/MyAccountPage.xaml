@@ -39,6 +39,7 @@
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
 			</Grid.RowDefinitions>
 			<telerikChart:RadPieChart x:Name="AccountPieChart" Height="250" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0" EmptyContent="No data to show">
 				<telerikChart:PieSeries ShowLabels="True" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" LabelOffset="8">								
@@ -116,6 +117,23 @@
 				</Border>
 				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Free space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
 				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+			</Grid>
+			<Grid x:Name="CacheSpaceGrid" Grid.Row="4" Margin="0,18,0,6">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0">
+					<Border.Background>
+						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+					</Border.Background>
+					<Border.BorderBrush>
+						<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+					</Border.BorderBrush>
+				</Border>
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cache size:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
 			</Grid>
 		</Grid>
 

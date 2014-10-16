@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Navigation;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;

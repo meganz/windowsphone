@@ -3,6 +3,7 @@ using System.Threading;
 using Windows.Foundation.Metadata;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
@@ -83,6 +84,11 @@ namespace MegaApp.Models
         public bool HasPreviewInCache()
         {
             return FileService.FileExists(PreviewPath);
+        }
+
+        public void CancelPreviewRequest()
+        {
+            MegaSdk.cancelGetPreview(GetMegaNode());
         }
 
         public void CancelTransfer()

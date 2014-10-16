@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -12,18 +13,23 @@ namespace MegaApp.Services
 {
     public static class NavigateService
     {
+        public static Type PreviousPage { get; set; }
+
         public static void NavigateTo(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
         {
+            PreviousPage = navPage;
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
         }
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam, object data)
         {
+            PreviousPage = navPage;
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam), data);
         }
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
         {
+            PreviousPage = navPage;
             ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
         }
         

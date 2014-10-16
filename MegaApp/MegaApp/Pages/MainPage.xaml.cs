@@ -1,6 +1,7 @@
 ﻿using GoedWare.Windows.Phone.Controls;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -66,9 +67,15 @@ namespace MegaApp.Pages
             if (e.NavigationMode == NavigationMode.Back)
             {
                 if (!App.CloudDrive.NoFolderUpAction)
+                {
                     App.CloudDrive.GoFolderUp();
-                 
-                _navParam = NavigationParameter.Browsing;
+                    _navParam = NavigationParameter.Browsing;
+                }
+                else
+                    _navParam = NavigationParameter.Normal;
+
+                if(NavigateService.PreviousPage == typeof(MyAccountPage))
+                    _navParam = NavigationParameter.Browsing;
             }
 
             App.CloudDrive.NoFolderUpAction = false;
