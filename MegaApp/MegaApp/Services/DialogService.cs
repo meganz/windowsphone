@@ -79,7 +79,7 @@ namespace MegaApp.Services
             var uploadRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
-                Background = new SolidColorBrush(Color.FromArgb(128,0,0,0)),
+                Background = new SolidColorBrush(Color.FromArgb(192,0,0,0)),
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
@@ -105,7 +105,7 @@ namespace MegaApp.Services
 
             var takePhotoButton = new Button()
             {
-                Content = "take a photo",
+                Content = "take photo",
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 Margin = new Thickness(8, 0, 8, 20)
@@ -117,9 +117,24 @@ namespace MegaApp.Services
                 cloudDrive.CaptureCameraImage();
             };
 
+            var selectPhotoButton = new Button()
+            {
+                Content = "select photo",
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Margin = new Thickness(8, 0, 8, 20)
+
+            };
+            selectPhotoButton.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                cloudDrive.SelectImage();
+            };
+
 
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(takePhotoButton);
+            buttonStackPanel.Children.Add(selectPhotoButton);
 
             uploadRadWindow.Content = buttonStackPanel;
 

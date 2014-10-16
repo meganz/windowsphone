@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Navigation;
+using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Services;
 

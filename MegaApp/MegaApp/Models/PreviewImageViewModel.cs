@@ -72,12 +72,25 @@ namespace MegaApp.Models
         private void PreloadPreviews(NodeViewModel selectedPreview)
         {
             selectedPreview.SetPreviewImage();
+            int selectedIndex = PreviewItems.IndexOf(selectedPreview);
+
             int previousIndex = PreviewItems.IndexOf(selectedPreview) - 1;
             if(previousIndex >= 0)
                 PreviewItems[previousIndex].SetPreviewImage();
             int nextIndex = PreviewItems.IndexOf(selectedPreview) + 1;
             if (nextIndex <= PreviewItems.Count-1)
-                PreviewItems[nextIndex].SetPreviewImage(); 
+                PreviewItems[nextIndex].SetPreviewImage();
+
+            for (int i = 0; i < selectedIndex - 4; i++)
+            {
+                if (PreviewItems[i].IsBusy)
+                    PreviewItems[i].CancelPreviewRequest();
+            }
+            for (int i = PreviewItems.Count-1; i > selectedIndex + 4; i--)
+            {
+                if (PreviewItems[i].IsBusy)
+                    PreviewItems[i].CancelPreviewRequest();
+            }
         }
 
         #region Properties

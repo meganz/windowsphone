@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -20,6 +21,7 @@ namespace MegaApp.MegaApi
     class GetPreviewRequestListener: BaseRequestListener
     {
         private readonly NodeViewModel _node;
+
         public GetPreviewRequestListener(NodeViewModel node)
         {
             this._node = node;

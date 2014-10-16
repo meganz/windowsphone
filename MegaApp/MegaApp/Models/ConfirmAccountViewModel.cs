@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;

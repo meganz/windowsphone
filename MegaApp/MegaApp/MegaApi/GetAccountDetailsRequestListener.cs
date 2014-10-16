@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Resources;
 
 namespace MegaApp.MegaApi

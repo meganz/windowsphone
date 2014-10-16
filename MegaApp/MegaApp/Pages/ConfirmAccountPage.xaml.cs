@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;

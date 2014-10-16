@@ -2,6 +2,7 @@
 using System.IO;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
@@ -91,23 +92,38 @@ namespace MegaApp.Models
         public void CaptureCameraImage()
         {
             var cameraCaptureTask = new CameraCaptureTask();
-            cameraCaptureTask.Completed += CameraCaptureTaskOnCompleted;
+            cameraCaptureTask.Completed += PhotoTaskOnCompleted;
+            NoFolderUpAction = true;
             cameraCaptureTask.Show();
         }
 
-        private async void CameraCaptureTaskOnCompleted(object sender, PhotoResult photoResult)
+        public void SelectImage()
+        {
+            var photoChooserTask = new PhotoChooserTask();
+            photoChooserTask.Completed += PhotoTaskOnCompleted;
+            photoChooserTask.ShowCamera = true;
+            NoFolderUpAction = true;
+            photoChooserTask.Show();
+        }
+
+        private async void PhotoTaskOnCompleted(object sender, PhotoResult photoResult)
         {
             if (photoResult.TaskResult != TaskResult.OK) return;
 
-            string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), Path.GetFileName(photoResult.OriginalFileName));
-            using (var fs = new FileStream(newFilePath, FileMode.CreateNew))
+            string fileName = Path.GetFileName(photoResult.OriginalFileName);
+            if (fileName != null)
             {
-                await photoResult.ChosenPhoto.CopyToAsync(fs);
-                await fs.FlushAsync();
-                fs.Close();
+                string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
+                using (var fs = new FileStream(newFilePath, FileMode.CreateNew))
+                {
+                    await photoResult.ChosenPhoto.CopyToAsync(fs);
+                    await fs.FlushAsync();
+                    fs.Close();
+                }
+                var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, TransferType.Upload, newFilePath);
+                App.MegaTransfers.Insert(0,uploadTransfer);
+                uploadTransfer.StartTransfer();
             }
-
-            App.MegaTransfers.Add(new TransferObjectModel(Path.GetFileName(photoResult.OriginalFileName), newFilePath, CurrentRootNode, MegaSdk));
             NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
         }

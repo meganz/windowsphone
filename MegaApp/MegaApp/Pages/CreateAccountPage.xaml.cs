@@ -13,12 +13,18 @@ namespace MegaApp.Pages
 {
     public partial class CreateAccountPage : PhoneApplicationPage
     {
+        private readonly CreateAccountViewModel _createAccountViewModel;
         public CreateAccountPage()
         {
-            var createAccountViewModelwModel = new CreateAccountViewModel(App.MegaSdk);
-            this.DataContext = createAccountViewModelwModel;
+            _createAccountViewModel = new CreateAccountViewModel(App.MegaSdk);
+            this.DataContext = _createAccountViewModel;
 
             InitializeComponent();
+        }
+
+        private void OnCreateAccountClick(object sender, System.EventArgs e)
+        {
+            _createAccountViewModel.CreateAccount();
         }
     }
 }

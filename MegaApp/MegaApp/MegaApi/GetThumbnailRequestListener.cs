@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;

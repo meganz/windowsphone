@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -64,7 +65,7 @@ namespace MegaApp.MegaApi
             get { return typeof(LoginPage); }
         }
 
-        protected override Classes.NavigationParameter NavigationParameter
+        protected override NavigationParameter NavigationParameter
         {
             get { return NavigationParameter.Normal; }
         }

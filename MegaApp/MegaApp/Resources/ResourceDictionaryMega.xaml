@@ -11,6 +11,8 @@
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters:TransferStatusToReadableTextConverter x:Key="TransferStatusToReadableTextConverter"/>
+    <converters:TransferStatusToIndeterminateConverter x:Key="TransferStatusToIndeterminateConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
@@ -60,14 +62,21 @@
 
     <DataTemplate x:Key="MegaTransferItemContent">
         <Grid Margin="0,0,0,12">
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="Auto"/>
+        		<ColumnDefinition/>
+        		<ColumnDefinition Width="Auto"/>
+        	</Grid.ColumnDefinitions>
         	<Grid.RowDefinitions>
         		<RowDefinition/>
         		<RowDefinition/>
 				<RowDefinition/>
         	</Grid.RowDefinitions>
-        	<TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis"/>
-			<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding IsNotTransferring, FallbackValue=True}" Grid.Row="1"/>
-            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UploadFile, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="2" />
+        	<Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Source="{Binding Thumbnail}" Stretch="UniformToFill"/>
+        	<TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Column="1"/>
+        	<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1"/>
+        	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" />
+        	<telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel.png" FontFamily="Portable User Interface"/>
         </Grid>
     </DataTemplate>
 
