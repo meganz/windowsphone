@@ -118,7 +118,7 @@
 				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Free space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
 				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
 			</Grid>
-			<Grid x:Name="CacheSpaceGrid" Grid.Row="4" Margin="0,18,0,6">
+			<Grid x:Name="CacheSpaceGrid" Grid.Row="4" Margin="0,24,0,6">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition/>

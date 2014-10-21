@@ -26,6 +26,7 @@ namespace MegaApp.Models
             Status = TransferStatus.NotStarted;
             SelectedNode = selectedNode;
             CancelButtonState = false;
+            AutoLoadImageOnFinish = false;
             CancelTransferCommand = new DelegateCommand(CancelTransfer);
             SetThumbnail();
         }
@@ -44,7 +45,7 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                 {
-                    
+                    this.MegaSdk.startDownload(SelectedNode.GetMegaNode(), FilePath, this);
                     break;
                 }
                 case TransferType.Upload:
@@ -57,18 +58,38 @@ namespace MegaApp.Models
             }
         }
 
-        public void CancelTransfer(object p)
+        public void CancelTransfer(object p = null)
         {
+            if (!IsBusy) return;
             Status = TransferStatus.Canceling;
             MegaSdk.cancelTransfer(Transfer);
         }
 
         private void SetThumbnail()
         {
-            if (ImageService.IsImage(FilePath))
-                Thumbnail = new BitmapImage(new Uri(FilePath));
-            else
-                Thumbnail = ImageService.GetDefaultFileImage(FilePath);
+            switch (Type)
+            {
+                case TransferType.Download:
+                    {
+                        Thumbnail = ImageService.GetDefaultFileImage(SelectedNode.Name);
+                        if (FileService.FileExists(SelectedNode.ThumbnailPath))
+                        {
+                            SelectedNode.ThumbnailImage = new BitmapImage(new Uri(SelectedNode.ThumbnailPath)); ;
+                        }
+                        break;
+                    }
+                case TransferType.Upload:
+                    {
+                        if (ImageService.IsImage(FilePath))
+                            Thumbnail = new BitmapImage(new Uri(FilePath));
+                        else
+                            Thumbnail = ImageService.GetDefaultFileImage(FilePath);
+                        break;
+                    }
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
         }
 
         #endregion
@@ -80,8 +101,8 @@ namespace MegaApp.Models
         public TransferType Type { get; set; }
         public NodeViewModel SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
-
         public BitmapImage Thumbnail { get; private set; }
+        public bool AutoLoadImageOnFinish { get; set; }
 
         private bool _cancelButtonState;
         public bool CancelButtonState
@@ -153,7 +174,12 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
-                     Deployment.Current.Dispatcher.BeginInvoke(() =>Status = TransferStatus.Finished);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>Status = TransferStatus.Finished);
+
+                    if (AutoLoadImageOnFinish)
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() => SelectedNode.LoadImage(SelectedNode.ImagePath));
+                    }
                     break;
                 }
                 case MErrorType.API_EINCOMPLETE:

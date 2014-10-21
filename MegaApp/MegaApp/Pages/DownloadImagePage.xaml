@@ -29,7 +29,7 @@
 			x:Name="OriginalImage" 
 			Source="{Binding Image}"			
 		/>
-		<Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
+		<Border Visibility="{Binding Transfer.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<Border.Background>
 				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
 			</Border.Background>  
@@ -38,8 +38,8 @@
 					<RowDefinition Height="Auto"/>
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
-				<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding IsNotTransferring, FallbackValue=True}"/>
-				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
+				<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding Transfer.TotalBytes}" Value="{Binding Transfer.TransferedBytes}" Height="8" IsIndeterminate="{Binding Transfer.Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}"/>
+				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Transfer.Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="1" />
 			</Grid>		    
         
 		</Border>
