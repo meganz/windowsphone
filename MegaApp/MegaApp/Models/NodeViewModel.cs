@@ -1,8 +1,4 @@
-﻿using System.Globalization;
-using System.Threading;
-using Windows.Foundation.Metadata;
-using mega;
-using MegaApp.Classes;
+﻿using mega;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
@@ -40,13 +36,12 @@ namespace MegaApp.Models
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseMegaNode.getType();
             this.ParentCollection = parentCollection;
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
 
             this.MegaService = new MegaService();
 
             if(this.Type == MNodeType.TYPE_FOLDER)
                 SetFolderInfo();
-
-            this.IsNotTransferring = true;
         }
 
         #region Interfaces
@@ -184,7 +179,8 @@ namespace MegaApp.Models
             }
             else
             {
-                this.MegaSdk.startDownload(this._baseMegaNode, ImagePath, new DownloadTransferListener(this));
+                Transfer.AutoLoadImageOnFinish = true;
+                Transfer.StartTransfer();
             }
         }
 
@@ -192,10 +188,12 @@ namespace MegaApp.Models
         {
             ThumbnailIsDefaultImage = false;
             this.ThumbnailImage = null;
-            this.ThumbnailImage = new BitmapImage();
-            this.ThumbnailImage.DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight);
-            this.ThumbnailImage.DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth);
-            this.ThumbnailImage.DecodePixelType = DecodePixelType.Logical;
+            this.ThumbnailImage = new BitmapImage
+            {
+                DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight),
+                DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth),
+                DecodePixelType = DecodePixelType.Logical
+            };
             this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
             this.ThumbnailImage.UriSource = new Uri(path);
 
@@ -271,6 +269,8 @@ namespace MegaApp.Models
 
         #region Properties
 
+        public TransferObjectModel Transfer { get; set; }
+
         private string _name;
         public string Name
         {
@@ -295,17 +295,6 @@ namespace MegaApp.Models
         public object ParentCollection { get; set; }
 
         public bool ThumbnailIsDefaultImage { get; set; }
-
-        private bool _isNotTransferring;
-        public bool IsNotTransferring
-        {
-            get { return _isNotTransferring; }
-            set
-            {
-                _isNotTransferring = value;
-                OnPropertyChanged("IsNotTransferring");
-            }
-        }
 
         private BitmapImage _thumbnailImage;
         public BitmapImage ThumbnailImage
@@ -339,29 +328,6 @@ namespace MegaApp.Models
                 OnPropertyChanged("Image");
             }
         }
-
-        private ulong _totalBytes;
-        public ulong TotalBytes
-        {
-            get { return _totalBytes; }
-            set
-            {
-                _totalBytes = value;
-                OnPropertyChanged("TotalBytes");
-            }
-        }
-
-        private ulong _transferedBytes;
-        public ulong TransferedBytes
-        {
-            get { return _transferedBytes; }
-            set
-            {
-                _transferedBytes = value;
-                OnPropertyChanged("TransferedBytes");
-            }
-        }
-
 
         public bool IsImage
         {
