@@ -99,10 +99,13 @@
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
+    <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
     <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
     <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
+    <Compile Include="Enums\DriveDisplayMode.cs" />
     <Compile Include="Enums\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
+    <Compile Include="Enums\NodeDisplayMode.cs" />
     <Compile Include="Enums\TransferStatus.cs" />
     <Compile Include="Enums\TransferType.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
@@ -230,6 +233,8 @@
     </Content>
     <Content Include="Assets\AppBar\login.png" />
     <Content Include="Assets\AppBar\logout.png" />
+    <Content Include="Assets\AppBar\move.png" />
+    <Content Include="Assets\AppBar\remove.png" />
     <Content Include="Assets\AppBar\save.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

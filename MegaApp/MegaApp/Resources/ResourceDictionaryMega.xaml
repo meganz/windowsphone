@@ -13,42 +13,47 @@
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <converters:TransferStatusToReadableTextConverter x:Key="TransferStatusToReadableTextConverter"/>
     <converters:TransferStatusToIndeterminateConverter x:Key="TransferStatusToIndeterminateConverter"/>
+    <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
-        <Grid Margin="0,0,0,12">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ThumbnailImage, TargetNullValue=\\Assets\\FileTypes\\file.png}" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
-            <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
-            <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SizeAndSuffix}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
-            <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-        </Grid>
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter='0,4', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter='1,0', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+            <Grid Margin="0,6">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ThumbnailImage, TargetNullValue=\\Assets\\FileTypes\\file.png}" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
+                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SizeAndSuffix}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListFolderItemContent">
-        <Grid Margin="0,0,0,12">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="\Assets\FileTypes\folder.png" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
-            <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
-            <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
-            <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-        </Grid>
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter='0,4', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter='1,0', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+            <Grid Margin="0,6">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="\Assets\FileTypes\folder.png" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
+                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">

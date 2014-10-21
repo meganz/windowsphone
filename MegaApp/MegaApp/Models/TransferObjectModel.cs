@@ -20,7 +20,19 @@ namespace MegaApp.Models
         public TransferObjectModel(MegaSDK megaSdk, NodeViewModel selectedNode, TransferType transferType, string filePath) 
             :base(megaSdk)
         {
-            DisplayName = Path.GetFileName(filePath);
+            switch (transferType)
+            {
+                case TransferType.Download:
+                    {
+                        DisplayName = selectedNode.Name;
+                        break;
+                    }
+                case TransferType.Upload:
+                    {
+                        DisplayName = Path.GetFileName(filePath);
+                        break;
+                    }
+            }
             Type = transferType;
             FilePath = filePath;
             Status = TransferStatus.NotStarted;
@@ -74,7 +86,7 @@ namespace MegaApp.Models
                         Thumbnail = ImageService.GetDefaultFileImage(SelectedNode.Name);
                         if (FileService.FileExists(SelectedNode.ThumbnailPath))
                         {
-                            SelectedNode.ThumbnailImage = new BitmapImage(new Uri(SelectedNode.ThumbnailPath)); ;
+                            Thumbnail = new BitmapImage(new Uri(SelectedNode.ThumbnailPath)); ;
                         }
                         break;
                     }

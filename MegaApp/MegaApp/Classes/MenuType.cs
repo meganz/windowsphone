@@ -9,6 +9,7 @@ namespace MegaApp.Classes
     public enum MenuType
     {
         CloudDriveMenu = 0,
-        MoveMenu = 1
+        MoveMenu = 1,
+        MultiSelectMenu = 2
     }
 }

@@ -1,4 +1,5 @@
-﻿using GoedWare.Windows.Phone.Controls;
+﻿using System.ServiceModel.Description;
+using GoedWare.Windows.Phone.Controls;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -51,15 +52,20 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (App.CloudDrive.MoveItemMode)
+            switch (App.CloudDrive.DriveDisplayMode)
             {
-                this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
-                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
-            }
-            else
-            {
-                this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+                case DriveDisplayMode.MoveItem:
+                {
+                    this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
+                    break;
+                }
+                default:
+                {
+                    this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+                    break;
+                }
             }
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
@@ -191,15 +197,46 @@ namespace MegaApp.Pages
 
         private void OnCancelMoveClick(object sender, EventArgs e)
         {
-            App.CloudDrive.MoveItemMode = false;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+
+            if(App.CloudDrive.FocusedNode != null)
+                App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
             App.CloudDrive.FocusedNode = null;
+
+            if (App.CloudDrive.SelectedNodes.Count > 0)
+            {
+                foreach (var node in App.CloudDrive.SelectedNodes)
+                {
+                    node.DisplayMode = NodeDisplayMode.Normal;
+                }
+            }
+            App.CloudDrive.SelectedNodes.Clear();
+
+            LstCloudDrive.IsCheckModeActive = false;
+            LstCloudDrive.CheckedItems.Clear();
+
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
-            App.CloudDrive.MoveItem(App.CloudDrive.CurrentRootNode);
-            App.CloudDrive.MoveItemMode = false;
+            if (App.CloudDrive.FocusedNode != null)
+            {
+                App.CloudDrive.FocusedNode.Move(App.CloudDrive.CurrentRootNode);
+                App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+            }
+
+            if (App.CloudDrive.SelectedNodes.Count > 0)
+            {
+                foreach (var node in App.CloudDrive.SelectedNodes)
+                {
+                    node.Move(App.CloudDrive.CurrentRootNode);
+                    node.DisplayMode = NodeDisplayMode.Normal;
+                }
+                App.CloudDrive.SelectedNodes.Clear();
+            }
+
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
@@ -208,7 +245,8 @@ namespace MegaApp.Pages
         {
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
-            App.CloudDrive.MoveItemMode = true;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
+            App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
         }
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -237,6 +275,81 @@ namespace MegaApp.Pages
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
 
             App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
+        }
+
+        private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
+        {
+            if (e.CheckBoxesVisible)
+            {
+                this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
+                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
+            }
+            else
+            {
+                LstCloudDrive.CheckedItems.Clear();
+                this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+            }
+        }
+        private void OnMultiSelectDownloadClick(object sender, EventArgs e)
+        {
+            if (LstCloudDrive.CheckedItems.Count < 1) return;
+
+            foreach (var item in LstCloudDrive.CheckedItems)
+            {
+                var node = (NodeViewModel) item;
+                
+                if (node == null) continue;
+                
+                App.MegaTransfers.Add(node.Transfer);
+                node.Transfer.StartTransfer();
+            }
+            LstCloudDrive.IsCheckModeActive = false;
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        }
+
+        private void OnMultiSelectMoveClick(object sender, EventArgs e)
+        {
+            if (LstCloudDrive.CheckedItems.Count < 1) return;
+
+            App.CloudDrive.SelectedNodes.Clear();
+
+            foreach (var item in LstCloudDrive.CheckedItems)
+            {
+                var node = (NodeViewModel)item;
+
+                if (node == null) continue;
+
+                node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                App.CloudDrive.SelectedNodes.Add(node);
+            }
+
+            LstCloudDrive.IsCheckModeActive = false;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
+            this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
+        }
+
+        private void OnMultiSelectRemoveClick(object sender, EventArgs e)
+        {
+            if (LstCloudDrive.CheckedItems.Count < 1) return;
+
+            if (MessageBox.Show(String.Format("Are you sure you want to remove {0} items?", LstCloudDrive.CheckedItems.Count),
+                "Remove items", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+
+            foreach (var item in LstCloudDrive.CheckedItems)
+            {
+                var node = (NodeViewModel)item;
+
+                if (node == null) continue;
+
+                node.Remove();
+            }
+
+            LstCloudDrive.IsCheckModeActive = false;
+            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
     }
     

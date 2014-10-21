@@ -17,22 +17,32 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 		<!--Pivot Control-->
-		<phone:Pivot Title="MEGA">
+		<phone:Pivot x:Name="Transfers" Title="MEGA">
 			<!--Pivot item one-->
 			<phone:PivotItem x:Name="Uploads" Header="uploads">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstUploads"
 						ItemsSource="{Binding Uploads}"
-						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" ItemTemplate="{StaticResource MegaTransferItemContent}" FontFamily="Portable User Interface" 
+						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
+						ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						FontFamily="Portable User Interface" 
+					/>
+				</Grid>
+			</phone:PivotItem>
+			<phone:PivotItem x:Name="Downloads" Header="downloads">
+				<Grid>
+					<telerikPrimitives:RadDataBoundListBox 
+						x:Name="LstDownloads"
+						ItemsSource="{Binding Downloads}"
+						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
+						ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						FontFamily="Portable User Interface" 
 					/>
 				</Grid>
 			</phone:PivotItem>
 
 			<!--Pivot item two-->
-			<phone:PivotItem x:Name="Downloads" Header="downloads">
-				<Grid/>
-			</phone:PivotItem>
 		</phone:Pivot>
 	</Grid>
     

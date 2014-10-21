@@ -10,6 +10,8 @@
         Browsing = 50,
         BreadCrumb = 60,
         ImportLinkLaunch = 70,
+        Uploads = 80,
+        Downloads = 90,
         Unknown = 999
     }
 }

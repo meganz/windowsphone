@@ -70,6 +70,27 @@
 				Click="OnCancelMoveClick" 				
 			/>
 		</shell:ApplicationBar>
+
+		<shell:ApplicationBar x:Key="MultiSelectMenu">
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnMultiSelectDownload" 
+				IconUri="/Assets/AppBar/cloud.download.png" 
+				Text="download" 
+				Click="OnMultiSelectDownloadClick" 				
+			/>
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnMultiSelectMove" 
+				IconUri="/Assets/AppBar/move.png" 
+				Text="move" 
+				Click="OnMultiSelectMoveClick" 
+			/>		
+			<shell:ApplicationBarIconButton 
+				x:Name="BtnMultiSelectRemove" 
+				IconUri="/Assets/AppBar/remove.png" 
+				Text="remove" 
+				Click="OnMultiSelectRemoveClick" 
+			/>		
+		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.Resources>
 
 <!--LayoutRoot is the root grid where all page content is placed-->
@@ -90,7 +111,7 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,-28,12,0">
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,12,0">
 
 			<telerikPrimitives:RadDataBoundListBox 
 				x:Name="LstCloudDrive" 				
@@ -101,7 +122,7 @@
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 				Loaded="OnListLoaded" 
-                ItemStateChanged="OnItemStateChanged" ScrollStateChanged="OnScrollStateChanged"				
+                ItemStateChanged="OnItemStateChanged" ScrollStateChanged="OnScrollStateChanged" IsCheckModeEnabled="True" IsCheckModeActiveChanged="OnCheckModeChanged"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 
@@ -116,7 +137,7 @@
 						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnDownloadItemCloud" 
 							Command="{Binding DownloadItemCommand}"
-							Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+							Content="{Binding LocalizedUiResources.ViewOrginal, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								/>
 						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnGetPreviewLink" 
