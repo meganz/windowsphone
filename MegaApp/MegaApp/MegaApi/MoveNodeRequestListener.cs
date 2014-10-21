@@ -17,10 +17,12 @@ namespace MegaApp.MegaApi
 {
     class MoveNodeRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public MoveNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        private readonly NodeViewModel _rootNode;
+        private readonly NodeViewModel _nodeToMove;
+        public MoveNodeRequestListener(NodeViewModel rootNode, NodeViewModel nodeToMove)
         {
-            this._cloudDriveViewModel = cloudDriveViewModel;
+            this._rootNode = rootNode;
+            this._nodeToMove = nodeToMove;
         }
 
         #region Base Properties
@@ -86,7 +88,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _cloudDriveViewModel.LoadNodes();
+            ((ObservableCollection<NodeViewModel>)_rootNode.ChildCollection).Add(_nodeToMove);
         }
 
         #endregion

@@ -196,7 +196,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View original.
+        ///   Looks up a localized string similar to download.
         /// </summary>
         public static string Download {
             get {
@@ -633,6 +633,15 @@ namespace MegaApp.Resources {
         public static string UploadFile {
             get {
                 return ResourceManager.GetString("UploadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View original.
+        /// </summary>
+        public static string ViewOrginal {
+            get {
+                return ResourceManager.GetString("ViewOrginal", resourceCulture);
             }
         }
     }

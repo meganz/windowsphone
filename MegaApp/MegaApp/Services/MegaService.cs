@@ -42,5 +42,14 @@ namespace MegaApp.Services
 
             megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel));
         }
+
+        public void Move(MegaSDK megaSdk, NodeViewModel nodeViewModel, NodeViewModel newParentNode)
+        {
+            if (megaSdk.checkMove(nodeViewModel.GetMegaNode(), newParentNode.GetMegaNode()).getErrorCode() == MErrorType.API_OK)
+            {
+                megaSdk.moveNode(nodeViewModel.GetMegaNode(), newParentNode.GetMegaNode(), 
+                    new MoveNodeRequestListener(newParentNode, nodeViewModel));
+            }
+        }
     }
 }

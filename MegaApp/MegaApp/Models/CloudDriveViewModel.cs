@@ -25,12 +25,12 @@ namespace MegaApp.Models
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
         {
-            this.MoveItemMode = false;
-            this.NoFolderUpAction = false;
+            this.DriveDisplayMode = DriveDisplayMode.CloudDrive;
             this.CurrentRootNode = null;
             this.BreadCrumbNode = null;
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
+            this.SelectedNodes = new List<NodeViewModel>();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
@@ -80,6 +80,13 @@ namespace MegaApp.Models
                   
                     break;
                 }
+                case MenuType.MultiSelectMenu:
+                {
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Download;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Move;
+                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Remove;
+                    break;
+                }
             }
            
         }
@@ -114,7 +121,7 @@ namespace MegaApp.Models
             if (fileName != null)
             {
                 string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
-                using (var fs = new FileStream(newFilePath, FileMode.CreateNew))
+                using (var fs = new FileStream(newFilePath, FileMode.Create))
                 {
                     await photoResult.ChosenPhoto.CopyToAsync(fs);
                     await fs.FlushAsync();
@@ -135,7 +142,7 @@ namespace MegaApp.Models
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN )
                 parentNode = this.MegaSdk.getRootNode();
             
-            this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode);
+            this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode, childCollection:ChildNodes);
             CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
@@ -143,6 +150,7 @@ namespace MegaApp.Models
         {
             this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
+            this.CurrentRootNode.ChildCollection = ChildNodes;
             CalculateBreadCrumbs(this.CurrentRootNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
@@ -180,14 +188,6 @@ namespace MegaApp.Models
             return result;
         }
 
-        public void MoveItem(NodeViewModel selectedRootNode)
-        {
-            if (!IsUserOnline()) return;
-
-            if (this.MegaSdk.checkMove(FocusedNode.GetMegaNode(), selectedRootNode.GetMegaNode()).getErrorCode() == MErrorType.API_OK)
-                this.MegaSdk.moveNode(FocusedNode.GetMegaNode(), selectedRootNode.GetMegaNode(), new MoveNodeRequestListener(this));
-        }
-
         public async void OpenLink()
         {
             if (!IsUserOnline()) return;
@@ -212,7 +212,16 @@ namespace MegaApp.Models
 
             for (int i = 0; i < nodeList.size(); i++)
             {
-                ChildNodes.Add(new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes));
+                var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
+
+                if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
+                    node.GetMegaNode().getBase64Handle() == FocusedNode.GetMegaNode().getBase64Handle())
+                {
+                    node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                    FocusedNode = node;
+                }
+
+                ChildNodes.Add(node);
             }
         }
 
@@ -258,6 +267,7 @@ namespace MegaApp.Models
         public void SelectFolder(NodeViewModel selectedNode)
         {
             this.CurrentRootNode = selectedNode;
+            this.CurrentRootNode.ChildCollection = ChildNodes;
             CalculateBreadCrumbs(this.CurrentRootNode);
             // Create unique uri string to navigate
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> {{"Id", Guid.NewGuid().ToString("N")}});
@@ -318,20 +328,13 @@ namespace MegaApp.Models
 
         public NodeViewModel FocusedNode { get; set; }
 
+        public List<NodeViewModel> SelectedNodes { get; set; } 
+
         public NodeViewModel BreadCrumbNode { get; set; }
 
         public bool NoFolderUpAction { get; set; }
 
-        private bool _moveItemMode;
-        public bool MoveItemMode
-        {
-            get { return _moveItemMode; }
-            set
-            {
-                _moveItemMode = value;
-                OnPropertyChanged("MoveItemMode");
-            }
-        }
+        public DriveDisplayMode DriveDisplayMode { get; set; }
 
         #endregion
       

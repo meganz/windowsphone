@@ -59,7 +59,7 @@ namespace MegaApp.Models
         public void TranslateAppBar(IList iconButtons, IList menuItems)
         {
             ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Previous;
-            ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Download;
+            ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.ViewOrginal;
             ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.GetPreviewLink;
             ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.Next;
 

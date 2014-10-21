@@ -26,16 +26,18 @@ namespace MegaApp.Models
         // Offset DateTime value to calculate the correct creation and modification time
         private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
-        public NodeViewModel(MegaSDK megaSdk, MNode baseMegaNode, object parentCollection = null)
+        public NodeViewModel(MegaSDK megaSdk, MNode baseMegaNode, object parentCollection = null, object childCollection = null)
             : base(megaSdk)
         {
             this._baseMegaNode = baseMegaNode;
+            this.DisplayMode = NodeDisplayMode.Normal;
             this.Name = baseMegaNode.getName();
             this.Size = baseMegaNode.getSize();
             this.CreationTime = ConvertDateToString(baseMegaNode.getCreationTime()).ToString("dd MMM yyyy");
             this.SizeAndSuffix = Size.ToStringAndSuffix();
             this.Type = baseMegaNode.getType();
             this.ParentCollection = parentCollection;
+            this.ChildCollection = childCollection;
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
 
             this.MegaService = new MegaService();
@@ -56,6 +58,12 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
             MegaService.Rename(this.MegaSdk, this);
+        }
+
+        public void Move(NodeViewModel newParentNode)
+        {
+            if (!IsUserOnline()) return;
+            MegaService.Move(this.MegaSdk, this, newParentNode);
         }
 
         public void Remove()
@@ -271,6 +279,17 @@ namespace MegaApp.Models
 
         public TransferObjectModel Transfer { get; set; }
 
+        private NodeDisplayMode _displayMode;
+        public NodeDisplayMode DisplayMode
+        {
+            get { return _displayMode; }
+            set
+            {
+                _displayMode = value;
+                OnPropertyChanged("DisplayMode");
+            }
+        }
+
         private string _name;
         public string Name
         {
@@ -293,6 +312,7 @@ namespace MegaApp.Models
         public string FolderInfo { get; private set; }
 
         public object ParentCollection { get; set; }
+        public object ChildCollection { get; set; }
 
         public bool ThumbnailIsDefaultImage { get; set; }
 
