@@ -52,6 +52,14 @@ namespace MegaApp.Services
             }
         }
 
+        public static BitmapImage GetBitmapFromStream(Stream stream)
+        {
+            stream.Position = 0;
+            var result = new BitmapImage();
+            result.SetSource(stream);
+            return result;
+        }
+
         public static BitmapImage GetDefaultFileImage(string filename)
         {
             string fileExtension;

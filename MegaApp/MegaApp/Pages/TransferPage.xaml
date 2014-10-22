@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     x:Class="MegaApp.Pages.TransferPage"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -26,7 +27,8 @@
 						ItemsSource="{Binding Uploads}"
 						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
 						ItemTemplate="{StaticResource MegaTransferItemContent}" 
-						FontFamily="Portable User Interface" 
+						FontFamily="Portable User Interface"
+                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
 				</Grid>
 			</phone:PivotItem>
@@ -38,6 +40,7 @@
 						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
 						ItemTemplate="{StaticResource MegaTransferItemContent}" 
 						FontFamily="Portable User Interface" 
+                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
 				</Grid>
 			</phone:PivotItem>
