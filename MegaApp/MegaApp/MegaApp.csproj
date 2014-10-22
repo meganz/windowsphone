@@ -99,15 +99,19 @@
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
+    <Compile Include="Converters\BooleanToColorConverter.cs" />
     <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
     <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
     <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
     <Compile Include="Enums\DriveDisplayMode.cs" />
+    <Compile Include="Enums\MediaType.cs" />
     <Compile Include="Enums\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />
     <Compile Include="Enums\NodeDisplayMode.cs" />
     <Compile Include="Enums\TransferStatus.cs" />
     <Compile Include="Enums\TransferType.cs" />
+    <Compile Include="Models\BaseMediaModel.cs" />
+    <Compile Include="Models\MediaSelectionPageModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -161,6 +165,9 @@
     <Compile Include="Pages\CreateAccountPage.xaml.cs">
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MediaSelectionPage.xaml.cs">
+      <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MyAccountPage.xaml.cs">
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
@@ -202,6 +209,7 @@
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\MediaService.cs" />
     <Compile Include="Services\MegaService.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\NodeService.cs" />
@@ -346,6 +354,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CreateAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MediaSelectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -14,6 +14,7 @@
     <converters:TransferStatusToReadableTextConverter x:Key="TransferStatusToReadableTextConverter"/>
     <converters:TransferStatusToIndeterminateConverter x:Key="TransferStatusToIndeterminateConverter"/>
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
+    <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
@@ -118,33 +119,27 @@
         </Grid>
     </DataTemplate>
 
-    <!--<DataTemplate x:Key="DownloadSlideViewItemContent">
-        <Grid>
-            <slideView:PanAndZoomImage Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface" ZoomMode="FitToPhysicalSize"/>
-            <Grid VerticalAlignment="Bottom" Visibility="{Binding Transfer.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,0,0,40">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding Transfer.TotalBytes}" Value="{Binding Transfer.TransferedBytes}"/>
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" />
-            </Grid>
+    <!-- MEDIA SELECTION PAGE TEMPLATES -->
+    <DataTemplate x:Key="MediaAlbumTemplate">
+        <Grid Width="200" Height="200" Margin="10" >
+        	<Grid.Background>
+        		<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+        	</Grid.Background>
+        	<Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
+        	<TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
         </Grid>
     </DataTemplate>
 
-    <DataTemplate x:Key="DownloadFilmStripContent">
-        <Grid>
-            <Image Source="{Binding Image, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="Auto" Margin="10,0"/>
-            <Grid VerticalAlignment="Bottom" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="40,0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}"/>
-                <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DownloadNode, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Row="1" Margin="0"/>
-            </Grid>
+    <DataTemplate x:Key="MediaItemTemplate">
+        <Grid Width="100" Height="100" Margin="5" >
+        	<Border Margin="0,1,0,0" BorderThickness="2" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}">
+        		<Border.Background>
+        			<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+        		</Border.Background>
+        		<Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
+        	</Border>
         </Grid>
-    </DataTemplate>-->
+    </DataTemplate>
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
     <DataTemplate x:Key="ShowShareLinkButtons">
@@ -172,6 +167,17 @@
 
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
+    
+	<!-- EMPTY STYLE FOR MEDIA SELECTION -->
+	<Style x:Key="MediaItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
+    	<Setter Property="Template">
+    		<Setter.Value>
+    			<ControlTemplate TargetType="telerikPrimitives:ItemCheckBox">
+    				<Grid Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    			</ControlTemplate>
+    		</Setter.Value>
+    	</Setter>
+    </Style>
 
     <!-- Resource dictionary entries should be defined here. -->
 </ResourceDictionary>

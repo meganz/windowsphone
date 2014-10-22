@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
@@ -131,10 +133,26 @@ namespace MegaApp.Services
                 cloudDrive.SelectImage();
             };
 
+            var selectPhotosButton = new Button()
+            {
+                Content = "select photos",
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Margin = new Thickness(8, 0, 8, 20)
+
+            };
+            selectPhotosButton.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                cloudDrive.NoFolderUpAction = true;
+                NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
+            };
+
 
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(takePhotoButton);
             buttonStackPanel.Children.Add(selectPhotoButton);
+            buttonStackPanel.Children.Add(selectPhotosButton);
 
             uploadRadWindow.Content = buttonStackPanel;
 
