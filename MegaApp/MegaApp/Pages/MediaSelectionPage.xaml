@@ -1,0 +1,64 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    x:Class="MegaApp.Pages.MediaSelectionPage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+		<phone:Pivot x:Name="MediaPivot" Title="media selection" Grid.RowSpan="2">
+			<phone:PivotItem x:Name="Albums" CacheMode="{x:Null}" Header="albums">
+				<Grid>
+					<telerikPrimitives:RadDataBoundListBox
+						x:Name="LstMediaAlbums"
+						ItemsSource="{Binding PictureAlbums}" 
+						ItemTemplate="{StaticResource MediaAlbumTemplate}"							
+						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+						IsAsyncBalanceEnabled="True"
+			>
+						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
+						</telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition> 				
+					</telerikPrimitives:RadDataBoundListBox>
+				</Grid>
+			</phone:PivotItem>
+			<phone:PivotItem x:Name="Photos" CacheMode="{x:Null}" Header="photos">
+				<Grid>
+					<telerikPrimitives:RadDataBoundListBox
+						x:Name="LstMediaItems"
+						ItemsSource="{Binding Pictures}" 
+						ItemTemplate="{StaticResource MediaItemTemplate}"							
+						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+						IsAsyncBalanceEnabled="True" 
+						IsCheckModeActive="True" 
+						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" ItemCheckedPath="Selected" CheckModeDeactivatedOnBackButton="False"																		
+			>
+						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
+							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
+						</telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition> 				
+					</telerikPrimitives:RadDataBoundListBox>
+				</Grid>
+			</phone:PivotItem>
+		</phone:Pivot>
+	</Grid>
+
+</phone:PhoneApplicationPage>
