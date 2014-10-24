@@ -97,6 +97,7 @@
     <Compile Include="Classes\AccountDataPoint.cs" />
     <Compile Include="Classes\AccountDetails.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
+    <Compile Include="Classes\MemoryInformation.cs" />
     <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
     <Compile Include="Converters\BooleanToColorConverter.cs" />
@@ -216,6 +217,9 @@
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\UiService.cs" />
+    <Compile Include="UserControls\MemoryControl.xaml.cs">
+      <DependentUpon>MemoryControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -381,6 +385,10 @@
     <Page Include="Resources\ResourceDictionaryMega.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MemoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:UserControls="clr-namespace:MegaApp.UserControls"
     x:Class="MegaApp.Pages.PreviewImagePage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -15,7 +16,22 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
+				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
+			</shell:ApplicationBar.MenuItems>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
+        
+		<UserControls:MemoryControl HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0"/>        
         
 		<telerikPrimitives:RadSlideView 
 			x:Name="SlideViewAndFilmStrip" 
@@ -37,18 +53,5 @@
 		</Border>        
         
 	</Grid>
-
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBar.MenuItems>
-				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
-				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
-			</shell:ApplicationBar.MenuItems>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

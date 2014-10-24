@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
+using Windows.Devices.Geolocation;
+using MegaApp.Classes;
 using MegaApp.Resources;
 using System.IO;
 using System.Xml;
 using Windows.Storage;
+using Microsoft.Phone.Info;
 
 namespace MegaApp.Services
 {
@@ -29,6 +32,17 @@ namespace MegaApp.Services
             //    Package.Current.Id.Version.Minor,
             //    Package.Current.Id.Version.Build,
             //    Package.Current.Id.Version.Revision);
+        }
+
+        public static MemoryInformation GetAppMemoryUsage()
+        {
+            return new MemoryInformation()
+            {
+                AppMemoryUsage = (ulong) DeviceStatus.ApplicationCurrentMemoryUsage,
+                AppMemoryLimit = (ulong) DeviceStatus.ApplicationMemoryUsageLimit,
+                AppMemoryPeak = (ulong) DeviceStatus.ApplicationPeakMemoryUsage,
+                DeviceMemory = (ulong) DeviceStatus.DeviceTotalMemory
+            };
         }
 
         /// <summary>
@@ -68,8 +82,10 @@ namespace MegaApp.Services
             return totalSize;
         }
 
-        public static void ClearAppCache()
+        public static void ClearAppCache(bool includeLocalFolder)
         {
+            if (includeLocalFolder)
+                ClearLocalCache();
             ClearThumbnailCache();
             ClearPreviewCache();
             ClearDownloadCache();
@@ -109,6 +125,11 @@ namespace MegaApp.Services
             {
                 FileService.ClearFiles(Directory.GetFiles(uploadDir));
             }
+        }
+
+        public static void ClearLocalCache()
+        {
+            FileService.ClearFiles(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
         }
 
         public static string GetUploadDirectoryPath()
