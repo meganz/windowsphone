@@ -49,7 +49,7 @@ namespace MegaApp.Services
         public static IEnumerable<BaseMediaModel<Picture>> GetPictures()
         {
             var mediaLibrary = new MediaLibrary();
-
+            
             var pictureList = new List<BaseMediaModel<Picture>>();
 
             foreach (var picture in mediaLibrary.Pictures)
