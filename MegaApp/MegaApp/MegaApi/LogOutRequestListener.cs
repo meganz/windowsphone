@@ -35,6 +35,11 @@ namespace MegaApp.MegaApi
             get { return AppMessages.LogoutFailed_Title; }
         }
 
+        protected override bool ShowErrorMessage
+        {
+            get { return true; }
+        }
+
         protected override string SuccessMessage
         {
             get { return AppMessages.LoggedOut; }

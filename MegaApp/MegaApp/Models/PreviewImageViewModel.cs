@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
 using mega;
@@ -30,7 +31,7 @@ namespace MegaApp.Models
 
             cloudDriveViewModel.ChildNodes.CollectionChanged += CloudDriveNodesOnCollectionChanged;
 
-            GetPreviewsFromCache();
+            //GetPreviewsFromCache();
         }
 
         private void CloudDriveNodesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -47,13 +48,13 @@ namespace MegaApp.Models
         {
             foreach (var previewItem in PreviewItems.Where(p => p.HasPreviewInCache()))
             {
-                previewItem.LoadPreviewImage(previewItem.PreviewPath);
+                previewItem.PreviewImageUri = new Uri(previewItem.PreviewPath);
             }
 
-            foreach (var previewItem in PreviewItems.Where(p => p.PreviewImage == null && !p.ThumbnailIsDefaultImage))
-            {
-                previewItem.PreviewImage = previewItem.ThumbnailImage;
-            }
+            //foreach (var previewItem in PreviewItems.Where(p => p.PreviewImageUri == null && !p.ThumbnailIsDefaultImage))
+            //{
+            //    previewItem.PreviewImageUri = previewItem.ThumbnailImageUri;
+            //}
         }
 
         public void TranslateAppBar(IList iconButtons, IList menuItems)
@@ -68,30 +69,7 @@ namespace MegaApp.Models
         }
 
         #endregion
-
-        private void PreloadPreviews(NodeViewModel selectedPreview)
-        {
-            selectedPreview.SetPreviewImage();
-            int selectedIndex = PreviewItems.IndexOf(selectedPreview);
-
-            int previousIndex = PreviewItems.IndexOf(selectedPreview) - 1;
-            if(previousIndex >= 0)
-                PreviewItems[previousIndex].SetPreviewImage();
-            int nextIndex = PreviewItems.IndexOf(selectedPreview) + 1;
-            if (nextIndex <= PreviewItems.Count-1)
-                PreviewItems[nextIndex].SetPreviewImage();
-
-            for (int i = 0; i < selectedIndex - 4; i++)
-            {
-                if (PreviewItems[i].IsBusy)
-                    PreviewItems[i].CancelPreviewRequest();
-            }
-            for (int i = PreviewItems.Count-1; i > selectedIndex + 4; i--)
-            {
-                if (PreviewItems[i].IsBusy)
-                    PreviewItems[i].CancelPreviewRequest();
-            }
-        }
+        
 
         #region Properties
 
@@ -106,10 +84,10 @@ namespace MegaApp.Models
             set
             {
                 _selectedPreview = value;
-                PreloadPreviews(_selectedPreview);
                 OnPropertyChanged("SelectedPreview");
             }
         }
+
         #endregion
     }
 }

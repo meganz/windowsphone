@@ -44,6 +44,11 @@ namespace MegaApp.Models
 
             if(this.Type == MNodeType.TYPE_FOLDER)
                 SetFolderInfo();
+
+            if (this.Type != MNodeType.TYPE_FILE) return;
+            
+            ThumbnailIsDefaultImage = true;
+            this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
         }
 
         #region Interfaces
@@ -117,14 +122,14 @@ namespace MegaApp.Models
 
         public void SetThumbnailImage()
         {
-            if (this.ThumbnailImage != null) return;
+            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
 
             if (this.Type == MNodeType.TYPE_FOLDER) return;
 
-            ThumbnailIsDefaultImage = true;
-            this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
+            //ThumbnailIsDefaultImage = true;
+            //this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
             
-            if (this.IsImage && this.GetMegaNode().hasThumbnail())
+            if (this.IsImage || this.GetMegaNode().hasThumbnail())
             {
                 GetThumbnail();
             }
@@ -134,7 +139,8 @@ namespace MegaApp.Models
         {
             if (FileService.FileExists(ThumbnailPath))
             {
-                LoadThumbnailImage(ThumbnailPath);
+                ThumbnailImageUri = new Uri(ThumbnailPath);
+                ThumbnailIsDefaultImage = false;
             }
             else
             {
@@ -145,17 +151,20 @@ namespace MegaApp.Models
 
         public void SetPreviewImage()
         {
-            if (this.PreviewImage != null && this.PreviewImage != this.ThumbnailImage) return;
+            //string previewUri = PreviewImageUri != null ? PreviewImageUri.ToString() : null;
+            //string thumbnailUri = ThumbnailImageUri != null ? ThumbnailImageUri.ToString() : null;
+
+            //if (this.PreviewImageUri != null && Path.GetFileName(previewUri) != Path.GetFileName(thumbnailUri)) return;
             if (this.IsBusy) return;
-            if (!this.IsImage) return;
-          
+            if (!this.IsImage && !this.GetMegaNode().hasPreview()) return;
+
             if (this.GetMegaNode().hasPreview())
             {
                 GetPreview();
             }
             else
             {
-                GetImage();
+                GetImage(true);
             }
         }
 
@@ -163,7 +172,7 @@ namespace MegaApp.Models
         {
             if (FileService.FileExists(PreviewPath))
             {
-                LoadPreviewImage(PreviewPath);
+                PreviewImageUri = new Uri(PreviewPath);
             }
             else
             {
@@ -173,68 +182,75 @@ namespace MegaApp.Models
 
         public void SetImage()
         {
-            if (this.Image != null) return;
+            if (this.ImageUri != null) return;
             if (this.IsBusy) return;
             if (!this.IsImage) return;
             GetImage();
         }
 
-        private void GetImage()
+        private void GetImage(bool isForPreview = false)
         {
             if (FileService.FileExists(ImagePath))
             {
-                LoadImage(ImagePath);
+                ImageUri = new Uri(ImagePath);
+
+                if (!isForPreview) return;
+
+                PreviewImageUri = new Uri(ImagePath);
+
             }
             else
             {
+                if (isForPreview)
+                    IsBusy = true;
                 Transfer.AutoLoadImageOnFinish = true;
                 Transfer.StartTransfer();
             }
         }
 
-        public void LoadThumbnailImage(string path)
-        {
-            ThumbnailIsDefaultImage = false;
-            this.ThumbnailImage = null;
-            this.ThumbnailImage = new BitmapImage
-            {
-                DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight),
-                DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth),
-                DecodePixelType = DecodePixelType.Logical
-            };
-            this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
-            this.ThumbnailImage.UriSource = new Uri(path);
+        //public void LoadThumbnailImage(string path)
+        //{
+        //    ThumbnailIsDefaultImage = false;
+        //    this.ThumbnailImage = null;
+        //    this.ThumbnailImage = new BitmapImage
+        //    {
+        //        DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight),
+        //        DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth),
+        //        DecodePixelType = DecodePixelType.Logical
+        //    };
+        //    this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
+        //    this.ThumbnailImage.UriSource = new Uri(path);
 
-        }
+        //}
 
-        public void LoadPreviewImage(string path)
-        {
-            this.PreviewImage = null;
-            this.PreviewImage = new BitmapImage();
-            this.PreviewImage.ImageFailed += PreviewImageOnImageFailed;
-            this.PreviewImage.UriSource = new Uri(path);
-        }
+        //public void LoadPreviewImage(string path)
+        //{
+        //    this.PreviewImage = null;
+        //    this.PreviewImage = new BitmapImage();
+        //    this.PreviewImage.ImageFailed += PreviewImageOnImageFailed;
+        //    this.PreviewImage.UriSource = new Uri(path);
+        //}
 
-        public void LoadImage(string path)
-        {
-            this.Image = null;
-            this.Image = new BitmapImage();
-            this.Image.ImageFailed += ImageOnImageFailed;
-            this.Image.UriSource = new Uri(path);
+        //public void LoadImage(string path)
+        //{
+        //    this.Image = null;
+        //    this.Image = new BitmapImage();
+        //    this.Image.ImageFailed += ImageOnImageFailed;
+        //    this.Image.UriSource = new Uri(path);
 
-            if (this.GetMegaNode().hasPreview()) return;
+        //    if (this.GetMegaNode().hasPreview()) return;
 
-            LoadPreviewImage(path);
-        }
+        //    LoadPreviewImage(path);
+        //}
 
         public void SaveImageToCameraRoll()
         {
-            if (this.Image == null) return;
+            if (this.ImageUri == null) return;
 
             if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
                     MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
-            if (ImageService.SaveToCameraRoll(this.Name, this.Image))
+            if (ImageService.SaveToCameraRoll(this.Name, this.ImageUri))
                 MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
             else
                 MessageBox.Show(AppMessages.ImageSaveError, AppMessages.ImageSaveError_Title, MessageBoxButton.OK);
@@ -254,24 +270,24 @@ namespace MegaApp.Models
 
         #region Events
 
-        private void ImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        {
-            MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
-            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
-            this.Image = bitmapImage;
-        }
+        //private void ImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        //{
+        //    MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
+        //    var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
+        //    this.Image = bitmapImage;
+        //}
 
-        private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        {
-            MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
-            var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
-            this.PreviewImage = bitmapImage;
-        }
+        //private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        //{
+        //    MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
+        //    var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
+        //    this.PreviewImage = bitmapImage;
+        //}
 
-        private void ThumbnailImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        {
-            this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
-        }
+        //private void ThumbnailImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
+        //{
+        //    this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
+        //}
 
         #endregion
 
@@ -316,36 +332,41 @@ namespace MegaApp.Models
 
         public bool ThumbnailIsDefaultImage { get; set; }
 
-        private BitmapImage _thumbnailImage;
-        public BitmapImage ThumbnailImage
+        private Uri _thumbnailImageUri;
+        public Uri ThumbnailImageUri
         {
-            get { return _thumbnailImage; }
+            get { return _thumbnailImageUri; }
             set
             {
-                _thumbnailImage = value;
-                OnPropertyChanged("ThumbnailImage");
+                _thumbnailImageUri = value;
+                OnPropertyChanged("ThumbnailImageUri");
             }
         }
 
-        private BitmapImage _previewImage;
-        public BitmapImage PreviewImage
+        private Uri _previewImageUri;
+        public Uri PreviewImageUri
         {
-            get { return _previewImage; }
+            get
+            {
+                if (_previewImageUri == null)
+                    SetPreviewImage();
+                return _previewImageUri;
+            }
             set
             {
-                _previewImage = value;
-                OnPropertyChanged("PreviewImage");
+                _previewImageUri = value;
+                OnPropertyChanged("PreviewImageUri");
             }
         }
 
-        private BitmapImage _image;
-        public BitmapImage Image
+        private Uri _imageUri;
+        public Uri ImageUri
         {
-            get { return _image; }
+            get { return _imageUri; }
             set
             {
-                _image = value;
-                OnPropertyChanged("Image");
+                _imageUri = value;
+                OnPropertyChanged("ImageUri");
             }
         }
 

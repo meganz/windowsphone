@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows.Media.Imaging;
 using MegaApp.Enums;
 using MegaApp.Models;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
 namespace MegaApp.Services
 {
@@ -20,6 +22,8 @@ namespace MegaApp.Services
 
             foreach (var album in mediaLibrary.RootPictureAlbum.Albums)
             {
+                if (album.Pictures.Count <= 0) continue;
+
                 var media = new BaseMediaModel<PictureAlbum>()
                 {
                     Name = album.Name,
@@ -40,7 +44,12 @@ namespace MegaApp.Services
 
             var random = new Random(DateTime.Now.Millisecond);
 
-            var bitmapImage = new BitmapImage();
+            var bitmapImage = new BitmapImage
+            {
+                DecodePixelHeight = 200,
+                DecodePixelWidth = 200,
+                DecodePixelType = DecodePixelType.Logical
+            };
             bitmapImage.SetSource(pictureAlbum.Pictures[random.Next(0, pictureAlbum.Pictures.Count - 1)].GetImage());
 
             return bitmapImage;

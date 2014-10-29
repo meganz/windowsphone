@@ -23,12 +23,32 @@
 		<StaticResource ResourceKey="PhoneForegroundBrush"/>
 	</phone:PhoneApplicationPage.Foreground>
 	
-	<Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding SelectedNode}">        
-        
-		<slideView:PanAndZoomImage 
-			x:Name="OriginalImage" 
-			Source="{Binding Image}"			
-		/>
+	<Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding SelectedNode}">
+
+		<!--<Image>
+			<Image.Source>
+                <BitmapImage 
+                    UriSource="{Binding ImageUri}"                    
+                    DecodePixelType="Logical"
+                    CreateOptions="BackgroundCreation"
+                />
+            </Image.Source>
+		</Image>-->
+        <slideView:PanAndZoomImage x:Name="PanAndZoomImage">
+            <slideView:PanAndZoomImage.BusyIndicatorStyle>
+                <Style TargetType="telerikPrimitives:RadBusyIndicator">
+                    <Setter Property="Visibility" Value="Collapsed" /> 
+                </Style>
+            </slideView:PanAndZoomImage.BusyIndicatorStyle>
+            <slideView:PanAndZoomImage.Source>
+                <BitmapImage 
+                            UriSource="{Binding ImageUri}"
+							DecodePixelType="Logical"							 
+                            CreateOptions="BackgroundCreation"
+                        />
+            </slideView:PanAndZoomImage.Source>
+        </slideView:PanAndZoomImage>
+		
 		<Border Visibility="{Binding Transfer.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<Border.Background>
 				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>

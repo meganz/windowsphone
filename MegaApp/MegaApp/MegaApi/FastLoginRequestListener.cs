@@ -45,6 +45,11 @@ namespace MegaApp.MegaApi
             get { return AppMessages.LoginFailed_Title; }
         }
 
+        protected override bool ShowErrorMessage
+        {
+            get { return true; }
+        }
+
         protected override string SuccessMessage
         {
             get { throw new NotImplementedException(); }

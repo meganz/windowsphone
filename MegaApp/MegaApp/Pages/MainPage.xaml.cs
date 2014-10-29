@@ -251,12 +251,23 @@ namespace MegaApp.Pages
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
         {
-            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
+            switch (e.State)
+            {
+                case ItemState.Recycling:
+                    break;
+                case ItemState.Recycled:
+                    break;
+                case ItemState.Realizing:
+                    break;
+                case ItemState.Realized:
+                        ((NodeViewModel)e.DataItem).SetThumbnailImage();
+                    break;
+            }
         }
 
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
-            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
+           //
         }
 
         private void OnGoToTopTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -264,8 +275,6 @@ namespace MegaApp.Pages
             if (!App.CloudDrive.HasChildNodes()) return;
             
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.First());
-            
-            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
 
         private void OnGoToBottomTap(object sender, System.Windows.Input.GestureEventArgs e)
@@ -273,8 +282,6 @@ namespace MegaApp.Pages
             if (!App.CloudDrive.HasChildNodes()) return;
            
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
-
-            App.CloudDrive.UiService.RefreshViewport(LstCloudDrive.ViewportItems);
         }
 
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)

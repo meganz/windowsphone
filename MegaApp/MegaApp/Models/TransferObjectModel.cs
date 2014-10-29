@@ -83,19 +83,19 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                     {
-                        Thumbnail = ImageService.GetDefaultFileImage(SelectedNode.Name);
+                        ThumbnailUri = ImageService.GetDefaultFileImage(SelectedNode.Name);
                         if (FileService.FileExists(SelectedNode.ThumbnailPath))
                         {
-                            Thumbnail = new BitmapImage(new Uri(SelectedNode.ThumbnailPath)); ;
+                            ThumbnailUri = new Uri(SelectedNode.ThumbnailPath); ;
                         }
                         break;
                     }
                 case TransferType.Upload:
                     {
                         if (ImageService.IsImage(FilePath))
-                            Thumbnail = new BitmapImage(new Uri(FilePath));
+                            ThumbnailUri = new Uri(FilePath);
                         else
-                            Thumbnail = ImageService.GetDefaultFileImage(FilePath);
+                            ThumbnailUri = ImageService.GetDefaultFileImage(FilePath);
                         break;
                     }
                 default:
@@ -113,7 +113,7 @@ namespace MegaApp.Models
         public TransferType Type { get; set; }
         public NodeViewModel SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
-        public BitmapImage Thumbnail { get; private set; }
+        public Uri ThumbnailUri { get; private set; }
         public bool AutoLoadImageOnFinish { get; set; }
 
         private bool _cancelButtonState;
@@ -190,7 +190,13 @@ namespace MegaApp.Models
 
                     if (AutoLoadImageOnFinish)
                     {
-                        Deployment.Current.Dispatcher.BeginInvoke(() => SelectedNode.LoadImage(SelectedNode.ImagePath));
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            SelectedNode.ImageUri = new Uri(SelectedNode.ImagePath);
+                            if (SelectedNode.GetMegaNode().hasPreview()) return;
+                            SelectedNode.PreviewImageUri = new Uri(SelectedNode.ImagePath);
+                            SelectedNode.IsBusy = false;
+                        });
                     }
                     break;
                 }

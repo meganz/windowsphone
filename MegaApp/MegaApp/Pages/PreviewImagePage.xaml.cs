@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
+using Windows.Devices.Sensors;
 using MegaApp.Models;
-using MegaApp.Resources;
+using Microsoft.Devices.Sensors;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows;
+using System.Windows.Controls;
+using Microsoft.Xna.Framework;
 using Telerik.Windows.Controls;
+using Accelerometer = Microsoft.Devices.Sensors.Accelerometer;
+using AccelerometerReading = Microsoft.Devices.Sensors.AccelerometerReading;
 
 namespace MegaApp.Pages
 {
@@ -26,8 +27,10 @@ namespace MegaApp.Pages
             InitializeComponent();
 
             _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
+
+            MemoryControl.StartMemoryCounter();
         }
-        
+
         private void SetMoveButtons(bool isSlideview = true)
         {
             ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled =

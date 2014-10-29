@@ -421,7 +421,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remember me.
+        ///   Looks up a localized string similar to Stay logged in.
         /// </summary>
         public static string RememberMeText {
             get {

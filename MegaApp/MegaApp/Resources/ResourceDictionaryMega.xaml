@@ -29,7 +29,17 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ThumbnailImage, TargetNullValue=\\Assets\\FileTypes\\file.png}" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
+                    <Image.Source>
+                        <BitmapImage 
+                            UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+                            DecodePixelHeight="64"
+                            DecodePixelWidth="64"
+                            DecodePixelType="Logical"
+                            CreateOptions="BackgroundCreation"
+                        />
+                    </Image.Source>
+                </Image>
                 <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SizeAndSuffix}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
@@ -49,7 +59,17 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="\Assets\FileTypes\folder.png" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0"/>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
+                    <Image.Source>
+                        <BitmapImage 
+                            UriSource="\Assets\FileTypes\folder.png"
+                            DecodePixelHeight="64"
+                            DecodePixelWidth="64"
+                            DecodePixelType="Logical"
+                            CreateOptions="BackgroundCreation"
+                        />
+                    </Image.Source>
+                </Image>
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
@@ -78,7 +98,17 @@
         		<RowDefinition/>
 				<RowDefinition/>
         	</Grid.RowDefinitions>
-        	<Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Source="{Binding Thumbnail}" Stretch="UniformToFill"/>
+            <Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Stretch="UniformToFill">
+                <Image.Source>
+                    <BitmapImage 
+                            UriSource="{Binding ThumbnailImageUri}"
+                            DecodePixelHeight="90"
+                            DecodePixelWidth="90"
+                            DecodePixelType="Logical"
+                            CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
         	<TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Row="0" Grid.Column="1"/>
         	<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1"/>
         	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" />
@@ -97,7 +127,15 @@
 
     <DataTemplate x:Key="PreviewSlideViewItemContent">
         <Grid>
-            <slideView:PanAndZoomImage Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" FontFamily="Portable User Interface"/>
+            <slideView:PanAndZoomImage FontFamily="Portable User Interface">
+                <slideView:PanAndZoomImage.Source>
+                    <BitmapImage 
+                            UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
+                            CreateOptions="BackgroundCreation"
+                            DecodePixelWidth="480"
+                        />
+                </slideView:PanAndZoomImage.Source>
+            </slideView:PanAndZoomImage>
             <Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
@@ -109,7 +147,15 @@
 
     <DataTemplate x:Key="PreviewFilmStripContent">
         <Grid>
-            <Image Source="{Binding PreviewImage, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}" Width="460"/>
+            <Image Width="460">
+                <Image.Source>
+                    <BitmapImage 
+                            UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
+                            CreateOptions="BackgroundCreation"
+                            DecodePixelWidth="460"
+                        />
+                </Image.Source>
+            </Image>
             <Border Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
@@ -125,8 +171,8 @@
         	<Grid.Background>
         		<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
         	</Grid.Background>
-        	<Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
-        	<TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
+            <Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="200" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
         </Grid>
     </DataTemplate>
 
@@ -136,8 +182,8 @@
         		<Border.Background>
         			<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
         		</Border.Background>
-        		<Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
-        	</Border>
+                <Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
+            </Border>
         </Grid>
     </DataTemplate>
 

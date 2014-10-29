@@ -49,6 +49,11 @@ namespace MegaApp.MegaApi
             get { return AppMessages.GetPreviewFailed_Title; }
         }
 
+        protected override bool ShowErrorMessage
+        {
+            get { return true; }
+        }
+
         protected override string SuccessMessage
         {
             get { throw new NotImplementedException(); }
@@ -90,7 +95,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _node.LoadPreviewImage(request.getFile());
+            _node.PreviewImageUri = new Uri(request.getFile());
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)
