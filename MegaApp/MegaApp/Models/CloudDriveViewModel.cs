@@ -36,8 +36,6 @@ namespace MegaApp.Models
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
-
-            this.UiService = new UiService();
         }
        
         #region Commands
@@ -50,8 +48,7 @@ namespace MegaApp.Models
         #endregion
 
         #region Services
-
-        public IUiService UiService { get; set; }
+       
 
         #endregion
 

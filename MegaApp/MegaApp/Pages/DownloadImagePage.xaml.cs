@@ -32,6 +32,11 @@ namespace MegaApp.Pages
             _downloadImageViewModel.SelectedNode.Transfer.CancelTransfer();
         }
 
+        protected override void OnRemovedFromJournal(JournalEntryRemovedEventArgs e)
+        {
+            PanAndZoomImage.Source = null; // memory leak TELERIK
+        }
+
         private void OnSaveClick(object sender, System.EventArgs e)
         {
             _downloadImageViewModel.SelectedNode.SaveImageToCameraRoll();

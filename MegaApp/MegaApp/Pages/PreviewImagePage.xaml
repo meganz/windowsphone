@@ -31,7 +31,7 @@
 
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
         
-		<UserControls:MemoryControl HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0"/>        
+		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Canvas.ZIndex="1"/>        
         
 		<telerikPrimitives:RadSlideView 
 			x:Name="SlideViewAndFilmStrip" 
@@ -43,7 +43,7 @@
 			IsLoopingEnabled="False" 
 			SelectionChanged="OnSlideViewSelectionChanged" 
 			Loaded="OnSlideViewLoaded" 
-			SlideViewStateChanged="OnSlideViewStateChanged"
+			SlideViewStateChanged="OnSlideViewStateChanged" 
 		/>
 		<Border VerticalAlignment="Top">			
 			<Border.Background>

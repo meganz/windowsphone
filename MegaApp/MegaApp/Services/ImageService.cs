@@ -12,12 +12,13 @@ namespace MegaApp.Services
 {
     class ImageService
     {
-        public static bool SaveToCameraRoll(string name, BitmapImage bitmapImage)
+        public static bool SaveToCameraRoll(string name, Uri bitmapImageUri)
         {
             using (var mediaLibrary = new MediaLibrary())
             {
                 try
                 {
+                    var bitmapImage = new BitmapImage(bitmapImageUri);
                     return mediaLibrary.SavePictureToCameraRoll(name, bitmapImage.ConvertToBytes()) != null;
                 }
                 catch (Exception)
@@ -60,7 +61,7 @@ namespace MegaApp.Services
             return result;
         }
 
-        public static BitmapImage GetDefaultFileImage(string filename)
+        public static Uri GetDefaultFileImage(string filename)
         {
             string fileExtension;
 
@@ -70,93 +71,93 @@ namespace MegaApp.Services
             }
             catch (Exception)
             {
-                return new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                return new Uri("/Assets/FileTypes/file.png", UriKind.Relative);
             }
             
             if (String.IsNullOrEmpty(fileExtension) || String.IsNullOrWhiteSpace(fileExtension))
-                return new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                return new Uri("/Assets/FileTypes/file.png", UriKind.Relative);
 
             switch (fileExtension.ToLower())
             {
                 case ".accdb":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/accdb.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/accdb.png", UriKind.Relative);
                     }
                 case ".bmp":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/bmp.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/bmp.png", UriKind.Relative);
                     }
                 case ".doc":
                 case ".docx":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/doc.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/doc.png", UriKind.Relative);
                     }
                 case ".eps":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/eps.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/eps.png", UriKind.Relative);
                     }
                 case ".gif":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/gif.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/gif.png", UriKind.Relative);
                     }
                 case ".ico":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/ico.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/ico.png", UriKind.Relative);
                     }
                 case ".jpg":
                 case ".jpeg":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/jpg.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/jpg.png", UriKind.Relative);
                     }
                 case ".mp3":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/mp3.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/mp3.png", UriKind.Relative);
                     }
                 case ".pdf":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/pdf.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/pdf.png", UriKind.Relative);
                     }
                 case ".png":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/png.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/png.png", UriKind.Relative);
                     }
                 case ".ppt":
                 case ".pptx":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/ppt.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/ppt.png", UriKind.Relative);
                     }
                 case ".swf":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/swf.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/swf.png", UriKind.Relative);
                     }
                 case ".tga":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/tga.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/tga.png", UriKind.Relative);
                     }
                 case ".tiff":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/tiff.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/tiff.png", UriKind.Relative);
                     }
                 case ".txt":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/txt.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/txt.png", UriKind.Relative);
                     }
                 case ".wav":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/wav.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/wav.png", UriKind.Relative);
                     }
                 case ".xls":
                 case ".xlsx":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/xls.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/xls.png", UriKind.Relative);
                     }
                 case ".zip":
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/zip.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/zip.png", UriKind.Relative);
                     }
                 default:
                     {
-                        return new BitmapImage(new Uri("/Assets/FileTypes/file.png", UriKind.Relative));
+                        return new Uri("/Assets/FileTypes/file.png", UriKind.Relative);
                     }
             }
         }

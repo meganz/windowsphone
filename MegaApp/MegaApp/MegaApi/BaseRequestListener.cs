@@ -19,6 +19,7 @@ namespace MegaApp.MegaApi
         abstract protected bool ShowProgressMessage { get; }
         abstract protected string ErrorMessage { get; }
         abstract protected string ErrorMessageTitle { get; }
+        abstract protected bool ShowErrorMessage { get; }
         abstract protected string SuccessMessage { get; }
         abstract protected string SuccessMessageTitle { get; }
         abstract protected bool ShowSuccesMessage { get; }
@@ -49,7 +50,8 @@ namespace MegaApp.MegaApi
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
                 }
                 else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
-                    MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
+                    if (ShowErrorMessage)
+                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
             });
         }
 

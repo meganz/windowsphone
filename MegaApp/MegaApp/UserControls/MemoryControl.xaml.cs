@@ -16,22 +16,35 @@ namespace MegaApp.UserControls
 {
     public partial class MemoryControl : UserControl
     {
-        private readonly Timer _timer;
+        private Timer _timer;
 
         public MemoryControl()
         {
             InitializeComponent();
-            _timer = new Timer(TimerCallback, null, new TimeSpan(0), new TimeSpan(0,0,2));
         }
 
         private void TimerCallback(object state)
         {
             MemoryInformation memInfo = AppService.GetAppMemoryUsage();
 
-            TxtAppMemory.Text = String.Format("RAM: {0}", memInfo.AppMemoryLimit.ToStringAndSuffix());
-            TxtAppMemoryLimit.Text = String.Format("MAX: {0}", memInfo.AppMemoryLimit.ToStringAndSuffix());
-            TxtAppMemoryPeak.Text = String.Format("PEAK: {0}", memInfo.AppMemoryPeak.ToStringAndSuffix());
-            TxtDeviceMemory.Text = String.Format("PHONE: {0}", memInfo.DeviceMemory.ToStringAndSuffix());
+            Dispatcher.BeginInvoke(() =>
+            {
+                TxtAppMemory.Text = String.Format("RAM: {0}", memInfo.AppMemoryUsage.ToStringAndSuffix());
+                TxtAppMemoryLimit.Text = String.Format("MAX: {0}", memInfo.AppMemoryLimit.ToStringAndSuffix());
+                TxtAppMemoryPeak.Text = String.Format("PEAK: {0}", memInfo.AppMemoryPeak.ToStringAndSuffix());
+                TxtDeviceMemory.Text = String.Format("PHONE: {0}", memInfo.DeviceMemory.ToStringAndSuffix());
+            });
+        }
+
+        public void StartMemoryCounter()
+        {
+            _timer = new Timer(TimerCallback, null, new TimeSpan(0), new TimeSpan(0, 0, 3));
+        }
+
+        public void StopMemoryCounter()
+        {
+            _timer.Dispose();
+            _timer = null;
         }
     }
 }

@@ -48,6 +48,11 @@ namespace MegaApp.MegaApi
             get { return AppMessages.GetThumbnailFailed_Title; }
         }
 
+        protected override bool ShowErrorMessage
+        {
+            get { return false; }
+        }
+
         protected override string SuccessMessage
         {
             get { throw new NotImplementedException(); }
@@ -89,7 +94,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _node.LoadThumbnailImage(request.getFile());
+            _node.ThumbnailImageUri = new Uri(request.getFile());
+            _node.ThumbnailIsDefaultImage = false;
         }
 
         #endregion

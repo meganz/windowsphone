@@ -26,6 +26,7 @@ namespace MegaApp.Models
         public LoginViewModel(MegaSDK megaSdk)
         {
             this._megaSdk = megaSdk;
+            this.RememberMe = true;
             this.ControlState = true;
             this.NavigateCreateAccountCommand = new DelegateCommand(NavigateCreateAccount);
         }

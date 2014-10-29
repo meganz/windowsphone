@@ -45,6 +45,11 @@ namespace MegaApp.MegaApi
             get { return AppMessages.CreateFolderFailed_Title; }
         }
 
+        protected override bool ShowErrorMessage
+        {
+            get { return true; }
+        }
+
         protected override string SuccessMessage
         {
             get { return AppMessages.CreateFolderSuccess; }
