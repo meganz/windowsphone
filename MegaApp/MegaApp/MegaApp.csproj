@@ -111,6 +111,7 @@
     <Compile Include="Enums\NodeDisplayMode.cs" />
     <Compile Include="Enums\TransferStatus.cs" />
     <Compile Include="Enums\TransferType.cs" />
+    <Compile Include="MegaApi\MegaLogger.cs" />
     <Compile Include="Models\BaseMediaModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
