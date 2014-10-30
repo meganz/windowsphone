@@ -207,42 +207,7 @@ namespace MegaApp.Models
                 Transfer.StartTransfer();
             }
         }
-
-        //public void LoadThumbnailImage(string path)
-        //{
-        //    ThumbnailIsDefaultImage = false;
-        //    this.ThumbnailImage = null;
-        //    this.ThumbnailImage = new BitmapImage
-        //    {
-        //        DecodePixelHeight = Convert.ToInt32(AppResources.ThumbnailHeight),
-        //        DecodePixelWidth = Convert.ToInt32(AppResources.ThumbnailWidth),
-        //        DecodePixelType = DecodePixelType.Logical
-        //    };
-        //    this.ThumbnailImage.ImageFailed += ThumbnailImageOnImageFailed;
-        //    this.ThumbnailImage.UriSource = new Uri(path);
-
-        //}
-
-        //public void LoadPreviewImage(string path)
-        //{
-        //    this.PreviewImage = null;
-        //    this.PreviewImage = new BitmapImage();
-        //    this.PreviewImage.ImageFailed += PreviewImageOnImageFailed;
-        //    this.PreviewImage.UriSource = new Uri(path);
-        //}
-
-        //public void LoadImage(string path)
-        //{
-        //    this.Image = null;
-        //    this.Image = new BitmapImage();
-        //    this.Image.ImageFailed += ImageOnImageFailed;
-        //    this.Image.UriSource = new Uri(path);
-
-        //    if (this.GetMegaNode().hasPreview()) return;
-
-        //    LoadPreviewImage(path);
-        //}
-
+       
         public void SaveImageToCameraRoll()
         {
             if (this.ImageUri == null) return;
