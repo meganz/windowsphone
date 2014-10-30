@@ -152,6 +152,8 @@ namespace MegaApp.Services
             var grid = new Grid();
             grid.ColumnDefinitions.Add(new ColumnDefinition());
             grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
+            grid.RowDefinitions.Add(new RowDefinition());
 
             var hubCamera = new RadHubTile()
             {
@@ -164,6 +166,19 @@ namespace MegaApp.Services
             {
                 uploadRadWindow.IsOpen = false;
                 cloudDrive.CaptureCameraImage();
+            };
+
+            var hubSelfie = new RadHubTile()
+            {
+                Title = "Selfie mode",
+                ImageSource = new BitmapImage(new Uri("/Assets/Images/selfie_upload.png", UriKind.Relative)),
+                IsFrozen = true,
+                Margin = new Thickness(20)
+            };
+            hubSelfie.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
             };
 
             var hubPicture = new RadHubTile()
@@ -181,10 +196,15 @@ namespace MegaApp.Services
             };
 
             grid.Children.Add(hubCamera);
+            grid.Children.Add(hubSelfie);
             grid.Children.Add(hubPicture);
 
             Grid.SetColumn(hubCamera, 0);
-            Grid.SetColumn(hubPicture, 1);
+            Grid.SetColumn(hubSelfie, 1);
+            Grid.SetColumn(hubPicture, 0);
+            Grid.SetRow(hubCamera, 0);
+            Grid.SetRow(hubSelfie, 0);
+            Grid.SetRow(hubPicture, 1);
 
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(grid);
