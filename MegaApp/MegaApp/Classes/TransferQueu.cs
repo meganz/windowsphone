@@ -88,7 +88,6 @@ namespace MegaApp.Classes
                 foreach (var item in e.NewItems)
                 {
                     ((TransferObjectModel)item).PropertyChanged += UploadsOnPropertyChanged;
-                    UploadSort((TransferObjectModel)item);
                 }
             }
 

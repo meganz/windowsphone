@@ -32,6 +32,9 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.Downloads)
                 Transfers.SelectedItem = Downloads;
+
+            if (navParam == NavigationParameter.PictureSelected)
+                NavigationService.RemoveBackEntry();
         }
 
         private void OnPauseClick(object sender, System.EventArgs e)

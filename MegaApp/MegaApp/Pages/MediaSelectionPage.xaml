@@ -50,8 +50,10 @@
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 						IsAsyncBalanceEnabled="True" 
 						IsCheckModeActive="True" 
-						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" ItemCheckedPath="Selected" CheckModeDeactivatedOnBackButton="False" ItemStateChanged="OnItemStateChanged"																		
-			>
+						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" 
+						ItemCheckedPath="Selected" 
+						CheckModeDeactivatedOnBackButton="False" 	
+					>
 						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
 							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
 						</telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition> 				

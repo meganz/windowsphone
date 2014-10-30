@@ -178,7 +178,7 @@
 
     <DataTemplate x:Key="MediaItemTemplate">
         <Grid Width="100" Height="100" Margin="5" >
-        	<Border Margin="0,1,0,0" BorderThickness="3" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}" Canvas.ZIndex="1">
+        	<Border Margin="0,1,0,0" BorderThickness="5" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}" Canvas.ZIndex="1">
         		<Border.Background>
         			<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
         		</Border.Background>
