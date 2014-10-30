@@ -22,5 +22,15 @@ namespace MegaApp.Pages
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
+
+        private void OnAcceptClick(object sender, System.EventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
+
+        private void OnItemStateChanged(object sender, Telerik.Windows.Controls.ItemStateChangedEventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
+        }
     }
 }

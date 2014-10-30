@@ -14,17 +14,17 @@ namespace MegaApp.Services
 {
     static class MediaService
     {
-        public static IEnumerable<BaseMediaModel<PictureAlbum>> GetPictureAlbums()
+        public static IEnumerable<BaseMediaViewModel<PictureAlbum>> GetPictureAlbums()
         {
             var mediaLibrary = new MediaLibrary();
 
-            var albumsList = new List<BaseMediaModel<PictureAlbum>>();
+            var albumsList = new List<BaseMediaViewModel<PictureAlbum>>();
 
             foreach (var album in mediaLibrary.RootPictureAlbum.Albums)
             {
                 if (album.Pictures.Count <= 0) continue;
 
-                var media = new BaseMediaModel<PictureAlbum>()
+                var media = new BaseMediaViewModel<PictureAlbum>()
                 {
                     Name = album.Name,
                     Type = MediaType.Album,
@@ -55,19 +55,18 @@ namespace MegaApp.Services
             return bitmapImage;
         }
 
-        public static IEnumerable<BaseMediaModel<Picture>> GetPictures()
+        public static IEnumerable<BaseMediaViewModel<Picture>> GetPictures()
         {
             var mediaLibrary = new MediaLibrary();
             
-            var pictureList = new List<BaseMediaModel<Picture>>();
+            var pictureList = new List<BaseMediaViewModel<Picture>>();
 
             foreach (var picture in mediaLibrary.Pictures)
             {
-                var media = new BaseMediaModel<Picture>()
+                var media = new BaseMediaViewModel<Picture>()
                 {
                     Name = picture.Name,
                     Type = MediaType.Picture,
-                    DisplayImage = ImageService.GetBitmapFromStream(picture.GetThumbnail()),
                     BaseObject = picture
                 };
 

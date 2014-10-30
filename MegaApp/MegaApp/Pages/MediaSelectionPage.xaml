@@ -41,7 +41,7 @@
 					</telerikPrimitives:RadDataBoundListBox>
 				</Grid>
 			</phone:PivotItem>
-			<phone:PivotItem x:Name="Photos" CacheMode="{x:Null}" Header="photos">
+			<phone:PivotItem x:Name="Photos" Header="photos">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox
 						x:Name="LstMediaItems"
@@ -50,7 +50,7 @@
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 						IsAsyncBalanceEnabled="True" 
 						IsCheckModeActive="True" 
-						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" ItemCheckedPath="Selected" CheckModeDeactivatedOnBackButton="False"																		
+						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" ItemCheckedPath="Selected" CheckModeDeactivatedOnBackButton="False" ItemStateChanged="OnItemStateChanged"																		
 			>
 						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
 							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
@@ -60,5 +60,11 @@
 			</phone:PivotItem>
 		</phone:Pivot>
 	</Grid>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" />			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

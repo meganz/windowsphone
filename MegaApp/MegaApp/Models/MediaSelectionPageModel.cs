@@ -15,8 +15,8 @@ namespace MegaApp.Models
         public MediaSelectionPageModel(MegaSDK megaSdk)
             : base(megaSdk)
         {
-            PictureAlbums = new ObservableCollection<BaseMediaModel<PictureAlbum>>(MediaService.GetPictureAlbums());
-            Pictures = new ObservableCollection<BaseMediaModel<Picture>>(MediaService.GetPictures());
+            PictureAlbums = new ObservableCollection<BaseMediaViewModel<PictureAlbum>>(MediaService.GetPictureAlbums());
+            Pictures = new ObservableCollection<BaseMediaViewModel<Picture>>(MediaService.GetPictures());
         }
         
         #region Methods
@@ -27,8 +27,8 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public ObservableCollection<BaseMediaModel<PictureAlbum>> PictureAlbums { get; set; }
-        public ObservableCollection<BaseMediaModel<Picture>> Pictures { get; set; } 
+        public ObservableCollection<BaseMediaViewModel<PictureAlbum>> PictureAlbums { get; set; }
+        public ObservableCollection<BaseMediaViewModel<Picture>> Pictures { get; set; } 
 
         #endregion
     }

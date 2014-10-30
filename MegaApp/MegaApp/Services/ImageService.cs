@@ -53,11 +53,18 @@ namespace MegaApp.Services
             }
         }
 
-        public static BitmapImage GetBitmapFromStream(Stream stream)
+        public static BitmapImage GetBitmapFromStream(Stream stream, int decodePixelHeight, int decodePixelWidth)
         {
             stream.Position = 0;
-            var result = new BitmapImage();
+            
+            var result = new BitmapImage
+            {
+                DecodePixelHeight = decodePixelHeight, 
+                DecodePixelWidth = decodePixelWidth,
+                DecodePixelType = DecodePixelType.Logical
+            };
             result.SetSource(stream);
+            
             return result;
         }
 

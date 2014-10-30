@@ -288,6 +288,7 @@ namespace MegaApp.Pages
         {
             if (e.CheckBoxesVisible)
             {
+                LstCloudDrive.CheckedItems.Add(e.TappedItem);
                 this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
                 App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
             }

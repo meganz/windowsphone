@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Enums;
+using MegaApp.Models;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -17,7 +18,8 @@ namespace MegaApp.Pages
     {
         public TransferPage()
         {
-            this.DataContext = App.MegaTransfers;
+            var transfersViewModel = new TransfersViewModel(App.MegaSdk, App.MegaTransfers);
+            this.DataContext = transfersViewModel;
             InitializeComponent();
 
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
@@ -30,6 +32,11 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.Downloads)
                 Transfers.SelectedItem = Downloads;
+        }
+
+        private void OnPauseClick(object sender, System.EventArgs e)
+        {
+        	// TODO: Add event handler implementation here.
         }
 
     }

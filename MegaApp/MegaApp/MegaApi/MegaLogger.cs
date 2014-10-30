@@ -16,7 +16,7 @@ namespace MegaApp.MegaApi
 {
     class MegaLogger : MLoggerInterface
     {
-        public virtual void log(String time, int loglevel, String source, String message)
+        public virtual void log(string time, int loglevel, string source, string message)
         {
             String logLevelString;
             switch((MLogLevel)loglevel)
@@ -44,7 +44,7 @@ namespace MegaApp.MegaApi
                     break;
             }
 
-            if(source != null && source.Length != 0)
+            if(!string.IsNullOrEmpty(source))
             {
                 int index = source.LastIndexOf('\\');
                 if(index >=0 && source.Length > (index + 1))
