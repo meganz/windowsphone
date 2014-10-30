@@ -24,7 +24,7 @@
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstUploads"
-						ItemsSource="{Binding Uploads}"
+						ItemsSource="{Binding MegaTransfers.Uploads}"
 						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
 						ItemTemplate="{StaticResource MegaTransferItemContent}" 
 						FontFamily="Portable User Interface"
@@ -36,7 +36,7 @@
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstDownloads"
-						ItemsSource="{Binding Downloads}"
+						ItemsSource="{Binding MegaTransfers.Downloads}"
 						EmptyContentTemplate="{StaticResource MegaTransferListEmptyContent}" 
 						ItemTemplate="{StaticResource MegaTransferItemContent}" 
 						FontFamily="Portable User Interface" 
@@ -49,4 +49,10 @@
 		</phone:Pivot>
 	</Grid>
     
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseClick" />			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
 </phone:PhoneApplicationPage>

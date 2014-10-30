@@ -101,7 +101,7 @@
             <Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Stretch="UniformToFill">
                 <Image.Source>
                     <BitmapImage 
-                            UriSource="{Binding ThumbnailImageUri}"
+                            UriSource="{Binding ThumbnailUri}"
                             DecodePixelHeight="90"
                             DecodePixelWidth="90"
                             DecodePixelType="Logical"
@@ -178,11 +178,11 @@
 
     <DataTemplate x:Key="MediaItemTemplate">
         <Grid Width="100" Height="100" Margin="5" >
-        	<Border Margin="0,1,0,0" BorderThickness="3" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}">
+        	<Border Margin="0,1,0,0" BorderThickness="3" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}" Canvas.ZIndex="1">
         		<Border.Background>
         			<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
         		</Border.Background>
-                <Image Stretch="UniformToFill" Source="{Binding DisplayImage}"/>
+                <Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="100" Width="100"/>
             </Border>
         </Grid>
     </DataTemplate>

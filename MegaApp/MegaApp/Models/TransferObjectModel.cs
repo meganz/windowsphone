@@ -42,7 +42,7 @@ namespace MegaApp.Models
             CancelTransferCommand = new DelegateCommand(CancelTransfer);
             SetThumbnail();
         }
-
+        
         #region Commands
 
         public ICommand CancelTransferCommand { get; set; }
@@ -227,18 +227,10 @@ namespace MegaApp.Models
                 }
             }
 
-
-            if (e.getErrorCode() == MErrorType.API_OK)
-            {
-                
-            }
-            
-            else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
-                    AppMessages.DownloadNodeFailed_Title, MessageBoxButton.OK));
-            }
+            // Clean up: remove the file from the cache
+            if (Type == TransferType.Upload)
+                File.Delete(FilePath);
+           
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)

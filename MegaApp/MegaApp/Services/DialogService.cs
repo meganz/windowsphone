@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -105,54 +106,89 @@ namespace MegaApp.Services
                 Margin = new Thickness(20, 30, 20, 20)
             };
 
-            var takePhotoButton = new Button()
-            {
-                Content = "take photo",
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Margin = new Thickness(8, 0, 8, 20)
+            //var takePhotoButton = new Button()
+            //{
+            //    Content = "take photo",
+            //    Width = Double.NaN,
+            //    HorizontalAlignment = HorizontalAlignment.Stretch,
+            //    Margin = new Thickness(8, 0, 8, 20)
                 
+            //};
+            //takePhotoButton.Tap += (sender, args) =>
+            //{
+            //    uploadRadWindow.IsOpen = false;
+            //    cloudDrive.CaptureCameraImage();
+            //};
+
+            //var selectPhotoButton = new Button()
+            //{
+            //    Content = "select photo",
+            //    Width = Double.NaN,
+            //    HorizontalAlignment = HorizontalAlignment.Stretch,
+            //    Margin = new Thickness(8, 0, 8, 20)
+
+            //};
+            //selectPhotoButton.Tap += (sender, args) =>
+            //{
+            //    uploadRadWindow.IsOpen = false;
+            //    cloudDrive.SelectImage();
+            //};
+
+            //var selectPhotosButton = new Button()
+            //{
+            //    Content = "select photos",
+            //    Width = Double.NaN,
+            //    HorizontalAlignment = HorizontalAlignment.Stretch,
+            //    Margin = new Thickness(8, 0, 8, 20)
+
+            //};
+            //selectPhotosButton.Tap += (sender, args) =>
+            //{
+            //    uploadRadWindow.IsOpen = false;
+            //    cloudDrive.NoFolderUpAction = true;
+            //    NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
+            //};
+
+            var grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition());
+
+            var hubCamera = new RadHubTile()
+            {
+                Title = "Take photo",
+                ImageSource = new BitmapImage(new Uri("/Assets/Images/camera_upload.png", UriKind.Relative)),
+                IsFrozen = true,
+                Margin = new Thickness(20)
             };
-            takePhotoButton.Tap += (sender, args) =>
+            hubCamera.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
                 cloudDrive.CaptureCameraImage();
             };
 
-            var selectPhotoButton = new Button()
+            var hubPicture = new RadHubTile()
             {
-                Content = "select photo",
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Margin = new Thickness(8, 0, 8, 20)
-
+                Title = "Select photo(s)",
+                ImageSource = new BitmapImage(new Uri("/Assets/Images/picture_upload.png", UriKind.Relative)),
+                IsFrozen = true,
+                Margin = new Thickness(20)
             };
-            selectPhotoButton.Tap += (sender, args) =>
-            {
-                uploadRadWindow.IsOpen = false;
-                cloudDrive.SelectImage();
-            };
-
-            var selectPhotosButton = new Button()
-            {
-                Content = "select photos",
-                Width = Double.NaN,
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                Margin = new Thickness(8, 0, 8, 20)
-
-            };
-            selectPhotosButton.Tap += (sender, args) =>
+            hubPicture.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
                 cloudDrive.NoFolderUpAction = true;
                 NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
             };
 
+            grid.Children.Add(hubCamera);
+            grid.Children.Add(hubPicture);
+
+            Grid.SetColumn(hubCamera, 0);
+            Grid.SetColumn(hubPicture, 1);
 
             buttonStackPanel.Children.Add(headerText);
-            buttonStackPanel.Children.Add(takePhotoButton);
-            buttonStackPanel.Children.Add(selectPhotoButton);
-            buttonStackPanel.Children.Add(selectPhotosButton);
+            buttonStackPanel.Children.Add(grid);
+          
 
             uploadRadWindow.Content = buttonStackPanel;
 
