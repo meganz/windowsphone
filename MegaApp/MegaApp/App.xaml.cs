@@ -135,6 +135,21 @@ namespace MegaApp
             if (phoneApplicationInitialized)
                 return;
 
+            //The next line enables a custom logger, if this function is not used OutputDebugString() is called
+            //in the native library and log messages are only readable with the native debugger attached.
+            //The default behavior of MegaLogger() is to print logs using Debug.WriteLine() but it could
+            //be used to sends log to a file, for example.
+            MegaSDK.setLoggerClass(new MegaLogger());
+
+            //You can select the maximum output level for debug messages.
+            //By default FATAL, ERROR, WARNING and INFO will be enabled
+            //DEBUG and MAX can only be enabled in Debug builds, they are ignored in Release builds
+            MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
+            
+            //You can send messages to the logger using MEGASDK.log(), those messages will be received
+            //in the active logger
+            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
+
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
             RootFrame = new RadPhoneApplicationFrame();
