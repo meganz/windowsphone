@@ -17,7 +17,7 @@ namespace MegaApp.Services
         public static IEnumerable<BaseMediaViewModel<PictureAlbum>> GetPictureAlbums()
         {
             var mediaLibrary = new MediaLibrary();
-
+           
             var albumsList = new List<BaseMediaViewModel<PictureAlbum>>();
 
             foreach (var album in mediaLibrary.RootPictureAlbum.Albums)

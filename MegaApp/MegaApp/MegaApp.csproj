@@ -173,6 +173,9 @@
     <Compile Include="Pages\MyAccountPage.xaml.cs">
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PhotoCameraPage.xaml.cs">
+      <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PreviewImagePage.xaml.cs">
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
     </Compile>
@@ -306,6 +309,7 @@
     <Content Include="Assets\Images\picture_upload.png" />
     <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
+    <Content Include="Assets\Images\selfie_upload.png" />
     <Content Include="Assets\Images\transfers_empty.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
@@ -374,6 +378,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MyAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PhotoCameraPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
