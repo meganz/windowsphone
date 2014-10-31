@@ -127,7 +127,7 @@
 
     <DataTemplate x:Key="PreviewSlideViewItemContent">
         <Grid>
-            <slideView:PanAndZoomImage FontFamily="Portable User Interface">
+            <slideView:PanAndZoomImage>
                 <slideView:PanAndZoomImage.Source>
                     <BitmapImage 
                             UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"

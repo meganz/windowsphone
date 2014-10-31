@@ -9,11 +9,15 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Xna.Framework;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.Primitives;
+using Telerik.Windows.Controls.SlideView;
+using Telerik.Windows.Data;
 using Accelerometer = Microsoft.Devices.Sensors.Accelerometer;
 using AccelerometerReading = Microsoft.Devices.Sensors.AccelerometerReading;
 
 namespace MegaApp.Pages
 {
+    [System.Runtime.InteropServices.GuidAttribute("91AC3183-2A13-4D02-9E2D-27F2AD4B1ACD")]
     public partial class PreviewImagePage : PhoneApplicationPage
     {
         private readonly PreviewImageViewModel _previewImageViewModel;
@@ -73,6 +77,26 @@ namespace MegaApp.Pages
         private void OnSlideViewLoaded(object sender, RoutedEventArgs e)
         {
             SetMoveButtons();
+
+            // Bind to item state changed event to explicit release the image when scrolling in filmstrip mode.
+            var zoomableListBox = ElementTreeHelper.FindVisualDescendant<ZoomableListBox>(sender as RadSlideView);
+            zoomableListBox.ItemStateChanged += ZoomableListBoxOnItemStateChanged;
+        }
+
+        private void ZoomableListBoxOnItemStateChanged(object sender, ItemStateChangedEventArgs e)
+        {
+            switch (e.State)
+            {
+                case ItemState.Recycling:
+                    ((NodeViewModel)e.DataItem).PreviewImageUri = null;
+                    break;
+                case ItemState.Recycled:
+                    break;
+                case ItemState.Realizing:
+                    break;
+                case ItemState.Realized:
+                    break;
+            }
         }
 
         private void OnSlideViewSelectionChanged(object sender, SelectionChangedEventArgs e)
