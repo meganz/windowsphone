@@ -106,49 +106,6 @@ namespace MegaApp.Services
                 Margin = new Thickness(20, 30, 20, 20)
             };
 
-            //var takePhotoButton = new Button()
-            //{
-            //    Content = "take photo",
-            //    Width = Double.NaN,
-            //    HorizontalAlignment = HorizontalAlignment.Stretch,
-            //    Margin = new Thickness(8, 0, 8, 20)
-                
-            //};
-            //takePhotoButton.Tap += (sender, args) =>
-            //{
-            //    uploadRadWindow.IsOpen = false;
-            //    cloudDrive.CaptureCameraImage();
-            //};
-
-            //var selectPhotoButton = new Button()
-            //{
-            //    Content = "select photo",
-            //    Width = Double.NaN,
-            //    HorizontalAlignment = HorizontalAlignment.Stretch,
-            //    Margin = new Thickness(8, 0, 8, 20)
-
-            //};
-            //selectPhotoButton.Tap += (sender, args) =>
-            //{
-            //    uploadRadWindow.IsOpen = false;
-            //    cloudDrive.SelectImage();
-            //};
-
-            //var selectPhotosButton = new Button()
-            //{
-            //    Content = "select photos",
-            //    Width = Double.NaN,
-            //    HorizontalAlignment = HorizontalAlignment.Stretch,
-            //    Margin = new Thickness(8, 0, 8, 20)
-
-            //};
-            //selectPhotosButton.Tap += (sender, args) =>
-            //{
-            //    uploadRadWindow.IsOpen = false;
-            //    cloudDrive.NoFolderUpAction = true;
-            //    NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
-            //};
-
             var grid = new Grid();
             grid.ColumnDefinitions.Add(new ColumnDefinition());
             grid.ColumnDefinitions.Add(new ColumnDefinition());
