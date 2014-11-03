@@ -188,5 +188,175 @@ namespace MegaApp.Services
 
             uploadRadWindow.IsOpen = true;
         }
+
+        public static void ShowSortDialog(CloudDriveViewModel cloudDrive)
+        {
+            var sortRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+            };
+
+            var buttonStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+            };
+
+            var headerText = new TextBlock()
+            {
+                Text = "Sort options",
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(20, 30, 20, 20)
+            };
+
+            var fileAscButton = new Button()
+            {
+                Content = "files ascending",
+                Tag = 1
+            };
+            fileAscButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var fileDescButton = new Button()
+            {
+                Content = "files descending",
+                Tag = 2
+            };
+            fileDescButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var sizeAscButton = new Button()
+            {
+                Content = "size ascending",
+                Tag = 3
+            };
+            sizeAscButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var sizeDescButton = new Button()
+            {
+                Content = "size descending",
+                Tag = 4
+            };
+            sizeDescButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var creationAscButton = new Button()
+            {
+                Content = "creation date ascending",
+                Tag = 5
+            };
+            creationAscButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var creationDescButton = new Button()
+            {
+                Content = "creation date descending",
+                Tag = 6
+            };
+            creationDescButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var modificationAscButton = new Button()
+            {
+                Content = "modification date ascending",
+                Tag = 7
+            };
+            modificationAscButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var modificationDescButton = new Button()
+            {
+                Content = "modification date descending",
+                Tag = 8
+            };
+            modificationDescButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var alphaAscButton = new Button()
+            {
+                Content = "alphabetical ascending",
+                Tag = 9
+            };
+            alphaAscButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+            var alphaDescButton = new Button()
+            {
+                Content = "alphabetical descending",
+                Tag = 10
+            };
+            alphaDescButton.Tap += (sender, args) =>
+            {
+                sortRadWindow.IsOpen = false;
+                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
+                cloudDrive.LoadNodes();
+            };
+
+
+            buttonStackPanel.Children.Add(headerText);
+            buttonStackPanel.Children.Add(fileAscButton);
+            buttonStackPanel.Children.Add(fileDescButton);
+            buttonStackPanel.Children.Add(sizeAscButton);
+            buttonStackPanel.Children.Add(sizeDescButton);
+            buttonStackPanel.Children.Add(creationAscButton);
+            buttonStackPanel.Children.Add(creationDescButton);
+            buttonStackPanel.Children.Add(modificationAscButton);
+            buttonStackPanel.Children.Add(modificationDescButton);
+            buttonStackPanel.Children.Add(alphaAscButton);
+            buttonStackPanel.Children.Add(alphaDescButton);
+
+            var scrollViewer = new ScrollViewer {Content = buttonStackPanel};
+
+            sortRadWindow.Content = scrollViewer;
+
+
+            sortRadWindow.IsOpen = true;
+        }
     }
 }
