@@ -18,7 +18,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 		<!--Pivot Control-->
-		<phone:Pivot x:Name="Transfers" Title="MEGA">
+		<phone:Pivot x:Name="Transfers" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
 			<!--Pivot item one-->
 			<phone:PivotItem x:Name="Uploads" Header="uploads">
 				<Grid>

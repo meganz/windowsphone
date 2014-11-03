@@ -23,7 +23,7 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">

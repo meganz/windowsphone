@@ -241,6 +241,12 @@ namespace MegaApp.Pages
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
         }
 
+        private void OnPreferencesClick(object sender, EventArgs e)
+        {
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(PreferencesPage), NavigationParameter.Normal);
+        }
+
         private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
