@@ -116,6 +116,7 @@
     <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
+    <Compile Include="Models\PreferencesViewModel.cs" />
     <Compile Include="Models\SongSelectionViewModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
