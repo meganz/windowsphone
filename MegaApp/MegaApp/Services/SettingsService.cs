@@ -14,7 +14,10 @@ namespace MegaApp.Services
         {
             var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            settings.Add(key, value);
+            if (settings.Contains(key))
+                settings[key] = value;
+            else
+                settings.Add(key, value);
 
             settings.Save();
         }
@@ -41,14 +44,14 @@ namespace MegaApp.Services
 
         public static void SaveMegaLoginData(string email, string session)
         {
-            SettingsService.SaveSetting(SettingsResources.RememberMe, true);
+            SettingsService.SaveSetting(SettingsResources.StayLoggedIn, true);
             SettingsService.SaveSetting(SettingsResources.UserMegaEmailAddress, email);
             SettingsService.SaveSetting(SettingsResources.UserMegaSession, session);
         }
 
         public static void ClearMegaLoginData()
         {
-            SettingsService.DeleteSetting(SettingsResources.RememberMe);
+            SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
             SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
             SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
         }

@@ -205,7 +205,11 @@ namespace MegaApp.Models
         {
             this.ChildNodes.Clear();
 
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode());
+            var sortOrder = SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes) == 0
+                ? (int)MSortOrderType.ORDER_DEFAULT_ASC
+                : SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes);
+            
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), sortOrder);
 
             for (int i = 0; i < nodeList.size(); i++)
             {

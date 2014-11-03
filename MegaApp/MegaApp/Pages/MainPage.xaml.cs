@@ -113,7 +113,7 @@ namespace MegaApp.Pages
                 }
                 case NavigationParameter.Unknown:
                 {
-                    if (!SettingsService.LoadSetting<bool>(SettingsResources.RememberMe))
+                    if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                         return;
@@ -282,6 +282,11 @@ namespace MegaApp.Pages
             if (!App.CloudDrive.HasChildNodes()) return;
            
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
+        }
+
+        private void OnSortTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            DialogService.ShowSortDialog(App.CloudDrive);
         }
 
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)

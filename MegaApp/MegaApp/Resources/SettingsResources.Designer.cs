@@ -61,11 +61,20 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {048D1075-3EC2-40F1-A8CF-874656BBB212}.
+        /// </summary>
+        internal static string SortOrderNodes {
+            get {
+                return ResourceManager.GetString("SortOrderNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {42A8FBE1-08A0-4E48-82C2-C90AFDAB2551}.
         /// </summary>
-        internal static string RememberMe {
+        internal static string StayLoggedIn {
             get {
-                return ResourceManager.GetString("RememberMe", resourceCulture);
+                return ResourceManager.GetString("StayLoggedIn", resourceCulture);
             }
         }
         
