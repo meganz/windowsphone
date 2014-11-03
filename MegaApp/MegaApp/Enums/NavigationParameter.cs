@@ -6,6 +6,7 @@
         Login = 10,
         RememberedLogin = 20,
         PictureSelected = 30,
+        AlbumSelected = 35,
         UriLaunch = 40,
         Browsing = 50,
         BreadCrumb = 60,

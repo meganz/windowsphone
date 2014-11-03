@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Services;
@@ -12,9 +13,9 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Classes
 {
-    class AccountDetailsModel: BaseViewModel
+    class AccountDetailsViewModel: BaseViewModel
     {
-        public AccountDetailsModel()
+        public AccountDetailsViewModel()
         {
             CacheSize = AppService.GetAppCacheSize();
         }
@@ -73,6 +74,17 @@ namespace MegaApp.Classes
             {
                 _cacheSize = value;
                 OnPropertyChanged("CacheSize");
+            }
+        }
+
+        private MAccountType _accountType;
+        public MAccountType AccountType
+        {
+            get { return _accountType; }
+            set
+            {
+                _accountType = value;
+                OnPropertyChanged("AccountType");
             }
         }
         

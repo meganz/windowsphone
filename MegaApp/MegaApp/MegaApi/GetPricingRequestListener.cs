@@ -10,11 +10,11 @@ using MegaApp.Resources;
 
 namespace MegaApp.MegaApi
 {
-    class GetAccountDetailsRequestListener : BaseRequestListener
+    class GetPricingRequestListener : BaseRequestListener
     {
         private readonly AccountDetailsViewModel _accountDetails;
 
-        public GetAccountDetailsRequestListener(AccountDetailsViewModel accountDetails)
+        public GetPricingRequestListener(AccountDetailsViewModel accountDetails)
         {
             _accountDetails = accountDetails;
         }
@@ -83,10 +83,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
-            _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
-            _accountDetails.CreateDataPoints();
-            _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+            //request.getPricing().
         }
 
         #endregion

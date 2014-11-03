@@ -55,13 +55,13 @@ namespace MegaApp.Services
             return bitmapImage;
         }
 
-        public static IEnumerable<BaseMediaViewModel<Picture>> GetPictures()
+        public static IEnumerable<BaseMediaViewModel<Picture>> GetPictures(PictureAlbum pictureAlbum = null)
         {
-            var mediaLibrary = new MediaLibrary();
-            
+            var pictureCollection = pictureAlbum == null ? new MediaLibrary().Pictures : pictureAlbum.Pictures;
+
             var pictureList = new List<BaseMediaViewModel<Picture>>();
 
-            foreach (var picture in mediaLibrary.Pictures)
+            foreach (var picture in pictureCollection)
             {
                 var media = new BaseMediaViewModel<Picture>()
                 {
@@ -75,6 +75,29 @@ namespace MegaApp.Services
 
             return pictureList;
           
+        }
+
+        public static IEnumerable<BaseMediaViewModel<Song>> GetSongs(Album album = null)
+        {
+            var songCollection = album == null ? new MediaLibrary().Songs : album.Songs;
+
+            var songList = new List<BaseMediaViewModel<Song>>();
+
+            foreach (var song in songCollection)
+            {
+                var media = new BaseMediaViewModel<Song>()
+                {
+                    Name = song.Name,
+                    Details = song.Artist.Name,
+                    Type = MediaType.Song,
+                    BaseObject = song
+                };
+              
+                songList.Add(media);
+            }
+
+            return songList;
+
         }
     }
 }

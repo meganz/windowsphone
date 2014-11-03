@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Windows.Storage;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -140,7 +141,7 @@ namespace MegaApp.Services
 
             var hubPicture = new RadHubTile()
             {
-                Title = "Select photo(s)",
+                Title = "Select photos",
                 ImageSource = new BitmapImage(new Uri("/Assets/Images/picture_upload.png", UriKind.Relative)),
                 IsFrozen = true,
                 Margin = new Thickness(20)
@@ -152,21 +153,37 @@ namespace MegaApp.Services
                 NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
             };
 
+            //var hubSong = new RadHubTile()
+            //{
+            //    Title = "Select songs",
+            //    ImageSource = new BitmapImage(new Uri("/Assets/Images/song_upload.png", UriKind.Relative)),
+            //    IsFrozen = true,
+            //    Margin = new Thickness(20)
+            //};
+            //hubSong.Tap += (sender, args) =>
+            //{
+            //    uploadRadWindow.IsOpen = false;
+            //    cloudDrive.NoFolderUpAction = true;
+            //    NavigateService.NavigateTo(typeof(SongSelectionPage), NavigationParameter.Normal);
+            //};
+
             grid.Children.Add(hubCamera);
             grid.Children.Add(hubSelfie);
             grid.Children.Add(hubPicture);
+            //grid.Children.Add(hubSong);
 
             Grid.SetColumn(hubCamera, 0);
             Grid.SetColumn(hubSelfie, 1);
             Grid.SetColumn(hubPicture, 0);
+            //Grid.SetColumn(hubSong, 1);
             Grid.SetRow(hubCamera, 0);
             Grid.SetRow(hubSelfie, 0);
             Grid.SetRow(hubPicture, 1);
+            //Grid.SetRow(hubSong, 1);
 
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(grid);
-          
-
+         
             uploadRadWindow.Content = buttonStackPanel;
 
             uploadRadWindow.IsOpen = true;

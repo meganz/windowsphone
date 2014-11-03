@@ -21,10 +21,6 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-
-		<!--TitlePanel contains the name of the application and page title-->
-
-        <!--ContentPanel - place additional content here-->
 		<phone:Pivot x:Name="MediaPivot" Title="media selection" Grid.RowSpan="2">
 			<phone:PivotItem x:Name="Albums" CacheMode="{x:Null}" Header="albums">
 				<Grid>
@@ -33,7 +29,7 @@
 						ItemsSource="{Binding PictureAlbums}" 
 						ItemTemplate="{StaticResource MediaAlbumTemplate}"							
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-						IsAsyncBalanceEnabled="True"
+						IsAsyncBalanceEnabled="True" ItemTap="OnItemTap" EmptyContent="No albums to display"
 			>
 						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
 							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
@@ -52,7 +48,7 @@
 						IsCheckModeActive="True" 
 						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" 
 						ItemCheckedPath="Selected" 
-						CheckModeDeactivatedOnBackButton="False" 	
+						CheckModeDeactivatedOnBackButton="False" ItemCheckedStateChanged="OnItemCheckedStateChanged" RealizedItemsBufferScale="3" Loaded="OnLoaded" EmptyContent="No photos to display" 	
 					>
 						<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
 							<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
@@ -61,11 +57,16 @@
 				</Grid>
 			</phone:PivotItem>
 		</phone:Pivot>
+
+		<!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
 	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" />			
+		<shell:ApplicationBar>			
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" IsEnabled="False" />
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/refresh.png" Text="clear selection" Click="OnClearSelectionClick" IsEnabled="False" />						
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

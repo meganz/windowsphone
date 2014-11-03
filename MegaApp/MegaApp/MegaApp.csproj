@@ -111,9 +111,12 @@
     <Compile Include="Enums\NodeDisplayMode.cs" />
     <Compile Include="Enums\TransferStatus.cs" />
     <Compile Include="Enums\TransferType.cs" />
+    <Compile Include="MegaApi\GetPricingRequestListener.cs" />
     <Compile Include="MegaApi\MegaLogger.cs" />
     <Compile Include="Models\BaseMediaViewModel.cs" />
+    <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
+    <Compile Include="Models\SongSelectionViewModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -167,6 +170,9 @@
     <Compile Include="Pages\CreateAccountPage.xaml.cs">
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MediaAlbumPage.xaml.cs">
+      <DependentUpon>MediaAlbumPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MediaSelectionPage.xaml.cs">
       <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
     </Compile>
@@ -178,6 +184,9 @@
     </Compile>
     <Compile Include="Pages\PreviewImagePage.xaml.cs">
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SongSelectionPage.xaml.cs">
+      <DependentUpon>SongSelectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TransferPage.xaml.cs">
       <DependentUpon>TransferPage.xaml</DependentUpon>
@@ -310,24 +319,14 @@
     <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
     <Content Include="Assets\Images\selfie_upload.png" />
+    <Content Include="Assets\Images\song_upload.png" />
     <Content Include="Assets\Images\transfers_empty.png" />
     <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
-    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="Assets\Tiles\IconImage.png" />
+    <Content Include="Assets\Tiles\SmallIconImage.png" />
+    <Content Include="SplashScreenImage.screen-720p.jpg" />
+    <Content Include="SplashScreenImage.screen-WVGA.jpg" />
+    <Content Include="SplashScreenImage.screen-WXGA.jpg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\ProgressMessages.resx">
@@ -373,6 +372,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MediaAlbumPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MediaSelectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -386,6 +389,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PreviewImagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SongSelectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

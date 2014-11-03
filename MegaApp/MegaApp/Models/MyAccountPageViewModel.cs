@@ -16,8 +16,9 @@ namespace MegaApp.Models
         public MyAccountPageViewModel(MegaSDK megaSdk)
             :base(megaSdk)
         {
-            AccountDetails = new AccountDetailsModel {UserName = megaSdk.getMyEmail()};
+            AccountDetails = new AccountDetailsViewModel {UserName = megaSdk.getMyEmail()};
             MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
+            //MegaSdk.getPricing();
         }
 
         #region Methods
@@ -38,9 +39,9 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private AccountDetailsModel _accountDetails;
+        private AccountDetailsViewModel _accountDetails;
 
-        public AccountDetailsModel AccountDetails
+        public AccountDetailsViewModel AccountDetails
         {
             get { return _accountDetails; }
             set

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA" RuntimeType="Silverlight" Version="1.0.0.10" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
+  <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA" RuntimeType="Silverlight" Version="1.0.0.11" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -17,25 +17,25 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="MegaAppToken" TaskName="_default">
-        <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+        <TemplateIconic>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\SmallIconImage.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
+          <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</LargeBackgroundImageURI>
-          <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
+          <HasLarge>False</HasLarge>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>True</HasLarge>
-        </TemplateFlip>
+        </TemplateIconic>
       </PrimaryToken>
     </Tokens>
     <Extensions>
