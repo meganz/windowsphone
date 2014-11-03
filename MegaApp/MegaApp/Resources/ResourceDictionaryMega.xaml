@@ -171,21 +171,51 @@
         	<Grid.Background>
         		<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
         	</Grid.Background>
-            <Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="200" Width="200"/>
+            <Image Source="{Binding DisplayImage}" Height="200" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MediaItemTemplate">
         <Grid Width="100" Height="100" Margin="5" >
-        	<Border Margin="0,1,0,0" BorderThickness="5" BorderBrush="{Binding Selected, Converter={StaticResource BooleanToColorConverter}}" Canvas.ZIndex="1">
-        		<Border.Background>
-        			<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-        		</Border.Background>
-                <Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="100" Width="100"/>
-            </Border>
+			<Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<Border.BorderBrush>
+					<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+				</Border.BorderBrush>
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+				</Border.Background>
+				<Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+					<Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+						<Path.Fill>
+							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+						</Path.Fill>
+					</Path>
+					<Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+				</Grid>
+			</Border>
+			<Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="100" Width="100"/>
         </Grid>
     </DataTemplate>
+
+    <DataTemplate x:Key="SongItemTemplate">
+        <StackPanel Orientation="Vertical" Margin="12,6">
+        	<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+        	<TextBlock Text="{Binding Details}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+    	</StackPanel>
+    </DataTemplate>
+
+
+    <DataTemplate x:Key="SongHeaderTemplate">
+        <Border Width="60" Height="60" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            </Border.Background>
+            <TextBlock FontSize="{StaticResource PhoneFontSizeExtraLarge}" Text="{Binding}" HorizontalAlignment="Left" Margin="4" VerticalAlignment="Center" />
+       </Border>
+    </DataTemplate>
+
+    
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
     <DataTemplate x:Key="ShowShareLinkButtons">

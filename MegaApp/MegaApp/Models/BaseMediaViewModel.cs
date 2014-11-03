@@ -16,6 +16,8 @@ namespace MegaApp.Models
         #region Properties
 
         public string Name { get; set; }
+
+        public string Details { get; set; }
         public MediaType Type { get; set; }
 
         private BitmapImage _displayImage;

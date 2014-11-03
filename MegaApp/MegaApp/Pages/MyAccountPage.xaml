@@ -31,7 +31,8 @@
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock Text="{Binding AccountDetails.UserName}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+			<TextBlock Text="{Binding AccountDetails.UserName}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Bold"/>
+			<TextBlock Text="{Binding AccountDetails.AccountType}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
 		</StackPanel>
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 			<Grid.RowDefinitions>

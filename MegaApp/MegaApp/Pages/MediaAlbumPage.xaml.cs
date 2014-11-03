@@ -16,21 +16,17 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Pages
 {
-    public partial class MediaSelectionPage : PhoneApplicationPage
+    public partial class MediaAlbumPage : PhoneApplicationPage
     {
-        private readonly MediaSelectionPageModel _mediaSelectionPageModel;
-        public MediaSelectionPage()
+       private readonly MediaAlbumViewModel _mediaAlbumViewModel;
+       public MediaAlbumPage()
         {
-            _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
-            this.DataContext = _mediaSelectionPageModel;
+            _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk, 
+                NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
+            this.DataContext = _mediaAlbumViewModel;
             InitializeComponent();
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
-
-            // node tap item animation
-            var transition = new RadTileTransition();
-            this.SetValue(RadTransitionControl.TransitionProperty, transition);
-            this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstMediaAlbums);
         }
 
         private async void OnAcceptClick(object sender, System.EventArgs e)
@@ -45,7 +41,7 @@ namespace MegaApp.Pages
 
             foreach (var checkedItem in LstMediaItems.CheckedItems)
             {
-                var item = (BaseMediaViewModel<Picture>) checkedItem;
+                var item = (BaseMediaViewModel<Picture>)checkedItem;
 
                 string fileName = Path.GetFileName(item.Name);
                 if (fileName != null)
@@ -65,7 +61,7 @@ namespace MegaApp.Pages
             ProgessService.SetProgressIndicator(false);
 
             App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.PictureSelected);
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.AlbumSelected);
         }
 
         private void OnClearSelectionClick(object sender, System.EventArgs e)
@@ -81,14 +77,7 @@ namespace MegaApp.Pages
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            LstMediaItems.BringIntoView(_mediaSelectionPageModel.Pictures.Last());
+            LstMediaItems.BringIntoView(_mediaAlbumViewModel.Pictures.Last());
         }
-
-        private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
-        {
-            this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
-            NavigateService.NavigateTo(typeof(MediaAlbumPage), NavigationParameter.Normal, LstMediaAlbums.SelectedItem);
-        }
-        
     }
 }

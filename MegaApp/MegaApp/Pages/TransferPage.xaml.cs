@@ -35,6 +35,12 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.PictureSelected)
                 NavigationService.RemoveBackEntry();
+
+            if (navParam == NavigationParameter.AlbumSelected)
+            {
+                NavigationService.RemoveBackEntry();
+                NavigationService.RemoveBackEntry();
+            }
         }
 
         private void OnPauseClick(object sender, System.EventArgs e)
