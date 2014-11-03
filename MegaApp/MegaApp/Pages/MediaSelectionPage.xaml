@@ -21,7 +21,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<phone:Pivot x:Name="MediaPivot" Title="media selection" Grid.RowSpan="2">
+		<phone:Pivot x:Name="MediaPivot" Grid.RowSpan="2" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
 			<phone:PivotItem x:Name="Albums" CacheMode="{x:Null}" Header="albums">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox

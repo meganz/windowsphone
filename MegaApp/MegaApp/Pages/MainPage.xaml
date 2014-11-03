@@ -27,6 +27,11 @@
 					Text="my account"	
 					Click="OnMyAccountClick"			
 				/>
+				<shell:ApplicationBarMenuItem
+					x:Name="BtnPreferences" 				
+					Text="preferences"	
+					Click="OnPreferencesClick"			
+				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
 				x:Name="BtnCloudUpload" 
@@ -108,14 +113,16 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
         <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="TxtAppName" Text="{Binding LocalizedUiResources.AppName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
-            <StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
-                <telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" Margin="0,0,-12,0" />
-                <telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" />
-                <telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" />
-            </StackPanel>
+        	<Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        	<Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
+        	<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
+        		<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" Margin="0,0,-12,0" />
+        		<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" />
+        		<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" />
+        	</StackPanel>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

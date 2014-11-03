@@ -215,7 +215,11 @@
        </Border>
     </DataTemplate>
 
-    
+    <DataTemplate x:Key="PivotMegaTitleTemplate">
+        <Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+    </DataTemplate>
+
+
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
     <DataTemplate x:Key="ShowShareLinkButtons">
