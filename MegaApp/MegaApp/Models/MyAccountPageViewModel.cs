@@ -17,11 +17,19 @@ namespace MegaApp.Models
             :base(megaSdk)
         {
             AccountDetails = new AccountDetailsViewModel {UserName = megaSdk.getMyEmail()};
-            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
-            //MegaSdk.getPricing();
         }
 
         #region Methods
+
+        public void GetAccountDetails()
+        {
+            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
+        }
+
+        public void GetPricing()
+        {
+            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails));
+        }
 
         public void Logout()
         {

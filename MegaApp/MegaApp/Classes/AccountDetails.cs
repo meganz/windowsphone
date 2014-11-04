@@ -17,6 +17,7 @@ namespace MegaApp.Classes
     {
         public AccountDetailsViewModel()
         {
+            Products = new ObservableCollection<Product>();
             CacheSize = AppService.GetAppCacheSize();
         }
 
@@ -115,6 +116,9 @@ namespace MegaApp.Classes
                 OnPropertyChanged("PieChartCollection");
             }
         }
+
+
+        public ObservableCollection<Product> Products { get; set; }
        
     }
 }

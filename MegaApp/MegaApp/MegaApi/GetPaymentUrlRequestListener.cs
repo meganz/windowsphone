@@ -7,18 +7,12 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
+using Microsoft.Phone.Tasks;
 
 namespace MegaApp.MegaApi
 {
-    class GetPricingRequestListener : BaseRequestListener
+    class GetPaymentUrlRequestListener : BaseRequestListener
     {
-        private readonly AccountDetailsViewModel _accountDetails;
-
-        public GetPricingRequestListener(AccountDetailsViewModel accountDetails)
-        {
-            _accountDetails = accountDetails;
-        }
-
         protected override string ProgressMessage
         {
             get { return ProgressMessages.GetAccountDetails; }
@@ -83,31 +77,11 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MRequest request)
         {
-            _accountDetails.Products.Clear();
-
-            int numberOfProducts = request.getPricing().getNumProducts();
-
-            for (int i = 1; i <= numberOfProducts; i++)
+            var webBrowserTask = new WebBrowserTask
             {
-                var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
-                    request.getPricing().getProLevel(i).ToString());
-
-                if(accountType == _accountDetails.AccountType)
-                    continue;
-
-                var product = new Product
-                {
-                    Name = accountType.ToString(),
-                    Amount = request.getPricing().getAmount(i),
-                    Currency = request.getPricing().getCurrency(i),
-                    GbStorage = request.getPricing().getGBStorage(i),
-                    GbTransfer = request.getPricing().getGBTransfer(i),
-                    Months = request.getPricing().getMonths(i),
-                    Handle = request.getPricing().getHandle(i)
-                };
-
-                _accountDetails.Products.Add(product);
-            }
+                Uri = new Uri(request.getLink())
+            };
+            webBrowserTask.Show();
         }
 
         #endregion

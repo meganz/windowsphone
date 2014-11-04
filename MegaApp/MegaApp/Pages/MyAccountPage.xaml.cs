@@ -5,9 +5,12 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using MegaApp.Classes;
+using MegaApp.MegaApi;
 using MegaApp.Models;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Pages
@@ -39,5 +42,19 @@ namespace MegaApp.Pages
             App.CloudDrive.ChildNodes.Clear();
             _myAccountPageViewModel.ClearCache();
         }
+
+        private void OnItemTap(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
+        {
+            App.MegaSdk.getPaymentUrl(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());;
+        }
+
+        private void OnPivotLoaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (sender == PivotAccount)
+                _myAccountPageViewModel.GetAccountDetails();
+            else
+                _myAccountPageViewModel.GetPricing();
+        }
+        
     }
 }
