@@ -15,12 +15,15 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Canvas x:Name="viewfinderCanvas" HorizontalAlignment="Center" >
-            <!--Camera viewfinder -->
+        <Canvas x:Name="viewfinderCanvas" >
             <Canvas.Background>
-                <VideoBrush x:Name="viewfinderBrush" />
+                <VideoBrush x:Name="viewfinderBrush">
+                    <VideoBrush.RelativeTransform>
+                        <CompositeTransform x:Name="cameraViewBrushTransform" CenterX=".5" CenterY=".5" Rotation="-180" />
+                    </VideoBrush.RelativeTransform>
+                </VideoBrush>
             </Canvas.Background>
-        </Canvas>       
+        </Canvas>
     </Grid>
 
 </phone:PhoneApplicationPage>
