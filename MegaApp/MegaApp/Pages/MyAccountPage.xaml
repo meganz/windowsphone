@@ -9,10 +9,8 @@
     xmlns:telerikChart="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Chart"
     xmlns:charting="clr-namespace:Telerik.Charting;assembly=Telerik.Windows.Controls.Chart"
     xmlns:telerikDataVisualization="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.DataVisualization"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     x:Class="MegaApp.Pages.MyAccountPage"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
-    FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
@@ -21,125 +19,17 @@
 		<converters:LongToReadableSizeConverter x:Key="LongToReadableSizeConverter"/>
 	</phone:PhoneApplicationPage.Resources>
 
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Transparent">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-
-		<!--TitlePanel contains the name of the application and page title-->
-		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-			<TextBlock Text="{Binding AccountDetails.UserName}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Bold"/>
-			<TextBlock Text="{Binding AccountDetails.AccountType}" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-		</StackPanel>
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-				<RowDefinition Height="Auto"/>
-			</Grid.RowDefinitions>
-			<telerikChart:RadPieChart x:Name="AccountPieChart" Height="250" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0" EmptyContent="No data to show">
-				<telerikChart:PieSeries ShowLabels="True" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" LabelOffset="8">								
-					<telerikChart:PieSeries.LabelDefinitions>
-						<telerikChart:ChartSeriesLabelDefinition>
-							<telerikChart:ChartSeriesLabelDefinition.Template>
-								<DataTemplate>
-									<StackPanel>
-										<TextBlock Text="{Binding DataItem.Label}"/>
-										<TextBlock Text="{Binding Percent, StringFormat=\{0:N\} %}"/>
-									</StackPanel>
-								</DataTemplate>
-							</telerikChart:ChartSeriesLabelDefinition.Template>
-						</telerikChart:ChartSeriesLabelDefinition>
-					</telerikChart:PieSeries.LabelDefinitions>
-					<telerikChart:PieSeries.ValueBinding>
-						<telerikChart:PropertyNameDataPointBinding PropertyName="Value" />						
-					</telerikChart:PieSeries.ValueBinding>					
-					<telerikChart:PieSeries.SliceStyles>
-						<Style TargetType="Path">
-							<Setter Property="Fill" Value="Green"/>
-							<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>
-						</Style>
-						<Style TargetType="Path">
-							<Setter Property="Fill" Value="Red"/>
-							<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>
-						</Style>
-					</telerikChart:PieSeries.SliceStyles>	
-					<telerikChart:PieSeries.AngleRange>
-						<charting:AngleRange StartAngle="270" SweepAngle="360"/>
-					</telerikChart:PieSeries.AngleRange>								
-				</telerikChart:PieSeries>
-			</telerikChart:RadPieChart>
-			<Grid x:Name="StorageSpaceGrid" Grid.Row="1" Margin="0,6">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto"/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0">
-					<Border.Background>
-						<SolidColorBrush Color="{StaticResource PhoneContrastBackgroundColor}"/>
-					</Border.Background>
-					<Border.BorderBrush>
-						<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-					</Border.BorderBrush>
-				</Border>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Storage space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
-			</Grid>
-			<Grid x:Name="UsedSpaceGrid" Grid.Row="2" Margin="0,6">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto"/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0" Background="Red">
-					<Border.BorderBrush>
-						<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-					</Border.BorderBrush>
-				</Border>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Used space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
-			</Grid>
-			<Grid x:Name="FreeSpaceGrid" Grid.Row="3" Margin="0,6">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto"/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0" Background="Green">
-					<Border.BorderBrush>
-						<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-					</Border.BorderBrush>
-				</Border>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Free space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
-			</Grid>
-			<Grid x:Name="CacheSpaceGrid" Grid.Row="4" Margin="0,24,0,6">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="Auto"/>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-				<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0">
-					<Border.Background>
-						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-					</Border.Background>
-					<Border.BorderBrush>
-						<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-					</Border.BorderBrush>
-				</Border>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cache size:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
-			</Grid>
-		</Grid>
-
-        <!--ContentPanel - place additional content here-->
-	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
@@ -147,4 +37,130 @@
 			<shell:ApplicationBarIconButton IconUri="\Assets\Appbar\clear.cache.png" Text="clear cache" Click="OnClearCacheClick"/>						
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
+	<phone:Pivot x:Name="PivotAccountInformation" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
+		<phone:PivotItem x:Name="PivotAccount" CacheMode="{x:Null}" Header="account" Loaded="OnPivotLoaded">
+			<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+
+				<!--ContentPanel - place additional content here-->
+				<!--TitlePanel contains the name of the application and page title-->
+				<StackPanel Grid.Row="0" Margin="0">
+					<TextBlock Text="{Binding AccountDetails.UserName}" Margin="12,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Bold"/>
+					<TextBlock Text="{Binding AccountDetails.AccountType}" Margin="12,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+				</StackPanel>
+				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<telerikChart:RadPieChart x:Name="AccountPieChart" Height="220" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0" EmptyContent="No data to show">
+						<telerikChart:PieSeries ShowLabels="True" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" LabelOffset="8">								
+							<telerikChart:PieSeries.LabelDefinitions>
+								<telerikChart:ChartSeriesLabelDefinition>
+									<telerikChart:ChartSeriesLabelDefinition.Template>
+										<DataTemplate>
+											<StackPanel>
+												<TextBlock Text="{Binding DataItem.Label}"/>
+												<TextBlock Text="{Binding Percent, StringFormat=\{0:N\} %}"/>
+											</StackPanel>
+										</DataTemplate>
+									</telerikChart:ChartSeriesLabelDefinition.Template>
+								</telerikChart:ChartSeriesLabelDefinition>
+							</telerikChart:PieSeries.LabelDefinitions>
+							<telerikChart:PieSeries.ValueBinding>
+								<telerikChart:PropertyNameDataPointBinding PropertyName="Value" />						
+							</telerikChart:PieSeries.ValueBinding>					
+							<telerikChart:PieSeries.SliceStyles>
+								<Style TargetType="Path">
+									<Setter Property="Fill" Value="Green"/>
+									<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>
+								</Style>
+								<Style TargetType="Path">
+									<Setter Property="Fill" Value="Red"/>
+									<Setter Property="Stroke" Value="{StaticResource PhoneContrastBackgroundColor}"/>
+								</Style>
+							</telerikChart:PieSeries.SliceStyles>	
+							<telerikChart:PieSeries.AngleRange>
+								<charting:AngleRange StartAngle="270" SweepAngle="360"/>
+							</telerikChart:PieSeries.AngleRange>								
+						</telerikChart:PieSeries>
+					</telerikChart:RadPieChart>
+					<Grid x:Name="StorageSpaceGrid" Grid.Row="1" Margin="0,6">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0">
+							<Border.Background>
+								<SolidColorBrush Color="{StaticResource PhoneContrastBackgroundColor}"/>
+							</Border.Background>
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+							</Border.BorderBrush>
+						</Border>
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Storage space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+						<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+					</Grid>
+					<Grid x:Name="UsedSpaceGrid" Grid.Row="2" Margin="0,6">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0" Background="Red">
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+							</Border.BorderBrush>
+						</Border>
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Used space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+						<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+					</Grid>
+					<Grid x:Name="FreeSpaceGrid" Grid.Row="3" Margin="0,6">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0" Background="Green">
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+							</Border.BorderBrush>
+						</Border>
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Free space:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+						<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+					</Grid>
+					<Grid x:Name="CacheSpaceGrid" Grid.Row="4" Margin="0,24,0,6">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+						<Border BorderThickness="2" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="32" Margin="12,0">
+							<Border.Background>
+								<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+							</Border.Background>
+							<Border.BorderBrush>
+								<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+							</Border.BorderBrush>
+						</Border>
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cache size:" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+						<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+					</Grid>
+				</Grid>
+
+			</Grid>
+		</phone:PivotItem>
+		<phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="subscription" Loaded="OnPivotLoaded">
+			<Grid>
+				<telerikPrimitives:RadDataBoundListBox ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Products}" EmptyContent="No plans to display" ItemTap="OnItemTap"/>
+			</Grid>
+		</phone:PivotItem>
+	</phone:Pivot>
 </phone:PhoneApplicationPage>

@@ -99,6 +99,7 @@
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\MemoryInformation.cs" />
     <Compile Include="Classes\MenuType.cs" />
+    <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
     <Compile Include="Converters\BooleanToColorConverter.cs" />
     <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
@@ -111,12 +112,13 @@
     <Compile Include="Enums\NodeDisplayMode.cs" />
     <Compile Include="Enums\TransferStatus.cs" />
     <Compile Include="Enums\TransferType.cs" />
+    <Compile Include="MegaApi\GetPaymentUrlRequestListener.cs" />
     <Compile Include="MegaApi\GetPricingRequestListener.cs" />
     <Compile Include="MegaApi\MegaLogger.cs" />
     <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
-    <Compile Include="Models\PreferencesViewModel.cs" />
+    <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\SongSelectionViewModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
     <Compile Include="Converters\LongToReadableSizeConverter.cs" />
@@ -183,8 +185,8 @@
     <Compile Include="Pages\PhotoCameraPage.xaml.cs">
       <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PreferencesPage.xaml.cs">
-      <DependentUpon>PreferencesPage.xaml</DependentUpon>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PreviewImagePage.xaml.cs">
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
@@ -394,7 +396,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PreferencesPage.xaml">
+    <Page Include="Pages\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

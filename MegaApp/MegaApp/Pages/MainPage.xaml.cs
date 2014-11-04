@@ -244,7 +244,7 @@ namespace MegaApp.Pages
         private void OnPreferencesClick(object sender, EventArgs e)
         {
             App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(PreferencesPage), NavigationParameter.Normal);
+            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
         }
 
         private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
