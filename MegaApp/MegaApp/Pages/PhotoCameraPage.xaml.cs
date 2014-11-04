@@ -5,7 +5,9 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Navigation;
+using Windows.Phone.Media.Capture;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
@@ -41,6 +43,7 @@ namespace MegaApp.Pages
                     viewfinderBrush.SetSource(_cam);
 
                     CameraButtons.ShutterKeyPressed += OnButtonFullPress;
+                   
                 }
                 else if (PhotoCamera.IsCameraTypeSupported(CameraType.Primary))
                 {
@@ -50,6 +53,7 @@ namespace MegaApp.Pages
                     viewfinderBrush.SetSource(_cam);
 
                     CameraButtons.ShutterKeyPressed += OnButtonFullPress;
+                
                 }
             }
         }
@@ -115,5 +119,23 @@ namespace MegaApp.Pages
                 _cam.CaptureImage();
             }
         }
+
+        protected override void OnOrientationChanged(OrientationChangedEventArgs e)
+        {
+            base.OnOrientationChanged(e);
+
+            if (cameraViewBrushTransform == null) return;
+            switch (e.Orientation)
+            {
+                case PageOrientation.Landscape:
+                case PageOrientation.LandscapeLeft:
+                    this.cameraViewBrushTransform.Rotation = -180;
+                    break;
+                case PageOrientation.LandscapeRight:
+                    this.cameraViewBrushTransform.Rotation = 180;
+                    break;
+            }
+        }
+        
     }
 }
