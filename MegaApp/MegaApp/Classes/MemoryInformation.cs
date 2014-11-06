@@ -7,11 +7,16 @@ using Windows.Devices.Geolocation;
 
 namespace MegaApp.Classes
 {
-    class MemoryInformation
+    public class MemoryInformation
     {
         public ulong AppMemoryUsage { get; set; }
         public ulong AppMemoryLimit { get; set; }
         public ulong AppMemoryPeak { get; set; }
         public ulong DeviceMemory { get; set; }
+
+        public ulong AppMemorySpace
+        {
+            get { return AppMemoryLimit - AppMemoryUsage; }
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Navigation;
 using Windows.Devices.Sensors;
+using MegaApp.Classes;
 using MegaApp.Models;
 using Microsoft.Devices.Sensors;
 using Microsoft.Phone.Controls;
@@ -17,7 +18,7 @@ using AccelerometerReading = Microsoft.Devices.Sensors.AccelerometerReading;
 
 namespace MegaApp.Pages
 {
-    [System.Runtime.InteropServices.GuidAttribute("91AC3183-2A13-4D02-9E2D-27F2AD4B1ACD")]
+  
     public partial class PreviewImagePage : PhoneApplicationPage
     {
         private readonly PreviewImageViewModel _previewImageViewModel;
@@ -33,6 +34,13 @@ namespace MegaApp.Pages
             _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
 
             MemoryControl.StartMemoryCounter();
+        }
+        
+
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            base.OnNavigatingFrom(e);
+            MemoryControl.StopMemoryCounter();
         }
 
         private void SetMoveButtons(bool isSlideview = true)

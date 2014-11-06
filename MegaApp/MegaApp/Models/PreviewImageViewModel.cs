@@ -10,8 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using Windows.Networking.Connectivity;
+using Windows.Phone.System.Memory;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -30,8 +32,6 @@ namespace MegaApp.Models
                 cloudDriveViewModel.ChildNodes.Where(n => n.IsImage || n.GetMegaNode().hasPreview()));
 
             cloudDriveViewModel.ChildNodes.CollectionChanged += CloudDriveNodesOnCollectionChanged;
-
-            //GetPreviewsFromCache();
         }
 
         private void CloudDriveNodesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -43,19 +43,6 @@ namespace MegaApp.Models
         }
 
         #region Methods
-
-        private void GetPreviewsFromCache()
-        {
-            foreach (var previewItem in PreviewItems.Where(p => p.HasPreviewInCache()))
-            {
-                previewItem.PreviewImageUri = new Uri(previewItem.PreviewPath);
-            }
-
-            //foreach (var previewItem in PreviewItems.Where(p => p.PreviewImageUri == null && !p.ThumbnailIsDefaultImage))
-            //{
-            //    previewItem.PreviewImageUri = previewItem.ThumbnailImageUri;
-            //}
-        }
 
         public void TranslateAppBar(IList iconButtons, IList menuItems)
         {
@@ -69,7 +56,6 @@ namespace MegaApp.Models
         }
 
         #endregion
-        
 
         #region Properties
 

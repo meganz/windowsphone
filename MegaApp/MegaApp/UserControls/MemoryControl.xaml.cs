@@ -16,17 +16,22 @@ namespace MegaApp.UserControls
 {
     public partial class MemoryControl : UserControl
     {
-        private Timer _timer;
+        private AppMemoryController _appMemoryController;
 
         public MemoryControl()
         {
             InitializeComponent();
         }
 
-        private void TimerCallback(object state)
+        public void StartMemoryCounter()
         {
-            MemoryInformation memInfo = AppService.GetAppMemoryUsage();
+            _appMemoryController = new AppMemoryController(100UL.FromMBToBytes());
+            _appMemoryController.DiagnosticUpdate += AppMemoryControllerOnDiagnosticUpdate;
+            _appMemoryController.StartDiagnostics(new TimeSpan(0), new TimeSpan(0, 0, 3));
+        }
 
+        private void AppMemoryControllerOnDiagnosticUpdate(object sender, MemoryInformation memInfo)
+        {
             Dispatcher.BeginInvoke(() =>
             {
                 TxtAppMemory.Text = String.Format("RAM: {0}", memInfo.AppMemoryUsage.ToStringAndSuffix());
@@ -36,15 +41,13 @@ namespace MegaApp.UserControls
             });
         }
 
-        public void StartMemoryCounter()
-        {
-            _timer = new Timer(TimerCallback, null, new TimeSpan(0), new TimeSpan(0, 0, 3));
-        }
-
         public void StopMemoryCounter()
         {
-            _timer.Dispose();
-            _timer = null;
+            if (_appMemoryController == null) return;
+
+            _appMemoryController.StopDiagnostics();
+            _appMemoryController.Dispose();
+            _appMemoryController = null;
         }
     }
 }

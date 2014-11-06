@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -59,6 +60,18 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
                 String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
+
+            if (AppMemoryController.IsThresholdExceeded(75UL.FromMBToBytes()))
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(
+                        "Not enough free memory space to complete this operation. The app will shutdown now",
+                        "Memory Limit", MessageBoxButton.OK);
+                    Application.Current.Terminate();
+                });
+
+            }
         }
 
         #endregion
