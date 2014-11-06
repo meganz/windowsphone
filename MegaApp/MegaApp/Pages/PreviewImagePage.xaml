@@ -46,8 +46,7 @@
 			SelectionChanged="OnSlideViewSelectionChanged" 
 			Loaded="OnSlideViewLoaded" 
 			SlideViewStateChanged="OnSlideViewStateChanged" 
-			Margin="0,-10,0,10" 
-			ItemRealizationMode="ViewportItem" 			
+			Margin="0,-10,0,10" 			
 		/>
 		<Border VerticalAlignment="Top">			
 			<Border.Background>
