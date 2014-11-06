@@ -5,9 +5,9 @@
     xmlns:selectors="clr-namespace:MegaApp.Classes"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives">
+    xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives" >
 
+    <!-- Resource dictionary entries should be defined here. -->
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
@@ -18,7 +18,7 @@
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
-        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter='0,4', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter='1,0', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
             <Grid Margin="0,6">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -32,11 +32,11 @@
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
                     <Image.Source>
                         <BitmapImage 
-                            UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
-                            DecodePixelHeight="64"
-                            DecodePixelWidth="64"
-                            DecodePixelType="Logical"
-                            CreateOptions="BackgroundCreation"
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							DecodePixelHeight="64"
+							DecodePixelWidth="64"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
                         />
                     </Image.Source>
                 </Image>
@@ -48,7 +48,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListFolderItemContent">
-        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter='0,4', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter='1,0', Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
             <Grid Margin="0,6">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -62,11 +62,11 @@
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
                     <Image.Source>
                         <BitmapImage 
-                            UriSource="\Assets\FileTypes\folder.png"
-                            DecodePixelHeight="64"
-                            DecodePixelWidth="64"
-                            DecodePixelType="Logical"
-                            CreateOptions="BackgroundCreation"
+							UriSource="\Assets\FileTypes\folder.png"
+							DecodePixelHeight="64"
+							DecodePixelWidth="64"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
                         />
                     </Image.Source>
                 </Image>
@@ -88,31 +88,31 @@
 
     <DataTemplate x:Key="MegaTransferItemContent">
         <Grid Margin="0,0,0,12">
-        	<Grid.ColumnDefinitions>
-        		<ColumnDefinition Width="Auto"/>
-        		<ColumnDefinition/>
-        		<ColumnDefinition Width="Auto"/>
-        	</Grid.ColumnDefinitions>
-        	<Grid.RowDefinitions>
-        		<RowDefinition/>
-        		<RowDefinition/>
-				<RowDefinition/>
-        	</Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             <Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Stretch="UniformToFill">
                 <Image.Source>
                     <BitmapImage 
-                            UriSource="{Binding ThumbnailUri}"
-                            DecodePixelHeight="90"
-                            DecodePixelWidth="90"
-                            DecodePixelType="Logical"
-                            CreateOptions="BackgroundCreation"
+						UriSource="{Binding ThumbnailUri}"
+						DecodePixelHeight="90"
+						DecodePixelWidth="90"
+						DecodePixelType="Logical"
+						CreateOptions="BackgroundCreation"
                         />
                 </Image.Source>
             </Image>
-        	<TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Row="0" Grid.Column="1"/>
-        	<ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1"/>
-        	<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" />
-        	<telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel.png" FontFamily="Portable User Interface"/>
+            <TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Row="0" Grid.Column="1"/>
+            <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" />
+            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel.png" FontFamily="Portable User Interface"/>
         </Grid>
     </DataTemplate>
 
@@ -130,9 +130,9 @@
             <slideView:PanAndZoomImage>
                 <slideView:PanAndZoomImage.Source>
                     <BitmapImage 
-                            UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
-                            CreateOptions="BackgroundCreation"
-                            DecodePixelWidth="480"
+						UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
+						CreateOptions="BackgroundCreation"
+						DecodePixelWidth="480"
                         />
                 </slideView:PanAndZoomImage.Source>
             </slideView:PanAndZoomImage>
@@ -150,9 +150,9 @@
             <Image Width="460">
                 <Image.Source>
                     <BitmapImage 
-                            UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
-                            CreateOptions="BackgroundCreation"
-                            DecodePixelWidth="460"
+						UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"
+						CreateOptions="BackgroundCreation"
+						DecodePixelWidth="460"
                         />
                 </Image.Source>
             </Image>
@@ -168,9 +168,9 @@
     <!-- MEDIA SELECTION PAGE TEMPLATES -->
     <DataTemplate x:Key="MediaAlbumTemplate">
         <Grid Width="200" Height="200" Margin="10" >
-        	<Grid.Background>
-        		<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-        	</Grid.Background>
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+            </Grid.Background>
             <Image Source="{Binding DisplayImage}" Height="200" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
         </Grid>
@@ -178,31 +178,31 @@
 
     <DataTemplate x:Key="MediaItemTemplate">
         <Grid Width="100" Height="100" Margin="5" >
-			<Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}">
-				<Border.BorderBrush>
-					<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-				</Border.BorderBrush>
-				<Border.Background>
-					<SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-				</Border.Background>
-				<Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
-					<Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
-						<Path.Fill>
-							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-						</Path.Fill>
-					</Path>
-					<Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
-				</Grid>
-			</Border>
-			<Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="100" Width="100"/>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding Selected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Image Stretch="UniformToFill" Source="{Binding DisplayImage}" Height="100" Width="100"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="SongItemTemplate">
         <StackPanel Orientation="Vertical" Margin="12,6">
-        	<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
-        	<TextBlock Text="{Binding Details}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-    	</StackPanel>
+            <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold"/>
+            <TextBlock Text="{Binding Details}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+        </StackPanel>
     </DataTemplate>
 
 
@@ -212,7 +212,7 @@
                 <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
             </Border.Background>
             <TextBlock FontSize="{StaticResource PhoneFontSizeExtraLarge}" Text="{Binding}" HorizontalAlignment="Left" Margin="4" VerticalAlignment="Center" />
-       </Border>
+        </Border>
     </DataTemplate>
 
     <DataTemplate x:Key="PivotMegaTitleTemplate">
@@ -221,22 +221,22 @@
 
     <DataTemplate x:Key="ProductItemTemplate">
         <Grid Margin="0,10">
-        	<Grid.ColumnDefinitions>
-        		<ColumnDefinition/>
-        		<ColumnDefinition/>
-        		<ColumnDefinition/>
-        		<ColumnDefinition/>
-        	</Grid.ColumnDefinitions>
-        	<Grid.RowDefinitions>
-        		<RowDefinition/>
-        		<RowDefinition/>
-        	</Grid.RowDefinitions>
-    		<TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="4"/>
-    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Row="1"/>
-    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Transfer}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
-    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Period}" VerticalAlignment="Center" Grid.Column="3" Margin="0,3.699,0,3.3" Grid.Row="1"/>
-    	</Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="4"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Transfer}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Period}" VerticalAlignment="Center" Grid.Column="3" Margin="0,3.699,0,3.3" Grid.Row="1"/>
+        </Grid>
     </DataTemplate>
 
 
@@ -255,8 +255,8 @@
     <DataTemplate x:Key="MoveDialogContent">
         <StackPanel>
             <telerikPrimitives:RadDataBoundListBox 
-                x:Name="LstFolders"
-                ItemsSource="{Binding ChildNodes}"
+				x:Name="LstFolders"
+				ItemsSource="{Binding ChildNodes}"
 				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
 				IsAsyncBalanceEnabled="True" 
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
@@ -267,17 +267,16 @@
 
     <!--SELECTORS -->
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
-    
-	<!-- EMPTY STYLE FOR MEDIA SELECTION -->
-	<Style x:Key="MediaItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
-    	<Setter Property="Template">
-    		<Setter.Value>
-    			<ControlTemplate TargetType="telerikPrimitives:ItemCheckBox">
-    				<Grid Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    			</ControlTemplate>
-    		</Setter.Value>
-    	</Setter>
+
+    <!-- EMPTY STYLE FOR MEDIA SELECTION -->
+    <Style x:Key="MediaItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerikPrimitives:ItemCheckBox">
+                    <Grid Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
-    <!-- Resource dictionary entries should be defined here. -->
 </ResourceDictionary>

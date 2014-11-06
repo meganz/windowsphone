@@ -19,5 +19,20 @@ namespace MegaApp.Extensions
 
             return String.Format("{0:n2} {1}", adjustedSize, SizeSuffixes[mag]);
         }
+
+        public static ulong FromKBToBytes (this UInt64 value)
+        {
+            return value*1024;
+        }
+
+        public static ulong FromMBToBytes(this UInt64 value)
+        {
+            return (value *1024).FromKBToBytes();
+        }
+
+        public static ulong FromGBToBytes(this UInt64 value)
+        {
+            return (value * 1024).FromMBToBytes().FromKBToBytes();
+        }
     }
 }

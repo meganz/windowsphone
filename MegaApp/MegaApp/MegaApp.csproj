@@ -97,6 +97,7 @@
     <Compile Include="Classes\AccountDataPoint.cs" />
     <Compile Include="Classes\AccountDetails.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
+    <Compile Include="Classes\AppMemoryController.cs" />
     <Compile Include="Classes\MemoryInformation.cs" />
     <Compile Include="Classes\MenuType.cs" />
     <Compile Include="Classes\Product.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
+    <Compile Include="Models\MemDiagnosticViewModel.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\SongSelectionViewModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />

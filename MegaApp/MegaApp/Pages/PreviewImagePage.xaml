@@ -7,6 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:UserControls="clr-namespace:MegaApp.UserControls"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
     x:Class="MegaApp.Pages.PreviewImagePage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -44,6 +46,8 @@
 			SelectionChanged="OnSlideViewSelectionChanged" 
 			Loaded="OnSlideViewLoaded" 
 			SlideViewStateChanged="OnSlideViewStateChanged" 
+			Margin="0,-10,0,10" 
+			ItemRealizationMode="ViewportItem" 			
 		/>
 		<Border VerticalAlignment="Top">			
 			<Border.Background>

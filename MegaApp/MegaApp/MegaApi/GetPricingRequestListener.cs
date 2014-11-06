@@ -87,7 +87,7 @@ namespace MegaApp.MegaApi
 
             int numberOfProducts = request.getPricing().getNumProducts();
 
-            for (int i = 1; i <= numberOfProducts; i++)
+            for (int i = 0; i < numberOfProducts; i++)
             {
                 var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
                     request.getPricing().getProLevel(i).ToString());

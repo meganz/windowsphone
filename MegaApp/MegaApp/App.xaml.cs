@@ -26,8 +26,7 @@ namespace MegaApp
 
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
-
-        public static TransferQueu MegaTransfers { get; set; } 
+        public static TransferQueu MegaTransfers { get; set; }
 
         /// <summary>
         /// Constructor for the Application object.
@@ -170,7 +169,6 @@ namespace MegaApp
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
-
             //Initialize Folders
             AppService.InitializeAppFolders();
 
