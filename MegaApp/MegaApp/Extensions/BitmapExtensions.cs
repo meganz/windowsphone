@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace MegaApp.Extensions
@@ -14,7 +15,8 @@ namespace MegaApp.Extensions
         {
             using (var ms = new MemoryStream())
             {
-                var btmMap = new WriteableBitmap(bitmapImage);
+                var image = new Image {Source = bitmapImage};
+                var btmMap = new WriteableBitmap(image, null);
 
                 // write an image into the stream
                 btmMap.SaveJpeg(ms, bitmapImage.PixelWidth, bitmapImage.PixelHeight, 0, 100);

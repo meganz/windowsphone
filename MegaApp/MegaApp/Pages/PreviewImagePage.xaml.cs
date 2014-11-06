@@ -2,9 +2,12 @@
 using System.Windows.Navigation;
 using Windows.Devices.Sensors;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Services;
 using Microsoft.Devices.Sensors;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Notification;
 using Microsoft.Phone.Shell;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,8 +35,11 @@ namespace MegaApp.Pages
             InitializeComponent();
 
             _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
-
+          
             MemoryControl.StartMemoryCounter();
+
+            if(AppService.IsLowMemoryDevice())
+                SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
         }
         
 
@@ -96,11 +102,14 @@ namespace MegaApp.Pages
             switch (e.State)
             {
                 case ItemState.Recycling:
+                    ((NodeViewModel) e.DataItem).InViewingRange = false;
                     ((NodeViewModel)e.DataItem).PreviewImageUri = null;
                     break;
                 case ItemState.Recycled:
                     break;
                 case ItemState.Realizing:
+                    ((NodeViewModel)e.DataItem).InViewingRange = true;
+                    ((NodeViewModel)e.DataItem).SetPreviewImage();
                     break;
                 case ItemState.Realized:
                     break;
@@ -110,6 +119,17 @@ namespace MegaApp.Pages
         private void OnSlideViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SetMoveButtons();
+            if (e.RemovedItems[0] != null)
+            {
+                int currentIndex = _previewImageViewModel.PreviewItems.IndexOf((NodeViewModel) e.AddedItems[0]);
+                int lastIndex = _previewImageViewModel.PreviewItems.IndexOf((NodeViewModel)e.RemovedItems[0]);
+
+                _previewImageViewModel.GalleryDirection = currentIndex > lastIndex
+                    ? GalleryDirection.Next
+                    : GalleryDirection.Previous;
+            }
+            else
+                _previewImageViewModel.GalleryDirection = GalleryDirection.Next;
         }
 
         private void OnSlideViewStateChanged(object sender, SlideViewStateChangedArgs e)
