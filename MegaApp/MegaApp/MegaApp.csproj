@@ -107,6 +107,7 @@
     <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
     <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
     <Compile Include="Enums\DriveDisplayMode.cs" />
+    <Compile Include="Enums\GalleryDirection.cs" />
     <Compile Include="Enums\MediaType.cs" />
     <Compile Include="Enums\NavigationParameter.cs" />
     <Compile Include="Classes\NodeTemplateSelector.cs" />

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Windows.Devices.Geolocation;
 using MegaApp.Classes;
+using MegaApp.Extensions;
 using MegaApp.Resources;
 using System.IO;
 using System.Xml;
@@ -43,6 +44,11 @@ namespace MegaApp.Services
                 AppMemoryPeak = (ulong) DeviceStatus.ApplicationPeakMemoryUsage,
                 DeviceMemory = (ulong) DeviceStatus.DeviceTotalMemory
             };
+        }
+
+        public static bool IsLowMemoryDevice()
+        {
+            return (ulong) DeviceStatus.ApplicationMemoryUsageLimit < 200UL.FromMBToBytes();
         }
 
         /// <summary>

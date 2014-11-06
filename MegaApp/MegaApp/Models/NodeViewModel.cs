@@ -49,6 +49,7 @@ namespace MegaApp.Models
             
             ThumbnailIsDefaultImage = true;
             this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+            InViewingRange = false;
         }
 
         #region Interfaces
@@ -97,6 +98,7 @@ namespace MegaApp.Models
         public void CancelPreviewRequest()
         {
             MegaSdk.cancelGetPreview(GetMegaNode());
+            IsBusy = false;
         }
 
         public void CancelTransfer()
@@ -260,6 +262,8 @@ namespace MegaApp.Models
 
         public TransferObjectModel Transfer { get; set; }
 
+        public bool InViewingRange { get; set; }
+
         private NodeDisplayMode _displayMode;
         public NodeDisplayMode DisplayMode
         {
@@ -313,7 +317,7 @@ namespace MegaApp.Models
         {
             get
             {
-                if (_previewImageUri == null)
+                if (_previewImageUri == null && InViewingRange)
                     SetPreviewImage();
                 return _previewImageUri;
             }
