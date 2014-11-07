@@ -1,5 +1,5 @@
-﻿using System.ServiceModel.Description;
-using GoedWare.Windows.Phone.Controls;
+﻿using System.ComponentModel;
+using System.ServiceModel.Description;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -7,6 +7,7 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System;
@@ -69,6 +70,10 @@ namespace MegaApp.Pages
             }
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            {
+                App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+            }
             
             if (e.NavigationMode == NavigationMode.Back)
             {
@@ -129,6 +134,20 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
         }
 
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            if(!NavigationService.CanGoBack)
+            {
+                if (App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
+                {
+                    App.CloudDrive.GoFolderUp();
+                    App.CloudDrive.LoadNodes();
+                    e.Cancel = true;
+                }
+            }
+            base.OnBackKeyPress(e);
+        }
+
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
         {
             if(e.Item == null || e.Item.DataContext == null) return;
@@ -152,7 +171,7 @@ namespace MegaApp.Pages
             {
                 App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
-                BtnGetPreviewLink.Visibility = visibility;
+                BtnCreateShortCut.Visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FOLDER ? Visibility.Visible : Visibility.Collapsed;
                 BtnDownloadItemCloud.Visibility = visibility;
             }
         }

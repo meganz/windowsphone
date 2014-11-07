@@ -196,6 +196,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create shortcut.
+        /// </summary>
+        public static string CreateShortCut {
+            get {
+                return ResourceManager.GetString("CreateShortCut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to download.
         /// </summary>
         public static string Download {

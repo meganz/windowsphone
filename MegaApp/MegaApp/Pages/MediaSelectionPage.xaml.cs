@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -13,12 +14,14 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Data;
 
 namespace MegaApp.Pages
 {
     public partial class MediaSelectionPage : PhoneApplicationPage
     {
         private readonly MediaSelectionPageModel _mediaSelectionPageModel;
+       
         public MediaSelectionPage()
         {
             _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
@@ -81,7 +84,36 @@ namespace MegaApp.Pages
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            CreateGroupDescriptor();
+            CreateGroupPickerItems();
+
             LstMediaItems.BringIntoView(_mediaSelectionPageModel.Pictures.Last());
+        }
+
+        private void CreateGroupDescriptor()
+        {
+            var groupByDate = new GenericGroupDescriptor<BaseMediaViewModel<Picture>, DateTime>(p => DateTime.Parse(p.BaseObject.Date.ToString("MMMM yyyy"))) 
+                { SortMode = ListSortMode.Ascending };
+
+            groupByDate.GroupFormatString = "{0:MMMM yyyy}";
+            LstMediaItems.GroupDescriptors.Add(groupByDate);
+        }
+
+        private void CreateGroupPickerItems()
+        {
+            var monthList = _mediaSelectionPageModel.Pictures
+              .GroupBy(revision =>  revision.BaseObject.Date.ToString("MMMM yyyy") )
+              .Select(group => new { GroupCriteria = group.Key, Count = group.Count(), GroupDate=DateTime.Parse(group.Key) })
+              .OrderBy(x => x.GroupDate);
+
+           var groupPickerItems = new List<string>();
+
+            foreach (var month in monthList)
+            {
+                groupPickerItems.Add(month.GroupCriteria);
+            }
+
+            LstMediaItems.GroupPickerItemsSource = groupPickerItems;
         }
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
@@ -89,6 +121,24 @@ namespace MegaApp.Pages
             this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
             NavigateService.NavigateTo(typeof(MediaAlbumPage), NavigationParameter.Normal, LstMediaAlbums.SelectedItem);
         }
-        
+
+        private void OnGroupPickerItemTap(object sender, Telerik.Windows.Controls.GroupPickerItemTapEventArgs e)
+        {
+            foreach (DataGroup group in LstMediaItems.Groups)
+            {
+                if (object.Equals(DateTime.Parse(Convert.ToString(e.DataItem)), group.Key))
+                {
+                    e.DataItemToNavigate = group;
+                    return;
+                }
+            }
+        }
+
+        private void OnSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            // Nice for the user
+            this.SetValue(RadTileAnimation.ContainerToAnimateProperty,
+                e.AddedItems[0] == Photos ? LstMediaItems : LstMediaAlbums);
+        }
     }
 }
