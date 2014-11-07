@@ -18,10 +18,13 @@ namespace MegaApp.MegaApi
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
         private readonly NodeViewModel _rootRefreshNode;
-        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel, NodeViewModel rootRefreshNode = null)
+        private readonly ulong? _shortCutHandle;
+        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel, NodeViewModel rootRefreshNode = null,
+            ulong? shortCutHandle = null)
         {
             this._cloudDriveViewModel = cloudDriveViewModel;
             this._rootRefreshNode = rootRefreshNode;
+            this._shortCutHandle = shortCutHandle;
         }
 
         #region MRequestListenerInterface
@@ -32,7 +35,19 @@ namespace MegaApp.MegaApi
             {
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
-                    _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ?? new NodeViewModel(api, api.getRootNode());
+                    if (_shortCutHandle.HasValue)
+                    {
+                        MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                        if (shortCutMegaNode != null){
+                            
+                            _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
+                        }
+                    }
+                    else
+                    {
+                        _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ?? new NodeViewModel(api, api.getRootNode());
+                    }
+
                     _cloudDriveViewModel.LoadNodes();
                 }
                 else

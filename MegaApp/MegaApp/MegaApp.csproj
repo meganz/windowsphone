@@ -238,9 +238,13 @@
     <Compile Include="Services\NodeService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="UserControls\BreadCrumb.xaml.cs" />
+    <Compile Include="UserControls\BreadCrumbButtons.cs" />
+    <Compile Include="UserControls\BreadCrumbTapEventArgs.cs" />
     <Compile Include="UserControls\MemoryControl.xaml.cs">
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\BreadCrumbStyle.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -328,11 +332,13 @@
     <Content Include="Assets\Images\picture_upload.png" />
     <Content Include="Assets\Images\preview_error.png" />
     <Content Include="Assets\Images\preview_placeholder.png" />
+    <Content Include="Assets\Images\root.png" />
     <Content Include="Assets\Images\selfie_upload.png" />
+    <Content Include="Assets\Images\seperator.png" />
+    <Content Include="Assets\Images\shortcut.png" />
     <Content Include="Assets\Images\song_upload.png" />
     <Content Include="Assets\Images\sort.png" />
     <Content Include="Assets\Images\transfers_empty.png" />
-    <Content Include="Assets\References\GoedWare.Windows.Phone.Controls.dll" />
     <Content Include="Assets\Tiles\IconImage.png" />
     <Content Include="Assets\Tiles\SmallIconImage.png" />
     <Content Include="SplashScreenImage.screen-720p.jpg" />
@@ -424,9 +430,17 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\BreadCrumb.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\MemoryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BreadCrumbStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -466,6 +480,9 @@
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\References\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

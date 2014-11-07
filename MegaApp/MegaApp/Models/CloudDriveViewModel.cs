@@ -36,6 +36,7 @@ namespace MegaApp.Models
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+            this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
         }
        
         #region Commands
@@ -44,6 +45,7 @@ namespace MegaApp.Models
         public ICommand GetPreviewLinkItemCommand { get; set; }
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
+        public ICommand CreateShortCutCommand { get; set; }
 
         #endregion
 
@@ -87,6 +89,19 @@ namespace MegaApp.Models
                 }
             }
            
+        }
+        private void CreateShortCut(object obj)
+        {
+            var shortCut = new RadExtendedTileData
+            {
+                BackgroundImage = new Uri("/Assets/Images/shortcut.png", UriKind.Relative),
+                Title = FocusedNode.Name
+            };
+            
+            
+            LiveTileHelper.CreateOrUpdateTile(shortCut,
+                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.GetMegaNode().getHandle(), UriKind.Relative));
+            
         }
 
         public bool HasChildNodes()
@@ -141,7 +156,7 @@ namespace MegaApp.Models
                 parentNode = this.MegaSdk.getRootNode();
             
             this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode, childCollection:ChildNodes);
-            CalculateBreadCrumbs(this.CurrentRootNode);
+            //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
         public void GoToFolder(NodeViewModel folder)
@@ -149,7 +164,7 @@ namespace MegaApp.Models
             this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
             this.CurrentRootNode.ChildCollection = ChildNodes;
-            CalculateBreadCrumbs(this.CurrentRootNode);
+            // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
 
@@ -225,6 +240,8 @@ namespace MegaApp.Models
 
                 ChildNodes.Add(node);
             }
+
+            CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
         public void OnNodeTap(NodeViewModel node)
@@ -262,7 +279,8 @@ namespace MegaApp.Models
         {
             this.ChildNodes.Clear();
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode);
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
+            ShortCutHandle = null;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
@@ -270,16 +288,12 @@ namespace MegaApp.Models
         {
             this.CurrentRootNode = selectedNode;
             this.CurrentRootNode.ChildCollection = ChildNodes;
-            CalculateBreadCrumbs(this.CurrentRootNode);
+            // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
             // Create unique uri string to navigate
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> {{"Id", Guid.NewGuid().ToString("N")}});
         }
 
-        #endregion
-
-        #region Private Methods
-
-        private void CalculateBreadCrumbs(NodeViewModel currentRootNode)
+        public void CalculateBreadCrumbs(NodeViewModel currentRootNode)
         {
             this.BreadCrumbs.Clear();
 
@@ -295,6 +309,11 @@ namespace MegaApp.Models
             }
 
         }
+
+        #endregion
+
+        #region Private Methods
+       
 
         private void GetPreviewLink(object obj)
         {
@@ -337,6 +356,8 @@ namespace MegaApp.Models
         public bool NoFolderUpAction { get; set; }
 
         public DriveDisplayMode DriveDisplayMode { get; set; }
+
+        public ulong? ShortCutHandle { get; set; }
 
         #endregion
       

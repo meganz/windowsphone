@@ -7,7 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
-    xmlns:Controls="clr-namespace:GoedWare.Windows.Phone.Controls;assembly=GoedWare.Windows.Phone.Controls"
     xmlns:UserControls="clr-namespace:MegaApp.UserControls"
     x:Class="MegaApp.Pages.MainPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
@@ -116,8 +115,7 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-        	<Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        	<Controls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
+            <UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
         	<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
         		<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" Margin="0,0,-12,0" />
         		<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" />
@@ -156,6 +154,11 @@
 							x:Name="BtnDownloadItemCloud" 
 							Command="{Binding DownloadItemCommand}"
 							Content="{Binding LocalizedUiResources.ViewOrginal, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								/>
+						<telerikPrimitives:RadContextMenuItem 
+							x:Name="BtnCreateShortCut" 
+							Command="{Binding CreateShortCutCommand}"
+							Content="{Binding LocalizedUiResources.CreateShortCut, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								/>
                         <telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnGetPreviewLink" 

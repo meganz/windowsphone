@@ -97,7 +97,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to megabeta@goedware.com.
+        ///   Looks up a localized string similar to windowsphone@mega.co.nz.
         /// </summary>
         public static string DiagnosticsEmailAddress {
             get {
