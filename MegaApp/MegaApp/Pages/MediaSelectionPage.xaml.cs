@@ -26,6 +26,10 @@ namespace MegaApp.Pages
         {
             _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
             this.DataContext = _mediaSelectionPageModel;
+
+            CreateGroupDescriptor();
+            CreateGroupPickerItems();
+
             InitializeComponent();
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
@@ -84,9 +88,6 @@ namespace MegaApp.Pages
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            CreateGroupDescriptor();
-            CreateGroupPickerItems();
-
             LstMediaItems.BringIntoView(_mediaSelectionPageModel.Pictures.Last());
         }
 
@@ -106,12 +107,7 @@ namespace MegaApp.Pages
               .Select(group => new { GroupCriteria = group.Key, Count = group.Count(), GroupDate=DateTime.Parse(group.Key) })
               .OrderBy(x => x.GroupDate);
 
-           var groupPickerItems = new List<string>();
-
-            foreach (var month in monthList)
-            {
-                groupPickerItems.Add(month.GroupCriteria);
-            }
+           var groupPickerItems = monthList.Select(month => month.GroupCriteria).ToList();
 
             LstMediaItems.GroupPickerItemsSource = groupPickerItems;
         }

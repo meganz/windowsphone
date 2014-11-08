@@ -30,19 +30,7 @@
 				</Border.Background>
 				<TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" VerticalAlignment="Bottom" LineStackingStrategy="BaselineToBaseline" Margin="12,0"/>
 			</Border>
-		</DataTemplate>
-		<DataTemplate x:Key="MediaStickyHeaderTemplate">
-			<Border Margin="0,-2,0,0" VerticalAlignment="Top" Width="480" Padding="0,0,0,20" >
-				<Border.Background>
-					<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
-				</Border.Background>
-				<TextBlock Text="{Binding}" FontSize="{StaticResource PhoneFontSizeLarge}" >
-					<TextBlock.Foreground>
-						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-					</TextBlock.Foreground>
-				</TextBlock>
-			</Border>
-		</DataTemplate>
+		</DataTemplate>		
 	</phone:PhoneApplicationPage.Resources>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
@@ -90,9 +78,7 @@
 						RealizedItemsBufferScale="3" 
 						Loaded="OnLoaded" 
 						EmptyContent="No photos to display" 
-						GroupHeaderTemplate="{StaticResource MediaGroupHeaderTemplate}" 
-						StickyHeaderTemplate="{StaticResource MediaStickyHeaderTemplate}"
-						IsStickyHeaderEnabled="True" 
+						GroupHeaderTemplate="{StaticResource MediaGroupHeaderTemplate}" 						 
 						GroupPickerItemTemplate="{StaticResource MediaGroupPickerTemplate}" GroupPickerItemTap="OnGroupPickerItemTap" 	
 					>
 						<telerikDataControls:RadJumpList.VirtualizationStrategyDefinition>
