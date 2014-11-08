@@ -14,12 +14,24 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" 
-    Orientation="Landscape"
+    Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
-
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
+    shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="PreviewOverlayTemplate">
+			<Border VerticalAlignment="Top">			
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+				</Border.Background>
+				<TextBlock TextWrapping="Wrap" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,30,0,20" FontFamily="Portable User Interface"/>
+			</Border>
+		</DataTemplate>
+		<telerik:RadSlideAnimation
+				x:Name="OverlayContentDisplayAnimation"
+				StartPoint="0,-80"
+				EndPoint="0,0"
+				Duration="00:00:0.1" />
+		<shell:ApplicationBar x:Name="PreviewApplicationBar" Opacity="0.5">
 			<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
 				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
@@ -29,12 +41,11 @@
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+	</phone:PhoneApplicationPage.Resources>	
 
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
         
-		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Canvas.ZIndex="1"/>        
-        
+		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Canvas.ZIndex="1"/>
 		<telerikPrimitives:RadSlideView 
 			x:Name="SlideViewAndFilmStrip" 
 			ItemTemplate="{StaticResource PreviewSlideViewItemContent}"
@@ -46,14 +57,11 @@
 			SelectionChanged="OnSlideViewSelectionChanged" 
 			Loaded="OnSlideViewLoaded" 
 			SlideViewStateChanged="OnSlideViewStateChanged" 
-			Margin="0,-10,0,10" 			
-		/>
-		<Border VerticalAlignment="Top">			
-			<Border.Background>
-				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
-			</Border.Background>
-			<TextBlock TextWrapping="Wrap" Text="{Binding SelectedPreview.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,10"/>
-		</Border>        
+			Margin="0,-10,0,10" 
+			IsShowOverlayContentOnTapEnabled="True" 
+			OverlayContentTemplate="{StaticResource PreviewOverlayTemplate}" 
+			Tap="OnSlideViewTap" OverlayContentDisplayAnimation="{StaticResource OverlayContentDisplayAnimation}" FontFamily="Portable User Interface" 			
+		/>        
         
 	</Grid>
 
