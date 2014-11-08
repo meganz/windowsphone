@@ -27,10 +27,10 @@ namespace MegaApp.Pages
             _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
             this.DataContext = _mediaSelectionPageModel;
 
+            InitializeComponent();
+
             CreateGroupDescriptor();
             CreateGroupPickerItems();
-
-            InitializeComponent();
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
 
