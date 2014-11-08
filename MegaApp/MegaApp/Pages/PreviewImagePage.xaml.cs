@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Navigation;
 using Windows.Devices.Sensors;
 using MegaApp.Classes;
@@ -25,6 +27,7 @@ namespace MegaApp.Pages
     public partial class PreviewImagePage : PhoneApplicationPage
     {
         private readonly PreviewImageViewModel _previewImageViewModel;
+        private Timer _overlayTimer;
 
         public PreviewImagePage()
         {
@@ -33,6 +36,8 @@ namespace MegaApp.Pages
             _previewImageViewModel.SelectedPreview = App.CloudDrive.FocusedNode;
             
             InitializeComponent();
+
+            ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
 
             _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
           
@@ -51,6 +56,8 @@ namespace MegaApp.Pages
 
         private void SetMoveButtons(bool isSlideview = true)
         {
+            if (ApplicationBar == null) return;
+
             ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled =
                 SlideViewAndFilmStrip.PreviousItem != null && isSlideview;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = isSlideview;
@@ -90,11 +97,28 @@ namespace MegaApp.Pages
 
         private void OnSlideViewLoaded(object sender, RoutedEventArgs e)
         {
+            // Start always with the information visible
+            SlideViewAndFilmStrip.ShowOverlayContent();
+
+            // Start the timer. If the user does not do anything in a few seconds then remove the overlay
+            //_overlayTimer = new Timer(HideOverlayAndAppbar, null, new TimeSpan(0,0,10), new TimeSpan(0,0,0,0,-1));
+
             SetMoveButtons();
 
             // Bind to item state changed event to explicit release the image when scrolling in filmstrip mode.
             var zoomableListBox = ElementTreeHelper.FindVisualDescendant<ZoomableListBox>(sender as RadSlideView);
             zoomableListBox.ItemStateChanged += ZoomableListBoxOnItemStateChanged;
+        }
+
+        private void HideOverlayAndAppbar(object p)
+        {
+            Dispatcher.BeginInvoke(() =>
+            {
+                SlideViewAndFilmStrip.HideOverlayContent();
+                ApplicationBar = null;
+            });
+            _overlayTimer.Dispose();
+            _overlayTimer = null;
         }
 
         private void ZoomableListBoxOnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -135,7 +159,26 @@ namespace MegaApp.Pages
         private void OnSlideViewStateChanged(object sender, SlideViewStateChangedArgs e)
         {
             SetMoveButtons(e.NewState != SlideViewState.Filmstrip);
+            if (!SlideViewAndFilmStrip.IsOverlayContentDisplayed)
+            {
+                ApplicationBar = null;
+            }
+            else
+            {
+                ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
+            }
         }
-        
+
+        private void OnSlideViewTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
+            {
+                ApplicationBar = null;
+            }
+            else
+            {
+                ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
+            }
+        }
     }
 }
