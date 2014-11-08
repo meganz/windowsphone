@@ -19,7 +19,7 @@
 		</DataTemplate>
 		<DataTemplate x:Key="BreadCrumbHomeContentTemplate">
 			<Grid>
-				<Image Source="/Assets/Images/root.png" Stretch="None" />
+                <Image Source="/Assets/Images/mega_logo.png" Stretch="None" />
 			</Grid>
 		</DataTemplate>
 		<DataTemplate x:Key="BreadCrumbHomeExtendedContentTemplate">
@@ -28,7 +28,7 @@
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-				<Image Source="/Assets/Images/root.png" Stretch="None" Grid.Column="0"/>
+                <Image Source="/Assets/Images/mega_logo.png" Stretch="None" Grid.Column="0"/>
 				<Image Source="/Assets/Images/seperator.png" Stretch="None" Grid.Column="1"/>
 			</Grid>
 		</DataTemplate>
