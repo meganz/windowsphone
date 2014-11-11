@@ -19,9 +19,11 @@ namespace MegaApp.MegaApi
     class RemoveNodeRequestListener: BaseRequestListener
     {
         private NodeViewModel _nodeViewModel;
-        public RemoveNodeRequestListener(NodeViewModel nodeViewModel)
+        private bool _isMultiRemove;        
+        public RemoveNodeRequestListener(NodeViewModel nodeViewModel, bool isMultiRemove)
         {
             this._nodeViewModel = nodeViewModel;
+            this._isMultiRemove = isMultiRemove;
         }
 
         #region Base Properties
@@ -98,6 +100,29 @@ namespace MegaApp.MegaApi
                     ((ObservableCollection<NodeViewModel>) _nodeViewModel.ParentCollection).Remove(_nodeViewModel);
             }
             _nodeViewModel = null;
+        }
+
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgessService.SetProgressIndicator(false);
+
+                if (e.getErrorCode() == MErrorType.API_OK)
+                {
+                    if (ShowSuccesMessage && !_isMultiRemove)
+                        MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
+
+                    if (ActionOnSucces)
+                        OnSuccesAction(request);
+
+                    if (NavigateOnSucces)
+                        NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+                }
+                else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+                    if (ShowErrorMessage)
+                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
+            });
         }
 
         #endregion
