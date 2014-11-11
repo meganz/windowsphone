@@ -87,7 +87,7 @@ namespace MegaApp.Pages
         }
         private void OnRemoveClick(object sender, System.EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Remove();
+            _previewImageViewModel.SelectedPreview.Remove(false);
         }
 
         private void OnPreviousClick(object sender, System.EventArgs e)

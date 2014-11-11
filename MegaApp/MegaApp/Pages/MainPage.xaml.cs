@@ -318,7 +318,8 @@ namespace MegaApp.Pages
         {
             if (e.CheckBoxesVisible)
             {
-                LstCloudDrive.CheckedItems.Add(e.TappedItem);
+                if(e.TappedItem != null)
+                    LstCloudDrive.CheckedItems.Add(e.TappedItem);
                 this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
                 App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
             }
@@ -329,6 +330,12 @@ namespace MegaApp.Pages
                 App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
             }
         }
+
+        private void OnMultiSelectClick(object sender, EventArgs e)
+        {
+            LstCloudDrive.IsCheckModeActive = true;            
+        }
+
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             if (LstCloudDrive.CheckedItems.Count < 1) return;
@@ -382,12 +389,14 @@ namespace MegaApp.Pages
 
                 if (node == null) continue;
 
-                node.Remove();
+                node.Remove(true);
             }
 
             LstCloudDrive.IsCheckModeActive = false;
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+
+            MessageBox.Show(String.Format("Items removed to rubbish bin"), String.Format("Items removed"), MessageBoxButton.OK);
         }
     }
     

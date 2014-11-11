@@ -7,7 +7,7 @@ namespace MegaApp.Interfaces
     {
         void GetPreviewLink(MegaSDK megaSdk, NodeViewModel nodeViewModel);
         void Rename(MegaSDK megaSdk, NodeViewModel nodeViewModel);
-        void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel);
+        void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel, bool isMultiRemove);
         void Move(MegaSDK megaSdk, NodeViewModel nodeViewModel, NodeViewModel newParentNode);
     }
 }

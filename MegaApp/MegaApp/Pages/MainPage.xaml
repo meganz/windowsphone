@@ -17,6 +17,11 @@
         <shell:ApplicationBar x:Key="CloudDriveMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
+					x:Name="BtnMultiSelect" 				
+					Text="multi select"	
+					Click="OnMultiSelectClick"			
+				/>
+                <shell:ApplicationBarMenuItem
 					x:Name="BtnTransfers" 				
 					Text="transfers"	
 					Click="OnTransfersClick"			
