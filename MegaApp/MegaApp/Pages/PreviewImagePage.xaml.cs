@@ -159,17 +159,14 @@ namespace MegaApp.Pages
         private void OnSlideViewStateChanged(object sender, SlideViewStateChangedArgs e)
         {
             SetMoveButtons(e.NewState != SlideViewState.Filmstrip);
-            if (!SlideViewAndFilmStrip.IsOverlayContentDisplayed)
-            {
-                ApplicationBar = null;
-            }
-            else
-            {
-                ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
-            }
         }
 
         private void OnSlideViewTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            SetApplicationBar();
+        }
+
+        private void SetApplicationBar()
         {
             if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
             {

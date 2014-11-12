@@ -31,6 +31,7 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
             this.SelectedNodes = new List<NodeViewModel>();
+            this.ViewMode = DriveViewMode.ListView;
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
@@ -358,6 +359,9 @@ namespace MegaApp.Models
         public DriveDisplayMode DriveDisplayMode { get; set; }
 
         public ulong? ShortCutHandle { get; set; }
+
+        public DriveViewMode ViewMode { get; set; }
+             
 
         #endregion
       

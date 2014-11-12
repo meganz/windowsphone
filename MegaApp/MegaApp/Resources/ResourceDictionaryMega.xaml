@@ -77,6 +77,82 @@
         </Border>
     </DataTemplate>
 
+    <DataTemplate x:Key="MegaNodeListLargeViewFolderItemContent">
+        <Grid Width="200" Height="200" Margin="10">
+        	<Grid.RowDefinitions>
+        		<RowDefinition/>
+        		<RowDefinition Height="Auto"/>
+        	</Grid.RowDefinitions>
+        	<Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/Assets/FileTypes/folder.png" Height="180" Width="180"/>
+        	<TextBlock HorizontalAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeNormal}"/>           
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListMediumViewFolderItemContent">
+        <Grid Width="140" Height="140" Margin="5">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/Assets/FileTypes/folder.png" Height="140" Width="140"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListSmallViewFolderItemContent">
+        <Grid Width="100" Height="100" Margin="5">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Source="/Assets/FileTypes/folder.png" Height="100" Width="100"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListLargeViewFileItemContent">
+        <Grid Width="200" Height="200" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="180" Height="180">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							DecodePixelHeight="180"
+							DecodePixelWidth="180"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <TextBlock HorizontalAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListMediumViewFileItemContent">
+        <Grid Width="140" Height="140" Margin="5">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="140" Height="140">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							DecodePixelHeight="150"
+							DecodePixelWidth="150"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListSmallViewFileItemContent">
+        <Grid Width="100" Height="100" Margin="5">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="100" Height="100">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							DecodePixelHeight="150"
+							DecodePixelWidth="150"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+        </Grid>
+    </DataTemplate>
+
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
             <Grid.Background>
