@@ -69,9 +69,10 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
                     ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
 
-                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.Transfers;
-                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Settings;
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MultiSelect;
+                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Transfers;
+                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.MyAccount;
+                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;                    
                     break;
                 }
                 case MenuType.MoveMenu:
@@ -331,7 +332,7 @@ namespace MegaApp.Models
 
         private void RemoveItem(object obj)
         {
-            FocusedNode.Remove();
+            FocusedNode.Remove(false);
         }
 
         private void RenameItem(object obj)
