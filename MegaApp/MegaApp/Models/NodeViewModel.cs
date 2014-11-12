@@ -72,10 +72,10 @@ namespace MegaApp.Models
             MegaService.Move(this.MegaSdk, this, newParentNode);
         }
 
-        public void Remove()
+        public void Remove(bool isMultiRemove)
         {
             if (!IsUserOnline()) return;
-            MegaService.Remove(this.MegaSdk, this);
+            MegaService.Remove(this.MegaSdk, this, isMultiRemove);
         }
         
         public void GetPreviewLink()

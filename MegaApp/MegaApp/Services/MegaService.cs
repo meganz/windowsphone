@@ -35,12 +35,13 @@ namespace MegaApp.Services
             megaSdk.renameNode(nodeViewModel.GetMegaNode(), inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(nodeViewModel));
         }
 
-        public void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel)
+        public void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel, bool isMultiRemove)
         {
-            if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, nodeViewModel.Name),
-                AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+            if(!isMultiRemove)
+                if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, nodeViewModel.Name),
+                    AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
-            megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel));
+            megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove));
         }
 
         public void Move(MegaSDK megaSdk, NodeViewModel nodeViewModel, NodeViewModel newParentNode)
