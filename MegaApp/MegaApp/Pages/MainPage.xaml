@@ -124,7 +124,7 @@
         	<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
         		<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}"/>
         		<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}" />
-        		<telerikPrimitives:RadImageButton x:Name="BtnSelectView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/view_list.png" IsChecked="False" Tap="OnViewTap" Margin="0,0,-12,0" />
+        		<telerikPrimitives:RadImageButton x:Name="BtnSelectView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="{Binding ViewStateButtonIconUri}" IsChecked="False" Command="{Binding ChangeViewCommand}" Margin="0,0,-12,0" />
         		<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" />
         	</StackPanel>
         </StackPanel>
@@ -134,7 +134,7 @@
         		x:Name="LstCloudDrive" 				
         		ItemsSource="{Binding ChildNodes}"
         		ItemTap="OnItemTap"
-        		ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
+        		ItemTemplateSelector="{Binding NodeTemplateSelector}"				
         		IsAsyncBalanceEnabled="True" 
         		EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
         		telerik:InteractionEffectManager.IsInteractionEnabled="True" 
@@ -142,7 +142,8 @@
         		ItemStateChanged="OnItemStateChanged" 
         		ScrollStateChanged="OnScrollStateChanged" 
         		IsCheckModeEnabled="True" 
-        		IsCheckModeActiveChanged="OnCheckModeChanged" ItemTemplate="{StaticResource MegaNodeListLargeViewFolderItemContent}"				
+        		IsCheckModeActiveChanged="OnCheckModeChanged" 				
+				VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"				
 			>
         		<telerikPrimitives:RadContextMenu.ContextMenu>
         			<telerikPrimitives:RadContextMenu 

@@ -392,61 +392,6 @@ namespace MegaApp.Pages
 
             MessageBox.Show(String.Format("Items removed to rubbish bin"), String.Format("Items removed"), MessageBoxButton.OK);
         }
-
-        private void OnViewTap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            switch (App.CloudDrive.ViewMode)
-            {
-                case ViewMode.ListView:
-                {
-                    LstCloudDrive.VirtualizationStrategyDefinition = new WrapVirtualizationStrategyDefinition()
-                    {
-                        Orientation = System.Windows.Controls.Orientation.Horizontal,
-                        WrapLineAlignment = WrapLineAlignment.Near
-                    };
-                    LstCloudDrive.ItemTemplateSelector = new NodeTemplateSelector()
-                    {
-                        FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFileItemContent"],
-                        FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFolderItemContent"]
-                    };
-                    App.CloudDrive.ViewMode = ViewMode.LargeThumbnails;
-                    BtnSelectView.RestStateImageSource = new BitmapImage(new Uri("/Assets/Images/view_large.png", UriKind.Relative));
-                    break;
-                }
-                case ViewMode.LargeThumbnails:
-                {
-                    LstCloudDrive.VirtualizationStrategyDefinition = new WrapVirtualizationStrategyDefinition()
-                    {
-                        Orientation = System.Windows.Controls.Orientation.Horizontal,
-                        WrapLineAlignment = WrapLineAlignment.Near
-                    };
-                    
-                    LstCloudDrive.ItemTemplateSelector = new NodeTemplateSelector()
-                    {
-                        FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFileItemContent"],
-                        FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFolderItemContent"]
-                    };
-                    App.CloudDrive.ViewMode = ViewMode.SmallThumbnails;
-                    BtnSelectView.RestStateImageSource = new BitmapImage(new Uri("/Assets/Images/view_small.png", UriKind.Relative));
-                    break;
-                }
-                case ViewMode.SmallThumbnails:
-                {
-                    LstCloudDrive.VirtualizationStrategyDefinition = new WrapVirtualizationStrategyDefinition()
-                    {
-                        Orientation = System.Windows.Controls.Orientation.Horizontal
-                    };
-                    LstCloudDrive.ItemTemplateSelector = new NodeTemplateSelector()
-                    {
-                        FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFileItemContent"],
-                        FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFolderItemContent"]
-                    };
-                    App.CloudDrive.ViewMode = ViewMode.ListView;
-                    BtnSelectView.RestStateImageSource = new BitmapImage(new Uri("/Assets/Images/view_list.png", UriKind.Relative));
-                    break;
-                }
-            }
-        }
     }
     
 }
