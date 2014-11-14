@@ -372,25 +372,10 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            if (MessageBox.Show(String.Format("Are you sure you want to remove {0} items?", LstCloudDrive.CheckedItems.Count),
-                "Remove items", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel)item;
-
-                if (node == null) continue;
-
-                node.Remove(true);
-            }
-
-            LstCloudDrive.IsCheckModeActive = false;
+            if (!App.CloudDrive.MultiRemove()) return;
+            
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
-
-            MessageBox.Show(String.Format("Items removed to rubbish bin"), String.Format("Items removed"), MessageBoxButton.OK);
         }
 
         private void OnDisableMultiSelectClick(object sender, System.EventArgs e)

@@ -511,6 +511,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} Items removed to rubbish bin.
+        /// </summary>
+        internal static string MultiRemoveSucces {
+            get {
+                return ResourceManager.GetString("MultiRemoveSucces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items removed.
+        /// </summary>
+        internal static string MultiRemoveSucces_Title {
+            get {
+                return ResourceManager.GetString("MultiRemoveSucces_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove {0} items?.
+        /// </summary>
+        internal static string MultiSelectRemoveQuestion {
+            get {
+                return ResourceManager.GetString("MultiSelectRemoveQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove items?.
+        /// </summary>
+        internal static string MultiSelectRemoveQuestion_Title {
+            get {
+                return ResourceManager.GetString("MultiSelectRemoveQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your passwords do not match. Please re-type them and make sure they are equal.
         /// </summary>
         internal static string PasswordsDoNotMatch {

@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.IO;
+using System.Linq;
+using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -31,6 +33,7 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
             this.SelectedNodes = new List<NodeViewModel>();
+            this.IsMultiSelectActive = false;
             SetViewDefaults();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
@@ -95,6 +98,29 @@ namespace MegaApp.Models
             }
            
         }
+
+        public bool MultiRemove()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return false;
+
+            if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion,count), 
+                AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                node.Remove(true);
+            }
+
+            this.IsMultiSelectActive = false;
+
+            MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
+                AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+
+            return true;
+        }
+
         private void CreateShortCut(object obj)
         {
             var shortCut = new RadExtendedTileData
@@ -480,6 +506,18 @@ namespace MegaApp.Models
                 OnPropertyChanged("MultiSelectCheckBoxStyle");
             }
         }
+
+        private bool _isMultiSelectActive;
+        public bool IsMultiSelectActive
+        {
+            get { return _isMultiSelectActive; }
+            set
+            {
+                _isMultiSelectActive = value;
+                OnPropertyChanged("IsMultiSelectActive");
+            }
+        }
+
 
 
              
