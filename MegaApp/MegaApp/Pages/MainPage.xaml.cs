@@ -332,20 +332,7 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         { 
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel) item;
-                
-                if (node == null) continue;
-                
-                App.MegaTransfers.Add(node.Transfer);
-                node.Transfer.StartTransfer();
-            }
-            LstCloudDrive.IsCheckModeActive = false;
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+           App.CloudDrive.MultipleDownload();
         }
 
         private void OnMultiSelectMoveClick(object sender, EventArgs e)

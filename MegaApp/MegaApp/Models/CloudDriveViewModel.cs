@@ -141,6 +141,22 @@ namespace MegaApp.Models
             return true;
         }
 
+        public void MultipleDownload()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return;
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                App.MegaTransfers.Add(node.Transfer);
+                node.Transfer.StartTransfer();
+            }
+            this.IsMultiSelectActive = false;
+            this.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        }
+
         private void CreateShortCut(object obj)
         {
             var shortCut = new RadExtendedTileData
