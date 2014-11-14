@@ -350,29 +350,15 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectMoveClick(object sender, EventArgs e)
         {
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            App.CloudDrive.SelectedNodes.Clear();
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel)item;
-
-                if (node == null) continue;
-
-                node.DisplayMode = NodeDisplayMode.SelectedForMove;
-                App.CloudDrive.SelectedNodes.Add(node);
-            }
-
-            LstCloudDrive.IsCheckModeActive = false;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
+            if (!App.CloudDrive.SelectMultipleMove()) return;
+            
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
         }
 
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
-            if (!App.CloudDrive.MultiRemove()) return;
+            if (!App.CloudDrive.MultipleRemove()) return;
             
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);

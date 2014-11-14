@@ -99,7 +99,7 @@ namespace MegaApp.Models
            
         }
 
-        public bool MultiRemove()
+        public bool MultipleRemove()
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
@@ -117,6 +117,26 @@ namespace MegaApp.Models
 
             MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
                 AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+
+            return true;
+        }
+
+        public bool SelectMultipleMove()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return false;
+
+            SelectedNodes.Clear();
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                SelectedNodes.Add(node);
+            }
+
+            this.IsMultiSelectActive = false;
+            DriveDisplayMode = DriveDisplayMode.MoveItem;
 
             return true;
         }
