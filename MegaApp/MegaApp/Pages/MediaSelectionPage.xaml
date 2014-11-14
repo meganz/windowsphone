@@ -9,7 +9,6 @@
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
     x:Class="MegaApp.Pages.MediaSelectionPage"
-    FontFamily="Portable User Interface"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
@@ -46,7 +45,7 @@
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
-		<phone:Pivot x:Name="MediaPivot" Grid.RowSpan="2" TitleTemplate="{StaticResource PivotMegaTitleTemplate}" SelectionChanged="OnSelectionChanged">
+		<phone:Pivot x:Name="MediaPivot" Grid.RowSpan="2" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
 			<phone:PivotItem x:Name="Albums" CacheMode="{x:Null}" Header="albums">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox
@@ -71,7 +70,7 @@
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 						IsAsyncBalanceEnabled="True" 
 						IsCheckModeActive="True" 
-						CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" 
+						CheckBoxStyle="{StaticResource MultiSelectItemCheckBoxStyle}" 
 						ItemCheckedPath="Selected" 
 						CheckModeDeactivatedOnBackButton="False" 
 						ItemCheckedStateChanged="OnItemCheckedStateChanged" 

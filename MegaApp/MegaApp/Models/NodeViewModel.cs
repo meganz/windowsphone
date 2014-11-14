@@ -39,6 +39,7 @@ namespace MegaApp.Models
             this.ParentCollection = parentCollection;
             this.ChildCollection = childCollection;
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
+            this.IsMultiSelected = false;
 
             this.MegaService = new MegaService();
 
@@ -336,6 +337,17 @@ namespace MegaApp.Models
             {
                 _imageUri = value;
                 OnPropertyChanged("ImageUri");
+            }
+        }
+
+        private bool _isMultiSelected;
+        public bool IsMultiSelected
+        {
+            get { return _isMultiSelected; }
+            set
+            {
+                _isMultiSelected = value;
+                OnPropertyChanged("IsMultiSelected");
             }
         }
 

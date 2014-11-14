@@ -184,6 +184,8 @@ namespace MegaApp.Models
 
                         this.ViewMode = ViewMode.LargeThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_large.png", UriKind.Relative);
+
+                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
                 case ViewMode.LargeThumbnails:
@@ -202,6 +204,8 @@ namespace MegaApp.Models
 
                         this.ViewMode = ViewMode.SmallThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_small.png", UriKind.Relative);
+
+                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
                 case ViewMode.SmallThumbnails:
@@ -227,6 +231,8 @@ namespace MegaApp.Models
 
             this.ViewMode = ViewMode.ListView;
             this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_list.png", UriKind.Relative);
+
+            this.MultiSelectCheckBoxStyle = null;
         }
 
         public void GoToFolder(NodeViewModel folder)
@@ -461,6 +467,17 @@ namespace MegaApp.Models
             {
                 _viewStateButtonIconUri = value;
                 OnPropertyChanged("ViewStateButtonIconUri");
+            }
+        }
+
+        private Style _multiSelectCheckBoxStyle;
+        public Style MultiSelectCheckBoxStyle
+        {
+            get { return _multiSelectCheckBoxStyle; }
+            set
+            {
+                _multiSelectCheckBoxStyle = value;
+                OnPropertyChanged("MultiSelectCheckBoxStyle");
             }
         }
 
