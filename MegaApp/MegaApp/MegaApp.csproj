@@ -103,11 +103,12 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
     <Compile Include="Converters\BooleanToColorConverter.cs" />
+    <Compile Include="Converters\CountToVisibilityConverter.cs" />
     <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
     <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
     <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
     <Compile Include="Enums\DriveDisplayMode.cs" />
-    <Compile Include="Enums\DriveViewMode.cs" />
+    <Compile Include="Enums\ViewMode.cs" />
     <Compile Include="Enums\GalleryDirection.cs" />
     <Compile Include="Enums\MediaType.cs" />
     <Compile Include="Enums\NavigationParameter.cs" />
@@ -339,9 +340,8 @@
     <Content Include="Assets\Images\song_upload.png" />
     <Content Include="Assets\Images\sort.png" />
     <Content Include="Assets\Images\transfers_empty.png" />
-    <Content Include="Assets\Images\view_large.png" />
     <Content Include="Assets\Images\view_list.png" />
-    <Content Include="Assets\Images\view_medium.png" />
+    <Content Include="Assets\Images\view_large.png" />
     <Content Include="Assets\Images\view_small.png" />
     <Content Include="Assets\Tiles\IconImage.png" />
     <Content Include="Assets\Tiles\SmallIconImage.png" />

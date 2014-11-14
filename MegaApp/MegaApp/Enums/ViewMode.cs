@@ -1,10 +1,9 @@
 ﻿namespace MegaApp.Enums
 {
-    public enum DriveViewMode
+    public enum ViewMode
     {
         ListView,
         LargeThumbnails,
-        MediumThumbnails,
-        SmallThumbnails
+        SmallThumbnails,
     }
 }
