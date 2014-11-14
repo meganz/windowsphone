@@ -31,13 +31,14 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
             this.SelectedNodes = new List<NodeViewModel>();
-            this.ViewMode = Enums.ViewMode.ListView;
+            SetViewDefaults();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
+            this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
         }
        
         #region Commands
@@ -47,6 +48,8 @@ namespace MegaApp.Models
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
         public ICommand CreateShortCutCommand { get; set; }
+
+        public ICommand ChangeViewCommand { get; set; }
 
         #endregion
 
@@ -159,6 +162,71 @@ namespace MegaApp.Models
             
             this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode, childCollection:ChildNodes);
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
+        }
+
+        private void ChangeView(object obj)
+        {
+            switch (this.ViewMode)
+            {
+                case ViewMode.ListView:
+                    {
+                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        {
+                            Orientation = Orientation.Horizontal,
+                            WrapLineAlignment = WrapLineAlignment.Near
+                        };
+
+                        this.NodeTemplateSelector = new NodeTemplateSelector()
+                        {
+                            FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFileItemContent"],
+                            FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFolderItemContent"]
+                        };
+
+                        this.ViewMode = ViewMode.LargeThumbnails;
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_large.png", UriKind.Relative);
+                        break;
+                    }
+                case ViewMode.LargeThumbnails:
+                    {
+                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        {
+                            Orientation = Orientation.Horizontal,
+                            WrapLineAlignment = WrapLineAlignment.Near
+                        };
+
+                        this.NodeTemplateSelector = new NodeTemplateSelector()
+                        {
+                            FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFileItemContent"],
+                            FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFolderItemContent"]
+                        };
+
+                        this.ViewMode = ViewMode.SmallThumbnails;
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_small.png", UriKind.Relative);
+                        break;
+                    }
+                case ViewMode.SmallThumbnails:
+                    {
+                        SetViewDefaults();
+                        break;
+                    }
+            }
+        }
+
+        private void SetViewDefaults()
+        {
+            this.VirtualizationStrategy = new StackVirtualizationStrategyDefinition()
+            {
+                Orientation = Orientation.Vertical
+            };
+
+            this.NodeTemplateSelector = new NodeTemplateSelector()
+            {
+                FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFileItemContent"],
+                FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFolderItemContent"]
+            };
+
+            this.ViewMode = ViewMode.ListView;
+            this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_list.png", UriKind.Relative);
         }
 
         public void GoToFolder(NodeViewModel folder)
@@ -362,6 +430,41 @@ namespace MegaApp.Models
         public ulong? ShortCutHandle { get; set; }
 
         public ViewMode ViewMode { get; set; }
+
+        private VirtualizationStrategyDefinition _virtualizationStrategy;
+        public VirtualizationStrategyDefinition VirtualizationStrategy
+        {
+            get { return _virtualizationStrategy; }
+            set
+            {
+                _virtualizationStrategy = value;
+                OnPropertyChanged("VirtualizationStrategy");
+            }
+        }
+
+        private DataTemplateSelector _nodeTemplateSelector;
+        public DataTemplateSelector NodeTemplateSelector
+        {
+             get { return _nodeTemplateSelector; }
+            set
+            {
+                _nodeTemplateSelector = value;
+                OnPropertyChanged("NodeTemplateSelector");
+            }
+        }
+
+        private Uri _viewStateButtonIconUri;
+        public Uri ViewStateButtonIconUri
+        {
+            get { return _viewStateButtonIconUri; }
+            set
+            {
+                _viewStateButtonIconUri = value;
+                OnPropertyChanged("ViewStateButtonIconUri");
+            }
+        }
+
+
              
 
         #endregion
