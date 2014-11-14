@@ -75,7 +75,7 @@
 				IconUri="/Assets/AppBar/cancel.png" 
 				Text="cancel" 
 				Click="OnCancelMoveClick" 				
-			/>
+			/>			
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MultiSelectMenu">
@@ -97,6 +97,13 @@
 				Text="remove" 
 				Click="OnMultiSelectRemoveClick" 
 			/>
+			<shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnDisableMultiSelect" 				
+					Text="disable multi select"	
+					Click="OnDisableMultiSelectClick"			
+				/>                
+            </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.Resources>
 
@@ -143,7 +150,7 @@
         		ScrollStateChanged="OnScrollStateChanged" 
         		IsCheckModeEnabled="True" 
         		IsCheckModeActiveChanged="OnCheckModeChanged" 				
-				VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"				
+				VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" ItemCheckedPath="IsMultiSelected"				
 			>
         		<telerikPrimitives:RadContextMenu.ContextMenu>
         			<telerikPrimitives:RadContextMenu 

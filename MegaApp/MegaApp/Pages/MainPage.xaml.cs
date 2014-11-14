@@ -331,7 +331,7 @@ namespace MegaApp.Pages
         }
 
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
-        {
+        { 
             if (LstCloudDrive.CheckedItems.Count < 1) return;
 
             foreach (var item in LstCloudDrive.CheckedItems)
@@ -391,6 +391,11 @@ namespace MegaApp.Pages
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
 
             MessageBox.Show(String.Format("Items removed to rubbish bin"), String.Format("Items removed"), MessageBoxButton.OK);
+        }
+
+        private void OnDisableMultiSelectClick(object sender, System.EventArgs e)
+        {
+            LstCloudDrive.IsCheckModeActive = false;
         }
     }
     
