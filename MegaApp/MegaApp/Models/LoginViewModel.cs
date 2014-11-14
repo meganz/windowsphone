@@ -26,7 +26,7 @@ namespace MegaApp.Models
         public LoginViewModel(MegaSDK megaSdk)
         {
             this._megaSdk = megaSdk;
-            this.RememberMe = true;
+            this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
             this.ControlState = true;
             this.NavigateCreateAccountCommand = new DelegateCommand(NavigateCreateAccount);
         }
@@ -55,9 +55,9 @@ namespace MegaApp.Models
             return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password);
         }
 
-        private static void SaveLoginData(string email, string session)
+        private static void SaveLoginData(string email, string session, bool stayLoggedIn)
         {
-            SettingsService.SaveMegaLoginData(email, session);
+            SettingsService.SaveMegaLoginData(email, session, stayLoggedIn);
         }
         
         #endregion
@@ -72,7 +72,7 @@ namespace MegaApp.Models
 
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool RememberMe { get; set; }
+        public bool StayLoggedIn { get; set; }
         public string SessionKey { get; private set; }
 
         #endregion
@@ -116,7 +116,7 @@ namespace MegaApp.Models
 
         protected override bool ActionOnSucces
         {
-            get { return RememberMe; }
+            get { return true; }
         }
 
         protected override Type NavigateToPage
@@ -147,7 +147,7 @@ namespace MegaApp.Models
 
         protected override void OnSuccesAction(MRequest request)
         {
-            SaveLoginData(Email, SessionKey);
+            SaveLoginData(Email, SessionKey, StayLoggedIn);
         }
 
         #endregion

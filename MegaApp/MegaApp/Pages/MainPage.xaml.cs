@@ -121,7 +121,10 @@ namespace MegaApp.Pages
                     }
                     else
                     {
-                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+
+                        if (!isAlreadyOnline)
+                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     }
                     break;
                 }
@@ -327,7 +330,7 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
-            LstCloudDrive.IsCheckModeActive = true;            
+            App.CloudDrive.IsMultiSelectActive = true;            
         }
 
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
@@ -353,7 +356,7 @@ namespace MegaApp.Pages
 
         private void OnDisableMultiSelectClick(object sender, System.EventArgs e)
         {
-            LstCloudDrive.IsCheckModeActive = false;
+            App.CloudDrive.IsMultiSelectActive = false;
         }
     }
     
