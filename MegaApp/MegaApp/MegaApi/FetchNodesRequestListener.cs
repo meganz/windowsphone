@@ -33,6 +33,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgessService.SetProgressIndicator(false);
+
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
                     if (_shortCutHandle.HasValue)
@@ -54,8 +56,7 @@ namespace MegaApp.MegaApi
                 {
                     MessageBox.Show(e.getErrorString());
                 }
-
-                ProgessService.SetProgressIndicator(false);
+                
             });
 
         }

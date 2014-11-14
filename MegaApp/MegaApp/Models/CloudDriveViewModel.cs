@@ -357,6 +357,8 @@ namespace MegaApp.Models
 
         public void LoadNodes()
         {
+            ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+
             this.ChildNodes.Clear();
 
             var sortOrder = SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes) == 0
@@ -380,6 +382,8 @@ namespace MegaApp.Models
             }
 
             CalculateBreadCrumbs(this.CurrentRootNode);
+
+            ProgessService.SetProgressIndicator(false);
         }
 
         public void OnNodeTap(NodeViewModel node)

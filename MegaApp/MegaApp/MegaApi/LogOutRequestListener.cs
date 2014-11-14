@@ -81,7 +81,7 @@ namespace MegaApp.MegaApi
         {
             SettingsService.ClearMegaLoginData();
             App.CloudDrive.ChildNodes.Clear();
-            AppService.ClearAppCache(true);
+            AppService.ClearAppCache(false);
         }
 
         #endregion
