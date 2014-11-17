@@ -78,7 +78,8 @@ namespace MegaApp.Models
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MultiSelect;
                     ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Transfers;
                     ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;                    
+                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;
+                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.About; 
                     break;
                 }
                 case MenuType.MoveMenu:

@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to about.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
         public static string AddButton {
@@ -525,6 +534,15 @@ namespace MegaApp.Resources {
         public static string Size {
             get {
                 return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We want to special thank the following companies/people for making this app possible:.
+        /// </summary>
+        public static string SpecialThankYou {
+            get {
+                return ResourceManager.GetString("SpecialThankYou", resourceCulture);
             }
         }
         

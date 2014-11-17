@@ -118,7 +118,10 @@
     <Compile Include="Enums\TransferType.cs" />
     <Compile Include="MegaApi\GetPaymentUrlRequestListener.cs" />
     <Compile Include="MegaApi\GetPricingRequestListener.cs" />
+    <Compile Include="MegaApi\GlobalListener.cs" />
     <Compile Include="MegaApi\MegaLogger.cs" />
+    <Compile Include="Models\AboutViewModel.cs" />
+    <Compile Include="Models\AcknowledgementsViewModel.cs" />
     <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
@@ -163,6 +166,12 @@
     <Compile Include="Models\CreateAccountViewModel.cs" />
     <Compile Include="Models\PreviewImageViewModel.cs" />
     <Compile Include="Models\TransfersViewModel.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AcknowledgementsPage.xaml.cs">
+      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConfirmAccountPage.xaml.cs">
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
     </Compile>
@@ -373,6 +382,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AcknowledgementsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ConfirmAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
