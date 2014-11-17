@@ -44,7 +44,7 @@ namespace MegaApp.MegaApi
                         MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
 
                     if (ActionOnSucces)
-                        OnSuccesAction(request);
+                        OnSuccesAction(api, request);
 
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
@@ -79,7 +79,7 @@ namespace MegaApp.MegaApi
 
         #region Virtual Methods
 
-        protected virtual void OnSuccesAction(MRequest request)
+        protected virtual void OnSuccesAction(MegaSDK api, MRequest request)
         {
             // No standard succes action
         }

@@ -92,7 +92,7 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             _node.ThumbnailImageUri = new Uri(request.getFile());
             _node.ThumbnailIsDefaultImage = false;

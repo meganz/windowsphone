@@ -265,30 +265,7 @@ namespace MegaApp.Services
                 SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
                 cloudDrive.LoadNodes();
             };
-
-            var creationAscButton = new Button()
-            {
-                Content = "creation date ascending",
-                Tag = 5
-            };
-            creationAscButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
-                cloudDrive.LoadNodes();
-            };
-
-            var creationDescButton = new Button()
-            {
-                Content = "creation date descending",
-                Tag = 6
-            };
-            creationDescButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                SettingsService.SaveSetting(SettingsResources.SortOrderNodes, ((Button)sender).Tag);
-                cloudDrive.LoadNodes();
-            };
+           
 
             var modificationAscButton = new Button()
             {
@@ -344,8 +321,6 @@ namespace MegaApp.Services
             buttonStackPanel.Children.Add(fileDescButton);
             buttonStackPanel.Children.Add(sizeAscButton);
             buttonStackPanel.Children.Add(sizeDescButton);
-            buttonStackPanel.Children.Add(creationAscButton);
-            buttonStackPanel.Children.Add(creationDescButton);
             buttonStackPanel.Children.Add(modificationAscButton);
             buttonStackPanel.Children.Add(modificationDescButton);
             buttonStackPanel.Children.Add(alphaAscButton);
