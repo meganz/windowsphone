@@ -358,6 +358,12 @@ namespace MegaApp.Pages
         {
             App.CloudDrive.IsMultiSelectActive = false;
         }
+
+        private void OnAboutClick(object sender, System.EventArgs e)
+        {
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
+        }
     }
     
 }

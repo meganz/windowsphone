@@ -165,6 +165,8 @@ namespace MegaApp
 
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            // Add notifications listener
+            MegaSdk.addGlobalListener(new GlobalListener());
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Initialize the transfer listing

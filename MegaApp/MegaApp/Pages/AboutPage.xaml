@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="MegaApp.Pages.SettingsPage"
+    x:Class="MegaApp.Pages.AboutPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -23,18 +23,24 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock Text="settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="Portable User Interface"/>
+            <TextBlock Text="about" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
         </StackPanel>
         <StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-        	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export masterkey" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Margin="12,0,12,10"/>
-        	<Grid Margin="0,0,0,10">
+        	<Grid x:Name="VersionGrid" Margin="0,0,0,10">
         		<Grid.ColumnDefinitions>
         			<ColumnDefinition/>
         			<ColumnDefinition/>
         		</Grid.ColumnDefinitions>
-        		<Button x:Name="BtnShareMasterKey" Content="share" Command="{Binding ShareMasterKeyCommand}" FontFamily="Portable User Interface"/>
-        		<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
+        		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
+        		<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding AppVersion}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Column="1">
+        			<TextBlock.Foreground>
+        				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+        			</TextBlock.Foreground>
+        		</TextBlock>
         	</Grid>
+        	<HyperlinkButton x:Name="BtnTermsOfService" Content="Terms of Service" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,10,0,10" Command="{Binding TermsOfServiceCommand}"/>
+        	<HyperlinkButton x:Name="BtnPrivacyPolicy" Content="Privacy Policy" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,10,0,10" Command="{Binding PrivacyPolicyCommand}"/>
+        	<HyperlinkButton x:Name="BtnAcknowledgements" Content="Acknowledgements" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,40,0,10" Command="{Binding AcknowledgementsCommands}" />
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

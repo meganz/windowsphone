@@ -37,6 +37,11 @@
 					Text="preferences"	
 					Click="OnPreferencesClick"			
 				/>
+				<shell:ApplicationBarMenuItem
+					x:Name="BtnAbout" 				
+					Text="about"	
+					Click="OnAboutClick"			
+				/>
             </shell:ApplicationBar.MenuItems>
         	<shell:ApplicationBarIconButton 
         		x:Name="BtnCloudUpload" 
