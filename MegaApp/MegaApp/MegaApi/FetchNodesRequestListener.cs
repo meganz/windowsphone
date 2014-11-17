@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -14,7 +15,7 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FetchNodesRequestListener: MRequestListenerInterface
+    class FetchNodesRequestListener : BaseRequestListener
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
         private readonly NodeViewModel _rootRefreshNode;
@@ -27,52 +28,102 @@ namespace MegaApp.MegaApi
             this._shortCutHandle = shortCutHandle;
         }
 
-        #region MRequestListenerInterface
+        #region Base Properties
 
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override string ProgressMessage
+        {
+            get { return ProgressMessages.FetchingNodes; }
+        }
+
+        protected override bool ShowProgressMessage
+        {
+            get { return true; }
+        }
+
+        protected override string ErrorMessage
+        {
+            get { return AppMessages.FetchingNodesFailed; }
+        }
+
+        protected override string ErrorMessageTitle
+        {
+            get { return AppMessages.FetchingNodesFailed_Title; }
+        }
+
+        protected override bool ShowErrorMessage
+        {
+            get { return true; }
+        }
+
+        protected override string SuccessMessage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override string SuccessMessageTitle
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override bool ShowSuccesMessage
+        {
+            get { return false; }
+        }
+
+        protected override bool NavigateOnSucces
+        {
+            get { return false; }
+        }
+
+        protected override bool ActionOnSucces
+        {
+            get { return true; }
+        }
+
+        protected override Type NavigateToPage
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        protected override NavigationParameter NavigationParameter
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+        #region Override Methods
+
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgessService.SetProgressIndicator(false);
-
-                if (e.getErrorCode() == MErrorType.API_OK)
+                if (_shortCutHandle.HasValue)
                 {
-                    if (_shortCutHandle.HasValue)
+                    MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                    if (shortCutMegaNode != null)
                     {
-                        MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                        if (shortCutMegaNode != null){
-                            
-                            _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
-                        }
-                    }
-                    else
-                    {
-                        _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ?? new NodeViewModel(api, api.getRootNode());
-                    }
 
-                    _cloudDriveViewModel.LoadNodes();
+                        _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(e.getErrorString());
+                    _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ??
+                                                           new NodeViewModel(api, api.getRootNode());
                 }
-                
-            });
 
+                _cloudDriveViewModel.LoadNodes();
+            });
         }
 
-        public void onRequestStart(MegaSDK api, MRequest request)
+        public override void onRequestStart(MegaSDK api, MRequest request)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
                 String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
         }
 
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show(e.getErrorString()));
-        }
-
-        public void onRequestUpdate(MegaSDK api, MRequest request)
+        public override void onRequestUpdate(MegaSDK api, MRequest request)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
                 String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));

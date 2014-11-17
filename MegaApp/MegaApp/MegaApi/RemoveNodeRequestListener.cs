@@ -92,7 +92,7 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             if (_nodeViewModel.ParentCollection != null)
             {
@@ -114,7 +114,7 @@ namespace MegaApp.MegaApi
                         MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
 
                     if (ActionOnSucces)
-                        OnSuccesAction(request);
+                        OnSuccesAction(api, request);
 
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);

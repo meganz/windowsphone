@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
@@ -359,7 +360,7 @@ namespace MegaApp.Models
         public void LoadNodes()
         {
             ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
-
+            
             this.ChildNodes.Clear();
 
             var sortOrder = SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes) == 0
@@ -370,6 +371,7 @@ namespace MegaApp.Models
 
             for (int i = 0; i < nodeList.size(); i++)
             {
+                Thread.Sleep(5000);
                 var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
 
                 if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&

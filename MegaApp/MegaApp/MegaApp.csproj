@@ -118,7 +118,7 @@
     <Compile Include="Enums\TransferType.cs" />
     <Compile Include="MegaApi\GetPaymentUrlRequestListener.cs" />
     <Compile Include="MegaApi\GetPricingRequestListener.cs" />
-    <Compile Include="MegaApi\GlobalListener.cs" />
+    <Compile Include="MegaApi\GlobalDriveListener.cs" />
     <Compile Include="MegaApi\MegaLogger.cs" />
     <Compile Include="Models\AboutViewModel.cs" />
     <Compile Include="Models\AcknowledgementsViewModel.cs" />
