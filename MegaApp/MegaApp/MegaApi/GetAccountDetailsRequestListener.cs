@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -83,10 +84,13 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
-            _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
-            _accountDetails.CreateDataPoints();
-            _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
+                _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
+                _accountDetails.CreateDataPoints();
+                _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+            });
         }
 
         #endregion

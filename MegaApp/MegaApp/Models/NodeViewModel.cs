@@ -120,7 +120,7 @@ namespace MegaApp.Models
             CancelingTransfer(this, new EventArgs());
         }
 
-        private void SetFolderInfo()
+        public void SetFolderInfo()
         {
             int childFolders = this.MegaSdk.getNumChildFolders(this._baseMegaNode);
             int childFiles = this.MegaSdk.getNumChildFiles(this._baseMegaNode);

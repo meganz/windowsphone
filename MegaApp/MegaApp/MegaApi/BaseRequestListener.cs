@@ -34,25 +34,25 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+
+            if (e.getErrorCode() == MErrorType.API_OK)
             {
-                ProgessService.SetProgressIndicator(false);
+                if (ShowSuccesMessage)
+                    Deployment.Current.Dispatcher.BeginInvoke(
+                        () => MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK));
 
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    if (ShowSuccesMessage)
-                        MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
+                if (ActionOnSucces)
+                    OnSuccesAction(api, request);
 
-                    if (ActionOnSucces)
-                        OnSuccesAction(api, request);
-
-                    if (NavigateOnSucces)
-                        NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
-                }
-                else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
-                    if (ShowErrorMessage)
-                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            });
+                if (NavigateOnSucces)
+                    Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
+            }
+            else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+                if (ShowErrorMessage)
+                    Deployment.Current.Dispatcher.BeginInvoke(() => 
+                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
+           
         }
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)

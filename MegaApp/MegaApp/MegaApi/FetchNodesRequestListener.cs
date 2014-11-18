@@ -96,25 +96,21 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            if (_shortCutHandle.HasValue)
             {
-                if (_shortCutHandle.HasValue)
+                MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                if (shortCutMegaNode != null)
                 {
-                    MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                    if (shortCutMegaNode != null)
-                    {
 
-                        _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
-                    }
+                    _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
                 }
-                else
-                {
-                    _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ??
-                                                           new NodeViewModel(api, api.getRootNode());
-                }
-
-                _cloudDriveViewModel.LoadNodes();
-            });
+            }
+            else
+            {
+                _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ??
+                                                        new NodeViewModel(api, api.getRootNode());
+            }
+            _cloudDriveViewModel.LoadNodes();
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)
