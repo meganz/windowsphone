@@ -92,7 +92,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _nodeViewModel.Name = request.getName();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>_nodeViewModel.Name = request.getName());
         }
 
         #endregion

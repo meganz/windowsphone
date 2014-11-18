@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -77,11 +78,14 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            var webBrowserTask = new WebBrowserTask
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Uri = new Uri(request.getLink())
-            };
-            webBrowserTask.Show();
+                var webBrowserTask = new WebBrowserTask
+                {
+                    Uri = new Uri(request.getLink())
+                };
+                webBrowserTask.Show();
+            });
         }
 
         #endregion

@@ -80,7 +80,7 @@ namespace MegaApp.MegaApi
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             SettingsService.ClearMegaLoginData();
-            App.CloudDrive.ChildNodes.Clear();
+            Deployment.Current.Dispatcher.BeginInvoke(() => App.CloudDrive.ChildNodes.Clear());
             AppService.ClearAppCache(false);
         }
 

@@ -93,7 +93,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            ((ObservableCollection<NodeViewModel>)_rootNode.ChildCollection).Add(_nodeToMove);
+           Deployment.Current.Dispatcher.BeginInvoke(() =>
+               ((ObservableCollection<NodeViewModel>)_rootNode.ChildCollection).Add(_nodeToMove));
         }
 
         #endregion

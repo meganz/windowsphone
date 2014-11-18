@@ -95,7 +95,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _node.PreviewImageUri = new Uri(request.getFile());
+            Deployment.Current.Dispatcher.BeginInvoke(() =>_node.PreviewImageUri = new Uri(request.getFile()));
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)

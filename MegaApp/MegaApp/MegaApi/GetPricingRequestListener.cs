@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -83,31 +84,34 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _accountDetails.Products.Clear();
-
-            int numberOfProducts = request.getPricing().getNumProducts();
-
-            for (int i = 0; i < numberOfProducts; i++)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
-                    request.getPricing().getProLevel(i).ToString());
+                _accountDetails.Products.Clear();
 
-                if(accountType == _accountDetails.AccountType)
-                    continue;
+                int numberOfProducts = request.getPricing().getNumProducts();
 
-                var product = new Product
+                for (int i = 0; i < numberOfProducts; i++)
                 {
-                    Name = accountType.ToString(),
-                    Amount = request.getPricing().getAmount(i),
-                    Currency = request.getPricing().getCurrency(i),
-                    GbStorage = request.getPricing().getGBStorage(i),
-                    GbTransfer = request.getPricing().getGBTransfer(i),
-                    Months = request.getPricing().getMonths(i),
-                    Handle = request.getPricing().getHandle(i)
-                };
+                    var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
+                        request.getPricing().getProLevel(i).ToString());
 
-                _accountDetails.Products.Add(product);
-            }
+                    if (accountType == _accountDetails.AccountType)
+                        continue;
+
+                    var product = new Product
+                    {
+                        Name = accountType.ToString(),
+                        Amount = request.getPricing().getAmount(i),
+                        Currency = request.getPricing().getCurrency(i),
+                        GbStorage = request.getPricing().getGBStorage(i),
+                        GbTransfer = request.getPricing().getGBTransfer(i),
+                        Months = request.getPricing().getMonths(i),
+                        Handle = request.getPricing().getHandle(i)
+                    };
+
+                    _accountDetails.Products.Add(product);
+                }
+            });
         }
 
         #endregion

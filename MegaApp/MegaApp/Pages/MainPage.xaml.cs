@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ServiceModel.Description;
+using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Classes;
@@ -140,7 +141,7 @@ namespace MegaApp.Pages
                 if (App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
                 {
                     App.CloudDrive.GoFolderUp();
-                    App.CloudDrive.LoadNodes();
+                    Task.Run(() => App.CloudDrive.LoadNodes());
                     e.Cancel = true;
                 }
             }
@@ -178,7 +179,7 @@ namespace MegaApp.Pages
             if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
             
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
-            App.CloudDrive.LoadNodes();
+            Task.Run(() => App.CloudDrive.LoadNodes());
         }
         private void OnRefreshClick(object sender, EventArgs e)
         {

@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.Windows.Data;
 using System.Windows.Threading;
+using Windows.UI.Core;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -228,11 +231,11 @@ namespace MegaApp.Models
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
-        private void ChangeView(object obj)
+        private void SetView(ViewMode viewMode)
         {
-            switch (this.ViewMode)
+            switch (viewMode)
             {
-                case ViewMode.ListView:
+                case ViewMode.LargeThumbnails:
                     {
                         this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
                         {
@@ -252,7 +255,7 @@ namespace MegaApp.Models
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
-                case ViewMode.LargeThumbnails:
+                case ViewMode.SmallThumbnails:
                     {
                         this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
                         {
@@ -272,9 +275,34 @@ namespace MegaApp.Models
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
-                case ViewMode.SmallThumbnails:
+                case ViewMode.ListView:
                     {
                         SetViewDefaults();
+                        break;
+                    }
+            }
+        }
+
+        private void ChangeView(object obj)
+        {
+            switch (this.ViewMode)
+            {
+                case ViewMode.ListView:
+                    {
+                        SetView(ViewMode.LargeThumbnails);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.LargeThumbnails);
+                        break;
+                    }
+                case ViewMode.LargeThumbnails:
+                    {
+                        SetView(ViewMode.SmallThumbnails);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.SmallThumbnails);
+                        break;
+                    }
+                case ViewMode.SmallThumbnails:
+                    {
+                        SetView(ViewMode.ListView);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.ListView);
                         break;
                     }
             }
@@ -359,19 +387,27 @@ namespace MegaApp.Models
 
         public void LoadNodes()
         {
-            ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+            if (Deployment.Current.Dispatcher.CheckAccess())
+            {
+                ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+                SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+                this.ChildNodes.Clear();
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+                    SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+                    this.ChildNodes.Clear();
+                });
+            }
             
-            this.ChildNodes.Clear();
-
-            var sortOrder = SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes) == 0
-                ? (int)MSortOrderType.ORDER_DEFAULT_ASC
-                : SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes);
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), 
+                UiService.GetSortOrder(CurrentRootNode.Handle));
             
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), sortOrder);
-
             for (int i = 0; i < nodeList.size(); i++)
             {
-                Thread.Sleep(5000);
                 var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
 
                 if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
@@ -381,12 +417,38 @@ namespace MegaApp.Models
                     FocusedNode = node;
                 }
 
-                ChildNodes.Add(node);
+                if (Deployment.Current.Dispatcher.CheckAccess())
+                {
+                    ChildNodes.Add(node);
+                }
+                else
+                {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        ChildNodes.Add(node);
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne(10);
+                }
+               
+                
             }
 
-            CalculateBreadCrumbs(this.CurrentRootNode);
-
-            ProgessService.SetProgressIndicator(false);
+            if (Deployment.Current.Dispatcher.CheckAccess())
+            {
+                ProgessService.SetProgressIndicator(false);
+                CalculateBreadCrumbs(this.CurrentRootNode);
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    ProgessService.SetProgressIndicator(false);
+                    CalculateBreadCrumbs(this.CurrentRootNode);
+                });
+            }
+            
         }
 
         public void OnNodeTap(NodeViewModel node)
@@ -422,8 +484,6 @@ namespace MegaApp.Models
 
         public void FetchNodes(NodeViewModel rootRefreshNode = null)
         {
-            this.ChildNodes.Clear();
-
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
             ShortCutHandle = null;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
@@ -486,7 +546,7 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
+        
         public ObservableCollection<NodeViewModel> ChildNodes { get; set; }
         public ObservableCollection<NodeViewModel> BreadCrumbs { get; set; }
 
