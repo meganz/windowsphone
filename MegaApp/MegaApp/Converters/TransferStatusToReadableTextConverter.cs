@@ -34,6 +34,10 @@ namespace MegaApp.Converters
                     return UiResources.Transfer_Canceled;
                 case TransferStatus.Error:
                     return UiResources.Transfer_Error;
+                case TransferStatus.Pausing:
+                    return UiResources.Transfer_Pausing;
+                case TransferStatus.Paused:
+                    return UiResources.Transfer_Paused;                    
                 default:
                     throw new ArgumentOutOfRangeException("value");
             }

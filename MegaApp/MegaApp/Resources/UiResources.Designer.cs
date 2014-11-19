@@ -619,6 +619,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Paused.
+        /// </summary>
+        public static string Transfer_Paused {
+            get {
+                return ResourceManager.GetString("Transfer_Paused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pausing....
+        /// </summary>
+        public static string Transfer_Pausing {
+            get {
+                return ResourceManager.GetString("Transfer_Pausing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Uploading....
         /// </summary>
         public static string Transfer_Upload {
