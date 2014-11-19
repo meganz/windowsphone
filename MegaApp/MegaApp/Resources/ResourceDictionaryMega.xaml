@@ -15,6 +15,7 @@
     <converters:TransferStatusToIndeterminateConverter x:Key="TransferStatusToIndeterminateConverter"/>
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
     <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+    <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
@@ -75,6 +76,164 @@
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListLargeViewFolderItemContent">
+        <Grid Width="132" Margin="10">
+        	<Grid.RowDefinitions>
+        		<RowDefinition/>
+        		<RowDefinition Height="Auto"/>
+        	</Grid.RowDefinitions>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Image Stretch="UniformToFill" Height="132" Width="132">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="/Assets/FileTypes/folder.png"
+                            DecodePixelWidth="132"
+                            DecodePixelHeight="132"
+                            DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />           
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListSmallViewFolderItemContent">
+        <Grid Width="66" Height="66" Margin="5">
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Image Stretch="UniformToFill" Height="66" Width="66">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="/Assets/FileTypes/folder.png"
+                            DecodePixelWidth="66"
+                            DecodePixelHeight="66"
+                            DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListLargeViewFileItemContent">
+        <Grid Width="132" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Image Stretch="UniformToFill" Height="132" Width="132">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+                            DecodePixelHeight="132"
+                            DecodePixelWidth="132"
+                            DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+        </Grid>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="MegaNodeListSmallViewFileItemContent">
+        <Grid Width="66" Margin="5">
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="66" Height="66">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							DecodePixelHeight="66"
+							DecodePixelWidth="66"
+							DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+        </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
@@ -269,7 +428,7 @@
     <selectors:NodeTemplateSelector x:Key="NodeTemplateSelector" FileItemTemplate="{StaticResource MegaNodeListFileItemContent}" FolderItemTemplate="{StaticResource MegaNodeListFolderItemContent}"/>
 
     <!-- EMPTY STYLE FOR MEDIA SELECTION -->
-    <Style x:Key="MediaItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
+    <Style x:Key="MultiSelectItemCheckBoxStyle" TargetType="telerikPrimitives:ItemCheckBox">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="telerikPrimitives:ItemCheckBox">

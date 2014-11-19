@@ -11,7 +11,7 @@ namespace MegaApp.Pages
 {
     public partial class LoginPage : PhoneApplicationPage
     {
-        private LoginViewModel _loginViewModel;
+        private readonly LoginViewModel _loginViewModel;
 
         public LoginPage()
         {

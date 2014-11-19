@@ -103,10 +103,12 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\TransferQueu.cs" />
     <Compile Include="Converters\BooleanToColorConverter.cs" />
+    <Compile Include="Converters\CountToVisibilityConverter.cs" />
     <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
     <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
     <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
     <Compile Include="Enums\DriveDisplayMode.cs" />
+    <Compile Include="Enums\ViewMode.cs" />
     <Compile Include="Enums\GalleryDirection.cs" />
     <Compile Include="Enums\MediaType.cs" />
     <Compile Include="Enums\NavigationParameter.cs" />
@@ -116,7 +118,10 @@
     <Compile Include="Enums\TransferType.cs" />
     <Compile Include="MegaApi\GetPaymentUrlRequestListener.cs" />
     <Compile Include="MegaApi\GetPricingRequestListener.cs" />
+    <Compile Include="MegaApi\GlobalDriveListener.cs" />
     <Compile Include="MegaApi\MegaLogger.cs" />
+    <Compile Include="Models\AboutViewModel.cs" />
+    <Compile Include="Models\AcknowledgementsViewModel.cs" />
     <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
@@ -161,6 +166,12 @@
     <Compile Include="Models\CreateAccountViewModel.cs" />
     <Compile Include="Models\PreviewImageViewModel.cs" />
     <Compile Include="Models\TransfersViewModel.cs" />
+    <Compile Include="Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AcknowledgementsPage.xaml.cs">
+      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ConfirmAccountPage.xaml.cs">
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
     </Compile>
@@ -238,6 +249,7 @@
     <Compile Include="Services\NodeService.cs" />
     <Compile Include="Services\ProgessService.cs" />
     <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="Services\UiService.cs" />
     <Compile Include="UserControls\BreadCrumb.xaml.cs" />
     <Compile Include="UserControls\BreadCrumbButtons.cs" />
     <Compile Include="UserControls\BreadCrumbTapEventArgs.cs" />
@@ -338,6 +350,9 @@
     <Content Include="Assets\Images\song_upload.png" />
     <Content Include="Assets\Images\sort.png" />
     <Content Include="Assets\Images\transfers_empty.png" />
+    <Content Include="Assets\Images\view_list.png" />
+    <Content Include="Assets\Images\view_large.png" />
+    <Content Include="Assets\Images\view_small.png" />
     <Content Include="Assets\Tiles\IconImage.png" />
     <Content Include="Assets\Tiles\SmallIconImage.png" />
     <Content Include="SplashScreenImage.screen-720p.jpg" />
@@ -364,10 +379,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\UiResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AcknowledgementsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ConfirmAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

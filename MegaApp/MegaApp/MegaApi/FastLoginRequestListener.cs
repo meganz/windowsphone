@@ -16,7 +16,7 @@ namespace MegaApp.MegaApi
 {
     class FastLoginRequestListener: BaseRequestListener
     {
-        private CloudDriveViewModel _cloudDriveViewModel;
+        private readonly CloudDriveViewModel _cloudDriveViewModel;
         
         public FastLoginRequestListener(CloudDriveViewModel cloudDriveViewModel)
         {
@@ -89,7 +89,7 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             _cloudDriveViewModel.FetchNodes();
         }

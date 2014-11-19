@@ -21,15 +21,19 @@ namespace MegaApp.Services
 
             settings.Save();
         }
-
-        public static T LoadSetting<T>(string key)
+        public static T LoadSetting<T>(string key, T defaultValue)
         {
             var settings = IsolatedStorageSettings.ApplicationSettings;
 
             if (settings.Contains(key))
-                return (T) settings[key];
+                return (T)settings[key];
             else
-                return default(T);
+                return defaultValue;
+        }
+
+        public static T LoadSetting<T>(string key)
+        {
+            return LoadSetting(key, default(T));
         }
 
         public static void DeleteSetting(string key)
@@ -42,16 +46,16 @@ namespace MegaApp.Services
             settings.Save();
         }
 
-        public static void SaveMegaLoginData(string email, string session)
+        public static void SaveMegaLoginData(string email, string session, bool stayLoggedIn)
         {
-            SettingsService.SaveSetting(SettingsResources.StayLoggedIn, true);
+            SettingsService.SaveSetting(SettingsResources.StayLoggedIn, stayLoggedIn);
             SettingsService.SaveSetting(SettingsResources.UserMegaEmailAddress, email);
             SettingsService.SaveSetting(SettingsResources.UserMegaSession, session);
         }
 
         public static void ClearMegaLoginData()
         {
-            SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
+            //SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
             SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
             SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
         }

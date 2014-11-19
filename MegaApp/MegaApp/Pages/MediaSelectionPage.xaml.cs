@@ -33,11 +33,6 @@ namespace MegaApp.Pages
             CreateGroupPickerItems();
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
-
-            // node tap item animation
-            var transition = new RadTileTransition();
-            this.SetValue(RadTransitionControl.TransitionProperty, transition);
-            this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstMediaAlbums);
         }
 
         private async void OnAcceptClick(object sender, System.EventArgs e)
@@ -114,7 +109,6 @@ namespace MegaApp.Pages
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
         {
-            this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
             NavigateService.NavigateTo(typeof(MediaAlbumPage), NavigationParameter.Normal, LstMediaAlbums.SelectedItem);
         }
 
@@ -128,13 +122,6 @@ namespace MegaApp.Pages
                     return;
                 }
             }
-        }
-
-        private void OnSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            // Nice for the user
-            this.SetValue(RadTileAnimation.ContainerToAnimateProperty,
-                e.AddedItems[0] == Photos ? LstMediaItems : LstMediaAlbums);
         }
     }
 }

@@ -92,37 +92,17 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             if (_nodeViewModel.ParentCollection != null)
             {
                 if (_nodeViewModel.ParentCollection is ObservableCollection<NodeViewModel>)
-                    ((ObservableCollection<NodeViewModel>) _nodeViewModel.ParentCollection).Remove(_nodeViewModel);
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        ((ObservableCollection<NodeViewModel>) _nodeViewModel.ParentCollection).Remove(_nodeViewModel));
+                }
             }
             _nodeViewModel = null;
-        }
-
-        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-
-                if (e.getErrorCode() == MErrorType.API_OK)
-                {
-                    if (ShowSuccesMessage && !_isMultiRemove)
-                        MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
-
-                    if (ActionOnSucces)
-                        OnSuccesAction(request);
-
-                    if (NavigateOnSucces)
-                        NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
-                }
-                else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
-                    if (ShowErrorMessage)
-                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            });
         }
 
         #endregion

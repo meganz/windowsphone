@@ -1,5 +1,11 @@
 ﻿using System.Collections;
 using System.IO;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Windows.Data;
+using System.Windows.Threading;
+using Windows.UI.Core;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -31,12 +37,15 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<NodeViewModel>();
             this.BreadCrumbs = new ObservableCollection<NodeViewModel>();
             this.SelectedNodes = new List<NodeViewModel>();
+            this.IsMultiSelectActive = false;
+            SetViewDefaults();
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
+            this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
         }
        
         #region Commands
@@ -46,6 +55,8 @@ namespace MegaApp.Models
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
         public ICommand CreateShortCutCommand { get; set; }
+
+        public ICommand ChangeViewCommand { get; set; }
 
         #endregion
 
@@ -71,7 +82,8 @@ namespace MegaApp.Models
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MultiSelect;
                     ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Transfers;
                     ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;                    
+                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;
+                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.About; 
                     break;
                 }
                 case MenuType.MoveMenu:
@@ -91,6 +103,65 @@ namespace MegaApp.Models
             }
            
         }
+
+        public bool MultipleRemove()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return false;
+
+            if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion,count), 
+                AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                node.Remove(true);
+            }
+
+            this.IsMultiSelectActive = false;
+
+            MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
+                AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+
+            return true;
+        }
+
+        public bool SelectMultipleMove()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return false;
+
+            SelectedNodes.Clear();
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                SelectedNodes.Add(node);
+            }
+
+            this.IsMultiSelectActive = false;
+            DriveDisplayMode = DriveDisplayMode.MoveItem;
+
+            return true;
+        }
+
+        public void MultipleDownload()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+
+            if (count < 1) return;
+
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                App.MegaTransfers.Add(node.Transfer);
+                node.Transfer.StartTransfer();
+            }
+            this.IsMultiSelectActive = false;
+            this.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        }
+
         private void CreateShortCut(object obj)
         {
             var shortCut = new RadExtendedTileData
@@ -160,6 +231,102 @@ namespace MegaApp.Models
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
+        private void SetView(ViewMode viewMode)
+        {
+            switch (viewMode)
+            {
+                case ViewMode.LargeThumbnails:
+                    {
+                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        {
+                            Orientation = Orientation.Horizontal,
+                            WrapLineAlignment = WrapLineAlignment.Near
+                        };
+
+                        this.NodeTemplateSelector = new NodeTemplateSelector()
+                        {
+                            FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFileItemContent"],
+                            FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLargeViewFolderItemContent"]
+                        };
+
+                        this.ViewMode = ViewMode.LargeThumbnails;
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_large.png", UriKind.Relative);
+
+                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        break;
+                    }
+                case ViewMode.SmallThumbnails:
+                    {
+                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        {
+                            Orientation = Orientation.Horizontal,
+                            WrapLineAlignment = WrapLineAlignment.Near
+                        };
+
+                        this.NodeTemplateSelector = new NodeTemplateSelector()
+                        {
+                            FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFileItemContent"],
+                            FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSmallViewFolderItemContent"]
+                        };
+
+                        this.ViewMode = ViewMode.SmallThumbnails;
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_small.png", UriKind.Relative);
+
+                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        break;
+                    }
+                case ViewMode.ListView:
+                    {
+                        SetViewDefaults();
+                        break;
+                    }
+            }
+        }
+
+        private void ChangeView(object obj)
+        {
+            switch (this.ViewMode)
+            {
+                case ViewMode.ListView:
+                    {
+                        SetView(ViewMode.LargeThumbnails);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.LargeThumbnails);
+                        break;
+                    }
+                case ViewMode.LargeThumbnails:
+                    {
+                        SetView(ViewMode.SmallThumbnails);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.SmallThumbnails);
+                        break;
+                    }
+                case ViewMode.SmallThumbnails:
+                    {
+                        SetView(ViewMode.ListView);
+                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.ListView);
+                        break;
+                    }
+            }
+        }
+
+        private void SetViewDefaults()
+        {
+            this.VirtualizationStrategy = new StackVirtualizationStrategyDefinition()
+            {
+                Orientation = Orientation.Vertical
+            };
+
+            this.NodeTemplateSelector = new NodeTemplateSelector()
+            {
+                FileItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFileItemContent"],
+                FolderItemTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListFolderItemContent"]
+            };
+
+            this.ViewMode = ViewMode.ListView;
+            this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_list.png", UriKind.Relative);
+
+            this.MultiSelectCheckBoxStyle = null;
+        }
+
         public void GoToFolder(NodeViewModel folder)
         {
             this.BreadCrumbNode = this.CurrentRootNode;
@@ -220,14 +387,25 @@ namespace MegaApp.Models
 
         public void LoadNodes()
         {
-            this.ChildNodes.Clear();
-
-            var sortOrder = SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes) == 0
-                ? (int)MSortOrderType.ORDER_DEFAULT_ASC
-                : SettingsService.LoadSetting<int>(SettingsResources.SortOrderNodes);
+            if (Deployment.Current.Dispatcher.CheckAccess())
+            {
+                ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+                SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+                this.ChildNodes.Clear();
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
+                    SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+                    this.ChildNodes.Clear();
+                });
+            }
             
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), sortOrder);
-
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), 
+                UiService.GetSortOrder(CurrentRootNode.Handle));
+            
             for (int i = 0; i < nodeList.size(); i++)
             {
                 var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
@@ -239,10 +417,38 @@ namespace MegaApp.Models
                     FocusedNode = node;
                 }
 
-                ChildNodes.Add(node);
+                if (Deployment.Current.Dispatcher.CheckAccess())
+                {
+                    ChildNodes.Add(node);
+                }
+                else
+                {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        ChildNodes.Add(node);
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne(10);
+                }
+               
+                
             }
 
-            CalculateBreadCrumbs(this.CurrentRootNode);
+            if (Deployment.Current.Dispatcher.CheckAccess())
+            {
+                ProgessService.SetProgressIndicator(false);
+                CalculateBreadCrumbs(this.CurrentRootNode);
+            }
+            else
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    ProgessService.SetProgressIndicator(false);
+                    CalculateBreadCrumbs(this.CurrentRootNode);
+                });
+            }
+            
         }
 
         public void OnNodeTap(NodeViewModel node)
@@ -278,8 +484,6 @@ namespace MegaApp.Models
 
         public void FetchNodes(NodeViewModel rootRefreshNode = null)
         {
-            this.ChildNodes.Clear();
-
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
             ShortCutHandle = null;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
@@ -342,7 +546,7 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
+        
         public ObservableCollection<NodeViewModel> ChildNodes { get; set; }
         public ObservableCollection<NodeViewModel> BreadCrumbs { get; set; }
 
@@ -359,6 +563,67 @@ namespace MegaApp.Models
         public DriveDisplayMode DriveDisplayMode { get; set; }
 
         public ulong? ShortCutHandle { get; set; }
+
+        public ViewMode ViewMode { get; set; }
+
+        private VirtualizationStrategyDefinition _virtualizationStrategy;
+        public VirtualizationStrategyDefinition VirtualizationStrategy
+        {
+            get { return _virtualizationStrategy; }
+            set
+            {
+                _virtualizationStrategy = value;
+                OnPropertyChanged("VirtualizationStrategy");
+            }
+        }
+
+        private DataTemplateSelector _nodeTemplateSelector;
+        public DataTemplateSelector NodeTemplateSelector
+        {
+             get { return _nodeTemplateSelector; }
+            set
+            {
+                _nodeTemplateSelector = value;
+                OnPropertyChanged("NodeTemplateSelector");
+            }
+        }
+
+        private Uri _viewStateButtonIconUri;
+        public Uri ViewStateButtonIconUri
+        {
+            get { return _viewStateButtonIconUri; }
+            set
+            {
+                _viewStateButtonIconUri = value;
+                OnPropertyChanged("ViewStateButtonIconUri");
+            }
+        }
+
+        private Style _multiSelectCheckBoxStyle;
+        public Style MultiSelectCheckBoxStyle
+        {
+            get { return _multiSelectCheckBoxStyle; }
+            set
+            {
+                _multiSelectCheckBoxStyle = value;
+                OnPropertyChanged("MultiSelectCheckBoxStyle");
+            }
+        }
+
+        private bool _isMultiSelectActive;
+        public bool IsMultiSelectActive
+        {
+            get { return _isMultiSelectActive; }
+            set
+            {
+                _isMultiSelectActive = value;
+                OnPropertyChanged("IsMultiSelectActive");
+            }
+        }
+
+
+
+             
 
         #endregion
       

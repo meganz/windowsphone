@@ -89,13 +89,15 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             MNode publicNode = request.getPublicNode();
             if (publicNode != null)
-                DialogService.ShowOpenLink(publicNode.getName(), request.getLink(), _cloudDriveViewModel);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    DialogService.ShowOpenLink(publicNode.getName(), request.getLink(), _cloudDriveViewModel));
             else
-                MessageBox.Show(ErrorMessage, ErrorMessageTitle, MessageBoxButton.OK);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(ErrorMessage, ErrorMessageTitle, MessageBoxButton.OK));
         }
 
         #endregion

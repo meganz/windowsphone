@@ -22,28 +22,30 @@ namespace MegaApp.Models
 
         public event EventHandler CancelingTransfer;
         // Original MNode object from the MEGA SDK
-        private readonly MNode _baseMegaNode;
+        private MNode _baseMegaNode;
         // Offset DateTime value to calculate the correct creation and modification time
         private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
         public NodeViewModel(MegaSDK megaSdk, MNode baseMegaNode, object parentCollection = null, object childCollection = null)
             : base(megaSdk)
         {
-            this._baseMegaNode = baseMegaNode;
+            SetCoreNodeData(baseMegaNode);
+            //this._baseMegaNode = baseMegaNode;
             this.DisplayMode = NodeDisplayMode.Normal;
-            this.Name = baseMegaNode.getName();
-            this.Size = baseMegaNode.getSize();
-            this.CreationTime = ConvertDateToString(baseMegaNode.getCreationTime()).ToString("dd MMM yyyy");
-            this.SizeAndSuffix = Size.ToStringAndSuffix();
-            this.Type = baseMegaNode.getType();
+            //this.Name = baseMegaNode.getName();
+            //this.Size = baseMegaNode.getSize();
+            //this.CreationTime = ConvertDateToString(baseMegaNode.getCreationTime()).ToString("dd MMM yyyy");
+            //this.SizeAndSuffix = Size.ToStringAndSuffix();
+            //this.Type = baseMegaNode.getType();
             this.ParentCollection = parentCollection;
             this.ChildCollection = childCollection;
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
+            this.IsMultiSelected = false;
 
             this.MegaService = new MegaService();
 
-            if(this.Type == MNodeType.TYPE_FOLDER)
-                SetFolderInfo();
+            //if(this.Type == MNodeType.TYPE_FOLDER)
+            //    SetFolderInfo();
 
             if (this.Type != MNodeType.TYPE_FILE) return;
             
@@ -106,6 +108,11 @@ namespace MegaApp.Models
             OnCancelingTransfer();
         }
 
+        public void Update(MNode megaNode)
+        {
+           SetCoreNodeData(megaNode);
+        }
+
         protected virtual void OnCancelingTransfer()
         {
             if (CancelingTransfer == null) return;
@@ -113,13 +120,26 @@ namespace MegaApp.Models
             CancelingTransfer(this, new EventArgs());
         }
 
-        private void SetFolderInfo()
+        public void SetFolderInfo()
         {
             int childFolders = this.MegaSdk.getNumChildFolders(this._baseMegaNode);
             int childFiles = this.MegaSdk.getNumChildFiles(this._baseMegaNode);
             this.FolderInfo = String.Format("{0} {1} | {2} {3}",
                 childFolders, childFolders == 1 ? UiResources.SingleFolder : UiResources.MultipleFolders,
                 childFiles, childFiles == 1 ? UiResources.SingleFile : UiResources.MultipleFiles);
+        }
+
+        private void SetCoreNodeData(MNode megaNode)
+        {
+            this._baseMegaNode = megaNode;
+            this.Handle = megaNode.getHandle();
+            this.Name = megaNode.getName();
+            this.Size = megaNode.getSize();
+            this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
+            this.SizeAndSuffix = Size.ToStringAndSuffix();
+            this.Type = megaNode.getType();
+            if (this.Type == MNodeType.TYPE_FOLDER)
+                SetFolderInfo();
         }
 
         public void SetThumbnailImage()
@@ -286,6 +306,8 @@ namespace MegaApp.Models
             }
         }
 
+        public ulong Handle { get; set; }
+
         public ulong Size { get; private set; }
 
         public MNodeType Type { get; private set ; }
@@ -294,7 +316,16 @@ namespace MegaApp.Models
 
         public string SizeAndSuffix { get; private set; }
 
-        public string FolderInfo { get; private set; }
+        private string _folderInfo;
+        public string FolderInfo
+        {
+            get { return _folderInfo; }
+            private set
+            {
+                _folderInfo = value;
+                OnPropertyChanged("FolderInfo");
+            }
+        }
 
         public object ParentCollection { get; set; }
         public object ChildCollection { get; set; }
@@ -339,6 +370,17 @@ namespace MegaApp.Models
             }
         }
 
+        private bool _isMultiSelected;
+        public bool IsMultiSelected
+        {
+            get { return _isMultiSelected; }
+            set
+            {
+                _isMultiSelected = value;
+                OnPropertyChanged("IsMultiSelected");
+            }
+        }
+
         public bool IsImage
         {
             get { return ImageService.IsImage(this.Name); }
@@ -377,7 +419,5 @@ namespace MegaApp.Models
         }
 
         #endregion
-
-        
     }
 }
