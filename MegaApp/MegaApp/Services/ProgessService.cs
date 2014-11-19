@@ -6,14 +6,18 @@ namespace MegaApp.Services
     {
         public static void SetProgressIndicator(bool isVisible, string message = null)
         {
+            if (!isVisible)
+            {
+                SystemTray.ProgressIndicator = null;
+                return;
+            }
+
             if (SystemTray.ProgressIndicator == null)
                 SystemTray.ProgressIndicator = new ProgressIndicator();
           
             SystemTray.ProgressIndicator.Text = message;
-            SystemTray.ProgressIndicator.IsIndeterminate = isVisible;
-            SystemTray.ProgressIndicator.IsVisible = isVisible;
-            
-            //SystemTray.IsVisible = isVisible;
+            SystemTray.ProgressIndicator.IsIndeterminate = true;
+            SystemTray.ProgressIndicator.IsVisible = true;
         }
     }
 }

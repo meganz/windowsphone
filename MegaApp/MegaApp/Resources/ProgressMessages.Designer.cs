@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading files &amp; folders....
+        /// </summary>
+        internal static string LoadNodes {
+            get {
+                return ResourceManager.GetString("LoadNodes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Logging in....
         /// </summary>
         internal static string Login {

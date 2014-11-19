@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ServiceModel.Description;
+using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -31,11 +33,6 @@ namespace MegaApp.Pages
             InitializeComponent();
 
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
-
-            // node tap item animation
-            var transition = new RadTileTransition();
-            this.SetValue(RadTransitionControl.TransitionProperty, transition);
-            this.SetValue(RadTileAnimation.ContainerToAnimateProperty, LstCloudDrive);
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
@@ -125,12 +122,15 @@ namespace MegaApp.Pages
                     }
                     else
                     {
-                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+
+                        if (!isAlreadyOnline)
+                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     }
                     break;
                 }
             }
-
+            
             base.OnNavigatedTo(e);
         }
 
@@ -141,7 +141,7 @@ namespace MegaApp.Pages
                 if (App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
                 {
                     App.CloudDrive.GoFolderUp();
-                    App.CloudDrive.LoadNodes();
+                    Task.Run(() => App.CloudDrive.LoadNodes());
                     e.Cancel = true;
                 }
             }
@@ -152,8 +152,6 @@ namespace MegaApp.Pages
         {
             if(e.Item == null || e.Item.DataContext == null) return;
             if (e.Item.DataContext as NodeViewModel == null) return;
-
-            this.SetValue(RadTileAnimation.ElementToDelayProperty, e.Item);
             
             App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
         }
@@ -181,7 +179,7 @@ namespace MegaApp.Pages
             if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
             
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
-            App.CloudDrive.LoadNodes();
+            Task.Run(() => App.CloudDrive.LoadNodes());
         }
         private void OnRefreshClick(object sender, EventArgs e)
         {
@@ -333,70 +331,39 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
-            LstCloudDrive.IsCheckModeActive = true;            
+            App.CloudDrive.IsMultiSelectActive = true;            
         }
 
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
-        {
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel) item;
-                
-                if (node == null) continue;
-                
-                App.MegaTransfers.Add(node.Transfer);
-                node.Transfer.StartTransfer();
-            }
-            LstCloudDrive.IsCheckModeActive = false;
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        { 
+           App.CloudDrive.MultipleDownload();
         }
 
         private void OnMultiSelectMoveClick(object sender, EventArgs e)
         {
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            App.CloudDrive.SelectedNodes.Clear();
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel)item;
-
-                if (node == null) continue;
-
-                node.DisplayMode = NodeDisplayMode.SelectedForMove;
-                App.CloudDrive.SelectedNodes.Add(node);
-            }
-
-            LstCloudDrive.IsCheckModeActive = false;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
+            if (!App.CloudDrive.SelectMultipleMove()) return;
+            
             this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
         }
 
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
-            if (LstCloudDrive.CheckedItems.Count < 1) return;
-
-            if (MessageBox.Show(String.Format("Are you sure you want to remove {0} items?", LstCloudDrive.CheckedItems.Count),
-                "Remove items", MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
-
-            foreach (var item in LstCloudDrive.CheckedItems)
-            {
-                var node = (NodeViewModel)item;
-
-                if (node == null) continue;
-
-                node.Remove(true);
-            }
-
-            LstCloudDrive.IsCheckModeActive = false;
+            if (!App.CloudDrive.MultipleRemove()) return;
+            
             this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
             App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+        }
 
-            MessageBox.Show(String.Format("Items removed to rubbish bin"), String.Format("Items removed"), MessageBoxButton.OK);
+        private void OnDisableMultiSelectClick(object sender, System.EventArgs e)
+        {
+            App.CloudDrive.IsMultiSelectActive = false;
+        }
+
+        private void OnAboutClick(object sender, System.EventArgs e)
+        {
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
         }
     }
     

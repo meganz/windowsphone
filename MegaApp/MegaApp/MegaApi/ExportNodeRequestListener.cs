@@ -83,9 +83,9 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MRequest request)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            DialogService.ShowShareLink(request.getLink());
+            Deployment.Current.Dispatcher.BeginInvoke(() =>DialogService.ShowShareLink(request.getLink()));
         }
 
         #endregion

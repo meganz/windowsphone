@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="MegaApp.Pages.SettingsPage"
+    x:Class="MegaApp.Pages.AcknowledgementsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -23,18 +23,11 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock Text="settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="Portable User Interface"/>
+            <TextBlock Text="acknowledgements" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
         </StackPanel>
         <StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-        	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export masterkey" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Margin="12,0,12,10"/>
-        	<Grid Margin="0,0,0,10">
-        		<Grid.ColumnDefinitions>
-        			<ColumnDefinition/>
-        			<ColumnDefinition/>
-        		</Grid.ColumnDefinitions>
-        		<Button x:Name="BtnShareMasterKey" Content="share" Command="{Binding ShareMasterKeyCommand}" FontFamily="Portable User Interface"/>
-        		<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
-        	</Grid>
+        	<TextBlock TextWrapping="Wrap" Text="{Binding SpecialThankYou}" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="0,0,0,10"/>
+        	<HyperlinkButton Content="GoedWare" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="-12,10,0,10" Command="{Binding GoedWareCommand}" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->

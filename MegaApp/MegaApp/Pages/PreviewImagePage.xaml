@@ -60,7 +60,8 @@
 			Margin="0,-10,0,10" 
 			IsShowOverlayContentOnTapEnabled="True" 
 			OverlayContentTemplate="{StaticResource PreviewOverlayTemplate}" 
-			Tap="OnSlideViewTap" OverlayContentDisplayAnimation="{StaticResource OverlayContentDisplayAnimation}" FontFamily="Portable User Interface" 			
+			Tap="OnSlideViewTap" 
+			OverlayContentDisplayAnimation="{StaticResource OverlayContentDisplayAnimation}" FontFamily="Portable User Interface" 			
 		/>        
         
 	</Grid>

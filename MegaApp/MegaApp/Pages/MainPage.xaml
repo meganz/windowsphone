@@ -8,6 +8,7 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:UserControls="clr-namespace:MegaApp.UserControls"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
     x:Class="MegaApp.Pages.MainPage"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
@@ -36,66 +37,78 @@
 					Text="preferences"	
 					Click="OnPreferencesClick"			
 				/>
+				<shell:ApplicationBarMenuItem
+					x:Name="BtnAbout" 				
+					Text="about"	
+					Click="OnAboutClick"			
+				/>
             </shell:ApplicationBar.MenuItems>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnCloudUpload" 
-				IconUri="/Assets/AppBar/cloud.upload.png" 
-				Text="upload" 
-				Click="OnCloudUploadClick" 
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnCloudUpload" 
+        		IconUri="/Assets/AppBar/cloud.upload.png" 
+        		Text="upload" 
+        		Click="OnCloudUploadClick" 
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnAddFolder" 
-				IconUri="/Assets/AppBar/folder_add.png" 
-				Text="add folder" 
-				Click="OnAddFolderClick" 
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnAddFolder" 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnRefresh" 
-				IconUri="/Assets/AppBar/refresh.png" 
-				Text="refresh" 
-				Click="OnRefreshClick" 				
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnRefresh" 
+        		IconUri="/Assets/AppBar/refresh.png" 
+        		Text="refresh" 
+        		Click="OnRefreshClick" 				
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnOpenLink" 
-				IconUri="/Assets/AppBar/open_link.png" 
-				Text="open link" 
-				Click="OnOpenLinkClick" 				
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnOpenLink" 
+        		IconUri="/Assets/AppBar/open_link.png" 
+        		Text="open link" 
+        		Click="OnOpenLinkClick" 				
 			/>
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MoveItemMenu">
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnAcceptMove" 
-				IconUri="/Assets/AppBar/accept_move.png" 
-				Text="move" 
-				Click="OnAcceptMoveClick" 
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnAcceptMove" 
+        		IconUri="/Assets/AppBar/accept_move.png" 
+        		Text="move" 
+        		Click="OnAcceptMoveClick" 
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnCancelMove" 
-				IconUri="/Assets/AppBar/cancel.png" 
-				Text="cancel" 
-				Click="OnCancelMoveClick" 				
-			/>
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnCancelMove" 
+        		IconUri="/Assets/AppBar/cancel.png" 
+        		Text="cancel" 
+        		Click="OnCancelMoveClick" 				
+			/>			
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MultiSelectMenu">
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnMultiSelectDownload" 
-				IconUri="/Assets/AppBar/cloud.download.png" 
-				Text="download" 
-				Click="OnMultiSelectDownloadClick" 				
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem
+					x:Name="BtnDisableMultiSelect" 				
+					Text="disable multi select"	
+					Click="OnDisableMultiSelectClick"			
+				/>                
+            </shell:ApplicationBar.MenuItems>
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnMultiSelectDownload" 
+        		IconUri="/Assets/AppBar/cloud.download.png" 
+        		Text="download" 
+        		Click="OnMultiSelectDownloadClick" 				
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnMultiSelectMove" 
-				IconUri="/Assets/AppBar/move.png" 
-				Text="move" 
-				Click="OnMultiSelectMoveClick" 
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnMultiSelectMove" 
+        		IconUri="/Assets/AppBar/move.png" 
+        		Text="move" 
+        		Click="OnMultiSelectMoveClick" 
 			/>
-            <shell:ApplicationBarIconButton 
-				x:Name="BtnMultiSelectRemove" 
-				IconUri="/Assets/AppBar/remove.png" 
-				Text="remove" 
-				Click="OnMultiSelectRemoveClick" 
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnMultiSelectRemove" 
+        		IconUri="/Assets/AppBar/remove.png" 
+        		Text="remove" 
+        		Click="OnMultiSelectRemoveClick" 
 			/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.Resources>
@@ -110,32 +123,32 @@
         <StaticResource ResourceKey="PhoneForegroundBrush"/>
     </phone:PhoneApplicationPage.Foreground>
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
+		<!--TitlePanel contains the name of the application and page title-->
 
-        <!--ContentPanel - place additional content here-->
-        <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-            <UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
-        	<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
-        		<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" Margin="0,0,-12,0" />
-        		<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" />
-        		<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" />
-        	</StackPanel>
-        </StackPanel>
+		<!--ContentPanel - place additional content here-->
+    <!--ContentPanel - place additional content here-->
+		<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
+			<UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
+			<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
+				<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}"/>
+				<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}" />
+				<telerikPrimitives:RadImageButton x:Name="BtnSelectView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="{Binding ViewStateButtonIconUri}" IsChecked="False" Command="{Binding ChangeViewCommand}" Margin="0,0,-12,0" />
+				<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" />
+			</StackPanel>
+		</StackPanel>
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,12,0">
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,12,0">
-
-            <telerikPrimitives:RadDataBoundListBox 
+			<telerikPrimitives:RadDataBoundListBox 
 				x:Name="LstCloudDrive" 				
 				ItemsSource="{Binding ChildNodes}"
 				ItemTap="OnItemTap"
-				ItemTemplateSelector="{StaticResource NodeTemplateSelector}"				
+				ItemTemplateSelector="{Binding NodeTemplateSelector}"				
 				IsAsyncBalanceEnabled="True" 
 				EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
@@ -143,10 +156,14 @@
 				ItemStateChanged="OnItemStateChanged" 
 				ScrollStateChanged="OnScrollStateChanged" 
 				IsCheckModeEnabled="True" 
-				IsCheckModeActiveChanged="OnCheckModeChanged"				
+				IsCheckModeActiveChanged="OnCheckModeChanged" 				
+				VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 
+				CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+				ItemCheckedPath="IsMultiSelected" 
+				IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}"							
 			>
-                <telerikPrimitives:RadContextMenu.ContextMenu>
-                    <telerikPrimitives:RadContextMenu 
+				<telerikPrimitives:RadContextMenu.ContextMenu>
+					<telerikPrimitives:RadContextMenu 
 						OpenGesture="Hold" 
 						x:Name="CloudDriveMenu" 
 						Opening="OnMenuOpening">
@@ -155,7 +172,7 @@
 							Command="{Binding PreviewItemCommand}"
 							Content="{Binding LocalizedUiResources.Preview, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								/>-->
-                        <telerikPrimitives:RadContextMenuItem 
+						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnDownloadItemCloud" 
 							Command="{Binding DownloadItemCommand}"
 							Content="{Binding LocalizedUiResources.ViewOrginal, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
@@ -165,31 +182,32 @@
 							Command="{Binding CreateShortCutCommand}"
 							Content="{Binding LocalizedUiResources.CreateShortCut, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								/>
-                        <telerikPrimitives:RadContextMenuItem 
+						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnGetPreviewLink" 
 							Command="{Binding GetPreviewLinkItemCommand}"
 							Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								/>
-                        <telerikPrimitives:RadContextMenuItem 
+						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnRenameItem" 
 							Command="{Binding RenameItemCommand}"
 							Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								/>
-                        <telerikPrimitives:RadContextMenuItem 
+						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnMoveItem"
 							Tapped="OnMoveItemTap"
 							Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								/>
-                        <telerikPrimitives:RadContextMenuItem 
+						<telerikPrimitives:RadContextMenuItem 
 							x:Name="BtnRemoveToRubbish" 
 							Command="{Binding RemoveItemCommand}" 
 							Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								/>
-                    </telerikPrimitives:RadContextMenu>
-                </telerikPrimitives:RadContextMenu.ContextMenu>
-            </telerikPrimitives:RadDataBoundListBox>
+					</telerikPrimitives:RadContextMenu>
+				</telerikPrimitives:RadContextMenu.ContextMenu>				
+			</telerikPrimitives:RadDataBoundListBox>
 
-        </Grid>
-    </Grid>
+		</Grid>
+
+	</Grid>
 
 </phone:PhoneApplicationPage>

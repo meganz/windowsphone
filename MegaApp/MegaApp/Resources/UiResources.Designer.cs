@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a about.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a add.
         /// </summary>
         public static string AddButton {
@@ -439,15 +448,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Stay logged in.
-        /// </summary>
-        public static string RememberMeText {
-            get {
-                return ResourceManager.GetString("RememberMeText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Remove.
         /// </summary>
         public static string Remove {
@@ -534,6 +534,24 @@ namespace MegaApp.Resources {
         public static string Size {
             get {
                 return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a We want to special thank the following companies/people for making this app possible:.
+        /// </summary>
+        public static string SpecialThankYou {
+            get {
+                return ResourceManager.GetString("SpecialThankYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Stay logged in.
+        /// </summary>
+        public static string StayLoggedInText {
+            get {
+                return ResourceManager.GetString("StayLoggedInText", resourceCulture);
             }
         }
         
