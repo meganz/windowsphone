@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Input;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Services;
 using Microsoft.Phone.Tasks;
 

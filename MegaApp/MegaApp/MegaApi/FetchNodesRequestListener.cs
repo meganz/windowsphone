@@ -110,6 +110,7 @@ namespace MegaApp.MegaApi
                 _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ??
                                                         new NodeViewModel(api, api.getRootNode());
             }
+            //_cloudDriveViewModel.LoadNodes();
             _cloudDriveViewModel.LoadNodes();
         }
 

@@ -49,8 +49,8 @@ namespace MegaApp.Models
 
             if (this.Type != MNodeType.TYPE_FILE) return;
             
-            ThumbnailIsDefaultImage = true;
-            this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+            //ThumbnailIsDefaultImage = true;
+            //this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
             InViewingRange = false;
         }
 
@@ -155,6 +155,11 @@ namespace MegaApp.Models
             {
                 GetThumbnail();
             }
+            else
+            {
+                ThumbnailIsDefaultImage = true;
+                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+            }
         }
 
         private void GetThumbnail()
@@ -166,8 +171,11 @@ namespace MegaApp.Models
             }
             else
             {
-                if(Convert.ToBoolean(MegaSdk.isLoggedIn()))
+                if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+                {
                     this.MegaSdk.getThumbnail(this.GetMegaNode(), ThumbnailPath, new GetThumbnailRequestListener(this));
+                }
+                    
             }
         }
 

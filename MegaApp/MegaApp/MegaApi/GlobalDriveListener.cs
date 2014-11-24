@@ -25,82 +25,90 @@ namespace MegaApp.MegaApi
         {
             if (nodes == null) return;
 
-            for (int i = 0; i < nodes.size(); i++)
+            try
             {
-                MNode megaNode = nodes.get(i);
-
-                if (megaNode == null) return;
-
-                if (megaNode.isRemoved())
+                for (int i = 0; i < nodes.size(); i++)
                 {
-                    NodeViewModel nodeToRemove = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
-                        n => n.Handle.Equals(megaNode.getHandle()));
-                    if (nodeToRemove != null)
+                    MNode megaNode = nodes.get(i);
+
+                    if (megaNode == null) return;
+
+                    if (megaNode.isRemoved())
                     {
-                        Deployment.Current.Dispatcher.BeginInvoke(
-                            () => _cloudDriveViewModel.ChildNodes.Remove(nodeToRemove));
-                    }
-                    else
-                    {
-                        MNode parentNode = api.getParentNode(megaNode);
-                        if (parentNode == null) return;
-                        NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
-                            n => n.Handle.Equals(parentNode.getHandle()));
-                        if (nodeToUpdate == null) return;
-                        Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(parentNode));
-                    }
-                }
-                else
-                {
-                    NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
-                        n => n.Handle.Equals(megaNode.getHandle()));
-                    if (nodeToUpdate != null)
-                    {
-                        MNode parentNode = api.getParentNode(megaNode);
-                        if (_cloudDriveViewModel.CurrentRootNode.Handle.Equals(parentNode.getHandle()))
+                        NodeViewModel nodeToRemove = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                            n => n.Handle.Equals(megaNode.getHandle()));
+                        if (nodeToRemove != null)
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(megaNode));
+                            Deployment.Current.Dispatcher.BeginInvoke(
+                                () => _cloudDriveViewModel.ChildNodes.Remove(nodeToRemove));
                         }
                         else
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(
-                            () => _cloudDriveViewModel.ChildNodes.Remove(nodeToUpdate));
+                            MNode parentNode = api.getParentNode(megaNode);
+                            if (parentNode == null) return;
+                            NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                                n => n.Handle.Equals(parentNode.getHandle()));
+                            if (nodeToUpdate == null) return;
+                            Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(parentNode));
                         }
                     }
                     else
                     {
-                        MNode parentNode = api.getParentNode(megaNode);
-                        if (parentNode != null)
+                        NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                            n => n.Handle.Equals(megaNode.getHandle()));
+                        if (nodeToUpdate != null)
                         {
+                            MNode parentNode = api.getParentNode(megaNode);
                             if (_cloudDriveViewModel.CurrentRootNode.Handle.Equals(parentNode.getHandle()))
                             {
-                                int insertIndex = api.getIndex(megaNode, UiService.GetSortOrder(parentNode.getHandle()));
-
-                                if(insertIndex > 0)
-                                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                        _cloudDriveViewModel.ChildNodes.Insert(insertIndex-1, new NodeViewModel(api, megaNode,
-                                        _cloudDriveViewModel.ChildNodes)));
+                                Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(megaNode));
                             }
                             else
                             {
-                                NodeViewModel folderNodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
-                                     n => n.Handle.Equals(parentNode.getHandle()));
-                                if (folderNodeToUpdate != null) 
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => folderNodeToUpdate.Update(parentNode));
+                                Deployment.Current.Dispatcher.BeginInvoke(
+                                () => _cloudDriveViewModel.ChildNodes.Remove(nodeToUpdate));
+                            }
+                        }
+                        else
+                        {
+                            MNode parentNode = api.getParentNode(megaNode);
+                            if (parentNode != null)
+                            {
+                                if (_cloudDriveViewModel.CurrentRootNode.Handle.Equals(parentNode.getHandle()))
+                                {
+                                    int insertIndex = api.getIndex(megaNode, UiService.GetSortOrder(parentNode.getHandle(),
+                                        parentNode.getName()));
+
+                                    if (insertIndex > 0)
+                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                            _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, new NodeViewModel(api, megaNode,
+                                            _cloudDriveViewModel.ChildNodes)));
+                                }
                                 else
                                 {
-                                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                    NodeViewModel folderNodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                                         n => n.Handle.Equals(parentNode.getHandle()));
+                                    if (folderNodeToUpdate != null)
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => folderNodeToUpdate.Update(parentNode));
+                                    else
                                     {
-                                        foreach (var node in _cloudDriveViewModel.ChildNodes.Where(n => n.Type == MNodeType.TYPE_FOLDER))
+                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
                                         {
-                                            node.SetFolderInfo();
-                                        }
-                                    });
+                                            foreach (var node in _cloudDriveViewModel.ChildNodes.Where(n => n.Type == MNodeType.TYPE_FOLDER))
+                                            {
+                                                node.SetFolderInfo();
+                                            }
+                                        });
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+            catch (Exception)
+            {
+                // No exception handling. If it fails. 
             }
         }
 

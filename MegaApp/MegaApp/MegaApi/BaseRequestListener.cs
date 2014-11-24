@@ -63,11 +63,12 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgessService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            });
+            //Deployment.Current.Dispatcher.BeginInvoke(() =>
+            //{
+            //    ProgessService.SetProgressIndicator(false);
+            //    if (ShowErrorMessage)
+            //        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
+            //});
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
