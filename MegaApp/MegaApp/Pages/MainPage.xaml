@@ -160,7 +160,9 @@
 				VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 
 				CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
 				ItemCheckedPath="IsMultiSelected" 
-				IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}"							
+				IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
+				RealizedItemsBufferScale="2" 
+				DataVirtualizationMode="Automatic"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 

@@ -171,8 +171,10 @@ namespace MegaApp
             MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive));
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
-            //Initialize Folders
+            // Initialize Folders
             AppService.InitializeAppFolders();
+            // Initialize Debug Settings
+            DebugService.DebugSettings = new DebugSettingsViewModel();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

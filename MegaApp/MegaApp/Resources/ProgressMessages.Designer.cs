@@ -151,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Loading files &amp; folders....
+        ///   Looks up a localized string similar to Building view....
         /// </summary>
         internal static string LoadNodes {
             get {

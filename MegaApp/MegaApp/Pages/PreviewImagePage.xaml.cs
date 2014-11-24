@@ -40,11 +40,13 @@ namespace MegaApp.Pages
             ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
 
             _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
-          
-            MemoryControl.StartMemoryCounter();
 
             if(AppService.IsLowMemoryDevice())
                 SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
+
+            if (!DebugService.DebugSettings.IsDebugMode || !DebugService.DebugSettings.ShowMemoryInformation) return;
+            MemoryControl.Visibility = Visibility.Visible;
+            MemoryControl.StartMemoryCounter();
         }
         
 

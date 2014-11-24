@@ -45,7 +45,7 @@
 
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
         
-		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,0" Canvas.ZIndex="1"/>
+		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20,0,20,80" Canvas.ZIndex="1" Visibility="Collapsed"/>
 		<telerikPrimitives:RadSlideView 
 			x:Name="SlideViewAndFilmStrip" 
 			ItemTemplate="{StaticResource PreviewSlideViewItemContent}"

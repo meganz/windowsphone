@@ -33,11 +33,10 @@
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
                     <Image.Source>
                         <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							UriSource="{Binding ThumbnailImageUri}"
 							DecodePixelHeight="64"
-							DecodePixelWidth="64"
 							DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
+							CreateOptions="BackgroundCreation, DelayCreation"
                         />
                     </Image.Source>
                 </Image>
@@ -64,10 +63,9 @@
                     <Image.Source>
                         <BitmapImage 
 							UriSource="\Assets\FileTypes\folder.png"
-							DecodePixelHeight="64"
-							DecodePixelWidth="64"
+                            DecodePixelHeight="64"							
 							DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
+							CreateOptions="BackgroundCreation, DelayCreation"
                         />
                     </Image.Source>
                 </Image>
@@ -109,10 +107,9 @@
                 <Image.Source>
                     <BitmapImage 
 							UriSource="/Assets/FileTypes/folder.png"
-                            DecodePixelWidth="132"
                             DecodePixelHeight="132"
                             DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
+							CreateOptions="BackgroundCreation, DelayCreation"
                         />
                 </Image.Source>
             </Image>
@@ -147,10 +144,9 @@
                 <Image.Source>
                     <BitmapImage 
 							UriSource="/Assets/FileTypes/folder.png"
-                            DecodePixelWidth="66"
                             DecodePixelHeight="66"
                             DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
+							CreateOptions="BackgroundCreation, DelayCreation"
                         />
                 </Image.Source>
             </Image>
@@ -187,11 +183,10 @@
             <Image Stretch="UniformToFill" Height="132" Width="132">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
+							UriSource="{Binding ThumbnailImageUri}"
                             DecodePixelHeight="132"
-                            DecodePixelWidth="132"
                             DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
+							CreateOptions="BackgroundCreation, DelayCreation"
                         />
                 </Image.Source>
             </Image>
@@ -225,12 +220,11 @@
             <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="66" Height="66">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, TargetNullValue=\\Assets\\FileTypes\\file.png}"
-							DecodePixelHeight="66"
-							DecodePixelWidth="66"
-							DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation"
-                        />
+						UriSource="{Binding ThumbnailImageUri}"
+						DecodePixelHeight="66"
+						DecodePixelType="Logical"
+						CreateOptions="BackgroundCreation, DelayCreation"
+                    />
                 </Image.Source>
             </Image>
         </Grid>

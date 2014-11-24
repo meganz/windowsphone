@@ -1,33 +1,34 @@
-﻿using System.Collections;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
-using System.Windows.Data;
-using System.Windows.Threading;
-using Windows.UI.Core;
-using mega;
+﻿using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Microsoft.Phone.Shell;
-using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {
     public class CloudDriveViewModel : BaseSdkViewModel
     {
+        private const int ProgressDisplaySize = 4000;
+        private CancellationTokenSource cancellationTokenSource;
+        private CancellationToken cancellationToken;
+
+
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
         {
@@ -47,7 +48,7 @@ namespace MegaApp.Models
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
         }
-       
+
         #region Commands
 
         public ICommand RemoveItemCommand { get; set; }
@@ -222,12 +223,19 @@ namespace MegaApp.Models
 
         public void GoFolderUp()
         {
-            MNode parentNode = this.MegaSdk.getParentNode(this.CurrentRootNode.GetMegaNode());
+            if (cancellationToken.CanBeCanceled)
+                cancellationTokenSource.Cancel();
+
+            MNode parentNode = null;
+            
+            if (this.CurrentRootNode != null) 
+                parentNode = this.MegaSdk.getParentNode(this.CurrentRootNode.GetMegaNode());
 
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN )
                 parentNode = this.MegaSdk.getRootNode();
             
             this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode, childCollection:ChildNodes);
+            this.ChildNodes.Clear();
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
@@ -329,9 +337,13 @@ namespace MegaApp.Models
 
         public void GoToFolder(NodeViewModel folder)
         {
+            if(cancellationToken.CanBeCanceled)
+                cancellationTokenSource.Cancel();
+
             this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
             this.CurrentRootNode.ChildCollection = ChildNodes;
+            this.ChildNodes.Clear();
             // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
@@ -385,28 +397,18 @@ namespace MegaApp.Models
             this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this)); ;
         }
 
-        public void LoadNodes()
+        public void LoadVirtualNodes()
         {
-            if (Deployment.Current.Dispatcher.CheckAccess())
-            {
-                ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
-                SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
-                this.ChildNodes.Clear();
-            }
-            else
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    ProgessService.SetProgressIndicator(true, ProgressMessages.LoadNodes);
-                    SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
-                    this.ChildNodes.Clear();
-                });
-            }
-            
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(), 
-                UiService.GetSortOrder(CurrentRootNode.Handle));
-            
-            for (int i = 0; i < nodeList.size(); i++)
+            // Get the nodes from the MEGA SDK
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
+                UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
+
+            // Retrieve the size of the list to save time in the loops
+            int listSize = nodeList.size();
+
+            ChildNodesList = new List<NodeViewModel>(listSize);
+            ChildNodesList.Clear();
+            for (int i = 0; i < listSize; i++)
             {
                 var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
 
@@ -416,39 +418,175 @@ namespace MegaApp.Models
                     node.DisplayMode = NodeDisplayMode.SelectedForMove;
                     FocusedNode = node;
                 }
+                ChildNodesList.Add(node);
+            }
 
+            ChildNodes = null;
+            ChildNodes = new ObservableCollection<NodeViewModel>(ChildNodesList);
+
+        }
+        
+        public List<NodeViewModel> ChildNodesList { get; set; } 
+
+        public void LoadNodes()
+        {
+            // Get the nodes from the MEGA SDK
+            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
+                UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
+            
+            // Retrieve the size of the list to save time in the loops
+            int listSize = nodeList.size();
+
+            // Only display a progress bar when a certain threshold is passed
+            if (listSize > ProgressDisplaySize)
+            {
                 if (Deployment.Current.Dispatcher.CheckAccess())
-                {
-                    ChildNodes.Add(node);
-                }
+                    ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, 0);
                 else
                 {
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        ChildNodes.Add(node);
+                        ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, 0);
                         autoResetEvent.Set();
                     });
-                    autoResetEvent.WaitOne(10);
+                    autoResetEvent.WaitOne();
                 }
-               
-                
+                    
             }
 
+            // Clear the child nodes to make a fresh start
             if (Deployment.Current.Dispatcher.CheckAccess())
-            {
-                ProgessService.SetProgressIndicator(false);
-                CalculateBreadCrumbs(this.CurrentRootNode);
-            }
+                this.ChildNodes.Clear();
             else
             {
+                var autoResetEvent = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    ProgessService.SetProgressIndicator(false);
-                    CalculateBreadCrumbs(this.CurrentRootNode);
+                    this.ChildNodes.Clear();
+                    autoResetEvent.Set();
                 });
+                autoResetEvent.WaitOne();
+            }
+
+            // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
+            if (Deployment.Current.Dispatcher.CheckAccess())
+                 CalculateBreadCrumbs(this.CurrentRootNode);
+            else
+            {
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                     CalculateBreadCrumbs(this.CurrentRootNode);
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
+            }
+
+            // Set the correct view for the main drive. Do this after the childs are cleared to speed things up
+            if (Deployment.Current.Dispatcher.CheckAccess())
+                SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+            else
+            {
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
             }
             
+            cancellationTokenSource = new CancellationTokenSource();
+            cancellationToken = cancellationTokenSource.Token;
+
+            Task.Factory.StartNew(() =>
+            {
+                //var stopwatch = new Stopwatch();
+                //stopwatch.Start();
+
+                int viewport = 0;
+                int background = 0;
+
+                // Each view has different performance options
+                switch (ViewMode)
+                {
+                    case ViewMode.ListView:
+                        viewport = 20;
+                        background = 20;
+                        break;
+                    case ViewMode.LargeThumbnails:
+                        viewport = 24;
+                        background = 24;
+                        break;
+                    case ViewMode.SmallThumbnails:
+                        viewport = 60;
+                        background = 60;
+                        break;
+                }
+
+
+                var helperList = new List<NodeViewModel>((int) ViewMode);
+                for (int i = 0; i < listSize; i++)
+                {
+                    if (cancellationToken.IsCancellationRequested) break;
+                    
+                    var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
+
+                    if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
+                        node.GetMegaNode().getBase64Handle() == FocusedNode.GetMegaNode().getBase64Handle())
+                    {
+                        node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                        FocusedNode = node;
+                    }
+
+                    helperList.Add(node);
+
+                    if (listSize > ProgressDisplaySize)
+                        Deployment.Current.Dispatcher.BeginInvoke(
+                            () => ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, i));
+
+                    if (i == viewport)
+                    {
+                        EventWaitHandle waitHandleProgress = new AutoResetEvent(false);
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            helperList.ForEach(n => ChildNodes.Add(n));
+                            waitHandleProgress.Set();
+                        });
+                        waitHandleProgress.WaitOne();
+                        helperList.Clear();
+                    }
+                    else if (helperList.Count == background && i > viewport)
+                    {
+                        EventWaitHandle waitHandleProgress = new AutoResetEvent(false);
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            helperList.ForEach(n =>ChildNodes.Add(n));
+                            waitHandleProgress.Set();
+                        });
+                        waitHandleProgress.WaitOne();
+                        helperList.Clear();
+                    }
+                }
+
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    helperList.ForEach(n => ChildNodes.Add(n));
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
+
+
+                //stopwatch.Stop();
+                //Deployment.Current.Dispatcher.BeginInvoke(() =>
+                //    MessageBox.Show(stopwatch.Elapsed.ToString("g")));
+
+                if (listSize <= ProgressDisplaySize) return;
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressBar(false));
+            }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
         }
 
         public void OnNodeTap(NodeViewModel node)
@@ -491,9 +629,14 @@ namespace MegaApp.Models
 
         public void SelectFolder(NodeViewModel selectedNode)
         {
+            if (cancellationToken.CanBeCanceled)
+                cancellationTokenSource.Cancel();
+
+            this.ChildNodes.Clear();
+
             this.CurrentRootNode = selectedNode;
             this.CurrentRootNode.ChildCollection = ChildNodes;
-            // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
+
             // Create unique uri string to navigate
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Browsing, new Dictionary<string, string> {{"Id", Guid.NewGuid().ToString("N")}});
         }
