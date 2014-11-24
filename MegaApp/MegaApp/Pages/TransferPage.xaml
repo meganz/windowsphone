@@ -51,8 +51,11 @@
     
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseClick" />			
-		</shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Images/seperator.png" Text="start/resume all" Click="OnStartResumeAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/transport.pause.png" Text="pause all" Click="OnPauseAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />
+        </shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
