@@ -162,7 +162,7 @@
 				ItemCheckedPath="IsMultiSelected" 
 				IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
 				RealizedItemsBufferScale="2" 
-				DataVirtualizationMode="Automatic"				
+				DataVirtualizationMode="Automatic" EmptyContentDisplayMode="DataSourceEmpty"				
 			>
 				<telerikPrimitives:RadContextMenu.ContextMenu>
 					<telerikPrimitives:RadContextMenu 

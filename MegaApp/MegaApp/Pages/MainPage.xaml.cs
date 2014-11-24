@@ -199,7 +199,7 @@ namespace MegaApp.Pages
         }
         private void OnRefreshClick(object sender, EventArgs e)
         {
-            MessageBox.Show(LstCloudDrive.RealizedItems.Length.ToString());
+            //MessageBox.Show(LstCloudDrive.RealizedItems.Length.ToString());
 
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
