@@ -382,6 +382,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\UiResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

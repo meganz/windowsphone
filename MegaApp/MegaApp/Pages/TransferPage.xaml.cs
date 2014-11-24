@@ -22,7 +22,7 @@ namespace MegaApp.Pages
             this.DataContext = transfersViewModel;
             InitializeComponent();
 
-            InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
+            InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -43,10 +43,78 @@ namespace MegaApp.Pages
             }
         }
 
-        private void OnPauseClick(object sender, System.EventArgs e)
-        {
-        	// TODO: Add event handler implementation here.
+        private void OnPauseAllClick(object sender, System.EventArgs e)
+        {        	
+            if (App.MegaTransfers.Count < 1) return;
+
+            foreach (var item in App.MegaTransfers)
+            {
+                var transfer = (TransferObjectModel)item;
+                if (transfer == null) continue;
+                else if (transfer.TransferedBytes < transfer.TotalBytes && 
+                    (transfer.Status != TransferStatus.Canceled || transfer.Status != TransferStatus.Error))
+                {
+                    transfer.Status = TransferStatus.Pausing;                
+                }                    
+            }
+
+            App.MegaSdk.pauseTransfers(true);            
+
+            foreach (var item in App.MegaTransfers)
+            {
+                var transfer = (TransferObjectModel)item;
+                if (transfer == null) continue;
+                else if (transfer.TransferedBytes < transfer.TotalBytes)
+                {
+                    transfer.Status = TransferStatus.Paused;
+                }                    
+            }
         }
 
+        private void OnStartResumeAllClick(object sender, EventArgs e)
+        {
+            if (App.MegaTransfers.Count < 1) return;
+            
+            App.MegaSdk.pauseTransfers(false);
+
+            foreach (var item in App.MegaTransfers)
+            {
+                var transfer = (TransferObjectModel)item;
+                if (transfer == null) continue;
+                else if (transfer.Status == TransferStatus.Paused)
+                    transfer.Status = TransferStatus.Connecting;                
+            }            
+        }
+
+        private void OnCancelAllClick(object sender, EventArgs e)
+        {
+            if (App.MegaTransfers.Count < 1) return;
+                        
+            foreach (var item in App.MegaTransfers)
+            {
+                var transfer = (TransferObjectModel)item;
+                if (transfer == null) continue;
+                
+                transfer.CancelTransfer();
+            }
+        }
+
+        private void OnCleanUpTransfersClick(object sender, EventArgs e)
+        {
+            if (App.MegaTransfers.Count < 1) return;
+
+            List<TransferObjectModel> transfersToRemove = new List<TransferObjectModel>();
+            foreach (var item in App.MegaTransfers)
+            {
+                var transfer = (TransferObjectModel)item;
+                    if (transfer == null) continue;
+                    if (transfer.Status == TransferStatus.Finished || transfer.Status == TransferStatus.Canceled)
+                        transfersToRemove.Add(transfer);
+            }
+
+            foreach (var item in transfersToRemove)
+                App.MegaTransfers.Remove(item);
+        }
+        
     }
 }
