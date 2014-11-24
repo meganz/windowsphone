@@ -20,6 +20,8 @@ namespace MegaApp.Converters
             {
                 case TransferStatus.NotStarted:
                 case TransferStatus.Connecting:
+                case TransferStatus.Pausing:
+                case TransferStatus.Paused:
                     return true;
                 case TransferStatus.Downloading:
                 case TransferStatus.Uploading:
