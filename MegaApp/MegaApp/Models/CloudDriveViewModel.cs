@@ -397,37 +397,6 @@ namespace MegaApp.Models
             this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this)); ;
         }
 
-        public void LoadVirtualNodes()
-        {
-            // Get the nodes from the MEGA SDK
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
-                UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
-
-            // Retrieve the size of the list to save time in the loops
-            int listSize = nodeList.size();
-
-            ChildNodesList = new List<NodeViewModel>(listSize);
-            ChildNodesList.Clear();
-            for (int i = 0; i < listSize; i++)
-            {
-                var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
-
-                if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
-                    node.GetMegaNode().getBase64Handle() == FocusedNode.GetMegaNode().getBase64Handle())
-                {
-                    node.DisplayMode = NodeDisplayMode.SelectedForMove;
-                    FocusedNode = node;
-                }
-                ChildNodesList.Add(node);
-            }
-
-            ChildNodes = null;
-            ChildNodes = new ObservableCollection<NodeViewModel>(ChildNodesList);
-
-        }
-        
-        public List<NodeViewModel> ChildNodesList { get; set; } 
-
         public void LoadNodes()
         {
             // Get the nodes from the MEGA SDK
@@ -437,24 +406,19 @@ namespace MegaApp.Models
             // Retrieve the size of the list to save time in the loops
             int listSize = nodeList.size();
 
-            // Only display a progress bar when a certain threshold is passed
-            if (listSize > ProgressDisplaySize)
+            // Display a minor indication for the user that the app is busy
+            if (Deployment.Current.Dispatcher.CheckAccess())
+                ProgessService.SetProgressIndicator(true, String.Empty);
+            else
             {
-                if (Deployment.Current.Dispatcher.CheckAccess())
-                    ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, 0);
-                else
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    var autoResetEvent = new AutoResetEvent(false);
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, 0);
-                        autoResetEvent.Set();
-                    });
-                    autoResetEvent.WaitOne();
-                }
-                    
+                    ProgessService.SetProgressIndicator(true, String.Empty);
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
             }
-
             // Clear the child nodes to make a fresh start
             if (Deployment.Current.Dispatcher.CheckAccess())
                 this.ChildNodes.Clear();
@@ -477,7 +441,7 @@ namespace MegaApp.Models
                 var autoResetEvent = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                     CalculateBreadCrumbs(this.CurrentRootNode);
+                    CalculateBreadCrumbs(this.CurrentRootNode);
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
@@ -496,7 +460,8 @@ namespace MegaApp.Models
                 });
                 autoResetEvent.WaitOne();
             }
-            
+
+            // Create the possibility to cancel the loadnodes task
             cancellationTokenSource = new CancellationTokenSource();
             cancellationToken = cancellationTokenSource.Token;
 
@@ -529,7 +494,7 @@ namespace MegaApp.Models
                 var helperList = new List<NodeViewModel>((int) ViewMode);
                 for (int i = 0; i < listSize; i++)
                 {
-                    if (cancellationToken.IsCancellationRequested) break;
+                    if (cancellationToken.IsCancellationRequested) return;
                     
                     var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
 
@@ -542,19 +507,29 @@ namespace MegaApp.Models
 
                     helperList.Add(node);
 
-                    if (listSize > ProgressDisplaySize)
-                        Deployment.Current.Dispatcher.BeginInvoke(
-                            () => ProgessService.SetProgressBar(true, ProgressMessages.LoadNodes, listSize, i));
-
                     if (i == viewport)
                     {
-                        EventWaitHandle waitHandleProgress = new AutoResetEvent(false);
+                        var waitHandleNodes = new AutoResetEvent(false);
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
-                            helperList.ForEach(n => ChildNodes.Add(n));
+                            helperList.ForEach(n =>
+                            {
+                                if (cancellationToken.IsCancellationRequested) return;
+                                ChildNodes.Add(n);
+                            });
+                            waitHandleNodes.Set();
+                        });
+                        waitHandleNodes.WaitOne();
+
+                        // Remove the busy indication
+                        var waitHandleProgress = new AutoResetEvent(false);
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            ProgessService.SetProgressIndicator(false);
                             waitHandleProgress.Set();
                         });
                         waitHandleProgress.WaitOne();
+
                         helperList.Clear();
                     }
                     else if (helperList.Count == background && i > viewport)
@@ -562,7 +537,11 @@ namespace MegaApp.Models
                         EventWaitHandle waitHandleProgress = new AutoResetEvent(false);
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
-                            helperList.ForEach(n =>ChildNodes.Add(n));
+                            helperList.ForEach(n =>
+                            {
+                                if (cancellationToken.IsCancellationRequested) return;
+                                ChildNodes.Add(n);
+                            });
                             waitHandleProgress.Set();
                         });
                         waitHandleProgress.WaitOne();
@@ -573,7 +552,11 @@ namespace MegaApp.Models
                 var autoResetEvent = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    helperList.ForEach(n => ChildNodes.Add(n));
+                    helperList.ForEach(n =>
+                    {
+                        if (cancellationToken.IsCancellationRequested) return;
+                        ChildNodes.Add(n);
+                    });
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
@@ -582,10 +565,9 @@ namespace MegaApp.Models
                 //stopwatch.Stop();
                 //Deployment.Current.Dispatcher.BeginInvoke(() =>
                 //    MessageBox.Show(stopwatch.Elapsed.ToString("g")));
+               
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
 
-                if (listSize <= ProgressDisplaySize) return;
-
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressBar(false));
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
         }
 
