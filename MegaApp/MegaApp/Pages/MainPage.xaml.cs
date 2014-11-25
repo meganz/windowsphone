@@ -1,9 +1,4 @@
-﻿using System.ComponentModel;
-using System.ServiceModel.Description;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using mega;
+﻿using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
@@ -14,13 +9,14 @@ using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using Windows.Storage;
-using Telerik.Windows.Data;
 
 namespace MegaApp.Pages
 {
