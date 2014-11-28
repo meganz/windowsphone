@@ -4,6 +4,7 @@
     {
         CloudDrive,
         MoveItem,
-        MultiSelect
+        MultiSelect,
+        RubbishBin
     }
 }
