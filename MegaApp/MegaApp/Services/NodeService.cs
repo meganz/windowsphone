@@ -34,11 +34,10 @@ namespace MegaApp.Services
                 }
                 case MNodeType.TYPE_FOLDER:
                 case MNodeType.TYPE_ROOT:
+                case MNodeType.TYPE_RUBBISH:
                     return new FolderNodeViewModel(megaSdk, megaNode, parentCollection, childCollection);
                 case MNodeType.TYPE_INCOMING:
                     break;
-                case MNodeType.TYPE_RUBBISH:
-                    return new FolderNodeViewModel(megaSdk, megaNode, parentCollection, childCollection);
                 case MNodeType.TYPE_MAIL:
                     break;
                 default:

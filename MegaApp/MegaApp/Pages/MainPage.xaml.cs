@@ -1,4 +1,5 @@
-﻿using mega;
+﻿using System.Collections.Generic;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
@@ -29,11 +30,70 @@ namespace MegaApp.Pages
             this.DataContext = App.CloudDrive;
 
             InitializeComponent();
+
+            CreateAdvancedMenu();
             
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+        }
+
+        private void CreateAdvancedMenu()
+        {
+            var advancedMenuItems = new List<AdvancedMenuItem>();
+            advancedMenuItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.Transfers,
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    App.CloudDrive.GoToTransfers();
+                }
+            });
+
+            advancedMenuItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.MyAccount,
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    App.CloudDrive.GoToAccountDetails();
+                }
+            });
+
+            advancedMenuItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.Settings,
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    App.CloudDrive.NoFolderUpAction = true;
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
+                }
+            });
+
+            advancedMenuItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.About,
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    App.CloudDrive.NoFolderUpAction = true;
+                    NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
+                }
+            });
+           
+
+            LstAdvancedMenu.ItemsSource = advancedMenuItems;
         }        
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
@@ -100,7 +160,7 @@ namespace MegaApp.Pages
                 if (!App.CloudDrive.NoFolderUpAction)
                 {
                     App.CloudDrive.GoFolderUp();
-                    Task.Run(() => App.CloudDrive.LoadNodes());
+                    //Task.Run(() => App.CloudDrive.LoadNodes());
                     _navParam = NavigationParameter.Browsing;
                 }
                 else
@@ -393,7 +453,8 @@ namespace MegaApp.Pages
             {
                 if(e.TappedItem != null)
                     LstCloudDrive.CheckedItems.Add(e.TappedItem);
-                App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
+                if(App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
+                    App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
                 App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MultiSelect;
             }
             else
@@ -484,6 +545,13 @@ namespace MegaApp.Pages
 
             Task.Run(() => App.CloudDrive.LoadNodes());
             ChangeMenu();
+        }
+
+        private void OnAdvancedMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
+            if (advancedMenuItem == null) return;
+            advancedMenuItem.TapAction.Invoke();
         }        
     }
     
