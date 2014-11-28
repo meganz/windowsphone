@@ -233,8 +233,8 @@ namespace MegaApp.Models
 
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN )
                 parentNode = this.MegaSdk.getRootNode();
-            
-            this.CurrentRootNode = new NodeViewModel(App.MegaSdk, parentNode, childCollection:ChildNodes);
+
+            this.CurrentRootNode = NodeService.CreateNew(App.MegaSdk, parentNode, ChildNodes);
             this.ChildNodes.Clear();
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
@@ -350,7 +350,7 @@ namespace MegaApp.Models
 
         public void GoToRoot()
         {
-            GoToFolder(new NodeViewModel(this.MegaSdk, MegaSdk.getRootNode()));
+            GoToFolder(NodeService.CreateNew(this.MegaSdk, MegaSdk.getRootNode()));
         }
 
         public void GoToAccountDetails()
@@ -495,8 +495,8 @@ namespace MegaApp.Models
                 for (int i = 0; i < listSize; i++)
                 {
                     if (cancellationToken.IsCancellationRequested) return;
-                    
-                    var node = new NodeViewModel(this.MegaSdk, nodeList.get(i), ChildNodes);
+
+                    var node = NodeService.CreateNew(this.MegaSdk, nodeList.get(i), ChildNodes);
 
                     if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
                         node.GetMegaNode().getBase64Handle() == FocusedNode.GetMegaNode().getBase64Handle())
@@ -548,7 +548,7 @@ namespace MegaApp.Models
                         helperList.Clear();
                     }
                 }
-
+                
                 var autoResetEvent = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
@@ -582,10 +582,14 @@ namespace MegaApp.Models
                 }
                 case MNodeType.TYPE_FILE:
                 {
-                    if (!node.IsImage) return;
                     this.NoFolderUpAction = true;
                     FocusedNode = node;
-                    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
+
+                    if (node.IsImage)
+                        NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
+                    else
+                        NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, FocusedNode);
+
                     break;
                 }
             }
@@ -635,7 +639,7 @@ namespace MegaApp.Models
             while ((parentNode = this.MegaSdk.getParentNode(parentNode)).getType() !=
                    MNodeType.TYPE_ROOT)
             {
-                this.BreadCrumbs.Insert(0, new NodeViewModel(this.MegaSdk, parentNode));
+                this.BreadCrumbs.Insert(0, NodeService.CreateNew(this.MegaSdk, parentNode));
             }
 
         }
@@ -675,7 +679,16 @@ namespace MegaApp.Models
         public ObservableCollection<NodeViewModel> ChildNodes { get; set; }
         public ObservableCollection<NodeViewModel> BreadCrumbs { get; set; }
 
-        public NodeViewModel CurrentRootNode { get; set; }
+        private NodeViewModel _currentRootNode;
+        public NodeViewModel CurrentRootNode
+        {
+            get { return _currentRootNode; }
+            set
+            {
+                _currentRootNode = value;
+                OnPropertyChanged("CurrentRootNode");
+            }
+        }
 
         public NodeViewModel FocusedNode { get; set; }
 

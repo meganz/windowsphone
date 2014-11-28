@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MegaApp.Models
 {
-    class DownloadImageViewModel : BaseViewModel
+    class DownloadNodeViewModel : BaseViewModel
     {
-        public DownloadImageViewModel(NodeViewModel selectedNode)
+        public DownloadNodeViewModel(NodeViewModel selectedNode)
         {
             SelectedNode = selectedNode;
         }
@@ -23,7 +23,11 @@ namespace MegaApp.Models
             set
             {
                 _selectedNode = value;
-                _selectedNode.SetImage();
+                var node = _selectedNode as ImageNodeViewModel;
+                if (node != null)
+                    node.SetImage();
+                else
+                    ((FileNodeViewModel)_selectedNode).SetFile();
                 OnPropertyChanged("SelectedNode");
             }
         }

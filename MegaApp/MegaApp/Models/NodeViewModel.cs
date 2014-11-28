@@ -17,41 +17,24 @@ namespace MegaApp.Models
     /// <summary>
     /// ViewModel of the main MEGA datatype (MNode)
     /// </summary>
-    public class NodeViewModel : BaseSdkViewModel
+    public abstract class NodeViewModel : BaseSdkViewModel
     {
-
         public event EventHandler CancelingTransfer;
         // Original MNode object from the MEGA SDK
-        private MNode _baseMegaNode;
+        private MNode _originalMegaNode;
         // Offset DateTime value to calculate the correct creation and modification time
         private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
-        public NodeViewModel(MegaSDK megaSdk, MNode baseMegaNode, object parentCollection = null, object childCollection = null)
+        protected NodeViewModel(MegaSDK megaSdk, MNode megaNode, object parentCollection = null, object childCollection = null)
             : base(megaSdk)
         {
-            SetCoreNodeData(baseMegaNode);
-            //this._baseMegaNode = baseMegaNode;
-            this.DisplayMode = NodeDisplayMode.Normal;
-            //this.Name = baseMegaNode.getName();
-            //this.Size = baseMegaNode.getSize();
-            //this.CreationTime = ConvertDateToString(baseMegaNode.getCreationTime()).ToString("dd MMM yyyy");
-            //this.SizeAndSuffix = Size.ToStringAndSuffix();
-            //this.Type = baseMegaNode.getType();
+            SetCoreNodeData(megaNode);
+            SetDefaultValues();
+            
             this.ParentCollection = parentCollection;
             this.ChildCollection = childCollection;
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
-            this.IsMultiSelected = false;
 
             this.MegaService = new MegaService();
-
-            //if(this.Type == MNodeType.TYPE_FOLDER)
-            //    SetFolderInfo();
-
-            if (this.Type != MNodeType.TYPE_FILE) return;
-            
-            //ThumbnailIsDefaultImage = true;
-            //this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
-            InViewingRange = false;
         }
 
         #region Interfaces
@@ -60,57 +43,47 @@ namespace MegaApp.Models
 
         #endregion
 
-        #region Methods
+        #region Abstract Methods
 
-        public void Rename()
+        public abstract void OpenFile();
+
+        #endregion
+
+        #region Virtual Methods
+
+        public virtual void Rename()
         {
             if (!IsUserOnline()) return;
             MegaService.Rename(this.MegaSdk, this);
         }
 
-        public void Move(NodeViewModel newParentNode)
+        public virtual void Move(NodeViewModel newParentNode)
         {
             if (!IsUserOnline()) return;
             MegaService.Move(this.MegaSdk, this, newParentNode);
         }
 
-        public void Remove(bool isMultiRemove)
+        public virtual void Remove(bool isMultiRemove)
         {
             if (!IsUserOnline()) return;
             MegaService.Remove(this.MegaSdk, this, isMultiRemove);
         }
-        
-        public void GetPreviewLink()
+
+        public virtual void GetPreviewLink()
         {
             if (!IsUserOnline()) return;
             MegaService.GetPreviewLink(this.MegaSdk, this);
         }
 
-        public void ViewOriginal()
+        public virtual void ViewOriginal()
         {
             if (!IsUserOnline()) return;
-            NavigateService.NavigateTo(typeof(DownloadImagePage), NavigationParameter.Normal, this);
+            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
         }
 
-        public bool HasPreviewInCache()
+        public virtual void Update(MNode megaNode)
         {
-            return FileService.FileExists(PreviewPath);
-        }
-
-        public void CancelPreviewRequest()
-        {
-            MegaSdk.cancelGetPreview(GetMegaNode());
-            IsBusy = false;
-        }
-
-        public void CancelTransfer()
-        {
-            OnCancelingTransfer();
-        }
-
-        public void Update(MNode megaNode)
-        {
-           SetCoreNodeData(megaNode);
+            SetCoreNodeData(megaNode);
         }
 
         protected virtual void OnCancelingTransfer()
@@ -120,46 +93,25 @@ namespace MegaApp.Models
             CancelingTransfer(this, new EventArgs());
         }
 
-        public void SetFolderInfo()
-        {
-            int childFolders = this.MegaSdk.getNumChildFolders(this._baseMegaNode);
-            int childFiles = this.MegaSdk.getNumChildFiles(this._baseMegaNode);
-            this.FolderInfo = String.Format("{0} {1} | {2} {3}",
-                childFolders, childFolders == 1 ? UiResources.SingleFolder : UiResources.MultipleFolders,
-                childFiles, childFiles == 1 ? UiResources.SingleFile : UiResources.MultipleFiles);
-        }
+        #endregion
+
+        #region Private Methods
 
         private void SetCoreNodeData(MNode megaNode)
         {
-            this._baseMegaNode = megaNode;
+            _originalMegaNode = megaNode;
             this.Handle = megaNode.getHandle();
             this.Name = megaNode.getName();
             this.Size = megaNode.getSize();
             this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
-            this.SizeAndSuffix = Size.ToStringAndSuffix();
+            this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
             this.Type = megaNode.getType();
-            if (this.Type == MNodeType.TYPE_FOLDER)
-                SetFolderInfo();
         }
 
-        public void SetThumbnailImage()
+        private void SetDefaultValues()
         {
-            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
-
-            if (this.Type == MNodeType.TYPE_FOLDER) return;
-
-            //ThumbnailIsDefaultImage = true;
-            //this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
-            
-            if (this.IsImage || this.GetMegaNode().hasThumbnail())
-            {
-                GetThumbnail();
-            }
-            else
-            {
-                ThumbnailIsDefaultImage = true;
-                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
-            }
+            this.IsMultiSelected = false;
+            this.DisplayMode = NodeDisplayMode.Normal;
         }
 
         private void GetThumbnail()
@@ -175,80 +127,8 @@ namespace MegaApp.Models
                 {
                     this.MegaSdk.getThumbnail(this.GetMegaNode(), ThumbnailPath, new GetThumbnailRequestListener(this));
                 }
-                    
-            }
-        }
-
-        public void SetPreviewImage()
-        {
-            //string previewUri = PreviewImageUri != null ? PreviewImageUri.ToString() : null;
-            //string thumbnailUri = ThumbnailImageUri != null ? ThumbnailImageUri.ToString() : null;
-
-            //if (this.PreviewImageUri != null && Path.GetFileName(previewUri) != Path.GetFileName(thumbnailUri)) return;
-            if (this.IsBusy) return;
-            if (!this.IsImage && !this.GetMegaNode().hasPreview()) return;
-
-            if (this.GetMegaNode().hasPreview())
-            {
-                GetPreview();
-            }
-            else
-            {
-                GetImage(true);
-            }
-        }
-
-        private void GetPreview()
-        {
-            if (FileService.FileExists(PreviewPath))
-            {
-                PreviewImageUri = new Uri(PreviewPath);
-            }
-            else
-            {
-                this.MegaSdk.getPreview(this._baseMegaNode, PreviewPath, new GetPreviewRequestListener(this));
-            }
-        }
-
-        public void SetImage()
-        {
-            if (this.ImageUri != null) return;
-            if (this.IsBusy) return;
-            if (!this.IsImage) return;
-            GetImage();
-        }
-
-        private void GetImage(bool isForPreview = false)
-        {
-            if (FileService.FileExists(ImagePath))
-            {
-                ImageUri = new Uri(ImagePath);
-
-                if (!isForPreview) return;
-
-                PreviewImageUri = new Uri(ImagePath);
 
             }
-            else
-            {
-                if (isForPreview)
-                    IsBusy = true;
-                Transfer.AutoLoadImageOnFinish = true;
-                Transfer.StartTransfer();
-            }
-        }
-       
-        public void SaveImageToCameraRoll()
-        {
-            if (this.ImageUri == null) return;
-
-            if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
-                    MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
-
-            if (ImageService.SaveToCameraRoll(this.Name, this.ImageUri))
-                MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
-            else
-                MessageBox.Show(AppMessages.ImageSaveError, AppMessages.ImageSaveError_Title, MessageBoxButton.OK);
         }
 
         /// <summary>
@@ -259,6 +139,32 @@ namespace MegaApp.Models
         private static DateTime ConvertDateToString(ulong time)
         {
             return OriginalDateTime.AddSeconds(time).ToLocalTime();
+        }
+
+        #endregion
+
+        #region Public Methods
+      
+        public void CancelTransfer()
+        {
+            OnCancelingTransfer();
+        }
+
+        public void SetThumbnailImage()
+        {
+            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
+
+            if (this.Type == MNodeType.TYPE_FOLDER) return;
+
+            if (this.IsImage || this.GetMegaNode().hasThumbnail())
+            {
+                GetThumbnail();
+            }
+            else
+            {
+                ThumbnailIsDefaultImage = true;
+                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+            }
         }
 
         #endregion
@@ -290,8 +196,6 @@ namespace MegaApp.Models
 
         public TransferObjectModel Transfer { get; set; }
 
-        public bool InViewingRange { get; set; }
-
         private NodeDisplayMode _displayMode;
         public NodeDisplayMode DisplayMode
         {
@@ -322,18 +226,7 @@ namespace MegaApp.Models
 
         public string CreationTime { get; private set; }
 
-        public string SizeAndSuffix { get; private set; }
-
-        private string _folderInfo;
-        public string FolderInfo
-        {
-            get { return _folderInfo; }
-            private set
-            {
-                _folderInfo = value;
-                OnPropertyChanged("FolderInfo");
-            }
-        }
+        public string ModificationTime { get; private set; }
 
         public object ParentCollection { get; set; }
         public object ChildCollection { get; set; }
@@ -348,33 +241,6 @@ namespace MegaApp.Models
             {
                 _thumbnailImageUri = value;
                 OnPropertyChanged("ThumbnailImageUri");
-            }
-        }
-
-        private Uri _previewImageUri;
-        public Uri PreviewImageUri
-        {
-            get
-            {
-                if (_previewImageUri == null && InViewingRange)
-                    SetPreviewImage();
-                return _previewImageUri;
-            }
-            set
-            {
-                _previewImageUri = value;
-                OnPropertyChanged("PreviewImageUri");
-            }
-        }
-
-        private Uri _imageUri;
-        public Uri ImageUri
-        {
-            get { return _imageUri; }
-            set
-            {
-                _imageUri = value;
-                OnPropertyChanged("ImageUri");
             }
         }
 
@@ -400,30 +266,11 @@ namespace MegaApp.Models
                                       AppResources.ThumbnailsDirectory, 
                                       this.GetMegaNode().getBase64Handle()); }
         }
-
-        public string PreviewPath
-        {
-            get
-            {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.PreviewsDirectory,
-                                    this.GetMegaNode().getBase64Handle());
-            }
-        }
-
-        public string ImagePath
-        {
-            get
-            {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory,
-                                    this.GetMegaNode().getBase64Handle());
-            }
-        }
+       
 
         public MNode GetMegaNode()
         {
-            return this._baseMegaNode;
+            return this._originalMegaNode;
         }
 
         #endregion

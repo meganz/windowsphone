@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
@@ -102,15 +103,21 @@ namespace MegaApp.MegaApi
                 if (shortCutMegaNode != null)
                 {
 
-                    _cloudDriveViewModel.CurrentRootNode = new NodeViewModel(api, shortCutMegaNode);
+                    _cloudDriveViewModel.CurrentRootNode = NodeService.CreateNew(api, shortCutMegaNode);
                 }
             }
             else
             {
-                _cloudDriveViewModel.CurrentRootNode = this._rootRefreshNode ??
-                                                        new NodeViewModel(api, api.getRootNode());
+                var newRootNode = _rootRefreshNode ?? NodeService.CreateNew(api, api.getRootNode());
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _cloudDriveViewModel.CurrentRootNode = newRootNode;
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
             }
-            //_cloudDriveViewModel.LoadNodes();
+           
             _cloudDriveViewModel.LoadNodes();
         }
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
+using Windows.Storage;
 
 namespace MegaApp.Services
 {
@@ -17,6 +19,16 @@ namespace MegaApp.Services
             {
                 File.Delete(file);
             }
+        }
+
+        public static async Task<bool> OpenFile(string filePath)
+        {
+            var file = await StorageFile.GetFileFromPathAsync(filePath);
+
+            if (file != null)
+                return await Windows.System.Launcher.LaunchFileAsync(file);
+            
+            return false;
         }
 
         public static string CreateRandomFilePath(string path)
