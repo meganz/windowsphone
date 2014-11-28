@@ -1,12 +1,14 @@
-﻿using System.Collections.ObjectModel;
-using mega;
+﻿using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
@@ -24,10 +26,12 @@ namespace MegaApp
         /// <returns>The root frame of the Phone Application.</returns>
         public static RadPhoneApplicationFrame RootFrame { get; private set; }
 
+        public static ApplicationEvent AppEvent { get; set; }
+
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
-
+        
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -71,6 +75,9 @@ namespace MegaApp
                 EmailTo = AppResources.DiagnosticsEmailAddress
             };
             diagnostics.Init();
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -79,6 +86,7 @@ namespace MegaApp
         {
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
+            AppEvent = ApplicationEvent.Lauching;
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -87,18 +95,42 @@ namespace MegaApp
         {
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
+            AppEvent = ApplicationEvent.Activated;
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            AppEvent = ApplicationEvent.Deactivated;
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
+            AppEvent = ApplicationEvent.Closing;
+        }
+
+        // Code to execute when the application detects a Network change.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            if (DeviceNetworkInformation.IsNetworkAvailable) 
+            { 
+            
+            }            
+
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                    break;
+                default:
+                    break;
+            }
         }
 
         // Code to execute if a navigation fails
