@@ -432,4 +432,19 @@
         </Setter>
     </Style>
 
+    <!-- ADVANCED MENU TEMPLATES -->
+    <DataTemplate x:Key="AdvancedMenuHeader">
+        <Grid Margin="0,0,0,20">
+        	<TextBlock HorizontalAlignment="Left" Text="Menu" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontWeight="Bold"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AdvancedMenuItem">
+        <Grid Margin="0,0,0,20">
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+        </Grid>
+    </DataTemplate>
+
+
+
 </ResourceDictionary>

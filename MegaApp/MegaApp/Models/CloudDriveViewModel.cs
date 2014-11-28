@@ -81,10 +81,10 @@ namespace MegaApp.Models
 
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.RubbishBin;
                     ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
-                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
-                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
-                    ((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About; 
+                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
+                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
+                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
+                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About; 
                     break;
                 }
                 case MenuType.RubbishBinMenu:
@@ -93,10 +93,10 @@ namespace MegaApp.Models
 
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.CloudDriveName;                    
                     ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
-                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
-                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
-                    ((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About;
+                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
+                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
+                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
+                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About;
                     break;
                 }
                 case MenuType.MoveMenu:
