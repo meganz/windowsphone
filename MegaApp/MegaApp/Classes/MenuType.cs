@@ -10,6 +10,7 @@ namespace MegaApp.Classes
     {
         CloudDriveMenu = 0,
         MoveMenu = 1,
-        MultiSelectMenu = 2
+        MultiSelectMenu = 2,
+        RubbishBinMenu = 3
     }
 }

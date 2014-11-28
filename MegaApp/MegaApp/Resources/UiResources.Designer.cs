@@ -484,6 +484,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Rubbish Bin.
+        /// </summary>
+        public static string RubbishBin {
+            get {
+                return ResourceManager.GetString("RubbishBin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a save.
         /// </summary>
         public static string Save {
