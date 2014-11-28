@@ -26,8 +26,7 @@ namespace MegaApp.Models
     {
         private const int ProgressDisplaySize = 4000;
         private CancellationTokenSource cancellationTokenSource;
-        private CancellationToken cancellationToken;
-
+        private CancellationToken cancellationToken;        
 
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
@@ -80,11 +79,24 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
                     ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
 
-                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MultiSelect;
-                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Transfers;
-                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.MyAccount;
-                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.Settings;
-                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.About; 
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.RubbishBin;
+                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
+                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
+                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
+                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
+                    ((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About; 
+                    break;
+                }
+                case MenuType.RubbishBinMenu:
+                {
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Refresh;                    
+
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.CloudDriveName;                    
+                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
+                    ((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
+                    ((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
+                    ((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
+                    ((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About;
                     break;
                 }
                 case MenuType.MoveMenu:
@@ -100,7 +112,7 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Move;
                     ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Remove;
                     break;
-                }
+                }                
             }
            
         }
@@ -142,6 +154,7 @@ namespace MegaApp.Models
             }
 
             this.IsMultiSelectActive = false;
+            OldDriveDisplayMode = DriveDisplayMode;
             DriveDisplayMode = DriveDisplayMode.MoveItem;
 
             return true;
@@ -627,15 +640,16 @@ namespace MegaApp.Models
         {
             this.BreadCrumbs.Clear();
 
-            if (currentRootNode.Type == MNodeType.TYPE_ROOT) return;
+            if (currentRootNode.Type == MNodeType.TYPE_ROOT || currentRootNode.Type == MNodeType.TYPE_RUBBISH) return;
 
             this.BreadCrumbs.Add(currentRootNode);
 
             MNode parentNode = currentRootNode.GetMegaNode();
-            while ((parentNode = this.MegaSdk.getParentNode(parentNode)).getType() !=
-                   MNodeType.TYPE_ROOT)
+            parentNode = this.MegaSdk.getParentNode(parentNode);
+            while ((parentNode.getType() != MNodeType.TYPE_ROOT) && (parentNode.getType() != MNodeType.TYPE_RUBBISH))
             {
                 this.BreadCrumbs.Insert(0, new NodeViewModel(this.MegaSdk, parentNode));
+                parentNode = this.MegaSdk.getParentNode(parentNode);
             }
 
         }
@@ -686,6 +700,7 @@ namespace MegaApp.Models
         public bool NoFolderUpAction { get; set; }
 
         public DriveDisplayMode DriveDisplayMode { get; set; }
+        public DriveDisplayMode OldDriveDisplayMode { get; set; }
 
         public ulong? ShortCutHandle { get; set; }
 

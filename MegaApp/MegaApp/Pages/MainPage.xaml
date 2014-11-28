@@ -18,6 +18,11 @@
         <shell:ApplicationBar x:Key="CloudDriveMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
+					x:Name="BtnRubbishBin" 				
+					Text="rubbish bin"	
+					Click="OnRubbishBinClick"			
+				/>
+                <shell:ApplicationBarMenuItem
 					x:Name="BtnMultiSelect" 				
 					Text="multi select"	
 					Click="OnMultiSelectClick"			
@@ -67,6 +72,47 @@
         		Text="open link" 
         		Click="OnOpenLinkClick" 				
 			/>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="RubbishBinMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnCloudDrive" 				
+					Text="Cloud Drive"	
+					Click="OnCloudDriveClick"			
+				/>                
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnMultiSelectRB" 				
+					Text="multi select"	
+					Click="OnMultiSelectClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnTransfersRB" 				
+					Text="transfers"	
+					Click="OnTransfersClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnMyAccountRB" 				
+					Text="my account"	
+					Click="OnMyAccountClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnPreferencesRB" 				
+					Text="preferences"	
+					Click="OnPreferencesClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					x:Name="BtnAboutRB" 				
+					Text="about"	
+					Click="OnAboutClick"			
+				/>
+            </shell:ApplicationBar.MenuItems>            
+            <shell:ApplicationBarIconButton 
+        		x:Name="BtnRefreshRB" 
+        		IconUri="/Assets/AppBar/refresh.png" 
+        		Text="refresh" 
+        		Click="OnRefreshClick" 				
+			/>            
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MoveItemMenu">
