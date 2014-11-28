@@ -41,7 +41,7 @@
                     </Image.Source>
                 </Image>
                 <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
-                <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SizeAndSuffix}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+                <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FileSize}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>

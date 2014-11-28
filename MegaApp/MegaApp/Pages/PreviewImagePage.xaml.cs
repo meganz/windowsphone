@@ -33,7 +33,7 @@ namespace MegaApp.Pages
         {
             _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.CloudDrive);
             this.DataContext = _previewImageViewModel;
-            _previewImageViewModel.SelectedPreview = App.CloudDrive.FocusedNode;
+            _previewImageViewModel.SelectedPreview = (ImageNodeViewModel) App.CloudDrive.FocusedNode;
             
             InitializeComponent();
 
@@ -128,14 +128,14 @@ namespace MegaApp.Pages
             switch (e.State)
             {
                 case ItemState.Recycling:
-                    ((NodeViewModel) e.DataItem).InViewingRange = false;
-                    ((NodeViewModel)e.DataItem).PreviewImageUri = null;
+                    ((ImageNodeViewModel)e.DataItem).InViewingRange = false;
+                    ((ImageNodeViewModel)e.DataItem).PreviewImageUri = null;
                     break;
                 case ItemState.Recycled:
                     break;
                 case ItemState.Realizing:
-                    ((NodeViewModel)e.DataItem).InViewingRange = true;
-                    ((NodeViewModel)e.DataItem).SetPreviewImage();
+                    ((ImageNodeViewModel)e.DataItem).InViewingRange = true;
+                    ((ImageNodeViewModel)e.DataItem).SetPreviewImage();
                     break;
                 case ItemState.Realized:
                     break;
@@ -147,8 +147,8 @@ namespace MegaApp.Pages
             SetMoveButtons();
             if (e.RemovedItems[0] != null)
             {
-                int currentIndex = _previewImageViewModel.PreviewItems.IndexOf((NodeViewModel) e.AddedItems[0]);
-                int lastIndex = _previewImageViewModel.PreviewItems.IndexOf((NodeViewModel)e.RemovedItems[0]);
+                int currentIndex = _previewImageViewModel.PreviewItems.IndexOf((ImageNodeViewModel)e.AddedItems[0]);
+                int lastIndex = _previewImageViewModel.PreviewItems.IndexOf((ImageNodeViewModel)e.RemovedItems[0]);
 
                 _previewImageViewModel.GalleryDirection = currentIndex > lastIndex
                     ? GalleryDirection.Next

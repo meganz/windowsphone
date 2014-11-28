@@ -188,16 +188,22 @@ namespace MegaApp.Models
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>Status = TransferStatus.Finished);
 
-                    if (AutoLoadImageOnFinish)
+                    if (SelectedNode is ImageNodeViewModel && AutoLoadImageOnFinish)
                     {
+                        var imageNode = SelectedNode as ImageNodeViewModel;
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
-                            SelectedNode.ImageUri = new Uri(SelectedNode.ImagePath);
+                            imageNode.ImageUri = new Uri(imageNode.ImagePath);
                             if (SelectedNode.GetMegaNode().hasPreview()) return;
-                            SelectedNode.PreviewImageUri = new Uri(SelectedNode.ImagePath);
-                            SelectedNode.IsBusy = false;
+                            imageNode.PreviewImageUri = new Uri(imageNode.ImagePath);
+                            imageNode.IsBusy = false;
                         });
                     }
+
+                    //if (!SelectedNode.IsImage)
+                    //    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    //        SelectedNode.ImageUri = ImageService.GetDefaultFileImage(SelectedNode.Name));
+
                     break;
                 }
                 case MErrorType.API_EINCOMPLETE:

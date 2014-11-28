@@ -30,8 +30,8 @@ namespace MegaApp.Models
         public PreviewImageViewModel(MegaSDK megaSdk, CloudDriveViewModel cloudDriveViewModel)
             : base(megaSdk)
         {
-            PreviewItems = new ObservableCollection<NodeViewModel>(
-                cloudDriveViewModel.ChildNodes.Where(n => n.IsImage || n.GetMegaNode().hasPreview()));
+            PreviewItems = new ObservableCollection<ImageNodeViewModel>(
+                cloudDriveViewModel.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
 
             cloudDriveViewModel.ChildNodes.CollectionChanged += CloudDriveNodesOnCollectionChanged;
         }
@@ -61,14 +61,14 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public ObservableCollection<NodeViewModel> PreviewItems { get; private set; }
+        public ObservableCollection<ImageNodeViewModel> PreviewItems { get; private set; }
 
         public GalleryDirection GalleryDirection { get; set; }
-        
 
-        private NodeViewModel _selectedPreview;
 
-        public NodeViewModel SelectedPreview
+        private ImageNodeViewModel _selectedPreview;
+
+        public ImageNodeViewModel SelectedPreview
         {
             get { return _selectedPreview; }
             set

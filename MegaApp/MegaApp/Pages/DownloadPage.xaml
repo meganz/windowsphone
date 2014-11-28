@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
 	xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
-    x:Class="MegaApp.Pages.DownloadImagePage"
+    x:Class="MegaApp.Pages.DownloadPage"
     SupportedOrientations="PortraitOrLandscape" 
     Orientation="Portrait"
     mc:Ignorable="d"
@@ -48,7 +48,6 @@
                         />
             </slideView:PanAndZoomImage.Source>
         </slideView:PanAndZoomImage>
-		
 		<Border Visibility="{Binding Transfer.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}">
 			<Border.Background>
 				<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
@@ -74,7 +73,8 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>				
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>							
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open.png" Text="open" Click="OnOpenClick"/>									
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

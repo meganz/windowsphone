@@ -81,7 +81,7 @@ namespace MegaApp.MegaApi
 
                                     if (insertIndex > 0)
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                            _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, new NodeViewModel(api, megaNode,
+                                            _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode,
                                             _cloudDriveViewModel.ChildNodes)));
                                 }
                                 else
@@ -94,7 +94,8 @@ namespace MegaApp.MegaApi
                                     {
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                                         {
-                                            foreach (var node in _cloudDriveViewModel.ChildNodes.Where(n => n.Type == MNodeType.TYPE_FOLDER))
+                                            foreach (var node in _cloudDriveViewModel.ChildNodes.Where(
+                                                n => n is FolderNodeViewModel).Cast<FolderNodeViewModel>())
                                             {
                                                 node.SetFolderInfo();
                                             }

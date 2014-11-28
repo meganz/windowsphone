@@ -124,6 +124,9 @@
     <Compile Include="Models\AboutViewModel.cs" />
     <Compile Include="Models\AcknowledgementsViewModel.cs" />
     <Compile Include="Models\BaseMediaViewModel.cs" />
+    <Compile Include="Models\FileNodeViewModel.cs" />
+    <Compile Include="Models\FolderNodeViewModel.cs" />
+    <Compile Include="Models\ImageNodeViewModel.cs" />
     <Compile Include="Models\MediaAlbumViewModel.cs" />
     <Compile Include="Models\MediaSelectionPageModel.cs" />
     <Compile Include="Models\MemDiagnosticViewModel.cs" />
@@ -160,7 +163,7 @@
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\ConfirmAccountViewModel.cs" />
     <Compile Include="Models\DelegateCommand.cs" />
-    <Compile Include="Models\DownloadImageViewModel.cs" />
+    <Compile Include="Models\DownloadNodeViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\MyAccountPageViewModel.cs" />
     <Compile Include="Models\NodeViewModel.cs" />
@@ -176,8 +179,8 @@
     <Compile Include="Pages\ConfirmAccountPage.xaml.cs">
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DownloadImagePage.xaml.cs">
-      <DependentUpon>DownloadImagePage.xaml</DependentUpon>
+    <Compile Include="Pages\DownloadPage.xaml.cs">
+      <DependentUpon>DownloadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -273,6 +276,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AppBar\open.png" />
     <Content Include="Assets\AppBar\transport.pause.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -399,7 +403,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\DownloadImagePage.xaml">
+    <Page Include="Pages\DownloadPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -508,7 +512,6 @@
       <Name>mega</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

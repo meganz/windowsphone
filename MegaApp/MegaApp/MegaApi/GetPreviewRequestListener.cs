@@ -20,9 +20,9 @@ namespace MegaApp.MegaApi
 {
     class GetPreviewRequestListener: BaseRequestListener
     {
-        private readonly NodeViewModel _node;
+        private readonly ImageNodeViewModel _node;
 
-        public GetPreviewRequestListener(NodeViewModel node)
+        public GetPreviewRequestListener(ImageNodeViewModel node)
         {
             this._node = node;
         }
