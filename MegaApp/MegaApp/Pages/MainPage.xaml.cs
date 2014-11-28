@@ -22,19 +22,19 @@ namespace MegaApp.Pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private NavigationParameter _navParam;
+        private NavigationParameter _navParam;        
 
         public MainPage()
         {
             this.DataContext = App.CloudDrive;
 
             InitializeComponent();
-
+            
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
-        }
+        }        
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
@@ -51,25 +51,43 @@ namespace MegaApp.Pages
 
             App.CloudDrive.GoToFolder(e.Item as NodeViewModel);
         }
-       
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        private void ChangeMenu()
         {
             switch (App.CloudDrive.DriveDisplayMode)
             {
+                case DriveDisplayMode.RubbishBin:
+                    this.ApplicationBar = (ApplicationBar)Resources["RubbishBinMenu"];
+                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.RubbishBinMenu);
+                    break;
+
                 case DriveDisplayMode.MoveItem:
-                {
                     this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
                     break;
-                }
+
+                case DriveDisplayMode.MultiSelect:
+                    this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
+                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
+                    break;
+
+                case DriveDisplayMode.CloudDrive:
                 default:
-                {
                     this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
                     break;
-                }
             }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {            
+            if(App.AppEvent == ApplicationEvent.Activated)
+            {                
+                App.AppEvent = ApplicationEvent.None;
+                return;
+            }
+
+            ChangeMenu();
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
@@ -82,6 +100,7 @@ namespace MegaApp.Pages
                 if (!App.CloudDrive.NoFolderUpAction)
                 {
                     App.CloudDrive.GoFolderUp();
+                    Task.Run(() => App.CloudDrive.LoadNodes());
                     _navParam = NavigationParameter.Browsing;
                 }
                 else
@@ -138,6 +157,7 @@ namespace MegaApp.Pages
             }
             
             base.OnNavigatedTo(e);
+            App.AppEvent = ApplicationEvent.None;
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -248,9 +268,9 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
-
+            
+            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
+            
             if(App.CloudDrive.FocusedNode != null)
                 App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
             App.CloudDrive.FocusedNode = null;
@@ -267,8 +287,7 @@ namespace MegaApp.Pages
             LstCloudDrive.IsCheckModeActive = false;
             LstCloudDrive.CheckedItems.Clear();
 
-            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+            ChangeMenu();
         }
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
@@ -291,9 +310,8 @@ namespace MegaApp.Pages
                 App.CloudDrive.SelectedNodes.Clear();
             }
 
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
-            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
+            ChangeMenu();
         }
 
         private void OnPreferencesClick(object sender, EventArgs e)
@@ -309,11 +327,11 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
-            this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
-            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
+                        
+            App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
             App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
+            ChangeMenu();
         }
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -375,15 +393,16 @@ namespace MegaApp.Pages
             {
                 if(e.TappedItem != null)
                     LstCloudDrive.CheckedItems.Add(e.TappedItem);
-                this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
-                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
+                App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
+                App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MultiSelect;
             }
             else
             {
                 LstCloudDrive.CheckedItems.Clear();
-                this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-                App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+                App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;                
             }
+
+            ChangeMenu();
         }
 
         private void OnMultiSelectClick(object sender, EventArgs e)
@@ -440,6 +459,32 @@ namespace MegaApp.Pages
             App.CloudDrive.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
         }
+
+        private void OnCloudDriveClick(object sender, EventArgs e)
+        {
+            NodeViewModel node = new NodeViewModel(App.MegaSdk, App.MegaSdk.getRootNode());
+            App.CloudDrive.CurrentRootNode = node;
+            App.CloudDrive.BreadCrumbNode = node;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+
+            this.BreadCrumbControl.RootName = "Cloud Drive";
+
+            Task.Run(() => App.CloudDrive.LoadNodes());
+            ChangeMenu();
+        }
+
+        private void OnRubbishBinClick(object sender, EventArgs e)
+        {           
+            NodeViewModel node = new NodeViewModel(App.MegaSdk, App.MegaSdk.getRubbishNode());                        
+            App.CloudDrive.CurrentRootNode = node;
+            App.CloudDrive.BreadCrumbNode = node;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.RubbishBin;
+
+            this.BreadCrumbControl.RootName = "Rubbish Bin";
+
+            Task.Run(() => App.CloudDrive.LoadNodes());
+            ChangeMenu();
+        }        
     }
     
 }
