@@ -462,7 +462,7 @@ namespace MegaApp.Pages
 
         private void OnCloudDriveClick(object sender, EventArgs e)
         {
-            NodeViewModel node = new NodeViewModel(App.MegaSdk, App.MegaSdk.getRootNode());
+            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getRootNode());
             App.CloudDrive.CurrentRootNode = node;
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
@@ -474,8 +474,8 @@ namespace MegaApp.Pages
         }
 
         private void OnRubbishBinClick(object sender, EventArgs e)
-        {           
-            NodeViewModel node = new NodeViewModel(App.MegaSdk, App.MegaSdk.getRubbishNode());                        
+        {
+            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getRubbishNode());                        
             App.CloudDrive.CurrentRootNode = node;
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.RubbishBin;
