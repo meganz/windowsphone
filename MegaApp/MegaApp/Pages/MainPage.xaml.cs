@@ -159,8 +159,7 @@ namespace MegaApp.Pages
             {
                 if (!App.CloudDrive.NoFolderUpAction)
                 {
-                    App.CloudDrive.GoFolderUp();
-                    //Task.Run(() => App.CloudDrive.LoadNodes());
+                    App.CloudDrive.GoFolderUp();                    
                     _navParam = NavigationParameter.Browsing;
                 }
                 else
@@ -273,6 +272,7 @@ namespace MegaApp.Pages
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
+
         private void OnRefreshClick(object sender, EventArgs e)
         {
             //MessageBox.Show(LstCloudDrive.RealizedItems.Length.ToString());
@@ -284,7 +284,11 @@ namespace MegaApp.Pages
                 NodeService.GetFiles(App.CloudDrive.ChildNodes,
                 Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory)));
             App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
+
+            if (App.CloudDrive.DriveDisplayMode == DriveDisplayMode.MultiSelect)
+                App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
         }
+
         private void OnAddFolderClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
@@ -499,9 +503,9 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             if (!App.CloudDrive.MultipleRemove()) return;
-            
-            this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
+
+            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
+            ChangeMenu();
         }
 
         private void OnDisableMultiSelectClick(object sender, System.EventArgs e)
