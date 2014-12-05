@@ -92,7 +92,7 @@ namespace MegaApp.MegaApi
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             // TODO REFACTOR!!
-            _cloudDriveViewModel.LoadNodes();
+            //_cloudDriveViewModel.LoadNodes();
         }
 
         #endregion

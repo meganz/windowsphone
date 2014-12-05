@@ -37,11 +37,29 @@ namespace MegaApp.Services
 
         public void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel, bool isMultiRemove)
         {
-            if(!isMultiRemove)
-                if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, nodeViewModel.Name),
-                    AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+            // Looking for the absolute parent of the node to remove
+            MNode _absoluteParentNode, _parentNode;
+            _absoluteParentNode = nodeViewModel.GetMegaNode();
+            while ((_parentNode = megaSdk.getParentNode(_absoluteParentNode)) != null)
+                _absoluteParentNode = _parentNode;
 
-            megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove));
+            // If the node is on the rubbish bin, delete it forever
+            if (_absoluteParentNode.getType() == MNodeType.TYPE_RUBBISH)
+            {
+                if(!isMultiRemove)
+                    if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, nodeViewModel.Name),
+                        AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+
+                megaSdk.remove(nodeViewModel.GetMegaNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType()));
+            }
+            else // If the node is on the Cloud Drive, move it to the rubbish bin
+            {
+                if(!isMultiRemove)
+                    if (MessageBox.Show(String.Format(AppMessages.MoveToRubbishBinQuestion, nodeViewModel.Name),
+                        AppMessages.MoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+
+                megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType()));
+            }   
         }
 
         public void Move(MegaSDK megaSdk, NodeViewModel nodeViewModel, NodeViewModel newParentNode)
