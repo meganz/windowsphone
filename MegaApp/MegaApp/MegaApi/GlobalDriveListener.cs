@@ -135,6 +135,12 @@ namespace MegaApp.MegaApi
                         }
                     }
                 }
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    try { ((FolderNodeViewModel)_cloudDriveViewModel.CurrentRootNode).SetFolderInfo(); }
+                    catch (Exception) { }
+                });
             }
             catch (Exception)
             {

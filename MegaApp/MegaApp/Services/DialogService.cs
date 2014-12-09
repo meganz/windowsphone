@@ -221,7 +221,7 @@ namespace MegaApp.Services
 
             var fileAscButton = new Button()
             {
-                Content = "files ascending"
+                Content = "Files type/name ascending"
             };
             fileAscButton.Tap += (sender, args) =>
             {
@@ -232,7 +232,7 @@ namespace MegaApp.Services
 
             var fileDescButton = new Button()
             {
-                Content = "files descending"
+                Content = "Files type/name descending"
             };
             fileDescButton.Tap += (sender, args) =>
             {
@@ -243,7 +243,7 @@ namespace MegaApp.Services
 
             var sizeAscButton = new Button()
             {
-                Content = "size ascending"
+                Content = "Size ascending"
             };
             sizeAscButton.Tap += (sender, args) =>
             {
@@ -254,7 +254,7 @@ namespace MegaApp.Services
 
             var sizeDescButton = new Button()
             {
-                Content = "size descending"
+                Content = "Size descending"
             };
             sizeDescButton.Tap += (sender, args) =>
             {
@@ -265,7 +265,7 @@ namespace MegaApp.Services
 
             var modificationAscButton = new Button()
             {
-                Content = "modification date ascending"
+                Content = "Modification date ascending"
             };
             modificationAscButton.Tap += (sender, args) =>
             {
@@ -276,7 +276,7 @@ namespace MegaApp.Services
 
             var modificationDescButton = new Button()
             {
-                Content = "modification date descending"
+                Content = "Modification date descending"
             };
             modificationDescButton.Tap += (sender, args) =>
             {
@@ -287,7 +287,7 @@ namespace MegaApp.Services
 
             var alphaAscButton = new Button()
             {
-                Content = "alphabetical ascending"
+                Content = "Alphabetical ascending"
             };
             alphaAscButton.Tap += (sender, args) =>
             {
@@ -298,7 +298,7 @@ namespace MegaApp.Services
 
             var alphaDescButton = new Button()
             {
-                Content = "alphabetical descending"
+                Content = "Alphabetical descending"
             };
             alphaDescButton.Tap += (sender, args) =>
             {
