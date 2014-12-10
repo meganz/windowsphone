@@ -123,8 +123,17 @@ namespace MegaApp.Models
 
             if (count < 1) return false;
 
-            if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion,count), 
-                AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+            if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
+            {
+                if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion, count),
+                    AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+            }
+            else
+            {
+                if (MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
+                    AppMessages.MultiMoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+            }
+                
 
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
             {
@@ -133,8 +142,16 @@ namespace MegaApp.Models
 
             this.IsMultiSelectActive = false;
 
-            MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
-                AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+            if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
+            {
+                MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
+                    AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+            }
+            else
+            {
+                MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
+                    AppMessages.MultiMoveToRubbishBinSucces_Title, MessageBoxButton.OK);
+            }
 
             return true;
         }
