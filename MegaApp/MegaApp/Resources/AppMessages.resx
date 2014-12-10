@@ -270,7 +270,7 @@
     <value>Remove failed</value>
   </data>
   <data name="RemoveNodeSucces" xml:space="preserve">
-    <value>Item successful removed to rubbish bin</value>
+    <value>Item successful removed</value>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
     <value>Item removed</value>
@@ -337,9 +337,39 @@
     <value>Remove items?</value>
   </data>
   <data name="MultiRemoveSucces" xml:space="preserve">
-    <value>{0} Items removed to rubbish bin</value>
+    <value>{0} Items removed</value>
   </data>
   <data name="MultiRemoveSucces_Title" xml:space="preserve">
     <value>Items removed</value>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>Failed to move item to rubbish bin. Please try again</value>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>Move to rubbish bin failed</value>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Are you sure you want to move {0} to rubbish bin?</value>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Move to rubbish bin?</value>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>Item successful moved to rubbish bin</value>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>Item moved</value>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Are you sure you want to move to rubbish bin {0} items?</value>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Move items?</value>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>{0} Items moved to rubbish bin</value>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>Items moved</value>
   </data>
 </root>

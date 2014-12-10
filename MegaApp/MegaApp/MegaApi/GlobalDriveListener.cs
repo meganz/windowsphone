@@ -31,6 +31,9 @@ namespace MegaApp.MegaApi
                 {
                     MNode megaNode = nodes.get(i);
 
+                    // Don't process the node, because it already has been processed
+                    //if (megaNode.getTag() != 0) continue;
+
                     if (megaNode == null) return;
 
                     if (megaNode.isRemoved())
@@ -39,8 +42,11 @@ namespace MegaApp.MegaApi
                             n => n.Handle.Equals(megaNode.getHandle()));
                         if (nodeToRemove != null)
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(
-                                () => _cloudDriveViewModel.ChildNodes.Remove(nodeToRemove));
+                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                {
+                                    try{ _cloudDriveViewModel.ChildNodes.Remove(nodeToRemove); }
+                                    catch (Exception) { }
+                                });
                         }
                         else
                         {
@@ -49,7 +55,11 @@ namespace MegaApp.MegaApi
                             NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                                 n => n.Handle.Equals(parentNode.getHandle()));
                             if (nodeToUpdate == null) return;
-                            Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(parentNode));
+                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                {
+                                    try { nodeToUpdate.Update(parentNode); }
+                                    catch (Exception) { }
+                                });
                         }
                     }
                     else
@@ -61,12 +71,19 @@ namespace MegaApp.MegaApi
                             MNode parentNode = api.getParentNode(megaNode);
                             if (_cloudDriveViewModel.CurrentRootNode.Handle.Equals(parentNode.getHandle()))
                             {
-                                Deployment.Current.Dispatcher.BeginInvoke(() => nodeToUpdate.Update(megaNode));
+                                Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                    {
+                                        try { nodeToUpdate.Update(megaNode); }
+                                        catch (Exception) { }
+                                    });
                             }
                             else
                             {
-                                Deployment.Current.Dispatcher.BeginInvoke(
-                                () => _cloudDriveViewModel.ChildNodes.Remove(nodeToUpdate));
+                                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                    {
+                                        try { _cloudDriveViewModel.ChildNodes.Remove(nodeToUpdate); }
+                                        catch (Exception) { }
+                                    });
                             }
                         }
                         else
@@ -81,24 +98,36 @@ namespace MegaApp.MegaApi
 
                                     if (insertIndex > 0)
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                            _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode,
-                                            _cloudDriveViewModel.ChildNodes)));
+                                            {
+                                                try { _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode, _cloudDriveViewModel.ChildNodes)); }
+                                                catch (Exception) { }
+                                            });
                                 }
                                 else
                                 {
                                     NodeViewModel folderNodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                                          n => n.Handle.Equals(parentNode.getHandle()));
                                     if (folderNodeToUpdate != null)
-                                        Deployment.Current.Dispatcher.BeginInvoke(() => folderNodeToUpdate.Update(parentNode));
+                                    {
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                            {
+                                                try { folderNodeToUpdate.Update(parentNode); }
+                                                catch (Exception){ }
+                                            });
+                                    }                                        
                                     else
                                     {
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                                         {
-                                            foreach (var node in _cloudDriveViewModel.ChildNodes.Where(
-                                                n => n is FolderNodeViewModel).Cast<FolderNodeViewModel>())
+                                            try
                                             {
-                                                node.SetFolderInfo();
+                                                foreach (var node in _cloudDriveViewModel.ChildNodes.Where(
+                                                n => n is FolderNodeViewModel).Cast<FolderNodeViewModel>())
+                                                {
+                                                    node.SetFolderInfo();
+                                                }
                                             }
+                                            catch (Exception) { }                                            
                                         });
                                     }
                                 }
@@ -106,6 +135,12 @@ namespace MegaApp.MegaApi
                         }
                     }
                 }
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    try { ((FolderNodeViewModel)_cloudDriveViewModel.CurrentRootNode).SetFolderInfo(); }
+                    catch (Exception) { }
+                });
             }
             catch (Exception)
             {
