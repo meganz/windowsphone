@@ -19,18 +19,27 @@ namespace MegaApp.MegaApi
     class RemoveNodeRequestListener: BaseRequestListener
     {
         private NodeViewModel _nodeViewModel;
-        private bool _isMultiRemove;        
-        public RemoveNodeRequestListener(NodeViewModel nodeViewModel, bool isMultiRemove)
+        private bool _isMultiRemove;
+        private MNodeType _nodeType;
+
+        public RemoveNodeRequestListener(NodeViewModel nodeViewModel, bool isMultiRemove, MNodeType nodeType)
         {
             this._nodeViewModel = nodeViewModel;
             this._isMultiRemove = isMultiRemove;
+            this._nodeType = nodeType;
         }
 
         #region Base Properties
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.RemoveNode; }
+            get 
+            {
+                if (_nodeType == MNodeType.TYPE_RUBBISH)
+                    return ProgressMessages.RemoveNode;
+                else
+                    return ProgressMessages.MoveNode;
+            }                
         }
 
         protected override bool ShowProgressMessage
@@ -40,12 +49,24 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.RemoveNodeFailed; }
+            get 
+            {
+                if (_nodeType == MNodeType.TYPE_RUBBISH)
+                    return AppMessages.RemoveNodeFailed;
+                else
+                    return AppMessages.MoveToRubbishBinFailed;                    
+            }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.RemoveNodeFailed_Title; }
+            get 
+            {
+                if (_nodeType == MNodeType.TYPE_RUBBISH)
+                    return AppMessages.RemoveNodeFailed_Title;
+                else
+                    return AppMessages.MoveToRubbishBinFailed_Title;                    
+            }
         }
 
         protected override bool ShowErrorMessage
@@ -54,13 +75,25 @@ namespace MegaApp.MegaApi
         }
 
         protected override string SuccessMessage
-        {
-            get { return AppMessages.RemoveNodeSucces; }
+        {            
+            get 
+            {
+                if (_nodeType == MNodeType.TYPE_RUBBISH)
+                    return AppMessages.RemoveNodeSucces;
+                else
+                    return AppMessages.MoveToRubbishBinSuccess;                    
+            }
         }
 
         protected override string SuccessMessageTitle
         {
-            get { return AppMessages.RemoveNodeSuccess_Title; }
+            get 
+            {
+                if (_nodeType == MNodeType.TYPE_RUBBISH)
+                    return AppMessages.RemoveNodeSuccess_Title;
+                else
+                    return AppMessages.MoveToRubbishBinSuccess_Title;                    
+            }
         }
 
         protected override bool ShowSuccesMessage
@@ -92,17 +125,47 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                if (ShowSuccesMessage && !_isMultiRemove)
+                    Deployment.Current.Dispatcher.BeginInvoke(
+                        () => MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK));
+
+                if (ActionOnSucces)
+                    OnSuccesAction(api, request);
+
+                if (NavigateOnSucces)
+                    Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
+            }
+            else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+                if (ShowErrorMessage)
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
+
+        }
+
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            if (_nodeViewModel.ParentCollection != null)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                if (_nodeViewModel.ParentCollection is ObservableCollection<NodeViewModel>)
+                try 
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        ((ObservableCollection<NodeViewModel>) _nodeViewModel.ParentCollection).Remove(_nodeViewModel));
+                    if ((_nodeViewModel != null) && (_nodeViewModel.ParentCollection != null))
+                    {
+                        if (_nodeViewModel.ParentCollection is ObservableCollection<NodeViewModel>)
+                        {
+                            ((ObservableCollection<NodeViewModel>)_nodeViewModel.ParentCollection).Remove(_nodeViewModel);
+                        }
+                    }
+
+                    _nodeViewModel = null;
                 }
-            }
-            _nodeViewModel = null;
+                catch (Exception) { }
+            });
         }
 
         #endregion
