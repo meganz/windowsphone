@@ -8,12 +8,14 @@ using MegaApp.Services;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
+using Windows.Networking.Connectivity;
 using Windows.Storage;
 
 namespace MegaApp
@@ -27,6 +29,8 @@ namespace MegaApp
         public static RadPhoneApplicationFrame RootFrame { get; private set; }
 
         public static ApplicationEvent AppEvent { get; set; }
+        
+        public static String IpAddress { get; set; }
 
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
@@ -77,7 +81,7 @@ namespace MegaApp
             diagnostics.Init();
 
             // Subscribe to the NetworkAvailabilityChanged event
-            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);            
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -86,6 +90,7 @@ namespace MegaApp
         {
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
+            CheckChangesIP();
             AppEvent = ApplicationEvent.Lauching;
         }
 
@@ -95,6 +100,7 @@ namespace MegaApp
         {
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
+            CheckChangesIP();
             AppEvent = ApplicationEvent.Activated;
         }
 
@@ -113,24 +119,45 @@ namespace MegaApp
         }
 
         // Code to execute when the application detects a Network change.
-        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        private static void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
         {
-            if (DeviceNetworkInformation.IsNetworkAvailable) 
-            { 
-            
-            }            
-
             switch (e.NotificationType)
             {
-                case NetworkNotificationType.InterfaceConnected:
-                    break;
+                case NetworkNotificationType.InterfaceConnected:                    
                 case NetworkNotificationType.InterfaceDisconnected:
+                    CheckChangesIP();
                     break;
-                case NetworkNotificationType.CharacteristicUpdate:
-                    break;
+                case NetworkNotificationType.CharacteristicUpdate:                    
                 default:
                     break;
             }
+        }
+
+        // Code to detect if the IP has changed and refresh all open connections on this case
+        private static void CheckChangesIP()
+        {            
+            // Find the IP of all network devices
+            List<String> ipAddresses = new List<String>();
+            var hostnames = NetworkInformation.GetHostNames();
+            foreach (var hn in hostnames)
+            {   
+                if (hn.IPInformation != null && hn.Type == Windows.Networking.HostNameType.Ipv4)
+                {
+                    string ipAddress = hn.DisplayName;
+                    ipAddresses.Add(ipAddress);
+                }
+            }
+
+            // If no network device is connected, do nothing
+            if (ipAddresses.Count < 1)
+                return;
+            
+            // If the primary IP has changed
+            if (ipAddresses[0] != IpAddress)
+            {
+                MegaSdk.reconnect();        // Refresh all open connections
+                IpAddress = ipAddresses[0]; // Storage the new primary IP address
+            }            
         }
 
         // Code to execute if a navigation fails
