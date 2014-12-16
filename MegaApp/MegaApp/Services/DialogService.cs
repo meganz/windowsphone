@@ -139,6 +139,7 @@ namespace MegaApp.Services
             hubSelfie.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
+                cloudDrive.NoFolderUpAction = true;
                 NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
             };
 
