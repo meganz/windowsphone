@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -324,6 +326,168 @@ namespace MegaApp.Services
 
 
             sortRadWindow.IsOpen = true;
+        }
+
+        public static void ShowPasswordDialog(bool isChange, SettingsViewModel settingsViewModel)
+        {
+            var openAnimation = new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.TopIn
+            };
+
+            var closeAnimation = new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.BottomOut
+            };
+
+            var passwordRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = openAnimation,
+                CloseAnimation = closeAnimation
+            };
+
+            var passwordStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(12)
+            };
+
+            var passwordButtonsGrid = new Grid()
+            {
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+            };
+            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+
+            var titleLabel = new TextBlock()
+            {
+                Margin = new Thickness(12),
+                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])
+            };
+            passwordStackPanel.Children.Add(titleLabel);
+            
+            NumericPasswordBox currentPassword = null;
+
+            if (isChange)
+            {
+                titleLabel.Text = "Change password";
+                currentPassword = new NumericPasswordBox()
+                {
+                    Watermark = "current password",
+                    ClearButtonVisibility = Visibility.Visible
+                };
+                passwordStackPanel.Children.Add(currentPassword);
+            }
+            else
+            {
+                titleLabel.Text = "Make a password";
+            }
+
+            var password = new NumericPasswordBox()
+            {
+                Watermark = UiResources.PasswordWatermark,
+                ClearButtonVisibility = Visibility.Visible
+            };
+
+
+            var confirmPassword = new NumericPasswordBox()
+            {
+                Watermark = UiResources.ConfirmPasswordWatermark,
+                ClearButtonVisibility = Visibility.Visible
+            };
+
+            var confirmButton = new Button()
+            {
+                Content = UiResources.DoneButton,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            confirmButton.Tap += (sender, args) =>
+            {
+                if (isChange)
+                {
+                    if (currentPassword != null)
+                    {
+                        string hashValue = CryptoService.HashData(currentPassword.Password);
+
+                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPassword)))
+                        {
+                            MessageBox.Show("Current password does not match", "Current password no match",
+                                MessageBoxButton.OK);
+                            return;
+                        }
+                    }
+
+                }
+
+                if (password.Password.Length < 4)
+                {
+                    MessageBox.Show("Password must be at least 4 digits", "Password too short",
+                                MessageBoxButton.OK);
+                    return;
+                }
+
+                if (!password.Password.Equals(confirmPassword.Password))
+                {
+                    MessageBox.Show(AppMessages.PasswordsDoNotMatch, AppMessages.PasswordsDoNotMatch_Title,
+                        MessageBoxButton.OK);
+                    return;
+                }
+               
+                SettingsService.SaveSetting(SettingsResources.UserPassword, CryptoService.HashData(password.Password));
+                SettingsService.SaveSetting(SettingsResources.UserPasswordIsEnabled, true);
+
+                passwordRadWindow.IsOpen = false;
+            };
+
+            var cancelButton = new Button()
+            {
+                Content = UiResources.CancelButton,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            cancelButton.Tap += (sender, args) =>
+            {
+                if (!isChange)
+                {
+                    settingsViewModel.PasswordIsEnabled = false;
+                }
+                passwordRadWindow.IsOpen = false;
+            };
+
+
+            passwordStackPanel.Children.Add(password);
+            passwordStackPanel.Children.Add(confirmPassword);
+
+            passwordButtonsGrid.Children.Add(confirmButton);
+            passwordButtonsGrid.Children.Add(cancelButton);
+            Grid.SetColumn(confirmButton, 0);
+            Grid.SetColumn(cancelButton, 1);
+
+            var grid = new Grid()
+            {
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch
+            };
+
+            grid.Children.Add(passwordStackPanel);
+            grid.Children.Add(passwordButtonsGrid);
+
+            passwordRadWindow.Content = grid;
+      
+            passwordRadWindow.IsOpen = true;
         }
     }
 }

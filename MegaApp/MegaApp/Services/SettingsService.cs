@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using MegaApp.Resources;
@@ -21,12 +22,39 @@ namespace MegaApp.Services
 
             settings.Save();
         }
+        public static void SecureSaveSetting(string key, string value)
+        {
+            var settings = IsolatedStorageSettings.ApplicationSettings;
+
+            if (settings.Contains(key))
+                settings[key] = CryptoService.EncryptData(value);
+            else
+                settings.Add(key, CryptoService.EncryptData(value));
+
+            settings.Save();
+        }
+
         public static T LoadSetting<T>(string key, T defaultValue)
         {
             var settings = IsolatedStorageSettings.ApplicationSettings;
 
             if (settings.Contains(key))
                 return (T)settings[key];
+            else
+                return defaultValue;
+        }
+
+        public static string SecureLoadSetting(string key)
+        {
+            return SecureLoadSetting(key, null);
+        }
+
+        public static string SecureLoadSetting(string key, string defaultValue)
+        {
+            var settings = IsolatedStorageSettings.ApplicationSettings;
+
+            if (settings.Contains(key))
+                return CryptoService.DecryptData((string)settings[key]);
             else
                 return defaultValue;
         }
@@ -58,6 +86,8 @@ namespace MegaApp.Services
             //SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
             SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
             SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
+            SettingsService.DeleteSetting(SettingsResources.UserPasswordIsEnabled);
+            SettingsService.DeleteSetting(SettingsResources.UserPassword);
         }
     }
 }

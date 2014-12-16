@@ -15,6 +15,12 @@ namespace MegaApp.Services
     {
         public static Type PreviousPage { get; set; }
 
+        public static void GoBack()
+        {
+            if(((PhoneApplicationFrame)Application.Current.RootVisual).CanGoBack)
+                ((PhoneApplicationFrame)Application.Current.RootVisual).GoBack();
+        }
+
         public static void NavigateTo(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
         {
             PreviousPage = navPage;

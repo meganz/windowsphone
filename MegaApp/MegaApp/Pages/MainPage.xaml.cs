@@ -197,6 +197,12 @@ namespace MegaApp.Pages
                     //App.CloudDrive.ImportLink(NavigationContext.QueryString["link"]);
                     break;
                 }
+                case NavigationParameter.PasswordLogin:
+                {
+                    NavigationService.RemoveBackEntry();
+                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                    break;
+                }
                 case NavigationParameter.Unknown:
                 {
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
@@ -204,13 +210,17 @@ namespace MegaApp.Pages
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                         return;
                     }
-                    else
+                    
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled))
                     {
-                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-
-                        if (!isAlreadyOnline)
-                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
+                        return;
                     }
+
+                    bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+
+                    if (!isAlreadyOnline)
+                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     break;
                 }
             }
@@ -221,6 +231,13 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
+            if (MainPivot.SelectedItem == MenuPivot)
+            {
+                MainPivot.SelectedItem = DrivePivot;
+                e.Cancel = true;
+                return;
+            }
+
             if(!NavigationService.CanGoBack)
             {
                 if (App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
@@ -556,6 +573,12 @@ namespace MegaApp.Pages
             var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
             if (advancedMenuItem == null) return;
             advancedMenuItem.TapAction.Invoke();
+        }
+
+        private void OnPivotSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            ApplicationBar.IsVisible = MainPivot.SelectedItem == DrivePivot;
+
         }        
     }
     

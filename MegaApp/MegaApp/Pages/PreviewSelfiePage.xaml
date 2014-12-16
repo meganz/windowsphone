@@ -1,11 +1,12 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="MegaApp.Pages.PhotoCameraPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:SlideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives" xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    x:Class="MegaApp.Pages.PreviewSelfiePage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -14,19 +15,13 @@
     shell:SystemTray.IsVisible="false">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-         <Canvas x:Name="VideoCanvas">
-            <Canvas.Background>
-                <VideoBrush x:Name="videoBrush"/>
-            </Canvas.Background>
-			<Rectangle x:Name="FocusIndicator" Stroke='Red' Opacity="0.7" Width="80" Height="80" StrokeThickness="5" Visibility="Collapsed"/>
-		 </Canvas>
-    </Grid>
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<SlideView:PanAndZoomImage x:Name="PanAndZoomImage" Source="{Binding Selfie}"/>
+	</Grid>
 
 	<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton Text="capture" IconUri="/Assets/AppBar/feature.camera.png" IsEnabled="False" Click="OnCaptureClick"/>     
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
+		<shell:ApplicationBar>				
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.upload.png" Text="upload" Click="OnUploadClick" />			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

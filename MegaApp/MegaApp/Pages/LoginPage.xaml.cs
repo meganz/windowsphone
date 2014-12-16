@@ -1,4 +1,6 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
+using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using Microsoft.Phone.Controls;
@@ -34,6 +36,13 @@ namespace MegaApp.Pages
         private void OnLoginClick(object sender, System.EventArgs e)
         {
             _loginViewModel.DoLogin();
+        }
+
+        private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter) return;
+            var control = sender as Control;
+            if (control != null) control.TabToNextControl((Panel)control.Parent, this);
         }
     }
 }
