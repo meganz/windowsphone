@@ -209,7 +209,24 @@ namespace MegaApp.Pages
                         bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
 
                         if (!isAlreadyOnline)
-                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        {
+                            try
+                            {
+                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                                else
+                                {
+                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    return;
+                                }
+                            }
+                            catch (System.ArgumentNullException)
+                            {
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                return;
+                            }
+                            
+                        }                            
                     }
                     break;
                 }

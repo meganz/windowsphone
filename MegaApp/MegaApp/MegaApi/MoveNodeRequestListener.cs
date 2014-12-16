@@ -93,8 +93,12 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-           Deployment.Current.Dispatcher.BeginInvoke(() =>
-               ((ObservableCollection<NodeViewModel>)_rootNode.ChildCollection).Add(_nodeToMove));
+            // ALREADY MOVED ON THE GlobalDriveListener
+            /*Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    try { ((ObservableCollection<NodeViewModel>)_rootNode.ChildCollection).Add(_nodeToMove); }
+                    catch (Exception) { }
+                }); */
         }
 
         #endregion
