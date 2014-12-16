@@ -781,7 +781,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export current image to the camere roll?.
+        ///   Busca una cadena traducida similar a Export current image to the camera roll?.
         /// </summary>
         internal static string SaveImageQuestion {
             get {
