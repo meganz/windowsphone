@@ -217,10 +217,28 @@ namespace MegaApp.Pages
                         return;
                     }
 
-                    bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
 
-                    if (!isAlreadyOnline)
-                        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        if (!isAlreadyOnline)
+                        {
+                            try
+                            {
+                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                                else
+                                {
+                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    return;
+                                }
+                            }
+                            catch (System.ArgumentNullException)
+                            {
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                return;
+                            }
+                            
+                        }                            
+                    }
                     break;
                 }
             }
@@ -573,7 +591,7 @@ namespace MegaApp.Pages
             var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
             if (advancedMenuItem == null) return;
             advancedMenuItem.TapAction.Invoke();
-        }
+        }        
 
         private void OnPivotSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
