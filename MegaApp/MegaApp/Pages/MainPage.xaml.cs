@@ -217,32 +217,32 @@ namespace MegaApp.Pages
                         return;
                     }
 
-                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+                    bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
 
-                        if (!isAlreadyOnline)
+                    if (!isAlreadyOnline)
+                    {
+                        try
                         {
-                            try
-                            {
-                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
-                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
-                                else
-                                {
-                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-                                    return;
-                                }
-                            }
-                            catch (System.ArgumentNullException)
+                            if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                                App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                            else
                             {
                                 NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                                 return;
                             }
+                        }
+                        catch (System.ArgumentNullException)
+                        {
+                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                            return;
+                        }
                             
-                        }                            
-                    }
+                    }                            
+                    
                     break;
                 }
             }
-            
+
             base.OnNavigatedTo(e);
             App.AppEvent = ApplicationEvent.None;
         }
