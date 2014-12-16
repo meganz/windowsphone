@@ -141,7 +141,7 @@ namespace MegaApp
             var hostnames = NetworkInformation.GetHostNames();
             foreach (var hn in hostnames)
             {   
-                if (hn.IPInformation != null && hn.Type == Windows.Networking.HostNameType.Ipv4)
+                if (hn.IPInformation != null)// && hn.Type == Windows.Networking.HostNameType.Ipv4)
                 {
                     string ipAddress = hn.DisplayName;
                     ipAddresses.Add(ipAddress);
@@ -150,7 +150,10 @@ namespace MegaApp
 
             // If no network device is connected, do nothing
             if (ipAddresses.Count < 1)
+            {
+                IpAddress = null;
                 return;
+            }                
             
             // If the primary IP has changed
             if (ipAddresses[0] != IpAddress)

@@ -91,7 +91,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            // TODO REFACTOR!!
+            // ALREADY ADDED ON THE GlobalDriveListener
             //_cloudDriveViewModel.LoadNodes();
         }
 

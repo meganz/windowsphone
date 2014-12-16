@@ -432,69 +432,77 @@ namespace MegaApp.Models
             // Get the nodes from the MEGA SDK
             MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
                 UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
-            
+
             // Retrieve the size of the list to save time in the loops
             int listSize = nodeList.size();
 
-            // Display a minor indication for the user that the app is busy
-            if (Deployment.Current.Dispatcher.CheckAccess())
-                ProgessService.SetProgressIndicator(true, String.Empty);
-            else
+            try
             {
-                var autoResetEvent = new AutoResetEvent(false);
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
+                // Display a minor indication for the user that the app is busy
+                if (Deployment.Current.Dispatcher.CheckAccess())
                     ProgessService.SetProgressIndicator(true, String.Empty);
-                    autoResetEvent.Set();
-                });
-                autoResetEvent.WaitOne();
-            }
-            // Clear the child nodes to make a fresh start
-            if (Deployment.Current.Dispatcher.CheckAccess())
-                this.ChildNodes.Clear();
-            else
-            {
-                var autoResetEvent = new AutoResetEvent(false);
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                else
                 {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        ProgessService.SetProgressIndicator(true, String.Empty);
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
+
+                // Clear the child nodes to make a fresh start
+                if (Deployment.Current.Dispatcher.CheckAccess())
                     this.ChildNodes.Clear();
-                    autoResetEvent.Set();
-                });
-                autoResetEvent.WaitOne();
-            }
-
-            // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
-            if (Deployment.Current.Dispatcher.CheckAccess())
-                 CalculateBreadCrumbs(this.CurrentRootNode);
-            else
-            {
-                var autoResetEvent = new AutoResetEvent(false);
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                else
                 {
-                    CalculateBreadCrumbs(this.CurrentRootNode);
-                    autoResetEvent.Set();
-                });
-                autoResetEvent.WaitOne();
-            }
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        try { this.ChildNodes.Clear(); }
+                        catch (Exception) { }
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
 
-            // Set the correct view for the main drive. Do this after the childs are cleared to speed things up
-            if (Deployment.Current.Dispatcher.CheckAccess())
-                SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
-            else
-            {
-                var autoResetEvent = new AutoResetEvent(false);
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
+                if (Deployment.Current.Dispatcher.CheckAccess())
+                     CalculateBreadCrumbs(this.CurrentRootNode);
+                else
                 {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        try { CalculateBreadCrumbs(this.CurrentRootNode); }
+                        catch (Exception) { }
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
+
+                // Set the correct view for the main drive. Do this after the childs are cleared to speed things up
+                if (Deployment.Current.Dispatcher.CheckAccess())
                     SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
-                    autoResetEvent.Set();
-                });
-                autoResetEvent.WaitOne();
+                else
+                {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        try { SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name)); }
+                        catch (Exception) { }
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
+
+                // Create the possibility to cancel the loadnodes task
+                cancellationTokenSource = new CancellationTokenSource();
+                cancellationToken = cancellationTokenSource.Token;
             }
-
-            // Create the possibility to cancel the loadnodes task
-            cancellationTokenSource = new CancellationTokenSource();
-            cancellationToken = cancellationTokenSource.Token;
-
+            catch (Exception) { }
+            
             Task.Factory.StartNew(() =>
             {
                 //var stopwatch = new Stopwatch();
@@ -545,7 +553,8 @@ namespace MegaApp.Models
                             helperList.ForEach(n =>
                             {
                                 if (cancellationToken.IsCancellationRequested) return;
-                                ChildNodes.Add(n);
+                                try { ChildNodes.Add(n); }
+                                catch (Exception) { }
                             });
                             waitHandleNodes.Set();
                         });
@@ -570,12 +579,14 @@ namespace MegaApp.Models
                             helperList.ForEach(n =>
                             {
                                 if (cancellationToken.IsCancellationRequested) return;
-                                ChildNodes.Add(n);
+                                try { ChildNodes.Add(n); }
+                                catch (Exception) { }
                             });
                             waitHandleProgress.Set();
                         });
                         waitHandleProgress.WaitOne();
-                        helperList.Clear();
+                        try { helperList.Clear(); }
+                        catch (Exception) { }
                     }
                 }
 
@@ -585,7 +596,8 @@ namespace MegaApp.Models
                     helperList.ForEach(n =>
                     {
                         if (cancellationToken.IsCancellationRequested) return;
-                        ChildNodes.Add(n);
+                        try { ChildNodes.Add(n); }
+                        catch (Exception) { }
                     });
                     autoResetEvent.Set();
                 });
