@@ -95,5 +95,23 @@ namespace MegaApp.Resources {
                 return ResourceManager.GetString("UserMegaSession", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {4405AB87-B1B8-4AE1-A59D-68DC036E569F}.
+        /// </summary>
+        internal static string UserPassword {
+            get {
+                return ResourceManager.GetString("UserPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {564DED0B-7DAA-47FA-A02A-4E00ED38749E}.
+        /// </summary>
+        internal static string UserPasswordIsEnabled {
+            get {
+                return ResourceManager.GetString("UserPasswordIsEnabled", resourceCulture);
+            }
+        }
     }
 }

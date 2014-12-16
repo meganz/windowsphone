@@ -16,7 +16,7 @@ namespace MegaApp.Pages
 {
     public partial class SettingsPage : PhoneApplicationPage
     {
-        private readonly SettingsViewModel _settingsViewModel;
+        private SettingsViewModel _settingsViewModel;
 
         public SettingsPage()
         {
@@ -34,6 +34,10 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            if (NavigateService.PreviousPage == typeof (PasswordPage))
+                NavigationService.RemoveBackEntry();
+
             DebugPanel.DataContext = DebugService.DebugSettings;
         }
 

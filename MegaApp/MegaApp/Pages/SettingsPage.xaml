@@ -27,8 +27,8 @@
 			<TextBlock Text="settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="Portable User Interface"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export masterkey" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Margin="12,0,12,10"/>
-			<Grid Margin="0,0,0,10">
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export masterkey" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			<Grid Margin="0,0,0,40">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
@@ -36,16 +36,15 @@
 				<Button x:Name="BtnShareMasterKey" Content="share" Command="{Binding ShareMasterKeyCommand}" FontFamily="Portable User Interface"/>
 				<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
 			</Grid>
-			<StackPanel x:Name="DebugPanel" Margin="0,10" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Debug mode" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Margin="12,0,0,10"/>
-				<Grid x:Name="MemoryGrid" Margin="0,0,0,10">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="2*"/>
-						<ColumnDefinition/>
-					</Grid.ColumnDefinitions>
-					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Show memory statistics:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0,0,0"/>
-					<telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Content="" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}"/>					
-				</Grid>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			<StackPanel Margin="0,0,0,40">
+				<telerikPrimitives:RadToggleSwitch x:Name="BtnPasswordSwitch" VerticalAlignment="Center" Content="{Binding PasswordIsEnabledText}" IsChecked="{Binding PasswordIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
+				<Button x:Name="BtnChangePassword" Content="change password" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PasswordIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePasswordCommand}"/>
+			</StackPanel>
+			<StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="memory statistics" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				<telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
 			</StackPanel>
 		</StackPanel>
 

@@ -27,26 +27,26 @@
             <TextBlock Text="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<StackPanel x:Name="stackCreateAccount">
-        		<telerikPrimitives:RadTextBox x:Name="txtName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.NameWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Name, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-        		<telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-        		<telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-        		<telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType" Watermark="{Binding LocalizedUiResources.ConfirmPasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>
-        		<StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
-        			<CheckBox x:Name="chkTermsOfUse" Content="{Binding LocalizedUiResources.AgreeCreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}"/>
-        			<HyperlinkButton x:Name="btnTermsOfUse" Content="{Binding LocalizedUiResources.TermsOfUse, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}"/>
-        		</StackPanel>                
-        	</StackPanel>
+            <StackPanel x:Name="stackCreateAccount">
+                <telerikPrimitives:RadTextBox x:Name="txtName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.NameWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Name, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="0"/>
+                <telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="1" InputScope="EmailUserName"/>
+                <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True"/>
+                <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType" Watermark="{Binding LocalizedUiResources.ConfirmPasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="3"/>
+                <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
+                    <CheckBox x:Name="chkTermsOfUse" Content="{Binding LocalizedUiResources.AgreeCreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}" TabIndex="4"/>
+                    <HyperlinkButton x:Name="btnTermsOfUse" Content="{Binding LocalizedUiResources.TermsOfUse, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}"/>
+                </StackPanel>
+            </StackPanel>
         </ScrollViewer>
 
         <!--ContentPanel - place additional content here-->
 
     </Grid>
 
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="create account" Click="OnCreateAccountClick" />			
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="create account" Click="OnCreateAccountClick" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

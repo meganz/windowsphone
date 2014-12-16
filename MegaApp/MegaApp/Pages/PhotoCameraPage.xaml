@@ -9,21 +9,24 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Landscape" Orientation="LandscapeLeft"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="false">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Canvas x:Name="viewfinderCanvas" >
+         <Canvas x:Name="VideoCanvas">
             <Canvas.Background>
-                <VideoBrush x:Name="viewfinderBrush">
-                    <VideoBrush.RelativeTransform>
-                        <CompositeTransform x:Name="cameraViewBrushTransform" CenterX=".5" CenterY=".5" Rotation="-180" />
-                    </VideoBrush.RelativeTransform>
-                </VideoBrush>
+                <VideoBrush x:Name="videoBrush"/>
             </Canvas.Background>
-        </Canvas>
+			<Rectangle x:Name="FocusIndicator" Stroke='Red' Opacity="0.7" Width="80" Height="80" StrokeThickness="5" Visibility="Collapsed"/>
+		 </Canvas>
     </Grid>
+
+	<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton Text="capture" IconUri="/Assets/AppBar/feature.camera.png" IsEnabled="False" Click="OnCaptureClick"/>     
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
