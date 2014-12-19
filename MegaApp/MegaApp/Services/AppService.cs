@@ -12,6 +12,8 @@ namespace MegaApp.Services
 {
     static class AppService
     {
+        public static Resolutions CurrentResolution;
+
         public static string GetAppVersion()
         {
             var xmlReaderSettings = new XmlReaderSettings
