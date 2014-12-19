@@ -190,12 +190,12 @@
 				</StackPanel>
 				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,12,0">
 
+				<!-- VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" -->
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstCloudDrive" 				
 						ItemsSource="{Binding ChildNodes}"
 						ItemTap="OnItemTap"
-						ItemTemplateSelector="{Binding NodeTemplateSelector}"				
-						IsAsyncBalanceEnabled="True" 
+						ItemTemplateSelector="{Binding NodeTemplateSelector}" 
 						EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 						Loaded="OnListLoaded" 
@@ -203,12 +203,14 @@
 						ScrollStateChanged="OnScrollStateChanged" 
 						IsCheckModeEnabled="True" 
 						IsCheckModeActiveChanged="OnCheckModeChanged" 				
-						VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 
+						
 						CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
 						ItemCheckedPath="IsMultiSelected" 
 						IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
-						RealizedItemsBufferScale="2" 
-						DataVirtualizationMode="Automatic" EmptyContentDisplayMode="DataSourceEmpty"				
+						RealizedItemsBufferScale="3" 
+						DataVirtualizationMode="Automatic" 
+						EmptyContentDisplayMode="DataSourceEmpty" 
+						IsAsyncBalanceEnabled="True"				
 			>
 						<telerikPrimitives:RadContextMenu.ContextMenu>
 							<telerikPrimitives:RadContextMenu 

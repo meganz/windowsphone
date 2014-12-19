@@ -235,6 +235,7 @@ namespace MegaApp
             MegaTransfers = new TransferQueu();
             // Initialize Folders
             AppService.InitializeAppFolders();
+            AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
 

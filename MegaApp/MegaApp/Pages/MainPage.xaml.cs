@@ -13,6 +13,7 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
@@ -140,7 +141,9 @@ namespace MegaApp.Pages
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        {            
+        {
+            App.CloudDrive.ListBox = LstCloudDrive;
+
             if(App.AppEvent == ApplicationEvent.Activated)
             {                
                 App.AppEvent = ApplicationEvent.None;
@@ -303,7 +306,10 @@ namespace MegaApp.Pages
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
             if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
-            
+
+
+            //switch (UiService.GetViewMode(App.CloudDrive.CurrentRootNode.Handle, App.CloudDrive.CurrentRootNode.Name))
+           
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
@@ -444,6 +450,7 @@ namespace MegaApp.Pages
                 case ItemState.Realizing:
                     break;
                 case ItemState.Realized:
+                        //if(LstCloudDrive.IsItemInViewport(e.DataItem))
                         ((NodeViewModel)e.DataItem).SetThumbnailImage();
                     break;
             }
@@ -453,6 +460,34 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+
+            switch (e.NewState)
+            {
+                case ScrollState.NotScrolling:
+                    //foreach (var frameworkElement in LstCloudDrive.ViewportItems)
+                    //{
+                    //    ((NodeViewModel)frameworkElement.DataContext).SetThumbnailImage();
+                    //}
+                    break;
+                case ScrollState.Scrolling:
+                    break;
+                case ScrollState.Flicking:
+                    break;
+                case ScrollState.TopStretch:
+                    break;
+                case ScrollState.LeftStretch:
+                    break;
+                case ScrollState.RightStretch:
+                    break;
+                case ScrollState.BottomStretch:
+                    break;
+                case ScrollState.ForceStopTopBottomScroll:
+                    break;
+                case ScrollState.ForceStopBottomTopScroll:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void OnGoToTopTap(object sender, System.Windows.Input.GestureEventArgs e)

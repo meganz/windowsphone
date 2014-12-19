@@ -28,6 +28,8 @@ namespace MegaApp.Models
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
 
+        public RadDataBoundListBox ListBox { get; set; }
+
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
         {
@@ -269,13 +271,13 @@ namespace MegaApp.Models
             //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
         }
 
-        private void SetView(ViewMode viewMode)
-        {
+        public void SetView(ViewMode viewMode)
+        {            
             switch (viewMode)
             {
                 case ViewMode.LargeThumbnails:
                     {
-                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        ListBox.VirtualizationStrategyDefinition = new WrapVirtualizationStrategyDefinition()
                         {
                             Orientation = Orientation.Horizontal,
                             WrapLineAlignment = WrapLineAlignment.Near
@@ -290,12 +292,13 @@ namespace MegaApp.Models
                         this.ViewMode = ViewMode.LargeThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_large.png", UriKind.Relative);
 
+                        this.MultiSelectCheckBoxStyle = null;
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
                 case ViewMode.SmallThumbnails:
                     {
-                        this.VirtualizationStrategy = new WrapVirtualizationStrategyDefinition()
+                        ListBox.VirtualizationStrategyDefinition = new WrapVirtualizationStrategyDefinition()
                         {
                             Orientation = Orientation.Horizontal,
                             WrapLineAlignment = WrapLineAlignment.Near
@@ -348,10 +351,11 @@ namespace MegaApp.Models
 
         private void SetViewDefaults()
         {
-            this.VirtualizationStrategy = new StackVirtualizationStrategyDefinition()
-            {
-                Orientation = Orientation.Vertical
-            };
+            if (ListBox != null)
+                ListBox.VirtualizationStrategyDefinition = new StackVirtualizationStrategyDefinition()
+                {
+                    Orientation = Orientation.Vertical
+                };
 
             this.NodeTemplateSelector = new NodeTemplateSelector()
             {
@@ -429,6 +433,10 @@ namespace MegaApp.Models
 
         public void LoadNodes()
         {
+            // First cancel any other loadnodes
+            if (cancellationToken.CanBeCanceled)
+                cancellationTokenSource.Cancel();
+
             // Get the nodes from the MEGA SDK
             MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
                 UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
@@ -467,21 +475,6 @@ namespace MegaApp.Models
                     autoResetEvent.WaitOne();
                 }
 
-                // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
-                if (Deployment.Current.Dispatcher.CheckAccess())
-                     CalculateBreadCrumbs(this.CurrentRootNode);
-                else
-                {
-                    var autoResetEvent = new AutoResetEvent(false);
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        try { CalculateBreadCrumbs(this.CurrentRootNode); }
-                        catch (Exception) { }
-                        autoResetEvent.Set();
-                    });
-                    autoResetEvent.WaitOne();
-                }
-
                 // Set the correct view for the main drive. Do this after the childs are cleared to speed things up
                 if (Deployment.Current.Dispatcher.CheckAccess())
                     SetView(UiService.GetViewMode(CurrentRootNode.Handle, CurrentRootNode.Name));
@@ -497,6 +490,25 @@ namespace MegaApp.Models
                     autoResetEvent.WaitOne();
                 }
 
+
+
+                // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
+                if (Deployment.Current.Dispatcher.CheckAccess())
+                     CalculateBreadCrumbs(this.CurrentRootNode);
+                else
+                {
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        try { CalculateBreadCrumbs(this.CurrentRootNode); }
+                        catch (Exception) { }
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
+
+                
+
                 // Create the possibility to cancel the loadnodes task
                 cancellationTokenSource = new CancellationTokenSource();
                 cancellationToken = cancellationTokenSource.Token;
@@ -505,8 +517,6 @@ namespace MegaApp.Models
             
             Task.Factory.StartNew(() =>
             {
-                //var stopwatch = new Stopwatch();
-                //stopwatch.Start();
 
                 int viewport = 0;
                 int background = 0;
@@ -515,16 +525,16 @@ namespace MegaApp.Models
                 switch (ViewMode)
                 {
                     case ViewMode.ListView:
-                        viewport = 20;
-                        background = 20;
+                        viewport = 256;
+                        background = 1024;
                         break;
                     case ViewMode.LargeThumbnails:
-                        viewport = 24;
-                        background = 24;
+                        viewport = 128;
+                        background = 512;
                         break;
                     case ViewMode.SmallThumbnails:
-                        viewport = 60;
-                        background = 60;
+                        viewport = 72;
+                        background = 512;
                         break;
                 }
 
@@ -560,14 +570,14 @@ namespace MegaApp.Models
                         });
                         waitHandleNodes.WaitOne();
 
-                        // Remove the busy indication
-                        var waitHandleProgress = new AutoResetEvent(false);
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            ProgessService.SetProgressIndicator(false);
-                            waitHandleProgress.Set();
-                        });
-                        waitHandleProgress.WaitOne();
+                        //// Remove the busy indication
+                        //var waitHandleProgress = new AutoResetEvent(false);
+                        //Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        //{
+                        //    ProgessService.SetProgressIndicator(false);
+                        //    waitHandleProgress.Set();
+                        //});
+                        //waitHandleProgress.WaitOne();
 
                         helperList.Clear();
                     }
@@ -602,11 +612,6 @@ namespace MegaApp.Models
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
-
-
-                //stopwatch.Stop();
-                //Deployment.Current.Dispatcher.BeginInvoke(() =>
-                //    MessageBox.Show(stopwatch.Elapsed.ToString("g")));
                
                 Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
 

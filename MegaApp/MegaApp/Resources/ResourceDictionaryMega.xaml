@@ -59,16 +59,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
-                    <Image.Source>
+                <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
+                    <telerikPrimitives:RadMultiResolutionImage.Source>
                         <BitmapImage 
-							UriSource="\Assets\FileTypes\folder.png"
+							UriSource="\Assets\FileTypes\List\folder.png"
                             DecodePixelHeight="64"							
 							DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
                         />
-                    </Image.Source>
-                </Image>
+                    </telerikPrimitives:RadMultiResolutionImage.Source>
+                </telerikPrimitives:RadMultiResolutionImage>
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>

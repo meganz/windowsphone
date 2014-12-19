@@ -1,25 +1,16 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
-using Windows.Devices.Sensors;
-using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
-using Microsoft.Devices.Sensors;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Notification;
 using Microsoft.Phone.Shell;
-using System.Windows;
-using System.Windows.Controls;
-using Microsoft.Xna.Framework;
 using Telerik.Windows.Controls;
-using Telerik.Windows.Controls.Primitives;
 using Telerik.Windows.Controls.SlideView;
-using Telerik.Windows.Data;
-using Accelerometer = Microsoft.Devices.Sensors.Accelerometer;
-using AccelerometerReading = Microsoft.Devices.Sensors.AccelerometerReading;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
@@ -68,31 +59,31 @@ namespace MegaApp.Pages
                 SlideViewAndFilmStrip.NextItem != null && isSlideview;
         }
 
-        private void OnNextClick(object sender, System.EventArgs e)
+        private void OnNextClick(object sender, EventArgs e)
         {
             SlideViewAndFilmStrip.MoveToNextItem();
         }
 
-        private void OnViewOriginalClick(object sender, System.EventArgs e)
+        private void OnViewOriginalClick(object sender, EventArgs e)
         {
             _previewImageViewModel.SelectedPreview.ViewOriginal();
         }
 
-        private void OnGetLinkClick(object sender, System.EventArgs e)
+        private void OnGetLinkClick(object sender, EventArgs e)
         {
             _previewImageViewModel.SelectedPreview.GetPreviewLink();
         }
 
-        private void OnRenameItemClick(object sender, System.EventArgs e)
+        private void OnRenameItemClick(object sender, EventArgs e)
         {
             _previewImageViewModel.SelectedPreview.Rename();
         }
-        private void OnRemoveClick(object sender, System.EventArgs e)
+        private void OnRemoveClick(object sender, EventArgs e)
         {
             _previewImageViewModel.SelectedPreview.Remove(false);
         }
 
-        private void OnPreviousClick(object sender, System.EventArgs e)
+        private void OnPreviousClick(object sender, EventArgs e)
         {
             SlideViewAndFilmStrip.MoveToPreviousItem();
         }
@@ -163,7 +154,7 @@ namespace MegaApp.Pages
             SetMoveButtons(e.NewState != SlideViewState.Filmstrip);
         }
 
-        private void OnSlideViewTap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void OnSlideViewTap(object sender, GestureEventArgs e)
         {
             SetApplicationBar();
         }

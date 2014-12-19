@@ -112,23 +112,36 @@ namespace MegaApp.Models
         {
             this.IsMultiSelected = false;
             this.DisplayMode = NodeDisplayMode.Normal;
+
+            if (this.Type == MNodeType.TYPE_FOLDER) return;
+
+            if (FileService.FileExists(ThumbnailPath))
+            {
+                this.ThumbnailIsDefaultImage = false;
+                this.ThumbnailImageUri = new Uri(ThumbnailPath);
+            }
+            else
+            {
+                this.ThumbnailIsDefaultImage = true;
+                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+            }
         }
 
         private void GetThumbnail()
         {
-            if (FileService.FileExists(ThumbnailPath))
-            {
-                ThumbnailImageUri = new Uri(ThumbnailPath);
-                ThumbnailIsDefaultImage = false;
-            }
-            else
-            {
+            //if (FileService.FileExists(ThumbnailPath))
+            //{
+            //    ThumbnailIsDefaultImage = false;
+            //    ThumbnailImageUri = new Uri(ThumbnailPath);
+            //}
+            //else
+            //{
                 if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
                 {
+                    //System.Threading.ThreadPool.QueueUserWorkItem(state => 
                     this.MegaSdk.getThumbnail(this.GetMegaNode(), ThumbnailPath, new GetThumbnailRequestListener(this));
                 }
-
-            }
+            //}
         }
 
         /// <summary>
@@ -152,18 +165,13 @@ namespace MegaApp.Models
 
         public void SetThumbnailImage()
         {
-            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
-
             if (this.Type == MNodeType.TYPE_FOLDER) return;
 
+            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
+            
             if (this.IsImage || this.GetMegaNode().hasThumbnail())
             {
                 GetThumbnail();
-            }
-            else
-            {
-                ThumbnailIsDefaultImage = true;
-                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
             }
         }
 
@@ -264,7 +272,8 @@ namespace MegaApp.Models
         {
             get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
                                       AppResources.ThumbnailsDirectory, 
-                                      this.GetMegaNode().getBase64Handle()); }
+                                      this.GetMegaNode().getBase64Handle());
+            }
         }
        
 
