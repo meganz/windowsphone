@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
@@ -21,12 +22,14 @@ namespace MegaApp.MegaApi
         private NodeViewModel _nodeViewModel;
         private bool _isMultiRemove;
         private MNodeType _nodeType;
+        private AutoResetEvent _waitEventRequest;
 
-        public RemoveNodeRequestListener(NodeViewModel nodeViewModel, bool isMultiRemove, MNodeType nodeType)
+        public RemoveNodeRequestListener(NodeViewModel nodeViewModel, bool isMultiRemove, MNodeType nodeType, AutoResetEvent waitEventRequest)
         {
             this._nodeViewModel = nodeViewModel;
             this._isMultiRemove = isMultiRemove;
             this._nodeType = nodeType;
+            this._waitEventRequest = waitEventRequest;
         }
 
         #region Base Properties
@@ -131,6 +134,9 @@ namespace MegaApp.MegaApi
 
             if (e.getErrorCode() == MErrorType.API_OK)
             {
+                if (this._waitEventRequest != null)
+                    this._waitEventRequest.Set();
+
                 if (ShowSuccesMessage && !_isMultiRemove)
                     Deployment.Current.Dispatcher.BeginInvoke(
                         () => MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK));

@@ -130,31 +130,59 @@ namespace MegaApp.Models
             {
                 if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion, count),
                     AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
             }
             else
             {
                 if (MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
                     AppMessages.MultiMoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+                
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.NodeToTrash));
             }
                 
-
+            var helperList = new List<NodeViewModel>(count);
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+                helperList.Add(node);
+
+            Task.Run(() =>
             {
-                node.Remove(true);
+                    AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
+
+                    int index = 0;
+                    
+                    foreach (var node in helperList)
+                    {
+                        waitEventRequests[index] = new AutoResetEvent(false);
+                        node.Remove(true, waitEventRequests[index]);
+                        index++;
             }
 
-            this.IsMultiSelectActive = false;
+                    WaitHandle.WaitAll(waitEventRequests);
+
+                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
 
             if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
             {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
                 MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
                     AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+                            });
             }
             else
             {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
                 MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
                     AppMessages.MultiMoveToRubbishBinSucces_Title, MessageBoxButton.OK);
+                        });
             }
+
+                                        
+                });
+
+            this.IsMultiSelectActive = false;
 
             return true;
         }
@@ -293,7 +321,6 @@ namespace MegaApp.Models
                         this.ViewMode = ViewMode.LargeThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/large grid view.Screen-WXGA.png", UriKind.Relative);
 
-                        this.MultiSelectCheckBoxStyle = null;
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
                     }
@@ -703,7 +730,7 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
-
+       
         private void MultiSelect(object obj)
         {
             this.IsMultiSelectActive = !this.IsMultiSelectActive;
@@ -816,7 +843,7 @@ namespace MegaApp.Models
             set
             {
                 _multiSelectCheckBoxStyle = value;
-                OnPropertyChanged("MultiSelectCheckBoxStyle");
+                OnPropertyChanged("MultiSelectItemCheckBoxStyle");
             }
         }
 
