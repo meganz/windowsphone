@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,7 +37,7 @@ namespace MegaApp.Services
             megaSdk.renameNode(nodeViewModel.GetMegaNode(), inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(nodeViewModel));
         }
 
-        public void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel, bool isMultiRemove)
+        public void Remove(MegaSDK megaSdk, NodeViewModel nodeViewModel, bool isMultiRemove, AutoResetEvent waitEventRequest)
         {
             // Looking for the absolute parent of the node to remove
             MNode _absoluteParentNode, _parentNode;
@@ -51,7 +52,7 @@ namespace MegaApp.Services
                     if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, nodeViewModel.Name),
                         AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
-                megaSdk.remove(nodeViewModel.GetMegaNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType()));
+                megaSdk.remove(nodeViewModel.GetMegaNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType(), waitEventRequest));
             }
             else // If the node is on the Cloud Drive, move it to the rubbish bin
             {
@@ -59,7 +60,7 @@ namespace MegaApp.Services
                     if (MessageBox.Show(String.Format(AppMessages.MoveToRubbishBinQuestion, nodeViewModel.Name),
                         AppMessages.MoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
-                megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType()));
+                megaSdk.moveNode(nodeViewModel.GetMegaNode(), megaSdk.getRubbishNode(), new RemoveNodeRequestListener(nodeViewModel, isMultiRemove, _absoluteParentNode.getType(), waitEventRequest));
             }   
         }
 

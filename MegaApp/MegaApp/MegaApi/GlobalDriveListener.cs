@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
@@ -94,15 +95,30 @@ namespace MegaApp.MegaApi
                             {
                                 if (_cloudDriveViewModel.CurrentRootNode.Handle.Equals(parentNode.getHandle()))
                                 {
-                                    int insertIndex = api.getIndex(megaNode, UiService.GetSortOrder(parentNode.getHandle(),
+                                    int insertIndex = api.getIndex(megaNode, UiService.GetSortOrder(parentNode.getHandle(), 
                                         parentNode.getName()));
 
+                                    // If the insert position is higher than the ChilNodes size insert in the last position
+                                    if (insertIndex > _cloudDriveViewModel.ChildNodes.Count())
+                                        insertIndex = _cloudDriveViewModel.ChildNodes.Count() - 1;
+
+                                    // Force to be at least the first position
+                                    if (insertIndex <= 0) insertIndex = 1;                                    
+
                                     if (insertIndex > 0)
+                                    {
+                                        var autoResetEvent = new AutoResetEvent(false);
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                            {
-                                                try { _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode, _cloudDriveViewModel.ChildNodes)); }
-                                                catch (Exception) { }
-                                            });
+                                        {
+                                            try 
+                                            { 
+                                                _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode, _cloudDriveViewModel.ChildNodes));
+                                                autoResetEvent.Set();
+                                            }
+                                            catch (Exception) { }
+                                        });
+                                        autoResetEvent.WaitOne();
+                                    }                                        
                                 }
                                 else
                                 {
