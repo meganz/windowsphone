@@ -6,6 +6,7 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using System.Threading;
 using System;
 using System.IO;
 using System.Windows;
@@ -63,10 +64,10 @@ namespace MegaApp.Models
             MegaService.Move(this.MegaSdk, this, newParentNode);
         }
 
-        public virtual void Remove(bool isMultiRemove)
+        public virtual void Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
         {
             if (!IsUserOnline()) return;
-            MegaService.Remove(this.MegaSdk, this, isMultiRemove);
+            MegaService.Remove(this.MegaSdk, this, isMultiRemove, waitEventRequest);
         }
 
         public virtual void GetPreviewLink()
