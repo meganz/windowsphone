@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -48,6 +49,7 @@ namespace MegaApp.Models
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
+            this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
         }
 
         #region Commands
@@ -57,8 +59,8 @@ namespace MegaApp.Models
         public ICommand DownloadItemCommand { get; set; }
         public ICommand RenameItemCommand { get; set; }
         public ICommand CreateShortCutCommand { get; set; }
-
         public ICommand ChangeViewCommand { get; set; }
+        public ICommand MultiSelectCommand { get; set; }
 
         #endregion
 
@@ -66,7 +68,6 @@ namespace MegaApp.Models
        
 
         #endregion
-
 
         #region Public Methods
 
@@ -82,7 +83,7 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
 
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.RubbishBin;
-                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
+                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
                     //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
                     //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
                     //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
@@ -94,7 +95,7 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Refresh;                    
 
                     ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.CloudDriveName;                    
-                    ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
+                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
                     //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
                     //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
                     //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
@@ -290,7 +291,7 @@ namespace MegaApp.Models
                         };
 
                         this.ViewMode = ViewMode.LargeThumbnails;
-                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_large.png", UriKind.Relative);
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/large grid view.Screen-WXGA.png", UriKind.Relative);
 
                         this.MultiSelectCheckBoxStyle = null;
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
@@ -311,7 +312,7 @@ namespace MegaApp.Models
                         };
 
                         this.ViewMode = ViewMode.SmallThumbnails;
-                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_small.png", UriKind.Relative);
+                        this.ViewStateButtonIconUri = new Uri("/Assets/Images/small grid view.Screen-WXGA.png", UriKind.Relative);
 
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
                         break;
@@ -364,7 +365,7 @@ namespace MegaApp.Models
             };
 
             this.ViewMode = ViewMode.ListView;
-            this.ViewStateButtonIconUri = new Uri("/Assets/Images/view_list.png", UriKind.Relative);
+            this.ViewStateButtonIconUri = new Uri("/Assets/Images/list view.Screen-WXGA.png", UriKind.Relative);
 
             this.MultiSelectCheckBoxStyle = null;
         }
@@ -691,11 +692,22 @@ namespace MegaApp.Models
             }
 
         }
+        public void SetMultiSelect(bool isMultiSelectActive)
+        {
+            if (isMultiSelectActive)
+                this.MultiSelectStateButtonForeGroundColor = UiService.GetMegaSolidColorBrush();
+            else
+                this.MultiSelectStateButtonForeGroundColor = new SolidColorBrush(Colors.White);
+        }
 
         #endregion
 
         #region Private Methods
-       
+
+        private void MultiSelect(object obj)
+        {
+            this.IsMultiSelectActive = !this.IsMultiSelectActive;
+        }
 
         private void GetPreviewLink(object obj)
         {
@@ -786,6 +798,17 @@ namespace MegaApp.Models
             }
         }
 
+        private SolidColorBrush _multiSelectStateButtonForeGroundColor;
+        public SolidColorBrush MultiSelectStateButtonForeGroundColor
+        {
+            get { return _multiSelectStateButtonForeGroundColor; }
+            set
+            {
+                _multiSelectStateButtonForeGroundColor = value;
+                OnPropertyChanged("MultiSelectStateButtonForeGroundColor");
+            }
+        }
+
         private Style _multiSelectCheckBoxStyle;
         public Style MultiSelectCheckBoxStyle
         {
@@ -804,6 +827,7 @@ namespace MegaApp.Models
             set
             {
                 _isMultiSelectActive = value;
+                SetMultiSelect(_isMultiSelectActive);
                 OnPropertyChanged("IsMultiSelectActive");
             }
         }

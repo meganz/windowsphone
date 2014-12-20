@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using mega;
 using MegaApp.Enums;
 
@@ -12,6 +13,11 @@ namespace MegaApp.Services
     {
         private static Dictionary<ulong, int> _folderSorting;
         private static Dictionary<ulong, int> _folderViewMode;
+
+        public static SolidColorBrush GetMegaSolidColorBrush()
+        {
+            return new SolidColorBrush(Color.FromArgb(255, 226, 25, 23));
+        }
 
         public static int GetSortOrder(ulong folderHandle, string folderName)
         {

@@ -16,6 +16,7 @@ namespace MegaApp.Services
 {
     class MegaService: IMegaService
     {
+        
         public void GetPreviewLink(MegaSDK megaSdk, NodeViewModel nodeViewModel)
         {
             megaSdk.exportNode(nodeViewModel.GetMegaNode(), new ExportNodeRequestListener());

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using mega;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -14,6 +11,8 @@ namespace MegaApp.Models
             : base(megaSdk, megaNode, parentCollection, childCollection)
         {
             SetFolderInfo();
+            this.ThumbnailIsDefaultImage = true;
+            this.ThumbnailImageUri = new Uri("folder" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
         }
 
         #region Override Methods

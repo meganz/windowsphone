@@ -22,11 +22,11 @@
 					Text="rubbish bin"	
 					Click="OnRubbishBinClick"			
 				/>
-                <shell:ApplicationBarMenuItem
+                <!--<shell:ApplicationBarMenuItem
 					x:Name="BtnMultiSelect" 				
 					Text="multi select"	
 					Click="OnMultiSelectClick"			
-				/>
+				/>-->
                 <!--<shell:ApplicationBarMenuItem
 					x:Name="BtnTransfers" 				
 					Text="transfers"	
@@ -81,11 +81,11 @@
 					Text="Cloud Drive"	
 					Click="OnCloudDriveClick"			
 				/>                
-                <shell:ApplicationBarMenuItem
+                <!--<shell:ApplicationBarMenuItem
 					x:Name="BtnMultiSelectRB" 				
 					Text="multi select"	
 					Click="OnMultiSelectClick"			
-				/>
+				/>-->
                 <!--<shell:ApplicationBarMenuItem
 					x:Name="BtnTransfersRB" 				
 					Text="transfers"	
@@ -131,13 +131,13 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MultiSelectMenu">
-			<shell:ApplicationBar.MenuItems>
+			<!--<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem
 					x:Name="BtnDisableMultiSelect" 				
 					Text="disable multi select"	
 					Click="OnDisableMultiSelectClick"			
 				/>                
-            </shell:ApplicationBar.MenuItems>
+            </shell:ApplicationBar.MenuItems>-->
         	<shell:ApplicationBarIconButton 
         		x:Name="BtnMultiSelectDownload" 
         		IconUri="/Assets/AppBar/cloud.download.png" 
@@ -181,14 +181,15 @@
 				<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
 					<UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
 					<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
-						<TextBlock Text="{Binding CurrentRootNode.FolderInfo}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-						<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}"/>
-						<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.png" IsChecked="False" Tap="OnGoToBottomTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}" />
+						<TextBlock Text="{Binding CurrentRootNode.FolderInfo}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14.667"/>
+						<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.Screen-WXGA.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}"/>
+						<telerikPrimitives:RadImageButton x:Name="BtnGoToBottom" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_bottom.Screen-WXGA.png" IsChecked="False" Tap="OnGoToBottomTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}" />
+						<telerikPrimitives:RadImageButton x:Name="BtnMultiSelect" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" IsChecked="False" Margin="0,0,-12,0" Command="{Binding MultiSelectCommand}" RestStateImageSource="/Assets/Images/multi_select.Screen-WXGA.png" Foreground="{Binding MultiSelectStateButtonForeGroundColor}"/>
+						<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.Screen-WXGA.png" IsChecked="False" Tap="OnSortTap" Margin="0,0,-12,0" />
 						<telerikPrimitives:RadImageButton x:Name="BtnSelectView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="{Binding ViewStateButtonIconUri}" IsChecked="False" Command="{Binding ChangeViewCommand}" Margin="0,0,-12,0" />
-						<telerikPrimitives:RadImageButton x:Name="BtnSelectSorting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/sort.png" IsChecked="False" Tap="OnSortTap" />
 					</StackPanel>
 				</StackPanel>
-				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,12,0">
+				<Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-28,0,0">
 
 				<!-- VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" -->
 					<telerikPrimitives:RadDataBoundListBox 
