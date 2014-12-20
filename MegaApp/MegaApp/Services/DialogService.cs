@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Linq;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.ServiceModel.Channels;
@@ -11,10 +12,12 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Resources;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -119,7 +122,7 @@ namespace MegaApp.Services
             var hubCamera = new RadHubTile()
             {
                 Title = "Take photo",
-                ImageSource = new BitmapImage(new Uri("/Assets/Images/camera_upload.png", UriKind.Relative)),
+                ImageSource =new BitmapImage(new Uri("/Assets/Images/take photos.Screen-WVGA.png", UriKind.Relative)),
                 IsFrozen = true,
                 Margin = new Thickness(20)
             };
@@ -132,7 +135,7 @@ namespace MegaApp.Services
             var hubSelfie = new RadHubTile()
             {
                 Title = "Selfie mode",
-                ImageSource = new BitmapImage(new Uri("/Assets/Images/selfie_upload.png", UriKind.Relative)),
+                ImageSource = new BitmapImage(new Uri("/Assets/Images/selfie_upload.Screen-WVGA.png", UriKind.Relative)),
                 IsFrozen = true,
                 Margin = new Thickness(20)
             };
@@ -146,7 +149,7 @@ namespace MegaApp.Services
             var hubPicture = new RadHubTile()
             {
                 Title = "Select photos",
-                ImageSource = new BitmapImage(new Uri("/Assets/Images/picture_upload.png", UriKind.Relative)),
+                ImageSource = new BitmapImage(new Uri("/Assets/Images/picture_upload.Screen-WVGA.png", UriKind.Relative)),
                 IsFrozen = true,
                 Margin = new Thickness(20)
             };

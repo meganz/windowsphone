@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     x:Class="MegaApp.UserControls.BreadCrumbStyle"
     mc:Ignorable="d"
     d:DesignHeight="480" d:DesignWidth="480">
@@ -14,12 +15,12 @@
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
 				<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center"/>
-				<Image Source="/Assets/Images/seperator.png" Stretch="None" Grid.Column="1"/>
+                <telerikPrimitives:RadMultiResolutionImage  Source="/Assets/Images/seperator.png" Stretch="None" Grid.Column="1"/>
 			</Grid>
 		</DataTemplate>
 		<DataTemplate x:Key="BreadCrumbHomeContentTemplate">
 			<Grid>
-                <Image Source="/Assets/Images/mega_logo.png" Stretch="None" />
+                <telerikPrimitives:RadMultiResolutionImage Source="/Assets/Images/mega_logo_root.png" Stretch="None" FontFamily="Portable User Interface" />
 			</Grid>
 		</DataTemplate>
 		<DataTemplate x:Key="BreadCrumbHomeExtendedContentTemplate">
@@ -28,8 +29,8 @@
 					<ColumnDefinition Width="Auto"/>
 					<ColumnDefinition Width="Auto"/>
 				</Grid.ColumnDefinitions>
-                <Image Source="/Assets/Images/mega_logo.png" Stretch="None" Grid.Column="0"/>
-				<Image Source="/Assets/Images/seperator.png" Stretch="None" Grid.Column="1"/>
+                <telerikPrimitives:RadMultiResolutionImage Source="/Assets/Images/mega_logo_root.png" Stretch="None" Grid.Column="0" FontFamily="Portable User Interface"/>
+                <telerikPrimitives:RadMultiResolutionImage Source="/Assets/Images/seperator.png" Stretch="None" Grid.Column="1" FontFamily="Portable User Interface"/>
 			</Grid>
 		</DataTemplate>
 		<Style x:Key="BreadCrumbStyle" TargetType="Button">

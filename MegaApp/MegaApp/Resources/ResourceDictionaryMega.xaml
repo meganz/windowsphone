@@ -16,6 +16,7 @@
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
     <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
     <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
+    <converters:UriToResolutionUriConverter x:Key="UriToResolutionUriConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
@@ -33,7 +34,7 @@
                 <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
                     <Image.Source>
                         <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri}"
+							UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
 							DecodePixelHeight="64"
 							DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
@@ -59,16 +60,16 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
-                    <telerikPrimitives:RadMultiResolutionImage.Source>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0" >
+                    <Image.Source>
                         <BitmapImage 
-							UriSource="\Assets\FileTypes\List\folder.png"
+							UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
                             DecodePixelHeight="64"							
 							DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
                         />
-                    </telerikPrimitives:RadMultiResolutionImage.Source>
-                </telerikPrimitives:RadMultiResolutionImage>
+                    </Image.Source>
+                </Image>
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FolderInfo}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
@@ -77,7 +78,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListLargeViewFolderItemContent">
-        <Grid Width="132" Margin="10">
+        <Grid Width="128" Margin="12">
         	<Grid.RowDefinitions>
         		<RowDefinition/>
         		<RowDefinition Height="Auto"/>
@@ -103,11 +104,11 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="132" Width="132">
+            <Image Stretch="UniformToFill" Height="128" Width="128">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="/Assets/FileTypes/folder.png"
-                            DecodePixelHeight="132"
+							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+                            DecodePixelHeight="128"
                             DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
                         />
@@ -118,7 +119,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListSmallViewFolderItemContent">
-        <Grid Width="66" Height="66" Margin="5">
+        <Grid Width="64" Height="64" Margin="6">
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
@@ -140,11 +141,11 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="66" Width="66">
+            <Image Stretch="UniformToFill" Height="64" Width="64">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="/Assets/FileTypes/folder.png"
-                            DecodePixelHeight="66"
+							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+                            DecodePixelHeight="64"
                             DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
                         />
@@ -154,7 +155,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListLargeViewFileItemContent">
-        <Grid Width="132" Margin="10">
+        <Grid Width="128" Margin="12">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
@@ -180,11 +181,11 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="132" Width="132">
+            <Image Stretch="UniformToFill" Height="128" Width="128">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri}"
-                            DecodePixelHeight="132"
+							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+                            DecodePixelHeight="128"
                             DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
                         />
@@ -195,7 +196,7 @@
     </DataTemplate>
     
     <DataTemplate x:Key="MegaNodeListSmallViewFileItemContent">
-        <Grid Width="66" Margin="5">
+        <Grid Width="64" Margin="6">
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
@@ -217,11 +218,11 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="66" Height="66">
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="64" Height="64">
                 <Image.Source>
                     <BitmapImage 
-						UriSource="{Binding ThumbnailImageUri}"
-						DecodePixelHeight="66"
+						UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+						DecodePixelHeight="64"
 						DecodePixelType="Logical"
 						CreateOptions="BackgroundCreation, DelayCreation"
                     />
@@ -231,11 +232,9 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush Stretch="None" ImageSource="/Assets/Images/folder_empty.png" Opacity="0.3"/>
-            </Grid.Background>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+        <Grid Width="256" Height="418" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,384,0,0" FontFamily="Portable User Interface"/>
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
@@ -269,12 +268,17 @@
         </Grid>
     </DataTemplate>
 
-    <DataTemplate x:Key="MegaTransferListEmptyContent">
-        <Grid>
-            <Grid.Background>
-                <ImageBrush Stretch="None" ImageSource="/Assets/Images/transfers_empty.png" Opacity="0.3"/>
-            </Grid.Background>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+    <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
+        <Grid Height="562" Width="456">
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,40" />
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
+        </Grid>
+    </DataTemplate>
+
+	<DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
+        <Grid Height="562" Width="456">
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,40"/>
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
@@ -434,8 +438,8 @@
 
     <!-- ADVANCED MENU TEMPLATES -->
     <DataTemplate x:Key="AdvancedMenuHeader">
-        <Grid Margin="0,0,0,20">
-        	<Image Margin="0" Source="/Assets/Images/mega_logo_advanced_menu.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Grid Margin="0">
+        	<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
         </Grid>
     </DataTemplate>
 

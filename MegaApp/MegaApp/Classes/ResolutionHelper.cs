@@ -15,7 +15,7 @@ namespace MegaApp.Classes
         {
             get
             {
-                return  App.Current.Host.Content.ScaleFactor == 100;
+                return  Application.Current.Host.Content.ScaleFactor == 100;
             }
         }
 
@@ -23,7 +23,7 @@ namespace MegaApp.Classes
         {
             get
             {
-                return App.Current.Host.Content.ScaleFactor == 160;
+                return Application.Current.Host.Content.ScaleFactor == 160;
             }
         }
 
@@ -31,7 +31,7 @@ namespace MegaApp.Classes
         {
             get
             {
-                return App.Current.Host.Content.ScaleFactor == 150;
+                return Application.Current.Host.Content.ScaleFactor == 150;
             }
         }
 
@@ -40,9 +40,9 @@ namespace MegaApp.Classes
             get
             {
                 if (IsWvga) return Resolutions.WVGA;
-                else if (IsWxga) return Resolutions.WXGA;
-                else if (IsHd) return Resolutions.HD;
-                else throw new InvalidOperationException("Unknown resolution");
+                if (IsWxga) return Resolutions.WXGA;
+                if (IsHd) return Resolutions.HD;
+                throw new InvalidOperationException("Unknown resolution");
             }
         }
     }

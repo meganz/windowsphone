@@ -539,15 +539,7 @@ namespace MegaApp.Pages
 
             ChangeMenu();
         }
-
-        private void OnMultiSelectClick(object sender, EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            App.CloudDrive.IsMultiSelectActive = true;            
-        }
-
+        
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
@@ -577,15 +569,7 @@ namespace MegaApp.Pages
             App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
             ChangeMenu();
         }
-
-        private void OnDisableMultiSelectClick(object sender, System.EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            App.CloudDrive.IsMultiSelectActive = false;
-        }
-
+        
         private void OnAboutClick(object sender, System.EventArgs e)
         {
             // Needed on every UI interaction

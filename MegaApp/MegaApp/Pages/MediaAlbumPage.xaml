@@ -29,7 +29,7 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<Image Source="/Assets/Images/mega_logo.png" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+			<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
 			<TextBlock Text="{Binding PictureAlbumName}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
 		</StackPanel>
 
