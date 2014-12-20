@@ -252,7 +252,7 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            if (MainPivot.SelectedItem == MenuPivot)
+            if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
             {
                 MainPivot.SelectedItem = DrivePivot;
                 e.Cancel = true;
@@ -261,7 +261,8 @@ namespace MegaApp.Pages
 
             if(!NavigationService.CanGoBack)
             {
-                if (App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
+                if (App.CloudDrive.CurrentRootNode != null && 
+                    App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
                 {
                     App.CloudDrive.GoFolderUp();
                     Task.Run(() => App.CloudDrive.LoadNodes());
@@ -614,9 +615,9 @@ namespace MegaApp.Pages
 
         private void OnPivotSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            if (ApplicationBar == null || MainPivot == null) return;
             ApplicationBar.IsVisible = MainPivot.SelectedItem == DrivePivot;
-
-        }        
+        }
     }
     
 }
