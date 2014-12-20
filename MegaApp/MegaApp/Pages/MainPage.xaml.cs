@@ -92,6 +92,18 @@ namespace MegaApp.Pages
                     NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
                 }
             });
+
+            advancedMenuItems.Add(new AdvancedMenuItem()
+            {
+                Name = "logout",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    App.MegaSdk.logout(new LogOutRequestListener());
+                }
+            });
            
 
             LstAdvancedMenu.ItemsSource = advancedMenuItems;
