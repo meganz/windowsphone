@@ -28,6 +28,7 @@ namespace MegaApp.Models
         private const int ProgressDisplaySize = 4000;
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
+        private bool addFolderDialogIsOpen = false;
 
         public RadDataBoundListBox ListBox { get; set; }
 
@@ -354,6 +355,8 @@ namespace MegaApp.Models
 
         private void ChangeView(object obj)
         {
+            if (CurrentRootNode == null) return;
+
             switch (this.ViewMode)
             {
                 case ViewMode.ListView:
@@ -463,7 +466,8 @@ namespace MegaApp.Models
         {
             // First cancel any other loadnodes
             if (cancellationToken.CanBeCanceled)
-                cancellationTokenSource.Cancel();
+                if (cancellationTokenSource != null) 
+                    cancellationTokenSource.Cancel();
 
             // Get the nodes from the MEGA SDK
             MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
@@ -674,7 +678,11 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
 
+            if (addFolderDialogIsOpen) return;
+
+            addFolderDialogIsOpen = true;
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, vibrate: false);
+            addFolderDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
@@ -843,7 +851,7 @@ namespace MegaApp.Models
             set
             {
                 _multiSelectCheckBoxStyle = value;
-                OnPropertyChanged("MultiSelectItemCheckBoxStyle");
+                OnPropertyChanged("MultiSelectCheckBoxStyle");
             }
         }
 
