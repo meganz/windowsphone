@@ -39,6 +39,14 @@ namespace MegaApp.Pages
             {
                 if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
                     AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+
+                foreach (var item in App.MegaTransfers)
+                {
+                    var transfer = (TransferObjectModel)item;
+                    if (transfer == null) continue;
+
+                    transfer.CancelTransfer();
+                }
             }
 
         	_myAccountPageViewModel.Logout();
