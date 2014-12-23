@@ -25,12 +25,13 @@ namespace MegaApp.Models
 {
     public class CloudDriveViewModel : BaseSdkViewModel
     {
-        private const int ProgressDisplaySize = 4000;
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
-        private bool addFolderDialogIsOpen = false;
+        private bool asyncInputPromptDialogIsOpen;
 
-        public RadDataBoundListBox ListBox { get; set; }
+        public event EventHandler<CommandStatusArgs> CommandStatusChanged;
+
+        public RadDataBoundListBox ListBox { private get; set; }
 
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
@@ -65,12 +66,28 @@ namespace MegaApp.Models
 
         #endregion
 
+        #region Events
+
+        private void OnCommandStatusChanged(bool status)
+        {
+            if (CommandStatusChanged == null) return;
+
+            CommandStatusChanged(this, new CommandStatusArgs(status));
+        }
+
+        #endregion
+
         #region Services
-       
+
 
         #endregion
 
         #region Public Methods
+
+        public void SetCommandStatus(bool status)
+        {
+            OnCommandStatusChanged(status);
+        }
 
         public void TranslateAppBar(IList iconButtons, IList menuItems, MenuType menuType)
         {
@@ -322,7 +339,9 @@ namespace MegaApp.Models
                         this.ViewMode = ViewMode.LargeThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/large grid view.Screen-WXGA.png", UriKind.Relative);
 
-                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        if (ListBox != null) ListBox.CheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        //this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        
                         break;
                     }
                 case ViewMode.SmallThumbnails:
@@ -342,7 +361,9 @@ namespace MegaApp.Models
                         this.ViewMode = ViewMode.SmallThumbnails;
                         this.ViewStateButtonIconUri = new Uri("/Assets/Images/small grid view.Screen-WXGA.png", UriKind.Relative);
 
-                        this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        if (ListBox != null) ListBox.CheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                        //this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
+                       
                         break;
                     }
                 case ViewMode.ListView:
@@ -397,7 +418,8 @@ namespace MegaApp.Models
             this.ViewMode = ViewMode.ListView;
             this.ViewStateButtonIconUri = new Uri("/Assets/Images/list view.Screen-WXGA.png", UriKind.Relative);
 
-            this.MultiSelectCheckBoxStyle = null;
+            if (ListBox != null) ListBox.CheckBoxStyle = (Style) Application.Current.Resources["DefaultCheckBoxStyle"];
+            //this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["DefaultCheckBoxStyle"];
         }
 
         public void GoToFolder(NodeViewModel folder)
@@ -450,7 +472,12 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
 
+            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
+            if (asyncInputPromptDialogIsOpen) return;
+          
+            asyncInputPromptDialogIsOpen = true;
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink, vibrate: false);
+            asyncInputPromptDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
@@ -549,7 +576,6 @@ namespace MegaApp.Models
             
             Task.Factory.StartNew(() =>
             {
-
                 int viewport = 0;
                 int background = 0;
 
@@ -644,7 +670,7 @@ namespace MegaApp.Models
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
-               
+                
                 Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
 
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
@@ -678,11 +704,12 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
 
-            if (addFolderDialogIsOpen) return;
-
-            addFolderDialogIsOpen = true;
+            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
+            if (asyncInputPromptDialogIsOpen) return;
+            
+            asyncInputPromptDialogIsOpen = true;
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, vibrate: false);
-            addFolderDialogIsOpen = false;
+            asyncInputPromptDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
@@ -730,7 +757,7 @@ namespace MegaApp.Models
         public void SetMultiSelect(bool isMultiSelectActive)
         {
             if (isMultiSelectActive)
-                this.MultiSelectStateButtonForeGroundColor = UiService.GetMegaSolidColorBrush();
+                this.MultiSelectStateButtonForeGroundColor = (SolidColorBrush) Application.Current.Resources["MegaRedSolidColorBrush"];
             else
                 this.MultiSelectStateButtonForeGroundColor = new SolidColorBrush(Colors.White);
         }

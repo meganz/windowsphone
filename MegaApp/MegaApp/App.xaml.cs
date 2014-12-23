@@ -13,10 +13,12 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Telerik.Windows.Controls;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
+using Microsoft.Phone.Controls;
 
 namespace MegaApp
 {
