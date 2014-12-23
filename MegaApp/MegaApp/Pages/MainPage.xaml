@@ -205,7 +205,7 @@
 						IsCheckModeEnabled="True" 
 						IsCheckModeActiveChanged="OnCheckModeChanged" 				
 						
-						CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+						CheckBoxStyle="{StaticResource DefaultCheckBoxStyle}" 
 						ItemCheckedPath="IsMultiSelected" 
 						IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
 						RealizedItemsBufferScale="3" 

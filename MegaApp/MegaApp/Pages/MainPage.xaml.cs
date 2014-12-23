@@ -38,6 +38,20 @@ namespace MegaApp.Pages
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+
+
+            App.CloudDrive.CommandStatusChanged += (sender, args) =>
+            {
+                foreach (var button in ApplicationBar.Buttons)
+                {
+                    ((ApplicationBarIconButton) button).IsEnabled = args.Status;
+                }
+
+                foreach (var item in ApplicationBar.MenuItems)
+                {
+                    ((ApplicationBarMenuItem) item).IsEnabled = args.Status;
+                }
+            };
         }
 
         private void CreateAdvancedMenu()
@@ -594,7 +608,11 @@ namespace MegaApp.Pages
 
         private void OnCloudDriveClick(object sender, EventArgs e)
         {
-            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getRootNode());
+            var rootNode = App.MegaSdk.getRootNode();
+
+            if (rootNode == null) return;
+
+            var node = NodeService.CreateNew(App.MegaSdk, rootNode);
             App.CloudDrive.CurrentRootNode = node;
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
@@ -607,7 +625,11 @@ namespace MegaApp.Pages
 
         private void OnRubbishBinClick(object sender, EventArgs e)
         {
-            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getRubbishNode());                        
+            var rubbishNode = App.MegaSdk.getRubbishNode();
+
+            if (rubbishNode == null) return;
+
+            var node = NodeService.CreateNew(App.MegaSdk, rubbishNode);                        
             App.CloudDrive.CurrentRootNode = node;
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.RubbishBin;

@@ -97,6 +97,12 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                // Enable appbar buttons
+                _cloudDriveViewModel.SetCommandStatus(true);
+            });
+
             if (_shortCutHandle.HasValue)
             {
                 MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
@@ -123,8 +129,14 @@ namespace MegaApp.MegaApi
 
         public override void onRequestStart(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
-                String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                // Disable appbar buttons
+                _cloudDriveViewModel.SetCommandStatus(false);
+
+                ProgessService.SetProgressIndicator(true,
+                   String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));
+            });
         }
 
         public override void onRequestUpdate(MegaSDK api, MRequest request)
