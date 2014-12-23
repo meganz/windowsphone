@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -18,11 +19,12 @@ namespace MegaApp.Pages
     public partial class DownloadPage : PhoneApplicationPage
     {
         private readonly DownloadNodeViewModel _downloadNodeViewModel;
+        
         public DownloadPage()
         {
             _downloadNodeViewModel = new DownloadNodeViewModel(NavigateService.GetNavigationData<NodeViewModel>());
             this.DataContext = _downloadNodeViewModel;
-
+            
             InitializeComponent();
 
             SetApplicationBar();
@@ -70,7 +72,12 @@ namespace MegaApp.Pages
 
         private void OnOpenClick(object sender, System.EventArgs e)
         {
-            _downloadNodeViewModel.SelectedNode.OpenFile();
+            // Only open it if the transfer have finished or the file is already downloaded previously
+            if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Finished ||                
+                _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.NotStarted)
+            {                
+                _downloadNodeViewModel.SelectedNode.OpenFile();
+            }
         }
     }
 }

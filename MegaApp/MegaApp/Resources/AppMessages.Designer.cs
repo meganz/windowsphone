@@ -655,6 +655,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You have {0} pending transfers. Are you sure logout?.
+        /// </summary>
+        internal static string PendingTransfersLogout {
+            get {
+                return ResourceManager.GetString("PendingTransfersLogout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pending Transfers.
+        /// </summary>
+        internal static string PendingTransfersLogout_Title {
+            get {
+                return ResourceManager.GetString("PendingTransfersLogout_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The image is saved in your photo album.
         /// </summary>
         internal static string PictureSaved {
