@@ -165,40 +165,38 @@ namespace MegaApp.Models
 
             Task.Run(() =>
             {
-                    AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
+                AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
 
-                    int index = 0;
+                int index = 0;
                     
-                    foreach (var node in helperList)
+                foreach (var node in helperList)
+                {
+                    waitEventRequests[index] = new AutoResetEvent(false);
+                    node.Remove(true, waitEventRequests[index]);
+                    index++;
+                }
+
+                WaitHandle.WaitAll(waitEventRequests);
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+
+                if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        waitEventRequests[index] = new AutoResetEvent(false);
-                        node.Remove(true, waitEventRequests[index]);
-                        index++;
-            }
-
-                    WaitHandle.WaitAll(waitEventRequests);
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
-
-            if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
-            {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
-                    AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
-                            });
-            }
-            else
-            {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
-                    AppMessages.MultiMoveToRubbishBinSucces_Title, MessageBoxButton.OK);
-                        });
-            }
-
-                                        
-                });
+                        MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
+                            AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
+                    });
+                }
+                else
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
+                            AppMessages.MultiMoveToRubbishBinSucces_Title, MessageBoxButton.OK);
+                    });
+                }                                        
+            });
 
             this.IsMultiSelectActive = false;
 
@@ -691,7 +689,7 @@ namespace MegaApp.Models
                     FocusedNode = node;
 
                     if (node.IsImage)
-                    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
+                        NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
                     else
                         NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, FocusedNode);
 

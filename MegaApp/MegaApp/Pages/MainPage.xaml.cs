@@ -109,11 +109,17 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = "logout",
+                Name = UiResources.Logout,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
                     App.MegaSdk.retryPendingConnections();
+
+                    if(App.MegaTransfers.Count != 0)
+                    {
+                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
+                            AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+                    }
 
                     App.MegaSdk.logout(new LogOutRequestListener());
                 }
