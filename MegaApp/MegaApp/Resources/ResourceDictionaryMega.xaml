@@ -264,7 +264,7 @@
             <TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Row="0" Grid.Column="1"/>
             <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1"/>
             <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" />
-            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel.png" FontFamily="Portable User Interface"/>
+            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel transfers.Screen-WXGA.png" FontFamily="Portable User Interface"/>
         </Grid>
     </DataTemplate>
 

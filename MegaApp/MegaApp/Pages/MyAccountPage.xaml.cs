@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Models;
+using MegaApp.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
@@ -34,6 +35,12 @@ namespace MegaApp.Pages
 
         private void OnLogoutClick(object sender, System.EventArgs e)
         {
+            if (App.MegaTransfers.Count != 0)
+            {
+                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
+                    AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+            }
+
         	_myAccountPageViewModel.Logout();
         }
 
