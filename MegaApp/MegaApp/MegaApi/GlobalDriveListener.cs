@@ -107,17 +107,17 @@ namespace MegaApp.MegaApi
 
                                     if (insertIndex > 0)
                                     {
-                                        var autoResetEvent = new AutoResetEvent(false);
+                                       
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                                         {
                                             try 
                                             { 
                                                 _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode, _cloudDriveViewModel.ChildNodes));
-                                                autoResetEvent.Set();
+                                               
                                             }
                                             catch (Exception) { }
                                         });
-                                        autoResetEvent.WaitOne();
+                                      
                                     }                                        
                                 }
                                 else
