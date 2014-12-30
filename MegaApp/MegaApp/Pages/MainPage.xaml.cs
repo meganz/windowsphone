@@ -42,6 +42,8 @@ namespace MegaApp.Pages
 
             App.CloudDrive.CommandStatusChanged += (sender, args) =>
             {
+                if (ApplicationBar == null) return;
+
                 foreach (var button in ApplicationBar.Buttons)
                 {
                     ((ApplicationBarIconButton) button).IsEnabled = args.Status;
@@ -51,6 +53,8 @@ namespace MegaApp.Pages
                 {
                     ((ApplicationBarMenuItem) item).IsEnabled = args.Status;
                 }
+
+                BtnSelectSorting.IsEnabled = args.Status;
             };
         }
 
@@ -365,6 +369,7 @@ namespace MegaApp.Pages
             FileService.ClearFiles(
                 NodeService.GetFiles(App.CloudDrive.ChildNodes,
                 Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory)));
+
             App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
 
             if (App.CloudDrive.DriveDisplayMode == DriveDisplayMode.MultiSelect)

@@ -241,9 +241,15 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
-        <Grid Width="256" Height="418" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,384,0,0" FontFamily="Portable User Interface"/>
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3"/>
+        <Grid>
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,384,0,0" />
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListLoadingContent">
+        <Grid>
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/init_loading.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
 
@@ -337,7 +343,7 @@
             <Grid.Background>
                 <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
             </Grid.Background>
-            <Image Source="{Binding DisplayImage}" Height="200" Width="200"/>
+            <Image Source="{Binding DisplayImage}" Stretch="Uniform" Height="200" Width="200"/>
             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Bottom" TextTrimming="WordEllipsis" Margin="12" FontSize="{StaticResource PhoneFontSizeNormal}" FontWeight="Bold"/>
         </Grid>
     </DataTemplate>

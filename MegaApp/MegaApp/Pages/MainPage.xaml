@@ -197,7 +197,6 @@
 						ItemsSource="{Binding ChildNodes}"
 						ItemTap="OnItemTap"
 						ItemTemplateSelector="{Binding NodeTemplateSelector}" 
-						EmptyContentTemplate="{StaticResource MegaNodeListEmptyContent}" 
 						telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 						Loaded="OnListLoaded" 
 						ItemStateChanged="OnItemStateChanged" 
