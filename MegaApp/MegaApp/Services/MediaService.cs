@@ -50,7 +50,10 @@ namespace MegaApp.Services
                 DecodePixelWidth = 200,
                 DecodePixelType = DecodePixelType.Logical
             };
-            bitmapImage.SetSource(pictureAlbum.Pictures[random.Next(0, pictureAlbum.Pictures.Count)].GetImage());
+
+            // If there is a problem obtaining the random image only will appear the album name
+            try { bitmapImage.SetSource(pictureAlbum.Pictures[random.Next(0, pictureAlbum.Pictures.Count)].GetImage()); }
+            catch (Exception) { return null; }
 
             return bitmapImage;
         }
