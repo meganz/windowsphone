@@ -518,13 +518,20 @@ namespace MegaApp.Models
 
                 // Clear the child nodes to make a fresh start
                 if (Deployment.Current.Dispatcher.CheckAccess())
-                    this.ChildNodes.Clear();
+                {
+                    SetEmptyContentTemplate(true, this.CurrentRootNode);
+                    this.ChildNodes.Clear();}
+                    
                 else
                 {
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        try { this.ChildNodes.Clear(); }
+                        try
+                        {
+                            SetEmptyContentTemplate(true);
+                            this.ChildNodes.Clear();
+                        }
                         catch (Exception) { }
                         autoResetEvent.Set();
                     });
@@ -553,7 +560,7 @@ namespace MegaApp.Models
                      CalculateBreadCrumbs(this.CurrentRootNode);
                 else
                 {
-                    var autoResetEvent = new AutoResetEvent(false);
+                    var autoResetEvent = new AutoResetEvent(true);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         try { CalculateBreadCrumbs(this.CurrentRootNode); }
@@ -562,8 +569,6 @@ namespace MegaApp.Models
                     });
                     autoResetEvent.WaitOne();
                 }
-
-                
 
                 // Create the possibility to cancel the loadnodes task
                 cancellationTokenSource = new CancellationTokenSource();
@@ -668,7 +673,11 @@ namespace MegaApp.Models
                 });
                 autoResetEvent.WaitOne();
                 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    SetEmptyContentTemplate(false, this.CurrentRootNode);
+                    ProgessService.SetProgressIndicator(false);
+                });
 
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
         }
@@ -716,6 +725,8 @@ namespace MegaApp.Models
         public void FetchNodes(NodeViewModel rootRefreshNode = null)
         {
             CancelLoadNodes();
+
+           Deployment.Current.Dispatcher.BeginInvoke(() =>SetEmptyContentTemplate(true));
 
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
             ShortCutHandle = null;
@@ -803,6 +814,28 @@ namespace MegaApp.Models
                 else
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() => this.ChildNodes.Clear()); 
+                }
+            }
+        }
+
+        private void SetEmptyContentTemplate(bool isLoading, NodeViewModel currentRootNode = null)
+        {
+            if (isLoading)
+            {
+                ListBox.EmptyContentTemplate =
+                    (DataTemplate) Application.Current.Resources["MegaNodeListLoadingContent"];
+            }
+            else
+            {
+                if (currentRootNode != null && currentRootNode.Handle.Equals(this.MegaSdk.getRootNode().getHandle()))
+                {
+                    ListBox.EmptyContentTemplate =
+                        (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"];
+                }
+                else
+                {
+                    ListBox.EmptyContentTemplate =
+                        (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
                 }
             }
         }
