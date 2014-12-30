@@ -242,7 +242,7 @@
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,384,0,0" />
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
             <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
@@ -250,6 +250,12 @@
     <DataTemplate x:Key="MegaNodeListLoadingContent">
         <Grid>
             <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/init_loading.png" Opacity="0.3" Width="256" Height="256"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListCloudDriveEmptyContent">
+        <Grid>
+            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/cloud drive empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
 

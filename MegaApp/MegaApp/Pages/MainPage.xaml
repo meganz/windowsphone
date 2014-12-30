@@ -202,16 +202,15 @@
 						ItemStateChanged="OnItemStateChanged" 
 						ScrollStateChanged="OnScrollStateChanged" 
 						IsCheckModeEnabled="True" 
-						IsCheckModeActiveChanged="OnCheckModeChanged" 				
-						
+						IsCheckModeActiveChanged="OnCheckModeChanged"
 						CheckBoxStyle="{StaticResource DefaultCheckBoxStyle}" 
 						ItemCheckedPath="IsMultiSelected" 
 						IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
 						RealizedItemsBufferScale="3" 
 						DataVirtualizationMode="Automatic" 
 						EmptyContentDisplayMode="DataSourceEmpty" 
-						IsAsyncBalanceEnabled="True"				
-			>
+						IsAsyncBalanceEnabled="True" 
+						EmptyContent="" 			>
 						<telerikPrimitives:RadContextMenu.ContextMenu>
 							<telerikPrimitives:RadContextMenu 
 								OpenGesture="Hold" 
