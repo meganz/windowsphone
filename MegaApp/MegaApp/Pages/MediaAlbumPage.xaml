@@ -43,7 +43,7 @@
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
 				IsAsyncBalanceEnabled="True" 
 				IsCheckModeActive="True" 
-				CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" 
+				CheckBoxStyle="{StaticResource MultiSelectItemCheckBoxStyle}" 
 				ItemCheckedPath="Selected" 
 				CheckModeDeactivatedOnBackButton="False" 
 				ItemCheckedStateChanged="OnItemCheckedStateChanged" 

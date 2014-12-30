@@ -35,7 +35,7 @@ namespace MegaApp.Pages
 
         private void OnLogoutClick(object sender, System.EventArgs e)
         {
-            if (App.MegaTransfers.Count != 0)
+            if (App.MegaTransfers.Count > 0)
             {
                 if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
                     AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
