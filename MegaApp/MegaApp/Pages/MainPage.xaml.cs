@@ -115,7 +115,7 @@ namespace MegaApp.Pages
                     // Needed on every UI interaction
                     App.MegaSdk.retryPendingConnections();
 
-                    if(App.MegaTransfers.Count != 0)
+                    if(App.MegaTransfers.Count > 0)
                     {
                         if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
                             AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
@@ -307,6 +307,18 @@ namespace MegaApp.Pages
                     App.CloudDrive.GoFolderUp();
                     Task.Run(() => App.CloudDrive.LoadNodes());
                     e.Cancel = true;
+                }
+                else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
+                {
+                    if (App.MegaTransfers.Count > 0)
+                    {
+                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
+                            AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                        {
+                            e.Cancel = true;
+                            return;
+                        }
+                    }
                 }
             }
             base.OnBackKeyPress(e);
