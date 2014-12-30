@@ -1,29 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Linq;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.ServiceModel.Channels;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Resources;
-using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
-using Binding = System.Windows.Data.Binding;
 
 namespace MegaApp.Services
 {
@@ -198,6 +186,9 @@ namespace MegaApp.Services
 
         public static void ShowSortDialog(CloudDriveViewModel cloudDrive)
         {
+            // If rootnode is not determined yet. Do nothing
+            if (cloudDrive.CurrentRootNode == null) return;
+
             var sortRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,

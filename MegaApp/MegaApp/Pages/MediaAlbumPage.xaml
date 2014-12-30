@@ -41,17 +41,16 @@
 				ItemsSource="{Binding Pictures}" 
 				ItemTemplate="{StaticResource MediaItemTemplate}"							
 				telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-				IsAsyncBalanceEnabled="True" 
 				IsCheckModeActive="True" 
-				CheckBoxStyle="{StaticResource MediaItemCheckBoxStyle}" 
+				CheckBoxStyle="{StaticResource MultiSelectItemCheckBoxStyle}" 
 				ItemCheckedPath="Selected" 
 				CheckModeDeactivatedOnBackButton="False" 
 				ItemCheckedStateChanged="OnItemCheckedStateChanged" 
-				RealizedItemsBufferScale="3" 
-				Loaded="OnLoaded"
+				RealizedItemsBufferScale="4" 
+				Loaded="OnLoaded" 
 				>
 				<telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition>
-					<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" />
+					<telerikPrimitives:WrapVirtualizationStrategyDefinition Orientation="Horizontal" WrapLineAlignment="Near" />
 				</telerikPrimitives:RadDataBoundListBox.VirtualizationStrategyDefinition> 				
 			</telerikPrimitives:RadDataBoundListBox>
 

@@ -300,8 +300,7 @@ namespace MegaApp.Models
 
         public void GoFolderUp()
         {
-            if (cancellationToken.CanBeCanceled)
-                cancellationTokenSource.Cancel();
+            CancelLoadNodes();
 
             MNode parentNode = null;
             
@@ -312,8 +311,7 @@ namespace MegaApp.Models
                 parentNode = this.MegaSdk.getRootNode();
             
             this.CurrentRootNode = NodeService.CreateNew(App.MegaSdk, parentNode, ChildNodes);
-            this.ChildNodes.Clear();
-            //TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
+            //this.ChildNodes.Clear();
         }
 
         public void SetView(ViewMode viewMode)
@@ -422,13 +420,12 @@ namespace MegaApp.Models
 
         public void GoToFolder(NodeViewModel folder)
         {
-            if(cancellationToken.CanBeCanceled)
-                cancellationTokenSource.Cancel();
+            CancelLoadNodes();
 
             this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
             this.CurrentRootNode.ChildCollection = ChildNodes;
-            this.ChildNodes.Clear();
+            //this.ChildNodes.Clear();
             // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
@@ -490,9 +487,11 @@ namespace MegaApp.Models
         public void LoadNodes()
         {
             // First cancel any other loadnodes
-            if (cancellationToken.CanBeCanceled)
-                if (cancellationTokenSource != null) 
-                    cancellationTokenSource.Cancel();
+            CancelLoadNodes(false);
+
+            // If for some reason the CurrentRootNode is null then create clouddrive rootnode as replacement
+            if (this.CurrentRootNode == null)
+                this.CurrentRootNode = NodeService.CreateNew(this.MegaSdk, this.MegaSdk.getRootNode());
 
             // Get the nodes from the MEGA SDK
             MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
@@ -716,6 +715,8 @@ namespace MegaApp.Models
 
         public void FetchNodes(NodeViewModel rootRefreshNode = null)
         {
+            CancelLoadNodes();
+
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
             ShortCutHandle = null;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
@@ -723,10 +724,7 @@ namespace MegaApp.Models
 
         public void SelectFolder(NodeViewModel selectedNode)
         {
-            if (cancellationToken.CanBeCanceled)
-                cancellationTokenSource.Cancel();
-
-            this.ChildNodes.Clear();
+            CancelLoadNodes();
 
             this.CurrentRootNode = selectedNode;
             this.CurrentRootNode.ChildCollection = ChildNodes;
@@ -790,6 +788,23 @@ namespace MegaApp.Models
         private void RenameItem(object obj)
         {
             FocusedNode.Rename();
+        }
+
+        private void CancelLoadNodes(bool clearChilds = true)
+        {
+            if (cancellationToken.CanBeCanceled)
+                if (cancellationTokenSource != null)
+                    cancellationTokenSource.Cancel();
+
+            if (clearChilds)
+            {
+                if (Deployment.Current.Dispatcher.CheckAccess())
+                    this.ChildNodes.Clear();
+                else
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() => this.ChildNodes.Clear()); 
+                }
+            }
         }
 
         #endregion
