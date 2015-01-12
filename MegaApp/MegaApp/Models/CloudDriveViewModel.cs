@@ -481,7 +481,13 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
-            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this)); ;
+            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this));
+        }
+
+        public void DownloadLink(string link)
+        {            
+            MessageBox.Show("This feature is unavailable for the moment", "Feature unavailable",
+                MessageBoxButton.OK);
         }
 
         public void LoadNodes()
