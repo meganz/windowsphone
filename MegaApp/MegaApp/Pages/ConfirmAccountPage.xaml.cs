@@ -32,7 +32,13 @@ namespace MegaApp.Pages
             if (NavigateService.ProcessQueryString(NavigationContext.QueryString) != NavigationParameter.UriLaunch) return;
 
             if (NavigationContext.QueryString.ContainsKey("confirm"))
+            {
                 _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                if(_confirmAccountViewModel.ConfirmCode.StartsWith("mega://"))
+                    _confirmAccountViewModel.ConfirmCode = _confirmAccountViewModel.ConfirmCode.Replace("mega://", "https://mega.co.nz/#");
+
+                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode, _confirmAccountViewModel);
+            }                
         }
     }
 }

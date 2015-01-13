@@ -481,7 +481,13 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
-            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this)); ;
+            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this));
+        }
+
+        public void DownloadLink(string link)
+        {            
+            MessageBox.Show("This feature is unavailable for the moment", "Feature unavailable",
+                MessageBoxButton.OK);
         }
 
         public void LoadNodes()
@@ -603,7 +609,10 @@ namespace MegaApp.Models
                 for (int i = 0; i < listSize; i++)
                 {
                     if (cancellationToken.IsCancellationRequested) return;
-                    
+
+                    // To avoid pass null values to CreateNew
+                    if (nodeList.get(i) == null) continue;
+                                        
                     var node = NodeService.CreateNew(this.MegaSdk, nodeList.get(i), ChildNodes);
 
                     if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
@@ -748,13 +757,16 @@ namespace MegaApp.Models
         {
             this.BreadCrumbs.Clear();
 
-            if (currentRootNode.Type == MNodeType.TYPE_ROOT || currentRootNode.Type == MNodeType.TYPE_RUBBISH) return;
+            if (currentRootNode == null || currentRootNode.Type == MNodeType.TYPE_ROOT || 
+                currentRootNode.Type == MNodeType.TYPE_RUBBISH) 
+                return;
 
             this.BreadCrumbs.Add(currentRootNode);
 
             MNode parentNode = currentRootNode.GetMegaNode();
             parentNode = this.MegaSdk.getParentNode(parentNode);
-            while ((parentNode.getType() != MNodeType.TYPE_ROOT) && (parentNode.getType() != MNodeType.TYPE_RUBBISH))
+            while ((currentRootNode != null) && (parentNode.getType() != MNodeType.TYPE_ROOT) && 
+                (parentNode.getType() != MNodeType.TYPE_RUBBISH))
             {
                 this.BreadCrumbs.Insert(0, NodeService.CreateNew(this.MegaSdk, parentNode));
                 parentNode = this.MegaSdk.getParentNode(parentNode);
