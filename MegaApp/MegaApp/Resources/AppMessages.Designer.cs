@@ -79,7 +79,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to confirm account. Please try again. [{0}].
+        ///   Busca una cadena traducida similar a The account is already confirmed. You can now login..
+        /// </summary>
+        internal static string AlreadyConfirmedAccount {
+            get {
+                return ResourceManager.GetString("AlreadyConfirmedAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account already confirmed.
+        /// </summary>
+        internal static string AlreadyConfirmedAccount_Title {
+            get {
+                return ResourceManager.GetString("AlreadyConfirmedAccount_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to confirm account. Please try again. [{0}].
         /// </summary>
         internal static string ConfirmAccountFailed {
             get {
@@ -858,6 +876,24 @@ namespace MegaApp.Resources {
         internal static string UserNotOnline_Title {
             get {
                 return ResourceManager.GetString("UserNotOnline_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The typed password is incorrect.
+        /// </summary>
+        internal static string WrongPassword {
+            get {
+                return ResourceManager.GetString("WrongPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong password.
+        /// </summary>
+        internal static string WrongPassword_Title {
+            get {
+                return ResourceManager.GetString("WrongPassword_Title", resourceCulture);
             }
         }
     }

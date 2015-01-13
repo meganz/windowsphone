@@ -130,7 +130,7 @@
     <value>Confirm account failed</value>
   </data>
   <data name="ConfirmAccountSucces" xml:space="preserve">
-    <value>Your account has been created, confirmed and activated. You can now login.</value>
+    <value>Your account has been created, confirmed and activated. You will automatically logged in.</value>
   </data>
   <data name="ConfirmAccountSucces_Title" xml:space="preserve">
     <value>Account activated</value>
@@ -384,7 +384,16 @@
   <data name="PendingTransfersExit_Title" xml:space="preserve">
     <value>Pending Transfers</value>
   </data>
-  <data name="QuestionAskedDownloadOption" xml:space="preserve">
-    <value>Do you want to automatic export image files to your photo album after download? You can also change this setting on the settings page. Other file types will always be stored in local storage of the app.</value>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>The account is already confirmed. You can now login.</value>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>Account already confirmed</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>The typed password is incorrect</value>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>Wrong password</value>
   </data>
 </root>

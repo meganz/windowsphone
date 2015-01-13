@@ -28,6 +28,7 @@ namespace MegaApp.Pages
         // Constants
         private readonly Size _defaultCameraResolution = new Size(640, 480);
 
+        private bool _isCameraInitialized = false;
         private bool _capturing = false;
         private readonly Semaphore _focusSemaphore = new Semaphore(1, 1);
         private bool _manuallyFocused = false;
@@ -132,6 +133,7 @@ namespace MegaApp.Pages
                           device.SensorRotationInDegrees : -device.SensorRotationInDegrees);
 
             PhotoCaptureDevice = device;
+            _isCameraInitialized = true;
         }
 
         protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -165,6 +167,13 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
+            // If the camera was not initialize yet, the app does nothing to avoid crashes
+            if (!this._isCameraInitialized)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             if (PhotoCaptureDevice != null && !e.Uri.ToString().Contains("SettingsPage.xaml"))
             {
                 PhotoCaptureDevice.Dispose();
