@@ -111,5 +111,73 @@ namespace MegaApp.Models
         }
 
         #endregion
+
+        #region MRequestListenerInterface
+
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            MRequestType type = request.getType();
+            MErrorType error = e.getErrorCode();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgessService.SetProgressIndicator(false);
+                this.ControlState = true;                
+
+                switch (e.getErrorCode())
+                {
+                    case MErrorType.API_OK: //Successfull confirmation process
+                        {
+                            if(request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
+                            {
+                                if (ShowSuccesMessage)
+                                    MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
+
+                                OnSuccesAction(request);
+                            }
+                            break;
+                        }
+
+                    case MErrorType.API_ENOENT: //Useful errors for users
+                        {
+                            //Already confirmed account
+                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
+                            {
+                                MessageBox.Show(AppMessages.AlreadyConfirmedAccount, AppMessages.AlreadyConfirmedAccount_Title,
+                                    MessageBoxButton.OK);
+
+                                NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+                            }                                
+
+                            //Wrong password
+                            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
+                                MessageBox.Show(AppMessages.WrongPassword, AppMessages.WrongPassword_Title,
+                                    MessageBoxButton.OK);
+                            
+                            break;
+                        }
+
+                    default: //Other error
+                        {
+                            MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
+                                MessageBoxButton.OK);
+                            break;
+                        }
+
+                }
+            });            
+        }
+
+        protected override void OnSuccesAction(MRequest request)
+        {
+            bool isAlreadyOnline = Convert.ToBoolean(_megaSdk.isLoggedIn());
+                        
+            if (isAlreadyOnline)
+                _megaSdk.logout(this);
+            
+            _megaSdk.login(request.getEmail(), request.getPassword(), new LoginViewModel(_megaSdk));            
+        }
+
+        #endregion
     }
 }
