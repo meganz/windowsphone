@@ -61,6 +61,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {AC2D08AF-7809-4FE9-8B3A-3582BCB24DC5}.
+        /// </summary>
+        internal static string ExportImagesToPhotoAlbum {
+            get {
+                return ResourceManager.GetString("ExportImagesToPhotoAlbum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {A8659687-3710-4B8D-8D0E-CAF3C3B44434}.
+        /// </summary>
+        internal static string QuestionAskedDownloadOption {
+            get {
+                return ResourceManager.GetString("QuestionAskedDownloadOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {048D1075-3EC2-40F1-A8CF-874656BBB212}.
         /// </summary>
         internal static string SortOrderNodes {

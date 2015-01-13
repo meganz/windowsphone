@@ -31,29 +31,31 @@
     <DataTemplate x:Key="MegaNodeListFileItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
             <Grid Margin="0,6">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
-                    <Image.Source>
-                        <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
-							DecodePixelHeight="64"
-							DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation, DelayCreation"
+        		<Grid.RowDefinitions>
+        			<RowDefinition/>
+        			<RowDefinition/>
+        		</Grid.RowDefinitions>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition Width="Auto"/>
+        			<ColumnDefinition Width="Auto"/>
+        			<ColumnDefinition Width="Auto"/>
+        			<ColumnDefinition/>
+        		</Grid.ColumnDefinitions>
+        		<Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
+        			<Image.Source>
+        				<BitmapImage 
+        					UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+        					DecodePixelHeight="64"
+        					DecodePixelType="Logical"
+        					CreateOptions="BackgroundCreation, DelayCreation"
                         />
-                    </Image.Source>
-                </Image>
-                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
-                <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FileSize}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
-                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-            </Grid>
+        			</Image.Source>
+        		</Image>
+        		<TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" FontWeight="Bold"/>
+        		<TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding FileSize}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+        		<Image Margin="0" Source="/Assets/AppBar/save.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Width="38" Height="38" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        		<TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+        	</Grid>
         </Border>
     </DataTemplate>
 
@@ -551,6 +553,11 @@
         <Grid Margin="0,0,0,20">
             <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
         </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="MainPagePivotHeaderTemplate">
+    	<Grid>
+    		<TextBlock HorizontalAlignment="Left" Text="{Binding}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+    	</Grid>
     </DataTemplate>
     
 

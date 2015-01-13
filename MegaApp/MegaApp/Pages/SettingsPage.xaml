@@ -36,6 +36,14 @@
 				<Button x:Name="BtnShareMasterKey" Content="share" Command="{Binding ShareMasterKeyCommand}" FontFamily="Portable User Interface"/>
 				<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
 			</Grid>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export images to photo album" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			<Grid Margin="0,0,0,40">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<telerikPrimitives:RadToggleSwitch x:Name="BtnExportPhotoAlbumSwitch" VerticalAlignment="Center" Content="{Binding ExportIsEnabledText}" IsChecked="{Binding ExportIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2"/>
+			</Grid>
 			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<StackPanel Margin="0,0,0,40">
 				<telerikPrimitives:RadToggleSwitch x:Name="BtnPasswordSwitch" VerticalAlignment="Center" Content="{Binding PasswordIsEnabledText}" IsChecked="{Binding PasswordIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>

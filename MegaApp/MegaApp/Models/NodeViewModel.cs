@@ -276,7 +276,6 @@ namespace MegaApp.Models
                                       this.GetMegaNode().getBase64Handle());
             }
         }
-       
 
         public MNode GetMegaNode()
         {

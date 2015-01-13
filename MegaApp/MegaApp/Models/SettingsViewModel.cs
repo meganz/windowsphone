@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Interop;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
@@ -27,14 +28,14 @@ namespace MegaApp.Models
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePasswordCommand = new DelegateCommand(ChangePassword);
 
-            PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
+            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+            this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
         }
 
         #region Commands
 
         public ICommand ShareMasterKeyCommand { get; set; }
         public ICommand CopyMasterKeyCommand { get; set; }
-
         public ICommand ChangePasswordCommand { get; set; }
 
         #endregion
@@ -62,6 +63,23 @@ namespace MegaApp.Models
         #region Properties
 
         public string AppVersion { get; set; }
+
+        private bool _exportIsEnabled;
+        public bool ExportIsEnabled
+        {
+            get { return _exportIsEnabled; }
+            set
+            {
+                if(_exportIsEnabled != value)
+                    SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, value);
+                
+                _exportIsEnabled = value;
+
+                ExportIsEnabledText = _exportIsEnabled ? UiResources.On : UiResources.Off;
+                
+                OnPropertyChanged("ExportIsEnabled");
+            }
+        }
 
         private bool _passwordIsEnabled;
         public bool PasswordIsEnabled
@@ -94,6 +112,17 @@ namespace MegaApp.Models
             {
                 _passwordIsEnabledText = value;
                 OnPropertyChanged("PasswordIsEnabledText");
+            }
+        }
+
+        private string _exportIsEnabledText;
+        public string ExportIsEnabledText
+        {
+            get { return _exportIsEnabledText; }
+            set
+            {
+                _exportIsEnabledText = value;
+                OnPropertyChanged("ExportIsEnabledText");
             }
         }
 

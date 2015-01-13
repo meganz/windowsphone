@@ -224,11 +224,35 @@ namespace MegaApp.Models
             return true;
         }
 
-        public void MultipleDownload()
+        public async void MultipleDownload()
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
             if (count < 1) return;
+            
+            if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
+            {
+                switch (await DialogService.ShowOptionsDialog("Download options", AppMessages.QuestionAskedDownloadOption,
+                    new[] {"yes, export", "no, only local"}))
+                {
+                    case -1:
+                    {
+                        return;
+                    }
+                    case 0:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
+                        break;
+                    }
+                    case 1:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
+                        break;
+                    }
+                }
+                SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
+                
+            }
 
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
             {
