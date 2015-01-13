@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace MegaApp.Services
 {
-    class ImageService
+    static class ImageService
     {
         public static bool SaveToCameraRoll(string name, Uri bitmapImageUri)
         {
@@ -21,8 +21,13 @@ namespace MegaApp.Services
             {
                 try
                 {
-                    var bitmapImage = new BitmapImage(bitmapImageUri);
-                    return mediaLibrary.SavePictureToCameraRoll(name, bitmapImage.ConvertToBytes()) != null;
+                    using (var bitmapFile = File.OpenRead(bitmapImageUri.LocalPath))
+                    {
+                        var bitmapImage = new BitmapImage();
+                        bitmapImage.SetSource(bitmapFile); 
+                        bitmapFile.Close();
+                        return mediaLibrary.SavePictureToCameraRoll(name, bitmapImage.ConvertToBytes()) != null;
+                    }
                 }
                 catch (Exception)
                 {

@@ -314,7 +314,7 @@ namespace MegaApp.Pages
                 }
                 else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
                 {
-                    if (App.MegaTransfers.Count > 0)
+                    if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
                     {
                         if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
                             AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
