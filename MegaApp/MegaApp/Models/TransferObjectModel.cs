@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -186,18 +187,40 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>Status = TransferStatus.Finished);
-
-                    if (SelectedNode is ImageNodeViewModel && AutoLoadImageOnFinish)
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        var imageNode = SelectedNode as ImageNodeViewModel;
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        Status = TransferStatus.Finished;
+                        var node = SelectedNode as FileNodeViewModel;
+                        if (node != null) 
+                            node.IsDownloadAvailable = File.Exists(node.FilePath);
+                    });
+
+                    var imageNode = SelectedNode as ImageNodeViewModel;
+                    if (imageNode != null)
+                    {
+                        if (AutoLoadImageOnFinish)
                         {
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                imageNode.ImageUri = new Uri(imageNode.ImagePath);
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                                if (imageNode.GetMegaNode().hasPreview()) return;
+                                imageNode.PreviewImageUri = new Uri(imageNode.ImagePath);
+                                imageNode.IsBusy = false;
+                            });
+                        }
+                        else
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                            });
                             imageNode.ImageUri = new Uri(imageNode.ImagePath);
-                            if (SelectedNode.GetMegaNode().hasPreview()) return;
-                            imageNode.PreviewImageUri = new Uri(imageNode.ImagePath);
-                            imageNode.IsBusy = false;
-                        });
+                        }
+
+                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                        if (exportToPhotoAlbum)
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>imageNode.SaveImageToCameraRoll(false));
                     }
 
                     //if (!SelectedNode.IsImage)

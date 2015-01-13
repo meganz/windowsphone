@@ -20,6 +20,8 @@ namespace MegaApp.Models
         {
             this.FileSize = base.Size.ToStringAndSuffix();
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, FilePath);
+
+            this.IsDownloadAvailable = File.Exists(this.FilePath);
         }
 
         #region Override Methods
@@ -59,6 +61,17 @@ namespace MegaApp.Models
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
                                     this.Name);
+            }
+        }
+
+        private bool _isDownloadAvailable;
+        public bool IsDownloadAvailable
+        {
+            get { return _isDownloadAvailable; }
+            set
+            {
+                _isDownloadAvailable = value;
+                OnPropertyChanged("IsDownloadAvailable");
             }
         }
 

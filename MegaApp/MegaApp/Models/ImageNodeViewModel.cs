@@ -22,6 +22,8 @@ namespace MegaApp.Models
             // Image node downloads to the image path of the full original image
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
 
+            this.IsDownloadAvailable = File.Exists(ImagePath);
+
             // Default false for preview slide
             InViewingRange = false;
         }
@@ -71,15 +73,19 @@ namespace MegaApp.Models
             GetImage(false);
         }
 
-        public void SaveImageToCameraRoll()
+        public void SaveImageToCameraRoll(bool showMessages = true)
         {
             if (this.ImageUri == null) return;
 
-            if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
-                    MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+            if(showMessages)
+                if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
+                        MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
             if (ImageService.SaveToCameraRoll(this.Name, this.ImageUri))
-                MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
+            {
+                if (showMessages)
+                    MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
+            }
             else
                 MessageBox.Show(AppMessages.ImageSaveError, AppMessages.ImageSaveError_Title, MessageBoxButton.OK);
         }

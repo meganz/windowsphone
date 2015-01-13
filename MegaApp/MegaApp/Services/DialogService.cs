@@ -484,5 +484,16 @@ namespace MegaApp.Services
       
             passwordRadWindow.IsOpen = true;
         }
+
+        public static async Task<int> ShowOptionsDialog(string title, string message, string[] buttons)
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+               buttonsContent: buttons,
+               title: title,
+               message: message
+               );
+            
+            return closedEventArgs.ButtonIndex;
+        }
     }
 }
