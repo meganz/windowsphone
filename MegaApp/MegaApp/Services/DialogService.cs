@@ -65,7 +65,7 @@ namespace MegaApp.Services
                 // Download button clicked
                 case 1:
                     {
-                        //cloudDrive.ImportLink(link);
+                        cloudDrive.DownloadLink(link);
                         break;
                     }
             }
