@@ -138,7 +138,7 @@ namespace MegaApp.Pages
 
         protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            ProgessService.SetProgressIndicator(true, "Loading camera...");
+            ProgressService.SetProgressIndicator(true, "Loading camera...");
             if (Camera.IsCameraTypeSupported(CameraType.FrontFacing))
             {
                 await InitializeCamera(CameraSensorLocation.Front);
@@ -148,7 +148,7 @@ namespace MegaApp.Pages
                 MessageBox.Show("Your phone does not have a front facing camera for selfies. Back Camera is used");
                 await InitializeCamera(CameraSensorLocation.Back);
             }
-            ProgessService.SetProgressIndicator(false);
+            ProgressService.SetProgressIndicator(false);
 
             videoBrush.RelativeTransform = new CompositeTransform()
             {

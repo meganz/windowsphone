@@ -46,5 +46,31 @@ namespace MegaApp.Services
 
             throw new ArgumentOutOfRangeException();
         }
+
+        public static List<NodeViewModel> GetRecursiveNodes(MegaSDK megaSdk, FolderNodeViewModel folderNode)
+        {
+            var result = new List<NodeViewModel>();
+
+            var childNodeList = megaSdk.getChildren(folderNode.GetMegaNode());
+        
+            // Retrieve the size of the list to save time in the loops
+            int listSize = childNodeList.size();
+
+            for (int i = 0; i < listSize; i++)
+            {
+              // To avoid pass null values to CreateNew
+                if (childNodeList.get(i) == null) continue;
+
+                var node = CreateNew(megaSdk, childNodeList.get(i));
+
+                var folder = node as FolderNodeViewModel;
+                if (folder != null)
+                    result.AddRange(GetRecursiveNodes(megaSdk, folder));
+                else
+                    result.Add(node);
+            }
+
+            return result;
+        }
     }
 }

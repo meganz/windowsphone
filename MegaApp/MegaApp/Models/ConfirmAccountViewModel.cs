@@ -121,7 +121,7 @@ namespace MegaApp.Models
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgessService.SetProgressIndicator(false);
+                ProgressService.SetProgressIndicator(false);
                 this.ControlState = true;                
 
                 switch (e.getErrorCode())

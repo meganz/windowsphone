@@ -202,13 +202,13 @@
     <value>Getting preview failed</value>
   </data>
   <data name="ImageSaved" xml:space="preserve">
-    <value>Image successful exported to camera roll</value>
+    <value>Image successful exported to 'saved pictures' album</value>
   </data>
   <data name="ImageSaved_Title" xml:space="preserve">
     <value>Image saved</value>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Error exporting image to camera roll. Please try again</value>
+    <value>Error exporting image to  'saved pictures' album. Please try again</value>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
     <value>Failed to save image</value>
@@ -295,7 +295,7 @@
     <value>Fill in required fields</value>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>Export current image to the camera roll?</value>
+    <value>Export current image to 'saved pictures' album?</value>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
     <value>Save image to photo's</value>
@@ -373,13 +373,13 @@
     <value>Items moved</value>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
-    <value>You have {0} pending transfers. Are you sure logout?</value>
+    <value>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</value>
   </data>
   <data name="PendingTransfersLogout_Title" xml:space="preserve">
     <value>Pending Transfers</value>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>You have {0} pending transfers. Are you sure exit?</value>
+    <value>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</value>
   </data>
   <data name="PendingTransfersExit_Title" xml:space="preserve">
     <value>Pending Transfers</value>
@@ -395,5 +395,26 @@
   </data>
   <data name="WrongPassword_Title" xml:space="preserve">
     <value>Wrong password</value>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>You have selected over 100 items ({0}) to download. Do you want to proceed?</value>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>Download count</value>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</value>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>Failed to pause transfers</value>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>Pause failed</value>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>Failed to resume transfers</value>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>Resume failed</value>
   </data>
 </root>

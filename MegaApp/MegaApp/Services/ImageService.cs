@@ -26,7 +26,7 @@ namespace MegaApp.Services
                         var bitmapImage = new BitmapImage();
                         bitmapImage.SetSource(bitmapFile); 
                         bitmapFile.Close();
-                        return mediaLibrary.SavePictureToCameraRoll(name, bitmapImage.ConvertToBytes()) != null;
+                        return mediaLibrary.SavePicture(name, bitmapImage.ConvertToBytes()) != null;
                     }
                 }
                 catch (Exception)

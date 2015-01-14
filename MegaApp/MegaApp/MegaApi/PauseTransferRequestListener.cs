@@ -5,29 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
-using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.MegaApi
 {
-    class FastLoginRequestListener: BaseRequestListener
+    class PauseTransferRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        
-        public FastLoginRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        private bool _pause;
+
+        public PauseTransferRequestListener(bool pause)
         {
-            _cloudDriveViewModel = cloudDriveViewModel;
+            _pause = pause;
         }
 
         #region Base Properties
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.FastLogin; }
+            get { return _pause ? ProgressMessages.PauseTransfers : ProgressMessages.ResumeTransfers; }
         }
 
         protected override bool ShowProgressMessage
@@ -37,12 +36,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.LoginFailed; }
+            get { return _pause ? AppMessages.PausingTransfersFailed : AppMessages.ResumingTransfersFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title; }
+            get { return _pause ? AppMessages.PausingTransfersFailed_Title: AppMessages.ResumingTransfersFailed_Title; }
         }
 
         protected override bool ShowErrorMessage
@@ -91,7 +90,34 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _cloudDriveViewModel.FetchNodes();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                foreach (var item in App.MegaTransfers)
+                {
+                    if (item == null) continue;
+
+                    if (item.TransferedBytes < item.TotalBytes || item.TransferedBytes == 0)
+                    {
+                        switch (item.Status)
+                        {
+                            case TransferStatus.Downloading:
+                            case TransferStatus.Uploading:
+                            case TransferStatus.Connecting:
+                                {
+                                    if(_pause)
+                                        item.Status = TransferStatus.Paused;
+                                    break;
+                                }
+                            case TransferStatus.Paused:
+                            {
+                                if (!_pause)
+                                    item.Status = TransferStatus.Connecting;
+                                break;
+                            }
+                        }
+                    }
+                }
+            });
         }
 
         #endregion

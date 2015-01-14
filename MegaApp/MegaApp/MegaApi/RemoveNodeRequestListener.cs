@@ -130,7 +130,7 @@ namespace MegaApp.MegaApi
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
 
             if (e.getErrorCode() == MErrorType.API_OK)
             {

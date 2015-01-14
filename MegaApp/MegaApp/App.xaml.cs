@@ -240,6 +240,8 @@ namespace MegaApp
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
+            // Clear upload folder. Temporary uploads files are not necessary to keep
+            AppService.ClearUploadCache();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

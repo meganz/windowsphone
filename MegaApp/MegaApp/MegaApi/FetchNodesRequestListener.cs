@@ -134,14 +134,14 @@ namespace MegaApp.MegaApi
                 // Disable appbar buttons
                 _cloudDriveViewModel.SetCommandStatus(false);
 
-                ProgessService.SetProgressIndicator(true,
+                ProgressService.SetProgressIndicator(true,
                    String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));
             });
         }
 
         public override void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true,
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true,
                 String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
 
             if (AppMemoryController.IsThresholdExceeded(75UL.FromMBToBytes()))

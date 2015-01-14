@@ -79,7 +79,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The account is already confirmed. You can now login..
+        ///   Looks up a localized string similar to The account is already confirmed. You can now login..
         /// </summary>
         internal static string AlreadyConfirmedAccount {
             get {
@@ -88,7 +88,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Account already confirmed.
+        ///   Looks up a localized string similar to Account already confirmed.
         /// </summary>
         internal static string AlreadyConfirmedAccount_Title {
             get {
@@ -97,7 +97,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to confirm account. Please try again. [{0}].
+        ///   Looks up a localized string similar to Failed to confirm account. Please try again. [{0}].
         /// </summary>
         internal static string ConfirmAccountFailed {
             get {
@@ -115,7 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your account has been created, confirmed and activated. You can now login..
+        ///   Looks up a localized string similar to Your account has been created, confirmed and activated. You will automatically logged in..
         /// </summary>
         internal static string ConfirmAccountSucces {
             get {
@@ -219,6 +219,24 @@ namespace MegaApp.Resources {
         internal static string DeleteNodeFailed_Title {
             get {
                 return ResourceManager.GetString("DeleteNodeFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have selected over 100 items ({0}) to download. Do you want to proceed?.
+        /// </summary>
+        internal static string DownloadLimitMessage {
+            get {
+                return ResourceManager.GetString("DownloadLimitMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download count.
+        /// </summary>
+        internal static string DownloadLimitMessage_Title {
+            get {
+                return ResourceManager.GetString("DownloadLimitMessage_Title", resourceCulture);
             }
         }
         
@@ -367,7 +385,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image successful exported to camera roll.
+        ///   Looks up a localized string similar to Image successful exported to &apos;saved pictures&apos; album.
         /// </summary>
         internal static string ImageSaved {
             get {
@@ -385,7 +403,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error exporting image to camera roll. Please try again.
+        ///   Looks up a localized string similar to Error exporting image to  &apos;saved pictures&apos; album. Please try again.
         /// </summary>
         internal static string ImageSaveError {
             get {
@@ -673,7 +691,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have {0} pending transfers. Are you sure exit?.
+        ///   Looks up a localized string similar to Failed to pause transfers.
+        /// </summary>
+        internal static string PausingTransfersFailed {
+            get {
+                return ResourceManager.GetString("PausingTransfersFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pause failed.
+        /// </summary>
+        internal static string PausingTransfersFailed_Title {
+            get {
+                return ResourceManager.GetString("PausingTransfersFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?.
         /// </summary>
         internal static string PendingTransfersExit {
             get {
@@ -691,7 +727,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have {0} pending transfers. Are you sure logout?.
+        ///   Looks up a localized string similar to You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?.
         /// </summary>
         internal static string PendingTransfersLogout {
             get {
@@ -727,7 +763,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to automatic export image files to your photo album after download? You can also change this setting on the settings page. Other file types will always be stored in local storage of the app..
+        ///   Looks up a localized string similar to Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app..
         /// </summary>
         internal static string QuestionAskedDownloadOption {
             get {
@@ -844,7 +880,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export current image to the camera roll?.
+        ///   Looks up a localized string similar to Failed to resume transfers.
+        /// </summary>
+        internal static string ResumingTransfersFailed {
+            get {
+                return ResourceManager.GetString("ResumingTransfersFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resume failed.
+        /// </summary>
+        internal static string ResumingTransfersFailed_Title {
+            get {
+                return ResourceManager.GetString("ResumingTransfersFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export current image to &apos;saved pictures&apos; album?.
         /// </summary>
         internal static string SaveImageQuestion {
             get {
@@ -880,7 +934,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The typed password is incorrect.
+        ///   Looks up a localized string similar to The typed password is incorrect.
         /// </summary>
         internal static string WrongPassword {
             get {
@@ -889,7 +943,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Wrong password.
+        ///   Looks up a localized string similar to Wrong password.
         /// </summary>
         internal static string WrongPassword_Title {
             get {

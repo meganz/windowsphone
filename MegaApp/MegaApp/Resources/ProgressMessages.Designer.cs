@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resuming session....
+        /// </summary>
+        internal static string FastLogin {
+            get {
+                return ResourceManager.GetString("FastLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fetching files &amp; folders... [{0}].
         /// </summary>
         internal static string FetchingNodes {
@@ -196,6 +205,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pausing transfers....
+        /// </summary>
+        internal static string PauseTransfers {
+            get {
+                return ResourceManager.GetString("PauseTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparing downloads....
+        /// </summary>
+        internal static string PrepareDownloads {
+            get {
+                return ResourceManager.GetString("PrepareDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparing uploads....
+        /// </summary>
+        internal static string PrepareUploads {
+            get {
+                return ResourceManager.GetString("PrepareUploads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Removing....
         /// </summary>
         internal static string RemoveNode {
@@ -210,6 +246,15 @@ namespace MegaApp.Resources {
         internal static string RenameNode {
             get {
                 return ResourceManager.GetString("RenameNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resuming transfers....
+        /// </summary>
+        internal static string ResumeTransfers {
+            get {
+                return ResourceManager.GetString("ResumeTransfers", resourceCulture);
             }
         }
     }
