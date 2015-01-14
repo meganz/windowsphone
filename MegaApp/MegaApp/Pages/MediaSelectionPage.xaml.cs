@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -43,7 +44,7 @@ namespace MegaApp.Pages
                 return;
             }
 
-            ProgessService.SetProgressIndicator(true, "Preparing uploads...");
+            ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
 
             foreach (var checkedItem in LstMediaItems.CheckedItems)
             {
@@ -64,7 +65,7 @@ namespace MegaApp.Pages
                     uploadTransfer.StartTransfer();
                 }
             }
-            ProgessService.SetProgressIndicator(false);
+            ProgressService.SetProgressIndicator(false);
 
             App.CloudDrive.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.PictureSelected);

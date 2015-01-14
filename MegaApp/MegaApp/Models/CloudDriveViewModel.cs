@@ -25,6 +25,7 @@ namespace MegaApp.Models
 {
     public class CloudDriveViewModel : BaseSdkViewModel
     {
+        private const int DownloadLimitMessage = 100;
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
         private bool asyncInputPromptDialogIsOpen;
@@ -149,14 +150,14 @@ namespace MegaApp.Models
                 if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion, count),
                     AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
             }
             else
             {
                 if (MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
                     AppMessages.MultiMoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
                 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessages.NodeToTrash));
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.NodeToTrash));
             }
                 
             var helperList = new List<NodeViewModel>(count);
@@ -178,7 +179,7 @@ namespace MegaApp.Models
 
                 WaitHandle.WaitAll(waitEventRequests);
 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
 
                 if (this.OldDriveDisplayMode == DriveDisplayMode.RubbishBin)
                 {
@@ -252,16 +253,65 @@ namespace MegaApp.Models
                 }
                 SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
                 
+                
             }
+            
+            ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads);
+
+            // Give the app the time to display the progress indicator
+            await Task.Delay(5);
+           
+            // First count the number of downloads before proceeding to the transfers.
+            int downloadCount = 0;
+            var downloadNodes = new List<NodeViewModel>();
 
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
             {
-                App.MegaTransfers.Add(node.Transfer);
-                node.Transfer.StartTransfer();
+                // If selected file is a folder then also select it childnodes to download
+                var folderNode = node as FolderNodeViewModel;
+                if (folderNode != null)
+                {
+                    List<NodeViewModel> recursiveNodes = NodeService.GetRecursiveNodes(MegaSdk, folderNode);
+                    foreach (var recursiveNode in recursiveNodes)
+                    {
+                        downloadNodes.Add(recursiveNode);
+                        downloadCount++;
+                    }
+                }
+                else
+                {
+                    // No folder then just add node to transferlist
+                    downloadNodes.Add(node);
+                    downloadCount++;
+                }
+               
             }
+
+            if (!DownloadLimitCheck(downloadCount))
+            {
+                ProgressService.SetProgressIndicator(false);
+                return;
+            }
+
+            downloadNodes.ForEach(n =>
+            {
+                App.MegaTransfers.Add(n.Transfer);
+                n.Transfer.StartTransfer();
+            });
+
+            ProgressService.SetProgressIndicator(false);
+
             this.IsMultiSelectActive = false;
             this.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        }
+
+        private bool DownloadLimitCheck(int downloadCount)
+        {
+            if (downloadCount <= DownloadLimitMessage) return true;
+
+            return MessageBox.Show(String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+                AppMessages.DownloadLimitMessage_Title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
         }
 
         private void CreateShortCut(object obj)
@@ -534,13 +584,13 @@ namespace MegaApp.Models
             {
                 // Display a minor indication for the user that the app is busy
                 if (Deployment.Current.Dispatcher.CheckAccess())
-                    ProgessService.SetProgressIndicator(true, String.Empty);
+                    ProgressService.SetProgressIndicator(true, String.Empty);
                 else
                 {
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        ProgessService.SetProgressIndicator(true, String.Empty);
+                        ProgressService.SetProgressIndicator(true, String.Empty);
                         autoResetEvent.Set();
                     });
                     autoResetEvent.WaitOne();
@@ -582,8 +632,6 @@ namespace MegaApp.Models
                     });
                     autoResetEvent.WaitOne();
                 }
-
-
 
                 // Build the bread crumbs. Do this before loading the nodes so that the user can click on home
                 if (Deployment.Current.Dispatcher.CheckAccess())
@@ -667,7 +715,7 @@ namespace MegaApp.Models
                         //var waitHandleProgress = new AutoResetEvent(false);
                         //Deployment.Current.Dispatcher.BeginInvoke(() =>
                         //{
-                        //    ProgessService.SetProgressIndicator(false);
+                        //    ProgressService.SetProgressIndicator(false);
                         //    waitHandleProgress.Set();
                         //});
                         //waitHandleProgress.WaitOne();
@@ -705,11 +753,12 @@ namespace MegaApp.Models
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
-                
+
+               
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     SetEmptyContentTemplate(false, this.CurrentRootNode);
-                    ProgessService.SetProgressIndicator(false);
+                    ProgressService.SetProgressIndicator(false);
                 });
 
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
@@ -732,7 +781,15 @@ namespace MegaApp.Models
                     if (node.IsImage)
                         NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
                     else
+                    {
+                        var fileNode = node as FileNodeViewModel;
+                        if (fileNode != null && fileNode.IsDownloadAvailable)
+                        {
+                            fileNode.OpenFile();
+                            break;
+                        }
                         NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, FocusedNode);
+                    }
 
                     break;
                 }

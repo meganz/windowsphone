@@ -105,6 +105,7 @@
     <Compile Include="Converters\UriToResolutionUriConverter.cs" />
     <Compile Include="Enums\ApplicationEvent.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="MegaApi\PauseTransferRequestListener.cs" />
     <Compile Include="Models\DebugSettingsViewModel.cs" />
     <Compile Include="Classes\MemoryInformation.cs" />
     <Compile Include="Classes\MenuType.cs" />
@@ -267,7 +268,7 @@
     <Compile Include="Services\MegaService.cs" />
     <Compile Include="Services\NavigateService.cs" />
     <Compile Include="Services\NodeService.cs" />
-    <Compile Include="Services\ProgessService.cs" />
+    <Compile Include="Services\ProgressService.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\UiService.cs" />
     <Compile Include="UserControls\BreadCrumb.xaml.cs" />

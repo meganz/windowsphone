@@ -364,9 +364,6 @@ namespace MegaApp.Pages
         {
             if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
 
-
-            //switch (UiService.GetViewMode(App.CloudDrive.CurrentRootNode.Handle, App.CloudDrive.CurrentRootNode.Name))
-           
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
         }
@@ -602,7 +599,7 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
+           
             App.CloudDrive.MultipleDownload();
         }
 

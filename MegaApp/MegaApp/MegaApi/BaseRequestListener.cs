@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
@@ -34,8 +35,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(false));
-
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+            
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 if (ShowSuccesMessage)
@@ -58,14 +59,21 @@ namespace MegaApp.MegaApi
         public virtual void onRequestStart(MegaSDK api, MRequest request)
         {
             if (!ShowProgressMessage) return;
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgessService.SetProgressIndicator(true, ProgressMessage));
+            var autoReset = new AutoResetEvent(true);
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.SetProgressIndicator(true, ProgressMessage);
+                autoReset.Set();
+            });
+            autoReset.WaitOne();
+
         }
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
             //Deployment.Current.Dispatcher.BeginInvoke(() =>
             //{
-            //    ProgessService.SetProgressIndicator(false);
+            //    ProgressService.SetProgressIndicator(false);
             //    if (ShowErrorMessage)
             //        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
             //});

@@ -276,7 +276,7 @@
             <Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Stretch="UniformToFill">
                 <Image.Source>
                     <BitmapImage 
-						UriSource="{Binding ThumbnailUri}"
+						UriSource="{Binding ThumbnailUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
 						DecodePixelHeight="90"
 						DecodePixelWidth="90"
 						DecodePixelType="Logical"

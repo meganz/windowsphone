@@ -36,7 +36,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgessService.SetProgressIndicator(false);
+                ProgressService.SetProgressIndicator(false);
 
                 this.ControlState = true;
 
@@ -62,7 +62,7 @@ namespace MegaApp.Models
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 this.ControlState = false;
-                ProgessService.SetProgressIndicator(true, ProgressMessage);
+                ProgressService.SetProgressIndicator(true, ProgressMessage);
             });
         }
 
@@ -70,7 +70,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgessService.SetProgressIndicator(false);
+                ProgressService.SetProgressIndicator(false);
                 MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
             });
         }

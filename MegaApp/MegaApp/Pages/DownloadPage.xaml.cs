@@ -5,8 +5,10 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using MegaApp.Converters;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -44,12 +46,18 @@ namespace MegaApp.Pages
         private void SetImageSize()
         {
             if (_downloadNodeViewModel.SelectedNode is ImageNodeViewModel) return;
-            this.PanAndZoomImage.Width = 100;
-            this.PanAndZoomImage.Height = 100;
-            this.PanAndZoomImage.HorizontalAlignment = HorizontalAlignment.Center;
+            
+           this.PanAndZoomImage.HorizontalAlignment = HorizontalAlignment.Center;
             this.PanAndZoomImage.VerticalAlignment = VerticalAlignment.Center;
+            this.PanAndZoomImage.Stretch = Stretch.None;
 
-            var bitmapImage = new BitmapImage(_downloadNodeViewModel.SelectedNode.ThumbnailImageUri);
+            var bitmapImage = new BitmapImage(new Uri("/Assets/FileTypes/ThumbView/" + 
+                _downloadNodeViewModel.SelectedNode.ThumbnailImageUri, UriKind.Relative))
+            {
+                DecodePixelHeight = 128,
+                DecodePixelWidth = 128,
+                DecodePixelType = DecodePixelType.Logical
+            };
 
             this.PanAndZoomImage.Source = bitmapImage;
         }

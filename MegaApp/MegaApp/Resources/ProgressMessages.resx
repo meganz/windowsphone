@@ -132,6 +132,9 @@
   <data name="DownloadLink" xml:space="preserve">
     <value>Retrieving download link...</value>
   </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Resuming session...</value>
+  </data>
   <data name="FetchingNodes" xml:space="preserve">
     <value>Fetching files &amp; folders... [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service</comment>
@@ -166,10 +169,22 @@
     <value>Moving to Rubbish bin...</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
   </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Pausing transfers...</value>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Preparing downloads...</value>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Preparing uploads...</value>
+  </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Removing...</value>
   </data>
   <data name="RenameNode" xml:space="preserve">
     <value>Renaming...</value>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Resuming transfers...</value>
   </data>
 </root>

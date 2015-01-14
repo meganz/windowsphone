@@ -2,7 +2,7 @@
 
 namespace MegaApp.Services
 {
-    public static class ProgessService
+    public static class ProgressService
     {
         public static void SetProgressIndicator(bool isVisible, string message = null)
         {

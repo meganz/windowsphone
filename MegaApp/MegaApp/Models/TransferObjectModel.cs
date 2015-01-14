@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -73,7 +74,13 @@ namespace MegaApp.Models
 
         public void CancelTransfer(object p = null)
         {
-            if (!IsBusy) return;
+
+            if (!IsBusy)
+            {
+                if(Status == TransferStatus.NotStarted)
+                    Status = TransferStatus.Canceled;
+                return;
+            }
             Status = TransferStatus.Canceling;
             MegaSdk.cancelTransfer(Transfer);
         }
@@ -114,7 +121,16 @@ namespace MegaApp.Models
         public TransferType Type { get; set; }
         public NodeViewModel SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
-        public Uri ThumbnailUri { get; private set; }
+        private Uri _thumbnailUri;
+        public Uri ThumbnailUri
+        {
+            get { return _thumbnailUri; }
+            private set
+            {
+                _thumbnailUri = value;
+                OnPropertyChanged("ThumbnailUri");
+            }
+        }
         public bool AutoLoadImageOnFinish { get; set; }
 
         private bool _cancelButtonState;
@@ -187,14 +203,6 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        Status = TransferStatus.Finished;
-                        var node = SelectedNode as FileNodeViewModel;
-                        if (node != null) 
-                            node.IsDownloadAvailable = File.Exists(node.FilePath);
-                    });
-
                     var imageNode = SelectedNode as ImageNodeViewModel;
                     if (imageNode != null)
                     {
@@ -216,17 +224,26 @@ namespace MegaApp.Models
                                 imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
                             });
                             imageNode.ImageUri = new Uri(imageNode.ImagePath);
-                        }
 
-                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                        if (exportToPhotoAlbum)
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>imageNode.SaveImageToCameraRoll(false));
+                            bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                            if (exportToPhotoAlbum)
+                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                        }
                     }
 
-                    //if (!SelectedNode.IsImage)
-                    //    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    //        SelectedNode.ImageUri = ImageService.GetDefaultFileImage(SelectedNode.Name));
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        var node = SelectedNode as FileNodeViewModel;
+                        if (node != null)
+                            node.IsDownloadAvailable = File.Exists(node.FilePath);
 
+                        // Set finished status as last item so that the clean function can only happen after exporting image to
+                        // camera roll
+                        Status = TransferStatus.Finished;
+                        TransferedBytes = 10;
+                        TotalBytes = 10;
+                    });
+                   
                     break;
                 }
                 case MErrorType.API_EINCOMPLETE:
@@ -255,11 +272,6 @@ namespace MegaApp.Models
                     break;
                 }
             }
-
-            // Clean up: remove the file from the cache
-            if (Type == TransferType.Upload)
-                File.Delete(FilePath);
-           
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)
@@ -287,7 +299,7 @@ namespace MegaApp.Models
             {
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
-
+                
                 if (TransferedBytes > 0)
                 {
                     switch (Type)
