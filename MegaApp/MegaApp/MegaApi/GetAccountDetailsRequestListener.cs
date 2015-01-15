@@ -7,7 +7,9 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
@@ -90,6 +92,27 @@ namespace MegaApp.MegaApi
                 _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
                 _accountDetails.CreateDataPoints();
                 _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+              
+                switch (_accountDetails.AccountType)
+                {
+                    case MAccountType.ACCOUNT_TYPE_FREE:
+                        _accountDetails.AccountTypeText = UiResources.AccountTypeFree;
+                        _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                        break;
+                    case MAccountType.ACCOUNT_TYPE_PROI:
+                        _accountDetails.AccountTypeText = UiResources.AccountTypePro1;
+                        _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                        break;
+                    case MAccountType.ACCOUNT_TYPE_PROII:
+                        _accountDetails.AccountTypeText = UiResources.AccountTypePro2;
+                        _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                        break;
+                    case MAccountType.ACCOUNT_TYPE_PROIII:
+                        _accountDetails.AccountTypeText = UiResources.AccountTypePro3;
+                        _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                        break;
+                }
+               
             });
         }
 

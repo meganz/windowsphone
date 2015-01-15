@@ -25,6 +25,8 @@ namespace MegaApp.Pages
             _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk);
             this.DataContext = _myAccountPageViewModel;
             InitializeComponent();
+
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
 
         private void OnPieDataBindingComplete(object sender, System.EventArgs e)
@@ -69,6 +71,11 @@ namespace MegaApp.Pages
                 _myAccountPageViewModel.GetAccountDetails();
             else
                 _myAccountPageViewModel.GetPricing();
+        }
+
+        private void OnSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            LstProducts.SelectedItem = null;
         }
         
     }

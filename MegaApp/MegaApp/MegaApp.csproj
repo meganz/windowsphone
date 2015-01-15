@@ -102,9 +102,11 @@
     <Compile Include="Classes\CommandStatusArgs.cs" />
     <Compile Include="Classes\NumericPasswordBox.cs" />
     <Compile Include="Classes\ResolutionHelper.cs" />
+    <Compile Include="Converters\TextToUpperCaseConverter.cs" />
     <Compile Include="Converters\UriToResolutionUriConverter.cs" />
     <Compile Include="Enums\ApplicationEvent.cs" />
     <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="MegaApi\GetUserAvatarRequestListener.cs" />
     <Compile Include="MegaApi\PauseTransferRequestListener.cs" />
     <Compile Include="Models\DebugSettingsViewModel.cs" />
     <Compile Include="Classes\MemoryInformation.cs" />

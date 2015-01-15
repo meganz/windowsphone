@@ -24,7 +24,7 @@
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
-			<TextBlock Text="settings" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="Portable User Interface"/>
+			<TextBlock Text="preferences" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraLarge}" FontFamily="Portable User Interface"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
 			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export masterkey" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
@@ -33,10 +33,11 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-				<Button x:Name="BtnShareMasterKey" Content="share" Command="{Binding ShareMasterKeyCommand}" FontFamily="Portable User Interface"/>
+				<Button x:Name="BtnViewMasterKey" Content="view" Command="{Binding ViewMasterKeyCommand}"/>
 				<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
 			</Grid>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export images to photo album" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="transfers" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export images to 'saved pictures' album after download" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<Grid Margin="0,0,0,40">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>

@@ -27,6 +27,7 @@ namespace MegaApp.Models
             this.ShareMasterKeyCommand = new DelegateCommand(ShareMasterKey);
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePasswordCommand = new DelegateCommand(ChangePassword);
+            this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
 
             this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
             this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
@@ -36,6 +37,7 @@ namespace MegaApp.Models
 
         public ICommand ShareMasterKeyCommand { get; set; }
         public ICommand CopyMasterKeyCommand { get; set; }
+        public ICommand ViewMasterKeyCommand { get; set; }
         public ICommand ChangePasswordCommand { get; set; }
 
         #endregion
@@ -50,9 +52,27 @@ namespace MegaApp.Models
 
         private void CopyMasterkey(object obj)
         {
-            Clipboard.SetText(MegaSdk.exportMasterKey());
-            MessageBox.Show("Masterkey copied to clipboard", "Masterkey copied", MessageBoxButton.OK);
+            CopyClipboard();
         }
+
+        private void CopyClipboard()
+        {
+            try
+            {
+                Clipboard.SetText(MegaSdk.exportMasterKey());
+                MessageBox.Show("Masterkey copied to clipboard", "Masterkey copied", MessageBoxButton.OK);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Failed to copy masterkey to clipboard. Please try again", "Clipboard failed", MessageBoxButton.OK);
+            }
+        }
+        
+        private void ViewMasterKey(object obj)
+        {
+            DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
+        }
+
         private void ChangePassword(object obj)
         {
             DialogService.ShowPasswordDialog(true, this);
