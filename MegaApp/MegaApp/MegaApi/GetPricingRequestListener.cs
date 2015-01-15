@@ -8,6 +8,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
@@ -100,7 +101,6 @@ namespace MegaApp.MegaApi
 
                     var product = new Product
                     {
-                        Name = accountType.ToString(),
                         Amount = request.getPricing().getAmount(i),
                         Currency = request.getPricing().getCurrency(i),
                         GbStorage = request.getPricing().getGBStorage(i),
@@ -108,6 +108,26 @@ namespace MegaApp.MegaApi
                         Months = request.getPricing().getMonths(i),
                         Handle = request.getPricing().getHandle(i)
                     };
+
+                    switch (accountType)
+                    {
+                        case MAccountType.ACCOUNT_TYPE_FREE:
+                            product.Name = UiResources.AccountTypeFree;
+                            product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                        case MAccountType.ACCOUNT_TYPE_PROI:
+                            product.Name = UiResources.AccountTypePro1;
+                            product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                        case MAccountType.ACCOUNT_TYPE_PROII:
+                            product.Name = UiResources.AccountTypePro2;
+                            product.ProductUri = new Uri("/Assets/Images/pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                        case MAccountType.ACCOUNT_TYPE_PROIII:
+                            product.Name = UiResources.AccountTypePro3;
+                            product.ProductUri = new Uri("/Assets/Images/pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                    }
 
                     _accountDetails.Products.Add(product);
                 }

@@ -78,6 +78,11 @@ namespace MegaApp.Classes
             }
         }
 
+        public ulong MaxCache
+        {
+            get { return 100UL.FromMBToBytes(); }
+        }
+
         private MAccountType _accountType;
         public MAccountType AccountType
         {
@@ -86,6 +91,39 @@ namespace MegaApp.Classes
             {
                 _accountType = value;
                 OnPropertyChanged("AccountType");
+            }
+        }
+
+        private string _accountTypeText;
+        public string AccountTypeText
+        {
+            get { return _accountTypeText; }
+            set
+            {
+                _accountTypeText = value;
+                OnPropertyChanged("AccountTypeText");
+            }
+        }
+
+        private Uri _accountTypeUri;
+        public Uri AccountTypeUri
+        {
+            get { return _accountTypeUri; }
+            set
+            {
+                _accountTypeUri = value;
+                OnPropertyChanged("AccountTypeUri");
+            }
+        }
+
+        private Uri _avatarUri;
+        public Uri AvatarUri
+        {
+            get { return _avatarUri; }
+            set
+            {
+                _avatarUri = value;
+                OnPropertyChanged("AvatarUri");
             }
         }
         

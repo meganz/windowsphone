@@ -87,7 +87,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.Settings,
+                Name = UiResources.Preferences,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -645,7 +645,7 @@ namespace MegaApp.Pages
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
 
-            this.BreadCrumbControl.RootName = "Cloud Drive";
+            this.BreadCrumbControl.RootName = UiResources.HomeRoot;
 
             Task.Run(() => App.CloudDrive.LoadNodes());
             ChangeMenu();
@@ -662,7 +662,7 @@ namespace MegaApp.Pages
             App.CloudDrive.BreadCrumbNode = node;
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.RubbishBin;
 
-            this.BreadCrumbControl.RootName = "Rubbish Bin";
+            this.BreadCrumbControl.RootName = UiResources.RubbishBinRoot;
 
             Task.Run(() => App.CloudDrive.LoadNodes());
             ChangeMenu();

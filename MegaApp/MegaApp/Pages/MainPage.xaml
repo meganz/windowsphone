@@ -169,7 +169,7 @@
         <StaticResource ResourceKey="PhoneForegroundBrush"/>
     </phone:PhoneApplicationPage.Foreground>
 	<phone:Pivot x:Name="MainPivot" SelectionChanged="OnPivotSelectionChanged" HeaderTemplate="{StaticResource MainPagePivotHeaderTemplate}">		
-		<phone:PivotItem x:Name="DrivePivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="EXPLORER">			
+		<phone:PivotItem x:Name="DrivePivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.CloudDriveName, Converter={StaticResource TextToUpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">			
 			<Grid x:Name="LayoutRoot" Background="Transparent" Margin="0,0,12,0">
 				<!--ContentPanel - place additional content here-->
 				<Grid.RowDefinitions>
@@ -179,7 +179,7 @@
 
 				<!--ContentPanel - place additional content here-->
 				<StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-					<UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.CloudDriveName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeMediumLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
+					<UserControls:BreadCrumb x:Name="BreadCrumbControl" RootName="{Binding LocalizedUiResources.HomeRoot, Mode=OneWay, Source={StaticResource LocalizedStrings}}" DisplayMember="Name" ValueMember="Name" FontSize="{StaticResource PhoneFontSizeMediumLarge}" CrumbFontSize="19" ItemsSource="{Binding BreadCrumbs}" Margin="0"/>
 					<StackPanel x:Name="ToolbarControl" Orientation="Horizontal" HorizontalAlignment="Right">
 						<TextBlock Text="{Binding CurrentRootNode.FolderInfo}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14.667"/>
 						<telerikPrimitives:RadImageButton x:Name="BtnGoToTop" Content="" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ButtonShape="Ellipse" ButtonType="Custom" RestStateImageSource="/Assets/Images/go_to_top.Screen-WXGA.png" IsChecked="False" Tap="OnGoToTopTap" Margin="0,0,-12,0" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}}"/>
@@ -260,14 +260,15 @@
 
 			</Grid>
 		</phone:PivotItem>
-		<phone:PivotItem x:Name="MenuPivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="MENU">
+		<phone:PivotItem x:Name="MenuPivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.Settings, Converter={StaticResource TextToUpperCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
 			<Grid>
 				<telerikPrimitives:RadDataBoundListBox 
 					x:Name="LstAdvancedMenu" 					
 					Margin="12" 
 					ItemTemplate="{StaticResource AdvancedMenuItem}" 
 					ItemTap="OnAdvancedMenuItemTap"
-					telerik:InteractionEffectManager.IsInteractionEnabled="True" BorderThickness="0,10,0,0" 
+					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+					ListHeaderTemplate="{StaticResource AdvancedMenuHeader}" 
 					/>
 			</Grid>
 		</phone:PivotItem>

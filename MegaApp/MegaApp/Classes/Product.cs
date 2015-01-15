@@ -15,6 +15,7 @@ namespace MegaApp.Classes
         public int GbTransfer { get; set; }
         public int Months { get; set; }
         public ulong Handle { get; set; }
+        public Uri ProductUri { get; set; }
 
         public string Period
         {

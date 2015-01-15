@@ -495,5 +495,24 @@ namespace MegaApp.Services
             
             return closedEventArgs.ButtonIndex;
         }
+
+        public static async void ShowViewMasterKey(string masterkey, Action copyAction)
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: new string[] { UiResources.CopyButton, UiResources.CancelButton },
+                title: "MasterKey",
+                message: masterkey
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                // Share button clicked
+                case 0:
+                    {
+                        copyAction.Invoke();
+                        break;
+                    }
+            }
+        }
     }
 }
