@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -46,12 +47,20 @@ namespace MegaApp.Services
             }
         }
 
-        public static async void ShowOpenLink(string name, string link, CloudDriveViewModel cloudDrive)
+        public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive, bool isImage = false)
         {
+            IEnumerable<string> buttons;
+
+            // Only allows download directly if is an image file
+            if (isImage)
+                buttons = new string[] { "import", "download" };
+            else
+                buttons = new string[] { "import" };
+
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new string[] { "import", "download" },
+                buttonsContent: buttons,
                 title: "Download MEGA link",
-                message: name
+                message: publicNode.getName()
                 );
 
             switch (closedEventArgs.ButtonIndex)
@@ -65,7 +74,7 @@ namespace MegaApp.Services
                 // Download button clicked
                 case 1:
                     {
-                        cloudDrive.DownloadLink(link);
+                        cloudDrive.DownloadLink(publicNode);
                         break;
                     }
             }
