@@ -228,7 +228,7 @@ namespace MegaApp.Services
             var sortItems = new List<AdvancedMenuItem>();
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Files (ascending)",
+                Name = "files (ascending)",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -242,7 +242,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Files (descending)",
+                Name = "files (descending)",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -256,7 +256,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Largest",
+                Name = "largest",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -270,7 +270,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Smallest",
+                Name = "smallest",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -284,7 +284,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Newest",
+                Name = "newest",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -298,7 +298,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Oldest",
+                Name = "oldest",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -312,7 +312,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Name (ascending)",
+                Name = "name (ascending)",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -326,7 +326,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "Name (descending)",
+                Name = "name (descending)",
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -344,13 +344,13 @@ namespace MegaApp.Services
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,
                 ItemsSource = sortItems,
-                Margin = new Thickness(12),
-                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"]
+                Margin = new Thickness(20),
+                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"],
             };
+            ScrollViewer.SetVerticalScrollBarVisibility(sortList, ScrollBarVisibility.Disabled);
+            InteractionEffectManager.SetIsInteractionEnabled(sortList, true);
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
             sortList.ItemTap += (sender, args) => ((AdvancedMenuItem) args.Item.DataContext).TapAction.Invoke();
-            
-
-          
         
 
             //var fileAscButton = new Button()
