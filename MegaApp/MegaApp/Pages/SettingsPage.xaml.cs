@@ -50,8 +50,8 @@ namespace MegaApp.Pages
 
         private void InstanceOnShakeGesture(object sender, ShakeGestureEventArgs e)
         {
-            Dispatcher.BeginInvoke(
-                () => DebugService.DebugSettings.IsDebugMode = !DebugService.DebugSettings.IsDebugMode);
+            //Dispatcher.BeginInvoke(
+            //    () => DebugService.DebugSettings.IsDebugMode = !DebugService.DebugSettings.IsDebugMode);
         }
     }
 }
