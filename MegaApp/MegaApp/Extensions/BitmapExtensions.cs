@@ -15,13 +15,21 @@ namespace MegaApp.Extensions
         {
             using (var ms = new MemoryStream())
             {
-                var image = new Image {Source = bitmapImage};
-                var btmMap = new WriteableBitmap(image, null);
+                try
+                {
+                    //var image = new Image {Source = bitmapImage};
+                    //var btmMap = new WriteableBitmap(image, null);
+                    var btmMap = new WriteableBitmap(bitmapImage);
 
-                // write an image into the stream
-                btmMap.SaveJpeg(ms, bitmapImage.PixelWidth, bitmapImage.PixelHeight, 0, 100);
+                    // write an image into the stream
+                    btmMap.SaveJpeg(ms, bitmapImage.PixelWidth, bitmapImage.PixelHeight, 0, 100);
 
-                return ms.ToArray();
+                    return ms.ToArray();
+                }
+                catch(Exception)
+                {
+                    return null;
+                }                
             }
         }
     }
