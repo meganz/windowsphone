@@ -19,6 +19,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -316,16 +317,16 @@ namespace MegaApp.Models
 
         private void CreateShortCut(object obj)
         {
-            var shortCut = new RadExtendedTileData
+            var shortCutTile = new RadIconicTileData()
             {
-                BackgroundImage = new Uri("/Assets/Images/shortcut.png", UriKind.Relative),
+                IconImage = new Uri("/Assets/Tiles/FolderIconImage.png", UriKind.Relative),
+                SmallIconImage = new Uri("/Assets/Tiles/FolderSmallIconImage.png", UriKind.Relative),
                 Title = FocusedNode.Name
             };
-            
-            
-            LiveTileHelper.CreateOrUpdateTile(shortCut,
-                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.GetMegaNode().getHandle(), UriKind.Relative));
-            
+
+            LiveTileHelper.CreateOrUpdateTile(shortCutTile,
+                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.GetMegaNode().getHandle(), UriKind.Relative),
+                false);
         }
 
         public bool HasChildNodes()
@@ -499,8 +500,7 @@ namespace MegaApp.Models
             this.BreadCrumbNode = this.CurrentRootNode;
             this.CurrentRootNode = folder;
             this.CurrentRootNode.ChildCollection = ChildNodes;
-            //this.ChildNodes.Clear();
-            // TODO REMOVE CalculateBreadCrumbs(this.CurrentRootNode);
+            
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.BreadCrumb, new Dictionary<string, string> { { "Id", Guid.NewGuid().ToString("N") } });
         }
 
@@ -796,6 +796,31 @@ namespace MegaApp.Models
             }
         }
 
+        public void ChangeDrive(bool changeToCloudDrive)
+        {
+            MNode rootNode;
+
+            if (changeToCloudDrive)
+            {
+                rootNode = MegaSdk.getRootNode();
+                DriveDisplayMode = DriveDisplayMode.CloudDrive;
+            }
+            else
+            {
+                rootNode = MegaSdk.getRubbishNode();
+                DriveDisplayMode = DriveDisplayMode.RubbishBin;
+            }
+
+            if (rootNode == null) return;
+
+            var node = NodeService.CreateNew(App.MegaSdk, rootNode);
+            App.CloudDrive.CurrentRootNode = node;
+            App.CloudDrive.BreadCrumbNode = node;
+
+            CancelLoadNodes();
+            LoadNodes();
+        }
+
         public async void AddFolder(NodeViewModel parentNode)
         {
             if (!IsUserOnline()) return;
@@ -816,7 +841,7 @@ namespace MegaApp.Models
         {
             CancelLoadNodes();
 
-           Deployment.Current.Dispatcher.BeginInvoke(() =>SetEmptyContentTemplate(true));
+            Deployment.Current.Dispatcher.BeginInvoke(() =>SetEmptyContentTemplate(true));
 
             var fetchNodesRequestListener = new FetchNodesRequestListener(this, rootRefreshNode, ShortCutHandle);
             ShortCutHandle = null;

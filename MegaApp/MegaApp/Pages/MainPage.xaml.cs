@@ -1,4 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
+using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -9,22 +18,15 @@ using MegaApp.Services;
 using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using System;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Navigation;
 using Telerik.Windows.Controls;
-using Windows.Storage;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private NavigationParameter _navParam;        
+        private NavigationParameter _navParam;
+        private bool _normalBackAction = false;
 
         public MainPage()
         {
@@ -46,15 +48,16 @@ namespace MegaApp.Pages
 
                 foreach (var button in ApplicationBar.Buttons)
                 {
-                    ((ApplicationBarIconButton) button).IsEnabled = args.Status;
+                    ((ApplicationBarIconButton)button).IsEnabled = args.Status;
                 }
 
                 foreach (var item in ApplicationBar.MenuItems)
                 {
-                    ((ApplicationBarMenuItem) item).IsEnabled = args.Status;
+                    ((ApplicationBarMenuItem)item).IsEnabled = args.Status;
                 }
 
                 BtnSelectSorting.IsEnabled = args.Status;
+               
             };
         }
 
@@ -278,7 +281,7 @@ namespace MegaApp.Pages
                                 return;
                             }
                         }
-                        catch (System.ArgumentNullException)
+                        catch (ArgumentNullException)
                         {
                             NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                             return;
@@ -296,35 +299,49 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
+            if (!_normalBackAction)
             {
-                MainPivot.SelectedItem = DrivePivot;
-                e.Cancel = true;
-                return;
-            }
-
-            if(!NavigationService.CanGoBack)
-            {
-                if (App.CloudDrive.CurrentRootNode != null && 
-                    App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
+                if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
                 {
-                    App.CloudDrive.GoFolderUp();
-                    Task.Run(() => App.CloudDrive.LoadNodes());
+                    MainPivot.SelectedItem = DrivePivot;
                     e.Cancel = true;
+                    return;
                 }
-                else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
+
+                if (!NavigationService.CanGoBack)
                 {
-                    if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
+                    if (App.CloudDrive.CurrentRootNode != null &&
+                        App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
                     {
-                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
-                            AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                        App.CloudDrive.GoFolderUp();
+                        Task.Run(() => App.CloudDrive.LoadNodes());
+                        e.Cancel = true;
+                    }
+                    else if (App.CloudDrive.CurrentRootNode != null && App.CloudDrive.CurrentRootNode.Type == MNodeType.TYPE_RUBBISH)
+                    {
+                        this.BreadCrumbControl.RootName = UiResources.CloudDriveName;
+                        App.CloudDrive.ChangeDrive(true);
+                        ChangeMenu();
+
+                        e.Cancel = true;
+                        return;
+                    }
+                    else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
+                    {
+                        if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
                         {
-                            e.Cancel = true;
-                            return;
+                            if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
+                                AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                            {
+                                e.Cancel = true;
+                                return;
+                            }
                         }
                     }
                 }
             }
+
+            _normalBackAction = false;
             base.OnBackKeyPress(e);
         }
 
@@ -334,9 +351,9 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             if(e.Item == null || e.Item.DataContext == null) return;
-            if (e.Item.DataContext as NodeViewModel == null) return;
+            if (!(e.Item.DataContext is NodeViewModel)) return;
             
-            App.CloudDrive.OnNodeTap(e.Item.DataContext as NodeViewModel);
+            App.CloudDrive.OnNodeTap((NodeViewModel) e.Item.DataContext);
         }
 
         private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
@@ -353,9 +370,11 @@ namespace MegaApp.Pages
             }
             else
             {
-                App.CloudDrive.FocusedNode = focusedListBoxItem.DataContext as NodeViewModel;
+                _normalBackAction = true;
+                App.CloudDrive.FocusedNode = (NodeViewModel) focusedListBoxItem.DataContext;
                 var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
-                BtnCreateShortCut.Visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FOLDER ? Visibility.Visible : Visibility.Collapsed;
+                BtnCreateShortCut.Visibility = 
+                    App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FOLDER ? Visibility.Visible : Visibility.Collapsed;
                 BtnDownloadItemCloud.Visibility = visibility;
             }
         }
@@ -389,7 +408,7 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
+         
             App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
         }
 
@@ -545,7 +564,7 @@ namespace MegaApp.Pages
             }
         }
 
-        private void OnGoToTopTap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void OnGoToTopTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
@@ -555,7 +574,7 @@ namespace MegaApp.Pages
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.First());
         }
 
-        private void OnGoToBottomTap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void OnGoToBottomTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
@@ -565,11 +584,12 @@ namespace MegaApp.Pages
             LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
         }
 
-        private void OnSortTap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void OnSortTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
+            _normalBackAction = true;
             DialogService.ShowSortDialog(App.CloudDrive);
         }
 
@@ -625,7 +645,7 @@ namespace MegaApp.Pages
             ChangeMenu();
         }
         
-        private void OnAboutClick(object sender, System.EventArgs e)
+        private void OnAboutClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
@@ -675,7 +695,7 @@ namespace MegaApp.Pages
             advancedMenuItem.TapAction.Invoke();
         }        
 
-        private void OnPivotSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void OnPivotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ApplicationBar == null || MainPivot == null) return;
             ApplicationBar.IsVisible = MainPivot.SelectedItem == DrivePivot;

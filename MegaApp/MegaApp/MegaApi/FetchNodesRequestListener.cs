@@ -108,8 +108,14 @@ namespace MegaApp.MegaApi
                 MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
                 if (shortCutMegaNode != null)
                 {
-
-                    _cloudDriveViewModel.CurrentRootNode = NodeService.CreateNew(api, shortCutMegaNode);
+                     var newRootNode = NodeService.CreateNew(api, shortCutMegaNode);
+                     var autoResetEvent = new AutoResetEvent(false);
+                     Deployment.Current.Dispatcher.BeginInvoke(() =>
+                     {
+                         _cloudDriveViewModel.CurrentRootNode = newRootNode;
+                         autoResetEvent.Set();
+                     });
+                     autoResetEvent.WaitOne();
                 }
             }
             else
