@@ -21,7 +21,7 @@ namespace MegaApp.Classes
         {
             get 
             {
-                return Months == 1 ? "Monthly" : "Annualy";
+                return Months == 1 ? "Monthly" : "Annually";
             }
         }
 
@@ -54,7 +54,7 @@ namespace MegaApp.Classes
         {
             get
             {
-                return String.Format("{0:N} {1}", Amount/100, Currency);
+                return String.Format("{0:N} {1}", (double)Amount/100, Currency);
             }
         }
     }

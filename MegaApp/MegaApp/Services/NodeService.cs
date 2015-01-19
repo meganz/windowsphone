@@ -21,6 +21,8 @@ namespace MegaApp.Services
         public static NodeViewModel CreateNew(MegaSDK megaSdk, MNode megaNode, object parentCollection = null,
             object childCollection = null)
         {
+            if (megaNode == null) return null;
+
             switch (megaNode.getType())
             {
                 case MNodeType.TYPE_UNKNOWN:

@@ -558,10 +558,14 @@ namespace MegaApp.Models
             this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this));
         }
 
-        public void DownloadLink(string link)
-        {            
-            MessageBox.Show("This feature is unavailable for the moment", "Feature unavailable",
-                MessageBoxButton.OK);
+        public void DownloadLink(MNode publicNode)
+        {
+            // Create a temporary DownloadNodeViewModel from the public Node created from the link
+            DownloadNodeViewModel _downloadNodeViewModel = new DownloadNodeViewModel(NodeService.CreateNew(this.MegaSdk, publicNode));
+            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImagePath);
+
+            // Save the image to the camera album
+            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).SaveImageToCameraRoll();
         }
 
         public void LoadNodes()
@@ -686,6 +690,7 @@ namespace MegaApp.Models
                     if (nodeList.get(i) == null) continue;
                                         
                     var node = NodeService.CreateNew(this.MegaSdk, nodeList.get(i), ChildNodes);
+                    if (node == null) continue;
 
                     if (DriveDisplayMode == DriveDisplayMode.MoveItem && FocusedNode != null &&
                         node.GetMegaNode().getBase64Handle() == FocusedNode.GetMegaNode().getBase64Handle())
@@ -871,7 +876,7 @@ namespace MegaApp.Models
 
             MNode parentNode = currentRootNode.GetMegaNode();
             parentNode = this.MegaSdk.getParentNode(parentNode);
-            while ((currentRootNode != null) && (parentNode.getType() != MNodeType.TYPE_ROOT) && 
+            while ((parentNode != null) && (parentNode.getType() != MNodeType.TYPE_ROOT) && 
                 (parentNode.getType() != MNodeType.TYPE_RUBBISH))
             {
                 this.BreadCrumbs.Insert(0, NodeService.CreateNew(this.MegaSdk, parentNode));

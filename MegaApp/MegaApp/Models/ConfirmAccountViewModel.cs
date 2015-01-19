@@ -17,11 +17,13 @@ namespace MegaApp.Models
     class ConfirmAccountViewModel: BaseRequestListenerViewModel
     {
         private readonly MegaSDK _megaSdk;
+        private readonly ConfirmAccountPage _confirmAccountPage;
 
-        public ConfirmAccountViewModel(MegaSDK megaSdk)
+        public ConfirmAccountViewModel(MegaSDK megaSdk, ConfirmAccountPage confirmAccountPage)
         {
             this.ControlState = true;
             this._megaSdk = megaSdk;
+            this._confirmAccountPage = confirmAccountPage;
             this.ConfirmAccountCommand = new DelegateCommand(this.ConfirmAccount);
         }
 
@@ -126,8 +128,15 @@ namespace MegaApp.Models
 
                 switch (e.getErrorCode())
                 {
-                    case MErrorType.API_OK: //Successfull confirmation process
+                    case MErrorType.API_OK: //Request finish successfully
                         {
+                            //Valid and operative confirmation link
+                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
+                            {
+                                this._confirmAccountPage.txtEmail.Text = request.getEmail();                                
+                            }
+
+                            //Successfull confirmation process
                             if(request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
                             {
                                 if (ShowSuccesMessage)
