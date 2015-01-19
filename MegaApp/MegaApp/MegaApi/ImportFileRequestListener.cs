@@ -91,7 +91,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _cloudDriveViewModel.LoadNodes();
+            // FIX for double import
+            //_cloudDriveViewModel.LoadNodes();
         }
 
         #endregion
