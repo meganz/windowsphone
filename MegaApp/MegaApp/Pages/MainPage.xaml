@@ -268,7 +268,7 @@
 					ItemTemplate="{StaticResource AdvancedMenuItem}" 
 					ItemTap="OnAdvancedMenuItemTap"
 					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-					ListHeaderTemplate="{StaticResource AdvancedMenuHeader}" 
+					ListHeaderTemplate="{StaticResource AdvancedMenuHeader}" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
 					/>
 			</Grid>
 		</phone:PivotItem>
