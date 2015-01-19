@@ -218,115 +218,244 @@ namespace MegaApp.Services
 
             var headerText = new TextBlock()
             {
-                Text = "Sort options",
+                Text = "SORT BY",
                 HorizontalAlignment = HorizontalAlignment.Left,
                 FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
                 FontWeight = FontWeights.SemiBold,
                 Margin = new Thickness(20, 30, 20, 20)
             };
 
-            var fileAscButton = new Button()
+            var sortItems = new List<AdvancedMenuItem>();
+            sortItems.Add(new AdvancedMenuItem()
             {
-                Content = "Files type/name ascending"
-            };
-            fileAscButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int) MSortOrderType.ORDER_DEFAULT_ASC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                Name = "Files (ascending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
 
-            var fileDescButton = new Button()
-            {
-                Content = "Files type/name descending"
-            };
-            fileDescButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
 
-            var sizeAscButton = new Button()
+            sortItems.Add(new AdvancedMenuItem()
             {
-                Content = "Size ascending"
-            };
-            sizeAscButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                Name = "Files (descending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
 
-            var sizeDescButton = new Button()
-            {
-                Content = "Size descending"
-            };
-            sizeDescButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
 
-            var modificationAscButton = new Button()
+            sortItems.Add(new AdvancedMenuItem()
             {
-                Content = "Modification date ascending"
-            };
-            modificationAscButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                Name = "Largest",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
 
-            var modificationDescButton = new Button()
-            {
-                Content = "Modification date descending"
-            };
-            modificationDescButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
 
-            var alphaAscButton = new Button()
+            sortItems.Add(new AdvancedMenuItem()
             {
-                Content = "Alphabetical ascending"
-            };
-            alphaAscButton.Tap += (sender, args) =>
-            {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
-                Task.Run(() => cloudDrive.LoadNodes());
-            };
+                Name = "Smallest",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
 
-            var alphaDescButton = new Button()
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
             {
-                Content = "Alphabetical descending"
-            };
-            alphaDescButton.Tap += (sender, args) =>
+                Name = "Newest",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
             {
-                sortRadWindow.IsOpen = false;
-                UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
-                Task.Run(() => cloudDrive.LoadNodes());
+                Name = "Oldest",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = "Name (ascending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = "Name (descending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
+                    Task.Run(() => cloudDrive.LoadNodes());
+                }
+            });
+
+
+            var sortList = new RadDataBoundListBox
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                ItemsSource = sortItems,
+                Margin = new Thickness(12),
+                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"]
             };
+            sortList.ItemTap += (sender, args) => ((AdvancedMenuItem) args.Item.DataContext).TapAction.Invoke();
+            
+
+          
+        
+
+            //var fileAscButton = new Button()
+            //{
+            //    Content = "Files type/name ascending"
+            //};
+            //fileAscButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int) MSortOrderType.ORDER_DEFAULT_ASC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var fileDescButton = new Button()
+            //{
+            //    Content = "Files type/name descending"
+            //};
+            //fileDescButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var sizeAscButton = new Button()
+            //{
+            //    Content = "Size ascending"
+            //};
+            //sizeAscButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var sizeDescButton = new Button()
+            //{
+            //    Content = "Size descending"
+            //};
+            //sizeDescButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var modificationAscButton = new Button()
+            //{
+            //    Content = "Modification date ascending"
+            //};
+            //modificationAscButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var modificationDescButton = new Button()
+            //{
+            //    Content = "Modification date descending"
+            //};
+            //modificationDescButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var alphaAscButton = new Button()
+            //{
+            //    Content = "Alphabetical ascending"
+            //};
+            //alphaAscButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
+
+            //var alphaDescButton = new Button()
+            //{
+            //    Content = "Alphabetical descending"
+            //};
+            //alphaDescButton.Tap += (sender, args) =>
+            //{
+            //    sortRadWindow.IsOpen = false;
+            //    UiService.SetSortOrder(cloudDrive.CurrentRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
+            //    Task.Run(() => cloudDrive.LoadNodes());
+            //};
 
 
             buttonStackPanel.Children.Add(headerText);
-            buttonStackPanel.Children.Add(fileAscButton);
-            buttonStackPanel.Children.Add(fileDescButton);
-            buttonStackPanel.Children.Add(sizeAscButton);
-            buttonStackPanel.Children.Add(sizeDescButton);
-            buttonStackPanel.Children.Add(modificationAscButton);
-            buttonStackPanel.Children.Add(modificationDescButton);
-            buttonStackPanel.Children.Add(alphaAscButton);
-            buttonStackPanel.Children.Add(alphaDescButton);
+            buttonStackPanel.Children.Add(sortList);
+            //buttonStackPanel.Children.Add(fileAscButton);
+            //buttonStackPanel.Children.Add(fileDescButton);
+            //buttonStackPanel.Children.Add(sizeAscButton);
+            //buttonStackPanel.Children.Add(sizeDescButton);
+            //buttonStackPanel.Children.Add(modificationAscButton);
+            //buttonStackPanel.Children.Add(modificationDescButton);
+            //buttonStackPanel.Children.Add(alphaAscButton);
+            //buttonStackPanel.Children.Add(alphaDescButton);
 
-            var scrollViewer = new ScrollViewer {Content = buttonStackPanel};
+            //var scrollViewer = new ScrollViewer {Content = buttonStackPanel};
 
-            sortRadWindow.Content = scrollViewer;
+            sortRadWindow.Content = buttonStackPanel;
 
 
             sortRadWindow.IsOpen = true;
