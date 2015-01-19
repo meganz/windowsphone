@@ -23,23 +23,33 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
+            <telerikPrimitives:RadMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
 			<TextBlock Text="about" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
-			<Grid x:Name="VersionGrid" Margin="0,0,0,10">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
+			<Grid x:Name="VersionGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>                                        
 				</Grid.ColumnDefinitions>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
-				<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding AppVersion}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Left" Margin="0,10,0,10" TextWrapping="Wrap" Text="App version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,10,0,10" TextWrapping="Wrap" Text="{Binding AppVersion}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Column="1">
 					<TextBlock.Foreground>
 						<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
 					</TextBlock.Foreground>
 				</TextBlock>
-			</Grid>
-			<HyperlinkButton x:Name="BtnTermsOfService" Content="Terms of Service" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,10,0,10" Command="{Binding TermsOfServiceCommand}"/>
+                <TextBlock HorizontalAlignment="Left" Margin="0,10,0,10" TextWrapping="Wrap" Text="MEGA SDK version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Row="1"/>
+                <TextBlock HorizontalAlignment="Right" Margin="0,10,0,10" TextWrapping="Wrap" Text="{Binding MegaSDK_Version}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Row="1" Grid.Column="1">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </Grid>
+			<HyperlinkButton x:Name="BtnTermsOfService" Content="Terms of Service" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,40,0,10" Command="{Binding TermsOfServiceCommand}"/>
 			<HyperlinkButton x:Name="BtnPrivacyPolicy" Content="Privacy Policy" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,10,0,10" Command="{Binding PrivacyPolicyCommand}"/>
 			<HyperlinkButton x:Name="BtnAcknowledgements" Content="Acknowledgements" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="-12,40,0,10" Command="{Binding AcknowledgementsCommands}" />
 		</StackPanel>

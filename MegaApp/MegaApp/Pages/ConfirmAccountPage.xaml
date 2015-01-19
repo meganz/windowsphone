@@ -23,11 +23,12 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
+            <telerikPrimitives:RadMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
 			<TextBlock Text="{Binding LocalizedUiResources.CreateAccountTitle, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1">
-			<telerikPrimitives:RadPasswordBox x:Name="txtPassword" Password="{Binding Password, Mode=TwoWay}" ClearButtonVisibility="Visible" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}"/>
+            <telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}" IsReadOnly="True" InputScope="EmailUserName"/>
+            <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}"/>            
 			<Button x:Name="btnConfirmAccount" Content="{Binding LocalizedUiResources.ConfirmAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding ConfirmAccountCommand}" IsEnabled="{Binding ControlState}"/>
 		</StackPanel>
 

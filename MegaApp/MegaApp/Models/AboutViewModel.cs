@@ -17,6 +17,7 @@ namespace MegaApp.Models
         public AboutViewModel()
         {
             this.AppVersion = AppService.GetAppVersion();
+            this.MegaSDK_Version = AppResources.MegaSDK_Version;
             this.TermsOfServiceCommand = new DelegateCommand(NavigateToTermsOfService);
             this.PrivacyPolicyCommand = new DelegateCommand(NavigateToPrivacyPolicy);
             this.AcknowledgementsCommands = new DelegateCommand(NavigateToAcknowledgements);
@@ -54,6 +55,8 @@ namespace MegaApp.Models
         #region Properties
 
         public string AppVersion { get; set; }
+
+        public string MegaSDK_Version { get; set; }
 
         #endregion
     }
