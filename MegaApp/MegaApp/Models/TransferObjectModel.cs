@@ -74,7 +74,6 @@ namespace MegaApp.Models
 
         public void CancelTransfer(object p = null)
         {
-
             if (!IsBusy)
             {
                 if(Status == TransferStatus.NotStarted)

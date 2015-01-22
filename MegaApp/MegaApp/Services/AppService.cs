@@ -140,9 +140,17 @@ namespace MegaApp.Services
             FileService.ClearFiles(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
         }
 
-        public static string GetUploadDirectoryPath()
+        public static string GetUploadDirectoryPath(bool checkIfExists = false)
         {
-            return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.UploadsDirectory);
+            var uploadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.UploadsDirectory);
+
+            if (checkIfExists)
+            {
+                if (!Directory.Exists(uploadDir))
+                    Directory.CreateDirectory(uploadDir);
+            }
+
+            return uploadDir;
         }
 
         public static string GetDownloadDirectoryPath()

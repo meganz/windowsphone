@@ -353,24 +353,31 @@ namespace MegaApp.Models
 
         private async void PhotoTaskOnCompleted(object sender, PhotoResult photoResult)
         {
-            if (photoResult.TaskResult != TaskResult.OK) return;
+            if (photoResult == null || photoResult.TaskResult != TaskResult.OK) return;
 
-            string fileName = Path.GetFileName(photoResult.OriginalFileName);
-            if (fileName != null)
+            try
             {
-                string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
-                using (var fs = new FileStream(newFilePath, FileMode.Create))
+                string fileName = Path.GetFileName(photoResult.OriginalFileName);
+                if (fileName != null)
                 {
-                    await photoResult.ChosenPhoto.CopyToAsync(fs);
-                    await fs.FlushAsync();
-                    fs.Close();
+                    string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
+                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    {
+                        await photoResult.ChosenPhoto.CopyToAsync(fs);
+                        await fs.FlushAsync();
+                        fs.Close();
+                    }
+                    var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, TransferType.Upload, newFilePath);
+                    App.MegaTransfers.Insert(0, uploadTransfer);
+                    uploadTransfer.StartTransfer();
                 }
-                var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, TransferType.Upload, newFilePath);
-                App.MegaTransfers.Insert(0,uploadTransfer);
-                uploadTransfer.StartTransfer();
+                NoFolderUpAction = true;
+                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
-            NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+            catch (Exception)
+            {
+                MessageBox.Show(AppMessages.PhotoUploadError, AppMessages.PhotoUploadError_Title, MessageBoxButton.OK);
+            }
         }
 
         public void GoFolderUp()
@@ -826,20 +833,45 @@ namespace MegaApp.Models
             LoadNodes();
         }
 
+        public void ShowUploadOptions()
+        {
+            // Only 1 dialog can be open at the same time with ShowAsync.
+            if (asyncInputPromptDialogIsOpen) return;
+            
+            DialogService.ShowUploadOptions(this);
+        }
+
         public async void AddFolder(NodeViewModel parentNode)
         {
             if (!IsUserOnline()) return;
 
             // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
             if (asyncInputPromptDialogIsOpen) return;
-            
-            asyncInputPromptDialogIsOpen = true;
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, vibrate: false);
-            asyncInputPromptDialogIsOpen = false;
 
-            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+            try
+            {
+                asyncInputPromptDialogIsOpen = true;
+                var inputPromptClosedEventArgs =await RadInputPrompt.ShowAsync(
+                    new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, 
+                    vibrate: false);
+                asyncInputPromptDialogIsOpen = false;
 
-            this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetMegaNode(), new CreateFolderRequestListener(this));
+                if (inputPromptClosedEventArgs == null || inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+                this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, parentNode.GetMegaNode(),
+                    new CreateFolderRequestListener(this));
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(AppMessages.FolderCreateFailed, AppMessages.FolderCreateFailed_Title,
+                    MessageBoxButton.OK);
+            }
+            finally
+            {
+                asyncInputPromptDialogIsOpen = false;
+            }
+
+           
         }
 
         public void FetchNodes(NodeViewModel rootRefreshNode = null)

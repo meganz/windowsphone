@@ -38,6 +38,7 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Save;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.OpenButton;
 
+            if (_downloadNodeViewModel.SelectedNode == null) return;
             if (_downloadNodeViewModel.SelectedNode is ImageNodeViewModel) return;
             
             ApplicationBar.Buttons.RemoveAt(0);
@@ -45,9 +46,10 @@ namespace MegaApp.Pages
 
         private void SetImageSize()
         {
+            if (_downloadNodeViewModel.SelectedNode == null) return;
             if (_downloadNodeViewModel.SelectedNode is ImageNodeViewModel) return;
             
-           this.PanAndZoomImage.HorizontalAlignment = HorizontalAlignment.Center;
+            this.PanAndZoomImage.HorizontalAlignment = HorizontalAlignment.Center;
             this.PanAndZoomImage.VerticalAlignment = VerticalAlignment.Center;
             this.PanAndZoomImage.Stretch = Stretch.None;
 
@@ -65,7 +67,8 @@ namespace MegaApp.Pages
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             base.OnNavigatingFrom(e);
-            _downloadNodeViewModel.SelectedNode.Transfer.CancelTransfer();
+            if (_downloadNodeViewModel.SelectedNode != null)
+                _downloadNodeViewModel.SelectedNode.Transfer.CancelTransfer();
         }
 
         protected override void OnRemovedFromJournal(JournalEntryRemovedEventArgs e)
@@ -75,16 +78,21 @@ namespace MegaApp.Pages
 
         private void OnSaveClick(object sender, System.EventArgs e)
         {
+            if (_downloadNodeViewModel.SelectedNode == null) return;
+            if (_downloadNodeViewModel.SelectedNode.Transfer.IsBusy) return;
             ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).SaveImageToCameraRoll();
         }
 
         private void OnOpenClick(object sender, System.EventArgs e)
         {
+            if (_downloadNodeViewModel.SelectedNode == null) return;
+            if (_downloadNodeViewModel.SelectedNode.Transfer.IsBusy) return;
+
             // Only open it if the transfer have finished or the file is already downloaded previously
             if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Finished ||                
                 _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.NotStarted)
-            {                
-                _downloadNodeViewModel.SelectedNode.OpenFile();
+            {       
+               _downloadNodeViewModel.SelectedNode.OpenFile();
             }
         }
     }

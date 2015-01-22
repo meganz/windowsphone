@@ -59,8 +59,8 @@
 
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>			
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" IsEnabled="False" />
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/refresh.png" Text="clear selection" Click="OnClearSelectionClick" IsEnabled="False" />						
+			<shell:ApplicationBarIconButton x:Name="BtnAccept" IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" IsEnabled="False" />
+			<shell:ApplicationBarIconButton x:Name="BtnClearSelection" IconUri="/Assets/AppBar/refresh.png" Text="clear selection" Click="OnClearSelectionClick" IsEnabled="False" />						
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 

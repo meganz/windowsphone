@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -34,23 +35,31 @@ namespace MegaApp.Pages
                 DateTime.Now.Month,
                 DateTime.Now.Day,
                 DateTime.Now.Hour,
-                DateTime.Now.Minute); //Guid.NewGuid().ToString("N") + ".jpg";
+                DateTime.Now.Minute);
 
-            string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
-            using (var fs = new FileStream(newFilePath, FileMode.Create))
+            try
             {
-                await fs.WriteAsync(_previewSelfieViewModel.Selfie.ConvertToBytes().ToArray(), 0,
-                        _previewSelfieViewModel.Selfie.ConvertToBytes().Count());
-                await fs.FlushAsync();
-                fs.Close();
+                string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(true), fileName);
+                using (var fs = new FileStream(newFilePath, FileMode.Create))
+                {
+                    await fs.WriteAsync(_previewSelfieViewModel.Selfie.ConvertToBytes().ToArray(), 0,
+                            _previewSelfieViewModel.Selfie.ConvertToBytes().Count());
+                    await fs.FlushAsync();
+                    fs.Close();
+                }
+
+                var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                App.MegaTransfers.Insert(0, uploadTransfer);
+                uploadTransfer.StartTransfer();
+
+                App.CloudDrive.NoFolderUpAction = true;
+                this.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.SelfieSelected));
             }
-
-            var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-            App.MegaTransfers.Insert(0, uploadTransfer);
-            uploadTransfer.StartTransfer();
-
-            App.CloudDrive.NoFolderUpAction = true;
-            this.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.SelfieSelected));
+            catch (Exception)
+            {
+                MessageBox.Show(AppMessages.UploadSelfieFailed, AppMessages.UploadSelfieFailed_Title,
+                    MessageBoxButton.OK);
+            }
         }
     }
 }
