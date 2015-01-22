@@ -595,9 +595,11 @@ namespace MegaApp.Models
                     UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
 
                 // Retrieve the size of the list to save time in the loops
-                if(nodeList != null)
+                if (nodeList != null)
+                {
                     listSize = nodeList.size();
-                else 
+                }
+                else
                 {
                     MessageBox.Show(AppMessages.LoadNodesFailed, AppMessages.LoadNodesFailed_Title, MessageBoxButton.OK);
                     SetEmptyContentTemplate(false, this.CurrentRootNode);
@@ -613,8 +615,6 @@ namespace MegaApp.Models
 
                     SetEmptyContentTemplate(false, this.CurrentRootNode);
                 });
-
-                return;
             }
 
             try
