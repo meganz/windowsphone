@@ -440,7 +440,7 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            DialogService.ShowUploadOptions(App.CloudDrive);
+            App.CloudDrive.ShowUploadOptions();
         }
 
         private void OnCancelMoveClick(object sender, EventArgs e)

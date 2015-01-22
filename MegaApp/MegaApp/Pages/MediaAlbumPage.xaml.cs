@@ -30,36 +30,59 @@ namespace MegaApp.Pages
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
 
+        private void SetControlState(bool state)
+        {
+            LstMediaItems.IsEnabled = state;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = state;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = state;
+        }
+
         private async void OnAcceptClick(object sender, System.EventArgs e)
         {
-            if (LstMediaItems.CheckedItems.Count < 1)
+            if (LstMediaItems.CheckedItems == null || LstMediaItems.CheckedItems.Count < 1)
             {
-                MessageBox.Show("Please select minimal 1 picture", "No pictures selected", MessageBoxButton.OK);
+                MessageBox.Show(AppMessages.MinimalPictureSelection, AppMessages.MinimalPictureSelection_Title, 
+                    MessageBoxButton.OK);
                 return;
             }
 
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
+            SetControlState(false);
+
+            // Set upload directory only once for speed improvement and if not exists, create dir
+            var uploadDir = AppService.GetUploadDirectoryPath(true);
 
             foreach (var checkedItem in LstMediaItems.CheckedItems)
             {
                 var item = (BaseMediaViewModel<Picture>)checkedItem;
+                if(item == null) continue;
 
-                string fileName = Path.GetFileName(item.Name);
-                if (fileName != null)
+                try
                 {
-                    string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
-                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    string fileName = Path.GetFileName(item.Name);
+                    if (fileName != null)
                     {
-                        await item.BaseObject.GetImage().CopyToAsync(fs);
-                        await fs.FlushAsync();
-                        fs.Close();
+                        string newFilePath = Path.Combine(uploadDir, fileName);
+                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        {
+                            await item.BaseObject.GetImage().CopyToAsync(fs);
+                            await fs.FlushAsync();
+                            fs.Close();
+                        }
+                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                        App.MegaTransfers.Add(uploadTransfer);
+                        uploadTransfer.StartTransfer();
                     }
-                    var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                    App.MegaTransfers.Add(uploadTransfer);
-                    uploadTransfer.StartTransfer();
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show(String.Format(AppMessages.PrepareImageForUploadFailed, item.Name), 
+                        AppMessages.PrepareImageForUploadFailed_Title, MessageBoxButton.OK);
+                }
+                
             }
             ProgressService.SetProgressIndicator(false);
+            SetControlState(true);
 
             App.CloudDrive.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.AlbumSelected);
@@ -78,7 +101,11 @@ namespace MegaApp.Pages
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            LstMediaItems.BringIntoView(_mediaAlbumViewModel.Pictures.Last());
+            if (_mediaAlbumViewModel.Pictures == null) return;
+
+            var lastPicture = _mediaAlbumViewModel.Pictures.LastOrDefault();
+            if (lastPicture != null) 
+                LstMediaItems.BringIntoView(lastPicture);
         }
     }
 }

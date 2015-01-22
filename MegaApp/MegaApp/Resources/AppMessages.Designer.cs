@@ -295,6 +295,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Could not find the selected file.
+        /// </summary>
+        internal static string FileNotFound {
+            get {
+                return ResourceManager.GetString("FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File not found.
+        /// </summary>
+        internal static string FileNotFound_Title {
+            get {
+                return ResourceManager.GetString("FileNotFound_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to create folder. Please try again.
         /// </summary>
         internal static string FolderCreateFailed {
@@ -511,6 +529,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select minimal 1 picture for upload.
+        /// </summary>
+        internal static string MinimalPictureSelection {
+            get {
+                return ResourceManager.GetString("MinimalPictureSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No pictures selected.
+        /// </summary>
+        internal static string MinimalPictureSelection_Title {
+            get {
+                return ResourceManager.GetString("MinimalPictureSelection_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destination folder is the same as the source folder. Moving canceled.
         /// </summary>
         internal static string MoveEqualsParent {
@@ -673,6 +709,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to open the selected file.
+        /// </summary>
+        internal static string OpenFileFailed {
+            get {
+                return ResourceManager.GetString("OpenFileFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open file failed.
+        /// </summary>
+        internal static string OpenFileFailed_Title {
+            get {
+                return ResourceManager.GetString("OpenFileFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your passwords do not match. Please re-type them and make sure they are equal.
         /// </summary>
         internal static string PasswordsDoNotMatch {
@@ -745,6 +799,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to upload photo.
+        /// </summary>
+        internal static string PhotoUploadError {
+            get {
+                return ResourceManager.GetString("PhotoUploadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload photo failed.
+        /// </summary>
+        internal static string PhotoUploadError_Title {
+            get {
+                return ResourceManager.GetString("PhotoUploadError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The image is saved in your photo album.
         /// </summary>
         internal static string PictureSaved {
@@ -759,6 +831,24 @@ namespace MegaApp.Resources {
         internal static string PictureSaved_Title {
             get {
                 return ResourceManager.GetString("PictureSaved_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to prepare image: {0} for upload.
+        /// </summary>
+        internal static string PrepareImageForUploadFailed {
+            get {
+                return ResourceManager.GetString("PrepareImageForUploadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparing image failed.
+        /// </summary>
+        internal static string PrepareImageForUploadFailed_Title {
+            get {
+                return ResourceManager.GetString("PrepareImageForUploadFailed_Title", resourceCulture);
             }
         }
         
@@ -912,6 +1002,24 @@ namespace MegaApp.Resources {
         internal static string SaveImageQuestion_Title {
             get {
                 return ResourceManager.GetString("SaveImageQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to upload the selfie picture.
+        /// </summary>
+        internal static string UploadSelfieFailed {
+            get {
+                return ResourceManager.GetString("UploadSelfieFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selfie upload failed.
+        /// </summary>
+        internal static string UploadSelfieFailed_Title {
+            get {
+                return ResourceManager.GetString("UploadSelfieFailed_Title", resourceCulture);
             }
         }
         

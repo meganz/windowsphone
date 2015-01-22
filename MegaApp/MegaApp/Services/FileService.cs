@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows;
 using Windows.Storage;
+using MegaApp.Resources;
 
 namespace MegaApp.Services
 {
@@ -23,12 +25,22 @@ namespace MegaApp.Services
 
         public static async Task<bool> OpenFile(string filePath)
         {
-            var file = await StorageFile.GetFileFromPathAsync(filePath);
+            try
+            {
+                var file = await StorageFile.GetFileFromPathAsync(filePath);
 
-            if (file != null)
-                return await Windows.System.Launcher.LaunchFileAsync(file);
+                if (file != null)
+                    return await Windows.System.Launcher.LaunchFileAsync(file);
+                
+                MessageBox.Show(AppMessages.FileNotFound, AppMessages.FileNotFound_Title, MessageBoxButton.OK);
+                return false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(AppMessages.OpenFileFailed, AppMessages.OpenFileFailed_Title, MessageBoxButton.OK);
+                return false;
+            }
             
-            return false;
         }
 
         public static string CreateRandomFilePath(string path)
