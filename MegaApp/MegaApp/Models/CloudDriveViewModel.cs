@@ -580,16 +580,42 @@ namespace MegaApp.Models
             // First cancel any other loadnodes
             CancelLoadNodes(false);
 
-            // If for some reason the CurrentRootNode is null then create clouddrive rootnode as replacement
-            if (this.CurrentRootNode == null)
-                this.CurrentRootNode = NodeService.CreateNew(this.MegaSdk, this.MegaSdk.getRootNode());
+            // Initialize the nodeList and listSize variables
+            MNodeList nodeList = null;
+            int listSize = 0;
 
-            // Get the nodes from the MEGA SDK
-            MNodeList nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
-                UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
+            try
+            {
+                // If for some reason the CurrentRootNode is null then create CloudDrive RootNode as replacement
+                if (this.CurrentRootNode == null)
+                    this.CurrentRootNode = NodeService.CreateNew(this.MegaSdk, this.MegaSdk.getRootNode());
 
-            // Retrieve the size of the list to save time in the loops
-            int listSize = nodeList.size();
+                // Get the nodes from the MEGA SDK
+                nodeList = this.MegaSdk.getChildren(this.CurrentRootNode.GetMegaNode(),
+                    UiService.GetSortOrder(CurrentRootNode.Handle, CurrentRootNode.Name));
+
+                // Retrieve the size of the list to save time in the loops
+                if(nodeList != null)
+                    listSize = nodeList.size();
+                else 
+                {
+                    MessageBox.Show(AppMessages.LoadNodesFailed, AppMessages.LoadNodesFailed_Title, MessageBoxButton.OK);
+                    SetEmptyContentTemplate(false, this.CurrentRootNode);
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(AppMessages.LoadNodesFailed, AppMessages.LoadNodesFailed_Title,
+                        MessageBoxButton.OK);
+
+                    SetEmptyContentTemplate(false, this.CurrentRootNode);
+                });
+
+                return;
+            }
 
             try
             {
@@ -620,7 +646,7 @@ namespace MegaApp.Models
                     {
                         try
                         {
-                            SetEmptyContentTemplate(true);
+                            SetEmptyContentTemplate(true, this.CurrentRootNode);
                             this.ChildNodes.Clear();
                         }
                         catch (Exception) { }
