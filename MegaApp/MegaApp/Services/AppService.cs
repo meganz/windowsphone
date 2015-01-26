@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Windows.Devices.Geolocation;
 using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Resources;
 using System.IO;
 using System.Xml;
+using Windows.ApplicationModel;
 using Windows.Storage;
 using Microsoft.Phone.Info;
 
@@ -16,25 +18,25 @@ namespace MegaApp.Services
 
         public static string GetAppVersion()
         {
-            var xmlReaderSettings = new XmlReaderSettings
-            {
-                XmlResolver = new XmlXapResolver()
-            };
+            //var xmlReaderSettings = new XmlReaderSettings
+            //{
+            //    XmlResolver = new XmlXapResolver()
+            //};
 
-            using (var xmlReader = XmlReader.Create("WMAppManifest.xml", xmlReaderSettings))
-            {
-                xmlReader.ReadToDescendant("App");
+            //using (var xmlReader = XmlReader.Create("WMAppManifest.xml", xmlReaderSettings))
+            //{
+            //    xmlReader.ReadToDescendant("App");
 
-                return xmlReader.GetAttribute("Version");
-            }
+            //    return xmlReader.GetAttribute("Version");
+            //}
 
             // TODO When moving to WP 8.1 use code below
 
-            //return String.Format("{0}.{1}.{2}.{3}",
-            //    Package.Current.Id.Version.Major,
-            //    Package.Current.Id.Version.Minor,
-            //    Package.Current.Id.Version.Build,
-            //    Package.Current.Id.Version.Revision);
+            return String.Format("{0}.{1}.{2}.{3}",
+                Package.Current.Id.Version.Major,
+                Package.Current.Id.Version.Minor,
+                Package.Current.Id.Version.Build,
+                Package.Current.Id.Version.Revision);
         }
 
         public static MemoryInformation GetAppMemoryUsage()

@@ -19,5 +19,14 @@ namespace MegaApp.Services
                 Duration = new Duration(new TimeSpan(0,0,0,0,500))
             };
         }
+
+        public static RadMoveAnimation GetOpenDialogAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.TopIn,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
+            };
+        }
     }
 }

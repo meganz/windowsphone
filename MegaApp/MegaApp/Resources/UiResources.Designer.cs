@@ -304,6 +304,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File upload.
+        /// </summary>
+        public static string FileUpload {
+            get {
+                return ResourceManager.GetString("FileUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get link.
         /// </summary>
         public static string GetPreviewLink {
@@ -601,6 +610,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select photo.
+        /// </summary>
+        public static string SelectPhoto {
+            get {
+                return ResourceManager.GetString("SelectPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selfie mode.
+        /// </summary>
+        public static string SelfieMode {
+            get {
+                return ResourceManager.GetString("SelfieMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to settings.
         /// </summary>
         public static string Settings {
@@ -669,6 +696,15 @@ namespace MegaApp.Resources {
         public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Take photo.
+        /// </summary>
+        public static string TakePhoto {
+            get {
+                return ResourceManager.GetString("TakePhoto", resourceCulture);
             }
         }
         
@@ -804,6 +840,15 @@ namespace MegaApp.Resources {
         public static string UploadFile {
             get {
                 return ResourceManager.GetString("UploadFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload options.
+        /// </summary>
+        public static string UploadOptionsTitle {
+            get {
+                return ResourceManager.GetString("UploadOptionsTitle", resourceCulture);
             }
         }
         

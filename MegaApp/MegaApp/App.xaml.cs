@@ -1,4 +1,14 @@
-﻿using mega;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Markup;
+using System.Windows.Navigation;
+using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.DataTransfer.ShareTarget;
+using Windows.Networking.Connectivity;
+using Windows.Storage;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
@@ -7,18 +17,7 @@ using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Navigation;
 using Telerik.Windows.Controls;
-using Windows.Networking.Connectivity;
-using Windows.Storage;
-using Microsoft.Phone.Controls;
 
 namespace MegaApp
 {
@@ -37,6 +36,13 @@ namespace MegaApp
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
+
+        // Used for multiple file selection
+        public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
+        public static bool FileOpenPickerOpenend { get; set; }
+
+        // Makes the app a share target for files
+        public ShareOperation ShareOperation { get; set; }
         
         /// <summary>
         /// Constructor for the Application object.
@@ -59,7 +65,7 @@ namespace MegaApp
             if (Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -94,6 +100,13 @@ namespace MegaApp
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
             CheckChangesIP();
             AppEvent = ApplicationEvent.Lauching;
+
+            // Code to intercept files that are send to MEGA as share target
+            var shareEventArgs = e as ShareLaunchingEventArgs;
+            if (shareEventArgs != null)
+            {
+                this.ShareOperation = shareEventArgs.ShareTargetActivatedEventArgs.ShareOperation;
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -208,6 +221,10 @@ namespace MegaApp
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+            RootFrame.Navigating += RootFrameOnNavigating;
+
+            // Handle contract activation such as returned values from file open or save picker
+            PhoneApplicationService.Current.ContractActivated += CurrentOnContractActivated;
 
             // Assign the URI-mapper class to the application frame.
             RootFrame.UriMapper = new AssociationUriMapper();
@@ -247,6 +264,28 @@ namespace MegaApp
             phoneApplicationInitialized = true;
         }
 
+        private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Reset && FileOpenPickerOpenend)
+                e.Cancel = true;
+
+            if (e.NavigationMode == NavigationMode.New && FileOpenPickerOpenend)
+            {
+                e.Cancel = true;
+                FileOpenPickerOpenend = false;
+            }
+            
+        }
+
+        private void CurrentOnContractActivated(object sender, IActivatedEventArgs activatedEventArgs)
+        {
+            var filePickerContinuationArgs = activatedEventArgs as FileOpenPickerContinuationEventArgs;
+            if (filePickerContinuationArgs != null)
+            {
+                this.FilePickerContinuationArgs = filePickerContinuationArgs;
+            }
+        }
+
         // Do not add any additional code to this method
         private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
         {
@@ -262,7 +301,7 @@ namespace MegaApp
         {
             // If the app has received a 'reset' navigation, then we need to check
             // on the next navigation to see if the page stack should be reset
-            if (e.NavigationMode == NavigationMode.Reset)
+            if (e.NavigationMode == NavigationMode.Reset && (!FileOpenPickerOpenend && FilePickerContinuationArgs == null))
                 RootFrame.Navigated += ClearBackStackAfterReset;
         }
 

@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using mega;
+using MegaApp.Converters;
 using MegaApp.Enums;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Services
 {
@@ -59,6 +64,41 @@ namespace MegaApp.Services
             else
                 _folderViewMode.Add(folderHandle, (int)viewMode);
 
+        }
+
+        public static RadCustomHubTile CreateHubTile(string title, Uri bitmapUri, Thickness margin)
+        {
+            var bitmapImage = new BitmapImage()
+            {
+                DecodePixelHeight = 128,
+                DecodePixelWidth = 128,
+                DecodePixelType = DecodePixelType.Logical,
+                UriSource = bitmapUri
+            };
+
+            return new RadCustomHubTile()
+            {
+                Title = title,
+                FrontContent = new Grid()
+                {
+                    HorizontalAlignment = HorizontalAlignment.Stretch,
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    Background = (SolidColorBrush) Application.Current.Resources["MegaRedSolidColorBrush"],
+                    Children =
+                    {
+                        new Image()
+                        {
+                            Source = bitmapImage,
+                            Width = 128,
+                            Height = 128,
+                        }
+                    }
+                },
+                IsFrozen = true,
+                Width = 210,
+                Height = 210,
+                Margin = margin
+            };
         }
 
     }

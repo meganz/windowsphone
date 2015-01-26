@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Windows.ApplicationModel.Activation;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
@@ -40,8 +41,7 @@ namespace MegaApp.Pages
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
-
-
+            
             App.CloudDrive.CommandStatusChanged += (sender, args) =>
             {
                 if (ApplicationBar == null) return;
@@ -64,6 +64,7 @@ namespace MegaApp.Pages
         private void CreateAdvancedMenu()
         {
             var advancedMenuItems = new List<AdvancedMenuItem>();
+
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
                 Name = UiResources.Transfers,
@@ -186,17 +187,29 @@ namespace MegaApp.Pages
                     break;
             }
         }
-
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App.CloudDrive.ListBox = LstCloudDrive;
+            LstAdvancedMenu.SelectedItem = null;
 
             if(App.AppEvent == ApplicationEvent.Activated)
             {                
                 App.AppEvent = ApplicationEvent.None;
+
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+
+                // Check to see if any files have been picked
+                var app = Application.Current as App;
+                if (app != null && app.FilePickerContinuationArgs != null)
+                {
+                    this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
+                }
+
                 return;
             }
-
+            
             ChangeMenu();
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
@@ -204,7 +217,9 @@ namespace MegaApp.Pages
             {
                 App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
-            
+
+            if (e.NavigationMode == NavigationMode.Reset) return;
+
             if (e.NavigationMode == NavigationMode.Back)
             {
                 if (!App.CloudDrive.NoFolderUpAction)
@@ -287,14 +302,67 @@ namespace MegaApp.Pages
                             return;
                         }
                             
-                    }                            
+                    }
                     
                     break;
                 }
             }
-
+            
             base.OnNavigatedTo(e);
             App.AppEvent = ApplicationEvent.None;
+        }
+
+        private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
+        {
+            if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||
+                args.Files.Count <= 0)
+            {
+                ResetFilePicker();
+                return;
+            }
+
+            if (!App.CloudDrive.IsUserOnline()) return;
+
+            ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
+
+            // Set upload directory only once for speed improvement and if not exists, create dir
+            var uploadDir = AppService.GetUploadDirectoryPath(true);
+
+            foreach (var file in args.Files)
+            {
+                try
+                {
+                    string newFilePath = Path.Combine(uploadDir, file.Name);
+                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    {
+                        var stream = await file.OpenStreamForReadAsync();
+                        await stream.CopyToAsync(fs);
+                        await fs.FlushAsync();
+                        fs.Close();
+                    }
+                    var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                    App.MegaTransfers.Add(uploadTransfer);
+                    uploadTransfer.StartTransfer();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
+                        AppMessages.PrepareFileForUploadFailed_Title, MessageBoxButton.OK);
+                }
+            }
+            ResetFilePicker();
+
+            ProgressService.SetProgressIndicator(false);
+
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+        }
+
+        private static void ResetFilePicker()
+        {
+            // Reset the picker data
+            var app = Application.Current as App;
+            if (app != null) app.FilePickerContinuationArgs = null;
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -389,8 +457,6 @@ namespace MegaApp.Pages
 
         private void OnRefreshClick(object sender, EventArgs e)
         {
-            //MessageBox.Show(LstCloudDrive.RealizedItems.Length.ToString());
-
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
@@ -656,6 +722,9 @@ namespace MegaApp.Pages
 
         private void OnCloudDriveClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
             var rootNode = App.MegaSdk.getRootNode();
 
             if (rootNode == null) return;
@@ -673,6 +742,9 @@ namespace MegaApp.Pages
 
         private void OnRubbishBinClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
             var rubbishNode = App.MegaSdk.getRubbishNode();
 
             if (rubbishNode == null) return;
@@ -690,6 +762,11 @@ namespace MegaApp.Pages
 
         private void OnAdvancedMenuItemTap(object sender, ListBoxItemTapEventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            LstAdvancedMenu.SelectedItem = null;
+
             var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
             if (advancedMenuItem == null) return;
             advancedMenuItem.TapAction.Invoke();

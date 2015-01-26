@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using MegaApp.Resources;
 
 namespace MegaApp.Services
@@ -41,6 +42,20 @@ namespace MegaApp.Services
                 return false;
             }
             
+        }
+
+        public static void SelectMultipleFiles()
+        {
+            var fileOpenPicker = new FileOpenPicker();
+            
+            fileOpenPicker.ContinuationData["Operation"] = "SelectedFiles";
+            
+            // Use wildcard filter to start FileOpenPicker in location selection screen instead of 
+            // photo selection screen
+            fileOpenPicker.FileTypeFilter.Add("*");
+            fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
+            
+            fileOpenPicker.PickMultipleFilesAndContinue();
         }
 
         public static string CreateRandomFilePath(string path)
