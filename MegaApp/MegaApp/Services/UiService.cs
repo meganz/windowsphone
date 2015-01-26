@@ -81,8 +81,8 @@ namespace MegaApp.Services
                 Title = title,
                 FrontContent = new Grid()
                 {
-                    HorizontalAlignment = HorizontalAlignment.Stretch,
-                    VerticalAlignment = VerticalAlignment.Stretch,
+                    //HorizontalAlignment = HorizontalAlignment.Stretch,
+                    //VerticalAlignment = VerticalAlignment.Stretch,
                     Background = (SolidColorBrush) Application.Current.Resources["MegaRedSolidColorBrush"],
                     Children =
                     {
@@ -91,6 +91,7 @@ namespace MegaApp.Services
                             Source = bitmapImage,
                             Width = 128,
                             Height = 128,
+                            Stretch = Stretch.UniformToFill
                         }
                     }
                 },

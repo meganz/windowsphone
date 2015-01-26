@@ -218,7 +218,11 @@ namespace MegaApp.Pages
                 App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
 
-            if (e.NavigationMode == NavigationMode.Reset) return;
+            if (e.NavigationMode == NavigationMode.Reset)
+            {
+                //App.CloudDrive.NoFolderUpAction = false;
+                return;
+            }
 
             if (e.NavigationMode == NavigationMode.Back)
             {

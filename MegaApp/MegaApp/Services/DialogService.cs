@@ -93,7 +93,8 @@ namespace MegaApp.Services
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
-                OpenAnimation = AnimationService.GetOpenDialogAnimation()
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                Margin = new Thickness(0)
             };
 
             var grid = new Grid()
@@ -103,11 +104,26 @@ namespace MegaApp.Services
                 Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"],
                 Margin = new Thickness(24, 0, 24, 0)
             };
-            grid.ColumnDefinitions.Add(new ColumnDefinition());
-            grid.ColumnDefinitions.Add(new ColumnDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(1, GridUnitType.Auto)
+            });
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(1, GridUnitType.Auto)
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
 
 
             var headerText = new TextBlock()
@@ -164,7 +180,7 @@ namespace MegaApp.Services
             hubFile.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
-                cloudDrive.NoFolderUpAction = true;
+                //cloudDrive.NoFolderUpAction = true;
                 App.FileOpenPickerOpenend = true;
                 FileService.SelectMultipleFiles();
             };
