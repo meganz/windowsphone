@@ -246,19 +246,19 @@
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
             <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListLoadingContent">
         <Grid>
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/init_loading.png" Opacity="0.3" Width="256" Height="256"/>
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/init_loading.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListCloudDriveEmptyContent">
         <Grid>
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/cloud drive empty.png" Opacity="0.3" Width="256" Height="256"/>
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/cloud drive empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
 
@@ -295,14 +295,14 @@
     <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
         <Grid Height="562" Width="456">
             <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
 	<DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
         <Grid Height="562" Width="456">
             <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
-            <telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
@@ -397,7 +397,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="PivotMegaTitleTemplate">
-    	<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png" Margin="0,0,0,-16"/>
+    	<selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png" Margin="0,0,0,-16"/>
     </DataTemplate>
 
     <DataTemplate x:Key="ProductItemTemplate">
@@ -562,7 +562,7 @@
     <!-- ADVANCED MENU TEMPLATES -->
     <DataTemplate x:Key="AdvancedMenuHeader">
         <Grid Margin="0">
-        	<telerikPrimitives:RadMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
+        	<selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
         </Grid>
     </DataTemplate>
 
