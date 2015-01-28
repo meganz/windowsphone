@@ -21,6 +21,7 @@ namespace MegaApp.Models
             this.TermsOfServiceCommand = new DelegateCommand(NavigateToTermsOfService);
             this.PrivacyPolicyCommand = new DelegateCommand(NavigateToPrivacyPolicy);
             this.AcknowledgementsCommands = new DelegateCommand(NavigateToAcknowledgements);
+            this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
         }
 
         #region Private Methods
@@ -42,6 +43,12 @@ namespace MegaApp.Models
             NavigateService.NavigateTo(typeof(AcknowledgementsPage), NavigationParameter.Normal);
         }
 
+        private void NavigateToMegaSdk(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.MegaSdkUrl) };
+            webBrowserTask.Show();
+        }
+
         #endregion
 
         #region Commands
@@ -49,6 +56,7 @@ namespace MegaApp.Models
         public ICommand TermsOfServiceCommand { get; set; }
         public ICommand PrivacyPolicyCommand { get; set; }
         public ICommand AcknowledgementsCommands { get; set; }
+        public ICommand MegaSdkCommand { get; set; }
 
         #endregion
 

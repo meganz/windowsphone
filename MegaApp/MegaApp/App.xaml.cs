@@ -34,6 +34,8 @@ namespace MegaApp
         
         public static String IpAddress { get; set; }
 
+        public static String MegaRedColor="#D90007";
+
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
