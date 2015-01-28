@@ -75,7 +75,7 @@ namespace MegaApp.Services
                 DecodePixelType = DecodePixelType.Logical,
                 UriSource = bitmapUri
             };
-
+          
             return new RadCustomHubTile()
             {
                 Title = title,
