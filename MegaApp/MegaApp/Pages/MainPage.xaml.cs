@@ -196,6 +196,7 @@ namespace MegaApp.Pages
             if(App.AppEvent == ApplicationEvent.Activated)
             {                
                 App.AppEvent = ApplicationEvent.None;
+                App.CloudDrive.NoFolderUpAction = false;
 
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
@@ -220,7 +221,6 @@ namespace MegaApp.Pages
 
             if (e.NavigationMode == NavigationMode.Reset)
             {
-                //App.CloudDrive.NoFolderUpAction = false;
                 return;
             }
 
