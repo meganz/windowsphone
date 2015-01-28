@@ -853,6 +853,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your PIN lock codes do not match. Please re-type them and make sure they are equal.
+        /// </summary>
+        internal static string PinLockCodesDoNotMatch {
+            get {
+                return ResourceManager.GetString("PinLockCodesDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PIN lock codes do not match.
+        /// </summary>
+        internal static string PinLockCodesDoNotMatch_Title {
+            get {
+                return ResourceManager.GetString("PinLockCodesDoNotMatch_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to prepare image: {0} for upload.
         /// </summary>
         internal static string PrepareImageForUploadFailed {

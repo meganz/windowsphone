@@ -27,11 +27,11 @@ namespace MegaApp.Models
             this.MegaSDK_Version = AppResources.MegaSDK_Version;
             this.ShareMasterKeyCommand = new DelegateCommand(ShareMasterKey);
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
-            this.ChangePasswordCommand = new DelegateCommand(ChangePassword);
+            this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
 
             this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-            this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
+            this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
         }
 
         #region Commands
@@ -39,7 +39,7 @@ namespace MegaApp.Models
         public ICommand ShareMasterKeyCommand { get; set; }
         public ICommand CopyMasterKeyCommand { get; set; }
         public ICommand ViewMasterKeyCommand { get; set; }
-        public ICommand ChangePasswordCommand { get; set; }
+        public ICommand ChangePinLockCommand { get; set; }
 
         #endregion
 
@@ -74,9 +74,9 @@ namespace MegaApp.Models
             DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
-        private void ChangePassword(object obj)
+        private void ChangePinLock(object obj)
         {
-            DialogService.ShowPasswordDialog(true, this);
+            DialogService.ShowPinLockDialog(true, this);
         }
 
         #endregion
@@ -104,37 +104,37 @@ namespace MegaApp.Models
             }
         }
 
-        private bool _passwordIsEnabled;
-        public bool PasswordIsEnabled
+        private bool _pinLockIsEnabled;
+        public bool PinLockIsEnabled
         {
-            get { return _passwordIsEnabled; }
+            get { return _pinLockIsEnabled; }
             set
             {
-                if (_passwordIsEnabled && !value)
+                if (_pinLockIsEnabled && !value)
                 {
-                    SettingsService.DeleteSetting(SettingsResources.UserPasswordIsEnabled);
-                    SettingsService.DeleteSetting(SettingsResources.UserPassword);
+                    SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
+                    SettingsService.DeleteSetting(SettingsResources.UserPinLock);
                 }
 
-                _passwordIsEnabled = value;
+                _pinLockIsEnabled = value;
 
-                PasswordIsEnabledText = _passwordIsEnabled ? UiResources.On : UiResources.Off;
-               
-                if (_passwordIsEnabled)
-                    DialogService.ShowPasswordDialog(false, this);
+                PinLockIsEnabledText = _pinLockIsEnabled ? UiResources.On : UiResources.Off;
+
+                if (_pinLockIsEnabled)
+                    DialogService.ShowPinLockDialog(false, this);
                 
-                OnPropertyChanged("PasswordIsEnabled");
+                OnPropertyChanged("PinLockIsEnabled");
             }
         }
 
-        private string _passwordIsEnabledText;
-        public string PasswordIsEnabledText
+        private string _pinLockIsEnabledText;
+        public string PinLockIsEnabledText
         {
-            get { return _passwordIsEnabledText; }
+            get { return _pinLockIsEnabledText; }
             set
             {
-                _passwordIsEnabledText = value;
-                OnPropertyChanged("PasswordIsEnabledText");
+                _pinLockIsEnabledText = value;
+                OnPropertyChanged("PinLockIsEnabledText");
             }
         }
 
