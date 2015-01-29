@@ -25,7 +25,7 @@ namespace MegaApp.Models
             if (String.IsNullOrEmpty(Password) || String.IsNullOrWhiteSpace(Password)) return;
 
             string hashValue = CryptoService.HashData(Password);
-            if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPassword)))
+            if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
             {
                 MessageBox.Show("Password is incorrect", "Password incorrect",
                     MessageBoxButton.OK);

@@ -22,7 +22,9 @@
 		</Grid.RowDefinitions>
 
 		<!--TitlePanel contains the name of the application and page title-->
-		<StackPanel Grid.Row="0" Margin="12,17,0,28">
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock Text="MEGA" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="Portable User Interface"/>
 		</StackPanel>
 

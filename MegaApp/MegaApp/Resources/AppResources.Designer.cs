@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk.
+        /// </summary>
+        public static string MegaSdkUrl {
+            get {
+                return ResourceManager.GetString("MegaSdkUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a /Pages/.
         /// </summary>
         public static string PagesLocation {

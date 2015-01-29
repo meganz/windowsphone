@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikToggleSwitch="clr-namespace:Telerik.Windows.Controls.ToggleSwitch;assembly=Telerik.Windows.Controls.Primitives"
     x:Class="MegaApp.Pages.SettingsPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -36,19 +37,39 @@
 				<Button x:Name="BtnViewMasterKey" Content="view" Command="{Binding ViewMasterKeyCommand}"/>
 				<Button x:Name="BtnCopyMasterKey" Content="clipboard" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
 			</Grid>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="transfers" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Transfers, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
 			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Export images to 'saved pictures' album after download" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<Grid Margin="0,0,0,40">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-				<telerikPrimitives:RadToggleSwitch x:Name="BtnExportPhotoAlbumSwitch" VerticalAlignment="Center" Content="{Binding ExportIsEnabledText}" IsChecked="{Binding ExportIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2"/>
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnExportPhotoAlbumSwitch" VerticalAlignment="Center" Content="{Binding ExportIsEnabledText}" IsChecked="{Binding ExportIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
+                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                            <Setter Property="CheckBackground">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                </telerikPrimitives:RadToggleSwitch>                
 			</Grid>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<StackPanel Margin="0,0,0,40">
-				<telerikPrimitives:RadToggleSwitch x:Name="BtnPasswordSwitch" VerticalAlignment="Center" Content="{Binding PasswordIsEnabledText}" IsChecked="{Binding PasswordIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
-				<Button x:Name="BtnChangePassword" Content="change password" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PasswordIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePasswordCommand}"/>
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnPinLockSwitch" VerticalAlignment="Center" Content="{Binding PinLockIsEnabledText}" IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
+                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                            <Setter Property="CheckBackground">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                </telerikPrimitives:RadToggleSwitch>
+                <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLockButton, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
 			</StackPanel>
 			<StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
 				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>

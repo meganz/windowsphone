@@ -18,7 +18,7 @@ namespace MegaApp.Models
 
         #region Methods
 
-        protected bool IsUserOnline()
+        public bool IsUserOnline()
         {
             bool isOnline = Convert.ToBoolean(this.MegaSdk.isLoggedIn());
 
