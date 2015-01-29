@@ -461,7 +461,7 @@ namespace MegaApp.Services
             sortRadWindow.IsOpen = true;
         }
 
-        public static void ShowPasswordDialog(bool isChange, SettingsViewModel settingsViewModel)
+        public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
         {
             var openAnimation = new RadMoveAnimation()
             {
@@ -473,7 +473,7 @@ namespace MegaApp.Services
                 MoveDirection = MoveDirection.BottomOut
             };
 
-            var passwordRadWindow = new RadModalWindow()
+            var pinLockRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
                 Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
@@ -485,7 +485,7 @@ namespace MegaApp.Services
                 CloseAnimation = closeAnimation
             };
 
-            var passwordStackPanel = new StackPanel()
+            var pinLockStackPanel = new StackPanel()
             {
                 Orientation = Orientation.Vertical,
                 Width = Double.NaN,
@@ -494,15 +494,15 @@ namespace MegaApp.Services
                 Margin = new Thickness(12)
             };
 
-            var passwordButtonsGrid = new Grid()
+            var pinLockButtonsGrid = new Grid()
             {
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Bottom,
                 Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
             };
-            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
-            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
 
 
             var titleLabel = new TextBlock()
@@ -510,35 +510,35 @@ namespace MegaApp.Services
                 Margin = new Thickness(12),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])
             };
-            passwordStackPanel.Children.Add(titleLabel);
+            pinLockStackPanel.Children.Add(titleLabel);
             
-            NumericPasswordBox currentPassword = null;
+            NumericPasswordBox currentPinLock = null;
 
             if (isChange)
             {
-                titleLabel.Text = "Change password";
-                currentPassword = new NumericPasswordBox()
+                titleLabel.Text = "Change PIN Lock";
+                currentPinLock = new NumericPasswordBox()
                 {
-                    Watermark = "current password",
+                    Watermark = "current PIN Lock",
                     ClearButtonVisibility = Visibility.Visible
                 };
-                passwordStackPanel.Children.Add(currentPassword);
+                pinLockStackPanel.Children.Add(currentPinLock);
             }
             else
             {
-                titleLabel.Text = "Make a password";
+                titleLabel.Text = "Make a PIN Lock";
             }
 
-            var password = new NumericPasswordBox()
+            var pinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.PasswordWatermark,
+                Watermark = UiResources.PinLockWatermark,
                 ClearButtonVisibility = Visibility.Visible
             };
 
 
-            var confirmPassword = new NumericPasswordBox()
+            var confirmPinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.ConfirmPasswordWatermark,
+                Watermark = UiResources.ConfirmPinLockWatermark,
                 ClearButtonVisibility = Visibility.Visible
             };
 
@@ -551,13 +551,13 @@ namespace MegaApp.Services
             {
                 if (isChange)
                 {
-                    if (currentPassword != null)
+                    if (currentPinLock != null)
                     {
-                        string hashValue = CryptoService.HashData(currentPassword.Password);
+                        string hashValue = CryptoService.HashData(currentPinLock.Password);
 
-                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPassword)))
+                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
                         {
-                            MessageBox.Show("Current password does not match", "Current password no match",
+                            MessageBox.Show("Current PIN lock does not match", "Current PIN lock no match",
                                 MessageBoxButton.OK);
                             return;
                         }
@@ -565,24 +565,24 @@ namespace MegaApp.Services
 
                 }
 
-                if (password.Password.Length < 4)
+                if (pinLock.Password.Length < 4)
                 {
-                    MessageBox.Show("Password must be at least 4 digits", "Password too short",
+                    MessageBox.Show("PIN lock must be at least 4 digits", "PIN lock too short",
                                 MessageBoxButton.OK);
                     return;
                 }
 
-                if (!password.Password.Equals(confirmPassword.Password))
+                if (!pinLock.Password.Equals(confirmPinLock.Password))
                 {
-                    MessageBox.Show(AppMessages.PasswordsDoNotMatch, AppMessages.PasswordsDoNotMatch_Title,
+                    MessageBox.Show(AppMessages.PinLockCodesDoNotMatch, AppMessages.PinLockCodesDoNotMatch_Title,
                         MessageBoxButton.OK);
                     return;
                 }
                
-                SettingsService.SaveSetting(SettingsResources.UserPassword, CryptoService.HashData(password.Password));
-                SettingsService.SaveSetting(SettingsResources.UserPasswordIsEnabled, true);
+                SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(pinLock.Password));
+                SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
 
-                passwordRadWindow.IsOpen = false;
+                pinLockRadWindow.IsOpen = false;
             };
 
             var cancelButton = new Button()
@@ -594,17 +594,17 @@ namespace MegaApp.Services
             {
                 if (!isChange)
                 {
-                    settingsViewModel.PasswordIsEnabled = false;
+                    settingsViewModel.PinLockIsEnabled = false;                    
                 }
-                passwordRadWindow.IsOpen = false;
+                pinLockRadWindow.IsOpen = false;
             };
 
 
-            passwordStackPanel.Children.Add(password);
-            passwordStackPanel.Children.Add(confirmPassword);
+            pinLockStackPanel.Children.Add(pinLock);
+            pinLockStackPanel.Children.Add(confirmPinLock);
 
-            passwordButtonsGrid.Children.Add(confirmButton);
-            passwordButtonsGrid.Children.Add(cancelButton);
+            pinLockButtonsGrid.Children.Add(confirmButton);
+            pinLockButtonsGrid.Children.Add(cancelButton);
             Grid.SetColumn(confirmButton, 0);
             Grid.SetColumn(cancelButton, 1);
 
@@ -615,12 +615,12 @@ namespace MegaApp.Services
                 VerticalAlignment = VerticalAlignment.Stretch
             };
 
-            grid.Children.Add(passwordStackPanel);
-            grid.Children.Add(passwordButtonsGrid);
+            grid.Children.Add(pinLockStackPanel);
+            grid.Children.Add(pinLockButtonsGrid);
 
-            passwordRadWindow.Content = grid;
+            pinLockRadWindow.Content = grid;
       
-            passwordRadWindow.IsOpen = true;
+            pinLockRadWindow.IsOpen = true;
         }
 
         public static async Task<int> ShowOptionsDialog(string title, string message, string[] buttons)

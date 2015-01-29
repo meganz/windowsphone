@@ -241,10 +241,36 @@ namespace MegaApp.Pages
                 }
                 case NavigationParameter.ImportLinkLaunch:
                 {
-                    //App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener());
-                    //App.CloudDrive.FetchNodes();
+                    if (NavigationContext.QueryString.ContainsKey("link"))
+                    {
+                        if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                        {
+                            try
+                            {
+                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                                else
+                                {
+                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    return;
+                                }
+                            }
+                            catch (ArgumentNullException)
+                            {
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                return;
+                            }
+                        }
 
-                    //App.CloudDrive.ImportLink(NavigationContext.QueryString["link"]);
+                        //App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        //App.CloudDrive.FetchNodes();
+
+                        string _link = NavigationContext.QueryString["link"];                        
+                        if (_link.StartsWith("mega://"))
+                            _link = _link.Replace("mega://", "https://mega.co.nz/#");
+
+                        App.MegaSdk.getPublicNode(_link, new GetPublicNodeRequestListener(App.CloudDrive));
+                    }
                     break;
                 }
                 case NavigationParameter.PasswordLogin:
@@ -261,7 +287,7 @@ namespace MegaApp.Pages
                         return;
                     }
                     
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled))
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                     {
                         NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
                         return;
@@ -389,8 +415,6 @@ namespace MegaApp.Pages
 
         private void OnRefreshClick(object sender, EventArgs e)
         {
-            //MessageBox.Show(LstCloudDrive.RealizedItems.Length.ToString());
-
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
@@ -656,6 +680,9 @@ namespace MegaApp.Pages
 
         private void OnCloudDriveClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
             var rootNode = App.MegaSdk.getRootNode();
 
             if (rootNode == null) return;
@@ -673,6 +700,9 @@ namespace MegaApp.Pages
 
         private void OnRubbishBinClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
             var rubbishNode = App.MegaSdk.getRubbishNode();
 
             if (rubbishNode == null) return;
@@ -690,6 +720,11 @@ namespace MegaApp.Pages
 
         private void OnAdvancedMenuItemTap(object sender, ListBoxItemTapEventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            LstAdvancedMenu.SelectedItem = null;
+
             var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
             if (advancedMenuItem == null) return;
             advancedMenuItem.TapAction.Invoke();

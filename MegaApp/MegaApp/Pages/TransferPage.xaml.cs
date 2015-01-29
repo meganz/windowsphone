@@ -43,6 +43,9 @@ namespace MegaApp.Pages
                 NavigationService.RemoveBackEntry();
                 NavigationService.RemoveBackEntry();
             }
+
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
         }
 
         private void OnPauseAllClick(object sender, System.EventArgs e)
