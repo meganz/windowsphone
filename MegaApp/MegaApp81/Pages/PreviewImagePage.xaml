@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:UserControls="clr-namespace:MegaApp.UserControls"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
+    x:Class="MegaApp.Pages.PreviewImagePage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" 
+    Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="PreviewOverlayTemplate">
+			<Border VerticalAlignment="Top">			
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.5"/>
+				</Border.Background>
+				<TextBlock TextWrapping="Wrap" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,30,0,20" FontFamily="Portable User Interface"/>
+			</Border>
+		</DataTemplate>
+		<telerik:RadSlideAnimation
+				x:Name="OverlayContentDisplayAnimation"
+				StartPoint="0,-80"
+				EndPoint="0,0"
+				Duration="00:00:0.1" />
+		<shell:ApplicationBar x:Name="PreviewApplicationBar" Opacity="0.5">
+			<shell:ApplicationBar.MenuItems>
+				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
+				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
+			</shell:ApplicationBar.MenuItems>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.Resources>	
+
+	<Grid x:Name="LayoutRoot" Background="Transparent">        
+        
+		<UserControls:MemoryControl x:Name="MemoryControl" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20,0,20,80" Canvas.ZIndex="1" Visibility="Collapsed"/>
+		<telerikPrimitives:RadSlideView 
+			x:Name="SlideViewAndFilmStrip" 
+			ItemTemplate="{StaticResource PreviewSlideViewItemContent}"
+			FilmstripModeItemTemplate="{StaticResource PreviewFilmStripContent}"
+			ItemsSource="{Binding PreviewItems}"
+			SelectedItem="{Binding SelectedPreview, Mode=TwoWay}" 
+			IsFilmstripModeEnabled="True" 
+			IsLoopingEnabled="False" 
+			SelectionChanged="OnSlideViewSelectionChanged" 
+			Loaded="OnSlideViewLoaded" 
+			SlideViewStateChanged="OnSlideViewStateChanged" 
+			Margin="0,-10,0,10" 
+			IsShowOverlayContentOnTapEnabled="True" 
+			OverlayContentTemplate="{StaticResource PreviewOverlayTemplate}" 
+			Tap="OnSlideViewTap" 
+			OverlayContentDisplayAnimation="{StaticResource OverlayContentDisplayAnimation}" FontFamily="Portable User Interface" 			
+		/>        
+        
+	</Grid>
+
+</phone:PhoneApplicationPage>

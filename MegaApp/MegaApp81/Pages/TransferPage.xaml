@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    x:Class="MegaApp.Pages.TransferPage"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+	<Grid x:Name="LayoutRoot" Background="Transparent">
+		<!--Pivot Control-->
+		<phone:Pivot x:Name="Transfers" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
+			<!--Pivot item one-->
+			<phone:PivotItem x:Name="Uploads" Header="uploads">
+				<Grid>
+					<telerikPrimitives:RadDataBoundListBox 
+						x:Name="LstUploads"
+						ItemsSource="{Binding MegaTransfers.Uploads}"
+						EmptyContentTemplate="{StaticResource MegaTransferListUploadEmptyContent}" 
+						ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						FontFamily="Portable User Interface"
+                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					/>
+				</Grid>
+			</phone:PivotItem>
+			<phone:PivotItem x:Name="Downloads" Header="downloads">
+				<Grid>
+					<telerikPrimitives:RadDataBoundListBox 
+						x:Name="LstDownloads"
+						ItemsSource="{Binding MegaTransfers.Downloads}"
+						EmptyContentTemplate="{StaticResource MegaTransferListDownloadEmptyContent}" 
+						ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						FontFamily="Portable User Interface" 
+                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					/>
+				</Grid>
+			</phone:PivotItem>
+
+			<!--Pivot item two-->
+		</phone:Pivot>
+	</Grid>
+    
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Appbar/transport.play.png" Text="start/resume all" Click="OnStartResumeAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/transport.pause.png" Text="pause all" Click="OnPauseAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />
+        </shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>
