@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="MegaLimited.7475E04196F8" Publisher="CN=78B72E51-6188-4F93-9245-24D5C79F8840" Version="2.0.2.81" />
+  <mp:PhoneIdentity PhoneProductId="7d8d3817-2eb5-416a-9147-ed5e83dee03e" PhonePublisherId="78b72e51-6188-4f93-9245-24d5c79f8840" />
+  <Properties>
+    <DisplayName>MEGA Privacy</DisplayName>
+    <PublisherDisplayName>Mega Limited</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="x7d8d3817y2eb5y416ay9147yed5e83dee03ex" Executable="AGHost.exe" EntryPoint="Pages\MainPage.xaml">
+      <m3:VisualElements DisplayName="MEGA Privacy" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="MEGA Cloud Service Application" ForegroundText="light" BackgroundColor="#464646">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
+        </m3:DefaultTile>
+        <!--<m3:SplashScreen Image="Assets\Splashscreen.png" />-->
+      </m3:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileOpenPicker">
+          <FileOpenPicker>
+            <SupportedFileTypes>
+              <SupportsAnyFileType />
+            </SupportedFileTypes>
+          </FileOpenPicker>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    <Capability Name="musicLibrary" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="removableStorage" />
+    <Capability Name="videosLibrary" />
+    <DeviceCapability Name="webcam" />
+  </Capabilities>
+</Package>
