@@ -8,6 +8,7 @@ using System.IO;
 using System.Xml;
 using Windows.ApplicationModel;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Microsoft.Phone.Info;
 
 namespace MegaApp.Services
@@ -53,6 +54,17 @@ namespace MegaApp.Services
         public static bool IsLowMemoryDevice()
         {
             return (ulong) DeviceStatus.ApplicationMemoryUsageLimit < 200UL.FromMBToBytes();
+        }
+
+        public static StorageFolder SelectFolder()
+        {
+            var folderPicker = new FolderPicker
+            {
+                SuggestedStartLocation = PickerLocationId.Downloads
+            };
+            folderPicker.ContinuationData["Operation"] = "SelectedFolder";
+
+            folderPicker.PickFolderAndContinue();
         }
 
         /// <summary>

@@ -39,6 +39,8 @@ namespace MegaApp
 
         // Used for multiple file selection
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
+        // Used for folder selection
+        public FolderPickerContinuationEventArgs FolderPickerContinuationArgs { get; set; }
         public static bool FileOpenPickerOpenend { get; set; }
 
         // Makes the app a share target for files
@@ -283,6 +285,13 @@ namespace MegaApp
             if (filePickerContinuationArgs != null)
             {
                 this.FilePickerContinuationArgs = filePickerContinuationArgs;
+                return;
+            }
+
+            var folderPickerContinuationArgs = activatedEventArgs as FolderPickerContinuationEventArgs;
+            if (folderPickerContinuationArgs != null)
+            {
+                this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
             }
         }
 
