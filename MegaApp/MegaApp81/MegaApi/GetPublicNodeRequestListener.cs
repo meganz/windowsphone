@@ -94,16 +94,8 @@ namespace MegaApp.MegaApi
             MNode publicNode = request.getPublicNode();
             if (publicNode != null)
             {
-                // Detect if is an image to allow directly download to camera albums
-                bool isImage = false;
-                if (publicNode.isFile())
-                {
-                    FileNodeViewModel node = new FileNodeViewModel(api, publicNode);
-                    isImage = node.IsImage;
-                }   
-
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    DialogService.ShowOpenLink(publicNode, request.getLink(), _cloudDriveViewModel, isImage));
+                    DialogService.ShowOpenLink(publicNode, request.getLink(), _cloudDriveViewModel));
             }                
             else
                 Deployment.Current.Dispatcher.BeginInvoke(() =>

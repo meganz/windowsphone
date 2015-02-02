@@ -52,16 +52,8 @@ namespace MegaApp.Services
 
         public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive, bool isImage = false)
         {
-            IEnumerable<string> buttons;
-
-            // Only allows download directly if is an image file
-            if (isImage)
-                buttons = new string[] { "import", "download" };
-            else
-                buttons = new string[] { "import" };
-
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: buttons,
+                buttonsContent: new string[] { "import", "download" },
                 title: "Download MEGA link",
                 message: publicNode.getName()
                 );

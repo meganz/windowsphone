@@ -84,8 +84,20 @@ namespace MegaApp.Services
             if (args.ContinuationData["NodeData"] != null && (ulong) args.ContinuationData["NodeData"] != 0)
             {
                 var handle = (ulong)args.ContinuationData["NodeData"];
-                var node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getNodeByHandle(handle));
-                node.Download(args.Folder.Path);
+                NodeViewModel node;
+                if (App.CloudDrive.PublicNode != null && handle.Equals(App.CloudDrive.PublicNode.getHandle()))
+                {
+                    node = NodeService.CreateNew(App.MegaSdk, App.CloudDrive.PublicNode);
+                    App.CloudDrive.PublicNode = null;
+                }
+                else
+                {
+                    node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getNodeByHandle(handle));
+                }
+               
+                if(node != null)
+                    node.Download(args.Folder.Path);
+
                 ResetFolderPicker();
                 return;
             }

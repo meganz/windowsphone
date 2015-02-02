@@ -219,12 +219,15 @@ namespace MegaApp.Pages
             }
             
             ChangeMenu();
+            
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
                 App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
+
+            
 
             if (e.NavigationMode == NavigationMode.Reset)
             {
@@ -243,6 +246,11 @@ namespace MegaApp.Pages
 
                 if(NavigateService.PreviousPage == typeof(MyAccountPage))
                     _navParam = NavigationParameter.Browsing;
+            }
+            else
+            {
+                if (NavigationContext.QueryString.ContainsKey("link"))
+                    App.CloudDrive.LinkToImport = NavigationContext.QueryString["link"];
             }
 
             App.CloudDrive.NoFolderUpAction = false;

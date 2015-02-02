@@ -46,7 +46,7 @@
 				</Grid.ColumnDefinitions>
 				<telerikPrimitives:RadToggleSwitch x:Name="BtnAskDownloadLocation" VerticalAlignment="Center" Content="{Binding AskDownloadLocationIsEnabledText}" IsChecked="{Binding AskDownloadLocationIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2"/>
 			</Grid>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Standard download location" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Default download location" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<HyperlinkButton Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="PIN lock" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 			<StackPanel Margin="0,0,0,40">
