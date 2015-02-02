@@ -853,7 +853,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to View original.
+        ///   Looks up a localized string similar to Download.
         /// </summary>
         public static string ViewOrginal {
             get {

@@ -23,11 +23,15 @@ namespace MegaApp.Models
             set
             {
                 _selectedNode = value;
-                var node = _selectedNode as ImageNodeViewModel;
-                if (node != null)
-                    node.SetImage();
+                var image = _selectedNode as ImageNodeViewModel;
+                if (image != null)
+                    image.SetImage();
                 else
-                    ((FileNodeViewModel)_selectedNode).SetFile();
+                {
+                    var file = _selectedNode as FileNodeViewModel;
+                    if (file != null)
+                        file.SetFile();
+                }
                 OnPropertyChanged("SelectedNode");
             }
         }

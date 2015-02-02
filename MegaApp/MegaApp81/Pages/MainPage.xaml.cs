@@ -206,9 +206,16 @@ namespace MegaApp.Pages
                 if (app != null && app.FilePickerContinuationArgs != null)
                 {
                     this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
+                    return;
+                }
+
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
 
                 return;
+                
             }
             
             ChangeMenu();
@@ -315,7 +322,7 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
             App.AppEvent = ApplicationEvent.None;
         }
-
+        
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
             if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||

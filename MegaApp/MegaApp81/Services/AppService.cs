@@ -56,17 +56,6 @@ namespace MegaApp.Services
             return (ulong) DeviceStatus.ApplicationMemoryUsageLimit < 200UL.FromMBToBytes();
         }
 
-        public static StorageFolder SelectFolder()
-        {
-            var folderPicker = new FolderPicker
-            {
-                SuggestedStartLocation = PickerLocationId.Downloads
-            };
-            folderPicker.ContinuationData["Operation"] = "SelectedFolder";
-
-            folderPicker.PickFolderAndContinue();
-        }
-
         /// <summary>
         /// Create working directories for the app to use if they do not exist yet
         /// </summary>
@@ -180,6 +169,27 @@ namespace MegaApp.Services
         public static string GetThumbnailDirectoryPath()
         {
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
+        }
+
+        public static string GetSelectedDownloadDirectoryPath()
+        {
+            return Path.Combine(SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                AppResources.DefaultDownloadLocation));
+        }
+
+        public static void ClearObsoleteSettings()
+        {
+            var lastAppVersion = SettingsService.LoadSetting<string>(SettingsResources.LastAppVersion, null);
+
+            if (lastAppVersion == null)
+            {
+                SettingsService.DeleteSetting(SettingsResources.QuestionAskedDownloadOption);
+            }
+        }
+
+        public static void SaveAppInformation()
+        {
+            SettingsService.SaveSetting(SettingsResources.LastAppVersion, AppService.GetAppVersion());
         }
     }
 }

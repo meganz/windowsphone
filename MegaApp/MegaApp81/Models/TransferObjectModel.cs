@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Enums;
-using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -117,6 +109,7 @@ namespace MegaApp.Models
 
         public string DisplayName { get; set; }
         public string FilePath { get; private set; }
+        public string DownloadFolderPath { get; set; }
         public TransferType Type { get; set; }
         public NodeViewModel SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
@@ -188,7 +181,7 @@ namespace MegaApp.Models
             return false;
         }
 
-        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
+        public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -209,10 +202,10 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.ImageUri = new Uri(imageNode.ImagePath);
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
                                 if (imageNode.GetMegaNode().hasPreview()) return;
-                                imageNode.PreviewImageUri = new Uri(imageNode.ImagePath);
+                                imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsBusy = false;
                             });
                         }
@@ -220,29 +213,43 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
                             });
-                            imageNode.ImageUri = new Uri(imageNode.ImagePath);
-
-                            bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                            if (exportToPhotoAlbum)
-                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                            imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
                         }
-                    }
 
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        bool result = await FileService.CopyFile(imageNode.LocalImagePath,
+                            DownloadFolderPath?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                            null));
+
+                        if (!result)
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                            break;
+                        }
+                        
+                    }
+                    else
                     {
                         var node = SelectedNode as FileNodeViewModel;
                         if (node != null)
-                            node.IsDownloadAvailable = File.Exists(node.FilePath);
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => node.IsDownloadAvailable = File.Exists(node.LocalFilePath));
 
-                        // Set finished status as last item so that the clean function can only happen after exporting image to
-                        // camera roll
-                        Status = TransferStatus.Finished;
-                        TransferedBytes = 10;
-                        TotalBytes = 10;
-                    });
-                   
+                            bool result = await FileService.CopyFile(node.LocalFilePath,
+                                DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                                null)); ;
+
+                            if (!result)
+                            {
+                                Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                                break;
+                            }
+                        }
+                    }
+                    
+
+                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Finished);
                     break;
                 }
                 case MErrorType.API_EINCOMPLETE:

@@ -76,10 +76,18 @@ namespace MegaApp.Models
             MegaService.GetPreviewLink(this.MegaSdk, this);
         }
 
-        public virtual void ViewOriginal()
+        public async void Download(string downloadPath = null)
         {
             if (!IsUserOnline()) return;
-            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+
+            if (downloadPath == null)
+                if (!await FolderService.SelectDownloadFolder(this)) return;
+
+            this.Transfer.DownloadFolderPath = downloadPath;
+            App.MegaTransfers.Add(this.Transfer);
+            this.Transfer.StartTransfer();
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 
         public virtual void Update(MNode megaNode)
