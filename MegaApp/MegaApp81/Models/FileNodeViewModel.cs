@@ -19,16 +19,16 @@ namespace MegaApp.Models
             : base(megaSdk, megaNode, parentCollection, childCollection)
         {
             this.FileSize = base.Size.ToStringAndSuffix();
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, FilePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
 
-            this.IsDownloadAvailable = File.Exists(this.FilePath);
+            this.IsDownloadAvailable = File.Exists(this.LocalFilePath);
         }
 
         #region Override Methods
 
         public override async void OpenFile()
         {
-            await FileService.OpenFile(FilePath);
+            await FileService.OpenFile(LocalFilePath);
         }
 
         #endregion
@@ -38,7 +38,7 @@ namespace MegaApp.Models
 
         public void SetFile()
         {
-            if (!FileService.FileExists(FilePath))
+            if (!FileService.FileExists(LocalFilePath))
             {
                 Transfer.StartTransfer();
             }
@@ -54,12 +54,21 @@ namespace MegaApp.Models
 
         public string FileSize { get; private set; }
 
-        public string FilePath
+        public string LocalFilePath
         {
             get
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
+                                    this.Name);
+            }
+        }
+
+        public string PublicFilePath
+        {
+            get
+            {
+                return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
                                     this.Name);
             }
         }

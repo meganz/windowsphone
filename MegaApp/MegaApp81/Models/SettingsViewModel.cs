@@ -29,9 +29,12 @@ namespace MegaApp.Models
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePasswordCommand = new DelegateCommand(ChangePassword);
             this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
+            this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
 
-            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
             this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
+            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
         }
 
         #region Commands
@@ -40,6 +43,7 @@ namespace MegaApp.Models
         public ICommand CopyMasterKeyCommand { get; set; }
         public ICommand ViewMasterKeyCommand { get; set; }
         public ICommand ChangePasswordCommand { get; set; }
+        public ICommand SelectDownloadLocationCommand { get; set; }
 
         #endregion
 
@@ -79,6 +83,11 @@ namespace MegaApp.Models
             DialogService.ShowPasswordDialog(true, this);
         }
 
+        private void SelectDownloadLocation(object obj)
+        {
+            FolderService.SelectFolder("SelectDefaultDownloadFolder");
+        }
+
         #endregion
 
         #region Properties
@@ -87,20 +96,32 @@ namespace MegaApp.Models
 
         public string MegaSDK_Version { get; set; }
 
-        private bool _exportIsEnabled;
-        public bool ExportIsEnabled
+        private bool _askDownloadLocationIsEnabled;
+        public bool AskDownloadLocationIsEnabled
         {
-            get { return _exportIsEnabled; }
+            get { return _askDownloadLocationIsEnabled; }
             set
             {
-                if(_exportIsEnabled != value)
-                    SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, value);
-                
-                _exportIsEnabled = value;
+                if (_askDownloadLocationIsEnabled != value)
+                    SettingsService.SaveSetting(SettingsResources.AskDownloadLocationIsEnabled, value);
 
-                ExportIsEnabledText = _exportIsEnabled ? UiResources.On : UiResources.Off;
-                
-                OnPropertyChanged("ExportIsEnabled");
+                _askDownloadLocationIsEnabled = value;
+                DownloadLocationSelectionIsEnabled = !_askDownloadLocationIsEnabled;
+
+                AskDownloadLocationIsEnabledText = _askDownloadLocationIsEnabled ? UiResources.On : UiResources.Off;
+
+                OnPropertyChanged("AskDownloadLocationIsEnabled");
+            }
+        }
+
+        private bool _downloadLocationSelectionIsEnabled;
+        public bool DownloadLocationSelectionIsEnabled
+        {
+            get { return _downloadLocationSelectionIsEnabled; }
+            set
+            {
+                _downloadLocationSelectionIsEnabled = value;
+                OnPropertyChanged("DownloadLocationSelectionIsEnabled");
             }
         }
 
@@ -138,14 +159,25 @@ namespace MegaApp.Models
             }
         }
 
-        private string _exportIsEnabledText;
-        public string ExportIsEnabledText
+        private string _askDownloadLocationIsEnabledText;
+        public string AskDownloadLocationIsEnabledText
         {
-            get { return _exportIsEnabledText; }
+            get { return _askDownloadLocationIsEnabledText; }
             set
             {
-                _exportIsEnabledText = value;
-                OnPropertyChanged("ExportIsEnabledText");
+                _askDownloadLocationIsEnabledText = value;
+                OnPropertyChanged("AskDownloadLocationIsEnabledText");
+            }
+        }
+
+        private string _standardDownloadLocation;
+        public string StandardDownloadLocation
+        {
+            get { return _standardDownloadLocation; }
+            set
+            {
+                _standardDownloadLocation = value;
+                OnPropertyChanged("StandardDownloadLocation");
             }
         }
 

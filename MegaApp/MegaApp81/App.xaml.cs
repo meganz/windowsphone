@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
@@ -8,6 +9,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.DataTransfer.ShareTarget;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
+using Windows.Storage.AccessCache;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -256,11 +258,16 @@ namespace MegaApp
             MegaTransfers = new TransferQueu();
             // Initialize Folders
             AppService.InitializeAppFolders();
+            // Set the current resolution that we use later on for our image selection
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
             // Clear upload folder. Temporary uploads files are not necessary to keep
             AppService.ClearUploadCache();
+            // Clear settings values we do no longer use
+            AppService.ClearObsoleteSettings();
+            // Save the app version information for future use (like deleting settings)
+            AppService.SaveAppInformation();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
@@ -289,9 +296,22 @@ namespace MegaApp
             }
 
             var folderPickerContinuationArgs = activatedEventArgs as FolderPickerContinuationEventArgs;
-            if (folderPickerContinuationArgs != null)
+            if (folderPickerContinuationArgs != null && folderPickerContinuationArgs.Folder != null)
             {
-                this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
+                if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
+                    StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
+
+                if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() ==
+                    "SelectDefaultDownloadFolder")
+                {
+                    SettingsService.SaveSetting(SettingsResources.DefaultDownloadLocation, folderPickerContinuationArgs.Folder.Path);
+                    this.FolderPickerContinuationArgs = null;
+                }
+                
+                if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectDownloadFolder")
+                     this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
+                
+                
             }
         }
 

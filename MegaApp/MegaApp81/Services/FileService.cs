@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
+using Windows.Storage.AccessCache;
 using Windows.Storage.Pickers;
 using MegaApp.Resources;
 
@@ -24,6 +25,20 @@ namespace MegaApp.Services
             }
         }
 
+        public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath)
+        {
+            var file = await StorageFile.GetFileFromPathAsync(sourcePath);
+            if (file == null) return false;
+            
+            //StorageApplicationPermissions.FutureAccessList.
+            var folder = await StorageFolder.GetFolderFromPathAsync(destinationFolderPath);
+            if (folder == null) return false;
+
+            var copy = await file.CopyAsync(folder, file.Name, NameCollisionOption.GenerateUniqueName);
+
+            return copy != null;
+        }
+       
         public static async Task<bool> OpenFile(string filePath)
         {
             try

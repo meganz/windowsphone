@@ -20,6 +20,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Windows.Storage;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -226,36 +227,14 @@ namespace MegaApp.Models
             return true;
         }
 
-        public async void MultipleDownload()
+        public async void MultipleDownload(StorageFolder downloadFolder = null)
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
             if (count < 1) return;
-            
-            if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
-            {
-                switch (await DialogService.ShowOptionsDialog("Download options", AppMessages.QuestionAskedDownloadOption,
-                    new[] {"yes, export", "no, only local"}))
-                {
-                    case -1:
-                    {
-                        return;
-                    }
-                    case 0:
-                    {
-                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
-                        break;
-                    }
-                    case 1:
-                    {
-                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
-                        break;
-                    }
-                }
-                SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
-                
-                
-            }
+
+            if(downloadFolder == null)
+                if (!await FolderService.SelectDownloadFolder()) return;
             
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads);
 
@@ -296,6 +275,8 @@ namespace MegaApp.Models
 
             downloadNodes.ForEach(n =>
             {
+                if (downloadFolder != null)
+                    n.Transfer.DownloadFolderPath = downloadFolder.Path;
                 App.MegaTransfers.Add(n.Transfer);
                 n.Transfer.StartTransfer();
             });
@@ -569,7 +550,7 @@ namespace MegaApp.Models
         {
             // Create a temporary DownloadNodeViewModel from the public Node created from the link
             DownloadNodeViewModel _downloadNodeViewModel = new DownloadNodeViewModel(NodeService.CreateNew(this.MegaSdk, publicNode));
-            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImagePath);
+            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).LocalImagePath);
 
             // Save the image to the camera album
             ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).SaveImageToCameraRoll();
@@ -820,13 +801,15 @@ namespace MegaApp.Models
                         NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal);
                     else
                     {
-                        var fileNode = node as FileNodeViewModel;
-                        if (fileNode != null && fileNode.IsDownloadAvailable)
-                        {
-                            fileNode.OpenFile();
-                            break;
-                        }
-                        NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, FocusedNode);
+                        //var fileNode = node as FileNodeViewModel;
+                        
+                        //if (fileNode != null && fileNode.IsDownloadAvailable)
+                        //{
+                        //    if (File.Exists(fileNode.PublicFilePath))
+                        //        fileNode.OpenFile();
+                        //    break;
+                        //}
+                        FocusedNode.Download();
                     }
 
                     break;
@@ -966,10 +949,10 @@ namespace MegaApp.Models
             FocusedNode.GetPreviewLink();
         }
 
-        private void DownloadItem(object obj)
+        private  void DownloadItem(object obj)
         {
             this.NoFolderUpAction = true;
-            FocusedNode.ViewOriginal();
+            FocusedNode.Download();
         }
 
         private void RemoveItem(object obj)

@@ -727,6 +727,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have not selected a default download location for your files. Just select a folder this time or go to preferences to select a default download location and get access permissions..
+        /// </summary>
+        internal static string NoDownloadLocationSelected {
+            get {
+                return ResourceManager.GetString("NoDownloadLocationSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed to open the selected file.
         /// </summary>
         internal static string OpenFileFailed {
@@ -885,15 +894,6 @@ namespace MegaApp.Resources {
         internal static string PrepareImageForUploadFailed_Title {
             get {
                 return ResourceManager.GetString("PrepareImageForUploadFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app..
-        /// </summary>
-        internal static string QuestionAskedDownloadOption {
-            get {
-                return ResourceManager.GetString("QuestionAskedDownloadOption", resourceCulture);
             }
         }
         

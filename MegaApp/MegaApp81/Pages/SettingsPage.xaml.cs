@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -39,6 +40,10 @@ namespace MegaApp.Pages
                 NavigationService.RemoveBackEntry();
 
             DebugPanel.DataContext = DebugService.DebugSettings;
+
+            ((SettingsViewModel)this.DataContext).StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
+
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
