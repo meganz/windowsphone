@@ -35,7 +35,7 @@ namespace MegaApp.Classes
 
                     extraParams.Add("link", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
 
-                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Unknown, extraParams);
                 }
             }
 

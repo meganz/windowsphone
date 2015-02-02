@@ -543,17 +543,19 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
-            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this));
+            this.MegaSdk.importFileLink(
+                link,
+                CurrentRootNode != null ? CurrentRootNode.GetMegaNode() : this.MegaSdk.getRootNode(), 
+                new ImportFileRequestListener(this));
         }
 
         public void DownloadLink(MNode publicNode)
         {
             // Create a temporary DownloadNodeViewModel from the public Node created from the link
-            DownloadNodeViewModel _downloadNodeViewModel = new DownloadNodeViewModel(NodeService.CreateNew(this.MegaSdk, publicNode));
-            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).LocalImagePath);
-
-            // Save the image to the camera album
-            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).SaveImageToCameraRoll();
+            this.NoFolderUpAction = true;
+            PublicNode = publicNode;
+            var downloadNode = NodeService.CreateNew(this.MegaSdk, publicNode);
+            downloadNode.Download();
         }
 
         public void LoadNodes()
@@ -781,6 +783,12 @@ namespace MegaApp.Models
                 });
 
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
+
+            if(LinkToImport != null)
+            {
+                this.MegaSdk.getPublicNode(LinkToImport, new GetPublicNodeRequestListener(this));
+                LinkToImport = null;
+            }
         }
 
         public void OnNodeTap(NodeViewModel node)
@@ -1023,6 +1031,10 @@ namespace MegaApp.Models
         }
 
         public NodeViewModel FocusedNode { get; set; }
+
+        public MNode PublicNode { get; set; }
+
+        public string LinkToImport { get; set; }
 
         public List<NodeViewModel> SelectedNodes { get; set; } 
 
