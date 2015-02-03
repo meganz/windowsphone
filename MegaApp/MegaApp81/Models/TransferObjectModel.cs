@@ -220,7 +220,7 @@ namespace MegaApp.Models
 
                         bool result = await FileService.CopyFile(imageNode.LocalImagePath,
                             DownloadFolderPath?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                            null));
+                            null), imageNode.Name);
 
                         if (!result)
                         {
@@ -238,7 +238,7 @@ namespace MegaApp.Models
 
                             bool result = await FileService.CopyFile(node.LocalFilePath,
                                 DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                null)); ;
+                                null), node.Name);
 
                             if (!result)
                             {

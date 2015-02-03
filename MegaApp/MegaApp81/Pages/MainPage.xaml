@@ -130,6 +130,21 @@
 			/>			
         </shell:ApplicationBar>
 
+		<shell:ApplicationBar x:Key="ImportItemMenu">
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnImportLink" 
+        		IconUri="/Assets/AppBar/open_link.png" 
+        		Text="import" 
+        		Click="OnImportLinkClick" 
+			/>			
+        	<shell:ApplicationBarIconButton 
+        		x:Name="BtnCancelImport" 
+        		IconUri="/Assets/AppBar/cancel.png" 
+        		Text="cancel" 
+        		Click="OnCancelImportClick" 				
+			/>			
+        </shell:ApplicationBar>
+
         <shell:ApplicationBar x:Key="MultiSelectMenu">
 			<!--<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem

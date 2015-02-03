@@ -180,6 +180,11 @@ namespace MegaApp.Pages
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
                     break;
 
+                case DriveDisplayMode.ImportItem:
+                    this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
+                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.ImportMenu);
+                    break;
+
                 case DriveDisplayMode.CloudDrive:
                 default:
                     this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
@@ -219,7 +224,6 @@ namespace MegaApp.Pages
             }
             
             ChangeMenu();
-            
 
             _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
@@ -247,11 +251,6 @@ namespace MegaApp.Pages
                 if(NavigateService.PreviousPage == typeof(MyAccountPage))
                     _navParam = NavigationParameter.Browsing;
             }
-            else
-            {
-                if (NavigationContext.QueryString.ContainsKey("link"))
-                    App.CloudDrive.LinkToImport = NavigationContext.QueryString["link"];
-            }
 
             App.CloudDrive.NoFolderUpAction = false;
 
@@ -273,22 +272,25 @@ namespace MegaApp.Pages
                    
                     break;
                 }
-                case NavigationParameter.ImportLinkLaunch:
-                {
-                    //App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener());
-                    //App.CloudDrive.FetchNodes();
-
-                    //App.CloudDrive.ImportLink(NavigationContext.QueryString["link"]);
-                    break;
-                }
                 case NavigationParameter.PasswordLogin:
                 {
                     NavigationService.RemoveBackEntry();
                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     break;
                 }
+                case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.Unknown:
                 {
+                    if (e.NavigationMode != NavigationMode.Back)
+                    {
+                        if (NavigationContext.QueryString.ContainsKey("filelink"))
+                        {
+                            App.CloudDrive.LinkToImport = NavigationContext.QueryString["filelink"];
+                            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.ImportItem;
+                            ChangeMenu();
+                        }
+                    }
+
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
@@ -796,6 +798,30 @@ namespace MegaApp.Pages
             if (ApplicationBar == null || MainPivot == null) return;
             ApplicationBar.IsVisible = MainPivot.SelectedItem == DrivePivot;
         }
+
+        private void OnImportLinkClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            App.MegaSdk.getPublicNode(App.CloudDrive.LinkToImport, new GetPublicNodeRequestListener(App.CloudDrive));
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+
+            ChangeMenu();
+        }
+
+        private void OnCancelImportClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            App.CloudDrive.LinkToImport = null;
+            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+
+            ChangeMenu();
+        }
+
+        
     }
     
 }

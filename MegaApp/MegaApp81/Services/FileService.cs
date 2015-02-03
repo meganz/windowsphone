@@ -25,16 +25,17 @@ namespace MegaApp.Services
             }
         }
 
-        public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath)
+        public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath, string newFileName = null)
         {
             var file = await StorageFile.GetFileFromPathAsync(sourcePath);
             if (file == null) return false;
             
-            //StorageApplicationPermissions.FutureAccessList.
             var folder = await StorageFolder.GetFolderFromPathAsync(destinationFolderPath);
             if (folder == null) return false;
 
-            var copy = await file.CopyAsync(folder, file.Name, NameCollisionOption.GenerateUniqueName);
+            newFileName = newFileName ?? file.Name;
+
+            var copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName);
 
             return copy != null;
         }

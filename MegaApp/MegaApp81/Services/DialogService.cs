@@ -50,11 +50,11 @@ namespace MegaApp.Services
             }
         }
 
-        public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive, bool isImage = false)
+        public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive)
         {
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new string[] { "import", "download" },
-                title: "Download MEGA link",
+                buttonsContent: new[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() },
+                title: UiResources.LinkOptions,
                 message: publicNode.getName()
                 );
 
