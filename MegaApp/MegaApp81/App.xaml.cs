@@ -154,21 +154,27 @@ namespace MegaApp
 
         // Code to detect if the IP has changed and refresh all open connections on this case
         private static void CheckChangesIP()
-        {            
+        {
+            List<String> ipAddresses = null;
+
             // Find the IP of all network devices
-            List<String> ipAddresses = new List<String>();
-            var hostnames = NetworkInformation.GetHostNames();
-            foreach (var hn in hostnames)
-            {   
-                if (hn.IPInformation != null)// && hn.Type == Windows.Networking.HostNameType.Ipv4)
+            try
+            {
+                ipAddresses = new List<String>();
+                var hostnames = NetworkInformation.GetHostNames();
+                foreach (var hn in hostnames)
                 {
-                    string ipAddress = hn.DisplayName;
-                    ipAddresses.Add(ipAddress);
+                    if (hn.IPInformation != null)// && hn.Type == Windows.Networking.HostNameType.Ipv4)
+                    {
+                        string ipAddress = hn.DisplayName;
+                        ipAddresses.Add(ipAddress);
+                    }
                 }
             }
+            catch(ArgumentException) { return; }
 
             // If no network device is connected, do nothing
-            if (ipAddresses.Count < 1)
+            if ((ipAddresses == null) || (ipAddresses.Count < 1))
             {
                 IpAddress = null;
                 return;
