@@ -331,11 +331,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Import.
+        /// </summary>
+        public static string Import {
+            get {
+                return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Inbox.
         /// </summary>
         public static string InboxName {
             get {
                 return ResourceManager.GetString("InboxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Link options.
+        /// </summary>
+        public static string LinkOptions {
+            get {
+                return ResourceManager.GetString("LinkOptions", resourceCulture);
             }
         }
         

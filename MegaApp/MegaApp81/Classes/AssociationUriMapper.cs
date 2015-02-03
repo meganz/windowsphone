@@ -33,9 +33,9 @@ namespace MegaApp.Classes
                 {
                     var extraParams = new Dictionary<string, string>(1);
 
-                    extraParams.Add("link", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
+                    extraParams.Add("filelink", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
 
-                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Unknown, extraParams);
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
                 }
             }
 

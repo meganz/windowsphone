@@ -18,6 +18,7 @@ namespace MegaApp.MegaApi
     class GetPublicNodeRequestListener: BaseRequestListener
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
+        
         public GetPublicNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
         {
             this._cloudDriveViewModel = cloudDriveViewModel;

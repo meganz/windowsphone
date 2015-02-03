@@ -137,6 +137,12 @@ namespace MegaApp.Models
                     ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Remove;
                     break;
                 }
+                case MenuType.ImportMenu:
+                {
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.LinkOptions;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                    break;
+                }
             }
            
         }
@@ -543,10 +549,14 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
+            if (String.IsNullOrEmpty(link)) return;
+
             this.MegaSdk.importFileLink(
                 link,
                 CurrentRootNode != null ? CurrentRootNode.GetMegaNode() : this.MegaSdk.getRootNode(), 
                 new ImportFileRequestListener(this));
+
+            LinkToImport = null;
         }
 
         public void DownloadLink(MNode publicNode)
@@ -783,12 +793,6 @@ namespace MegaApp.Models
                 });
 
             }, cancellationToken, TaskCreationOptions.LongRunning, TaskScheduler.Current);
-
-            if(LinkToImport != null)
-            {
-                this.MegaSdk.getPublicNode(LinkToImport, new GetPublicNodeRequestListener(this));
-                LinkToImport = null;
-            }
         }
 
         public void OnNodeTap(NodeViewModel node)
