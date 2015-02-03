@@ -727,7 +727,9 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have not selected a default download location for your files. Just select a folder this time or go to preferences to select a default download location and get access permissions..
+        ///   Looks up a localized string similar to You have not selected a default download location for your files.
+        ///
+        ///To proceed with the download please select a destination folder or go to preferences in order to set up your default download location..
         /// </summary>
         internal static string NoDownloadLocationSelected {
             get {
