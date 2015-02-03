@@ -562,7 +562,10 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
-            this.MegaSdk.importFileLink(link, CurrentRootNode.GetMegaNode(), new ImportFileRequestListener(this));
+            this.MegaSdk.importFileLink(
+                link,
+                CurrentRootNode != null ? CurrentRootNode.GetMegaNode() : this.MegaSdk.getRootNode(), 
+                new ImportFileRequestListener(this));
         }
 
         public void DownloadLink(MNode publicNode)
