@@ -122,64 +122,7 @@
     <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
+    <value>es-ES</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
-  </data>
-  <data name="ApplicationTitle" xml:space="preserve">
-    <value>MY APPLICATION</value>
-  </data>
-  <data name="AppBarButtonText" xml:space="preserve">
-    <value>add</value>
-  </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
-  </data>
-  <data name="PagesLocation" xml:space="preserve">
-    <value>/Pages/</value>
-  </data>
-  <data name="TermsOfUseUrl" xml:space="preserve">
-    <value>https://mega.co.nz/mobile_terms.html</value>
-  </data>
-  <data name="AppKey" xml:space="preserve">
-    <value>Z5dGhQhL</value>
-    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</comment>
-  </data>
-  <data name="UserAgent" xml:space="preserve">
-    <value>MEGAWindowsPhone81/2.0.3.81</value>
-    <comment>Agent to identify which client uses the SDK</comment>
-  </data>
-  <data name="ThumbnailsDirectory" xml:space="preserve">
-    <value>thumbnails\</value>
-  </data>
-  <data name="PreviewsDirectory" xml:space="preserve">
-    <value>previews\</value>
-  </data>
-  <data name="DownloadsDirectory" xml:space="preserve">
-    <value>downloads\</value>
-  </data>
-  <data name="DiagnosticsEmailAddress" xml:space="preserve">
-    <value>windowsphone@mega.co.nz</value>
-  </data>
-  <data name="ThumbnailHeight" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="ThumbnailWidth" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="UploadsDirectory" xml:space="preserve">
-    <value>uploads\</value>
-  </data>
-  <data name="PrivacyPolicyUrl" xml:space="preserve">
-    <value>https://mega.co.nz/mobile_privacy.html</value>
-  </data>
-  <data name="MegaSDK_Version" xml:space="preserve">
-    <value>8e80893</value>
-    <comment>The revision code of the SDK version used by the app</comment>
-  </data>
-  <data name="MegaSdkUrl" xml:space="preserve">
-    <value>https://github.com/meganz/sdk</value>
-  </data>
-  <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>please select a default download folder</value>
   </data>
 </root>
