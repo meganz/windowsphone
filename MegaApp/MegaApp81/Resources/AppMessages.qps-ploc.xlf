@@ -386,8 +386,12 @@
           <target state="new">Download count</target>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" xml:space="preserve">
-          <source>You have not selected a default download location for your files. Just select a folder this time or go to preferences to select a default download location and get access permissions.</source>
-          <target state="new">You have not selected a default download location for your files. Just select a folder this time or go to preferences to select a default download location and get access permissions.</target>
+          <source>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="new">You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</target>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" xml:space="preserve">
           <source>Failed to pause transfers</source>

@@ -272,6 +272,15 @@
 					</telerikPrimitives:RadDataBoundListBox>
 
 				</Grid>
+				<Border x:Name="BorderLinkText" BorderThickness="1" VerticalAlignment="Bottom" Grid.Row="1">
+					<Border.BorderBrush>
+						<SolidColorBrush Color="Black" Opacity="0.75"/>
+					</Border.BorderBrush>
+					<Border.Background>
+						<SolidColorBrush Color="Black" Opacity="0.75"/>
+					</Border.Background>
+					<TextBlock TextWrapping="Wrap" Text="Browse to destination and import or download link" Margin="12" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+				</Border>
 
 			</Grid>
 		</phone:PivotItem>
