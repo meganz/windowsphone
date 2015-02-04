@@ -115,7 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 8e80893.
+        ///   Busca una cadena traducida similar a 331aa8e.
         /// </summary>
         public static string MegaSDK_Version {
             get {
