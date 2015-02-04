@@ -163,6 +163,8 @@ namespace MegaApp.Pages
 
         private void ChangeMenu()
         {
+            BorderLinkText.Visibility = Visibility.Collapsed;
+
             switch (App.CloudDrive.DriveDisplayMode)
             {
                 case DriveDisplayMode.RubbishBin:
@@ -183,6 +185,7 @@ namespace MegaApp.Pages
                 case DriveDisplayMode.ImportItem:
                     this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.ImportMenu);
+                    BorderLinkText.Visibility = Visibility.Visible;
                     break;
 
                 case DriveDisplayMode.CloudDrive:

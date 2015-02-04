@@ -309,6 +309,11 @@
     <DataTemplate x:Key="PreviewSlideViewItemContent">
         <Grid>
             <slideView:PanAndZoomImage>
+                <slideView:PanAndZoomImage.BusyIndicatorStyle>
+                    <Style TargetType="telerikPrimitives:RadBusyIndicator">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </Style>
+                </slideView:PanAndZoomImage.BusyIndicatorStyle>
                 <slideView:PanAndZoomImage.Source>
                     <BitmapImage 
 						UriSource="{Binding PreviewImageUri, FallbackValue=/Assets/Images/preview_placeholder.png, TargetNullValue=/Assets/Images/preview_placeholder.png}"

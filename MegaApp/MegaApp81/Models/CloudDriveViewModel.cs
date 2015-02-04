@@ -996,6 +996,8 @@ namespace MegaApp.Models
 
         private void SetEmptyContentTemplate(bool isLoading, NodeViewModel currentRootNode = null)
         {
+            if (ListBox == null) return;
+
             if (isLoading)
             {
                 ListBox.EmptyContentTemplate =
@@ -1003,7 +1005,9 @@ namespace MegaApp.Models
             }
             else
             {
-                if (currentRootNode != null && currentRootNode.Handle.Equals(this.MegaSdk.getRootNode().getHandle()))
+                var megaRoot = this.MegaSdk.getRootNode();
+
+                if (currentRootNode != null && megaRoot != null && currentRootNode.Handle.Equals(megaRoot.getHandle()))
                 {
                     ListBox.EmptyContentTemplate =
                         (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"];
@@ -1045,7 +1049,7 @@ namespace MegaApp.Models
         public NodeViewModel BreadCrumbNode { get; set; }
 
         public bool NoFolderUpAction { get; set; }
-
+        
         public DriveDisplayMode DriveDisplayMode { get; set; }
         public DriveDisplayMode OldDriveDisplayMode { get; set; }
 
