@@ -78,7 +78,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -169,198 +169,378 @@
     <MultilingualAppToolkitVersion>3.0</MultilingualAppToolkitVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\common\Classes\AccountDataPoint.cs">
+      <Link>Classes\AccountDataPoint.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\AccountDetails.cs">
+      <Link>Classes\AccountDetails.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
+      <Link>Classes\AdvancedMenuItem.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\AppMemoryController.cs">
+      <Link>Classes\AppMemoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\CommandStatusArgs.cs">
+      <Link>Classes\CommandStatusArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\CustomMultiResolutionImage.cs">
+      <Link>Classes\CustomMultiResolutionImage.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\MemoryInformation.cs">
+      <Link>Classes\MemoryInformation.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\MenuType.cs">
+      <Link>Classes\MenuType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\NodeTemplateSelector.cs">
+      <Link>Classes\NodeTemplateSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\NumericPasswordBox.cs">
+      <Link>Classes\NumericPasswordBox.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\Product.cs">
+      <Link>Classes\Product.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\ResolutionHelper.cs">
+      <Link>Classes\ResolutionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\TransferQueu.cs">
+      <Link>Classes\TransferQueu.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\BooleanToColorConverter.cs">
+      <Link>Converters\BooleanToColorConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\BooleanToVisibilityConverter.cs">
+      <Link>Converters\BooleanToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\CountToVisibilityConverter.cs">
+      <Link>Converters\CountToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\CustomMultiResolutionResolver.cs">
+      <Link>Converters\CustomMultiResolutionResolver.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\FileTypeToImageConverter.cs">
+      <Link>Converters\FileTypeToImageConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\LongToReadableSizeConverter.cs">
+      <Link>Converters\LongToReadableSizeConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\NodeDisplayModeToColorBrushConverter.cs">
+      <Link>Converters\NodeDisplayModeToColorBrushConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
+      <Link>Converters\TextToUpperCaseConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\TransferStatusToIndeterminateConverter.cs">
+      <Link>Converters\TransferStatusToIndeterminateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\TransferStatusToReadableTextConverter.cs">
+      <Link>Converters\TransferStatusToReadableTextConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
+      <Link>Converters\UriToResolutionUriConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\ApplicationEvent.cs">
+      <Link>Enums\ApplicationEvent.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\DriveDisplayMode.cs">
+      <Link>Enums\DriveDisplayMode.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\GalleryDirection.cs">
+      <Link>Enums\GalleryDirection.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\MediaType.cs">
+      <Link>Enums\MediaType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\NavigationParameter.cs">
+      <Link>Enums\NavigationParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\NodeDisplayMode.cs">
+      <Link>Enums\NodeDisplayMode.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\TransferStatus.cs">
+      <Link>Enums\TransferStatus.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\TransferType.cs">
+      <Link>Enums\TransferType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\ViewMode.cs">
+      <Link>Enums\ViewMode.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Extensions\BitmapExtensions.cs">
+      <Link>Extensions\BitmapExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Extensions\ControlExtensions.cs">
+      <Link>Extensions\ControlExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Extensions\NavigationExtensions.cs">
+      <Link>Extensions\NavigationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Extensions\SizeExtensions.cs">
+      <Link>Extensions\SizeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Interfaces\IMegaService.cs">
+      <Link>Interfaces\IMegaService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\LocalizedStrings.cs">
+      <Link>LocalizedStrings.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\BaseRequestListener.cs">
+      <Link>MegaApi\BaseRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\BaseTransferListener.cs">
+      <Link>MegaApi\BaseTransferListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\CreateFolderRequestListener.cs">
+      <Link>MegaApi\CreateFolderRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ExportNodeRequestListener.cs">
+      <Link>MegaApi\ExportNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\FastLoginRequestListener.cs">
+      <Link>MegaApi\FastLoginRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\FetchNodesRequestListener.cs">
+      <Link>MegaApi\FetchNodesRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
+      <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetPaymentUrlRequestListener.cs">
+      <Link>MegaApi\GetPaymentUrlRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetPreviewRequestListener.cs">
+      <Link>MegaApi\GetPreviewRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetPricingRequestListener.cs">
+      <Link>MegaApi\GetPricingRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetThumbnailRequestListener.cs">
+      <Link>MegaApi\GetThumbnailRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetUserAvatarRequestListener.cs">
+      <Link>MegaApi\GetUserAvatarRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
+      <Link>MegaApi\GlobalDriveListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ImportFileRequestListener.cs">
+      <Link>MegaApi\ImportFileRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
+      <Link>MegaApi\LogOutRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MegaLogger.cs">
+      <Link>MegaApi\MegaLogger.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MegaRandomNumberProvider.cs">
+      <Link>MegaApi\MegaRandomNumberProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MoveNodeRequestListener.cs">
+      <Link>MegaApi\MoveNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
+      <Link>MegaApi\PauseTransferRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\RemoveNodeRequestListener.cs">
+      <Link>MegaApi\RemoveNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\RenameNodeRequestListener.cs">
+      <Link>MegaApi\RenameNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\AboutViewModel.cs">
+      <Link>Models\AboutViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\AcknowledgementsViewModel.cs">
+      <Link>Models\AcknowledgementsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\BaseMediaViewModel.cs">
+      <Link>Models\BaseMediaViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\BaseRequestListenerViewModel.cs">
+      <Link>Models\BaseRequestListenerViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\BaseSDKViewModel.cs">
+      <Link>Models\BaseSDKViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\BaseViewModel.cs">
+      <Link>Models\BaseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\ConfirmAccountViewModel.cs">
+      <Link>Models\ConfirmAccountViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\CreateAccountViewModel.cs">
+      <Link>Models\CreateAccountViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\DebugSettingsViewModel.cs">
+      <Link>Models\DebugSettingsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\DelegateCommand.cs">
+      <Link>Models\DelegateCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\FolderNodeViewModel.cs">
+      <Link>Models\FolderNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\LoginViewModel.cs">
+      <Link>Models\LoginViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\MediaAlbumViewModel.cs">
+      <Link>Models\MediaAlbumViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\MediaSelectionPageModel.cs">
+      <Link>Models\MediaSelectionPageModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\MemDiagnosticViewModel.cs">
+      <Link>Models\MemDiagnosticViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\MyAccountPageViewModel.cs">
+      <Link>Models\MyAccountPageViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\PreviewImageViewModel.cs">
+      <Link>Models\PreviewImageViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\PreviewSelfieViewModel.cs">
+      <Link>Models\PreviewSelfieViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\SongSelectionViewModel.cs">
+      <Link>Models\SongSelectionViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\TransfersViewModel.cs">
+      <Link>Models\TransfersViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Pages\AboutPage.xaml.cs">
+      <Link>Pages\AboutPage.xaml.cs</Link>
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\AcknowledgementsPage.xaml.cs">
+      <Link>Pages\AcknowledgementsPage.xaml.cs</Link>
+      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\ConfirmAccountPage.xaml.cs">
+      <Link>Pages\ConfirmAccountPage.xaml.cs</Link>
+      <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\CreateAccountPage.xaml.cs">
+      <Link>Pages\CreateAccountPage.xaml.cs</Link>
+      <DependentUpon>CreateAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
+      <Link>Pages\DownloadPage.xaml.cs</Link>
+      <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\LoginPage.xaml.cs">
+      <Link>Pages\LoginPage.xaml.cs</Link>
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\MediaAlbumPage.xaml.cs">
+      <Link>Pages\MediaAlbumPage.xaml.cs</Link>
+      <DependentUpon>MediaAlbumPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\MediaSelectionPage.xaml.cs">
+      <Link>Pages\MediaSelectionPage.xaml.cs</Link>
+      <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\MyAccountPage.xaml.cs">
+      <Link>Pages\MyAccountPage.xaml.cs</Link>
+      <DependentUpon>MyAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\PasswordPage.xaml.cs">
+      <Link>Pages\PasswordPage.xaml.cs</Link>
+      <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\PhotoCameraPage.xaml.cs">
+      <Link>Pages\PhotoCameraPage.xaml.cs</Link>
+      <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\PreviewSelfiePage.xaml.cs">
+      <Link>Pages\PreviewSelfiePage.xaml.cs</Link>
+      <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\SongSelectionPage.xaml.cs">
+      <Link>Pages\SongSelectionPage.xaml.cs</Link>
+      <DependentUpon>SongSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\TransferPage.xaml.cs">
+      <Link>Pages\TransferPage.xaml.cs</Link>
+      <DependentUpon>TransferPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Services\AnimationService.cs">
+      <Link>Services\AnimationService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\CryptoService.cs">
+      <Link>Services\CryptoService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\DebugService.cs">
+      <Link>Services\DebugService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\ImageService.cs">
+      <Link>Services\ImageService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\MediaService.cs">
+      <Link>Services\MediaService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\MegaService.cs">
+      <Link>Services\MegaService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\NavigateService.cs">
+      <Link>Services\NavigateService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\NodeService.cs">
+      <Link>Services\NodeService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\ProgressService.cs">
+      <Link>Services\ProgressService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\BreadCrumb.xaml.cs">
+      <Link>UserControls\BreadCrumb.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\BreadCrumbButtons.cs">
+      <Link>UserControls\BreadCrumbButtons.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\BreadCrumbStyle.xaml.cs">
+      <Link>UserControls\BreadCrumbStyle.xaml.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
+      <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
+      <Link>UserControls\MemoryControl.xaml.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\AccountDataPoint.cs" />
-    <Compile Include="Classes\AccountDetails.cs" />
-    <Compile Include="Classes\AdvancedMenuItem.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
-    <Compile Include="Classes\AppMemoryController.cs" />
-    <Compile Include="Classes\CommandStatusArgs.cs" />
-    <Compile Include="Classes\CustomMultiResolutionImage.cs" />
-    <Compile Include="Classes\NumericPasswordBox.cs" />
-    <Compile Include="Classes\ResolutionHelper.cs" />
-    <Compile Include="Converters\CustomMultiResolutionResolver.cs" />
-    <Compile Include="Converters\TextToUpperCaseConverter.cs" />
-    <Compile Include="Converters\UriToResolutionUriConverter.cs" />
-    <Compile Include="Enums\ApplicationEvent.cs" />
-    <Compile Include="Extensions\ControlExtensions.cs" />
-    <Compile Include="MegaApi\GetUserAvatarRequestListener.cs" />
-    <Compile Include="MegaApi\PauseTransferRequestListener.cs" />
-    <Compile Include="Models\DebugSettingsViewModel.cs" />
-    <Compile Include="Classes\MemoryInformation.cs" />
-    <Compile Include="Classes\MenuType.cs" />
-    <Compile Include="Classes\Product.cs" />
-    <Compile Include="Classes\TransferQueu.cs" />
-    <Compile Include="Converters\BooleanToColorConverter.cs" />
-    <Compile Include="Converters\CountToVisibilityConverter.cs" />
-    <Compile Include="Converters\NodeDisplayModeToColorBrushConverter.cs" />
-    <Compile Include="Converters\TransferStatusToIndeterminateConverter.cs" />
-    <Compile Include="Converters\TransferStatusToReadableTextConverter.cs" />
-    <Compile Include="Enums\DriveDisplayMode.cs" />
-    <Compile Include="Enums\ViewMode.cs" />
-    <Compile Include="Enums\GalleryDirection.cs" />
-    <Compile Include="Enums\MediaType.cs" />
-    <Compile Include="Enums\NavigationParameter.cs" />
-    <Compile Include="Classes\NodeTemplateSelector.cs" />
-    <Compile Include="Enums\NodeDisplayMode.cs" />
-    <Compile Include="Enums\TransferStatus.cs" />
-    <Compile Include="Enums\TransferType.cs" />
-    <Compile Include="MegaApi\GetPaymentUrlRequestListener.cs" />
-    <Compile Include="MegaApi\GetPricingRequestListener.cs" />
-    <Compile Include="MegaApi\GlobalDriveListener.cs" />
-    <Compile Include="MegaApi\MegaLogger.cs" />
-    <Compile Include="Models\AboutViewModel.cs" />
-    <Compile Include="Models\AcknowledgementsViewModel.cs" />
-    <Compile Include="Models\BaseMediaViewModel.cs" />
     <Compile Include="Models\PasswordViewModel.cs" />
-    <Compile Include="Models\PreviewSelfieViewModel.cs" />
     <Compile Include="Models\FileNodeViewModel.cs" />
-    <Compile Include="Models\FolderNodeViewModel.cs" />
     <Compile Include="Models\ImageNodeViewModel.cs" />
-    <Compile Include="Models\MediaAlbumViewModel.cs" />
-    <Compile Include="Models\MediaSelectionPageModel.cs" />
-    <Compile Include="Models\MemDiagnosticViewModel.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
-    <Compile Include="Models\SongSelectionViewModel.cs" />
     <Compile Include="Models\TransferObjectModel.cs" />
-    <Compile Include="Converters\LongToReadableSizeConverter.cs" />
-    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converters\FileTypeToImageConverter.cs" />
-    <Compile Include="Extensions\BitmapExtensions.cs" />
-    <Compile Include="Extensions\NavigationExtensions.cs" />
-    <Compile Include="Extensions\SizeExtensions.cs" />
-    <Compile Include="Interfaces\IMegaService.cs" />
-    <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="MegaApi\BaseRequestListener.cs" />
-    <Compile Include="MegaApi\BaseTransferListener.cs" />
-    <Compile Include="MegaApi\ExportNodeRequestListener.cs" />
-    <Compile Include="MegaApi\GetAccountDetailsRequestListener.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
-    <Compile Include="MegaApi\GetPreviewRequestListener.cs" />
-    <Compile Include="MegaApi\LogOutRequestListener.cs" />
-    <Compile Include="MegaApi\MegaRandomNumberProvider.cs" />
-    <Compile Include="MegaApi\MoveNodeRequestListener.cs" />
-    <Compile Include="MegaApi\ImportFileRequestListener.cs" />
-    <Compile Include="MegaApi\RenameNodeRequestListener.cs" />
-    <Compile Include="MegaApi\GetThumbnailRequestListener.cs" />
-    <Compile Include="MegaApi\RemoveNodeRequestListener.cs" />
-    <Compile Include="MegaApi\FastLoginRequestListener.cs" />
-    <Compile Include="MegaApi\CreateFolderRequestListener.cs" />
-    <Compile Include="MegaApi\FetchNodesRequestListener.cs" />
-    <Compile Include="Models\BaseRequestListenerViewModel.cs" />
-    <Compile Include="Models\BaseSdkViewModel.cs" />
-    <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\CloudDriveViewModel.cs" />
-    <Compile Include="Models\ConfirmAccountViewModel.cs" />
-    <Compile Include="Models\DelegateCommand.cs" />
     <Compile Include="Models\DownloadNodeViewModel.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\MyAccountPageViewModel.cs" />
     <Compile Include="Models\NodeViewModel.cs" />
-    <Compile Include="Models\CreateAccountViewModel.cs" />
-    <Compile Include="Models\PreviewImageViewModel.cs" />
-    <Compile Include="Models\TransfersViewModel.cs" />
-    <Compile Include="Pages\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AcknowledgementsPage.xaml.cs">
-      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ConfirmAccountPage.xaml.cs">
-      <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DownloadPage.xaml.cs">
-      <DependentUpon>DownloadPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\CreateAccountPage.xaml.cs">
-      <DependentUpon>CreateAccountPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MediaAlbumPage.xaml.cs">
-      <DependentUpon>MediaAlbumPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MediaSelectionPage.xaml.cs">
-      <DependentUpon>MediaSelectionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MyAccountPage.xaml.cs">
-      <DependentUpon>MyAccountPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PasswordPage.xaml.cs">
-      <DependentUpon>PasswordPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PhotoCameraPage.xaml.cs">
-      <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PreviewSelfiePage.xaml.cs">
-      <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PreviewImagePage.xaml.cs">
       <DependentUpon>PreviewImagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SongSelectionPage.xaml.cs">
-      <DependentUpon>SongSelectionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\TransferPage.xaml.cs">
-      <DependentUpon>TransferPage.xaml</DependentUpon>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ProgressMessages.Designer.cs">
-      <DependentUpon>ProgressMessages.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\AppMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\SettingsResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\UiResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Services\AnimationService.cs" />
+    <Compile Include="Resources\AppMessages.Designer.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs" />
+    <Compile Include="Resources\ProgressMessages.Designer.cs" />
+    <Compile Include="Resources\SettingsResources.Designer.cs" />
+    <Compile Include="Resources\UiResources.Designer.cs" />
     <Compile Include="Services\AppService.cs" />
-    <Compile Include="Services\CryptoService.cs" />
-    <Compile Include="Services\DebugService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\FolderService.cs" />
-    <Compile Include="Services\ImageService.cs" />
-    <Compile Include="Services\MediaService.cs" />
-    <Compile Include="Services\MegaService.cs" />
-    <Compile Include="Services\NavigateService.cs" />
-    <Compile Include="Services\NodeService.cs" />
-    <Compile Include="Services\ProgressService.cs" />
     <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\UiService.cs" />
-    <Compile Include="UserControls\BreadCrumb.xaml.cs" />
-    <Compile Include="UserControls\BreadCrumbButtons.cs" />
-    <Compile Include="UserControls\BreadCrumbTapEventArgs.cs" />
-    <Compile Include="UserControls\MemoryControl.xaml.cs">
-      <DependentUpon>MemoryControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\BreadCrumbStyle.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -378,551 +558,1343 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\AppBar\camera uploads on off.png" />
-    <Content Include="Assets\AppBar\change pass.png" />
-    <Content Include="Assets\AppBar\delete.file.png" />
-    <Content Include="Assets\AppBar\feature.camera.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AlignmentGrid.png">
+      <Link>Assets\AlignmentGrid.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\open.png" />
-    <Content Include="Assets\AppBar\search.png" />
-    <Content Include="Assets\AppBar\send file.png" />
-    <Content Include="Assets\AppBar\settings.png" />
-    <Content Include="Assets\AppBar\share folder.png" />
-    <Content Include="Assets\AppBar\start conversation.png" />
-    <Content Include="Assets\AppBar\transport.pause.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\accept_move.png">
+      <Link>Assets\AppBar\accept_move.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\check.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\add.png">
+      <Link>Assets\AppBar\add.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\add.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\back.png">
+      <Link>Assets\AppBar\back.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\clear.cache.png" />
-    <Content Include="Assets\AppBar\cloud.download.png" />
-    <Content Include="Assets\AppBar\cloud.upload.png" />
-    <Content Include="Assets\AppBar\edit.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\camera uploads on off.png">
+      <Link>Assets\AppBar\camera uploads on off.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\login.png" />
-    <Content Include="Assets\AppBar\logout.png" />
-    <Content Include="Assets\AppBar\move.png" />
-    <Content Include="Assets\AppBar\remove.png" />
-    <Content Include="Assets\AppBar\save.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\cancel.png">
+      <Link>Assets\AppBar\cancel.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\next.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\change pass.png">
+      <Link>Assets\AppBar\change pass.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\back.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\check.png">
+      <Link>Assets\AppBar\check.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\share.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\clear.cache.png">
+      <Link>Assets\AppBar\clear.cache.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\accept_move.png" />
-    <Content Include="Assets\AppBar\cancel.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\cloud.download.png">
+      <Link>Assets\AppBar\cloud.download.png</Link>
     </Content>
-    <Content Include="Assets\AppBar\open_link.png" />
-    <Content Include="Assets\AppBar\refresh.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\cloud.upload.png">
+      <Link>Assets\AppBar\cloud.upload.png</Link>
     </Content>
-    <Content Include="Assets\AlignmentGrid.png" />
-    <Content Include="Assets\AppBar\folder_add.png" />
-    <Content Include="Assets\AppBar\transport.play.png" />
-    <Content Include="Assets\ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\common\Assets\AppBar\delete.file.png">
+      <Link>Assets\AppBar\delete.file.png</Link>
     </Content>
-    <Content Include="Assets\FileTypes\ListView\3d.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\3d.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\3d.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\aftereffects.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\aftereffects.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\aftereffects.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\audio.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\audio.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\audio.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\cad.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\cad.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\cad.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\compressed.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\compressed.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\compressed.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\data.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\data.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\data.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\dmg.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\dmg.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\dmg.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\dreamweaver.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\dreamweaver.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\dreamweaver.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\excel.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\excel.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\excel.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\executable.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\executable.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\executable.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\flash.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\flash.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\flash.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\fla_lang.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\fla_lang.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\fla_lang.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder photo.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\folder photo.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder photo.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder shared.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\folder shared.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder shared.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\folder.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\folder.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\font.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\font.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\font.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\generic.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\generic.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\generic.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\gis.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\gis.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\gis.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\graphic.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\graphic.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\graphic.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\html.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\html.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\html.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\illustrator.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\illustrator.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\illustrator.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\image.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\image.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\image.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\indesign.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\indesign.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\indesign.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\java.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\java.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\java.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\midi.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\midi.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\midi.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\pdf.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\pdf.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\pdf.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\photoshop.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\photoshop.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\photoshop.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\playlist.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\playlist.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\playlist.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\podcast.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\podcast.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\podcast.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\powerpoint.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\powerpoint.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\powerpoint.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\premiere.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\premiere.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\premiere.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\raw.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\raw.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\raw.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\real_audio.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\real_audio.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\real_audio.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\sourcecode.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\sourcecode.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\sourcecode.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\spreadsheet.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\spreadsheet.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\spreadsheet.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\swf.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\swf.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\swf.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\text.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\text.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\text.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\torrent.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\torrent.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\torrent.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\vcard.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\vcard.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\vcard.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\vector.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\vector.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\vector.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\video.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video_subtitle.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\video_subtitle.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video_subtitle.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video_vob.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\video_vob.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\video_vob.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\web_data.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\web_data.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\web_data.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\web_lang.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\web_lang.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\web_lang.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ListView\word.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ListView\word.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ListView\word.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\3d.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\3d.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\3d.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\aftereffects.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\aftereffects.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\aftereffects.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\audio.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\audio.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\audio.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\cad.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\cad.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\cad.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\compressed.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\compressed.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\compressed.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\data.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\data.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\data.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dmg.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dmg.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dmg.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dreamweaver.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dreamweaver.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\dreamweaver.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\excel.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\excel.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\excel.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\executable.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\executable.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\executable.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\flash.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\flash.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\flash.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\fla_lang.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\fla_lang.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\fla_lang.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder photo.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder photo.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder photo.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder shared.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder shared.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder shared.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\folder.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\font.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\font.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\font.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\generic.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\generic.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\generic.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\gis.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\gis.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\gis.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\graphic.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\graphic.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\graphic.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\html.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\html.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\html.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\illustrator.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\illustrator.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\illustrator.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\image.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\image.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\image.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\indesign.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\indesign.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\indesign.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\java.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\java.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\java.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\midi.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\midi.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\midi.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\pdf.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\pdf.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\pdf.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\photoshop.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\photoshop.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\photoshop.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\playlist.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\playlist.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\playlist.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\podcast.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\podcast.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\podcast.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\powerpoint.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\powerpoint.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\powerpoint.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\premiere.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\premiere.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\premiere.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\raw.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\raw.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\raw.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\real_audio.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\real_audio.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\real_audio.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\sourcecode.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\sourcecode.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\sourcecode.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\spreadsheet.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\spreadsheet.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\spreadsheet.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\swf.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\swf.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\swf.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\text.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\text.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\text.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\torrent.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\torrent.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\torrent.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vcard.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vcard.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vcard.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vector.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vector.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\vector.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_subtitle.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_subtitle.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_subtitle.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_vob.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_vob.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\video_vob.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_data.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_data.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_data.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_lang.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_lang.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\web_lang.Screen-WXGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\word.Screen-720p.png" />
-    <Content Include="Assets\FileTypes\ThumbView\word.Screen-WVGA.png" />
-    <Content Include="Assets\FileTypes\ThumbView\word.Screen-WXGA.png" />
-    <Content Include="Assets\Images\account_available_circ.Screen-720p.png" />
-    <Content Include="Assets\Images\account_available_circ.Screen-WVGA.png" />
-    <Content Include="Assets\Images\account_available_circ.Screen-WXGA.png" />
-    <Content Include="Assets\Images\account_cache_circ.Screen-720p.png" />
-    <Content Include="Assets\Images\account_cache_circ.Screen-WVGA.png" />
-    <Content Include="Assets\Images\account_cache_circ.Screen-WXGA.png" />
-    <Content Include="Assets\Images\account_local_circ.Screen-720p.png" />
-    <Content Include="Assets\Images\account_local_circ.Screen-WVGA.png" />
-    <Content Include="Assets\Images\account_local_circ.Screen-WXGA.png" />
-    <Content Include="Assets\Images\account_used_circ.Screen-720p.png" />
-    <Content Include="Assets\Images\account_used_circ.Screen-WVGA.png" />
-    <Content Include="Assets\Images\account_used_circ.Screen-WXGA.png" />
-    <Content Include="Assets\Images\cancel transfers.Screen-720p.png" />
-    <Content Include="Assets\Images\cancel transfers.Screen-WVGA.png" />
-    <Content Include="Assets\Images\cancel transfers.Screen-WXGA.png" />
-    <Content Include="Assets\Images\cloud drive empty.Screen-720p.png" />
-    <Content Include="Assets\Images\cloud drive empty.Screen-WVGA.png" />
-    <Content Include="Assets\Images\cloud drive empty.Screen-WXGA.png" />
-    <Content Include="Assets\Images\completed transfers.Screen-720p.png" />
-    <Content Include="Assets\Images\completed transfers.Screen-WVGA.png" />
-    <Content Include="Assets\Images\completed transfers.Screen-WXGA.png" />
-    <Content Include="Assets\Images\contacts_empty.Screen-720p.png" />
-    <Content Include="Assets\Images\contacts_empty.Screen-WVGA.png" />
-    <Content Include="Assets\Images\contacts_empty.Screen-WXGA.png" />
-    <Content Include="Assets\Images\downloads_empty.Screen-720p.png" />
-    <Content Include="Assets\Images\downloads_empty.Screen-WVGA.png" />
-    <Content Include="Assets\Images\downloads_empty.Screen-WXGA.png" />
-    <Content Include="Assets\Images\file upload.Screen-720p.png" />
-    <Content Include="Assets\Images\file upload.Screen-WVGA.png" />
-    <Content Include="Assets\Images\file upload.Screen-WXGA.png" />
-    <Content Include="Assets\Images\folder_empty.Screen-720p.png" />
-    <Content Include="Assets\Images\folder_empty.Screen-WVGA.png" />
-    <Content Include="Assets\Images\folder_empty.Screen-WXGA.png" />
-    <Content Include="Assets\Images\go_to_bottom.Screen-720p.png" />
-    <Content Include="Assets\Images\go_to_bottom.Screen-WVGA.png" />
-    <Content Include="Assets\Images\go_to_bottom.Screen-WXGA.png" />
-    <Content Include="Assets\Images\go_to_top.Screen-720p.png" />
-    <Content Include="Assets\Images\go_to_top.Screen-WVGA.png" />
-    <Content Include="Assets\Images\go_to_top.Screen-WXGA.png" />
-    <Content Include="Assets\Images\init_loading.Screen-720p.png" />
-    <Content Include="Assets\Images\init_loading.Screen-WVGA.png" />
-    <Content Include="Assets\Images\init_loading.Screen-WXGA.png" />
-    <Content Include="Assets\Images\large grid view.Screen-720p.png" />
-    <Content Include="Assets\Images\large grid view.Screen-WVGA.png" />
-    <Content Include="Assets\Images\large grid view.Screen-WXGA.png" />
-    <Content Include="Assets\Images\list view.Screen-720p.png" />
-    <Content Include="Assets\Images\list view.Screen-WVGA.png" />
-    <Content Include="Assets\Images\list view.Screen-WXGA.png" />
-    <Content Include="Assets\Images\medium grid view.Screen-720p.png" />
-    <Content Include="Assets\Images\medium grid view.Screen-WVGA.png" />
-    <Content Include="Assets\Images\medium grid view.Screen-WXGA.png" />
-    <Content Include="Assets\Images\mega_logo.Screen-720p.png" />
-    <Content Include="Assets\Images\mega_logo.Screen-WVGA.png" />
-    <Content Include="Assets\Images\mega_logo.Screen-WXGA.png" />
-    <Content Include="Assets\Images\mega_logo_root.Screen-720p.png" />
-    <Content Include="Assets\Images\mega_logo_root.Screen-WVGA.png" />
-    <Content Include="Assets\Images\mega_logo_root.Screen-WXGA.png" />
-    <Content Include="Assets\Images\multi_select.Screen-720p.png" />
-    <Content Include="Assets\Images\multi_select.Screen-WVGA.png" />
-    <Content Include="Assets\Images\multi_select.Screen-WXGA.png" />
-    <Content Include="Assets\Images\multi_selected.Screen-720p.png" />
-    <Content Include="Assets\Images\multi_selected.Screen-WVGA.png" />
-    <Content Include="Assets\Images\multi_selected.Screen-WXGA.png" />
-    <Content Include="Assets\Images\picture_upload.Screen-720p.png" />
-    <Content Include="Assets\Images\picture_upload.Screen-WVGA.png" />
-    <Content Include="Assets\Images\picture_upload.Screen-WXGA.png" />
-    <Content Include="Assets\Images\preview_error.Screen-720p.png" />
-    <Content Include="Assets\Images\preview_error.Screen-WVGA.png" />
-    <Content Include="Assets\Images\preview_error.Screen-WXGA.png" />
-    <Content Include="Assets\Images\preview_placeholder.Screen-720p.png" />
-    <Content Include="Assets\Images\preview_placeholder.Screen-WVGA.png" />
-    <Content Include="Assets\Images\preview_placeholder.Screen-WXGA.png" />
-    <Content Include="Assets\Images\pro1.Screen-720p.png" />
-    <Content Include="Assets\Images\pro1.Screen-WVGA.png" />
-    <Content Include="Assets\Images\pro1.Screen-WXGA.png" />
-    <Content Include="Assets\Images\pro2.Screen-720p.png" />
-    <Content Include="Assets\Images\pro2.Screen-WVGA.png" />
-    <Content Include="Assets\Images\pro2.Screen-WXGA.png" />
-    <Content Include="Assets\Images\pro3.Screen-720p.png" />
-    <Content Include="Assets\Images\pro3.Screen-WVGA.png" />
-    <Content Include="Assets\Images\pro3.Screen-WXGA.png" />
-    <Content Include="Assets\Images\selfie_upload.Screen-720p.png" />
-    <Content Include="Assets\Images\selfie_upload.Screen-WVGA.png" />
-    <Content Include="Assets\Images\selfie_upload.Screen-WXGA.png" />
-    <Content Include="Assets\Images\seperator.Screen-720p.png" />
-    <Content Include="Assets\Images\seperator.Screen-WVGA.png" />
-    <Content Include="Assets\Images\seperator.Screen-WXGA.png" />
-    <Content Include="Assets\Images\small grid view.Screen-720p.png" />
-    <Content Include="Assets\Images\small grid view.Screen-WVGA.png" />
-    <Content Include="Assets\Images\small grid view.Screen-WXGA.png" />
-    <Content Include="Assets\Images\small_free.Screen-720p.png" />
-    <Content Include="Assets\Images\small_free.Screen-WVGA.png" />
-    <Content Include="Assets\Images\small_free.Screen-WXGA.png" />
-    <Content Include="Assets\Images\small_pro1.Screen-720p.png" />
-    <Content Include="Assets\Images\small_pro1.Screen-WVGA.png" />
-    <Content Include="Assets\Images\small_pro1.Screen-WXGA.png" />
-    <Content Include="Assets\Images\small_pro2.Screen-720p.png" />
-    <Content Include="Assets\Images\small_pro2.Screen-WVGA.png" />
-    <Content Include="Assets\Images\small_pro2.Screen-WXGA.png" />
-    <Content Include="Assets\Images\small_pro3.Screen-720p.png" />
-    <Content Include="Assets\Images\small_pro3.Screen-WVGA.png" />
-    <Content Include="Assets\Images\small_pro3.Screen-WXGA.png" />
-    <Content Include="Assets\Images\song_upload.Screen-720p.png" />
-    <Content Include="Assets\Images\song_upload.Screen-WVGA.png" />
-    <Content Include="Assets\Images\song_upload.Screen-WXGA.png" />
-    <Content Include="Assets\Images\sort.Screen-720p.png" />
-    <Content Include="Assets\Images\sort.Screen-WVGA.png" />
-    <Content Include="Assets\Images\sort.Screen-WXGA.png" />
-    <Content Include="Assets\Images\take photos.Screen-720p.png" />
-    <Content Include="Assets\Images\take photos.Screen-WVGA.png" />
-    <Content Include="Assets\Images\take photos.Screen-WXGA.png" />
-    <Content Include="Assets\Images\transfers_paused.Screen-720p.png" />
-    <Content Include="Assets\Images\transfers_paused.Screen-WVGA.png" />
-    <Content Include="Assets\Images\transfers_paused.Screen-WXGA.png" />
-    <Content Include="Assets\Images\uploads_empty.Screen-720p.png" />
-    <Content Include="Assets\Images\uploads_empty.Screen-WVGA.png" />
-    <Content Include="Assets\Images\uploads_empty.Screen-WXGA.png" />
-    <Content Include="Assets\References\ShakeGestures.dll" />
-    <Content Include="Assets\Tiles\FolderIconImage.png" />
-    <Content Include="Assets\Tiles\FolderSmallIconImage.png" />
+    <Content Include="..\common\Assets\AppBar\edit.png">
+      <Link>Assets\AppBar\edit.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\feature.camera.png">
+      <Link>Assets\AppBar\feature.camera.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\folder_add.png">
+      <Link>Assets\AppBar\folder_add.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\login.png">
+      <Link>Assets\AppBar\login.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\logout.png">
+      <Link>Assets\AppBar\logout.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\move.png">
+      <Link>Assets\AppBar\move.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\next.png">
+      <Link>Assets\AppBar\next.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\open.png">
+      <Link>Assets\AppBar\open.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\open_link.png">
+      <Link>Assets\AppBar\open_link.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\refresh.png">
+      <Link>Assets\AppBar\refresh.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\remove.png">
+      <Link>Assets\AppBar\remove.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\save.png">
+      <Link>Assets\AppBar\save.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\search.png">
+      <Link>Assets\AppBar\search.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\send file.png">
+      <Link>Assets\AppBar\send file.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\settings.png">
+      <Link>Assets\AppBar\settings.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\share folder.png">
+      <Link>Assets\AppBar\share folder.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\share.png">
+      <Link>Assets\AppBar\share.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\start conversation.png">
+      <Link>Assets\AppBar\start conversation.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\transport.pause.png">
+      <Link>Assets\AppBar\transport.pause.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\transport.play.png">
+      <Link>Assets\AppBar\transport.play.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\3d.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\3d.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\3d.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\3d.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\3d.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\3d.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\aftereffects.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\aftereffects.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\aftereffects.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\aftereffects.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\aftereffects.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\aftereffects.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\audio.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\audio.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\audio.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\audio.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\audio.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\audio.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\cad.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\cad.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\cad.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\cad.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\cad.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\cad.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\compressed.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\compressed.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\compressed.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\compressed.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\compressed.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\compressed.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\data.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\data.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\data.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\data.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\data.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\data.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dmg.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\dmg.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dmg.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\dmg.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dmg.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\dmg.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dreamweaver.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\dreamweaver.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dreamweaver.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\dreamweaver.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\dreamweaver.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\dreamweaver.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\excel.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\excel.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\excel.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\excel.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\excel.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\excel.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\executable.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\executable.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\executable.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\executable.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\executable.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\executable.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\flash.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\flash.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\flash.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\flash.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\flash.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\flash.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\fla_lang.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\fla_lang.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\fla_lang.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\fla_lang.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\fla_lang.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\fla_lang.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder photo.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\folder photo.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder photo.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\folder photo.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder photo.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\folder photo.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder shared.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\folder shared.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder shared.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\folder shared.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder shared.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\folder shared.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\folder.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\folder.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\folder.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\folder.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\font.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\font.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\font.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\font.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\font.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\font.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\generic.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\generic.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\generic.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\generic.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\generic.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\generic.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\gis.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\gis.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\gis.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\gis.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\gis.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\gis.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\graphic.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\graphic.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\graphic.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\graphic.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\graphic.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\graphic.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\html.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\html.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\html.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\html.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\html.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\html.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\illustrator.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\illustrator.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\illustrator.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\illustrator.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\illustrator.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\illustrator.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\image.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\image.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\image.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\image.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\image.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\image.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\indesign.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\indesign.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\indesign.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\indesign.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\indesign.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\indesign.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\java.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\java.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\java.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\java.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\java.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\java.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\midi.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\midi.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\midi.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\midi.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\midi.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\midi.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\pdf.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\pdf.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\pdf.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\pdf.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\pdf.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\pdf.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\photoshop.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\photoshop.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\photoshop.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\photoshop.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\photoshop.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\photoshop.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\playlist.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\playlist.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\playlist.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\playlist.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\playlist.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\playlist.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\podcast.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\podcast.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\podcast.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\podcast.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\podcast.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\podcast.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\powerpoint.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\powerpoint.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\powerpoint.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\powerpoint.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\powerpoint.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\powerpoint.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\premiere.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\premiere.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\premiere.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\premiere.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\premiere.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\premiere.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\raw.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\raw.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\raw.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\raw.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\raw.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\raw.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\real_audio.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\real_audio.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\real_audio.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\real_audio.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\real_audio.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\real_audio.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\sourcecode.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\sourcecode.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\sourcecode.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\sourcecode.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\sourcecode.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\sourcecode.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\spreadsheet.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\spreadsheet.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\spreadsheet.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\spreadsheet.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\spreadsheet.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\spreadsheet.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\swf.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\swf.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\swf.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\swf.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\swf.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\swf.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\text.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\text.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\text.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\text.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\text.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\text.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\torrent.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\torrent.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\torrent.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\torrent.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\torrent.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\torrent.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vcard.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\vcard.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vcard.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\vcard.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vcard.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\vcard.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vector.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\vector.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vector.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\vector.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\vector.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\vector.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\video.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\video.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\video.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_subtitle.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\video_subtitle.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_subtitle.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\video_subtitle.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_subtitle.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\video_subtitle.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_vob.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\video_vob.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_vob.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\video_vob.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\video_vob.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\video_vob.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_data.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\web_data.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_data.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\web_data.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_data.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\web_data.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_lang.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\web_lang.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_lang.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\web_lang.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\web_lang.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\web_lang.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\word.Screen-720p.png">
+      <Link>Assets\FileTypes\ListView\word.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\word.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ListView\word.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ListView\word.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ListView\word.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\3d.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\3d.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\3d.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\3d.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\3d.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\3d.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\aftereffects.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\aftereffects.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\aftereffects.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\aftereffects.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\aftereffects.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\aftereffects.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\audio.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\audio.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\audio.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\audio.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\audio.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\audio.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\cad.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\cad.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\cad.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\cad.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\cad.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\cad.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\compressed.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\compressed.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\compressed.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\compressed.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\compressed.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\compressed.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\data.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\data.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\data.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\data.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\data.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\data.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dmg.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\dmg.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dmg.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\dmg.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dmg.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\dmg.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dreamweaver.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\dreamweaver.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dreamweaver.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\dreamweaver.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\dreamweaver.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\dreamweaver.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\excel.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\excel.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\excel.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\excel.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\excel.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\excel.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\executable.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\executable.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\executable.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\executable.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\executable.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\executable.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\flash.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\flash.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\flash.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\flash.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\flash.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\flash.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\fla_lang.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\fla_lang.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\fla_lang.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\fla_lang.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\fla_lang.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\fla_lang.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder photo.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\folder photo.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder photo.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder photo.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder photo.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder photo.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder shared.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\folder shared.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder shared.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder shared.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder shared.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder shared.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\folder.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\folder.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\folder.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\font.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\font.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\font.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\font.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\font.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\font.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\generic.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\generic.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\generic.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\generic.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\generic.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\generic.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\gis.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\gis.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\gis.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\gis.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\gis.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\gis.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\graphic.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\graphic.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\graphic.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\graphic.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\graphic.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\graphic.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\html.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\html.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\html.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\html.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\html.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\html.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\illustrator.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\illustrator.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\illustrator.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\illustrator.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\illustrator.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\illustrator.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\image.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\image.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\image.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\image.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\image.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\image.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\indesign.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\indesign.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\indesign.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\indesign.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\indesign.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\indesign.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\java.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\java.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\java.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\java.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\java.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\java.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\midi.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\midi.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\midi.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\midi.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\midi.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\midi.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\pdf.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\pdf.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\pdf.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\pdf.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\pdf.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\pdf.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\photoshop.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\photoshop.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\photoshop.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\photoshop.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\photoshop.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\photoshop.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\playlist.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\playlist.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\playlist.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\playlist.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\playlist.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\playlist.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\podcast.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\podcast.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\podcast.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\podcast.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\podcast.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\podcast.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\powerpoint.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\powerpoint.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\powerpoint.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\powerpoint.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\powerpoint.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\powerpoint.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\premiere.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\premiere.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\premiere.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\premiere.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\premiere.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\premiere.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\raw.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\raw.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\raw.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\raw.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\raw.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\raw.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\real_audio.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\real_audio.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\real_audio.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\real_audio.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\real_audio.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\real_audio.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\sourcecode.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\sourcecode.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\sourcecode.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\sourcecode.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\sourcecode.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\sourcecode.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\spreadsheet.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\spreadsheet.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\spreadsheet.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\spreadsheet.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\spreadsheet.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\spreadsheet.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\swf.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\swf.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\swf.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\swf.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\swf.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\swf.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\text.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\text.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\text.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\text.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\text.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\text.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\torrent.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\torrent.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\torrent.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\torrent.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\torrent.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\torrent.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vcard.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\vcard.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vcard.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\vcard.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vcard.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\vcard.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vector.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\vector.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vector.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\vector.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\vector.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\vector.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\video.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\video.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\video.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_subtitle.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\video_subtitle.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_subtitle.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\video_subtitle.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_subtitle.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\video_subtitle.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_vob.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\video_vob.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_vob.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\video_vob.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\video_vob.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\video_vob.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_data.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\web_data.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_data.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\web_data.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_data.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\web_data.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_lang.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\web_lang.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_lang.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\web_lang.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\web_lang.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\web_lang.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\word.Screen-720p.png">
+      <Link>Assets\FileTypes\ThumbView\word.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\word.Screen-WVGA.png">
+      <Link>Assets\FileTypes\ThumbView\word.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\FileTypes\ThumbView\word.Screen-WXGA.png">
+      <Link>Assets\FileTypes\ThumbView\word.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_available_circ.Screen-720p.png">
+      <Link>Assets\Images\account_available_circ.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_available_circ.Screen-WVGA.png">
+      <Link>Assets\Images\account_available_circ.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_available_circ.Screen-WXGA.png">
+      <Link>Assets\Images\account_available_circ.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_cache_circ.Screen-720p.png">
+      <Link>Assets\Images\account_cache_circ.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_cache_circ.Screen-WVGA.png">
+      <Link>Assets\Images\account_cache_circ.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_cache_circ.Screen-WXGA.png">
+      <Link>Assets\Images\account_cache_circ.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_local_circ.Screen-720p.png">
+      <Link>Assets\Images\account_local_circ.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_local_circ.Screen-WVGA.png">
+      <Link>Assets\Images\account_local_circ.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_local_circ.Screen-WXGA.png">
+      <Link>Assets\Images\account_local_circ.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_used_circ.Screen-720p.png">
+      <Link>Assets\Images\account_used_circ.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_used_circ.Screen-WVGA.png">
+      <Link>Assets\Images\account_used_circ.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\account_used_circ.Screen-WXGA.png">
+      <Link>Assets\Images\account_used_circ.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cancel transfers.Screen-720p.png">
+      <Link>Assets\Images\cancel transfers.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cancel transfers.Screen-WVGA.png">
+      <Link>Assets\Images\cancel transfers.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cancel transfers.Screen-WXGA.png">
+      <Link>Assets\Images\cancel transfers.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cloud drive empty.Screen-720p.png">
+      <Link>Assets\Images\cloud drive empty.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cloud drive empty.Screen-WVGA.png">
+      <Link>Assets\Images\cloud drive empty.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\cloud drive empty.Screen-WXGA.png">
+      <Link>Assets\Images\cloud drive empty.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\completed transfers.Screen-720p.png">
+      <Link>Assets\Images\completed transfers.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\completed transfers.Screen-WVGA.png">
+      <Link>Assets\Images\completed transfers.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\completed transfers.Screen-WXGA.png">
+      <Link>Assets\Images\completed transfers.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\contacts_empty.Screen-720p.png">
+      <Link>Assets\Images\contacts_empty.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\contacts_empty.Screen-WVGA.png">
+      <Link>Assets\Images\contacts_empty.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\contacts_empty.Screen-WXGA.png">
+      <Link>Assets\Images\contacts_empty.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\downloads_empty.Screen-720p.png">
+      <Link>Assets\Images\downloads_empty.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\downloads_empty.Screen-WVGA.png">
+      <Link>Assets\Images\downloads_empty.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\downloads_empty.Screen-WXGA.png">
+      <Link>Assets\Images\downloads_empty.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\file upload.Screen-720p.png">
+      <Link>Assets\Images\file upload.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\file upload.Screen-WVGA.png">
+      <Link>Assets\Images\file upload.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\file upload.Screen-WXGA.png">
+      <Link>Assets\Images\file upload.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\folder_empty.Screen-720p.png">
+      <Link>Assets\Images\folder_empty.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\folder_empty.Screen-WVGA.png">
+      <Link>Assets\Images\folder_empty.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\folder_empty.Screen-WXGA.png">
+      <Link>Assets\Images\folder_empty.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_bottom.Screen-720p.png">
+      <Link>Assets\Images\go_to_bottom.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_bottom.Screen-WVGA.png">
+      <Link>Assets\Images\go_to_bottom.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_bottom.Screen-WXGA.png">
+      <Link>Assets\Images\go_to_bottom.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_top.Screen-720p.png">
+      <Link>Assets\Images\go_to_top.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_top.Screen-WVGA.png">
+      <Link>Assets\Images\go_to_top.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\go_to_top.Screen-WXGA.png">
+      <Link>Assets\Images\go_to_top.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\init_loading.Screen-720p.png">
+      <Link>Assets\Images\init_loading.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\init_loading.Screen-WVGA.png">
+      <Link>Assets\Images\init_loading.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\init_loading.Screen-WXGA.png">
+      <Link>Assets\Images\init_loading.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\large grid view.Screen-720p.png">
+      <Link>Assets\Images\large grid view.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\large grid view.Screen-WVGA.png">
+      <Link>Assets\Images\large grid view.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\large grid view.Screen-WXGA.png">
+      <Link>Assets\Images\large grid view.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\list view.Screen-720p.png">
+      <Link>Assets\Images\list view.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\list view.Screen-WVGA.png">
+      <Link>Assets\Images\list view.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\list view.Screen-WXGA.png">
+      <Link>Assets\Images\list view.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\medium grid view.Screen-720p.png">
+      <Link>Assets\Images\medium grid view.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\medium grid view.Screen-WVGA.png">
+      <Link>Assets\Images\medium grid view.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\medium grid view.Screen-WXGA.png">
+      <Link>Assets\Images\medium grid view.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo.Screen-720p.png">
+      <Link>Assets\Images\mega_logo.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo.Screen-WVGA.png">
+      <Link>Assets\Images\mega_logo.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo.Screen-WXGA.png">
+      <Link>Assets\Images\mega_logo.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo_root.Screen-720p.png">
+      <Link>Assets\Images\mega_logo_root.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo_root.Screen-WVGA.png">
+      <Link>Assets\Images\mega_logo_root.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\mega_logo_root.Screen-WXGA.png">
+      <Link>Assets\Images\mega_logo_root.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_select.Screen-720p.png">
+      <Link>Assets\Images\multi_select.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_select.Screen-WVGA.png">
+      <Link>Assets\Images\multi_select.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_select.Screen-WXGA.png">
+      <Link>Assets\Images\multi_select.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_selected.Screen-720p.png">
+      <Link>Assets\Images\multi_selected.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_selected.Screen-WVGA.png">
+      <Link>Assets\Images\multi_selected.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\multi_selected.Screen-WXGA.png">
+      <Link>Assets\Images\multi_selected.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\picture_upload.Screen-720p.png">
+      <Link>Assets\Images\picture_upload.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\picture_upload.Screen-WVGA.png">
+      <Link>Assets\Images\picture_upload.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\picture_upload.Screen-WXGA.png">
+      <Link>Assets\Images\picture_upload.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_error.Screen-720p.png">
+      <Link>Assets\Images\preview_error.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_error.Screen-WVGA.png">
+      <Link>Assets\Images\preview_error.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_error.Screen-WXGA.png">
+      <Link>Assets\Images\preview_error.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_placeholder.Screen-720p.png">
+      <Link>Assets\Images\preview_placeholder.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_placeholder.Screen-WVGA.png">
+      <Link>Assets\Images\preview_placeholder.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\preview_placeholder.Screen-WXGA.png">
+      <Link>Assets\Images\preview_placeholder.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro1.Screen-720p.png">
+      <Link>Assets\Images\pro1.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro1.Screen-WVGA.png">
+      <Link>Assets\Images\pro1.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro1.Screen-WXGA.png">
+      <Link>Assets\Images\pro1.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro2.Screen-720p.png">
+      <Link>Assets\Images\pro2.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro2.Screen-WVGA.png">
+      <Link>Assets\Images\pro2.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro2.Screen-WXGA.png">
+      <Link>Assets\Images\pro2.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro3.Screen-720p.png">
+      <Link>Assets\Images\pro3.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro3.Screen-WVGA.png">
+      <Link>Assets\Images\pro3.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\pro3.Screen-WXGA.png">
+      <Link>Assets\Images\pro3.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\selfie_upload.Screen-720p.png">
+      <Link>Assets\Images\selfie_upload.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\selfie_upload.Screen-WVGA.png">
+      <Link>Assets\Images\selfie_upload.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\selfie_upload.Screen-WXGA.png">
+      <Link>Assets\Images\selfie_upload.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\seperator.Screen-720p.png">
+      <Link>Assets\Images\seperator.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\seperator.Screen-WVGA.png">
+      <Link>Assets\Images\seperator.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\seperator.Screen-WXGA.png">
+      <Link>Assets\Images\seperator.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small grid view.Screen-720p.png">
+      <Link>Assets\Images\small grid view.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small grid view.Screen-WVGA.png">
+      <Link>Assets\Images\small grid view.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small grid view.Screen-WXGA.png">
+      <Link>Assets\Images\small grid view.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_free.Screen-720p.png">
+      <Link>Assets\Images\small_free.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_free.Screen-WVGA.png">
+      <Link>Assets\Images\small_free.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_free.Screen-WXGA.png">
+      <Link>Assets\Images\small_free.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro1.Screen-720p.png">
+      <Link>Assets\Images\small_pro1.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro1.Screen-WVGA.png">
+      <Link>Assets\Images\small_pro1.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro1.Screen-WXGA.png">
+      <Link>Assets\Images\small_pro1.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro2.Screen-720p.png">
+      <Link>Assets\Images\small_pro2.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro2.Screen-WVGA.png">
+      <Link>Assets\Images\small_pro2.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro2.Screen-WXGA.png">
+      <Link>Assets\Images\small_pro2.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro3.Screen-720p.png">
+      <Link>Assets\Images\small_pro3.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro3.Screen-WVGA.png">
+      <Link>Assets\Images\small_pro3.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\small_pro3.Screen-WXGA.png">
+      <Link>Assets\Images\small_pro3.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\song_upload.Screen-720p.png">
+      <Link>Assets\Images\song_upload.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\song_upload.Screen-WVGA.png">
+      <Link>Assets\Images\song_upload.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\song_upload.Screen-WXGA.png">
+      <Link>Assets\Images\song_upload.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\sort.Screen-720p.png">
+      <Link>Assets\Images\sort.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\sort.Screen-WVGA.png">
+      <Link>Assets\Images\sort.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\sort.Screen-WXGA.png">
+      <Link>Assets\Images\sort.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\take photos.Screen-720p.png">
+      <Link>Assets\Images\take photos.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\take photos.Screen-WVGA.png">
+      <Link>Assets\Images\take photos.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\take photos.Screen-WXGA.png">
+      <Link>Assets\Images\take photos.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\transfers_paused.Screen-720p.png">
+      <Link>Assets\Images\transfers_paused.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\transfers_paused.Screen-WVGA.png">
+      <Link>Assets\Images\transfers_paused.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\transfers_paused.Screen-WXGA.png">
+      <Link>Assets\Images\transfers_paused.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\uploads_empty.Screen-720p.png">
+      <Link>Assets\Images\uploads_empty.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\uploads_empty.Screen-WVGA.png">
+      <Link>Assets\Images\uploads_empty.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\uploads_empty.Screen-WXGA.png">
+      <Link>Assets\Images\uploads_empty.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\References\ShakeGestures.dll">
+      <Link>Assets\References\ShakeGestures.dll</Link>
+    </Content>
+    <Content Include="..\common\Assets\Tiles\FolderIconImage.png">
+      <Link>Assets\Tiles\FolderIconImage.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Tiles\FolderSmallIconImage.png">
+      <Link>Assets\Tiles\FolderSmallIconImage.png</Link>
+    </Content>
+    <Content Include="..\common\SplashScreenImage.screen-1080p.jpg">
+      <Link>SplashScreenImage.screen-1080p.jpg</Link>
+    </Content>
+    <Content Include="..\common\SplashScreenImage.screen-720p.jpg">
+      <Link>SplashScreenImage.screen-720p.jpg</Link>
+    </Content>
+    <Content Include="..\common\SplashScreenImage.screen-WVGA.jpg">
+      <Link>SplashScreenImage.screen-WVGA.jpg</Link>
+    </Content>
+    <Content Include="..\common\SplashScreenImage.screen-WXGA.jpg">
+      <Link>SplashScreenImage.screen-WXGA.jpg</Link>
+    </Content>
+    <Content Include="Assets\ApplicationIcon.png" />
     <Content Include="Assets\Tiles\IconImage.png" />
     <Content Include="Assets\Tiles\SmallIconImage.png" />
-    <Content Include="SplashScreenImage.screen-1080p.jpg" />
-    <Content Include="SplashScreenImage.screen-720p.jpg" />
-    <Content Include="SplashScreenImage.screen-WVGA.jpg" />
-    <Content Include="SplashScreenImage.screen-WXGA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppMessages.es-ES.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppMessages.qps-ploc.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.es-ES.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.qps-ploc.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.es-ES.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.qps-ploc.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ProgressMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppMessages.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+    <Page Include="..\common\Pages\DownloadPage.xaml">
+      <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SettingsResources.es-ES.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SettingsResources.qps-ploc.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SettingsResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.es-ES.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.qps-ploc.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+    </Page>
+    <Page Include="..\common\Pages\MediaSelectionPage.xaml">
+      <Link>Pages\MediaSelectionPage.xaml</Link>
       <SubType>Designer</SubType>
-      <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
+    </Page>
+    <Page Include="..\common\Pages\MyAccountPage.xaml">
+      <Link>Pages\MyAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\PhotoCameraPage.xaml">
+      <Link>Pages\PhotoCameraPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\PreviewImagePage.xaml">
+      <Link>Pages\PreviewImagePage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\PreviewSelfiePage.xaml">
+      <Link>Pages\PreviewSelfiePage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\TransferPage.xaml">
+      <Link>Pages\TransferPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\UserControls\BreadCrumb.xaml">
+      <Link>UserControls\BreadCrumb.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\UserControls\MemoryControl.xaml">
+      <Link>UserControls\MemoryControl.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -932,10 +1904,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ConfirmAccountPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DownloadPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -955,23 +1923,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\MediaSelectionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\MyAccountPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\PasswordPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PhotoCameraPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PreviewSelfiePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -979,15 +1931,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PreviewImagePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\SongSelectionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\TransferPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -995,18 +1939,6 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
-    </Page>
-    <Page Include="Resources\ResourceDictionaryMega.xaml">
-      <Generator>MSBuild:MarkupCompilePass1</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\BreadCrumb.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\MemoryControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\BreadCrumbStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -1050,6 +1982,74 @@
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppMessages.es-ES.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
+      <culture>es-ES</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppMessages.qps-ploc.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
+      <culture>qps-ploc</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppMessages.resx" />
+    <EmbeddedResource Include="Resources\AppResources.es-ES.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.es-ES.xlf</DependentUpon>
+      <culture>es-ES</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.qps-ploc.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
+      <culture>qps-ploc</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.resx" />
+    <EmbeddedResource Include="Resources\ProgressMessages.es-ES.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgressMessages.es-ES.xlf</DependentUpon>
+      <culture>es-ES</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ProgressMessages.qps-ploc.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
+      <culture>qps-ploc</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ProgressMessages.resx" />
+    <EmbeddedResource Include="Resources\SettingsResources.es-ES.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsResources.es-ES.xlf</DependentUpon>
+      <culture>es-ES</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SettingsResources.qps-ploc.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
+      <culture>qps-ploc</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SettingsResources.resx" />
+    <EmbeddedResource Include="Resources\UiResources.es-ES.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UiResources.es-ES.xlf</DependentUpon>
+      <culture>es-ES</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UiResources.qps-ploc.resx">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
+      <culture>qps-ploc</culture>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UiResources.resx" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="Resources\AppMessages.es-ES.xlf">
