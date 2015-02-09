@@ -8,6 +8,7 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
@@ -36,7 +37,7 @@ namespace MegaApp.MegaApi
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
-            
+
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 if (ShowSuccesMessage)
@@ -49,11 +50,19 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
-            else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+            else if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_EACCESS)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));
+
+                api.logout(new LogOutRequestListener());
+            }
+            else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+            {
                 if (ShowErrorMessage)
-                    Deployment.Current.Dispatcher.BeginInvoke(() => 
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
                         MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
-           
+            }           
         }
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)

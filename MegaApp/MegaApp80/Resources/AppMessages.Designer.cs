@@ -22,7 +22,7 @@ namespace MegaApp.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class AppMessages {
+    public class AppMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MegaApp.Resources {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MegaApp.Resources.AppMessages", typeof(AppMessages).Assembly);
@@ -51,7 +51,7 @@ namespace MegaApp.Resources {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You must agree with our terms of use.
         /// </summary>
-        internal static string AgreeTermsOfUse {
+        public static string AgreeTermsOfUse {
             get {
                 return ResourceManager.GetString("AgreeTermsOfUse", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Terms of use.
         /// </summary>
-        internal static string AgreeTermsOfUse_Title {
+        public static string AgreeTermsOfUse_Title {
             get {
                 return ResourceManager.GetString("AgreeTermsOfUse_Title", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a The account is already confirmed. You can now login..
         /// </summary>
-        internal static string AlreadyConfirmedAccount {
+        public static string AlreadyConfirmedAccount {
             get {
                 return ResourceManager.GetString("AlreadyConfirmedAccount", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Account already confirmed.
         /// </summary>
-        internal static string AlreadyConfirmedAccount_Title {
+        public static string AlreadyConfirmedAccount_Title {
             get {
                 return ResourceManager.GetString("AlreadyConfirmedAccount_Title", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to confirm account. Please try again. [{0}].
         /// </summary>
-        internal static string ConfirmAccountFailed {
+        public static string ConfirmAccountFailed {
             get {
                 return ResourceManager.GetString("ConfirmAccountFailed", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Confirm account failed.
         /// </summary>
-        internal static string ConfirmAccountFailed_Title {
+        public static string ConfirmAccountFailed_Title {
             get {
                 return ResourceManager.GetString("ConfirmAccountFailed_Title", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Your account has been created, confirmed and activated. You will automatically logged in..
         /// </summary>
-        internal static string ConfirmAccountSucces {
+        public static string ConfirmAccountSucces {
             get {
                 return ResourceManager.GetString("ConfirmAccountSucces", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Account activated.
         /// </summary>
-        internal static string ConfirmAccountSucces_Title {
+        public static string ConfirmAccountSucces_Title {
             get {
                 return ResourceManager.GetString("ConfirmAccountSucces_Title", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Check your e-mail and click the link to login and confirm your account.
         /// </summary>
-        internal static string ConfirmNeeded {
+        public static string ConfirmNeeded {
             get {
                 return ResourceManager.GetString("ConfirmNeeded", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Confirmation needed.
         /// </summary>
-        internal static string ConfirmNeeded_Title {
+        public static string ConfirmNeeded_Title {
             get {
                 return ResourceManager.GetString("ConfirmNeeded_Title", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGA Cloud Drive account creation failed. Please try again. [{0}].
         /// </summary>
-        internal static string CreateAccountFailed {
+        public static string CreateAccountFailed {
             get {
                 return ResourceManager.GetString("CreateAccountFailed", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Account creation failed.
         /// </summary>
-        internal static string CreateAccountFailed_Title {
+        public static string CreateAccountFailed_Title {
             get {
                 return ResourceManager.GetString("CreateAccountFailed_Title", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to create folder.
         /// </summary>
-        internal static string CreateFolderFailed {
+        public static string CreateFolderFailed {
             get {
                 return ResourceManager.GetString("CreateFolderFailed", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Folder creation failed.
         /// </summary>
-        internal static string CreateFolderFailed_Title {
+        public static string CreateFolderFailed_Title {
             get {
                 return ResourceManager.GetString("CreateFolderFailed_Title", resourceCulture);
             }
@@ -189,7 +189,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Folder created successful.
         /// </summary>
-        internal static string CreateFolderSuccess {
+        public static string CreateFolderSuccess {
             get {
                 return ResourceManager.GetString("CreateFolderSuccess", resourceCulture);
             }
@@ -198,7 +198,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Folder created.
         /// </summary>
-        internal static string CreateFolderSuccess_Title {
+        public static string CreateFolderSuccess_Title {
             get {
                 return ResourceManager.GetString("CreateFolderSuccess_Title", resourceCulture);
             }
@@ -207,7 +207,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed tot delete item. Please try again.
         /// </summary>
-        internal static string DeleteNodeFailed {
+        public static string DeleteNodeFailed {
             get {
                 return ResourceManager.GetString("DeleteNodeFailed", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Delete failed.
         /// </summary>
-        internal static string DeleteNodeFailed_Title {
+        public static string DeleteNodeFailed_Title {
             get {
                 return ResourceManager.GetString("DeleteNodeFailed_Title", resourceCulture);
             }
@@ -225,7 +225,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You have selected over 100 items ({0}) to download. Do you want to proceed?.
         /// </summary>
-        internal static string DownloadLimitMessage {
+        public static string DownloadLimitMessage {
             get {
                 return ResourceManager.GetString("DownloadLimitMessage", resourceCulture);
             }
@@ -234,7 +234,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Download count.
         /// </summary>
-        internal static string DownloadLimitMessage_Title {
+        public static string DownloadLimitMessage_Title {
             get {
                 return ResourceManager.GetString("DownloadLimitMessage_Title", resourceCulture);
             }
@@ -243,7 +243,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to retrieve a download link. Please try again.
         /// </summary>
-        internal static string DownloadLinkFailed {
+        public static string DownloadLinkFailed {
             get {
                 return ResourceManager.GetString("DownloadLinkFailed", resourceCulture);
             }
@@ -252,7 +252,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Retrieving link failed.
         /// </summary>
-        internal static string DownloadLinkFailed_Title {
+        public static string DownloadLinkFailed_Title {
             get {
                 return ResourceManager.GetString("DownloadLinkFailed_Title", resourceCulture);
             }
@@ -261,7 +261,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to download file. Please try again. [{0}].
         /// </summary>
-        internal static string DownloadNodeFailed {
+        public static string DownloadNodeFailed {
             get {
                 return ResourceManager.GetString("DownloadNodeFailed", resourceCulture);
             }
@@ -270,7 +270,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Download failed.
         /// </summary>
-        internal static string DownloadNodeFailed_Title {
+        public static string DownloadNodeFailed_Title {
             get {
                 return ResourceManager.GetString("DownloadNodeFailed_Title", resourceCulture);
             }
@@ -279,7 +279,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Could not retrieve files and folders from MEGA. Please try again..
         /// </summary>
-        internal static string FetchingNodesFailed {
+        public static string FetchingNodesFailed {
             get {
                 return ResourceManager.GetString("FetchingNodesFailed", resourceCulture);
             }
@@ -288,7 +288,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Fetching data failed.
         /// </summary>
-        internal static string FetchingNodesFailed_Title {
+        public static string FetchingNodesFailed_Title {
             get {
                 return ResourceManager.GetString("FetchingNodesFailed_Title", resourceCulture);
             }
@@ -297,7 +297,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Could not find the selected file.
         /// </summary>
-        internal static string FileNotFound {
+        public static string FileNotFound {
             get {
                 return ResourceManager.GetString("FileNotFound", resourceCulture);
             }
@@ -306,7 +306,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a File not found.
         /// </summary>
-        internal static string FileNotFound_Title {
+        public static string FileNotFound_Title {
             get {
                 return ResourceManager.GetString("FileNotFound_Title", resourceCulture);
             }
@@ -315,7 +315,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to create folder. Please try again.
         /// </summary>
-        internal static string FolderCreateFailed {
+        public static string FolderCreateFailed {
             get {
                 return ResourceManager.GetString("FolderCreateFailed", resourceCulture);
             }
@@ -324,7 +324,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Folder creation failed.
         /// </summary>
-        internal static string FolderCreateFailed_Title {
+        public static string FolderCreateFailed_Title {
             get {
                 return ResourceManager.GetString("FolderCreateFailed_Title", resourceCulture);
             }
@@ -333,7 +333,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to retrieve your account details. Please try again. [{0}].
         /// </summary>
-        internal static string GetAccountDetailsFailed {
+        public static string GetAccountDetailsFailed {
             get {
                 return ResourceManager.GetString("GetAccountDetailsFailed", resourceCulture);
             }
@@ -342,7 +342,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Retrieving account details failed.
         /// </summary>
-        internal static string GetAccountDetailsFailed_Title {
+        public static string GetAccountDetailsFailed_Title {
             get {
                 return ResourceManager.GetString("GetAccountDetailsFailed_Title", resourceCulture);
             }
@@ -351,7 +351,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to get link.
         /// </summary>
-        internal static string GetLinkFailed {
+        public static string GetLinkFailed {
             get {
                 return ResourceManager.GetString("GetLinkFailed", resourceCulture);
             }
@@ -360,7 +360,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Get link failed.
         /// </summary>
-        internal static string GetLinkFailed_Title {
+        public static string GetLinkFailed_Title {
             get {
                 return ResourceManager.GetString("GetLinkFailed_Title", resourceCulture);
             }
@@ -369,7 +369,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to retrieve preview.
         /// </summary>
-        internal static string GetPreviewFailed {
+        public static string GetPreviewFailed {
             get {
                 return ResourceManager.GetString("GetPreviewFailed", resourceCulture);
             }
@@ -378,7 +378,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Getting preview failed.
         /// </summary>
-        internal static string GetPreviewFailed_Title {
+        public static string GetPreviewFailed_Title {
             get {
                 return ResourceManager.GetString("GetPreviewFailed_Title", resourceCulture);
             }
@@ -387,7 +387,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to retrieve thumbnail [{0}].
         /// </summary>
-        internal static string GetThumbnailFailed {
+        public static string GetThumbnailFailed {
             get {
                 return ResourceManager.GetString("GetThumbnailFailed", resourceCulture);
             }
@@ -396,7 +396,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Getting thumbnail failed.
         /// </summary>
-        internal static string GetThumbnailFailed_Title {
+        public static string GetThumbnailFailed_Title {
             get {
                 return ResourceManager.GetString("GetThumbnailFailed_Title", resourceCulture);
             }
@@ -405,7 +405,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Image successful exported to &apos;saved pictures&apos; album.
         /// </summary>
-        internal static string ImageSaved {
+        public static string ImageSaved {
             get {
                 return ResourceManager.GetString("ImageSaved", resourceCulture);
             }
@@ -414,7 +414,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Image saved.
         /// </summary>
-        internal static string ImageSaved_Title {
+        public static string ImageSaved_Title {
             get {
                 return ResourceManager.GetString("ImageSaved_Title", resourceCulture);
             }
@@ -423,7 +423,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Error exporting image to  &apos;saved pictures&apos; album. Please try again.
         /// </summary>
-        internal static string ImageSaveError {
+        public static string ImageSaveError {
             get {
                 return ResourceManager.GetString("ImageSaveError", resourceCulture);
             }
@@ -432,7 +432,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to save image.
         /// </summary>
-        internal static string ImageSaveError_Title {
+        public static string ImageSaveError_Title {
             get {
                 return ResourceManager.GetString("ImageSaveError_Title", resourceCulture);
             }
@@ -441,7 +441,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Importing file failed.
         /// </summary>
-        internal static string ImportFileFailed {
+        public static string ImportFileFailed {
             get {
                 return ResourceManager.GetString("ImportFileFailed", resourceCulture);
             }
@@ -450,7 +450,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Import file failed.
         /// </summary>
-        internal static string ImportFileFailed_Title {
+        public static string ImportFileFailed_Title {
             get {
                 return ResourceManager.GetString("ImportFileFailed_Title", resourceCulture);
             }
@@ -459,7 +459,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGA link is copied to your clipboard.
         /// </summary>
-        internal static string LinkCopiedToClipboard {
+        public static string LinkCopiedToClipboard {
             get {
                 return ResourceManager.GetString("LinkCopiedToClipboard", resourceCulture);
             }
@@ -468,7 +468,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Copied to clipboard.
         /// </summary>
-        internal static string LinkCopiedToClipboard_Title {
+        public static string LinkCopiedToClipboard_Title {
             get {
                 return ResourceManager.GetString("LinkCopiedToClipboard_Title", resourceCulture);
             }
@@ -477,7 +477,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Could not load files and folders from MEGA. Please try again or click on refresh..
         /// </summary>
-        internal static string LoadNodesFailed {
+        public static string LoadNodesFailed {
             get {
                 return ResourceManager.GetString("LoadNodesFailed", resourceCulture);
             }
@@ -486,7 +486,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to load.
         /// </summary>
-        internal static string LoadNodesFailed_Title {
+        public static string LoadNodesFailed_Title {
             get {
                 return ResourceManager.GetString("LoadNodesFailed_Title", resourceCulture);
             }
@@ -495,7 +495,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You have successfully logged out.
         /// </summary>
-        internal static string LoggedOut {
+        public static string LoggedOut {
             get {
                 return ResourceManager.GetString("LoggedOut", resourceCulture);
             }
@@ -504,7 +504,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Logged out.
         /// </summary>
-        internal static string LoggedOut_Title {
+        public static string LoggedOut_Title {
             get {
                 return ResourceManager.GetString("LoggedOut_Title", resourceCulture);
             }
@@ -513,7 +513,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGA Cloud Drive login failed. Please try again. [{0}].
         /// </summary>
-        internal static string LoginFailed {
+        public static string LoginFailed {
             get {
                 return ResourceManager.GetString("LoginFailed", resourceCulture);
             }
@@ -522,7 +522,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Login failed.
         /// </summary>
-        internal static string LoginFailed_Title {
+        public static string LoginFailed_Title {
             get {
                 return ResourceManager.GetString("LoginFailed_Title", resourceCulture);
             }
@@ -531,7 +531,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to logout. Please try again. [{0}].
         /// </summary>
-        internal static string LogoutFailed {
+        public static string LogoutFailed {
             get {
                 return ResourceManager.GetString("LogoutFailed", resourceCulture);
             }
@@ -540,7 +540,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Logout failed.
         /// </summary>
-        internal static string LogoutFailed_Title {
+        public static string LogoutFailed_Title {
             get {
                 return ResourceManager.GetString("LogoutFailed_Title", resourceCulture);
             }
@@ -549,7 +549,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Please select minimal 1 picture for upload.
         /// </summary>
-        internal static string MinimalPictureSelection {
+        public static string MinimalPictureSelection {
             get {
                 return ResourceManager.GetString("MinimalPictureSelection", resourceCulture);
             }
@@ -558,7 +558,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a No pictures selected.
         /// </summary>
-        internal static string MinimalPictureSelection_Title {
+        public static string MinimalPictureSelection_Title {
             get {
                 return ResourceManager.GetString("MinimalPictureSelection_Title", resourceCulture);
             }
@@ -567,7 +567,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Destination folder is the same as the source folder. Moving canceled.
         /// </summary>
-        internal static string MoveEqualsParent {
+        public static string MoveEqualsParent {
             get {
                 return ResourceManager.GetString("MoveEqualsParent", resourceCulture);
             }
@@ -576,7 +576,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Move failed.
         /// </summary>
-        internal static string MoveEqualsParent_Title {
+        public static string MoveEqualsParent_Title {
             get {
                 return ResourceManager.GetString("MoveEqualsParent_Title", resourceCulture);
             }
@@ -585,7 +585,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to move item. Please try again.
         /// </summary>
-        internal static string MoveFailed {
+        public static string MoveFailed {
             get {
                 return ResourceManager.GetString("MoveFailed", resourceCulture);
             }
@@ -594,7 +594,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Move failed.
         /// </summary>
-        internal static string MoveFailed_Title {
+        public static string MoveFailed_Title {
             get {
                 return ResourceManager.GetString("MoveFailed_Title", resourceCulture);
             }
@@ -603,7 +603,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to move item to rubbish bin. Please try again.
         /// </summary>
-        internal static string MoveToRubbishBinFailed {
+        public static string MoveToRubbishBinFailed {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinFailed", resourceCulture);
             }
@@ -612,7 +612,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Move to rubbish bin failed.
         /// </summary>
-        internal static string MoveToRubbishBinFailed_Title {
+        public static string MoveToRubbishBinFailed_Title {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinFailed_Title", resourceCulture);
             }
@@ -621,7 +621,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Are you sure you want to move {0} to rubbish bin?.
         /// </summary>
-        internal static string MoveToRubbishBinQuestion {
+        public static string MoveToRubbishBinQuestion {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinQuestion", resourceCulture);
             }
@@ -630,7 +630,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Move to rubbish bin?.
         /// </summary>
-        internal static string MoveToRubbishBinQuestion_Title {
+        public static string MoveToRubbishBinQuestion_Title {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinQuestion_Title", resourceCulture);
             }
@@ -639,7 +639,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Item successful moved to rubbish bin.
         /// </summary>
-        internal static string MoveToRubbishBinSuccess {
+        public static string MoveToRubbishBinSuccess {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinSuccess", resourceCulture);
             }
@@ -648,7 +648,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Item moved.
         /// </summary>
-        internal static string MoveToRubbishBinSuccess_Title {
+        public static string MoveToRubbishBinSuccess_Title {
             get {
                 return ResourceManager.GetString("MoveToRubbishBinSuccess_Title", resourceCulture);
             }
@@ -657,7 +657,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Are you sure you want to move to rubbish bin {0} items?.
         /// </summary>
-        internal static string MultiMoveToRubbishBinQuestion {
+        public static string MultiMoveToRubbishBinQuestion {
             get {
                 return ResourceManager.GetString("MultiMoveToRubbishBinQuestion", resourceCulture);
             }
@@ -666,7 +666,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Move items?.
         /// </summary>
-        internal static string MultiMoveToRubbishBinQuestion_Title {
+        public static string MultiMoveToRubbishBinQuestion_Title {
             get {
                 return ResourceManager.GetString("MultiMoveToRubbishBinQuestion_Title", resourceCulture);
             }
@@ -675,7 +675,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a {0} Items moved to rubbish bin.
         /// </summary>
-        internal static string MultiMoveToRubbishBinSucces {
+        public static string MultiMoveToRubbishBinSucces {
             get {
                 return ResourceManager.GetString("MultiMoveToRubbishBinSucces", resourceCulture);
             }
@@ -684,7 +684,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Items moved.
         /// </summary>
-        internal static string MultiMoveToRubbishBinSucces_Title {
+        public static string MultiMoveToRubbishBinSucces_Title {
             get {
                 return ResourceManager.GetString("MultiMoveToRubbishBinSucces_Title", resourceCulture);
             }
@@ -693,7 +693,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a {0} Items removed.
         /// </summary>
-        internal static string MultiRemoveSucces {
+        public static string MultiRemoveSucces {
             get {
                 return ResourceManager.GetString("MultiRemoveSucces", resourceCulture);
             }
@@ -702,7 +702,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Items removed.
         /// </summary>
-        internal static string MultiRemoveSucces_Title {
+        public static string MultiRemoveSucces_Title {
             get {
                 return ResourceManager.GetString("MultiRemoveSucces_Title", resourceCulture);
             }
@@ -711,7 +711,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Are you sure you want to remove {0} items?.
         /// </summary>
-        internal static string MultiSelectRemoveQuestion {
+        public static string MultiSelectRemoveQuestion {
             get {
                 return ResourceManager.GetString("MultiSelectRemoveQuestion", resourceCulture);
             }
@@ -720,7 +720,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Remove items?.
         /// </summary>
-        internal static string MultiSelectRemoveQuestion_Title {
+        public static string MultiSelectRemoveQuestion_Title {
             get {
                 return ResourceManager.GetString("MultiSelectRemoveQuestion_Title", resourceCulture);
             }
@@ -729,7 +729,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to open the selected file.
         /// </summary>
-        internal static string OpenFileFailed {
+        public static string OpenFileFailed {
             get {
                 return ResourceManager.GetString("OpenFileFailed", resourceCulture);
             }
@@ -738,7 +738,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Open file failed.
         /// </summary>
-        internal static string OpenFileFailed_Title {
+        public static string OpenFileFailed_Title {
             get {
                 return ResourceManager.GetString("OpenFileFailed_Title", resourceCulture);
             }
@@ -747,7 +747,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Your passwords do not match. Please re-type them and make sure they are equal.
         /// </summary>
-        internal static string PasswordsDoNotMatch {
+        public static string PasswordsDoNotMatch {
             get {
                 return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
             }
@@ -756,7 +756,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Passwords do not match.
         /// </summary>
-        internal static string PasswordsDoNotMatch_Title {
+        public static string PasswordsDoNotMatch_Title {
             get {
                 return ResourceManager.GetString("PasswordsDoNotMatch_Title", resourceCulture);
             }
@@ -765,7 +765,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to pause transfers.
         /// </summary>
-        internal static string PausingTransfersFailed {
+        public static string PausingTransfersFailed {
             get {
                 return ResourceManager.GetString("PausingTransfersFailed", resourceCulture);
             }
@@ -774,7 +774,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Pause failed.
         /// </summary>
-        internal static string PausingTransfersFailed_Title {
+        public static string PausingTransfersFailed_Title {
             get {
                 return ResourceManager.GetString("PausingTransfersFailed_Title", resourceCulture);
             }
@@ -783,7 +783,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?.
         /// </summary>
-        internal static string PendingTransfersExit {
+        public static string PendingTransfersExit {
             get {
                 return ResourceManager.GetString("PendingTransfersExit", resourceCulture);
             }
@@ -792,7 +792,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Pending Transfers.
         /// </summary>
-        internal static string PendingTransfersExit_Title {
+        public static string PendingTransfersExit_Title {
             get {
                 return ResourceManager.GetString("PendingTransfersExit_Title", resourceCulture);
             }
@@ -801,7 +801,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?.
         /// </summary>
-        internal static string PendingTransfersLogout {
+        public static string PendingTransfersLogout {
             get {
                 return ResourceManager.GetString("PendingTransfersLogout", resourceCulture);
             }
@@ -810,7 +810,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Pending Transfers.
         /// </summary>
-        internal static string PendingTransfersLogout_Title {
+        public static string PendingTransfersLogout_Title {
             get {
                 return ResourceManager.GetString("PendingTransfersLogout_Title", resourceCulture);
             }
@@ -819,7 +819,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload photo.
         /// </summary>
-        internal static string PhotoUploadError {
+        public static string PhotoUploadError {
             get {
                 return ResourceManager.GetString("PhotoUploadError", resourceCulture);
             }
@@ -828,7 +828,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Upload photo failed.
         /// </summary>
-        internal static string PhotoUploadError_Title {
+        public static string PhotoUploadError_Title {
             get {
                 return ResourceManager.GetString("PhotoUploadError_Title", resourceCulture);
             }
@@ -837,7 +837,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a The image is saved in your photo album.
         /// </summary>
-        internal static string PictureSaved {
+        public static string PictureSaved {
             get {
                 return ResourceManager.GetString("PictureSaved", resourceCulture);
             }
@@ -846,7 +846,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Picture saved.
         /// </summary>
-        internal static string PictureSaved_Title {
+        public static string PictureSaved_Title {
             get {
                 return ResourceManager.GetString("PictureSaved_Title", resourceCulture);
             }
@@ -855,7 +855,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Your PIN lock codes do not match. Please re-type them and make sure they are equal.
         /// </summary>
-        internal static string PinLockCodesDoNotMatch {
+        public static string PinLockCodesDoNotMatch {
             get {
                 return ResourceManager.GetString("PinLockCodesDoNotMatch", resourceCulture);
             }
@@ -864,7 +864,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a PIN lock codes do not match.
         /// </summary>
-        internal static string PinLockCodesDoNotMatch_Title {
+        public static string PinLockCodesDoNotMatch_Title {
             get {
                 return ResourceManager.GetString("PinLockCodesDoNotMatch_Title", resourceCulture);
             }
@@ -873,7 +873,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to prepare image: {0} for upload.
         /// </summary>
-        internal static string PrepareImageForUploadFailed {
+        public static string PrepareImageForUploadFailed {
             get {
                 return ResourceManager.GetString("PrepareImageForUploadFailed", resourceCulture);
             }
@@ -882,7 +882,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Preparing image failed.
         /// </summary>
-        internal static string PrepareImageForUploadFailed_Title {
+        public static string PrepareImageForUploadFailed_Title {
             get {
                 return ResourceManager.GetString("PrepareImageForUploadFailed_Title", resourceCulture);
             }
@@ -891,7 +891,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app..
         /// </summary>
-        internal static string QuestionAskedDownloadOption {
+        public static string QuestionAskedDownloadOption {
             get {
                 return ResourceManager.GetString("QuestionAskedDownloadOption", resourceCulture);
             }
@@ -900,7 +900,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Are you sure you want to remove {0}?.
         /// </summary>
-        internal static string RemoveItemQuestion {
+        public static string RemoveItemQuestion {
             get {
                 return ResourceManager.GetString("RemoveItemQuestion", resourceCulture);
             }
@@ -909,7 +909,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Remove?.
         /// </summary>
-        internal static string RemoveItemQuestion_Title {
+        public static string RemoveItemQuestion_Title {
             get {
                 return ResourceManager.GetString("RemoveItemQuestion_Title", resourceCulture);
             }
@@ -918,7 +918,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to remove item.
         /// </summary>
-        internal static string RemoveNodeFailed {
+        public static string RemoveNodeFailed {
             get {
                 return ResourceManager.GetString("RemoveNodeFailed", resourceCulture);
             }
@@ -927,7 +927,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Remove failed.
         /// </summary>
-        internal static string RemoveNodeFailed_Title {
+        public static string RemoveNodeFailed_Title {
             get {
                 return ResourceManager.GetString("RemoveNodeFailed_Title", resourceCulture);
             }
@@ -936,7 +936,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Item successful removed.
         /// </summary>
-        internal static string RemoveNodeSucces {
+        public static string RemoveNodeSucces {
             get {
                 return ResourceManager.GetString("RemoveNodeSucces", resourceCulture);
             }
@@ -945,7 +945,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Item removed.
         /// </summary>
-        internal static string RemoveNodeSuccess_Title {
+        public static string RemoveNodeSuccess_Title {
             get {
                 return ResourceManager.GetString("RemoveNodeSuccess_Title", resourceCulture);
             }
@@ -954,7 +954,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Renaming item failed.
         /// </summary>
-        internal static string RenameNodeFailed {
+        public static string RenameNodeFailed {
             get {
                 return ResourceManager.GetString("RenameNodeFailed", resourceCulture);
             }
@@ -963,7 +963,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Rename failed.
         /// </summary>
-        internal static string RenameNodeFailed_Title {
+        public static string RenameNodeFailed_Title {
             get {
                 return ResourceManager.GetString("RenameNodeFailed_Title", resourceCulture);
             }
@@ -972,7 +972,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Fill in required fields.
         /// </summary>
-        internal static string RequiredFields_Title {
+        public static string RequiredFields_Title {
             get {
                 return ResourceManager.GetString("RequiredFields_Title", resourceCulture);
             }
@@ -981,7 +981,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Please fill in your choosen password.
         /// </summary>
-        internal static string RequiredFieldsConfirmAccount {
+        public static string RequiredFieldsConfirmAccount {
             get {
                 return ResourceManager.GetString("RequiredFieldsConfirmAccount", resourceCulture);
             }
@@ -990,7 +990,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and your new password.
         /// </summary>
-        internal static string RequiredFieldsCreateAccount {
+        public static string RequiredFieldsCreateAccount {
             get {
                 return ResourceManager.GetString("RequiredFieldsCreateAccount", resourceCulture);
             }
@@ -999,7 +999,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Please fill in your e-mail address and your MEGA password.
         /// </summary>
-        internal static string RequiredFieldsLogin {
+        public static string RequiredFieldsLogin {
             get {
                 return ResourceManager.GetString("RequiredFieldsLogin", resourceCulture);
             }
@@ -1008,7 +1008,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Failed to resume transfers.
         /// </summary>
-        internal static string ResumingTransfersFailed {
+        public static string ResumingTransfersFailed {
             get {
                 return ResourceManager.GetString("ResumingTransfersFailed", resourceCulture);
             }
@@ -1017,7 +1017,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Resume failed.
         /// </summary>
-        internal static string ResumingTransfersFailed_Title {
+        public static string ResumingTransfersFailed_Title {
             get {
                 return ResourceManager.GetString("ResumingTransfersFailed_Title", resourceCulture);
             }
@@ -1026,7 +1026,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Export current image to &apos;saved pictures&apos; album?.
         /// </summary>
-        internal static string SaveImageQuestion {
+        public static string SaveImageQuestion {
             get {
                 return ResourceManager.GetString("SaveImageQuestion", resourceCulture);
             }
@@ -1035,16 +1035,25 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Save image to photo&apos;s.
         /// </summary>
-        internal static string SaveImageQuestion_Title {
+        public static string SaveImageQuestion_Title {
             get {
                 return ResourceManager.GetString("SaveImageQuestion_Title", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You have been logged out on this device from another location.
+        /// </summary>
+        public static string SessionIDError {
+            get {
+                return ResourceManager.GetString("SessionIDError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload the selfie picture.
         /// </summary>
-        internal static string UploadSelfieFailed {
+        public static string UploadSelfieFailed {
             get {
                 return ResourceManager.GetString("UploadSelfieFailed", resourceCulture);
             }
@@ -1053,7 +1062,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Selfie upload failed.
         /// </summary>
-        internal static string UploadSelfieFailed_Title {
+        public static string UploadSelfieFailed_Title {
             get {
                 return ResourceManager.GetString("UploadSelfieFailed_Title", resourceCulture);
             }
@@ -1062,7 +1071,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a You are not logged in at MEGA to do this action. Please re-login.
         /// </summary>
-        internal static string UserNotOnline {
+        public static string UserNotOnline {
             get {
                 return ResourceManager.GetString("UserNotOnline", resourceCulture);
             }
@@ -1071,7 +1080,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Not online.
         /// </summary>
-        internal static string UserNotOnline_Title {
+        public static string UserNotOnline_Title {
             get {
                 return ResourceManager.GetString("UserNotOnline_Title", resourceCulture);
             }
@@ -1080,7 +1089,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a The typed password is incorrect.
         /// </summary>
-        internal static string WrongPassword {
+        public static string WrongPassword {
             get {
                 return ResourceManager.GetString("WrongPassword", resourceCulture);
             }
@@ -1089,7 +1098,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Wrong password.
         /// </summary>
-        internal static string WrongPassword_Title {
+        public static string WrongPassword_Title {
             get {
                 return ResourceManager.GetString("WrongPassword_Title", resourceCulture);
             }
