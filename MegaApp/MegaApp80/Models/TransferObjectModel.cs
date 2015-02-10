@@ -198,7 +198,7 @@ namespace MegaApp.Models
                 CancelButtonState = false;
             });
 
-            switch (e.getErrorCode())
+            switch (e.getErrorCode())            
             {
                 case MErrorType.API_OK:
                 {
@@ -245,6 +245,31 @@ namespace MegaApp.Models
                    
                     break;
                 }
+                case MErrorType.API_EOVERQUOTA:
+                {
+                    // Stop all upload transfers
+                    if (App.MegaTransfers.Count > 0)
+                    {
+                        foreach (var item in App.MegaTransfers)
+                        {
+                            var transferItem = (TransferObjectModel)item;
+                            if (transferItem == null) continue;
+
+                            if (transferItem.Type == TransferType.Upload)
+                                transferItem.CancelTransfer();
+                        }
+                    }
+
+                    //**************************************************
+                    // TODO: Disable the "camera upload" (when availabe)
+                    //**************************************************
+
+
+                    // User notification message.
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+
+                    break;
+                }                
                 case MErrorType.API_EINCOMPLETE:
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Canceled);

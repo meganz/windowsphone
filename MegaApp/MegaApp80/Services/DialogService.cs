@@ -80,6 +80,26 @@ namespace MegaApp.Services
             }
         }
 
+        public static async void ShowOverquotaAlert()
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
+                title: AppMessages.OverquotaAlert_Title,
+                message: AppMessages.OverquotaAlert
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                case 0: // "Yes" button clicked
+                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);                    
+                    break;
+
+                case 1: // "No" button clicked
+                default:
+                    break;
+            }
+        }
+
         public static void ShowUploadOptions(CloudDriveViewModel cloudDrive)
         {
 
