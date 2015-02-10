@@ -8,6 +8,8 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
@@ -36,7 +38,7 @@ namespace MegaApp.MegaApi
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
-            
+
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 if (ShowSuccesMessage)
@@ -49,11 +51,42 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
-            else if(e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+            else if (e.getErrorCode() == MErrorType.API_ESID)
+            {
+                api.logout(new LogOutRequestListener());
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));                                
+            }
+            else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            {
+                // Stop all upload transfers
+                if (App.MegaTransfers.Count > 0)
+                {
+                    foreach (var item in App.MegaTransfers)
+                    {
+                        var transferItem = (TransferObjectModel)item;
+                        if (transferItem == null) continue;
+
+                        if (transferItem.Type == TransferType.Upload)
+                            transferItem.CancelTransfer();
+                    }
+                }
+
+                //**************************************************
+                // TODO: Disable the "camera upload" (when availabe)
+                //**************************************************
+
+
+                // User notification message.
+                Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+            }
+            else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
+            {
                 if (ShowErrorMessage)
-                    Deployment.Current.Dispatcher.BeginInvoke(() => 
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
                         MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
-           
+            }           
         }
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)

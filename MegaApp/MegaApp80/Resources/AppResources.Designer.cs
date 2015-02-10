@@ -115,7 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 331aa8e.
+        ///   Busca una cadena traducida similar a 773b34c.
         /// </summary>
         public static string MegaSDK_Version {
             get {
@@ -223,7 +223,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MEGAWindowsPhone80/2.0.2.80.
+        ///   Busca una cadena traducida similar a MEGAWindowsPhone80/2.0.3.80.
         /// </summary>
         public static string UserAgent {
             get {

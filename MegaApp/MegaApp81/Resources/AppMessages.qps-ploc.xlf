@@ -473,6 +473,18 @@ To proceed with the download please select a destination folder or go to prefere
           <source>Preparing file failed</source>
           <target state="new">Preparing file failed</target>
         </trans-unit>
+        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="new">You have been logged out on this device from another location</target>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" xml:space="preserve">
+          <source>Overquota Alert!</source>
+          <target state="new">Overquota Alert!</target>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert" translate="yes" xml:space="preserve">
+          <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
+          <target state="new">Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</target>
+        </trans-unit>
       </group>
     </body>
   </file>
