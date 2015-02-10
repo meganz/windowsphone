@@ -8,7 +8,7 @@ namespace MegaApp.Extensions
 {
     static class SizeExtensions
     {
-        private static readonly string[] SizeSuffixes = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+        private static readonly string[] SizeSuffixesBytes = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
 
         public static string ToStringAndSuffix(this UInt64 value)
         {
@@ -17,7 +17,16 @@ namespace MegaApp.Extensions
             int mag = (int)Math.Log(value, 1024);
             decimal adjustedSize = (decimal)value / (1L << (mag * 10));
 
-            return String.Format("{0:n2} {1}", adjustedSize, SizeSuffixes[mag]);
+            return String.Format("{0:n2} {1}", adjustedSize, SizeSuffixesBytes[mag]);
+        }
+        public static string ToStringAndSuffixPerSecond(this UInt64 value)
+        {
+            if (value == 0) { return "0.0 bytes/s"; }
+
+            int mag = (int)Math.Log(value, 1024);
+            decimal adjustedSize = (decimal)value / (1L << (mag * 10));
+
+            return String.Format("{0:n2} {1}/s", adjustedSize, SizeSuffixesBytes[mag]);
         }
 
         public static ulong FromKBToBytes (this UInt64 value)

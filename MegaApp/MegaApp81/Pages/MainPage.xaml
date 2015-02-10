@@ -272,7 +272,7 @@
 					</telerikPrimitives:RadDataBoundListBox>
 
 				</Grid>
-				<Border x:Name="BorderLinkText" BorderThickness="1" VerticalAlignment="Bottom" Grid.Row="1">
+				<Border x:Name="BorderLinkText" BorderThickness="1" VerticalAlignment="Bottom" Grid.Row="1" Visibility="Collapsed">
 					<Border.BorderBrush>
 						<SolidColorBrush Color="Black" Opacity="0.75"/>
 					</Border.BorderBrush>

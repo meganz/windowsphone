@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using mega;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -170,6 +173,17 @@ namespace MegaApp.Models
             }
         }
 
+        private string _transferSpeed;
+        public string TransferSpeed
+        {
+            get { return _transferSpeed; }
+            private set
+            {
+                _transferSpeed = value;
+                OnPropertyChanged("TransferSpeed");
+            }
+        }
+
         #endregion
 
         #region MTransferListenerInterface
@@ -187,6 +201,7 @@ namespace MegaApp.Models
             {
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
                 IsBusy = false;
                 CancelButtonState = false;
             });
@@ -283,6 +298,7 @@ namespace MegaApp.Models
         public void onTransferStart(MegaSDK api, MTransfer transfer)
         {
             Transfer = transfer;
+           
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -291,6 +307,7 @@ namespace MegaApp.Models
                 IsBusy = true;
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
             });
         }
 
@@ -305,6 +322,11 @@ namespace MegaApp.Models
             {
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
+                //TransferTime.Stop();
+                //CalculateTransferSpeed(TransferTime.Elapsed, transfer.getDeltaSize());
+                //ransferTime.Restart();
                 
                 if (TransferedBytes > 0)
                 {
@@ -321,6 +343,14 @@ namespace MegaApp.Models
                     }
                 }
             });
+        }
+
+        private void CalculateTransferSpeed(TimeSpan elepsedTransferTime, ulong transferedBytes)
+        {
+            double bytesPerSecond = transferedBytes / elepsedTransferTime.TotalSeconds;
+            double bitsPerSecond = bytesPerSecond * 8;
+
+            TransferSpeed = ((ulong) bitsPerSecond).ToStringAndSuffixPerSecond();
         }
 
         #endregion
