@@ -147,6 +147,10 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
+            else if (e.getErrorCode() == MErrorType.API_ESID)
+            {
+                base.onRequestFinish(api, request, e);
+            }
             else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
                 if (ShowErrorMessage)
                     Deployment.Current.Dispatcher.BeginInvoke(() =>

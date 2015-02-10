@@ -50,7 +50,7 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
-            else if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_EACCESS)
+            else if (e.getErrorCode() == MErrorType.API_ESID)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));
