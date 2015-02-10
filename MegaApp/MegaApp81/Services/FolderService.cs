@@ -18,6 +18,8 @@ namespace MegaApp.Services
     {
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {
+            App.FileOpenOrFolderPickerOpenend = true;
+
             var folderPicker = new FolderPicker
             {
                 SuggestedStartLocation = PickerLocationId.Downloads
@@ -33,6 +35,7 @@ namespace MegaApp.Services
 
         public static async Task<bool> SelectDownloadFolder(NodeViewModel nodeViewModel = null)
         {
+
             if (SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false))
             {
                 // Ask the user a download location when alsways asking is ON
@@ -49,6 +52,7 @@ namespace MegaApp.Services
                     case -1:
                         {
                             // Back button is pressed
+                            App.CloudDrive.PickerOrDialogIsOpen = false;
                             return false;
                         }
                     case 0:
@@ -60,6 +64,7 @@ namespace MegaApp.Services
                     case 1:
                         {
                             // Go to preferences page
+                            App.CloudDrive.PickerOrDialogIsOpen = false;
                             App.CloudDrive.NoFolderUpAction = true;
                             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
                             return false;

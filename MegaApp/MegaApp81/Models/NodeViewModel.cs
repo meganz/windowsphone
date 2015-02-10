@@ -79,9 +79,15 @@ namespace MegaApp.Models
         public async void Download(string downloadPath = null)
         {
             if (!IsUserOnline()) return;
+            
+            if (App.CloudDrive.PickerOrDialogIsOpen) return;
 
             if (downloadPath == null)
+            {
+                App.CloudDrive.PickerOrDialogIsOpen = true;
                 if (!await FolderService.SelectDownloadFolder(this)) return;
+            }
+                
 
             this.Transfer.DownloadFolderPath = downloadPath;
             App.MegaTransfers.Add(this.Transfer);

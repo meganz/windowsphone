@@ -89,6 +89,8 @@ namespace MegaApp.Services
                 Margin = new Thickness(0)
             };
 
+            uploadRadWindow.WindowClosed += (sender, args) => cloudDrive.PickerOrDialogIsOpen = false;
+
             var grid = new Grid()
             {
                 HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -172,8 +174,7 @@ namespace MegaApp.Services
             hubFile.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
-                //cloudDrive.NoFolderUpAction = true;
-                App.FileOpenPickerOpenend = true;
+                App.FileOpenOrFolderPickerOpenend = true;
                 FileService.SelectMultipleFiles();
             };
 
