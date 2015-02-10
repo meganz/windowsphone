@@ -530,11 +530,23 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\AppMessages.Designer.cs" />
-    <Compile Include="Resources\AppResources.Designer.cs" />
+    <Compile Include="Resources\AppMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ProgressMessages.Designer.cs" />
     <Compile Include="Resources\SettingsResources.Designer.cs" />
-    <Compile Include="Resources\UiResources.Designer.cs" />
+    <Compile Include="Resources\UiResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UiResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
@@ -2001,7 +2013,10 @@
       <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
       <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppMessages.resx" />
+    <EmbeddedResource Include="Resources\AppMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\AppResources.es-ES.resx">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2014,7 +2029,10 @@
       <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
       <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.resx" />
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\ProgressMessages.es-ES.resx">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2053,7 +2071,10 @@
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
       <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.resx" />
+    <EmbeddedResource Include="Resources\UiResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="Resources\AppMessages.es-ES.xlf">

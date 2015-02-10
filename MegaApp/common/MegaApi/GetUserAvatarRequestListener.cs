@@ -96,6 +96,10 @@ namespace MegaApp.MegaApi
                     _accountDetails.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
                 });
             }
+            else if (e.getErrorCode() == MErrorType.API_ESID)
+            {
+                base.onRequestFinish(api, request, e);
+            }
             else
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
