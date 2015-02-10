@@ -57,6 +57,29 @@ namespace MegaApp.Models
                     MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK);
                     api.logout(new LogOutRequestListener());
                 }
+                else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+                {
+                    // Stop all upload transfers
+                    if (App.MegaTransfers.Count > 0)
+                    {
+                        foreach (var item in App.MegaTransfers)
+                        {
+                            var transferItem = (TransferObjectModel)item;
+                            if (transferItem == null) continue;
+
+                            if (transferItem.Type == TransferType.Upload)
+                                transferItem.CancelTransfer();
+                        }
+                    }
+
+                    //**************************************************
+                    // TODO: Disable the "camera upload" (when availabe)
+                    //**************************************************
+
+
+                    // User notification message.
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+                }
                 else
                     MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
                         MessageBoxButton.OK);

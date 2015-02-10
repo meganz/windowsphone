@@ -8,6 +8,7 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -56,6 +57,29 @@ namespace MegaApp.MegaApi
                     MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));
 
                 api.logout(new LogOutRequestListener());
+            }
+            else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            {
+                // Stop all upload transfers
+                if (App.MegaTransfers.Count > 0)
+                {
+                    foreach (var item in App.MegaTransfers)
+                    {
+                        var transferItem = (TransferObjectModel)item;
+                        if (transferItem == null) continue;
+
+                        if (transferItem.Type == TransferType.Upload)
+                            transferItem.CancelTransfer();
+                    }
+                }
+
+                //**************************************************
+                // TODO: Disable the "camera upload" (when availabe)
+                //**************************************************
+
+
+                // User notification message.
+                Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
             }
             else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
             {

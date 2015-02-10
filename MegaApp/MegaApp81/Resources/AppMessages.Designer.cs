@@ -756,6 +756,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?.
+        /// </summary>
+        public static string OverquotaAlert {
+            get {
+                return ResourceManager.GetString("OverquotaAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Overquota Alert!.
+        /// </summary>
+        public static string OverquotaAlert_Title {
+            get {
+                return ResourceManager.GetString("OverquotaAlert_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Your passwords do not match. Please re-type them and make sure they are equal.
         /// </summary>
         public static string PasswordsDoNotMatch {
