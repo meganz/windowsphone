@@ -53,10 +53,10 @@ namespace MegaApp.MegaApi
             }
             else if (e.getErrorCode() == MErrorType.API_ESID)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));
-
                 api.logout(new LogOutRequestListener());
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));                                
             }
             else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {

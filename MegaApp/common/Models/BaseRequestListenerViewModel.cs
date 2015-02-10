@@ -54,8 +54,8 @@ namespace MegaApp.Models
                 }
                 else if (e.getErrorCode() == MErrorType.API_ESID)
                 {                    
-                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK);
                     api.logout(new LogOutRequestListener());
+                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK);                    
                 }
                 else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
                 {
