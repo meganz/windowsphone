@@ -473,7 +473,12 @@ namespace MegaApp.Pages
 
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
-            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
+            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb)
+            {
+                // #1870 fix (single column when reactivating app)
+                App.CloudDrive.SetView(App.CloudDrive.ViewMode);
+                return;
+            }
 
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
@@ -702,7 +707,7 @@ namespace MegaApp.Pages
                 App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;                
             }
 
-            ChangeMenu();
+            Dispatcher.BeginInvoke(ChangeMenu);
         }
         
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
