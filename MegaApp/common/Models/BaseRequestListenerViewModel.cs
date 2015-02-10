@@ -7,6 +7,7 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -50,6 +51,11 @@ namespace MegaApp.Models
 
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+                }
+                else if (e.getErrorCode() == MErrorType.API_ESID)
+                {                    
+                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK);
+                    api.logout(new LogOutRequestListener());
                 }
                 else
                     MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,

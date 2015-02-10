@@ -166,6 +166,10 @@ namespace MegaApp.Models
                             break;
                         }
 
+                    case MErrorType.API_ESID:
+                        base.onRequestFinish(api, request, e);
+                        break;
+
                     default: //Other error
                         {
                             MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
