@@ -17,6 +17,7 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -43,7 +44,7 @@ namespace MegaApp
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
         // Used for folder selection
         public FolderPickerContinuationEventArgs FolderPickerContinuationArgs { get; set; }
-        public static bool FileOpenPickerOpenend { get; set; }
+        public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         // Makes the app a share target for files
         public ShareOperation ShareOperation { get; set; }
@@ -253,9 +254,11 @@ namespace MegaApp
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-
+            
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                AppResources.UserAgent, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Add notifications listener. Needs a DriveViewModel
@@ -281,19 +284,21 @@ namespace MegaApp
 
         private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs e)
         {
-            if (e.NavigationMode == NavigationMode.Reset && FileOpenPickerOpenend)
+            if (e.NavigationMode == NavigationMode.Reset && FileOpenOrFolderPickerOpenend)
                 e.Cancel = true;
 
-            if (e.NavigationMode == NavigationMode.New && FileOpenPickerOpenend)
+            if (e.NavigationMode == NavigationMode.New && FileOpenOrFolderPickerOpenend)
             {
                 e.Cancel = true;
-                FileOpenPickerOpenend = false;
+                FileOpenOrFolderPickerOpenend = false;
             }
             
         }
 
         private void CurrentOnContractActivated(object sender, IActivatedEventArgs activatedEventArgs)
         {
+            FileOpenOrFolderPickerOpenend = false;
+
             var filePickerContinuationArgs = activatedEventArgs as FileOpenPickerContinuationEventArgs;
             if (filePickerContinuationArgs != null)
             {
@@ -302,22 +307,24 @@ namespace MegaApp
             }
 
             var folderPickerContinuationArgs = activatedEventArgs as FolderPickerContinuationEventArgs;
-            if (folderPickerContinuationArgs != null && folderPickerContinuationArgs.Folder != null)
+            if (folderPickerContinuationArgs != null)
             {
-                if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
-                    StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
-
-                if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() ==
-                    "SelectDefaultDownloadFolder")
+                CloudDrive.PickerOrDialogIsOpen = false;
+                if(folderPickerContinuationArgs.Folder != null)
                 {
-                    SettingsService.SaveSetting(SettingsResources.DefaultDownloadLocation, folderPickerContinuationArgs.Folder.Path);
-                    this.FolderPickerContinuationArgs = null;
+                    if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
+                        StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
+
+                    if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() ==
+                        "SelectDefaultDownloadFolder")
+                    {
+                        SettingsService.SaveSetting(SettingsResources.DefaultDownloadLocation, folderPickerContinuationArgs.Folder.Path);
+                        this.FolderPickerContinuationArgs = null;
+                    }
+                
+                    if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectDownloadFolder")
+                        this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
                 }
-                
-                if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectDownloadFolder")
-                     this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
-                
-                
             }
         }
 
@@ -336,7 +343,7 @@ namespace MegaApp
         {
             // If the app has received a 'reset' navigation, then we need to check
             // on the next navigation to see if the page stack should be reset
-            if (e.NavigationMode == NavigationMode.Reset && (!FileOpenPickerOpenend && FilePickerContinuationArgs == null))
+            if (e.NavigationMode == NavigationMode.Reset && (!FileOpenOrFolderPickerOpenend && FilePickerContinuationArgs == null))
                 RootFrame.Navigated += ClearBackStackAfterReset;
         }
 

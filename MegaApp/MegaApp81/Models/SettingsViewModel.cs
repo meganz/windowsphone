@@ -85,6 +85,7 @@ namespace MegaApp.Models
 
         private void SelectDownloadLocation(object obj)
         {
+            if (App.FileOpenOrFolderPickerOpenend) return;
             FolderService.SelectFolder("SelectDefaultDownloadFolder");
         }
 

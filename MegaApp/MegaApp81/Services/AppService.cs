@@ -7,9 +7,11 @@ using MegaApp.Resources;
 using System.IO;
 using System.Xml;
 using Windows.ApplicationModel;
+using Windows.Phone.System.Memory;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Microsoft.Phone.Info;
+using MemoryManager = Windows.System.MemoryManager;
 
 namespace MegaApp.Services
 {
@@ -44,8 +46,8 @@ namespace MegaApp.Services
         {
             return new MemoryInformation()
             {
-                AppMemoryUsage = (ulong) DeviceStatus.ApplicationCurrentMemoryUsage,
-                AppMemoryLimit = (ulong) DeviceStatus.ApplicationMemoryUsageLimit,
+                AppMemoryUsage = MemoryManager.AppMemoryUsage,
+                AppMemoryLimit = MemoryManager.AppMemoryUsageLimit,
                 AppMemoryPeak = (ulong) DeviceStatus.ApplicationPeakMemoryUsage,
                 DeviceMemory = (ulong) DeviceStatus.DeviceTotalMemory
             };
@@ -53,7 +55,7 @@ namespace MegaApp.Services
 
         public static bool IsLowMemoryDevice()
         {
-            return (ulong) DeviceStatus.ApplicationMemoryUsageLimit < 200UL.FromMBToBytes();
+            return MemoryManager.AppMemoryUsageLimit < 200UL.FromMBToBytes();
         }
 
         /// <summary>

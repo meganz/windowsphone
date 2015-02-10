@@ -21,6 +21,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -30,11 +31,13 @@ namespace MegaApp.Models
         private const int DownloadLimitMessage = 100;
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
-        private bool asyncInputPromptDialogIsOpen;
+        //private bool asyncInputPromptDialogIsOpen;
 
         public event EventHandler<CommandStatusArgs> CommandStatusChanged;
 
         public RadDataBoundListBox ListBox { private get; set; }
+
+        public bool PickerOrDialogIsOpen { get; set; }
 
         public CloudDriveViewModel(MegaSDK megaSdk)
             : base(megaSdk)
@@ -239,8 +242,14 @@ namespace MegaApp.Models
 
             if (count < 1) return;
 
-            if(downloadFolder == null)
-                if (!await FolderService.SelectDownloadFolder()) return;
+            // Only 1 Folder Picker can be open at 1 time
+            if (PickerOrDialogIsOpen) return;
+
+            if (downloadFolder == null)
+            {
+                PickerOrDialogIsOpen = true;
+                if (!await FolderService.SelectDownloadFolder())return;
+            }
             
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads);
 
@@ -536,11 +545,11 @@ namespace MegaApp.Models
             if (!IsUserOnline()) return;
 
             // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
-            if (asyncInputPromptDialogIsOpen) return;
-          
-            asyncInputPromptDialogIsOpen = true;
+            if (PickerOrDialogIsOpen) return;
+
+            PickerOrDialogIsOpen = true;
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink, vibrate: false);
-            asyncInputPromptDialogIsOpen = false;
+            PickerOrDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
@@ -857,8 +866,9 @@ namespace MegaApp.Models
         public void ShowUploadOptions()
         {
             // Only 1 dialog can be open at the same time with ShowAsync.
-            if (asyncInputPromptDialogIsOpen) return;
-            
+            if (PickerOrDialogIsOpen) return;
+
+            PickerOrDialogIsOpen = true;
             DialogService.ShowUploadOptions(this);
         }
 
@@ -867,15 +877,15 @@ namespace MegaApp.Models
             if (!IsUserOnline()) return;
 
             // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
-            if (asyncInputPromptDialogIsOpen) return;
+            if (PickerOrDialogIsOpen) return;
 
             try
             {
-                asyncInputPromptDialogIsOpen = true;
+                PickerOrDialogIsOpen = true;
                 var inputPromptClosedEventArgs =await RadInputPrompt.ShowAsync(
                     new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, 
                     vibrate: false);
-                asyncInputPromptDialogIsOpen = false;
+                PickerOrDialogIsOpen = false;
 
                 if (inputPromptClosedEventArgs == null || inputPromptClosedEventArgs.Result != DialogResult.OK) return;
 
@@ -889,7 +899,7 @@ namespace MegaApp.Models
             }
             finally
             {
-                asyncInputPromptDialogIsOpen = false;
+                PickerOrDialogIsOpen = false;
             }
 
            
