@@ -167,5 +167,26 @@ namespace MegaApp.Services
         {
             return Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory);
         }
+
+        public static string GetSelectedDownloadDirectoryPath()
+        {
+            return Path.Combine(SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                AppResources.DefaultDownloadLocation));
+        }
+
+        public static void ClearObsoleteSettings()
+        {
+            var lastAppVersion = SettingsService.LoadSetting<string>(SettingsResources.LastAppVersion, null);
+
+            if (lastAppVersion == null)
+            {
+                SettingsService.DeleteSetting(SettingsResources.QuestionAskedDownloadOption);
+            }
+        }
+
+        public static void SaveAppInformation()
+        {
+            SettingsService.SaveSetting(SettingsResources.LastAppVersion, AppService.GetAppVersion());
+        }
     }
 }

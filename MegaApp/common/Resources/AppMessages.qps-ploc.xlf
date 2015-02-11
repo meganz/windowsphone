@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -10,13 +10,21 @@
           <source>You must agree with our terms of use</source>
           <target state="new">You must agree with our terms of use</target>
         </trans-unit>
-        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" xml:space="preserve">
-          <source>PIN lock codes do not match</source>
-          <target state="new">PIN lock codes do not match</target>
+        <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Preparing file failed</source>
+          <target state="new">Preparing file failed</target>
         </trans-unit>
-        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
-          <source>You have been logged out on this device from another location</source>
-          <target state="new">You have been logged out on this device from another location</target>
+        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare file: {0} for upload</source>
+          <target state="new">Failed to prepare file: {0} for upload</target>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" xml:space="preserve">
+          <source>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="new">You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</target>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" xml:space="preserve">
           <source>Overquota Alert!</source>
@@ -25,6 +33,14 @@
         <trans-unit id="Resx/OverquotaAlert" translate="yes" xml:space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
           <target state="new">Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</target>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="new">You have been logged out on this device from another location</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock codes do not match</source>
+          <target state="new">PIN lock codes do not match</target>
         </trans-unit>
         <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" xml:space="preserve">
           <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal</source>

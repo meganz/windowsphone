@@ -14,9 +14,17 @@
           <source>Preparing file failed</source>
           <target state="new">Preparing file failed</target>
         </trans-unit>
-        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
-          <source>You have been logged out on this device from another location</source>
-          <target state="new">You have been logged out on this device from another location</target>
+        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare file: {0} for upload</source>
+          <target state="new">Failed to prepare file: {0} for upload</target>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" xml:space="preserve">
+          <source>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="new">You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</target>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" xml:space="preserve">
           <source>Overquota Alert!</source>
@@ -26,9 +34,17 @@
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
           <target state="new">Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</target>
         </trans-unit>
-        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" xml:space="preserve">
-          <source>Failed to prepare file: {0} for upload</source>
-          <target state="new">Failed to prepare file: {0} for upload</target>
+        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="new">You have been logged out on this device from another location</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock codes do not match</source>
+          <target state="new">PIN lock codes do not match</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal</source>
+          <target state="new">Your PIN lock codes do not match. Please re-type them and make sure they are equal</target>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" xml:space="preserve">
           <source>Failed to load</source>
@@ -102,13 +118,9 @@
           <source>Failed to pause transfers</source>
           <target state="new">Failed to pause transfers</target>
         </trans-unit>
-        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" xml:space="preserve">
-          <source>You have not selected a default download location for your files.
-
-To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="new">You have not selected a default download location for your files.
-
-To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</target>
+        <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" xml:space="preserve">
+          <source>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
+          <target state="new">Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</target>
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" xml:space="preserve">
           <source>Download count</source>

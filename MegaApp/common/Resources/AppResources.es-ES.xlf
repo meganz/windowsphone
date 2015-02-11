@@ -11,6 +11,11 @@
           <target state="translated">LeftToRight</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</note>
           </trans-unit>
+        <trans-unit id="Resx/UserAgentWP81" translate="yes" xml:space="preserve">
+          <source>MEGAWindowsPhone81/2.0.4.81</source>
+          <target state="new">MEGAWindowsPhone81/2.0.4.81</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Agent to identify which client uses the SDK</note>
+          </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocation" translate="yes" xml:space="preserve">
           <source>please select a default download folder</source>
           <target state="new">please select a default download folder</target>
@@ -56,9 +61,9 @@
           <source>thumbnails\</source>
           <target state="new">thumbnails\</target>
         </trans-unit>
-        <trans-unit id="Resx/UserAgent" translate="yes" xml:space="preserve">
-          <source>MEGAWindowsPhone81/2.0.4.81</source>
-          <target state="new">MEGAWindowsPhone81/2.0.4.81</target>
+        <trans-unit id="Resx/UserAgentWP80" translate="yes" xml:space="preserve">
+          <source>MEGAWindowsPhone80/2.0.3.80</source>
+          <target state="new">MEGAWindowsPhone80/2.0.3.80</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Agent to identify which client uses the SDK</note>
           </trans-unit>
         <trans-unit id="Resx/AppKey" translate="yes" xml:space="preserve">

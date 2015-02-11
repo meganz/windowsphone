@@ -117,66 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ResourceFlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  <data name="AskDownloadLocationIsEnabled" xml:space="preserve">
+    <value>{72012C9A-F893-4CFF-9D42-944274C44935}</value>
   </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>en-US</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  <data name="DefaultDownloadLocation" xml:space="preserve">
+    <value>{DA6C9F2D-6521-4BD5-BD5E-8F27C3F61E1A}</value>
   </data>
-  <data name="ApplicationTitle" xml:space="preserve">
-    <value>MY APPLICATION</value>
+  <data name="ExportImagesToPhotoAlbum" xml:space="preserve">
+    <value>{AC2D08AF-7809-4FE9-8B3A-3582BCB24DC5}</value>
   </data>
-  <data name="AppBarButtonText" xml:space="preserve">
-    <value>add</value>
+  <data name="LastAppVersion" xml:space="preserve">
+    <value>{13C908CC-E5A1-4D3F-80F2-D18BF2075619}</value>
   </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>{A8659687-3710-4B8D-8D0E-CAF3C3B44434}</value>
   </data>
-  <data name="PagesLocation" xml:space="preserve">
-    <value>/Pages/</value>
+  <data name="SortOrderNodes" xml:space="preserve">
+    <value>{048D1075-3EC2-40F1-A8CF-874656BBB212}</value>
   </data>
-  <data name="TermsOfUseUrl" xml:space="preserve">
-    <value>https://mega.co.nz/mobile_terms.html</value>
+  <data name="StayLoggedIn" xml:space="preserve">
+    <value>{42A8FBE1-08A0-4E48-82C2-C90AFDAB2551}</value>
   </data>
-  <data name="AppKey" xml:space="preserve">
-    <value>Z5dGhQhL</value>
-    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</comment>
+  <data name="UserMegaEmailAddress" xml:space="preserve">
+    <value>{92C84A5F-1387-4A44-AFE8-C44154B264D1}</value>
   </data>
-  <data name="UserAgent" xml:space="preserve">
-    <value>MEGAWindowsPhone80/2.0.3.80</value>
-    <comment>Agent to identify which client uses the SDK</comment>
+  <data name="UserMegaSession" xml:space="preserve">
+    <value>{85DBF3E5-51E8-40BB-968C-8857B4FC6EF4}</value>
   </data>
-  <data name="ThumbnailsDirectory" xml:space="preserve">
-    <value>thumbnails\</value>
+  <data name="UserPinLock" xml:space="preserve">
+    <value>{4405AB87-B1B8-4AE1-A59D-68DC036E569F}</value>
   </data>
-  <data name="PreviewsDirectory" xml:space="preserve">
-    <value>previews\</value>
-  </data>
-  <data name="DownloadsDirectory" xml:space="preserve">
-    <value>downloads\</value>
-  </data>
-  <data name="DiagnosticsEmailAddress" xml:space="preserve">
-    <value>windowsphone@mega.co.nz</value>
-  </data>
-  <data name="ThumbnailHeight" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="ThumbnailWidth" xml:space="preserve">
-    <value>64</value>
-  </data>
-  <data name="UploadsDirectory" xml:space="preserve">
-    <value>uploads\</value>
-  </data>
-  <data name="PrivacyPolicyUrl" xml:space="preserve">
-    <value>https://mega.co.nz/mobile_privacy.html</value>
-  </data>
-  <data name="MegaSDK_Version" xml:space="preserve">
-    <value>773b34c</value>
-    <comment>The revision code of the SDK version used by the app</comment>
-  </data>
-  <data name="MegaSdkUrl" xml:space="preserve">
-    <value>https://github.com/meganz/sdk</value>
+  <data name="UserPinLockIsEnabled" xml:space="preserve">
+    <value>{564DED0B-7DAA-47FA-A02A-4E00ED38749E}</value>
   </data>
 </root>

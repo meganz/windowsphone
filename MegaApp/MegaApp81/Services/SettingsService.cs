@@ -86,8 +86,8 @@ namespace MegaApp.Services
             //SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
             SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
             SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
-            SettingsService.DeleteSetting(SettingsResources.UserPasswordIsEnabled);
-            SettingsService.DeleteSetting(SettingsResources.UserPassword);
+            SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
+            SettingsService.DeleteSetting(SettingsResources.UserPinLock);
         }
     }
 }

@@ -257,7 +257,7 @@ namespace MegaApp
             
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
-                AppResources.UserAgent, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                AppResources.UserAgentWP81, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
                 ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);

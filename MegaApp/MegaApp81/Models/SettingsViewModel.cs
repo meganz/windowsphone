@@ -32,7 +32,7 @@ namespace MegaApp.Models
             this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
 
             this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
-            this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled, false);
+            this.PasswordIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
         }
@@ -134,8 +134,8 @@ namespace MegaApp.Models
             {
                 if (_passwordIsEnabled && !value)
                 {
-                    SettingsService.DeleteSetting(SettingsResources.UserPasswordIsEnabled);
-                    SettingsService.DeleteSetting(SettingsResources.UserPassword);
+                    SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
+                    SettingsService.DeleteSetting(SettingsResources.UserPinLock);
                 }
 
                 _passwordIsEnabled = value;

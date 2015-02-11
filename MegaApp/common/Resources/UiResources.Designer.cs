@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Change PIN Lock.
+        /// </summary>
+        public static string ChangePinLockButton {
+            get {
+                return ResourceManager.GetString("ChangePinLockButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cloud Drive.
         /// </summary>
         public static string CloudDriveName {
@@ -183,6 +192,15 @@ namespace MegaApp.Resources {
         public static string ConfirmPasswordWatermark {
             get {
                 return ResourceManager.GetString("ConfirmPasswordWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a confirm your PIN lock.
+        /// </summary>
+        public static string ConfirmPinLockWatermark {
+            get {
+                return ResourceManager.GetString("ConfirmPinLockWatermark", resourceCulture);
             }
         }
         
@@ -534,6 +552,24 @@ namespace MegaApp.Resources {
         public static string PasswordWatermark {
             get {
                 return ResourceManager.GetString("PasswordWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PIN Lock.
+        /// </summary>
+        public static string PinLock {
+            get {
+                return ResourceManager.GetString("PinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a your PIN lock.
+        /// </summary>
+        public static string PinLockWatermark {
+            get {
+                return ResourceManager.GetString("PinLockWatermark", resourceCulture);
             }
         }
         

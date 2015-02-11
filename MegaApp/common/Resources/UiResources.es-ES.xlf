@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -10,9 +10,33 @@
           <source>add</source>
           <target state="new">add</target>
         </trans-unit>
-        <trans-unit id="Resx/PinLockWatermark" translate="yes" xml:space="preserve">
-          <source>your PIN lock</source>
-          <target state="new">your PIN lock</target>
+        <trans-unit id="Resx/UploadOptionsTitle" translate="yes" xml:space="preserve">
+          <source>Upload options</source>
+          <target state="new">Upload options</target>
+        </trans-unit>
+        <trans-unit id="Resx/TakePhoto" translate="yes" xml:space="preserve">
+          <source>Take photo</source>
+          <target state="new">Take photo</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelfieMode" translate="yes" xml:space="preserve">
+          <source>Selfie mode</source>
+          <target state="new">Selfie mode</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectPhoto" translate="yes" xml:space="preserve">
+          <source>Select photo</source>
+          <target state="new">Select photo</target>
+        </trans-unit>
+        <trans-unit id="Resx/LinkOptions" translate="yes" xml:space="preserve">
+          <source>Link options</source>
+          <target state="new">Link options</target>
+        </trans-unit>
+        <trans-unit id="Resx/Import" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
+        </trans-unit>
+        <trans-unit id="Resx/FileUpload" translate="yes" xml:space="preserve">
+          <source>File upload</source>
+          <target state="new">File upload</target>
         </trans-unit>
         <trans-unit id="Resx/Yes" translate="yes" xml:space="preserve">
           <source>yes</source>
@@ -21,6 +45,10 @@
         <trans-unit id="Resx/No" translate="yes" xml:space="preserve">
           <source>no</source>
           <target state="new">no</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockWatermark" translate="yes" xml:space="preserve">
+          <source>your PIN lock</source>
+          <target state="new">your PIN lock</target>
         </trans-unit>
         <trans-unit id="Resx/PinLock" translate="yes" xml:space="preserve">
           <source>PIN Lock</source>
@@ -307,8 +335,8 @@
           <target state="new">Downloading...</target>
         </trans-unit>
         <trans-unit id="Resx/ViewOrginal" translate="yes" xml:space="preserve">
-          <source>View original</source>
-          <target state="new">View original</target>
+          <source>Download</source>
+          <target state="new">Download</target>
         </trans-unit>
         <trans-unit id="Resx/CreateNewAccount" translate="yes" xml:space="preserve">
           <source>Create a new account here</source>
