@@ -300,7 +300,7 @@ namespace MegaApp.Pages
                         return;
                     }
                     
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPasswordIsEnabled))
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                     {
                         NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
                         return;

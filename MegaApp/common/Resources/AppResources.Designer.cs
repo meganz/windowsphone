@@ -97,6 +97,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a please select a default download folder.
+        /// </summary>
+        public static string DefaultDownloadLocation {
+            get {
+                return ResourceManager.GetString("DefaultDownloadLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a windowsphone@mega.co.nz.
         /// </summary>
         public static string DiagnosticsEmailAddress {
@@ -225,9 +234,18 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a MEGAWindowsPhone80/2.0.3.80.
         /// </summary>
-        public static string UserAgent {
+        public static string UserAgentWP80 {
             get {
-                return ResourceManager.GetString("UserAgent", resourceCulture);
+                return ResourceManager.GetString("UserAgentWP80", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGAWindowsPhone81/2.0.4.81.
+        /// </summary>
+        public static string UserAgentWP81 {
+            get {
+                return ResourceManager.GetString("UserAgentWP81", resourceCulture);
             }
         }
     }

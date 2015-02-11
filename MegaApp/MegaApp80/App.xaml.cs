@@ -234,7 +234,7 @@ namespace MegaApp
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
 
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgent, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgentWP80, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Add notifications listener. Needs a DriveViewModel

@@ -402,10 +402,8 @@
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>Download count</value>
   </data>
-  <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.
-
-To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</value>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</value>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
     <value>Failed to pause transfers</value>
@@ -461,11 +459,11 @@ To proceed with the download please select a destination folder or go to prefere
   <data name="LoadNodesFailed_Title" xml:space="preserve">
     <value>Failed to load</value>
   </data>
-  <data name="PrepareFileForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file: {0} for upload</value>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>Your PIN lock codes do not match. Please re-type them and make sure they are equal</value>
   </data>
-  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
-    <value>Preparing file failed</value>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>PIN lock codes do not match</value>
   </data>
   <data name="SessionIDError" xml:space="preserve">
     <value>You have been logged out on this device from another location</value>
@@ -475,5 +473,16 @@ To proceed with the download please select a destination folder or go to prefere
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
     <value>Overquota Alert!</value>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</value>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>Failed to prepare file: {0} for upload</value>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>Preparing file failed</value>
   </data>
 </root>

@@ -578,7 +578,7 @@ namespace MegaApp.Services
                     {
                         string hashValue = CryptoService.HashData(currentPassword.Password);
 
-                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPassword)))
+                        if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
                         {
                             MessageBox.Show("Current password does not match", "Current password no match",
                                 MessageBoxButton.OK);
@@ -602,8 +602,8 @@ namespace MegaApp.Services
                     return;
                 }
                
-                SettingsService.SaveSetting(SettingsResources.UserPassword, CryptoService.HashData(password.Password));
-                SettingsService.SaveSetting(SettingsResources.UserPasswordIsEnabled, true);
+                SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(password.Password));
+                SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
 
                 passwordRadWindow.IsOpen = false;
             };

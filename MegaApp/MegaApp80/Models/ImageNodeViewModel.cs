@@ -20,9 +20,9 @@ namespace MegaApp.Models
             : base(megaSdk, megaNode, parentCollection, childCollection)
         {
             // Image node downloads to the image path of the full original image
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, ImagePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
 
-            this.IsDownloadAvailable = File.Exists(ImagePath);
+            this.IsDownloadAvailable = File.Exists(LocalImagePath);
 
             // Default false for preview slide
             InViewingRange = false;
@@ -32,7 +32,7 @@ namespace MegaApp.Models
 
         public override async void OpenFile()
         {
-            await FileService.OpenFile(ImagePath);
+            await FileService.OpenFile(LocalImagePath);
         }
 
         #endregion
@@ -108,13 +108,13 @@ namespace MegaApp.Models
 
         private void GetImage(bool isForPreview)
         {
-            if (FileService.FileExists(ImagePath))
+            if (FileService.FileExists(LocalImagePath))
             {
-                ImageUri = new Uri(ImagePath);
+                ImageUri = new Uri(LocalImagePath);
 
                 if (!isForPreview) return;
 
-                PreviewImageUri = new Uri(ImagePath);
+                PreviewImageUri = new Uri(LocalImagePath);
 
             }
             else
@@ -169,12 +169,23 @@ namespace MegaApp.Models
             }
         }
 
-        public string ImagePath
+        public string LocalImagePath
         {
             get
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
+                                    String.Format("{0}{1}",
+                                        this.GetMegaNode().getBase64Handle(),
+                                        Path.GetExtension(base.Name)));
+            }
+        }
+
+        public string PublicImagePath
+        {
+            get
+            {
+                return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
                                     String.Format("{0}{1}",
                                         this.GetMegaNode().getBase64Handle(),
                                         Path.GetExtension(base.Name)));

@@ -727,6 +727,17 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.
+        ///
+        ///To proceed with the download please select a destination folder or go to preferences in order to set up your default download location..
+        /// </summary>
+        public static string NoDownloadLocationSelected {
+            get {
+                return ResourceManager.GetString("NoDownloadLocationSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to open the selected file.
         /// </summary>
         public static string OpenFileFailed {
@@ -885,6 +896,24 @@ namespace MegaApp.Resources {
         public static string PinLockCodesDoNotMatch_Title {
             get {
                 return ResourceManager.GetString("PinLockCodesDoNotMatch_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to prepare file: {0} for upload.
+        /// </summary>
+        public static string PrepareFileForUploadFailed {
+            get {
+                return ResourceManager.GetString("PrepareFileForUploadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Preparing file failed.
+        /// </summary>
+        public static string PrepareFileForUploadFailed_Title {
+            get {
+                return ResourceManager.GetString("PrepareFileForUploadFailed_Title", resourceCulture);
             }
         }
         

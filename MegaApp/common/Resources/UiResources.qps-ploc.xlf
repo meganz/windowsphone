@@ -10,25 +10,13 @@
           <source>add</source>
           <target state="new">add</target>
         </trans-unit>
+        <trans-unit id="Resx/UploadOptionsTitle" translate="yes" xml:space="preserve">
+          <source>Upload options</source>
+          <target state="new">Upload options</target>
+        </trans-unit>
         <trans-unit id="Resx/TakePhoto" translate="yes" xml:space="preserve">
           <source>Take photo</source>
           <target state="new">Take photo</target>
-        </trans-unit>
-        <trans-unit id="Resx/LinkOptions" translate="yes" xml:space="preserve">
-          <source>Link options</source>
-          <target state="new">Link options</target>
-        </trans-unit>
-        <trans-unit id="Resx/Yes" translate="yes" xml:space="preserve">
-          <source>yes</source>
-          <target state="new">yes</target>
-        </trans-unit>
-        <trans-unit id="Resx/No" translate="yes" xml:space="preserve">
-          <source>no</source>
-          <target state="new">no</target>
-        </trans-unit>
-        <trans-unit id="Resx/Import" translate="yes" xml:space="preserve">
-          <source>Import</source>
-          <target state="new">Import</target>
         </trans-unit>
         <trans-unit id="Resx/SelfieMode" translate="yes" xml:space="preserve">
           <source>Selfie mode</source>
@@ -38,13 +26,41 @@
           <source>Select photo</source>
           <target state="new">Select photo</target>
         </trans-unit>
+        <trans-unit id="Resx/LinkOptions" translate="yes" xml:space="preserve">
+          <source>Link options</source>
+          <target state="new">Link options</target>
+        </trans-unit>
+        <trans-unit id="Resx/Import" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
+        </trans-unit>
         <trans-unit id="Resx/FileUpload" translate="yes" xml:space="preserve">
           <source>File upload</source>
           <target state="new">File upload</target>
         </trans-unit>
-        <trans-unit id="Resx/UploadOptionsTitle" translate="yes" xml:space="preserve">
-          <source>Upload options</source>
-          <target state="new">Upload options</target>
+        <trans-unit id="Resx/Yes" translate="yes" xml:space="preserve">
+          <source>yes</source>
+          <target state="new">yes</target>
+        </trans-unit>
+        <trans-unit id="Resx/No" translate="yes" xml:space="preserve">
+          <source>no</source>
+          <target state="new">no</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockWatermark" translate="yes" xml:space="preserve">
+          <source>your PIN lock</source>
+          <target state="new">your PIN lock</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLock" translate="yes" xml:space="preserve">
+          <source>PIN Lock</source>
+          <target state="new">PIN Lock</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" xml:space="preserve">
+          <source>confirm your PIN lock</source>
+          <target state="new">confirm your PIN lock</target>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePinLockButton" translate="yes" xml:space="preserve">
+          <source>Change PIN Lock</source>
+          <target state="new">Change PIN Lock</target>
         </trans-unit>
         <trans-unit id="Resx/AccountTypePro3" translate="yes" xml:space="preserve">
           <source>PRO III</source>
