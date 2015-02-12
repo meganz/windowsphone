@@ -298,7 +298,6 @@ namespace MegaApp.Models
         public void onTransferStart(MegaSDK api, MTransfer transfer)
         {
             Transfer = transfer;
-           
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {

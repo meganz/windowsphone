@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -177,6 +179,17 @@ namespace MegaApp.Models
             }
         }
 
+        private string _transferSpeed;
+        public string TransferSpeed
+        {
+            get { return _transferSpeed; }
+            private set
+            {
+                _transferSpeed = value;
+                OnPropertyChanged("TransferSpeed");
+            }
+        }
+
         #endregion
 
         #region MTransferListenerInterface
@@ -188,17 +201,18 @@ namespace MegaApp.Models
             return false;
         }
 
-        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
+        public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
                 IsBusy = false;
                 CancelButtonState = false;
             });
 
-            switch (e.getErrorCode())            
+            switch (e.getErrorCode())
             {
                 case MErrorType.API_OK:
                 {
@@ -209,10 +223,10 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.ImageUri = new Uri(imageNode.ImagePath);
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
                                 if (imageNode.GetMegaNode().hasPreview()) return;
-                                imageNode.PreviewImageUri = new Uri(imageNode.ImagePath);
+                                imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsBusy = false;
                             });
                         }
@@ -220,9 +234,9 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.ImagePath);
+                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
                             });
-                            imageNode.ImageUri = new Uri(imageNode.ImagePath);
+                            imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
 
                             bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
                             if (exportToPhotoAlbum)
@@ -234,7 +248,7 @@ namespace MegaApp.Models
                     {
                         var node = SelectedNode as FileNodeViewModel;
                         if (node != null)
-                            node.IsDownloadAvailable = File.Exists(node.FilePath);
+                            node.IsDownloadAvailable = File.Exists(node.LocalFilePath);
 
                         // Set finished status as last item so that the clean function can only happen after exporting image to
                         // camera roll
@@ -309,6 +323,7 @@ namespace MegaApp.Models
                 IsBusy = true;
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
             });
         }
 
@@ -323,6 +338,11 @@ namespace MegaApp.Models
             {
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
+
+                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
+                //TransferTime.Stop();
+                //CalculateTransferSpeed(TransferTime.Elapsed, transfer.getDeltaSize());
+                //ransferTime.Restart();
                 
                 if (TransferedBytes > 0)
                 {
@@ -339,6 +359,14 @@ namespace MegaApp.Models
                     }
                 }
             });
+        }
+
+        private void CalculateTransferSpeed(TimeSpan elepsedTransferTime, ulong transferedBytes)
+        {
+            double bytesPerSecond = transferedBytes / elepsedTransferTime.TotalSeconds;
+            double bitsPerSecond = bytesPerSecond * 8;
+
+            TransferSpeed = ((ulong) bitsPerSecond).ToStringAndSuffixPerSecond();
         }
 
         #endregion
