@@ -76,6 +76,13 @@ namespace MegaApp.Models
             MegaService.GetPreviewLink(this.MegaSdk, this);
         }
 
+#if WINDOWS_PHONE_80
+        public virtual void ViewOriginal()
+        {
+            if (!IsUserOnline()) return;
+            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+        }
+#elif WINDOWS_PHONE_81
         public async void Download(string downloadPath = null)
         {
             if (!IsUserOnline()) return;
@@ -95,6 +102,7 @@ namespace MegaApp.Models
             App.CloudDrive.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
+#endif
 
         public virtual void Update(MNode megaNode)
         {

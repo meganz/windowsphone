@@ -89,9 +89,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Label="MultilingualAppToolkit">
-    <MultilingualAppToolkitVersion>3.0</MultilingualAppToolkitVersion>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
       <Link>Classes\AccountDataPoint.cs</Link>
@@ -321,6 +318,9 @@
     <Compile Include="..\common\Models\MyAccountPageViewModel.cs">
       <Link>Models\MyAccountPageViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\NodeViewModel.cs">
+      <Link>Models\NodeViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
     </Compile>
@@ -446,20 +446,26 @@
     <Compile Include="..\common\Services\ProgressService.cs">
       <Link>Services\ProgressService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\SettingsService.cs">
+      <Link>Services\SettingsService.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\BreadCrumb.xaml.cs">
       <Link>UserControls\BreadCrumb.xaml.cs</Link>
+      <DependentUpon>BreadCrumb.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbButtons.cs">
       <Link>UserControls\BreadCrumbButtons.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbStyle.xaml.cs">
       <Link>UserControls\BreadCrumbStyle.xaml.cs</Link>
+      <DependentUpon>BreadCrumbStyle.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
+      <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -473,7 +479,6 @@
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\DownloadNodeViewModel.cs" />
-    <Compile Include="Models\NodeViewModel.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -487,7 +492,6 @@
     <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
-    <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\UiService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1837,6 +1841,10 @@
       <Link>UserControls\BreadCrumb.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\common\UserControls\BreadCrumbStyle.xaml">
+      <Link>UserControls\BreadCrumbStyle.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\common\UserControls\MemoryControl.xaml">
       <Link>UserControls\MemoryControl.xaml</Link>
       <SubType>Designer</SubType>
@@ -1886,10 +1894,6 @@
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
-    <Page Include="UserControls\BreadCrumbStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
@@ -1935,14 +1939,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.qps-ploc.resx">
       <Link>Resources\AppMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.resx">
       <Link>Resources\AppMessages.resx</Link>
@@ -1954,14 +1956,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.qps-ploc.resx">
       <Link>Resources\AppResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.resx">
       <Link>Resources\AppResources.resx</Link>
@@ -1973,14 +1973,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.qps-ploc.resx">
       <Link>Resources\ProgressMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.resx">
       <Link>Resources\ProgressMessages.resx</Link>
@@ -1992,14 +1990,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.qps-ploc.resx">
       <Link>Resources\SettingsResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.resx">
       <Link>Resources\SettingsResources.resx</Link>
@@ -2011,14 +2007,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.qps-ploc.resx">
       <Link>Resources\UiResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.resx">
       <Link>Resources\UiResources.resx</Link>
@@ -2080,7 +2074,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
