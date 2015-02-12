@@ -13,8 +13,7 @@
     <AssemblyName>MegaApp</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion>
-    </SilverlightVersion>
+    <SilverlightVersion></SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
     </SupportedCultures>
@@ -165,9 +164,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Label="MultilingualAppToolkit">
-    <MultilingualAppToolkitVersion>3.0</MultilingualAppToolkitVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
@@ -398,6 +394,9 @@
     <Compile Include="..\common\Models\MyAccountPageViewModel.cs">
       <Link>Models\MyAccountPageViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\NodeViewModel.cs">
+      <Link>Models\NodeViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
     </Compile>
@@ -466,6 +465,36 @@
       <Link>Pages\TransferPage.xaml.cs</Link>
       <DependentUpon>TransferPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Resources\AppMessages.Designer.cs">
+      <Link>Resources\AppMessages.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Resources\AppResources.Designer.cs">
+      <Link>Resources\AppResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Resources\ProgressMessages.Designer.cs">
+      <Link>Resources\ProgressMessages.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgressMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Resources\SettingsResources.Designer.cs">
+      <Link>Resources\SettingsResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Resources\UiResources.Designer.cs">
+      <Link>Resources\UiResources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UiResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Services\AnimationService.cs">
       <Link>Services\AnimationService.cs</Link>
     </Compile>
@@ -493,6 +522,9 @@
     <Compile Include="..\common\Services\ProgressService.cs">
       <Link>Services\ProgressService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\SettingsService.cs">
+      <Link>Services\SettingsService.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\BreadCrumb.xaml.cs">
       <Link>UserControls\BreadCrumb.xaml.cs</Link>
     </Compile>
@@ -501,6 +533,7 @@
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbStyle.xaml.cs">
       <Link>UserControls\BreadCrumbStyle.xaml.cs</Link>
+      <DependentUpon>BreadCrumbStyle.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
@@ -520,7 +553,6 @@
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="Models\CloudDriveViewModel.cs" />
     <Compile Include="Models\DownloadNodeViewModel.cs" />
-    <Compile Include="Models\NodeViewModel.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -531,28 +563,10 @@
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\AppMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\AppResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\ProgressMessages.Designer.cs" />
-    <Compile Include="Resources\SettingsResources.Designer.cs" />
-    <Compile Include="Resources\UiResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Services\AppService.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\FolderService.cs" />
-    <Compile Include="Services\SettingsService.cs" />
     <Compile Include="Services\UiService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1900,8 +1914,16 @@
       <Link>Pages\TransferPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\common\Resources\ResourceDictionaryMega.xaml">
+      <Link>Resources\ResourceDictionaryMega.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\common\UserControls\BreadCrumb.xaml">
       <Link>UserControls\BreadCrumb.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\UserControls\BreadCrumbStyle.xaml">
+      <Link>UserControls\BreadCrumbStyle.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\UserControls\MemoryControl.xaml">
@@ -1953,14 +1975,6 @@
       <SubType>Designer</SubType>
       <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
-    <Page Include="Resources\ResourceDictionaryMega.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UserControls\BreadCrumbStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
@@ -2000,128 +2014,147 @@
       <Name>mega</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppMessages.es-ES.resx">
+    <EmbeddedResource Include="..\common\Resources\AppMessages.es-ES.resx">
+      <Link>Resources\AppMessages.es-ES.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppMessages.qps-ploc.resx">
+    <EmbeddedResource Include="..\common\Resources\AppMessages.qps-ploc.resx">
+      <Link>Resources\AppMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppMessages.resx">
+    <EmbeddedResource Include="..\common\Resources\AppMessages.resx">
+      <Link>Resources\AppMessages.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.es-ES.resx">
+    <EmbeddedResource Include="..\common\Resources\AppResources.es-ES.resx">
+      <Link>Resources\AppResources.es-ES.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.qps-ploc.resx">
+    <EmbeddedResource Include="..\common\Resources\AppResources.qps-ploc.resx">
+      <Link>Resources\AppResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\AppResources.resx">
+    <EmbeddedResource Include="..\common\Resources\AppResources.resx">
+      <Link>Resources\AppResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.es-ES.resx">
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.es-ES.resx">
+      <Link>Resources\ProgressMessages.es-ES.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.qps-ploc.resx">
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.qps-ploc.resx">
+      <Link>Resources\ProgressMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\ProgressMessages.resx" />
-    <EmbeddedResource Include="Resources\SettingsResources.es-ES.resx">
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.resx">
+      <Link>Resources\ProgressMessages.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProgressMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.es-ES.resx">
+      <Link>Resources\SettingsResources.es-ES.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SettingsResources.qps-ploc.resx">
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.qps-ploc.resx">
+      <Link>Resources\SettingsResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SettingsResources.resx" />
-    <EmbeddedResource Include="Resources\UiResources.es-ES.resx">
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.resx">
+      <Link>Resources\SettingsResources.resx</Link>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\common\Resources\UiResources.es-ES.resx">
+      <Link>Resources\UiResources.es-ES.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.qps-ploc.resx">
+    <EmbeddedResource Include="..\common\Resources\UiResources.qps-ploc.resx">
+      <Link>Resources\UiResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UiResources.resx">
+    <EmbeddedResource Include="..\common\Resources\UiResources.resx">
+      <Link>Resources\UiResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="Resources\AppMessages.es-ES.xlf">
+    <XliffResource Include="..\common\Resources\AppMessages.es-ES.xlf">
+      <Link>Resources\AppMessages.es-ES.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.es-ES.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\AppMessages.qps-ploc.xlf">
+    <XliffResource Include="..\common\Resources\AppMessages.qps-ploc.xlf">
+      <Link>Resources\AppMessages.qps-ploc.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.qps-ploc.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\AppResources.es-ES.xlf">
+    <XliffResource Include="..\common\Resources\AppResources.es-ES.xlf">
+      <Link>Resources\AppResources.es-ES.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.es-ES.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\AppResources.qps-ploc.xlf">
+    <XliffResource Include="..\common\Resources\AppResources.qps-ploc.xlf">
+      <Link>Resources\AppResources.qps-ploc.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\ProgressMessages.es-ES.xlf">
+    <XliffResource Include="..\common\Resources\ProgressMessages.es-ES.xlf">
+      <Link>Resources\ProgressMessages.es-ES.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.es-ES.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\ProgressMessages.qps-ploc.xlf">
+    <XliffResource Include="..\common\Resources\ProgressMessages.qps-ploc.xlf">
+      <Link>Resources\ProgressMessages.qps-ploc.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.qps-ploc.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\SettingsResources.es-ES.xlf">
+    <XliffResource Include="..\common\Resources\SettingsResources.es-ES.xlf">
+      <Link>Resources\SettingsResources.es-ES.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.es-ES.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\SettingsResources.qps-ploc.xlf">
+    <XliffResource Include="..\common\Resources\SettingsResources.qps-ploc.xlf">
+      <Link>Resources\SettingsResources.qps-ploc.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\UiResources.es-ES.xlf">
+    <XliffResource Include="..\common\Resources\UiResources.es-ES.xlf">
+      <Link>Resources\UiResources.es-ES.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.es-ES.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="Resources\UiResources.qps-ploc.xlf">
+    <XliffResource Include="..\common\Resources\UiResources.qps-ploc.xlf">
+      <Link>Resources\UiResources.qps-ploc.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

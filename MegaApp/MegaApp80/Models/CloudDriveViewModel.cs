@@ -572,7 +572,7 @@ namespace MegaApp.Models
         {
             // Create a temporary DownloadNodeViewModel from the public Node created from the link
             DownloadNodeViewModel _downloadNodeViewModel = new DownloadNodeViewModel(NodeService.CreateNew(this.MegaSdk, publicNode));
-            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImagePath);
+            ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).ImageUri = new Uri(((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).LocalImagePath);
 
             // Save the image to the camera album
             ((ImageNodeViewModel)_downloadNodeViewModel.SelectedNode).SaveImageToCameraRoll();
