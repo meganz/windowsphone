@@ -52,11 +52,6 @@ namespace MegaApp.Models
                     if (NavigateOnSucces)
                         NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
                 }
-                else if (e.getErrorCode() == MErrorType.API_ESID)
-                {                    
-                    api.logout(new LogOutRequestListener());
-                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK);                    
-                }
                 else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
                 {
                     // Stop all upload transfers

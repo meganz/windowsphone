@@ -1,28 +1,33 @@
-﻿using mega;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows;
+using System.Windows.Markup;
+using System.Windows.Navigation;
+using Windows.ApplicationModel.Activation;
+using Windows.Networking.Connectivity;
+using Windows.Storage;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Navigation;
 using Telerik.Windows.Controls;
-using Windows.Networking.Connectivity;
-using Windows.Storage;
-using Microsoft.Phone.Controls;
+
+#if WINDOWS_PHONE_81
+    using Windows.ApplicationModel.DataTransfer.ShareTarget;
+    using Windows.Storage.AccessCache;
+#endif
 
 namespace MegaApp
 {
-    public partial class App : Application
+    public partial class App : Application, MRequestListenerInterface
     {
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -37,7 +42,18 @@ namespace MegaApp
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
-        
+
+        #if WINDOWS_PHONE_81
+            // Used for multiple file selection
+            public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
+            // Used for folder selection
+            public FolderPickerContinuationEventArgs FolderPickerContinuationArgs { get; set; }
+            public static bool FileOpenOrFolderPickerOpenend { get; set; }
+
+            // Makes the app a share target for files
+            public ShareOperation ShareOperation { get; set; }
+        #endif
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -59,7 +75,7 @@ namespace MegaApp
             if (Debugger.IsAttached)
             {
                 // Display the current frame rate counters.
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
+                Current.Host.Settings.EnableFrameRateCounter = true;
 
                 // Show the areas of the app that are being redrawn in each frame.
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
@@ -94,6 +110,15 @@ namespace MegaApp
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
             CheckChangesIP();
             AppEvent = ApplicationEvent.Lauching;
+
+            #if WINDOWS_PHONE_81
+                // Code to intercept files that are send to MEGA as share target
+                var shareEventArgs = e as ShareLaunchingEventArgs;
+                if (shareEventArgs != null)
+                {
+                    this.ShareOperation = shareEventArgs.ShareTargetActivatedEventArgs.ShareOperation;
+                }
+            #endif
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -214,6 +239,12 @@ namespace MegaApp
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+            #if WINDOWS_PHONE_81
+                RootFrame.Navigating += RootFrameOnNavigating;
+
+                // Handle contract activation such as returned values from file open or save picker
+                PhoneApplicationService.Current.ContractActivated += CurrentOnContractActivated;
+            #endif
 
             // Assign the URI-mapper class to the application frame.
             RootFrame.UriMapper = new AssociationUriMapper();
@@ -234,11 +265,21 @@ namespace MegaApp
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
             
             // Initialize MegaSDK 
-            MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgentWP80, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            #if WINDOWS_PHONE_80
+                MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgentWP80, 
+                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            #elif WINDOWS_PHONE_81
+                MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                    AppResources.UserAgentWP81, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+            #endif
+
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Add notifications listener. Needs a DriveViewModel
             MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive));
+            // Add a global request listener to process all.
+            MegaSdk.addRequestListener(this);
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
             // Initialize Folders
@@ -249,10 +290,61 @@ namespace MegaApp
             DebugService.DebugSettings = new DebugSettingsViewModel();
             // Clear upload folder. Temporary uploads files are not necessary to keep
             AppService.ClearUploadCache();
+            // Clear settings values we do no longer use
+            AppService.ClearObsoleteSettings();
+            // Save the app version information for future use (like deleting settings)
+            AppService.SaveAppInformation();
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }
+
+        #if WINDOWS_PHONE_81
+            private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs e)
+            {
+                if (e.NavigationMode == NavigationMode.Reset && FileOpenOrFolderPickerOpenend)
+                    e.Cancel = true;
+
+                if (e.NavigationMode == NavigationMode.New && FileOpenOrFolderPickerOpenend)
+                {
+                    e.Cancel = true;
+                    FileOpenOrFolderPickerOpenend = false;
+                }            
+            }
+
+            private void CurrentOnContractActivated(object sender, IActivatedEventArgs activatedEventArgs)
+            {
+                FileOpenOrFolderPickerOpenend = false;
+
+                var filePickerContinuationArgs = activatedEventArgs as FileOpenPickerContinuationEventArgs;
+                if (filePickerContinuationArgs != null)
+                {
+                    this.FilePickerContinuationArgs = filePickerContinuationArgs;
+                    return;
+                }
+
+                var folderPickerContinuationArgs = activatedEventArgs as FolderPickerContinuationEventArgs;
+                if (folderPickerContinuationArgs != null)
+                {
+                    CloudDrive.PickerOrDialogIsOpen = false;
+                    if(folderPickerContinuationArgs.Folder != null)
+                    {
+                        if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
+                            StorageApplicationPermissions.FutureAccessList.Add(folderPickerContinuationArgs.Folder);
+
+                        if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() ==
+                            "SelectDefaultDownloadFolder")
+                        {
+                            SettingsService.SaveSetting(SettingsResources.DefaultDownloadLocation, folderPickerContinuationArgs.Folder.Path);
+                            this.FolderPickerContinuationArgs = null;
+                        }
+                
+                        if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectDownloadFolder")
+                            this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
+                    }
+                }
+            }
+        #endif
 
         // Do not add any additional code to this method
         private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
@@ -269,8 +361,13 @@ namespace MegaApp
         {
             // If the app has received a 'reset' navigation, then we need to check
             // on the next navigation to see if the page stack should be reset
-            if (e.NavigationMode == NavigationMode.Reset)
-                RootFrame.Navigated += ClearBackStackAfterReset;
+            #if WINDOWS_PHONE_80
+                if (e.NavigationMode == NavigationMode.Reset)
+                    RootFrame.Navigated += ClearBackStackAfterReset;
+            #elif WINDOWS_PHONE_81
+                if (e.NavigationMode == NavigationMode.Reset && (!FileOpenOrFolderPickerOpenend && FilePickerContinuationArgs == null))
+                    RootFrame.Navigated += ClearBackStackAfterReset;
+            #endif
         }
 
         private void ClearBackStackAfterReset(object sender, NavigationEventArgs e)
@@ -346,5 +443,35 @@ namespace MegaApp
                 throw;
             }
         }
+
+        #region MRequestListenerInterface
+
+        public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            if (e.getErrorCode() == MErrorType.API_ESID)
+            {
+                api.logout(new LogOutRequestListener());
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(AppMessages.SessionIDError, AppMessages.SessionIDError_Title, MessageBoxButton.OK));
+            }
+        }
+
+        public virtual void onRequestStart(MegaSDK api, MRequest request)
+        {
+            // Not necessary
+        }
+
+        public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        {
+            // Not necessary
+        }
+
+        public virtual void onRequestUpdate(MegaSDK api, MRequest request)
+        {
+            // Not necessary
+        }
+
+        #endregion
     }
 }
