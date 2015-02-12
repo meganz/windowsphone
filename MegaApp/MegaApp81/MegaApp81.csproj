@@ -13,7 +13,8 @@
     <AssemblyName>MegaApp</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion></SilverlightVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
     </SupportedCultures>
@@ -89,7 +90,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -118,7 +119,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release Emulator|ARM'">
     <OutputPath>bin\ARM\Release Emulator\</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <Optimize>true</Optimize>
     <NoStdLib>true</NoStdLib>
     <DebugType>pdbonly</DebugType>
@@ -158,7 +159,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Emulator Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Emulator Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -166,6 +167,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\common\App.xaml.cs">
+      <Link>App.xaml.cs</Link>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
       <Link>Classes\AccountDataPoint.cs</Link>
     </Compile>
@@ -541,9 +546,6 @@
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
     </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Models\PasswordViewModel.cs" />
     <Compile Include="Models\FileNodeViewModel.cs" />
@@ -568,12 +570,6 @@
     <Compile Include="Services\FileService.cs" />
     <Compile Include="Services\FolderService.cs" />
     <Compile Include="Services\UiService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -1886,6 +1882,10 @@
     <Content Include="Assets\Tiles\SmallIconImage.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="..\common\App.xaml">
+      <Link>App.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>

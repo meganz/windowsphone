@@ -40,8 +40,7 @@ namespace MegaApp.Pages
 
             BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
-
-
+            
             App.CloudDrive.CommandStatusChanged += (sender, args) =>
             {
                 if (ApplicationBar == null) return;
@@ -64,6 +63,7 @@ namespace MegaApp.Pages
         private void CreateAdvancedMenu()
         {
             var advancedMenuItems = new List<AdvancedMenuItem>();
+
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
                 Name = UiResources.Transfers,
@@ -186,7 +186,7 @@ namespace MegaApp.Pages
                     break;
             }
         }
-
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App.CloudDrive.ListBox = LstCloudDrive;
@@ -313,12 +313,12 @@ namespace MegaApp.Pages
                             return;
                         }
                             
-                    }                            
+                    }
                     
                     break;
                 }
             }
-
+            
             base.OnNavigatedTo(e);
             App.AppEvent = ApplicationEvent.None;
         }
@@ -407,7 +407,12 @@ namespace MegaApp.Pages
 
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
-            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb) return;
+            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb)
+            {
+                // #1870 fix (single column when reactivating app)
+                App.CloudDrive.SetView(App.CloudDrive.ViewMode);
+                return;
+            }
 
             // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
             App.CloudDrive.LoadNodes();
@@ -636,7 +641,7 @@ namespace MegaApp.Pages
                 App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;                
             }
 
-            ChangeMenu();
+            Dispatcher.BeginInvoke(ChangeMenu);
         }
         
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
