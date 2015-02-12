@@ -155,7 +155,7 @@ namespace MegaApp
                 }
             }
             catch(ArgumentException) { return; }
-            
+
             // If no network device is connected, do nothing
             if ((ipAddresses == null) || (ipAddresses.Count < 1))
             {
@@ -232,7 +232,7 @@ namespace MegaApp
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-
+            
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgentWP80, ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             // Initialize the main drive
@@ -243,6 +243,7 @@ namespace MegaApp
             MegaTransfers = new TransferQueu();
             // Initialize Folders
             AppService.InitializeAppFolders();
+            // Set the current resolution that we use later on for our image selection
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
