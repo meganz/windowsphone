@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Windows.Storage.Pickers;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -13,6 +15,10 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
+
+#if WINDOWS_PHONE_81
+    using Windows.Storage.Pickers.Provider;
+#endif
 
 namespace MegaApp.Services
 {
@@ -47,6 +53,7 @@ namespace MegaApp.Services
             }
         }
 
+        #if WINDOWS_PHONE_80
         public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive, bool isImage = false)
         {
             IEnumerable<string> buttons;
@@ -79,6 +86,32 @@ namespace MegaApp.Services
                     }
             }
         }
+        #elif WINDOWS_PHONE_81
+        public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive)
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: new[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() },
+                title: UiResources.LinkOptions,
+                message: publicNode.getName()
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                // Import button clicked
+                case 0:
+                    {
+                        cloudDrive.ImportLink(link);
+                        break;
+                    }
+                // Download button clicked
+                case 1:
+                    {
+                        cloudDrive.DownloadLink(publicNode);
+                        break;
+                    }
+            }
+        }
+        #endif
 
         public static async void ShowOverquotaAlert()
         {
@@ -91,7 +124,7 @@ namespace MegaApp.Services
             switch (closedEventArgs.ButtonIndex)
             {
                 case 0: // "Yes" button clicked
-                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);                    
+                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
                     break;
 
                 case 1: // "No" button clicked
@@ -106,56 +139,76 @@ namespace MegaApp.Services
             var uploadRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
-                Background = new SolidColorBrush(Color.FromArgb(192,0,0,0)),
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"],
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                Margin = new Thickness(0)
             };
 
-            var buttonStackPanel = new StackPanel()
+            #if WINDOWS_PHONE_81
+                uploadRadWindow.WindowClosed += (sender, args) => 
+                    cloudDrive.PickerOrDialogIsOpen = false;
+            #endif
+
+            var grid = new Grid()
             {
-                Orientation = Orientation.Vertical,
-                Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"],
+                Margin = new Thickness(24, 0, 24, 0)
             };
-
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(1, GridUnitType.Auto)
+            });
+            grid.ColumnDefinitions.Add(new ColumnDefinition()
+            {
+                Width = new GridLength(1, GridUnitType.Auto)
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
+            grid.RowDefinitions.Add(new RowDefinition()
+            {
+                Height = GridLength.Auto
+            });
+            
             var headerText = new TextBlock()
             {
-                Text = "Upload options",
+                Text = UiResources.UploadOptionsTitle.ToUpper(),
                 HorizontalAlignment = HorizontalAlignment.Left,
-                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
-                FontWeight = FontWeights.SemiBold,
-                Margin = new Thickness(20, 30, 20, 20)
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeMedium"],
+                //FontWeight = FontWeights.SemiBold,
+                FontFamily = new FontFamily("Segoe WP SemiBold"),
+                Margin = new Thickness(-1, 16, 0, 14)
             };
+            
+            grid.Children.Add(headerText);
+            Grid.SetColumn(headerText, 0);
+            Grid.SetColumnSpan(headerText, 2);
+            Grid.SetRow(headerText, 0);
 
-            var grid = new Grid();
-            grid.ColumnDefinitions.Add(new ColumnDefinition());
-            grid.ColumnDefinitions.Add(new ColumnDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
+            var hubCamera = UiService.CreateHubTile(UiResources.TakePhoto,
+                new Uri("/Assets/Images/take photos" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                new Thickness(0, 0, 12, 12));
 
-            var hubCamera = new RadHubTile()
-            {
-                Title = "Take photo",
-                ImageSource =new BitmapImage(new Uri("/Assets/Images/take photos.Screen-WVGA.png", UriKind.Relative)),
-                IsFrozen = true,
-                Margin = new Thickness(20)
-            };
             hubCamera.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
                 cloudDrive.CaptureCameraImage();
             };
 
-            var hubSelfie = new RadHubTile()
-            {
-                Title = "Selfie mode",
-                ImageSource = new BitmapImage(new Uri("/Assets/Images/selfie_upload.Screen-WVGA.png", UriKind.Relative)),
-                IsFrozen = true,
-                Margin = new Thickness(20)
-            };
+            var hubSelfie = UiService.CreateHubTile(UiResources.SelfieMode,
+                new Uri("/Assets/Images/selfie_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                new Thickness(0, 0, 0, 12));
+           
             hubSelfie.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
@@ -163,52 +216,55 @@ namespace MegaApp.Services
                 NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
             };
 
-            var hubPicture = new RadHubTile()
-            {
-                Title = "Select photos",
-                ImageSource = new BitmapImage(new Uri("/Assets/Images/picture_upload.Screen-WVGA.png", UriKind.Relative)),
-                IsFrozen = true,
-                Margin = new Thickness(20)
-            };
+            #if WINDOWS_PHONE_80
+            var hubPicture = UiService.CreateHubTile(UiResources.ImageUpload,
+                new Uri("/Assets/Images/picture_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                new Thickness(0, 0, 12, 0));            
+            
             hubPicture.Tap += (sender, args) =>
             {
                 uploadRadWindow.IsOpen = false;
                 cloudDrive.NoFolderUpAction = true;
                 NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
             };
-
-            //var hubSong = new RadHubTile()
-            //{
-            //    Title = "Select songs",
-            //    ImageSource = new BitmapImage(new Uri("/Assets/Images/song_upload.png", UriKind.Relative)),
-            //    IsFrozen = true,
-            //    Margin = new Thickness(20)
-            //};
-            //hubSong.Tap += (sender, args) =>
-            //{
-            //    uploadRadWindow.IsOpen = false;
-            //    cloudDrive.NoFolderUpAction = true;
-            //    NavigateService.NavigateTo(typeof(SongSelectionPage), NavigationParameter.Normal);
-            //};
+            #elif WINDOWS_PHONE_81
+            var hubFile = UiService.CreateHubTile(UiResources.FileUpload, 
+                new Uri("/Assets/Images/file upload" +ImageService.GetResolutionExtension() + ".png", UriKind.Relative), 
+                new Thickness(0, 0, 12, 0));
+           
+            hubFile.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                App.FileOpenOrFolderPickerOpenend = true;
+                FileService.SelectMultipleFiles();
+            };
+            #endif
 
             grid.Children.Add(hubCamera);
             grid.Children.Add(hubSelfie);
-            grid.Children.Add(hubPicture);
-            //grid.Children.Add(hubSong);
+            #if WINDOWS_PHONE_80
+                grid.Children.Add(hubPicture);
+            #elif WINDOWS_PHONE_81
+                grid.Children.Add(hubFile);
+            #endif
 
             Grid.SetColumn(hubCamera, 0);
             Grid.SetColumn(hubSelfie, 1);
-            Grid.SetColumn(hubPicture, 0);
-            //Grid.SetColumn(hubSong, 1);
-            Grid.SetRow(hubCamera, 0);
-            Grid.SetRow(hubSelfie, 0);
-            Grid.SetRow(hubPicture, 1);
-            //Grid.SetRow(hubSong, 1);
+            #if WINDOWS_PHONE_80
+                Grid.SetColumn(hubPicture, 0);
+            #elif WINDOWS_PHONE_81
+                Grid.SetColumn(hubFile, 0);
+            #endif
 
-            buttonStackPanel.Children.Add(headerText);
-            buttonStackPanel.Children.Add(grid);
-         
-            uploadRadWindow.Content = buttonStackPanel;
+            Grid.SetRow(hubCamera, 1);
+            Grid.SetRow(hubSelfie, 1);
+            #if WINDOWS_PHONE_80
+                Grid.SetRow(hubPicture, 2);
+            #elif WINDOWS_PHONE_81
+                Grid.SetRow(hubFile, 2);
+            #endif
+            
+            uploadRadWindow.Content = grid;
 
             uploadRadWindow.IsOpen = true;
         }

@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:classes="clr-namespace:MegaApp.Classes"
     x:Class="MegaApp.Pages.AboutPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -23,7 +24,7 @@
 
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <telerikPrimitives:RadMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
+            <classes:CustomMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
 			<TextBlock Text="about" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
@@ -37,15 +38,15 @@
                     <ColumnDefinition Width="Auto"/>                                        
 				</Grid.ColumnDefinitions>
                 <TextBlock HorizontalAlignment="Left" Margin="0,10,0,10" TextWrapping="Wrap" Text="App version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
-                <StackPanel Orientation="Horizontal" Grid.Row="1">
-                    <HyperlinkButton x:Name="BtnMegaSdk" Content="MEGA SDK" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Command="{Binding MegaSdkCommand}" FontFamily="Portable User Interface" VerticalAlignment="Center" Margin="-12,0,-4,0"/>
-                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
-                </StackPanel>
                 <TextBlock HorizontalAlignment="Right" Margin="0,10,0,10" TextWrapping="Wrap" Text="{Binding AppVersion}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Column="1">
 					<TextBlock.Foreground>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
 					</TextBlock.Foreground>
 				</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <HyperlinkButton x:Name="BtnMegaSdk" Content="MEGA SDK" HorizontalAlignment="Left" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Command="{Binding MegaSdkCommand}" FontFamily="Portable User Interface" VerticalAlignment="Center" Margin="-12,0,-4,0"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="version:" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface"/>
+                </StackPanel>
                 <TextBlock HorizontalAlignment="Right" Margin="0,10,0,10" TextWrapping="Wrap" Text="{Binding MegaSDK_Version}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" FontFamily="Portable User Interface" Grid.Row="1" Grid.Column="1">
                     <TextBlock.Foreground>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>

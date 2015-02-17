@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Windows.Threading;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -27,7 +28,20 @@ namespace MegaApp.Pages
             ShakeGesturesHelper.Instance.ShakeGesture += InstanceOnShakeGesture;
             ShakeGesturesHelper.Instance.MinimumRequiredMovesForShake = 12;
             ShakeGesturesHelper.Instance.Active = true;
-
+                        
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                #if WINDOWS_PHONE_80
+                    TextAskDownloadLocation.Visibility = Visibility.Collapsed;
+                    GridAskDownloadLocation.Visibility = Visibility.Collapsed;
+                    TextDefaultDownloadLocation.Visibility = Visibility.Collapsed;
+                    LinkDefaultDownloadLocation.Visibility = Visibility.Collapsed;
+                #elif WINDOWS_PHONE_81
+                    TextExportPhotoAlbumSwitch.Visibility = Visibility.Collapsed;
+                    GridExportPhotoAlbumSwitch.Visibility = Visibility.Collapsed;
+                #endif
+                });
+            
             InitializeComponent();
         }
 
@@ -39,6 +53,11 @@ namespace MegaApp.Pages
                 NavigationService.RemoveBackEntry();
 
             DebugPanel.DataContext = DebugService.DebugSettings;
+
+            #if WINDOWS_PHONE_81
+            ((SettingsViewModel)this.DataContext).StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
+            #endif
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)

@@ -29,9 +29,18 @@ namespace MegaApp.Models
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
+            #if WINDOWS_PHONE_81
+            this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
+            #endif
 
-            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
             this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
+            #if WINDOWS_PHONE_80
+            this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+            #elif WINDOWS_PHONE_81
+            this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
+            this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
+                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
+            #endif
         }
 
         #region Commands
@@ -40,6 +49,9 @@ namespace MegaApp.Models
         public ICommand CopyMasterKeyCommand { get; set; }
         public ICommand ViewMasterKeyCommand { get; set; }
         public ICommand ChangePinLockCommand { get; set; }
+        #if WINDOWS_PHONE_81
+        public ICommand SelectDownloadLocationCommand { get; set; }
+        #endif
 
         #endregion
 
@@ -79,6 +91,14 @@ namespace MegaApp.Models
             DialogService.ShowPinLockDialog(true, this);
         }
 
+        #if WINDOWS_PHONE_81
+        private void SelectDownloadLocation(object obj)
+        {
+            if (App.FileOpenOrFolderPickerOpenend) return;
+            FolderService.SelectFolder("SelectDefaultDownloadFolder");
+        }
+        #endif
+
         #endregion
 
         #region Properties
@@ -87,6 +107,7 @@ namespace MegaApp.Models
 
         public string MegaSDK_Version { get; set; }
 
+        #if WINDOWS_PHONE_80
         private bool _exportIsEnabled;
         public bool ExportIsEnabled
         {
@@ -103,6 +124,38 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabled");
             }
         }
+        #endif
+
+        #if WINDOWS_PHONE_81
+        private bool _askDownloadLocationIsEnabled;
+        public bool AskDownloadLocationIsEnabled
+        {
+            get { return _askDownloadLocationIsEnabled; }
+            set
+            {
+                if (_askDownloadLocationIsEnabled != value)
+                    SettingsService.SaveSetting(SettingsResources.AskDownloadLocationIsEnabled, value);
+
+                _askDownloadLocationIsEnabled = value;
+                DownloadLocationSelectionIsEnabled = !_askDownloadLocationIsEnabled;
+
+                AskDownloadLocationIsEnabledText = _askDownloadLocationIsEnabled ? UiResources.On : UiResources.Off;
+
+                OnPropertyChanged("AskDownloadLocationIsEnabled");
+            }
+        }
+
+        private bool _downloadLocationSelectionIsEnabled;
+        public bool DownloadLocationSelectionIsEnabled
+        {
+            get { return _downloadLocationSelectionIsEnabled; }
+            set
+            {
+                _downloadLocationSelectionIsEnabled = value;
+                OnPropertyChanged("DownloadLocationSelectionIsEnabled");
+            }
+        }
+        #endif
 
         private bool _pinLockIsEnabled;
         public bool PinLockIsEnabled
@@ -138,6 +191,7 @@ namespace MegaApp.Models
             }
         }
 
+        #if WINDOWS_PHONE_80
         private string _exportIsEnabledText;
         public string ExportIsEnabledText
         {
@@ -148,6 +202,31 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabledText");
             }
         }
+        #endif
+
+        #if WINDOWS_PHONE_81
+        private string _askDownloadLocationIsEnabledText;
+        public string AskDownloadLocationIsEnabledText
+        {
+            get { return _askDownloadLocationIsEnabledText; }
+            set
+            {
+                _askDownloadLocationIsEnabledText = value;
+                OnPropertyChanged("AskDownloadLocationIsEnabledText");
+            }
+        }
+
+        private string _standardDownloadLocation;
+        public string StandardDownloadLocation
+        {
+            get { return _standardDownloadLocation; }
+            set
+            {
+                _standardDownloadLocation = value;
+                OnPropertyChanged("StandardDownloadLocation");
+            }
+        }
+        #endif
 
         #endregion
     }

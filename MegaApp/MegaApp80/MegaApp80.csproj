@@ -83,13 +83,17 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_80</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\common\App.xaml.cs">
+      <Link>App.xaml.cs</Link>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
       <Link>Classes\AccountDataPoint.cs</Link>
     </Compile>
@@ -101,6 +105,9 @@
     </Compile>
     <Compile Include="..\common\Classes\AppMemoryController.cs">
       <Link>Classes\AppMemoryController.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\AssociationUriMapper.cs">
+      <Link>Classes\AssociationUriMapper.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\CommandStatusArgs.cs">
       <Link>Classes\CommandStatusArgs.cs</Link>
@@ -237,6 +244,9 @@
     <Compile Include="..\common\MegaApi\GetPricingRequestListener.cs">
       <Link>MegaApi\GetPricingRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\GetPublicNodeRequestListener.cs">
+      <Link>MegaApi\GetPublicNodeRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\GetThumbnailRequestListener.cs">
       <Link>MegaApi\GetThumbnailRequestListener.cs</Link>
     </Compile>
@@ -288,6 +298,9 @@
     <Compile Include="..\common\Models\BaseViewModel.cs">
       <Link>Models\BaseViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\CloudDriveViewModel.cs">
+      <Link>Models\CloudDriveViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\ConfirmAccountViewModel.cs">
       <Link>Models\ConfirmAccountViewModel.cs</Link>
     </Compile>
@@ -300,8 +313,17 @@
     <Compile Include="..\common\Models\DelegateCommand.cs">
       <Link>Models\DelegateCommand.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\DownloadNodeViewModel.cs">
+      <Link>Models\DownloadNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\FileNodeViewModel.cs">
+      <Link>Models\FileNodeViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\FolderNodeViewModel.cs">
       <Link>Models\FolderNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\ImageNodeViewModel.cs">
+      <Link>Models\ImageNodeViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\LoginViewModel.cs">
       <Link>Models\LoginViewModel.cs</Link>
@@ -321,14 +343,23 @@
     <Compile Include="..\common\Models\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\PasswordViewModel.cs">
+      <Link>Models\PasswordViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\PreviewSelfieViewModel.cs">
       <Link>Models\PreviewSelfieViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\SettingsViewModel.cs">
+      <Link>Models\SettingsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\SongSelectionViewModel.cs">
       <Link>Models\SongSelectionViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\TransferObjectModel.cs">
+      <Link>Models\TransferObjectModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\TransfersViewModel.cs">
       <Link>Models\TransfersViewModel.cs</Link>
@@ -357,6 +388,10 @@
       <Link>Pages\LoginPage.xaml.cs</Link>
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Pages\MainPage.xaml.cs">
+      <Link>Pages\MainPage.xaml.cs</Link>
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Pages\MediaAlbumPage.xaml.cs">
       <Link>Pages\MediaAlbumPage.xaml.cs</Link>
       <DependentUpon>MediaAlbumPage.xaml</DependentUpon>
@@ -377,9 +412,17 @@
       <Link>Pages\PhotoCameraPage.xaml.cs</Link>
       <DependentUpon>PhotoCameraPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Pages\PreviewImagePage.xaml.cs">
+      <Link>Pages\PreviewImagePage.xaml.cs</Link>
+      <DependentUpon>PreviewImagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Pages\PreviewSelfiePage.xaml.cs">
       <Link>Pages\PreviewSelfiePage.xaml.cs</Link>
       <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\SettingsPage.xaml.cs">
+      <Link>Pages\SettingsPage.xaml.cs</Link>
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\SongSelectionPage.xaml.cs">
       <Link>Pages\SongSelectionPage.xaml.cs</Link>
@@ -422,11 +465,20 @@
     <Compile Include="..\common\Services\AnimationService.cs">
       <Link>Services\AnimationService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\AppService.cs">
+      <Link>Services\AppService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\CryptoService.cs">
       <Link>Services\CryptoService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\DebugService.cs">
       <Link>Services\DebugService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\DialogService.cs">
+      <Link>Services\DialogService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\FileService.cs">
+      <Link>Services\FileService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\ImageService.cs">
       <Link>Services\ImageService.cs</Link>
@@ -449,6 +501,9 @@
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\UiService.cs">
+      <Link>Services\UiService.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\BreadCrumb.xaml.cs">
       <Link>UserControls\BreadCrumb.xaml.cs</Link>
       <DependentUpon>BreadCrumb.xaml</DependentUpon>
@@ -467,38 +522,7 @@
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\AssociationUriMapper.cs" />
-    <Compile Include="Models\PasswordViewModel.cs" />
-    <Compile Include="Models\FileNodeViewModel.cs" />
-    <Compile Include="Models\ImageNodeViewModel.cs" />
-    <Compile Include="Models\SettingsViewModel.cs" />
-    <Compile Include="Models\TransferObjectModel.cs" />
-    <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
-    <Compile Include="Models\CloudDriveViewModel.cs" />
-    <Compile Include="Models\DownloadNodeViewModel.cs" />
-    <Compile Include="Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PreviewImagePage.xaml.cs">
-      <DependentUpon>PreviewImagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AppService.cs" />
-    <Compile Include="Services\DialogService.cs" />
-    <Compile Include="Services\FileService.cs" />
-    <Compile Include="Services\UiService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
@@ -1805,8 +1829,40 @@
     <Content Include="Assets\Tiles\SmallIconImage.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="..\common\App.xaml">
+      <Link>App.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\AboutPage.xaml">
+      <Link>Pages\AboutPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\AcknowledgementsPage.xaml">
+      <Link>Pages\AcknowledgementsPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\ConfirmAccountPage.xaml">
+      <Link>Pages\ConfirmAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\CreateAccountPage.xaml">
+      <Link>Pages\CreateAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\LoginPage.xaml">
+      <Link>Pages\LoginPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\MainPage.xaml">
+      <Link>Pages\MainPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\MediaAlbumPage.xaml">
+      <Link>Pages\MediaAlbumPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\MediaSelectionPage.xaml">
@@ -1815,6 +1871,10 @@
     </Page>
     <Page Include="..\common\Pages\MyAccountPage.xaml">
       <Link>Pages\MyAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\PasswordPage.xaml">
+      <Link>Pages\PasswordPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\PhotoCameraPage.xaml">
@@ -1827,6 +1887,14 @@
     </Page>
     <Page Include="..\common\Pages\PreviewSelfiePage.xaml">
       <Link>Pages\PreviewSelfiePage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\SettingsPage.xaml">
+      <Link>Pages\SettingsPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\SongSelectionPage.xaml">
+      <Link>Pages\SongSelectionPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\TransferPage.xaml">
@@ -1848,46 +1916,6 @@
     <Page Include="..\common\UserControls\MemoryControl.xaml">
       <Link>UserControls\MemoryControl.xaml</Link>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\AboutPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AcknowledgementsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ConfirmAccountPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\CreateAccountPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\MediaAlbumPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PasswordPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SettingsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SongSelectionPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
       <Generator>MSBuild:MarkupCompilePass1</Generator>

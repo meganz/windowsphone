@@ -349,6 +349,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Image upload.
+        /// </summary>
+        public static string ImageUpload {
+            get {
+                return ResourceManager.GetString("ImageUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Import.
         /// </summary>
         public static string Import {
@@ -750,6 +759,15 @@ namespace MegaApp.Resources {
         public static string StayLoggedInText {
             get {
                 return ResourceManager.GetString("StayLoggedInText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a storage.
+        /// </summary>
+        public static string Storage {
+            get {
+                return ResourceManager.GetString("Storage", resourceCulture);
             }
         }
         
