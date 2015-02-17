@@ -11,7 +11,10 @@ using Windows.Phone.System.Memory;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Microsoft.Phone.Info;
-using MemoryManager = Windows.System.MemoryManager;
+
+#if WINDOWS_PHONE_81
+    using MemoryManager = Windows.System.MemoryManager;
+#endif
 
 namespace MegaApp.Services
 {
@@ -21,41 +24,55 @@ namespace MegaApp.Services
 
         public static string GetAppVersion()
         {
-            //var xmlReaderSettings = new XmlReaderSettings
-            //{
-            //    XmlResolver = new XmlXapResolver()
-            //};
+            #if WINDOWS_PHONE_80
+                var xmlReaderSettings = new XmlReaderSettings
+                {
+                    XmlResolver = new XmlXapResolver()
+                };
 
-            //using (var xmlReader = XmlReader.Create("WMAppManifest.xml", xmlReaderSettings))
-            //{
-            //    xmlReader.ReadToDescendant("App");
+                using (var xmlReader = XmlReader.Create("WMAppManifest.xml", xmlReaderSettings))
+                {
+                    xmlReader.ReadToDescendant("App");
 
-            //    return xmlReader.GetAttribute("Version");
-            //}
-
-            // TODO When moving to WP 8.1 use code below
-
-            return String.Format("{0}.{1}.{2}.{3}",
-                Package.Current.Id.Version.Major,
-                Package.Current.Id.Version.Minor,
-                Package.Current.Id.Version.Build,
-                Package.Current.Id.Version.Revision);
+                    return xmlReader.GetAttribute("Version");
+                }
+            #elif WINDOWS_PHONE_81
+                return String.Format("{0}.{1}.{2}.{3}",
+                    Package.Current.Id.Version.Major,
+                    Package.Current.Id.Version.Minor,
+                    Package.Current.Id.Version.Build,
+                    Package.Current.Id.Version.Revision);
+            #endif
         }
 
         public static MemoryInformation GetAppMemoryUsage()
         {
-            return new MemoryInformation()
-            {
-                AppMemoryUsage = MemoryManager.AppMemoryUsage,
-                AppMemoryLimit = MemoryManager.AppMemoryUsageLimit,
-                AppMemoryPeak = (ulong) DeviceStatus.ApplicationPeakMemoryUsage,
-                DeviceMemory = (ulong) DeviceStatus.DeviceTotalMemory
-            };
+            #if WINDOWS_PHONE_80
+                return new MemoryInformation()
+                {
+                    AppMemoryUsage = (ulong) DeviceStatus.ApplicationCurrentMemoryUsage,
+                    AppMemoryLimit = (ulong) DeviceStatus.ApplicationMemoryUsageLimit,
+                    AppMemoryPeak = (ulong) DeviceStatus.ApplicationPeakMemoryUsage,
+                    DeviceMemory = (ulong) DeviceStatus.DeviceTotalMemory
+                };
+            #elif WINDOWS_PHONE_81
+                return new MemoryInformation()
+                {
+                    AppMemoryUsage = MemoryManager.AppMemoryUsage,
+                    AppMemoryLimit = MemoryManager.AppMemoryUsageLimit,
+                    AppMemoryPeak = (ulong)DeviceStatus.ApplicationPeakMemoryUsage,
+                    DeviceMemory = (ulong)DeviceStatus.DeviceTotalMemory
+                };
+            #endif
         }
 
         public static bool IsLowMemoryDevice()
         {
-            return MemoryManager.AppMemoryUsageLimit < 200UL.FromMBToBytes();
+            #if WINDOWS_PHONE_80
+                return (ulong) DeviceStatus.ApplicationMemoryUsageLimit < 200UL.FromMBToBytes();
+            #elif WINDOWS_PHONE_81
+                return MemoryManager.AppMemoryUsageLimit < 200UL.FromMBToBytes();
+            #endif
         }
 
         /// <summary>

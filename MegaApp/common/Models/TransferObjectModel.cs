@@ -195,7 +195,11 @@ namespace MegaApp.Models
             return false;
         }
 
+        #if WINDOWS_PHONE_80
+        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
+        #elif WINDOWS_PHONE_81
         public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
+        #endif
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -231,8 +235,15 @@ namespace MegaApp.Models
                                 imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
                             });
                             imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
+
+                            #if WINDOWS_PHONE_80
+                            bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                            if (exportToPhotoAlbum)
+                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                            #endif
                         }
 
+                        #if WINDOWS_PHONE_81
                         bool result = await FileService.CopyFile(imageNode.LocalImagePath,
                             DownloadFolderPath?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                             null), imageNode.Name);
@@ -242,7 +253,7 @@ namespace MegaApp.Models
                             Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                             break;
                         }
-                        
+                        #endif
                     }
                     else
                     {
@@ -251,6 +262,7 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() => node.IsDownloadAvailable = File.Exists(node.LocalFilePath));
 
+                            #if WINDOWS_PHONE_81
                             bool result = await FileService.CopyFile(node.LocalFilePath,
                                 DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                                 null), node.Name);
@@ -260,11 +272,37 @@ namespace MegaApp.Models
                                 Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                                 break;
                             }
+                            #endif
                         }
                     }
                     
 
                     Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Finished);
+                    break;
+                }
+                case MErrorType.API_EOVERQUOTA:
+                {
+                    // Stop all upload transfers
+                    if (App.MegaTransfers.Count > 0)
+                    {
+                        foreach (var item in App.MegaTransfers)
+                        {
+                            var transferItem = (TransferObjectModel)item;
+                            if (transferItem == null) continue;
+
+                            if (transferItem.Type == TransferType.Upload)
+                                transferItem.CancelTransfer();
+                        }
+                    }
+
+                    //**************************************************
+                    // TODO: Disable the "camera upload" (when availabe)
+                    //**************************************************
+
+
+                    // User notification message.
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+
                     break;
                 }
                 case MErrorType.API_EINCOMPLETE:

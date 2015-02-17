@@ -47,6 +47,28 @@ namespace MegaApp.Pages
             MemoryControl.StopMemoryCounter();
         }
 
+        #if WINDOWS_PHONE_81
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (App.AppEvent == ApplicationEvent.Activated)
+            {
+                App.AppEvent = ApplicationEvent.None;
+               
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+
+                // Check to see if any files have been picked
+                var app = Application.Current as App;
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                }
+                return;
+            }
+            base.OnNavigatedTo(e);
+        }
+        #endif
+
         private void SetMoveButtons(bool isSlideview = true)
         {
             if (ApplicationBar == null) return;
@@ -66,7 +88,7 @@ namespace MegaApp.Pages
 
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.ViewOriginal();
+            _previewImageViewModel.SelectedPreview.Download();
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
