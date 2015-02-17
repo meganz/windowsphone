@@ -1098,6 +1098,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Logged out.
+        /// </summary>
+        public static string SessionIDError_Title {
+            get {
+                return ResourceManager.GetString("SessionIDError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload the selfie picture.
         /// </summary>
         public static string UploadSelfieFailed {

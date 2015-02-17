@@ -77,7 +77,7 @@ namespace MegaApp.Models
         }
 
 #if WINDOWS_PHONE_80
-        public virtual void ViewOriginal()
+        public virtual void Download()
         {
             if (!IsUserOnline()) return;
             NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);

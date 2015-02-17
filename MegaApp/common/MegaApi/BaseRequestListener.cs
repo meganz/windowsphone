@@ -51,13 +51,6 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
-            else if (e.getErrorCode() == MErrorType.API_ESID)
-            {
-                api.logout(new LogOutRequestListener());
-
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));                                
-            }
             else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 // Stop all upload transfers

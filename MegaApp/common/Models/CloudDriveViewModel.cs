@@ -241,7 +241,31 @@ namespace MegaApp.Models
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
             if (count < 1) return;
-
+            
+            #if WINDOWS_PHONE_80
+            if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
+            {
+                switch (await DialogService.ShowOptionsDialog("Download options", AppMessages.QuestionAskedDownloadOption,
+                    new[] {"yes, export", "no, only local"}))
+                {
+                    case -1:
+                    {
+                        return;
+                    }
+                    case 0:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
+                        break;
+                    }
+                    case 1:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
+                        break;
+                    }
+                }
+                SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
+            }
+            #elif WINDOWS_PHONE_81
             // Only 1 Folder Picker can be open at 1 time
             if (PickerOrDialogIsOpen) return;
 
@@ -250,7 +274,8 @@ namespace MegaApp.Models
                 PickerOrDialogIsOpen = true;
                 if (!await FolderService.SelectDownloadFolder())return;
             }
-            
+            #endif
+
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads);
 
             // Give the app the time to display the progress indicator
@@ -971,7 +996,7 @@ namespace MegaApp.Models
             FocusedNode.GetPreviewLink();
         }
 
-        private  void DownloadItem(object obj)
+        private void DownloadItem(object obj)
         {
             this.NoFolderUpAction = true;
             FocusedNode.Download();
@@ -1059,7 +1084,7 @@ namespace MegaApp.Models
         public NodeViewModel BreadCrumbNode { get; set; }
 
         public bool NoFolderUpAction { get; set; }
-        
+
         public DriveDisplayMode DriveDisplayMode { get; set; }
         public DriveDisplayMode OldDriveDisplayMode { get; set; }
 

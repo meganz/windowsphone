@@ -165,8 +165,7 @@ namespace MegaApp.Models
                             
                             break;
                         }
-
-                    case MErrorType.API_ESID:
+                    
                     case MErrorType.API_EOVERQUOTA:
                         base.onRequestFinish(api, request, e);
                         break;

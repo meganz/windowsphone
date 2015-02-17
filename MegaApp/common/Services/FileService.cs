@@ -4,7 +4,12 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using MegaApp.Resources;
+
+#if WINDOWS_PHONE_81
+    using Windows.Storage.AccessCache;
+#endif
 
 namespace MegaApp.Services
 {
@@ -23,6 +28,21 @@ namespace MegaApp.Services
             }
         }
 
+        public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath, string newFileName = null)
+        {
+            var file = await StorageFile.GetFileFromPathAsync(sourcePath);
+            if (file == null) return false;
+            
+            var folder = await StorageFolder.GetFolderFromPathAsync(destinationFolderPath);
+            if (folder == null) return false;
+
+            newFileName = newFileName ?? file.Name;
+
+            var copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName);
+
+            return copy != null;
+        }
+       
         public static async Task<bool> OpenFile(string filePath)
         {
             try
@@ -39,9 +59,24 @@ namespace MegaApp.Services
             {
                 MessageBox.Show(AppMessages.OpenFileFailed, AppMessages.OpenFileFailed_Title, MessageBoxButton.OK);
                 return false;
-            }
-            
+            }            
         }
+
+        #if WINDOWS_PHONE_81
+            public static void SelectMultipleFiles()
+            {
+                var fileOpenPicker = new FileOpenPicker();
+            
+                fileOpenPicker.ContinuationData["Operation"] = "SelectedFiles";
+            
+                // Use wildcard filter to start FileOpenPicker in location selection screen instead of 
+                // photo selection screen
+                fileOpenPicker.FileTypeFilter.Add("*");
+                fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
+            
+                fileOpenPicker.PickMultipleFilesAndContinue();
+            }
+        #endif
 
         public static string CreateRandomFilePath(string path)
         {
