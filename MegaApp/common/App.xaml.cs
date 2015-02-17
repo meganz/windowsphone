@@ -450,8 +450,16 @@ namespace MegaApp
         {
             if (e.getErrorCode() == MErrorType.API_ESID)
             {
-                api.logout(new LogOutRequestListener());
+                // Show the login page
+                Deployment.Current.Dispatcher.BeginInvoke(() => 
+                    NavigateService.NavigateTo(typeof(Pages.LoginPage), NavigationParameter.Normal));
 
+                // Clear settings, cache, previews, thumbnails, etc.
+                SettingsService.ClearMegaLoginData();
+                Deployment.Current.Dispatcher.BeginInvoke(() => App.CloudDrive.ChildNodes.Clear());
+                AppService.ClearAppCache(false);                
+
+                // Show a message notifying the error
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     MessageBox.Show(AppMessages.SessionIDError, AppMessages.SessionIDError_Title, MessageBoxButton.OK));
             }

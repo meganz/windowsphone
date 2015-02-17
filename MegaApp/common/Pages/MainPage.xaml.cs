@@ -163,7 +163,9 @@ namespace MegaApp.Pages
 
         private void ChangeMenu()
         {
+            #if WINDOWS_PHONE_81
             BorderLinkText.Visibility = Visibility.Collapsed;
+            #endif
 
             switch (App.CloudDrive.DriveDisplayMode)
             {
@@ -182,11 +184,13 @@ namespace MegaApp.Pages
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
                     break;
 
+                #if WINDOWS_PHONE_81
                 case DriveDisplayMode.ImportItem:
                     this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
                     App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.ImportMenu);
                     BorderLinkText.Visibility = Visibility.Visible;
                     break;
+                #endif
 
                 case DriveDisplayMode.CloudDrive:
                 default:
@@ -199,11 +203,16 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App.CloudDrive.ListBox = LstCloudDrive;
+            
+            #if WINDOWS_PHONE_81
             LstAdvancedMenu.SelectedItem = null;
+            #endif
 
             if(App.AppEvent == ApplicationEvent.Activated)
             {                
                 App.AppEvent = ApplicationEvent.None;
+
+                #if WINDOWS_PHONE_81
                 App.CloudDrive.NoFolderUpAction = false;
 
                 // Needed on every UI interaction
@@ -221,9 +230,9 @@ namespace MegaApp.Pages
                 {
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
+                #endif
 
                 return;
-                
             }
             
             ChangeMenu();
@@ -232,9 +241,7 @@ namespace MegaApp.Pages
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
                 App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
-            }
-
-            
+            }            
 
             if (e.NavigationMode == NavigationMode.Reset)
             {
@@ -281,9 +288,49 @@ namespace MegaApp.Pages
                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     break;
                 }
+
+                #if WINDOWS_PHONE_80
+                case NavigationParameter.ImportLinkLaunch:                
+                {
+                    if (NavigationContext.QueryString.ContainsKey("filelink"))
+                    {
+                        if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                        {
+                            try
+                            {
+                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                                else
+                                {
+                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    return;
+                                }
+                            }
+                            catch (ArgumentNullException)
+                            {
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                return;
+                            }
+                        }
+
+                        //App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                        //App.CloudDrive.FetchNodes();
+
+                        string _link = NavigationContext.QueryString["filelink"];                        
+                        if (_link.StartsWith("mega://"))
+                            _link = _link.Replace("mega://", "https://mega.co.nz/#");
+
+                        App.MegaSdk.getPublicNode(_link, new GetPublicNodeRequestListener(App.CloudDrive));
+                    }
+                    break;
+                }
+                #elif WINDOWS_PHONE_81
                 case NavigationParameter.ImportLinkLaunch:
+                #endif
+
                 case NavigationParameter.Unknown:
                 {
+                    #if WINDOWS_PHONE_81
                     if (e.NavigationMode != NavigationMode.Back)
                     {
                         if (NavigationContext.QueryString.ContainsKey("filelink"))
@@ -293,6 +340,7 @@ namespace MegaApp.Pages
                             ChangeMenu();
                         }
                     }
+                    #endif
 
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
@@ -336,6 +384,7 @@ namespace MegaApp.Pages
             App.AppEvent = ApplicationEvent.None;
         }
         
+        #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
             if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||
@@ -388,6 +437,7 @@ namespace MegaApp.Pages
             var app = Application.Current as App;
             if (app != null) app.FilePickerContinuationArgs = null;
         }
+        #endif
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
@@ -827,9 +877,6 @@ namespace MegaApp.Pages
             App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
 
             ChangeMenu();
-        }
-
-        
-    }
-    
+        }        
+    }    
 }
