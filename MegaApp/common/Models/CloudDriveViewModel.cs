@@ -523,6 +523,8 @@ namespace MegaApp.Models
 
         public void GoToFolder(NodeViewModel folder)
         {
+            if (folder == null) return;
+
             CancelLoadNodes();
 
             this.BreadCrumbNode = this.CurrentRootNode;

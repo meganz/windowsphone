@@ -151,6 +151,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to copy the selected file: {0}.
+        /// </summary>
+        public static string CopyFileFailed {
+            get {
+                return ResourceManager.GetString("CopyFileFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Copy file failed.
+        /// </summary>
+        public static string CopyFileFailed_Title {
+            get {
+                return ResourceManager.GetString("CopyFileFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type into the destination folder.
+        /// </summary>
+        public static string CopyFileUnauthorizedAccessException {
+            get {
+                return ResourceManager.GetString("CopyFileUnauthorizedAccessException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unauthorized access.
+        /// </summary>
+        public static string CopyFileUnauthorizedAccessException_Title {
+            get {
+                return ResourceManager.GetString("CopyFileUnauthorizedAccessException_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a MEGA Cloud Drive account creation failed. Please try again. [{0}].
         /// </summary>
         public static string CreateAccountFailed {
