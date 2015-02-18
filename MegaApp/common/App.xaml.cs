@@ -266,8 +266,9 @@ namespace MegaApp
             
             // Initialize MegaSDK 
             #if WINDOWS_PHONE_80
-                MegaSdk = new MegaSDK(AppResources.AppKey, AppResources.UserAgentWP80, 
-                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+                MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                    AppResources.UserAgentWP80, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());                
             #elif WINDOWS_PHONE_81
                 MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
                     AppResources.UserAgentWP81, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),

@@ -60,30 +60,25 @@ namespace MegaApp.Services
 
             // Only allows download directly if is an image file
             if (isImage)
-                buttons = new string[] { "import", "download" };
+                buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
             else
-                buttons = new string[] { "import" };
+                buttons = new string[] { UiResources.Import.ToLower() };
 
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: buttons,
-                title: "Download MEGA link",
+                title: UiResources.LinkOptions,
                 message: publicNode.getName()
                 );
 
             switch (closedEventArgs.ButtonIndex)
             {
-                // Import button clicked
-                case 0:
-                    {
-                        cloudDrive.ImportLink(link);
-                        break;
-                    }
-                // Download button clicked
-                case 1:
-                    {
-                        cloudDrive.DownloadLink(publicNode);
-                        break;
-                    }
+                case 0: // Import button clicked
+                    cloudDrive.ImportLink(link);
+                    break;
+
+                case 1: // Download button clicked
+                    cloudDrive.DownloadLink(publicNode);
+                    break;
             }
         }
         #elif WINDOWS_PHONE_81
@@ -97,18 +92,13 @@ namespace MegaApp.Services
 
             switch (closedEventArgs.ButtonIndex)
             {
-                // Import button clicked
-                case 0:
-                    {
-                        cloudDrive.ImportLink(link);
-                        break;
-                    }
-                // Download button clicked
-                case 1:
-                    {
-                        cloudDrive.DownloadLink(publicNode);
-                        break;
-                    }
+                case 0: // Import button clicked
+                    cloudDrive.ImportLink(link);
+                    break;
+
+                case 1: // Download button clicked
+                    cloudDrive.DownloadLink(publicNode);
+                    break;
             }
         }
         #endif

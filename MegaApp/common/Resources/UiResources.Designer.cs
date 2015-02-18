@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a PRO Lite.
+        /// </summary>
+        public static string AccountTypeProLite {
+            get {
+                return ResourceManager.GetString("AccountTypeProLite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a add.
         /// </summary>
         public static string AddButton {
