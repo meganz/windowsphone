@@ -21,39 +21,36 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            switch(e.getErrorCode())
             {
-                switch(e.getErrorCode())
-                {
-                    case MErrorType.API_OK:
-                        break;
+                case MErrorType.API_OK:
+                    break;
 
-                    case MErrorType.API_EOVERQUOTA:
+                case MErrorType.API_EOVERQUOTA:
 
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        // Stop all upload transfers
+                        if (App.MegaTransfers.Count > 0)
                         {
-                            // Stop all upload transfers
-                            if (App.MegaTransfers.Count > 0)
+                            foreach (var item in App.MegaTransfers)
                             {
-                                foreach (var item in App.MegaTransfers)
-                                {
-                                    var transferItem = (TransferObjectModel)item;
-                                    if (transferItem == null) continue;
+                                var transferItem = (TransferObjectModel)item;
+                                if (transferItem == null) continue;
 
-                                    if (transferItem.Type == TransferType.Upload)
-                                        transferItem.CancelTransfer();
-                                }
+                                if (transferItem.Type == TransferType.Upload)
+                                    transferItem.CancelTransfer();
                             }
+                        }
 
-                            //**************************************************
-                            // TODO: Disable the "camera upload" (when availabe)
-                            //**************************************************
+                        //**************************************************
+                        // TODO: Disable the "camera upload" (when availabe)
+                        //**************************************************
 
-                            DialogService.ShowOverquotaAlert();
-                        });
-                        break;
-                }                
-            });
+                        DialogService.ShowOverquotaAlert();
+                    });
+                    break;
+            }
         }
 
         public virtual void onTransferStart(MegaSDK api, MTransfer transfer)
