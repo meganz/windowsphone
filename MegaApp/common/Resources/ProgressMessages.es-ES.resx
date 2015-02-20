@@ -117,4 +117,74 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Confirmando la cuenta...</value>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Reanudando transferencias...</value>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>Renombrando...</value>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Eliminando...</value>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Preparando subidas...</value>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Preparando descargas...</value>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Pausando transferencias...</value>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Moviendo a la Papelera...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Moviendo...</value>
+    <comment>Progress indicator message when moving a node to a different parent</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrando sesión...</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iniciando sesión...</value>
+    <comment>Progress indicator message when logging in</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>Creando vista...</value>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Importando archivo...</value>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>Obteniendo vista previa...</value>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Obteniendo enlace...</value>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>Obteniendo detalles de la cuenta...</value>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Obteniendo archivos &amp; carpetas... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Reanudando sesión...</value>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Recuperando enlace de descarga...</value>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Eliminando '{0}'...</value>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Creando carpeta...</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Creando cuenta...</value>
+  </data>
 </root>

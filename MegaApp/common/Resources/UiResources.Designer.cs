@@ -520,6 +520,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No transfers.
+        /// </summary>
+        public static string NoTransfers {
+            get {
+                return ResourceManager.GetString("NoTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Off.
         /// </summary>
         public static string Off {
@@ -777,15 +786,6 @@ namespace MegaApp.Resources {
         public static string Storage {
             get {
                 return ResourceManager.GetString("Storage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a No transfers.
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         
