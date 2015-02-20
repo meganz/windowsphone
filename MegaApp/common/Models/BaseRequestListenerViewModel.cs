@@ -54,26 +54,27 @@ namespace MegaApp.Models
                 }
                 else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
                 {
-                    // Stop all upload transfers
-                    if (App.MegaTransfers.Count > 0)
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        foreach (var item in App.MegaTransfers)
+                        // Stop all upload transfers
+                        if (App.MegaTransfers.Count > 0)
                         {
-                            var transferItem = (TransferObjectModel)item;
-                            if (transferItem == null) continue;
+                            foreach (var item in App.MegaTransfers)
+                            {
+                                var transferItem = (TransferObjectModel)item;
+                                if (transferItem == null) continue;
 
-                            if (transferItem.Type == TransferType.Upload)
-                                transferItem.CancelTransfer();
+                                if (transferItem.Type == TransferType.Upload)
+                                    transferItem.CancelTransfer();
+                            }
                         }
-                    }
 
-                    //**************************************************
-                    // TODO: Disable the "camera upload" (when availabe)
-                    //**************************************************
+                        //**************************************************
+                        // TODO: Disable the "camera upload" (when availabe)
+                        //**************************************************
 
-
-                    // User notification message.
-                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+                        DialogService.ShowOverquotaAlert();
+                    });
                 }
                 else
                     MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
