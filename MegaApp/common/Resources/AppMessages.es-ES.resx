@@ -168,10 +168,10 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
     <value>No se pudieron cargar los archivos y carpetas de MEGA. Por favor, inténtalo de nuevo o haz clic en actualizar.</value>
   </data>
   <data name="UploadSelfieFailed_Title" xml:space="preserve">
-    <value>Error al cargar los Selfie</value>
+    <value>Error al subir el selfie</value>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
-    <value>No se pudo cargar la imagen selfie</value>
+    <value>No se pudo subir la imagen selfie</value>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
     <value>Error al abrir el archivo</value>
@@ -207,7 +207,7 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
     <value>Error al reanudar</value>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
-    <value>No se pudo reanudar transferencias</value>
+    <value>No se pudieron reanudar las transferencias</value>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
     <value>Error al pausar</value>
@@ -228,7 +228,7 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
     <value>Contraseña incorrecta</value>
   </data>
   <data name="WrongPassword" xml:space="preserve">
-    <value>La contraseña escrita no es correcta</value>
+    <value>La contraseña escrita es incorrecta</value>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
     <value>Cuenta ya confirmada</value>
@@ -318,26 +318,26 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
     <value>Sin conexión</value>
   </data>
   <data name="UserNotOnline" xml:space="preserve">
-    <value>No se registran en MEGA para esta acción. Por favor, volver a iniciar sesión</value>
+    <value>No estás conectado a MEGA para realizar esta acción. Por favor, vuelve a iniciar sesión</value>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
-    <value>Guardar la imagen en la foto</value>
+    <value>Guardar la imagen en el álbum</value>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>¿Exportar imagen actual al álbum 'imágenes guardadas'?</value>
+    <value>¿Exportar la imagen actual al álbum 'imágenes guardadas'?</value>
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
     <value>Rellena los campos obligatorios</value>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Rellene su dirección de correo electrónico y su contraseña MEGA</value>
+    <value>Introduce tu e-mail y tu contraseña  de MEGA</value>
     <comment>Message when required fields for login are not filled in</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Por favor, rellene su nombre, dirección de correo electrónico y la contraseña nueva</value>
+    <value>Por favor, introduce tu nombre, e-mail y contraseña</value>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
-    <value>Por favor, rellene la contraseña elegida</value>
+    <value>Por favor, introduce la contraseña elegida</value>
   </data>
   <data name="RenameNodeFailed_Title" xml:space="preserve">
     <value>Error al renombrar</value>
@@ -499,5 +499,53 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
   </data>
   <data name="AgreeTermsOfUse_Title" xml:space="preserve">
     <value>Condiciones de uso</value>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN de bloqueo demasiado corto</value>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>El PIN de bloqueo debe tener al menos 4 dígitos</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>El PIN de bloqueo actual no coincide</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>El PIN de bloqueo actual es incorrecto o no coincide</value>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>Fallo al copiar</value>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>No se pudo copiar la clave maestra al portapapeles. Por favor, inténtalo de nuevo</value>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>Clave maestra copiada</value>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>Clave maestra copiada al portapapeles</value>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>Caché limpiada</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>La caché se ha limpiado con éxito</value>
+  </data>
+  <data name="UnknownResolutionType" xml:space="preserve">
+    <value>Tipo de resolución desconocido</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>sí, exportar</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>Opciones de descarga</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>no, sólo local</value>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>Límite de memoria</value>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>No hay sufiente espacio libre en la memoria para completar esta operación. La aplicación se cerrará ahora</value>
   </data>
 </root>

@@ -154,9 +154,8 @@ namespace MegaApp.MegaApi
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(
-                        "Not enough free memory space to complete this operation. The app will shutdown now",
-                        "Memory Limit", MessageBoxButton.OK);
+                    MessageBox.Show(AppMessages.MemoryLimitError,
+                        AppMessages.MemoryLimitError_Title, MessageBoxButton.OK);
                     Application.Current.Terminate();
                 });
 

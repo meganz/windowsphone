@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -229,9 +229,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[90C22][!!_Ρłęáŝè ƒíľĺ įи ÿòµř čħòõŝèή þáššŵóѓđ_!!!!!!!!!!]</target>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" xml:space="preserve">
-          <source>Please fill in your name, e-mail address and your new password</source>
+          <source>Please fill in your name, e-mail address and password</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[9F38D][!!_Рľéàşê ƒįľľ įη ýòúŕ йâмê, é-мâîļ âďďŕéŝš ãйď ŷõûŗ йęẅ þàŝšẃòŗð_!!!!!!!!!!!!!!!!!!]</target>
-        </trans-unit>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note></trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" xml:space="preserve">
           <source>Please fill in your e-mail address and your MEGA password</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[EBF4A][!!_Þłèáşé ƒîłľ îй ÿõúѓ ę-mãìļ áððѓéŝŝ âήđ ўõùŕ МÈĞÁ ρâśšẁõŗđ_!!!!!!!!!!!!!!!!!!]</target>
@@ -516,6 +516,70 @@ To proceed with the download please select a destination folder or go to prefere
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" xml:space="preserve">
           <source>Unauthorized access</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[0ACB2][!!_Ûηáµτнõŕîžéď âčĉèšś_!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" xml:space="preserve">
+          <source>Clipboard failed</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[48620][!!_Ćľíρвòàřď ƒáįłéď_!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy masterkey to clipboard. Please try again</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[F6472][!!_₣áîļèð τó ĉôрÿ мãśтêřкęŷ тò ċļîþъóářď. Ρĺéáşê τѓý àğàîή_!!!!!!!!!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock too short</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[29789][!!_ΡÎŅ ĺòćќ ťôó šђòѓт_!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared_Title" translate="yes" xml:space="preserve">
+          <source>Cache cleared</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[63B36][!!_Ċâĉнé čłèâѓêđ_!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/UnknownResolutionType" translate="yes" xml:space="preserve">
+          <source>Unknown resolution type</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[2F253][!!_Üиĸηõẅη ѓèšółùťìôй ţŷрé_!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
+          <source>yes, export</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[E867A][!!_Уêŝ, èхρõŗţ_!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" xml:space="preserve">
+          <source>Download options</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[CC43B][!!_Ðòẅиĺôãð ôрţîóήš_!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" xml:space="preserve">
+          <source>no, only local</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[AC2F2][!!_иò, óήľУ ļôćâļ_!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" xml:space="preserve">
+          <source>Memory Limit</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[90820][!!_Μèмóŗŷ Ĺîmįť_!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError" translate="yes" xml:space="preserve">
+          <source>Not enough free memory space to complete this operation. The app will shutdown now</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[4AF1C][!!_Ńóť ęήôµģћ ƒѓęé мéмòŕý śρáčè ťó ćõmрļêτé τћįş ôрéřãťíóй. Тħè àρр ẅíľļ ŝђµτðòẃи иóẃ_!!!!!!!!!!!!!!!!!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared" translate="yes" xml:space="preserve">
+          <source>Cache has been succesfully cleared</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[27F52][!!_Čàĉђę нâş Бéèи šúċċèŝƒùļľў ċłèáѓèđ_!!!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort" translate="yes" xml:space="preserve">
+          <source>PIN lock must be at least 4 digits</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[193B2][!!_ΡÌÑ ľóċќ мùšт вè âţ ļéâšť 4 ďìğíťŝ_!!!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>Current PIN lock no match</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[DB943][!!_Ćùŕŕéήτ РÎŇ ļõćķ ήò мâтċђ_!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" xml:space="preserve">
+          <source>Masterkey copied</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B82E5][!!_Μãşţèŕкéý ćôрíêď_!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied" translate="yes" xml:space="preserve">
+          <source>Masterkey copied to clipboard</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[4457F][!!_Μãśτèѓķéŷ ćóρįéđ тò ĉłîрьóàѓď_!!!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Current PIN lock is not correct or does not match</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[02863][!!_Ĉùŗŕęйτ ÞĮÑ ļóćĸ íś ήôţ ĉòŕѓèćτ òř đôęś ήôţ máтċђ_!!!!!!!!!!!!!!]</target>
         </trans-unit>
       </group>
     </body>

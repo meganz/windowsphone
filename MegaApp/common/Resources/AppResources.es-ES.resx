@@ -118,6 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>Por favor, selecciona una carpeta de descarga predeterminada</value>
+    <value>por favor, selecciona una carpeta de descarga 
+predeterminada</value>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>es-ES</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
 </root>

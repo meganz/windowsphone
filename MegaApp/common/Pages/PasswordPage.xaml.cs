@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -22,6 +23,13 @@ namespace MegaApp.Pages
             this.DataContext = _passwordViewModel;
 
             InitializeComponent();
+
+            SetApplicationBar();
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.DoneButton;         
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

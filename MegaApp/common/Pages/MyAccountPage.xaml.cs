@@ -26,7 +26,15 @@ namespace MegaApp.Pages
             this.DataContext = _myAccountPageViewModel;
             InitializeComponent();
 
+            SetApplicationBar();
+
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.ClearCache;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout;            
         }
 
         private void OnPieDataBindingComplete(object sender, System.EventArgs e)

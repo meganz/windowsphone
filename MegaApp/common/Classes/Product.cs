@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MegaApp.Resources;
 
 namespace MegaApp.Classes
 {
@@ -21,7 +22,7 @@ namespace MegaApp.Classes
         {
             get 
             {
-                return Months == 1 ? "Monthly" : "Annually";
+                return Months == 1 ? UiResources.Monthly : UiResources.Annually;
             }
         }
 

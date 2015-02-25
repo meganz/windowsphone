@@ -245,8 +245,9 @@ namespace MegaApp.Models
             #if WINDOWS_PHONE_80
             if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
             {
-                switch (await DialogService.ShowOptionsDialog("Download options", AppMessages.QuestionAskedDownloadOption,
-                    new[] {"yes, export", "no, only local"}))
+                switch (await DialogService.ShowOptionsDialog(AppMessages.QuestionAskedDownloadOption_Title, 
+                    AppMessages.QuestionAskedDownloadOption,
+                    new[] { AppMessages.QuestionAskedDownloadOption_YesButton, AppMessages.QuestionAskedDownloadOption_NoButton }))
                 {
                     case -1:
                     {

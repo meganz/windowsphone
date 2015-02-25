@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Telerik.Windows.Controls;
 
@@ -138,8 +139,8 @@ namespace MegaApp.Classes
         {
             var accountDataPoints = new List<AccountDataPoint>
             {
-                new AccountDataPoint() {Label = "Free space", Value = FreeSpace},
-                new AccountDataPoint() {Label = "Used space", Value = UsedSpace}
+                new AccountDataPoint() {Label = UiResources.FreeSpace, Value = FreeSpace},
+                new AccountDataPoint() {Label = UiResources.UsedSpace, Value = UsedSpace}
             };
             PieChartCollection = accountDataPoints;
         }
