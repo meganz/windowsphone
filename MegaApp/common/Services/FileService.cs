@@ -37,8 +37,30 @@ namespace MegaApp.Services
             if (folder == null) return false;
 
             newFileName = newFileName ?? file.Name;
-
-            var copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName);
+                        
+            StorageFile copy = null;
+            try 
+            { 
+                copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName); 
+            }
+            catch (UnauthorizedAccessException) 
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(AppMessages.CopyFileUnauthorizedAccessException,
+                        AppMessages.CopyFileUnauthorizedAccessException_Title, MessageBoxButton.OK);
+                });
+                return false;
+            }
+            catch (Exception e) 
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.CopyFileFailed, e.Message),
+                        AppMessages.CopyFileFailed_Title, MessageBoxButton.OK);
+                });
+                return false;
+            }
 
             return copy != null;
         }

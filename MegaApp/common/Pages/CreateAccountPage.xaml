@@ -34,8 +34,11 @@
                 <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True"/>
                 <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType" Watermark="{Binding LocalizedUiResources.ConfirmPasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding ControlState}" KeyDown="OnKeyDown" TabIndex="3"/>
                 <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
-                    <CheckBox x:Name="chkTermsOfUse" Content="{Binding LocalizedUiResources.AgreeCreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}" TabIndex="4"/>
-                    <HyperlinkButton x:Name="btnTermsOfUse" Content="{Binding LocalizedUiResources.TermsOfUse, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}"/>
+                <CheckBox x:Name="chkTermsOfUse1" VerticalAlignment="Center" IsEnabled="{Binding ControlState}" IsChecked="{Binding TermOfUse, Mode=TwoWay}" TabIndex="4"/>
+                    <StackPanel x:Name="stackTermOfUse2" Orientation="Vertical" VerticalAlignment="Center">
+                        <TextBlock x:Name="textTermsOfUse" HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.AgreeCreateAccount, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface"/>
+                        <HyperlinkButton x:Name="btnTermsOfUse" HorizontalAlignment="Left" Content="{Binding LocalizedUiResources.TermsOfUse, Source={StaticResource LocalizedStrings}}" Margin="-12,0,0,0" IsEnabled="{Binding ControlState}" Command="{Binding NavigateTermsOfUseCommand}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
@@ -46,8 +49,8 @@
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/add.png" Text="create account" Click="OnCreateAccountClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="create account" Click="OnCreateAccountClick" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
-
+    
 </phone:PhoneApplicationPage>

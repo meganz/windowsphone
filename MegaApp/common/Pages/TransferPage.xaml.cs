@@ -9,6 +9,7 @@ using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -24,7 +25,17 @@ namespace MegaApp.Pages
             this.DataContext = transfersViewModel;
             InitializeComponent();
 
+            SetApplicationBar();
+
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));            
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.StartResumeAll;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.PauseAll;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.CancelAll;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[3]).Text = UiResources.CleanUpTransfers;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

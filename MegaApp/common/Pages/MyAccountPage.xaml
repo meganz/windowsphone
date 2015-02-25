@@ -39,7 +39,7 @@
 		</shell:ApplicationBar>
 	</phone:PhoneApplicationPage.ApplicationBar>
 	<phone:Pivot x:Name="PivotAccountInformation" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
-		<phone:PivotItem x:Name="PivotAccount" Header="account" Loaded="OnPivotLoaded">
+        <phone:PivotItem x:Name="PivotAccount" Header="{Binding LocalizedUiResources.Account, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition/>
@@ -67,15 +67,15 @@
 						<TextBlock Text="{Binding AccountDetails.AccountTypeText}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold" Grid.Column="1" Margin="12,0"/>
 					</Grid>
 				</StackPanel>
-				<telerikChart:RadPieChart x:Name="AccountPieChart" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" EmptyContent="No data to show" Grid.Row="1" Width="210" Height="210">
+                <telerikChart:RadPieChart x:Name="AccountPieChart" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" EmptyContent="{Binding LocalizedUiResources.NoDataToShow, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Width="210" Height="210">
 					<telerikChart:PieSeries ShowLabels="True" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" LabelOffset="8">								
 						<telerikChart:PieSeries.LabelDefinitions>
 							<telerikChart:ChartSeriesLabelDefinition>
 								<telerikChart:ChartSeriesLabelDefinition.Template>
 									<DataTemplate>
 										<StackPanel>
-											<TextBlock Text="{Binding DataItem.Label}"/>
-											<TextBlock Text="{Binding Percent, StringFormat=\{0:N\} %}"/>
+											<TextBlock Text="{Binding DataItem.Label}" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Percent, StringFormat=\{0:N\} %}" HorizontalAlignment="Center"/>
 										</StackPanel>
 									</DataTemplate>
 								</telerikChart:ChartSeriesLabelDefinition.Template>
@@ -100,14 +100,14 @@
 					</telerikChart:PieSeries>
 				</telerikChart:RadPieChart>
 				<StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
-<Grid x:Name="StorageSpaceGrid" Margin="0,0,0,10">
+                    <Grid x:Name="StorageSpaceGrid" Margin="0,0,0,10">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="Auto"/>
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 						<Ellipse HorizontalAlignment="Left" Height="30" Stroke="Black" VerticalAlignment="Top" Width="30" Fill="LightGreen"/>
-						<TextBlock HorizontalAlignment="Left"  Text="total" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <TextBlock HorizontalAlignment="Left"  Text="{Binding LocalizedUiResources.Total, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 						<TextBlock HorizontalAlignment="Right"  Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 					</Grid>
 					<Grid x:Name="UsedSpaceGrid" Margin="0,0,0,10">
@@ -117,7 +117,7 @@
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 						<Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" Fill="LightBlue"/>
-						<TextBlock HorizontalAlignment="Left"  Text="used" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <TextBlock HorizontalAlignment="Left"  Text="{Binding LocalizedUiResources.Used, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 						<TextBlock HorizontalAlignment="Right"  Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 					</Grid>
 					<Grid x:Name="FreeSpaceGrid">
@@ -127,7 +127,7 @@
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
 						<Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" Fill="Gray"/>
-						<TextBlock HorizontalAlignment="Left" Text="available" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                        <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Available, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
 						<TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.FreeSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 					</Grid>
 				</StackPanel>
@@ -143,14 +143,14 @@
 							<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
 						</Ellipse.Fill>
 					</Ellipse>
-					<TextBlock HorizontalAlignment="Left" Text="cache" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Cache, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Style="{StaticResource PhoneTextSubtleStyle}"/>
 					<TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.CacheSize, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 				</Grid>
 			</Grid>
 		</phone:PivotItem>
-		<phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="subscribe" Loaded="OnPivotLoaded">
+        <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.Subscribe, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
 			<Grid>
-				<telerikPrimitives:RadDataBoundListBox x:Name="LstProducts" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Products}" EmptyContent="No plans to display" ItemTap="OnItemTap" SelectionChanged="OnSelectionChanged"/>
+                <telerikPrimitives:RadDataBoundListBox x:Name="LstProducts" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Products}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" ItemTap="OnItemTap" SelectionChanged="OnSelectionChanged"/>
 			</Grid>
 		</phone:PivotItem>
 	</phone:Pivot>

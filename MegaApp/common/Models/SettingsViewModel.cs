@@ -73,11 +73,11 @@ namespace MegaApp.Models
             try
             {
                 Clipboard.SetText(MegaSdk.exportMasterKey());
-                MessageBox.Show("Masterkey copied to clipboard", "Masterkey copied", MessageBoxButton.OK);
+                MessageBox.Show(AppMessages.MasterkeyCopied, AppMessages.MasterkeyCopied_Title, MessageBoxButton.OK);
             }
             catch (Exception)
             {
-                MessageBox.Show("Failed to copy masterkey to clipboard. Please try again", "Clipboard failed", MessageBoxButton.OK);
+                MessageBox.Show(AppMessages.ClipboardFailed, AppMessages.ClipboardFailed_Title, MessageBoxButton.OK);
             }
         }
         

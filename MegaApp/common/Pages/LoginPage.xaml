@@ -44,10 +44,10 @@
         <!--ContentPanel - place additional content here-->
     </Grid>
 
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/login.png" Text="login" Click="OnLoginClick" />			
-		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/login.png" Text="login" Click="OnLoginClick" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

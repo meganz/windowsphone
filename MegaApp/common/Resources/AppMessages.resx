@@ -285,7 +285,7 @@
     <value>Please fill in your choosen password</value>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Please fill in your name, e-mail address and your new password</value>
+    <value>Please fill in your name, e-mail address and password</value>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
     <value>Please fill in your e-mail address and your MEGA password</value>
@@ -487,5 +487,65 @@ To proceed with the download please select a destination folder or go to prefere
   </data>
   <data name="SessionIDError_Title" xml:space="preserve">
     <value>Logged out</value>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>Failed to copy the selected file: {0}</value>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>Copy file failed</value>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>You don't have permission to copy this file type into the destination folder</value>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>Unauthorized access</value>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>Failed to copy masterkey to clipboard. Please try again</value>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>Clipboard failed</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>Current PIN lock is not correct or does not match</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>Current PIN lock no match</value>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>Masterkey copied to clipboard</value>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>Masterkey copied</value>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>PIN lock must be at least 4 digits</value>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN lock too short</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>Cache has been succesfully cleared</value>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>Cache cleared</value>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>Not enough free memory space to complete this operation. The app will shutdown now</value>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>Memory Limit</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>no, only local</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>Download options</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>yes, export</value>
+  </data>
+  <data name="UnknownResolutionType" xml:space="preserve">
+    <value>Unknown resolution type</value>
   </data>
 </root>
