@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -75,7 +75,7 @@
         </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" xml:space="preserve">
           <source>Fetching files %%amp; folders... [{0}]</source>
-          <target state="translated">Obteniendo archivos %%amp; carpetas... [{0}]</target>
+          <target state="translated">Obteniendo archivos y carpetas... [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service</note>
           </trans-unit>
         <trans-unit id="Resx/FastLogin" translate="yes" xml:space="preserve">

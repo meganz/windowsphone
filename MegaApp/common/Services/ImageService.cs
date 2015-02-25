@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.Resources;
 using Microsoft.Xna.Framework.Media;
 
 namespace MegaApp.Services
@@ -89,7 +90,7 @@ namespace MegaApp.Services
                 case Resolutions.WVGA:
                     return ".Screen-WVGA";
                 default:
-                    throw new InvalidOperationException("Unknown resolution type");
+                    throw new InvalidOperationException(AppMessages.UnknownResolutionType);
             }
         }
 

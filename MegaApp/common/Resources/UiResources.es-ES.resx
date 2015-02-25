@@ -124,7 +124,7 @@
     <value>añadir</value>
   </data>
   <data name="Storage" xml:space="preserve">
-    <value>almacenamiento</value>
+    <value>Almacenamiento</value>
   </data>
   <data name="ImageUpload" xml:space="preserve">
     <value>Subir imagen</value>
@@ -163,7 +163,7 @@
     <value>Bloqueo con PIN</value>
   </data>
   <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>Confirma tu PIN de bloqueo</value>
+    <value>confirma tu PIN de bloqueo</value>
   </data>
   <data name="ChangePinLockButton" xml:space="preserve">
     <value>Cambiar PIN de bloqueo</value>
@@ -199,7 +199,7 @@
     <value>Queremos agradecer especialmente a las siguientes personas o empresas por hacer posible esta aplicación:</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>acerca de nosotros</value>
+    <value>acerca de</value>
   </data>
   <data name="Transfer_Pausing" xml:space="preserve">
     <value>Pausando...</value>
@@ -402,5 +402,156 @@
   </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>No hay transferencias</value>
+  </data>
+  <data name="Acknowledgements" xml:space="preserve">
+    <value>Agradecimientos</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>versión</value>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Términos de servicio</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Política de privacidad</value>
+  </data>
+  <data name="AppVersionText" xml:space="preserve">
+    <value>Versión de la aplicación</value>
+  </data>
+  <data name="AcknowledgementsTitle" xml:space="preserve">
+    <value>agradecimientos</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>aceptar</value>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>limpiar selección</value>
+  </data>
+  <data name="Capture" xml:space="preserve">
+    <value>capturar</value>
+  </data>
+  <data name="Uploads" xml:space="preserve">
+    <value>subidas</value>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>descargas</value>
+  </data>
+  <data name="StartResumeAll" xml:space="preserve">
+    <value>reanudar todo</value>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>cancelar todo</value>
+  </data>
+  <data name="CleanUpTransfers" xml:space="preserve">
+    <value>limpiar transf.</value>
+  </data>
+  <data name="PauseAll" xml:space="preserve">
+    <value>pausar todo</value>
+  </data>
+  <data name="AskDownloadLocationText" xml:space="preserve">
+    <value>Siempre pedir ubicación de descarga</value>
+  </data>
+  <data name="DefaultDownloadLocationText" xml:space="preserve">
+    <value>Ubicación de descarga por defecto</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>ver</value>
+  </data>
+  <data name="Clipboard" xml:space="preserve">
+    <value>portapapeles</value>
+  </data>
+  <data name="ExportPhotoAlbumText" xml:space="preserve">
+    <value>Exportar imáges al álbum 'imágenes guardadas' después de descargar</value>
+  </data>
+  <data name="ExportMasterKeyText" xml:space="preserve">
+    <value>Exportar clave maestra</value>
+  </data>
+  <data name="CurrentPinLockWatermark" xml:space="preserve">
+    <value>tu PIN de bloqueo actual</value>
+  </data>
+  <data name="MasterKey" xml:space="preserve">
+    <value>Clave Maestra</value>
+  </data>
+  <data name="MakePinLock" xml:space="preserve">
+    <value>Crear un PIN de bloqueo</value>
+  </data>
+  <data name="ChangePinLock" xml:space="preserve">
+    <value>Cambiar PIN de bloqueo</value>
+  </data>
+  <data name="NewPinLockWatermark" xml:space="preserve">
+    <value>tu nuevo PIN de bloqueo</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>cuenta</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>subscribir</value>
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value>Anual</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>total</value>
+  </data>
+  <data name="UsedSpace" xml:space="preserve">
+    <value>Espacio usado</value>
+  </data>
+  <data name="Used" xml:space="preserve">
+    <value>usado</value>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>caché</value>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>A. de banda</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>libre</value>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Espacio libre</value>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>limpiar caché</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensual</value>
+  </data>
+  <data name="NoDataToShow" xml:space="preserve">
+    <value>No hay datos
+para mostrar</value>
+  </data>
+  <data name="NoPlansToDisplay" xml:space="preserve">
+    <value>No hay planes para mostrar</value>
+  </data>
+  <data name="StorageSubscriptionPlans" xml:space="preserve">
+    <value>Espacio</value>
+  </data>
+  <data name="SortByMenuTitle" xml:space="preserve">
+    <value>ORDENAR POR</value>
+  </data>
+  <data name="SmallestSortOption" xml:space="preserve">
+    <value>el más pequeño</value>
+  </data>
+  <data name="FilesDescendingSortOption" xml:space="preserve">
+    <value>archivos (descendente)</value>
+  </data>
+  <data name="FilesAscendingSortOption" xml:space="preserve">
+    <value>archivos (ascendente)</value>
+  </data>
+  <data name="LargestSortOption" xml:space="preserve">
+    <value>el más grandeme</value>
+  </data>
+  <data name="NewestSortOption" xml:space="preserve">
+    <value>el más nuevo</value>
+  </data>
+  <data name="NameDescendingSortOption" xml:space="preserve">
+    <value>nombre (descendente)</value>
+  </data>
+  <data name="NameAscendingSortOption" xml:space="preserve">
+    <value>nombre (ascendente)</value>
+  </data>
+  <data name="OldestSortOption" xml:space="preserve">
+    <value>el más antigüo</value>
   </data>
 </root>

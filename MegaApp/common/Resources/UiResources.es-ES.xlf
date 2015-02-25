@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -14,10 +14,214 @@
           <source>PRO Lite</source>
           <target state="signed-off" state-qualifier="mt-suggestion">PRO Lite</target>
         </trans-unit>
-        <trans-unit id="Resx/Storage" translate="yes" xml:space="preserve">
-          <source>storage</source>
-          <target state="translated" state-qualifier="tm-suggestion">almacenamiento</target>
+        <trans-unit id="Resx/Accept" translate="yes" xml:space="preserve">
+          <source>accept</source>
+          <target state="translated">aceptar</target>
         </trans-unit>
+        <trans-unit id="Resx/Account" translate="yes" xml:space="preserve">
+          <source>account</source>
+          <target state="translated">cuenta</target>
+        </trans-unit>
+        <trans-unit id="Resx/Acknowledgements" translate="yes" xml:space="preserve">
+          <source>Acknowledgements</source>
+          <target state="translated">Agradecimientos</target>
+        </trans-unit>
+        <trans-unit id="Resx/AcknowledgementsTitle" translate="yes" xml:space="preserve">
+          <source>acknowledgements</source>
+          <target state="translated">agradecimientos</target>
+        </trans-unit>
+        <trans-unit id="Resx/Annually" translate="yes" xml:space="preserve">
+          <source>Annually</source>
+          <target state="translated">Anual</target>
+        </trans-unit>
+        <trans-unit id="Resx/Version" translate="yes" xml:space="preserve">
+          <source>version</source>
+          <target state="translated">versión</target>
+        </trans-unit>
+        <trans-unit id="Resx/View" translate="yes" xml:space="preserve">
+          <source>view</source>
+          <target state="translated">ver</target>
+        </trans-unit>
+        <trans-unit id="Resx/TermsOfService" translate="yes" xml:space="preserve">
+          <source>Terms of service</source>
+          <target state="translated">Términos de servicio</target>
+        </trans-unit>
+        <trans-unit id="Resx/Total" translate="yes" xml:space="preserve">
+          <source>total</source>
+          <target state="translated">total</target>
+        </trans-unit>
+        <trans-unit id="Resx/Uploads" translate="yes" xml:space="preserve">
+          <source>uploads</source>
+          <target state="translated">subidas</target>
+        </trans-unit>
+        <trans-unit id="Resx/UsedSpace" translate="yes" xml:space="preserve">
+          <source>Used space</source>
+          <target state="translated">Espacio usado</target>
+        </trans-unit>
+        <trans-unit id="Resx/Used" translate="yes" xml:space="preserve">
+          <source>used</source>
+          <target state="translated">usado</target>
+        </trans-unit>
+        <trans-unit id="Resx/PrivacyPolicy" translate="yes" xml:space="preserve">
+          <source>Privacy policy</source>
+          <target state="translated">Política de privacidad</target>
+        </trans-unit>
+        <trans-unit id="Resx/SortByMenuTitle" translate="yes" xml:space="preserve">
+          <source>SORT BY</source>
+          <target state="translated">ORDENAR POR</target>
+        </trans-unit>
+        <trans-unit id="Resx/SmallestSortOption" translate="yes" xml:space="preserve">
+          <source>smallest</source>
+          <target state="translated">el más pequeño</target>
+        </trans-unit>
+        <trans-unit id="Resx/StartResumeAll" translate="yes" xml:space="preserve">
+          <source>start/resume all</source>
+          <target state="translated">reanudar todo</target>
+        </trans-unit>
+        <trans-unit id="Resx/StorageSubscriptionPlans" translate="yes" xml:space="preserve">
+          <source>Storage</source>
+          <target state="translated">Espacio</target>
+        </trans-unit>
+        <trans-unit id="Resx/Subscribe" translate="yes" xml:space="preserve">
+          <source>subscribe</source>
+          <target state="translated">subscribir</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppVersionText" translate="yes" xml:space="preserve">
+          <source>App version</source>
+          <target state="translated">Versión de la aplicación</target>
+        </trans-unit>
+        <trans-unit id="Resx/AskDownloadLocationText" translate="yes" xml:space="preserve">
+          <source>Always ask for download location</source>
+          <target state="translated">Siempre pedir ubicación de descarga</target>
+        </trans-unit>
+        <trans-unit id="Resx/Cache" translate="yes" xml:space="preserve">
+          <source>cache</source>
+          <target state="translated">caché</target>
+        </trans-unit>
+        <trans-unit id="Resx/Bandwidth" translate="yes" xml:space="preserve">
+          <source>Bandwidth</source>
+          <target state="translated">A. de banda</target>
+        </trans-unit>
+        <trans-unit id="Resx/Available" translate="yes" xml:space="preserve">
+          <source>available</source>
+          <target state="translated">libre</target>
+        </trans-unit>
+        <trans-unit id="Resx/CancelAll" translate="yes" xml:space="preserve">
+          <source>cancel all</source>
+          <target state="translated">cancelar todo</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClearSelection" translate="yes" xml:space="preserve">
+          <source>clear selection</source>
+          <target state="translated">limpiar selección</target>
+        </trans-unit>
+        <trans-unit id="Resx/Clipboard" translate="yes" xml:space="preserve">
+          <source>clipboard</source>
+          <target state="translated">portapapeles</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockWatermark" translate="yes" xml:space="preserve">
+          <source>your current PIN lock</source>
+          <target state="translated">tu PIN de bloqueo actual</target>
+        </trans-unit>
+        <trans-unit id="Resx/DefaultDownloadLocationText" translate="yes" xml:space="preserve">
+          <source>Default download location</source>
+          <target state="translated">Ubicación de descarga por defecto</target>
+        </trans-unit>
+        <trans-unit id="Resx/Downloads" translate="yes" xml:space="preserve">
+          <source>downloads</source>
+          <target state="translated">descargas</target>
+        </trans-unit>
+        <trans-unit id="Resx/ExportMasterKeyText" translate="yes" xml:space="preserve">
+          <source>Export masterkey</source>
+          <target state="translated">Exportar clave maestra</target>
+        </trans-unit>
+        <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" xml:space="preserve">
+          <source>Export images to 'saved pictures' album after download</source>
+          <target state="translated">Exportar imáges al álbum 'imágenes guardadas' después de descargar</target>
+        </trans-unit>
+        <trans-unit id="Resx/FilesDescendingSortOption" translate="yes" xml:space="preserve">
+          <source>files (descending)</source>
+          <target state="translated">archivos (descendente)</target>
+        </trans-unit>
+        <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" xml:space="preserve">
+          <source>files (ascending)</source>
+          <target state="translated">archivos (ascendente)</target>
+        </trans-unit>
+        <trans-unit id="Resx/FreeSpace" translate="yes" xml:space="preserve">
+          <source>Free space</source>
+          <target state="translated">Espacio libre</target>
+        </trans-unit>
+        <trans-unit id="Resx/LargestSortOption" translate="yes" xml:space="preserve">
+          <source>largest</source>
+          <target state="translated">el más grandeme</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterKey" translate="yes" xml:space="preserve">
+          <source>MasterKey</source>
+          <target state="translated">Clave Maestra</target>
+        </trans-unit>
+        <trans-unit id="Resx/MakePinLock" translate="yes" xml:space="preserve">
+          <source>Make a PIN Lock</source>
+          <target state="translated">Crear un PIN de bloqueo</target>
+        </trans-unit>
+        <trans-unit id="Resx/Capture" translate="yes" xml:space="preserve">
+          <source>capture</source>
+          <target state="translated">capturar</target>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePinLock" translate="yes" xml:space="preserve">
+          <source>Change PIN Lock</source>
+          <target state="translated">Cambiar PIN de bloqueo</target>
+        </trans-unit>
+        <trans-unit id="Resx/CleanUpTransfers" translate="yes" xml:space="preserve">
+          <source>clean up transfers</source>
+          <target state="translated">limpiar transf.</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClearCache" translate="yes" xml:space="preserve">
+          <source>clear cache</source>
+          <target state="translated">limpiar caché</target>
+        </trans-unit>
+        <trans-unit id="Resx/MEGA_SDK" translate="no" xml:space="preserve">
+          <source>MEGA SDK</source>
+          <target state="signed-off">MEGA SDK</target>
+        </trans-unit>
+        <trans-unit id="Resx/Monthly" translate="yes" xml:space="preserve">
+          <source>Monthly</source>
+          <target state="translated">Mensual</target>
+        </trans-unit>
+        <trans-unit id="Resx/NewestSortOption" translate="yes" xml:space="preserve">
+          <source>newest</source>
+          <target state="translated">el más nuevo</target>
+        </trans-unit>
+        <trans-unit id="Resx/NameDescendingSortOption" translate="yes" xml:space="preserve">
+          <source>name (descending)</source>
+          <target state="translated">nombre (descendente)</target>
+        </trans-unit>
+        <trans-unit id="Resx/NameAscendingSortOption" translate="yes" xml:space="preserve">
+          <source>name (ascending)</source>
+          <target state="translated">nombre (ascendente)</target>
+        </trans-unit>
+        <trans-unit id="Resx/NewPinLockWatermark" translate="yes" xml:space="preserve">
+          <source>your new PIN lock</source>
+          <target state="translated">tu nuevo PIN de bloqueo</target>
+        </trans-unit>
+        <trans-unit id="Resx/NoDataToShow" translate="yes" xml:space="preserve">
+          <source>No data to show</source>
+          <target state="translated">No hay datos
+para mostrar</target>
+        </trans-unit>
+        <trans-unit id="Resx/NoPlansToDisplay" translate="yes" xml:space="preserve">
+          <source>No plans to display</source>
+          <target state="translated">No hay planes para mostrar</target>
+        </trans-unit>
+        <trans-unit id="Resx/OldestSortOption" translate="yes" xml:space="preserve">
+          <source>oldest</source>
+          <target state="translated">el más antigüo</target>
+        </trans-unit>
+        <trans-unit id="Resx/PauseAll" translate="yes" xml:space="preserve">
+          <source>pause all</source>
+          <target state="translated">pausar todo</target>
+        </trans-unit>
+        <trans-unit id="Resx/Storage" translate="yes" xml:space="preserve">
+          <source>Storage</source>
+          <target state="translated">Almacenamiento</target></trans-unit>
         <trans-unit id="Resx/ImageUpload" translate="yes" xml:space="preserve">
           <source>Image upload</source>
           <target state="translated">Subir imagen</target>
@@ -68,7 +272,7 @@
         </trans-unit>
         <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" xml:space="preserve">
           <source>confirm your PIN lock</source>
-          <target state="translated">Confirma tu PIN de bloqueo</target>
+          <target state="translated">confirma tu PIN de bloqueo</target>
         </trans-unit>
         <trans-unit id="Resx/ChangePinLockButton" translate="yes" xml:space="preserve">
           <source>Change PIN Lock</source>
@@ -128,7 +332,7 @@
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" xml:space="preserve">
           <source>about</source>
-          <target state="translated">acerca de nosotros</target>
+          <target state="translated">acerca de</target>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Pausing" translate="yes" xml:space="preserve">
           <source>Pausing...</source>

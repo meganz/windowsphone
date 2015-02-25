@@ -97,6 +97,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cache has been succesfully cleared.
+        /// </summary>
+        public static string CacheCleared {
+            get {
+                return ResourceManager.GetString("CacheCleared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cache cleared.
+        /// </summary>
+        public static string CacheCleared_Title {
+            get {
+                return ResourceManager.GetString("CacheCleared_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
+        /// </summary>
+        public static string ClipboardFailed {
+            get {
+                return ResourceManager.GetString("ClipboardFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clipboard failed.
+        /// </summary>
+        public static string ClipboardFailed_Title {
+            get {
+                return ResourceManager.GetString("ClipboardFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to confirm account. Please try again. [{0}].
         /// </summary>
         public static string ConfirmAccountFailed {
@@ -237,6 +273,24 @@ namespace MegaApp.Resources {
         public static string CreateFolderSuccess_Title {
             get {
                 return ResourceManager.GetString("CreateFolderSuccess_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Current PIN lock is not correct or does not match.
+        /// </summary>
+        public static string CurrentPinLockCodeDoNotMatch {
+            get {
+                return ResourceManager.GetString("CurrentPinLockCodeDoNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Current PIN lock no match.
+        /// </summary>
+        public static string CurrentPinLockCodeDoNotMatch_Title {
+            get {
+                return ResourceManager.GetString("CurrentPinLockCodeDoNotMatch_Title", resourceCulture);
             }
         }
         
@@ -579,6 +633,42 @@ namespace MegaApp.Resources {
         public static string LogoutFailed_Title {
             get {
                 return ResourceManager.GetString("LogoutFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Masterkey copied to clipboard.
+        /// </summary>
+        public static string MasterkeyCopied {
+            get {
+                return ResourceManager.GetString("MasterkeyCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Masterkey copied.
+        /// </summary>
+        public static string MasterkeyCopied_Title {
+            get {
+                return ResourceManager.GetString("MasterkeyCopied_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Not enough free memory space to complete this operation. The app will shutdown now.
+        /// </summary>
+        public static string MemoryLimitError {
+            get {
+                return ResourceManager.GetString("MemoryLimitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Memory Limit.
+        /// </summary>
+        public static string MemoryLimitError_Title {
+            get {
+                return ResourceManager.GetString("MemoryLimitError_Title", resourceCulture);
             }
         }
         
@@ -936,6 +1026,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a PIN lock must be at least 4 digits.
+        /// </summary>
+        public static string PinLockTooShort {
+            get {
+                return ResourceManager.GetString("PinLockTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PIN lock too short.
+        /// </summary>
+        public static string PinLockTooShort_Title {
+            get {
+                return ResourceManager.GetString("PinLockTooShort_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to prepare file: {0} for upload.
         /// </summary>
         public static string PrepareFileForUploadFailed {
@@ -977,6 +1085,33 @@ namespace MegaApp.Resources {
         public static string QuestionAskedDownloadOption {
             get {
                 return ResourceManager.GetString("QuestionAskedDownloadOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a no, only local.
+        /// </summary>
+        public static string QuestionAskedDownloadOption_NoButton {
+            get {
+                return ResourceManager.GetString("QuestionAskedDownloadOption_NoButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Download options.
+        /// </summary>
+        public static string QuestionAskedDownloadOption_Title {
+            get {
+                return ResourceManager.GetString("QuestionAskedDownloadOption_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a yes, export.
+        /// </summary>
+        public static string QuestionAskedDownloadOption_YesButton {
+            get {
+                return ResourceManager.GetString("QuestionAskedDownloadOption_YesButton", resourceCulture);
             }
         }
         
@@ -1071,7 +1206,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and your new password.
+        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and password.
         /// </summary>
         public static string RequiredFieldsCreateAccount {
             get {
@@ -1139,6 +1274,15 @@ namespace MegaApp.Resources {
         public static string SessionIDError_Title {
             get {
                 return ResourceManager.GetString("SessionIDError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unknown resolution type.
+        /// </summary>
+        public static string UnknownResolutionType {
+            get {
+                return ResourceManager.GetString("UnknownResolutionType", resourceCulture);
             }
         }
         

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -14,6 +14,69 @@
           <source>Unauthorized access</source>
           <target state="translated" state-qualifier="mt-suggestion">Acceso no autorizado</target>
         </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" xml:space="preserve">
+          <source>Clipboard failed</source>
+          <target state="translated">Fallo al copiar</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy masterkey to clipboard. Please try again</source>
+          <target state="translated">No se pudo copiar la clave maestra al portapapeles. Por favor, inténtalo de nuevo</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock too short</source>
+          <target state="translated">PIN de bloqueo demasiado corto</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared_Title" translate="yes" xml:space="preserve">
+          <source>Cache cleared</source>
+          <target state="translated">Caché limpiada</target>
+        </trans-unit>
+        <trans-unit id="Resx/UnknownResolutionType" translate="yes" xml:space="preserve">
+          <source>Unknown resolution type</source>
+          <target state="translated">Tipo de resolución desconocido</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
+          <source>yes, export</source>
+          <target state="translated">sí, exportar</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" xml:space="preserve">
+          <source>Download options</source>
+          <target state="translated">Opciones de descarga</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" xml:space="preserve">
+          <source>no, only local</source>
+          <target state="translated">no, sólo local</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" xml:space="preserve">
+          <source>Memory Limit</source>
+          <target state="translated">Límite de memoria</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError" translate="yes" xml:space="preserve">
+          <source>Not enough free memory space to complete this operation. The app will shutdown now</source>
+          <target state="translated">No hay sufiente espacio libre en la memoria para completar esta operación. La aplicación se cerrará ahora</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared" translate="yes" xml:space="preserve">
+          <source>Cache has been succesfully cleared</source>
+          <target state="translated">La caché se ha limpiado con éxito</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort" translate="yes" xml:space="preserve">
+          <source>PIN lock must be at least 4 digits</source>
+          <target state="translated">El PIN de bloqueo debe tener al menos 4 dígitos</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>Current PIN lock no match</source>
+          <target state="translated">El PIN de bloqueo actual no coincide</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" xml:space="preserve">
+          <source>Masterkey copied</source>
+          <target state="translated">Clave maestra copiada</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied" translate="yes" xml:space="preserve">
+          <source>Masterkey copied to clipboard</source>
+          <target state="translated">Clave maestra copiada al portapapeles</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Current PIN lock is not correct or does not match</source>
+          <target state="translated">El PIN de bloqueo actual es incorrecto o no coincide</target></trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" xml:space="preserve">
           <source>You don't have permission to copy this file type into the destination folder</source>
           <target state="translated">No tienes permisos para copiar este tipo de archivo en la carpeta de destino</target>
@@ -296,9 +359,8 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
           <note from="MultilingualBuild" annotates="source" priority="2">Message when required fields for login are not filled in</note>
           </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" xml:space="preserve">
-          <source>Please fill in your name, e-mail address and your new password</source>
-          <target state="translated">Por favor, introduce tu nombre, e-mail y la contraseña nueva</target>
-        </trans-unit>
+          <source>Please fill in your name, e-mail address and password</source>
+          <target state="translated">Por favor, introduce tu nombre, e-mail y contraseña</target></trans-unit>
         <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" xml:space="preserve">
           <source>Please fill in your choosen password</source>
           <target state="translated">Por favor, introduce la contraseña elegida</target>
