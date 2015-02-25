@@ -60,30 +60,25 @@ namespace MegaApp.Services
 
             // Only allows download directly if is an image file
             if (isImage)
-                buttons = new string[] { "import", "download" };
+                buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
             else
-                buttons = new string[] { "import" };
+                buttons = new string[] { UiResources.Import.ToLower() };
 
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: buttons,
-                title: "Download MEGA link",
+                title: UiResources.LinkOptions,
                 message: publicNode.getName()
                 );
 
             switch (closedEventArgs.ButtonIndex)
             {
-                // Import button clicked
-                case 0:
-                    {
-                        cloudDrive.ImportLink(link);
-                        break;
-                    }
-                // Download button clicked
-                case 1:
-                    {
-                        cloudDrive.DownloadLink(publicNode);
-                        break;
-                    }
+                case 0: // Import button clicked
+                    cloudDrive.ImportLink(link);
+                    break;
+
+                case 1: // Download button clicked
+                    cloudDrive.DownloadLink(publicNode);
+                    break;
             }
         }
         #elif WINDOWS_PHONE_81
@@ -97,18 +92,13 @@ namespace MegaApp.Services
 
             switch (closedEventArgs.ButtonIndex)
             {
-                // Import button clicked
-                case 0:
-                    {
-                        cloudDrive.ImportLink(link);
-                        break;
-                    }
-                // Download button clicked
-                case 1:
-                    {
-                        cloudDrive.DownloadLink(publicNode);
-                        break;
-                    }
+                case 0: // Import button clicked
+                    cloudDrive.ImportLink(link);
+                    break;
+
+                case 1: // Download button clicked
+                    cloudDrive.DownloadLink(publicNode);
+                    break;
             }
         }
         #endif
@@ -294,7 +284,7 @@ namespace MegaApp.Services
 
             var headerText = new TextBlock()
             {
-                Text = "SORT BY",
+                Text = UiResources.SortByMenuTitle,
                 HorizontalAlignment = HorizontalAlignment.Left,
                 FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
                 FontWeight = FontWeights.SemiBold,
@@ -304,7 +294,7 @@ namespace MegaApp.Services
             var sortItems = new List<AdvancedMenuItem>();
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (ascending)",
+                Name = UiResources.FilesAscendingSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -318,7 +308,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (descending)",
+                Name = UiResources.FilesDescendingSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -332,7 +322,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "largest",
+                Name = UiResources.LargestSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -346,7 +336,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "smallest",
+                Name = UiResources.SmallestSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -360,7 +350,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "newest",
+                Name = UiResources.NewestSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -374,7 +364,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "oldest",
+                Name = UiResources.OldestSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -388,7 +378,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (ascending)",
+                Name = UiResources.NameAscendingSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -402,7 +392,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (descending)",
+                Name = UiResources.NameDescendingSortOption,
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -592,22 +582,22 @@ namespace MegaApp.Services
 
             if (isChange)
             {
-                titleLabel.Text = "Change PIN Lock";
+                titleLabel.Text = UiResources.ChangePinLock;
                 currentPinLock = new NumericPasswordBox()
                 {
-                    Watermark = "current PIN Lock",
+                    Watermark = UiResources.CurrentPinLockWatermark,
                     ClearButtonVisibility = Visibility.Visible
                 };
                 pinLockStackPanel.Children.Add(currentPinLock);
             }
             else
             {
-                titleLabel.Text = "Make a PIN Lock";
+                titleLabel.Text = UiResources.MakePinLock;
             }
 
             var pinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.PinLockWatermark,
+                Watermark = UiResources.NewPinLockWatermark,
                 ClearButtonVisibility = Visibility.Visible
             };
 
@@ -633,8 +623,8 @@ namespace MegaApp.Services
 
                         if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
                         {
-                            MessageBox.Show("Current PIN lock does not match", "Current PIN lock no match",
-                                MessageBoxButton.OK);
+                            MessageBox.Show(AppMessages.CurrentPinLockCodeDoNotMatch, 
+                                AppMessages.CurrentPinLockCodeDoNotMatch_Title, MessageBoxButton.OK);
                             return;
                         }
                     }
@@ -643,7 +633,7 @@ namespace MegaApp.Services
 
                 if (pinLock.Password.Length < 4)
                 {
-                    MessageBox.Show("PIN lock must be at least 4 digits", "PIN lock too short",
+                    MessageBox.Show(AppMessages.PinLockTooShort, AppMessages.PinLockTooShort_Title,
                                 MessageBoxButton.OK);
                     return;
                 }
@@ -714,7 +704,7 @@ namespace MegaApp.Services
         {
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: new string[] { UiResources.CopyButton, UiResources.CancelButton },
-                title: "MasterKey",
+                title: UiResources.MasterKey,
                 message: masterkey
                 );
 

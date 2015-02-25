@@ -117,4 +117,435 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeTermsOfUse" xml:space="preserve">
+    <value>Debes aceptar las condiciones de uso</value>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>Acceso no autorizado</value>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>No tienes permisos para copiar este tipo de archivo en la carpeta de destino</value>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>Fallo al copiar el archivo</value>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>No se pudo copiar el archivo seleccionado: {0}</value>
+  </data>
+  <data name="SessionIDError_Title" xml:space="preserve">
+    <value>Desconectado</value>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>Error preparando el archivo</value>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>No se pudo preparar el archivo: {0} para la subida</value>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>No has seleccionado una ubicación de descarga predeterminada para los archivos.
+
+Para continuar con la descarga, por favor selecciona una carpeta de destino o ve a preferencias para configurar la ubicación de descarga predeterminada.</value>
+  </data>
+  <data name="OverquotaAlert_Title" xml:space="preserve">
+    <value>¡Límite superado!</value>
+  </data>
+  <data name="OverquotaAlert" xml:space="preserve">
+    <value>Operación no permitida, se superará el límite de almacenamiento de tu cuenta. ¿Deseas actualizar tu cuenta?</value>
+  </data>
+  <data name="SessionIDError" xml:space="preserve">
+    <value>Se ha cerrado la sesión de este dispositivo desde otra ubicación</value>
+  </data>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>Los códigos de bloqueo PIN no coinciden</value>
+  </data>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>Los códigos de bloqueo PIN no coinciden. Por favor, vuelve a escribirlos y asegúrate de que son iguales</value>
+  </data>
+  <data name="LoadNodesFailed_Title" xml:space="preserve">
+    <value>Error al cargar</value>
+  </data>
+  <data name="LoadNodesFailed" xml:space="preserve">
+    <value>No se pudieron cargar los archivos y carpetas de MEGA. Por favor, inténtalo de nuevo o haz clic en actualizar.</value>
+  </data>
+  <data name="UploadSelfieFailed_Title" xml:space="preserve">
+    <value>Error al subir el selfie</value>
+  </data>
+  <data name="UploadSelfieFailed" xml:space="preserve">
+    <value>No se pudo subir la imagen selfie</value>
+  </data>
+  <data name="OpenFileFailed_Title" xml:space="preserve">
+    <value>Error al abrir el archivo</value>
+  </data>
+  <data name="OpenFileFailed" xml:space="preserve">
+    <value>No se pudo abrir el archivo seleccionado</value>
+  </data>
+  <data name="FileNotFound_Title" xml:space="preserve">
+    <value>No se encuentra el archivo</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>No se pudo encontrar el archivo seleccionado</value>
+  </data>
+  <data name="PhotoUploadError_Title" xml:space="preserve">
+    <value>Error al subir la foto</value>
+  </data>
+  <data name="PhotoUploadError" xml:space="preserve">
+    <value>No se pudo subir la foto</value>
+  </data>
+  <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
+    <value>Error preparando la imagen</value>
+  </data>
+  <data name="PrepareImageForUploadFailed" xml:space="preserve">
+    <value>No se pudo preparar la imagen: {0} para la subida</value>
+  </data>
+  <data name="MinimalPictureSelection_Title" xml:space="preserve">
+    <value>No se seleccionó ninguna imagen</value>
+  </data>
+  <data name="MinimalPictureSelection" xml:space="preserve">
+    <value>Por favor, selecciona mínimo 1 imagen para subir</value>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>Error al reanudar</value>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>No se pudieron reanudar las transferencias</value>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>Error al pausar</value>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>No se pudieron pausar las transferencias</value>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>¿Quieres exportar automáticamente los archivos de imagen a tu álbum de fotos después de la descarga? Puedes cambiar esta opción en la página ajustes posteriormente. Otros tipos de archivo sólo se almacenará en el almacenamiento local de la aplicación.</value>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>Número de descargas</value>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Has seleccionado más de 100 elementos ({0}) para descargar. ¿Desea continuar?</value>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>Contraseña incorrecta</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>La contraseña escrita es incorrecta</value>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>Cuenta ya confirmada</value>
+  </data>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>La cuenta ya está confirmada. Ahora puede iniciar la sesión.</value>
+  </data>
+  <data name="PendingTransfersExit_Title" xml:space="preserve">
+    <value>Transferencias pendientes</value>
+  </data>
+  <data name="PendingTransfersExit" xml:space="preserve">
+    <value>Tienes {0} transferencias pendientes. Las transferencias pendientes se cancelarán. ¿Estás seguro de que quieres salir?</value>
+  </data>
+  <data name="PendingTransfersLogout_Title" xml:space="preserve">
+    <value>Transferencias pendientes</value>
+  </data>
+  <data name="PendingTransfersLogout" xml:space="preserve">
+    <value>Tienes {0} transferencias pendientes. Las transferencias pendientes se cancelarán. ¿Estás seguro de que quieres cerrar la sesión?</value>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>Elementos movidos</value>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>{0} elementos movidos a la Papelera</value>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>¿Mover elementos?</value>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>¿Estás seguro de que quieres mover {0} elementos a la Papelera?</value>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>Elemento movido</value>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>Elemento movido correctamente a la Papelera</value>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>¿Mover a la Papelera?</value>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>¿Estás seguro de que quieres mover {0} a la Papelera?</value>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>Error al mover a la Papelera</value>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>No se pudo mover el elemento a la Papelera. Vuelve a intentarlo</value>
+  </data>
+  <data name="MultiRemoveSucces_Title" xml:space="preserve">
+    <value>Elementos eliminados</value>
+  </data>
+  <data name="MultiRemoveSucces" xml:space="preserve">
+    <value>{0} elementos eliminados</value>
+  </data>
+  <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
+    <value>¿Eliminar elementos?</value>
+  </data>
+  <data name="MultiSelectRemoveQuestion" xml:space="preserve">
+    <value>¿Estás seguro de que quieres eliminar {0} elementos?</value>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>Error al cerrar la sesión</value>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>No se pudo cerrar la sesión. Vuelve a intentarlo. [{0}]</value>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>Cierre de sesión</value>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>Se ha cerrado la sesión correctamente</value>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>Error recuperando detalles de la cuenta</value>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>No se pudieron recuperar los detalles de la cuenta. Vuelve a intentarlo. [{0}]</value>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>Error obteniendo miniatura</value>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>No se pudo recuperar la miniatura [{0}]</value>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>Sin conexión</value>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>No estás conectado a MEGA para realizar esta acción. Por favor, vuelve a iniciar sesión</value>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>Guardar la imagen en el álbum</value>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>¿Exportar la imagen actual al álbum 'imágenes guardadas'?</value>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>Rellena los campos obligatorios</value>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>Introduce tu e-mail y tu contraseña  de MEGA</value>
+    <comment>Message when required fields for login are not filled in</comment>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>Por favor, introduce tu nombre, e-mail y contraseña</value>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>Por favor, introduce la contraseña elegida</value>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>Error al renombrar</value>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>No se pudo renombrar el elemento</value>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>Elemento eliminado</value>
+  </data>
+  <data name="RemoveNodeSucces" xml:space="preserve">
+    <value>Elemento eliminado correctamente</value>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>Error al eliminar</value>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>No se pudo eliminar el elemento</value>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>¿Eliminar?</value>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>¿Estás seguro de que deseas eliminar {0}?</value>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>Imagen guardada</value>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>La imagen se guardó en el álbum de fotografías</value>
+  </data>
+  <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
+    <value>Las contraseñas no coinciden</value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden. Por favor, vuelve a escribirlas y asegúrate de que son iguales</value>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>Error al mover</value>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>No se pudo mover el elemento. Vuelve a intentarlo</value>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>Error al mover</value>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>La arpeta de destino es la misma que la carpeta de origen. Mover cancelado</value>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>Error al iniciar sesión</value>
+    <comment>Title when login to the MEGA web service api failed</comment>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>No se pudo iniciar sesión en el Disco en la nube de MEGA. Vuelve a intentarlo. [{0}]</value>
+    <comment>Message when login to the MEGA web service api failed</comment>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>Copiado al portapapeles</value>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>El enlace MEGA se copió en el portapapeles</value>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>Error importando archivo</value>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>No se pudo importar el archivo</value>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>Error al guardar la imagen</value>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>No se pudo exportar la imagen al álbum 'imágenes guardadas'. Vuelve a intentarlo</value>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>Imagen guardada</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Imagen exportada satisfactoriamente al álbum 'imágenes guardadas'</value>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>Error obteniendo la vista previa</value>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>No se pudo recuperar la vista previa</value>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>Error obteniendo enlace</value>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>No se pudo obtener el enlace</value>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>Error al crear la carpeta</value>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>No se pudo crear la carpeta. Vuelve a intentarlo</value>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>Error obteniendo datos</value>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>No se pudieron recuperar archivos y carpetas de MEGA. Vuelve a intentarlo.</value>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>Error de descarga</value>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>Error al descargar el archivo. Vuelve a intentarlo. [{0}]</value>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>Error recuperando enlace</value>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>No se pudo recuperar un enlace de descarga. Vuelve a intentarlo</value>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>Error al eliminar</value>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>No se pudo eliminar el elemento. Vuelve a intentarlo</value>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>Carpeta creada</value>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>Carpeta creada correctamente</value>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>Error al crear la carpeta</value>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>No se pudo crear la carpeta</value>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>Error al crear cuenta</value>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>Error de creación de la cuenta del Disco en la Nube de MEGA. Vuelve a intentarlo. [{0}]</value>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>Confirmación necesaria</value>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>Comprueba tu e-mail y haz clic en el enlace para iniciar sesión y confirma tu cuenta</value>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>Cuenta activada</value>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>Tu cuenta ha sido creada, confirmada y activada. Se iniciará sesión automáticamente.</value>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>Fallo al confirmar la cuenta</value>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>No se pudo confirmar la cuenta. Vuelve a intentarlo. [{0}]</value>
+  </data>
+  <data name="AgreeTermsOfUse_Title" xml:space="preserve">
+    <value>Condiciones de uso</value>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN de bloqueo demasiado corto</value>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>El PIN de bloqueo debe tener al menos 4 dígitos</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>El PIN de bloqueo actual no coincide</value>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>El PIN de bloqueo actual es incorrecto o no coincide</value>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>Fallo al copiar</value>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>No se pudo copiar la clave maestra al portapapeles. Por favor, inténtalo de nuevo</value>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>Clave maestra copiada</value>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>Clave maestra copiada al portapapeles</value>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>Caché limpiada</value>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>La caché se ha limpiado con éxito</value>
+  </data>
+  <data name="UnknownResolutionType" xml:space="preserve">
+    <value>Tipo de resolución desconocido</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>sí, exportar</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>Opciones de descarga</value>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>no, sólo local</value>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>Límite de memoria</value>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>No hay sufiente espacio libre en la memoria para completar esta operación. La aplicación se cerrará ahora</value>
+  </data>
 </root>

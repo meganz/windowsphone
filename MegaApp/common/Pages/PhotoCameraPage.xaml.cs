@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MegaApp.Enums;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Devices;
 using Microsoft.Phone.Controls;
@@ -42,7 +43,14 @@ namespace MegaApp.Pages
         {
             InitializeComponent();
 
+            SetApplicationBar();
+
             VideoCanvas.Tap += VideoCanvasOnTap;
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Capture;
         }
 
         private async void VideoCanvasOnTap(object sender, GestureEventArgs e)

@@ -45,7 +45,7 @@ namespace MegaApp.Models
         public void ClearCache()
         {
             AppService.ClearAppCache(false);
-            MessageBox.Show("Cache has been succesfully cleared", "Cache cleared", MessageBoxButton.OK);
+            MessageBox.Show(AppMessages.CacheCleared, AppMessages.CacheCleared_Title, MessageBoxButton.OK);
             AccountDetails.CacheSize = AppService.GetAppCacheSize();
         }
 

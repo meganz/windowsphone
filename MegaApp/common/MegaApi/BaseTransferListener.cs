@@ -21,15 +21,15 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            switch(e.getErrorCode())
             {
-                switch(e.getErrorCode())
-                {
-                    case MErrorType.API_OK:
-                        break;
+                case MErrorType.API_OK:
+                    break;
 
-                    case MErrorType.API_EOVERQUOTA:
+                case MErrorType.API_EOVERQUOTA:
 
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
                         // Stop all upload transfers
                         if (App.MegaTransfers.Count > 0)
                         {
@@ -47,13 +47,10 @@ namespace MegaApp.MegaApi
                         // TODO: Disable the "camera upload" (when availabe)
                         //**************************************************
 
-
-                        // User notification message.
-                        Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
-
-                        break;
-                }                
-            });
+                        DialogService.ShowOverquotaAlert();
+                    });
+                    break;
+            }
         }
 
         public virtual void onTransferStart(MegaSDK api, MTransfer transfer)

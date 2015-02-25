@@ -4,6 +4,7 @@ using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using System;
 using System.Windows;
 using System.Windows.Navigation;
@@ -21,6 +22,13 @@ namespace MegaApp.Pages
             this.DataContext = _loginViewModel;
 
             InitializeComponent();
+
+            SetApplicationBar();
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.LoginText;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
