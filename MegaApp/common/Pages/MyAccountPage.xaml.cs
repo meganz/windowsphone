@@ -83,7 +83,7 @@ namespace MegaApp.Pages
 
         private void OnSelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            LstProducts.SelectedItem = null;
+            //LstProducts.SelectedItem = null;
         }
         
     }
