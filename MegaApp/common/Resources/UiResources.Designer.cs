@@ -466,6 +466,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Download location.
+        /// </summary>
+        public static string DownloadLocation {
+            get {
+                return ResourceManager.GetString("DownloadLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Downloading....
         /// </summary>
         public static string DownloadNode {
@@ -1047,6 +1056,15 @@ namespace MegaApp.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a select folder.
+        /// </summary>
+        public static string SelectFolder {
+            get {
+                return ResourceManager.GetString("SelectFolder", resourceCulture);
             }
         }
         

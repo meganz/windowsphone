@@ -13,8 +13,7 @@
     <AssemblyName>MegaApp</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion>
-    </SilverlightVersion>
+    <SilverlightVersion></SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>es-ES;qps-ploc</SupportedCultures>
     <XapOutputs>true</XapOutputs>
@@ -164,9 +163,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Label="MultilingualAppToolkit">
-    <MultilingualAppToolkitVersion>3.0</MultilingualAppToolkitVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\common\App.xaml.cs">
@@ -2053,14 +2049,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.qps-ploc.resx">
       <Link>Resources\AppMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.resx">
       <Link>Resources\AppMessages.resx</Link>
@@ -2072,14 +2066,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.qps-ploc.resx">
       <Link>Resources\AppResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.resx">
       <Link>Resources\AppResources.resx</Link>
@@ -2091,14 +2083,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.qps-ploc.resx">
       <Link>Resources\ProgressMessages.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.resx">
       <Link>Resources\ProgressMessages.resx</Link>
@@ -2110,14 +2100,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.qps-ploc.resx">
       <Link>Resources\SettingsResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.resx">
       <Link>Resources\SettingsResources.resx</Link>
@@ -2129,14 +2117,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.qps-ploc.resx">
       <Link>Resources\UiResources.qps-ploc.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.resx">
       <Link>Resources\UiResources.resx</Link>
@@ -2198,7 +2184,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

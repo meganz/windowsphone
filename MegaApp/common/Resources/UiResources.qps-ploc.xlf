@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -41,6 +41,14 @@
         <trans-unit id="Resx/View" translate="yes" xml:space="preserve">
           <source>view</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[6EE8F][!!_νîęŵ_!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolder" translate="yes" xml:space="preserve">
+          <source>select folder</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[2533A][!!_şèĺèčτ ƒõĺđèŗ_!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLocation" translate="yes" xml:space="preserve">
+          <source>Download location</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[E3CFF][!!_Đòẅйļòâď łôĉãţîóή_!!!!!!]</target>
         </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" xml:space="preserve">
           <source>Terms of service</source>
@@ -221,7 +229,8 @@
         <trans-unit id="Resx/Storage" translate="yes" xml:space="preserve">
           <source>Storage</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[C9748][!!_ŝťòŕãģè_!!]</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note></trans-unit>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          </trans-unit>
         <trans-unit id="Resx/ImageUpload" translate="yes" xml:space="preserve">
           <source>Image upload</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[40EA4][!!_Įмáġè ùρłôàď_!!]</target>

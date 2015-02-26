@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
+using Windows.UI.ViewManagement;
 using mega;
 using MegaApp.Enums;
 using MegaApp.Extensions;
@@ -203,6 +204,8 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgressService.SetProgressIndicator(false);
+                
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
                 TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
@@ -351,13 +354,16 @@ namespace MegaApp.Models
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            // Do nothing
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.SetProgressIndicator(true));            
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgressService.SetProgressIndicator(false);
+                
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
 
