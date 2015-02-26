@@ -148,10 +148,10 @@
 				</Grid>
 			</Grid>
 		</phone:PivotItem>
-        <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.Subscribe, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
+        <!--<phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.Subscribe, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
 			<Grid>
                 <telerikPrimitives:RadDataBoundListBox x:Name="LstProducts" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Products}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" ItemTap="OnItemTap" SelectionChanged="OnSelectionChanged"/>
 			</Grid>
-		</phone:PivotItem>
+		</phone:PivotItem>-->
 	</phone:Pivot>
 </phone:PhoneApplicationPage>

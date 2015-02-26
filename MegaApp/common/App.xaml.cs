@@ -449,6 +449,9 @@ namespace MegaApp
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.SetProgressIndicator(false));
+            
             if (e.getErrorCode() == MErrorType.API_ESID)
             {
                 // Show the login page
@@ -473,12 +476,14 @@ namespace MegaApp
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            // Not necessary
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.SetProgressIndicator(true));            
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            // Not necessary
+            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                ProgressService.SetProgressIndicator(false));
         }
 
         #endregion
