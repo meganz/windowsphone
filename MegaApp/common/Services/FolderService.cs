@@ -46,8 +46,8 @@ namespace MegaApp.Services
             if (SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation, null) == null)
             {
 
-                switch (await DialogService.ShowOptionsDialog("Download location", AppMessages.NoDownloadLocationSelected,
-                    new[] { "select folder", "preferences" }))
+                switch (await DialogService.ShowOptionsDialog(UiResources.DownloadLocation, AppMessages.NoDownloadLocationSelected,
+                    new[] { UiResources.SelectFolder, UiResources.Preferences }))
                 {
                     case -1:
                         {
