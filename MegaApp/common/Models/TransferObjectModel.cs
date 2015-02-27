@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Input;
 using Windows.UI.ViewManagement;
 using mega;
@@ -204,7 +205,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.SetProgressIndicator(false);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);
                 
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
@@ -355,14 +356,14 @@ namespace MegaApp.Models
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.SetProgressIndicator(true));            
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.SetProgressIndicator(false);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);
                 
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();

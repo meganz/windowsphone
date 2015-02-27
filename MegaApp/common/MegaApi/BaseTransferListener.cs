@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -21,6 +22,9 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]));
+
             switch(e.getErrorCode())
             {
                 case MErrorType.API_OK:
@@ -64,12 +68,14 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
         }
 
         public virtual void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
-            // No update status necessary
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]));
         }
 
         //Will be called only for transfers started by startStreaming
