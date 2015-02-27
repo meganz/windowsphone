@@ -30,17 +30,18 @@ namespace MegaApp.Services
 
         public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath, string newFileName = null)
         {
-            var file = await StorageFile.GetFileFromPathAsync(sourcePath);
-            if (file == null) return false;
-            
-            var folder = await StorageFolder.GetFolderFromPathAsync(destinationFolderPath);
-            if (folder == null) return false;
-
-            newFileName = newFileName ?? file.Name;
-                        
             StorageFile copy = null;
+
             try 
             { 
+                var file = await StorageFile.GetFileFromPathAsync(sourcePath);
+                if (file == null) return false;
+            
+                var folder = await StorageFolder.GetFolderFromPathAsync(destinationFolderPath);
+                if (folder == null) return false;
+
+                newFileName = newFileName ?? file.Name;
+
                 copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName); 
             }
             catch (UnauthorizedAccessException) 
