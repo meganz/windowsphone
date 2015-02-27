@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Shell;
+using System.Windows.Media;
 
 namespace MegaApp.Services
 {
@@ -20,6 +21,14 @@ namespace MegaApp.Services
             SystemTray.ProgressIndicator.IsVisible = true;
         }
 
+        public static bool GetProgressIndicatorVisibility()
+        {
+            if (SystemTray.ProgressIndicator == null)
+                return false;
+
+            return SystemTray.ProgressIndicator.IsVisible;
+        }
+
         public static void SetProgressBar(bool isVisible, string message = null, int max = 1, int progress = 1)
         {
             if (!isVisible)
@@ -35,6 +44,11 @@ namespace MegaApp.Services
             SystemTray.ProgressIndicator.IsIndeterminate = false;
             SystemTray.ProgressIndicator.Value = (double) progress/max;
             SystemTray.ProgressIndicator.IsVisible = true;
+        }
+
+        public static void ChangeProgressBarBackgroundColor(Color color)
+        {
+            SystemTray.BackgroundColor = color;
         }
     }
 }
