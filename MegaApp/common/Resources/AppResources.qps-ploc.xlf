@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -11,11 +11,6 @@
           <target state="translated">LeftToRight</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</note>
           </trans-unit>
-        <trans-unit id="Resx/UserAgentWP81" translate="yes" xml:space="preserve">
-          <source>MEGAWindowsPhone81/2.0.4.81</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[6AE06][!!_МÈĞÃẄîйðôẁśÞђôήè81/2.0.4.81_!!!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Agent to identify which client uses the SDK</note>
-          </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocation" translate="yes" xml:space="preserve">
           <source>please select a default download folder</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[BB375][!!_þłéâśê śéĺèčτ á đęƒàúĺт ďõŵиłõàď ƒõļđéŗ_!!!!!!!!!!!!]</target>
@@ -25,9 +20,9 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[BA5CE][!!_ђтťρś://ģįтħùв.ćóm/мęġáйź/şďķ_!!!!!!!!]</target>
         </trans-unit>
         <trans-unit id="Resx/MegaSDK_Version" translate="yes" xml:space="preserve">
-          <source>773b34c</source>
+          <source>bc74d3f</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[F9E74][!!_773в34ĉ_!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">The revision code of the SDK version used by the app</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">The revision code of the SDK version used by the app</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
         <trans-unit id="Resx/PrivacyPolicyUrl" translate="yes" xml:space="preserve">
           <source>https://mega.co.nz/mobile_privacy.html</source>
@@ -61,11 +56,6 @@
           <source>thumbnails\</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[119A3][!!_ţнùмБήâįĺş\_!!]</target>
         </trans-unit>
-        <trans-unit id="Resx/UserAgentWP80" translate="yes" xml:space="preserve">
-          <source>MEGAWindowsPhone80/2.0.3.80</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[7ACE9][!!_ΜĘĞÁẄìήđóẁśΡђòήę80/2.0.3.80_!!!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Agent to identify which client uses the SDK</note>
-          </trans-unit>
         <trans-unit id="Resx/AppKey" translate="yes" xml:space="preserve">
           <source>Z5dGhQhL</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[FF483][!!_Ź5đĠħQнĿ_!!]</target>

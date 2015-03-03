@@ -103,9 +103,14 @@ namespace MegaApp.Services
         }
         #endif
 
-        public static async void ShowOverquotaAlert()
+        // MODIFIED TEMPORARILY. WAITING FOR THE NEW PAYMENT METHODS        
+        //public static async void ShowOverquotaAlert()
+        public static void ShowOverquotaAlert()
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+            MessageBox.Show("Operation not allowed, you will exceed the storage limit of your account", 
+                AppMessages.OverquotaAlert_Title, MessageBoxButton.OK);
+            
+            /*MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
                 title: AppMessages.OverquotaAlert_Title,
                 message: AppMessages.OverquotaAlert
@@ -120,7 +125,7 @@ namespace MegaApp.Services
                 case 1: // "No" button clicked
                 default:
                     break;
-            }
+            }*/
         }
 
         public static void ShowUploadOptions(CloudDriveViewModel cloudDrive)

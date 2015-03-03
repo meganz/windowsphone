@@ -264,17 +264,11 @@ namespace MegaApp
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
             
-            // Initialize MegaSDK 
-            #if WINDOWS_PHONE_80
-                MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
-                    AppResources.UserAgentWP80, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
-                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());                
-            #elif WINDOWS_PHONE_81
-                MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
-                    AppResources.UserAgentWP81, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
-                    ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
-            #endif
-
+            // Initialize MegaSDK            
+            MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());                
+            
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk);
             // Add notifications listener. Needs a DriveViewModel
@@ -449,9 +443,6 @@ namespace MegaApp
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.SetProgressIndicator(false));
-            
             if (e.getErrorCode() == MErrorType.API_ESID)
             {
                 // Show the login page
@@ -476,14 +467,12 @@ namespace MegaApp
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.SetProgressIndicator(true));            
+            // Not necessary
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => 
-                ProgressService.SetProgressIndicator(false));
+            // Not necessary
         }
 
         #endregion
