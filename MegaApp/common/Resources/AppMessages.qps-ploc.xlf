@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -502,16 +502,17 @@ To proceed with the download please select a destination folder or go to prefere
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[25B3B][!!_Ľõģģéð ôùţ_!!]</target>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed" translate="yes" xml:space="preserve">
-          <source>Failed to copy the selected file: {0}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[FBD40][!!_₣áíĺéð тõ ċôρУ ťħé śèľêćťéđ ƒìĺę: {0}_!!!!!!!!!!!!]</target>
+          <source>Failed to copy the selected file: [{0}]</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[FBD40][!!_₣áíĺéð тõ ċôρУ ťħé śèľêćťéđ ƒìĺę: {0}_!!!!!!!!!!!!]</target><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" xml:space="preserve">
           <source>Copy file failed</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[FD8F9][!!_Čõþý ƒíľé ƒáìĺęđ_!!!!]</target>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" xml:space="preserve">
-          <source>You don't have permission to copy this file type into the destination folder</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[04C45][!!_Ŷõµ ðóи'ť ħáνè þéѓмíŝŝįôй ťõ ĉôþý τħįş ƒìĺę ťÿþê įηţõ ţћé ďéšţìήãţìóи ƒôĺðéŗ_!!!!!!!!!!!!!!!!!!!!!!]</target>
+          <source>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+Please, try to save/copy the file into the your device internal memory.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[04C45][!!_Ŷõµ ðóи'ť ħáνè þéѓмíŝŝįôй ťõ ĉôþý τħįş ƒìĺę ťÿþê įηţõ ţћé ďéšţìήãţìóи ƒôĺðéŗ_!!!!!!!!!!!!!!!!!!!!!!]</target><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" xml:space="preserve">
           <source>Unauthorized access</source>
@@ -536,6 +537,22 @@ To proceed with the download please select a destination folder or go to prefere
         <trans-unit id="Resx/UnknownResolutionType" translate="yes" xml:space="preserve">
           <source>Unknown resolution type</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[2F253][!!_Üиĸηõẅη ѓèšółùťìôй ţŷрé_!!!!!!]</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Upload failed</source>
+          <target state="new">Upload failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to upload file. Please try again. [{0}]</source>
+          <target state="new">Failed to upload file. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" xml:space="preserve">
+          <source>Select folder failed</source>
+          <target state="new">Select folder failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed" translate="yes" xml:space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
+          <target state="new">Failed to select folder. Please, try again or select another folder: [{0}]</target>
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
           <source>yes, export</source>

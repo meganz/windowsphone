@@ -317,18 +317,21 @@ namespace MegaApp.Models
                 }
                 default:
                 {
-                    Status = TransferStatus.Error;
+                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                     switch (Type)
                     {
-                        case TransferType.Download:
-                        {
+                        case TransferType.Download:                        
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                                 MessageBox.Show(String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
                                     AppMessages.DownloadNodeFailed_Title, MessageBoxButton.OK));
                             break;
-                        }
-                    case TransferType.Upload:
+
+                        case TransferType.Upload:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                MessageBox.Show(String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
+                                    AppMessages.UploadNodeFailed_Title, MessageBoxButton.OK));
                             break;
+
                         default:
                             throw new ArgumentOutOfRangeException();
                     }
