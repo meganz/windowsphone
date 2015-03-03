@@ -18,19 +18,30 @@ namespace MegaApp.Services
     {
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {
-            App.FileOpenOrFolderPickerOpenend = true;
-
-            var folderPicker = new FolderPicker
+            try
             {
-                SuggestedStartLocation = PickerLocationId.Downloads
-            };
+                App.FileOpenOrFolderPickerOpenend = true;
 
-            folderPicker.FileTypeFilter.Add("*");
+                var folderPicker = new FolderPicker
+                {
+                    SuggestedStartLocation = PickerLocationId.Downloads
+                };
 
-            folderPicker.ContinuationData["Operation"] = operation;
-            folderPicker.ContinuationData["NodeData"] = nodeViewModel != null ? nodeViewModel.Handle : 0;
+                folderPicker.FileTypeFilter.Add("*");
 
-            folderPicker.PickFolderAndContinue();
+                folderPicker.ContinuationData["Operation"] = operation;
+                folderPicker.ContinuationData["NodeData"] = nodeViewModel != null ? nodeViewModel.Handle : 0;
+
+                folderPicker.PickFolderAndContinue();
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.SelectFolderFailed, e.Message),
+                        AppMessages.SelectFolderFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
 
         public static async Task<bool> SelectDownloadFolder(NodeViewModel nodeViewModel = null)

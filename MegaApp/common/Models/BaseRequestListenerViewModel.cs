@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -37,6 +38,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);                   
                 ProgressService.SetProgressIndicator(false);
 
                 this.ControlState = true;
@@ -93,15 +95,19 @@ namespace MegaApp.Models
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));                    
+
+            /*Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 ProgressService.SetProgressIndicator(false);
                 MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            });
+            });*/
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            // No update status necessary
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]));
         }
 
         #endregion
