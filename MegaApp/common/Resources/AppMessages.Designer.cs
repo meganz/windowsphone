@@ -187,7 +187,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to copy the selected file: {0}.
+        ///   Busca una cadena traducida similar a Failed to copy the selected file: [{0}].
         /// </summary>
         public static string CopyFileFailed {
             get {
@@ -205,7 +205,8 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type into the destination folder.
+        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+        ///Please, try to save/copy the file into the your device internal memory..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {
@@ -1260,6 +1261,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder: [{0}].
+        /// </summary>
+        public static string SelectFolderFailed {
+            get {
+                return ResourceManager.GetString("SelectFolderFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select folder failed.
+        /// </summary>
+        public static string SelectFolderFailed_Title {
+            get {
+                return ResourceManager.GetString("SelectFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You have been logged out on this device from another location.
         /// </summary>
         public static string SessionIDError {
@@ -1283,6 +1302,24 @@ namespace MegaApp.Resources {
         public static string UnknownResolutionType {
             get {
                 return ResourceManager.GetString("UnknownResolutionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to upload file. Please try again. [{0}].
+        /// </summary>
+        public static string UploadNodeFailed {
+            get {
+                return ResourceManager.GetString("UploadNodeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upload failed.
+        /// </summary>
+        public static string UploadNodeFailed_Title {
+            get {
+                return ResourceManager.GetString("UploadNodeFailed_Title", resourceCulture);
             }
         }
         

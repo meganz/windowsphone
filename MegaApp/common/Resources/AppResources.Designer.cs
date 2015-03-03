@@ -212,23 +212,5 @@ namespace MegaApp.Resources {
                 return ResourceManager.GetString("UploadsDirectory", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a MEGAWindowsPhone80/2.0.5.80.
-        /// </summary>
-        public static string UserAgentWP80 {
-            get {
-                return ResourceManager.GetString("UserAgentWP80", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a MEGAWindowsPhone81/2.0.5.81.
-        /// </summary>
-        public static string UserAgentWP81 {
-            get {
-                return ResourceManager.GetString("UserAgentWP81", resourceCulture);
-            }
-        }
     }
 }

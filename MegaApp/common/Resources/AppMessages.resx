@@ -489,13 +489,14 @@ To proceed with the download please select a destination folder or go to prefere
     <value>Logged out</value>
   </data>
   <data name="CopyFileFailed" xml:space="preserve">
-    <value>Failed to copy the selected file: {0}</value>
+    <value>Failed to copy the selected file: [{0}]</value>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
     <value>Copy file failed</value>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You don't have permission to copy this file type into the destination folder</value>
+    <value>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+Please, try to save/copy the file into the your device internal memory.</value>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
     <value>Unauthorized access</value>
@@ -547,5 +548,17 @@ To proceed with the download please select a destination folder or go to prefere
   </data>
   <data name="UnknownResolutionType" xml:space="preserve">
     <value>Unknown resolution type</value>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>Failed to select folder. Please, try again or select another folder: [{0}]</value>
+  </data>
+  <data name="SelectFolderFailed_Title" xml:space="preserve">
+    <value>Select folder failed</value>
+  </data>
+  <data name="UploadNodeFailed" xml:space="preserve">
+    <value>Failed to upload file. Please try again. [{0}]</value>
+  </data>
+  <data name="UploadNodeFailed_Title" xml:space="preserve">
+    <value>Upload failed</value>
   </data>
 </root>

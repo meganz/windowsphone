@@ -45,6 +45,15 @@ namespace MegaApp.Services
             #endif
         }
 
+        public static string GetAppUserAgent()
+        {
+            #if WINDOWS_PHONE_80
+                return String.Format("MEGAWindowsPhone80/{0}", GetAppVersion());
+            #elif WINDOWS_PHONE_81
+                return String.Format("MEGAWindowsPhone81/{0}", GetAppVersion());
+            #endif
+        }
+
         public static MemoryInformation GetAppMemoryUsage()
         {
             #if WINDOWS_PHONE_80
