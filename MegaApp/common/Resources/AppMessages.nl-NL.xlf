@@ -1,0 +1,605 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="nl-NL" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/AgreeTermsOfUse" translate="yes" xml:space="preserve">
+          <source>You must agree with our terms of use</source>
+          <target state="new">You must agree with our terms of use</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Upload failed</source>
+          <target state="new">Upload failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to upload file. Please try again. [{0}]</source>
+          <target state="new">Failed to upload file. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" xml:space="preserve">
+          <source>Select folder failed</source>
+          <target state="new">Select folder failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed" translate="yes" xml:space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
+          <target state="new">Failed to select folder. Please, try again or select another folder: [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/UnknownResolutionType" translate="yes" xml:space="preserve">
+          <source>Unknown resolution type</source>
+          <target state="new">Unknown resolution type</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
+          <source>yes, export</source>
+          <target state="new">yes, export</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" xml:space="preserve">
+          <source>Download options</source>
+          <target state="new">Download options</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" xml:space="preserve">
+          <source>no, only local</source>
+          <target state="new">no, only local</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" xml:space="preserve">
+          <source>Memory Limit</source>
+          <target state="new">Memory Limit</target>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError" translate="yes" xml:space="preserve">
+          <source>Not enough free memory space to complete this operation. The app will shutdown now</source>
+          <target state="new">Not enough free memory space to complete this operation. The app will shutdown now</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared_Title" translate="yes" xml:space="preserve">
+          <source>Cache cleared</source>
+          <target state="new">Cache cleared</target>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared" translate="yes" xml:space="preserve">
+          <source>Cache has been succesfully cleared</source>
+          <target state="new">Cache has been succesfully cleared</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock too short</source>
+          <target state="new">PIN lock too short</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort" translate="yes" xml:space="preserve">
+          <source>PIN lock must be at least 4 digits</source>
+          <target state="new">PIN lock must be at least 4 digits</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" xml:space="preserve">
+          <source>Masterkey copied</source>
+          <target state="new">Masterkey copied</target>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied" translate="yes" xml:space="preserve">
+          <source>Masterkey copied to clipboard</source>
+          <target state="new">Masterkey copied to clipboard</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>Current PIN lock no match</source>
+          <target state="new">Current PIN lock no match</target>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Current PIN lock is not correct or does not match</source>
+          <target state="new">Current PIN lock is not correct or does not match</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" xml:space="preserve">
+          <source>Clipboard failed</source>
+          <target state="new">Clipboard failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy masterkey to clipboard. Please try again</source>
+          <target state="new">Failed to copy masterkey to clipboard. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" xml:space="preserve">
+          <source>Unauthorized access</source>
+          <target state="new">Unauthorized access</target>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" xml:space="preserve">
+          <source>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+Please, try to save/copy the file into the your device internal memory.</source>
+          <target state="new">You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+Please, try to save/copy the file into the your device internal memory.</target>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" xml:space="preserve">
+          <source>Copy file failed</source>
+          <target state="new">Copy file failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy the selected file: [{0}]</source>
+          <target state="new">Failed to copy the selected file: [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError_Title" translate="yes" xml:space="preserve">
+          <source>Logged out</source>
+          <target state="new">Logged out</target>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Preparing file failed</source>
+          <target state="new">Preparing file failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare file: {0} for upload</source>
+          <target state="new">Failed to prepare file: {0} for upload</target>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" xml:space="preserve">
+          <source>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="new">You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</target>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" xml:space="preserve">
+          <source>Overquota Alert!</source>
+          <target state="new">Overquota Alert!</target>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert" translate="yes" xml:space="preserve">
+          <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
+          <target state="new">Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</target>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError" translate="yes" xml:space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="new">You have been logged out on this device from another location</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>PIN lock codes do not match</source>
+          <target state="new">PIN lock codes do not match</target>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal</source>
+          <target state="new">Your PIN lock codes do not match. Please re-type them and make sure they are equal</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load files and folders from MEGA. Please try again or click on refresh.</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed_Title" translate="yes" xml:space="preserve">
+          <source>Selfie upload failed</source>
+          <target state="new">Selfie upload failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed" translate="yes" xml:space="preserve">
+          <source>Failed to upload the selfie picture</source>
+          <target state="new">Failed to upload the selfie picture</target>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" xml:space="preserve">
+          <source>Open file failed</source>
+          <target state="new">Open file failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed" translate="yes" xml:space="preserve">
+          <source>Failed to open the selected file</source>
+          <target state="new">Failed to open the selected file</target>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound_Title" translate="yes" xml:space="preserve">
+          <source>File not found</source>
+          <target state="new">File not found</target>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound" translate="yes" xml:space="preserve">
+          <source>Could not find the selected file</source>
+          <target state="new">Could not find the selected file</target>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError_Title" translate="yes" xml:space="preserve">
+          <source>Upload photo failed</source>
+          <target state="new">Upload photo failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError" translate="yes" xml:space="preserve">
+          <source>Failed to upload photo</source>
+          <target state="new">Failed to upload photo</target>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Preparing image failed</source>
+          <target state="new">Preparing image failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare image: {0} for upload</source>
+          <target state="new">Failed to prepare image: {0} for upload</target>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection_Title" translate="yes" xml:space="preserve">
+          <source>No pictures selected</source>
+          <target state="new">No pictures selected</target>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection" translate="yes" xml:space="preserve">
+          <source>Please select minimal 1 picture for upload</source>
+          <target state="new">Please select minimal 1 picture for upload</target>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed_Title" translate="yes" xml:space="preserve">
+          <source>Resume failed</source>
+          <target state="new">Resume failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" xml:space="preserve">
+          <source>Failed to resume transfers</source>
+          <target state="new">Failed to resume transfers</target>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" xml:space="preserve">
+          <source>Pause failed</source>
+          <target state="new">Pause failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed" translate="yes" xml:space="preserve">
+          <source>Failed to pause transfers</source>
+          <target state="new">Failed to pause transfers</target>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" xml:space="preserve">
+          <source>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
+          <target state="new">Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" xml:space="preserve">
+          <source>Download count</source>
+          <target state="new">Download count</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage" translate="yes" xml:space="preserve">
+          <source>You have selected over 100 items ({0}) to download. Do you want to proceed?</source>
+          <target state="new">You have selected over 100 items ({0}) to download. Do you want to proceed?</target>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword_Title" translate="yes" xml:space="preserve">
+          <source>Wrong password</source>
+          <target state="new">Wrong password</target>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword" translate="yes" xml:space="preserve">
+          <source>The typed password is incorrect</source>
+          <target state="new">The typed password is incorrect</target>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" xml:space="preserve">
+          <source>Account already confirmed</source>
+          <target state="new">Account already confirmed</target>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" xml:space="preserve">
+          <source>The account is already confirmed. You can now login.</source>
+          <target state="new">The account is already confirmed. You can now login.</target>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" xml:space="preserve">
+          <source>Pending Transfers</source>
+          <target state="new">Pending Transfers</target>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit" translate="yes" xml:space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
+          <target state="new">You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</target>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" xml:space="preserve">
+          <source>Pending Transfers</source>
+          <target state="new">Pending Transfers</target>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout" translate="yes" xml:space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
+          <target state="new">You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces_Title" translate="yes" xml:space="preserve">
+          <source>Items moved</source>
+          <target state="new">Items moved</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" xml:space="preserve">
+          <source>{0} Items moved to rubbish bin</source>
+          <target state="new">{0} Items moved to rubbish bin</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Move items?</source>
+          <target state="new">Move items?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to move to rubbish bin {0} items?</source>
+          <target state="new">Are you sure you want to move to rubbish bin {0} items?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" xml:space="preserve">
+          <source>Item moved</source>
+          <target state="new">Item moved</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" xml:space="preserve">
+          <source>Item successful moved to rubbish bin</source>
+          <target state="new">Item successful moved to rubbish bin</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Move to rubbish bin?</source>
+          <target state="new">Move to rubbish bin?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to move {0} to rubbish bin?</source>
+          <target state="new">Are you sure you want to move {0} to rubbish bin?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" xml:space="preserve">
+          <source>Move to rubbish bin failed</source>
+          <target state="new">Move to rubbish bin failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" xml:space="preserve">
+          <source>Failed to move item to rubbish bin. Please try again</source>
+          <target state="new">Failed to move item to rubbish bin. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces_Title" translate="yes" xml:space="preserve">
+          <source>Items removed</source>
+          <target state="new">Items removed</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces" translate="yes" xml:space="preserve">
+          <source>{0} Items removed</source>
+          <target state="new">{0} Items removed</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Remove items?</source>
+          <target state="new">Remove items?</target>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to remove {0} items?</source>
+          <target state="new">Are you sure you want to remove {0} items?</target>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed_Title" translate="yes" xml:space="preserve">
+          <source>Logout failed</source>
+          <target state="new">Logout failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed" translate="yes" xml:space="preserve">
+          <source>Failed to logout. Please try again. [{0}]</source>
+          <target state="new">Failed to logout. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut_Title" translate="yes" xml:space="preserve">
+          <source>Logged out</source>
+          <target state="new">Logged out</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut" translate="yes" xml:space="preserve">
+          <source>You have successfully logged out</source>
+          <target state="new">You have successfully logged out</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed_Title" translate="yes" xml:space="preserve">
+          <source>Retrieving account details failed</source>
+          <target state="new">Retrieving account details failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve your account details. Please try again. [{0}]</source>
+          <target state="new">Failed to retrieve your account details. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed_Title" translate="yes" xml:space="preserve">
+          <source>Getting thumbnail failed</source>
+          <target state="new">Getting thumbnail failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve thumbnail [{0}]</source>
+          <target state="new">Failed to retrieve thumbnail [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline_Title" translate="yes" xml:space="preserve">
+          <source>Not online</source>
+          <target state="new">Not online</target>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline" translate="yes" xml:space="preserve">
+          <source>You are not logged in at MEGA to do this action. Please re-login</source>
+          <target state="new">You are not logged in at MEGA to do this action. Please re-login</target>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Save image to photo's</source>
+          <target state="new">Save image to photo's</target>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion" translate="yes" xml:space="preserve">
+          <source>Export current image to 'saved pictures' album?</source>
+          <target state="new">Export current image to 'saved pictures' album?</target>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFields_Title" translate="yes" xml:space="preserve">
+          <source>Fill in required fields</source>
+          <target state="new">Fill in required fields</target>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" xml:space="preserve">
+          <source>Please fill in your e-mail address and your MEGA password</source>
+          <target state="new">Please fill in your e-mail address and your MEGA password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message when required fields for login are not filled in</note>
+          </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" xml:space="preserve">
+          <source>Please fill in your name, e-mail address and password</source>
+          <target state="new">Please fill in your name, e-mail address and password</target>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" xml:space="preserve">
+          <source>Please fill in your choosen password</source>
+          <target state="new">Please fill in your choosen password</target>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Rename failed</source>
+          <target state="new">Rename failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed" translate="yes" xml:space="preserve">
+          <source>Renaming item failed</source>
+          <target state="new">Renaming item failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" xml:space="preserve">
+          <source>Item removed</source>
+          <target state="new">Item removed</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSucces" translate="yes" xml:space="preserve">
+          <source>Item successful removed</source>
+          <target state="new">Item successful removed</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Remove failed</source>
+          <target state="new">Remove failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to remove item</source>
+          <target state="new">Failed to remove item</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Remove?</source>
+          <target state="new">Remove?</target>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to remove {0}?</source>
+          <target state="new">Are you sure you want to remove {0}?</target>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved_Title" translate="yes" xml:space="preserve">
+          <source>Picture saved</source>
+          <target state="new">Picture saved</target>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved" translate="yes" xml:space="preserve">
+          <source>The image is saved in your photo album</source>
+          <target state="new">The image is saved in your photo album</target>
+        </trans-unit>
+        <trans-unit id="Resx/PasswordsDoNotMatch_Title" translate="yes" xml:space="preserve">
+          <source>Passwords do not match</source>
+          <target state="new">Passwords do not match</target>
+        </trans-unit>
+        <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" xml:space="preserve">
+          <source>Your passwords do not match. Please re-type them and make sure they are equal</source>
+          <target state="new">Your passwords do not match. Please re-type them and make sure they are equal</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed_Title" translate="yes" xml:space="preserve">
+          <source>Move failed</source>
+          <target state="new">Move failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed" translate="yes" xml:space="preserve">
+          <source>Failed to move item. Please try again</source>
+          <target state="new">Failed to move item. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent_Title" translate="yes" xml:space="preserve">
+          <source>Move failed</source>
+          <target state="new">Move failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent" translate="yes" xml:space="preserve">
+          <source>Destination folder is the same as the source folder. Moving canceled</source>
+          <target state="new">Destination folder is the same as the source folder. Moving canceled</target>
+        </trans-unit>
+        <trans-unit id="Resx/LoginFailed_Title" translate="yes" xml:space="preserve">
+          <source>Login failed</source>
+          <target state="new">Login failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title when login to the MEGA web service api failed</note>
+          </trans-unit>
+        <trans-unit id="Resx/LoginFailed" translate="yes" xml:space="preserve">
+          <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
+          <target state="new">MEGA Cloud Drive login failed. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message when login to the MEGA web service api failed</note>
+          </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" xml:space="preserve">
+          <source>Copied to clipboard</source>
+          <target state="new">Copied to clipboard</target>
+        </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" xml:space="preserve">
+          <source>MEGA link is copied to your clipboard</source>
+          <target state="new">MEGA link is copied to your clipboard</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" xml:space="preserve">
+          <source>Import file failed</source>
+          <target state="new">Import file failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImportFileFailed" translate="yes" xml:space="preserve">
+          <source>Importing file failed</source>
+          <target state="new">Importing file failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError_Title" translate="yes" xml:space="preserve">
+          <source>Failed to save image</source>
+          <target state="new">Failed to save image</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError" translate="yes" xml:space="preserve">
+          <source>Error exporting image to  'saved pictures' album. Please try again</source>
+          <target state="new">Error exporting image to  'saved pictures' album. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved_Title" translate="yes" xml:space="preserve">
+          <source>Image saved</source>
+          <target state="new">Image saved</target>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved" translate="yes" xml:space="preserve">
+          <source>Image successful exported to 'saved pictures' album</source>
+          <target state="new">Image successful exported to 'saved pictures' album</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed_Title" translate="yes" xml:space="preserve">
+          <source>Getting preview failed</source>
+          <target state="new">Getting preview failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve preview</source>
+          <target state="new">Failed to retrieve preview</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" xml:space="preserve">
+          <source>Get link failed</source>
+          <target state="new">Get link failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed" translate="yes" xml:space="preserve">
+          <source>Failed to get link</source>
+          <target state="new">Failed to get link</target>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed_Title" translate="yes" xml:space="preserve">
+          <source>Folder creation failed</source>
+          <target state="new">Folder creation failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed" translate="yes" xml:space="preserve">
+          <source>Failed to create folder. Please try again</source>
+          <target state="new">Failed to create folder. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed_Title" translate="yes" xml:space="preserve">
+          <source>Fetching data failed</source>
+          <target state="new">Fetching data failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed" translate="yes" xml:space="preserve">
+          <source>Could not retrieve files and folders from MEGA. Please try again.</source>
+          <target state="new">Could not retrieve files and folders from MEGA. Please try again.</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Download failed</source>
+          <target state="new">Download failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed" translate="yes" xml:space="preserve">
+          <source>Failed to download file. Please try again. [{0}]</source>
+          <target state="new">Failed to download file. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" xml:space="preserve">
+          <source>Retrieving link failed</source>
+          <target state="new">Retrieving link failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve a download link. Please try again</source>
+          <target state="new">Failed to retrieve a download link. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" xml:space="preserve">
+          <source>Delete failed</source>
+          <target state="new">Delete failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" xml:space="preserve">
+          <source>Failed tot delete item. Please try again</source>
+          <target state="new">Failed tot delete item. Please try again</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess_Title" translate="yes" xml:space="preserve">
+          <source>Folder created</source>
+          <target state="new">Folder created</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess" translate="yes" xml:space="preserve">
+          <source>Folder created successful</source>
+          <target state="new">Folder created successful</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed_Title" translate="yes" xml:space="preserve">
+          <source>Folder creation failed</source>
+          <target state="new">Folder creation failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed" translate="yes" xml:space="preserve">
+          <source>Failed to create folder</source>
+          <target state="new">Failed to create folder</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed_Title" translate="yes" xml:space="preserve">
+          <source>Account creation failed</source>
+          <target state="new">Account creation failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed" translate="yes" xml:space="preserve">
+          <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
+          <target state="new">MEGA Cloud Drive account creation failed. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" xml:space="preserve">
+          <source>Confirmation needed</source>
+          <target state="new">Confirmation needed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded" translate="yes" xml:space="preserve">
+          <source>Check your e-mail and click the link to login and confirm your account</source>
+          <target state="new">Check your e-mail and click the link to login and confirm your account</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" xml:space="preserve">
+          <source>Account activated</source>
+          <target state="new">Account activated</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" xml:space="preserve">
+          <source>Your account has been created, confirmed and activated. You will automatically logged in.</source>
+          <target state="new">Your account has been created, confirmed and activated. You will automatically logged in.</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" xml:space="preserve">
+          <source>Confirm account failed</source>
+          <target state="new">Confirm account failed</target>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" xml:space="preserve">
+          <source>Failed to confirm account. Please try again. [{0}]</source>
+          <target state="new">Failed to confirm account. Please try again. [{0}]</target>
+        </trans-unit>
+        <trans-unit id="Resx/AgreeTermsOfUse_Title" translate="yes" xml:space="preserve">
+          <source>Terms of use</source>
+          <target state="new">Terms of use</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
