@@ -2,7 +2,59 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <Languages xmlns="">
+    <Language code="af-ZA" />
+    <Language code="ar" />
+    <Language code="bg-BG" />
+    <Language code="bn" />
+    <Language code="br-FR" />
+    <Language code="bs-Cyrl-BA" />
+    <Language code="ca-ES" />
+    <Language code="cs-CZ" />
+    <Language code="cy-GB" />
+    <Language code="da-DK" />
+    <Language code="de-DE" />
+    <Language code="el-GR" />
+    <Language code="es-ES" />
+    <Language code="et-EE" />
+    <Language code="eu-ES" />
+    <Language code="fa-IR" />
+    <Language code="fi-FI" />
+    <Language code="fr-FR" />
+    <Language code="gl-ES" />
+    <Language code="he-IL" />
+    <Language code="hi-IN" />
+    <Language code="hr-HR" />
+    <Language code="hu-HU" />
+    <Language code="id-ID" />
+    <Language code="it-IT" />
+    <Language code="ja-JP" />
+    <Language code="ka-GE" />
+    <Language code="ko-KR" />
+    <Language code="lt-LT" />
+    <Language code="lv-LV" />
+    <Language code="mi-NZ" />
+    <Language code="mk-MK" />
+    <Language code="ms" />
+    <Language code="nl-NL" />
+    <Language code="nn-NO" />
+    <Language code="pl-PL" />
+    <Language code="pt-BR" />
+    <Language code="pt-PT" />
     <Language code="qps-ploc" />
+    <Language code="ro-RO" />
+    <Language code="ru-RU" />
+    <Language code="sk-SK" />
+    <Language code="sl-SI" />
+    <Language code="sq-AL" />
+    <Language code="sr-Cyrl" />
+    <Language code="sv-SE" />
+    <Language code="th-TH" />
+    <Language code="tr-TR" />
+    <Language code="uk-UA" />
+    <Language code="uz-Cyrl-UZ" />
+    <Language code="vi-VN" />
+    <Language code="zh-CN" />
+    <Language code="zh-Hant" />
   </Languages>
   <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA Privacy" RuntimeType="Silverlight" Version="2.0.6.81" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service Application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
@@ -26,19 +78,13 @@
           <Count>0</Count>
           <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <Message>
-          </Message>
-          <BackgroundColor>
-          </BackgroundColor>
+          <Message></Message>
+          <BackgroundColor></BackgroundColor>
           <HasLarge>False</HasLarge>
-          <LargeContent1>
-          </LargeContent1>
-          <LargeContent2>
-          </LargeContent2>
-          <LargeContent3>
-          </LargeContent3>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
-          </DeviceLockImageURI>
+          <LargeContent1></LargeContent1>
+          <LargeContent2></LargeContent2>
+          <LargeContent3></LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
         </TemplateIconic>
       </PrimaryToken>
     </Tokens>
