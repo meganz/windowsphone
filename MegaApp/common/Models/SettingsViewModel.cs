@@ -24,7 +24,7 @@ namespace MegaApp.Models
             : base(megaSdk)
         {
             this.AppVersion = AppService.GetAppVersion();
-            this.MegaSDK_Version = AppResources.MegaSDK_Version;
+            this.MegaSDK_Version = AppService.GetMegaSDK_Version();
             this.ShareMasterKeyCommand = new DelegateCommand(ShareMasterKey);
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);

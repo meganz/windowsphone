@@ -45,6 +45,11 @@ namespace MegaApp.Services
             #endif
         }
 
+        public static string GetMegaSDK_Version()
+        {
+            return String.Format("32aa638");
+        }
+
         public static string GetAppUserAgent()
         {
             #if WINDOWS_PHONE_80
