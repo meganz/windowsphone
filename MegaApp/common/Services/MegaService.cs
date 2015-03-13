@@ -29,7 +29,7 @@ namespace MegaApp.Services
             var textboxStyle = new Style(typeof(RadTextBox));
             textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, nodeViewModel.Name));
 
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.RenameButton, UiResources.CancelButton }, UiResources.RenameItem,
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.Rename.ToLower(), UiResources.Cancel.ToLower() }, UiResources.RenameItem,
                 vibrate: false, inputStyle: textboxStyle);
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;

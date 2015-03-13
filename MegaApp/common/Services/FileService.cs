@@ -22,9 +22,23 @@ namespace MegaApp.Services
 
         public static void ClearFiles(IEnumerable<string> filesToDelete)
         {
-            foreach (var file in filesToDelete)
+            try
             {
-                File.Delete(file);
+                if (filesToDelete == null) return;
+                
+                foreach (var file in filesToDelete)
+                {
+                    if (file != null)
+                        File.Delete(file);
+                }                
+            }
+            catch(IOException e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.DeleteNodeFailed, e.Message),
+                        AppMessages.DeleteNodeFailed_Title, MessageBoxButton.OK);
+                });
             }
         }
 
@@ -88,16 +102,27 @@ namespace MegaApp.Services
         #if WINDOWS_PHONE_81
             public static void SelectMultipleFiles()
             {
-                var fileOpenPicker = new FileOpenPicker();
-            
-                fileOpenPicker.ContinuationData["Operation"] = "SelectedFiles";
-            
-                // Use wildcard filter to start FileOpenPicker in location selection screen instead of 
-                // photo selection screen
-                fileOpenPicker.FileTypeFilter.Add("*");
-                fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
-            
-                fileOpenPicker.PickMultipleFilesAndContinue();
+                try
+                {
+                    var fileOpenPicker = new FileOpenPicker();
+
+                    fileOpenPicker.ContinuationData["Operation"] = "SelectedFiles";
+
+                    // Use wildcard filter to start FileOpenPicker in location selection screen instead of 
+                    // photo selection screen
+                    fileOpenPicker.FileTypeFilter.Add("*");
+                    fileOpenPicker.ViewMode = PickerViewMode.Thumbnail;
+
+                    fileOpenPicker.PickMultipleFilesAndContinue();
+                }
+                catch (Exception e)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        MessageBox.Show(String.Format(AppMessages.SelectFileFailed, e.Message),
+                            AppMessages.SelectFileFailed_Title, MessageBoxButton.OK);
+                    });
+                }
             }
         #endif
 

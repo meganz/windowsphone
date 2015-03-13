@@ -9,95 +9,115 @@
         <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
           <source>Confirming account...</source>
           <target state="translated">Confirmando la cuenta...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" xml:space="preserve">
           <source>Resuming transfers...</source>
           <target state="translated">Reanudando transferencias...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/RenameNode" translate="yes" xml:space="preserve">
           <source>Renaming...</source>
           <target state="translated">Renombrando...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when renaming a node - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" xml:space="preserve">
           <source>Removing...</source>
           <target state="translated" state-qualifier="mt-suggestion">Eliminando...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a node (file or folder) - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/PrepareUploads" translate="yes" xml:space="preserve">
           <source>Preparing uploads...</source>
           <target state="translated">Preparando subidas...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing uploads - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" xml:space="preserve">
           <source>Preparing downloads...</source>
           <target state="translated">Preparando descargas...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing downloads - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/PauseTransfers" translate="yes" xml:space="preserve">
           <source>Pausing transfers...</source>
           <target state="translated">Pausando transferencias...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when pausing transfers - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" xml:space="preserve">
-          <source>Moving to Rubbish bin...</source>
-          <target state="translated">Moviendo a la Papelera...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash)</note>
+          <source>Moving to rubbish bin...</source>
+          <target state="translated">Moviendo a la papelera...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" xml:space="preserve">
           <source>Moving...</source>
           <target state="translated" state-qualifier="tm-suggestion">Moviendo...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Logout" translate="yes" xml:space="preserve">
           <source>Logging out...</source>
           <target state="translated" state-qualifier="mt-suggestion">Cerrando sesión...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/Login" translate="yes" xml:space="preserve">
           <source>Logging in...</source>
           <target state="translated" state-qualifier="tm-suggestion">Iniciando sesión...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/LoadNodes" translate="yes" xml:space="preserve">
           <source>Building view...</source>
           <target state="translated">Creando vista...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when building a nodes view - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/ImportFile" translate="yes" xml:space="preserve">
           <source>Importing file...</source>
           <target state="translated">Importando archivo...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a file - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" xml:space="preserve">
           <source>Getting preview...</source>
           <target state="translated">Obteniendo vista previa...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a preview - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/GetLink" translate="yes" xml:space="preserve">
           <source>Getting link...</source>
           <target state="translated">Obteniendo enlace...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" xml:space="preserve">
           <source>Getting account details...</source>
           <target state="translated">Obteniendo detalles de la cuenta...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" xml:space="preserve">
-          <source>Fetching files %%amp; folders... [{0}]</source>
+          <source>Fetching files and folders... [{0}]</source>
           <target state="translated">Obteniendo archivos y carpetas... [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</note>
           </trans-unit>
         <trans-unit id="Resx/FastLogin" translate="yes" xml:space="preserve">
           <source>Resuming session...</source>
           <target state="translated">Reanudando sesión...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming a session - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/DownloadLink" translate="yes" xml:space="preserve">
           <source>Retrieving download link...</source>
           <target state="translated">Recuperando enlace de descarga...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when retieving a download link - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/DeleteNode" translate="yes" xml:space="preserve">
           <source>Deleting '{0}'...</source>
           <target state="translated" state-qualifier="mt-suggestion">Eliminando '{0}'...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</note>
+          </trans-unit>
         <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
           <source>Creating folder...</source>
           <target state="translated" state-qualifier="mt-suggestion">Creando carpeta...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/CreateAccount" translate="yes" xml:space="preserve">
           <source>Creating account...</source>
           <target state="translated" state-qualifier="mt-suggestion">Creando cuenta...</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
+          </trans-unit>
       </group>
     </body>
   </file>

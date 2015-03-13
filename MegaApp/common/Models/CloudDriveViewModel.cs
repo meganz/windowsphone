@@ -58,6 +58,7 @@ namespace MegaApp.Models
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
+            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
         }
 
         #region Commands
@@ -69,6 +70,7 @@ namespace MegaApp.Models
         public ICommand CreateShortCutCommand { get; set; }
         public ICommand ChangeViewCommand { get; set; }
         public ICommand MultiSelectCommand { get; set; }
+        public ICommand UpgradeAccountCommand { get; set; }
 
         #endregion
 
@@ -101,49 +103,49 @@ namespace MegaApp.Models
             {
                 case MenuType.CloudDriveMenu:
                 {
-                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Upload;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.AddFolder;
-                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
-                    ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLinkAppBar;
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Upload.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.AddFolder.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.OpenLink.ToLower();
 
-                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.RubbishBin;
-                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
-                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
-                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
-                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
-                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About; 
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.RubbishBinName.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About.ToLower(); 
                     break;
                 }
                 case MenuType.RubbishBinMenu:
                 {
-                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Refresh;                    
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Refresh.ToLower();
 
-                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.CloudDriveName;                    
-                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect;
-                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
-                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount;
-                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings;
-                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About;
+                    ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.CloudDriveName.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.MultiSelect.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[3]).Text = UiResources.MyAccount.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[4]).Text = UiResources.Settings.ToLower();
+                    //((ApplicationBarMenuItem)menuItems[5]).Text = UiResources.About.ToLower();
                     break;
                 }
                 case MenuType.MoveMenu:
                 {
-                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Move;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Move.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Cancel.ToLower();
                   
                     break;
                 }
                 case MenuType.MultiSelectMenu:
                 {
-                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Download;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Move;
-                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Remove;
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Download.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Move.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Remove.ToLower();
                     break;
                 }
                 case MenuType.ImportMenu:
                 {
-                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.LinkOptions;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                    ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.LinkOptions.ToLower();
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Cancel.ToLower();
                     break;
                 }
             }
@@ -333,7 +335,7 @@ namespace MegaApp.Models
         {
             if (downloadCount <= DownloadLimitMessage) return true;
 
-            return MessageBox.Show(String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+            return MessageBox.Show(String.Format(AppMessages.DownloadLimitMessage, DownloadLimitMessage, downloadCount),
                 AppMessages.DownloadLimitMessage_Title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
         }
 
@@ -576,7 +578,7 @@ namespace MegaApp.Models
             if (PickerOrDialogIsOpen) return;
 
             PickerOrDialogIsOpen = true;
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink, vibrate: false);
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.Open.ToLower(), UiResources.Cancel.ToLower() }, UiResources.OpenLinkText, vibrate: false);
             PickerOrDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
@@ -911,7 +913,7 @@ namespace MegaApp.Models
             {
                 PickerOrDialogIsOpen = true;
                 var inputPromptClosedEventArgs =await RadInputPrompt.ShowAsync(
-                    new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, 
+                    new string[] {UiResources.Add.ToLower(), UiResources.Cancel.ToLower()}, UiResources.CreateFolder, 
                     vibrate: false);
                 PickerOrDialogIsOpen = false;
 
@@ -986,7 +988,12 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
-       
+
+        private void UpgradeAccount(object obj)
+        {
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
+
         private void MultiSelect(object obj)
         {
             this.IsMultiSelectActive = !this.IsMultiSelectActive;

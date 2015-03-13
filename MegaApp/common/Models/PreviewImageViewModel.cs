@@ -48,13 +48,13 @@ namespace MegaApp.Models
 
         public void TranslateAppBar(IList iconButtons, IList menuItems)
         {
-            ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Previous;
-            ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.ViewOrginal;
-            ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.GetPreviewLink;
-            ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.Next;
+            ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Previous.ToLower();
+            ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Download.ToLower();
+            ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.GetPreviewLink.ToLower();
+            ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.Next.ToLower();
 
-            ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.Rename;
-            ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Remove;
+            ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.Rename.ToLower();
+            ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Remove.ToLower();
         }
 
         #endregion
