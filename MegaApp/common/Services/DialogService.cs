@@ -29,7 +29,7 @@ namespace MegaApp.Services
             var buttonsDataTemplate = (DataTemplate)Application.Current.Resources["ShowShareLinkButtons"];
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsTemplate:buttonsDataTemplate,
-                buttonsContent: new string[] {UiResources.ShareButton, UiResources.CopyButton, UiResources.CancelButton},
+                buttonsContent: new string[] { UiResources.Share.ToLower(), UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
                 title: UiResources.MegaLinkTitle,
                 message: link
                 );
@@ -289,7 +289,7 @@ namespace MegaApp.Services
 
             var headerText = new TextBlock()
             {
-                Text = UiResources.SortByMenuTitle,
+                Text = UiResources.SortByMenuTitle.ToUpper(),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
                 FontWeight = FontWeights.SemiBold,
@@ -299,7 +299,7 @@ namespace MegaApp.Services
             var sortItems = new List<AdvancedMenuItem>();
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.FilesAscendingSortOption,
+                Name = UiResources.FilesAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -313,7 +313,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.FilesDescendingSortOption,
+                Name = UiResources.FilesDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -327,7 +327,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.LargestSortOption,
+                Name = UiResources.LargestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -341,7 +341,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.SmallestSortOption,
+                Name = UiResources.SmallestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -355,7 +355,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.NewestSortOption,
+                Name = UiResources.NewestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -369,7 +369,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.OldestSortOption,
+                Name = UiResources.OldestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -383,7 +383,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.NameAscendingSortOption,
+                Name = UiResources.NameAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -397,7 +397,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.NameDescendingSortOption,
+                Name = UiResources.NameDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -590,7 +590,7 @@ namespace MegaApp.Services
                 titleLabel.Text = UiResources.ChangePinLock;
                 currentPinLock = new NumericPasswordBox()
                 {
-                    Watermark = UiResources.CurrentPinLockWatermark,
+                    Watermark = UiResources.PinLockWatermark.ToLower(),
                     ClearButtonVisibility = Visibility.Visible
                 };
                 pinLockStackPanel.Children.Add(currentPinLock);
@@ -602,20 +602,20 @@ namespace MegaApp.Services
 
             var pinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.NewPinLockWatermark,
+                Watermark = UiResources.NewPinLockWatermark.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
 
 
             var confirmPinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.ConfirmPinLockWatermark,
+                Watermark = UiResources.ConfirmPinLockWatermark.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
 
             var confirmButton = new Button()
             {
-                Content = UiResources.DoneButton,
+                Content = UiResources.Done.ToLower(),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
             };
             confirmButton.Tap += (sender, args) =>
@@ -658,7 +658,7 @@ namespace MegaApp.Services
 
             var cancelButton = new Button()
             {
-                Content = UiResources.CancelButton,
+                Content = UiResources.Cancel.ToLower(),
                 HorizontalAlignment = HorizontalAlignment.Stretch,
             };
             cancelButton.Tap += (sender, args) =>
@@ -708,7 +708,7 @@ namespace MegaApp.Services
         public static async void ShowViewMasterKey(string masterkey, Action copyAction)
         {
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new string[] { UiResources.CopyButton, UiResources.CancelButton },
+                buttonsContent: new string[] { UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
                 title: UiResources.MasterKey,
                 message: masterkey
                 );

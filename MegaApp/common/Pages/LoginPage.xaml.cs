@@ -28,7 +28,7 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.LoginText;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Login.ToLower();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

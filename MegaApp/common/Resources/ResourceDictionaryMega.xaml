@@ -27,6 +27,7 @@
     <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
     <converters:UriToResolutionUriConverter x:Key="UriToResolutionUriConverter"/>
     <converters:TextToUpperCaseConverter x:Key="TextToUpperCaseConverter"/>
+    <converters:TextToLowerCaseConverter x:Key="TextToLowerCaseConverter"/>
 
     <!-- TEMPLATES -->
     <DataTemplate x:Key="MegaNodeListFileItemContent">
@@ -245,7 +246,7 @@
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
             <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
@@ -295,14 +296,14 @@
 
     <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
         <Grid Height="562" Width="456">
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
             <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
         <Grid Height="562" Width="456">
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Converter={StaticResource TextToLowerCaseConverter},Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
             <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
@@ -425,7 +426,7 @@
                 <Image Source="{Binding ProductUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
             </Border>
             <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.StorageSubscriptionPlans, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="LightGray"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="LightGray"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Column="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" Margin="20,14.425,0,13.242" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Row="1" Foreground="LightGray"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Transfer}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>

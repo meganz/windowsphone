@@ -115,7 +115,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Fetching files &amp; folders... [{0}].
+        ///   Busca una cadena traducida similar a Fetching files and folders... [{0}].
         /// </summary>
         public static string FetchingNodes {
             get {
@@ -196,7 +196,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Moving to Rubbish bin....
+        ///   Busca una cadena traducida similar a Moving to rubbish bin....
         /// </summary>
         public static string NodeToTrash {
             get {

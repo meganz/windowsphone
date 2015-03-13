@@ -90,7 +90,7 @@ namespace MegaApp.Services
                 case Resolutions.WVGA:
                     return ".Screen-WVGA";
                 default:
-                    throw new InvalidOperationException(AppMessages.UnknownResolutionType);
+                    throw new InvalidOperationException("Unknown resolution type");
             }
         }
 

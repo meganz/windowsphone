@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -9,71 +9,84 @@
         <trans-unit id="Resx/ResourceFlowDirection" translate="no" xml:space="preserve">
           <source>LeftToRight</source>
           <target state="translated">LeftToRight</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language - (NO-TRANSLATION).</note>
           </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocation" translate="yes" xml:space="preserve">
           <source>please select a default download folder</source>
           <target state="translated">por favor, selecciona una carpeta de descarga 
 predeterminada</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
+          </trans-unit>
         <trans-unit id="Resx/MegaSdkUrl" translate="no" xml:space="preserve">
           <source>https://github.com/meganz/sdk</source>
           <target state="signed-off">https://github.com/meganz/sdk</target>
-        </trans-unit>
-        <trans-unit id="Resx/MegaSDK_Version" translate="yes" xml:space="preserve">
+          <note from="MultilingualBuild" annotates="source" priority="2">URL to the MEGA SDK repository - (NO-TRANSLATION).</note>
+          </trans-unit>
+        <trans-unit id="Resx/MegaSDK_Version" translate="no" xml:space="preserve">
           <source>bc74d3f</source>
           <target state="signed-off">bc74d3f</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">The revision code of the SDK version used by the app</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">The revision code of the SDK version used by the app - (NO-TRANSLATION).</note>
           </trans-unit>
         <trans-unit id="Resx/PrivacyPolicyUrl" translate="no" xml:space="preserve">
           <source>https://mega.co.nz/mobile_privacy.html</source>
           <target state="signed-off">https://mega.co.nz/mobile_privacy.html</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">URL to the 'Privacy Policy' information web page - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/UploadsDirectory" translate="no" xml:space="preserve">
           <source>uploads\</source>
           <target state="signed-off">uploads\</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Path of the 'uploads' folder of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/ThumbnailWidth" translate="no" xml:space="preserve">
           <source>64</source>
           <target state="signed-off">64</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Default thumbnail width - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/ThumbnailHeight" translate="no" xml:space="preserve">
           <source>64</source>
           <target state="signed-off">64</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Default thumbnail height - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/DiagnosticsEmailAddress" translate="no" xml:space="preserve">
           <source>windowsphone@mega.co.nz</source>
           <target state="signed-off">windowsphone@mega.co.nz</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Windows Phone Team email for contact and/or support - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/DownloadsDirectory" translate="no" xml:space="preserve">
           <source>downloads\</source>
           <target state="signed-off">downloads\</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Path of the 'downloads' folder of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/PreviewsDirectory" translate="no" xml:space="preserve">
           <source>previews\</source>
           <target state="signed-off">previews\</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Path of the 'previews' folder of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/ThumbnailsDirectory" translate="no" xml:space="preserve">
           <source>thumbnails\</source>
           <target state="signed-off">thumbnails\</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Path of the 'thumbnails' folder of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/AppKey" translate="no" xml:space="preserve">
           <source>Z5dGhQhL</source>
           <target state="signed-off">Z5dGhQhL</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications. - (NO-TRANSLATION).</note>
           </trans-unit>
         <trans-unit id="Resx/TermsOfUseUrl" translate="no" xml:space="preserve">
           <source>https://mega.co.nz/mobile_terms.html</source>
           <target state="signed-off">https://mega.co.nz/mobile_terms.html</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">URL to the 'Terms of use' information web page - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/PagesLocation" translate="no" xml:space="preserve">
           <source>/Pages/</source>
           <target state="signed-off">/Pages/</target>
-        </trans-unit>
+          <note from="MultilingualBuild" annotates="source" priority="2">Location of the pages of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/ApplicationTitle" translate="no" xml:space="preserve">
-          <source>MY APPLICATION</source>
-          <target state="signed-off">MY APPLICATION</target>
-        </trans-unit>
+          <source>MEGA Privacy</source>
+          <target state="signed-off">MEGA Privacy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the application. Try to preserve uppercase. - (NO-TRANSLATION).</note>
+          </trans-unit>
         <trans-unit id="Resx/ResourceLanguage" translate="yes" xml:space="preserve">
           <source>en-US</source>
           <target state="translated">es-ES</target>

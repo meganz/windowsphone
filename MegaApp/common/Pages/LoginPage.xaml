@@ -25,13 +25,13 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
             <classes:CustomMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
-            <TextBlock Text="{Binding LocalizedUiResources.LoginText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding LocalizedUiResources.Login, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
         <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
         	<Grid>
         		<StackPanel x:Name="stackLogin" VerticalAlignment="Top">
-        			<telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown"/>
-        			<telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}" TabIndex="1" KeyDown="OnKeyDown"/>
+                    <telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown"/>
+                    <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}" TabIndex="1" KeyDown="OnKeyDown"/>
                     <CheckBox x:Name="CheckStayLoggedIn" Content="{Binding LocalizedUiResources.StayLoggedInText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding StayLoggedIn, Mode=TwoWay}" IsEnabled="{Binding ControlState}" TabIndex="2"/>
         		</StackPanel>
         		<StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">

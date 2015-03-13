@@ -160,6 +160,9 @@
     <Compile Include="..\common\Converters\NodeDisplayModeToColorBrushConverter.cs">
       <Link>Converters\NodeDisplayModeToColorBrushConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Converters\TextToLowerCaseConverter.cs">
+      <Link>Converters\TextToLowerCaseConverter.cs</Link>
+    </Compile>
     <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
       <Link>Converters\TextToUpperCaseConverter.cs</Link>
     </Compile>
