@@ -106,15 +106,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a bc74d3f.
-        /// </summary>
-        public static string MegaSDK_Version {
-            get {
-                return ResourceManager.GetString("MegaSDK_Version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a https://github.com/meganz/sdk.
         /// </summary>
         public static string MegaSdkUrl {
