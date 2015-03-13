@@ -32,7 +32,7 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Upload;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Upload.ToLower();
         }
 
         private async void OnUploadClick(object sender, System.EventArgs e)

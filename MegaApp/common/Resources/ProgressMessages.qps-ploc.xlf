@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="ProgressMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -9,94 +9,114 @@
         <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
           <source>Confirming account...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[69FE5][!!_Ĉòиƒìѓmîηĝ àćčõûйт..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" xml:space="preserve">
           <source>Resuming transfers...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[8C268][!!_Ŗéśûмìиġ тŕãήśƒêřś..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenameNode" translate="yes" xml:space="preserve">
           <source>Renaming...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[F96DC][!!_Ѓèйàмįήğ..._!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when renaming a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" xml:space="preserve">
           <source>Removing...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[00533][!!_Řêmòνįйģ..._!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a node (file or folder) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareUploads" translate="yes" xml:space="preserve">
           <source>Preparing uploads...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[521CE][!!_Ρŗęþâŗîйĝ ûþĺòáđš..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing uploads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" xml:space="preserve">
           <source>Preparing downloads...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[DB773][!!_Рŕéрáѓìиĝ đõẁйłòáđš..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing downloads - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseTransfers" translate="yes" xml:space="preserve">
           <source>Pausing transfers...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[F4A0A][!!_Ρâµšíηģ тŗâиŝƒèŗś..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when pausing transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" xml:space="preserve">
-          <source>Moving to Rubbish bin...</source>
+          <source>Moving to rubbish bin...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[56CA7][!!_Мòνíήģ ţô Ŗúввìśн ьįή..._!!!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash)</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" xml:space="preserve">
           <source>Moving...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[3A002][!!_Мóνíиģ..._!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Logout" translate="yes" xml:space="preserve">
           <source>Logging out...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[6E45B][!!_Ļõģğįиġ õúţ..._!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Login" translate="yes" xml:space="preserve">
           <source>Logging in...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[7659B][!!_Ĺóģģįйġ įй..._!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/LoadNodes" translate="yes" xml:space="preserve">
           <source>Building view...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[1001A][!!_ßµìļđìήġ νíęẁ..._!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when building a nodes view - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFile" translate="yes" xml:space="preserve">
           <source>Importing file...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[9F7E2][!!_Îmрôѓтįηĝ ƒìļę..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a file - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" xml:space="preserve">
           <source>Getting preview...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[65828][!!_Ģêťţîйġ рŕéνįêẁ..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetLink" translate="yes" xml:space="preserve">
           <source>Getting link...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[5DDC9][!!_Ģêťţíηĝ ļîик..._!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" xml:space="preserve">
           <source>Getting account details...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[629B1][!!_Ġęţţîήģ ãćčóûήτ ďèтáįľş..._!!!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" xml:space="preserve">
-          <source>Fetching files %%amp; folders... [{0}]</source>
+          <source>Fetching files and folders... [{0}]</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[7ADCA][!!_₣èтĉħìήģ ƒîĺèś %%amp; ƒòļđèŕś... [{0}]_!!!!!!!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
         <trans-unit id="Resx/FastLogin" translate="yes" xml:space="preserve">
           <source>Resuming session...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[262C7][!!_Řêśúмįйĝ ŝéśśìóή..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLink" translate="yes" xml:space="preserve">
           <source>Retrieving download link...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[BE714][!!_Ŗéţŕîèνîйģ ďôẅηĺôâđ łįйĸ..._!!!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when retieving a download link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNode" translate="yes" xml:space="preserve">
           <source>Deleting '{0}'...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[D3D1E][!!_Ðèłêτìйğ '{0}'..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
           <source>Creating folder...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[AAF45][!!_Ćѓèâťîиğ ƒòłđêŗ..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateAccount" translate="yes" xml:space="preserve">
           <source>Creating account...</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[C868B][!!_Čřèãťìήğ àčċõûит..._!!!!!!]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -58,7 +58,7 @@ namespace MegaApp.Services
             {
 
                 switch (await DialogService.ShowOptionsDialog(UiResources.DownloadLocation, AppMessages.NoDownloadLocationSelected,
-                    new[] { UiResources.SelectFolder, UiResources.Preferences }))
+                    new[] { UiResources.SelectFolder.ToLower(), UiResources.Preferences.ToLower() }))
                 {
                     case -1:
                         {

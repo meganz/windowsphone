@@ -119,72 +119,92 @@
   </resheader>
   <data name="ConfirmAccount" xml:space="preserve">
     <value>[69FE5][!!_Ĉòиƒìѓmîηĝ àćčõûйт..._!!!!!!]</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
     <value>[8C268][!!_Ŗéśûмìиġ тŕãήśƒêřś..._!!!!!!]</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
     <value>[F96DC][!!_Ѓèйàмįήğ..._!!]</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>[00533][!!_Řêmòνįйģ..._!!]</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
   </data>
   <data name="PrepareUploads" xml:space="preserve">
     <value>[521CE][!!_Ρŗęþâŗîйĝ ûþĺòáđš..._!!!!!!]</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="PrepareDownloads" xml:space="preserve">
     <value>[DB773][!!_Рŕéрáѓìиĝ đõẁйłòáđš..._!!!!!!]</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
     <value>[F4A0A][!!_Ρâµšíηģ тŗâиŝƒèŗś..._!!!!!!]</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
     <value>[56CA7][!!_Мòνíήģ ţô Ŗúввìśн ьįή..._!!!!!!!!]</value>
-    <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
     <value>[3A002][!!_Мóνíиģ..._!!]</value>
-    <comment>Progress indicator message when moving a node to a different parent</comment>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="Logout" xml:space="preserve">
     <value>[6E45B][!!_Ļõģğįиġ õúţ..._!!!!]</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="Login" xml:space="preserve">
     <value>[7659B][!!_Ĺóģģįйġ įй..._!!]</value>
-    <comment>Progress indicator message when logging in</comment>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
     <value>[1001A][!!_ßµìļđìήġ νíęẁ..._!!!!]</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
     <value>[9F7E2][!!_Îmрôѓтįηĝ ƒìļę..._!!!!!!]</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="GetPreview" xml:space="preserve">
     <value>[65828][!!_Ģêťţîйġ рŕéνįêẁ..._!!!!!!]</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="GetLink" xml:space="preserve">
     <value>[5DDC9][!!_Ģêťţíηĝ ļîик..._!!!!]</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
     <value>[629B1][!!_Ġęţţîήģ ãćčóûήτ ďèтáįľş..._!!!!!!!!]</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
     <value>[7ADCA][!!_₣èтĉħìήģ ƒîĺèś &amp; ƒòļđèŕś... [{0}]_!!!!!!!!!!!!]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service</comment>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
     <value>[262C7][!!_Řêśúмįйĝ ŝéśśìóή..._!!!!!!]</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="DownloadLink" xml:space="preserve">
     <value>[BE714][!!_Ŗéţŕîèνîйģ ďôẅηĺôâđ łįйĸ..._!!!!!!!!]</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="DeleteNode" xml:space="preserve">
     <value>[D3D1E][!!_Ðèłêτìйğ '{0}'..._!!!!!!]</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
   </data>
   <data name="CreateFolder" xml:space="preserve">
     <value>[AAF45][!!_Ćѓèâťîиğ ƒòłđêŗ..._!!!!!!]</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreateAccount" xml:space="preserve">
     <value>[C868B][!!_Čřèãťìήğ àčċõûит..._!!!!!!]</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
 </root>

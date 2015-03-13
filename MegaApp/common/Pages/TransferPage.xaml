@@ -20,7 +20,7 @@
 		<!--Pivot Control-->
 		<phone:Pivot x:Name="Transfers" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
 			<!--Pivot item one-->
-            <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstUploads"
@@ -32,7 +32,7 @@
 					/>
 				</Grid>
 			</phone:PivotItem>
-            <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstDownloads"

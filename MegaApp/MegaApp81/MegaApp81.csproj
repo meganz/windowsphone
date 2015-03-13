@@ -16,7 +16,7 @@
     <SilverlightVersion>
     </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>af-ZA;ar;bg-BG;bn;br-FR;bs-Cyrl-BA;ca-ES;cs-CZ;cy-GB;da-DK;de-DE;el-GR;es-ES;et-EE;eu-ES;fa-IR;fi-FI;fr-FR;gl-ES;he-IL;hi-IN;hr-HR;hu-HU;id-ID;it-IT;ja-JP;ka-GE;ko-KR;lt-LT;lv-LV;mi-NZ;mk-MK;ms;nl-NL;nn-NO;pl-PL;pt-BR;pt-PT;qps-ploc;ro-RO;ru-RU;sk-SK;sl-SI;sq-AL;sr-Cyrl;sv-SE;th-TH;tr-TR;uk-UA;uz-Cyrl-UZ;vi-VN;zh-CN;zh-Hant</SupportedCultures>
+    <SupportedCultures>af-ZA%3bar%3bbg-BG%3bbn%3bbr-FR%3bbs-Cyrl-BA%3bca-ES%3bcs-CZ%3bcy-GB%3bda-DK%3bde-DE%3bel-GR%3bet-EE%3beu-ES%3bfa-IR%3bfi-FI%3bfr-FR%3bgl-ES%3bhe-IL%3bhi-IN%3bhr-HR%3bhu-HU%3bid-ID%3bit-IT%3bja-JP%3bka-GE%3bko-KR%3blt-LT%3blv-LV%3bmi-NZ%3bmk-MK%3bms%3bnl-NL%3bnn-NO%3bpl-PL%3bpt-BR%3bpt-PT%3bqps-ploc%3bro-RO%3bru-RU%3bsk-SK%3bsl-SI%3bsq-AL%3bsr-Cyrl%3bsv-SE%3bth-TH%3btr-TR%3buk-UA%3buz-Cyrl-UZ%3bvi-VN%3bzh-CN%3bzh-Hant</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>MegaApp_$(Configuration)_$(Platform).xap</XapFilename>
@@ -235,6 +235,9 @@
     </Compile>
     <Compile Include="..\common\Converters\NodeDisplayModeToColorBrushConverter.cs">
       <Link>Converters\NodeDisplayModeToColorBrushConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Converters\TextToLowerCaseConverter.cs">
+      <Link>Converters\TextToLowerCaseConverter.cs</Link>
     </Compile>
     <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
       <Link>Converters\TextToUpperCaseConverter.cs</Link>

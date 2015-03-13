@@ -26,7 +26,7 @@
 		<!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
             <classes:CustomMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
-            <TextBlock Text="{Binding LocalizedUiResources.Preferences, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding LocalizedUiResources.Preferences, Converter={StaticResource TextToLowerCaseConverter},Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
@@ -35,8 +35,8 @@
 					<ColumnDefinition/>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
-                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}}" Command="{Binding ViewMasterKeyCommand}"/>
-                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
+                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding ViewMasterKeyCommand}"/>
+                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
 			</Grid>
 			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
             <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
@@ -90,7 +90,7 @@
                         </Style>
                     </telerikPrimitives:RadToggleSwitch.ButtonStyle>
                 </telerikPrimitives:RadToggleSwitch>
-                <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLockButton, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
+                <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLock, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
 			</StackPanel>
 			<StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
 				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>

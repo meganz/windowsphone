@@ -33,7 +33,7 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.CreateAccount;            
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.CreateAccount.ToLower();            
         }
 
         private void OnCreateAccountClick(object sender, System.EventArgs e)

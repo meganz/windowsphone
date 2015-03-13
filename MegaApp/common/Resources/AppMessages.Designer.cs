@@ -296,7 +296,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed tot delete item. Please try again.
+        ///   Busca una cadena traducida similar a Failed to delete item. Please try again [{0}].
         /// </summary>
         public static string DeleteNodeFailed {
             get {
@@ -314,7 +314,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You have selected over 100 items ({0}) to download. Do you want to proceed?.
+        ///   Busca una cadena traducida similar a You have selected over {0} items ({0}) to download. Do you want to proceed?.
         /// </summary>
         public static string DownloadLimitMessage {
             get {
@@ -332,7 +332,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to retrieve a download link. Please try again.
+        ///   Busca una cadena traducida similar a Failed to retrieve a download link. Please try again..
         /// </summary>
         public static string DownloadLinkFailed {
             get {
@@ -386,7 +386,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Could not find the selected file.
+        ///   Busca una cadena traducida similar a Could not find the selected file..
         /// </summary>
         public static string FileNotFound {
             get {
@@ -404,7 +404,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to create folder. Please try again.
+        ///   Busca una cadena traducida similar a Failed to create folder. Please try again..
         /// </summary>
         public static string FolderCreateFailed {
             get {
@@ -440,7 +440,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to get link.
+        ///   Busca una cadena traducida similar a Failed to get link..
         /// </summary>
         public static string GetLinkFailed {
             get {
@@ -458,7 +458,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to retrieve preview.
+        ///   Busca una cadena traducida similar a Failed to retrieve preview..
         /// </summary>
         public static string GetPreviewFailed {
             get {
@@ -494,7 +494,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Image successful exported to &apos;saved pictures&apos; album.
+        ///   Busca una cadena traducida similar a Image successful exported to &apos;saved pictures&apos; album..
         /// </summary>
         public static string ImageSaved {
             get {
@@ -512,7 +512,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error exporting image to  &apos;saved pictures&apos; album. Please try again.
+        ///   Busca una cadena traducida similar a Error exporting image to &apos;saved pictures&apos; album. Please try again..
         /// </summary>
         public static string ImageSaveError {
             get {
@@ -584,7 +584,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You have successfully logged out.
+        ///   Busca una cadena traducida similar a You have successfully logged out..
         /// </summary>
         public static string LoggedOut {
             get {
@@ -656,7 +656,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Not enough free memory space to complete this operation. The app will shutdown now.
+        ///   Busca una cadena traducida similar a Not enough free memory space to complete this operation. The app will shutdown now..
         /// </summary>
         public static string MemoryLimitError {
             get {
@@ -674,7 +674,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please select minimal 1 picture for upload.
+        ///   Busca una cadena traducida similar a Please select minimal 1 picture for upload..
         /// </summary>
         public static string MinimalPictureSelection {
             get {
@@ -692,7 +692,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Destination folder is the same as the source folder. Moving canceled.
+        ///   Busca una cadena traducida similar a Destination folder is the same as the source folder. Moving canceled..
         /// </summary>
         public static string MoveEqualsParent {
             get {
@@ -710,7 +710,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to move item. Please try again.
+        ///   Busca una cadena traducida similar a Failed to move item. Please try again..
         /// </summary>
         public static string MoveFailed {
             get {
@@ -728,7 +728,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to move item to rubbish bin. Please try again.
+        ///   Busca una cadena traducida similar a Failed to move item to rubbish bin. Please try again..
         /// </summary>
         public static string MoveToRubbishBinFailed {
             get {
@@ -755,7 +755,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Move to rubbish bin?.
+        ///   Busca una cadena traducida similar a Move item to rubbish bin?.
         /// </summary>
         public static string MoveToRubbishBinQuestion_Title {
             get {
@@ -764,7 +764,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Item successful moved to rubbish bin.
+        ///   Busca una cadena traducida similar a Item successful moved to rubbish bin..
         /// </summary>
         public static string MoveToRubbishBinSuccess {
             get {
@@ -791,7 +791,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Move items?.
+        ///   Busca una cadena traducida similar a Move items to rubbish bin?.
         /// </summary>
         public static string MultiMoveToRubbishBinQuestion_Title {
             get {
@@ -800,7 +800,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a {0} Items moved to rubbish bin.
+        ///   Busca una cadena traducida similar a {0} Items moved to rubbish bin..
         /// </summary>
         public static string MultiMoveToRubbishBinSucces {
             get {
@@ -818,7 +818,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a {0} Items removed.
+        ///   Busca una cadena traducida similar a {0} Items removed..
         /// </summary>
         public static string MultiRemoveSucces {
             get {
@@ -865,7 +865,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to open the selected file.
+        ///   Busca una cadena traducida similar a Failed to open the selected file..
         /// </summary>
         public static string OpenFileFailed {
             get {
@@ -901,7 +901,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your passwords do not match. Please re-type them and make sure they are equal.
+        ///   Busca una cadena traducida similar a Your passwords do not match. Please re-type them and make sure they are equal..
         /// </summary>
         public static string PasswordsDoNotMatch {
             get {
@@ -919,7 +919,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to pause transfers.
+        ///   Busca una cadena traducida similar a Failed to pause transfers..
         /// </summary>
         public static string PausingTransfersFailed {
             get {
@@ -973,7 +973,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to upload photo.
+        ///   Busca una cadena traducida similar a Failed to upload photo..
         /// </summary>
         public static string PhotoUploadError {
             get {
@@ -991,7 +991,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The image is saved in your photo album.
+        ///   Busca una cadena traducida similar a The image is saved in your photo album..
         /// </summary>
         public static string PictureSaved {
             get {
@@ -1009,7 +1009,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your PIN lock codes do not match. Please re-type them and make sure they are equal.
+        ///   Busca una cadena traducida similar a Your PIN lock codes do not match. Please re-type them and make sure they are equal..
         /// </summary>
         public static string PinLockCodesDoNotMatch {
             get {
@@ -1027,7 +1027,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a PIN lock must be at least 4 digits.
+        ///   Busca una cadena traducida similar a PIN lock must be at least 4 digits..
         /// </summary>
         public static string PinLockTooShort {
             get {
@@ -1045,7 +1045,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to prepare file: {0} for upload.
+        ///   Busca una cadena traducida similar a Failed to prepare file: {0} for upload..
         /// </summary>
         public static string PrepareFileForUploadFailed {
             get {
@@ -1063,7 +1063,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to prepare image: {0} for upload.
+        ///   Busca una cadena traducida similar a Failed to prepare image: {0} for upload..
         /// </summary>
         public static string PrepareImageForUploadFailed {
             get {
@@ -1198,7 +1198,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your choosen password.
+        ///   Busca una cadena traducida similar a Please fill in your choosen password..
         /// </summary>
         public static string RequiredFieldsConfirmAccount {
             get {
@@ -1207,7 +1207,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and password.
+        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and password..
         /// </summary>
         public static string RequiredFieldsCreateAccount {
             get {
@@ -1216,7 +1216,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your e-mail address and your MEGA password.
+        ///   Busca una cadena traducida similar a Please fill in your e-mail address and your MEGA password..
         /// </summary>
         public static string RequiredFieldsLogin {
             get {
@@ -1225,7 +1225,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to resume transfers.
+        ///   Busca una cadena traducida similar a Failed to resume transfers..
         /// </summary>
         public static string ResumingTransfersFailed {
             get {
@@ -1257,6 +1257,24 @@ namespace MegaApp.Resources {
         public static string SaveImageQuestion_Title {
             get {
                 return ResourceManager.GetString("SaveImageQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to select file(s). Please, try again [{0}].
+        /// </summary>
+        public static string SelectFileFailed {
+            get {
+                return ResourceManager.GetString("SelectFileFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select file(s) failed.
+        /// </summary>
+        public static string SelectFileFailed_Title {
+            get {
+                return ResourceManager.GetString("SelectFileFailed_Title", resourceCulture);
             }
         }
         
@@ -1297,15 +1315,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Unknown resolution type.
-        /// </summary>
-        public static string UnknownResolutionType {
-            get {
-                return ResourceManager.GetString("UnknownResolutionType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload file. Please try again. [{0}].
         /// </summary>
         public static string UploadNodeFailed {
@@ -1324,7 +1333,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to upload the selfie picture.
+        ///   Busca una cadena traducida similar a Failed to upload the selfie picture..
         /// </summary>
         public static string UploadSelfieFailed {
             get {
@@ -1342,7 +1351,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You are not logged in at MEGA to do this action. Please re-login.
+        ///   Busca una cadena traducida similar a You are not logged in at MEGA to do this action. Please re-login..
         /// </summary>
         public static string UserNotOnline {
             get {
@@ -1360,7 +1369,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The typed password is incorrect.
+        ///   Busca una cadena traducida similar a The typed password is incorrect..
         /// </summary>
         public static string WrongPassword {
             get {

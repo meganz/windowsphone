@@ -70,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MY APPLICATION.
+        ///   Busca una cadena traducida similar a MEGA Privacy.
         /// </summary>
         public static string ApplicationTitle {
             get {

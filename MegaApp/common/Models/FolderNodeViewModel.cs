@@ -31,8 +31,8 @@ namespace MegaApp.Models
             int childFolders = this.MegaSdk.getNumChildFolders(base.GetMegaNode());
             int childFiles = this.MegaSdk.getNumChildFiles(base.GetMegaNode());
             this.FolderInfo = String.Format("{0} {1} | {2} {3}",
-                childFolders, childFolders == 1 ? UiResources.SingleFolder : UiResources.MultipleFolders,
-                childFiles, childFiles == 1 ? UiResources.SingleFile : UiResources.MultipleFiles);
+                childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
+                childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
         }
 
         #endregion

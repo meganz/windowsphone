@@ -33,8 +33,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.ClearCache;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout;            
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.ClearCache.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();            
         }
 
         private void OnPieDataBindingComplete(object sender, System.EventArgs e)

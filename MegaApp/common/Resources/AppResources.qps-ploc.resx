@@ -119,7 +119,7 @@
   </resheader>
   <data name="ResourceFlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language - (NO-TRANSLATION).</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>qps-ploc</value>
@@ -127,49 +127,62 @@
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
     <value>[BB375][!!_þłéâśê śéĺèčτ á đęƒàúĺт ďõŵиłõàď ƒõļđéŗ_!!!!!!!!!!!!]</value>
+    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="MegaSdkUrl" xml:space="preserve">
     <value>[BA5CE][!!_ђтťρś://ģįтħùв.ćóm/мęġáйź/şďķ_!!!!!!!!]</value>
+    <comment>URL to the MEGA SDK repository - (NO-TRANSLATION).</comment>
   </data>
   <data name="MegaSDK_Version" xml:space="preserve">
     <value>[F9E74][!!_773в34ĉ_!!]</value>
-    <comment>The revision code of the SDK version used by the app</comment>
+    <comment>The revision code of the SDK version used by the app - (NO-TRANSLATION).</comment>
   </data>
   <data name="PrivacyPolicyUrl" xml:space="preserve">
     <value>[251B5][!!_ђťтρś://męġà.ĉó.иź/mõвìłę_þѓįνãčÿ.нţmł_!!!!!!!!!!!!]</value>
+    <comment>URL to the 'Privacy Policy' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="UploadsDirectory" xml:space="preserve">
     <value>[9EE9C][!!_ùрĺóàđś\_!!]</value>
+    <comment>Path of the 'uploads' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailWidth" xml:space="preserve">
     <value>[675DB][!!_64_!!]</value>
+    <comment>Default thumbnail width - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailHeight" xml:space="preserve">
     <value>[A3CA6][!!_64_!!]</value>
+    <comment>Default thumbnail height - (NO-TRANSLATION).</comment>
   </data>
   <data name="DiagnosticsEmailAddress" xml:space="preserve">
     <value>[B1812][!!_ẅìиðõẅŝрћõήè@мęġâ.ĉò.ήź_!!!!!!]</value>
+    <comment>Windows Phone Team email for contact and/or support - (NO-TRANSLATION).</comment>
   </data>
   <data name="DownloadsDirectory" xml:space="preserve">
     <value>[C8AA4][!!_đòŵиľôãđş\_!!]</value>
+    <comment>Path of the 'downloads' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="PreviewsDirectory" xml:space="preserve">
     <value>[5ABCF][!!_þѓęνìêŵş\_!!]</value>
+    <comment>Path of the 'previews' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailsDirectory" xml:space="preserve">
     <value>[119A3][!!_ţнùмБήâįĺş\_!!]</value>
+    <comment>Path of the 'thumbnails' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="AppKey" xml:space="preserve">
     <value>[FF483][!!_Ź5đĠħQнĿ_!!]</value>
-    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</comment>
+    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications. - (NO-TRANSLATION).</comment>
   </data>
   <data name="TermsOfUseUrl" xml:space="preserve">
     <value>[B131A][!!_ĥτţρś://mèģá.ċó.иź/мòъìĺé_ťèѓmş.ĥτмľ_!!!!!!!!!!]</value>
+    <comment>URL to the 'Terms of use' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="PagesLocation" xml:space="preserve">
     <value>[A3E53][!!_/Ρãğèş/_!!]</value>
+    <comment>Location of the pages of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>[73699][!!_МŶ ÀΡÞĿÎČÀŤÎÔŇ_!!!!]</value>
+    <comment>Title of the application. Try to preserve uppercase. - (NO-TRANSLATION).</comment>
   </data>
 </root>

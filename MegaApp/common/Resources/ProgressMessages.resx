@@ -119,72 +119,92 @@
   </resheader>
   <data name="ConfirmAccount" xml:space="preserve">
     <value>Confirming account...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="CreateAccount" xml:space="preserve">
     <value>Creating account...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="CreateFolder" xml:space="preserve">
     <value>Creating folder...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="DeleteNode" xml:space="preserve">
     <value>Deleting '{0}'...</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
   </data>
   <data name="DownloadLink" xml:space="preserve">
     <value>Retrieving download link...</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
   </data>
   <data name="FastLogin" xml:space="preserve">
     <value>Resuming session...</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Fetching files &amp; folders... [{0}]</value>
-    <comment>Progress indicator message when loading nodes from MEGA web service</comment>
+    <value>Fetching files and folders... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
     <value>Getting account details...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetLink" xml:space="preserve">
     <value>Getting link...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPreview" xml:space="preserve">
     <value>Getting preview...</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
     <value>Importing file...</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
     <value>Building view...</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Logging in...</value>
-    <comment>Progress indicator message when logging in</comment>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="Logout" xml:space="preserve">
     <value>Logging out...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
     <value>Moving...</value>
-    <comment>Progress indicator message when moving a node to a different parent</comment>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
-    <value>Moving to Rubbish bin...</value>
-    <comment>Progress indicator message when moving a node to the rubbish bin (trash)</comment>
+    <value>Moving to rubbish bin...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
     <value>Pausing transfers...</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
   </data>
   <data name="PrepareDownloads" xml:space="preserve">
     <value>Preparing downloads...</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
   </data>
   <data name="PrepareUploads" xml:space="preserve">
     <value>Preparing uploads...</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Removing...</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
     <value>Renaming...</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
     <value>Resuming transfers...</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
 </root>

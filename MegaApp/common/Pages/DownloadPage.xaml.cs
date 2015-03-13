@@ -35,8 +35,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Save;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.OpenButton;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Save.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Open.ToLower();
 
             if (_downloadNodeViewModel.SelectedNode == null) return;
             if (_downloadNodeViewModel.SelectedNode is ImageNodeViewModel) return;
