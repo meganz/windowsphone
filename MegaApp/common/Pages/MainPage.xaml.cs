@@ -67,7 +67,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.Transfers,
+                Name = UiResources.Transfers.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -79,7 +79,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.MyAccount,
+                Name = UiResources.MyAccount.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -91,7 +91,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.Preferences,
+                Name = UiResources.Preferences.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -104,7 +104,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.About,
+                Name = UiResources.About.ToLower().ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -117,7 +117,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.Logout,
+                Name = UiResources.Logout.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction

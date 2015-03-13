@@ -50,7 +50,7 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Capture;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Capture.ToLower();
         }
 
         private async void VideoCanvasOnTap(object sender, GestureEventArgs e)

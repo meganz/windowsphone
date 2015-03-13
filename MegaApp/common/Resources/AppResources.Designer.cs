@@ -70,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MY APPLICATION.
+        ///   Busca una cadena traducida similar a MEGA Privacy.
         /// </summary>
         public static string ApplicationTitle {
             get {
@@ -102,15 +102,6 @@ namespace MegaApp.Resources {
         public static string DownloadsDirectory {
             get {
                 return ResourceManager.GetString("DownloadsDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a bc74d3f.
-        /// </summary>
-        public static string MegaSDK_Version {
-            get {
-                return ResourceManager.GetString("MegaSDK_Version", resourceCulture);
             }
         }
         

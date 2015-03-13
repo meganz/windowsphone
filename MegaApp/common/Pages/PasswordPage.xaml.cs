@@ -29,7 +29,7 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.DoneButton;         
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Done.ToLower();         
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

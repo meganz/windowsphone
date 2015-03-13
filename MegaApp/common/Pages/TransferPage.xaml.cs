@@ -32,10 +32,10 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.StartResumeAll;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.PauseAll;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.CancelAll;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[3]).Text = UiResources.CleanUpTransfers;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.StartResumeAll.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.PauseAll.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.CancelAll.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[3]).Text = UiResources.CleanUpTransfers.ToLower();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

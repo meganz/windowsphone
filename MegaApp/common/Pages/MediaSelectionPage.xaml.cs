@@ -40,8 +40,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ClearSelection;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ClearSelection.ToLower();
         }
 
         private void SetControlState(bool state)
