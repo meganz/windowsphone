@@ -146,31 +146,39 @@ namespace MegaApp.Pages
 
         protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
-            ProgressService.SetProgressIndicator(true, "Loading camera...");
-            if (Camera.IsCameraTypeSupported(CameraType.FrontFacing))
+            try
             {
-                await InitializeCamera(CameraSensorLocation.Front);
+                ProgressService.SetProgressIndicator(true, "Loading camera...");
+                if (Camera.IsCameraTypeSupported(CameraType.FrontFacing))
+                {
+                    await InitializeCamera(CameraSensorLocation.Front);
+                }
+                else
+                {
+                    MessageBox.Show("Your phone does not have a front facing camera for selfies. Back Camera is used");
+                    await InitializeCamera(CameraSensorLocation.Back);
+                }
+                ProgressService.SetProgressIndicator(false);
+
+                videoBrush.RelativeTransform = new CompositeTransform()
+                {
+                    CenterX = 0.5,
+                    CenterY = 0.5,
+                    Rotation = PhotoCaptureDevice.SensorLocation == CameraSensorLocation.Back
+                        ? PhotoCaptureDevice.SensorRotationInDegrees
+                        : -PhotoCaptureDevice.SensorRotationInDegrees,
+                };
+
+                videoBrush.SetSource(PhotoCaptureDevice);
+
+                SetScreenButtonsEnabled(true);
+                SetCameraButtonsEnabled(true);
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Your phone does not have a front facing camera for selfies. Back Camera is used");
-                await InitializeCamera(CameraSensorLocation.Back);
+                MessageBox.Show(String.Format("There was an error during the camera initialization. Please, try again: [{0}]", ex.Message));
             }
-            ProgressService.SetProgressIndicator(false);
-
-            videoBrush.RelativeTransform = new CompositeTransform()
-            {
-                CenterX = 0.5,
-                CenterY = 0.5,
-                Rotation = PhotoCaptureDevice.SensorLocation == CameraSensorLocation.Back
-                    ? PhotoCaptureDevice.SensorRotationInDegrees
-                    : -PhotoCaptureDevice.SensorRotationInDegrees,
-            };
-
-            videoBrush.SetSource(PhotoCaptureDevice);
-
-            SetScreenButtonsEnabled(true);
-            SetCameraButtonsEnabled(true);
+            
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
