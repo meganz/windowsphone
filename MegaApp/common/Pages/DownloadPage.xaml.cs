@@ -89,7 +89,8 @@ namespace MegaApp.Pages
             if (_downloadNodeViewModel.SelectedNode.Transfer.IsBusy) return;
 
             // Only open it if the transfer have finished or the file is already downloaded previously
-            if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Finished ||                
+            if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Downloaded ||
+                _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Uploaded ||
                 _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.NotStarted)
             {       
                _downloadNodeViewModel.SelectedNode.OpenFile();

@@ -314,31 +314,23 @@
     <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Canceling...</value>
+    <value>Canceling</value>
     <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Connecting" xml:space="preserve">
-    <value>Connecting server...</value>
-    <comment>Label for the status of a transfer when is being connecting to the server - (String as short as possible).</comment>
-  </data>
   <data name="Transfer_Download" xml:space="preserve">
-    <value>Downloading...</value>
+    <value>Downloading</value>
     <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Error" xml:space="preserve">
-    <value>Error on transfer</value>
+    <value>Error</value>
     <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Finished" xml:space="preserve">
-    <value>Finished</value>
-    <comment>Label for the status of a finished transfer - (String as short as possible).</comment>
-  </data>
   <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>Ready</value>
-    <comment>Label for the status of a transfer when is ready - (String as short as possible).</comment>
+    <value>Not started</value>
+    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Upload" xml:space="preserve">
-    <value>Uploading...</value>
+    <value>Uploading</value>
     <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
@@ -362,7 +354,7 @@
     <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Pausing" xml:space="preserve">
-    <value>Pausing...</value>
+    <value>Pausing</value>
     <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
   <data name="SpecialThankYou" xml:space="preserve">
@@ -684,5 +676,85 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="About" xml:space="preserve">
     <value>About</value>
     <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pause</value>
+    <comment>Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Resume</value>
+    <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+    <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelAllTransfers" xml:space="preserve">
+    <value>Cancel all transfers</value>
+    <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Downloaded" xml:space="preserve">
+    <value>Downloaded</value>
+    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Queued" xml:space="preserve">
+    <value>Queued</value>
+    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Uploaded" xml:space="preserve">
+    <value>Uploaded</value>
+    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourAccess1" xml:space="preserve">
+    <value>get</value>
+    <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess2" xml:space="preserve">
+    <value>fully encrypted access</value>
+    <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess3" xml:space="preserve">
+    <value>anywhere, anytime.</value>
+    <comment>Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess_Title" xml:space="preserve">
+    <value>MEGA access</value>
+    <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourPrivacy1" xml:space="preserve">
+    <value>keep your files safe with MEGA's</value>
+    <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
+  </data>
+  <data name="InitTourPrivacy2" xml:space="preserve">
+    <value>end-to-end encryption.</value>
+    <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourPrivacy_Title" xml:space="preserve">
+    <value>MEGA privacy</value>
+    <comment>Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpace1" xml:space="preserve">
+    <value>register now and get</value>
+    <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpace2" xml:space="preserve">
+    <value>50 GB of free space.</value>
+    <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
+  </data>
+  <data name="InitTourSpace_Title" xml:space="preserve">
+    <value>MEGA space</value>
+    <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpeed1" xml:space="preserve">
+    <value>transfers are fast.</value>
+    <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed2" xml:space="preserve">
+    <value>quickly share files with everyone.</value>
+    <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed_Title" xml:space="preserve">
+    <value>MEGA speed</value>
+    <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
 </root>

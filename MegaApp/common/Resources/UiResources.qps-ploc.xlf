@@ -411,10 +411,110 @@ Try to preserve the PIN uppercase word.</note><note from="MultilingualUpdate" pr
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[D23B9][!!_ãвõµť_!!]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
+        <trans-unit id="Resx/Start" translate="yes" xml:space="preserve">
+          <source>Start</source>
+          <target state="new">Start</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelAllTransfers" translate="yes" xml:space="preserve">
+          <source>Cancel all transfers</source>
+          <target state="new">Cancel all transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Uploaded" translate="yes" xml:space="preserve">
+          <source>Uploaded</source>
+          <target state="new">Uploaded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of an upload transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed2" translate="yes" xml:space="preserve">
+          <source>quickly share files with everyone.</source>
+          <target state="new">quickly share files with everyone.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed_Title" translate="yes" xml:space="preserve">
+          <source>MEGA speed</source>
+          <target state="new">MEGA speed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed1" translate="yes" xml:space="preserve">
+          <source>transfers are fast.</source>
+          <target state="new">transfers are fast.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace2" translate="yes" xml:space="preserve">
+          <source>50 GB of free space.</source>
+          <target state="new">50 GB of free space.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace_Title" translate="yes" xml:space="preserve">
+          <source>MEGA space</source>
+          <target state="new">MEGA space</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace1" translate="yes" xml:space="preserve">
+          <source>register now and get</source>
+          <target state="new">register now and get</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy2" translate="yes" xml:space="preserve">
+          <source>end-to-end encryption.</source>
+          <target state="new">end-to-end encryption.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" xml:space="preserve">
+          <source>MEGA privacy</source>
+          <target state="new">MEGA privacy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy1" translate="yes" xml:space="preserve">
+          <source>keep your files safe with MEGA's</source>
+          <target state="new">keep your files safe with MEGA's</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess2" translate="yes" xml:space="preserve">
+          <source>fully encrypted access</source>
+          <target state="new">fully encrypted access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess3" translate="yes" xml:space="preserve">
+          <source>anywhere, anytime.</source>
+          <target state="new">anywhere, anytime.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess_Title" translate="yes" xml:space="preserve">
+          <source>MEGA access</source>
+          <target state="new">MEGA access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess1" translate="yes" xml:space="preserve">
+          <source>get</source>
+          <target state="new">get</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Queued" translate="yes" xml:space="preserve">
+          <source>Queued</source>
+          <target state="new">Queued</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is queued - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Downloaded" translate="yes" xml:space="preserve">
+          <source>Downloaded</source>
+          <target state="new">Downloaded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a download transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Resume" translate="yes" xml:space="preserve">
+          <source>Resume</source>
+          <target state="new">Resume</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Pause" translate="yes" xml:space="preserve">
+          <source>Pause</source>
+          <target state="new">Pause</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Transfer_Pausing" translate="yes" xml:space="preserve">
-          <source>Pausing...</source>
+          <source>Pausing</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[13047][!!_Ρãùşìήģ..._!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being pausing - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being pausing - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Paused" translate="yes" xml:space="preserve">
           <source>Paused</source>
@@ -442,39 +542,29 @@ Try to preserve the PIN uppercase word.</note><note from="MultilingualUpdate" pr
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Upload" translate="yes" xml:space="preserve">
-          <source>Uploading...</source>
+          <source>Uploading</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[3DEA0][!!_Üρľòáďíήġ..._!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being uploading - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being uploading - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_NotStarted" translate="yes" xml:space="preserve">
-          <source>Ready</source>
+          <source>Not started</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[2A6FF][!!_Ѓèàđý_!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is ready - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Finished" translate="yes" xml:space="preserve">
-          <source>Finished</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B503B][!!_₣įηįśнęď_!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a finished transfer - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Error" translate="yes" xml:space="preserve">
-          <source>Error on transfer</source>
+          <source>Error</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[C9AA5][!!_Èŗŗõŕ ôή ţŕãηŝƒèŗ_!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Download" translate="yes" xml:space="preserve">
-          <source>Downloading...</source>
+          <source>Downloading</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[C9DA0][!!_Ďôŵήľóãďįиğ..._!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being downloading - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Connecting" translate="yes" xml:space="preserve">
-          <source>Connecting server...</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[0BBB1][!!_Ćòиήêĉτíήģ śęŕνéѓ..._!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being connecting to the server - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being downloading - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Canceling" translate="yes" xml:space="preserve">
-          <source>Canceling...</source>
+          <source>Canceling</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[9B1CC][!!_Čâηċęľìиġ..._!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being canceling - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being canceling - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Canceled" translate="yes" xml:space="preserve">
           <source>Canceled</source>

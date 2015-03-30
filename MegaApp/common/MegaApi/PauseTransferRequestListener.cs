@@ -102,7 +102,7 @@ namespace MegaApp.MegaApi
                         {
                             case TransferStatus.Downloading:
                             case TransferStatus.Uploading:
-                            case TransferStatus.Connecting:
+                            case TransferStatus.Queued:
                                 {
                                     if(_pause)
                                         item.Status = TransferStatus.Paused;
@@ -111,7 +111,7 @@ namespace MegaApp.MegaApi
                             case TransferStatus.Paused:
                             {
                                 if (!_pause)
-                                    item.Status = TransferStatus.Connecting;
+                                    item.Status = TransferStatus.Queued;
                                 break;
                             }
                         }
