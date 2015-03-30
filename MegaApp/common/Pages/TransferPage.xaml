@@ -5,6 +5,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:selectors="clr-namespace:MegaApp.Classes"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     x:Class="MegaApp.Pages.TransferPage"
@@ -13,12 +14,21 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
-		<!--Pivot Control-->
-		<phone:Pivot x:Name="Transfers" TitleTemplate="{StaticResource PivotMegaTitleTemplate}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
+        
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="Transfers" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
 			<!--Pivot item one-->
             <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
 				<Grid>
@@ -30,7 +40,8 @@
 						FontFamily="Portable User Interface"
                         telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
-				</Grid>
+                    <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>                    
+                </Grid>
 			</phone:PivotItem>
             <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
 				<Grid>
@@ -42,6 +53,7 @@
 						FontFamily="Portable User Interface" 
                         telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
+                    <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
 				</Grid>
 			</phone:PivotItem>
 
@@ -51,11 +63,15 @@
     
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="/Assets/Appbar/transport.play.png" Text="start/resume all" Click="OnStartResumeAllClick" />
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/transport.pause.png" Text="pause all" Click="OnPauseAllClick" />
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />
-        </shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Appbar/transport.play.png" Text="start/resume all" Click="OnStartResumeAllClick" />-->
+            <shell:ApplicationBarIconButton x:Name="BtnPauseResume" IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseAllClick" />
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />-->
+            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />-->
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="cancel all transfers" Click="OnCancelAllClick" />
+                <shell:ApplicationBarMenuItem Text="clean up transfers" Click="OnCleanUpTransfersClick" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>        
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

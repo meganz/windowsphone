@@ -61,7 +61,7 @@ namespace MegaApp.Models
                 }
                 case TransferType.Upload:
                 {
-                    MegaSdk.startUpload(FilePath, SelectedNode.GetMegaNode(), this);
+                    this.MegaSdk.startUpload(FilePath, SelectedNode.GetMegaNode(), this);
                     break; 
                 }
                 default:
@@ -141,6 +141,27 @@ namespace MegaApp.Models
             }
         }
 
+        private Uri _transferButtonIcon;
+        public Uri TransferButtonIcon
+        {
+            get { return _transferButtonIcon; }
+            private set
+            {
+                _transferButtonIcon = value;
+                OnPropertyChanged("TransferButtonIcon");
+            }
+        }
+
+        private SolidColorBrush _transferButtonForegroundColor;
+        public SolidColorBrush TransferButtonForegroundColor
+        {
+            get { return _transferButtonForegroundColor; }
+            set
+            {
+                _transferButtonForegroundColor = value;
+                OnPropertyChanged("TransferButtonForegroundColor");
+            }
+        }
 
         private TransferStatus _transferStatus;
         public TransferStatus Status
@@ -205,19 +226,25 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
                 
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
                 TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
                 IsBusy = false;
-                CancelButtonState = false;
+                CancelButtonState = false;                
             });
 
             switch (e.getErrorCode())
             {
                 case MErrorType.API_OK:
                 {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
+                        TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
+                    });
+
                     var imageNode = SelectedNode as ImageNodeViewModel;
                     if (imageNode != null)
                     {
@@ -278,10 +305,22 @@ namespace MegaApp.Models
                             }
                             #endif
                         }
+                    }                    
+
+                    switch(Type)
+                    {
+                        case TransferType.Download:
+                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Downloaded);
+                            break;
+                     
+                        case TransferType.Upload:
+                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Uploaded);
+                            break;
+                        
+                        default:
+                            throw new ArgumentOutOfRangeException();                    
                     }
                     
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Finished);
                     break;
                 }
                 case MErrorType.API_EOVERQUOTA:
@@ -347,8 +386,10 @@ namespace MegaApp.Models
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Status = TransferStatus.Connecting;
+                Status = TransferStatus.Queued;
                 CancelButtonState = true;
+                TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
                 IsBusy = true;
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
@@ -366,7 +407,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
                 
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
