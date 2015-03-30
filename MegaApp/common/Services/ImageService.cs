@@ -65,6 +65,7 @@ namespace MegaApp.Services
                         }
                 }
             }
+            catch(Exception)
             {
                 return false;
             }            
