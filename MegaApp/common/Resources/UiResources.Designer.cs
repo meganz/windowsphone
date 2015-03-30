@@ -241,6 +241,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancel all transfers.
+        /// </summary>
+        public static string CancelAllTransfers {
+            get {
+                return ResourceManager.GetString("CancelAllTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Capture.
         /// </summary>
         public static string Capture {
@@ -543,6 +552,123 @@ namespace MegaApp.Resources {
         public static string Import {
             get {
                 return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA access.
+        /// </summary>
+        public static string InitTourAccess_Title {
+            get {
+                return ResourceManager.GetString("InitTourAccess_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a get.
+        /// </summary>
+        public static string InitTourAccess1 {
+            get {
+                return ResourceManager.GetString("InitTourAccess1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a fully encrypted access.
+        /// </summary>
+        public static string InitTourAccess2 {
+            get {
+                return ResourceManager.GetString("InitTourAccess2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a anywhere, anytime..
+        /// </summary>
+        public static string InitTourAccess3 {
+            get {
+                return ResourceManager.GetString("InitTourAccess3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA privacy.
+        /// </summary>
+        public static string InitTourPrivacy_Title {
+            get {
+                return ResourceManager.GetString("InitTourPrivacy_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a keep your files safe with MEGA&apos;s.
+        /// </summary>
+        public static string InitTourPrivacy1 {
+            get {
+                return ResourceManager.GetString("InitTourPrivacy1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a end-to-end encryption..
+        /// </summary>
+        public static string InitTourPrivacy2 {
+            get {
+                return ResourceManager.GetString("InitTourPrivacy2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA space.
+        /// </summary>
+        public static string InitTourSpace_Title {
+            get {
+                return ResourceManager.GetString("InitTourSpace_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a register now and get.
+        /// </summary>
+        public static string InitTourSpace1 {
+            get {
+                return ResourceManager.GetString("InitTourSpace1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 50 GB of free space..
+        /// </summary>
+        public static string InitTourSpace2 {
+            get {
+                return ResourceManager.GetString("InitTourSpace2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA speed.
+        /// </summary>
+        public static string InitTourSpeed_Title {
+            get {
+                return ResourceManager.GetString("InitTourSpeed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a transfers are fast..
+        /// </summary>
+        public static string InitTourSpeed1 {
+            get {
+                return ResourceManager.GetString("InitTourSpeed1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a quickly share files with everyone..
+        /// </summary>
+        public static string InitTourSpeed2 {
+            get {
+                return ResourceManager.GetString("InitTourSpeed2", resourceCulture);
             }
         }
         
@@ -853,6 +979,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Pause.
+        /// </summary>
+        public static string Pause {
+            get {
+                return ResourceManager.GetString("Pause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Pause all.
         /// </summary>
         public static string PauseAll {
@@ -948,6 +1083,15 @@ namespace MegaApp.Resources {
         public static string RenameItem {
             get {
                 return ResourceManager.GetString("RenameItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Resume.
+        /// </summary>
+        public static string Resume {
+            get {
+                return ResourceManager.GetString("Resume", resourceCulture);
             }
         }
         
@@ -1078,6 +1222,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Start.
+        /// </summary>
+        public static string Start {
+            get {
+                return ResourceManager.GetString("Start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Start/resume all.
         /// </summary>
         public static string StartResumeAll {
@@ -1159,7 +1312,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceling....
+        ///   Busca una cadena traducida similar a Canceling.
         /// </summary>
         public static string Transfer_Canceling {
             get {
@@ -1168,16 +1321,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Connecting server....
-        /// </summary>
-        public static string Transfer_Connecting {
-            get {
-                return ResourceManager.GetString("Transfer_Connecting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Downloading....
+        ///   Busca una cadena traducida similar a Downloading.
         /// </summary>
         public static string Transfer_Download {
             get {
@@ -1186,7 +1330,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error on transfer.
+        ///   Busca una cadena traducida similar a Downloaded.
+        /// </summary>
+        public static string Transfer_Downloaded {
+            get {
+                return ResourceManager.GetString("Transfer_Downloaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error.
         /// </summary>
         public static string Transfer_Error {
             get {
@@ -1195,16 +1348,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Finished.
-        /// </summary>
-        public static string Transfer_Finished {
-            get {
-                return ResourceManager.GetString("Transfer_Finished", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Ready.
+        ///   Busca una cadena traducida similar a Not started.
         /// </summary>
         public static string Transfer_NotStarted {
             get {
@@ -1222,7 +1366,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Pausing....
+        ///   Busca una cadena traducida similar a Pausing.
         /// </summary>
         public static string Transfer_Pausing {
             get {
@@ -1231,11 +1375,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploading....
+        ///   Busca una cadena traducida similar a Queued.
+        /// </summary>
+        public static string Transfer_Queued {
+            get {
+                return ResourceManager.GetString("Transfer_Queued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Uploading.
         /// </summary>
         public static string Transfer_Upload {
             get {
                 return ResourceManager.GetString("Transfer_Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Uploaded.
+        /// </summary>
+        public static string Transfer_Uploaded {
+            get {
+                return ResourceManager.GetString("Transfer_Uploaded", resourceCulture);
             }
         }
         

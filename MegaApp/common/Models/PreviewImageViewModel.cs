@@ -83,32 +83,37 @@ namespace MegaApp.Models
 
         private void SetViewingRange(int inViewRange, bool initialize)
         {
-            int currentIndex = PreviewItems.IndexOf(SelectedPreview);
-            int lowIndex = currentIndex - inViewRange;
-            if (lowIndex < 0) lowIndex = 0;
-            int highIndex = currentIndex + inViewRange;
-            if (highIndex > PreviewItems.Count - 1) highIndex = PreviewItems.Count - 1;
+            try
+            {
+                int currentIndex = PreviewItems.IndexOf(SelectedPreview);
+                int lowIndex = currentIndex - inViewRange;
+                if (lowIndex < 0) lowIndex = 0;
+                int highIndex = currentIndex + inViewRange;
+                if (highIndex > PreviewItems.Count - 1) highIndex = PreviewItems.Count - 1;
 
-            if(initialize)
-            {
-                for (int i = currentIndex; i >= lowIndex; i--)
-                    PreviewItems[i].InViewingRange = true;
-                for (int i = currentIndex; i <= highIndex; i++)
-                    PreviewItems[i].InViewingRange = true;
-            }
-            else
-            {
-                switch (GalleryDirection)
+                if (initialize)
                 {
-                    case GalleryDirection.Next:
-                        PreviewItems[highIndex].InViewingRange = true;
-                        break;
-                    case GalleryDirection.Previous:
-                        PreviewItems[lowIndex].InViewingRange = true;
-                        break;
+                    for (int i = currentIndex; i >= lowIndex; i--)
+                        PreviewItems[i].InViewingRange = true;
+                    for (int i = currentIndex; i <= highIndex; i++)
+                        PreviewItems[i].InViewingRange = true;
                 }
-                
-                
+                else
+                {
+                    switch (GalleryDirection)
+                    {
+                        case GalleryDirection.Next:
+                            PreviewItems[highIndex].InViewingRange = true;
+                            break;
+                        case GalleryDirection.Previous:
+                            PreviewItems[lowIndex].InViewingRange = true;
+                            break;
+                    }
+                }
+            }
+            catch(ArgumentOutOfRangeException)
+            {
+                return;
             }
         }
 

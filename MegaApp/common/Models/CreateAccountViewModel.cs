@@ -129,7 +129,7 @@ namespace MegaApp.Models
 
         protected override Type NavigateToPage
         {
-            get { return typeof (LoginPage); }
+            get { return typeof (InitTourPage); }
         }
 
         protected override NavigationParameter NavigationParameter

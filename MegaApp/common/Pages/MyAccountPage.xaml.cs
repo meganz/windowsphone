@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -45,9 +46,13 @@ namespace MegaApp.Pages
 
         private void OnLogoutClick(object sender, System.EventArgs e)
         {
-            if (App.MegaTransfers.Count > 0)
+            int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued ||
+                t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
+                t.Status == TransferStatus.Paused || t.Status == TransferStatus.Pausing));
+
+            if (numPendingTransfers > 0)
             {
-                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
+                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, numPendingTransfers),
                     AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
                 foreach (var item in App.MegaTransfers)
