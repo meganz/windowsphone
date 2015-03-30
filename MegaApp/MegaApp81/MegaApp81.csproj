@@ -251,9 +251,6 @@
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
     </Compile>
-    <Compile Include="..\common\Enums\ApplicationEvent.cs">
-      <Link>Enums\ApplicationEvent.cs</Link>
-    </Compile>
     <Compile Include="..\common\Enums\DriveDisplayMode.cs">
       <Link>Enums\DriveDisplayMode.cs</Link>
     </Compile>
@@ -465,6 +462,10 @@
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
       <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\InitTourPage.xaml.cs">
+      <Link>Pages\InitTourPage.xaml.cs</Link>
+      <DependentUpon>InitTourPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\LoginPage.xaml.cs">
       <Link>Pages\LoginPage.xaml.cs</Link>
@@ -1940,6 +1941,10 @@
     </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\InitTourPage.xaml">
+      <Link>Pages\InitTourPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\LoginPage.xaml">

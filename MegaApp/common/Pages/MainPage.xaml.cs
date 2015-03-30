@@ -123,9 +123,13 @@ namespace MegaApp.Pages
                     // Needed on every UI interaction
                     App.MegaSdk.retryPendingConnections();
 
-                    if(App.MegaTransfers.Count > 0)
+                    int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued ||
+                        t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
+                        t.Status == TransferStatus.Paused || t.Status == TransferStatus.Pausing));
+
+                    if (numPendingTransfers > 0)
                     {
-                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
+                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, numPendingTransfers),
                             AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
 
                         foreach (var item in App.MegaTransfers)
@@ -199,19 +203,41 @@ namespace MegaApp.Pages
                     break;
             }
         }
+
+        private bool validActiveAndOnlineSession()
+        {
+            if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+                return false;
+
+            if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                return false;
+
+            bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+            if (!isAlreadyOnline)
+            {
+                try
+                {
+                    if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) == null)                        
+                        return false;
+                }
+                catch (ArgumentNullException) { return false; }
+            }
+
+            return true;
+        }
         
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             App.CloudDrive.ListBox = LstCloudDrive;
             
+            _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            
             #if WINDOWS_PHONE_81
             LstAdvancedMenu.SelectedItem = null;
             #endif
 
-            if(App.AppEvent == ApplicationEvent.Activated)
+            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
             {                
-                App.AppEvent = ApplicationEvent.None;
-
                 #if WINDOWS_PHONE_81
                 App.CloudDrive.NoFolderUpAction = false;
 
@@ -229,15 +255,16 @@ namespace MegaApp.Pages
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    return;
                 }
-                #endif
-
-                return;
+                #endif  
+              
+                if (validActiveAndOnlineSession() && _navParam == NavigationParameter.Unknown)
+                    return;
             }
             
             ChangeMenu();
-
-            _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+                        
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
                 App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
@@ -302,13 +329,15 @@ namespace MegaApp.Pages
                                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                                 else
                                 {
-                                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                     return;
                                 }
                             }
                             catch (ArgumentNullException)
                             {
-                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                 return;
                             }
                         }
@@ -324,7 +353,7 @@ namespace MegaApp.Pages
                     }
                     break;
                 }
-                #elif WINDOWS_PHONE_81
+#elif WINDOWS_PHONE_81
                 case NavigationParameter.ImportLinkLaunch:
                 #endif
 
@@ -344,7 +373,8 @@ namespace MegaApp.Pages
 
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
-                        NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                        //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                         return;
                     }
                     
@@ -355,7 +385,6 @@ namespace MegaApp.Pages
                     }
 
                     bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-
                     if (!isAlreadyOnline)
                     {
                         try
@@ -364,24 +393,24 @@ namespace MegaApp.Pages
                                 App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                             else
                             {
-                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                                NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                 return;
                             }
                         }
                         catch (ArgumentNullException)
                         {
-                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                            //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                             return;
-                        }
-                            
+                        }                            
                     }
                     
                     break;
                 }
             }
             
-            base.OnNavigatedTo(e);
-            App.AppEvent = ApplicationEvent.None;
+            base.OnNavigatedTo(e);            
         }
         
         #if WINDOWS_PHONE_81
@@ -470,13 +499,27 @@ namespace MegaApp.Pages
                     }
                     else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
                     {
-                        if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
+                        int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued || 
+                            t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
+                            t.Status == TransferStatus.Paused || t.Status == TransferStatus.Pausing));
+                        
+                        if (numPendingTransfers > 0)
                         {
-                            if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
+                            if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, numPendingTransfers),
                                 AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
                             {
                                 e.Cancel = true;
                                 return;
+                            }
+                            else 
+                            {
+                                foreach (var item in App.MegaTransfers)
+                                {
+                                    var transfer = (TransferObjectModel)item;
+                                    if (transfer == null) continue;
+
+                                    transfer.CancelTransfer();
+                                }
                             }
                         }
                     }

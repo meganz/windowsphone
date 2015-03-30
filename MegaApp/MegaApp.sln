@@ -4,13 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaApp80", "MegaApp80\MegaApp80.csproj", "{7D8D3817-2EB5-416A-9147-ED5E83DEE03E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{383E1B56-6F99-4B20-AA0E-D27790B93159} = {383E1B56-6F99-4B20-AA0E-D27790B93159}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mega", "..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj", "{258D42D3-2556-46B1-AE8F-DA6C9F49CFFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaApp81", "MegaApp81\MegaApp81.csproj", "{383E1B56-6F99-4B20-AA0E-D27790B93159}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7D8D3817-2EB5-416A-9147-ED5E83DEE03E} = {7D8D3817-2EB5-416A-9147-ED5E83DEE03E}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

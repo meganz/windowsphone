@@ -19,25 +19,27 @@ namespace MegaApp.Converters
             switch ((TransferStatus)value)
             {
                 case TransferStatus.NotStarted:
-                    return UiResources.Transfer_NotStarted;
-                case TransferStatus.Connecting:
-                    return UiResources.Transfer_Connecting;
+                    return UiResources.Transfer_NotStarted.ToLower();
+                case TransferStatus.Queued:
+                    return UiResources.Transfer_Queued.ToLower();
                 case TransferStatus.Downloading:
-                    return UiResources.Transfer_Download;
+                    return UiResources.Transfer_Download.ToLower();
+                case TransferStatus.Downloaded:
+                    return UiResources.Transfer_Downloaded.ToLower();
                 case TransferStatus.Uploading:
-                    return UiResources.Transfer_Upload;
-                case TransferStatus.Finished:
-                    return UiResources.Transfer_Finished;
-                case TransferStatus.Canceling:
-                    return UiResources.Transfer_Canceling;
-                case TransferStatus.Canceled:
-                    return UiResources.Transfer_Canceled;
-                case TransferStatus.Error:
-                    return UiResources.Transfer_Error;
+                    return UiResources.Transfer_Upload.ToLower();
+                case TransferStatus.Uploaded:
+                    return UiResources.Transfer_Uploaded.ToLower();
                 case TransferStatus.Pausing:
-                    return UiResources.Transfer_Pausing;
+                    return UiResources.Transfer_Pausing.ToLower();
                 case TransferStatus.Paused:
-                    return UiResources.Transfer_Paused;                    
+                    return UiResources.Transfer_Paused.ToLower();
+                case TransferStatus.Canceling:
+                    return UiResources.Transfer_Canceling.ToLower();
+                case TransferStatus.Canceled:
+                    return UiResources.Transfer_Canceled.ToLower();                                                
+                case TransferStatus.Error:
+                    return UiResources.Transfer_Error.ToLower();
                 default:
                     throw new ArgumentOutOfRangeException("value");
             }

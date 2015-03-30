@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using System.Windows.Media;
 using Windows.ApplicationModel.Activation;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
@@ -35,8 +36,6 @@ namespace MegaApp
         /// <returns>The root frame of the Phone Application.</returns>
         public static RadPhoneApplicationFrame RootFrame { get; private set; }
 
-        public static ApplicationEvent AppEvent { get; set; }
-        
         public static String IpAddress { get; set; }
 
         public static MegaSDK MegaSdk { get; set; }
@@ -99,7 +98,12 @@ namespace MegaApp
             diagnostics.Init();
 
             // Subscribe to the NetworkAvailabilityChanged event
-            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);            
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            // APP THEME OVERRIDES
+            Resources.Remove("PhoneAccentColor");
+            Resources.Add("PhoneAccentColor", (Color)Application.Current.Resources["MegaRedColor"]);
+            ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Application.Current.Resources["MegaRedColor"];
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -109,7 +113,6 @@ namespace MegaApp
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
             CheckChangesIP();
-            AppEvent = ApplicationEvent.Lauching;
 
             #if WINDOWS_PHONE_81
                 // Code to intercept files that are send to MEGA as share target
@@ -127,22 +130,21 @@ namespace MegaApp
         {
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
-            CheckChangesIP();
-            AppEvent = ApplicationEvent.Activated;
+            CheckChangesIP();            
         }
 
         // Code to execute when the application is deactivated (sent to background)
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
-            AppEvent = ApplicationEvent.Deactivated;
+            
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            AppEvent = ApplicationEvent.Closing;
+            
         }
 
         // Code to execute when the application detects a Network change.
@@ -219,9 +221,7 @@ namespace MegaApp
         #region Phone application initialization
 
         // Avoid double-initialization
-        private bool phoneApplicationInitialized = false;
-       // private const String appKey = "Z5dGhQhL";
-        //private const String userAgent = "MEGAWindowsPhone/1.0.0";
+        private bool phoneApplicationInitialized = false;       
 
         // Do not add any additional code to this method
         private void InitializePhoneApplication()
@@ -447,7 +447,7 @@ namespace MegaApp
             {
                 // Show the login page
                 Deployment.Current.Dispatcher.BeginInvoke(() => 
-                    NavigateService.NavigateTo(typeof(Pages.LoginPage), NavigationParameter.Normal));
+                    NavigateService.NavigateTo(typeof(Pages.InitTourPage), NavigationParameter.Normal));
 
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();

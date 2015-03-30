@@ -258,11 +258,7 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="Transfer_NotStarted" xml:space="preserve">
     <value>[2A6FF][!!_Ѓèàđý_!!]</value>
-    <comment>Label for the status of a transfer when is ready - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Finished" xml:space="preserve">
-    <value>[B503B][!!_₣įηįśнęď_!!]</value>
-    <comment>Label for the status of a finished transfer - (String as short as possible).</comment>
+    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Error" xml:space="preserve">
     <value>[C9AA5][!!_Èŗŗõŕ ôή ţŕãηŝƒèŗ_!!!!!!]</value>
@@ -271,10 +267,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Transfer_Download" xml:space="preserve">
     <value>[C9DA0][!!_Ďôŵήľóãďįиğ..._!!!!]</value>
     <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Connecting" xml:space="preserve">
-    <value>[0BBB1][!!_Ćòиήêĉτíήģ śęŕνéѓ..._!!!!!!]</value>
-    <comment>Label for the status of a transfer when is being connecting to the server - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Canceling" xml:space="preserve">
     <value>[9B1CC][!!_Čâηċęľìиġ..._!!]</value>
