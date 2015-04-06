@@ -21,8 +21,7 @@
 	<Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="84"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>            
         </Grid.RowDefinitions>
         
         <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
@@ -43,6 +42,7 @@
                     <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>                    
                 </Grid>
 			</phone:PivotItem>
+            <!--Pivot item two-->
             <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
 				<Grid>
 					<telerikPrimitives:RadDataBoundListBox 
@@ -56,17 +56,12 @@
                     <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
 				</Grid>
 			</phone:PivotItem>
-
-			<!--Pivot item two-->
 		</phone:Pivot>
 	</Grid>
     
 	<phone:PhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Appbar/transport.play.png" Text="start/resume all" Click="OnStartResumeAllClick" />-->
             <shell:ApplicationBarIconButton x:Name="BtnPauseResume" IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseAllClick" />
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />-->
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />-->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="cancel all transfers" Click="OnCancelAllClick" />
                 <shell:ApplicationBarMenuItem Text="clean up transfers" Click="OnCleanUpTransfersClick" />

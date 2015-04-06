@@ -13,21 +13,23 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
 	<Grid x:Name="LayoutRoot" Background="Transparent">
 		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-        
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
+
         <!--TitlePanel contains the name of the application and page title-->
-		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <classes:CustomMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
-            <TextBlock Text="{Binding LocalizedUiResources.About, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" TextWrapping="Wrap" Style="{StaticResource PhoneTextTitle1Style}"/>
-		</StackPanel>
-		<StackPanel x:Name="ContentPanel" Margin="12,0,12,0" Grid.Row="1" >
+        <TextBlock Grid.Row="1" Text="{Binding LocalizedUiResources.About, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" FontFamily="Segoe WP SemiLight" TextWrapping="Wrap" Foreground="White" FontSize="40" Margin="24,6,24,0" />
+        
+		<StackPanel x:Name="ContentPanel" Margin="24,24,24,0" Grid.Row="2" >
 			<Grid x:Name="VersionGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

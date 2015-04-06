@@ -67,15 +67,15 @@ predeterminada</target>
           <target state="signed-off">Z5dGhQhL</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications. - (NO-TRANSLATION).</note>
           </trans-unit>
-        <trans-unit id="Resx/TermsOfUseUrl" translate="no" xml:space="preserve">
-          <source>https://mega.co.nz/mobile_terms.html</source>
-          <target state="signed-off">https://mega.co.nz/mobile_terms.html</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">URL to the 'Terms of use' information web page - (NO-TRANSLATION).</note>
-          </trans-unit>
         <trans-unit id="Resx/PagesLocation" translate="no" xml:space="preserve">
           <source>/Pages/</source>
           <target state="signed-off">/Pages/</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Location of the pages of the application - (NO-TRANSLATION).</note>
+          </trans-unit>
+        <trans-unit id="Resx/TermsOfServiceUrl" translate="no" xml:space="preserve">
+          <source>https://mega.co.nz/mobile_terms.html</source>
+          <target state="signed-off">https://mega.co.nz/mobile_terms.html</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">URL to the 'Terms of Service' information web page - (NO-TRANSLATION).</note>
           </trans-unit>
         <trans-unit id="Resx/ApplicationTitle" translate="no" xml:space="preserve">
           <source>MEGA Privacy</source>

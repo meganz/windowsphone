@@ -162,9 +162,9 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a https://mega.co.nz/mobile_terms.html.
         /// </summary>
-        public static string TermsOfUseUrl {
+        public static string TermsOfServiceUrl {
             get {
-                return ResourceManager.GetString("TermsOfUseUrl", resourceCulture);
+                return ResourceManager.GetString("TermsOfServiceUrl", resourceCulture);
             }
         }
         

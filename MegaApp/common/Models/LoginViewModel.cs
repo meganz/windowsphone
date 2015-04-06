@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
@@ -27,8 +28,7 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
-            this.ControlState = true;
-            this.NavigateCreateAccountCommand = new DelegateCommand(NavigateCreateAccount);
+            this.ControlState = true;            
         }
 
         #region Methods
@@ -39,20 +39,25 @@ namespace MegaApp.Models
             {
                 this._megaSdk.login(Email, Password, this);
             }
-            else
-            {
-                MessageBox.Show(AppMessages.RequiredFieldsLogin, AppMessages.RequiredFields_Title,
-                        MessageBoxButton.OK);
-            }
-        }
-        private static void NavigateCreateAccount(object obj)
-        {
-            NavigateService.NavigateTo(typeof(CreateAccountPage), NavigationParameter.Normal);
         }
 
         private bool CheckInputParameters()
         {
-            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password);
+            if (String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Password))
+            {
+                MessageBox.Show(AppMessages.RequiredFieldsLogin, AppMessages.RequiredFields_Title.ToUpper(),
+                        MessageBoxButton.OK);
+                return false;
+            }
+            
+            if(!ValidationService.IsValidEmail(Email))
+            {
+                MessageBox.Show(AppMessages.MalformedEmail, AppMessages.LoginFailed_Title.ToUpper(),
+                        MessageBoxButton.OK);
+                return false;
+            }
+
+            return true;
         }
 
         private static void SaveLoginData(string email, string session, bool stayLoggedIn)
@@ -61,13 +66,7 @@ namespace MegaApp.Models
         }
         
         #endregion
-
-        #region Commands
-
-        public ICommand NavigateCreateAccountCommand { get; set; }
-
-        #endregion
-
+        
         #region Properties
 
         public string Email { get; set; }
@@ -91,7 +90,7 @@ namespace MegaApp.Models
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title; }
+            get { return AppMessages.LoginFailed_Title.ToUpper(); }
         }
 
         protected override string SuccessMessage
@@ -135,8 +134,24 @@ namespace MegaApp.Models
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
+                ProgressService.SetProgressIndicator(false);
+
+                this.ControlState = true;
+            });            
+
             if (e.getErrorCode() == MErrorType.API_OK)
                 SessionKey = api.dumpSession();
+
+            // E-mail unassociated with a MEGA account or Wrong password
+            if (e.getErrorCode() == MErrorType.API_ENOENT)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    MessageBox.Show(AppMessages.WrongEmailPasswordLogin, ErrorMessageTitle, MessageBoxButton.OK));
+                return;
+            }
 
             base.onRequestFinish(api, request, e);
         }
