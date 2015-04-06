@@ -127,7 +127,7 @@
   </data>
   <data name="AgreeCreateAccount" xml:space="preserve">
     <value>I agree with the</value>
-    <comment>Text placed just before a link labeled 'Term of use' into the 'create account' page.</comment>
+    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>MEGA Privacy</value>
@@ -164,10 +164,6 @@
   <data name="CreateFolder" xml:space="preserve">
     <value>Folder name:</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
-  </data>
-  <data name="CreateNewAccount" xml:space="preserve">
-    <value>Create a new account here</value>
-    <comment>Text placed as a link to the 'create account' page into the 'login' page - (String as short as possible).</comment>
   </data>
   <data name="EmailWatermark" xml:space="preserve">
     <value>Your e-mail address</value>
@@ -220,10 +216,6 @@
   <data name="NameWatermark" xml:space="preserve">
     <value>Your name</value>
     <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
-  <data name="NewAtMega" xml:space="preserve">
-    <value>New at MEGA? </value>
-    <comment>Text placed into the login page just before a link to the create account page. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
     <value>Next</value>
@@ -296,10 +288,6 @@
   <data name="NoTransfers" xml:space="preserve">
     <value>No transfers</value>
     <comment>Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</comment>
-  </data>
-  <data name="TermsOfUse" xml:space="preserve">
-    <value>Terms of use</value>
-    <comment>Label for 'Terms of use' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
     <value>Upload</value>
@@ -634,8 +622,8 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="TermsOfService" xml:space="preserve">
-    <value>Terms of service</value>
-    <comment>Label for 'Terms of service' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+    <value>Terms of Service</value>
+    <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Total</value>

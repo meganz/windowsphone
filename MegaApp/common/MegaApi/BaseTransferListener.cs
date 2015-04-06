@@ -22,8 +22,8 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => 
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]));
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]));
 
             switch(e.getErrorCode())
             {
@@ -75,7 +75,7 @@ namespace MegaApp.MegaApi
         public virtual void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]));
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]));
         }
 
         //Will be called only for transfers started by startStreaming

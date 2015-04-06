@@ -6,15 +6,10 @@
     </header>
     <body>
       <group id="Resx">
-        <trans-unit id="Resx/AgreeTermsOfUse" translate="yes" xml:space="preserve">
-          <source>You must agree with our terms of use</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[CCC54][!!_Ýòµ mûšт áġřéé ẁįţн óûŗ тéŗмś óƒ µşé_!!!!!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use'.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AgreeTermsOfUse_Title" translate="yes" xml:space="preserve">
-          <source>Terms of use</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[A693B][!!_Ťèѓмş óƒ µšę_!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use' - (String as short as possible).</note>
+        <trans-unit id="Resx/AgreeTermsOfService" translate="yes" xml:space="preserve">
+          <source>You must agree with our Terms of Service</source>
+          <target state="new">You must agree with our Terms of Service</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" xml:space="preserve">
           <source>Failed to confirm account. Please try again. [{0}]</source>
@@ -222,14 +217,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" xml:space="preserve">
-          <source>Your passwords do not match. Please re-type them and make sure they are equal.</source>
+          <source>Passwords do not match. Please try again.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[069C1][!!_Ϋòùŗ ρâŝşẁõѓđś đò ηôт máτĉĥ. Þĺęáŝê řę-тÿρé ťнęm àйď màќé şúŕè ţĥêÿ áѓê éqûáł_!!!!!!!!!!!!!!!!!!!!!!!!]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="Resx/PasswordsDoNotMatch_Title" translate="yes" xml:space="preserve">
-          <source>Passwords do not match</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[04ABE][!!_Рáşşẁôŗđš ðó ήõť мàτĉћ_!!!!!!]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PictureSaved" translate="yes" xml:space="preserve">
           <source>The image is saved in your photo album.</source>
@@ -288,7 +278,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" xml:space="preserve">
-          <source>Please fill in your name, e-mail address and password.</source>
+          <source>Please fill in your name, e-mail address and your MEGA password.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[9F38D][!!_Рľéàşê ƒįľľ įη ýòúŕ йâмê, é-мâîļ âďďŕéŝš ãйď ŷõûŗ йęẅ þàŝšẃòŗð_!!!!!!!!!!!!!!!!!!]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
           <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note></trans-unit>
@@ -690,6 +680,16 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <source>Select file(s) failed</source>
           <target state="new">Select file(s) failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MalformedEmail" translate="yes" xml:space="preserve">
+          <source>Malformed e-mail. Please try again.</source>
+          <target state="new">Malformed e-mail. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" xml:space="preserve">
+          <source>E-mail is not associated with a MEGA account or wrong password. Please try again.</source>
+          <target state="new">E-mail is not associated with a MEGA account or wrong password. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" xml:space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>

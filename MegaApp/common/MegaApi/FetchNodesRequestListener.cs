@@ -150,7 +150,7 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneBackgroundColor"]);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
                 ProgressService.SetProgressIndicator(true, String.Format(ProgressMessages.FetchingNodes,
                     request.getTransferredBytes().ToStringAndSuffix()));
             });

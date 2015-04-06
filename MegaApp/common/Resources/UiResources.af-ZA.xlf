@@ -57,9 +57,9 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" xml:space="preserve">
-          <source>Terms of service</source>
-          <target state="new">Terms of service</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Terms of service' option of the dialog shown to upload nodes - (String as short as possible).</note>
+          <source>Terms of Service</source>
+          <target state="new">Terms of Service</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Subscribe" translate="yes" xml:space="preserve">
           <source>Subscribe</source>
@@ -580,11 +580,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Upload</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/TermsOfUse" translate="yes" xml:space="preserve">
-          <source>Terms of use</source>
-          <target state="new">Terms of use</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Terms of use' option of the dialog shown to upload nodes - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/NoTransfers" translate="yes" xml:space="preserve">
           <source>No transfers</source>
           <target state="new">No transfers</target>
@@ -675,11 +670,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Open</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NewAtMega" translate="yes" xml:space="preserve">
-          <source>New at MEGA? </source>
-          <target state="new">New at MEGA? </target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the login page just before a link to the create account page. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/NameWatermark" translate="yes" xml:space="preserve">
           <source>Your name</source>
           <target state="new">Your name</target>
@@ -745,11 +735,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Your e-mail address</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/CreateNewAccount" translate="yes" xml:space="preserve">
-          <source>Create a new account here</source>
-          <target state="new">Create a new account here</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed as a link to the 'create account' page into the 'login' page - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
           <source>Folder name:</source>
           <target state="new">Folder name:</target>
@@ -798,7 +783,7 @@ Try to preserve the PIN uppercase word.</note>
         <trans-unit id="Resx/AgreeCreateAccount" translate="yes" xml:space="preserve">
           <source>I agree with the</source>
           <target state="new">I agree with the</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of use' into the 'create account' page.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AddFolder" translate="yes" xml:space="preserve">
           <source>Add folder</source>

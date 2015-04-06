@@ -376,15 +376,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Create a new account here.
-        /// </summary>
-        public static string CreateNewAccount {
-            get {
-                return ResourceManager.GetString("CreateNewAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Create shortcut.
         /// </summary>
         public static string CreateShortCut {
@@ -844,15 +835,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a New at MEGA? .
-        /// </summary>
-        public static string NewAtMega {
-            get {
-                return ResourceManager.GetString("NewAtMega", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Newest.
         /// </summary>
         public static string NewestSortOption {
@@ -1276,20 +1258,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Terms of service.
+        ///   Busca una cadena traducida similar a Terms of Service.
         /// </summary>
         public static string TermsOfService {
             get {
                 return ResourceManager.GetString("TermsOfService", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Terms of use.
-        /// </summary>
-        public static string TermsOfUse {
-            get {
-                return ResourceManager.GetString("TermsOfUse", resourceCulture);
             }
         }
         
