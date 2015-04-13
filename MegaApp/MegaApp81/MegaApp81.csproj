@@ -3884,12 +3884,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
       <culture>qps-ploc</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.resx">
-      <Link>Resources\UiResources.resx</Link>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    </EmbeddedResource>    
     <EmbeddedResource Include="..\common\Resources\UiResources.ro-RO.resx">
       <Link>Resources\UiResources.ro-RO.resx</Link>
       <AutoGen>True</AutoGen>
