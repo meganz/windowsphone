@@ -86,12 +86,12 @@ namespace MegaApp.Pages
 
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Download();
+            _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.GetPreviewLink();
+            _previewImageViewModel.SelectedPreview.GetLink();
         }
 
         private void OnRenameItemClick(object sender, EventArgs e)

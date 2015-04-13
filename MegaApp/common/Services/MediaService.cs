@@ -4,9 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Imaging;
 using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Pages;
+using MegaApp.Resources;
+using MegaApp.ViewModels;
+using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
@@ -102,5 +107,46 @@ namespace MegaApp.Services
             return songList;
 
         }
+
+        public static void CaptureCameraImage(FolderViewModel currentFolder)
+        {
+            var cameraCaptureTask = new CameraCaptureTask();
+
+            cameraCaptureTask.Completed += async (sender, result) =>
+            {
+                if (result == null || result.TaskResult != TaskResult.OK) return;
+
+                try
+                {
+                    string fileName = Path.GetFileName(result.OriginalFileName);
+                    if (fileName != null)
+                    {
+                        string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
+                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        {
+                            await result.ChosenPhoto.CopyToAsync(fs);
+                            await fs.FlushAsync();
+                            fs.Close();
+                        }
+                        var uploadTransfer = new TransferObjectModel(currentFolder.MegaSdk,
+                            currentFolder.FolderRootNode, 
+                            TransferType.Upload,
+                            newFilePath);
+                        App.MegaTransfers.Insert(0, uploadTransfer);
+                        uploadTransfer.StartTransfer();
+                    }
+
+                    NavigateService.NavigateTo(typeof (TransferPage), NavigationParameter.Normal);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(AppMessages.PhotoUploadError, AppMessages.PhotoUploadError_Title,
+                        MessageBoxButton.OK);
+                }
+            };
+            
+            cameraCaptureTask.Show();
+        }
+        
     }
 }

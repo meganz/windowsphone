@@ -1,4 +1,5 @@
-﻿using Microsoft.Phone.Shell;
+﻿using System.Windows.Media;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Services
 {
@@ -11,10 +12,10 @@ namespace MegaApp.Services
                 SystemTray.ProgressIndicator = null;
                 return;
             }
-
+            
             if (SystemTray.ProgressIndicator == null)
                 SystemTray.ProgressIndicator = new ProgressIndicator();
-          
+            
             SystemTray.ProgressIndicator.Text = message;
             SystemTray.ProgressIndicator.IsIndeterminate = true;
             SystemTray.ProgressIndicator.IsVisible = true;

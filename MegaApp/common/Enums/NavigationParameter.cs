@@ -15,6 +15,6 @@
         Uploads = 80,
         Downloads = 90,
         DisablePassword = 100,
-        Unknown = 999
+        None = 999
     }
 }

@@ -9,8 +9,21 @@ namespace MegaApp
     {
         private static AppResources _localizedResources = new AppResources();
         private static UiResources _localizedUiResources = new UiResources();
+        private static VisualResources _localizedVisualResources = new VisualResources();
 
-        public AppResources LocalizedResources { get { return _localizedResources; } }
-        public UiResources LocalizedUiResources { get { return _localizedUiResources; } }
+        public AppResources LocalizedResources
+        {
+            get { return _localizedResources; }
+        }
+
+        public UiResources LocalizedUiResources
+        {
+            get { return _localizedUiResources; }
+        }
+
+        public VisualResources LocalizedVisualResources
+        {
+            get { return _localizedVisualResources; }
+        }
     }
 }

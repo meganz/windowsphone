@@ -13,7 +13,8 @@
     <AssemblyName>MegaApp</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion></SilverlightVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>
     </SupportedCultures>
@@ -89,7 +90,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -148,7 +149,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Emulator Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Emulator Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -171,9 +172,6 @@
     </Compile>
     <Compile Include="..\common\Classes\AccountDetails.cs">
       <Link>Classes\AccountDetails.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
-      <Link>Classes\AdvancedMenuItem.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\AppMemoryController.cs">
       <Link>Classes\AppMemoryController.cs</Link>
@@ -276,6 +274,9 @@
     </Compile>
     <Compile Include="..\common\Extensions\SizeExtensions.cs">
       <Link>Extensions\SizeExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Interfaces\IMegaNode.cs">
+      <Link>Interfaces\IMegaNode.cs</Link>
     </Compile>
     <Compile Include="..\common\Interfaces\IMegaService.cs">
       <Link>Interfaces\IMegaService.cs</Link>
@@ -510,9 +511,6 @@
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
     </Compile>
-    <Compile Include="..\common\Services\MegaService.cs">
-      <Link>Services\MegaService.cs</Link>
-    </Compile>
     <Compile Include="..\common\Services\NavigateService.cs">
       <Link>Services\NavigateService.cs</Link>
     </Compile>
@@ -544,15 +542,32 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\AppInformation.cs" />
     <Compile Include="Classes\AssociationUriMapper.cs" />
-    <Compile Include="Models\PasswordViewModel.cs" />
-    <Compile Include="Models\FileNodeViewModel.cs" />
-    <Compile Include="Models\ImageNodeViewModel.cs" />
-    <Compile Include="Models\SettingsViewModel.cs" />
-    <Compile Include="Models\TransferObjectModel.cs" />
+    <Compile Include="Classes\HamburgerMenuItem.cs" />
+    <Compile Include="Converters\ActiveToOpacityConverter.cs" />
+    <Compile Include="Converters\TextToLowerCaseConverter.cs" />
+    <Compile Include="Enums\ContainerType.cs" />
+    <Compile Include="Enums\NodeActionResult.cs" />
+    <Compile Include="Interfaces\IApplicationBar.cs" />
+    <Compile Include="Interfaces\IHamburgerMenu.cs" />
+    <Compile Include="Resources\VisualResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisualResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DrawerLayout.cs" />
+    <Compile Include="ViewModels\BaseAppInfoAwareViewModel.cs" />
+    <Compile Include="ViewModels\FolderViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\PasswordViewModel.cs" />
+    <Compile Include="ViewModels\FileNodeViewModel.cs" />
+    <Compile Include="ViewModels\ImageNodeViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\TransferObjectModel.cs" />
     <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
-    <Compile Include="Models\CloudDriveViewModel.cs" />
-    <Compile Include="Models\DownloadNodeViewModel.cs" />
+    <Compile Include="ViewModels\CloudDriveViewModel.cs" />
+    <Compile Include="ViewModels\DownloadNodeViewModel.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -2031,6 +2046,7 @@
       <Link>Resources\AppMessages.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.es-ES.resx">
       <Link>Resources\AppResources.es-ES.resx</Link>
@@ -2099,6 +2115,11 @@
       <Link>Resources\UiResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UiResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\VisualResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>VisualResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

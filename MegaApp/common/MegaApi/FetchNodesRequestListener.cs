@@ -13,19 +13,17 @@ using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
     class FetchNodesRequestListener : BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        private readonly NodeViewModel _rootRefreshNode;
+        private readonly MainPageViewModel _mainPageViewModel;
         private readonly ulong? _shortCutHandle;
-        public FetchNodesRequestListener(CloudDriveViewModel cloudDriveViewModel, NodeViewModel rootRefreshNode = null,
-            ulong? shortCutHandle = null)
+        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, ulong? shortCutHandle = null)
         {
-            this._cloudDriveViewModel = cloudDriveViewModel;
-            this._rootRefreshNode = rootRefreshNode;
+            this._mainPageViewModel = mainPageViewModel;
             this._shortCutHandle = shortCutHandle;
         }
 
@@ -100,37 +98,42 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Enable appbar buttons
-                _cloudDriveViewModel.SetCommandStatus(true);
+                //_cloudDriveViewModel.SetCommandStatus(true);
             });
 
             if (_shortCutHandle.HasValue)
             {
-                MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                if (shortCutMegaNode != null)
-                {
-                     var newRootNode = NodeService.CreateNew(api, shortCutMegaNode);
-                     var autoResetEvent = new AutoResetEvent(false);
-                     Deployment.Current.Dispatcher.BeginInvoke(() =>
-                     {
-                         _cloudDriveViewModel.CurrentRootNode = newRootNode;
-                         autoResetEvent.Set();
-                     });
-                     autoResetEvent.WaitOne();
-                }
+                //MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                //if (shortCutMegaNode != null)
+                //{
+                //     var newRootNode = NodeService.CreateNew(api, _cloudDriveViewModel.AppInformation, shortCutMegaNode);
+                //     var autoResetEvent = new AutoResetEvent(false);
+                //     Deployment.Current.Dispatcher.BeginInvoke(() =>
+                //     {
+                //         _cloudDriveViewModel.CurrentRootNode = newRootNode;
+                //         autoResetEvent.Set();
+                //     });
+                //     autoResetEvent.WaitOne();
+                //}
             }
             else
             {
-                var newRootNode = _rootRefreshNode ?? NodeService.CreateNew(api, api.getRootNode());
+                var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
+                    NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
+                var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
+                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
+
                 var autoResetEvent = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _cloudDriveViewModel.CurrentRootNode = newRootNode;
+                    _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
+                    _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
                     autoResetEvent.Set();
                 });
                 autoResetEvent.WaitOne();
             }
-           
-            _cloudDriveViewModel.LoadNodes();
+
+            _mainPageViewModel.LoadFolders();
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)
@@ -138,7 +141,7 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Disable appbar buttons
-                _cloudDriveViewModel.SetCommandStatus(false);
+                //_cloudDriveViewModel.SetCommandStatus(false);
 
                 ProgressService.SetProgressIndicator(true,
                    String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));

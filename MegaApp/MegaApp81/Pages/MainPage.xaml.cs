@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
-using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using MegaApp.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -26,22 +25,29 @@ namespace MegaApp.Pages
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private NavigationParameter _navParam;
-        private bool _normalBackAction = false;
+        private readonly MainPageViewModel _mainPageViewModel;
 
         public MainPage()
         {
-            this.DataContext = App.CloudDrive;
-
+            // Set the main viewmodel of this page
+            _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
+            this.DataContext = _mainPageViewModel;
+            
             InitializeComponent();
 
-            CreateAdvancedMenu();
+            // Initialize the hamburger menu / slide in
+            MainDrawerLayout.InitializeDrawerLayout();
+            MainDrawerLayout.DrawerOpened += OnDrawerOpened;
+            MainDrawerLayout.DrawerClosed += OnDrawerClosed;
             
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
-
-            BreadCrumbControl.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
-            BreadCrumbControl.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+           
+            //CloudDriveBreadCrumb.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            //CloudDriveBreadCrumb.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+            //RubbishBinBreadCrumb.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            //RubbishBinBreadCrumb.OnHomeTap += BreadCrumbControlOnOnHomeTap;
             
+            // TODO REFACTOR
             App.CloudDrive.CommandStatusChanged += (sender, args) =>
             {
                 if (ApplicationBar == null) return;
@@ -56,101 +62,31 @@ namespace MegaApp.Pages
                     ((ApplicationBarMenuItem)item).IsEnabled = args.Status;
                 }
 
-                BtnSelectSorting.IsEnabled = args.Status;
+                //BtnSelectSorting.IsEnabled = args.Status;
                
             };
         }
-
-        private void CreateAdvancedMenu()
-        {
-            var advancedMenuItems = new List<AdvancedMenuItem>();
-
-            advancedMenuItems.Add(new AdvancedMenuItem()
-            {
-                Name = UiResources.Transfers,
-                TapAction = () =>
-                {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
-
-                    App.CloudDrive.GoToTransfers();
-                }
-            });
-
-            advancedMenuItems.Add(new AdvancedMenuItem()
-            {
-                Name = UiResources.MyAccount,
-                TapAction = () =>
-                {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
-
-                    App.CloudDrive.GoToAccountDetails();
-                }
-            });
-
-            advancedMenuItems.Add(new AdvancedMenuItem()
-            {
-                Name = UiResources.Preferences,
-                TapAction = () =>
-                {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
-
-                    App.CloudDrive.NoFolderUpAction = true;
-                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
-                }
-            });
-
-            advancedMenuItems.Add(new AdvancedMenuItem()
-            {
-                Name = UiResources.About,
-                TapAction = () =>
-                {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
-
-                    App.CloudDrive.NoFolderUpAction = true;
-                    NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
-                }
-            });
-
-            advancedMenuItems.Add(new AdvancedMenuItem()
-            {
-                Name = UiResources.Logout,
-                TapAction = () =>
-                {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
-
-                    if(App.MegaTransfers.Count > 0)
-                    {
-                        if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, App.MegaTransfers.Count),
-                            AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
-
-                        foreach (var item in App.MegaTransfers)
-                        {
-                            var transfer = (TransferObjectModel)item;
-                            if (transfer == null) continue;
-
-                            transfer.CancelTransfer();
-                        }
-                    }
-
-                    App.MegaSdk.logout(new LogOutRequestListener());
-                }
-            });
-           
-
-            LstAdvancedMenu.ItemsSource = advancedMenuItems;
-        }        
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+           
+            CheckAndBrowseToHome((BreadCrumb)sender);
+        }
 
-            App.CloudDrive.GoToRoot();
+        private void CheckAndBrowseToHome(BreadCrumb breadCrumb)
+        {
+            //if (breadCrumb.Equals(CloudDriveBreadCrumb))
+            //{
+            //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToHome();
+            //    return;
+            //}
+
+            //if (breadCrumb.Equals(RubbishBinBreadCrumb))
+            //{
+            //    ((MainPageViewModel) this.DataContext).RubbishBin.BrowseToHome();
+            //}
         }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
@@ -158,148 +94,81 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.CloudDrive.GoToFolder(e.Item as NodeViewModel);
+            CheckAndBrowseToFolder((BreadCrumb) sender, (IMegaNode) e.Item);
         }
 
-        private void ChangeMenu()
+        private void CheckAndBrowseToFolder(BreadCrumb breadCrumb, IMegaNode folderNode)
         {
-            BorderLinkText.Visibility = Visibility.Collapsed;
+            //if (breadCrumb.Equals(CloudDriveBreadCrumb))
+            //{
+            //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToFolder(folderNode);
+            //    return;
+            //}
 
-            switch (App.CloudDrive.DriveDisplayMode)
-            {
-                case DriveDisplayMode.RubbishBin:
-                    this.ApplicationBar = (ApplicationBar)Resources["RubbishBinMenu"];
-                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.RubbishBinMenu);
-                    break;
-
-                case DriveDisplayMode.MoveItem:
-                    this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
-                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
-                    break;
-
-                case DriveDisplayMode.MultiSelect:
-                    this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
-                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MultiSelectMenu);
-                    break;
-
-                case DriveDisplayMode.ImportItem:
-                    this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
-                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.ImportMenu);
-                    BorderLinkText.Visibility = Visibility.Visible;
-                    break;
-
-                case DriveDisplayMode.CloudDrive:
-                default:
-                    this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
-                    App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.CloudDriveMenu);
-                    break;
-            }
+            //if (breadCrumb.Equals(RubbishBinBreadCrumb))
+            //{
+            //    ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
+            //}
         }
         
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            App.CloudDrive.ListBox = LstCloudDrive;
-            LstAdvancedMenu.SelectedItem = null;
-
-            if(App.AppEvent == ApplicationEvent.Activated)
-            {                
-                App.AppEvent = ApplicationEvent.None;
-                App.CloudDrive.NoFolderUpAction = false;
-
-                // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
-
-                // Check to see if any files have been picked
-                var app = Application.Current as App;
-                if (app != null && app.FilePickerContinuationArgs != null)
-                {
-                    this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
-                    return;
-                }
-
-                if (app != null && app.FolderPickerContinuationArgs != null)
-                {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
-                }
-
-                return;
-                
-            }
-            
-            ChangeMenu();
-
-            _navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
-            {
-                App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
-            }
-
-            
-
-            if (e.NavigationMode == NavigationMode.Reset)
-            {
-                return;
-            }
-
             if (e.NavigationMode == NavigationMode.Back)
             {
-                if (!App.CloudDrive.NoFolderUpAction)
-                {
-                    App.CloudDrive.GoFolderUp();                    
-                    _navParam = NavigationParameter.Browsing;
-                }
-                else
-                    _navParam = NavigationParameter.Normal;
-
-                if(NavigateService.PreviousPage == typeof(MyAccountPage))
-                    _navParam = NavigationParameter.Browsing;
+                // On back and the hamburger menu is still open. Close it.
+                if(MainDrawerLayout.IsDrawerOpen)
+                    MainDrawerLayout.CloseDrawer();
             }
 
-            App.CloudDrive.NoFolderUpAction = false;
-
-            switch (_navParam)
+            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
+                //TODO Refactor
+                //App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+            }
+
+            // Initialize the application bar of this page
+            SetApplicationBarData();
+
+            switch (navParam)
+            {
+                case NavigationParameter.Normal:
+                    break;
                 case NavigationParameter.Login:
-                {
                     // Remove the login page from the stack. If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
-                    
-                    App.CloudDrive.FetchNodes();
+                    _mainPageViewModel.FetchNodes();
                     break;
-                }
-                case NavigationParameter.BreadCrumb:
-                {
-                    int breadCrumbs = App.CloudDrive.CountBreadCrumbs();
-                    for (int x = 0; x <= breadCrumbs; x++)
-                        NavigationService.RemoveBackEntry();
-                   
-                    break;
-                }
                 case NavigationParameter.PasswordLogin:
-                {
-                    NavigationService.RemoveBackEntry();
-                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
                     break;
-                }
+                case NavigationParameter.PictureSelected:
+                    break;
+                case NavigationParameter.AlbumSelected:
+                    break;
+                case NavigationParameter.SelfieSelected:
+                    break;
+                case NavigationParameter.UriLaunch:
+                    break;
+                case NavigationParameter.Browsing:
+                    break;
+                case NavigationParameter.BreadCrumb:
+                    break;
                 case NavigationParameter.ImportLinkLaunch:
-                case NavigationParameter.Unknown:
+                    break;
+                case NavigationParameter.Uploads:
+                    break;
+                case NavigationParameter.Downloads:
+                    break;
+                case NavigationParameter.DisablePassword:
+                    break;
+                case NavigationParameter.None:
                 {
-                    if (e.NavigationMode != NavigationMode.Back)
-                    {
-                        if (NavigationContext.QueryString.ContainsKey("filelink"))
-                        {
-                            App.CloudDrive.LinkToImport = NavigationContext.QueryString["filelink"];
-                            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.ImportItem;
-                            ChangeMenu();
-                        }
-                    }
-
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                         return;
                     }
-                    
+
                     if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                     {
                         NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
@@ -313,7 +182,8 @@ namespace MegaApp.Pages
                         try
                         {
                             if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
-                                App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                                App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
+                                    new FastLoginRequestListener(_mainPageViewModel));
                             else
                             {
                                 NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
@@ -325,15 +195,151 @@ namespace MegaApp.Pages
                             NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                             return;
                         }
-                            
+
                     }
-                    
+
                     break;
                 }
+                
             }
+
+
+            //App.CloudDrive.ListBox = LstCloudDrive;
+            //LstAdvancedMenu.SelectedItem = null;
+
+            //if(App.AppEvent == ApplicationEvent.Activated)
+            //{                
+            //    App.AppEvent = ApplicationEvent.None;
+            //    App.CloudDrive.NoFolderUpAction = false;
+
+            //    // Needed on every UI interaction
+            //    App.MegaSdk.retryPendingConnections();
+
+            //    // Check to see if any files have been picked
+            //    var app = Application.Current as App;
+            //    if (app != null && app.FilePickerContinuationArgs != null)
+            //    {
+            //        this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
+            //        return;
+            //    }
+
+            //    if (app != null && app.FolderPickerContinuationArgs != null)
+            //    {
+            //        FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+            //    }
+
+            //    return;
+                
+            //}
             
-            base.OnNavigatedTo(e);
-            App.AppEvent = ApplicationEvent.None;
+            //ChangeMenu();
+
+            //_navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            //if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            //{
+            //    App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+            //}
+
+            
+
+            //if (e.NavigationMode == NavigationMode.Reset)
+            //{
+            //    return;
+            //}
+
+            //if (e.NavigationMode == NavigationMode.Back)
+            //{
+            //    if (!App.CloudDrive.NoFolderUpAction)
+            //    {
+            //        App.CloudDrive.GoFolderUp();                    
+            //        _navParam = NavigationParameter.Browsing;
+            //    }
+            //    else
+            //        _navParam = NavigationParameter.Normal;
+
+            //    if(NavigateService.PreviousPage == typeof(MyAccountPage))
+            //        _navParam = NavigationParameter.Browsing;
+            //}
+
+            //App.CloudDrive.NoFolderUpAction = false;
+
+            //switch (_navParam)
+            //{
+            //    case NavigationParameter.Login:
+            //    {
+            //        // Remove the login page from the stack. If user presses back button it will then exit the application
+            //        NavigationService.RemoveBackEntry();
+                    
+            //        App.CloudDrive.FetchNodes();
+            //        break;
+            //    }
+            //    case NavigationParameter.BreadCrumb:
+            //    {
+            //        int breadCrumbs = App.CloudDrive.CountBreadCrumbs();
+            //        for (int x = 0; x <= breadCrumbs; x++)
+            //            NavigationService.RemoveBackEntry();
+                   
+            //        break;
+            //    }
+            //    case NavigationParameter.PasswordLogin:
+            //    {
+            //        NavigationService.RemoveBackEntry();
+            //        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+            //        break;
+            //    }
+            //    case NavigationParameter.ImportLinkLaunch:
+            //    case NavigationParameter.Unknown:
+            //    {
+            //        if (e.NavigationMode != NavigationMode.Back)
+            //        {
+            //            if (NavigationContext.QueryString.ContainsKey("filelink"))
+            //            {
+            //                App.CloudDrive.LinkToImport = NavigationContext.QueryString["filelink"];
+            //                App.CloudDrive.CurrentDisplayMode = CurrentDisplayMode.ImportItem;
+            //                ChangeMenu();
+            //            }
+            //        }
+
+            //        if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+            //        {
+            //            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+            //            return;
+            //        }
+                    
+            //        if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            //        {
+            //            NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
+            //            return;
+            //        }
+
+            //        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+
+            //        if (!isAlreadyOnline)
+            //        {
+            //            try
+            //            {
+            //                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+            //                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+            //                else
+            //                {
+            //                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+            //                    return;
+            //                }
+            //            }
+            //            catch (ArgumentNullException)
+            //            {
+            //                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+            //                return;
+            //            }
+                            
+            //        }
+                    
+            //        break;
+            //    }
+            //}
+            
+            //base.OnNavigatedTo(e);
+            //App.AppEvent = ApplicationEvent.None;
         }
         
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
@@ -391,61 +397,162 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            if (!_normalBackAction)
-            {
-                if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
-                {
-                    MainPivot.SelectedItem = DrivePivot;
-                    e.Cancel = true;
-                    return;
-                }
+            // Check if Hamburger Menu is open in view. If open. First slide out before exit
+            e.Cancel = CheckHamburgerMenu(e.Cancel);
 
-                if (!NavigationService.CanGoBack)
-                {
-                    if (App.CloudDrive.CurrentRootNode != null &&
-                        App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.GetMegaNode()) != null)
-                    {
-                        App.CloudDrive.GoFolderUp();
-                        Task.Run(() => App.CloudDrive.LoadNodes());
-                        e.Cancel = true;
-                    }
-                    else if (App.CloudDrive.CurrentRootNode != null && App.CloudDrive.CurrentRootNode.Type == MNodeType.TYPE_RUBBISH)
-                    {
-                        this.BreadCrumbControl.RootName = UiResources.CloudDriveName;
-                        App.CloudDrive.ChangeDrive(true);
-                        ChangeMenu();
+            // Check if we can go a folder up in the selected pivot view
+            e.Cancel = CheckAndGoFolderUp(e.Cancel);
 
-                        e.Cancel = true;
-                        return;
-                    }
-                    else if (App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
-                    {
-                        if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
-                        {
-                            if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
-                                AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-                            {
-                                e.Cancel = true;
-                                return;
-                            }
-                        }
-                    }
-                }
-            }
-
-            _normalBackAction = false;
+            // If no folder up action, but we are not in the cloud drive section
+            // first slide to cloud drive before exiting the application
+            e.Cancel = CheckPivotInView(e.Cancel);
+            
             base.OnBackKeyPress(e);
+
+            //if (!_normalBackAction)
+            //{
+            //    if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
+            //    {
+            //        MainPivot.SelectedItem = CloudDrivePivot;
+            //        e.Cancel = true;
+            //        return;
+            //    }
+
+            //    if (!NavigationService.CanGoBack)
+            //    {
+            //        if (App.CloudDrive.CurrentRootNode != null &&
+            //            App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.OriginalMNode) != null)
+            //        {
+            //            App.CloudDrive.GoFolderUp();
+            //            Task.Run(() => App.CloudDrive.LoadNodes());
+            //            e.Cancel = true;
+            //        }
+            //        else if (App.CloudDrive.CurrentRootNode != null && App.CloudDrive.CurrentRootNode.Type == MNodeType.TYPE_RUBBISH)
+            //        {
+            //            this.CloudDriveBreadCrumb.RootName = UiResources.CloudDriveName;
+            //            App.CloudDrive.ChangeDrive(true);
+            //            ChangeMenu();
+
+            //            e.Cancel = true;
+            //            return;
+            //        }
+            //        else if (App.CloudDrive.CurrentDisplayMode != CurrentDisplayMode.MultiSelect)
+            //        {
+            //            if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
+            //            {
+            //                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
+            //                    AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+            //                {
+            //                    e.Cancel = true;
+            //                    return;
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+
+            //_normalBackAction = false;
+            //base.OnBackKeyPress(e);
         }
 
-        private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
+        private void SetApplicationBarData()
+        {
+            // Set the Applicatio Bar to one of the available menu resources in this page
+            SetAppbarResources(_mainPageViewModel.ActiveFolderView.CurrentDisplayMode);
+
+            // Change and translate the current application bar
+            ((MainPageViewModel)this.DataContext).ChangeMenu(_mainPageViewModel.ActiveFolderView,
+                this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+        }
+
+        private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
+        {
+            BorderLinkText.Visibility = Visibility.Collapsed;
+
+            switch (driveDisplayMode)
+            {
+                case DriveDisplayMode.CloudDrive:
+                    this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
+                    break;
+                case DriveDisplayMode.MoveItem:
+                    this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+                    break;
+                case DriveDisplayMode.ImportItem:
+                    BorderLinkText.Visibility = Visibility.Visible;
+                    this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
+                    break;
+                case DriveDisplayMode.MultiSelect:
+                    this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
+                    break;
+                case DriveDisplayMode.RubbishBin:
+                    this.ApplicationBar = (ApplicationBar)Resources["RubbishBinMenu"];
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("driveDisplayMode");
+            }
+        }
+
+        private bool CheckHamburgerMenu(bool isCancel)
+        {
+            if (isCancel) return true;
+            if (!MainDrawerLayout.IsDrawerOpen) return false;
+            MainDrawerLayout.CloseDrawer();
+            return true;
+        }
+
+        private bool CheckAndGoFolderUp(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
+            {
+                return _mainPageViewModel.CloudDrive.GoFolderUp();
+            }
+
+            if(MainPivot.SelectedItem.Equals(RubbishBinPivot))
+            {
+                return _mainPageViewModel.RubbishBin.GoFolderUp();
+            }
+
+            return false;
+        }
+
+        private bool CheckPivotInView(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
+            
+            MainPivot.SelectedItem = CloudDrivePivot;
+            return true;
+        }
+
+        private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            if(!CheckTappedItem(e.Item)) return;
+
+            LstCloudDrive.SelectedItem = null;
+
+            _mainPageViewModel.CloudDrive.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
+        }
+
+        private void OnRubbishBinItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            if (!CheckTappedItem(e.Item)) return;
+
+            LstRubbishBin.SelectedItem = null;
+
+            _mainPageViewModel.RubbishBin.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
+        }
+
+        private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if(e.Item == null || e.Item.DataContext == null) return;
-            if (!(e.Item.DataContext is NodeViewModel)) return;
-            
-            App.CloudDrive.OnNodeTap((NodeViewModel) e.Item.DataContext);
+            if (item == null || item.DataContext == null) return false;
+            if (!(item.DataContext is IMegaNode)) return false;
+            return true;
         }
 
         private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
@@ -454,7 +561,7 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
-            if (focusedListBoxItem == null || focusedListBoxItem.DataContext == null || !(focusedListBoxItem.DataContext is NodeViewModel))
+            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
             {
                 // We don't want to open the menu if the focused element is not a list box item.
                 // If the list box is empty focusedItem will be null.
@@ -462,26 +569,26 @@ namespace MegaApp.Pages
             }
             else
             {
-                _normalBackAction = true;
-                App.CloudDrive.FocusedNode = (NodeViewModel) focusedListBoxItem.DataContext;
-                var visibility = App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FILE ? Visibility.Visible : Visibility.Collapsed;
-                BtnCreateShortCut.Visibility = 
-                    App.CloudDrive.FocusedNode.Type == MNodeType.TYPE_FOLDER ? Visibility.Visible : Visibility.Collapsed;
+                _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;
+                var visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FILE 
+                    ? Visibility.Visible : Visibility.Collapsed;
+                BtnCreateShortCut.Visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FOLDER 
+                    ? Visibility.Visible : Visibility.Collapsed;
                 BtnDownloadItemCloud.Visibility = visibility;
             }
         }
 
         private void OnListLoaded(object sender, RoutedEventArgs e)
         {
-            if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb)
-            {
-                // #1870 fix (single column when reactivating app)
-                App.CloudDrive.SetView(App.CloudDrive.ViewMode);
-                return;
-            }
+            //if (_navParam != NavigationParameter.Browsing && _navParam != NavigationParameter.BreadCrumb)
+            //{
+            //    // #1870 fix (single column when reactivating app)
+            //    App.CloudDrive.SetView(App.CloudDrive.ViewMode);
+            //    return;
+            //}
 
-            // Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
-            App.CloudDrive.LoadNodes();
+            //// Load nodes in the onlistloaded event so that the nodes will display after the back animation and not before
+            //App.CloudDrive.LoadNodes();
         }
 
         private void OnRefreshClick(object sender, EventArgs e)
@@ -489,22 +596,17 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            FileService.ClearFiles(
-                NodeService.GetFiles(App.CloudDrive.ChildNodes,
-                Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.ThumbnailsDirectory)));
-
-            App.CloudDrive.FetchNodes(App.CloudDrive.CurrentRootNode);
-
-            if (App.CloudDrive.DriveDisplayMode == DriveDisplayMode.MultiSelect)
-                App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
+            _mainPageViewModel.ActiveFolderView.Refresh();
         }
 
         private void OnAddFolderClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-         
-            App.CloudDrive.AddFolder(App.CloudDrive.CurrentRootNode);
+
+            // Only allow add folder on the Cloud Drive section
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
+                _mainPageViewModel.CloudDrive.AddFolder();
         }
 
         private void OnOpenLinkClick(object sender, EventArgs e)
@@ -512,22 +614,9 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.CloudDrive.OpenLink();
-        }
-        private void OnMyAccountClick(object sender, EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            App.CloudDrive.GoToAccountDetails();
-        }
-
-        private void OnTransfersClick(object sender, EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            App.CloudDrive.GoToTransfers();
+            // Only allow opening of links on the Cloud Drive section
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
+                _mainPageViewModel.CloudDrive.OpenLink();
         }
 
         private void OnCloudUploadClick(object sender, EventArgs e)
@@ -535,7 +624,9 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.CloudDrive.ShowUploadOptions();
+            // Only allow uploads on the Cloud Drive section
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
+                DialogService.ShowUploadOptions(_mainPageViewModel.CloudDrive);
         }
 
         private void OnCancelMoveClick(object sender, EventArgs e)
@@ -543,69 +634,90 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
             
-            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
-            
-            if(App.CloudDrive.FocusedNode != null)
-                App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-            App.CloudDrive.FocusedNode = null;
+            CancelMoveAction();
 
-            if (App.CloudDrive.SelectedNodes.Count > 0)
+            SetApplicationBarData();
+        }
+
+        private void CancelMoveAction()
+        {
+            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
             {
-                foreach (var node in App.CloudDrive.SelectedNodes)
+                LstCloudDrive.IsCheckModeActive = false;
+                LstCloudDrive.CheckedItems.Clear();
+            }
+            
+            if (MainPivot.SelectedItem.Equals(RubbishBinPivot)){
+               
+                LstRubbishBin.IsCheckModeActive = false;
+                LstRubbishBin.CheckedItems.Clear();
+            }
+
+            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
+
+            if (_mainPageViewModel.ActiveFolderView.FocusedNode != null)
+                _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+
+            _mainPageViewModel.ActiveFolderView.FocusedNode = null;
+
+            if (_mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
+            {
+                foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
                 {
                     node.DisplayMode = NodeDisplayMode.Normal;
                 }
             }
-            App.CloudDrive.SelectedNodes.Clear();
 
-            LstCloudDrive.IsCheckModeActive = false;
-            LstCloudDrive.CheckedItems.Clear();
-
-            ChangeMenu();
+            _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
         }
+
+
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (App.CloudDrive.FocusedNode != null)
-            {
-                App.CloudDrive.FocusedNode.Move(App.CloudDrive.CurrentRootNode);
-                App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-            }
-
-            if (App.CloudDrive.SelectedNodes.Count > 0)
-            {
-                foreach (var node in App.CloudDrive.SelectedNodes)
-                {
-                    node.Move(App.CloudDrive.CurrentRootNode);
-                    node.DisplayMode = NodeDisplayMode.Normal;
-                }
-                App.CloudDrive.SelectedNodes.Clear();
-            }
-
-            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
-            ChangeMenu();
+            AcceptMoveAction();
+            
+            SetApplicationBarData();
         }
 
-        private void OnPreferencesClick(object sender, EventArgs e)
+        private void AcceptMoveAction()
         {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            if (_mainPageViewModel.ActiveFolderView.FocusedNode != null)
+            {
+                _mainPageViewModel.ActiveFolderView.FocusedNode.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+            }
 
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
+            if (_mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
+            {
+                foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
+                {
+                    node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                    node.DisplayMode = NodeDisplayMode.Normal;
+                }
+                _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
+            }
+
+            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
         }
 
         private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-                        
-            App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MoveItem;
-            App.CloudDrive.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
-            ChangeMenu();
+
+            MoveItemTapAction();
+          
+            SetApplicationBarData();
+        }
+
+        private void MoveItemTapAction()
+        {
+            _mainPageViewModel.ActiveFolderView.PreviousDisplayMode = _mainPageViewModel.ActiveFolderView.CurrentDisplayMode;
+            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
         }
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -619,8 +731,7 @@ namespace MegaApp.Pages
                 case ItemState.Realizing:
                     break;
                 case ItemState.Realized:
-                        //if(LstCloudDrive.IsItemInViewport(e.DataItem))
-                        ((NodeViewModel)e.DataItem).SetThumbnailImage();
+                        ((IMegaNode)e.DataItem).SetThumbnailImage();
                     break;
             }
         }
@@ -664,9 +775,9 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (!App.CloudDrive.HasChildNodes()) return;
-            
-            LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.First());
+            if (!_mainPageViewModel.ActiveFolderView.HasChildNodes()) return;
+
+            GoToAction(_mainPageViewModel.ActiveFolderView.ChildNodes.First());
         }
 
         private void OnGoToBottomTap(object sender, GestureEventArgs e)
@@ -674,18 +785,43 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (!App.CloudDrive.HasChildNodes()) return;
-           
-            LstCloudDrive.BringIntoView(App.CloudDrive.ChildNodes.Last());
+            if (!_mainPageViewModel.ActiveFolderView.HasChildNodes()) return;
+
+            GoToAction(_mainPageViewModel.ActiveFolderView.ChildNodes.Last());
         }
 
-        private void OnSortTap(object sender, GestureEventArgs e)
+        private void GoToAction(IMegaNode bringIntoViewNode)
+        {
+            if(MainPivot.SelectedItem == CloudDrivePivot)
+                LstCloudDrive.BringIntoView(bringIntoViewNode);
+
+            if (MainPivot.SelectedItem == RubbishBinPivot)
+                LstRubbishBin.BringIntoView(bringIntoViewNode);
+        }
+
+        private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            _normalBackAction = true;
-            DialogService.ShowSortDialog(App.CloudDrive);
+            DialogService.ShowSortDialog(_mainPageViewModel.ActiveFolderView);
+        }
+
+        private void OnMultiSelectClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            ChangeMultiSelectMode();
+        }
+
+        private void ChangeMultiSelectMode()
+        {
+            if (MainPivot.SelectedItem == CloudDrivePivot)
+                LstCloudDrive.IsCheckModeActive = !LstCloudDrive.IsCheckModeActive;
+
+            if (MainPivot.SelectedItem == RubbishBinPivot)
+                LstRubbishBin.IsCheckModeActive = !LstRubbishBin.IsCheckModeActive;
         }
 
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
@@ -693,29 +829,40 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (e.CheckBoxesVisible)
+            ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
+
+            Dispatcher.BeginInvoke(SetApplicationBarData);
+        }
+
+        private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
+        {
+            if (onOff)
             {
-                if(e.TappedItem != null)
-                    LstCloudDrive.CheckedItems.Add(e.TappedItem);
-                if(App.CloudDrive.DriveDisplayMode != DriveDisplayMode.MultiSelect)
-                    App.CloudDrive.OldDriveDisplayMode = App.CloudDrive.DriveDisplayMode;
-                App.CloudDrive.DriveDisplayMode = DriveDisplayMode.MultiSelect;
+                if(item != null)
+                    listBox.CheckedItems.Add(item);
+
+                if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
+                    _mainPageViewModel.ActiveFolderView.PreviousDisplayMode = _mainPageViewModel.ActiveFolderView.CurrentDisplayMode;
+                _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = DriveDisplayMode.MultiSelect;
             }
             else
             {
-                LstCloudDrive.CheckedItems.Clear();
-                App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;                
+                listBox.CheckedItems.Clear();
+                _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;          
             }
-
-            Dispatcher.BeginInvoke(ChangeMenu);
         }
         
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-           
-            App.CloudDrive.MultipleDownload();
+
+            MultipleDownloadAction();
+        }
+
+        private void MultipleDownloadAction()
+        {
+            _mainPageViewModel.ActiveFolderView.MultipleDownload();
         }
 
         private void OnMultiSelectMoveClick(object sender, EventArgs e)
@@ -723,10 +870,14 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (!App.CloudDrive.SelectMultipleMove()) return;
-            
-            this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
-            App.CloudDrive.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems, MenuType.MoveMenu);
+            MultiSelectMoveAction();
+        }
+
+        private void MultiSelectMoveAction()
+        {
+            if (!_mainPageViewModel.ActiveFolderView.SelectMultipleItemsForMove()) return;
+
+            SetApplicationBarData();
         }
 
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
@@ -734,88 +885,50 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if (!App.CloudDrive.MultipleRemove()) return;
-
-            App.CloudDrive.DriveDisplayMode = App.CloudDrive.OldDriveDisplayMode;
-            ChangeMenu();
+            MultiSelectRemoveAction();
         }
-        
-        private void OnAboutClick(object sender, EventArgs e)
+
+        private void MultiSelectRemoveAction()
+        {
+            if (!_mainPageViewModel.ActiveFolderView.MultipleRemoveItems()) return;
+
+            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
+
+            SetApplicationBarData();
+        }
+       private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(AboutPage), NavigationParameter.Normal);
-        }
-
-        private void OnCloudDriveClick(object sender, EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            var rootNode = App.MegaSdk.getRootNode();
-
-            if (rootNode == null) return;
-
-            var node = NodeService.CreateNew(App.MegaSdk, rootNode);
-            App.CloudDrive.CurrentRootNode = node;
-            App.CloudDrive.BreadCrumbNode = node;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
-
-            this.BreadCrumbControl.RootName = UiResources.HomeRoot;
-
-            Task.Run(() => App.CloudDrive.LoadNodes());
-            ChangeMenu();
-        }
-
-        private void OnRubbishBinClick(object sender, EventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            var rubbishNode = App.MegaSdk.getRubbishNode();
-
-            if (rubbishNode == null) return;
-
-            var node = NodeService.CreateNew(App.MegaSdk, rubbishNode);                        
-            App.CloudDrive.CurrentRootNode = node;
-            App.CloudDrive.BreadCrumbNode = node;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.RubbishBin;
-
-            this.BreadCrumbControl.RootName = UiResources.RubbishBinRoot;
-
-            Task.Run(() => App.CloudDrive.LoadNodes());
-            ChangeMenu();
-        }
-
-        private void OnAdvancedMenuItemTap(object sender, ListBoxItemTapEventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            LstAdvancedMenu.SelectedItem = null;
-
-            var advancedMenuItem = e.Item.DataContext as AdvancedMenuItem;
-            if (advancedMenuItem == null) return;
-            advancedMenuItem.TapAction.Invoke();
+            var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
+            if (hamburgerMenuItem == null) return;
+            hamburgerMenuItem.TapAction.Invoke();
+            LstHamburgerMenu.SelectedItem = null;
         }        
 
         private void OnPivotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ApplicationBar == null || MainPivot == null) return;
-            ApplicationBar.IsVisible = MainPivot.SelectedItem == DrivePivot;
+            if (e.AddedItems[0] == CloudDrivePivot)
+                _mainPageViewModel.ActiveFolderView = ((MainPageViewModel) this.DataContext).CloudDrive;
+           
+            if (e.AddedItems[0] == RubbishBinPivot)
+                _mainPageViewModel.ActiveFolderView = ((MainPageViewModel)this.DataContext).RubbishBin;
+
+            SetApplicationBarData();
         }
 
         private void OnImportLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+            
+            App.MegaSdk.getPublicNode(
+                _mainPageViewModel.ActiveImportLink, new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
 
-            App.MegaSdk.getPublicNode(App.CloudDrive.LinkToImport, new GetPublicNodeRequestListener(App.CloudDrive));
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
-            ChangeMenu();
+            SetApplicationBarData();
         }
 
         private void OnCancelImportClick(object sender, EventArgs e)
@@ -823,13 +936,30 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.CloudDrive.LinkToImport = null;
-            App.CloudDrive.DriveDisplayMode = DriveDisplayMode.CloudDrive;
+            _mainPageViewModel.ActiveImportLink = null;
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
-            ChangeMenu();
+            SetApplicationBarData();
         }
 
-        
+        private void OnHamburgerTap(object sender, GestureEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+        	MainDrawerLayout.OpenDrawer();
+        }
+
+        private void OnDrawerClosed(object sender)
+        {
+            SetApplicationBarData();
+        }
+
+        private void OnDrawerOpened(object sender)
+        {
+            // Remove application bar from display when sliding in the hamburger menu
+            this.ApplicationBar = null;
+        }
     }
     
 }

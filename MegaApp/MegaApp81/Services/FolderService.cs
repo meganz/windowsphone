@@ -92,16 +92,16 @@ namespace MegaApp.Services
                 NodeViewModel node;
                 if (App.CloudDrive.PublicNode != null && handle.Equals(App.CloudDrive.PublicNode.getHandle()))
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.CloudDrive.PublicNode);
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.CloudDrive.PublicNode);
                     App.CloudDrive.PublicNode = null;
                 }
                 else
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.MegaSdk.getNodeByHandle(handle));
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByHandle(handle));
                 }
                
                 if(node != null)
-                    node.Download(args.Folder.Path);
+                    node.Download(App.MegaTransfers, args.Folder.Path);
 
                 ResetFolderPicker();
                 return;
