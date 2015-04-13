@@ -27,80 +27,90 @@
 
         <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <TextBlock Grid.Row="1" Text="{Binding LocalizedUiResources.Preferences, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" FontFamily="Segoe WP SemiLight" TextWrapping="Wrap" Foreground="White" FontSize="40" Margin="24,6,24,0" />
-		<StackPanel x:Name="ContentPanel" Margin="12,24,12,0" Grid.Row="2" >
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-			<Grid Margin="0,0,0,40">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding ViewMasterKeyCommand}"/>
-                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
-			</Grid>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-            <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <Grid x:Name="GridAskDownloadLocation" Margin="0,0,0,40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnAskDownloadLocation" VerticalAlignment="Center" Content="{Binding AskDownloadLocationIsEnabledText}" IsChecked="{Binding AskDownloadLocationIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
-                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
-                            <Setter Property="CheckBackground">
-                                <Setter.Value>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                </telerikPrimitives:RadToggleSwitch>
-            </Grid>
-            <TextBlock x:Name="TextExportPhotoAlbumSwitch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportPhotoAlbumText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <Grid x:Name="GridExportPhotoAlbumSwitch" Margin="0,0,0,40">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>				
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnExportPhotoAlbumSwitch" VerticalAlignment="Center" Content="{Binding ExportIsEnabledText}" IsChecked="{Binding ExportIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
-                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
-                            <Setter Property="CheckBackground">
-                                <Setter.Value>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                </telerikPrimitives:RadToggleSwitch>                
-			</Grid>
-            <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-            <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-			<StackPanel Margin="0,0,0,40">
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnPinLockSwitch" VerticalAlignment="Center" Content="{Binding PinLockIsEnabledText}" IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
-                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
-                            <Setter Property="CheckBackground">
-                                <Setter.Value>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                </telerikPrimitives:RadToggleSwitch>
-                <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLock, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
-			</StackPanel>
-			<StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="memory statistics" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-				<telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
-			</StackPanel>
-		</StackPanel>
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="PivotSettingsPage" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="PivotSettings" Header="{Binding LocalizedUiResources.Settings, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+		        <StackPanel x:Name="ContentPanel" Margin="12,24,12,0" Grid.Row="2" >
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			        <Grid Margin="0,0,0,40">
+				        <Grid.ColumnDefinitions>
+					        <ColumnDefinition/>
+					        <ColumnDefinition/>
+				        </Grid.ColumnDefinitions>
+                        <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding ViewMasterKeyCommand}"/>
+                        <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
+			        </Grid>
+			        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                    <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <Grid x:Name="GridAskDownloadLocation" Margin="0,0,0,40">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <telerikPrimitives:RadToggleSwitch x:Name="BtnAskDownloadLocation" VerticalAlignment="Center" Content="{Binding AskDownloadLocationIsEnabledText}" IsChecked="{Binding AskDownloadLocationIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
+                            <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                    <Setter Property="CheckBackground">
+                                        <Setter.Value>
+                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        </telerikPrimitives:RadToggleSwitch>
+                    </Grid>
+                    <TextBlock x:Name="TextExportPhotoAlbumSwitch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportPhotoAlbumText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <Grid x:Name="GridExportPhotoAlbumSwitch" Margin="0,0,0,40">
+				        <Grid.ColumnDefinitions>
+					        <ColumnDefinition/>
+					        <ColumnDefinition/>
+				        </Grid.ColumnDefinitions>				
+                        <telerikPrimitives:RadToggleSwitch x:Name="BtnExportPhotoAlbumSwitch" VerticalAlignment="Center" Content="{Binding ExportIsEnabledText}" IsChecked="{Binding ExportIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
+                            <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                    <Setter Property="CheckBackground">
+                                        <Setter.Value>
+                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        </telerikPrimitives:RadToggleSwitch>                
+			        </Grid>
+                    <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                    <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+			        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+			        <StackPanel Margin="0,0,0,40">
+                        <telerikPrimitives:RadToggleSwitch x:Name="BtnPinLockSwitch" VerticalAlignment="Center" Content="{Binding PinLockIsEnabledText}" IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
+                            <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                    <Setter Property="CheckBackground">
+                                        <Setter.Value>
+                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        </telerikPrimitives:RadToggleSwitch>
+                        <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLock, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
+			        </StackPanel>
+			        <StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+				        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+				        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="memory statistics" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+				        <telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
+			        </StackPanel>
+		        </StackPanel>
+            </phone:PivotItem>
+            <!--Pivot item two-->
+            <!--<phone:PivotItem x:Name="PivotAdvanced" Header="{Binding LocalizedUiResources.Advanced, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
 
-		<!--ContentPanel - place additional content here-->
-	</Grid>
+            </phone:PivotItem>-->
+            <!--Pivot item three-->
+            <!--<phone:PivotItem x:Name="PivotHelp" Header="{Binding LocalizedUiResources.Help, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+
+            </phone:PivotItem>-->
+        </phone:Pivot>
+    </Grid>
 
 </phone:PhoneApplicationPage>

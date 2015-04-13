@@ -45,6 +45,28 @@ namespace MegaApp.Classes
             }
         }
 
+        private ulong _totalSpaceSize;
+        public ulong TotalSpaceSize
+        {
+            get { return _totalSpaceSize; }
+            set
+            {
+                _totalSpaceSize = value;                
+                OnPropertyChanged("TotalSpaceSize");
+            }
+        }
+
+        private string _totalSpaceUnits;
+        public string TotalSpaceUnits
+        {
+            get { return _totalSpaceUnits; }
+            set
+            {
+                _totalSpaceUnits = value;
+                OnPropertyChanged("TotalSpaceUnits");
+            }
+        }
+
         private ulong _usedSpace;
         public ulong UsedSpace
         {
@@ -139,8 +161,8 @@ namespace MegaApp.Classes
         {
             var accountDataPoints = new List<AccountDataPoint>
             {
-                new AccountDataPoint() {Label = UiResources.FreeSpace, Value = FreeSpace},
-                new AccountDataPoint() {Label = UiResources.UsedSpace, Value = UsedSpace}
+                new AccountDataPoint() {Label = UiResources.UsedSpace, Value = UsedSpace},
+                new AccountDataPoint() {Label = UiResources.FreeSpace, Value = FreeSpace}                
             };
             PieChartCollection = accountDataPoints;
         }

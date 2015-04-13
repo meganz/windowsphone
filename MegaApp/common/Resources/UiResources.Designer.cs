@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Advanced.
+        /// </summary>
+        public static string Advanced {
+            get {
+                return ResourceManager.GetString("Advanced", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a I agree with the.
         /// </summary>
         public static string AgreeCreateAccount {
@@ -255,6 +264,15 @@ namespace MegaApp.Resources {
         public static string Capture {
             get {
                 return ResourceManager.GetString("Capture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Change password.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
             }
         }
         
@@ -457,7 +475,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export masterkey.
+        ///   Busca una cadena traducida similar a Export MasterKey.
         /// </summary>
         public static string ExportMasterKeyText {
             get {
@@ -516,6 +534,15 @@ namespace MegaApp.Resources {
         public static string GetPreviewLink {
             get {
                 return ResourceManager.GetString("GetPreviewLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Help.
+        /// </summary>
+        public static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
             }
         }
         
@@ -718,7 +745,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Master Key.
+        ///   Busca una cadena traducida similar a MasterKey.
         /// </summary>
         public static string MasterKey {
             get {
@@ -993,15 +1020,6 @@ namespace MegaApp.Resources {
         public static string PinLockWatermark {
             get {
                 return ResourceManager.GetString("PinLockWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Preferences.
-        /// </summary>
-        public static string Preferences {
-            get {
-                return ResourceManager.GetString("Preferences", resourceCulture);
             }
         }
         

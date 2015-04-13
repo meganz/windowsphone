@@ -184,10 +184,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>GRATIS</value>
     <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
   </data>
-  <data name="Preferences" xml:space="preserve">
-    <value>Preferencias</value>
-    <comment>Label for any 'Preferences' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="RubbishBinRoot" xml:space="preserve">
     <value>Papelera</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
@@ -233,7 +229,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Aajustes</value>
+    <value>Ajustes</value>
     <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
@@ -485,12 +481,8 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
   </data>
   <data name="ExportMasterKeyText" xml:space="preserve">
-    <value>Exportar clave maestra</value>
-    <comment>Text placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the masterkey.</comment>
-  </data>
-  <data name="MasterKey" xml:space="preserve">
-    <value>Clave Maestra</value>
-    <comment>Label for any 'Master Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+    <value>Exportar MasterKey</value>
+    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
     <value>Crear un PIN de bloqueo</value>
@@ -721,5 +713,17 @@ para mostrar</value>
   <data name="InitTourAccess_Title" xml:space="preserve">
     <value>MEGA acceso</value>
     <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ayuda</value>
+    <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avanzado</value>
+    <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
