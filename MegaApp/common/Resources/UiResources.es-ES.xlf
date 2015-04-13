@@ -157,9 +157,9 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/ExportMasterKeyText" translate="yes" xml:space="preserve">
-          <source>Export masterkey</source>
-          <target state="translated">Exportar clave maestra</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the masterkey.</note>
+          <source>Export MasterKey</source>
+          <target state="translated">Exportar MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</note>
           </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" xml:space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
@@ -186,10 +186,10 @@
           <target state="translated">El más grandeme</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/MasterKey" translate="yes" xml:space="preserve">
-          <source>Master Key</source>
-          <target state="translated">Clave Maestra</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Master Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
+        <trans-unit id="Resx/MasterKey" translate="no" xml:space="preserve">
+          <source>MasterKey</source>
+          <target state="signed-off">MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/MakePinLock" translate="yes" xml:space="preserve">
           <source>Make a PIN Lock</source>
@@ -361,11 +361,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated" state-qualifier="mt-suggestion">GRATIS</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
           </trans-unit>
-        <trans-unit id="Resx/Preferences" translate="yes" xml:space="preserve">
-          <source>Preferences</source>
-          <target state="translated">Preferencias</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Preferences' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" xml:space="preserve">
           <source>Rubbish bin</source>
           <target state="translated">Papelera</target>
@@ -435,6 +430,21 @@ Try to preserve the PIN uppercase word.</note>
           <source>MEGA speed</source>
           <target state="translated">MEGA velocidad</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
+          <source>Change password</source>
+          <target state="translated">Cambiar contraseña</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Help" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="translated">Ayuda</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Advanced" translate="yes" xml:space="preserve">
+          <source>Advanced</source>
+          <target state="translated">Avanzado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/InitTourSpeed1" translate="yes" xml:space="preserve">
           <source>transfers are fast.</source>
@@ -533,7 +543,7 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/Settings" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="translated">Aajustes</target>
+          <target state="translated">Ajustes</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" xml:space="preserve">

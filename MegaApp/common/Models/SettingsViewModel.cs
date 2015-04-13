@@ -107,7 +107,7 @@ namespace MegaApp.Models
 
         public string MegaSDK_Version { get; set; }
 
-        #if WINDOWS_PHONE_80
+//        #if WINDOWS_PHONE_80
         private bool _exportIsEnabled;
         public bool ExportIsEnabled
         {
@@ -124,9 +124,9 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabled");
             }
         }
-        #endif
+//        #endif
 
-        #if WINDOWS_PHONE_81
+//        #if WINDOWS_PHONE_81
         private bool _askDownloadLocationIsEnabled;
         public bool AskDownloadLocationIsEnabled
         {
@@ -155,7 +155,7 @@ namespace MegaApp.Models
                 OnPropertyChanged("DownloadLocationSelectionIsEnabled");
             }
         }
-        #endif
+//        #endif
 
         private bool _pinLockIsEnabled;
         public bool PinLockIsEnabled
@@ -191,7 +191,7 @@ namespace MegaApp.Models
             }
         }
 
-        #if WINDOWS_PHONE_80
+//        #if WINDOWS_PHONE_80
         private string _exportIsEnabledText;
         public string ExportIsEnabledText
         {
@@ -202,9 +202,9 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabledText");
             }
         }
-        #endif
+  //      #endif
 
-        #if WINDOWS_PHONE_81
+//        #if WINDOWS_PHONE_81
         private string _askDownloadLocationIsEnabledText;
         public string AskDownloadLocationIsEnabledText
         {
@@ -226,7 +226,7 @@ namespace MegaApp.Models
                 OnPropertyChanged("StandardDownloadLocation");
             }
         }
-        #endif
+//        #endif
 
         #endregion
     }

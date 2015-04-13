@@ -377,10 +377,6 @@
     <value>Rubbish bin</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
-  <data name="Preferences" xml:space="preserve">
-    <value>Preferences</value>
-    <comment>Label for any 'Preferences' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="AccountTypeFree" xml:space="preserve">
     <value>FREE</value>
     <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
@@ -529,8 +525,8 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ExportMasterKeyText" xml:space="preserve">
-    <value>Export masterkey</value>
-    <comment>Text placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the masterkey.</comment>
+    <value>Export MasterKey</value>
+    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
   </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
     <value>Export images to 'saved pictures' album after download</value>
@@ -557,8 +553,8 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="MasterKey" xml:space="preserve">
-    <value>Master Key</value>
-    <comment>Label for any 'Master Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+    <value>MasterKey</value>
+    <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
     <value>MEGA SDK</value>
@@ -744,5 +740,17 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="InitTourSpeed_Title" xml:space="preserve">
     <value>MEGA speed</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+    <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
