@@ -89,6 +89,8 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
+                _accountDetails.TotalSpaceSize = _accountDetails.TotalSpace.ToReadableSize();
+                _accountDetails.TotalSpaceUnits = _accountDetails.TotalSpace.ToReadableUnits();
                 _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
                 _accountDetails.CreateDataPoints();
                 _accountDetails.AccountType = request.getMAccountDetails().getProLevel();

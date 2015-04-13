@@ -27,8 +27,16 @@ namespace MegaApp.Pages
             this.DataContext = _mediaAlbumViewModel;
             InitializeComponent();
 
+            SetApplicationBar();
+
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
+
+       private void SetApplicationBar()
+       {
+           ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept.ToLower();
+           ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ClearSelection.ToLower();
+       }
 
         private void SetControlState(bool state)
         {

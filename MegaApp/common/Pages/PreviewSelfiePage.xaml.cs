@@ -26,6 +26,13 @@ namespace MegaApp.Pages
             this.DataContext = _previewSelfieViewModel;
 
             InitializeComponent();
+
+            SetApplicationBar();
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Upload.ToLower();
         }
 
         private async void OnUploadClick(object sender, System.EventArgs e)

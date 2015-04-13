@@ -37,7 +37,7 @@ namespace MegaApp.Models
             this.ParentCollection = parentCollection;
             this.ChildCollection = childCollection;
         }
-        
+
         #region Private Methods
         
         private void SetDefaultValues()
@@ -51,7 +51,7 @@ namespace MegaApp.Models
             {
                 this.IsThumbnailDefaultImage = false;
                 this.ThumbnailImageUri = new Uri(ThumbnailPath);
-            }
+        }
             else
             {
                 this.IsThumbnailDefaultImage = true;
@@ -87,7 +87,7 @@ namespace MegaApp.Models
             // Add the current name to the rename dialog textbox
             var textboxStyle = new Style(typeof(RadTextBox));
             textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
-            
+
             // Create the rename dialog and show it to the user
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.RenameButton, UiResources.CancelButton },
                 UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
@@ -111,7 +111,7 @@ namespace MegaApp.Models
                 this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode,
                     new MoveNodeRequestListener());
                 return NodeActionResult.IsBusy;
-            }
+        }
 
             return NodeActionResult.Failed;
         }
@@ -140,8 +140,8 @@ namespace MegaApp.Models
                     waitEventRequest));
                 
                 return NodeActionResult.IsBusy;
-            }
-            
+        }
+
             // if the node in in the Cloud Drive, move it to rubbish bin
             if (!isMultiRemove)
                 if (MessageBox.Show(String.Format(AppMessages.MoveToRubbishBinQuestion, this.Name),
@@ -179,17 +179,17 @@ namespace MegaApp.Models
         }
 
 #if WINDOWS_PHONE_80
-                public virtual void ViewOriginal()
-                {
-                    if (!IsUserOnline()) return;
-                    NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
-                }
+        public virtual void Download()
+        {
+            if (!IsUserOnline()) return;
+            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+        }
 #elif WINDOWS_PHONE_81
         public async void Download(TransferQueu transferQueu, string downloadPath = null)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return;
-
+            
             if (AppInformation.PickerOrAsyncDialogIsOpen) return;
 
             if (downloadPath == null)
@@ -197,7 +197,7 @@ namespace MegaApp.Models
                 AppInformation.PickerOrAsyncDialogIsOpen = true;
                 if (!await FolderService.SelectDownloadFolder(this)) return;
             }
-
+                
 
             this.Transfer.DownloadFolderPath = downloadPath;
             transferQueu.Add(this.Transfer);
@@ -230,7 +230,7 @@ namespace MegaApp.Models
             if (this.Type == MNodeType.TYPE_FOLDER) return;
 
             if (this.ThumbnailImageUri != null && !IsThumbnailDefaultImage) return;
-
+            
             if (this.IsImage || this.OriginalMNode.hasThumbnail())
             {
                 GetThumbnail();
@@ -255,7 +255,7 @@ namespace MegaApp.Models
         public string ModificationTime { get; private set; }
 
         public string ThumbnailPath
-        {
+            {
             get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
                                       AppResources.ThumbnailsDirectory, 
                                       this.OriginalMNode.getBase64Handle());
@@ -317,7 +317,7 @@ namespace MegaApp.Models
         {
             get { return _thumbnailImageUri; }
             set
-            {
+        {
                 _thumbnailImageUri = value;
                 OnPropertyChanged("ThumbnailImageUri");
             }

@@ -61,24 +61,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a add.
-        /// </summary>
-        public static string AppBarButtonText {
-            get {
-                return ResourceManager.GetString("AppBarButtonText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Menu Item.
-        /// </summary>
-        public static string AppBarMenuItemText {
-            get {
-                return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Z5dGhQhL.
         /// </summary>
         public static string AppKey {
@@ -88,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MY APPLICATION.
+        ///   Busca una cadena traducida similar a MEGA Privacy.
         /// </summary>
         public static string ApplicationTitle {
             get {
@@ -120,15 +102,6 @@ namespace MegaApp.Resources {
         public static string DownloadsDirectory {
             get {
                 return ResourceManager.GetString("DownloadsDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a 773b34c.
-        /// </summary>
-        public static string MegaSDK_Version {
-            get {
-                return ResourceManager.GetString("MegaSDK_Version", resourceCulture);
             }
         }
         
@@ -189,9 +162,9 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a https://mega.co.nz/mobile_terms.html.
         /// </summary>
-        public static string TermsOfUseUrl {
+        public static string TermsOfServiceUrl {
             get {
-                return ResourceManager.GetString("TermsOfUseUrl", resourceCulture);
+                return ResourceManager.GetString("TermsOfServiceUrl", resourceCulture);
             }
         }
         
@@ -228,24 +201,6 @@ namespace MegaApp.Resources {
         public static string UploadsDirectory {
             get {
                 return ResourceManager.GetString("UploadsDirectory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a MEGAWindowsPhone80/2.0.3.80.
-        /// </summary>
-        public static string UserAgentWP80 {
-            get {
-                return ResourceManager.GetString("UserAgentWP80", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a MEGAWindowsPhone81/2.0.4.81.
-        /// </summary>
-        public static string UserAgentWP81 {
-            get {
-                return ResourceManager.GetString("UserAgentWP81", resourceCulture);
             }
         }
     }

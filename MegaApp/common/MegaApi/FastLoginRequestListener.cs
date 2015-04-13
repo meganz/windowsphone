@@ -47,7 +47,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title; }
+            get { return AppMessages.LoginFailed_Title.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage

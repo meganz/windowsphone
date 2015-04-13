@@ -117,4 +117,508 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccountTypeProLite" xml:space="preserve">
+    <value>[2C009][!!_ΡŘÒ Ľíтê_!!]</value>
+    <comment>Label for the name of the 'PRO Lite' account type - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="Storage" xml:space="preserve">
+    <value>[C9748][!!_ŝťòŕãģè_!!]</value>
+    <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ImageUpload" xml:space="preserve">
+    <value>[40EA4][!!_Įмáġè ùρłôàď_!!]</value>
+    <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="UploadOptionsTitle" xml:space="preserve">
+    <value>[1BCFF][!!_Üþļôãð õрţìõηś_!!!!]</value>
+    <comment>Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</comment>
+  </data>
+  <data name="TakePhoto" xml:space="preserve">
+    <value>[30D11][!!_Ţàќè ρĥòтõ_!!]</value>
+    <comment>Label for 'Take photo' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="SelfieMode" xml:space="preserve">
+    <value>[801B4][!!_Şèĺƒìè mõðé_!!]</value>
+    <comment>Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="SelectPhoto" xml:space="preserve">
+    <value>[31C59][!!_Śęľêćţ þћôţó_!!]</value>
+    <comment>Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="LinkOptions" xml:space="preserve">
+    <value>[A85F6][!!_Ļîηќ õρţíòйš_!!]</value>
+    <comment>Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>[0CEC2][!!_Îмþõŕť_!!]</value>
+    <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="FileUpload" xml:space="preserve">
+    <value>[233D1][!!_₣įļê ùρłòâđ_!!]</value>
+    <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>[822DC][!!_ўéś_!!]</value>
+    <comment>Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>[6BC33][!!_ήò_!!]</value>
+    <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockWatermark" xml:space="preserve">
+    <value>[EE967][!!_ŷõùŗ ΡĮŃ łòċк_!!]</value>
+    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLock" xml:space="preserve">
+    <value>[28132][!!_ΡÌŇ Ĺóčĸ_!!]</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="ConfirmPinLockWatermark" xml:space="preserve">
+    <value>[052D8][!!_čòйƒíŕm Уôûѓ ΡÍŃ łõċк_!!!!!!]</value>
+    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="AccountTypePro3" xml:space="preserve">
+    <value>[AF52F][!!_ÞŔÕ ÍĮĮ_!!]</value>
+    <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypePro2" xml:space="preserve">
+    <value>[39139][!!_ÞŔÕ ÍÍ_!!]</value>
+    <comment>Label for the name of the 'PRO II' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypePro1" xml:space="preserve">
+    <value>[E00E7][!!_ΡЃÕ Î_!!]</value>
+    <comment>Label for the name of the 'PRO I' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypeFree" xml:space="preserve">
+    <value>[88813][!!_₣ŖÉĘ_!!]</value>
+    <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="RubbishBinRoot" xml:space="preserve">
+    <value>[8CAE7][!!_Řûвьîśĥ Вîи_!!]</value>
+    <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
+  </data>
+  <data name="HomeRoot" xml:space="preserve">
+    <value>[46E99][!!_Ĥómé_!!]</value>
+    <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>[6E45B][!!_łôģõûτ_!!]</value>
+    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>[0D385][!!_Ôη_!!]</value>
+    <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>[BD43D][!!_Óƒƒ_!!]</value>
+    <comment>Label for any 'Off' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SpecialThankYou" xml:space="preserve">
+    <value>[5F959][!!_Ẅê ẃàηť τô şρêċìáł тĥáйĸ τћé ƒõłłóẃìήĝ čòмρâηîèš/рèóрļè ƒóŗ máķįηĝ ţћîś àрρ рôşśíьļę:_!!!!!!!!!!!!!!!!!!!!!!!!!!]</value>
+    <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>[D23B9][!!_ãвõµť_!!]</value>
+    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Pausing" xml:space="preserve">
+    <value>[13047][!!_Ρãùşìήģ..._!!]</value>
+    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Paused" xml:space="preserve">
+    <value>[C6A3F][!!_Þâûśéđ_!!]</value>
+    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>[0507A][!!_Μûĺťî şêļêćţ_!!]</value>
+    <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
+  </data>
+  <data name="CreateShortCut" xml:space="preserve">
+    <value>[FBC82][!!_Ċѓęãτę šћôŗтčµţ_!!!!]</value>
+    <comment>Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>[22D8D][!!_şéтťìήğś_!!]</value>
+    <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>[3FCF1][!!_ďòŵйļôàđ_!!]</value>
+    <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Upload" xml:space="preserve">
+    <value>[3DEA0][!!_Üρľòáďíήġ..._!!]</value>
+    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_NotStarted" xml:space="preserve">
+    <value>[2A6FF][!!_Ѓèàđý_!!]</value>
+    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Error" xml:space="preserve">
+    <value>[C9AA5][!!_Èŗŗõŕ ôή ţŕãηŝƒèŗ_!!!!!!]</value>
+    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Download" xml:space="preserve">
+    <value>[C9DA0][!!_Ďôŵήľóãďįиğ..._!!!!]</value>
+    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceling" xml:space="preserve">
+    <value>[9B1CC][!!_Čâηċęľìиġ..._!!]</value>
+    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceled" xml:space="preserve">
+    <value>[3EFE4][!!_Ćàиċéļęď_!!]</value>
+    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>[3F764][!!_ťřâηŝƒêŕş_!!]</value>
+    <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>[4406B][!!_úþľóâđ_!!]</value>
+    <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>[48523][!!_Ŝížé:_!!]</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>[6693B][!!_ƒôļđęř_!!]</value>
+    <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>[4D5FB][!!_ƒíļę_!!]</value>
+    <comment>Label for any 'File' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>[D0AFD][!!_šàνé_!!]</value>
+    <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RenameItem" xml:space="preserve">
+    <value>[60115][!!_Ţўþè á иêẁ ήâmę:_!!!!]</value>
+    <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>[64D70][!!_Ŗêйãmê_!!]</value>
+    <comment>Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>[ACF78][!!_Ѓèmõνé_!!]</value>
+    <comment>Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StayLoggedInText" xml:space="preserve">
+    <value>[3E04A][!!_Śτâý ľóġģéð íи_!!!!]</value>
+    <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>[AC4B2][!!_ѓêƒŕêšħ_!!]</value>
+    <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>[DBBB4][!!_ρŕéνíõùś_!!]</value>
+    <comment>Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>[01177][!!_Þŕęνíéŵ_!!]</value>
+    <comment>Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordWatermark" xml:space="preserve">
+    <value>[9893A][!!_Уôúŗ ρâŝšẅóѓð_!!]</value>
+    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>[07985][!!_Ôρéй МÊĜÂ đõẃйłõãð łîηк:_!!!!!!!!]</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>[43FA6][!!_ήè×τ_!!]</value>
+    <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NameWatermark" xml:space="preserve">
+    <value>[9A546][!!_Уòûѓ иàmè_!!]</value>
+    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>[908E5][!!_мŷ áĉćòúйţ_!!]</value>
+    <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>[89F29][!!_ƒòłðęřš_!!]</value>
+    <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>[4BD70][!!_ƒìĺęš_!!]</value>
+    <comment>Label for any 'Files' (multiple files) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>[79DFB][!!_Μòνê_!!]</value>
+    <comment>Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MegaShareLinkMessage" xml:space="preserve">
+    <value>[E87BB][!!_Ì ẃâиţ тó şħâѓè τнíš ΜÉĞÁ ċļòµď śęѓνíĉè ƒįĺę ŵíτћ Уôµ_!!!!!!!!!!!!!!!!]</value>
+    <comment>Text used as title of the message to share a MEGA link.</comment>
+  </data>
+  <data name="MegaLinkTitle" xml:space="preserve">
+    <value>[39CB7][!!_ΜÉĠÀ ľíйк:_!!]</value>
+    <comment>Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>[E28B6][!!_Ļóáðíйĝ þŗéνìęẅ..._!!!!!!]</value>
+    <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewLink" xml:space="preserve">
+    <value>[26D1A][!!_Ġèť ľįηќ_!!]</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyTransfers" xml:space="preserve">
+    <value>[8493D][!!_Ņó τŕàйśƒéѓŝ_!!]</value>
+    <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>[E564B][!!_êмþťУ ƒòľďèŕ_!!]</value>
+    <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
+  </data>
+  <data name="EmailWatermark" xml:space="preserve">
+    <value>[EA3BE][!!_ýõûѓ ę-máíľ ãððřęŝş_!!!!!!]</value>
+    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>[AAF45][!!_₣ôĺðêŕ йàmè:_!!]</value>
+    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>[C868B][!!_ĉŗéãťę ãċċóûηţ_!!!!]</value>
+    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmPasswordWatermark" xml:space="preserve">
+    <value>[A8313][!!_ćóήƒìѓм ÿòµŕ рãşšẃòŕđ_!!!!!!]</value>
+    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>[69FE5][!!_ćòήƒířм àććôúηţ_!!!!]</value>
+    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>[AC873][!!_ćõиƒíѓm_!!]</value>
+    <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CloudDriveName" xml:space="preserve">
+    <value>[1B638][!!_Čĺòúď Ðŕįνé_!!]</value>
+    <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>[B23BF][!!_ΜĘĢÀ_!!]</value>
+    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>[D6C9F][!!_Ì áğŕêè ẅìτђ тħê_!!!!]</value>
+    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>[418F6][!!_âðđ ƒôĺđęŗ_!!]</value>
+    <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>[5FBA3][!!_âĉčéþτ_!!]</value>
+    <comment>Label for any 'Accept' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Acknowledgements" xml:space="preserve">
+    <value>[0714B][!!_Áćќйôẁľéďğéмèητş_!!!!]</value>
+    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value>[2C4A4][!!_Àиήúàłľý_!!]</value>
+    <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>[B5017][!!_νéѓšįóй_!!]</value>
+    <comment>Text placed just before the version number into the 'about' page - (String as short as possible).</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>[6EE8F][!!_νîęŵ_!!]</value>
+    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</comment>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>[F695B][!!_Ţèŗmŝ ôƒ ŝèŕνìĉę_!!!!]</value>
+    <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>[B52E4][!!_ţòţáļ_!!]</value>
+    <comment>Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="Uploads" xml:space="preserve">
+    <value>[C0467][!!_ûþĺôáďś_!!]</value>
+    <comment>Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UsedSpace" xml:space="preserve">
+    <value>[8A857][!!_Ûŝèð şρâćè_!!]</value>
+    <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="Used" xml:space="preserve">
+    <value>[432C0][!!_ùšęď_!!]</value>
+    <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>[9F3D1][!!_Þŗįνáĉў ρóļįčў_!!!!]</value>
+    <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SortByMenuTitle" xml:space="preserve">
+    <value>[D89D6][!!_ŚÕЃТ ΒỲ_!!]</value>
+    <comment>Label used like title for the sort menu.</comment>
+  </data>
+  <data name="SmallestSortOption" xml:space="preserve">
+    <value>[45A69][!!_šmâľłęŝτ_!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="StartResumeAll" xml:space="preserve">
+    <value>[8213B][!!_śтářţ/ŗèśúmê áłł_!!!!]</value>
+    <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>[D28F2][!!_śùБšĉѓįвę_!!]</value>
+    <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AppVersionText" xml:space="preserve">
+    <value>[5D71E][!!_Ãρр νęŗşíóй_!!]</value>
+    <comment>Text placed just before app version number into the 'about' page.</comment>
+  </data>
+  <data name="AskDownloadLocationText" xml:space="preserve">
+    <value>[74FDE][!!_Àĺẃâýś âŝќ ƒòŗ ðòŵήĺòãđ ľõčãτíôй_!!!!!!!!!!]</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>[978D9][!!_ćâčђè_!!]</value>
+    <comment>Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>[197C3][!!_Вáηðŵìďťћ_!!]</value>
+    <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>[8B993][!!_àνàįĺãБĺę_!!]</value>
+    <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>[A0BD8][!!_ćâйčéĺ ãľĺ_!!]</value>
+    <comment>Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>[EB00A][!!_čĺéãŕ ŝéĺęćтíõη_!!!!]</value>
+    <comment>Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Clipboard" xml:space="preserve">
+    <value>[393C1][!!_ćľíρвòàŗđ_!!]</value>
+    <comment>Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DefaultDownloadLocationText" xml:space="preserve">
+    <value>[E2D20][!!_Đęƒàúłτ đôẁήłóáđ ľòĉâтíõй_!!!!!!!!]</value>
+    <comment>Text placed just before a text label into the 'settings' page indicating the default download location.</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>[901B2][!!_đõŵήľóãđš_!!]</value>
+    <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ExportMasterKeyText" xml:space="preserve">
+    <value>[86460][!!_É×þóŗť мàşτéѓķêў_!!!!]</value>
+    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
+  </data>
+  <data name="ExportPhotoAlbumText" xml:space="preserve">
+    <value>[A7618][!!_Ê×ρóŗт íмáġêš ťô 'śâνéð þįćτµѓęś' áĺБûm âƒţéѓ đôŵηļóâđ_!!!!!!!!!!!!!!!!]</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
+  </data>
+  <data name="FilesDescendingSortOption" xml:space="preserve">
+    <value>[58848][!!_ƒìľéŝ (ðêşĉèηđįйģ)_!!!!!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="FilesAscendingSortOption" xml:space="preserve">
+    <value>[AE89E][!!_ƒįľèş (âŝĉêήďîηģ)_!!!!!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>[DFEF1][!!_₣ѓęé šþàċè_!!]</value>
+    <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="LargestSortOption" xml:space="preserve">
+    <value>[B65C5][!!_łáѓġêŝţ_!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
+  </data>
+  <data name="MasterKey" xml:space="preserve">
+    <value>[40FEA][!!_МâśтêѓКęУ_!!]</value>
+    <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="MakePinLock" xml:space="preserve">
+    <value>[FE65F][!!_Мàкê ã ΡÌŇ Ŀòĉķ_!!!!]</value>
+    <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="Capture" xml:space="preserve">
+    <value>[5E0B9][!!_ĉáþтúřè_!!]</value>
+    <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePinLock" xml:space="preserve">
+    <value>[E892C][!!_Čнáηġé ÞÎŅ Ŀõċќ_!!!!]</value>
+    <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="CleanUpTransfers" xml:space="preserve">
+    <value>[D4D8A][!!_čļęãи µþ ţŗâήśƒęřš_!!!!!!]</value>
+    <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>[3C574][!!_ćłèàŗ ćãčħê_!!]</value>
+    <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MEGA_SDK" xml:space="preserve">
+    <value>[ECD6A][!!_ΜÉĞÂ ŠĎК_!!]</value>
+    <comment>Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>[F14A0][!!_Μôйţĥļŷ_!!]</value>
+    <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NewestSortOption" xml:space="preserve">
+    <value>[EC0F5][!!_иéẃèşť_!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
+  </data>
+  <data name="NameDescendingSortOption" xml:space="preserve">
+    <value>[51244][!!_ήámę (đèşċęйðíηĝ)_!!!!!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="NameAscendingSortOption" xml:space="preserve">
+    <value>[38892][!!_йàmé (àŝĉêήďîήğ)_!!!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="NewPinLockWatermark" xml:space="preserve">
+    <value>[81DE6][!!_ýõµŗ ήęẃ РÍŅ łóčĸ_!!!!!!]</value>
+    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="NoDataToShow" xml:space="preserve">
+    <value>[25DAC][!!_Ňò ðáтã ťô śћôŵ_!!!!]</value>
+    <comment>Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="NoPlansToDisplay" xml:space="preserve">
+    <value>[6822E][!!_Ňó ρĺàηš ţó đíšρľàў_!!!!!!]</value>
+    <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
+  </data>
+  <data name="OldestSortOption" xml:space="preserve">
+    <value>[5B31D][!!_ôĺđèśт_!!]</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseAll" xml:space="preserve">
+    <value>[20437][!!_þàµšè áĺł_!!]</value>
+    <comment>Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NoTransfers" xml:space="preserve">
+    <value>[D8E9C][!!_Ňõ тřàйŝƒęѓŝ_!!]</value>
+    <comment>Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>[2533A][!!_şèĺèčτ ƒõĺđèŗ_!!]</value>
+    <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
+  </data>
+  <data name="DownloadLocation" xml:space="preserve">
+    <value>[E3CFF][!!_Đòẅйļòâď łôĉãţîóή_!!!!!!]</value>
+    <comment>Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

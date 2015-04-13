@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
@@ -123,6 +124,7 @@ namespace MegaApp.Models
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
                 ProgressService.SetProgressIndicator(false);
                 this.ControlState = true;                
 
@@ -165,8 +167,7 @@ namespace MegaApp.Models
                             
                             break;
                         }
-
-                    case MErrorType.API_ESID:
+                    
                     case MErrorType.API_EOVERQUOTA:
                         base.onRequestFinish(api, request, e);
                         break;

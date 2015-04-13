@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -26,6 +27,13 @@ namespace MegaApp.Pages
             this.DataContext = _createAccountViewModel;
 
             InitializeComponent();
+
+            SetApplicationBar();
+        }
+
+        private void SetApplicationBar()
+        {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.CreateAccount.ToLower();            
         }
 
         private void OnCreateAccountClick(object sender, System.EventArgs e)
