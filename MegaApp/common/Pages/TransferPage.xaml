@@ -18,21 +18,20 @@
     shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="84"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
-        
+
         <!--Pivot Control-->
         <phone:Pivot x:Name="Transfers" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
-			<!--Pivot item one-->
-            <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
-				<Grid>
-					<telerikPrimitives:RadDataBoundListBox 
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,28,12,0">
+                <Grid>
+                    <telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstUploads"
 						ItemsSource="{Binding MegaTransfers.Uploads}"
 						EmptyContentTemplate="{StaticResource MegaTransferListUploadEmptyContent}" 
@@ -40,12 +39,13 @@
 						FontFamily="Portable User Interface"
                         telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
-                    <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>                    
+                    <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
                 </Grid>
-			</phone:PivotItem>
+            </phone:PivotItem>
+            <!--Pivot item two-->
             <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
-				<Grid>
-					<telerikPrimitives:RadDataBoundListBox 
+                <Grid>
+                    <telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstDownloads"
 						ItemsSource="{Binding MegaTransfers.Downloads}"
 						EmptyContentTemplate="{StaticResource MegaTransferListDownloadEmptyContent}" 
@@ -54,24 +54,19 @@
                         telerik:InteractionEffectManager.IsInteractionEnabled="True"
 					/>
                     <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
-				</Grid>
-			</phone:PivotItem>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
 
-			<!--Pivot item two-->
-		</phone:Pivot>
-	</Grid>
-    
-	<phone:PhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/Appbar/transport.play.png" Text="start/resume all" Click="OnStartResumeAllClick" />-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>
             <shell:ApplicationBarIconButton x:Name="BtnPauseResume" IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseAllClick" />
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel all" Click="OnCancelAllClick" />-->
-            <!--<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/clear.cache.png" Text="clean up transfers" Click="OnCleanUpTransfersClick" />-->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="cancel all transfers" Click="OnCancelAllClick" />
                 <shell:ApplicationBarMenuItem Text="clean up transfers" Click="OnCleanUpTransfersClick" />
             </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>        
+        </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

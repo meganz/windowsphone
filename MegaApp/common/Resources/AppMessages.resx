@@ -117,13 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AgreeTermsOfUse" xml:space="preserve">
-    <value>You must agree with our terms of use</value>
-    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use'.</comment>
-  </data>
-  <data name="AgreeTermsOfUse_Title" xml:space="preserve">
-    <value>Terms of use</value>
-    <comment>Title of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use' - (String as short as possible).</comment>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>You must agree with our Terms of Service</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
   <data name="ConfirmAccountFailed" xml:space="preserve">
     <value>Failed to confirm account. Please try again. [{0}]</value>
@@ -291,12 +287,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Your passwords do not match. Please re-type them and make sure they are equal.</value>
+    <value>Passwords do not match. Please try again.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
-  </data>
-  <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
-    <value>Passwords do not match</value>
-    <comment>Title of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match - (String as short as possible).</comment>
   </data>
   <data name="PictureSaved" xml:space="preserve">
     <value>The image is saved in your photo album.</value>
@@ -344,7 +336,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Please fill in your name, e-mail address and password.</value>
+    <value>Please fill in your name, e-mail address and your MEGA password.</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
@@ -730,5 +722,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="SelectFileFailed_Title" xml:space="preserve">
     <value>Select file(s) failed</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>Malformed e-mail. Please try again.</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>E-mail is not associated with a MEGA account or wrong password. Please try again.</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
 </root>

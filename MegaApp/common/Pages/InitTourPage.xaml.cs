@@ -31,12 +31,12 @@ namespace MegaApp.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+            NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml?item=0", UriKind.RelativeOrAbsolute));
         }
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            NavigateService.NavigateTo(typeof(CreateAccountPage), NavigationParameter.Normal);
+            NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml?item=1", UriKind.RelativeOrAbsolute));            
         }
     }
 }

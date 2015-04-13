@@ -10,6 +10,7 @@ using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
@@ -34,14 +35,20 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.ClearCache.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();            
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Settings.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
+
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ClearCache.ToLower();
+
+            /*((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ChangePassword.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ExportMasterKeyText.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.ClearCache.ToLower();*/
         }
 
         private void OnPieDataBindingComplete(object sender, System.EventArgs e)
         {
             // Focus on the first datapoint (= Used space)
-            ((PieSeries) sender).DataPoints[0].OffsetFromCenter = 0.05;
+            //((PieSeries) sender).DataPoints[0].OffsetFromCenter = 0.05;
         }
 
         private void OnLogoutClick(object sender, System.EventArgs e)
@@ -67,11 +74,26 @@ namespace MegaApp.Pages
         	_myAccountPageViewModel.Logout();
         }
 
+        private void OnSettingsClick(object sender, System.EventArgs e)
+        {
+            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
+        }
+
+        /*private void OnChangePasswordClick(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void OnExportMasterkeyClick(object sender, System.EventArgs e)
+        {
+
+        }*/
+
         private void OnClearCacheClick(object sender, System.EventArgs e)
         {
             App.CloudDrive.ChildNodes.Clear();
             _myAccountPageViewModel.ClearCache();
-        }
+        }        
 
         private void OnItemTap(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
         {

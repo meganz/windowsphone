@@ -91,7 +91,7 @@ namespace MegaApp.Pages
 
             advancedMenuItems.Add(new AdvancedMenuItem()
             {
-                Name = UiResources.Preferences.ToLower(),
+                Name = UiResources.Settings.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction

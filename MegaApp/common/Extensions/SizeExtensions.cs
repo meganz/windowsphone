@@ -19,6 +19,26 @@ namespace MegaApp.Extensions
 
             return String.Format("{0:n2} {1}", adjustedSize, SizeSuffixesBytes[mag]);
         }
+
+        public static ulong ToReadableSize(this UInt64 value)
+        {
+            if (value == 0) { return value; }
+
+            int mag = (int)Math.Log(value, 1024);
+            decimal adjustedSize = (decimal)value / (1L << (mag * 10));
+
+            return (ulong)adjustedSize;
+        }
+
+        public static string ToReadableUnits(this UInt64 value)
+        {
+            if (value == 0) { return " "; }
+
+            int mag = (int)Math.Log(value, 1024);
+            
+            return SizeSuffixesBytes[mag];
+        }
+
         public static string ToStringAndSuffixPerSecond(this UInt64 value)
         {
             if (value == 0) { return "0.0 bytes/s"; }

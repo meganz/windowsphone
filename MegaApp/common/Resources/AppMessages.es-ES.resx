@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AgreeTermsOfUse" xml:space="preserve">
-    <value>Debes aceptar las condiciones de uso</value>
-    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use'.</comment>
-  </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
     <value>Acceso no autorizado</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
@@ -415,11 +411,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Introduce tu e-mail y tu contraseña  de MEGA.</value>
+    <value>Introduce tu e-mail y tu contraseña de MEGA.</value>
     <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Por favor, introduce tu nombre, e-mail y contraseña.</value>
+    <value>Por favor, introduce tu nombre, e-mail y tu contraseña de MEGA.</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
@@ -467,12 +463,8 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <value>La imagen se guardó en el álbum de fotografías.</value>
     <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
   </data>
-  <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
-    <value>Las contraseñas no coinciden</value>
-    <comment>Title of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match - (String as short as possible).</comment>
-  </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Las contraseñas no coinciden. Por favor, vuelve a escribirlas y asegúrate de que son iguales.</value>
+    <value>Las contraseñas no coinciden. Por favor, vuelve a intentarlo.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
   </data>
   <data name="MoveFailed_Title" xml:space="preserve">
@@ -640,10 +632,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
-  <data name="AgreeTermsOfUse_Title" xml:space="preserve">
-    <value>Condiciones de uso</value>
-    <comment>Title of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of use' - (String as short as possible).</comment>
-  </data>
   <data name="PinLockTooShort_Title" xml:space="preserve">
     <value>PIN de bloqueo demasiado corto</value>
     <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
@@ -730,5 +718,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Error al seleccionar fichero(s). Por favor, inténtalo de nuevo [{0}]</value>
     <comment>Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>E-mail con formato incorrecto. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>E-mail no asociado con una cuenta de MEGA o contraseña incorrecta. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
+  </data>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>Debes aceptar nuestros Términos de Servicio</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
 </root>

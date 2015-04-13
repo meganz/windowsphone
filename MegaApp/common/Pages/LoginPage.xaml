@@ -13,40 +13,60 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
-        	<RowDefinition Height="Auto"/>
-        	<RowDefinition Height="*"/>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="*"/>            
         </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="HeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-            <classes:CustomMultiResolutionImage Margin="0,0,0,-16" HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
-            <TextBlock Text="{Binding LocalizedUiResources.Login, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
-        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<Grid>
-        		<StackPanel x:Name="stackLogin" VerticalAlignment="Top">
-                    <telerikPrimitives:RadTextBox x:Name="txtEmail" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding Email, Mode=TwoWay}" IsEnabled="{Binding ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown"/>
-                    <telerikPrimitives:RadPasswordBox x:Name="txtPassword" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding Password, Mode=TwoWay}" IsEnabled="{Binding ControlState}" TabIndex="1" KeyDown="OnKeyDown"/>
-                    <CheckBox x:Name="CheckStayLoggedIn" Content="{Binding LocalizedUiResources.StayLoggedInText, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding StayLoggedIn, Mode=TwoWay}" IsEnabled="{Binding ControlState}" TabIndex="2"/>
-        		</StackPanel>
-        		<StackPanel x:Name="stackCreateAccount" VerticalAlignment="Bottom" Margin="0,0,0,40">
-        			<TextBlock x:Name="txtNewAtMega" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.NewAtMega, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-        			<HyperlinkButton x:Name="btnCreateNewAccount" Content="{Binding LocalizedUiResources.CreateNewAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" IsEnabled="{Binding ControlState}" Command="{Binding NavigateCreateAccountCommand}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HorizontalAlignment="Center"/>
-        		</StackPanel>
-        	</Grid>
-        </ScrollViewer>
+        <ContentPresenter ContentTemplate="{StaticResource MegaPageHeaderLogo}"/>
 
-        <!--ContentPanel - place additional content here-->
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="Pivot_LoginAndCreateAccount" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <!--Pivot item one-->
+            <phone:PivotItem x:Name="PivotItem_Login" Header="{Binding LocalizedUiResources.Login, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <ScrollViewer x:Name="ContentPanel_Login" Grid.Row="1">
+                    <StackPanel x:Name="stackLogin" VerticalAlignment="Top">
+                        <telerikPrimitives:RadTextBox x:Name="txtEmail_Login" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding _loginViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding _loginViewModel.ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_Login" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding _loginViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding _loginViewModel.ControlState}" TabIndex="1" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
+                        <CheckBox x:Name="CheckStayLoggedIn" Content="{Binding LocalizedUiResources.StayLoggedInText, Mode=OneWay, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" IsChecked="{Binding _loginViewModel.StayLoggedIn, Mode=TwoWay}" IsEnabled="{Binding _loginViewModel.ControlState}" TabIndex="2" Margin="0"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem x:Name="PivotItem_CreateAccount" Header="{Binding LocalizedUiResources.CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+                <ScrollViewer x:Name="ContentPanel_CreateAccount" Grid.Row="1">
+                    <StackPanel x:Name="stackCreateAccount">
+                        <telerikPrimitives:RadTextBox x:Name="txtName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.NameWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding _createAccountViewModel.Name, Mode=TwoWay}" IsEnabled="{Binding _createAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadTextBox x:Name="txtEmail_CreateAccount" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding _createAccountViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding _createAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="1" InputScope="EmailUserName" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_CreateAccount" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding _createAccountViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding _createAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType_CreateAccount" Watermark="{Binding LocalizedUiResources.ConfirmPasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding _createAccountViewModel.ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding _createAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="3" Margin="0,0,0,-12"/>
+                        <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
+                            <CheckBox x:Name="chkTermsOfUse" VerticalAlignment="Center" IsEnabled="{Binding _createAccountViewModel.ControlState}" IsChecked="{Binding _createAccountViewModel.TermOfService, Mode=TwoWay}" TabIndex="4" Margin="0,0,-24,0"/>
+                            <RichTextBox x:Name="TermsOfUseAgreement" HorizontalAlignment="Left" TextWrapping="Wrap" Width="412">
+                                <Paragraph>
+                                    <Run Text="{Binding LocalizedUiResources.AgreeCreateAccount, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface"/>
+                                    <Hyperlink x:Name="linkTermsOfService" Command="{Binding _createAccountViewModel.NavigateTermsOfServiceCommand}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface">
+                                        <Run Text="{Binding LocalizedUiResources.TermsOfService, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource MegaRedSolidColorBrush}" FontFamily="Portable User Interface"/>
+                                    </Hyperlink>                                    
+                                </Paragraph>
+                            </RichTextBox>                            
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </phone:PivotItem>
+        </phone:Pivot>        
     </Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/login.png" Text="login" Click="OnLoginClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="OnCancelClick" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

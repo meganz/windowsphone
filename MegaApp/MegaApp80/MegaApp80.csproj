@@ -139,6 +139,9 @@
     <Compile Include="..\common\Classes\TransferQueu.cs">
       <Link>Classes\TransferQueu.cs</Link>
     </Compile>
+    <Compile Include="..\common\Containers\LoginAndCreateAccountViewModelContainer.cs">
+      <Link>Containers\LoginAndCreateAccountViewModelContainer.cs</Link>
+    </Compile>
     <Compile Include="..\common\Converters\BooleanToColorConverter.cs">
       <Link>Converters\BooleanToColorConverter.cs</Link>
     </Compile>
@@ -510,6 +513,9 @@
     </Compile>
     <Compile Include="..\common\Services\UiService.cs">
       <Link>Services\UiService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\ValidationService.cs">
+      <Link>Services\ValidationService.cs</Link>
     </Compile>
     <Compile Include="..\common\UserControls\BreadCrumb.xaml.cs">
       <Link>UserControls\BreadCrumb.xaml.cs</Link>
@@ -5181,6 +5187,7 @@
       <LastGenOutput>UiResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" />
