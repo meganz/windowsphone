@@ -3,6 +3,7 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
+using MegaApp.Services;
 using Microsoft.Phone.Tasks;
 using System;
 using System.Windows;
@@ -19,7 +20,7 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.ControlState = true;
-            this.NavigateTermsOfUseCommand = new DelegateCommand(NavigateTermsOfUse);
+            this.NavigateTermsOfServiceCommand = new DelegateCommand(NavigateTermsOfService);
         }
 
         #region Methods
@@ -28,32 +29,40 @@ namespace MegaApp.Models
         {
             if (CheckInputParameters())
             {
-                if (CheckPassword())
+                if (!ValidationService.IsValidEmail(Email))
                 {
-                    if (TermOfUse)
+                    if (CheckPassword())
                     {
-                        this._megaSdk.createAccount(Email, Password, Name, this);
+                        if (TermOfService)
+                        {
+                            this._megaSdk.createAccount(Email, Password, Name, this);
+                        }
+                        else
+                            MessageBox.Show(AppMessages.AgreeTermsOfService, AppMessages.CreateAccountFailed_Title.ToUpper(),
+                                MessageBoxButton.OK);
                     }
                     else
-                        MessageBox.Show(AppMessages.AgreeTermsOfUse, AppMessages.AgreeTermsOfUse_Title,
+                    {
+                        MessageBox.Show(AppMessages.PasswordsDoNotMatch, AppMessages.CreateAccountFailed_Title.ToUpper(),
                             MessageBoxButton.OK);
+                    }
                 }
-                else
+                else 
                 {
-                    MessageBox.Show(AppMessages.PasswordsDoNotMatch, AppMessages.PasswordsDoNotMatch_Title,
-                        MessageBoxButton.OK);
+                    MessageBox.Show(AppMessages.MalformedEmail, AppMessages.CreateAccountFailed_Title.ToUpper(),
+                            MessageBoxButton.OK);
                 }
             }
             else
             {
-                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFields_Title,
+                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFields_Title.ToUpper(),
                         MessageBoxButton.OK);
             }
             
         }
-        private static void NavigateTermsOfUse(object obj)
+        private static void NavigateTermsOfService(object obj)
         {
-            var webBrowserTask = new WebBrowserTask {Uri = new Uri(AppResources.TermsOfUseUrl)};
+            var webBrowserTask = new WebBrowserTask {Uri = new Uri(AppResources.TermsOfServiceUrl)};
             webBrowserTask.Show();
         }
 
@@ -71,7 +80,7 @@ namespace MegaApp.Models
 
         #region Commands
 
-        public ICommand NavigateTermsOfUseCommand { get; set; }
+        public ICommand NavigateTermsOfServiceCommand { get; set; }
 
         #endregion
 
@@ -81,7 +90,7 @@ namespace MegaApp.Models
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Name { get; set; }
-        public bool TermOfUse { get; set; }
+        public bool TermOfService { get; set; }
         
         #endregion
 
@@ -99,7 +108,7 @@ namespace MegaApp.Models
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.CreateAccountFailed_Title; }
+            get { return AppMessages.CreateAccountFailed_Title.ToUpper(); }
         }
 
         protected override string SuccessMessage
@@ -109,7 +118,7 @@ namespace MegaApp.Models
 
         protected override string SuccessMessageTitle
         {
-            get { return AppMessages.ConfirmNeeded_Title; }
+            get { return AppMessages.ConfirmNeeded_Title.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage
@@ -129,7 +138,7 @@ namespace MegaApp.Models
 
         protected override Type NavigateToPage
         {
-            get { return typeof (LoginPage); }
+            get { return typeof (InitTourPage); }
         }
 
         protected override NavigationParameter NavigationParameter

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -131,7 +132,11 @@ namespace MegaApp.MegaApi
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
 
             if (e.getErrorCode() == MErrorType.API_OK)
             {
@@ -147,10 +152,6 @@ namespace MegaApp.MegaApi
 
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
-            }
-            else if (e.getErrorCode() == MErrorType.API_ESID)
-            {
-                base.onRequestFinish(api, request, e);
             }
             else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
                 if (ShowErrorMessage)

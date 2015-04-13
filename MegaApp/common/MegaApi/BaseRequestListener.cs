@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -37,7 +38,11 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
 
             if (e.getErrorCode() == MErrorType.API_OK)
             {
@@ -51,35 +56,29 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
-            else if (e.getErrorCode() == MErrorType.API_ESID)
-            {
-                api.logout(new LogOutRequestListener());
-
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(AppMessages.SessionIDError, ErrorMessageTitle, MessageBoxButton.OK));                                
-            }
             else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
-                // Stop all upload transfers
-                if (App.MegaTransfers.Count > 0)
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    foreach (var item in App.MegaTransfers)
+                    // Stop all upload transfers
+                    if (App.MegaTransfers.Count > 0)
                     {
-                        var transferItem = (TransferObjectModel)item;
-                        if (transferItem == null) continue;
+                        foreach (var item in App.MegaTransfers)
+                        {
+                            var transferItem = (TransferObjectModel)item;
+                            if (transferItem == null) continue;
 
-                        if (transferItem.Type == TransferType.Upload)
-                            transferItem.CancelTransfer();
+                            if (transferItem.Type == TransferType.Upload)
+                                transferItem.CancelTransfer();
+                        }
                     }
-                }
 
-                //**************************************************
-                // TODO: Disable the "camera upload" (when availabe)
-                //**************************************************
+                    //**************************************************
+                    // TODO: Disable the "camera upload" (when availabe)
+                    //**************************************************
 
-
-                // User notification message.
-                Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+                    DialogService.ShowOverquotaAlert();
+                });
             }
             else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
             {
@@ -99,11 +98,13 @@ namespace MegaApp.MegaApi
                 autoReset.Set();
             });
             autoReset.WaitOne();
-
         }
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
+
             //Deployment.Current.Dispatcher.BeginInvoke(() =>
             //{
             //    ProgressService.SetProgressIndicator(false);
@@ -113,8 +114,9 @@ namespace MegaApp.MegaApi
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
-        {
-            // No update status necessary
+        {            
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]));
         }
 
         #endregion

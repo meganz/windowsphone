@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Telerik.Windows.Controls;
 
@@ -41,6 +42,28 @@ namespace MegaApp.Classes
                 _totalSpace = value;
                 CalculateFreeSpace();
                 OnPropertyChanged("TotalSpace");
+            }
+        }
+
+        private ulong _totalSpaceSize;
+        public ulong TotalSpaceSize
+        {
+            get { return _totalSpaceSize; }
+            set
+            {
+                _totalSpaceSize = value;                
+                OnPropertyChanged("TotalSpaceSize");
+            }
+        }
+
+        private string _totalSpaceUnits;
+        public string TotalSpaceUnits
+        {
+            get { return _totalSpaceUnits; }
+            set
+            {
+                _totalSpaceUnits = value;
+                OnPropertyChanged("TotalSpaceUnits");
             }
         }
 
@@ -138,8 +161,8 @@ namespace MegaApp.Classes
         {
             var accountDataPoints = new List<AccountDataPoint>
             {
-                new AccountDataPoint() {Label = "Free space", Value = FreeSpace},
-                new AccountDataPoint() {Label = "Used space", Value = UsedSpace}
+                new AccountDataPoint() {Label = UiResources.UsedSpace, Value = UsedSpace},
+                new AccountDataPoint() {Label = UiResources.FreeSpace, Value = FreeSpace}                
             };
             PieChartCollection = accountDataPoints;
         }

@@ -119,71 +119,66 @@
   </resheader>
   <data name="ResourceFlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
-    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language - (NO-TRANSLATION).</comment>
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-US</value>
     <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
-    <value>MY APPLICATION</value>
-  </data>
-  <data name="AppBarButtonText" xml:space="preserve">
-    <value>add</value>
-  </data>
-  <data name="AppBarMenuItemText" xml:space="preserve">
-    <value>Menu Item</value>
+    <value>MEGA Privacy</value>
+    <comment>Title of the application. Try to preserve uppercase. - (NO-TRANSLATION).</comment>
   </data>
   <data name="PagesLocation" xml:space="preserve">
     <value>/Pages/</value>
+    <comment>Location of the pages of the application - (NO-TRANSLATION).</comment>
   </data>
-  <data name="TermsOfUseUrl" xml:space="preserve">
+  <data name="TermsOfServiceUrl" xml:space="preserve">
     <value>https://mega.co.nz/mobile_terms.html</value>
+    <comment>URL to the 'Terms of Service' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="AppKey" xml:space="preserve">
     <value>Z5dGhQhL</value>
-    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications.</comment>
-  </data>
-  <data name="UserAgentWP80" xml:space="preserve">
-    <value>MEGAWindowsPhone80/2.0.3.80</value>
-    <comment>Agent to identify which client uses the SDK</comment>
+    <comment>Each MEGA client application needs a valid key to access the API. Please use a separate key for each of your applications. - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailsDirectory" xml:space="preserve">
     <value>thumbnails\</value>
+    <comment>Path of the 'thumbnails' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="PreviewsDirectory" xml:space="preserve">
     <value>previews\</value>
+    <comment>Path of the 'previews' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="DownloadsDirectory" xml:space="preserve">
     <value>downloads\</value>
+    <comment>Path of the 'downloads' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="DiagnosticsEmailAddress" xml:space="preserve">
     <value>windowsphone@mega.co.nz</value>
+    <comment>Windows Phone Team email for contact and/or support - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailHeight" xml:space="preserve">
     <value>64</value>
+    <comment>Default thumbnail height - (NO-TRANSLATION).</comment>
   </data>
   <data name="ThumbnailWidth" xml:space="preserve">
     <value>64</value>
+    <comment>Default thumbnail width - (NO-TRANSLATION).</comment>
   </data>
   <data name="UploadsDirectory" xml:space="preserve">
     <value>uploads\</value>
+    <comment>Path of the 'uploads' folder of the application - (NO-TRANSLATION).</comment>
   </data>
   <data name="PrivacyPolicyUrl" xml:space="preserve">
     <value>https://mega.co.nz/mobile_privacy.html</value>
-  </data>
-  <data name="MegaSDK_Version" xml:space="preserve">
-    <value>773b34c</value>
-    <comment>The revision code of the SDK version used by the app</comment>
+    <comment>URL to the 'Privacy Policy' information web page - (NO-TRANSLATION).</comment>
   </data>
   <data name="MegaSdkUrl" xml:space="preserve">
     <value>https://github.com/meganz/sdk</value>
+    <comment>URL to the MEGA SDK repository - (NO-TRANSLATION).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
     <value>please select a default download folder</value>
-  </data>
-  <data name="UserAgentWP81" xml:space="preserve">
-    <value>MEGAWindowsPhone81/2.0.4.81</value>
-    <comment>Agent to identify which client uses the SDK</comment>
+    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
 </root>

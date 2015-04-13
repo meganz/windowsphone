@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="mk-MK" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/Add" translate="yes" xml:space="preserve">
+          <source>Add</source>
+          <target state="new">Add</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolder" translate="yes" xml:space="preserve">
+          <source>Select folder</source>
+          <target state="new">Select folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccount" translate="yes" xml:space="preserve">
+          <source>Upgrade account</source>
+          <target state="new">Upgrade account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLocation" translate="yes" xml:space="preserve">
+          <source>Download location</source>
+          <target state="new">Download location</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/View" translate="yes" xml:space="preserve">
+          <source>View</source>
+          <target state="new">View</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Version" translate="yes" xml:space="preserve">
+          <source>Version</source>
+          <target state="new">Version</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the version number into the 'about' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UsedSpace" translate="yes" xml:space="preserve">
+          <source>Used space</source>
+          <target state="new">Used space</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the amount used space into the 'my account' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Used" translate="yes" xml:space="preserve">
+          <source>Used</source>
+          <target state="new">Used</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Uploads" translate="yes" xml:space="preserve">
+          <source>Uploads</source>
+          <target state="new">Uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Total" translate="yes" xml:space="preserve">
+          <source>Total</source>
+          <target state="new">Total</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/TermsOfService" translate="yes" xml:space="preserve">
+          <source>Terms of Service</source>
+          <target state="new">Terms of Service</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Subscribe" translate="yes" xml:space="preserve">
+          <source>Subscribe</source>
+          <target state="new">Subscribe</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/StartResumeAll" translate="yes" xml:space="preserve">
+          <source>Start/resume all</source>
+          <target state="new">Start/resume all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SortByMenuTitle" translate="yes" xml:space="preserve">
+          <source>Sort by</source>
+          <target state="new">Sort by</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SmallestSortOption" translate="yes" xml:space="preserve">
+          <source>Smallest</source>
+          <target state="new">Smallest</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrivacyPolicy" translate="yes" xml:space="preserve">
+          <source>Privacy policy</source>
+          <target state="new">Privacy policy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PauseAll" translate="yes" xml:space="preserve">
+          <source>Pause all</source>
+          <target state="new">Pause all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OldestSortOption" translate="yes" xml:space="preserve">
+          <source>Oldest</source>
+          <target state="new">Oldest</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoPlansToDisplay" translate="yes" xml:space="preserve">
+          <source>No plans to display</source>
+          <target state="new">No plans to display</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoDataToShow" translate="yes" xml:space="preserve">
+          <source>No data to show</source>
+          <target state="new">No data to show</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewPinLockWatermark" translate="yes" xml:space="preserve">
+          <source>Your new PIN lock</source>
+          <target state="new">Your new PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewestSortOption" translate="yes" xml:space="preserve">
+          <source>Newest</source>
+          <target state="new">Newest</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NameDescendingSortOption" translate="yes" xml:space="preserve">
+          <source>Name (descending)</source>
+          <target state="new">Name (descending)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NameAscendingSortOption" translate="yes" xml:space="preserve">
+          <source>Name (ascending)</source>
+          <target state="new">Name (ascending)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Monthly" translate="yes" xml:space="preserve">
+          <source>Monthly</source>
+          <target state="new">Monthly</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MEGA_SDK" translate="yes" xml:space="preserve">
+          <source>MEGA SDK</source>
+          <target state="new">MEGA SDK</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MasterKey" translate="yes" xml:space="preserve">
+          <source>MasterKey</source>
+          <target state="new">MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MakePinLock" translate="yes" xml:space="preserve">
+          <source>Make a PIN Lock</source>
+          <target state="new">Make a PIN Lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LargestSortOption" translate="yes" xml:space="preserve">
+          <source>Largest</source>
+          <target state="new">Largest</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FreeSpace" translate="yes" xml:space="preserve">
+          <source>Free space</source>
+          <target state="new">Free space</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the amount free space into the 'my account' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FilesDescendingSortOption" translate="yes" xml:space="preserve">
+          <source>Files (descending)</source>
+          <target state="new">Files (descending)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by type - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" xml:space="preserve">
+          <source>Files (ascending)</source>
+          <target state="new">Files (ascending)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" xml:space="preserve">
+          <source>Export images to 'saved pictures' album after download</source>
+          <target state="new">Export images to 'saved pictures' album after download</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ExportMasterKeyText" translate="yes" xml:space="preserve">
+          <source>Export MasterKey</source>
+          <target state="new">Export MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Downloads" translate="yes" xml:space="preserve">
+          <source>Downloads</source>
+          <target state="new">Downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DefaultDownloadLocationText" translate="yes" xml:space="preserve">
+          <source>Default download location</source>
+          <target state="new">Default download location</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a text label into the 'settings' page indicating the default download location.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Clipboard" translate="yes" xml:space="preserve">
+          <source>Clipboard</source>
+          <target state="new">Clipboard</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClearSelection" translate="yes" xml:space="preserve">
+          <source>Clear selection</source>
+          <target state="new">Clear selection</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClearCache" translate="yes" xml:space="preserve">
+          <source>Clear cache</source>
+          <target state="new">Clear cache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanUpTransfers" translate="yes" xml:space="preserve">
+          <source>Clean up transfers</source>
+          <target state="new">Clean up transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePinLock" translate="yes" xml:space="preserve">
+          <source>Change PIN Lock</source>
+          <target state="new">Change PIN Lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Capture" translate="yes" xml:space="preserve">
+          <source>Capture</source>
+          <target state="new">Capture</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Capture' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelAll" translate="yes" xml:space="preserve">
+          <source>Cancel all</source>
+          <target state="new">Cancel all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Cache" translate="yes" xml:space="preserve">
+          <source>Cache</source>
+          <target state="new">Cache</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Bandwidth" translate="yes" xml:space="preserve">
+          <source>Bandwidth</source>
+          <target state="new">Bandwidth</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Available" translate="yes" xml:space="preserve">
+          <source>Available</source>
+          <target state="new">Available</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AskDownloadLocationText" translate="yes" xml:space="preserve">
+          <source>Always ask for download location</source>
+          <target state="new">Always ask for download location</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AppVersionText" translate="yes" xml:space="preserve">
+          <source>App version</source>
+          <target state="new">App version</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before app version number into the 'about' page.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Annually" translate="yes" xml:space="preserve">
+          <source>Annually</source>
+          <target state="new">Annually</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Annually' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Acknowledgements" translate="yes" xml:space="preserve">
+          <source>Acknowledgements</source>
+          <target state="new">Acknowledgements</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Accept" translate="yes" xml:space="preserve">
+          <source>Accept</source>
+          <target state="new">Accept</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Accept' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountTypeProLite" translate="yes" xml:space="preserve">
+          <source>PRO Lite</source>
+          <target state="new">PRO Lite</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO Lite' account type - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Storage" translate="yes" xml:space="preserve">
+          <source>Storage</source>
+          <target state="new">Storage</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageUpload" translate="yes" xml:space="preserve">
+          <source>Image upload</source>
+          <target state="new">Image upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadOptionsTitle" translate="yes" xml:space="preserve">
+          <source>Upload options</source>
+          <target state="new">Upload options</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</note>
+        </trans-unit>
+        <trans-unit id="Resx/TakePhoto" translate="yes" xml:space="preserve">
+          <source>Take photo</source>
+          <target state="new">Take photo</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Take photo' option of the dialog shown to upload nodes - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelfieMode" translate="yes" xml:space="preserve">
+          <source>Selfie mode</source>
+          <target state="new">Selfie mode</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectPhoto" translate="yes" xml:space="preserve">
+          <source>Select photo</source>
+          <target state="new">Select photo</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LinkOptions" translate="yes" xml:space="preserve">
+          <source>Link options</source>
+          <target state="new">Link options</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Import" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="new">Import</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FileUpload" translate="yes" xml:space="preserve">
+          <source>File upload</source>
+          <target state="new">File upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Yes" translate="yes" xml:space="preserve">
+          <source>Yes</source>
+          <target state="new">Yes</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/No" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="new">No</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'No' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockWatermark" translate="yes" xml:space="preserve">
+          <source>Your PIN lock</source>
+          <target state="new">Your PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLock" translate="yes" xml:space="preserve">
+          <source>PIN Lock</source>
+          <target state="new">PIN Lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" xml:space="preserve">
+          <source>Confirm your PIN lock</source>
+          <target state="new">Confirm your PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountTypePro3" translate="yes" xml:space="preserve">
+          <source>PRO III</source>
+          <target state="new">PRO III</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountTypePro2" translate="yes" xml:space="preserve">
+          <source>PRO II</source>
+          <target state="new">PRO II</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO II' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountTypePro1" translate="yes" xml:space="preserve">
+          <source>PRO I</source>
+          <target state="new">PRO I</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO I' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountTypeFree" translate="yes" xml:space="preserve">
+          <source>FREE</source>
+          <target state="new">FREE</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RubbishBinRoot" translate="yes" xml:space="preserve">
+          <source>Rubbish bin</source>
+          <target state="new">Rubbish bin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/HomeRoot" translate="yes" xml:space="preserve">
+          <source>Home</source>
+          <target state="new">Home</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Logout" translate="yes" xml:space="preserve">
+          <source>Logout</source>
+          <target state="new">Logout</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="new">On</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Done" translate="yes" xml:space="preserve">
+          <source>Done</source>
+          <target state="new">Done</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="new">Off</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Off' (On/Off) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SpecialThankYou" translate="yes" xml:space="preserve">
+          <source>We want to special thank the following companies/people for making this app possible:</source>
+          <target state="new">We want to special thank the following companies/people for making this app possible:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RubbishBinName" translate="yes" xml:space="preserve">
+          <source>Rubbish bin</source>
+          <target state="new">Rubbish bin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubish bin' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Start" translate="yes" xml:space="preserve">
+          <source>Start</source>
+          <target state="new">Start</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelAllTransfers" translate="yes" xml:space="preserve">
+          <source>Cancel all transfers</source>
+          <target state="new">Cancel all transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Uploaded" translate="yes" xml:space="preserve">
+          <source>Uploaded</source>
+          <target state="new">Uploaded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of an upload transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed2" translate="yes" xml:space="preserve">
+          <source>quickly share files with everyone.</source>
+          <target state="new">quickly share files with everyone.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed_Title" translate="yes" xml:space="preserve">
+          <source>MEGA speed</source>
+          <target state="new">MEGA speed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
+          <source>Change password</source>
+          <target state="new">Change password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Help" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="new">Help</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Advanced" translate="yes" xml:space="preserve">
+          <source>Advanced</source>
+          <target state="new">Advanced</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpeed1" translate="yes" xml:space="preserve">
+          <source>transfers are fast.</source>
+          <target state="new">transfers are fast.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace2" translate="yes" xml:space="preserve">
+          <source>50 GB of free space.</source>
+          <target state="new">50 GB of free space.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace_Title" translate="yes" xml:space="preserve">
+          <source>MEGA space</source>
+          <target state="new">MEGA space</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourSpace1" translate="yes" xml:space="preserve">
+          <source>register now and get</source>
+          <target state="new">register now and get</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy2" translate="yes" xml:space="preserve">
+          <source>end-to-end encryption.</source>
+          <target state="new">end-to-end encryption.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" xml:space="preserve">
+          <source>MEGA privacy</source>
+          <target state="new">MEGA privacy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourPrivacy1" translate="yes" xml:space="preserve">
+          <source>keep your files safe with MEGA's</source>
+          <target state="new">keep your files safe with MEGA's</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess2" translate="yes" xml:space="preserve">
+          <source>fully encrypted access</source>
+          <target state="new">fully encrypted access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess3" translate="yes" xml:space="preserve">
+          <source>anywhere, anytime.</source>
+          <target state="new">anywhere, anytime.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess_Title" translate="yes" xml:space="preserve">
+          <source>MEGA access</source>
+          <target state="new">MEGA access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InitTourAccess1" translate="yes" xml:space="preserve">
+          <source>get</source>
+          <target state="new">get</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Queued" translate="yes" xml:space="preserve">
+          <source>Queued</source>
+          <target state="new">Queued</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is queued - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Downloaded" translate="yes" xml:space="preserve">
+          <source>Downloaded</source>
+          <target state="new">Downloaded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a download transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Resume" translate="yes" xml:space="preserve">
+          <source>Resume</source>
+          <target state="new">Resume</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Pause" translate="yes" xml:space="preserve">
+          <source>Pause</source>
+          <target state="new">Pause</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Pausing" translate="yes" xml:space="preserve">
+          <source>Pausing</source>
+          <target state="new">Pausing</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being pausing - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Paused" translate="yes" xml:space="preserve">
+          <source>Paused</source>
+          <target state="new">Paused</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a paused transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelect" translate="yes" xml:space="preserve">
+          <source>Multi select</source>
+          <target state="new">Multi select</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateShortCut" translate="yes" xml:space="preserve">
+          <source>Create shortcut</source>
+          <target state="new">Create shortcut</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Settings" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="new">Settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Download" translate="yes" xml:space="preserve">
+          <source>Download</source>
+          <target state="new">Download</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Upload" translate="yes" xml:space="preserve">
+          <source>Uploading</source>
+          <target state="new">Uploading</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being uploading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_NotStarted" translate="yes" xml:space="preserve">
+          <source>Not started</source>
+          <target state="new">Not started</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Error" translate="yes" xml:space="preserve">
+          <source>Error</source>
+          <target state="new">Error</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Download" translate="yes" xml:space="preserve">
+          <source>Downloading</source>
+          <target state="new">Downloading</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being downloading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Canceling" translate="yes" xml:space="preserve">
+          <source>Canceling</source>
+          <target state="new">Canceling</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being canceling - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfer_Canceled" translate="yes" xml:space="preserve">
+          <source>Canceled</source>
+          <target state="new">Canceled</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a canceled transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Transfers" translate="yes" xml:space="preserve">
+          <source>Transfers</source>
+          <target state="new">Transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Upload" translate="yes" xml:space="preserve">
+          <source>Upload</source>
+          <target state="new">Upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoTransfers" translate="yes" xml:space="preserve">
+          <source>No transfers</source>
+          <target state="new">No transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Size" translate="yes" xml:space="preserve">
+          <source>Size</source>
+          <target state="new">Size</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SingleFolder" translate="yes" xml:space="preserve">
+          <source>Folder</source>
+          <target state="new">Folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SingleFile" translate="yes" xml:space="preserve">
+          <source>File</source>
+          <target state="new">File</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Save" translate="yes" xml:space="preserve">
+          <source>Save</source>
+          <target state="new">Save</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Share" translate="yes" xml:space="preserve">
+          <source>Share</source>
+          <target state="new">Share</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RenameItem" translate="yes" xml:space="preserve">
+          <source>Type a new name:</source>
+          <target state="new">Type a new name:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Rename" translate="yes" xml:space="preserve">
+          <source>Rename</source>
+          <target state="new">Rename</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Remove" translate="yes" xml:space="preserve">
+          <source>Remove</source>
+          <target state="new">Remove</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/StayLoggedInText" translate="yes" xml:space="preserve">
+          <source>Stay logged in</source>
+          <target state="new">Stay logged in</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Refresh" translate="yes" xml:space="preserve">
+          <source>Refresh</source>
+          <target state="new">Refresh</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Previous" translate="yes" xml:space="preserve">
+          <source>Previous</source>
+          <target state="new">Previous</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Preview" translate="yes" xml:space="preserve">
+          <source>Preview</source>
+          <target state="new">Preview</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PasswordWatermark" translate="yes" xml:space="preserve">
+          <source>Your password</source>
+          <target state="new">Your password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenLink" translate="yes" xml:space="preserve">
+          <source>Open link</source>
+          <target state="new">Open link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Next" translate="yes" xml:space="preserve">
+          <source>Next</source>
+          <target state="new">Next</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenLinkText" translate="yes" xml:space="preserve">
+          <source>Open MEGA download link:</source>
+          <target state="new">Open MEGA download link:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/Open" translate="yes" xml:space="preserve">
+          <source>Open</source>
+          <target state="new">Open</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NameWatermark" translate="yes" xml:space="preserve">
+          <source>Your name</source>
+          <target state="new">Your name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MyAccount" translate="yes" xml:space="preserve">
+          <source>My account</source>
+          <target state="new">My account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultipleFolders" translate="yes" xml:space="preserve">
+          <source>Folders</source>
+          <target state="new">Folders</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultipleFiles" translate="yes" xml:space="preserve">
+          <source>Files</source>
+          <target state="new">Files</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Files' (multiple files) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Move" translate="yes" xml:space="preserve">
+          <source>Move</source>
+          <target state="new">Move</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MegaShareLinkMessage" translate="yes" xml:space="preserve">
+          <source>I want to share this MEGA cloud service file with you</source>
+          <target state="new">I want to share this MEGA cloud service file with you</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text used as title of the message to share a MEGA link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MegaLinkTitle" translate="yes" xml:space="preserve">
+          <source>MEGA link:</source>
+          <target state="new">MEGA link:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoadingPreview" translate="yes" xml:space="preserve">
+          <source>Loading preview...</source>
+          <target state="new">Loading preview...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="new">Login</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewLink" translate="yes" xml:space="preserve">
+          <source>Get link</source>
+          <target state="new">Get link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptyTransfers" translate="yes" xml:space="preserve">
+          <source>No transfers</source>
+          <target state="new">No transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptyFolder" translate="yes" xml:space="preserve">
+          <source>Empty folder</source>
+          <target state="new">Empty folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmailWatermark" translate="yes" xml:space="preserve">
+          <source>Your e-mail address</source>
+          <target state="new">Your e-mail address</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
+          <source>Folder name:</source>
+          <target state="new">Folder name:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
+          </trans-unit>
+        <trans-unit id="Resx/CreateAccount" translate="yes" xml:space="preserve">
+          <source>Create account</source>
+          <target state="new">Create account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" xml:space="preserve">
+          <source>Confirm your password</source>
+          <target state="new">Confirm your password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Copy" translate="yes" xml:space="preserve">
+          <source>Copy</source>
+          <target state="new">Copy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
+          <source>Confirm account</source>
+          <target state="new">Confirm account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Confirm" translate="yes" xml:space="preserve">
+          <source>Confirm</source>
+          <target state="new">Confirm</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloudDriveName" translate="yes" xml:space="preserve">
+          <source>Cloud Drive</source>
+          <target state="new">Cloud Drive</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AppName" translate="yes" xml:space="preserve">
+          <source>MEGA Privacy</source>
+          <target state="new">MEGA Privacy</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="new">Cancel</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AgreeCreateAccount" translate="yes" xml:space="preserve">
+          <source>I agree with the</source>
+          <target state="new">I agree with the</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AddFolder" translate="yes" xml:space="preserve">
+          <source>Add folder</source>
+          <target state="new">Add folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add folder' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

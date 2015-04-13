@@ -35,8 +35,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Save;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.OpenButton;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Save.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Open.ToLower();
 
             if (_downloadNodeViewModel.SelectedNode == null) return;
             if (_downloadNodeViewModel.SelectedNode is ImageNodeViewModel) return;
@@ -89,7 +89,8 @@ namespace MegaApp.Pages
             if (_downloadNodeViewModel.SelectedNode.Transfer.IsBusy) return;
 
             // Only open it if the transfer have finished or the file is already downloaded previously
-            if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Finished ||                
+            if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Downloaded ||
+                _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Uploaded ||
                 _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.NotStarted)
             {       
                _downloadNodeViewModel.SelectedNode.Open();

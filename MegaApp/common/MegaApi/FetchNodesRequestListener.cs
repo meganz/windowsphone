@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -150,16 +151,19 @@ namespace MegaApp.MegaApi
 
         public override void onRequestUpdate(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true,
-                String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix())));
-
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);
+                ProgressService.SetProgressIndicator(true, String.Format(ProgressMessages.FetchingNodes,
+                    request.getTransferredBytes().ToStringAndSuffix()));
+            });
+            
             if (AppMemoryController.IsThresholdExceeded(75UL.FromMBToBytes()))
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(
-                        "Not enough free memory space to complete this operation. The app will shutdown now",
-                        "Memory Limit", MessageBoxButton.OK);
+                    MessageBox.Show(AppMessages.MemoryLimitError,
+                        AppMessages.MemoryLimitError_Title, MessageBoxButton.OK);
                     Application.Current.Terminate();
                 });
 

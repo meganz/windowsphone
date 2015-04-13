@@ -17,7 +17,7 @@ namespace MegaApp.Models
         public AboutViewModel()
         {
             this.AppVersion = AppService.GetAppVersion();
-            this.MegaSDK_Version = AppResources.MegaSDK_Version;
+            this.MegaSDK_Version = AppService.GetMegaSDK_Version();
             this.TermsOfServiceCommand = new DelegateCommand(NavigateToTermsOfService);
             this.PrivacyPolicyCommand = new DelegateCommand(NavigateToPrivacyPolicy);
             this.AcknowledgementsCommands = new DelegateCommand(NavigateToAcknowledgements);
@@ -34,7 +34,7 @@ namespace MegaApp.Models
 
         private static void NavigateToTermsOfService(object obj)
         {
-            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.TermsOfUseUrl) };
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.TermsOfServiceUrl) };
             webBrowserTask.Show();
         }
 

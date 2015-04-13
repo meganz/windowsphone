@@ -19,6 +19,9 @@
 
     <system:Double x:Key="InformationFontSize">14</system:Double>
     
+    <Color x:Key="MegaGrayBackgroundColor">#1F1F1F</Color>
+    <SolidColorBrush x:Key="MegaGrayBackgroundSolidColorBrush" Color="{StaticResource MegaGrayBackgroundColor}"/>
+
     <!-- APP THEME OVERRIDES -->
     <!--<Color x:Key="PhoneAccentColor">#D90007</Color>
     <SolidColorBrush x:Key="PhoneAccentBrush" Color="{StaticResource PhoneAccentColor}"/>-->
@@ -37,6 +40,24 @@
     <converters:ActiveToOpacityConverter x:Key="ActiveToOpacityConverter"/>
 
     <!-- TEMPLATES -->
+    <DataTemplate x:Key="MegaPageHeaderLogo">
+        <Border>
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource MegaGrayBackgroundColor}" />
+            </Border.Background>
+            <Path Data="F1 M 18.092,16.246 C 18.092,16.450 17.927,16.615 17.725,16.615 L 16.168,16.615 C 15.966,16.615 15.802,16.450 15.802,16.246 L 15.802,11.419 C 15.802,11.378 15.752,11.357 15.723,11.387 L 12.427,14.709 C 12.140,14.997 11.676,14.997 11.390,14.709 L 8.094,11.387 C 8.065,11.357 8.015,11.378 8.015,11.419 L 8.015,16.246 C 8.015,16.450 7.851,16.615 7.649,16.615 L 6.092,16.615 C 5.889,16.615 5.725,16.450 5.725,16.246 L 5.725,7.754 C 5.725,7.550 5.889,7.385 6.092,7.385 L 7.162,7.385 C 7.356,7.385 7.543,7.462 7.680,7.601 L 11.779,11.731 C 11.850,11.803 11.966,11.803 12.038,11.731 L 16.136,7.601 C 16.274,7.462 16.460,7.385 16.655,7.385 L 17.725,7.385 C 17.927,7.385 18.092,7.550 18.092,7.754 L 18.092,16.246 Z M 12.000,0.000 C 5.373,0.000 0.000,5.373 0.000,12.000 C 0.000,18.627 5.373,24.000 12.000,24.000 C 18.627,24.000 24.000,18.627 24.000,12.000 C 24.000,5.373 18.627,0.000 12.000,0.000 Z" Height="52" Width="52" HorizontalAlignment="Center" Stretch="Fill" Margin="0,-32,0,0" VerticalAlignment="Center" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaPageHeader">
+        <Border>
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource MegaGrayBackgroundColor}" />
+            </Border.Background>
+            <Path Data="F1 M 1.000,0.000 L 23.000,0.000 C 23.552,0.000 24.000,0.448 24.000,1.000 L 24.000,3.000 C 24.000,3.552 23.552,4.000 23.000,4.000 L 1.000,4.000 C 0.448,4.000 0.000,3.552 0.000,3.000 L 0.000,1.000 C 0.000,0.448 0.448,0.000 1.000,0.000 Z M 1.000,8.000 L 23.000,8.000 C 23.552,8.000 24.000,8.448 24.000,9.000 L 24.000,11.000 C 24.000,11.552 23.552,12.000 23.000,12.000 L 1.000,12.000 C 0.448,12.000 0.000,11.552 0.000,11.000 L 0.000,9.000 C 0.000,8.448 0.448,8.000 1.000,8.000 Z M 1.000,16.000 L 23.000,16.000 C 23.552,16.000 24.000,16.448 24.000,17.000 L 24.000,19.000 C 24.000,19.552 23.552,20.000 23.000,20.000 L 1.000,20.000 C 0.448,20.000 0.000,19.552 0.000,19.000 L 0.000,17.000 C 0.000,16.448 0.448,16.000 1.000,16.000 Z" Height="20" Width="24" HorizontalAlignment="Left" Stretch="Fill" Margin="24,0,0,0" VerticalAlignment="Center" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+        </Border>
+    </DataTemplate>
+
     <DataTemplate x:Key="MegaNodeListFileItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
             <Grid Margin="0,6">
@@ -267,7 +288,7 @@
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
+            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
             <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
         </Grid>
     </DataTemplate>
@@ -288,7 +309,7 @@
         <Grid Margin="0,0,0,12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -296,36 +317,69 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Width="90" Height="90" Stretch="UniformToFill">
+            <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
                 <Image.Source>
                     <BitmapImage 
 						UriSource="{Binding ThumbnailUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
-						DecodePixelHeight="90"
-						DecodePixelWidth="90"
+						DecodePixelHeight="64"
+						DecodePixelWidth="64"
 						DecodePixelType="Logical"
 						CreateOptions="BackgroundCreation"
                         />
                 </Image.Source>
             </Image>
-            <TextBlock HorizontalAlignment="Left" Text="{Binding DisplayName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0" TextTrimming="WordEllipsis" Grid.Row="0" Grid.Column="1"/>
-            <ProgressBar VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" Height="8" IsIndeterminate="{Binding Status, Converter={StaticResource TransferStatusToIndeterminateConverter}}" Grid.Row="1" Grid.Column="1" FontFamily="Portable User Interface"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontFamily="Portable User Interface" Margin="12,0,0,0" />
-            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding TransferSpeed}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" FontFamily="Portable User Interface" Margin="0,0,12,0" />
-            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="/Assets/Images/cancel transfers.Screen-WXGA.png" FontFamily="Portable User Interface"/>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Text="{Binding DisplayName}" VerticalAlignment="Bottom" FontSize="22" TextTrimming="WordEllipsis" FontFamily="Segoe UI" Margin="0,0,0,-6"/>
+            <ProgressBar VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="-10,0,-12,0" Minimum="0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" IsIndeterminate="False" FontFamily="Portable User Interface">
+                <ProgressBar.Foreground>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </ProgressBar.Foreground>
+                <ProgressBar.Background>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </ProgressBar.Background>
+            </ProgressBar>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding TransferSpeed}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="{Binding TransferButtonIcon}" Foreground="{Binding TransferButtonForegroundColor}" FontFamily="Portable User Interface" Margin="0,0,-12,0"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
-        <Grid Height="562" Width="456">
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
-            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
+                <Paragraph TextAlignment="Right">
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </Paragraph>
+            </RichTextBox>
+            <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
-        <Grid Height="562" Width="456">
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyTransfers, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Bottom" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,0,0,56"/>
-            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
+                <Paragraph TextAlignment="Right">
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>                    
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </Paragraph>
+            </RichTextBox>
+            <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
@@ -428,6 +482,12 @@
         <selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png" Margin="0,0,0,-16"/>
     </DataTemplate>
 
+    <DataTemplate x:Key="PivotMegaHeaderTemplate">
+        <ContentPresenter>            
+            <TextBlock Text="{Binding}" FontFamily="Segoe WP SemiLight" Foreground="White" FontSize="40" />
+        </ContentPresenter>
+    </DataTemplate>    
+
     <DataTemplate x:Key="ProductItemTemplate">
         <Grid Margin="0,10" Background="#FF404040" Height="168">
             <Grid.ColumnDefinitions>
@@ -447,9 +507,9 @@
                 <Image Source="{Binding ProductUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
             </Border>
             <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Storage" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="LightGray"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="LightGray"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Column="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bandwidth" VerticalAlignment="Center" Grid.Column="1" Margin="20,14.425,0,13.242" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Row="1" Foreground="LightGray"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" Margin="20,14.425,0,13.242" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Row="1" Foreground="LightGray"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Transfer}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
             <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold">
                 <TextBlock.Foreground>
