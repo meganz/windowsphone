@@ -2462,6 +2462,7 @@
     <EmbeddedResource Include="Resources\VisualResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VisualResources.Designer.cs</LastGenOutput>
+	</EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.vi-VN.resx">
       <Link>Resources\AppMessages.vi-VN.resx</Link>
       <AutoGen>True</AutoGen>
