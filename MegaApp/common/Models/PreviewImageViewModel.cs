@@ -18,6 +18,7 @@ using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 using Microsoft.Phone.Notification;
 using Microsoft.Phone.Reactive;
 using Microsoft.Phone.Shell;
@@ -40,8 +41,8 @@ namespace MegaApp.Models
         {
             if (e.Action != NotifyCollectionChangedAction.Remove) return;
             var removedNode = (NodeViewModel) e.OldItems[0];
-            PreviewItems.Remove(PreviewItems.FirstOrDefault(n=> n.GetMegaNode().getBase64Handle() == 
-                removedNode.GetMegaNode().getBase64Handle()));
+            PreviewItems.Remove(PreviewItems.FirstOrDefault(n=> n.OriginalMNode.getBase64Handle() ==
+                removedNode.OriginalMNode.getBase64Handle()));
         }
 
         #region Methods

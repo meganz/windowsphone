@@ -10,6 +10,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.Interfaces;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -166,10 +167,7 @@ namespace MegaApp.MegaApi
                 {
                     if ((_nodeViewModel != null) && (_nodeViewModel.ParentCollection != null))
                     {
-                        if (_nodeViewModel.ParentCollection is ObservableCollection<NodeViewModel>)
-                        {
-                            ((ObservableCollection<NodeViewModel>)_nodeViewModel.ParentCollection).Remove(_nodeViewModel);
-                        }
+                        _nodeViewModel.ParentCollection.Remove(_nodeViewModel);
                     }
 
                     _nodeViewModel = null;

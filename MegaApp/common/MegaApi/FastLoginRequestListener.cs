@@ -15,16 +15,17 @@ using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
     class FastLoginRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
+        private readonly MainPageViewModel _mainPageViewModel;
         
-        public FastLoginRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        public FastLoginRequestListener(MainPageViewModel mainPageViewModel)
         {
-            _cloudDriveViewModel = cloudDriveViewModel;
+            _mainPageViewModel = mainPageViewModel;
         }
 
         #region Base Properties
@@ -95,7 +96,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _cloudDriveViewModel.FetchNodes();
+            _mainPageViewModel.FetchNodes();
         }
 
         #endregion

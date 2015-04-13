@@ -5,6 +5,7 @@ using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Resources;
 using System.IO;
+using System.Windows;
 using System.Xml;
 using Windows.ApplicationModel;
 using Windows.Phone.System.Memory;
@@ -17,6 +18,8 @@ namespace MegaApp.Services
 {
     static class AppService
     {
+        private const int DownloadLimit = 100;
+
         public static Resolutions CurrentResolution;
 
         public static string GetAppVersion()
@@ -192,6 +195,14 @@ namespace MegaApp.Services
         public static void SaveAppInformation()
         {
             SettingsService.SaveSetting(SettingsResources.LastAppVersion, AppService.GetAppVersion());
+        }
+
+        public static bool DownloadLimitCheck(int downloadCount)
+        {
+            if (downloadCount <= DownloadLimit) return true;
+
+            return MessageBox.Show(String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+                AppMessages.DownloadLimitMessage_Title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
         }
     }
 }

@@ -92,7 +92,7 @@ namespace MegaApp.Pages
             if(_downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.Finished ||                
                 _downloadNodeViewModel.SelectedNode.Transfer.Status == TransferStatus.NotStarted)
             {       
-               _downloadNodeViewModel.SelectedNode.OpenFile();
+               _downloadNodeViewModel.SelectedNode.Open();
             }
         }
     }

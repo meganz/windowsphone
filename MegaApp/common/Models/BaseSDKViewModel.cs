@@ -23,7 +23,7 @@ namespace MegaApp.Models
             bool isOnline = Convert.ToBoolean(this.MegaSdk.isLoggedIn());
 
             if (!isOnline)
-                MessageBox.Show(AppMessages.UserNotOnline, AppMessages.UserNotOnline_Title, MessageBoxButton.OK);
+                OnUiThread(() => MessageBox.Show(AppMessages.UserNotOnline, AppMessages.UserNotOnline_Title, MessageBoxButton.OK));
 
             return isOnline;
         }

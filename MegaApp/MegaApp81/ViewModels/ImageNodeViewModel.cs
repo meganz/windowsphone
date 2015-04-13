@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,17 +8,21 @@ using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Models
 {
     class ImageNodeViewModel: FileNodeViewModel
     {
-        public ImageNodeViewModel(MegaSDK megaSdk, MNode megaNode, object parentCollection = null, object childCollection = null)
-            : base(megaSdk, megaNode, parentCollection, childCollection)
+        public ImageNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+            ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
+            : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
         {
             // Image node downloads to the image path of the full original image
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
@@ -30,7 +35,7 @@ namespace MegaApp.Models
 
         #region Override Methods
 
-        public override async void OpenFile()
+        public override async void Open()
         {
             await FileService.OpenFile(LocalImagePath);
         }
@@ -46,16 +51,16 @@ namespace MegaApp.Models
 
         public void CancelPreviewRequest()
         {
-            MegaSdk.cancelGetPreview(GetMegaNode());
+            MegaSdk.cancelGetPreview(this.OriginalMNode);
             IsBusy = false;
         }
 
         public void SetPreviewImage()
         {
             if (this.IsBusy) return;
-            if (!this.GetMegaNode().hasPreview()) return;
+            if (!this.OriginalMNode.hasPreview()) return;
 
-            if (this.GetMegaNode().hasPreview())
+            if (this.OriginalMNode.hasPreview())
             {
                 GetPreview();
             }
@@ -102,7 +107,7 @@ namespace MegaApp.Models
             }
             else
             {
-                this.MegaSdk.getPreview(base.GetMegaNode(), PreviewPath, new GetPreviewRequestListener(this));
+                this.MegaSdk.getPreview(this.OriginalMNode, PreviewPath, new GetPreviewRequestListener(this));
             }
         }
 
@@ -165,7 +170,7 @@ namespace MegaApp.Models
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.PreviewsDirectory,
-                                    this.GetMegaNode().getBase64Handle());
+                                    this.OriginalMNode.getBase64Handle());
             }
         }
 
@@ -176,7 +181,7 @@ namespace MegaApp.Models
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
                                     String.Format("{0}{1}",
-                                        this.GetMegaNode().getBase64Handle(),
+                                        this.OriginalMNode.getBase64Handle(),
                                         Path.GetExtension(base.Name)));
             }
         }
@@ -187,7 +192,7 @@ namespace MegaApp.Models
             {
                 return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
                                     String.Format("{0}{1}",
-                                        this.GetMegaNode().getBase64Handle(),
+                                        this.OriginalMNode.getBase64Handle(),
                                         Path.GetExtension(base.Name)));
             }
         }

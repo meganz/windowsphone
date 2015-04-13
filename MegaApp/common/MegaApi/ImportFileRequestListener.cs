@@ -12,17 +12,12 @@ using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
     class ImportFileRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public ImportFileRequestListener(CloudDriveViewModel cloudDriveViewModel)
-        {
-            this._cloudDriveViewModel = cloudDriveViewModel;
-        }
-
         #region Base Properties
 
         protected override string ProgressMessage
@@ -83,16 +78,6 @@ namespace MegaApp.MegaApi
         protected override NavigationParameter NavigationParameter
         {
             get { throw new NotImplementedException(); }
-        }
-
-        #endregion
-
-        #region Override Methods
-
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
-        {
-            // FIX for double import
-            //_cloudDriveViewModel.LoadNodes();
         }
 
         #endregion

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MegaApp.Classes
 {
-    class AdvancedMenuItem
+    public class HamburgerMenuItem
     {
-        public string Name { get; set; }
+        public string DisplayName { get; set; }
+
+        public string IconPathData { get; set; }
 
         public Action TapAction { get; set; }
     }

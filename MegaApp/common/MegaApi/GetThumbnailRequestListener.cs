@@ -96,7 +96,7 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                _node.ThumbnailIsDefaultImage = false;
+                _node.IsThumbnailDefaultImage = false;
                 _node.ThumbnailImageUri = new Uri(request.getFile());
             });
             

@@ -17,13 +17,11 @@ namespace MegaApp.MegaApi
 {
     class MoveNodeRequestListener: BaseRequestListener
     {
-        private readonly NodeViewModel _rootNode;
-        private readonly NodeViewModel _nodeToMove;
-        public MoveNodeRequestListener(NodeViewModel rootNode, NodeViewModel nodeToMove)
-        {
-            this._rootNode = rootNode;
-            this._nodeToMove = nodeToMove;
-        }
+        //public MoveNodeRequestListener(NodeViewModel rootNode, NodeViewModel nodeToMove)
+        //{
+        //    this._rootNode = rootNode;
+        //    this._nodeToMove = nodeToMove;
+        //}
 
         #region Base Properties
 

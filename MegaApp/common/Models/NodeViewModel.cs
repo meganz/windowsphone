@@ -1,136 +1,45 @@
-﻿using mega;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using Windows.Storage;
+using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Extensions;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using System.Threading;
-using System;
-using System.IO;
-using System.Windows;
-using System.Windows.Media.Imaging;
-using Windows.Storage;
+using MegaApp.ViewModels;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {
     /// <summary>
     /// ViewModel of the main MEGA datatype (MNode)
     /// </summary>
-    public abstract class NodeViewModel : BaseSdkViewModel
+    public abstract class NodeViewModel : BaseAppInfoAwareViewModel, IMegaNode
     {
-        public event EventHandler CancelingTransfer;
-        // Original MNode object from the MEGA SDK
-        private MNode _originalMegaNode;
         // Offset DateTime value to calculate the correct creation and modification time
         private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
-        protected NodeViewModel(MegaSDK megaSdk, MNode megaNode, object parentCollection = null, object childCollection = null)
-            : base(megaSdk)
+        protected NodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+            ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
+            : base(megaSdk, appInformation)
         {
-            SetCoreNodeData(megaNode);
+            Update(megaNode);
             SetDefaultValues();
             
             this.ParentCollection = parentCollection;
             this.ChildCollection = childCollection;
-
-            this.MegaService = new MegaService();
         }
-
-        #region Interfaces
-
-        public IMegaService MegaService { get; set; }
-
-        #endregion
-
-        #region Abstract Methods
-
-        public abstract void OpenFile();
-
-        #endregion
-
-        #region Virtual Methods
-
-        public virtual void Rename()
-        {
-            if (!IsUserOnline()) return;
-            MegaService.Rename(this.MegaSdk, this);
-        }
-
-        public virtual void Move(NodeViewModel newParentNode)
-        {
-            if (!IsUserOnline()) return;
-            MegaService.Move(this.MegaSdk, this, newParentNode);
-        }
-
-        public virtual void Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
-        {
-            if (!IsUserOnline()) return;
-            MegaService.Remove(this.MegaSdk, this, isMultiRemove, waitEventRequest);
-        }
-
-        public virtual void GetPreviewLink()
-        {
-            if (!IsUserOnline()) return;
-            MegaService.GetPreviewLink(this.MegaSdk, this);
-        }
-
-#if WINDOWS_PHONE_80
-        public virtual void ViewOriginal()
-        {
-            if (!IsUserOnline()) return;
-            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
-        }
-#elif WINDOWS_PHONE_81
-        public async void Download(string downloadPath = null)
-        {
-            if (!IsUserOnline()) return;
-            
-            if (App.CloudDrive.PickerOrDialogIsOpen) return;
-
-            if (downloadPath == null)
-            {
-                App.CloudDrive.PickerOrDialogIsOpen = true;
-                if (!await FolderService.SelectDownloadFolder(this)) return;
-            }
-                
-
-            this.Transfer.DownloadFolderPath = downloadPath;
-            App.MegaTransfers.Add(this.Transfer);
-            this.Transfer.StartTransfer();
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
-        }
-#endif
-
-        public virtual void Update(MNode megaNode)
-        {
-            SetCoreNodeData(megaNode);
-        }
-
-        protected virtual void OnCancelingTransfer()
-        {
-            if (CancelingTransfer == null) return;
-
-            CancelingTransfer(this, new EventArgs());
-        }
-
-        #endregion
-
+        
         #region Private Methods
-
-        private void SetCoreNodeData(MNode megaNode)
-        {
-            _originalMegaNode = megaNode;
-            this.Handle = megaNode.getHandle();
-            this.Name = megaNode.getName();
-            this.Size = megaNode.getSize();
-            this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
-            this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
-            this.Type = megaNode.getType();
-        }
-
+        
         private void SetDefaultValues()
         {
             this.IsMultiSelected = false;
@@ -140,31 +49,20 @@ namespace MegaApp.Models
 
             if (FileService.FileExists(ThumbnailPath))
             {
-                this.ThumbnailIsDefaultImage = false;
+                this.IsThumbnailDefaultImage = false;
                 this.ThumbnailImageUri = new Uri(ThumbnailPath);
             }
             else
             {
-                this.ThumbnailIsDefaultImage = true;
+                this.IsThumbnailDefaultImage = true;
                 this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
             }
         }
 
         private void GetThumbnail()
         {
-            //if (FileService.FileExists(ThumbnailPath))
-            //{
-            //    ThumbnailIsDefaultImage = false;
-            //    ThumbnailImageUri = new Uri(ThumbnailPath);
-            //}
-            //else
-            //{
-                if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
-                {
-                    //System.Threading.ThreadPool.QueueUserWorkItem(state => 
-                    this.MegaSdk.getThumbnail(this.GetMegaNode(), ThumbnailPath, new GetThumbnailRequestListener(this));
-                }
-            //}
+            if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+                this.MegaSdk.getThumbnail(OriginalMNode, ThumbnailPath, new GetThumbnailRequestListener(this));
         }
 
         /// <summary>
@@ -179,64 +77,167 @@ namespace MegaApp.Models
 
         #endregion
 
-        #region Public Methods
-      
-        public void CancelTransfer()
+        #region IMegaNode Interface
+
+        public async Task<NodeActionResult> Rename()
         {
-            OnCancelingTransfer();
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            // Add the current name to the rename dialog textbox
+            var textboxStyle = new Style(typeof(RadTextBox));
+            textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
+            
+            // Create the rename dialog and show it to the user
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.RenameButton, UiResources.CancelButton },
+                UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
+
+            // If the user did not press OK, do nothing
+            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return NodeActionResult.Cancelled;
+
+            // Rename the node
+            this.MegaSdk.renameNode(this.OriginalMNode, inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
+            
+            return NodeActionResult.IsBusy;
+        }
+
+        public NodeActionResult Move(IMegaNode newParentNode)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() == MErrorType.API_OK)
+            {
+                this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode,
+                    new MoveNodeRequestListener());
+                return NodeActionResult.IsBusy;
+            }
+
+            return NodeActionResult.Failed;
+        }
+
+        public NodeActionResult Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            // Looking for the absolute parent of the node to remove
+            MNode parentNode;
+            MNode absoluteParentNode = this.OriginalMNode;
+
+            while ((parentNode = this.MegaSdk.getParentNode(absoluteParentNode)) != null)
+                absoluteParentNode = parentNode;
+
+            // If the node is on the rubbish bin, delete it forever
+            if (absoluteParentNode.getType() == MNodeType.TYPE_RUBBISH)
+            {
+                if (!isMultiRemove)
+                    if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, this.Name),
+                        AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                            return NodeActionResult.Cancelled;
+
+                this.MegaSdk.remove(this.OriginalMNode, new RemoveNodeRequestListener(this, isMultiRemove, absoluteParentNode.getType(),
+                    waitEventRequest));
+                
+                return NodeActionResult.IsBusy;
+            }
+            
+            // if the node in in the Cloud Drive, move it to rubbish bin
+            if (!isMultiRemove)
+                if (MessageBox.Show(String.Format(AppMessages.MoveToRubbishBinQuestion, this.Name),
+                    AppMessages.MoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                    return NodeActionResult.Cancelled;
+
+            this.MegaSdk.moveNode(this.OriginalMNode, this.MegaSdk.getRubbishNode(),
+                new RemoveNodeRequestListener(this, isMultiRemove, absoluteParentNode.getType(), waitEventRequest));
+
+            return NodeActionResult.IsBusy;
+        }
+
+        public NodeActionResult Delete()
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            if (MessageBox.Show(String.Format(AppMessages.DeleteNodeQuestion, this.Name),
+                    AppMessages.DeleteNodeQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
+                return NodeActionResult.Cancelled;
+
+            this.MegaSdk.remove(this.OriginalMNode, new RemoveNodeRequestListener(this, false, this.Type, null));
+
+            return NodeActionResult.IsBusy;
+        }
+
+        public NodeActionResult GetLink()
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            this.MegaSdk.exportNode(this.OriginalMNode, new ExportNodeRequestListener());
+
+            return NodeActionResult.IsBusy;
+        }
+
+#if WINDOWS_PHONE_80
+                public virtual void ViewOriginal()
+                {
+                    if (!IsUserOnline()) return;
+                    NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+                }
+#elif WINDOWS_PHONE_81
+        public async void Download(TransferQueu transferQueu, string downloadPath = null)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return;
+
+            if (AppInformation.PickerOrAsyncDialogIsOpen) return;
+
+            if (downloadPath == null)
+            {
+                AppInformation.PickerOrAsyncDialogIsOpen = true;
+                if (!await FolderService.SelectDownloadFolder(this)) return;
+            }
+
+
+            this.Transfer.DownloadFolderPath = downloadPath;
+            transferQueu.Add(this.Transfer);
+            this.Transfer.StartTransfer();
+
+            // TODO Remove this global declaration in method
+            App.CloudDrive.NoFolderUpAction = true;
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+        }
+#endif
+
+        public void Update(MNode megaNode)
+        {
+            OriginalMNode = megaNode;
+            this.Handle = megaNode.getHandle();
+            this.Name = megaNode.getName();
+            this.Size = megaNode.getSize();
+            this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
+            this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
+            this.Type = megaNode.getType();
+        }
+
+        public virtual void Open()
+        {
+            throw new NotImplementedException();
         }
 
         public void SetThumbnailImage()
         {
             if (this.Type == MNodeType.TYPE_FOLDER) return;
 
-            if (this.ThumbnailImageUri != null && !ThumbnailIsDefaultImage) return;
-            
-            if (this.IsImage || this.GetMegaNode().hasThumbnail())
+            if (this.ThumbnailImageUri != null && !IsThumbnailDefaultImage) return;
+
+            if (this.IsImage || this.OriginalMNode.hasThumbnail())
             {
                 GetThumbnail();
             }
         }
 
-        #endregion
-
-        #region Events
-
-        //private void ImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        //{
-        //    MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
-        //    var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
-        //    this.Image = bitmapImage;
-        //}
-
-        //private void PreviewImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        //{
-        //    MessageBox.Show("DEBUG: " + exceptionRoutedEventArgs.ErrorException.Message);
-        //    var bitmapImage = new BitmapImage(new Uri("/Assets/Images/preview_error.png", UriKind.Relative));
-        //    this.PreviewImage = bitmapImage;
-        //}
-
-        //private void ThumbnailImageOnImageFailed(object sender, ExceptionRoutedEventArgs exceptionRoutedEventArgs)
-        //{
-        //    this.ThumbnailImage = ImageService.GetDefaultFileImage(this.Name);
-        //}
-
-        #endregion
-
-        #region Properties
-
-        public TransferObjectModel Transfer { get; set; }
-
-        private NodeDisplayMode _displayMode;
-        public NodeDisplayMode DisplayMode
-        {
-            get { return _displayMode; }
-            set
-            {
-                _displayMode = value;
-                OnPropertyChanged("DisplayMode");
-            }
-        }
+        #region Interface Properties
 
         private string _name;
         public string Name
@@ -249,29 +250,47 @@ namespace MegaApp.Models
             }
         }
 
-        public ulong Handle { get; set; }
-
-        public ulong Size { get; private set; }
-
-        public MNodeType Type { get; private set ; }
-
         public string CreationTime { get; private set; }
 
         public string ModificationTime { get; private set; }
 
-        public object ParentCollection { get; set; }
-        public object ChildCollection { get; set; }
-
-        public bool ThumbnailIsDefaultImage { get; set; }
-
-        private Uri _thumbnailImageUri;
-        public Uri ThumbnailImageUri
+        public string ThumbnailPath
         {
-            get { return _thumbnailImageUri; }
+            get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
+                                      AppResources.ThumbnailsDirectory, 
+                                      this.OriginalMNode.getBase64Handle());
+            }
+        }
+
+        private string _information;
+        public string Information
+        {
+            get { return _information; }
             set
             {
-                _thumbnailImageUri = value;
-                OnPropertyChanged("ThumbnailImageUri");
+                _information = value;
+                OnPropertyChanged("Information");
+            }
+        }
+
+        public ulong Handle { get; set; }
+
+        public ulong Size { get; private set; }
+
+        public ObservableCollection<IMegaNode> ParentCollection { get; set; }
+
+        public ObservableCollection<IMegaNode> ChildCollection { get; set; }
+
+        public MNodeType Type { get; private set; }
+
+        private NodeDisplayMode _displayMode;
+        public NodeDisplayMode DisplayMode
+        {
+            get { return _displayMode; }
+            set
+            {
+                _displayMode = value;
+                OnPropertyChanged("DisplayMode");
             }
         }
 
@@ -291,18 +310,24 @@ namespace MegaApp.Models
             get { return ImageService.IsImage(this.Name); }
         }
 
-        public string ThumbnailPath
+        public bool IsThumbnailDefaultImage { get; set; }
+
+        private Uri _thumbnailImageUri;
+        public Uri ThumbnailImageUri
         {
-            get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
-                                      AppResources.ThumbnailsDirectory, 
-                                      this.GetMegaNode().getBase64Handle());
+            get { return _thumbnailImageUri; }
+            set
+            {
+                _thumbnailImageUri = value;
+                OnPropertyChanged("ThumbnailImageUri");
             }
         }
 
-        public MNode GetMegaNode()
-        {
-            return this._originalMegaNode;
-        }
+        public TransferObjectModel Transfer { get; set; }
+
+        public MNode OriginalMNode { get; private set; }
+
+        #endregion
 
         #endregion
     }

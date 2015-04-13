@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
-using MegaApp.Models;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Collections.ObjectModel;
+using MegaApp.Interfaces;
+using MegaApp.Models;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
@@ -34,33 +28,33 @@ namespace MegaApp.UserControls
         public event EventHandler<BreadCrumbTapEventArgs> OnBreadCrumbTap;
         public event EventHandler OnHomeTap;
 
-        public NodeViewModel SelectedItem { get; set; }
+        public IMegaNode SelectedItem { get; set; }
 
         #endregion
 
         #region Dependency Properties
 
-        public ObservableCollection<NodeViewModel> ItemsSource
+        public ObservableCollection<IMegaNode> ItemsSource
         {
-            get { return (ObservableCollection<NodeViewModel>)GetValue(ItemsSourceProperty); }
+            get { return (ObservableCollection<IMegaNode>)GetValue(ItemsSourceProperty); }
             set { SetValue(ItemsSourceProperty, value); }
         }
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource",
-            typeof(ObservableCollection<NodeViewModel>),          
+            typeof(ObservableCollection<IMegaNode>),          
             typeof(BreadCrumb),            
             new PropertyMetadata(null, new PropertyChangedCallback(OnItemsSourceChanged)));
 
-        public ObservableCollection<NodeViewModel> Items
+        public ObservableCollection<IMegaNode> Items
         {
-            get { return (ObservableCollection<NodeViewModel>)GetValue(ItemsProperty); }
+            get { return (ObservableCollection<IMegaNode>)GetValue(ItemsProperty); }
             set { SetValue(ItemsProperty, value); }
         }
 
         public static readonly DependencyProperty ItemsProperty = DependencyProperty.Register(
             "Items",
-            typeof(ObservableCollection<NodeViewModel>),         
+            typeof(ObservableCollection<IMegaNode>),         
             typeof(BreadCrumb),           
             new PropertyMetadata(null, new PropertyChangedCallback(OnItemsChanged)));        
 
@@ -235,7 +229,10 @@ namespace MegaApp.UserControls
                 }
             }
 
-            var current = new TextBlock();
+            var current = new TextBlock()
+            {
+                Margin = new Thickness(12, -8, 12, 0)
+            };
             if (Items != null && Items.Count > 0)
             {
                 if (!String.IsNullOrEmpty(DisplayMember))
@@ -251,14 +248,14 @@ namespace MegaApp.UserControls
             layoutRoot.Children.Add(current);
         }
 
-        void OnButtonTap(object sender, System.Windows.Input.GestureEventArgs e)
+        void OnButtonTap(object sender, GestureEventArgs e)
         {
             if (OnBreadCrumbTap == null) return;
             
             var tappedButton = (sender as Button);
             if (tappedButton == null) return;
 
-            SelectedItem = (NodeViewModel)tappedButton.DataContext;
+            SelectedItem = (IMegaNode)tappedButton.DataContext;
             var args = new BreadCrumbTapEventArgs()
             {
                 Text = tappedButton.Content.ToString(),
@@ -298,8 +295,11 @@ namespace MegaApp.UserControls
         {
             var control = d as BreadCrumb;
             if (control == null) return;
-            control.Items = (ObservableCollection<NodeViewModel>)e.NewValue;
-            control.Items.CollectionChanged += (sender, args) => control.DrawBreadCrumb();
+            control.Items = (ObservableCollection<IMegaNode>)e.NewValue;
+            control.Items.CollectionChanged += (sender, args) =>
+            {
+                control.DrawBreadCrumb();
+            };
             control.DrawBreadCrumb();
             //if (itemsSource != null)
             //{
@@ -323,14 +323,14 @@ namespace MegaApp.UserControls
         private static void OnItemsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var control = d as BreadCrumb;
-            var items = (ObservableCollection<NodeViewModel>)e.NewValue;
+            var items = (ObservableCollection<IMegaNode>)e.NewValue;
             if (items != null)
             {
                 control.DrawBreadCrumb();
             }
         }
 
-        void ItemsCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             DrawBreadCrumb();
         }

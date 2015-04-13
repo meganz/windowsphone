@@ -96,9 +96,6 @@
     <Compile Include="..\common\Classes\AccountDetails.cs">
       <Link>Classes\AccountDetails.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
-      <Link>Classes\AdvancedMenuItem.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\AppMemoryController.cs">
       <Link>Classes\AppMemoryController.cs</Link>
     </Compile>
@@ -107,6 +104,9 @@
     </Compile>
     <Compile Include="..\common\Classes\CustomMultiResolutionImage.cs">
       <Link>Classes\CustomMultiResolutionImage.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\HamburgerMenuItem.cs">
+      <Link>Classes\HamburgerMenuItem.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\MemoryInformation.cs">
       <Link>Classes\MemoryInformation.cs</Link>

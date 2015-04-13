@@ -7,19 +7,24 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Interfaces;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
     class GlobalDriveListener: MGlobalListenerInterface
     {
         private readonly CloudDriveViewModel _cloudDriveViewModel;
-        public GlobalDriveListener(CloudDriveViewModel cloudDriveViewModel)
+        private readonly AppInformation _appInformation;
+        public GlobalDriveListener(CloudDriveViewModel cloudDriveViewModel, AppInformation appInformation)
         {
             _cloudDriveViewModel = cloudDriveViewModel;
+            _appInformation = appInformation;
         }
 
         public void onNodesUpdate(MegaSDK api, MNodeList nodes)
@@ -40,8 +45,9 @@ namespace MegaApp.MegaApi
                     // Removed node
                     if (megaNode.isRemoved())
                     {
-                        NodeViewModel nodeToRemove = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                        var nodeToRemove = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                             n => n.Handle.Equals(megaNode.getHandle()));
+
                         if (nodeToRemove != null)
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() => 
@@ -54,7 +60,7 @@ namespace MegaApp.MegaApi
                         {
                             MNode parentNode = api.getParentNode(megaNode);
                             if (parentNode == null) return;
-                            NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                            var nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                                 n => n.Handle.Equals(parentNode.getHandle()));
                             if (nodeToUpdate == null) return;
                             Deployment.Current.Dispatcher.BeginInvoke(() => 
@@ -66,7 +72,7 @@ namespace MegaApp.MegaApi
                     }
                     else // Added/Updated node
                     {
-                        NodeViewModel nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                        var nodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                             n => n.Handle.Equals(megaNode.getHandle()));
                         if (nodeToUpdate != null)
                         {
@@ -112,7 +118,13 @@ namespace MegaApp.MegaApi
                                         {
                                             try 
                                             { 
-                                                _cloudDriveViewModel.ChildNodes.Insert(insertIndex - 1, NodeService.CreateNew(api, megaNode, _cloudDriveViewModel.ChildNodes));
+                                                _cloudDriveViewModel.ChildNodes.Insert(
+                                                    insertIndex - 1, 
+                                                    NodeService.CreateNew(
+                                                        api,
+                                                        _appInformation,
+                                                        megaNode,
+                                                        _cloudDriveViewModel.ChildNodes));
                                                
                                             }
                                             catch (Exception) { }
@@ -122,7 +134,7 @@ namespace MegaApp.MegaApi
                                 }
                                 else
                                 {
-                                    NodeViewModel folderNodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
+                                    var folderNodeToUpdate = _cloudDriveViewModel.ChildNodes.FirstOrDefault(
                                          n => n.Handle.Equals(parentNode.getHandle()));
                                     if (folderNodeToUpdate != null)
                                     {

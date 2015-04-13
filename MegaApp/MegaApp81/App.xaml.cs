@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.DataTransfer.ShareTarget;
@@ -17,6 +18,7 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
@@ -31,6 +33,11 @@ namespace MegaApp
         /// </summary>
         /// <returns>The root frame of the Phone Application.</returns>
         public static RadPhoneApplicationFrame RootFrame { get; private set; }
+
+        /// <summary>
+        /// Provides easy access to usefull application information
+        /// </summary>
+        public static AppInformation AppInformation { get; private set; }
 
         public static ApplicationEvent AppEvent { get; set; }
         
@@ -56,7 +63,7 @@ namespace MegaApp
         {
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
-
+            
             // Standard XAML initialization
             InitializeComponent();
 
@@ -240,6 +247,9 @@ namespace MegaApp
             // Assign the URI-mapper class to the application frame.
             RootFrame.UriMapper = new AssociationUriMapper();
 
+            // Initialize the application information
+            AppInformation = new AppInformation();
+
             //The next line enables a custom logger, if this function is not used OutputDebugString() is called
             //in the native library and log messages are only readable with the native debugger attached.
             //The default behavior of MegaLogger() is to print logs using Debug.WriteLine() but it could
@@ -260,9 +270,9 @@ namespace MegaApp
                 AppResources.UserAgentWP81, DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
                 ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             // Initialize the main drive
-            CloudDrive = new CloudDriveViewModel(MegaSdk);
+            CloudDrive = new CloudDriveViewModel(MegaSdk, AppInformation);
             // Add notifications listener. Needs a DriveViewModel
-            MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive));
+            MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive, AppInformation));
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
             // Initialize Folders
@@ -277,6 +287,8 @@ namespace MegaApp
             AppService.ClearObsoleteSettings();
             // Save the app version information for future use (like deleting settings)
             AppService.SaveAppInformation();
+            // Set MEGA red as Accent Color
+            ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Resources["MegaRedColor"];
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

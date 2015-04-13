@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.Interfaces;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 
-namespace MegaApp.Models
+namespace MegaApp.ViewModels
 {
     class FileNodeViewModel: NodeViewModel
     {
-        public FileNodeViewModel(MegaSDK megaSdk, MNode megaNode, object parentCollection = null, object childCollection = null)
-            : base(megaSdk, megaNode, parentCollection, childCollection)
+        public FileNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+            ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
+            : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
         {
-            this.FileSize = base.Size.ToStringAndSuffix();
+            this.Information = this.Size.ToStringAndSuffix();
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
 
             this.IsDownloadAvailable = File.Exists(this.LocalFilePath);
@@ -26,7 +26,7 @@ namespace MegaApp.Models
 
         #region Override Methods
 
-        public override async void OpenFile()
+        public override async void Open()
         {
             await FileService.OpenFile(LocalFilePath);
         }

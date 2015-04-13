@@ -12,16 +12,17 @@ using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
     class GetPublicNodeRequestListener: BaseRequestListener
     {
-        private readonly CloudDriveViewModel _cloudDriveViewModel;
+        private readonly FolderViewModel _folderViewModel;
         
-        public GetPublicNodeRequestListener(CloudDriveViewModel cloudDriveViewModel)
+        public GetPublicNodeRequestListener(FolderViewModel folderViewModel)
         {
-            this._cloudDriveViewModel = cloudDriveViewModel;
+            this._folderViewModel = folderViewModel;
         }
 
         #region Base Properties
@@ -96,7 +97,7 @@ namespace MegaApp.MegaApi
             if (publicNode != null)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    DialogService.ShowOpenLink(publicNode, request.getLink(), _cloudDriveViewModel));
+                    DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel));
             }                
             else
                 Deployment.Current.Dispatcher.BeginInvoke(() =>

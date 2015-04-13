@@ -71,7 +71,7 @@ namespace MegaApp.Services
             if (queryString.ContainsKey("navparam"))
                 return (NavigationParameter) Enum.Parse(typeof (NavigationParameter), queryString["navparam"]);
             else
-                return NavigationParameter.Unknown;
+                return NavigationParameter.None;
         }
     }
 }
