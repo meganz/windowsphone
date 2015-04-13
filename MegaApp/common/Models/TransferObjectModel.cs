@@ -9,14 +9,16 @@ using Windows.UI.ViewManagement;
 using mega;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.Interfaces;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 
 namespace MegaApp.Models
 {
     public class TransferObjectModel : BaseSdkViewModel, MTransferListenerInterface
     {
-        public TransferObjectModel(MegaSDK megaSdk, NodeViewModel selectedNode, TransferType transferType, string filePath) 
+        public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, TransferType transferType, string filePath) 
             :base(megaSdk)
         {
             switch (transferType)
@@ -56,12 +58,12 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                 {
-                    this.MegaSdk.startDownload(SelectedNode.GetMegaNode(), FilePath, this);
+                    this.MegaSdk.startDownload(SelectedNode.OriginalMNode, FilePath, this);
                     break;
                 }
                 case TransferType.Upload:
                 {
-                    this.MegaSdk.startUpload(FilePath, SelectedNode.GetMegaNode(), this);
+                    this.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode, this);
                     break; 
                 }
                 default:
@@ -116,7 +118,7 @@ namespace MegaApp.Models
         public string FilePath { get; private set; }
         public string DownloadFolderPath { get; set; }
         public TransferType Type { get; set; }
-        public NodeViewModel SelectedNode { get; private set; }
+        public IMegaNode SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
         private Uri _thumbnailUri;
         public Uri ThumbnailUri
@@ -254,7 +256,7 @@ namespace MegaApp.Models
                             {
                                 imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
-                                if (imageNode.GetMegaNode().hasPreview()) return;
+                                if (imageNode.OriginalMNode.hasPreview()) return;
                                 imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsBusy = false;
                             });

@@ -89,7 +89,7 @@ namespace MegaApp.Models
             textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
 
             // Create the rename dialog and show it to the user
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.RenameButton, UiResources.CancelButton },
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename, UiResources.Cancel },
                 UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
 
             // If the user did not press OK, do nothing

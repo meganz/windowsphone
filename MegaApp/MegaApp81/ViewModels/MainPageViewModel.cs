@@ -66,7 +66,7 @@ namespace MegaApp.ViewModels
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.OpenLinkAppBar},
+                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.OpenLink},
                         new []{ UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect});
                     break;
                 }
@@ -75,7 +75,7 @@ namespace MegaApp.ViewModels
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Move, UiResources.CancelButton, },
+                        new[] { UiResources.Move, UiResources.Cancel, },
                         null);
                     break;
                 }
@@ -85,7 +85,7 @@ namespace MegaApp.ViewModels
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.Move, UiResources.Remove },
-                        new[] { UiResources.CancelButton});
+                        new[] { UiResources.Cancel});
                     break;
                 }
                 case DriveDisplayMode.RubbishBin:
@@ -102,7 +102,7 @@ namespace MegaApp.ViewModels
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Import, UiResources.CancelButton},
+                        new[] { UiResources.Import, UiResources.Cancel},
                         null);
                     break;
                 }

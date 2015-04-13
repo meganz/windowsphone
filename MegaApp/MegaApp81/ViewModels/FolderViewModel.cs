@@ -156,7 +156,7 @@ namespace MegaApp.ViewModels
                 this.AppInformation.PickerOrAsyncDialogIsOpen = true;
 
                 var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-                    new[] { UiResources.AddButton, UiResources.CancelButton }, UiResources.CreateFolder);
+                    new[] { UiResources.Add, UiResources.Cancel }, UiResources.CreateFolder);
 
                 this.AppInformation.PickerOrAsyncDialogIsOpen = false;
 
@@ -185,7 +185,7 @@ namespace MegaApp.ViewModels
             this.AppInformation.PickerOrAsyncDialogIsOpen = true;
             
             var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-                new [] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink);
+                new[] { UiResources.Open, UiResources.Cancel }, UiResources.OpenLink);
             
             this.AppInformation.PickerOrAsyncDialogIsOpen = false;
 

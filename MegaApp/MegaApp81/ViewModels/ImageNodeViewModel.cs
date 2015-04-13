@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
 using mega;
@@ -12,11 +8,11 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 
-namespace MegaApp.Models
+namespace MegaApp.ViewModels
 {
     class ImageNodeViewModel: FileNodeViewModel
     {

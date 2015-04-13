@@ -1,13 +1,12 @@
-﻿using mega;
-using MegaApp.Classes;
+﻿using System;
+using System.Windows;
+using System.Windows.Input;
+using mega;
 using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Tasks;
-using System;
-using System.Windows;
-using System.Windows.Input;
 
 namespace MegaApp.Models
 {

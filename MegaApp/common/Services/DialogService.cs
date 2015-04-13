@@ -29,8 +29,8 @@ namespace MegaApp.Services
         {
             var buttonsDataTemplate = (DataTemplate)Application.Current.Resources["ShowShareLinkButtons"];
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsTemplate:buttonsDataTemplate,
-                buttonsContent: new string[] { UiResources.Share.ToLower(), UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
+                buttonsDataTemplate,
+                buttonsContent: new[] { UiResources.Share.ToLower(), UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
                 title: UiResources.MegaLinkTitle,
                 message: link
                 );
@@ -59,13 +59,13 @@ namespace MegaApp.Services
             IEnumerable<string> buttons;
 
             // Only allows download directly if is an image file
-            if (isImage)
-                buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
-            else
-                buttons = new string[] { UiResources.Import.ToLower() };
+            //if (isImage)
+            //    buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
+            //else
+            //    buttons = new string[] { UiResources.Import.ToLower() };
 
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: buttons,
+                buttonsContent: new [] { UiResources.Import.ToLower(), UiResources.Download.ToLower() },
                 title: UiResources.LinkOptions,
                 message: publicNode.getName()
                 );
@@ -74,23 +74,17 @@ namespace MegaApp.Services
             {
                 // Import button clicked
                 case 0:
-                    {
-                        folderViewModel.ImportLink(link);
-                        break;
-
-                case 1: // Download button clicked
-                    cloudDrive.DownloadLink(publicNode);
+                {
+                    folderViewModel.ImportLink(link);
                     break;
-                    }
-        }
-        #elif WINDOWS_PHONE_81
-        public static async void ShowOpenLink(MNode publicNode, string link, CloudDriveViewModel cloudDrive)
-                    {
-                        folderViewModel.DownloadLink(publicNode);
-                        break;
-                    }
+                }
+                case 1: // Download button clicked
+                {
+                    folderViewModel.DownloadLink(publicNode);
+                    break;
+                }
             }
-        #endif
+        }
 
         // MODIFIED TEMPORARILY. WAITING FOR THE NEW PAYMENT METHODS        
         //public static async void ShowOverquotaAlert()
@@ -208,7 +202,6 @@ namespace MegaApp.Services
                 App.FileOpenOrFolderPickerOpenend = true;
                 FileService.SelectMultipleFiles();
             };
-            #endif
 
             grid.Children.Add(hubCamera);
             grid.Children.Add(hubSelfie);

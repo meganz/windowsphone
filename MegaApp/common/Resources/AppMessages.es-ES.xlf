@@ -56,6 +56,14 @@
           <target state="translated">E-mail no asociado con una cuenta de MEGA o contraseña incorrecta. Por favor, vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
           </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Delete item?</source>
+          <target state="new">Delete item?</target>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to permanent delete {0}?</source>
+          <target state="new">Are you sure you want to permanent delete {0}?</target>
+        </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" xml:space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
           <target state="translated">Error al seleccionar fichero(s). Por favor, inténtalo de nuevo [{0}]</target>

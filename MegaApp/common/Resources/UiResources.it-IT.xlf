@@ -400,6 +400,26 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Rubbish bin</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubish bin' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/ClearRubbishBin" translate="yes" xml:space="preserve">
+          <source>Empty rubbish</source>
+          <target state="new">Empty rubbish</target>
+        </trans-unit>
+        <trans-unit id="Resx/Sort" translate="yes" xml:space="preserve">
+          <source>Sort</source>
+          <target state="new">Sort</target>
+        </trans-unit>
+        <trans-unit id="Resx/SharedItems" translate="yes" xml:space="preserve">
+          <source>Shared items</source>
+          <target state="new">Shared items</target>
+        </trans-unit>
+        <trans-unit id="Resx/Contacts" translate="yes" xml:space="preserve">
+          <source>Contacts</source>
+          <target state="new">Contacts</target>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploads" translate="yes" xml:space="preserve">
+          <source>Camera uploads</source>
+          <target state="new">Camera uploads</target>
+        </trans-unit>
         <trans-unit id="Resx/About" translate="yes" xml:space="preserve">
           <source>About</source>
           <target state="new">About</target>
