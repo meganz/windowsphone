@@ -609,11 +609,7 @@
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
     </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Classes\AppInformation.cs" />
-    <Compile Include="Classes\AssociationUriMapper.cs" />
     <Compile Include="Classes\HamburgerMenuItem.cs" />
     <Compile Include="Converters\ActiveToOpacityConverter.cs" />
     <Compile Include="Converters\TextToLowerCaseConverter.cs" />
@@ -635,18 +631,8 @@
     <Compile Include="ViewModels\ImageNodeViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\TransferObjectModel.cs" />
-    <Compile Include="MegaApi\GetPublicNodeRequestListener.cs" />
     <Compile Include="ViewModels\CloudDriveViewModel.cs" />
     <Compile Include="ViewModels\DownloadNodeViewModel.cs" />
-    <Compile Include="Pages\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PreviewImagePage.xaml.cs">
-      <DependentUpon>PreviewImagePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2462,7 +2448,7 @@
     <EmbeddedResource Include="Resources\VisualResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>VisualResources.Designer.cs</LastGenOutput>
-	</EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.vi-VN.resx">
       <Link>Resources\AppMessages.vi-VN.resx</Link>
       <AutoGen>True</AutoGen>
@@ -3884,7 +3870,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
       <culture>qps-ploc</culture>
-    </EmbeddedResource>    
+    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.ro-RO.resx">
       <Link>Resources\UiResources.ro-RO.resx</Link>
       <AutoGen>True</AutoGen>
