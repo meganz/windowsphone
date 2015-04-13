@@ -57,9 +57,9 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" xml:space="preserve">
-          <source>Terms of service</source>
-          <target state="translated">Términos de servicio</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Terms of service' option of the dialog shown to upload nodes - (String as short as possible).</note>
+          <source>Terms of Service</source>
+          <target state="translated">Términos de Servicio</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Total" translate="yes" xml:space="preserve">
           <source>Total</source>
@@ -157,9 +157,9 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/ExportMasterKeyText" translate="yes" xml:space="preserve">
-          <source>Export masterkey</source>
-          <target state="translated">Exportar clave maestra</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the masterkey.</note>
+          <source>Export MasterKey</source>
+          <target state="translated">Exportar MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</note>
           </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" xml:space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
@@ -186,10 +186,10 @@
           <target state="translated">El más grandeme</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/MasterKey" translate="yes" xml:space="preserve">
-          <source>Master Key</source>
-          <target state="translated">Clave Maestra</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Master Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
+        <trans-unit id="Resx/MasterKey" translate="no" xml:space="preserve">
+          <source>MasterKey</source>
+          <target state="signed-off">MasterKey</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/MakePinLock" translate="yes" xml:space="preserve">
           <source>Make a PIN Lock</source>
@@ -361,11 +361,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated" state-qualifier="mt-suggestion">GRATIS</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
           </trans-unit>
-        <trans-unit id="Resx/Preferences" translate="yes" xml:space="preserve">
-          <source>Preferences</source>
-          <target state="translated">Preferencias</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Preferences' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" xml:space="preserve">
           <source>Rubbish bin</source>
           <target state="translated">Papelera</target>
@@ -435,6 +430,21 @@ Try to preserve the PIN uppercase word.</note>
           <source>MEGA speed</source>
           <target state="translated">MEGA velocidad</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
+          <source>Change password</source>
+          <target state="translated">Cambiar contraseña</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Help" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="translated">Ayuda</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Advanced" translate="yes" xml:space="preserve">
+          <source>Advanced</source>
+          <target state="translated">Avanzado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/InitTourSpeed1" translate="yes" xml:space="preserve">
           <source>transfers are fast.</source>
@@ -533,7 +543,7 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/Settings" translate="yes" xml:space="preserve">
           <source>Settings</source>
-          <target state="translated">Aajustes</target>
+          <target state="translated">Ajustes</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" xml:space="preserve">
@@ -580,11 +590,6 @@ Try to preserve the PIN uppercase word.</note>
           <source>Upload</source>
           <target state="translated">Subir</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/TermsOfUse" translate="yes" xml:space="preserve">
-          <source>Terms of use</source>
-          <target state="translated">Condiciones de uso</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Terms of use' option of the dialog shown to upload nodes - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Size" translate="yes" xml:space="preserve">
           <source>Size</source>
@@ -676,11 +681,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Abrir</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/NewAtMega" translate="yes" xml:space="preserve">
-          <source>New at MEGA? </source>
-          <target state="translated">¿Nuevo en MEGA? </target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the login page just before a link to the create account page. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/NameWatermark" translate="yes" xml:space="preserve">
           <source>Your name</source>
           <target state="translated">Tu nombre</target>
@@ -723,7 +723,7 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/Login" translate="yes" xml:space="preserve">
           <source>Login</source>
-          <target state="translated">Login</target>
+          <target state="translated">Iniciar sesión</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/GetPreviewLink" translate="yes" xml:space="preserve">
@@ -745,11 +745,6 @@ Try to preserve the PIN uppercase word.</note>
           <source>Your e-mail address</source>
           <target state="translated">Tu dirección de e-mail</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/CreateNewAccount" translate="yes" xml:space="preserve">
-          <source>Create a new account here</source>
-          <target state="translated">Crea una nueva cuenta aquí</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed as a link to the 'create account' page into the 'login' page - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
           <source>Folder name:</source>
@@ -798,8 +793,8 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/AgreeCreateAccount" translate="yes" xml:space="preserve">
           <source>I agree with the</source>
-          <target state="translated">Estoy de acuerdo con las</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of use' into the 'create account' page.</note>
+          <target state="translated">Estoy de acuerdo con los</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
           </trans-unit>
         <trans-unit id="Resx/AddFolder" translate="yes" xml:space="preserve">
           <source>Add folder</source>

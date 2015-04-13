@@ -61,20 +61,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You must agree with our terms of use.
+        ///   Busca una cadena traducida similar a You must agree with our Terms of Service.
         /// </summary>
-        public static string AgreeTermsOfUse {
+        public static string AgreeTermsOfService {
             get {
-                return ResourceManager.GetString("AgreeTermsOfUse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Terms of use.
-        /// </summary>
-        public static string AgreeTermsOfUse_Title {
-            get {
-                return ResourceManager.GetString("AgreeTermsOfUse_Title", resourceCulture);
+                return ResourceManager.GetString("AgreeTermsOfService", resourceCulture);
             }
         }
         
@@ -638,6 +629,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Malformed e-mail. Please try again..
+        /// </summary>
+        public static string MalformedEmail {
+            get {
+                return ResourceManager.GetString("MalformedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Masterkey copied to clipboard.
         /// </summary>
         public static string MasterkeyCopied {
@@ -901,20 +901,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your passwords do not match. Please re-type them and make sure they are equal..
+        ///   Busca una cadena traducida similar a Passwords do not match. Please try again..
         /// </summary>
         public static string PasswordsDoNotMatch {
             get {
                 return ResourceManager.GetString("PasswordsDoNotMatch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Passwords do not match.
-        /// </summary>
-        public static string PasswordsDoNotMatch_Title {
-            get {
-                return ResourceManager.GetString("PasswordsDoNotMatch_Title", resourceCulture);
             }
         }
         
@@ -1207,7 +1198,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and password..
+        ///   Busca una cadena traducida similar a Please fill in your name, e-mail address and your MEGA password..
         /// </summary>
         public static string RequiredFieldsCreateAccount {
             get {
@@ -1365,6 +1356,15 @@ namespace MegaApp.Resources {
         public static string UserNotOnline_Title {
             get {
                 return ResourceManager.GetString("UserNotOnline_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a E-mail is not associated with a MEGA account or wrong password. Please try again..
+        /// </summary>
+        public static string WrongEmailPasswordLogin {
+            get {
+                return ResourceManager.GetString("WrongEmailPasswordLogin", resourceCulture);
             }
         }
         
