@@ -380,9 +380,6 @@
     <Compile Include="..\common\Models\BaseViewModel.cs">
       <Link>Models\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CloudDriveViewModel.cs">
-      <Link>Models\CloudDriveViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\ConfirmAccountViewModel.cs">
       <Link>Models\ConfirmAccountViewModel.cs</Link>
     </Compile>
@@ -395,17 +392,8 @@
     <Compile Include="..\common\Models\DelegateCommand.cs">
       <Link>Models\DelegateCommand.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\DownloadNodeViewModel.cs">
-      <Link>Models\DownloadNodeViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\FileNodeViewModel.cs">
-      <Link>Models\FileNodeViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\FolderNodeViewModel.cs">
       <Link>Models\FolderNodeViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\ImageNodeViewModel.cs">
-      <Link>Models\ImageNodeViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\LoginViewModel.cs">
       <Link>Models\LoginViewModel.cs</Link>
@@ -424,9 +412,6 @@
     </Compile>
     <Compile Include="..\common\Models\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\PasswordViewModel.cs">
-      <Link>Models\PasswordViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
@@ -612,7 +597,6 @@
     <Compile Include="Classes\AppInformation.cs" />
     <Compile Include="Classes\HamburgerMenuItem.cs" />
     <Compile Include="Converters\ActiveToOpacityConverter.cs" />
-    <Compile Include="Converters\TextToLowerCaseConverter.cs" />
     <Compile Include="Enums\ContainerType.cs" />
     <Compile Include="Enums\NodeActionResult.cs" />
     <Compile Include="Interfaces\IApplicationBar.cs" />
@@ -629,8 +613,6 @@
     <Compile Include="ViewModels\PasswordViewModel.cs" />
     <Compile Include="ViewModels\FileNodeViewModel.cs" />
     <Compile Include="ViewModels\ImageNodeViewModel.cs" />
-    <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\TransferObjectModel.cs" />
     <Compile Include="ViewModels\CloudDriveViewModel.cs" />
     <Compile Include="ViewModels\DownloadNodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

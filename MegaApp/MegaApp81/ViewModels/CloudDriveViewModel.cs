@@ -104,7 +104,7 @@ namespace MegaApp.ViewModels
                     ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Upload;
                     ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.AddFolder;
                     //((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.Refresh;
-                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.OpenLinkAppBar;
+                    ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.OpenLink;
                    
                     //((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.MultiSelect;
                     //((ApplicationBarMenuItem)menuItems[2]).Text = UiResources.Transfers;
@@ -128,7 +128,7 @@ namespace MegaApp.ViewModels
                 case MenuType.MoveMenu:
                 {
                     ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Move;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Cancel;
                   
                     break;
                 }
@@ -142,7 +142,7 @@ namespace MegaApp.ViewModels
                 case MenuType.ImportMenu:
                 {
                     ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.LinkOptions;
-                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.CancelButton;
+                    ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Cancel;
                     break;
                 }
             }
@@ -546,7 +546,8 @@ namespace MegaApp.ViewModels
             if (PickerOrDialogIsOpen) return;
 
             PickerOrDialogIsOpen = true;
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new string[] { UiResources.OpenButton, UiResources.CancelButton }, UiResources.OpenLink, vibrate: false);
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
+                new string[] { UiResources.Open, UiResources.Cancel }, UiResources.OpenLink);
             PickerOrDialogIsOpen = false;
 
             if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
@@ -881,7 +882,7 @@ namespace MegaApp.ViewModels
             {
                 PickerOrDialogIsOpen = true;
                 var inputPromptClosedEventArgs =await RadInputPrompt.ShowAsync(
-                    new string[] {UiResources.AddButton, UiResources.CancelButton}, UiResources.CreateFolder, 
+                    new string[] {UiResources.Add, UiResources.Cancel}, UiResources.CreateFolder, 
                     vibrate: false);
                 PickerOrDialogIsOpen = false;
 

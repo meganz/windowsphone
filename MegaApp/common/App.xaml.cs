@@ -42,11 +42,7 @@ namespace MegaApp
         /// Provides easy access to usefull application information
         /// </summary>
         public static AppInformation AppInformation { get; private set; }
-
-        public static ApplicationEvent AppEvent { get; set; }
-        
         public static String IpAddress { get; set; }
-
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
@@ -284,7 +280,7 @@ namespace MegaApp
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk, AppInformation);
             // Add notifications listener. Needs a DriveViewModel
-            MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive));
+            MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive, AppInformation));
             // Add a global request listener to process all.
             MegaSdk.addRequestListener(this);
             // Initialize the transfer listing

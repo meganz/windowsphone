@@ -6,6 +6,7 @@ using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
+using MegaApp.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;

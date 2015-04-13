@@ -47,36 +47,18 @@ namespace MegaApp.Pages
             //RubbishBinBreadCrumb.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             //RubbishBinBreadCrumb.OnHomeTap += BreadCrumbControlOnOnHomeTap;
             
-            // TODO REFACTOR
-            App.CloudDrive.CommandStatusChanged += (sender, args) =>
-            {
-                if (ApplicationBar == null) return;
-
-                foreach (var button in ApplicationBar.Buttons)
-                {
-                    ((ApplicationBarIconButton)button).IsEnabled = args.Status;
-                }
-
-                foreach (var item in ApplicationBar.MenuItems)
-                {
-                    ((ApplicationBarMenuItem)item).IsEnabled = args.Status;
-                }
-
-                //BtnSelectSorting.IsEnabled = args.Status;
-               
-            };
         }
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
-                    // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToHome((BreadCrumb)sender);
-                }
+        }
 
         private void CheckAndBrowseToHome(BreadCrumb breadCrumb)
-            {
+        {
             //if (breadCrumb.Equals(CloudDriveBreadCrumb))
             //{
             //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToHome();
@@ -87,7 +69,7 @@ namespace MegaApp.Pages
             //{
             //    ((MainPageViewModel) this.DataContext).RubbishBin.BrowseToHome();
             //}
-                }
+        }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
@@ -104,13 +86,13 @@ namespace MegaApp.Pages
             //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToFolder(folderNode);
             //    return;
             //}
-            #endif
+
 
             //if (breadCrumb.Equals(RubbishBinBreadCrumb))
             //{
             //    ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
             //}
-            }
+        }
         
         private bool validActiveAndOnlineSession()
         {
@@ -165,8 +147,10 @@ namespace MegaApp.Pages
                 case NavigationParameter.PasswordLogin:
                 {
                     NavigationService.RemoveBackEntry();
-                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
+                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
+                        new FastLoginRequestListener(_mainPageViewModel));
                     break;
+                }
                 case NavigationParameter.PictureSelected:
                     break;
                 case NavigationParameter.AlbumSelected:
@@ -369,7 +353,7 @@ namespace MegaApp.Pages
             //App.AppEvent = ApplicationEvent.None;
         }
         
-        #if WINDOWS_PHONE_81
+#if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
             if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||
@@ -422,7 +406,7 @@ namespace MegaApp.Pages
             var app = Application.Current as App;
             if (app != null) app.FilePickerContinuationArgs = null;
         }
-        #endif
+#endif
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
@@ -485,17 +469,17 @@ namespace MegaApp.Pages
         }
 
         private void SetApplicationBarData()
-                {
+        {
             // Set the Applicatio Bar to one of the available menu resources in this page
             SetAppbarResources(_mainPageViewModel.ActiveFolderView.CurrentDisplayMode);
 
             // Change and translate the current application bar
-            ((MainPageViewModel)this.DataContext).ChangeMenu(_mainPageViewModel.ActiveFolderView,
+            _mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
-                }
+        }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
-                {
+        {
             BorderLinkText.Visibility = Visibility.Collapsed;
 
             switch (driveDisplayMode)
@@ -519,7 +503,7 @@ namespace MegaApp.Pages
                 default:
                     throw new ArgumentOutOfRangeException("driveDisplayMode");
             }
-                    }
+        }
 
         private bool CheckHamburgerMenu(bool isCancel)
                     {
@@ -530,21 +514,21 @@ namespace MegaApp.Pages
         }
 
         private bool CheckAndGoFolderUp(bool isCancel)
-                        {
+        {
             if (isCancel) return true;
 
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
-                            {
+            {
                 return _mainPageViewModel.CloudDrive.GoFolderUp();
-                            }
+            }
 
             if(MainPivot.SelectedItem.Equals(RubbishBinPivot))
             {
                 return _mainPageViewModel.RubbishBin.GoFolderUp();
-                        }
+            }
 
             return false;
-                    }
+        }
 
         private bool CheckPivotInView(bool isCancel)
         {
@@ -554,7 +538,7 @@ namespace MegaApp.Pages
             
             MainPivot.SelectedItem = CloudDrivePivot;
             return true;
-                }
+        }
 
         private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
         {
@@ -563,7 +547,7 @@ namespace MegaApp.Pages
             LstCloudDrive.SelectedItem = null;
 
             _mainPageViewModel.CloudDrive.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
-            }
+        }
 
         private void OnRubbishBinItemTap(object sender, ListBoxItemTapEventArgs e)
         {
