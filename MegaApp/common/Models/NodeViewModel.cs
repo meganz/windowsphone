@@ -14,7 +14,6 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -89,7 +88,7 @@ namespace MegaApp.Models
             textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
 
             // Create the rename dialog and show it to the user
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename, UiResources.Cancel },
+            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename.ToLower(), UiResources.Cancel.ToLower() },
                 UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
 
             // If the user did not press OK, do nothing
@@ -179,7 +178,7 @@ namespace MegaApp.Models
         }
 
 #if WINDOWS_PHONE_80
-        public virtual void Download()
+        public virtual void Download(TransferQueu transferQueu, string downloadPath = null)
         {
             if (!IsUserOnline()) return;
             NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);

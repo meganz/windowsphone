@@ -6,7 +6,6 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Navigation;
-using System.Windows.Media;
 using Windows.ApplicationModel.Activation;
 using Windows.Networking.Connectivity;
 using Windows.Storage;
@@ -17,7 +16,6 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
@@ -47,13 +45,14 @@ namespace MegaApp
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
 
+        public static bool FileOpenOrFolderPickerOpenend { get; set; }
+
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
         // Used for folder selection
         public FolderPickerContinuationEventArgs FolderPickerContinuationArgs { get; set; }
-        public static bool FileOpenOrFolderPickerOpenend { get; set; }
-
+        
         // Makes the app a share target for files
         public ShareOperation ShareOperation { get; set; }
         #endif

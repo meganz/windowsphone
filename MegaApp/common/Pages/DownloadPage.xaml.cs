@@ -13,7 +13,6 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 

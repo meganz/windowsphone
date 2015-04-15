@@ -16,6 +16,7 @@ namespace MegaApp.Services
 {
     static class FolderService
     {
+        #if WINDOWS_PHONE_81
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {
             try
@@ -129,5 +130,6 @@ namespace MegaApp.Services
             var app = Application.Current as App;
             if (app != null) app.FolderPickerContinuationArgs = null;
         }
-    }
+        #endif
+    }    
 }

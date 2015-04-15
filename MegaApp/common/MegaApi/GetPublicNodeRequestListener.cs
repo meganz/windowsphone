@@ -12,7 +12,6 @@ using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {
@@ -101,12 +100,12 @@ namespace MegaApp.MegaApi
                 bool isImage = false;
                 if (publicNode.isFile())
                 {
-                    FileNodeViewModel node = new FileNodeViewModel(api, publicNode);
+                    FileNodeViewModel node = new FileNodeViewModel(api, null, publicNode);
                     isImage = node.IsImage;
                 }   
 
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    DialogService.ShowOpenLink(publicNode, request.getLink(), _cloudDriveViewModel, isImage));
+                    DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel, isImage));
                 #elif WINDOWS_PHONE_81
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel));

@@ -6,7 +6,6 @@ using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -87,7 +86,7 @@ namespace MegaApp.Pages
 
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+            _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);            
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)

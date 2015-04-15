@@ -11,7 +11,6 @@ using MegaApp.Classes;
 using MegaApp.Interfaces;
 using MegaApp.Models;
 using MegaApp.Resources;
-using MegaApp.ViewModels;
 
 namespace MegaApp.Services
 {

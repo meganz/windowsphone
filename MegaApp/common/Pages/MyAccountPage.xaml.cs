@@ -97,7 +97,7 @@ namespace MegaApp.Pages
 
         private void OnItemTap(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
         {
-            App.MegaSdk.getPaymentUrl(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());;
+            App.MegaSdk.getPaymentId(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());
         }
 
         private void OnPivotLoaded(object sender, System.Windows.RoutedEventArgs e)

@@ -10,7 +10,6 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Media.PhoneExtensions;
