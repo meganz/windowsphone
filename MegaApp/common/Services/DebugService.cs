@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
-using MegaApp.Classes;
+using MegaApp.Models;
 
 namespace MegaApp.Services
 {

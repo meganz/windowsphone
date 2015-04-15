@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MegaApp.Models;
 using MegaApp.Resources;
 
-namespace MegaApp.Classes
+namespace MegaApp.Models
 {
     class DebugSettingsViewModel: BaseViewModel
     {

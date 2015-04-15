@@ -18,7 +18,6 @@ using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Notification;
 using Microsoft.Phone.Reactive;
 using Microsoft.Phone.Shell;

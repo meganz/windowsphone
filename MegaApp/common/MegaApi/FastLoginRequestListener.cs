@@ -15,7 +15,6 @@ using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.ViewModels;
 
 namespace MegaApp.MegaApi
 {

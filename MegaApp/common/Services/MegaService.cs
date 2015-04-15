@@ -15,8 +15,8 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Services
 {
-    class MegaService: IMegaService
-    {
+    //class MegaService: IMegaService
+    //{
         
         //public void GetPreviewLink(MegaSDK megaSdk, NodeViewModel nodeViewModel)
         //{
@@ -72,5 +72,5 @@ namespace MegaApp.Services
         //            new MoveNodeRequestListener(newParentNode, nodeViewModel));
         //    }
         //}
-    }
+    //}
 }

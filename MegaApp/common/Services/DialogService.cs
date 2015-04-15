@@ -13,7 +13,6 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
-using MegaApp.ViewModels;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 
@@ -54,16 +53,37 @@ namespace MegaApp.Services
             }
         }
 
-        public static async void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
+        #if WINDOWS_PHONE_80
+        public static async void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel, bool isImage = false)
         {
             IEnumerable<string> buttons;
 
             // Only allows download directly if is an image file
-            //if (isImage)
-            //    buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
-            //else
-            //    buttons = new string[] { UiResources.Import.ToLower() };
+            if (isImage)
+                buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
+            else
+                buttons = new string[] { UiResources.Import.ToLower() };
 
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: buttons,
+                title: UiResources.LinkOptions,
+                message: publicNode.getName()
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                case 0: // Import button clicked
+                    folderViewModel.ImportLink(link);
+                    break;
+
+                case 1: // Download button clicked
+                    folderViewModel.DownloadLink(publicNode);
+                    break;
+            }
+        }
+        #elif WINDOWS_PHONE_81
+        public static async void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
+        {
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: new [] { UiResources.Import.ToLower(), UiResources.Download.ToLower() },
                 title: UiResources.LinkOptions,
@@ -85,6 +105,7 @@ namespace MegaApp.Services
                 }
             }
         }
+        #endif
 
         // MODIFIED TEMPORARILY. WAITING FOR THE NEW PAYMENT METHODS        
         //public static async void ShowOverquotaAlert()
@@ -109,7 +130,7 @@ namespace MegaApp.Services
                 default:
                     break;
             }*/
-            }
+        }
 
         public static void ShowUploadOptions(FolderViewModel folder)
         {
@@ -192,6 +213,17 @@ namespace MegaApp.Services
                 NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
             };
 
+            #if WINDOWS_PHONE_80
+            var hubPicture = UiService.CreateHubTile(UiResources.ImageUpload,
+                new Uri("/Assets/Images/picture_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                new Thickness(0, 0, 12, 0));            
+            
+            hubPicture.Tap += (sender, args) =>
+            {
+                uploadRadWindow.IsOpen = false;
+                NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
+            };
+            #elif WINDOWS_PHONE_81
             var hubFile = UiService.CreateHubTile(UiResources.FileUpload, 
                 new Uri("/Assets/Images/file upload" +ImageService.GetResolutionExtension() + ".png", UriKind.Relative), 
                 new Thickness(0, 0, 12, 0));
@@ -202,6 +234,7 @@ namespace MegaApp.Services
                 App.FileOpenOrFolderPickerOpenend = true;
                 FileService.SelectMultipleFiles();
             };
+            #endif
 
             grid.Children.Add(hubCamera);
             grid.Children.Add(hubSelfie);

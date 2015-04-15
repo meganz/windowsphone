@@ -8,13 +8,13 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
-    xmlns:viewModels="clr-namespace:MegaApp.ViewModels"
+    xmlns:models="clr-namespace:MegaApp.Models"
     x:Class="MegaApp.Pages.MainPage"
     SupportedOrientations="Portrait" 
 	Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
-	d:DataContext="{d:DesignInstance viewModels:MainPageViewModel}">
+	d:DataContext="{d:DesignInstance models:MainPageViewModel}">
 
     <phone:PhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="CloudDriveMenu">
