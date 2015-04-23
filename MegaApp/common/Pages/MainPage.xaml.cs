@@ -41,10 +41,10 @@ namespace MegaApp.Pages
             
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
 
-            //CloudDriveBreadCrumb.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
-            //CloudDriveBreadCrumb.OnHomeTap += BreadCrumbControlOnOnHomeTap;
-            //RubbishBinBreadCrumb.OnBreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
-            //RubbishBinBreadCrumb.OnHomeTap += BreadCrumbControlOnOnHomeTap;
+            CloudDriveBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            CloudDriveBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
+            RubbishBinBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            RubbishBinBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             
         }
 
@@ -58,16 +58,16 @@ namespace MegaApp.Pages
 
         private void CheckAndBrowseToHome(BreadCrumb breadCrumb)
         {
-            //if (breadCrumb.Equals(CloudDriveBreadCrumb))
-            //{
-            //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToHome();
-            //    return;
-            //}
+            if (breadCrumb.Equals(CloudDriveBreadCrumb))
+            {
+                ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToHome();
+                return;
+            }
 
-            //if (breadCrumb.Equals(RubbishBinBreadCrumb))
-            //{
-            //    ((MainPageViewModel) this.DataContext).RubbishBin.BrowseToHome();
-            //}
+            if (breadCrumb.Equals(RubbishBinBreadCrumb))
+            {
+                ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToHome();
+            }
         }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
@@ -80,17 +80,17 @@ namespace MegaApp.Pages
 
         private void CheckAndBrowseToFolder(BreadCrumb breadCrumb, IMegaNode folderNode)
         {
-            //if (breadCrumb.Equals(CloudDriveBreadCrumb))
-            //{
-            //    ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToFolder(folderNode);
-            //    return;
-            //}
+            if (breadCrumb.Equals(CloudDriveBreadCrumb))
+            {
+                ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToFolder(folderNode);
+                return;
+            }
 
 
-            //if (breadCrumb.Equals(RubbishBinBreadCrumb))
-            //{
-            //    ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
-            //}
+            if (breadCrumb.Equals(RubbishBinBreadCrumb))
+            {
+                ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
+            }
         }
         
         private bool validActiveAndOnlineSession()

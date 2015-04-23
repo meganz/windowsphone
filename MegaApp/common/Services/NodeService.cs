@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Devices.Geolocation;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Interfaces;
 using MegaApp.Models;
-using MegaApp.Resources;
 
 namespace MegaApp.Services
 {
