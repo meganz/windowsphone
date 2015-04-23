@@ -21,7 +21,7 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {
-	public class FolderViewModel: BaseAppInfoAwareViewModel
+    public class FolderViewModel : BaseAppInfoAwareViewModel, IBreadCrumb
 	{
 		public FolderViewModel(MegaSDK megaSdk, AppInformation appInformation, ContainerType containerType)
 			:base(megaSdk, appInformation)
@@ -107,7 +107,7 @@ namespace MegaApp.Models
             SetViewOnLoad();
 
 			// Build the bread crumbs. Do this before loading the nodes so that the user can click on home
-            OnUiThread(CalculateBreadCrumbs);
+            OnUiThread(BuildBreadCrumbs);
 
 			// Create the option to cancel
 			CreateLoadCancelOption();
@@ -357,6 +357,7 @@ namespace MegaApp.Models
 			if (node == null) return;
 
 			this.FolderRootNode = node;
+
 			LoadChildNodes();
 		}
 
@@ -721,7 +722,7 @@ namespace MegaApp.Models
 			this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["DefaultCheckBoxStyle"];
 		}
 
-		private void CalculateBreadCrumbs()
+        public void BuildBreadCrumbs()
 		{
 			this.BreadCrumbs.Clear();
 
@@ -744,10 +745,15 @@ namespace MegaApp.Models
 
 		#endregion
 
+        #region IBreadCrumb
 
-		#region Properties
+        public ObservableCollection<IMegaNode> BreadCrumbs { get; private set; }
 
-		public IMegaNode FocusedNode { get; set; }
+        #endregion
+
+        #region Properties
+
+        public IMegaNode FocusedNode { get; set; }
         public DriveDisplayMode CurrentDisplayMode { get; set; }
         public DriveDisplayMode PreviousDisplayMode { get; set; }
         public List<IMegaNode> SelectedNodes { get; set; } 
@@ -758,8 +764,6 @@ namespace MegaApp.Models
 			get { return _childNodes; }
 			set { SetField(ref _childNodes, value); }
 		}
-
-		public ObservableCollection<IMegaNode> BreadCrumbs { get; private set; }
 
 		public ContainerType Type { get; private set; }
 

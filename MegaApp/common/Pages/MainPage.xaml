@@ -140,7 +140,7 @@
     </phone:PhoneApplicationPage.Foreground>
 
 	<userControls:DrawerLayout x:Name="MainDrawerLayout">
-		<Grid x:Name="MainGrid" d:IsHidden="True">
+		<Grid x:Name="MainGrid">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="84"/>
 				<RowDefinition/>
@@ -180,36 +180,28 @@
 			<phone:Pivot x:Name="MainPivot" SelectionChanged="OnPivotSelectionChanged" HeaderTemplate="{StaticResource MainPagePivotHeaderTemplate}" Grid.Row="1" Style="{StaticResource PivotStyle}" Margin="0">
 				<phone:PivotItem x:Name="CloudDrivePivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.CloudDriveName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
 					<Grid x:Name="CloudDriveRoot" Background="Transparent" Margin="0,0,12,0">
-				<!--ContentPanel - place additional content here-->
-				<Grid.RowDefinitions>
-					<RowDefinition Height="Auto"/>
-					<RowDefinition Height="*"/>
-				</Grid.RowDefinitions>
-
-				<!--ContentPanel - place additional content here-->
-
-						<!--ContentPanel - place additional content here-->
-
-                        <!--ContentPanel - place additional content here-->
-						<StackPanel x:Name="CloudDriveHeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-							<Grid x:Name="CloudDriveProgressGrid" VerticalAlignment="Top" Visibility="{Binding CloudDrive.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" Background="{StaticResource PhoneBackgroundBrush}">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto"/>
-									<RowDefinition Height="Auto"/>
-								</Grid.RowDefinitions>
-								<ProgressBar x:Name="CloudDriveProgress" VerticalAlignment="Top" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="10"/>
-
-							</Grid>
-							<Grid Margin="24,0,24,5" Height="19">
+				    <!--ContentPanel - place additional content here-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+						<StackPanel Grid.Row="0" Margin="0">
+							<Grid Margin="21,0,24,5">
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition/>
-									<ColumnDefinition/>
+									<ColumnDefinition Width="Auto"/>
 								</Grid.ColumnDefinitions>
-								<TextBlock TextWrapping="Wrap" Text="BreadCrumbPlaceholder" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource InformationFontSize}"/>
-								<TextBlock x:Name="TxtFolderInformation" Text="{Binding CloudDrive.FolderRootNode.Information}" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1"/>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="24"/>
+                                </Grid.RowDefinitions>
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding CloudDrive.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <userControls:BreadCrumb x:Name="CloudDriveBreadCrumb" ItemsSource="{Binding CloudDrive.BreadCrumbs}" Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
+								<TextBlock Text="{Binding CloudDrive.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
 							</Grid>
-				</StackPanel>
-						<Grid x:Name="CloudDriveContentPanel" Grid.Row="1" Margin="0,-28,0,0">
+				        </StackPanel>
+						<Grid x:Name="CloudDriveContentPanel" Grid.Row="1" Margin="0">
 
 					<telerikPrimitives:RadDataBoundListBox 
 						x:Name="LstCloudDrive" 				
@@ -314,28 +306,23 @@
 							<RowDefinition Height="*"/>
 						</Grid.RowDefinitions>
 
-                        <!--ContentPanel - place additional content here-->
-						<StackPanel x:Name="RubbishBinHeaderPanel" Grid.Row="0" Margin="12,17,0,28">
-							<Grid Margin="24,0,24,5" Height="19">
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-								</Grid.ColumnDefinitions>
-								<TextBlock TextWrapping="Wrap" Text="BreadCrumbPlaceholder" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="{StaticResource InformationFontSize}"/>
-								<TextBlock x:Name="TxtFolderInformation1" Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1"/>
-							</Grid>
-						</StackPanel>
-						<Grid x:Name="RubbishBinContentPanel" Grid.Row="1" Margin="0,-28,0,0">
-
-							<Grid x:Name="RubbishBinProgressGrid" VerticalAlignment="Top" Visibility="{Binding RubbishBin.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" Background="{StaticResource PhoneBackgroundBrush}">
-								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto"/>
-									<RowDefinition Height="Auto"/>
-								</Grid.RowDefinitions>
-								<ProgressBar x:Name="CloudDriveProgress1" VerticalAlignment="Top" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="10"/>
-								<TextBlock x:Name="CloudDriveBusyText1" TextWrapping="Wrap" Text="{Binding RubbishBin.BusyText}" VerticalAlignment="Top" Grid.Row="1" Margin="12,0" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-
-							</Grid>
+                        <StackPanel Grid.Row="0" Margin="0">
+                            <Grid Margin="21,0,24,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="24"/>
+                                </Grid.RowDefinitions>
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding RubbishBin.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <userControls:BreadCrumb x:Name="RubbishBinBreadCrumb" ItemsSource="{Binding RubbishBin.BreadCrumbs}" Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
+                                <TextBlock Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                            </Grid>
+                        </StackPanel>
+                        
+						<Grid x:Name="RubbishBinContentPanel" Grid.Row="1">
 
 				<telerikPrimitives:RadDataBoundListBox 
 								x:Name="LstRubbishBin" 	
@@ -410,7 +397,7 @@
 		</phone:PivotItem>
 	</phone:Pivot>
 		</Grid>
-		<Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
+		<Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0" d:IsHidden="True">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition/>

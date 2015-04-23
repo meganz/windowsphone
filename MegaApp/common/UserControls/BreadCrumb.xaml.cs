@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
+using System.Windows.Shapes;
 using MegaApp.Interfaces;
-using MegaApp.Models;
-using Telerik.Windows.Controls;
-using GestureEventArgs = System.Windows.Input.GestureEventArgs;
+using MegaApp.Resources;
 
 namespace MegaApp.UserControls
 {
@@ -16,275 +16,120 @@ namespace MegaApp.UserControls
         public BreadCrumb()
         {
             InitializeComponent();
-
-            InteractionEffectManager.AllowedTypes.Add(typeof(BreadCrumbButton));
-
-            //Initial draw on the screen
-            DrawBreadCrumb();            
         }
 
-        #region Properties
+        #region Dependency Properties
 
-        public event EventHandler<BreadCrumbTapEventArgs> OnBreadCrumbTap;
-        public event EventHandler OnHomeTap;
-
-        public IMegaNode SelectedItem { get; set; }
+        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
+            "ItemsSource",
+            typeof(ObservableCollection<IMegaNode>),
+            typeof(BreadCrumb),
+            new PropertyMetadata(null, OnItemsSourceChanged));
 
         #endregion
 
-        #region Dependency Properties
+        #region Events
+
+        public event EventHandler HomeTap;
+        public event EventHandler<BreadCrumbTapEventArgs> BreadCrumbTap;
+
+        #endregion
+
+        #region Private Methods
+
+        private void Draw()
+        {
+            this.Content = null;
+            
+            var mainRoot = new StackPanel()
+            {
+                Orientation = Orientation.Horizontal,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Margin = new Thickness(0),
+            };
+            this.Content = mainRoot;
+
+            DrawMegaHomeButton(mainRoot, this.ItemsSource != null && this.ItemsSource.Count > 0);
+
+            if (this.ItemsSource == null || this.ItemsSource.Count == 0) return;
+
+            var buttonList = new List<Button>(this.ItemsSource.Count);
+
+            foreach (var megaNode in ItemsSource)
+            {
+                buttonList.Add(DrawMegaFolderButton(mainRoot, megaNode));
+                this.UpdateLayout();
+
+                int i = 0;
+                while (mainRoot.ActualWidth > this.ActualWidth)
+                {
+                    if(i < buttonList.Count - 1)
+                    {
+                        buttonList[i].Content = "...";
+                        i++;
+                    }
+                    else
+                    {
+                        mainRoot.Children.RemoveAt(1);
+                    }
+                    this.UpdateLayout();
+                }
+            }
+            
+        }
+
+        private void DrawMegaHomeButton(Panel parentControl, bool allowTap)
+        {
+            var homeButton = new Button
+            {
+                Style = (Style)Application.Current.Resources["HomeCrumbStyle"],
+            };
+
+            if (allowTap)
+            {
+                homeButton.Tap += (sender, args) => OnMegaHomeTap();
+            }
+
+            parentControl.Children.Add(homeButton);
+        }
+
+        private Button DrawMegaFolderButton(Panel parentControl, IMegaNode node)
+        {
+            var folderButton = new Button
+            {
+                Style = (Style) Application.Current.Resources["BreadCrumbStyle"],
+                Content = node.Name
+            };
+            folderButton.Tap += (sender, args) => OnBreadCrumbTap(node);
+
+            parentControl.Children.Add(folderButton);
+
+            return folderButton;
+        }
+
+        private void OnMegaHomeTap()
+        {
+            if (HomeTap == null) return;
+            HomeTap(this, new EventArgs());
+        }
+
+        private void OnBreadCrumbTap(IMegaNode selectedNode)
+        {
+            if (BreadCrumbTap == null) return;
+            BreadCrumbTap(this, new BreadCrumbTapEventArgs()
+            {
+                Item = selectedNode
+            });
+        }
+
+        #endregion
+
+        #region Properties
 
         public ObservableCollection<IMegaNode> ItemsSource
         {
             get { return (ObservableCollection<IMegaNode>)GetValue(ItemsSourceProperty); }
             set { SetValue(ItemsSourceProperty, value); }
-        }
-
-        public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
-            "ItemsSource",
-            typeof(ObservableCollection<IMegaNode>),          
-            typeof(BreadCrumb),            
-            new PropertyMetadata(null, new PropertyChangedCallback(OnItemsSourceChanged)));
-
-        public ObservableCollection<IMegaNode> Items
-        {
-            get { return (ObservableCollection<IMegaNode>)GetValue(ItemsProperty); }
-            set { SetValue(ItemsProperty, value); }
-        }
-
-        public static readonly DependencyProperty ItemsProperty = DependencyProperty.Register(
-            "Items",
-            typeof(ObservableCollection<IMegaNode>),         
-            typeof(BreadCrumb),           
-            new PropertyMetadata(null, new PropertyChangedCallback(OnItemsChanged)));        
-
-        public string DisplayMember
-        {
-            get { return (string)GetValue(DisplayMemberProperty); }
-            set { SetValue(DisplayMemberProperty, value); }
-        }
-
-        public static readonly DependencyProperty DisplayMemberProperty = DependencyProperty.Register(
-            "DisplayMember",
-            typeof(string),
-            typeof(BreadCrumb),
-            new PropertyMetadata(null));
-
-        public string ValueMember
-        {
-            get { return (string)GetValue(ValueMemberProperty); }
-            set { SetValue(ValueMemberProperty, value); }
-        }
-
-        public static readonly DependencyProperty ValueMemberProperty = DependencyProperty.Register(
-            "ValueMember",
-            typeof(string),
-            typeof(BreadCrumb),
-            new PropertyMetadata(null));
-
-        public string RootName
-        {
-            get { return (string)GetValue(RootNameProperty); }
-            set { SetValue(RootNameProperty, value); }
-        }
-
-        public static readonly DependencyProperty RootNameProperty = DependencyProperty.Register(
-            "RootName",
-            typeof(string),
-            typeof(BreadCrumb),
-            new PropertyMetadata("Root"));
-
-        public ImageSource RootImage
-        {
-            get { return (ImageSource)GetValue(RootImageProperty); }
-            set { SetValue(RootImageProperty, value); }
-        }
-
-        public static readonly DependencyProperty RootImageProperty = DependencyProperty.Register(
-            "RootImage",
-            typeof(ImageSource),
-            typeof(BreadCrumb),
-            new PropertyMetadata(null, new PropertyChangedCallback(OnRootImageSourceChanged)));
-
-        public ImageSource SeperatorImage
-        {
-            get { return (ImageSource)GetValue(SeperatorImageProperty); }
-            set { SetValue(SeperatorImageProperty, value); }
-        }
-
-        public static readonly DependencyProperty SeperatorImageProperty = DependencyProperty.Register(
-            "SeperatorImage",
-            typeof(ImageSource),
-            typeof(BreadCrumb),
-            new PropertyMetadata(null, new PropertyChangedCallback(OnRootImageSourceChanged)));
-
-        public Color CrumbForegroundColor
-        {
-            get { return (Color)GetValue(CrumbForegroundColorProperty); }
-            set { SetValue(CrumbForegroundColorProperty, value); }
-        }
-
-        public static readonly DependencyProperty CrumbForegroundColorProperty = DependencyProperty.Register(
-            "CrumbForegroundColor",
-            typeof(Color),
-            typeof(BreadCrumb),
-            new PropertyMetadata(Colors.White, new PropertyChangedCallback(OnCrumbStyleChanged)));
-
-        public FontFamily CrumbFontFamily
-        {
-            get { return (FontFamily)GetValue(CrumbFontFamilyProperty); }
-            set { SetValue(CrumbFontFamilyProperty, value); }
-        }
-        
-        public static readonly DependencyProperty CrumbFontFamilyProperty = DependencyProperty.Register(
-            "CrumbFontFamily",
-            typeof(FontFamily),
-            typeof(BreadCrumb),
-            new PropertyMetadata(new FontFamily("Segoe WP"), new PropertyChangedCallback(OnCrumbStyleChanged)));
-
-        public double CrumbFontSize
-        {
-            get { return (double)GetValue(CrumbFontSizeProperty); }
-            set { SetValue(CrumbFontSizeProperty, value); }
-        }
-
-        public static readonly DependencyProperty CrumbFontSizeProperty = DependencyProperty.Register(
-            "CrumbFontSize",
-            typeof(double),
-            typeof(BreadCrumb),
-            new PropertyMetadata(15.0, new PropertyChangedCallback(OnCrumbStyleChanged)));
-
-        public FontStyle CrumbFontStyle
-        {
-            get { return (FontStyle)GetValue(CrumbFontStyleProperty); }
-            set { SetValue(CrumbFontStyleProperty, value); }
-        }
-
-        public static readonly DependencyProperty CrumbFontStyleProperty = DependencyProperty.Register(
-            "CrumbFontStyle",
-            typeof(FontStyle),
-            typeof(BreadCrumb),
-            new PropertyMetadata(FontStyles.Normal, new PropertyChangedCallback(OnCrumbStyleChanged)));        
-
-        #endregion
-
-        #region Private methods
-
-        public void DrawBreadCrumb()
-        {
-            this.Content = null;
-
-            var layoutRoot = new StackPanel()
-            {
-                Orientation = Orientation.Vertical,
-                HorizontalAlignment = HorizontalAlignment.Stretch                 
-            };
-
-            this.Content = layoutRoot;
-
-            var stackPanel = new RadWrapPanel()
-            {
-                Orientation = Orientation.Horizontal,
-                HorizontalAlignment = HorizontalAlignment.Stretch
-            };
-
-            layoutRoot.Children.Add(stackPanel);
-           
-            stackPanel.Children.Add(GetHomeButton());
-
-            if(Items != null)
-            {
-                if (Items.Count > 0)
-                {
-                    stackPanel.Children.RemoveAt(0);
-                    stackPanel.Children.Add(GetHomeButtonExtended());
-                }
-
-                for(int i = 0; i <= Items.Count-2; i++)           
-                {                
-                    var button = new BreadCrumbButton();                   
-
-                    button.SetValue(InteractionEffectManager.IsInteractionEnabledProperty, true);
-                    
-                    button.Foreground = new SolidColorBrush(CrumbForegroundColor);
-                    button.FontFamily = CrumbFontFamily;
-                    button.FontSize = CrumbFontSize;
-                    button.FontStyle = CrumbFontStyle;                    
-                    
-                    button.DataContext = Items[i];
-
-                    if(!String.IsNullOrEmpty(DisplayMember))
-                        button.Content = Items[i].GetType().GetProperty(DisplayMember).GetValue(Items[i]).ToString();
-                    else
-                        button.Content = Items[i].ToString();
-
-                    if(!String.IsNullOrEmpty(ValueMember))
-                        button.Tag = Items[i].GetType().GetProperty(ValueMember).GetValue(Items[i]).ToString();
-                    else
-                        button.Tag = Items[i].ToString();
-                   
-                    button.Tap += OnButtonTap;
-                   
-                    stackPanel.Children.Add(button);
-                }
-            }
-
-            var current = new TextBlock()
-            {
-                Margin = new Thickness(12, -8, 12, 0)
-            };
-            if (Items != null && Items.Count > 0)
-            {
-                if (!String.IsNullOrEmpty(DisplayMember))
-                    current.Text = Items[Items.Count - 1].GetType().GetProperty(DisplayMember).GetValue(Items[Items.Count - 1]).ToString();
-                else
-                    current.Text = Items[Items.Count - 1].ToString();
-            }
-            else
-            {
-                current.Text = RootName;
-            }
-
-            layoutRoot.Children.Add(current);
-        }
-
-        void OnButtonTap(object sender, GestureEventArgs e)
-        {
-            if (OnBreadCrumbTap == null) return;
-            
-            var tappedButton = (sender as Button);
-            if (tappedButton == null) return;
-
-            SelectedItem = (IMegaNode)tappedButton.DataContext;
-            var args = new BreadCrumbTapEventArgs()
-            {
-                Text = tappedButton.Content.ToString(),
-                Value = tappedButton.Tag,
-                Item = SelectedItem
-            };
-            OnBreadCrumbTap(this, args);
-        }
-
-        private BreadCrumbHomeButton GetHomeButton()
-        {
-            return new BreadCrumbHomeButton();
-        }
-
-        private BreadCrumbHomeExtended GetHomeButtonExtended()
-        {
-            var home = new BreadCrumbHomeExtended();
-            home.Tap += HomeOnTap;
-            return home;
-        }
-
-        private void HomeOnTap(object sender, GestureEventArgs gestureEventArgs)
-        {
-            if (OnHomeTap == null) return;
-            
-            var tappedButton = (sender as Button);
-            if (tappedButton == null) return;
-
-            OnHomeTap(this, new EventArgs());
         }
 
         #endregion
@@ -293,57 +138,18 @@ namespace MegaApp.UserControls
 
         private static void OnItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var control = d as BreadCrumb;
-            if (control == null) return;
-            control.Items = (ObservableCollection<IMegaNode>)e.NewValue;
-            control.Items.CollectionChanged += (sender, args) =>
+            var breadCrumb = d as BreadCrumb;
+           
+            if (breadCrumb == null) return;
+            if (breadCrumb.ItemsSource == null) return;
+
+            breadCrumb.Draw();
+
+            breadCrumb.ItemsSource.CollectionChanged += (sender, args) =>
             {
-                control.DrawBreadCrumb();
+                breadCrumb.Draw();
             };
-            control.DrawBreadCrumb();
-            //if (itemsSource != null)
-            //{
-            //    if (control.Items == null)
-            //        control.Items = new ObservableCollection<object>();
-            //    else
-            //        control.Items.Clear();
 
-            //    foreach (object o in itemsSource)
-            //    {
-            //        control.Items.Add(o);
-            //    }
-               
-            //    control.DrawBreadCrumb();
-            //}
-            
-            
-            
-        }
-
-        private static void OnItemsChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = d as BreadCrumb;
-            var items = (ObservableCollection<IMegaNode>)e.NewValue;
-            if (items != null)
-            {
-                control.DrawBreadCrumb();
-            }
-        }
-
-        void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            DrawBreadCrumb();
-        }
-
-        private static void OnCrumbStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = d as BreadCrumb;
-            control.DrawBreadCrumb();            
-        }
-
-        private static void OnRootImageSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

@@ -13,7 +13,8 @@
     <AssemblyName>MegaApp</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
-    <SilverlightVersion></SilverlightVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>af-ZA;ar;bg-BG;bn;br-FR;bs-Cyrl-BA;ca-ES;cs-CZ;cy-GB;da-DK;de-DE;el-GR;es-ES;et-EE;eu-ES;fa-IR;fi-FI;fr-FR;gl-ES;he-IL;hi-IN;hr-HR;hu-HU;id-ID;it-IT;ja-JP;ka-GE;ko-KR;lt-LT;lv-LV;mi-NZ;mk-MK;ms;nl-NL;nn-NO;pl-PL;pt-BR;pt-PT;qps-ploc;ro-RO;ru-RU;sk-SK;sl-SI;sq-AL;sr-Cyrl;sv-SE;th-TH;tr-TR;uk-UA;uz-Cyrl-UZ;vi-VN;zh-CN;zh-Hant</SupportedCultures>
     <XapOutputs>true</XapOutputs>
@@ -629,13 +630,6 @@
       <Link>UserControls\BreadCrumb.xaml.cs</Link>
       <DependentUpon>BreadCrumb.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\UserControls\BreadCrumbButtons.cs">
-      <Link>UserControls\BreadCrumbButtons.cs</Link>
-    </Compile>
-    <Compile Include="..\common\UserControls\BreadCrumbStyle.xaml.cs">
-      <Link>UserControls\BreadCrumbStyle.xaml.cs</Link>
-      <DependentUpon>BreadCrumbStyle.xaml</DependentUpon>
-    </Compile>
     <Compile Include="..\common\UserControls\BreadCrumbTapEventArgs.cs">
       <Link>UserControls\BreadCrumbTapEventArgs.cs</Link>
     </Compile>
@@ -645,6 +639,9 @@
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IBreadCrumb.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -2041,10 +2038,6 @@
     </Page>
     <Page Include="..\common\UserControls\BreadCrumb.xaml">
       <Link>UserControls\BreadCrumb.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\UserControls\BreadCrumbStyle.xaml">
-      <Link>UserControls\BreadCrumbStyle.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\UserControls\MemoryControl.xaml">
