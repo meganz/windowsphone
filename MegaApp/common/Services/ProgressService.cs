@@ -16,7 +16,7 @@ namespace MegaApp.Services
 
             if (SystemTray.ProgressIndicator == null)
                 SystemTray.ProgressIndicator = new ProgressIndicator();
-          
+           
             SystemTray.ProgressIndicator.Text = message;
             SystemTray.ProgressIndicator.IsIndeterminate = true;
             SystemTray.ProgressIndicator.IsVisible = true;

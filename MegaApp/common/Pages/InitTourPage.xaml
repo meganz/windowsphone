@@ -12,7 +12,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"    
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}">
         
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">

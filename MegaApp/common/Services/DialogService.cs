@@ -141,7 +141,7 @@ namespace MegaApp.Services
             var uploadRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"],
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeColor"],
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
@@ -155,7 +155,7 @@ namespace MegaApp.Services
             {
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"],
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeColor"],
                 Margin = new Thickness(24, 0, 24, 0)
             };
             grid.ColumnDefinitions.Add(new ColumnDefinition()
@@ -285,7 +285,7 @@ namespace MegaApp.Services
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Stretch,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeColor"]
             };
 
             var headerText = new TextBlock()
@@ -571,7 +571,7 @@ namespace MegaApp.Services
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Bottom,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"]
+                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeColor"]
             };
             pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
