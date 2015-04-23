@@ -178,7 +178,7 @@
 				</StackPanel>
 			</Grid>
 			<phone:Pivot x:Name="MainPivot" SelectionChanged="OnPivotSelectionChanged" HeaderTemplate="{StaticResource MainPagePivotHeaderTemplate}" Grid.Row="1" Style="{StaticResource PivotStyle}" Margin="0">
-				<phone:PivotItem x:Name="CloudDrivePivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.CloudDriveName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
+                <phone:PivotItem x:Name="CloudDrivePivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.CloudDriveName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
 					<Grid x:Name="CloudDriveRoot" Background="Transparent" Margin="0,0,12,0">
 				    <!--ContentPanel - place additional content here-->
                         <Grid.RowDefinitions>
@@ -187,7 +187,7 @@
                         </Grid.RowDefinitions>
                         
 						<StackPanel Grid.Row="0" Margin="0">
-							<Grid Margin="21,0,24,5">
+							<Grid Margin="24,0,24,5">
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition/>
 									<ColumnDefinition Width="Auto"/>
@@ -307,7 +307,7 @@
 						</Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="21,0,24,5">
+                            <Grid Margin="24,0,24,5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
