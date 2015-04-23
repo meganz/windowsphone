@@ -15,7 +15,7 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource MegaGrayBackgroundColor}">
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}">
 
 	<phone:PhoneApplicationPage.Resources>
 		<converters:LongToReadableSizeConverter x:Key="LongToReadableSizeConverter"/>

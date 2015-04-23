@@ -14,6 +14,8 @@
 	Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource PhoneBackgroundColor}"
 	d:DataContext="{d:DesignInstance models:MainPageViewModel}">
 
     <phone:PhoneApplicationPage.Resources>
@@ -124,11 +126,7 @@
 
     
     <!--LayoutRoot is the root grid where all page content is placed-->
-
-	<shell:SystemTray.BackgroundColor>
-		<StaticResource ResourceKey="PhoneChromeColor"/>
-	</shell:SystemTray.BackgroundColor>
-
+	
     <phone:PhoneApplicationPage.FontFamily>
         <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
     </phone:PhoneApplicationPage.FontFamily>

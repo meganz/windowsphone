@@ -38,7 +38,7 @@ namespace MegaApp.Models
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]);                   
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);                   
                 ProgressService.SetProgressIndicator(false);
 
                 this.ControlState = true;
@@ -107,7 +107,7 @@ namespace MegaApp.Models
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaGrayBackgroundColor"]));
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]));
         }
 
         #endregion

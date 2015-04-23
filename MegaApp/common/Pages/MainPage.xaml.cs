@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
 using mega;
@@ -33,7 +34,6 @@ namespace MegaApp.Pages
             this.DataContext = _mainPageViewModel;
 
             InitializeComponent();
-
             // Initialize the hamburger menu / slide in
             MainDrawerLayout.InitializeDrawerLayout();
             MainDrawerLayout.DrawerOpened += OnDrawerOpened;
@@ -45,7 +45,6 @@ namespace MegaApp.Pages
             CloudDriveBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             RubbishBinBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             RubbishBinBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
-            
         }
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
