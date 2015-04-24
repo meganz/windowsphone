@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,4 +117,209 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddButton" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>إضافة مجلد</value>
+  </data>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>أنا أتفق مع</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>MEGA</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CloudDriveName" xml:space="preserve">
+    <value>سحابة التخزين</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>جاري تأكيد الحساب...</value>
+  </data>
+  <data name="ConfirmPasswordWatermark" xml:space="preserve">
+    <value>تأكيد كلمة السر</value>
+  </data>
+  <data name="CopyButton" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>إنشاء حساب...</value>
+  </data>
+  <data name="CreateAccountTitle" xml:space="preserve">
+    <value>التسجيل</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>تم الانشاء:</value>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>إنشاء مجلد...</value>
+    <comment>Text to show when a folder is created</comment>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>إنشاء حساب جديد هنا</value>
+  </data>
+  <data name="ViewOrginal" xml:space="preserve">
+    <value>التنزيل</value>
+  </data>
+  <data name="DownloadNode" xml:space="preserve">
+    <value>جارى التحميل...</value>
+  </data>
+  <data name="EmailWatermark" xml:space="preserve">
+    <value>بريدك الإلكتروني</value>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>مجلد فارغ</value>
+  </data>
+  <data name="EmptyTransfers" xml:space="preserve">
+    <value>لا توجد عمليات نقل</value>
+  </data>
+  <data name="GetPreviewLink" xml:space="preserve">
+    <value>الحصول على الرابط</value>
+  </data>
+  <data name="InboxName" xml:space="preserve">
+    <value>صندوق الوارد</value>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>تحميل المعاينة...</value>
+  </data>
+  <data name="LoginText" xml:space="preserve">
+    <value>الدخول</value>
+  </data>
+  <data name="MegaLinkTitle" xml:space="preserve">
+    <value>رابط MEGA:</value>
+  </data>
+  <data name="MegaShareLinkMessage" xml:space="preserve">
+    <value>أريد مشاركة خدمة التخزين MEGA معك</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>نقل</value>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>ملفات</value>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>المجلدات</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>حسابي</value>
+  </data>
+  <data name="NameWatermark" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="NewAtMega" xml:space="preserve">
+    <value>جديد في MEGA؟</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="OpenButton" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>فتح رابط التحميل MEGA:</value>
+  </data>
+  <data name="OpenLinkAppBar" xml:space="preserve">
+    <value>فتح الرابط</value>
+  </data>
+  <data name="PasswordWatermark" xml:space="preserve">
+    <value>الرقم السري الخاص بك</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>إعادة تحديث</value>
+  </data>
+  <data name="RememberMeText" xml:space="preserve">
+    <value>البقاء مسجلا للدخول</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>تغيير الاسم</value>
+  </data>
+  <data name="RenameButton" xml:space="preserve">
+    <value>إعادة تسمية</value>
+  </data>
+  <data name="RenameItem" xml:space="preserve">
+    <value>اكتب اسما جديدا:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="ShareButton" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>ملف</value>
+  </data>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>مجلد</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>الحجم:</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>لا توجد عمليات نقل</value>
+  </data>
+  <data name="TermsOfUse" xml:space="preserve">
+    <value>[$6109]</value>
+  </data>
+  <data name="TrashBinName" xml:space="preserve">
+    <value>سلة المهملات</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>رفع</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>جاري الرفع...</value>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>عمليات النقل</value>
+  </data>
+  <data name="Transfer_Canceled" xml:space="preserve">
+    <value>تم الالغاء</value>
+  </data>
+  <data name="Transfer_Canceling" xml:space="preserve">
+    <value>جاري الالغاء.</value>
+  </data>
+  <data name="Transfer_Connecting" xml:space="preserve">
+    <value>Connecting server...</value>
+  </data>
+  <data name="Transfer_Download" xml:space="preserve">
+    <value>جارى التحميل...</value>
+  </data>
+  <data name="Transfer_Error" xml:space="preserve">
+    <value>خطأ فى النقل</value>
+  </data>
+  <data name="Transfer_Finished" xml:space="preserve">
+    <value>تم الانتهاء</value>
+  </data>
+  <data name="Transfer_NotStarted" xml:space="preserve">
+    <value>جاهز</value>
+  </data>
+  <data name="Transfer_Upload" xml:space="preserve">
+    <value>جاري الرفع...</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>التحميل</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="CreateShortCut" xml:space="preserve">
+    <value>انشاء اختصار</value>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>اختيار متعدد</value>
+  </data>
 </root>

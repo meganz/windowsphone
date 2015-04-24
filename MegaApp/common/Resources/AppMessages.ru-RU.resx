@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,4 +117,217 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeTermsOfUse" xml:space="preserve">
+    <value>You must agree with our terms of use</value>
+  </data>
+  <data name="AgreeTermsOfUse_Title" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>Не удалось подтвердить учётную запись. Пожалуйста, попробуйте ещё раз. [{0}]</value>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>Confirm account failed</value>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>Учётная запись создана, подтверждена и активирована. Вы автоматически войдёте в систему</value>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>Учётная запись активирована</value>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>Check your e-mail and click the link to login and confirm your account</value>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>Необходимо подтверждение</value>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>Не удалось создать учётную запись облачного диска MEGA. Пожалуйста, попробуйте ещё раз. [{0}]</value>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>Не удалось создать учётную запись</value>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>Не удалось создать папку</value>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>Не удалось создать папку</value>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>Папка успешно создана</value>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>Папка создана</value>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>Failed tot delete item. Please try again</value>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>Не удалось удалить</value>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>Failed to retrieve a download link. Please try again</value>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>Не удалось получить ссылку</value>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>Не удалось загрузить файл. Пожалуйста, попробуйте ещё раз. [{0}]</value>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>Скачивание не удалось</value>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>Не удалось получить файлы и папки с сервера MEGA. Пожалуйста, попробуйте ещё раз.</value>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>Не удалось извлечь данные</value>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>Failed to create folder. Please try again</value>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>Не удалось создать папку</value>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>Не удалось получить ссылку</value>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>Не удалось получить ссылку</value>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>Не удалось получить предварительный просмотр</value>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>Не удалось создать предварительный просмотр</value>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Изображение экспортировано в  альбом «Сохранённые»</value>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>Изображение сохранено</value>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>Не удалось экспортировать изображение в  альбом «Сохранённые». Пожалуйста, попробуйте ещё раз</value>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>Не удалось сохранить изображение</value>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>Importing file failed</value>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>Import file failed</value>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>MEGA-ссылка скопирована в буфер обмена</value>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>Скопировано</value>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Не удалось войти в облачный диск MEGA. Пожалуйста, попробуйте ещё раз. [{0}]</value>
+    <comment>Message when login to the MEGA web service api failed</comment>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>Ошибка входа</value>
+    <comment>Title when login to the MEGA web service api failed</comment>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>Destination folder is the same as the source folder. Moving canceled</value>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>Не удалось переместить</value>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>Failed to move item. Please try again</value>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>Не удалось переместить</value>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Your passwords do not match. Please re-type them and make sure they are equal</value>
+  </data>
+  <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
+    <value>Пароли не совпадают</value>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>Изображение сохранено в фотоальбом</value>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>Изображение сохранено</value>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>Действительно удалить {0}?</value>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>Удалить?</value>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>Не удалось удалить элемент</value>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>Не удалось удалить</value>
+  </data>
+  <data name="RemoveNodeSucces" xml:space="preserve">
+    <value>Элемент удалён успешно</value>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>Элемент удалён</value>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>Не удалось переименовать элемент</value>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>Не удалось переименовать</value>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>Please fill in your choosen password</value>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>Пожалуйста, введите свое имя, адрес эл. почты и пароль</value>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>Please fill in your e-mail address and your MEGA password</value>
+    <comment>Message when required fields for login are not filled in</comment>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>Заполните требуемые поля</value>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>Экспортировать выбранное изображение в «Сохранённые»?</value>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>Save image to photo&apos;s</value>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>You are not logged in at MEGA to do this action. Please re-login</value>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>Не в сети</value>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>Не удалось получить миниатюры [{0}]</value>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>Не удалось получить миниатюры</value>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>Не удалось получить данные учётной записи. Пожалуйста, повторите позже. [{0}]</value>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>Не удалось получить данные учётной записи</value>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>Вы вышли из системы</value>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>Выйти из системы</value>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>Не удалось выйти из системы.Пожалуйста, повторите позже. [{0}]</value>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>Не удалось выйти из системы</value>
+  </data>
 </root>
