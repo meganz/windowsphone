@@ -8,6 +8,8 @@
     xmlns:selectors="clr-namespace:MegaApp.Classes"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:models="clr-namespace:MegaApp.Models"
     x:Class="MegaApp.Pages.TransferPage"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -15,58 +17,99 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}">
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    d:DataContext="{d:DesignInstance models:TransfersViewModel}">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="84"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <ContentPresenter ContentTemplate="{StaticResource MegaPageHeader}"/>
-
-        <!--Pivot Control-->
-        <phone:Pivot x:Name="Transfers" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
-            <!--Pivot item one-->
-            <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,28,12,0">
-                <Grid>
-                    <telerikPrimitives:RadDataBoundListBox 
-						x:Name="LstUploads"
-						ItemsSource="{Binding MegaTransfers.Uploads}"
-						EmptyContentTemplate="{StaticResource MegaTransferListUploadEmptyContent}" 
-						ItemTemplate="{StaticResource MegaTransferItemContent}" 
-						FontFamily="Portable User Interface"
-                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
-					/>
-                    <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
-                </Grid>
-            </phone:PivotItem>
-            <!--Pivot item two-->
-            <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
-                <Grid>
-                    <telerikPrimitives:RadDataBoundListBox 
-						x:Name="LstDownloads"
-						ItemsSource="{Binding MegaTransfers.Downloads}"
-						EmptyContentTemplate="{StaticResource MegaTransferListDownloadEmptyContent}" 
-						ItemTemplate="{StaticResource MegaTransferItemContent}" 
-						FontFamily="Portable User Interface" 
-                        telerik:InteractionEffectManager.IsInteractionEnabled="True"
-					/>
-                    <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
-                </Grid>
-            </phone:PivotItem>
-        </phone:Pivot>
-    </Grid>
-
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar>
+    <phone:PhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="TransferMenu">
             <shell:ApplicationBarIconButton x:Name="BtnPauseResume" IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseAllClick" />
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="cancel all transfers" Click="OnCancelAllClick" />
                 <shell:ApplicationBarMenuItem Text="clean up transfers" Click="OnCleanUpTransfersClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <userControls:DrawerLayout x:Name="MainDrawerLayout">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="84"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-6,0,0">
+                <Button x:Name="BtnHamburger" HorizontalAlignment="Left" Style="{StaticResource AppBarButtonStyleNoBorder}" VerticalAlignment="Center" Width="48" Height="48" Margin="12,0,0,0" Tap="OnHamburgerTap">
+                    <Path Data="{Binding LocalizedVisualResources.HamburgerPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Height="20" Width="24" HorizontalAlignment="Left" Stretch="UniformToFill" VerticalAlignment="Center" FlowDirection="LeftToRight" StrokeThickness="0">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+            </Grid>
+
+            <!--Pivot Control-->
+            <phone:Pivot x:Name="Transfers" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+                <!--Pivot item one-->
+                <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,28,12,0">
+                    <Grid>
+                        <telerikPrimitives:RadDataBoundListBox 
+						    x:Name="LstUploads"
+						    ItemsSource="{Binding MegaTransfers.Uploads}"
+						    EmptyContentTemplate="{StaticResource MegaTransferListUploadEmptyContent}" 
+						    ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						    FontFamily="Portable User Interface"
+                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					    />
+                        <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+                    </Grid>
+                </phone:PivotItem>
+                <!--Pivot item two-->
+                <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
+                    <Grid>
+                        <telerikPrimitives:RadDataBoundListBox 
+						    x:Name="LstDownloads"
+						    ItemsSource="{Binding MegaTransfers.Downloads}"
+						    EmptyContentTemplate="{StaticResource MegaTransferListDownloadEmptyContent}" 
+						    ItemTemplate="{StaticResource MegaTransferItemContent}" 
+						    FontFamily="Portable User Interface" 
+                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					    />
+                        <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>
+        </Grid>
+        <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="100" Margin="0,66,0,64">
+                <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
+                    <Grid HorizontalAlignment="Left" Width="420">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse Grid.Column="0" Fill="#FF404040" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                            <TextBlock Text="First Last" FontFamily="Segoe WP" FontSize="30"/>
+                            <TextBlock Text="{Binding UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20"/>
+                        </StackPanel>
+                    </Grid>
+                </Button>
+            </Grid>
+            <telerikPrimitives:RadDataBoundListBox 
+                x:Name="LstHamburgerMenu" 
+                Grid.Row="1" 
+                ItemsSource="{Binding MenuItems}" 
+                ItemTap="OnHamburgerMenuItemTap" 
+                ItemTemplate="{StaticResource HamburgerMenuItem}" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+             />
+        </Grid>
+    </userControls:DrawerLayout>
 
 </phone:PhoneApplicationPage>

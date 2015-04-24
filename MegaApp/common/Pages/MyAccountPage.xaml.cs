@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -11,10 +12,12 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
@@ -24,9 +27,14 @@ namespace MegaApp.Pages
 
         public MyAccountPage()
         {
-            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk);
+            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _myAccountPageViewModel;
             InitializeComponent();
+
+            // Initialize the hamburger menu / slide in
+            MainDrawerLayout.InitializeDrawerLayout();
+            MainDrawerLayout.DrawerOpened += OnDrawerOpened;
+            MainDrawerLayout.DrawerClosed += OnDrawerClosed;
 
             SetApplicationBar();
 
@@ -35,6 +43,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
+            this.ApplicationBar = (ApplicationBar)Resources["MyAccountMenu"];
+
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Settings.ToLower();
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
 
@@ -43,6 +53,14 @@ namespace MegaApp.Pages
             /*((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ChangePassword.ToLower();
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ExportMasterKeyText.ToLower();
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.ClearCache.ToLower();*/
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            // Check if Hamburger Menu is open in view. If open. First slide out before exit
+            e.Cancel = _myAccountPageViewModel.CheckHamburgerMenu(MainDrawerLayout, e.Cancel);
+
+            base.OnBackKeyPress(e);
         }
 
         private void OnPieDataBindingComplete(object sender, System.EventArgs e)
@@ -112,6 +130,48 @@ namespace MegaApp.Pages
         {
             //LstProducts.SelectedItem = null;
         }
-        
+
+        private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
+            if (hamburgerMenuItem == null) return;
+
+            if (hamburgerMenuItem.Type == HamburgerMenuItemType.MyAccount)
+                MainDrawerLayout.CloseDrawer();
+            else
+                hamburgerMenuItem.TapAction.Invoke();
+            
+            LstHamburgerMenu.SelectedItem = null;
+        }
+
+        private void OnHamburgerTap(object sender, GestureEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            MainDrawerLayout.OpenDrawer();
+        }
+
+        private void OnDrawerClosed(object sender)
+        {
+            SetApplicationBar();
+        }
+
+        private void OnDrawerOpened(object sender)
+        {
+            // Remove application bar from display when sliding in the hamburger menu
+            this.ApplicationBar = null;
+        }
+
+        private void OnMyAccountTap(object sender, GestureEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            MainDrawerLayout.CloseDrawer();
+        }
     }
 }

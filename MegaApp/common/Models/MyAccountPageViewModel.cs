@@ -8,18 +8,21 @@ using System.Windows;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class MyAccountPageViewModel : BaseSdkViewModel
+    class MyAccountPageViewModel : BaseAppInfoAwareViewModel
     {
-        public MyAccountPageViewModel(MegaSDK megaSdk)
-            :base(megaSdk)
+        public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
+            : base(megaSdk, appInformation)
         {
-            AccountDetails = new AccountDetailsViewModel {UserName = megaSdk.getMyEmail()};
+            InitializeMenu(HamburgerMenuItemType.MyAccount);
+
+            AccountDetails = new AccountDetailsViewModel {UserEmail = megaSdk.getMyEmail()};
             if (!File.Exists(AvatarPath)) return;
             AccountDetails.AvatarUri = new Uri(AvatarPath);
         }
@@ -28,8 +31,9 @@ namespace MegaApp.Models
 
         public void GetAccountDetails()
         {
-            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
+            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));            
             MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
+            //MegaSdk.getUserData(MegaSdk.getContact(MegaSdk.getMyEmail()), new GetUserDataRequestListener(AccountDetails));
         }
 
         public void GetPricing()

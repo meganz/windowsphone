@@ -5,15 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 
 namespace MegaApp.Models
 {
-    class TransfersViewModel: BaseSdkViewModel
+    class TransfersViewModel: BaseAppInfoAwareViewModel
     {
-        public TransfersViewModel(MegaSDK megaSdk, TransferQueu megaTransfers)
-            : base(megaSdk)
+        public TransfersViewModel(MegaSDK megaSdk, AppInformation appInformation, TransferQueu megaTransfers)
+            : base(megaSdk, appInformation)
         {
             MegaTransfers = megaTransfers;
+            
+            InitializeMenu(HamburgerMenuItemType.Transfers);
         }
 
         #region Methods

@@ -159,6 +159,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Getting preview...</value>
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Getting user data...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
   <data name="ImportFile" xml:space="preserve">
     <value>Importing file...</value>
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
