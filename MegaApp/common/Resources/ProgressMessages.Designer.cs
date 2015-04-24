@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Getting user data....
+        /// </summary>
+        public static string GetUserData {
+            get {
+                return ResourceManager.GetString("GetUserData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Importing file....
         /// </summary>
         public static string ImportFile {

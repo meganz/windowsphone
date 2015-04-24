@@ -914,7 +914,12 @@ namespace MegaApp.Pages
 
             var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
             if (hamburgerMenuItem == null) return;
-            hamburgerMenuItem.TapAction.Invoke();
+
+            if (hamburgerMenuItem.Type == HamburgerMenuItemType.CloudDrive)
+                MainDrawerLayout.CloseDrawer();
+            else
+                hamburgerMenuItem.TapAction.Invoke();
+            
             LstHamburgerMenu.SelectedItem = null;
         }        
 
@@ -970,6 +975,11 @@ namespace MegaApp.Pages
         {
             // Remove application bar from display when sliding in the hamburger menu
             this.ApplicationBar = null;
+        }
+
+        private void OnMyAccountTap(object sender, GestureEventArgs e)
+        {
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
     }
 }

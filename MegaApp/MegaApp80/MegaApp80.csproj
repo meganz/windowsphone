@@ -190,6 +190,9 @@
     <Compile Include="..\common\Enums\GalleryDirection.cs">
       <Link>Enums\GalleryDirection.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\HamburgerMenuItemType.cs">
+      <Link>Enums\HamburgerMenuItemType.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>
     </Compile>
@@ -225,6 +228,9 @@
     </Compile>
     <Compile Include="..\common\Interfaces\IApplicationBar.cs">
       <Link>Interfaces\IApplicationBar.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Interfaces\IBreadCrumb.cs">
+      <Link>Interfaces\IBreadCrumb.cs</Link>
     </Compile>
     <Compile Include="..\common\Interfaces\IHamburgerMenu.cs">
       <Link>Interfaces\IHamburgerMenu.cs</Link>
@@ -276,6 +282,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\GetUserAvatarRequestListener.cs">
       <Link>MegaApi\GetUserAvatarRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetUserDataRequestListener.cs">
+      <Link>MegaApi\GetUserDataRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
       <Link>MegaApi\GlobalDriveListener.cs</Link>

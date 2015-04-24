@@ -18,10 +18,10 @@ using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {
-    class SettingsViewModel: BaseSdkViewModel
+    class SettingsViewModel : BaseAppInfoAwareViewModel
     {
-        public SettingsViewModel(MegaSDK megaSdk)
-            : base(megaSdk)
+        public SettingsViewModel(MegaSDK megaSdk, AppInformation appInformation)
+            : base(megaSdk, appInformation)
         {
             this.AppVersion = AppService.GetAppVersion();
             this.MegaSDK_Version = AppService.GetMegaSDK_Version();
@@ -32,6 +32,7 @@ namespace MegaApp.Models
             #if WINDOWS_PHONE_81
             this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
             #endif
+            this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
 
             this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
             #if WINDOWS_PHONE_80
@@ -41,6 +42,8 @@ namespace MegaApp.Models
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
             #endif
+
+            InitializeMenu(HamburgerMenuItemType.Settings);
         }
 
         #region Commands
@@ -52,6 +55,7 @@ namespace MegaApp.Models
         #if WINDOWS_PHONE_81
         public ICommand SelectDownloadLocationCommand { get; set; }
         #endif
+        public ICommand MegaSdkCommand { get; set; }
 
         #endregion
 
@@ -98,6 +102,12 @@ namespace MegaApp.Models
             FolderService.SelectFolder("SelectDefaultDownloadFolder");
         }
         #endif
+
+        private void NavigateToMegaSdk(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.MegaSdkUrl) };
+            webBrowserTask.Show();
+        }
 
         #endregion
 

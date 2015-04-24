@@ -26,7 +26,7 @@ namespace MegaApp.Models
             :base(megaSdk, appInformation)
         {
             InitializeModel();
-            InitializeMenu();
+            InitializeMenu(HamburgerMenuItemType.CloudDrive);
         }
 
         #region Public Methods
@@ -122,71 +122,7 @@ namespace MegaApp.Models
             // The Cloud Drive is always the first active folder on initalization
             this.ActiveFolderView = this.CloudDrive;
         }
-
-        private void InitializeMenu()
-        {
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.CloudDriveName.ToLower(),
-                IconPathData = VisualResources.CloudDriveMenuPathData,
-                IconWidth = 48,
-                IconHeight = 34,
-                Margin = new Thickness(36, 0, 35, 0),
-                TapAction = () => { },
-                IsActive = true
-            });
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.CameraUploads.ToLower(),
-                IconPathData = VisualResources.CameraUploadsPathData,
-                IconWidth = 46,
-                IconHeight = 36,
-                Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { },
-                IsActive = false
-            });
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.SharedItems.ToLower(),
-                IconPathData = VisualResources.SharedItemsPathData,
-                IconWidth = 45,
-                IconHeight = 36,
-                Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { },
-                IsActive = false
-            });
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.Contacts.ToLower(),
-                IconPathData = VisualResources.ContactsPathData,
-                IconWidth = 45,
-                IconHeight = 33,
-                Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { },
-                IsActive = false
-            });
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.Transfers.ToLower(),
-                IconPathData = VisualResources.TransfersPathData,
-                IconWidth = 44,
-                IconHeight = 44,
-                Margin = new Thickness(38, 0, 36, 0),
-                TapAction = () => { NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal); },
-                IsActive = false
-            });
-            this.MenuItems.Add(new HamburgerMenuItem()
-            {
-                DisplayName = UiResources.Settings.ToLower(),
-                IconPathData = VisualResources.SettingsPathData,
-                IconWidth = 45,
-                IconHeight = 45,
-                Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal); },
-                IsActive = false
-            });
-        }
-
+        
         #endregion
 
 

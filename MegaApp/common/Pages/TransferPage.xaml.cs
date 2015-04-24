@@ -1,29 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
     public partial class TransferPage : PhoneApplicationPage
     {
+        private TransfersViewModel _transfersViewModel;
+
         public TransferPage()
         {
-            var transfersViewModel = new TransfersViewModel(App.MegaSdk, App.MegaTransfers);
-            this.DataContext = transfersViewModel;
+            _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+            this.DataContext = _transfersViewModel;
             InitializeComponent();
+
+            // Initialize the hamburger menu / slide in
+            MainDrawerLayout.InitializeDrawerLayout();
+            MainDrawerLayout.DrawerOpened += OnDrawerOpened;
+            MainDrawerLayout.DrawerClosed += OnDrawerClosed;
 
             SetApplicationBar();
 
@@ -32,6 +43,8 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
+            this.ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
+
             //((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.StartResumeAll.ToLower();
             //((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.PauseAll.ToLower();
             //((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.CancelAll.ToLower();
@@ -62,6 +75,14 @@ namespace MegaApp.Pages
 
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            // Check if Hamburger Menu is open in view. If open. First slide out before exit
+            e.Cancel = _transfersViewModel.CheckHamburgerMenu(MainDrawerLayout, e.Cancel);
+
+            base.OnBackKeyPress(e);
         }
 
         private void OnPauseAllClick(object sender, System.EventArgs e)
@@ -184,6 +205,46 @@ namespace MegaApp.Pages
 
             foreach (var item in transfersToRemove)
                 App.MegaTransfers.Remove(item);
+        }
+
+        private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
+            if (hamburgerMenuItem == null) return;
+
+            if (hamburgerMenuItem.Type == HamburgerMenuItemType.Transfers)
+                MainDrawerLayout.CloseDrawer();
+            else
+                hamburgerMenuItem.TapAction.Invoke();
+            
+            LstHamburgerMenu.SelectedItem = null;
+        }
+
+        private void OnHamburgerTap(object sender, GestureEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            MainDrawerLayout.OpenDrawer();
+        }
+
+        private void OnDrawerClosed(object sender)
+        {
+            SetApplicationBar();
+        }
+
+        private void OnDrawerOpened(object sender)
+        {
+            // Remove application bar from display when sliding in the hamburger menu
+            this.ApplicationBar = null;
+        }
+
+        private void OnMyAccountTap(object sender, GestureEventArgs e)
+        {
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
         
     }

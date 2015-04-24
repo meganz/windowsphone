@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MegaApp.Enums;
 
 namespace MegaApp.Classes
 {
     public class HamburgerMenuItem
     {
+        public HamburgerMenuItemType Type { get; set; }
+
         public string DisplayName { get; set; }
 
         public string IconPathData { get; set; }

@@ -22,6 +22,17 @@ namespace MegaApp.Classes
             CacheSize = AppService.GetAppCacheSize();
         }
 
+        private string _userEmail;
+        public string UserEmail
+        {
+            get { return _userEmail; }
+            set
+            {
+                _userEmail = value;
+                OnPropertyChanged("UserEmail");
+            }
+        }
+
         private string _userName;
         public string UserName
         {
