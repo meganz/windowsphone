@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,209 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddButton" xml:space="preserve">
-    <value>जोड़ना</value>
-  </data>
-  <data name="AddFolder" xml:space="preserve">
-    <value>फ़ोल्डर जोड़ें</value>
-  </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>मैं सहमत</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>मेगा</value>
-  </data>
-  <data name="CancelButton" xml:space="preserve">
-    <value>रद्द करें</value>
-  </data>
-  <data name="CloudDriveName" xml:space="preserve">
-    <value>बादल ड्राइव</value>
-  </data>
-  <data name="Confirm" xml:space="preserve">
-    <value>पुष्टि करें</value>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>खाते की पुष्टि ...</value>
-  </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>अपने पासवर्ड की पुष्टि करें</value>
-  </data>
-  <data name="CopyButton" xml:space="preserve">
-    <value>प्रतिलिपि</value>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>खाता बनाना ...</value>
-  </data>
-  <data name="CreateAccountTitle" xml:space="preserve">
-    <value>रजिस्ट्रेशन</value>
-  </data>
-  <data name="Created" xml:space="preserve">
-    <value>बनाई</value>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>फोल्डर बना रहा है ...</value>
-    <comment>Text to show when a folder is created</comment>
-  </data>
-  <data name="CreateNewAccount" xml:space="preserve">
-    <value>यहां एक नया खाता बनायें</value>
-  </data>
-  <data name="ViewOrginal" xml:space="preserve">
-    <value>डाउनलोड</value>
-  </data>
-  <data name="DownloadNode" xml:space="preserve">
-    <value>डाउनलोडिंग...</value>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>आपका ईमेल पता</value>
-  </data>
-  <data name="EmptyFolder" xml:space="preserve">
-    <value>काली फ़ाइल</value>
-  </data>
-  <data name="EmptyTransfers" xml:space="preserve">
-    <value>कोई स्थानान्तरण</value>
-  </data>
-  <data name="GetPreviewLink" xml:space="preserve">
-    <value>डाउनलोड</value>
-  </data>
-  <data name="InboxName" xml:space="preserve">
-    <value>इनबॉक्स</value>
-  </data>
-  <data name="LoadingPreview" xml:space="preserve">
-    <value>पूर्वावलोकन लोड हो रहा ...</value>
-  </data>
-  <data name="LoginText" xml:space="preserve">
-    <value>लॉगिन</value>
-  </data>
-  <data name="MegaLinkTitle" xml:space="preserve">
-    <value>मेगा लिंक:</value>
-  </data>
-  <data name="MegaShareLinkMessage" xml:space="preserve">
-    <value>मैं तुम्हारे साथ इस मेगा बादल सेवा फ़ाइल साझा करना चाहते हैं</value>
-  </data>
-  <data name="Move" xml:space="preserve">
-    <value>चाल</value>
-  </data>
-  <data name="MultipleFiles" xml:space="preserve">
-    <value>फ़ाइलें</value>
-  </data>
-  <data name="MultipleFolders" xml:space="preserve">
-    <value>फ़ोल्डरों</value>
-  </data>
-  <data name="MyAccount" xml:space="preserve">
-    <value>मेरा खाता</value>
-  </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>आपका नाम</value>
-  </data>
-  <data name="NewAtMega" xml:space="preserve">
-    <value>मेगा पर नए हैं?</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>अगला</value>
-  </data>
-  <data name="OpenButton" xml:space="preserve">
-    <value>खुली</value>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>मेगा डाउनलोड लिंक खोलें:</value>
-  </data>
-  <data name="OpenLinkAppBar" xml:space="preserve">
-    <value>खुली लिंक</value>
-  </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>आपका पासवर्ड</value>
-  </data>
-  <data name="Preview" xml:space="preserve">
-    <value>पूर्वावलोकन</value>
-  </data>
-  <data name="Previous" xml:space="preserve">
-    <value>प्रीवियस</value>
-  </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>ताज़ा</value>
-  </data>
-  <data name="RememberMeText" xml:space="preserve">
-    <value>लॉगइन रखें</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>हटाना</value>
-  </data>
-  <data name="Rename" xml:space="preserve">
-    <value>नाम बदलें</value>
-  </data>
-  <data name="RenameButton" xml:space="preserve">
-    <value>नाम बदलने के</value>
-  </data>
-  <data name="RenameItem" xml:space="preserve">
-    <value>एक नया नाम टाइप करें:</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>सेव</value>
-  </data>
-  <data name="ShareButton" xml:space="preserve">
-    <value>शेयर</value>
-  </data>
-  <data name="SingleFile" xml:space="preserve">
-    <value>फ़ाइल</value>
-  </data>
-  <data name="SingleFolder" xml:space="preserve">
-    <value>फ़ोल्डर</value>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>आकार:</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value>कोई स्थानान्तरण</value>
-  </data>
-  <data name="TermsOfUse" xml:space="preserve">
-    <value>[$6109]</value>
-  </data>
-  <data name="TrashBinName" xml:space="preserve">
-    <value>कचरा बिन</value>
-  </data>
-  <data name="Upload" xml:space="preserve">
-    <value>उपलोआड</value>
-  </data>
-  <data name="UploadFile" xml:space="preserve">
-    <value>उपलॉअडिंग...</value>
-  </data>
-  <data name="Transfers" xml:space="preserve">
-    <value>स्थानान्तरण</value>
-  </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>रद्द</value>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>रद्द ...</value>
-  </data>
-  <data name="Transfer_Connecting" xml:space="preserve">
-    <value>Connecting server...</value>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>डाउनलोडिंग...</value>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>स्थानांतरण पर त्रुटि</value>
-  </data>
-  <data name="Transfer_Finished" xml:space="preserve">
-    <value>ख़तम हो गया</value>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>रेडी</value>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>उपलॉअडिंग...</value>
-  </data>
-  <data name="Download" xml:space="preserve">
-    <value>डाउनलोड</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>सेटिंग</value>
-  </data>
-  <data name="CreateShortCut" xml:space="preserve">
-    <value>शॉर्टकट बनाएं</value>
-  </data>
-  <data name="MultiSelect" xml:space="preserve">
-    <value>मल्टी चयन</value>
-  </data>
 </root>

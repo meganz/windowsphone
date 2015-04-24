@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,217 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AgreeTermsOfUse" xml:space="preserve">
-    <value>You must agree with our terms of use</value>
-  </data>
-  <data name="AgreeTermsOfUse_Title" xml:space="preserve">
-    <value>Terms of use</value>
-  </data>
-  <data name="ConfirmAccountFailed" xml:space="preserve">
-    <value>Mislukt account te bevestigen. Probeer het alstublieft opnieuw. [{0}]</value>
-  </data>
-  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
-    <value>Confirm account failed</value>
-  </data>
-  <data name="ConfirmAccountSucces" xml:space="preserve">
-    <value>Uw account is aangemaakt, bevestigd en geactiveerd. U wordt automatisch ingelogd.</value>
-  </data>
-  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
-    <value>Account geactiveerd</value>
-  </data>
-  <data name="ConfirmNeeded" xml:space="preserve">
-    <value>Check your e-mail and click the link to login and confirm your account</value>
-  </data>
-  <data name="ConfirmNeeded_Title" xml:space="preserve">
-    <value>Bevestiging nodig</value>
-  </data>
-  <data name="CreateAccountFailed" xml:space="preserve">
-    <value>MEGA Cloud Schijf account aanmaak is mislukt. Probeer het alstublieft opnieuw. [{0}]</value>
-  </data>
-  <data name="CreateAccountFailed_Title" xml:space="preserve">
-    <value>Aanmaken van account mislukt</value>
-  </data>
-  <data name="CreateFolderFailed" xml:space="preserve">
-    <value>Mislukt map aan te maken</value>
-  </data>
-  <data name="CreateFolderFailed_Title" xml:space="preserve">
-    <value>Maken van map is mislukt</value>
-  </data>
-  <data name="CreateFolderSuccess" xml:space="preserve">
-    <value>Map succesvol aangemaakt</value>
-  </data>
-  <data name="CreateFolderSuccess_Title" xml:space="preserve">
-    <value>Map aangemaakt</value>
-  </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>Failed tot delete item. Please try again</value>
-  </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>Verwijderen is mislukt</value>
-  </data>
-  <data name="DownloadLinkFailed" xml:space="preserve">
-    <value>Failed to retrieve a download link. Please try again</value>
-  </data>
-  <data name="DownloadLinkFailed_Title" xml:space="preserve">
-    <value>Ophalen koppeling mislukt</value>
-  </data>
-  <data name="DownloadNodeFailed" xml:space="preserve">
-    <value>Mislukt het bestand te downloaden. Probeer het alstublieft opnieuw. [{0}]</value>
-  </data>
-  <data name="DownloadNodeFailed_Title" xml:space="preserve">
-    <value>Downloaden mislukt</value>
-  </data>
-  <data name="FetchingNodesFailed" xml:space="preserve">
-    <value>Kon geen bestanden en mappen ophalen bij MEGA.  Probeer het alstublieft opnieuw.</value>
-  </data>
-  <data name="FetchingNodesFailed_Title" xml:space="preserve">
-    <value>Het ophalen van gegevens is mislukt</value>
-  </data>
-  <data name="FolderCreateFailed" xml:space="preserve">
-    <value>Failed to create folder. Please try again</value>
-  </data>
-  <data name="FolderCreateFailed_Title" xml:space="preserve">
-    <value>Maken van map is mislukt</value>
-  </data>
-  <data name="GetLinkFailed" xml:space="preserve">
-    <value>Ophalen van link mislukt</value>
-  </data>
-  <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Verkrijgen van link mislukt</value>
-  </data>
-  <data name="GetPreviewFailed" xml:space="preserve">
-    <value>Mislukt om het voorbeeld op te halen</value>
-  </data>
-  <data name="GetPreviewFailed_Title" xml:space="preserve">
-    <value>Verkrijging van voorvertoning mislukt</value>
-  </data>
-  <data name="ImageSaved" xml:space="preserve">
-    <value>Afbeelding succesvol geëxporteerd naar &apos;opgeslagen foto&apos;s&apos; album</value>
-  </data>
-  <data name="ImageSaved_Title" xml:space="preserve">
-    <value>Afbeelding opgeslagen</value>
-  </data>
-  <data name="ImageSaveError" xml:space="preserve">
-    <value>Fout exporteren afbeelding om album &apos;opgeslagen foto&apos;s&apos;. Probeer het nogmaals</value>
-  </data>
-  <data name="ImageSaveError_Title" xml:space="preserve">
-    <value>Mislukt afbeelding opslaan</value>
-  </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>Importing file failed</value>
-  </data>
-  <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>Import file failed</value>
-  </data>
-  <data name="LinkCopiedToClipboard" xml:space="preserve">
-    <value>MEGA koppeling is gekopieerd naar uw klembord</value>
-  </data>
-  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
-    <value>Gekopiëerd naar klembord</value>
-  </data>
-  <data name="LoginFailed" xml:space="preserve">
-    <value>MEGA Cloud Schijf login mislukt. Probeer het opnieuw. [{0}]</value>
-    <comment>Message when login to the MEGA web service api failed</comment>
-  </data>
-  <data name="LoginFailed_Title" xml:space="preserve">
-    <value>Inloggen mislukt</value>
-    <comment>Title when login to the MEGA web service api failed</comment>
-  </data>
-  <data name="MoveEqualsParent" xml:space="preserve">
-    <value>Destination folder is the same as the source folder. Moving canceled</value>
-  </data>
-  <data name="MoveEqualsParent_Title" xml:space="preserve">
-    <value>Verplaatsing mislukt</value>
-  </data>
-  <data name="MoveFailed" xml:space="preserve">
-    <value>Failed to move item. Please try again</value>
-  </data>
-  <data name="MoveFailed_Title" xml:space="preserve">
-    <value>Verplaatsing mislukt</value>
-  </data>
-  <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Your passwords do not match. Please re-type them and make sure they are equal</value>
-  </data>
-  <data name="PasswordsDoNotMatch_Title" xml:space="preserve">
-    <value>Wachtwoorden komen niet overeen</value>
-  </data>
-  <data name="PictureSaved" xml:space="preserve">
-    <value>De afbeelding is opgeslagen in uw foto album</value>
-  </data>
-  <data name="PictureSaved_Title" xml:space="preserve">
-    <value>Afbeelding opgeslagen</value>
-  </data>
-  <data name="RemoveItemQuestion" xml:space="preserve">
-    <value>Weet u zeker dat u {0} wilt verwijderen?</value>
-  </data>
-  <data name="RemoveItemQuestion_Title" xml:space="preserve">
-    <value>Verwijderen?</value>
-  </data>
-  <data name="RemoveNodeFailed" xml:space="preserve">
-    <value>Mislukt het artikel te verwijderen</value>
-  </data>
-  <data name="RemoveNodeFailed_Title" xml:space="preserve">
-    <value>Verwijdering mislukt</value>
-  </data>
-  <data name="RemoveNodeSucces" xml:space="preserve">
-    <value>Bestand succesvol verwijderd</value>
-  </data>
-  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
-    <value>Bestand verwijderd</value>
-  </data>
-  <data name="RenameNodeFailed" xml:space="preserve">
-    <value>Hernamen van het bestand mislukt</value>
-  </data>
-  <data name="RenameNodeFailed_Title" xml:space="preserve">
-    <value>Hernamen mislukt</value>
-  </data>
-  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
-    <value>Please fill in your choosen password</value>
-  </data>
-  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Vul uw naam, e-mailadres en wachtwoord in</value>
-  </data>
-  <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Please fill in your e-mail address and your MEGA password</value>
-    <comment>Message when required fields for login are not filled in</comment>
-  </data>
-  <data name="RequiredFields_Title" xml:space="preserve">
-    <value>Vul de verplichte velden in</value>
-  </data>
-  <data name="SaveImageQuestion" xml:space="preserve">
-    <value>Uw huidige afbeelding naar &apos;opgeslagen foto&apos; album exporteren?</value>
-  </data>
-  <data name="SaveImageQuestion_Title" xml:space="preserve">
-    <value>Save image to photo&apos;s</value>
-  </data>
-  <data name="UserNotOnline" xml:space="preserve">
-    <value>You are not logged in at MEGA to do this action. Please re-login</value>
-  </data>
-  <data name="UserNotOnline_Title" xml:space="preserve">
-    <value>Niet online</value>
-  </data>
-  <data name="GetThumbnailFailed" xml:space="preserve">
-    <value>Mislukt om miniatuur op te halen [{0}]</value>
-  </data>
-  <data name="GetThumbnailFailed_Title" xml:space="preserve">
-    <value>Ophalen van miniatuur mislukt</value>
-  </data>
-  <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>Mislukt om uw accountgegevens op te halen. Gelieve opnieuw te proberen. [{0}]</value>
-  </data>
-  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
-    <value>Ophalen accountgegevens mislukt</value>
-  </data>
-  <data name="LoggedOut" xml:space="preserve">
-    <value>U bent succesvol afgemeld</value>
-  </data>
-  <data name="LoggedOut_Title" xml:space="preserve">
-    <value>Afgemeld</value>
-  </data>
-  <data name="LogoutFailed" xml:space="preserve">
-    <value>Mislukt af te melden. </value>
-  </data>
-  <data name="LogoutFailed_Title" xml:space="preserve">
-    <value>Afmelden mislukt</value>
-  </data>
 </root>

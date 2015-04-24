@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,209 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddButton" xml:space="preserve">
-    <value>добави</value>
-  </data>
-  <data name="AddFolder" xml:space="preserve">
-    <value>добави папка</value>
-  </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>Съгласен съм с</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA </value>
-  </data>
-  <data name="CancelButton" xml:space="preserve">
-    <value>отмени</value>
-  </data>
-  <data name="CloudDriveName" xml:space="preserve">
-    <value>Cloud Диск</value>
-  </data>
-  <data name="Confirm" xml:space="preserve">
-    <value>потвърди</value>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Потвърждаване на акаунта...</value>
-  </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>потвърдете паролата си</value>
-  </data>
-  <data name="CopyButton" xml:space="preserve">
-    <value>копирай</value>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Създаване на акаунт...</value>
-  </data>
-  <data name="CreateAccountTitle" xml:space="preserve">
-    <value>регистрация</value>
-  </data>
-  <data name="Created" xml:space="preserve">
-    <value>Създаден:</value>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Създаване на папка...</value>
-    <comment>Text to show when a folder is created</comment>
-  </data>
-  <data name="CreateNewAccount" xml:space="preserve">
-    <value>Създайте нов акаунт тук</value>
-  </data>
-  <data name="ViewOrginal" xml:space="preserve">
-    <value>Изтегли</value>
-  </data>
-  <data name="DownloadNode" xml:space="preserve">
-    <value>Сваляне...</value>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>вашият email адрес</value>
-  </data>
-  <data name="EmptyFolder" xml:space="preserve">
-    <value>изпразни папката</value>
-  </data>
-  <data name="EmptyTransfers" xml:space="preserve">
-    <value>Няма трансфери</value>
-  </data>
-  <data name="GetPreviewLink" xml:space="preserve">
-    <value>Вземи линк</value>
-  </data>
-  <data name="InboxName" xml:space="preserve">
-    <value>Входяща кутия</value>
-  </data>
-  <data name="LoadingPreview" xml:space="preserve">
-    <value>Зареждане на предварителен преглед...</value>
-  </data>
-  <data name="LoginText" xml:space="preserve">
-    <value>вход</value>
-  </data>
-  <data name="MegaLinkTitle" xml:space="preserve">
-    <value>MEGA линк:</value>
-  </data>
-  <data name="MegaShareLinkMessage" xml:space="preserve">
-    <value>Искам да споделя този файл от облачните услуги на MEGA с вас</value>
-  </data>
-  <data name="Move" xml:space="preserve">
-    <value>Премести</value>
-  </data>
-  <data name="MultipleFiles" xml:space="preserve">
-    <value>файлове</value>
-  </data>
-  <data name="MultipleFolders" xml:space="preserve">
-    <value>папки</value>
-  </data>
-  <data name="MyAccount" xml:space="preserve">
-    <value>моят акаунт</value>
-  </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>вашето име</value>
-  </data>
-  <data name="NewAtMega" xml:space="preserve">
-    <value>Нов в MEGA?</value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>следващ</value>
-  </data>
-  <data name="OpenButton" xml:space="preserve">
-    <value>отвори</value>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>Отвори MEGA линка за сваляне:</value>
-  </data>
-  <data name="OpenLinkAppBar" xml:space="preserve">
-    <value>отвори линк</value>
-  </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>вашата парола</value>
-  </data>
-  <data name="Preview" xml:space="preserve">
-    <value>Превю</value>
-  </data>
-  <data name="Previous" xml:space="preserve">
-    <value>предишен</value>
-  </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>опресни</value>
-  </data>
-  <data name="RememberMeText" xml:space="preserve">
-    <value>Остани логнат</value>
-  </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Изтрий</value>
-  </data>
-  <data name="Rename" xml:space="preserve">
-    <value>Преименувай</value>
-  </data>
-  <data name="RenameButton" xml:space="preserve">
-    <value>преименувай</value>
-  </data>
-  <data name="RenameItem" xml:space="preserve">
-    <value>Напишете ново име:</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>запази</value>
-  </data>
-  <data name="ShareButton" xml:space="preserve">
-    <value>сподели</value>
-  </data>
-  <data name="SingleFile" xml:space="preserve">
-    <value>файл</value>
-  </data>
-  <data name="SingleFolder" xml:space="preserve">
-    <value>папка</value>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер:</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value>Няма трансфери</value>
-  </data>
-  <data name="TermsOfUse" xml:space="preserve">
-    <value>[$6109]</value>
-  </data>
-  <data name="TrashBinName" xml:space="preserve">
-    <value>Кошче</value>
-  </data>
-  <data name="Upload" xml:space="preserve">
-    <value>качване</value>
-  </data>
-  <data name="UploadFile" xml:space="preserve">
-    <value>Качване...</value>
-  </data>
-  <data name="Transfers" xml:space="preserve">
-    <value>преноси</value>
-  </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>Отменено</value>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Отменяне...</value>
-  </data>
-  <data name="Transfer_Connecting" xml:space="preserve">
-    <value>Connecting server...</value>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>Сваляне...</value>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>Грешка при преноса</value>
-  </data>
-  <data name="Transfer_Finished" xml:space="preserve">
-    <value>Завършено</value>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>В готовност</value>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>Качване...</value>
-  </data>
-  <data name="Download" xml:space="preserve">
-    <value>изтегли</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>настройки</value>
-  </data>
-  <data name="CreateShortCut" xml:space="preserve">
-    <value>Създай пряк път</value>
-  </data>
-  <data name="MultiSelect" xml:space="preserve">
-    <value>Мулти селектиране</value>
-  </data>
 </root>
