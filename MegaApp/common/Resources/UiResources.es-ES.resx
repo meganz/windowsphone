@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,209 +117,612 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AddButton" xml:space="preserve">
-    <value>añadir</value>
-  </data>
-  <data name="AddFolder" xml:space="preserve">
-    <value>Añadir carpeta</value>
-  </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>Estoy de acuerdo con las</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>MEGA</value>
-  </data>
-  <data name="CancelButton" xml:space="preserve">
-    <value>cancelar</value>
-  </data>
-  <data name="CloudDriveName" xml:space="preserve">
-    <value>Disco en la nube</value>
-  </data>
-  <data name="Confirm" xml:space="preserve">
-    <value>Confirmar</value>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Confirmar cuenta</value>
-  </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>Confirma tu contraseña</value>
-  </data>
-  <data name="CopyButton" xml:space="preserve">
-    <value>copiar</value>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Crear cuenta</value>
-  </data>
-  <data name="CreateAccountTitle" xml:space="preserve">
-    <value>registro</value>
-  </data>
-  <data name="Created" xml:space="preserve">
-    <value>Creado:</value>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Nombre de la carpeta:</value>
-    <comment>Text to show when a folder is created</comment>
-  </data>
-  <data name="CreateNewAccount" xml:space="preserve">
-    <value>Crea una nueva cuenta aquí</value>
-  </data>
-  <data name="ViewOrginal" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
-  <data name="DownloadNode" xml:space="preserve">
-    <value>Descargando...</value>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>Tu dirección de e-mail</value>
-  </data>
-  <data name="EmptyFolder" xml:space="preserve">
-    <value>Carpeta vacía</value>
-  </data>
-  <data name="EmptyTransfers" xml:space="preserve">
-    <value>No hay transferencias</value>
-  </data>
-  <data name="GetPreviewLink" xml:space="preserve">
-    <value>Obtener enlace</value>
-  </data>
-  <data name="InboxName" xml:space="preserve">
-    <value>Bandeja de entrada</value>
-  </data>
-  <data name="LoadingPreview" xml:space="preserve">
-    <value>Cargando vista previa...</value>
-  </data>
-  <data name="LoginText" xml:space="preserve">
-    <value>iniciar sesión</value>
-  </data>
-  <data name="MegaLinkTitle" xml:space="preserve">
-    <value>Enlace MEGA:</value>
-  </data>
-  <data name="MegaShareLinkMessage" xml:space="preserve">
-    <value>Deseo compartir este archivo del servicio en la nube MEGA contigo</value>
-  </data>
-  <data name="Move" xml:space="preserve">
-    <value>Mover</value>
-  </data>
-  <data name="MultipleFiles" xml:space="preserve">
-    <value>Archivos</value>
-  </data>
-  <data name="MultipleFolders" xml:space="preserve">
-    <value>Carpetas</value>
-  </data>
-  <data name="MyAccount" xml:space="preserve">
-    <value>Mi cuenta</value>
-  </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>Tu nombre</value>
-  </data>
-  <data name="NewAtMega" xml:space="preserve">
-    <value>¿Nuevo en MEGA? </value>
-  </data>
-  <data name="Next" xml:space="preserve">
-    <value>Siguiente</value>
-  </data>
-  <data name="OpenButton" xml:space="preserve">
-    <value>abrir</value>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>Abrir enlace</value>
-  </data>
-  <data name="OpenLinkAppBar" xml:space="preserve">
-    <value>abrir enlace</value>
-  </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>Tú contraseña</value>
+    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
   </data>
-  <data name="Preview" xml:space="preserve">
-    <value>Vista previa</value>
+  <data name="Storage" xml:space="preserve">
+    <value>Almacenamiento</value>
+    <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Previous" xml:space="preserve">
-    <value>Anterior</value>
+  <data name="ImageUpload" xml:space="preserve">
+    <value>Subir imagen</value>
+    <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
-  <data name="Refresh" xml:space="preserve">
-    <value>Actualizar</value>
+  <data name="UploadOptionsTitle" xml:space="preserve">
+    <value>Opciones de subida</value>
+    <comment>Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</comment>
   </data>
-  <data name="RememberMeText" xml:space="preserve">
-    <value>Permanecer conectado</value>
+  <data name="TakePhoto" xml:space="preserve">
+    <value>Hacer foto</value>
+    <comment>Label for 'Take photo' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
-  <data name="Remove" xml:space="preserve">
-    <value>Eliminar</value>
+  <data name="SelfieMode" xml:space="preserve">
+    <value>Modo selfie</value>
+    <comment>Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
-  <data name="Rename" xml:space="preserve">
-    <value>Renombrar</value>
+  <data name="SelectPhoto" xml:space="preserve">
+    <value>Seleccione la foto</value>
+    <comment>Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="RenameButton" xml:space="preserve">
-    <value>renombrar</value>
+  <data name="LinkOptions" xml:space="preserve">
+    <value>Opciones de enlace</value>
+    <comment>Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="RenameItem" xml:space="preserve">
-    <value>Escriba un nuevo nombre:</value>
+  <data name="Import" xml:space="preserve">
+    <value>Importar</value>
+    <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Save" xml:space="preserve">
-    <value>Guardar</value>
+  <data name="FileUpload" xml:space="preserve">
+    <value>Subir archivo</value>
+    <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
-  <data name="ShareButton" xml:space="preserve">
-    <value>compartir</value>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+    <comment>Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="SingleFile" xml:space="preserve">
-    <value>Archivo</value>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+    <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="SingleFolder" xml:space="preserve">
-    <value>Carpeta</value>
+  <data name="PinLockWatermark" xml:space="preserve">
+    <value>Tu PIN de bloqueo</value>
+    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Tamaño</value>
+  <data name="PinLock" xml:space="preserve">
+    <value>Bloqueo con PIN</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value>No hay transferencias</value>
+  <data name="ConfirmPinLockWatermark" xml:space="preserve">
+    <value>Confirma tu PIN de bloqueo</value>
+    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
   </data>
-  <data name="TermsOfUse" xml:space="preserve">
-    <value>[$6109]</value>
+  <data name="AccountTypeFree" xml:space="preserve">
+    <value>GRATIS</value>
+    <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
   </data>
-  <data name="TrashBinName" xml:space="preserve">
+  <data name="RubbishBinRoot" xml:space="preserve">
     <value>Papelera</value>
+    <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
-  <data name="Upload" xml:space="preserve">
-    <value>Subir</value>
+  <data name="HomeRoot" xml:space="preserve">
+    <value>Inicio</value>
+    <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
-  <data name="UploadFile" xml:space="preserve">
-    <value>Subiendo...</value>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrar sesión</value>
+    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Transfers" xml:space="preserve">
-    <value>Transferencias</value>
+  <data name="On" xml:space="preserve">
+    <value>Activado</value>
+    <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>Cancelada</value>
+  <data name="Off" xml:space="preserve">
+    <value>Desactivado</value>
+    <comment>Label for any 'Off' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Cancelando...</value>
+  <data name="SpecialThankYou" xml:space="preserve">
+    <value>Queremos agradecer especialmente a las siguientes personas o empresas por hacer posible esta aplicación:</value>
+    <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
-  <data name="Transfer_Connecting" xml:space="preserve">
-    <value>Conectando al servidor...</value>
+  <data name="About" xml:space="preserve">
+    <value>Acerca de</value>
+    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>Descargando...</value>
+  <data name="Transfer_Pausing" xml:space="preserve">
+    <value>Pausando</value>
+    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>Error en la transferencia</value>
-  </data>
-  <data name="Transfer_Finished" xml:space="preserve">
-    <value>Finalizada</value>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>Lista</value>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>Subiendo...</value>
-  </data>
-  <data name="Download" xml:space="preserve">
-    <value>Descargar</value>
-  </data>
-  <data name="Settings" xml:space="preserve">
-    <value>Aajustes</value>
-  </data>
-  <data name="CreateShortCut" xml:space="preserve">
-    <value>Crear acceso directo</value>
+  <data name="Transfer_Paused" xml:space="preserve">
+    <value>Pausada</value>
+    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="MultiSelect" xml:space="preserve">
     <value>Selección múltiple</value>
+    <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
+  </data>
+  <data name="CreateShortCut" xml:space="preserve">
+    <value>Crear acceso directo</value>
+    <comment>Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ajustes</value>
+    <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Descargar</value>
+    <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Upload" xml:space="preserve">
+    <value>Subiendo</value>
+    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_NotStarted" xml:space="preserve">
+    <value>No iniciada</value>
+    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Download" xml:space="preserve">
+    <value>Descargando</value>
+    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceling" xml:space="preserve">
+    <value>Cancelando</value>
+    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceled" xml:space="preserve">
+    <value>Cancelada</value>
+    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>Transferencias</value>
+    <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Subir</value>
+    <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Tamaño</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>Carpeta</value>
+    <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>Archivo</value>
+    <comment>Label for any 'File' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+    <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RenameItem" xml:space="preserve">
+    <value>Escriba un nuevo nombre:</value>
+    <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Renombrar</value>
+    <comment>Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eliminar</value>
+    <comment>Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StayLoggedInText" xml:space="preserve">
+    <value>Permanecer conectado</value>
+    <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Actualizar</value>
+    <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+    <comment>Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Vista previa</value>
+    <comment>Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>Abrir enlace</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Siguiente</value>
+    <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NameWatermark" xml:space="preserve">
+    <value>Tu nombre</value>
+    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>Mi cuenta</value>
+    <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>Carpetas</value>
+    <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>Archivos</value>
+    <comment>Label for any 'Files' (multiple files) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Mover</value>
+    <comment>Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MegaShareLinkMessage" xml:space="preserve">
+    <value>Deseo compartir este archivo del servicio en la nube MEGA contigo</value>
+    <comment>Text used as title of the message to share a MEGA link.</comment>
+  </data>
+  <data name="MegaLinkTitle" xml:space="preserve">
+    <value>Enlace MEGA:</value>
+    <comment>Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>Cargando vista previa...</value>
+    <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewLink" xml:space="preserve">
+    <value>Obtener enlace</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyTransfers" xml:space="preserve">
+    <value>No hay transferencias</value>
+    <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>Carpeta vacía</value>
+    <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
+  </data>
+  <data name="EmailWatermark" xml:space="preserve">
+    <value>Tu dirección de e-mail</value>
+    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Nombre de la carpeta:</value>
+    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Crear cuenta</value>
+    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmPasswordWatermark" xml:space="preserve">
+    <value>Confirma tu contraseña</value>
+    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Confirmar cuenta</value>
+    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmar</value>
+    <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CloudDriveName" xml:space="preserve">
+    <value>Disco en la nube</value>
+    <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>Estoy de acuerdo con los</value>
+    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>Añadir carpeta</value>
+    <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NoTransfers" xml:space="preserve">
+    <value>No hay transferencias</value>
+    <comment>Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</comment>
+  </data>
+  <data name="Acknowledgements" xml:space="preserve">
+    <value>Agradecimientos</value>
+    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versión</value>
+    <comment>Text placed just before the version number into the 'about' page - (String as short as possible).</comment>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Términos de Servicio</value>
+    <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Política de privacidad</value>
+    <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AppVersionText" xml:space="preserve">
+    <value>Versión de la aplicación</value>
+    <comment>Text placed just before app version number into the 'about' page.</comment>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Aceptar</value>
+    <comment>Label for any 'Accept' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>Limpiar selección</value>
+    <comment>Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Capture" xml:space="preserve">
+    <value>Capturar</value>
+    <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Uploads" xml:space="preserve">
+    <value>Subidas</value>
+    <comment>Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>Descargas</value>
+    <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StartResumeAll" xml:space="preserve">
+    <value>Reanudar todo</value>
+    <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>Cancelar todo</value>
+    <comment>Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CleanUpTransfers" xml:space="preserve">
+    <value>Limpiar transf.</value>
+    <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
+  </data>
+  <data name="PauseAll" xml:space="preserve">
+    <value>Pausar todo</value>
+    <comment>Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AskDownloadLocationText" xml:space="preserve">
+    <value>Siempre pedir ubicación de descarga</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
+  </data>
+  <data name="DefaultDownloadLocationText" xml:space="preserve">
+    <value>Ubicación de descarga por defecto</value>
+    <comment>Text placed just before a text label into the 'settings' page indicating the default download location.</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Ver</value>
+    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</comment>
+  </data>
+  <data name="Clipboard" xml:space="preserve">
+    <value>Portapapeles</value>
+    <comment>Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ExportPhotoAlbumText" xml:space="preserve">
+    <value>Exportar imáges al álbum 'imágenes guardadas' después de descargar</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
+  </data>
+  <data name="ExportMasterKeyText" xml:space="preserve">
+    <value>Exportar MasterKey</value>
+    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
+  </data>
+  <data name="MakePinLock" xml:space="preserve">
+    <value>Crear un PIN de bloqueo</value>
+    <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePinLock" xml:space="preserve">
+    <value>Cambiar PIN de bloqueo</value>
+    <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="NewPinLockWatermark" xml:space="preserve">
+    <value>Tu nuevo PIN de bloqueo</value>
+    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>Subscribir</value>
+    <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value>Anual</value>
+    <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+    <comment>Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="UsedSpace" xml:space="preserve">
+    <value>Espacio usado</value>
+    <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="Used" xml:space="preserve">
+    <value>Usado</value>
+    <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>Caché</value>
+    <comment>Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>A. de banda</value>
+    <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Libre</value>
+    <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Espacio libre</value>
+    <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>Limpiar caché</value>
+    <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensual</value>
+    <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NoDataToShow" xml:space="preserve">
+    <value>No hay datos
+para mostrar</value>
+    <comment>Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="NoPlansToDisplay" xml:space="preserve">
+    <value>No hay planes para mostrar</value>
+    <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
+  </data>
+  <data name="SortByMenuTitle" xml:space="preserve">
+    <value>Ordenar por</value>
+    <comment>Label used like title for the sort menu.</comment>
+  </data>
+  <data name="SmallestSortOption" xml:space="preserve">
+    <value>El más pequeño</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="FilesDescendingSortOption" xml:space="preserve">
+    <value>Archivos (descendente)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="FilesAscendingSortOption" xml:space="preserve">
+    <value>Archivos (ascendente)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="LargestSortOption" xml:space="preserve">
+    <value>El más grandeme</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
+  </data>
+  <data name="NewestSortOption" xml:space="preserve">
+    <value>El más nuevo</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
+  </data>
+  <data name="NameDescendingSortOption" xml:space="preserve">
+    <value>Nombre (descendente)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="NameAscendingSortOption" xml:space="preserve">
+    <value>Nombre (ascendente)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="OldestSortOption" xml:space="preserve">
+    <value>El más antigüo</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>Selec. carpeta</value>
+    <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
+  </data>
+  <data name="DownloadLocation" xml:space="preserve">
+    <value>Localización de descargas</value>
+    <comment>Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Actualizar cuenta</value>
+    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Añadir</value>
+    <comment>Label for any 'Add' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Hecho</value>
+    <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RubbishBinName" xml:space="preserve">
+    <value>Papelera</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Compartir</value>
+    <comment>Label for any 'Share' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OpenLinkText" xml:space="preserve">
+    <value>Abrir un enlace de descarga MEGA:</value>
+    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Abrir</value>
+    <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iniciar sesión</value>
+    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+    <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Iniciar</value>
+    <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Reanudar</value>
+    <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Pausar</value>
+    <comment>Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelAllTransfers" xml:space="preserve">
+    <value>Cancelar todo</value>
+    <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Uploaded" xml:space="preserve">
+    <value>Subido</value>
+    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Queued" xml:space="preserve">
+    <value>En cola</value>
+    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Downloaded" xml:space="preserve">
+    <value>Descargado</value>
+    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpeed2" xml:space="preserve">
+    <value>comparte archivos rápidamente con todo el mundo.</value>
+    <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed1" xml:space="preserve">
+    <value>las transferencias son rápidas.</value>
+    <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpace2" xml:space="preserve">
+    <value>50 GB de espacio libre.</value>
+    <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
+  </data>
+  <data name="InitTourSpace1" xml:space="preserve">
+    <value>regístrate ahora y obtén</value>
+    <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourPrivacy2" xml:space="preserve">
+    <value>encriptación extremo a extremo.</value>
+    <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourPrivacy1" xml:space="preserve">
+    <value>mantén tus archivos seguros con la MEGA</value>
+    <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
+  </data>
+  <data name="InitTourAccess2" xml:space="preserve">
+    <value>acceso totalmente cifrado</value>
+    <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess3" xml:space="preserve">
+    <value>en cualquier lugar, en cualquier momento.</value>
+    <comment>Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess1" xml:space="preserve">
+    <value>obtén</value>
+    <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed_Title" xml:space="preserve">
+    <value>MEGA velocidad</value>
+    <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpace_Title" xml:space="preserve">
+    <value>MEGA espacio</value>
+    <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourPrivacy_Title" xml:space="preserve">
+    <value>MEGA privacidad</value>
+    <comment>Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourAccess_Title" xml:space="preserve">
+    <value>MEGA acceso</value>
+    <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ayuda</value>
+    <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Avanzado</value>
+    <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
