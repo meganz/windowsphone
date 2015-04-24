@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -117,4 +117,209 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddButton" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>add folder</value>
+  </data>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>MEGA</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>cancel</value>
+  </data>
+  <data name="CloudDriveName" xml:space="preserve">
+    <value>云存储</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>confirm</value>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Confirming account...</value>
+  </data>
+  <data name="ConfirmPasswordWatermark" xml:space="preserve">
+    <value>confirm your password</value>
+  </data>
+  <data name="CopyButton" xml:space="preserve">
+    <value>copy</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Creating account...</value>
+  </data>
+  <data name="CreateAccountTitle" xml:space="preserve">
+    <value>registration</value>
+  </data>
+  <data name="Created" xml:space="preserve">
+    <value>Created:</value>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Creating folder...</value>
+    <comment>Text to show when a folder is created</comment>
+  </data>
+  <data name="CreateNewAccount" xml:space="preserve">
+    <value>Create a new account here</value>
+  </data>
+  <data name="ViewOrginal" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="DownloadNode" xml:space="preserve">
+    <value>Downloading...</value>
+  </data>
+  <data name="EmailWatermark" xml:space="preserve">
+    <value>your e-mail address</value>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>empty folder</value>
+  </data>
+  <data name="EmptyTransfers" xml:space="preserve">
+    <value>没有转让</value>
+  </data>
+  <data name="GetPreviewLink" xml:space="preserve">
+    <value>获取链接</value>
+  </data>
+  <data name="InboxName" xml:space="preserve">
+    <value>收件箱</value>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>加载预览...</value>
+  </data>
+  <data name="LoginText" xml:space="preserve">
+    <value>登陆</value>
+  </data>
+  <data name="MegaLinkTitle" xml:space="preserve">
+    <value>MEGA链接：</value>
+  </data>
+  <data name="MegaShareLinkMessage" xml:space="preserve">
+    <value>我想与大家分享这个MEGA云服务的文件</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>my account</value>
+  </data>
+  <data name="NameWatermark" xml:space="preserve">
+    <value>your name</value>
+  </data>
+  <data name="NewAtMega" xml:space="preserve">
+    <value>New at MEGA? </value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="OpenButton" xml:space="preserve">
+    <value>open</value>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>Open MEGA download link:</value>
+  </data>
+  <data name="OpenLinkAppBar" xml:space="preserve">
+    <value>open link</value>
+  </data>
+  <data name="PasswordWatermark" xml:space="preserve">
+    <value>your password</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>previous</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="RememberMeText" xml:space="preserve">
+    <value>Stay logged in</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>重命名</value>
+  </data>
+  <data name="RenameButton" xml:space="preserve">
+    <value>rename</value>
+  </data>
+  <data name="RenameItem" xml:space="preserve">
+    <value>Type a new name:</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="ShareButton" xml:space="preserve">
+    <value>share</value>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>没有转让</value>
+  </data>
+  <data name="TermsOfUse" xml:space="preserve">
+    <value>[$6109]</value>
+  </data>
+  <data name="TrashBinName" xml:space="preserve">
+    <value>回收站</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Uploading...</value>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>transfers</value>
+  </data>
+  <data name="Transfer_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="Transfer_Canceling" xml:space="preserve">
+    <value>Canceling...</value>
+  </data>
+  <data name="Transfer_Connecting" xml:space="preserve">
+    <value>Connecting server...</value>
+  </data>
+  <data name="Transfer_Download" xml:space="preserve">
+    <value>Downloading...</value>
+  </data>
+  <data name="Transfer_Error" xml:space="preserve">
+    <value>Error on transfer</value>
+  </data>
+  <data name="Transfer_Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="Transfer_NotStarted" xml:space="preserve">
+    <value>Ready</value>
+  </data>
+  <data name="Transfer_Upload" xml:space="preserve">
+    <value>Uploading...</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>36MaxG  <a href=&quot;http://amtvdueqfhaj.com/&quot;>amtvdueqfhaj</a>, [url=http://mrgksvkmkmfv.com/]mrgksvkmkmfv[/url], [link=http://rmhfckpjzile.com/]rmhfckpjzile[/link], http://yckfulrongrp.com/</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>settings</value>
+  </data>
+  <data name="CreateShortCut" xml:space="preserve">
+    <value>Create shortcut</value>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>Multi select</value>
+  </data>
 </root>
