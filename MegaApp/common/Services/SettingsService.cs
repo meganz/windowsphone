@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MegaApp.Resources;
 
 namespace MegaApp.Services
@@ -13,25 +14,47 @@ namespace MegaApp.Services
     {
         public static void SaveSetting<T>(string key, T value)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            if (settings.Contains(key))
-                settings[key] = value;
-            else
-                settings.Add(key, value);
+                if (settings.Contains(key))
+                    settings[key] = value;
+                else
+                    settings.Add(key, value);
 
-            settings.Save();
+                settings.Save();
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                        AppMessages.SaveSettingsFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
         public static void SecureSaveSetting(string key, string value)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            if (settings.Contains(key))
-                settings[key] = CryptoService.EncryptData(value);
-            else
-                settings.Add(key, CryptoService.EncryptData(value));
+                if (settings.Contains(key))
+                    settings[key] = CryptoService.EncryptData(value);
+                else
+                    settings.Add(key, CryptoService.EncryptData(value));
 
-            settings.Save();
+                settings.Save();
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                        AppMessages.SaveSettingsFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
 
         public static T LoadSetting<T>(string key, T defaultValue)
