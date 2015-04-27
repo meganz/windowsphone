@@ -55,57 +55,68 @@ namespace MegaApp.Pages
 
         private async void VideoCanvasOnTap(object sender, GestureEventArgs e)
         {
-            System.Windows.Point uiTapPoint = e.GetPosition(VideoCanvas);
-
-            if (PhotoCaptureDevice.IsFocusRegionSupported(PhotoCaptureDevice.SensorLocation) && _focusSemaphore.WaitOne(0))
+            try
             {
-                // Get tap coordinates as a foundation point
-                var tapPoint = new Windows.Foundation.Point(uiTapPoint.X, uiTapPoint.Y);
+                System.Windows.Point uiTapPoint = e.GetPosition(VideoCanvas);
 
-                double xRatio = VideoCanvas.ActualHeight / PhotoCaptureDevice.PreviewResolution.Width;
-                double yRatio = VideoCanvas.ActualWidth / PhotoCaptureDevice.PreviewResolution.Height;
-
-                // adjust to center focus on the tap point
-                var displayOrigin = new Windows.Foundation.Point(
-                            tapPoint.Y - _focusRegionSize.Width / 2,
-                            (VideoCanvas.ActualWidth - tapPoint.X) - _focusRegionSize.Height / 2);
-
-                // adjust for resolution difference between preview image and the canvas
-                var viewFinderOrigin = new Windows.Foundation.Point(displayOrigin.X / xRatio, displayOrigin.Y / yRatio);
-                var focusrect = new Windows.Foundation.Rect(viewFinderOrigin, _focusRegionSize);
-
-                // clip to preview resolution
-                var viewPortRect = new Windows.Foundation.Rect(0, 0, PhotoCaptureDevice.PreviewResolution.Width,
-                    PhotoCaptureDevice.PreviewResolution.Height);
-                focusrect.Intersect(viewPortRect);
-
-                PhotoCaptureDevice.FocusRegion = focusrect;
-
-                // show a focus indicator
-                FocusIndicator.SetValue(Shape.StrokeProperty, _notFocusedBrush);
-                FocusIndicator.SetValue(Canvas.LeftProperty, uiTapPoint.X - _focusRegionSize.Width / 2);
-                FocusIndicator.SetValue(Canvas.TopProperty, uiTapPoint.Y - _focusRegionSize.Height / 2);
-                FocusIndicator.SetValue(VisibilityProperty, Visibility.Visible);
-
-                CameraFocusStatus status = await PhotoCaptureDevice.FocusAsync();
-
-                if (status == CameraFocusStatus.Locked)
+                if (PhotoCaptureDevice.IsFocusRegionSupported(PhotoCaptureDevice.SensorLocation) && _focusSemaphore.WaitOne(0))
                 {
-                    FocusIndicator.SetValue(Shape.StrokeProperty, _focusedBrush);
-                    _manuallyFocused = true;
-                    PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters,
-                        AutoFocusParameters.Exposure & AutoFocusParameters.Focus & AutoFocusParameters.WhiteBalance);
-                }
-                else
-                {
-                    _manuallyFocused = false;
-                    PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters, AutoFocusParameters.None);
+                    // Get tap coordinates as a foundation point
+                    var tapPoint = new Windows.Foundation.Point(uiTapPoint.X, uiTapPoint.Y);
+
+                    double xRatio = VideoCanvas.ActualHeight / PhotoCaptureDevice.PreviewResolution.Width;
+                    double yRatio = VideoCanvas.ActualWidth / PhotoCaptureDevice.PreviewResolution.Height;
+
+                    // adjust to center focus on the tap point
+                    var displayOrigin = new Windows.Foundation.Point(
+                                tapPoint.Y - _focusRegionSize.Width / 2,
+                                (VideoCanvas.ActualWidth - tapPoint.X) - _focusRegionSize.Height / 2);
+
+                    // adjust for resolution difference between preview image and the canvas
+                    var viewFinderOrigin = new Windows.Foundation.Point(displayOrigin.X / xRatio, displayOrigin.Y / yRatio);
+                    var focusrect = new Windows.Foundation.Rect(viewFinderOrigin, _focusRegionSize);
+
+                    // clip to preview resolution
+                    var viewPortRect = new Windows.Foundation.Rect(0, 0, PhotoCaptureDevice.PreviewResolution.Width,
+                        PhotoCaptureDevice.PreviewResolution.Height);
+                    focusrect.Intersect(viewPortRect);
+
+                    PhotoCaptureDevice.FocusRegion = focusrect;
+
+                    // show a focus indicator
+                    FocusIndicator.SetValue(Shape.StrokeProperty, _notFocusedBrush);
+                    FocusIndicator.SetValue(Canvas.LeftProperty, uiTapPoint.X - _focusRegionSize.Width / 2);
+                    FocusIndicator.SetValue(Canvas.TopProperty, uiTapPoint.Y - _focusRegionSize.Height / 2);
+                    FocusIndicator.SetValue(VisibilityProperty, Visibility.Visible);
+
+                    CameraFocusStatus status = await PhotoCaptureDevice.FocusAsync();
+
+                    if (status == CameraFocusStatus.Locked)
+                    {
+                        FocusIndicator.SetValue(Shape.StrokeProperty, _focusedBrush);
+                        _manuallyFocused = true;
+                        PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters,
+                            AutoFocusParameters.Exposure & AutoFocusParameters.Focus & AutoFocusParameters.WhiteBalance);
+                    }
+                    else
+                    {
+                        _manuallyFocused = false;
+                        PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters, AutoFocusParameters.None);
+                    }
+
+                    _focusSemaphore.Release();
                 }
 
-                _focusSemaphore.Release();
+                await Capture();
             }
-
-            await Capture();
+            catch (Exception exception)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.CaptureVideoFailed, exception.Message),
+                        AppMessages.CaptureVideoFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
 
         /// <summary>
@@ -242,12 +253,23 @@ namespace MegaApp.Pages
         /// </summary>
         private async void OnCaptureClick(object sender, EventArgs e)
         {
-            if (!_manuallyFocused)
+            try
             {
-                await AutoFocus();
-            }
+                if (!_manuallyFocused)
+                {
+                    await AutoFocus();
+                }
 
-            await Capture();
+                await Capture();
+            }
+            catch (Exception exception)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.CapturePhotoFailed, exception.Message),
+                        AppMessages.CapturePhotoFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
 
         /// <summary>
@@ -275,46 +297,57 @@ namespace MegaApp.Pages
         /// </summary>
         private async Task Capture()
         {
-            bool goToPreview = false;
-
-            var selfieBitmap = new BitmapImage();
-
-            if (!_capturing)
+            try
             {
-                _capturing = true;
+                bool goToPreview = false;
 
-                var stream = new MemoryStream();
+                var selfieBitmap = new BitmapImage();
 
-                CameraCaptureSequence sequence = PhotoCaptureDevice.CreateCaptureSequence(1);
-                sequence.Frames[0].CaptureStream = stream.AsOutputStream();
+                if (!_capturing)
+                {
+                    _capturing = true;
 
-                await PhotoCaptureDevice.PrepareCaptureSequenceAsync(sequence);
-                await sequence.StartCaptureAsync();
-                
-                selfieBitmap = new BitmapImage();
-                selfieBitmap.SetSource(stream);
+                    var stream = new MemoryStream();
 
-                _capturing = false;
+                    CameraCaptureSequence sequence = PhotoCaptureDevice.CreateCaptureSequence(1);
+                    sequence.Frames[0].CaptureStream = stream.AsOutputStream();
 
-                // Defer navigation as it will release the camera device and the
-                // following Device calls must still work.
-                goToPreview = true;
+                    await PhotoCaptureDevice.PrepareCaptureSequenceAsync(sequence);
+                    await sequence.StartCaptureAsync();
+
+                    selfieBitmap = new BitmapImage();
+                    selfieBitmap.SetSource(stream);
+
+                    _capturing = false;
+
+                    // Defer navigation as it will release the camera device and the
+                    // following Device calls must still work.
+                    goToPreview = true;
+                }
+
+                _manuallyFocused = false;
+
+                if (PhotoCaptureDevice.IsFocusRegionSupported(PhotoCaptureDevice.SensorLocation))
+                {
+                    PhotoCaptureDevice.FocusRegion = null;
+                }
+
+                FocusIndicator.SetValue(VisibilityProperty, Visibility.Collapsed);
+                PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters, AutoFocusParameters.None);
+
+                if (goToPreview)
+                {
+                    NavigateService.NavigateTo(typeof(PreviewSelfiePage), NavigationParameter.Normal, selfieBitmap);
+                }
             }
-
-            _manuallyFocused = false;
-
-            if (PhotoCaptureDevice.IsFocusRegionSupported(PhotoCaptureDevice.SensorLocation))
+            catch (Exception e)
             {
-                PhotoCaptureDevice.FocusRegion = null;
-            }
-
-            FocusIndicator.SetValue(VisibilityProperty, Visibility.Collapsed);
-            PhotoCaptureDevice.SetProperty(KnownCameraPhotoProperties.LockedAutoFocusParameters, AutoFocusParameters.None);
-
-            if (goToPreview)
-            {
-                NavigateService.NavigateTo(typeof(PreviewSelfiePage), NavigationParameter.Normal, selfieBitmap);
-            }
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    MessageBox.Show(String.Format(AppMessages.CapturePhotoVideoFailed, e.Message),
+                        AppMessages.CapturePhotoVideoFailed_Title, MessageBoxButton.OK);
+                });
+            }            
         }
 
         private async void ShutterKeyPressed(object sender, EventArgs e)
