@@ -24,7 +24,7 @@ namespace MegaApp.Pages
     public partial class SettingsPage : PhoneApplicationPage
     {
         private SettingsViewModel _settingsViewModel;
-
+        
         public SettingsPage()
         {
             _settingsViewModel = new SettingsViewModel(App.MegaSdk, App.AppInformation);

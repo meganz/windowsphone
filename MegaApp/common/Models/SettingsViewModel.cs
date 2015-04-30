@@ -11,6 +11,7 @@ using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -42,6 +43,8 @@ namespace MegaApp.Models
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
             #endif
+
+            UpdateUserData();
 
             InitializeMenu(HamburgerMenuItemType.Settings);
         }

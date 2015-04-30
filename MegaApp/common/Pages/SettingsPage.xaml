@@ -172,15 +172,20 @@
             </Grid.RowDefinitions>
             <Grid Height="100" Margin="0,66,0,64">
                 <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
-                    <Grid HorizontalAlignment="Left" Width="420">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <Ellipse Grid.Column="0" Fill="#FF404040" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0"/>
-                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-                            <TextBlock Text="First Last" FontFamily="Segoe WP" FontSize="30"/>
-                            <TextBlock Text="{Binding UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20"/>
+                        <Image x:Name="ImgAvatarMenu" Source="{Binding UserData.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />
+                            </Image.Clip>
+                        </Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
+                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20"/>
                         </StackPanel>
                     </Grid>
                 </Button>

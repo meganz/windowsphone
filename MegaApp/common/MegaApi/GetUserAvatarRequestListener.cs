@@ -4,25 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
     class GetUserAvatarRequestListener : BaseRequestListener
     {
-        private readonly AccountDetailsViewModel _accountDetails;
+        private readonly UserDataViewModel _userData;
 
-        public GetUserAvatarRequestListener(AccountDetailsViewModel accountDetails)
+        public GetUserAvatarRequestListener(UserDataViewModel userData)
         {
-            _accountDetails = accountDetails;
+            _userData = userData;
         }
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetAccountDetails; }
+            get { return ProgressMessages.GetUserData; }
         }
 
         protected override bool ShowProgressMessage
@@ -32,12 +34,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.GetAccountDetailsFailed; }
+            get { return AppMessages.GetUserDataFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.GetAccountDetailsFailed_Title; }
+            get { return AppMessages.GetUserDataFailed_Title; }
         }
 
         protected override bool ShowErrorMessage
@@ -89,18 +91,24 @@ namespace MegaApp.MegaApi
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
+
             if(e.getErrorCode() == MErrorType.API_OK)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _accountDetails.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
+                    _userData.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
                 });
             }
             else
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _accountDetails.AvatarUri = null;
+                    _userData.AvatarUri = null;
                 });
             }
         }

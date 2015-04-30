@@ -23,17 +23,17 @@ namespace MegaApp.Models
             InitializeMenu(HamburgerMenuItemType.MyAccount);
 
             AccountDetails = new AccountDetailsViewModel {UserEmail = megaSdk.getMyEmail()};
-            if (!File.Exists(AvatarPath)) return;
-            AccountDetails.AvatarUri = new Uri(AvatarPath);
+            if (!File.Exists(AccountDetails.AvatarPath)) return;
+            AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);
         }
 
         #region Methods
 
         public void GetAccountDetails()
         {
-            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));            
-            MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
-            //MegaSdk.getUserData(MegaSdk.getContact(MegaSdk.getMyEmail()), new GetUserDataRequestListener(AccountDetails));
+            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
+            MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
+            MegaSdk.getUserData(new GetUserDataRequestListener(AccountDetails));
         }
 
         public void GetPricing()
@@ -58,7 +58,6 @@ namespace MegaApp.Models
         #region Properties
 
         private AccountDetailsViewModel _accountDetails;
-
         public AccountDetailsViewModel AccountDetails
         {
             get { return _accountDetails; }
@@ -69,14 +68,14 @@ namespace MegaApp.Models
             }
         }
 
-        private string AvatarPath
+        /*private string AvatarPath
         {
             get
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory, "UserAvatarImage");
             }
-        }
+        }*/
 
         #endregion
 

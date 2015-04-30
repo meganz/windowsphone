@@ -26,6 +26,9 @@ namespace MegaApp.Models
             :base(megaSdk, appInformation)
         {
             InitializeModel();
+
+            UpdateUserData();
+
             InitializeMenu(HamburgerMenuItemType.CloudDrive);
         }
 
@@ -53,7 +56,7 @@ namespace MegaApp.Models
 
             // TODO Refactor
             //ShortCutHandle = null;
-            this.MegaSdk.fetchNodes(new FetchNodesRequestListener(this));
+            this.MegaSdk.fetchNodes(new FetchNodesRequestListener(this));            
         }
 
         public void ChangeMenu(FolderViewModel currentFolderViewModel, IList iconButtons, IList menuItems)
