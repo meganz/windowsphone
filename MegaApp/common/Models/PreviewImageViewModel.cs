@@ -1,63 +1,34 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using Windows.Networking.Connectivity;
-using Windows.Phone.System.Memory;
-using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.MegaApi;
 using MegaApp.Resources;
-using MegaApp.Services;
-using Microsoft.Phone.Notification;
-using Microsoft.Phone.Reactive;
 using Microsoft.Phone.Shell;
-using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {
-    class PreviewImageViewModel : BaseSdkViewModel
+    class PreviewImageViewModel : BaseAppInfoAwareViewModel
     {
-        public PreviewImageViewModel(MegaSDK megaSdk, CloudDriveViewModel cloudDriveViewModel)
-            : base(megaSdk)
+        public PreviewImageViewModel(MegaSDK megaSdk, AppInformation appInformation, FolderViewModel folder)
+            : base(megaSdk, appInformation)
         {
             PreviewItems = new ObservableCollection<ImageNodeViewModel>(
-                cloudDriveViewModel.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
+                folder.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
 
-            cloudDriveViewModel.ChildNodes.CollectionChanged += CloudDriveNodesOnCollectionChanged;
+            folder.ChildNodes.CollectionChanged += (sender, args) =>
+            {
+                if (args.Action != NotifyCollectionChangedAction.Remove) return;
+
+                var removedNode = (NodeViewModel)args.OldItems[0];
+
+                PreviewItems.Remove(PreviewItems.FirstOrDefault(n => n.OriginalMNode.getBase64Handle() ==
+                    removedNode.OriginalMNode.getBase64Handle()));
+            };
         }
-
-        private void CloudDriveNodesOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action != NotifyCollectionChangedAction.Remove) return;
-            var removedNode = (NodeViewModel) e.OldItems[0];
-            PreviewItems.Remove(PreviewItems.FirstOrDefault(n=> n.OriginalMNode.getBase64Handle() ==
-                removedNode.OriginalMNode.getBase64Handle()));
-        }
-
-        #region Methods
-
-        public void TranslateAppBar(IList iconButtons, IList menuItems)
-        {
-            ((ApplicationBarIconButton)iconButtons[0]).Text = UiResources.Previous.ToLower();
-            ((ApplicationBarIconButton)iconButtons[1]).Text = UiResources.Download.ToLower();
-            ((ApplicationBarIconButton)iconButtons[2]).Text = UiResources.GetPreviewLink.ToLower();
-            ((ApplicationBarIconButton)iconButtons[3]).Text = UiResources.Next.ToLower();
-
-            ((ApplicationBarMenuItem)menuItems[0]).Text = UiResources.Rename.ToLower();
-            ((ApplicationBarMenuItem)menuItems[1]).Text = UiResources.Remove.ToLower();
-        }
-
-        #endregion
 
         #region Properties
 

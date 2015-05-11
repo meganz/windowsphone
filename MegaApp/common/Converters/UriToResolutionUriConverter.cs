@@ -13,7 +13,8 @@ namespace MegaApp.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
-                return new Uri("/Assets/FileTypes/ListView/" + ImageService.GetDefaultFileImage(String.Empty));
+                //return new Uri("/Assets/FileTypes/ListView/" + ImageService.GetDefaultFileImage(String.Empty));
+                return null;
 
             if (System.Convert.ToString(value).Contains(@"file:///")) return value;
 

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
 using mega;
@@ -92,7 +91,7 @@ namespace MegaApp.Pages
             }
         }
         
-        private bool validActiveAndOnlineSession()
+        private bool ValidActiveAndOnlineSession()
         {
             if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                 return false;
@@ -671,17 +670,16 @@ namespace MegaApp.Pages
             
             _mainPageViewModel.ActiveFolderView.FocusedNode = null;
 
-            if (_mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
+            if (_mainPageViewModel.ActiveFolderView.SelectedNodes != null && 
+                _mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
             {
                 foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
                 {
                     node.DisplayMode = NodeDisplayMode.Normal;
                 }
+                _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
             }
-
-            _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
-            }
-
+        }
 
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
@@ -719,9 +717,9 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            MoveItemTapAction();
+            this.MoveItemTapAction();
           
-            SetApplicationBarData();
+            this.SetApplicationBarData();
         }
 
         private void MoveItemTapAction()

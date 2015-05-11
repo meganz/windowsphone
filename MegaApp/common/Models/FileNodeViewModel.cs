@@ -43,7 +43,7 @@ namespace MegaApp.Models
             }
             else
             {
-                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+                this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
             }
         }
 

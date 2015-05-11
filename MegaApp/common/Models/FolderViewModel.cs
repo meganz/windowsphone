@@ -1,4 +1,12 @@
-﻿using System;
+﻿using mega;
+using MegaApp.Classes;
+using MegaApp.Enums;
+using MegaApp.Interfaces;
+using MegaApp.MegaApi;
+using MegaApp.Pages;
+using MegaApp.Resources;
+using MegaApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -8,19 +16,14 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Windows.Storage;
-using mega;
-using MegaApp.Classes;
-using MegaApp.Enums;
-using MegaApp.Interfaces;
-using MegaApp.MegaApi;
-using MegaApp.Pages;
-using MegaApp.Resources;
-using MegaApp.Services;
 using Telerik.Windows.Controls;
+using Windows.Storage;
 
 namespace MegaApp.Models
 {
+    /// <summary>
+    /// Class that handles all process and operations of a section that contains MEGA nodes
+    /// </summary>
     public class FolderViewModel : BaseAppInfoAwareViewModel, IBreadCrumb
 	{
 		public FolderViewModel(MegaSDK megaSdk, AppInformation appInformation, ContainerType containerType)
@@ -35,6 +38,11 @@ namespace MegaApp.Models
 			this.BreadCrumbs = new ObservableCollection<IMegaNode>();
 
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
+            this.GetLinkCommand = new DelegateCommand(this.GetLink);
+            this.RenameItemCommand = new DelegateCommand(this.RenameItem);
+            this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
+            this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+            this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
 
 			SetViewDefaults();
 
@@ -52,20 +60,32 @@ namespace MegaApp.Models
 		            throw new ArgumentOutOfRangeException("containerType");
 		    }
 		}
-
+        
         #region Commands
-
-        public ICommand ChangeViewCommand { get; set; }
+        
+        public ICommand ChangeViewCommand { get; private set; }
+        public ICommand GetLinkCommand { get; private set; }
+        public ICommand RenameItemCommand { get; private set; }
+        public ICommand RemoveItemCommand { get; private set; }
+        public ICommand DownloadItemCommand { get; private set; }
+        public ICommand CreateShortCutCommand { get; private set; }
 
         #endregion
 
         #region Public Methods
 
+        /// <summary>
+        /// Returns boolean value to indicatie if the current folder view has any child nodes
+        /// </summary>
+        /// <returns>True if there are child nodes, False if child node count is zero</returns>
         public bool HasChildNodes()
         {
             return ChildNodes.Count > 0;
         }
 
+        /// <summary>
+        /// Load the mega nodes for this specific folder using the Mega SDK
+        /// </summary>
         public void LoadChildNodes()
 		{
 			// User must be online to perform this operation
@@ -127,12 +147,18 @@ namespace MegaApp.Models
 			}, LoadingCancelToken, TaskCreationOptions.PreferFairness, TaskScheduler.Current);
 		}
 
+        /// <summary>
+        /// Cancel any running load process of this folder
+        /// </summary>
 		public void CancelLoad()
 		{
 			if (this.LoadingCancelTokenSource != null && LoadingCancelToken.CanBeCanceled) 
 				LoadingCancelTokenSource.Cancel();
 		}
 
+        /// <summary>
+        /// Refresh the current folder. Delete cached thumbnails and reload the nodes
+        /// </summary>
 	    public void Refresh()
 	    {
             FileService.ClearFiles(
@@ -208,8 +234,6 @@ namespace MegaApp.Models
         public void DownloadLink(MNode publicNode)
         {
             // Create a temporary DownloadNodeViewModel from the public Node created from the link
-            //this.NoFolderUpAction = true;
-            //PublicNode = publicNode;
             var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode);
             downloadNode.Download(App.MegaTransfers);            
         }
@@ -221,6 +245,7 @@ namespace MegaApp.Models
 				case MNodeType.TYPE_UNKNOWN:
 					break;
 				case MNodeType.TYPE_FILE:
+			        ProcessFileNode(node);
 					break;
 				case MNodeType.TYPE_FOLDER:
 					BrowseToFolder(node);
@@ -360,6 +385,16 @@ namespace MegaApp.Models
 
 			LoadChildNodes();
 		}
+
+        public void ProcessFileNode(IMegaNode node)
+        {
+            this.FocusedNode = node;
+
+            if (node.IsImage)
+                NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this);
+            else
+                this.FocusedNode.Download(App.MegaTransfers);
+        }
 
         public async void MultipleDownload(StorageFolder downloadFolder = null)
         {
@@ -546,7 +581,34 @@ namespace MegaApp.Models
             }
         }
 
-		private void SetProgressIndication(bool onOff, string busyText = null)
+        private void GetLink(object obj)
+        {
+            this.FocusedNode.GetLink();
+        }
+
+        private void RenameItem(object obj)
+        {
+            this.FocusedNode.Rename();
+        }
+
+        private void RemoveItem(object obj)
+        {
+            this.FocusedNode.Remove(false);
+        }
+
+        private void DownloadItem(object obj)
+        {
+            this.FocusedNode.Download(App.MegaTransfers);
+        }
+
+        private void CreateShortCut(object obj)
+        {
+            var folderNode = this.FocusedNode as FolderNodeViewModel;
+            if (folderNode == null) return;
+            folderNode.CreateShortCut();
+        }
+
+        private void SetProgressIndication(bool onOff, string busyText = null)
 		{
             OnUiThread(() =>
             {

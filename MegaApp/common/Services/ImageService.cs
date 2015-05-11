@@ -101,7 +101,12 @@ namespace MegaApp.Services
             }
         }
 
-        public static Uri GetDefaultFileImage(string filename)
+        /// <summary>
+        /// Get the vector Path data for a specific filetype extension
+        /// </summary>
+        /// <param name="filename">filename to extract extension and retrieve vector data</param>
+        /// <returns>vector data string</returns>
+        public static string GetDefaultFileTypePathData(string filename)
         {
             string fileExtension;
 
@@ -111,11 +116,11 @@ namespace MegaApp.Services
             }
             catch (Exception)
             {
-                return new Uri("generic" + GetResolutionExtension() + ".png", UriKind.Relative);
+                return VisualResources.FileTypePath_generic;
             }
             
             if (String.IsNullOrEmpty(fileExtension) || String.IsNullOrWhiteSpace(fileExtension))
-                return new Uri("generic" + GetResolutionExtension() + ".png", UriKind.Relative);
+                return VisualResources.FileTypePath_generic;
 
             switch (fileExtension.ToLower())
             {
@@ -124,21 +129,21 @@ namespace MegaApp.Services
                 case ".max":
                 case ".obj":
                     {
-                        return new Uri("3d" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_3d;
                     }
                 case ".aep":
                 case ".aet":
                     {
-                        return new Uri("aftereffects" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_aftereffects;
                     }
                 case ".dxf":
                 case ".dwg":
                     {
-                        return new Uri("cad" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_cad;
                     }
                 case ".dwt":
                     {
-                        return new Uri("dreamweaver" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_dreamweaver;
                     }
                 case ".accdb":
                 case ".sql":
@@ -147,7 +152,7 @@ namespace MegaApp.Services
                 case ".mdb":
                 case ".pdb":
                     {
-                        return new Uri("database" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_data;
                     }
                 case ".exe":
                 case ".com":
@@ -158,24 +163,25 @@ namespace MegaApp.Services
                 case ".cmd":
                 case ".gadget":
                     {
-                        return new Uri("executable" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_executable;
                     }
                 case ".as":
                 case ".asc":
                 case ".ascs":
                     {
-                        return new Uri("fla_lang" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_fla_lang;
                     }
                 case ".fla":
                     {
-                        return new Uri("flash" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_flash;
                     }
                 case ".fnt":
                 case ".otf":
                 case ".ttf":
                 case ".fon":
                     {
-                        return new Uri("font" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO FONT PATH??
+                        return VisualResources.FileTypePath_generic;
                     }
                 case ".bmp":
                 case ".gif":
@@ -185,61 +191,62 @@ namespace MegaApp.Services
                 case ".png":
                 case ".ico":
                     {
-                        return new Uri("graphic" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_graphic;
                     }
                 case ".gpx":
                 case ".kml":
                 case ".kmz":
                     {
-                        return new Uri("gis" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_gis;
                     }
                 case ".html":
                 case ".htm":
                 case ".dhtml":
                 case ".xhtml":
                     {
-                        return new Uri("html" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_html;
                     }
                 case ".ai":
                 case ".ait":
                     {
-                        return new Uri("illustrator" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_illustrator;
                     }
                 case ".indd":
                     {
-                        return new Uri("indesign" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_indesign;
                     }
                 case ".jar":
                 case ".java":
                 case ".class":
                     {
-                        return new Uri("java" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_java;
                     }
                 case ".midi":
                 case ".mid":
                     {
-                        return new Uri("midi" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_midi;
                     }
                 case ".abr":
                 case ".psb":
                 case ".psd":
                     {
-                        return new Uri("photoshop" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_photoshop;
                     }
                 case ".pls":
                 case ".m3u":
                 case ".asx":
                     {
-                        return new Uri("playlist" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_playlist;
                     }
                 case ".pcast":
                     {
-                        return new Uri("podcast" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO PODCAST PATH??
+                        return VisualResources.FileTypePath_generic;
                     }
                 case ".prproj":
                 case ".ppj":
                     {
-                        return new Uri("premiere" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_premiere;
                     }
                 case ".3fr":
                 case ".arw":
@@ -257,13 +264,15 @@ namespace MegaApp.Services
                 case ".orf":
                 case ".rwl":
                     {
-                        return new Uri("raw" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO RAW PATH
+                        return VisualResources.FileTypePath_generic;
                     }
                 case ".rm":
                 case ".ra":
                 case ".ram":
                     {
-                        return new Uri("real_audio" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO REAL AUDIO PATH DATA??
+                        return VisualResources.FileTypePath_audio;
                     }
                 case ".sh":
                 case ".c":
@@ -276,15 +285,15 @@ namespace MegaApp.Services
                 case ".cs":
                 case ".vb":
                     {
-                        return new Uri("sourcecode" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_sourcecode;
                     }
                 case ".torrent":
                     {
-                        return new Uri("torrent" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_torrent;
                     }
                 case ".vcf":
                     {
-                        return new Uri("vcard" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_vcard;
                     }
                 case ".mkv":
                 case ".webm":
@@ -298,22 +307,23 @@ namespace MegaApp.Services
                 case ".asf":
                 case ".wmv":
                     {
-                        return new Uri("video" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO VIDEO PATH DATA??
+                        return VisualResources.FileTypePath_video_vob;
                     }
                 case ".srt":
                     {
-                        return new Uri("video_subtitle" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_video_subtitle;
                     }
                 case ".vob":
                     {
-                        return new Uri("video_vob" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_video_vob;
                     }
                 case ".xml":
                 case ".shtml":
                 case ".js":
                 case ".css":
                     {
-                        return new Uri("web_data" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_web_data;
                     }
                 case ".php":
                 case ".php3":
@@ -327,26 +337,27 @@ namespace MegaApp.Services
                 case ".cgi":
                 case ".py":
                     {
-                        return new Uri("web_lang" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_web_lang;
                     }
                 case ".doc":
                 case ".docx":
                 case ".dotx":
                 case ".wps":
                     {
-                        return new Uri("word" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_word;
                     }
                 case ".eps":
                 case ".svg":
                 case ".svgz":
                 case ".cdr":
                     {
-                        return new Uri("vector" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_vector;
                     }
                 case ".jpg":
                 case ".jpeg":
                     {
-                        return new Uri("image" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        // TODO IMAGE PATH DATA??
+                        return VisualResources.FileTypePath_generic;
                     }
                 case ".mp3":
                 case ".wav":
@@ -358,21 +369,21 @@ namespace MegaApp.Services
                 case ".m4a":
                 case ".wma":
                     {
-                        return new Uri("audio" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_audio;
                     }
                 case ".pdf":
                     {
-                        return new Uri("pdf" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_pdf;
                     }
                 case ".ppt":
                 case ".pptx":
                 case ".pps":
                     {
-                        return new Uri("powerpoint" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_powerpoint;
                     }
                 case ".swf":
                     {
-                        return new Uri("swf" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_swf;
                     }
                 case ".txt":
                 case ".rtf":
@@ -382,14 +393,14 @@ namespace MegaApp.Services
                 case ".odt":
                 case ".wpd":
                     {
-                        return new Uri("text" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_text;
                     }
                 case ".xls":
                 case ".xlsx":
                 case ".xlt":
                 case ".xltm":
                     {
-                        return new Uri("excel" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_excel;
                     }
                 case ".zip":
                 case ".rar":
@@ -401,11 +412,11 @@ namespace MegaApp.Services
                 case ".7z":
                 case ".sitx":
                     {
-                        return new Uri("compressed" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_compressed;
                     }
                 default:
                     {
-                        return new Uri("generic" + GetResolutionExtension() + ".png", UriKind.Relative);
+                        return VisualResources.FileTypePath_generic;
                     }
             }
         }

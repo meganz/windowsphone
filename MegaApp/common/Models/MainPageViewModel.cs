@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Interfaces;
 using MegaApp.MegaApi;
-using MegaApp.Pages;
 using MegaApp.Resources;
-using MegaApp.Services;
 using Microsoft.Phone.Shell;
-using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {

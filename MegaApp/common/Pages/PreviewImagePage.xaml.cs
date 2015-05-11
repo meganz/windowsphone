@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -17,25 +19,20 @@ namespace MegaApp.Pages
   
     public partial class PreviewImagePage : PhoneApplicationPage
     {
-        private readonly PreviewImageViewModel _previewImageViewModel;
+        private PreviewImageViewModel _previewImageViewModel;
         private Timer _overlayTimer;
 
         public PreviewImagePage()
         {
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.CloudDrive);
-            this.DataContext = _previewImageViewModel;
-            _previewImageViewModel.SelectedPreview = (ImageNodeViewModel) App.CloudDrive.FocusedNode;
-            
             InitializeComponent();
 
-            ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
-
-            _previewImageViewModel.TranslateAppBar(ApplicationBar.Buttons, ApplicationBar.MenuItems);
+            this.ApplicationBar = (ApplicationBar) Resources["PreviewApplicationBar"];
 
             if(AppService.IsLowMemoryDevice())
                 SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
 
             if (!DebugService.DebugSettings.IsDebugMode || !DebugService.DebugSettings.ShowMemoryInformation) return;
+            
             MemoryControl.Visibility = Visibility.Visible;
             MemoryControl.StartMemoryCounter();
         }
@@ -63,6 +60,21 @@ namespace MegaApp.Pages
                 }
                 return;
             }
+
+            var folder = NavigateService.GetNavigationData<FolderViewModel>();
+
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, folder)
+            {
+                SelectedPreview = (ImageNodeViewModel) folder.FocusedNode
+            };
+            _previewImageViewModel.TranslateAppBarItems(
+                        ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
+                        ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                        new[] { UiResources.Previous, UiResources.Download, UiResources.GetPreviewLink, UiResources.Next.ToLower() },
+                        new[] { UiResources.Rename, UiResources.Remove });
+            
+            this.DataContext = _previewImageViewModel;
+
             base.OnNavigatedTo(e);
         }
         #endif

@@ -144,13 +144,18 @@ namespace MegaApp.Interfaces
         /// A true/false value if the current thumbnail of the node is the default thumbnail image
         /// for that file/folder type
         /// </summary>
-        bool IsThumbnailDefaultImage { get; set; }
+        bool IsDefaultImage { get; set; }
 
         /// <summary>
         /// The uniform resource identifier of the current thumbnail for this node
         /// Could be a default file/folder type image or a thumbnail preview of the real picture
         /// </summary>
         Uri ThumbnailImageUri { get; set; }
+
+        /// <summary>
+        /// Vector data that represents the default image for a specific filetype / folder
+        /// </summary>
+        string DefaultImagePathData { get; set; }
 
         /// <summary>
         /// The TransferObjectModel that controls upload and download transfers of this node
