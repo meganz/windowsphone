@@ -48,13 +48,13 @@ namespace MegaApp.Models
 
             if (FileService.FileExists(ThumbnailPath))
             {
-                this.IsThumbnailDefaultImage = false;
+                this.IsDefaultImage = false;
                 this.ThumbnailImageUri = new Uri(ThumbnailPath);
         }
             else
             {
-                this.IsThumbnailDefaultImage = true;
-                this.ThumbnailImageUri = ImageService.GetDefaultFileImage(this.Name);
+                this.IsDefaultImage = true;
+                this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
             }
         }
 
@@ -228,7 +228,7 @@ namespace MegaApp.Models
         {
             if (this.Type == MNodeType.TYPE_FOLDER) return;
 
-            if (this.ThumbnailImageUri != null && !IsThumbnailDefaultImage) return;
+            if (this.ThumbnailImageUri != null && !IsDefaultImage) return;
             
             if (this.IsImage || this.OriginalMNode.hasThumbnail())
             {
@@ -242,11 +242,7 @@ namespace MegaApp.Models
         public string Name
         {
             get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged("Name");
-            }
+            set { SetField(ref _name, value); }
         }
 
         public string CreationTime { get; private set; }
@@ -265,11 +261,7 @@ namespace MegaApp.Models
         public string Information
         {
             get { return _information; }
-            set
-            {
-                _information = value;
-                OnPropertyChanged("Information");
-            }
+            set { SetField(ref _information, value); }
         }
 
         public ulong Handle { get; set; }
@@ -286,22 +278,14 @@ namespace MegaApp.Models
         public NodeDisplayMode DisplayMode
         {
             get { return _displayMode; }
-            set
-            {
-                _displayMode = value;
-                OnPropertyChanged("DisplayMode");
-            }
+            set { SetField(ref _displayMode, value); }
         }
 
         private bool _isMultiSelected;
         public bool IsMultiSelected
         {
             get { return _isMultiSelected; }
-            set
-            {
-                _isMultiSelected = value;
-                OnPropertyChanged("IsMultiSelected");
-            }
+            set { SetField(ref _isMultiSelected, value); }
         }
 
         public bool IsImage
@@ -309,17 +293,25 @@ namespace MegaApp.Models
             get { return ImageService.IsImage(this.Name); }
         }
 
-        public bool IsThumbnailDefaultImage { get; set; }
+        private bool _IsDefaultImage;
+        public bool IsDefaultImage
+        {
+            get { return _IsDefaultImage; }
+            set { SetField(ref _IsDefaultImage, value); }
+        }
 
         private Uri _thumbnailImageUri;
         public Uri ThumbnailImageUri
         {
             get { return _thumbnailImageUri; }
-            set
+            set { SetField(ref _thumbnailImageUri, value); }
+        }
+
+        private string _defaultImagePathData;
+        public string DefaultImagePathData
         {
-                _thumbnailImageUri = value;
-                OnPropertyChanged("ThumbnailImageUri");
-            }
+            get { return _defaultImagePathData; }
+            set { SetField(ref _defaultImagePathData, value); }
         }
 
         public TransferObjectModel Transfer { get; set; }

@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using mega;
+﻿using mega;
 using MegaApp.Classes;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
-using MegaApp.Services;
+using System;
+using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Media;
+using System.Windows.Shapes;
+using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
 {
@@ -17,8 +20,12 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
         {
             SetFolderInfo();
-            this.IsThumbnailDefaultImage = true;
-            this.ThumbnailImageUri = new Uri("folder" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+            
+            this.IsDefaultImage = true;
+            this.DefaultImagePathData = VisualResources.FolderTypePath_default;
+
+            if (!megaNode.getName().ToLower().Equals("camera uploads")) return;
+            this.DefaultImagePathData = VisualResources.FolderTypePath_photo;
         }
 
         #region Override Methods
@@ -40,6 +47,41 @@ namespace MegaApp.Models
             this.Information = String.Format("{0} {1} | {2} {3}",
                 childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
                 childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
+        }
+
+        public void CreateShortCut()
+        {
+            var iconPath = new Path()
+            {
+                Height = 150,
+                Width = 150,
+                Stretch = Stretch.Uniform,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Fill = new SolidColorBrush(Colors.White)
+            };
+            
+            // You cannot set the Data property of a Path object direct to a string source
+            // The data property is of type Geometry
+            // You need data binding to bind a string to the Geometry DataProperty
+            var binding = new Binding
+            {
+                Source = this.DefaultImagePathData,
+                Mode = BindingMode.OneWay,
+            };
+            BindingOperations.SetBinding(iconPath, Path.DataProperty, binding);
+
+            var shortCutTile = new RadIconicTileData()
+            {
+                IconVisualElement = iconPath,
+                SmallIconVisualElement = iconPath,
+                MeasureMode = MeasureMode.Tile,
+                Title = this.Name
+            };
+
+            LiveTileHelper.CreateOrUpdateTile(shortCutTile,
+                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + this.OriginalMNode.getHandle(), UriKind.Relative),
+                false);
         }
 
         #endregion

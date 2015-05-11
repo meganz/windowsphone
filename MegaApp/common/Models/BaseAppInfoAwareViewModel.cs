@@ -156,14 +156,14 @@ namespace MegaApp.Models
             {
                 if (iconStrings[i] == null) throw new IndexOutOfRangeException("iconStrings");
 
-                iconButtons[i].Text = iconStrings[i]; 
+                iconButtons[i].Text = iconStrings[i].ToLower(); 
             }
 
             for (var i = 0; i < menuItems.Count; i++)
             {
                 if (menuStrings[i] == null) throw new IndexOutOfRangeException("menuStrings");
 
-                menuItems[i].Text = menuStrings[i];
+                menuItems[i].Text = menuStrings[i].ToLower();
             }
         }
 

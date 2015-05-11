@@ -72,10 +72,15 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0">
+                <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Path.Fill>
+                </Path>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Image.Source>
                         <BitmapImage 
-        					UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+        					UriSource="{Binding ThumbnailImageUri}"
         					DecodePixelHeight="64"
         					DecodePixelType="Logical"
         					CreateOptions="BackgroundCreation, DelayCreation"
@@ -102,30 +107,11 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <!--<Rectangle Fill="{StaticResource PhoneForegroundBrush}" Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,12,0" Grid.RowSpan="2">
-                    <Rectangle.OpacityMask>
-                        <ImageBrush Stretch="UniformToFill">
-                            <ImageBrush.ImageSource>
-                                <BitmapImage 
-							        UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
-                                    DecodePixelHeight="64"							
-							        DecodePixelType="Logical"
-							        CreateOptions="BackgroundCreation, DelayCreation"
-                                 />
-                            </ImageBrush.ImageSource>
-                        </ImageBrush>
-                    </Rectangle.OpacityMask>
-                </Rectangle>-->
-                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0" >
-                    <Image.Source>
-                        <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
-                            DecodePixelHeight="64"							
-							DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation, DelayCreation"
-                        />
-                    </Image.Source>
-                </Image>
+                <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Path.Fill>
+                </Path>
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
@@ -155,21 +141,16 @@
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                 </Grid>
             </Border>
-            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="128" Width="128">
-                <Image.Source>
-                    <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
-                            DecodePixelHeight="128"
-                            DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation, DelayCreation"
-                        />
-                </Image.Source>
-            </Image>
+            <Path Grid.Row="0" Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" Stretch="Uniform">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
             <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
         </Grid>
     </DataTemplate>
@@ -197,16 +178,11 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="64" Width="64">
-                <Image.Source>
-                    <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
-                            DecodePixelHeight="64"
-                            DecodePixelType="Logical"
-							CreateOptions="BackgroundCreation, DelayCreation"
-                        />
-                </Image.Source>
-            </Image>
+            <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Stretch="Uniform">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
@@ -232,15 +208,20 @@
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                 </Grid>
             </Border>
-            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image Stretch="UniformToFill" Height="128" Width="128">
+            <Path Grid.Row="0" Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+            <Image Grid.Row="0" Stretch="UniformToFill" Height="128" Width="128" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Image.Source>
                     <BitmapImage 
-							UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+							UriSource="{Binding ThumbnailImageUri}"
                             DecodePixelHeight="128"
                             DecodePixelType="Logical"
 							CreateOptions="BackgroundCreation, DelayCreation"
@@ -274,10 +255,15 @@
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="64" Height="64">
+            <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" Width="64" Height="64" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="64" Height="64" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Image.Source>
                     <BitmapImage 
-						UriSource="{Binding ThumbnailImageUri, ConverterParameter=1, Converter={StaticResource UriToResolutionUriConverter}}"
+						UriSource="{Binding ThumbnailImageUri}"
 						DecodePixelHeight="64"
 						DecodePixelType="Logical"
 						CreateOptions="BackgroundCreation, DelayCreation"
@@ -289,20 +275,31 @@
 
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
-            <TextBlock x:Name="txtEmptyText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EmptyFolder, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,300,0,0" />
-            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/folder_empty.png" Opacity="0.3" Width="256" Height="256"/>
+            <Path Data="{Binding LocalizedVisualResources.EmptyFolderPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="208" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListLoadingContent">
         <Grid>
-            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/init_loading.png" Opacity="0.3" Width="256" Height="256"/>
+            <Path Data="{Binding LocalizedVisualResources.FolderLoadingPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="248" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaNodeListCloudDriveEmptyContent">
         <Grid>
-            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/Images/cloud drive empty.png" Opacity="0.3" Width="256" Height="256"/>
+            <Path Data="{Binding LocalizedVisualResources.EmptyCloudDrivePathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="286" Height="198" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
@@ -485,7 +482,11 @@
 
     <DataTemplate x:Key="PivotMegaHeaderTemplate">
         <Grid>
-            <TextBlock Text="{Binding}" FontFamily="Segoe WP SemiLight" Foreground="White" FontSize="40" />
+            <TextBlock Text="{Binding}" FontFamily="Segoe WP SemiLight" FontSize="40" >
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </TextBlock.Foreground>
+            </TextBlock>
         </Grid>
     </DataTemplate>
 

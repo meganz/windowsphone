@@ -88,7 +88,7 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                     {
-                        ThumbnailUri = ImageService.GetDefaultFileImage(SelectedNode.Name);
+                        FileTypePathData = ImageService.GetDefaultFileTypePathData(SelectedNode.Name);
                         if (FileService.FileExists(SelectedNode.ThumbnailPath))
                         {
                             ThumbnailUri = new Uri(SelectedNode.ThumbnailPath); ;
@@ -100,7 +100,7 @@ namespace MegaApp.Models
                         if (ImageService.IsImage(FilePath))
                             ThumbnailUri = new Uri(FilePath);
                         else
-                            ThumbnailUri = ImageService.GetDefaultFileImage(FilePath);
+                            FileTypePathData = ImageService.GetDefaultFileTypePathData(FilePath);
                         break;
                     }
                 default:
@@ -119,16 +119,21 @@ namespace MegaApp.Models
         public TransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
+        
         private Uri _thumbnailUri;
         public Uri ThumbnailUri
         {
             get { return _thumbnailUri; }
-            private set
-            {
-                _thumbnailUri = value;
-                OnPropertyChanged("ThumbnailUri");
-            }
+            set { SetField(ref _thumbnailUri, value); }
         }
+
+        private string _fileTypePathData;
+        public string FileTypePathData
+        {
+            get { return _fileTypePathData; }
+            set { SetField(ref _fileTypePathData, value);  }
+        }
+
         public bool AutoLoadImageOnFinish { get; set; }
 
         private bool _cancelButtonState;
