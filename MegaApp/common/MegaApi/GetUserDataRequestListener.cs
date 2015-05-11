@@ -4,20 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
     class GetUserDataRequestListener : BaseRequestListener
     {
-        private readonly AccountDetailsViewModel _accountDetails;
+        private readonly UserDataViewModel _userData;
 
-        public GetUserDataRequestListener(AccountDetailsViewModel accountDetails)
+        public GetUserDataRequestListener(UserDataViewModel userData)
         {
-            _accountDetails = accountDetails;
+            _userData = userData;
         }
 
         protected override string ProgressMessage
@@ -89,18 +91,25 @@ namespace MegaApp.MegaApi
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
+
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _accountDetails.UserName = request.getName();                    
+                    _userData.UserName = request.getName();                    
                 });
             }
             else
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _accountDetails.UserName = "";
+                    _userData.UserName = UiResources.MyAccount;
+                    //_userData.UserName = "";                    
                 });
             }
         }

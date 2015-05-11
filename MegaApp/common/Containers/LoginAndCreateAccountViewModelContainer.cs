@@ -1,6 +1,7 @@
 ﻿using System;
+using MegaApp.Models;
 
-namespace MegaApp.Models
+namespace MegaApp.Containers
 {
     class LoginAndCreateAccountViewModelContainer
     {

@@ -45,6 +45,8 @@ namespace MegaApp
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
 
+        public static UserDataViewModel UserData { get; set; }
+
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         #if WINDOWS_PHONE_81

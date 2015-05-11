@@ -16,6 +16,8 @@ namespace MegaApp.Models
         {
             MegaTransfers = megaTransfers;
             
+            UpdateUserData();
+            
             InitializeMenu(HamburgerMenuItemType.Transfers);
         }
 
