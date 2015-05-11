@@ -106,6 +106,60 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to capture photo. Please, try again [{0}].
+        /// </summary>
+        public static string CapturePhotoFailed {
+            get {
+                return ResourceManager.GetString("CapturePhotoFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capture photo failed.
+        /// </summary>
+        public static string CapturePhotoFailed_Title {
+            get {
+                return ResourceManager.GetString("CapturePhotoFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to capture photo or video. Please, try again [{0}].
+        /// </summary>
+        public static string CapturePhotoVideoFailed {
+            get {
+                return ResourceManager.GetString("CapturePhotoVideoFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capture photo/video failed.
+        /// </summary>
+        public static string CapturePhotoVideoFailed_Title {
+            get {
+                return ResourceManager.GetString("CapturePhotoVideoFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to capture video. Please, try again [{0}].
+        /// </summary>
+        public static string CaptureVideoFailed {
+            get {
+                return ResourceManager.GetString("CaptureVideoFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Capture video failed.
+        /// </summary>
+        public static string CaptureVideoFailed_Title {
+            get {
+                return ResourceManager.GetString("CaptureVideoFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
         /// </summary>
         public static string ClipboardFailed {
@@ -1284,6 +1338,24 @@ namespace MegaApp.Resources {
         public static string SaveImageQuestion_Title {
             get {
                 return ResourceManager.GetString("SaveImageQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to save settings. Please, try again [{0}].
+        /// </summary>
+        public static string SaveSettingsFailed {
+            get {
+                return ResourceManager.GetString("SaveSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Save settings failed.
+        /// </summary>
+        public static string SaveSettingsFailed_Title {
+            get {
+                return ResourceManager.GetString("SaveSettingsFailed_Title", resourceCulture);
             }
         }
         

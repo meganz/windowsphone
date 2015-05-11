@@ -905,7 +905,8 @@ namespace MegaApp.Pages
 
             SetApplicationBarData();
         }
-       private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        
+        private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();

@@ -9,6 +9,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -18,22 +19,54 @@ using IApplicationBar = MegaApp.Interfaces.IApplicationBar;
 
 namespace MegaApp.Models
 {
-    public abstract class BaseAppInfoAwareViewModel : BaseSdkViewModel, IHamburgerMenu, IApplicationBar
+    public class BaseAppInfoAwareViewModel : BaseSdkViewModel, IHamburgerMenu, IApplicationBar
     {
-        protected BaseAppInfoAwareViewModel(MegaSDK megaSdk, AppInformation appInformation): base(megaSdk)
+        public BaseAppInfoAwareViewModel(MegaSDK megaSdk, AppInformation appInformation): base(megaSdk)
         {
             this.AppInformation = appInformation;
-            this.MenuItems = new List<HamburgerMenuItem>();
+            this.MenuItems = new List<HamburgerMenuItem>();            
+        }
 
-            this.UserEmail = megaSdk.getMyEmail();
+        protected void UpdateUserData()
+        {
+            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            {
+                if (App.UserData == null)
+                    App.UserData = new UserDataViewModel { UserEmail = App.MegaSdk.getMyEmail() };
+
+                if (String.IsNullOrEmpty(App.UserData.AvatarPath) || App.UserData.AvatarUri == null)
+                    App.MegaSdk.getUserAvatar(App.MegaSdk.getContact(App.MegaSdk.getMyEmail()), App.UserData.AvatarPath, new GetUserAvatarRequestListener(App.UserData));
+
+                if (String.IsNullOrEmpty(App.UserData.UserEmail))
+                    App.UserData.UserEmail = App.MegaSdk.getMyEmail();
+                if (String.IsNullOrEmpty(App.UserData.UserName))
+                    App.MegaSdk.getUserData(new GetUserDataRequestListener(App.UserData));
+
+                UserData = App.UserData;
+            }
+            else
+            {
+                if (UserData == null)
+                    UserData = new UserDataViewModel();
+                
+                Deployment.Current.Dispatcher.BeginInvoke(() => UserData.UserName = UiResources.MyAccount);
+            }
         }
 
         #region Properties
 
         public AppInformation AppInformation { get; private set; }
 
-        public String UserName { get; set; }
-        public String UserEmail { get; set; }
+        private UserDataViewModel _userData;
+        public UserDataViewModel UserData
+        {
+            get { return _userData; }
+            set
+            {
+                _userData = value;
+                OnPropertyChanged("UserData");
+            }
+        }        
 
         #endregion
 

@@ -14,7 +14,7 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Classes
 {
-    class AccountDetailsViewModel: BaseViewModel
+    class AccountDetailsViewModel: UserDataViewModel
     {
         public AccountDetailsViewModel()
         {
@@ -22,7 +22,7 @@ namespace MegaApp.Classes
             CacheSize = AppService.GetAppCacheSize();
         }
 
-        private string _userEmail;
+        /*private string _userEmail;
         public string UserEmail
         {
             get { return _userEmail; }
@@ -42,7 +42,8 @@ namespace MegaApp.Classes
                 _userName = value;
                 OnPropertyChanged("UserName");
             }
-        }
+        }*/
+        
 
         private ulong _totalSpace;
         public ulong TotalSpace
@@ -150,7 +151,7 @@ namespace MegaApp.Classes
             }
         }
 
-        private Uri _avatarUri;
+        /*private Uri _avatarUri;
         public Uri AvatarUri
         {
             get { return _avatarUri; }
@@ -159,7 +160,7 @@ namespace MegaApp.Classes
                 _avatarUri = value;
                 OnPropertyChanged("AvatarUri");
             }
-        }
+        }*/
         
 
         private void CalculateFreeSpace()
