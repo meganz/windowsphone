@@ -99,8 +99,8 @@
                             </Image.Clip>
                         </Image>
                         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
-                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30"/>
-                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20"/>
+                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
                         </StackPanel>
                     </Grid>
                 </Button>
