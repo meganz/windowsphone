@@ -127,7 +127,7 @@
             </Grid.RowDefinitions>
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Border.BorderBrush>
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
@@ -135,7 +135,7 @@
                 <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
                     <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
                         <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Path.Fill>
                     </Path>
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
@@ -159,7 +159,7 @@
         <Grid Width="64" Height="64" Margin="6">
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Border.BorderBrush>
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
@@ -167,7 +167,7 @@
                 <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
                     <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
                         <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Path.Fill>
                     </Path>
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
@@ -194,7 +194,7 @@
             </Grid.RowDefinitions>
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Border.BorderBrush>
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
@@ -202,7 +202,7 @@
                 <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
                     <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
                         <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Path.Fill>
                     </Path>
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
@@ -236,7 +236,7 @@
         <Grid Width="64" Margin="6">
             <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Border.BorderBrush>
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
@@ -244,7 +244,7 @@
                 <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
                     <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
                         <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Path.Fill>
                     </Path>
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
@@ -653,6 +653,12 @@
     <DataTemplate x:Key="AdvancedMenuHeader">
         <Grid Margin="0">
             <selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/mega_logo.png"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="AdvancedMenuItem">
+        <Grid Margin="0,0,0,20">
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
         </Grid>
     </DataTemplate>
 

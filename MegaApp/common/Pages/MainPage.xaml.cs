@@ -115,22 +115,70 @@ namespace MegaApp.Pages
         
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            App.CloudDrive.ListBox = LstCloudDrive;
+
+            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            
+            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
+            {
+                #if WINDOWS_PHONE_81
+                _mainPageViewModel.CloudDrive.NoFolderUpAction = false;
+
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+
+                // Check to see if any files have been picked
+                var app = Application.Current as App;
+                if (app != null && app.FilePickerContinuationArgs != null)
+                {
+                    this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
+                    return;
+                }
+
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                }
+                #endif
+
+                if (ValidActiveAndOnlineSession() && navParam == NavigationParameter.None)
+                    return;
+            }
+
+            // Initialize the application bar of this page
+            SetApplicationBarData();
+
+            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            {
+                //TODO Refactor
+                //App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);                
+            }
+
+            if (e.NavigationMode == NavigationMode.Reset) return;
+
             if (e.NavigationMode == NavigationMode.Back)
             {                
                 // On back and the hamburger menu is still open. Close it.
                 if(MainDrawerLayout.IsDrawerOpen)
                     MainDrawerLayout.CloseDrawer();
-                }
+            }            
 
-            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            if (e.NavigationMode == NavigationMode.Back)
             {
-                //TODO Refactor
-                //App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+                if (!_mainPageViewModel.ActiveFolderView.NoFolderUpAction)
+                {
+                    _mainPageViewModel.ActiveFolderView.GoFolderUp();
+                    navParam = NavigationParameter.Browsing;
+                }
+                else
+                    navParam = NavigationParameter.Normal;
+
+                if (NavigateService.PreviousPage == typeof(MyAccountPage))
+                    navParam = NavigationParameter.Browsing;
             }
 
-            // Initialize the application bar of this page
-            SetApplicationBarData();
+            _mainPageViewModel.ActiveFolderView.NoFolderUpAction = false;
+
 
             switch (navParam)
             {
@@ -210,37 +258,6 @@ namespace MegaApp.Pages
                 }
                 
             }
-            
-
-            //App.CloudDrive.ListBox = LstCloudDrive;
-            //LstAdvancedMenu.SelectedItem = null;
-
-            //if(App.AppEvent == ApplicationEvent.Activated)
-            //{                
-            //    App.AppEvent = ApplicationEvent.None;
-            //    App.CloudDrive.NoFolderUpAction = false;
-
-            //    // Needed on every UI interaction
-            //    App.MegaSdk.retryPendingConnections();
-
-            //    // Check to see if any files have been picked
-            //    var app = Application.Current as App;
-            //    if (app != null && app.FilePickerContinuationArgs != null)
-            //    {
-            //        this.ContinueFileOpenPicker(app.FilePickerContinuationArgs);
-            //        return;
-            //    }
-
-            //    if (app != null && app.FolderPickerContinuationArgs != null)
-            //    {
-            //        FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
-            //    }
-
-            //    return;
-                
-            //}
-            
-            //ChangeMenu();
 
             //_navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             //if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
@@ -582,9 +599,9 @@ namespace MegaApp.Pages
                 _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;
                 var visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FILE 
                     ? Visibility.Visible : Visibility.Collapsed;
-                BtnCreateShortCut.Visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FOLDER 
+                BtnCreateShortCutCloudDrive.Visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FOLDER 
                     ? Visibility.Visible : Visibility.Collapsed;
-                BtnDownloadItemCloud.Visibility = visibility;
+                BtnDownloadItemCloudDrive.Visibility = visibility;
             }
         }
 

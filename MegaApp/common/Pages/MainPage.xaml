@@ -234,26 +234,29 @@
                                         Content="{Binding LocalizedUiResources.Preview, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								    />-->
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnDownloadItemCloud" 
-            								Command="{Binding DownloadItemCommand}"
-            								Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+									    x:Name="BtnDownloadItemCloudDrive" 
+									    Command="{Binding DownloadItemCommand}"
+									    Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnCreateShortCut" 
-            								Command="{Binding CreateShortCutCommand}"
-            								Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+									    x:Name="BtnCreateShortCutCloudDrive" 
+									    Command="{Binding CreateShortCutCommand}"
+									    Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
-            								Command="{Binding GetLinkCommand}"
-            								Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+									    x:Name="BtnGetPreviewLinkCloudDrive" 
+									    Command="{Binding GetLinkCommand}"
+									    Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
-            								Command="{Binding RenameItemCommand}"
-            								Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+									    x:Name="BtnRenameItemCloudDrive" 
+									    Command="{Binding RenameItemCommand}"
+									    Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								    />
-                                        <telerikPrimitives:RadContextMenuItem
-            								Tapped="OnMoveItemTap"
-            								Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                        <telerikPrimitives:RadContextMenuItem 
+									    x:Name="BtnMoveItemCloudDrive"
+									    Tapped="OnMoveItemTap"
+									    Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
             								Command="{Binding RemoveItemCommand}" 
@@ -342,43 +345,43 @@
                                 <!--ItemTemplate="{StaticResource MegaNodeListFileItemContent}"-->
                                 <telerikPrimitives:RadContextMenu.ContextMenu>
                                     <telerikPrimitives:RadContextMenu 
-            							OpenGesture="Hold" 
-            							x:Name="CloudDriveMenu1" 
-            							Opening="OnMenuOpening">
+										OpenGesture="Hold" 
+										x:Name="RubbishBinMenu" 
+										Opening="OnMenuOpening">
                                         <!--<telerikPrimitives:RadContextMenuItem 
 							                x:Name="BtnPreviewItem" 
 							                Command="{Binding PreviewItemCommand}"
 							                Content="{Binding LocalizedUiResources.Preview, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								        />-->
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnDownloadItemCloud1" 
-            								Command="{Binding DownloadItemCommand}"
-            								Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+											x:Name="BtnDownloadItemRubbishBin" 
+											Command="{Binding DownloadItemCommand}"
+											Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnCreateShortCut1" 
-            								Command="{Binding CreateShortCutCommand}"
-            								Content="{Binding LocalizedUiResources.CreateShortCut, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+											x:Name="BtnCreateShortCutRubbishBin" 
+											Command="{Binding CreateShortCutCommand}"
+											Content="{Binding LocalizedUiResources.CreateShortCut, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnGetPreviewLink1" 
-            								Command="{Binding GetPreviewLinkItemCommand}"
-            								Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+											x:Name="BtnGetPreviewLinkRubbishBin" 
+											Command="{Binding GetPreviewLinkItemCommand}"
+											Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnRenameItem1" 
-            								Command="{Binding RenameItemCommand}"
-            								Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											x:Name="BtnRenameItemRubbishBin" 
+											Command="{Binding RenameItemCommand}"
+											Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnMoveItem1"
-            								Tapped="OnMoveItemTap"
-            								Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											x:Name="BtnMoveItemRubbishBin"
+											Tapped="OnMoveItemTap"
+											Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
-            								x:Name="BtnRemoveToRubbish1" 
-            								Command="{Binding RemoveItemCommand}" 
-            								Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											x:Name="BtnRemoveRubbishBin" 
+											Command="{Binding RemoveItemCommand}" 
+											Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 					                    />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>
@@ -407,8 +410,8 @@
                             </Image.Clip>
                         </Image>
                         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
-                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30"/>
-                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20"/>
+                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
                         </StackPanel>
                     </Grid>
                 </Button>

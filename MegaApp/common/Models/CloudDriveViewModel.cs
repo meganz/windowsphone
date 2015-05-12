@@ -50,24 +50,24 @@ namespace MegaApp.Models
             this.IsMultiSelectActive = false;
             SetViewDefaults();
 
-            this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
-            this.RenameItemCommand = new DelegateCommand(this.RenameItem);
-            this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
-            this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
-            this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
-            this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
+            //this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
+            //this.RenameItemCommand = new DelegateCommand(this.RenameItem);
+            //this.GetPreviewLinkItemCommand = new DelegateCommand(this.GetPreviewLink);
+            //this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+            //this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
+            //this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
             this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
         }
 
         #region Commands
 
-        public ICommand RemoveItemCommand { get; set; }
-        public ICommand GetPreviewLinkItemCommand { get; set; }
-        public ICommand DownloadItemCommand { get; set; }
-        public ICommand RenameItemCommand { get; set; }
-        public ICommand CreateShortCutCommand { get; set; }
-        public ICommand ChangeViewCommand { get; set; }
+        //public ICommand RemoveItemCommand { get; set; }
+        //public ICommand GetPreviewLinkItemCommand { get; set; }
+        //public ICommand DownloadItemCommand { get; set; }
+        //public ICommand RenameItemCommand { get; set; }
+        //public ICommand CreateShortCutCommand { get; set; }
+        //public ICommand ChangeViewCommand { get; set; }
         public ICommand MultiSelectCommand { get; set; }
         public ICommand UpgradeAccountCommand { get; set; }
 
@@ -337,19 +337,19 @@ namespace MegaApp.Models
                 AppMessages.DownloadLimitMessage_Title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
         }
 
-        private void CreateShortCut(object obj)
-        {
-            var shortCutTile = new RadIconicTileData()
-            {
-                IconImage = new Uri("/Assets/Tiles/FolderIconImage.png", UriKind.Relative),
-                SmallIconImage = new Uri("/Assets/Tiles/FolderSmallIconImage.png", UriKind.Relative),
-                Title = FocusedNode.Name
-            };
+        //private void CreateShortCut(object obj)
+        //{
+        //    var shortCutTile = new RadIconicTileData()
+        //    {
+        //        IconImage = new Uri("/Assets/Tiles/FolderIconImage.png", UriKind.Relative),
+        //        SmallIconImage = new Uri("/Assets/Tiles/FolderSmallIconImage.png", UriKind.Relative),
+        //        Title = FocusedNode.Name
+        //    };
 
-            LiveTileHelper.CreateOrUpdateTile(shortCutTile,
-                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.OriginalMNode.getHandle(), UriKind.Relative),
-                false);
-        }
+        //    LiveTileHelper.CreateOrUpdateTile(shortCutTile,
+        //        new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.OriginalMNode.getHandle(), UriKind.Relative),
+        //        false);
+        //}
 
         public bool HasChildNodes()
         {
@@ -473,32 +473,32 @@ namespace MegaApp.Models
             }
         }
 
-        private void ChangeView(object obj)
-        {
-            if (CurrentRootNode == null) return;
+        //private void ChangeView(object obj)
+        //{
+        //    if (CurrentRootNode == null) return;
 
-            switch (this.ViewMode)
-            {
-                case ViewMode.ListView:
-                    {
-                        SetView(ViewMode.LargeThumbnails);
-                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.LargeThumbnails);
-                        break;
-                    }
-                case ViewMode.LargeThumbnails:
-                    {
-                        SetView(ViewMode.SmallThumbnails);
-                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.SmallThumbnails);
-                        break;
-                    }
-                case ViewMode.SmallThumbnails:
-                    {
-                        SetView(ViewMode.ListView);
-                        UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.ListView);
-                        break;
-                    }
-            }
-        }
+        //    switch (this.ViewMode)
+        //    {
+        //        case ViewMode.ListView:
+        //            {
+        //                SetView(ViewMode.LargeThumbnails);
+        //                UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.LargeThumbnails);
+        //                break;
+        //            }
+        //        case ViewMode.LargeThumbnails:
+        //            {
+        //                SetView(ViewMode.SmallThumbnails);
+        //                UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.SmallThumbnails);
+        //                break;
+        //            }
+        //        case ViewMode.SmallThumbnails:
+        //            {
+        //                SetView(ViewMode.ListView);
+        //                UiService.SetViewMode(CurrentRootNode.Handle, ViewMode.ListView);
+        //                break;
+        //            }
+        //    }
+        //}
 
         private void SetViewDefaults()
         {
@@ -997,28 +997,28 @@ namespace MegaApp.Models
             this.IsMultiSelectActive = !this.IsMultiSelectActive;
         }
 
-        private void GetPreviewLink(object obj)
-        {
-            if (!IsUserOnline()) return;
+        //private void GetPreviewLink(object obj)
+        //{
+        //    if (!IsUserOnline()) return;
 
-            FocusedNode.GetLink();
-        }
+        //    FocusedNode.GetLink();
+        //}
 
-        private void DownloadItem(object obj)
-        {
-            this.NoFolderUpAction = true;
-            FocusedNode.Download(App.MegaTransfers);
-        }
+        //private void DownloadItem(object obj)
+        //{
+        //    this.NoFolderUpAction = true;
+        //    FocusedNode.Download(App.MegaTransfers);
+        //}
 
-        private void RemoveItem(object obj)
-        {
-            FocusedNode.Remove(false);
-        }
+        //private void RemoveItem(object obj)
+        //{
+        //    FocusedNode.Remove(false);
+        //}
 
-        private void RenameItem(object obj)
-        {
-            FocusedNode.Rename();
-        }
+        //private void RenameItem(object obj)
+        //{
+        //    FocusedNode.Rename();
+        //}
 
         private void CancelLoadNodes(bool clearChilds = true)
         {
