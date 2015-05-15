@@ -655,8 +655,10 @@
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
+      <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\PhoneDrawerLayoutPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

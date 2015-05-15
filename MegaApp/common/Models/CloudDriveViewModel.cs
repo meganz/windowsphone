@@ -57,7 +57,7 @@ namespace MegaApp.Models
             //this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             //this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
-            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
+            //this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
         }
 
         #region Commands
@@ -69,7 +69,7 @@ namespace MegaApp.Models
         //public ICommand CreateShortCutCommand { get; set; }
         //public ICommand ChangeViewCommand { get; set; }
         public ICommand MultiSelectCommand { get; set; }
-        public ICommand UpgradeAccountCommand { get; set; }
+        //public ICommand UpgradeAccountCommand { get; set; }
 
         #endregion
 
@@ -987,10 +987,10 @@ namespace MegaApp.Models
 
         #region Private Methods
 
-        private void UpgradeAccount(object obj)
-        {
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
-        }
+        //private void UpgradeAccount(object obj)
+        //{
+        //    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        //}
 
         private void MultiSelect(object obj)
         {
