@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -14,13 +13,13 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
-
 #if WINDOWS_PHONE_81
     using Windows.ApplicationModel.DataTransfer.ShareTarget;
     using Windows.Storage.AccessCache;
@@ -108,8 +107,8 @@ namespace MegaApp
 
             // APP THEME OVERRIDES
             Resources.Remove("PhoneAccentColor");
-            Resources.Add("PhoneAccentColor", (Color)Application.Current.Resources["MegaRedColor"]);
-            ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Application.Current.Resources["MegaRedColor"];
+            Resources.Add("PhoneAccentColor", (Color)Current.Resources["MegaRedColor"]);
+            ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -458,11 +457,11 @@ namespace MegaApp
             {
                 // Show the login page
                 Deployment.Current.Dispatcher.BeginInvoke(() => 
-                    NavigateService.NavigateTo(typeof(Pages.InitTourPage), NavigationParameter.Normal));
+                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal));
 
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();
-                Deployment.Current.Dispatcher.BeginInvoke(() => App.CloudDrive.ChildNodes.Clear());
+                Deployment.Current.Dispatcher.BeginInvoke(() => CloudDrive.ChildNodes.Clear());
                 AppService.ClearAppCache(false);                
 
                 // Show a message notifying the error

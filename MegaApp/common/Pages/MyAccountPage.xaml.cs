@@ -58,7 +58,7 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             // Check if Hamburger Menu is open in view. If open. First slide out before exit
-            e.Cancel = _myAccountPageViewModel.CheckHamburgerMenu(MainDrawerLayout, e.Cancel);
+            e.Cancel = MainDrawerLayout.CloseIfOpen();
 
             base.OnBackKeyPress(e);
         }

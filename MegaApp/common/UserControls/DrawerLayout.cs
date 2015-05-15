@@ -185,6 +185,7 @@ namespace MegaApp.UserControls
             if (DrawerOpened != null)
                 DrawerOpened(this);
         }
+        
         public void CloseDrawer()
         {
             if (_fadeOutStoryboard == null || _mainFragment == null || _listFragment == null) return;
@@ -195,6 +196,14 @@ namespace MegaApp.UserControls
             if (DrawerClosed != null)
                 DrawerClosed(this);
         }
+
+        public bool CloseIfOpen()
+        {
+            if (!IsDrawerOpen) return false;
+            CloseDrawer();
+            return true;
+        }
+
         private void shadowFragment_Tapped(object sender, GestureEventArgs e)
         {
             _shadowFragment.IsHitTestVisible = false;

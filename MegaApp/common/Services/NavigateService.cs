@@ -7,13 +7,14 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using System;
 using System.Collections.Generic;
+using System.Windows.Controls;
 using Microsoft.Phone.Controls;
 
 namespace MegaApp.Services
 {
     public static class NavigateService
     {
-        public static Type PreviousPage { get; set; }
+        public static Type PreviousPage { get; private set; }
 
         public static void GoBack()
         {
