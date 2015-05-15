@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -702,7 +703,8 @@ namespace MegaApp.Pages
                 _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
             }
 
-            if (_mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
+            if (_mainPageViewModel.ActiveFolderView.SelectedNodes != null && 
+                _mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
             {
                 foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
                 {
@@ -727,6 +729,7 @@ namespace MegaApp.Pages
 
         private void MoveItemTapAction()
         {
+            _mainPageViewModel.ActiveFolderView.SelectedNodes.Add(_mainPageViewModel.ActiveFolderView.FocusedNode);
             _mainPageViewModel.ActiveFolderView.PreviousDisplayMode = _mainPageViewModel.ActiveFolderView.CurrentDisplayMode;
             _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = DriveDisplayMode.MoveItem;
             _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;

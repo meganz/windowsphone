@@ -113,12 +113,16 @@ namespace MegaApp.Services
                 }
                
                 if(node != null)
+                {
+                    App.AppInformation.PickerOrAsyncDialogIsOpen = false;
                     node.Download(App.MegaTransfers, args.Folder.Path);
+                }                    
 
                 ResetFolderPicker();
                 return;
             }
 
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
             App.CloudDrive.MultipleDownload(args.Folder);
 
             ResetFolderPicker();
@@ -128,7 +132,7 @@ namespace MegaApp.Services
         {
             // Reset the picker data
             var app = Application.Current as App;
-            if (app != null) app.FolderPickerContinuationArgs = null;
+            if (app != null) app.FolderPickerContinuationArgs = null;            
         }
         #endif
     }    

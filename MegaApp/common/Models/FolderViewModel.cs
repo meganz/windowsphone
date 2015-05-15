@@ -36,6 +36,18 @@ namespace MegaApp.Models
             this.BusyText = null;
             this.ChildNodes = new ObservableCollection<IMegaNode>();
             this.BreadCrumbs = new ObservableCollection<IMegaNode>();
+            this.SelectedNodes = new List<IMegaNode>();
+
+            ////FolderRootNode depending on the container type
+            //switch (this.Type)
+            //{
+            //    case ContainerType.RubbishBin:
+            //        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+            //        break;
+            //    case ContainerType.CloudDrive:            
+            //        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+            //        break;
+            //}
 
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
@@ -43,10 +55,7 @@ namespace MegaApp.Models
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.GetLinkCommand = new DelegateCommand(this.GetLink);
-            this.RenameItemCommand = new DelegateCommand(this.RenameItem);
-            this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
-            this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
-            this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
+            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
 
             SetViewDefaults();
 
@@ -73,6 +82,7 @@ namespace MegaApp.Models
         public ICommand RemoveItemCommand { get; private set; }
         public ICommand DownloadItemCommand { get; private set; }
         public ICommand CreateShortCutCommand { get; private set; }
+        public ICommand UpgradeAccountCommand { get; set; }
 
         #endregion
 
@@ -169,6 +179,19 @@ namespace MegaApp.Models
              NodeService.GetFiles(this.ChildNodes,
                 Path.Combine(ApplicationData.Current.LocalFolder.Path,
                 AppResources.ThumbnailsDirectory)));
+
+            if(this.FolderRootNode == null)
+            {
+                switch (this.Type)
+                {
+                    case ContainerType.RubbishBin:
+                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+                        break;
+                    case ContainerType.CloudDrive:                    
+                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+                        break;
+                }
+            }            
 
             this.LoadChildNodes();
         }
@@ -557,6 +580,11 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
+
+        private void UpgradeAccount(object obj)
+        {
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
 
         private void RemoveItem(object obj)
         {
