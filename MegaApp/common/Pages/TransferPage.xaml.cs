@@ -21,34 +21,26 @@ using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
-    public partial class TransferPage : PhoneApplicationPage
+    public partial class TransferPage : PhoneDrawerLayoutPage
     {
-        private TransfersViewModel _transfersViewModel;
+        private readonly TransfersViewModel _transfersViewModel;
 
         public TransferPage()
         {
             _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
             this.DataContext = _transfersViewModel;
+            
             InitializeComponent();
+            InitializePage(MainDrawerLayout,LstHamburgerMenu, HamburgerMenuItemType.Transfers);
 
-            // Initialize the hamburger menu / slide in
-            MainDrawerLayout.InitializeDrawerLayout();
-            MainDrawerLayout.DrawerOpened += OnDrawerOpened;
-            MainDrawerLayout.DrawerClosed += OnDrawerClosed;
-
-            SetApplicationBar();
+            SetApplicationBarData();
 
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
         }
 
-        private void SetApplicationBar()
+        private void SetApplicationBarData()
         {
             this.ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
-
-            //((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.StartResumeAll.ToLower();
-            //((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.PauseAll.ToLower();
-            //((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.CancelAll.ToLower();
-            //((ApplicationBarIconButton)ApplicationBar.Buttons[3]).Text = UiResources.CleanUpTransfers.ToLower();
                         
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Pause.ToLower();
             
@@ -75,14 +67,6 @@ namespace MegaApp.Pages
 
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-        }
-
-        protected override void OnBackKeyPress(CancelEventArgs e)
-        {
-            // Check if Hamburger Menu is open in view. If open. First slide out before exit
-            e.Cancel = _transfersViewModel.CheckHamburgerMenu(MainDrawerLayout, e.Cancel);
-
-            base.OnBackKeyPress(e);
         }
 
         private void OnPauseAllClick(object sender, System.EventArgs e)
@@ -207,45 +191,32 @@ namespace MegaApp.Pages
                 App.MegaTransfers.Remove(item);
         }
 
-        private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        protected override void OnDrawerClosed(object sender)
         {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
-            if (hamburgerMenuItem == null) return;
-
-            if (hamburgerMenuItem.Type == HamburgerMenuItemType.Transfers)
-                MainDrawerLayout.CloseDrawer();
-            else
-                hamburgerMenuItem.TapAction.Invoke();
-            
-            LstHamburgerMenu.SelectedItem = null;
-        }
-
-        private void OnHamburgerTap(object sender, GestureEventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            MainDrawerLayout.OpenDrawer();
-        }
-
-        private void OnDrawerClosed(object sender)
-        {
-            SetApplicationBar();
-        }
-
-        private void OnDrawerOpened(object sender)
-        {
-            // Remove application bar from display when sliding in the hamburger menu
-            this.ApplicationBar = null;
+            base.OnDrawerClosed(sender);
+            SetApplicationBarData();
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
-        
+
+        #region Override Events
+
+        // XAML can not bind them direct from the base class
+        // That is why these are dummy event handlers
+
+        protected override void OnHamburgerTap(object sender, GestureEventArgs e)
+        {
+            base.OnHamburgerTap(sender, e);
+        }
+
+        protected override void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            base.OnHamburgerMenuItemTap(sender, e);
+        }
+
+        #endregion
     }
 }

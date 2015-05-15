@@ -15,14 +15,13 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class MainPage : PhoneDrawerLayoutPage
     {
         private readonly MainPageViewModel _mainPageViewModel;
 
@@ -31,12 +30,9 @@ namespace MegaApp.Pages
             // Set the main viewmodel of this page
             _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _mainPageViewModel;
-
+            
             InitializeComponent();
-            // Initialize the hamburger menu / slide in
-            MainDrawerLayout.InitializeDrawerLayout();
-            MainDrawerLayout.DrawerOpened += OnDrawerOpened;
-            MainDrawerLayout.DrawerClosed += OnDrawerClosed;
+            InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.CloudDrive);
             
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
 
@@ -112,9 +108,11 @@ namespace MegaApp.Pages
 
             return true;
         }
-        
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             App.CloudDrive.ListBox = LstCloudDrive;
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
@@ -158,9 +156,7 @@ namespace MegaApp.Pages
 
             if (e.NavigationMode == NavigationMode.Back)
             {                
-                // On back and the hamburger menu is still open. Close it.
-                if(MainDrawerLayout.IsDrawerOpen)
-                    MainDrawerLayout.CloseDrawer();
+              
             }            
 
             if (e.NavigationMode == NavigationMode.Back)
@@ -183,6 +179,7 @@ namespace MegaApp.Pages
             switch (navParam)
             {
                 case NavigationParameter.Normal:
+                    _mainPageViewModel.LoadFolders();
                     break;
                 case NavigationParameter.Login:
                     // Remove the login page from the stack. If user presses back button it will then exit the application
@@ -424,9 +421,6 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            // Check if Hamburger Menu is open in view. If open. First slide out before exit
-            e.Cancel = CheckHamburgerMenu(e.Cancel);
-
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
 
@@ -517,14 +511,6 @@ namespace MegaApp.Pages
                 default:
                     throw new ArgumentOutOfRangeException("driveDisplayMode");
             }
-        }
-
-        private bool CheckHamburgerMenu(bool isCancel)
-                    {
-            if (isCancel) return true;
-            if (!MainDrawerLayout.IsDrawerOpen) return false;
-            MainDrawerLayout.CloseDrawer();
-            return true;
         }
 
         private bool CheckAndGoFolderUp(bool isCancel)
@@ -922,22 +908,6 @@ namespace MegaApp.Pages
 
             SetApplicationBarData();
         }
-        
-        private void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
-        {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-            var hamburgerMenuItem = e.Item.DataContext as HamburgerMenuItem;
-            if (hamburgerMenuItem == null) return;
-
-            if (hamburgerMenuItem.Type == HamburgerMenuItemType.CloudDrive)
-                MainDrawerLayout.CloseDrawer();
-            else
-                hamburgerMenuItem.TapAction.Invoke();
-            
-            LstHamburgerMenu.SelectedItem = null;
-        }        
 
         private void OnPivotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -974,28 +944,32 @@ namespace MegaApp.Pages
             SetApplicationBarData();
         }
 
-        private void OnHamburgerTap(object sender, GestureEventArgs e)
+        protected override void OnDrawerClosed(object sender)
         {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
-        	MainDrawerLayout.OpenDrawer();
-        }
-
-        private void OnDrawerClosed(object sender)
-        {
+            base.OnDrawerClosed(sender);
             SetApplicationBarData();
-        }
-
-        private void OnDrawerOpened(object sender)
-        {
-            // Remove application bar from display when sliding in the hamburger menu
-            this.ApplicationBar = null;
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
+
+        #region Override Events
+
+        // XAML can not bind them direct from the base class
+        // That is why these are dummy event handlers
+
+        protected override void OnHamburgerTap(object sender, GestureEventArgs e)
+        {
+            base.OnHamburgerTap(sender, e);
+        }
+
+        protected override void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            base.OnHamburgerMenuItemTap(sender, e);
+        }
+
+        #endregion
     }
 }

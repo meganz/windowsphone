@@ -76,32 +76,6 @@ namespace MegaApp.Models
 
         protected void InitializeMenu(HamburgerMenuItemType activeItem)
         {
-            bool[] activeItemsArray = new bool[6];
-            
-            switch(activeItem)
-            {
-                case HamburgerMenuItemType.CloudDrive:
-                    activeItemsArray[0] = true;
-                    break;
-                case HamburgerMenuItemType.CameraUploads:
-                    activeItemsArray[1] = true;
-                    break;
-                case HamburgerMenuItemType.SharedItems:
-                    activeItemsArray[2] = true;
-                    break;
-                case HamburgerMenuItemType.Contacts:
-                    activeItemsArray[3] = true;
-                    break;
-                case HamburgerMenuItemType.Transfers:
-                    activeItemsArray[4] = true;
-                    break;
-                case HamburgerMenuItemType.Settings:
-                    activeItemsArray[5] = true;
-                    break;
-                default:
-                    break;
-            }
-
             this.MenuItems.Add(new HamburgerMenuItem()
             {
                 Type = HamburgerMenuItemType.CloudDrive,
@@ -110,8 +84,11 @@ namespace MegaApp.Models
                 IconWidth = 48,
                 IconHeight = 34,
                 Margin = new Thickness(36, 0, 35, 0),
-                TapAction = () => { NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal); },
-                IsActive = activeItemsArray[0]
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+                },
+                IsActive = activeItem == HamburgerMenuItemType.CloudDrive
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
@@ -122,7 +99,7 @@ namespace MegaApp.Models
                 IconHeight = 36,
                 Margin = new Thickness(37, 0, 36, 0),
                 TapAction = () => { },
-                IsActive = activeItemsArray[1]
+                IsActive = activeItem == HamburgerMenuItemType.CameraUploads
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
@@ -133,7 +110,7 @@ namespace MegaApp.Models
                 IconHeight = 36,
                 Margin = new Thickness(37, 0, 36, 0),
                 TapAction = () => { },
-                IsActive = activeItemsArray[2]
+                IsActive = activeItem == HamburgerMenuItemType.SharedItems
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
@@ -144,7 +121,7 @@ namespace MegaApp.Models
                 IconHeight = 33,
                 Margin = new Thickness(37, 0, 36, 0),
                 TapAction = () => { },
-                IsActive = activeItemsArray[3]
+                IsActive = activeItem == HamburgerMenuItemType.Contacts
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
@@ -154,8 +131,11 @@ namespace MegaApp.Models
                 IconWidth = 44,
                 IconHeight = 44,
                 Margin = new Thickness(38, 0, 36, 0),
-                TapAction = () => { NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal); },
-                IsActive = activeItemsArray[4]
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+                },
+                IsActive = activeItem == HamburgerMenuItemType.Transfers
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
@@ -165,17 +145,12 @@ namespace MegaApp.Models
                 IconWidth = 45,
                 IconHeight = 45,
                 Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal); },
-                IsActive = activeItemsArray[5]
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
+                },
+                IsActive = activeItem == HamburgerMenuItemType.Settings
             });
-        }
-
-        public bool CheckHamburgerMenu(DrawerLayout MainDrawerLayout, bool isCancel)
-        {
-            if (isCancel) return true;
-            if (!MainDrawerLayout.IsDrawerOpen) return false;
-            MainDrawerLayout.CloseDrawer();
-            return true;
         }
 
         #endregion

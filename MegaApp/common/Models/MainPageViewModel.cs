@@ -7,6 +7,7 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Resources;
+using MegaApp.Services;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
@@ -27,7 +28,14 @@ namespace MegaApp.Models
 
         public void LoadFolders()
         {
+            if (this.CloudDrive.FolderRootNode == null)
+                this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+            
             this.CloudDrive.LoadChildNodes();
+
+            if (this.RubbishBin.FolderRootNode == null)
+                this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+            
             this.RubbishBin.LoadChildNodes();
         }
 
@@ -118,7 +126,6 @@ namespace MegaApp.Models
         }
         
         #endregion
-
 
         #region Properties
 

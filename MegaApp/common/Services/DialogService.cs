@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using Windows.Storage.Pickers;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -15,9 +12,8 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
-
 #if WINDOWS_PHONE_81
-    using Windows.Storage.Pickers.Provider;
+
 #endif
 
 namespace MegaApp.Services
@@ -724,6 +720,22 @@ namespace MegaApp.Services
                         break;
                     }
             }
+        }
+
+        public static void ShowInputDialog(FolderViewModel folder)
+        {
+            //if (folder.FolderRootNode == null) return;
+
+            //var inputWindow = new RadModalWindow()
+            //{
+            //    IsFullScreen = true,
+            //    Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+            //    WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+            //    HorizontalContentAlignment = HorizontalAlignment.Stretch,
+            //    VerticalContentAlignment = VerticalAlignment.Stretch,
+            //    ShouldHandleApplicationBar = true
+            //};
+
         }
     }
 }

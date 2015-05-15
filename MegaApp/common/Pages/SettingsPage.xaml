@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<userControls:PhoneDrawerLayoutPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -8,7 +8,6 @@
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikToggleSwitch="clr-namespace:Telerik.Windows.Controls.ToggleSwitch;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
-    xmlns:classes="clr-namespace:MegaApp.Classes"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
     xmlns:models="clr-namespace:MegaApp.Models"
     x:Class="MegaApp.Pages.SettingsPage"
@@ -202,4 +201,4 @@
         </Grid>
     </userControls:DrawerLayout>
 
-</phone:PhoneApplicationPage>
+</userControls:PhoneDrawerLayoutPage>
