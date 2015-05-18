@@ -110,9 +110,18 @@ namespace MegaApp.Pages
             return true;
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _mainPageViewModel.Deinitialize(App.GlobalDriveListener);
+            base.OnNavigatedFrom(e);
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            _mainPageViewModel.Initialize(App.GlobalDriveListener);
+
 
             App.CloudDrive.ListBox = LstCloudDrive;
 
@@ -422,59 +431,14 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
+            base.OnBackKeyPress(e);
+
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
 
             // If no folder up action, but we are not in the cloud drive section
             // first slide to cloud drive before exiting the application
             e.Cancel = CheckPivotInView(e.Cancel);
-            
-            base.OnBackKeyPress(e);
-
-            //if (!_normalBackAction)
-            //{
-            //    if (MainPivot != null && MainPivot.SelectedItem == MenuPivot)
-            //    {
-            //        MainPivot.SelectedItem = CloudDrivePivot;
-            //        e.Cancel = true;
-            //        return;
-            //    }
-
-            //    if (!NavigationService.CanGoBack)
-            //    {
-            //        if (App.CloudDrive.CurrentRootNode != null &&
-            //            App.MegaSdk.getParentNode(App.CloudDrive.CurrentRootNode.OriginalMNode) != null)
-            //        {
-            //            App.CloudDrive.GoFolderUp();
-            //            Task.Run(() => App.CloudDrive.LoadNodes());
-            //            e.Cancel = true;
-            //        }
-            //        else if (App.CloudDrive.CurrentRootNode != null && App.CloudDrive.CurrentRootNode.Type == MNodeType.TYPE_RUBBISH)
-            //        {
-            //            this.CloudDriveBreadCrumb.RootName = UiResources.CloudDriveName;
-            //            App.CloudDrive.ChangeDrive(true);
-            //            ChangeMenu();
-
-            //            e.Cancel = true;
-            //            return;
-            //        }
-            //        else if (App.CloudDrive.CurrentDisplayMode != CurrentDisplayMode.MultiSelect)
-            //        {
-            //            if (App.MegaTransfers.Count(t => t.Status != TransferStatus.Finished) > 0)
-            //            {
-            //                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersExit, App.MegaTransfers.Count),
-            //                    AppMessages.PendingTransfersExit_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-            //                {
-            //                    e.Cancel = true;
-            //                    return;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
-            //_normalBackAction = false;
-            //base.OnBackKeyPress(e);
         }
 
         private void SetApplicationBarData()

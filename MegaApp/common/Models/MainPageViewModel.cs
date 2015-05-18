@@ -26,6 +26,21 @@ namespace MegaApp.Models
 
         #region Public Methods
 
+        public void Initialize(GlobalDriveListener globalDriveListener)
+        {
+            // Add folders to global drive listener to receive notifications
+            globalDriveListener.Folders.Add(this.CloudDrive);
+            globalDriveListener.Folders.Add(this.RubbishBin);
+        }
+
+        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        {
+            // Add folders to global drive listener to receive notifications
+            globalDriveListener.Folders.Remove(this.CloudDrive);
+            globalDriveListener.Folders.Remove(this.RubbishBin);
+        }
+
+
         public void LoadFolders()
         {
             if (this.CloudDrive.FolderRootNode == null)

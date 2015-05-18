@@ -46,6 +46,8 @@ namespace MegaApp
 
         public static UserDataViewModel UserData { get; set; }
 
+        public static GlobalDriveListener GlobalDriveListener { get; private set; }
+
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         #if WINDOWS_PHONE_81
@@ -280,7 +282,8 @@ namespace MegaApp
             // Initialize the main drive
             CloudDrive = new CloudDriveViewModel(MegaSdk, AppInformation);
             // Add notifications listener. Needs a DriveViewModel
-            MegaSdk.addGlobalListener(new GlobalDriveListener(CloudDrive, AppInformation));
+            GlobalDriveListener = new GlobalDriveListener(AppInformation);
+            MegaSdk.addGlobalListener(GlobalDriveListener);
             // Add a global request listener to process all.
             MegaSdk.addRequestListener(this);
             // Initialize the transfer listing
