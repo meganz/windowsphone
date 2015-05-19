@@ -782,4 +782,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Save settings failed</value>
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>Shortcut error</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
 </root>
