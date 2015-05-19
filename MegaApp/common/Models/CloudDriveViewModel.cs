@@ -32,7 +32,7 @@ namespace MegaApp.Models
         private CancellationToken cancellationToken;
         //private bool asyncInputPromptDialogIsOpen;
 
-        public event EventHandler<CommandStatusArgs> CommandStatusChanged;
+        //public event EventHandler<CommandStatusArgs> CommandStatusChanged;
 
         public RadDataBoundListBox ListBox { private get; set; }
 
@@ -73,16 +73,16 @@ namespace MegaApp.Models
 
         #endregion
 
-        #region Events
+        //#region Events
 
-        private void OnCommandStatusChanged(bool status)
-        {
-            if (CommandStatusChanged == null) return;
+        //private void OnCommandStatusChanged(bool status)
+        //{
+        //    if (CommandStatusChanged == null) return;
 
-            CommandStatusChanged(this, new CommandStatusArgs(status));
-        }
+        //    CommandStatusChanged(this, new CommandStatusArgs(status));
+        //}
 
-        #endregion
+        //#endregion
 
         #region Services
 
@@ -91,10 +91,10 @@ namespace MegaApp.Models
 
         #region Public Methods
 
-        public void SetCommandStatus(bool status)
-        {
-            OnCommandStatusChanged(status);
-        }
+        //public void SetCommandStatus(bool status)
+        //{
+        //    OnCommandStatusChanged(status);
+        //}
 
         public void TranslateAppBar(IList iconButtons, IList menuItems, MenuType menuType)
         {

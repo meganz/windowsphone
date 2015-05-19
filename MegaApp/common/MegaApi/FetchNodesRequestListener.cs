@@ -98,23 +98,47 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Enable appbar buttons
-                //_cloudDriveViewModel.SetCommandStatus(true);
+                _mainPageViewModel.SetCommandStatus(true);
             });
 
+            // If the user is trying to open a shortcut
             if (_shortCutHandle.HasValue)
             {
-                //MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                //if (shortCutMegaNode != null)
-                //{
-                //     var newRootNode = NodeService.CreateNew(api, _cloudDriveViewModel.AppInformation, shortCutMegaNode);
-                //     var autoResetEvent = new AutoResetEvent(false);
-                //     Deployment.Current.Dispatcher.BeginInvoke(() =>
-                //     {
-                //         _cloudDriveViewModel.CurrentRootNode = newRootNode;
-                //         autoResetEvent.Set();
-                //     });
-                //     autoResetEvent.WaitOne();
-                //}
+                bool shortCutError = false;
+
+                MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                if (shortCutMegaNode != null)
+                {
+                    // Looking for the absolute parent of the shortcut node to see the type
+                    MNode parentNode;
+                    MNode absoluteParentNode = shortCutMegaNode;
+                    while ((parentNode = api.getParentNode(absoluteParentNode)) != null)
+                        absoluteParentNode = parentNode;
+
+                    if (absoluteParentNode.getType() == MNodeType.TYPE_ROOT)
+                    {
+                        var newRootNode = NodeService.CreateNew(api, _mainPageViewModel.AppInformation, shortCutMegaNode);
+                        var autoResetEvent = new AutoResetEvent(false);
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            _mainPageViewModel.ActiveFolderView.FolderRootNode = newRootNode;
+                            autoResetEvent.Set();
+                        });
+                        autoResetEvent.WaitOne();
+                    }
+                    else shortCutError = true;
+                }
+                else shortCutError = true;
+
+                if(shortCutError)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        MessageBox.Show(AppMessages.ShortCutFailed,
+                            AppMessages.ShortCutFailed_Title.ToUpper(),
+                            MessageBoxButton.OK);
+                    });
+                }
             }
             else
             {
@@ -141,7 +165,7 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Disable appbar buttons
-                //_cloudDriveViewModel.SetCommandStatus(false);
+                _mainPageViewModel.SetCommandStatus(false);
 
                 ProgressService.SetProgressIndicator(true,
                    String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));

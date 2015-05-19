@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Shell;
@@ -14,15 +16,36 @@ namespace MegaApp.Models
 {
     public class MainPageViewModel: BaseAppInfoAwareViewModel
     {
+        public event EventHandler<CommandStatusArgs> CommandStatusChanged;
+
         public MainPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
             :base(megaSdk, appInformation)
         {
+            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
+
             InitializeModel();
 
             UpdateUserData();
 
             InitializeMenu(HamburgerMenuItemType.CloudDrive);
         }
+
+        #region Commands
+                
+        public ICommand UpgradeAccountCommand { get; set; }
+
+        #endregion
+
+        #region Events
+
+        private void OnCommandStatusChanged(bool status)
+        {
+            if (CommandStatusChanged == null) return;
+
+            CommandStatusChanged(this, new CommandStatusArgs(status));
+        }
+
+        #endregion
 
         #region Public Methods
 
@@ -40,18 +63,25 @@ namespace MegaApp.Models
             globalDriveListener.Folders.Remove(this.RubbishBin);
         }
 
+        public void SetCommandStatus(bool status)
+        {
+            OnCommandStatusChanged(status);
+        }
 
         public void LoadFolders()
         {
-            if (this.CloudDrive.FolderRootNode == null)
-                this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
-            
-            this.CloudDrive.LoadChildNodes();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (this.CloudDrive.FolderRootNode == null)
+                    this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
 
-            if (this.RubbishBin.FolderRootNode == null)
-                this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
-            
-            this.RubbishBin.LoadChildNodes();
+                this.CloudDrive.LoadChildNodes();
+
+                if (this.RubbishBin.FolderRootNode == null)
+                    this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+
+                this.RubbishBin.LoadChildNodes();
+            });            
         }
 
         public void FetchNodes()
@@ -68,9 +98,9 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            // TODO Refactor
-            //ShortCutHandle = null;
-            this.MegaSdk.fetchNodes(new FetchNodesRequestListener(this));            
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, ShortCutHandle);
+            ShortCutHandle = null;
+            this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
         public void ChangeMenu(FolderViewModel currentFolderViewModel, IList iconButtons, IList menuItems)
@@ -131,6 +161,11 @@ namespace MegaApp.Models
 
         #region Private Methods
 
+        private void UpgradeAccount(object obj)
+        {
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+        }
+
         private void InitializeModel()
         {
             this.CloudDrive = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
@@ -143,6 +178,8 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
+
+        public ulong? ShortCutHandle { get; set; }
 
         private string _activeImportLink;
         public string ActiveImportLink

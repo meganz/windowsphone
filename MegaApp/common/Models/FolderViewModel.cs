@@ -54,8 +54,7 @@ namespace MegaApp.Models
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
-            this.GetLinkCommand = new DelegateCommand(this.GetLink);
-            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
+            this.GetLinkCommand = new DelegateCommand(this.GetLink);            
 
             SetViewDefaults();
 
@@ -81,8 +80,7 @@ namespace MegaApp.Models
         public ICommand RenameItemCommand { get; private set; }
         public ICommand RemoveItemCommand { get; private set; }
         public ICommand DownloadItemCommand { get; private set; }
-        public ICommand CreateShortCutCommand { get; private set; }
-        public ICommand UpgradeAccountCommand { get; set; }
+        public ICommand CreateShortCutCommand { get; private set; }        
 
         #endregion
 
@@ -580,11 +578,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
-
-        private void UpgradeAccount(object obj)
-        {
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
-        }
 
         private void RemoveItem(object obj)
         {

@@ -1414,6 +1414,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted..
+        /// </summary>
+        public static string ShortCutFailed {
+            get {
+                return ResourceManager.GetString("ShortCutFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Shortcut error.
+        /// </summary>
+        public static string ShortCutFailed_Title {
+            get {
+                return ResourceManager.GetString("ShortCutFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload file. Please try again. [{0}].
         /// </summary>
         public static string UploadNodeFailed {
