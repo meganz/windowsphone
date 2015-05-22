@@ -30,7 +30,7 @@ namespace MegaApp.Pages
         public MainPage()
         {
             // Set the main viewmodel of this page
-            _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
+            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _mainPageViewModel;
             
             InitializeComponent();
@@ -247,16 +247,28 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
-                case NavigationParameter.ImportLinkLaunch:
-                    break;
                 case NavigationParameter.Uploads:
                     break;
                 case NavigationParameter.Downloads:
                     break;
                 case NavigationParameter.DisablePassword:
                     break;
+                case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
                 {
+                    if (e.NavigationMode != NavigationMode.Back)
+                    {
+                        if (NavigationContext.QueryString.ContainsKey("filelink"))
+                        {
+                            _mainPageViewModel.LoadFolders();
+                            _mainPageViewModel.ActiveImportLink = NavigationContext.QueryString["filelink"];
+                            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+                            //_mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
+                            //    this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+                            //SetApplicationBarData();
+                        }
+                    }
+
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
                         //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
