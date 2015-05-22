@@ -37,6 +37,7 @@ namespace MegaApp.Models
             this.ChildNodes = new ObservableCollection<IMegaNode>();
             this.BreadCrumbs = new ObservableCollection<IMegaNode>();
             this.SelectedNodes = new List<IMegaNode>();
+            this.IsMultiSelectActive = false;
 
             ////FolderRootNode depending on the container type
             //switch (this.Type)
@@ -54,7 +55,8 @@ namespace MegaApp.Models
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
-            this.GetLinkCommand = new DelegateCommand(this.GetLink);            
+            this.GetLinkCommand = new DelegateCommand(this.GetLink);
+            this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
 
             SetViewDefaults();
 
@@ -80,7 +82,8 @@ namespace MegaApp.Models
         public ICommand RenameItemCommand { get; private set; }
         public ICommand RemoveItemCommand { get; private set; }
         public ICommand DownloadItemCommand { get; private set; }
-        public ICommand CreateShortCutCommand { get; private set; }        
+        public ICommand CreateShortCutCommand { get; private set; }
+        public ICommand MultiSelectCommand { get; set; }
 
         #endregion
 
@@ -430,13 +433,37 @@ namespace MegaApp.Models
             // Only 1 Folder Picker can be open at 1 time
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-#if WINDOWS_PHONE_81
+            #if WINDOWS_PHONE_80
+            if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
+            {
+                switch (await DialogService.ShowOptionsDialog(AppMessages.QuestionAskedDownloadOption_Title, 
+                    AppMessages.QuestionAskedDownloadOption,
+                    new[] { AppMessages.QuestionAskedDownloadOption_YesButton, AppMessages.QuestionAskedDownloadOption_NoButton }))
+                {
+                    case -1:
+                    {
+                        return;
+                    }
+                    case 0:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
+                        break;
+                    }
+                    case 1:
+                    {
+                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
+                        break;
+                    }
+                }
+                SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
+            }
+            #elif WINDOWS_PHONE_81
             if (downloadFolder == null)
             {
                 this.AppInformation.PickerOrAsyncDialogIsOpen = true;
                 if (!await FolderService.SelectDownloadFolder()) return;
             }
-#endif
+            #endif
 
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads);
 
@@ -486,6 +513,7 @@ namespace MegaApp.Models
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
+            this.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 
@@ -578,6 +606,11 @@ namespace MegaApp.Models
         #endregion
 
         #region Private Methods
+
+        private void MultiSelect(object obj)
+        {
+            this.IsMultiSelectActive = !this.IsMultiSelectActive;
+        }
 
         private void RemoveItem(object obj)
         {
@@ -852,7 +885,7 @@ namespace MegaApp.Models
 
         public IMegaNode FocusedNode { get; set; }
         public DriveDisplayMode CurrentDisplayMode { get; set; }
-        public DriveDisplayMode PreviousDisplayMode { get; set; }
+        public DriveDisplayMode PreviousDisplayMode { get; set; }        
         public List<IMegaNode> SelectedNodes { get; set; }
 
         public bool NoFolderUpAction { get; set; }
