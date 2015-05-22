@@ -568,7 +568,7 @@ namespace MegaApp.Services
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Bottom,
-                Background = (SolidColorBrush)Application.Current.Resources["PhoneChromeColor"]
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
             };
             pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
             pinLockButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
