@@ -123,7 +123,9 @@ namespace MegaApp.Services
             }
 
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-            App.CloudDrive.MultipleDownload(args.Folder);
+            
+            //App.CloudDrive.MultipleDownload(args.Folder);
+            App.MainPageViewModel.ActiveFolderView.MultipleDownload(args.Folder);
 
             ResetFolderPicker();
         }

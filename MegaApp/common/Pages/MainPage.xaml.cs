@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -29,7 +30,7 @@ namespace MegaApp.Pages
         public MainPage()
         {
             // Set the main viewmodel of this page
-            _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
+            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _mainPageViewModel;
             
             InitializeComponent();
@@ -110,6 +111,29 @@ namespace MegaApp.Pages
             return true;
         }
 
+        private bool OpenShortCut()
+        {
+            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(_mainPageViewModel.ShortCutHandle.Value);
+            if (shortCutMegaNode != null)
+            {
+                // Looking for the absolute parent of the shortcut node to see the type
+                MNode parentNode;
+                MNode absoluteParentNode = shortCutMegaNode;
+                while ((parentNode = App.MegaSdk.getParentNode(absoluteParentNode)) != null)
+                    absoluteParentNode = parentNode;
+
+                if (absoluteParentNode.getType() == MNodeType.TYPE_ROOT)
+                {
+                    _mainPageViewModel.CloudDrive.BrowseToFolder(
+                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, shortCutMegaNode));
+                }
+                else return false;
+            }
+            else return false;
+
+            return true;
+        }
+
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             _mainPageViewModel.Deinitialize(App.GlobalDriveListener);
@@ -120,12 +144,18 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
+            if (e.NavigationMode == NavigationMode.Reset) return;
+
             _mainPageViewModel.Initialize(App.GlobalDriveListener);
-
-
+            
             App.CloudDrive.ListBox = LstCloudDrive;
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+
+            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            {
+                _mainPageViewModel.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+            }
             
             if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
             {
@@ -150,25 +180,27 @@ namespace MegaApp.Pages
                 #endif
 
                 if (ValidActiveAndOnlineSession() && navParam == NavigationParameter.None)
+                {
+                    // If the user is trying to open a shortcut
+                    if (_mainPageViewModel.ShortCutHandle.HasValue)
+                    {
+                        if (!OpenShortCut())
+                        {
+                            MessageBox.Show(AppMessages.ShortCutFailed.ToUpper(),
+                                AppMessages.ShortCutFailed_Title, MessageBoxButton.OK);
+                            
+                            _mainPageViewModel.CloudDrive.BrowseToFolder(
+                                NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
+                        }
+                    }                        
+
                     return;
+                }                    
             }
 
             // Initialize the application bar of this page
             SetApplicationBarData();
-
-            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
-            {
-                //TODO Refactor
-                //App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);                
-            }
-
-            if (e.NavigationMode == NavigationMode.Reset) return;
-
-            if (e.NavigationMode == NavigationMode.Back)
-            {                
-              
-            }            
-
+                        
             if (e.NavigationMode == NavigationMode.Back)
             {
                 if (!_mainPageViewModel.ActiveFolderView.NoFolderUpAction)
@@ -215,16 +247,28 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
-                case NavigationParameter.ImportLinkLaunch:
-                    break;
                 case NavigationParameter.Uploads:
                     break;
                 case NavigationParameter.Downloads:
                     break;
                 case NavigationParameter.DisablePassword:
                     break;
+                case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
                 {
+                    if (e.NavigationMode != NavigationMode.Back)
+                    {
+                        if (NavigationContext.QueryString.ContainsKey("filelink"))
+                        {
+                            _mainPageViewModel.LoadFolders();
+                            _mainPageViewModel.ActiveImportLink = NavigationContext.QueryString["filelink"];
+                            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+                            //_mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
+                            //    this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+                            //SetApplicationBarData();
+                        }
+                    }
+
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
                         //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
