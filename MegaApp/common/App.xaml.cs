@@ -42,6 +42,7 @@ namespace MegaApp
         public static String IpAddress { get; set; }
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
+        public static MainPageViewModel MainPageViewModel { get; set; }
         public static TransferQueu MegaTransfers { get; set; }
 
         public static UserDataViewModel UserData { get; set; }
@@ -464,7 +465,12 @@ namespace MegaApp
 
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();
-                Deployment.Current.Dispatcher.BeginInvoke(() => CloudDrive.ChildNodes.Clear());
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        MainPageViewModel.CloudDrive.ChildNodes.Clear();
+                        MainPageViewModel.RubbishBin.ChildNodes.Clear();
+                    }                    
+                );
                 AppService.ClearAppCache(false);                
 
                 // Show a message notifying the error
