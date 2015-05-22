@@ -244,7 +244,7 @@
 									    Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
-									    x:Name="BtnGetPreviewLinkCloudDrive" 
+									    x:Name="BtnGetLinkCloudDrive" 
 									    Command="{Binding GetLinkCommand}"
 									    Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								    />
@@ -280,7 +280,7 @@
                                 </Border.Background>
                                 <StackPanel>
                                     <TextBlock TextWrapping="Wrap" Text="You have exceeded the storage limit of your account" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                                    <Button x:Name="btnUpgradeAccount" Content="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding UpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                                    <Button x:Name="BtnUpgradeAccount" Content="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding UpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                                 </StackPanel>
                             </Border>
                             <Border x:Name="BorderLinkText" BorderThickness="1" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="1" Visibility="Collapsed">
@@ -351,37 +351,37 @@
                                         <!--<telerikPrimitives:RadContextMenuItem 
 							                x:Name="BtnPreviewItem" 
 							                Command="{Binding PreviewItemCommand}"
-							                Content="{Binding LocalizedUiResources.Preview, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+							                Content="{Binding LocalizedUiResources.Preview, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								        />-->
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnDownloadItemRubbishBin" 
 											Command="{Binding DownloadItemCommand}"
-											Content="{Binding LocalizedUiResources.Download, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+											Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								        />
-                                        <telerikPrimitives:RadContextMenuItem 
+                                        <!--<telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnCreateShortCutRubbishBin" 
 											Command="{Binding CreateShortCutCommand}"
-											Content="{Binding LocalizedUiResources.CreateShortCut, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								        />
-                                        <telerikPrimitives:RadContextMenuItem 
-											x:Name="BtnGetPreviewLinkRubbishBin" 
+											Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								        />-->
+                                        <!--<telerikPrimitives:RadContextMenuItem 
+											x:Name="BtnGetLinkRubbishBin" 
 											Command="{Binding GetPreviewLinkItemCommand}"
-											Content="{Binding LocalizedUiResources.GetPreviewLink, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								        />
+											Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+								        />-->
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnRenameItemRubbishBin" 
 											Command="{Binding RenameItemCommand}"
-											Content="{Binding LocalizedUiResources.Rename, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnMoveItemRubbishBin"
 											Tapped="OnMoveItemTap"
-											Content="{Binding LocalizedUiResources.Move, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 								        />
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnRemoveRubbishBin" 
 											Command="{Binding RemoveItemCommand}" 
-											Content="{Binding LocalizedUiResources.Remove, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+											Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
 					                    />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>

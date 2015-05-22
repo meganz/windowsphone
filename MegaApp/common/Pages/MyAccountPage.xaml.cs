@@ -109,7 +109,8 @@ namespace MegaApp.Pages
 
         private void OnClearCacheClick(object sender, System.EventArgs e)
         {
-            App.CloudDrive.ChildNodes.Clear();
+            App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
+            App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             _myAccountPageViewModel.ClearCache();
         }        
 
