@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
-using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -69,7 +63,7 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
         }
 
-        private void OnPauseAllClick(object sender, System.EventArgs e)
+        private void OnPauseAllClick(object sender, EventArgs e)
         {        
 	        // Exit if no transfers
             if (App.MegaTransfers.Count < 1) return;
