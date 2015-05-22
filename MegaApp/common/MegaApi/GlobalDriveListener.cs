@@ -103,8 +103,6 @@ namespace MegaApp.MegaApi
                                                 // Dummy catch, surpress possible exception
                                             }
                                         });
-                                       
-                                        break;
                                     }
                                 }
                             }
@@ -114,6 +112,10 @@ namespace MegaApp.MegaApi
                     else
                     {
                         // UPDATE Scenario
+
+                        // Used in different scenario's
+                        MNode parentNode = api.getParentNode(megaNode);
+
                         foreach (var folder in Folders)
                         {
                             IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
@@ -122,8 +124,6 @@ namespace MegaApp.MegaApi
                             // If node is found, process the update action
                             if (nodeToUpdateInView != null)
                             {
-                                MNode parentNode = api.getParentNode(megaNode);
-
                                 bool isMoved = !folder.FolderRootNode.Handle.Equals(parentNode.getHandle());
 
                                 // Is node is move to different folder. Remove from current folder view
@@ -161,124 +161,119 @@ namespace MegaApp.MegaApi
                                             // Dummy catch, surpress possible exception
                                         }
                                     });
+                                    isProcessed = true;
+                                    break;
                                 }
                                
-                                isProcessed = true;
-                                break;
                             }
                         }
-
-                        if (!isProcessed)
+                        
+                        // ADDED scenario
+                        
+                        if (parentNode != null && !isProcessed)
                         {
-                            // ADDED scenario
-
-                            MNode parentNode = api.getParentNode(megaNode);
-
-                            if (parentNode != null)
+                            foreach (var folder in Folders)
                             {
-                                foreach (var folder in Folders)
+                                bool isAddedInFolder = folder.FolderRootNode.Handle.Equals(parentNode.getHandle());
+
+                                // If node is added in current folder, process the add action
+                                if (isAddedInFolder)
                                 {
-                                    bool isAddedInFolder = folder.FolderRootNode.Handle.Equals(parentNode.getHandle());
+                                    // Retrieve the index from the SDK
+                                    // Substract -1 to get a valid list index
+                                    int insertIndex = api.getIndex(megaNode,
+                                        UiService.GetSortOrder(parentNode.getHandle(),
+                                            parentNode.getName())) - 1;
 
-                                    // If node is added in current folder, process the add action
-                                    if (isAddedInFolder)
+                                    // If the insert position is higher than the ChilNodes size insert in the last position
+                                    if (insertIndex >= folder.ChildNodes.Count())
                                     {
-                                        // Retrieve the index from the SDK
-                                        // Substract -1 to get a valid list index
-                                        int insertIndex = api.getIndex(megaNode,
-                                            UiService.GetSortOrder(parentNode.getHandle(),
-                                                parentNode.getName())) - 1;
-
-                                        // If the insert position is higher than the ChilNodes size insert in the last position
-                                        if (insertIndex >= folder.ChildNodes.Count())
-                                        {
-                                            // Needed because we are in a foreach loop to prevent the use of the wrong 
-                                            // local variable in the dispatcher code.
-                                            var currentFolder = folder;
-                                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                            {
-                                                try
-                                                {
-                                                    currentFolder.ChildNodes.Add(NodeService.CreateNew(api,
-                                                        _appInformation,
-                                                        megaNode));
-                                                    ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
-                                                    UpdateFolders(currentFolder);
-                                                }
-                                                catch (Exception)
-                                                {
-                                                    // Dummy catch, surpress possible exception
-                                                }
-                                            });
-                                        }
-                                        // Insert the node at a specific position
-                                        else
-                                        {
-                                            // Insert position can never be less then zero
-                                            // Replace negative index with first possible index zero
-                                            if (insertIndex < 0) insertIndex = 0;
-
-                                            // Needed because we are in a foreach loop to prevent the use of the wrong 
-                                            // local variable in the dispatcher code.
-                                            var currentFolder = folder;
-                                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                            {
-                                                try
-                                                {
-                                                    currentFolder.ChildNodes.Insert(insertIndex,
-                                                        NodeService.CreateNew(api,
-                                                        _appInformation,
-                                                        megaNode));
-                                                    ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
-                                                    UpdateFolders(currentFolder);
-                                                }
-                                                catch (Exception)
-                                                {
-                                                    // Dummy catch, surpress possible exception
-                                                }
-                                            });
-                                        }
-                                      
-                                        break;
-                                    }
-                                    
-                                    // ADDED in subfolder scenario
-                                    IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
-                                        node => node.Handle.Equals(parentNode.getHandle()));
-
-                                    if (nodeToUpdateInView != null)
-                                    {
+                                        // Needed because we are in a foreach loop to prevent the use of the wrong 
+                                        // local variable in the dispatcher code.
+                                        var currentFolder = folder;
                                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                                         {
                                             try
                                             {
-                                                nodeToUpdateInView.Update(parentNode);
-                                                var folderNode = nodeToUpdateInView as FolderNodeViewModel;
-                                                if (folderNode != null) folderNode.SetFolderInfo();
+                                                currentFolder.ChildNodes.Add(NodeService.CreateNew(api,
+                                                    _appInformation,
+                                                    megaNode));
+                                                ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
+                                                UpdateFolders(currentFolder);
                                             }
                                             catch (Exception)
                                             {
                                                 // Dummy catch, surpress possible exception
                                             }
                                         });
-                                        break;
                                     }
+                                    // Insert the node at a specific position
+                                    else
+                                    {
+                                        // Insert position can never be less then zero
+                                        // Replace negative index with first possible index zero
+                                        if (insertIndex < 0) insertIndex = 0;
 
-                                    // Unconditional scenarios
-                                    // Move/delete/add actions in subfolders
-                                    var localFolder = folder;
+                                        // Needed because we are in a foreach loop to prevent the use of the wrong 
+                                        // local variable in the dispatcher code.
+                                        var currentFolder = folder;
+                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                        {
+                                            try
+                                            {
+                                                currentFolder.ChildNodes.Insert(insertIndex,
+                                                    NodeService.CreateNew(api,
+                                                    _appInformation,
+                                                    megaNode));
+                                                ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
+                                                UpdateFolders(currentFolder);
+                                            }
+                                            catch (Exception)
+                                            {
+                                                // Dummy catch, surpress possible exception
+                                            }
+                                        });
+                                    }
+                                      
+                                    break;
+                                }
+                                    
+                                // ADDED in subfolder scenario
+                                IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
+                                    node => node.Handle.Equals(parentNode.getHandle()));
+
+                                if (nodeToUpdateInView != null)
+                                {
                                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                                     {
                                         try
                                         {
-                                            UpdateFolders(localFolder);
+                                            nodeToUpdateInView.Update(parentNode);
+                                            var folderNode = nodeToUpdateInView as FolderNodeViewModel;
+                                            if (folderNode != null) folderNode.SetFolderInfo();
                                         }
                                         catch (Exception)
                                         {
                                             // Dummy catch, surpress possible exception
                                         }
                                     });
+                                    break;
                                 }
+
+                                // Unconditional scenarios
+                                // Move/delete/add actions in subfolders
+                                var localFolder = folder;
+                                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                {
+                                    try
+                                    {
+                                        UpdateFolders(localFolder);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        // Dummy catch, surpress possible exception
+                                    }
+                                });
                             }
                         }
                     }
