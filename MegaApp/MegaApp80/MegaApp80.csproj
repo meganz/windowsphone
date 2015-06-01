@@ -187,6 +187,9 @@
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
+      <Link>Enums\CameraUploadsConnectionType.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\ContainerType.cs">
       <Link>Enums\ContainerType.cs</Link>
     </Compile>
@@ -340,6 +343,9 @@
     <Compile Include="..\common\Models\BaseViewModel.cs">
       <Link>Models\BaseViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\CameraUploadsViewModel.cs">
+      <Link>Models\CameraUploadsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\CloudDriveViewModel.cs">
       <Link>Models\CloudDriveViewModel.cs</Link>
     </Compile>
@@ -431,6 +437,10 @@
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
       <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\InitCameraUploadsPage.xaml.cs">
+      <Link>Pages\InitCameraUploadsPage.xaml.cs</Link>
+      <DependentUpon>InitCameraUploadsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\InitTourPage.xaml.cs">
       <Link>Pages\InitTourPage.xaml.cs</Link>
@@ -1921,6 +1931,10 @@
     </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\InitCameraUploadsPage.xaml">
+      <Link>Pages\InitCameraUploadsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\InitTourPage.xaml">

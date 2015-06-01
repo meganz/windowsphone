@@ -81,7 +81,13 @@ namespace MegaApp.Models
                     this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
 
                 this.RubbishBin.LoadChildNodes();
-            });            
+
+                if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                {
+                    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
+                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                }
+            }); 
         }
 
         public void FetchNodes()

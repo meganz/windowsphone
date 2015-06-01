@@ -351,7 +351,6 @@
   </data>
   <data name="RubbishBinName" xml:space="preserve">
     <value>Rubbish bin</value>
-    <comment>Label for any 'Rubish bin' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
     <value>Off</value>
@@ -753,9 +752,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Help</value>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="RubbishBinName" xml:space="preserve">
-    <value>Rubbish bin</value>
-  </data>
   <data name="CameraUploads" xml:space="preserve">
     <value>Camera uploads</value>
   </data>
@@ -770,5 +766,25 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
     <value>Empty rubbish</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SetupCameraUploadsTitle" xml:space="preserve">
+    <value>Set up camera uploads</value>
+    <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Skip</value>
+    <comment>Label for any 'Skip' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="WifiAndDataPlan" xml:space="preserve">
+    <value>Wifi and Data plan</value>
+    <comment>Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</comment>
+  </data>
+  <data name="WifiOnly" xml:space="preserve">
+    <value>Wifi only</value>
+    <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
 </root>

@@ -111,6 +111,8 @@ namespace MegaApp.Services
             SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
             SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
             SettingsService.DeleteSetting(SettingsResources.UserPinLock);
+
+            SettingsService.DeleteSetting(SettingsResources.CameraUploadsFirstInit);
         }
     }
 }

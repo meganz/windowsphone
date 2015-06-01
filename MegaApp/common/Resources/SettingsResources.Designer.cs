@@ -70,6 +70,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a {7C0F8199-EFE6-4BA0-B982-93E6AB704A51}.
+        /// </summary>
+        public static string CameraUploadsConnectionType {
+            get {
+                return ResourceManager.GetString("CameraUploadsConnectionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {09D0E27C-FF4C-4244-94C6-0797C341466A}.
+        /// </summary>
+        public static string CameraUploadsFileType {
+            get {
+                return ResourceManager.GetString("CameraUploadsFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {6F9C35B2-2139-48B6-908A-C4950A6BB624}.
+        /// </summary>
+        public static string CameraUploadsFirstInit {
+            get {
+                return ResourceManager.GetString("CameraUploadsFirstInit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {ED012CA3-EA51-45B0-BC66-3D585C612E74}.
+        /// </summary>
+        public static string CameraUploadsIsEnabled {
+            get {
+                return ResourceManager.GetString("CameraUploadsIsEnabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a {DA6C9F2D-6521-4BD5-BD5E-8F27C3F61E1A}.
         /// </summary>
         public static string DefaultDownloadLocation {
