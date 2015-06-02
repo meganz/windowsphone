@@ -753,7 +753,8 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Camera uploads</value>
+    <value>Camera Uploads</value>
+    <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
@@ -786,5 +787,13 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="WifiOnly" xml:space="preserve">
     <value>Wifi only</value>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
+  </data>
+  <data name="EnableCameraUploads" xml:space="preserve">
+    <value>Enable Camera Uploads</value>
+    <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+    <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

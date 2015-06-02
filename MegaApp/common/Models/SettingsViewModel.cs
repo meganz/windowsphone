@@ -36,6 +36,7 @@ namespace MegaApp.Models
             this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
 
             this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
+            this.CameraUploadsIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsIsEnabled, false);
             #if WINDOWS_PHONE_80
             this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
             #elif WINDOWS_PHONE_81
@@ -190,6 +191,34 @@ namespace MegaApp.Models
                     DialogService.ShowPinLockDialog(false, this);
                 
                 OnPropertyChanged("PinLockIsEnabled");
+            }
+        }
+
+        private string _cameraUploadsIsEnabledText;
+        public string CameraUploadsIsEnabledText
+        {
+            get { return _cameraUploadsIsEnabledText; }
+            set
+            {
+                _cameraUploadsIsEnabledText = value;
+                OnPropertyChanged("CameraUploadsIsEnabledText");
+            }
+        }
+
+        private bool _cameraUploadsIsEnabled;
+        public bool CameraUploadsIsEnabled
+        {
+            get { return _cameraUploadsIsEnabled; }
+            set
+            {
+                if (_cameraUploadsIsEnabled != value)
+                    SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, value);
+
+                _cameraUploadsIsEnabled = value;
+
+                CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+                                
+                OnPropertyChanged("CameraUploadsIsEnabled");
             }
         }
 
