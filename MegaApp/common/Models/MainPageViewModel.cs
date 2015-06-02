@@ -82,11 +82,12 @@ namespace MegaApp.Models
 
                 this.RubbishBin.LoadChildNodes();
 
-                if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                {
-                    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
-                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                }
+                // UNCOMMENT TO CONTINUE WORKING ON CAMERA UPLOADS
+                //if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                //{
+                //    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
+                //    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                //}
             }); 
         }
 

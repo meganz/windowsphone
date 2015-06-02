@@ -232,7 +232,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Camera uploads.
+        ///   Busca una cadena traducida similar a Camera Uploads.
         /// </summary>
         public static string CameraUploads {
             get {
@@ -498,6 +498,15 @@ namespace MegaApp.Resources {
         public static string EmptyTransfers {
             get {
                 return ResourceManager.GetString("EmptyTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable Camera Uploads.
+        /// </summary>
+        public static string EnableCameraUploads {
+            get {
+                return ResourceManager.GetString("EnableCameraUploads", resourceCulture);
             }
         }
         
@@ -1155,6 +1164,15 @@ namespace MegaApp.Resources {
         public static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Security.
+        /// </summary>
+        public static string Security {
+            get {
+                return ResourceManager.GetString("Security", resourceCulture);
             }
         }
         
