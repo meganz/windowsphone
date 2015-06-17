@@ -33,7 +33,7 @@ namespace MegaApp.Models
         {
             MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
             MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
-            MegaSdk.getUserData(new GetUserDataRequestListener(AccountDetails));
+            MegaSdk.getOwnUserData(new GetUserDataRequestListener(AccountDetails));
         }
 
         public void GetPricing()

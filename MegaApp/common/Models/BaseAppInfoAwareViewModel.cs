@@ -40,7 +40,7 @@ namespace MegaApp.Models
                 if (String.IsNullOrEmpty(App.UserData.UserEmail))
                     App.UserData.UserEmail = App.MegaSdk.getMyEmail();
                 if (String.IsNullOrEmpty(App.UserData.UserName))
-                    App.MegaSdk.getUserData(new GetUserDataRequestListener(App.UserData));
+                    App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(App.UserData));
 
                 UserData = App.UserData;
             }
