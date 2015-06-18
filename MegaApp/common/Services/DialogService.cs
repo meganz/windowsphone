@@ -10,6 +10,7 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 #if WINDOWS_PHONE_81
@@ -103,14 +104,9 @@ namespace MegaApp.Services
         }
         #endif
 
-        // MODIFIED TEMPORARILY. WAITING FOR THE NEW PAYMENT METHODS        
-        //public static async void ShowOverquotaAlert()
-        public static void ShowOverquotaAlert()
+        public static async void ShowOverquotaAlert()
         {
-            MessageBox.Show("Operation not allowed, you will exceed the storage limit of your account", 
-                AppMessages.OverquotaAlert_Title, MessageBoxButton.OK);
-            
-            /*MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
                 title: AppMessages.OverquotaAlert_Title,
                 message: AppMessages.OverquotaAlert
@@ -119,13 +115,13 @@ namespace MegaApp.Services
             switch (closedEventArgs.ButtonIndex)
             {
                 case 0: // "Yes" button clicked
-                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+                    (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
                     break;
 
                 case 1: // "No" button clicked
                 default:
                     break;
-            }*/
+            }
         }
 
         public static void ShowUploadOptions(FolderViewModel folder)
