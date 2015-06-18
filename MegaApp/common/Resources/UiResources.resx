@@ -451,9 +451,9 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Storage</value>
     <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AccountTypeProLite" xml:space="preserve">
-    <value>PRO Lite</value>
-    <comment>Label for the name of the 'PRO Lite' account type - (NO-TRANSLATION).</comment>
+  <data name="AccountTypeLite" xml:space="preserve">
+    <value>LITE</value>
+    <comment>Label for the name of the 'LITE' account type - (NO-TRANSLATION).</comment>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Accept</value>
@@ -795,5 +795,9 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Security" xml:space="preserve">
     <value>Security</value>
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+    <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

@@ -88,6 +88,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Storing credit card....
+        /// </summary>
+        public static string CreditCardStore {
+            get {
+                return ResourceManager.GetString("CreditCardStore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Deleting &apos;{0}&apos;....
         /// </summary>
         public static string DeleteNode {
@@ -264,6 +273,15 @@ namespace MegaApp.Resources {
         public static string ResumeTransfers {
             get {
                 return ResourceManager.GetString("ResumeTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upgrading account....
+        /// </summary>
+        public static string UpgradeAccount {
+            get {
+                return ResourceManager.GetString("UpgradeAccount", resourceCulture);
             }
         }
     }

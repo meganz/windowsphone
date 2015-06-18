@@ -188,8 +188,14 @@
     <Compile Include="..\common\Classes\AssociationUriMapper.cs">
       <Link>Classes\AssociationUriMapper.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\BillingDetails.cs">
+      <Link>Classes\BillingDetails.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\CommandStatusArgs.cs">
       <Link>Classes\CommandStatusArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\CreditCard.cs">
+      <Link>Classes\CreditCard.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\CustomMultiResolutionImage.cs">
       <Link>Classes\CustomMultiResolutionImage.cs</Link>
@@ -211,6 +217,9 @@
     </Compile>
     <Compile Include="..\common\Classes\Product.cs">
       <Link>Classes\Product.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\ProductBase.cs">
+      <Link>Classes\ProductBase.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\ResolutionHelper.cs">
       <Link>Classes\ResolutionHelper.cs</Link>
@@ -268,6 +277,9 @@
     </Compile>
     <Compile Include="..\common\Enums\ContainerType.cs">
       <Link>Enums\ContainerType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\CountryCodes.cs">
+      <Link>Enums\CountryCodes.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\DriveDisplayMode.cs">
       <Link>Enums\DriveDisplayMode.cs</Link>
@@ -338,6 +350,9 @@
     <Compile Include="..\common\MegaApi\CreateFolderRequestListener.cs">
       <Link>MegaApi\CreateFolderRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\CreditCardStoreRequestListener.cs">
+      <Link>MegaApi\CreditCardStoreRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\ExportNodeRequestListener.cs">
       <Link>MegaApi\ExportNodeRequestListener.cs</Link>
     </Compile>
@@ -398,6 +413,9 @@
     <Compile Include="..\common\MegaApi\RenameNodeRequestListener.cs">
       <Link>MegaApi\RenameNodeRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
+      <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\AboutViewModel.cs">
       <Link>Models\AboutViewModel.cs</Link>
     </Compile>
@@ -430,6 +448,9 @@
     </Compile>
     <Compile Include="..\common\Models\CreateAccountViewModel.cs">
       <Link>Models\CreateAccountViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\CreditCardPaymentViewModel.cs">
+      <Link>Models\CreditCardPaymentViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\DebugSettingsViewModel.cs">
       <Link>Models\DebugSettingsViewModel.cs</Link>
@@ -509,6 +530,10 @@
     <Compile Include="..\common\Pages\CreateAccountPage.xaml.cs">
       <Link>Pages\CreateAccountPage.xaml.cs</Link>
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\CreditCardPaymentPage.xaml.cs">
+      <Link>Pages\CreditCardPaymentPage.xaml.cs</Link>
+      <DependentUpon>CreditCardPaymentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
@@ -1171,6 +1196,10 @@
     </Page>
     <Page Include="..\common\Pages\CreateAccountPage.xaml">
       <Link>Pages\CreateAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\CreditCardPaymentPage.xaml">
+      <Link>Pages\CreditCardPaymentPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">

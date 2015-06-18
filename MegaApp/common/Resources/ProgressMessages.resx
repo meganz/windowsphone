@@ -129,6 +129,10 @@
     <value>Creating folder...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Storing credit card...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
   <data name="DeleteNode" xml:space="preserve">
     <value>Deleting '{0}'...</value>
     <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
@@ -210,5 +214,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="ResumeTransfers" xml:space="preserve">
     <value>Resuming transfers...</value>
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Upgrading account...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
 </root>

@@ -1,0 +1,171 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Inputs"
+    xmlns:models="clr-namespace:MegaApp.Models"
+    xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    x:Class="MegaApp.Pages.CreditCardPaymentPage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    d:DataContext="{d:DesignInstance models:CreditCardPaymentViewModel}">
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar>            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" IsEnabled="False" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="OnCancelClick" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+	<ScrollViewer>
+		<Grid x:Name="LayoutRoot" Background="Transparent">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
+			<StackPanel Grid.Row="0" Margin="12,17,0,28">
+				<TextBlock x:Name="PageTitle" Text="YOU HAVE SELECTED THE PRO I PLAN" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,12"/>
+                <TextBlock Text="Choose renewal period below" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Text="Enter your payment details below" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+			</StackPanel>
+
+            <!--ContentPanel. Colocar aquí el contenido adicional-->
+			<StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+				<Grid Margin="12,10" Background="#FF404040" Height="168">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Border HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" >
+						<Border.Background>
+							<SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+						</Border.Background>
+						<Image x:Name="PlanImage" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
+					</Border>
+                    <TextBlock x:Name="PlanName" Text="{Binding Plan.Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
+					<RichTextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+						<Paragraph>
+                            <Run x:Name="PlanStorage" Text="{Binding Plan.Storage}"/>
+							<Run Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+						</Paragraph>
+					</RichTextBox>
+					<RichTextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+						<Paragraph>
+                            <Run x:Name="PlanBandwidth" Text="{Binding Plan.Transfer}"/>
+							<Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+						</Paragraph>
+					</RichTextBox>
+					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+						<Paragraph>
+							<Run Text="from"/>
+                            <Run x:Name="TxtBasePrice" Text="{Binding Plan.BasePrice}"/>
+							<Run Text="/month *"/>
+						</Paragraph>
+					</RichTextBox>
+					<RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+						<Paragraph>
+							<Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.Price}"/>
+							<Run Text="/month " Foreground="LightGray"/>
+						</Paragraph>
+					</RichTextBox>
+				</Grid>
+
+                <StackPanel x:Name="PanelMembership" Grid.Row="1" Margin="12,17,0,28" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<TextBlock Text="Select membership *" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap" Background="#FF404040">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding LocalizedUiResources.Monthly, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
+							<TextBlock x:Name="TxtMonthlyPrice" Text="{Binding ProductMonthly.Price}" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+						</Grid>
+					</Border>
+					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432" Tap="OnAnnualyTap" Background="#FF404040">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Column="0" Grid.Row="0" Background="{StaticResource MegaRedSolidColorBrush}">
+                                <TextBlock Text="{Binding LocalizedUiResources.Save, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
+                                <TextBlock Text="17%" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
+                            </StackPanel>
+                            <TextBlock Text="{Binding LocalizedUiResources.Annually, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
+                            <TextBlock x:Name="TxtAnnualyPrice" Text="{Binding ProductAnnualy.Price}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+						</Grid>
+					</Border>
+					<StackPanel Margin="0,17,0,28">
+						<TextBlock Text="* Get 2 months free if you subscribe to a one-year plan" TextWrapping="Wrap" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+						<TextBlock Text="* Credit Card recurring payments" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,0" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+					</StackPanel>
+				</StackPanel>
+
+                <StackPanel x:Name="PanelBillingPaymentDetails" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<TextBlock Text="BILLING DETAILS" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+					<TextBlock Text="Address 1" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtAddress1" Text="{Binding BillingDetails.Address1, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="0"/>
+					<TextBlock Text="Address 2 (optional)" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtAddress2" Text="{Binding BillingDetails.Address2, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="1"/>
+					<TextBlock Text="City" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtCity" Text="{Binding BillingDetails.City, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="2"/>
+					<TextBlock Text="State / Province" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtStateProvince" Text="{Binding BillingDetails.Province, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="3"/>
+                    <TextBlock Text="Country" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikInput:RadListPicker x:Name="LstCountries" PopupHeader="COUNTRY" SelectedValue="{Binding BillingDetails.CountryName, Mode=TwoWay}" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="5" SelectionChanged="LstCountries_SelectionChanged"/>
+					<TextBlock Text="Postal Code" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtPostalCode" Text="{Binding BillingDetails.PostalCode, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="6"/>
+
+					<TextBlock Text="PAYMENT DETAILS" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+					<TextBlock Text="FirstName" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtFirstName" Text="{Binding CreditCard.FirstName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="7"/>
+                    <TextBlock Text="LastName" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtLastName" Text="{Binding CreditCard.LastName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="8"/>
+                    <TextBlock Text="Credit Card Number" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtCreditCardNumber" Text="{Binding CreditCard.Number, Mode=TwoWay}" InputScope="Number" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="9"/>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+                        <TextBlock Text="Month" Grid.Column="0" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikInput:RadListPicker x:Name="LstMonths" PopupHeader="MONTH" SelectedValue="{Binding CreditCard.ExpireMonth, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="10"/>
+						<TextBlock Text="Year" Grid.Column="1" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikInput:RadListPicker x:Name="LstYears" PopupHeader="YEAR" SelectedValue="{Binding CreditCard.ExpireYear, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="11"/>
+                        <TextBlock Text="CVV" Grid.Column="2" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikPrimitives:RadTextBox x:Name="TxtCV2" Text="{Binding CreditCard.CV2, Mode=TwoWay}" InputScope="Number" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" MaxLength="3" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="12"/>
+					</Grid>					
+				</StackPanel>
+
+			</StackPanel>
+		</Grid>
+	</ScrollViewer>
+
+</phone:PhoneApplicationPage>

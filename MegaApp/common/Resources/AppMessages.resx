@@ -733,9 +733,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
     <value>Are you sure you want to permanent delete {0}?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
   <data name="DeleteNodeQuestion_Title" xml:space="preserve">
     <value>Delete item?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
     <value>Failed to retrieve your user data. Please try again. [{0}]</value>
@@ -789,5 +792,41 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="ShortCutFailed_Title" xml:space="preserve">
     <value>Shortcut error</value>
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>The credit card information is not correct. The credit card will not be charged.</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>Storing credit card failed</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>Please fill in all the required fields and try again.</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>Wrong data format</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>The operation has not finished correctly. The credit card will not be charged.</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>Upgrade account failed</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>Account successfully upgraded!</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>Account upgraded</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
 </root>

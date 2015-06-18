@@ -323,6 +323,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The credit card information is not correct. The credit card will not be charged..
+        /// </summary>
+        public static string CreditCardStoreFailed {
+            get {
+                return ResourceManager.GetString("CreditCardStoreFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Storing credit card failed.
+        /// </summary>
+        public static string CreditCardStoreFailed_Title {
+            get {
+                return ResourceManager.GetString("CreditCardStoreFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Current PIN lock is not correct or does not match.
         /// </summary>
         public static string CurrentPinLockCodeDoNotMatch {
@@ -1297,6 +1315,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please fill in all the required fields and try again..
+        /// </summary>
+        public static string RequiredFieldsCreditCardPayment {
+            get {
+                return ResourceManager.GetString("RequiredFieldsCreditCardPayment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please fill in your e-mail address and your MEGA password..
         /// </summary>
         public static string RequiredFieldsLogin {
@@ -1432,6 +1459,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The operation has not finished correctly. The credit card will not be charged..
+        /// </summary>
+        public static string UpgradeAccountFailed {
+            get {
+                return ResourceManager.GetString("UpgradeAccountFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upgrade account failed.
+        /// </summary>
+        public static string UpgradeAccountFailed_Title {
+            get {
+                return ResourceManager.GetString("UpgradeAccountFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account successfully upgraded!.
+        /// </summary>
+        public static string UpgradeAccountSuccessfully {
+            get {
+                return ResourceManager.GetString("UpgradeAccountSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account upgraded.
+        /// </summary>
+        public static string UpgradeAccountSuccessfully_Title {
+            get {
+                return ResourceManager.GetString("UpgradeAccountSuccessfully_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to upload file. Please try again. [{0}].
         /// </summary>
         public static string UploadNodeFailed {
@@ -1482,6 +1545,24 @@ namespace MegaApp.Resources {
         public static string UserNotOnline_Title {
             get {
                 return ResourceManager.GetString("UserNotOnline_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong data format.
+        /// </summary>
+        public static string WrongDataFormat_Title {
+            get {
+                return ResourceManager.GetString("WrongDataFormat_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again..
+        /// </summary>
+        public static string WrongDataFormatCreditCardPayment {
+            get {
+                return ResourceManager.GetString("WrongDataFormatCreditCardPayment", resourceCulture);
             }
         }
         

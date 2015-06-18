@@ -88,6 +88,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a LITE.
+        /// </summary>
+        public static string AccountTypeLite {
+            get {
+                return ResourceManager.GetString("AccountTypeLite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a PRO I.
         /// </summary>
         public static string AccountTypePro1 {
@@ -111,15 +120,6 @@ namespace MegaApp.Resources {
         public static string AccountTypePro3 {
             get {
                 return ResourceManager.GetString("AccountTypePro3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a PRO Lite.
-        /// </summary>
-        public static string AccountTypeProLite {
-            get {
-                return ResourceManager.GetString("AccountTypeProLite", resourceCulture);
             }
         }
         
@@ -210,6 +210,15 @@ namespace MegaApp.Resources {
         public static string Available {
             get {
                 return ResourceManager.GetString("Available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
             }
         }
         

@@ -18,6 +18,7 @@ namespace MegaApp.Classes
     {
         public AccountDetailsViewModel()
         {
+            Plans = new ObservableCollection<ProductBase>();
             Products = new ObservableCollection<Product>();
             CacheSize = AppService.GetAppCacheSize();
         }
@@ -161,12 +162,37 @@ namespace MegaApp.Classes
                 OnPropertyChanged("AvatarUri");
             }
         }*/
-        
+
+        private String _proExpiration;
+        public String ProExpiration
+        {
+            get { return _proExpiration; }
+            set
+            {
+                _proExpiration = value;
+                OnPropertyChanged("ProExpiration");
+            }
+        }
+
+        private bool _isProAccount;
+        public bool IsProAccount
+        {
+            get { return _isProAccount; }
+            set
+            {
+                _isProAccount = value;
+                OnPropertyChanged("IsProAccount");
+            }
+        }
 
         private void CalculateFreeSpace()
         {
             if (TotalSpace < 1) return;
-            FreeSpace = TotalSpace - UsedSpace;
+
+            if (UsedSpace <= TotalSpace)
+                FreeSpace = TotalSpace - UsedSpace;                
+            else
+                FreeSpace = 0;                            
         }
 
         public void CreateDataPoints()
@@ -190,8 +216,8 @@ namespace MegaApp.Classes
             }
         }
 
-
-        public ObservableCollection<Product> Products { get; set; }
-       
+        public ObservableCollection<ProductBase> Plans { get; set; }
+        public ObservableCollection<Product> Products { get; set; }        
+               
     }
 }
