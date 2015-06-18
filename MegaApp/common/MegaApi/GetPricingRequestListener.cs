@@ -88,6 +88,7 @@ namespace MegaApp.MegaApi
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 _accountDetails.Products.Clear();
+                _accountDetails.Plans.Clear();
 
                 int numberOfProducts = request.getPricing().getNumProducts();
 
@@ -98,9 +99,10 @@ namespace MegaApp.MegaApi
 
                     if (accountType == _accountDetails.AccountType)
                         continue;
-
+                    
                     var product = new Product
                     {
+                        AccountType = accountType,
                         Amount = request.getPricing().getAmount(i),
                         Currency = request.getPricing().getCurrency(i),
                         GbStorage = request.getPricing().getGBStorage(i),
@@ -113,7 +115,11 @@ namespace MegaApp.MegaApi
                     {
                         case MAccountType.ACCOUNT_TYPE_FREE:
                             product.Name = UiResources.AccountTypeFree;
-                            product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                        case MAccountType.ACCOUNT_TYPE_LITE:
+                            product.Name = UiResources.AccountTypeLite;
+                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROI:
                             product.Name = UiResources.AccountTypePro1;
@@ -130,6 +136,22 @@ namespace MegaApp.MegaApi
                     }
 
                     _accountDetails.Products.Add(product);
+                    
+                    if (request.getPricing().getMonths(i) == 12)
+                    {
+                        var plan = new ProductBase
+                        {
+                            AccountType = accountType,
+                            Name = product.Name,
+                            Amount = product.Amount,
+                            Currency = product.Currency,
+                            GbStorage = product.GbStorage,
+                            GbTransfer = product.GbTransfer / 12,
+                            ProductUri = product.ProductUri
+                        };
+
+                        _accountDetails.Plans.Add(plan);
+                    }
                 }
             });
         }

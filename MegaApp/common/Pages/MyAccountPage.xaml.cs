@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
@@ -10,6 +12,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -43,6 +46,34 @@ namespace MegaApp.Pages
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ClearCache.ToLower();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // If navigation is from the CreditCardPayment page, remove the last entry of the back stack
+            var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
+            var lastPage = backStack.FirstOrDefault();
+            if (lastPage != null)
+            {
+                if (lastPage.Source.ToString().Contains((typeof(CreditCardPaymentPage)).Name))
+                    ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+            }
+
+            // Check if the navigation destiny is a specific pivot item
+            if (NavigationContext.QueryString.ContainsKey("Pivot"))
+            {
+                var index = NavigationContext.QueryString["Pivot"];
+                if(!String.IsNullOrWhiteSpace(index))
+                {
+                    int indexParsed;
+                    if((int.TryParse(index, out indexParsed)) && 
+                        (indexParsed < PivotAccountInformation.Items.Count))
+                    {
+                        PivotAccountInformation.SelectedIndex = indexParsed;
+                    }                    
+                }                
+            }
+        }
 
         private void OnPieDataBindingComplete(object sender, EventArgs e)
         {
@@ -76,8 +107,7 @@ namespace MegaApp.Pages
         private void OnSettingsClick(object sender, EventArgs e)
         {
             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
-        }
-       
+        }       
 
         private void OnClearCacheClick(object sender, EventArgs e)
         {
@@ -88,7 +118,28 @@ namespace MegaApp.Pages
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
         {
-            App.MegaSdk.getPaymentId(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());
+            //App.MegaSdk.getPaymentId(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());
+            
+            for(int i=0; i < _myAccountPageViewModel.AccountDetails.Products.Count; i++)
+            {
+                if(_myAccountPageViewModel.AccountDetails.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
+                {
+                    switch(_myAccountPageViewModel.AccountDetails.Products.ElementAt(i).Months)
+                    {
+                        case 1:
+                            PhoneApplicationService.Current.State["SelectedPlanMonthly"] = _myAccountPageViewModel.AccountDetails.Products.ElementAt(i);
+                            break;
+                        case 12:
+                            PhoneApplicationService.Current.State["SelectedPlanAnnualy"] = _myAccountPageViewModel.AccountDetails.Products.ElementAt(i);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            PhoneApplicationService.Current.State["SelectedPlan"] = LstPlans.SelectedItem;
+            NavigationService.Navigate(new Uri("/Pages/CreditCardPaymentPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
@@ -98,12 +149,6 @@ namespace MegaApp.Pages
             else
                 _myAccountPageViewModel.GetPricing();
         }
-
-        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //LstProducts.SelectedItem = null;
-        }
-
 
         protected override void OnDrawerClosed(object sender)
         {
