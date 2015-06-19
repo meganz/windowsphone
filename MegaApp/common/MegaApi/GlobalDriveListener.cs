@@ -290,6 +290,11 @@ namespace MegaApp.MegaApi
            // throw new NotImplementedException();
         }
 
+        public void onAccountUpdate(MegaSDK api)
+        {
+           // throw new NotImplementedException();
+        }
+
         public void onUsersUpdate(MegaSDK api, MUserList users)
         {
            // throw new NotImplementedException();
