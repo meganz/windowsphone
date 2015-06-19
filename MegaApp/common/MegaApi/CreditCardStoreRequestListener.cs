@@ -114,7 +114,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            api.upgradeAccount(_selectedProduct.Handle, (int)MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD);
+            api.upgradeAccount(_selectedProduct.Handle, (int)MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD, new UpgradeAccountRequestListener());
         }
 
         #endregion
