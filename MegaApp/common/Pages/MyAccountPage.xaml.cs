@@ -25,7 +25,7 @@ namespace MegaApp.Pages
 
         public MyAccountPage()
         {
-            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation);
+            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation, this);
             this.DataContext = _myAccountPageViewModel;
             
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace MegaApp.Pages
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
         }
 
-        private void SetApplicationBarData()
+        public void SetApplicationBarData()
         {
             this.ApplicationBar = (ApplicationBar)Resources["MyAccountMenu"];
 
@@ -44,6 +44,23 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
 
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ClearCache.ToLower();
+            
+            // Only if is a LITE account show a "cancel subscription" menu option
+            if(_myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
+                _myAccountPageViewModel.AccountDetails.CreditCardSubscriptions != 0)
+            {
+                if(ApplicationBar.MenuItems.Count == 1)
+                {
+                    ApplicationBarMenuItem cancelSubscription = new ApplicationBarMenuItem(UiResources.CancelSubscription.ToLower());
+                    ApplicationBar.MenuItems.Add(cancelSubscription);
+                    cancelSubscription.Click += new EventHandler(OnCancelSubscriptionClick);
+                }                
+            }
+            // Else remove the "cancel subscription" menu item if exists
+            else if(ApplicationBar.MenuItems.Count == 2)
+            {
+                ApplicationBar.MenuItems.RemoveAt(1);
+            }
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -150,6 +167,11 @@ namespace MegaApp.Pages
                 _myAccountPageViewModel.GetPricing();
         }
 
+        private void OnCancelSubscriptionClick(object sender, EventArgs e)
+        {
+            DialogService.ShowCancelSubscriptionFeedbackDialog();
+        }
+                
         protected override void OnDrawerClosed(object sender)
         {
             base.OnDrawerClosed(sender);
@@ -179,6 +201,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
+        #endregion        
     }
 }

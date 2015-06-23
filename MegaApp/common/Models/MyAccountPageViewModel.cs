@@ -10,6 +10,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -17,12 +18,12 @@ namespace MegaApp.Models
 {
     class MyAccountPageViewModel : BaseAppInfoAwareViewModel
     {
-        public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
+        public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation, MyAccountPage myAccountPage)
             : base(megaSdk, appInformation)
         {
             InitializeMenu(HamburgerMenuItemType.MyAccount);
 
-            AccountDetails = new AccountDetailsViewModel {UserEmail = megaSdk.getMyEmail()};
+            AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
             if (!File.Exists(AccountDetails.AvatarPath)) return;
             AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);
         }
@@ -34,6 +35,7 @@ namespace MegaApp.Models
             MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
             MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
             MegaSdk.getOwnUserData(new GetUserDataRequestListener(AccountDetails));
+            MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
         }
 
         public void GetPricing()
@@ -63,7 +65,7 @@ namespace MegaApp.Models
             get { return _accountDetails; }
             set
             {
-                _accountDetails = value;
+                _accountDetails = value;                
                 OnPropertyChanged("AccountDetails");
             }
         }

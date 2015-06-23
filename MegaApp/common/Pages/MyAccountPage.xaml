@@ -29,7 +29,7 @@
             <shell:ApplicationBar.MenuItems>
                 <!--<shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />
                 <shell:ApplicationBarMenuItem Text="export masterkey" Click="OnExportMasterkeyClick" />-->
-                <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>                
+                <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.Resources>
@@ -93,7 +93,7 @@
                             </Grid>
                             <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <Paragraph>
-                                    <Run Text="expires on" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                    <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
                                     <Run Text="{Binding AccountDetails.ProExpiration}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                                 </Paragraph>
                             </RichTextBox>
@@ -143,8 +143,8 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Ellipse HorizontalAlignment="Left" Height="30" Stroke="Black" VerticalAlignment="Top" Width="30" Fill="#FF13E03C"/>
-                                <TextBlock HorizontalAlignment="Left"  Text="{Binding LocalizedUiResources.Total, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                <TextBlock HorizontalAlignment="Right"  Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Total, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.TotalSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
                             </Grid>
                             <Grid x:Name="UsedSpaceGrid" Margin="0,25">
                                 <Grid.ColumnDefinitions>
@@ -153,8 +153,8 @@
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
                                 <Ellipse HorizontalAlignment="Center" Height="30" Stroke="Black" VerticalAlignment="Center" Width="30" Fill="#FF2BA6DE"/>
-                                <TextBlock HorizontalAlignment="Left"  Text="{Binding LocalizedUiResources.Used, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
-                                <TextBlock HorizontalAlignment="Right"  Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
+                                <TextBlock HorizontalAlignment="Left" Text="{Binding LocalizedUiResources.Used, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                <TextBlock HorizontalAlignment="Right" Text="{Binding AccountDetails.UsedSpace, Converter={StaticResource LongToReadableSizeConverter}}" VerticalAlignment="Center" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="0,-6,0,0"/>
                             </Grid>
                             <Grid x:Name="FreeSpaceGrid">
                                 <Grid.ColumnDefinitions>
@@ -188,7 +188,7 @@
                         </Grid>
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
+                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Visibility="{Binding AccountDetails.IsFreeAccount, Converter={StaticResource BooleanToVisibilityConverter}}" Loaded="OnPivotLoaded">
                     <Grid>
                         <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" ItemTap="OnItemTap"/>
                     </Grid>

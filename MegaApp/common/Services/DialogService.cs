@@ -7,6 +7,7 @@ using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -524,6 +525,125 @@ namespace MegaApp.Services
 
 
             sortRadWindow.IsOpen = true;
+        }
+
+        public static void ShowCancelSubscriptionFeedbackDialog()
+        {
+            var feedbackRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = false,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,                
+            };
+
+            var feedbackStackPanel = new StackPanel()
+            {
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(0)
+            };
+
+            var titleLabel = new TextBlock()
+            {
+                Text = AppMessages.CancelSubscription_Title,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(24,12,24,12),
+                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])                
+            };            
+            feedbackStackPanel.Children.Add(titleLabel);
+
+            var textMessage = new TextBlock()
+            {
+                Text = AppMessages.CancelSubscription,
+                TextWrapping = TextWrapping.Wrap,
+                Margin = new Thickness(24, 12, 24, 12)
+            };
+            feedbackStackPanel.Children.Add(textMessage);
+
+            var feedbackTextBox = new TextBox()
+            {
+                TextWrapping = TextWrapping.Wrap,
+                Height = 150,
+                AcceptsReturn = true,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Visible,
+                Margin = new Thickness(12, 0, 12, 0)
+            };
+            feedbackStackPanel.Children.Add(feedbackTextBox);
+
+            var feedbackButtonsGrid = new Grid()
+            {
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
+                Margin = new Thickness(12)
+            };
+            feedbackButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            feedbackButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            feedbackStackPanel.Children.Add(feedbackButtonsGrid);
+
+            var confirmButton = new Button()
+            {
+                Content = UiResources.Send.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            confirmButton.Tap += (sender, args) =>
+            {
+                if(!String.IsNullOrWhiteSpace(feedbackTextBox.Text))
+                {
+                    feedbackRadWindow.IsOpen = false;
+                    ShowCancelSubscriptionDialog(feedbackTextBox.Text);                    
+                }
+                else
+                {
+                    MessageBox.Show(AppMessages.RequiredFieldsCancelSubscription, 
+                        AppMessages.RequiredFields_Title, MessageBoxButton.OK);
+                }
+            };
+            
+            var cancelButton = new Button()
+            {
+                Content = UiResources.Dismiss.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            cancelButton.Tap += (sender, args) =>
+            {                
+                feedbackRadWindow.IsOpen = false;
+            };
+            
+            feedbackButtonsGrid.Children.Add(confirmButton);
+            feedbackButtonsGrid.Children.Add(cancelButton);
+            Grid.SetColumn(confirmButton, 0);
+            Grid.SetColumn(cancelButton, 1);
+            
+            feedbackRadWindow.Content = feedbackStackPanel;
+
+            feedbackRadWindow.IsOpen = true;
+        }
+
+        private static async void ShowCancelSubscriptionDialog(string reason)
+        {
+            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
+                buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
+                title: AppMessages.CancelSubscription_Title,
+                message: AppMessages.CancelSubscriptionConfirmation
+                );
+
+            switch (closedEventArgs.ButtonIndex)
+            {
+                case 0: // "Yes" button clicked
+                    App.MegaSdk.creditCardCancelSubscriptions(reason, new CancelSubscriptionRequestListener());
+                    break;
+
+                case 1: // "No" button clicked
+                default:
+                    break;
+            }
         }
 
         public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
