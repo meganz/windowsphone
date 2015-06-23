@@ -813,6 +813,40 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Wrong data format</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Thank you for your feedback!
+
+Are you sure you want to cancel your Mega subscription?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>Cancel subscription failed</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>The subscription has been canceled correctly.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>Subscription cancelled</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>Cancel Subscription</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>Please type a feedback message for us. Thanks.</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
     <value>The operation has not finished correctly. The credit card will not be charged.</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>

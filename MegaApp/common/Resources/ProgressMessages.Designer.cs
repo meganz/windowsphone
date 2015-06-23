@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Canceling subscription....
+        /// </summary>
+        public static string CancelSubscription {
+            get {
+                return ResourceManager.GetString("CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirming account....
         /// </summary>
         public static string ConfirmAccount {

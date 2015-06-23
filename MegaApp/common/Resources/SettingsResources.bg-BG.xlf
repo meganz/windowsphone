@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="bg-BG" original="SettingsResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="bg-BG" original="SettingsResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -10,6 +10,26 @@
           <source>{72012C9A-F893-4CFF-9D42-944274C44935}</source>
           <target state="new">{72012C9A-F893-4CFF-9D42-944274C44935}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Resource key to store if the app should ask always for a download location or not - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadsIsEnabled" translate="yes" xml:space="preserve">
+          <source>{ED012CA3-EA51-45B0-BC66-3D585C612E74}</source>
+          <target state="new">{ED012CA3-EA51-45B0-BC66-3D585C612E74}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store if the Camera Uploads feature is enabled or not - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadsFirstInit" translate="yes" xml:space="preserve">
+          <source>{6F9C35B2-2139-48B6-908A-C4950A6BB624}</source>
+          <target state="new">{6F9C35B2-2139-48B6-908A-C4950A6BB624}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store if is the first initialization for the Camera Uploads - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadsFileType" translate="yes" xml:space="preserve">
+          <source>{09D0E27C-FF4C-4244-94C6-0797C341466A}</source>
+          <target state="new">{09D0E27C-FF4C-4244-94C6-0797C341466A}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store the Camera Uploads feature file type - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadsConnectionType" translate="yes" xml:space="preserve">
+          <source>{7C0F8199-EFE6-4BA0-B982-93E6AB704A51}</source>
+          <target state="new">{7C0F8199-EFE6-4BA0-B982-93E6AB704A51}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store the Camera Uploads feature connection type - (NO-TRANSLATION).</note>
         </trans-unit>
         <trans-unit id="Resx/UserPinLockIsEnabled" translate="yes" xml:space="preserve">
           <source>{564DED0B-7DAA-47FA-A02A-4E00ED38749E}</source>

@@ -731,4 +731,136 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Debes aceptar nuestros Términos de Servicio</value>
     <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
+  <data name="DeleteNodeQuestion_Title" xml:space="preserve">
+    <value>¿Eliminar elemento?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>Cuenta actualizada</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>¡Cuenta actualizada correctamente!</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>Fallo al actualizar la cuenta</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>La operación no ha terminado correctamente. No se efectuará el cargo en la tarjeta.</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>Por favor, escribe un mensaje para nosotros. Gracias.</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>Cancelar subscripción</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>Subscripción cancelada</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>La subscripción ha sido cancelada correctamente.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>Error al cancelar la subscripción</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>La subscripción no ha sido cancelada correctamente. Por favor, contacta con support@mega.co.nz para cancelar tu subscripción.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>¡Gracias por tu comentario!
+
+¿Estás seguro de que quieres cancelar tu subscripción a Mega?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Estás a punto de cancelar tu subscripción a Mega. Por favor, dinos si hay algo que podamos hacer para hacerte cambiar de opinión.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>Formato de datos incorrecto</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>El número de la tarjeta de crédito, el mes, el año y el CVV deben ser números. Por favor, comprueba que los datos introducidos son correctos e inténtalo de nuevo.</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>Por favor, introduce todos los campos requeridos y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>Error al almacenar la tarjeta de crédito</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>La información de la tarjeta de crédito no es correcta. No se efectuará el cargo en la tarjeta.</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>Error en el acceso directo</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>Ocurrió un error al intentar abrir un acceso directo. Puede ser que sea un acceso directo no válido o que el destino fue eliminado.</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="SaveSettingsFailed_Title" xml:space="preserve">
+    <value>Fallo al guardar la configuración</value>
+    <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="SaveSettingsFailed" xml:space="preserve">
+    <value>Error al guardar la configuración. Por favor, inténtalo de nuevo [{0}]</value>
+    <comment>Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CaptureVideoFailed_Title" xml:space="preserve">
+    <value>Fallo al capturar el video</value>
+    <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CaptureVideoFailed" xml:space="preserve">
+    <value>Error al capturar el video. Por favor, vuelve a intentarlo [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
+    <value>Fallo al capturar foto/video</value>
+    <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed" xml:space="preserve">
+    <value>Ocurrió un error al capturar la foto o el video. Por favor, vuelve a intentarlo [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoFailed_Title" xml:space="preserve">
+    <value>Fallo al capturar la foto</value>
+    <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoFailed" xml:space="preserve">
+    <value>Error al capturar la foto. Por favor, vuelve a intentarlo [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetUserDataFailed_Title" xml:space="preserve">
+    <value>Falló la recuperación de datos de usuario</value>
+    <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserDataFailed" xml:space="preserve">
+    <value>Error al recuperar tus datos de usuario. Por favor, inténtalo de nuevo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteNodeQuestion" xml:space="preserve">
+    <value>Estás seguro de que quieres eliminar permanentement {0}?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
+  </data>
 </root>

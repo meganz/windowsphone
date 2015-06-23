@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="pl-PL" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="pl-PL" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -34,10 +34,167 @@
         <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" xml:space="preserve">
           <source>Delete item?</source>
           <target state="new">Delete item?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" xml:space="preserve">
+          <source>Account upgraded</source>
+          <target state="new">Account upgraded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" xml:space="preserve">
+          <source>Account successfully upgraded!</source>
+          <target state="new">Account successfully upgraded!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" xml:space="preserve">
+          <source>Upgrade account failed</source>
+          <target state="new">Upgrade account failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" xml:space="preserve">
+          <source>The operation has not finished correctly. The credit card will not be charged.</source>
+          <target state="new">The operation has not finished correctly. The credit card will not be charged.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" xml:space="preserve">
+          <source>Please type a feedback message for us. Thanks.</source>
+          <target state="new">Please type a feedback message for us. Thanks.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscription_Title" translate="yes" xml:space="preserve">
+          <source>Cancel Subscription</source>
+          <target state="new">Cancel Subscription</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully_Title" translate="yes" xml:space="preserve">
+          <source>Subscription cancelled</source>
+          <target state="new">Subscription cancelled</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" xml:space="preserve">
+          <source>The subscription has been canceled correctly.</source>
+          <target state="new">The subscription has been canceled correctly.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" xml:space="preserve">
+          <source>Cancel subscription failed</source>
+          <target state="new">Cancel subscription failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" xml:space="preserve">
+          <source>The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</source>
+          <target state="new">The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" xml:space="preserve">
+          <source>Thank you for your feedback!
+
+Are you sure you want to cancel your Mega subscription?</source>
+          <target state="new">Thank you for your feedback!
+
+Are you sure you want to cancel your Mega subscription?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscription" translate="yes" xml:space="preserve">
+          <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
+          <target state="new">You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" xml:space="preserve">
+          <source>Wrong data format</source>
+          <target state="new">Wrong data format</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" xml:space="preserve">
+          <source>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</source>
+          <target state="new">The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" xml:space="preserve">
+          <source>Please fill in all the required fields and try again.</source>
+          <target state="new">Please fill in all the required fields and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" xml:space="preserve">
+          <source>Storing credit card failed</source>
+          <target state="new">Storing credit card failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" xml:space="preserve">
+          <source>The credit card information is not correct. The credit card will not be charged.</source>
+          <target state="new">The credit card information is not correct. The credit card will not be charged.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" xml:space="preserve">
+          <source>Shortcut error</source>
+          <target state="new">Shortcut error</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed" translate="yes" xml:space="preserve">
+          <source>An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</source>
+          <target state="new">An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" xml:space="preserve">
+          <source>Save settings failed</source>
+          <target state="new">Save settings failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed" translate="yes" xml:space="preserve">
+          <source>Failed to save settings. Please, try again [{0}]</source>
+          <target state="new">Failed to save settings. Please, try again [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" xml:space="preserve">
+          <source>Capture video failed</source>
+          <target state="new">Capture video failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed" translate="yes" xml:space="preserve">
+          <source>Failed to capture video. Please, try again [{0}]</source>
+          <target state="new">Failed to capture video. Please, try again [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" xml:space="preserve">
+          <source>Capture photo/video failed</source>
+          <target state="new">Capture photo/video failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" xml:space="preserve">
+          <source>Failed to capture photo or video. Please, try again [{0}]</source>
+          <target state="new">Failed to capture photo or video. Please, try again [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" xml:space="preserve">
+          <source>Capture photo failed</source>
+          <target state="new">Capture photo failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed" translate="yes" xml:space="preserve">
+          <source>Failed to capture photo. Please, try again [{0}]</source>
+          <target state="new">Failed to capture photo. Please, try again [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed_Title" translate="yes" xml:space="preserve">
+          <source>Retrieving user data failed</source>
+          <target state="new">Retrieving user data failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve your user data. Please try again. [{0}]</source>
+          <target state="new">Failed to retrieve your user data. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" xml:space="preserve">
           <source>Are you sure you want to permanent delete {0}?</source>
           <target state="new">Are you sure you want to permanent delete {0}?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" xml:space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
