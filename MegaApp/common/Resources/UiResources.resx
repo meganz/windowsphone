@@ -351,6 +351,7 @@
   </data>
   <data name="RubbishBinName" xml:space="preserve">
     <value>Rubbish bin</value>
+    <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
     <value>Off</value>
@@ -658,7 +659,7 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="About" xml:space="preserve">
     <value>About</value>
-    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+    <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
@@ -758,15 +759,19 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
     <value>Contacts</value>
+    <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="SharedItems" xml:space="preserve">
     <value>Shared items</value>
+    <comment>Label for any 'Shared items' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Sort" xml:space="preserve">
     <value>Sort</value>
+    <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
     <value>Empty rubbish</value>
+    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
@@ -799,5 +804,122 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Back" xml:space="preserve">
     <value>Back</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Cancel subscription</value>
+    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>Dismiss</value>
+    <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+    <comment>Label for any 'Send' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+    <comment>Label for any 'Address' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="BillingDetails" xml:space="preserve">
+    <value>Billing details</value>
+    <comment>Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ChooseRenewalPeriod" xml:space="preserve">
+    <value>Choose renewal period below</value>
+    <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+    <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+    <comment>Label for any 'Country' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardNumber" xml:space="preserve">
+    <value>Credit Card Number</value>
+    <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardRecurringPayments" xml:space="preserve">
+    <value>Credit Card recurring payments</value>
+    <comment>Label to indicate the user that the Credit Card payments are recurring.</comment>
+  </data>
+  <data name="CVV" xml:space="preserve">
+    <value>CVV</value>
+    <comment>Label for the 'CVV' text when register a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="EnterPaymentDetails" xml:space="preserve">
+    <value>Enter your payment details below</value>
+    <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
+  </data>
+  <data name="ExpiresOn" xml:space="preserve">
+    <value>Expires on</value>
+    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+    <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
+  </data>
+  <data name="Get2MonthsFree" xml:space="preserve">
+    <value>Get 2 months free if you subscribe to a one-year pro plan</value>
+    <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+    <comment>Label for any 'Month' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Optional</value>
+    <comment>Label for any 'Optional' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OptionalParenthesis" xml:space="preserve">
+    <value>(Optional)</value>
+    <comment>Label for any 'Optional' text between parenthesis. - (String as short as possible).</comment>
+  </data>
+  <data name="PaymentDetails" xml:space="preserve">
+    <value>Payment details</value>
+    <comment>Label for any 'Payment details' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+    <comment>Label for any 'Postal Code' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>Province</value>
+    <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SavePercentageUpgradeAccount" xml:space="preserve">
+    <value>Save</value>
+    <comment>Label for any 'Save' button, link, text, title, etc. referring to save money when update an account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectedPlan" xml:space="preserve">
+    <value>You have selected the {0} Plan</value>
+    <comment>Label to indicate the selected plan during the payment process.
+Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
+  </data>
+  <data name="SelectMembership" xml:space="preserve">
+    <value>Select membership</value>
+    <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+    <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StorageShort" xml:space="preserve">
+    <value>Storage</value>
+    <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+    <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

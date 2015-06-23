@@ -508,23 +508,25 @@
                 <Image Source="{Binding ProductUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
             </Border>
             <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
-            <RichTextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+            <RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
                 <Paragraph>
                     <Run Text="{Binding Storage}"/>
-                    <Run Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+                    <Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
                 </Paragraph>
             </RichTextBox>
-            <RichTextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+            <RichTextBox Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
                 <Paragraph>
                     <Run Text="{Binding Transfer}"/>
                     <Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
                 </Paragraph>
             </RichTextBox>
-            <RichTextBox Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}">
+            <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}">
                 <Paragraph>
-                    <Run Text="from"/>
+                    <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                     <Run Text="{Binding BasePrice}"/>
-                    <Run Text="/month *"/>
+                    <Run Text="/"/>
+                    <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
+                    <Run Text="*"/>
                 </Paragraph>
             </RichTextBox>
             <!--<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>

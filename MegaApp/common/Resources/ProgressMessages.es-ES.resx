@@ -207,4 +207,20 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Creando cuenta...</value>
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Cancelando subscripción...</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Actualizando cuenta...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Obteniendo datos de usuario...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Almacenando tarjeta de crédito...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
 </root>

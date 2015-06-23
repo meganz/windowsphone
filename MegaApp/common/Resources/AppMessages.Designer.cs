@@ -106,6 +106,71 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind..
+        /// </summary>
+        public static string CancelSubscription {
+            get {
+                return ResourceManager.GetString("CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancel Subscription.
+        /// </summary>
+        public static string CancelSubscription_Title {
+            get {
+                return ResourceManager.GetString("CancelSubscription_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Thank you for your feedback!
+        ///
+        ///Are you sure you want to cancel your Mega subscription?.
+        /// </summary>
+        public static string CancelSubscriptionConfirmation {
+            get {
+                return ResourceManager.GetString("CancelSubscriptionConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription..
+        /// </summary>
+        public static string CancelSubscriptionFailed {
+            get {
+                return ResourceManager.GetString("CancelSubscriptionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancel subscription failed.
+        /// </summary>
+        public static string CancelSubscriptionFailed_Title {
+            get {
+                return ResourceManager.GetString("CancelSubscriptionFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The subscription has been canceled correctly..
+        /// </summary>
+        public static string CancelSubscriptionSuccessfully {
+            get {
+                return ResourceManager.GetString("CancelSubscriptionSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Subscription cancelled.
+        /// </summary>
+        public static string CancelSubscriptionSuccessfully_Title {
+            get {
+                return ResourceManager.GetString("CancelSubscriptionSuccessfully_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to capture photo. Please, try again [{0}].
         /// </summary>
         public static string CapturePhotoFailed {
@@ -1293,6 +1358,15 @@ namespace MegaApp.Resources {
         public static string RequiredFields_Title {
             get {
                 return ResourceManager.GetString("RequiredFields_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please type a feedback message for us. Thanks..
+        /// </summary>
+        public static string RequiredFieldsCancelSubscription {
+            get {
+                return ResourceManager.GetString("RequiredFieldsCancelSubscription", resourceCulture);
             }
         }
         

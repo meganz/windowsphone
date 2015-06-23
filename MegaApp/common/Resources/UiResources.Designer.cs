@@ -151,6 +151,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Advanced.
         /// </summary>
         public static string Advanced {
@@ -232,6 +241,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Billing details.
+        /// </summary>
+        public static string BillingDetails {
+            get {
+                return ResourceManager.GetString("BillingDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cache.
         /// </summary>
         public static string Cache {
@@ -277,6 +295,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancel subscription.
+        /// </summary>
+        public static string CancelSubscription {
+            get {
+                return ResourceManager.GetString("CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Capture.
         /// </summary>
         public static string Capture {
@@ -300,6 +327,24 @@ namespace MegaApp.Resources {
         public static string ChangePinLock {
             get {
                 return ResourceManager.GetString("ChangePinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Choose renewal period below.
+        /// </summary>
+        public static string ChooseRenewalPeriod {
+            get {
+                return ResourceManager.GetString("ChooseRenewalPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a City.
+        /// </summary>
+        public static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
             }
         }
         
@@ -412,6 +457,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Country.
+        /// </summary>
+        public static string Country {
+            get {
+                return ResourceManager.GetString("Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create account.
         /// </summary>
         public static string CreateAccount {
@@ -439,11 +493,47 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Credit Card Number.
+        /// </summary>
+        public static string CreditCardNumber {
+            get {
+                return ResourceManager.GetString("CreditCardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Credit Card recurring payments.
+        /// </summary>
+        public static string CreditCardRecurringPayments {
+            get {
+                return ResourceManager.GetString("CreditCardRecurringPayments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a CVV.
+        /// </summary>
+        public static string CVV {
+            get {
+                return ResourceManager.GetString("CVV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Default download location.
         /// </summary>
         public static string DefaultDownloadLocationText {
             get {
                 return ResourceManager.GetString("DefaultDownloadLocationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dismiss.
+        /// </summary>
+        public static string Dismiss {
+            get {
+                return ResourceManager.GetString("Dismiss", resourceCulture);
             }
         }
         
@@ -520,6 +610,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enter your payment details below.
+        /// </summary>
+        public static string EnterPaymentDetails {
+            get {
+                return ResourceManager.GetString("EnterPaymentDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Expires on.
+        /// </summary>
+        public static string ExpiresOn {
+            get {
+                return ResourceManager.GetString("ExpiresOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export MasterKey.
         /// </summary>
         public static string ExportMasterKeyText {
@@ -565,11 +673,38 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a First name.
+        /// </summary>
+        public static string FirstName {
+            get {
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Free space.
         /// </summary>
         public static string FreeSpace {
             get {
                 return ResourceManager.GetString("FreeSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Get 2 months free if you subscribe to a one-year pro plan.
+        /// </summary>
+        public static string Get2MonthsFree {
+            get {
+                return ResourceManager.GetString("Get2MonthsFree", resourceCulture);
             }
         }
         
@@ -745,6 +880,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Last name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Link options.
         /// </summary>
         public static string LinkOptions {
@@ -822,6 +966,15 @@ namespace MegaApp.Resources {
         public static string MegaShareLinkMessage {
             get {
                 return ResourceManager.GetString("MegaShareLinkMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Month.
+        /// </summary>
+        public static string Month {
+            get {
+                return ResourceManager.GetString("Month", resourceCulture);
             }
         }
         
@@ -1033,6 +1186,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Optional.
+        /// </summary>
+        public static string Optional {
+            get {
+                return ResourceManager.GetString("Optional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a (Optional).
+        /// </summary>
+        public static string OptionalParenthesis {
+            get {
+                return ResourceManager.GetString("OptionalParenthesis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Your password.
         /// </summary>
         public static string PasswordWatermark {
@@ -1060,6 +1231,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Payment details.
+        /// </summary>
+        public static string PaymentDetails {
+            get {
+                return ResourceManager.GetString("PaymentDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a PIN Lock.
         /// </summary>
         public static string PinLock {
@@ -1074,6 +1254,15 @@ namespace MegaApp.Resources {
         public static string PinLockWatermark {
             get {
                 return ResourceManager.GetString("PinLockWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Postal Code.
+        /// </summary>
+        public static string PostalCode {
+            get {
+                return ResourceManager.GetString("PostalCode", resourceCulture);
             }
         }
         
@@ -1101,6 +1290,15 @@ namespace MegaApp.Resources {
         public static string PrivacyPolicy {
             get {
                 return ResourceManager.GetString("PrivacyPolicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Province.
+        /// </summary>
+        public static string Province {
+            get {
+                return ResourceManager.GetString("Province", resourceCulture);
             }
         }
         
@@ -1177,6 +1375,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Save.
+        /// </summary>
+        public static string SavePercentageUpgradeAccount {
+            get {
+                return ResourceManager.GetString("SavePercentageUpgradeAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Security.
         /// </summary>
         public static string Security {
@@ -1186,11 +1393,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You have selected the {0} Plan.
+        /// </summary>
+        public static string SelectedPlan {
+            get {
+                return ResourceManager.GetString("SelectedPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Select folder.
         /// </summary>
         public static string SelectFolder {
             get {
                 return ResourceManager.GetString("SelectFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Select membership.
+        /// </summary>
+        public static string SelectMembership {
+            get {
+                return ResourceManager.GetString("SelectMembership", resourceCulture);
             }
         }
         
@@ -1209,6 +1434,15 @@ namespace MegaApp.Resources {
         public static string SelfieMode {
             get {
                 return ResourceManager.GetString("SelfieMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Send.
+        /// </summary>
+        public static string Send {
+            get {
+                return ResourceManager.GetString("Send", resourceCulture);
             }
         }
         
@@ -1339,6 +1573,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a State.
+        /// </summary>
+        public static string State {
+            get {
+                return ResourceManager.GetString("State", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Stay logged in.
         /// </summary>
         public static string StayLoggedInText {
@@ -1353,6 +1596,15 @@ namespace MegaApp.Resources {
         public static string Storage {
             get {
                 return ResourceManager.GetString("Storage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Storage.
+        /// </summary>
+        public static string StorageShort {
+            get {
+                return ResourceManager.GetString("StorageShort", resourceCulture);
             }
         }
         
@@ -1587,6 +1839,15 @@ namespace MegaApp.Resources {
         public static string WifiOnly {
             get {
                 return ResourceManager.GetString("WifiOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Year.
+        /// </summary>
+        public static string Year {
+            get {
+                return ResourceManager.GetString("Year", resourceCulture);
             }
         }
         
