@@ -336,16 +336,16 @@ namespace MegaApp.Pages
             switch (_creditCardPaymentViewModel.Plan.AccountType)
             {                
                 case MAccountType.ACCOUNT_TYPE_LITE:
-                    PageTitle.Text = "YOU HAVE SELECTED THE LITE PLAN";
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypeLite.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROI:
-                    PageTitle.Text = "YOU HAVE SELECTED THE PRO I PLAN";
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro1.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROII:
-                    PageTitle.Text = "YOU HAVE SELECTED THE PRO II PLAN";
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro2.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROIII:
-                    PageTitle.Text = "YOU HAVE SELECTED THE PRO III PLAN";
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro3.ToUpper());
                     break;
             }
 

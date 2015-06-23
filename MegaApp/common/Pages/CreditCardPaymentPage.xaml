@@ -36,9 +36,9 @@
 
 			<!--TitlePanel contiene el nombre de la aplicación y el título de la página-->
 			<StackPanel Grid.Row="0" Margin="12,17,0,28">
-				<TextBlock x:Name="PageTitle" Text="YOU HAVE SELECTED THE PRO I PLAN" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,12"/>
-                <TextBlock Text="Choose renewal period below" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <TextBlock Text="Enter your payment details below" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock x:Name="PageTitle" Text="{Binding LocalizedUiResources.SelectedPlan, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,12" FontWeight="Bold"/>
+                <TextBlock Text="{Binding LocalizedUiResources.ChooseRenewalPeriod, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Text="{Binding LocalizedUiResources.EnterPaymentDetails, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 			</StackPanel>
 
             <!--ContentPanel. Colocar aquí el contenido adicional-->
@@ -60,36 +60,44 @@
 						<Image x:Name="PlanImage" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
 					</Border>
                     <TextBlock x:Name="PlanName" Text="{Binding Plan.Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
-					<RichTextBox Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+					<RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
 						<Paragraph>
                             <Run x:Name="PlanStorage" Text="{Binding Plan.Storage}"/>
-							<Run Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+							<Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
 						</Paragraph>
 					</RichTextBox>
-					<RichTextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
+					<RichTextBox Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
 						<Paragraph>
                             <Run x:Name="PlanBandwidth" Text="{Binding Plan.Transfer}"/>
 							<Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
 						</Paragraph>
 					</RichTextBox>
-					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
 						<Paragraph>
-							<Run Text="from"/>
+                            <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                             <Run x:Name="TxtBasePrice" Text="{Binding Plan.BasePrice}"/>
-							<Run Text="/month *"/>
+							<Run Text="/"/>
+                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
+                            <Run Text="*"/>
 						</Paragraph>
 					</RichTextBox>
 					<RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
 						<Paragraph>
 							<Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.Price}"/>
-							<Run Text="/month " Foreground="LightGray"/>
+							<Run Text="/" Foreground="LightGray"/>
+                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="LightGray"/>
 						</Paragraph>
 					</RichTextBox>
 				</Grid>
 
                 <StackPanel x:Name="PanelMembership" Grid.Row="1" Margin="12,17,0,28" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-					<TextBlock Text="Select membership *" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap" Background="#FF404040">
+                    <RichTextBox FontSize="{StaticResource PhoneFontSizeLarge}" Margin="-12,0,12,12">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.SelectMembership, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="*"/>
+                        </Paragraph>
+                    </RichTextBox>
+                    <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap" Background="#FF404040">
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"/>
@@ -110,7 +118,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <StackPanel Grid.Column="0" Grid.Row="0" Background="{StaticResource MegaRedSolidColorBrush}">
-                                <TextBlock Text="{Binding LocalizedUiResources.Save, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding LocalizedUiResources.SavePercentageUpgradeAccount, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
                                 <TextBlock Text="17%" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
                             </StackPanel>
                             <TextBlock Text="{Binding LocalizedUiResources.Annually, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
@@ -118,33 +126,60 @@
 						</Grid>
 					</Border>
 					<StackPanel Margin="0,17,0,28">
-						<TextBlock Text="* Get 2 months free if you subscribe to a one-year plan" TextWrapping="Wrap" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-						<TextBlock Text="* Credit Card recurring payments" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" Margin="0,0,12,0" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                        <RichTextBox Foreground="{StaticResource MegaRedSolidColorBrush}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="-12,0,12,12">
+                            <Paragraph>
+                                <Run Text="*"/>
+                                <Run Text="{Binding LocalizedUiResources.Get2MonthsFree, Source={StaticResource LocalizedStrings}}"/>                                
+                            </Paragraph>
+                        </RichTextBox>
+                        <RichTextBox TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="-12,0,12,0">
+                            <Paragraph>
+                                <Run Text="*"/>
+                                <Run Text="{Binding LocalizedUiResources.CreditCardRecurringPayments, Source={StaticResource LocalizedStrings}}"/>
+                            </Paragraph>
+                        </RichTextBox>                        
 					</StackPanel>
 				</StackPanel>
 
                 <StackPanel x:Name="PanelBillingPaymentDetails" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-					<TextBlock Text="BILLING DETAILS" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-					<TextBlock Text="Address 1" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.BillingDetails, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,24,12,12" FontWeight="Bold"/>
+					<RichTextBox Margin="0,0,12,0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.Address, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="1"/>
+                        </Paragraph>
+                    </RichTextBox>
                     <telerikPrimitives:RadTextBox x:Name="TxtAddress1" Text="{Binding BillingDetails.Address1, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="0"/>
-					<TextBlock Text="Address 2 (optional)" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+					<RichTextBox Margin="0,0,12,0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.Address, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="2"/>
+                            <Run Text="{Binding LocalizedUiResources.OptionalParenthesis, Source={StaticResource LocalizedStrings}}"/>
+                        </Paragraph>
+                    </RichTextBox>
                     <telerikPrimitives:RadTextBox x:Name="TxtAddress2" Text="{Binding BillingDetails.Address2, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="1"/>
-					<TextBlock Text="City" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.City, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
                     <telerikPrimitives:RadTextBox x:Name="TxtCity" Text="{Binding BillingDetails.City, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="2"/>
-					<TextBlock Text="State / Province" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+					<RichTextBox Margin="0,0,12,0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.State, Source={StaticResource LocalizedStrings}}"/>
+                            <Run Text="/"/>
+                            <Run Text="{Binding LocalizedUiResources.Province, Source={StaticResource LocalizedStrings}}"/>
+                        </Paragraph>
+                    </RichTextBox>
                     <telerikPrimitives:RadTextBox x:Name="TxtStateProvince" Text="{Binding BillingDetails.Province, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="3"/>
-                    <TextBlock Text="Country" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                    <telerikInput:RadListPicker x:Name="LstCountries" PopupHeader="COUNTRY" SelectedValue="{Binding BillingDetails.CountryName, Mode=TwoWay}" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="5" SelectionChanged="LstCountries_SelectionChanged"/>
-					<TextBlock Text="Postal Code" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                    <telerikPrimitives:RadTextBox x:Name="TxtPostalCode" Text="{Binding BillingDetails.PostalCode, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="6"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.Country, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikInput:RadListPicker x:Name="LstCountries" PopupHeader="{Binding LocalizedUiResources.Country, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" SelectedValue="{Binding BillingDetails.CountryName, Mode=TwoWay}" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="4" SelectionChanged="LstCountries_SelectionChanged"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.PostalCode, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtPostalCode" Text="{Binding BillingDetails.PostalCode, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,-24,0,0" TabIndex="5"/>
 
-					<TextBlock Text="PAYMENT DETAILS" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-					<TextBlock Text="FirstName" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                    <telerikPrimitives:RadTextBox x:Name="TxtFirstName" Text="{Binding CreditCard.FirstName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="7"/>
-                    <TextBlock Text="LastName" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                    <telerikPrimitives:RadTextBox x:Name="TxtLastName" Text="{Binding CreditCard.LastName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="8"/>
-                    <TextBlock Text="Credit Card Number" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                    <telerikPrimitives:RadTextBox x:Name="TxtCreditCardNumber" Text="{Binding CreditCard.Number, Mode=TwoWay}" InputScope="Number" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="9"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.PaymentDetails, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,24,12,12" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.FirstName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtFirstName" Text="{Binding CreditCard.FirstName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="6"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.LastName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtLastName" Text="{Binding CreditCard.LastName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="7"/>
+                    <TextBlock Text="{Binding LocalizedUiResources.CreditCardNumber, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                    <telerikPrimitives:RadTextBox x:Name="TxtCreditCardNumber" Text="{Binding CreditCard.Number, Mode=TwoWay}" InputScope="Number" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="8"/>
 					<Grid>
 						<Grid.RowDefinitions>
 							<RowDefinition/>
@@ -155,12 +190,12 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-                        <TextBlock Text="Month" Grid.Column="0" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                        <telerikInput:RadListPicker x:Name="LstMonths" PopupHeader="MONTH" SelectedValue="{Binding CreditCard.ExpireMonth, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="10"/>
-						<TextBlock Text="Year" Grid.Column="1" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                        <telerikInput:RadListPicker x:Name="LstYears" PopupHeader="YEAR" SelectedValue="{Binding CreditCard.ExpireYear, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="11"/>
-                        <TextBlock Text="CVV" Grid.Column="2" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
-                        <telerikPrimitives:RadTextBox x:Name="TxtCV2" Text="{Binding CreditCard.CV2, Mode=TwoWay}" InputScope="Number" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" MaxLength="3" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="12"/>
+                        <TextBlock Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}}" Grid.Column="0" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikInput:RadListPicker x:Name="LstMonths" PopupHeader="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" SelectedValue="{Binding CreditCard.ExpireMonth, Mode=TwoWay}" Grid.Column="0" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="9"/>
+                        <TextBlock Text="{Binding LocalizedUiResources.Year, Source={StaticResource LocalizedStrings}}" Grid.Column="1" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikInput:RadListPicker x:Name="LstYears" PopupHeader="{Binding LocalizedUiResources.Year, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" SelectedValue="{Binding CreditCard.ExpireYear, Mode=TwoWay}" Grid.Column="1" Grid.Row="1" BorderBrush="{StaticResource PhoneInverseInactiveBrush}" Background="{StaticResource PhoneInverseInactiveBrush}" Foreground="Black" TabIndex="10"/>
+                        <TextBlock Text="{Binding LocalizedUiResources.CVV, Source={StaticResource LocalizedStrings}}" Grid.Column="2" Grid.Row="0" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
+                        <telerikPrimitives:RadTextBox x:Name="TxtCV2" Text="{Binding CreditCard.CV2, Mode=TwoWay}" InputScope="Number" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap" MaxLength="3" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="11"/>
 					</Grid>					
 				</StackPanel>
 

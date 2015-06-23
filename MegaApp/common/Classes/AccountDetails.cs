@@ -5,9 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Telerik.Windows.Controls;
@@ -16,8 +18,12 @@ namespace MegaApp.Classes
 {
     class AccountDetailsViewModel: UserDataViewModel
     {
-        public AccountDetailsViewModel()
+        private readonly MyAccountPage _myAccountPage;
+
+        public AccountDetailsViewModel(MyAccountPage myAccountPage)
         {
+            _myAccountPage = myAccountPage;
+
             Plans = new ObservableCollection<ProductBase>();
             Products = new ObservableCollection<Product>();
             CacheSize = AppService.GetAppCacheSize();
@@ -174,14 +180,32 @@ namespace MegaApp.Classes
             }
         }
 
-        private bool _isProAccount;
-        public bool IsProAccount
+        private bool _isFreeAccount;
+        public bool IsFreeAccount
         {
-            get { return _isProAccount; }
+            get { return _isFreeAccount; }
             set
             {
-                _isProAccount = value;
+                _isFreeAccount = value;
+                OnPropertyChanged("IsFreeAccount");
                 OnPropertyChanged("IsProAccount");
+            }
+        }
+
+        public bool IsProAccount
+        {
+            get { return !_isFreeAccount; }            
+        }
+
+        private ulong _creditCardSubscriptions;
+        public ulong CreditCardSubscriptions
+        {
+            get { return _creditCardSubscriptions; }
+            set
+            {
+                _creditCardSubscriptions = value;
+                Deployment.Current.Dispatcher.BeginInvoke(() => _myAccountPage.SetApplicationBarData());
+                OnPropertyChanged("CreditCardSubscriptions");
             }
         }
 
