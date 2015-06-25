@@ -897,10 +897,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Province</value>
     <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="SavePercentageUpgradeAccount" xml:space="preserve">
-    <value>Save</value>
-    <comment>Label for any 'Save' button, link, text, title, etc. referring to save money when update an account - (String as short as possible).</comment>
-  </data>
   <data name="SelectedPlan" xml:space="preserve">
     <value>You have selected the {0} Plan</value>
     <comment>Label to indicate the selected plan during the payment process.
@@ -909,6 +905,10 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="SelectMembership" xml:space="preserve">
     <value>Select membership</value>
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
+  </data>
+  <data name="SettingsShort" xml:space="preserve">
+    <value>Settings</value>
+    <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
     <value>State</value>

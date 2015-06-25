@@ -501,11 +501,6 @@ Try to preserve the PIN uppercase word.</note><note from="MultilingualUpdate" pr
           <target state="new">(Optional)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Optional' text between parenthesis. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/SavePercentageUpgradeAccount" translate="yes" xml:space="preserve">
-          <source>Save</source>
-          <target state="new">Save</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. referring to save money when update an account - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/SelectedPlan" translate="yes" xml:space="preserve">
           <source>You have selected the {0} Plan</source>
           <target state="new">You have selected the {0} Plan</target>
@@ -516,6 +511,11 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <source>Select membership</source>
           <target state="new">Select membership</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsShort" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="new">Settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/State" translate="yes" xml:space="preserve">
           <source>State</source>

@@ -5,6 +5,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:selectors="clr-namespace:MegaApp.Classes"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Inputs"
@@ -43,7 +44,10 @@
 
             <!--ContentPanel. Colocar aquí el contenido adicional-->
 			<StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-				<Grid Margin="12,10" Background="#FF404040" Height="168">
+                <Grid Margin="12,10" Height="132" Width="432">
+                    <Grid.Background>
+                        <SolidColorBrush Color="#FFFFFF" Opacity="0.10"/>
+                    </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto"/>
 						<ColumnDefinition/>
@@ -53,13 +57,13 @@
 						<RowDefinition/>
 						<RowDefinition/>
 					</Grid.RowDefinitions>
-					<Border HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" >
+                    <Border HorizontalAlignment="Center" Grid.RowSpan="3" VerticalAlignment="Center" Height="132" Width="132">
 						<Border.Background>
-							<SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+							<SolidColorBrush Color="{Binding Plan.ProductColor}"/>
 						</Border.Background>
-						<Image x:Name="PlanImage" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="168" Height="168"/>
+                        <Image x:Name="PlanImage" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="60" Margin="36,18,36,18"/>
 					</Border>
-                    <TextBlock x:Name="PlanName" Text="{Binding Plan.Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="12,12,0,0"/>
+                    <TextBlock x:Name="PlanName" Text="{Binding Plan.Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="3" Margin="0,0,0,12" FontWeight="Bold"/>
 					<RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
 						<Paragraph>
                             <Run x:Name="PlanStorage" Text="{Binding Plan.Storage}"/>
@@ -72,7 +76,7 @@
 							<Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
 						</Paragraph>
 					</RichTextBox>
-					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource MegaRedSolidColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding Plan.ProductColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
 						<Paragraph>
                             <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                             <Run x:Name="TxtBasePrice" Text="{Binding Plan.BasePrice}"/>
@@ -88,7 +92,10 @@
                             <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="LightGray"/>
 						</Paragraph>
 					</RichTextBox>
-				</Grid>
+                    <Border Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding Plan.IsNewOffer, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/new_offer_WP.png"/>
+                    </Border>
+                </Grid>
 
                 <StackPanel x:Name="PanelMembership" Grid.Row="1" Margin="12,17,0,28" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <RichTextBox FontSize="{StaticResource PhoneFontSizeLarge}" Margin="-12,0,12,12">
@@ -97,9 +104,12 @@
                             <Run Text="*"/>
                         </Paragraph>
                     </RichTextBox>
-                    <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap" Background="#FF404040">
-						<Grid>
-							<Grid.ColumnDefinitions>
+                    <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap">
+                        <Border.Background>
+                            <SolidColorBrush Color="#FFFFFF" Opacity="0.20"/>
+                        </Border.Background>
+                        <Grid>
+                            <Grid.ColumnDefinitions>                                
 								<ColumnDefinition Width="Auto"/>
 								<ColumnDefinition Width="*"/>
 							</Grid.ColumnDefinitions>
@@ -107,7 +117,10 @@
 							<TextBlock x:Name="TxtMonthlyPrice" Text="{Binding ProductMonthly.Price}" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
 						</Grid>
 					</Border>
-					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432" Tap="OnAnnualyTap" Background="#FF404040">
+					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432" Tap="OnAnnualyTap">
+                        <Border.Background>
+                            <SolidColorBrush Color="#FFFFFF" Opacity="0.20"/>
+                        </Border.Background>
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"/>
@@ -117,10 +130,9 @@
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <StackPanel Grid.Column="0" Grid.Row="0" Background="{StaticResource MegaRedSolidColorBrush}">
-                                <TextBlock Text="{Binding LocalizedUiResources.SavePercentageUpgradeAccount, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
-                                <TextBlock Text="17%" Grid.Column="0" VerticalAlignment="Top" Margin="6,0,0,0" FontSize="14" FontWeight="Bold"/>
-                            </StackPanel>
+                            <Border Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/save_17_percent_WP.png"/>                                
+                            </Border>
                             <TextBlock Text="{Binding LocalizedUiResources.Annually, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="12,0,0,12"/>
                             <TextBlock x:Name="TxtAnnualyPrice" Text="{Binding ProductAnnualy.Price}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,12,12" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
 						</Grid>
@@ -174,6 +186,10 @@
                     <telerikPrimitives:RadTextBox x:Name="TxtPostalCode" Text="{Binding BillingDetails.PostalCode, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,-24,0,0" TabIndex="5"/>
 
                     <TextBlock Text="{Binding LocalizedUiResources.PaymentDetails, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,24,12,12" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/VISA_WP.png"/>
+                        <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/Mastercard_WP.png" Margin="24,0,12,0"/>                        
+                    </StackPanel>
                     <TextBlock Text="{Binding LocalizedUiResources.FirstName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>
                     <telerikPrimitives:RadTextBox x:Name="TxtFirstName" Text="{Binding CreditCard.FirstName, Mode=TwoWay}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" TabIndex="6"/>
                     <TextBlock Text="{Binding LocalizedUiResources.LastName, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,12,0"/>

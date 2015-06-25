@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -108,7 +109,8 @@ namespace MegaApp.MegaApi
                         GbStorage = request.getPricing().getGBStorage(i),
                         GbTransfer = request.getPricing().getGBTransfer(i),
                         Months = request.getPricing().getMonths(i),
-                        Handle = request.getPricing().getHandle(i)
+                        Handle = request.getPricing().getHandle(i),
+                        IsNewOffer = false
                     };
 
                     switch (accountType)
@@ -119,22 +121,34 @@ namespace MegaApp.MegaApi
                             break;
                         case MAccountType.ACCOUNT_TYPE_LITE:
                             product.Name = UiResources.AccountTypeLite;
-                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductColor = Color.FromArgb(255, 255, 165, 0);
+                            product.ProductUri = new Uri("/Assets/Images/lite_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.IsNewOffer = true;
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROI:
                             product.Name = UiResources.AccountTypePro1;
-                            product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductColor = Color.FromArgb(255, 217, 0, 7);
+                            product.ProductUri = new Uri("/Assets/Images/pro_1_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROII:
                             product.Name = UiResources.AccountTypePro2;
-                            product.ProductUri = new Uri("/Assets/Images/pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductColor = Color.FromArgb(255, 217, 0, 7);
+                            product.ProductUri = new Uri("/Assets/Images/pro_2_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            //product.ProductUri = new Uri("/Assets/Images/pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROIII:
                             product.Name = UiResources.AccountTypePro3;
-                            product.ProductUri = new Uri("/Assets/Images/pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductColor = Color.FromArgb(255, 217, 0, 7);
+                            product.ProductUri = new Uri("/Assets/Images/pro_3_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            //product.ProductUri = new Uri("/Assets/Images/pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            break;
+                        default:
+                            product.ProductColor = Color.FromArgb(255, 217, 0, 7);
                             break;
                     }
 
+                    product.ProductColorBrush = new SolidColorBrush(product.ProductColor);
                     _accountDetails.Products.Add(product);
                     
                     if (request.getPricing().getMonths(i) == 12)
@@ -147,7 +161,10 @@ namespace MegaApp.MegaApi
                             Currency = product.Currency,
                             GbStorage = product.GbStorage,
                             GbTransfer = product.GbTransfer / 12,
-                            ProductUri = product.ProductUri
+                            ProductUri = product.ProductUri,
+                            ProductColor = product.ProductColor,
+                            ProductColorBrush = product.ProductColorBrush,
+                            IsNewOffer = product.IsNewOffer
                         };
 
                         _accountDetails.Plans.Add(plan);

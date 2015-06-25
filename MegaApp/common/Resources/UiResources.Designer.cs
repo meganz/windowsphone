@@ -1375,15 +1375,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Save.
-        /// </summary>
-        public static string SavePercentageUpgradeAccount {
-            get {
-                return ResourceManager.GetString("SavePercentageUpgradeAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Security.
         /// </summary>
         public static string Security {
@@ -1452,6 +1443,15 @@ namespace MegaApp.Resources {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings.
+        /// </summary>
+        public static string SettingsShort {
+            get {
+                return ResourceManager.GetString("SettingsShort", resourceCulture);
             }
         }
         
