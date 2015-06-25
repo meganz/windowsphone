@@ -40,7 +40,7 @@ namespace MegaApp.Pages
         {
             this.ApplicationBar = (ApplicationBar)Resources["MyAccountMenu"];
 
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Settings.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.SettingsShort.ToLower();
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
 
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ClearCache.ToLower();

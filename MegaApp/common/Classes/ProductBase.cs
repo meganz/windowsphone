@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using mega;
 
 namespace MegaApp.Classes
@@ -16,6 +17,9 @@ namespace MegaApp.Classes
         public int GbStorage { get; set; }
         public int GbTransfer { get; set; }
         public Uri ProductUri { get; set; }
+        public Color ProductColor { get; set; }
+        public Brush ProductColorBrush { get; set; }
+        public bool IsNewOffer { get; set; }
 
         public string Storage
         {

@@ -229,7 +229,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Ajustes</value>
+    <value>Configuración</value>
     <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
@@ -802,10 +802,6 @@ para mostrar</value>
     <value>Desde</value>
     <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
   </data>
-  <data name="SavePercentageUpgradeAccount" xml:space="preserve">
-    <value>Ahorra</value>
-    <comment>Label for any 'Save' button, link, text, title, etc. referring to save money when update an account - (String as short as possible).</comment>
-  </data>
   <data name="ExpiresOn" xml:space="preserve">
     <value>Expira el</value>
     <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a subscription - (String as short as possible).</comment>
@@ -891,5 +887,9 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="StorageShort" xml:space="preserve">
     <value>Almac.</value>
     <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
+  </data>
+  <data name="SettingsShort" xml:space="preserve">
+    <value>Config.</value>
+    <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
 </root>
