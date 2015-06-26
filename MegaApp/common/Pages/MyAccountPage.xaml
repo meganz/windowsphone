@@ -74,7 +74,11 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Ellipse Fill="#FF404040" HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190"/>
+                        <Ellipse HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
                         <Image x:Name="ImgAvatar" Source="{Binding AccountDetails.AvatarUri}" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180" Stretch="UniformToFill">
                             <Image.Clip>
                                 <EllipseGeometry Center="90,90" RadiusX="90" RadiusY="90" />
@@ -98,7 +102,11 @@
                                 </Paragraph>
                             </RichTextBox>
                         </StackPanel>
-                        <Ellipse Grid.Row="1" Fill="#FF404040" HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190"/>
+                        <Ellipse Grid.Row="1" HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
                         <telerikChart:RadPieChart x:Name="AccountPieChart" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeNormal}" EmptyContent="{Binding LocalizedUiResources.NoDataToShow, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Width="180" Height="180">
                             <telerikChart:DoughnutSeries ShowLabels="False" ItemsSource="{Binding AccountDetails.PieChartCollection}" DataBindingComplete="OnPieDataBindingComplete" InnerRadiusFactor="0.80" LabelOffset="8">
                                 <!--<telerikChart:PieSeries.LabelDefinitions>
@@ -207,7 +215,11 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Column="0" Fill="#FF404040" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0"/>
+                        <Ellipse Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
                         <Image x:Name="ImgAvatarMenu" Source="{Binding AccountDetails.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
                             <Image.Clip>
                                 <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />

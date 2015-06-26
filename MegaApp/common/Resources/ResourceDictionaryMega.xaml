@@ -13,7 +13,7 @@
     <!-- Resource dictionary entries should be defined here. -->
 
     <!-- COLOR DEFINITIONS -->
-    <Color x:Key="MegaRedColor">#E51400</Color>
+    <Color x:Key="MegaRedColor">#D90007</Color>
     <SolidColorBrush x:Key="MegaRedSolidColorBrush" Color="{StaticResource MegaRedColor}"/>
 
 
@@ -493,7 +493,7 @@
     <DataTemplate x:Key="ProductItemTemplate">
         <Grid Margin="12,6" Height="132" Width="432">
             <Grid.Background>
-                <SolidColorBrush Color="#FFFFFF" Opacity="0.10"/>
+                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.10"/>
             </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -514,13 +514,21 @@
             <RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
                 <Paragraph>
                     <Run Text="{Binding Storage}"/>
-                    <Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+                    <Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}">
+                        <Run.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                        </Run.Foreground>
+                    </Run>
                 </Paragraph>
             </RichTextBox>
             <RichTextBox Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
                 <Paragraph>
                     <Run Text="{Binding Transfer}"/>
-                    <Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+                    <Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}">
+                        <Run.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                        </Run.Foreground>
+                    </Run>
                 </Paragraph>
             </RichTextBox>
             <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding ProductColorBrush}">
@@ -535,24 +543,8 @@
             <Border Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding IsNewOffer, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/new_offer_WP.png"/>
             </Border>
-            <!--<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Storage}" VerticalAlignment="Center" Grid.Column="1" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="LightGray"/>-->
-            <!--<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Transfer}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="20,14.425,0,13.242" FontSize="{StaticResource PhoneFontSizeMedium}"/>
-            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Grid.Column="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Row="1" Foreground="LightGray"/>-->
-            <!--<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Margin="0,0,20,0" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </TextBlock.Foreground>
-            </TextBlock>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Period}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </TextBlock.Foreground>
-            </TextBlock>-->
         </Grid>
     </DataTemplate>
-
-
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
     <DataTemplate x:Key="ShowShareLinkButtons">
