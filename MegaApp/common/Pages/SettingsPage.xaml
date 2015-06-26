@@ -212,7 +212,11 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Column="0" Fill="#FF404040" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0"/>
+                        <Ellipse Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
                         <Image x:Name="ImgAvatarMenu" Source="{Binding UserData.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
                             <Image.Clip>
                                 <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />

@@ -46,7 +46,7 @@
 			<StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
                 <Grid Margin="12,10" Height="132" Width="432">
                     <Grid.Background>
-                        <SolidColorBrush Color="#FFFFFF" Opacity="0.10"/>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.10"/>
                     </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="Auto"/>
@@ -67,13 +67,21 @@
 					<RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
 						<Paragraph>
                             <Run x:Name="PlanStorage" Text="{Binding Plan.Storage}"/>
-							<Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
-						</Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.StorageShort, Source={StaticResource LocalizedStrings}}">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                                </Run.Foreground>
+                            </Run>
+                        </Paragraph>
 					</RichTextBox>
 					<RichTextBox Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
 						<Paragraph>
                             <Run x:Name="PlanBandwidth" Text="{Binding Plan.Transfer}"/>
-							<Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}" Foreground="LightGray"/>
+							<Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                                </Run.Foreground>
+                            </Run>
 						</Paragraph>
 					</RichTextBox>
 					<RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding Plan.ProductColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -106,7 +114,7 @@
                     </RichTextBox>
                     <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap">
                         <Border.Background>
-                            <SolidColorBrush Color="#FFFFFF" Opacity="0.20"/>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.20"/>
                         </Border.Background>
                         <Grid>
                             <Grid.ColumnDefinitions>                                
@@ -119,7 +127,7 @@
 					</Border>
 					<Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432" Tap="OnAnnualyTap">
                         <Border.Background>
-                            <SolidColorBrush Color="#FFFFFF" Opacity="0.20"/>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.20"/>
                         </Border.Background>
 						<Grid>
 							<Grid.ColumnDefinitions>
