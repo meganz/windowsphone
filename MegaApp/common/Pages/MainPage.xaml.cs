@@ -477,6 +477,14 @@ namespace MegaApp.Pages
         {
             base.OnBackKeyPress(e);
 
+            // Check to see if any dialog is open
+            // Cancel backpress event so that the dialog can close first
+            if (App.AppInformation.PickerOrAsyncDialogIsOpen)
+            {
+                e.Cancel = true;
+                return;
+            }
+
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
 

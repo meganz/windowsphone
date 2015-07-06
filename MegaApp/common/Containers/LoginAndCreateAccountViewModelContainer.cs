@@ -5,13 +5,13 @@ namespace MegaApp.Containers
 {
     class LoginAndCreateAccountViewModelContainer
     {
-        public LoginViewModel _loginViewModel { get; set; }
-        public CreateAccountViewModel _createAccountViewModel { get; set; }
+        public LoginViewModel LoginViewModel { get; private set; }
+        public CreateAccountViewModel CreateAccountViewModel { get; private set; }
 
         public LoginAndCreateAccountViewModelContainer()
         {
-            _loginViewModel = new LoginViewModel(App.MegaSdk);
-            _createAccountViewModel = new CreateAccountViewModel(App.MegaSdk);
+            LoginViewModel = new LoginViewModel(App.MegaSdk);
+            CreateAccountViewModel = new CreateAccountViewModel(App.MegaSdk);
         }
     }
 }

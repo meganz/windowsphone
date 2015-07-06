@@ -112,6 +112,7 @@ namespace MegaApp
             Resources.Remove("PhoneAccentColor");
             Resources.Add("PhoneAccentColor", (Color)Current.Resources["MegaRedColor"]);
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
+            ((SolidColorBrush)Resources["PhoneTextBoxEditBorderBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
         }
 
         // Code to execute when the application is launching (eg, from Start)

@@ -20,8 +20,6 @@
     <system:Double x:Key="InformationFontSize">14</system:Double>
 
     <!-- APP THEME OVERRIDES -->
-    <!--<Color x:Key="PhoneAccentColor">#D90007</Color>
-    <SolidColorBrush x:Key="PhoneAccentBrush" Color="{StaticResource PhoneAccentColor}"/>-->
 
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>

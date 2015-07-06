@@ -470,6 +470,11 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Year</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/PasteMegaDownloadLink" translate="yes" xml:space="preserve">
+          <source>Paste MEGA download link:</source>
+          <target state="new">Paste MEGA download link:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
+        </trans-unit>
         <trans-unit id="Resx/Month" translate="yes" xml:space="preserve">
           <source>Month</source>
           <target state="new">Month</target>

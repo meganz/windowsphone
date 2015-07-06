@@ -417,112 +417,11 @@ namespace MegaApp.Services
             InteractionEffectManager.SetIsInteractionEnabled(sortList, true);
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
             sortList.ItemTap += (sender, args) => ((AdvancedMenuItem) args.Item.DataContext).TapAction.Invoke();
-        
-
-            //var fileAscButton = new Button()
-            //{
-            //    Content = "Files type/name ascending"
-            //};
-            //fileAscButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int) MSortOrderType.ORDER_DEFAULT_ASC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var fileDescButton = new Button()
-            //{
-            //    Content = "Files type/name descending"
-            //};
-            //fileDescButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var sizeAscButton = new Button()
-            //{
-            //    Content = "Size ascending"
-            //};
-            //sizeAscButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var sizeDescButton = new Button()
-            //{
-            //    Content = "Size descending"
-            //};
-            //sizeDescButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var modificationAscButton = new Button()
-            //{
-            //    Content = "Modification date ascending"
-            //};
-            //modificationAscButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var modificationDescButton = new Button()
-            //{
-            //    Content = "Modification date descending"
-            //};
-            //modificationDescButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var alphaAscButton = new Button()
-            //{
-            //    Content = "Alphabetical ascending"
-            //};
-            //alphaAscButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-            //var alphaDescButton = new Button()
-            //{
-            //    Content = "Alphabetical descending"
-            //};
-            //alphaDescButton.Tap += (sender, args) =>
-            //{
-            //    sortRadWindow.IsOpen = false;
-            //    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
-            //    Task.Run(() => folder.LoadChildNodes());
-            //};
-
-
+            
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(sortList);
-            //buttonStackPanel.Children.Add(fileAscButton);
-            //buttonStackPanel.Children.Add(fileDescButton);
-            //buttonStackPanel.Children.Add(sizeAscButton);
-            //buttonStackPanel.Children.Add(sizeDescButton);
-            //buttonStackPanel.Children.Add(modificationAscButton);
-            //buttonStackPanel.Children.Add(modificationDescButton);
-            //buttonStackPanel.Children.Add(alphaAscButton);
-            //buttonStackPanel.Children.Add(alphaDescButton);
-
-            //var scrollViewer = new ScrollViewer {Content = buttonStackPanel};
 
             sortRadWindow.Content = buttonStackPanel;
-
 
             sortRadWindow.IsOpen = true;
         }
@@ -836,22 +735,6 @@ namespace MegaApp.Services
                         break;
                     }
             }
-        }
-
-        public static void ShowInputDialog(FolderViewModel folder)
-        {
-            //if (folder.FolderRootNode == null) return;
-
-            //var inputWindow = new RadModalWindow()
-            //{
-            //    IsFullScreen = true,
-            //    Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
-            //    WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
-            //    HorizontalContentAlignment = HorizontalAlignment.Stretch,
-            //    VerticalContentAlignment = VerticalAlignment.Stretch,
-            //    ShouldHandleApplicationBar = true
-            //};
-
         }
     }
 }

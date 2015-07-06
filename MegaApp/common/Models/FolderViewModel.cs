@@ -197,54 +197,72 @@ namespace MegaApp.Models
             this.LoadChildNodes();
         }
 
-        public async void AddFolder()
+        public void AddFolder()
         {
             if (!IsUserOnline()) return;
 
-            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
+            // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-            try
+            var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.CreateFolder, this.AppInformation);
+            inputDialog.OkButtonTapped += (sender, args) =>
             {
-                this.AppInformation.PickerOrAsyncDialogIsOpen = true;
+                this.MegaSdk.createFolder(args.InputText, this.FolderRootNode.OriginalMNode,
+                     new CreateFolderRequestListener());
+            };
+            inputDialog.ShowDialog();
 
-                var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-                    new[] { UiResources.Add.ToLower(), UiResources.Cancel.ToLower() }, UiResources.CreateFolder);
+            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
+            //if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-                this.AppInformation.PickerOrAsyncDialogIsOpen = false;
+            //try
+            //{
+            //    this.AppInformation.PickerOrAsyncDialogIsOpen = true;
 
-                if (inputPromptClosedEventArgs == null || inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+            //    var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
+            //        new[] { UiResources.Add.ToLower(), UiResources.Cancel.ToLower() }, UiResources.CreateFolder);
 
-                this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, this.FolderRootNode.OriginalMNode,
-                    new CreateFolderRequestListener());
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(AppMessages.FolderCreateFailed, AppMessages.FolderCreateFailed_Title,
-                    MessageBoxButton.OK);
-            }
-            finally
-            {
-                this.AppInformation.PickerOrAsyncDialogIsOpen = false;
-            }
+            //    this.AppInformation.PickerOrAsyncDialogIsOpen = false;
+
+            //    if (inputPromptClosedEventArgs == null || inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+            //    this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, this.FolderRootNode.OriginalMNode,
+            //        new CreateFolderRequestListener());
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show(AppMessages.FolderCreateFailed, AppMessages.FolderCreateFailed_Title,
+            //        MessageBoxButton.OK);
+            //}
+            //finally
+            //{
+            //    this.AppInformation.PickerOrAsyncDialogIsOpen = false;
+            //}
         }
         public async void OpenLink()
         {
             if (!IsUserOnline()) return;
 
-            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
+            // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-            this.AppInformation.PickerOrAsyncDialogIsOpen = true;
+            var inputDialog = new CustomInputDialog(UiResources.OpenLink, UiResources.PasteMegaDownloadLink, this.AppInformation);
+            inputDialog.OkButtonTapped += (sender, args) =>
+            {
+                this.MegaSdk.getPublicNode(args.InputText, new GetPublicNodeRequestListener(this));
+            };
+            inputDialog.ShowDialog();
 
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-                new[] { UiResources.Open, UiResources.Cancel }, UiResources.OpenLink);
+            //this.AppInformation.PickerOrAsyncDialogIsOpen = true;
 
-            this.AppInformation.PickerOrAsyncDialogIsOpen = false;
+            //var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
+            //    new[] { UiResources.Open, UiResources.Cancel }, UiResources.OpenLink);
 
-            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+            //this.AppInformation.PickerOrAsyncDialogIsOpen = false;
 
-            this.MegaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
+            //if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
+
+            //this.MegaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
         }
 
         public void ImportLink(string link)
