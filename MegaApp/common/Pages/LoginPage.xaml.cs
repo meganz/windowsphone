@@ -64,9 +64,9 @@ namespace MegaApp.Pages
         private void OnAcceptClick(object sender, System.EventArgs e)        
         {
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
-                _loginAndCreateAccountViewModelContainer._loginViewModel.DoLogin();
+                _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
             else if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_CreateAccount)                
-                _loginAndCreateAccountViewModelContainer._createAccountViewModel.CreateAccount();
+                _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.CreateAccount();
         }
 
         private void OnCancelClick(object sender, System.EventArgs e)

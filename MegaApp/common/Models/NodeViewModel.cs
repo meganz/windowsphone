@@ -78,26 +78,45 @@ namespace MegaApp.Models
 
         #region IMegaNode Interface
 
-        public async Task<NodeActionResult> Rename()
+        public NodeActionResult Rename()
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            // Add the current name to the rename dialog textbox
-            var textboxStyle = new Style(typeof(RadTextBox));
-            textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
+            // Only 1 CustomInputDialog should be open at the same time.
+            if (this.AppInformation.PickerOrAsyncDialogIsOpen) return NodeActionResult.Cancelled;
 
-            // Create the rename dialog and show it to the user
-            var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename.ToLower(), UiResources.Cancel.ToLower() },
-                UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
+            var settings = new CustomInputDialogSettings()
+            {
+                DefaultText = this.Name,
+                SelectDefaultText = true,
+                IgnoreExtensionInSelection = true,
+            };
 
-            // If the user did not press OK, do nothing
-            if (inputPromptClosedEventArgs.Result != DialogResult.OK) return NodeActionResult.Cancelled;
+            var inputDialog = new CustomInputDialog(UiResources.Rename, UiResources.RenameItem, this.AppInformation, settings);
+            inputDialog.OkButtonTapped += (sender, args) =>
+            {
+                this.MegaSdk.renameNode(this.OriginalMNode, args.InputText, new RenameNodeRequestListener(this));
+            };
+            inputDialog.ShowDialog();
 
-            // Rename the node
-            this.MegaSdk.renameNode(this.OriginalMNode, inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
-            
             return NodeActionResult.IsBusy;
+           
+            // Add the current name to the rename dialog textbox
+            //var textboxStyle = new Style(typeof(RadTextBox));
+            //textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
+
+            //// Create the rename dialog and show it to the user
+            //var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename.ToLower(), UiResources.Cancel.ToLower() },
+            //    UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
+
+            //// If the user did not press OK, do nothing
+            //if (inputPromptClosedEventArgs.Result != DialogResult.OK) return NodeActionResult.Cancelled;
+
+            //// Rename the node
+            //this.MegaSdk.renameNode(this.OriginalMNode, inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
+            
+            //return NodeActionResult.IsBusy;
         }
 
         public NodeActionResult Move(IMegaNode newParentNode)
