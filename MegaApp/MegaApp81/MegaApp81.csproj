@@ -200,6 +200,9 @@
     <Compile Include="..\common\Classes\CreditCard.cs">
       <Link>Classes\CreditCard.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\CustomInputDialog.cs">
+      <Link>Classes\CustomInputDialog.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\CustomMultiResolutionImage.cs">
       <Link>Classes\CustomMultiResolutionImage.cs</Link>
     </Compile>
@@ -705,7 +708,6 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
-    <Compile Include="Classes\CustomInputDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
