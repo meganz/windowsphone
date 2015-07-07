@@ -93,12 +93,20 @@
                             <Run Text="*"/>
 						</Paragraph>
 					</RichTextBox>
-					<RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+					<RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
 						<Paragraph>
 							<Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.Price}"/>
-							<Run Text="/" Foreground="LightGray"/>
-                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="LightGray"/>
-						</Paragraph>
+                            <Run Text="/">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                                </Run.Foreground>
+                            </Run>
+                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
+                                </Run.Foreground>
+                            </Run>
+                        </Paragraph>
 					</RichTextBox>
                     <Border Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding Plan.IsNewOffer, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/new_offer_WP.png"/>

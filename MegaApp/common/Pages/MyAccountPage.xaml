@@ -95,12 +95,20 @@
                                 <Image x:Name="ImgAccountType" Source="{Binding AccountDetails.AccountTypeUri}" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <TextBlock Text="{Binding AccountDetails.AccountTypeText}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold" Grid.Column="1" Margin="12,0"/>
                             </Grid>
-                            <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                <Paragraph>
-                                    <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                                    <Run Text="{Binding AccountDetails.ProExpiration}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
-                                </Paragraph>
-                            </RichTextBox>
+                            <StackPanel Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <Paragraph>
+                                        <Run Text="{Binding LocalizedUiResources.RenewsOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                        <Run Text="{Binding AccountDetails.SubscriptionRenewDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                    </Paragraph>
+                                </RichTextBox>
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                                    <Paragraph>
+                                        <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                        <Run Text="{Binding AccountDetails.ProExpirationDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                    </Paragraph>
+                                </RichTextBox>
+                            </StackPanel>                            
                         </StackPanel>
                         <Ellipse Grid.Row="1" HorizontalAlignment="Center" Height="190" Stroke="Black" VerticalAlignment="Center" Width="190">
                             <Ellipse.Fill>
@@ -196,10 +204,16 @@
                         </Grid>
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Visibility="{Binding AccountDetails.IsFreeAccount, Converter={StaticResource BooleanToVisibilityConverter}}" Loaded="OnPivotLoaded">
+                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
                     <Grid>
-                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding AccountDetails.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" ItemTap="OnItemTap"/>
-                    </Grid>
+                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" Visibility="{Binding UpgradeAccount.AvailablePurchases, Converter={StaticResource BooleanToVisibilityConverter}}" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding UpgradeAccount.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" ItemTap="OnItemTap"/>
+                        <StackPanel Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <ContentPresenter x:Name="ProductPurchased" ContentTemplate="{StaticResource ProductItemTemplate}" Content="{Binding UpgradeAccount.ProductPurchased}"/>
+                            <TextBlock Text="{Binding LocalizedUiResources.Awesome, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
+                            <TextBlock Text="{Binding AccountDetails.PurchaseAccountTypeText}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                            <TextBlock Text="{Binding AccountDetails.PurchaseAccountRenewalText}" TextWrapping="Wrap" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="12,24"/>
+                        </StackPanel>
+                    </Grid>                    
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>

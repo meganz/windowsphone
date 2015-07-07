@@ -541,6 +541,9 @@
             <Border Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding IsNewOffer, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <selectors:CustomMultiResolutionImage HorizontalAlignment="Right" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/new_offer_WP.png"/>
             </Border>
+            <Border Grid.Column="0" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top" Visibility="{Binding Purchased, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <selectors:CustomMultiResolutionImage HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="None" Source="/Assets/Images/purchased_WP.png"/>
+            </Border>
         </Grid>
     </DataTemplate>
 

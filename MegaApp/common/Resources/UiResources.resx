@@ -855,7 +855,7 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
     <value>Expires on</value>
-    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a subscription - (String as short as possible).</comment>
+    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
   </data>
   <data name="FirstName" xml:space="preserve">
     <value>First name</value>
@@ -925,5 +925,27 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="PasteMegaDownloadLink" xml:space="preserve">
     <value>Paste MEGA download link:</value>
     <comment>Label for dialog message to download via a MEGA link</comment>
+  </data>
+  <data name="RenewsOn" xml:space="preserve">
+    <value>Renews on</value>
+    <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="AccountPurchased" xml:space="preserve">
+    <value>You have purchased a {0} account.</value>
+    <comment>Label to indicate the purchased account/subscription.
+Preserve the {0} code because is for include the name/type in runtime.</comment>
+  </data>
+  <data name="AccountRenewalNotice" xml:space="preserve">
+    <value>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel this subscription payment prior to the renewal date.</value>
+    <comment>Label to indicate the renewal period of the purchased subscription.
+Preserve the {0} code because is for include the renewal period string in runtime.</comment>
+  </data>
+  <data name="Annual" xml:space="preserve">
+    <value>Annual</value>
+    <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Awesome" xml:space="preserve">
+    <value>Awesome!</value>
+    <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

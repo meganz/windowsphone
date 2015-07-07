@@ -804,7 +804,7 @@ para mostrar</value>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
     <value>Expira el</value>
-    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a subscription - (String as short as possible).</comment>
+    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
   </data>
   <data name="CreditCardNumber" xml:space="preserve">
     <value>Número de Tarjeta de Crédito</value>
@@ -891,5 +891,27 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="SettingsShort" xml:space="preserve">
     <value>Config.</value>
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
+  </data>
+  <data name="RenewsOn" xml:space="preserve">
+    <value>Renueva el</value>
+    <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="Awesome" xml:space="preserve">
+    <value>¡Impresionante!</value>
+    <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AccountRenewalNotice" xml:space="preserve">
+    <value>Tu subscripción {0} se refacturará automáticamente en tu aniversario {0} a menos que inicies sesión en tu cuenta y canceles el pago de esta subscripción antes de la fecha de renovación.</value>
+    <comment>Label to indicate the renewal period of the purchased subscription.
+Preserve the {0} code because is for include the renewal period string in runtime.</comment>
+  </data>
+  <data name="AccountPurchased" xml:space="preserve">
+    <value>Has comprado una cuenta {0}.</value>
+    <comment>Label to indicate the purchased account/subscription.
+Preserve the {0} code because is for include the name/type in runtime.</comment>
+  </data>
+  <data name="Annual" xml:space="preserve">
+    <value>Anual</value>
+    <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

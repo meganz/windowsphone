@@ -97,14 +97,28 @@ namespace MegaApp.MegaApi
                         _accountDetails.TotalSpaceUnits = _accountDetails.TotalSpace.ToReadableUnits();
                         _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
                         _accountDetails.CreateDataPoints();
-                        _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
-
+                        _accountDetails.AccountType = request.getMAccountDetails().getProLevel();                        
+                        
                         if (_accountDetails.AccountType != MAccountType.ACCOUNT_TYPE_FREE)
                         {
-                            // Get the expiration time for the current PRO status
+                            DateTime date;
                             DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-                            DateTime date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
-                            _accountDetails.ProExpiration = date.ToString("dd-MM-yyyy");
+
+                            // If there is a valid subscription get the renew time
+                            if (request.getMAccountDetails().getSubscriptionStatus() == MSubscriptionStatus.SUBSCRIPTION_STATUS_VALID)
+                            {
+                                date = start.AddSeconds(request.getMAccountDetails().getSubscriptionRenewTime());
+                                _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                _accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
+                                _accountDetails.IsValidSubscription = true;
+                            }
+                            // Else get the expiration time for the current PRO status
+                            else 
+                            {
+                                date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
+                                _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                _accountDetails.IsValidSubscription = false;
+                            }
                         }
 
                         switch (_accountDetails.AccountType)

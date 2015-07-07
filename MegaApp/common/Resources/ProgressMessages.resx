@@ -163,6 +163,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Getting link...</value>
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Getting payment methods...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
   <data name="GetPreview" xml:space="preserve">
     <value>Getting preview...</value>
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>

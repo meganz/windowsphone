@@ -295,6 +295,9 @@
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\GetPaymentMethodsRequestListener.cs">
+      <Link>MegaApi\GetPaymentMethodsRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\GetPaymentUrlRequestListener.cs">
       <Link>MegaApi\GetPaymentUrlRequestListener.cs</Link>
     </Compile>
@@ -444,6 +447,9 @@
     </Compile>
     <Compile Include="..\common\Models\TransfersViewModel.cs">
       <Link>Models\TransfersViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\UpgradeAccountViewModel.cs">
+      <Link>Models\UpgradeAccountViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Pages\AboutPage.xaml.cs">
       <Link>Pages\AboutPage.xaml.cs</Link>
@@ -1886,6 +1892,15 @@
     </Content>
     <Content Include="..\common\Assets\Images\pro_3_crest_WP.Screen-WXGA.png">
       <Link>Assets\Images\pro_3_crest_WP.Screen-WXGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\purchased_WP.Screen-720p.png">
+      <Link>Assets\Images\purchased_WP.Screen-720p.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\purchased_WP.Screen-WVGA.png">
+      <Link>Assets\Images\purchased_WP.Screen-WVGA.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\Images\purchased_WP.Screen-WXGA.png">
+      <Link>Assets\Images\purchased_WP.Screen-WXGA.png</Link>
     </Content>
     <Content Include="..\common\Assets\Images\save_17_percent_WP.Screen-720p.png">
       <Link>Assets\Images\save_17_percent_WP.Screen-720p.png</Link>
