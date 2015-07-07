@@ -1,5 +1,5 @@
-﻿using System.Windows.Media;
-using Microsoft.Phone.Shell;
+﻿using Microsoft.Phone.Shell;
+using System.Windows.Media;
 
 namespace MegaApp.Services
 {

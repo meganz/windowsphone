@@ -701,6 +701,17 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <target state="new">Account upgraded</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error getting payment methods</source>
+          <target state="new">Error getting payment methods</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
+          <target state="new">Failed to retrieve the available payment methods. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" xml:space="preserve">
           <source>Account successfully upgraded!</source>
           <target state="new">Account successfully upgraded!</target>

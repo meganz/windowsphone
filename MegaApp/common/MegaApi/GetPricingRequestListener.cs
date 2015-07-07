@@ -8,6 +8,7 @@ using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -16,10 +17,12 @@ namespace MegaApp.MegaApi
     class GetPricingRequestListener : BaseRequestListener
     {
         private readonly AccountDetailsViewModel _accountDetails;
+        private readonly UpgradeAccountViewModel _upgradeAccount;
 
-        public GetPricingRequestListener(AccountDetailsViewModel accountDetails)
+        public GetPricingRequestListener(AccountDetailsViewModel accountDetails, UpgradeAccountViewModel upgradeAccount)
         {
             _accountDetails = accountDetails;
+            _upgradeAccount = upgradeAccount;
         }
 
         protected override string ProgressMessage
@@ -88,8 +91,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                _accountDetails.Products.Clear();
-                _accountDetails.Plans.Clear();
+                _upgradeAccount.Products.Clear();
+                _upgradeAccount.Plans.Clear();
 
                 int numberOfProducts = request.getPricing().getNumProducts();
 
@@ -98,8 +101,8 @@ namespace MegaApp.MegaApi
                     var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
                         request.getPricing().getProLevel(i).ToString());
 
-                    if (accountType == _accountDetails.AccountType)
-                        continue;
+                    //if (accountType == _accountDetails.AccountType)
+                    //    continue;
                     
                     var product = new Product
                     {
@@ -110,7 +113,8 @@ namespace MegaApp.MegaApi
                         GbTransfer = request.getPricing().getGBTransfer(i),
                         Months = request.getPricing().getMonths(i),
                         Handle = request.getPricing().getHandle(i),
-                        IsNewOffer = false
+                        IsNewOffer = false,
+                        Purchased = false
                     };
 
                     switch (accountType)
@@ -149,7 +153,8 @@ namespace MegaApp.MegaApi
                     }
 
                     product.ProductColorBrush = new SolidColorBrush(product.ProductColor);
-                    _accountDetails.Products.Add(product);
+
+                    _upgradeAccount.Products.Add(product);
                     
                     if (request.getPricing().getMonths(i) == 12)
                     {
@@ -167,7 +172,14 @@ namespace MegaApp.MegaApi
                             IsNewOffer = product.IsNewOffer
                         };
 
-                        _accountDetails.Plans.Add(plan);
+                        _upgradeAccount.Plans.Add(plan);
+
+                        if (accountType == _accountDetails.AccountType)
+                        {
+                            product.IsNewOffer = false;
+                            product.Purchased = true;
+                            _upgradeAccount.ProductPurchased = product;
+                        }
                     }
                 }
             });

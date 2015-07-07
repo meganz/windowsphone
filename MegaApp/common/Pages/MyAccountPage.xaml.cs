@@ -137,17 +137,17 @@ namespace MegaApp.Pages
         {
             //App.MegaSdk.getPaymentId(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());
             
-            for(int i=0; i < _myAccountPageViewModel.AccountDetails.Products.Count; i++)
+            for(int i=0; i < _myAccountPageViewModel.UpgradeAccount.Products.Count; i++)
             {
-                if(_myAccountPageViewModel.AccountDetails.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
+                if(_myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
                 {
-                    switch(_myAccountPageViewModel.AccountDetails.Products.ElementAt(i).Months)
+                    switch(_myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).Months)
                     {
                         case 1:
-                            PhoneApplicationService.Current.State["SelectedPlanMonthly"] = _myAccountPageViewModel.AccountDetails.Products.ElementAt(i);
+                            PhoneApplicationService.Current.State["SelectedPlanMonthly"] = _myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
                             break;
                         case 12:
-                            PhoneApplicationService.Current.State["SelectedPlanAnnualy"] = _myAccountPageViewModel.AccountDetails.Products.ElementAt(i);
+                            PhoneApplicationService.Current.State["SelectedPlanAnnualy"] = _myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
                             break;
                         default:
                             break;

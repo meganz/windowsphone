@@ -24,8 +24,10 @@ namespace MegaApp.Models
             InitializeMenu(HamburgerMenuItemType.MyAccount);
 
             AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
+            UpgradeAccount = new UpgradeAccountViewModel();
+
             if (!File.Exists(AccountDetails.AvatarPath)) return;
-            AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);
+            AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);            
         }
 
         #region Methods
@@ -40,7 +42,8 @@ namespace MegaApp.Models
 
         public void GetPricing()
         {
-            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails));
+            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails, UpgradeAccount));
+            MegaSdk.getPaymentMethods(new GetPaymentMethodsRequestListener(AccountDetails, UpgradeAccount));
         }
 
         public void Logout()
@@ -70,6 +73,17 @@ namespace MegaApp.Models
             }
         }
 
+        private UpgradeAccountViewModel _upgradeAccount;
+        public UpgradeAccountViewModel UpgradeAccount
+        {
+            get { return _upgradeAccount; }
+            set
+            {
+                _upgradeAccount = value;
+                OnPropertyChanged("UpgradeAccount");
+            }
+        }
+
         /*private string AvatarPath
         {
             get
@@ -80,7 +94,5 @@ namespace MegaApp.Models
         }*/
 
         #endregion
-
-
     }
 }

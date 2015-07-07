@@ -20,6 +20,7 @@ namespace MegaApp.Classes
         public Color ProductColor { get; set; }
         public Brush ProductColorBrush { get; set; }
         public bool IsNewOffer { get; set; }
+        public bool Purchased { get; set; }
 
         public string Storage
         {

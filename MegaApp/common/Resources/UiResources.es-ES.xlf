@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en-US" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -459,7 +459,7 @@ Try to preserve the PIN uppercase word.</note>
         <trans-unit id="Resx/ExpiresOn" translate="yes" xml:space="preserve">
           <source>Expires on</source>
           <target state="translated">Expira el</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Expires on' text into the my account page, indicating the expiration date of a subscription - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/FirstName" translate="yes" xml:space="preserve">
           <source>First name</source>
@@ -475,7 +475,34 @@ Try to preserve the PIN uppercase word.</note>
           <source>Paste MEGA download link:</source>
           <target state="new">Paste MEGA download link:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/RenewsOn" translate="yes" xml:space="preserve">
+          <source>Renews on</source>
+          <target state="translated">Renueva el</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Awesome" translate="yes" xml:space="preserve">
+          <source>Awesome!</source>
+          <target state="translated">¡Impresionante!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Awesome' text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/AccountRenewalNotice" translate="yes" xml:space="preserve">
+          <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel this subscription payment prior to the renewal date.</source>
+          <target state="translated">Tu subscripción {0} se refacturará automáticamente en tu aniversario {0} a menos que inicies sesión en tu cuenta y canceles el pago de esta subscripción antes de la fecha de renovación.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription.
+Preserve the {0} code because is for include the renewal period string in runtime.</note>
+          </trans-unit>
+        <trans-unit id="Resx/Annual" translate="yes" xml:space="preserve">
+          <source>Annual</source>
+          <target state="translated">Anual</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Annual' button, link, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/AccountPurchased" translate="yes" xml:space="preserve">
+          <source>You have purchased a {0} account.</source>
+          <target state="translated">Has comprado una cuenta {0}.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the purchased account/subscription.
+Preserve the {0} code because is for include the name/type in runtime.</note>
+          </trans-unit>
         <trans-unit id="Resx/Month" translate="yes" xml:space="preserve">
           <source>Month</source>
           <target state="translated">Mes</target>

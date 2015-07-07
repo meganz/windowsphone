@@ -863,4 +863,13 @@ Are you sure you want to cancel your Mega subscription?</value>
     <value>Account upgraded</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>Failed to retrieve the available payment methods. Please try again. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>Error getting payment methods</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
 </root>

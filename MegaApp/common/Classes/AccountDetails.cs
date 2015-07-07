@@ -24,8 +24,6 @@ namespace MegaApp.Classes
         {
             _myAccountPage = myAccountPage;
 
-            Plans = new ObservableCollection<ProductBase>();
-            Products = new ObservableCollection<Product>();
             CacheSize = AppService.GetAppCacheSize();
         }
 
@@ -142,8 +140,11 @@ namespace MegaApp.Classes
             get { return _accountTypeText; }
             set
             {
-                _accountTypeText = value;
+                _accountTypeText = value;                
                 OnPropertyChanged("AccountTypeText");
+
+                PurchaseAccountTypeText = String.Format(UiResources.AccountPurchased, 
+                    _accountTypeText.ToUpper());
             }
         }
 
@@ -169,14 +170,14 @@ namespace MegaApp.Classes
             }
         }*/
 
-        private String _proExpiration;
-        public String ProExpiration
+        private String _proExpirationDate;
+        public String ProExpirationDate
         {
-            get { return _proExpiration; }
+            get { return _proExpirationDate; }
             set
             {
-                _proExpiration = value;
-                OnPropertyChanged("ProExpiration");
+                _proExpirationDate = value;
+                OnPropertyChanged("ProExpirationDate");
             }
         }
 
@@ -195,6 +196,50 @@ namespace MegaApp.Classes
         public bool IsProAccount
         {
             get { return !_isFreeAccount; }            
+        }
+        
+        private bool _isValidSubscription;
+        public bool IsValidSubscription
+        {
+            get { return _isValidSubscription; }
+            set
+            {
+                _isValidSubscription = value;
+                OnPropertyChanged("IsValidSubscription");
+            }
+        }
+
+        private String _subscriptionRenewDate;
+        public String SubscriptionRenewDate
+        {
+            get { return _subscriptionRenewDate; }
+            set
+            {
+                _subscriptionRenewDate = value;
+                OnPropertyChanged("SubscriptionRenewDate");
+            }
+        }
+
+        private String _subscriptionCycle;
+        public String SubscriptionCycle
+        {
+            get { return _subscriptionCycle; }
+            set
+            {
+                _subscriptionCycle = value;                
+                OnPropertyChanged("SubscriptionCycle");
+
+                if(String.Compare(_subscriptionCycle,"1 M") == 0)
+                {
+                    PurchaseAccountRenewalText = String.Format(UiResources.AccountRenewalNotice,
+                        UiResources.Monthly.ToLower(), UiResources.Monthly.ToLower());
+                }
+                else if (String.Compare(_subscriptionCycle, "1 Y") == 0)
+                {
+                    PurchaseAccountRenewalText = String.Format(UiResources.AccountRenewalNotice,
+                        UiResources.Annual.ToLower(), UiResources.Annual.ToLower());
+                }                
+            }
         }
 
         private ulong _creditCardSubscriptions;
@@ -240,8 +285,26 @@ namespace MegaApp.Classes
             }
         }
 
-        public ObservableCollection<ProductBase> Plans { get; set; }
-        public ObservableCollection<Product> Products { get; set; }        
-               
+        private String _purchaseAccountTypeText;
+        public String PurchaseAccountTypeText
+        {
+            get { return _purchaseAccountTypeText; }
+            set
+            {
+                _purchaseAccountTypeText = value;
+                OnPropertyChanged("PurchaseAccountTypeText");
+            }
+        }
+
+        private String _purchaseAccountRenewalText;
+        public String PurchaseAccountRenewalText
+        {
+            get { return _purchaseAccountRenewalText; }
+            set
+            {
+                _purchaseAccountRenewalText = value;
+                OnPropertyChanged("PurchaseAccountRenewalText");
+            }
+        }
     }
 }

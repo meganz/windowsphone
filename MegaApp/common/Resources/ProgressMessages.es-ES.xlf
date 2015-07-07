@@ -96,6 +96,11 @@
           <target state="translated">Obteniendo enlace...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethods" translate="yes" xml:space="preserve">
+          <source>Getting payment methods...</source>
+          <target state="new">Getting payment methods...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting payment methods - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/GetAccountDetails" translate="yes" xml:space="preserve">
           <source>Getting account details...</source>
           <target state="translated">Obteniendo detalles de la cuenta...</target>
