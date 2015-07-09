@@ -16,7 +16,7 @@ namespace MegaApp.MegaApi
     {
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetAccountDetails; }
+            get { return ProgressMessages.GetPaymentUrl; }
         }
 
         protected override bool ShowProgressMessage
@@ -26,12 +26,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.GetAccountDetailsFailed; }
+            get { return AppMessages.GetPaymentUrlFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.GetAccountDetailsFailed_Title; }
+            get { return AppMessages.GetPaymentUrlFailed_Title; }
         }
 
         protected override bool ShowErrorMessage
@@ -82,7 +82,7 @@ namespace MegaApp.MegaApi
             {
                 var webBrowserTask = new WebBrowserTask
                 {
-                    Uri = new Uri(request.getLink())
+                    Uri = new Uri("http://fortumo.com/mobile_payments/f250460ec5d97fd27e361afaa366db0f?cuid=" + request.getLink())
                 };
                 webBrowserTask.Show();
             });

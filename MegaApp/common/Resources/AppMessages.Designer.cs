@@ -622,6 +622,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to retrieve the payment Url. Please try again. [{0}].
+        /// </summary>
+        public static string GetPaymentUrlFailed {
+            get {
+                return ResourceManager.GetString("GetPaymentUrlFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Retrieving payment Url failed.
+        /// </summary>
+        public static string GetPaymentUrlFailed_Title {
+            get {
+                return ResourceManager.GetString("GetPaymentUrlFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to retrieve preview..
         /// </summary>
         public static string GetPreviewFailed {

@@ -14,12 +14,10 @@ namespace MegaApp.MegaApi
 {
     class GetPaymentMethodsRequestListener : BaseRequestListener
     {
-        private readonly AccountDetailsViewModel _accountDetails;
         private readonly UpgradeAccountViewModel _upgradeAccount;
 
-        public GetPaymentMethodsRequestListener(AccountDetailsViewModel accountDetails, UpgradeAccountViewModel upgradeAccount)
+        public GetPaymentMethodsRequestListener(UpgradeAccountViewModel upgradeAccount)
         {
-            _accountDetails = accountDetails;
             _upgradeAccount = upgradeAccount;
         }
 
@@ -93,10 +91,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
+                _upgradeAccount.FortumoPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_FORTUMO));
                 _upgradeAccount.CreditCardPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD));
-                //bool balance = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_BALANCE));
-
-                _upgradeAccount.AvailablePurchases = _accountDetails.IsFreeAccount && _upgradeAccount.CreditCardPaymentMethodAvailable;
             });
         }
 

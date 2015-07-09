@@ -42,8 +42,8 @@ namespace MegaApp.Models
 
         public void GetPricing()
         {
-            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails, UpgradeAccount));
-            MegaSdk.getPaymentMethods(new GetPaymentMethodsRequestListener(AccountDetails, UpgradeAccount));
+            MegaSdk.getPaymentMethods(new GetPaymentMethodsRequestListener(UpgradeAccount));
+            MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails, UpgradeAccount));            
         }
 
         public void Logout()

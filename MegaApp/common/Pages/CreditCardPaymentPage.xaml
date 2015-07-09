@@ -39,12 +39,18 @@
 			<StackPanel Grid.Row="0" Margin="12,17,0,28">
                 <TextBlock x:Name="PageTitle" Text="{Binding LocalizedUiResources.SelectedPlan, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0,0,12" FontWeight="Bold"/>
                 <TextBlock Text="{Binding LocalizedUiResources.ChooseRenewalPeriod, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <TextBlock Text="{Binding LocalizedUiResources.ChoosePaymentMethod, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding PaymentMethodSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 <TextBlock Text="{Binding LocalizedUiResources.EnterPaymentDetails, Source={StaticResource LocalizedStrings}}" Foreground="{StaticResource MegaRedSolidColorBrush}" Style="{StaticResource PhoneTextNormalStyle}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 			</StackPanel>
 
             <!--ContentPanel. Colocar aquí el contenido adicional-->
-			<StackPanel x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-                <Grid Margin="12,10" Height="132" Width="432">
+			<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="0" Margin="12,10" Height="132" Width="432">
                     <Grid.Background>
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.10"/>
                     </Grid.Background>
@@ -93,7 +99,7 @@
                             <Run Text="*"/>
 						</Paragraph>
 					</RichTextBox>
-					<RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <RichTextBox x:Name="SelectedOptionPrice" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
 						<Paragraph>
 							<Run x:Name="TxtSelectedOptionPrice" Text="{Binding SelectedProduct.Price}"/>
                             <Run Text="/">
@@ -169,7 +175,16 @@
 					</StackPanel>
 				</StackPanel>
 
-                <StackPanel x:Name="PanelBillingPaymentDetails" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <StackPanel x:Name="PanelPaymentMethod" Grid.Row="1" Margin="12,17,0,28" Visibility="{Binding PaymentMethodSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <RichTextBox FontSize="{StaticResource PhoneFontSizeLarge}" Margin="-12,0,12,0">
+                        <Paragraph>
+                            <Run Text="{Binding LocalizedUiResources.ChoosePaymentMethod, Source={StaticResource LocalizedStrings}}"/>                            
+                        </Paragraph>
+                    </RichTextBox>
+                    <telerikPrimitives:RadDataBoundListBox x:Name="LstPaymentMethods" Grid.Row="1" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource PaymentMethodTemplate}" EmptyContent="{Binding LocalizedUiResources.NoPaymentMethodsAvailable, Source={StaticResource LocalizedStrings}}" EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" ItemTap="OnSelectedPaymentMethod"/>
+                </StackPanel>
+
+                <StackPanel x:Name="PanelBillingPaymentDetails" Grid.Row="1" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <TextBlock Text="{Binding LocalizedUiResources.BillingDetails, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToUpperCaseConverter}}" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,24,12,12" FontWeight="Bold"/>
 					<RichTextBox Margin="0,0,12,0">
                         <Paragraph>
@@ -231,7 +246,7 @@
 					</Grid>					
 				</StackPanel>
 
-			</StackPanel>
+			</Grid>
 		</Grid>
 	</ScrollViewer>
 

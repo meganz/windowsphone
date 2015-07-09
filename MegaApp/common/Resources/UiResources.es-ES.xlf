@@ -473,7 +473,7 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/PasteMegaDownloadLink" translate="yes" xml:space="preserve">
           <source>Paste MEGA download link:</source>
-          <target state="new">Paste MEGA download link:</target>
+          <target state="translated">Pega el enlace de descarga de MEGA:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
           </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" xml:space="preserve">
@@ -485,6 +485,36 @@ Try to preserve the PIN uppercase word.</note>
           <source>Awesome!</source>
           <target state="translated">¡Impresionante!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Awesome' text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/ChoosePaymentMethod" translate="yes" xml:space="preserve">
+          <source>Choose payment method</source>
+          <target state="translated">Elije el método de pago</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed choose a payment method for upgrade his account.</note>
+          </trans-unit>
+        <trans-unit id="Resx/NoPaymentMethodsAvailable" translate="yes" xml:space="preserve">
+          <source>At this time, there is no payment method available for this plan</source>
+          <target state="translated">En este momento, no hay disponible ningún método de pago para este plan</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no available payment methods to the selected subscription plan.</note>
+          </trans-unit>
+        <trans-unit id="Resx/Recurring" translate="yes" xml:space="preserve">
+          <source>Recurring</source>
+          <target state="translated">Recurrente</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Recurring' payments - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Punctual" translate="yes" xml:space="preserve">
+          <source>Punctual</source>
+          <target state="translated">Puntual</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Punctual' payments - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/PhoneBill" translate="yes" xml:space="preserve">
+          <source>Phone Bill</source>
+          <target state="translated">Factura de Teléfono</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Phone Bill' button, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/CreditCard" translate="yes" xml:space="preserve">
+          <source>Credit Card</source>
+          <target state="translated">Tarjeta de Crédito</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" xml:space="preserve">
           <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel this subscription payment prior to the renewal date.</source>

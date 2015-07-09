@@ -779,6 +779,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Error getting payment methods</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" xml:space="preserve">
+          <source>Retrieving payment Url failed</source>
+          <target state="new">Retrieving payment Url failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
+          <target state="new">Failed to retrieve the payment Url. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
           <target state="new">Failed to retrieve the available payment methods. Please try again. [{0}]</target>

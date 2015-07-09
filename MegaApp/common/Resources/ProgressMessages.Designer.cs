@@ -169,6 +169,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Getting payment Url....
+        /// </summary>
+        public static string GetPaymentUrl {
+            get {
+                return ResourceManager.GetString("GetPaymentUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Getting preview....
         /// </summary>
         public static string GetPreview {

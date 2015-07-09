@@ -948,4 +948,28 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <value>Awesome!</value>
     <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="ChoosePaymentMethod" xml:space="preserve">
+    <value>Choose payment method</value>
+    <comment>Label to indicate the user that is needed choose a payment method for upgrade his account.</comment>
+  </data>
+  <data name="NoPaymentMethodsAvailable" xml:space="preserve">
+    <value>At this time, there is no payment method available for this plan</value>
+    <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Credit Card</value>
+    <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PhoneBill" xml:space="preserve">
+    <value>Phone Bill</value>
+    <comment>Label for any 'Phone Bill' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Punctual" xml:space="preserve">
+    <value>Punctual</value>
+    <comment>Label for any 'Punctual' payments - (String as short as possible).</comment>
+  </data>
+  <data name="Recurring" xml:space="preserve">
+    <value>Recurring</value>
+    <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
+  </data>
 </root>
