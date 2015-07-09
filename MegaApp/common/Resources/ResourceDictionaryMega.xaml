@@ -546,6 +546,26 @@
             </Border>
         </Grid>
     </DataTemplate>
+    
+    <DataTemplate x:Key="PaymentMethodTemplate">
+        <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,12,12,0" Width="432">
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.20"/>
+            </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding PaymentMethodUri}" Grid.Column="0" Width="76" Height="76" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0,0,0"/>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ListEmptyContentTemplate">
+        <TextBlock Text="{Binding}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="0,0,12,0"/>
+    </DataTemplate>
 
     <!-- SHOWSHARELINK BUTTON DATATEMPLATE -->
     <DataTemplate x:Key="ShowShareLinkButtons">

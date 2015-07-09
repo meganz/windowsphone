@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,9 +113,7 @@ namespace MegaApp.MegaApi
                         GbStorage = request.getPricing().getGBStorage(i),
                         GbTransfer = request.getPricing().getGBTransfer(i),
                         Months = request.getPricing().getMonths(i),
-                        Handle = request.getPricing().getHandle(i),
-                        IsNewOffer = false,
-                        Purchased = false
+                        Handle = request.getPricing().getHandle(i)
                     };
 
                     switch (accountType)
@@ -128,6 +127,18 @@ namespace MegaApp.MegaApi
                             product.ProductColor = Color.FromArgb(255, 255, 165, 0);
                             product.ProductUri = new Uri("/Assets/Images/lite_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                             product.IsNewOffer = true;
+
+                            // If fortumo payment method is active, and product is LITE monthly include it into the product
+                            if(_upgradeAccount.FortumoPaymentMethodAvailable && product.Months == 1)
+                            {
+                                var fortumoPaymentMethod = new PaymentMethod
+                                {
+                                    PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_FORTUMO,
+                                    Name = String.Format(UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
+                                    PaymentMethodUri = new Uri("/Assets/Images/mega_logo" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative)
+                                };
+                                product.PaymentMethods.Add(fortumoPaymentMethod);
+                            }
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROI:
                             product.Name = UiResources.AccountTypePro1;
@@ -152,10 +163,21 @@ namespace MegaApp.MegaApi
                             break;
                     }
 
-                    product.ProductColorBrush = new SolidColorBrush(product.ProductColor);
+                    // If CC payment method is active, include it into the product
+                    if(_upgradeAccount.CreditCardPaymentMethodAvailable)
+                    {
+                        var creditCardPaymentMethod = new PaymentMethod
+                        {
+                            PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD,
+                            Name = String.Format(UiResources.CreditCard + " (" + UiResources.Recurring.ToLower() + ")"),
+                            PaymentMethodUri = new Uri("/Assets/Images/mega_logo" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative)
+                        };
+                        product.PaymentMethods.Add(creditCardPaymentMethod);
+                    }                    
 
                     _upgradeAccount.Products.Add(product);
                     
+                    // Plans show only the information off the annualy plans
                     if (request.getPricing().getMonths(i) == 12)
                     {
                         var plan = new ProductBase
@@ -168,17 +190,19 @@ namespace MegaApp.MegaApi
                             GbTransfer = product.GbTransfer / 12,
                             ProductUri = product.ProductUri,
                             ProductColor = product.ProductColor,
-                            ProductColorBrush = product.ProductColorBrush,
                             IsNewOffer = product.IsNewOffer
                         };
 
                         _upgradeAccount.Plans.Add(plan);
 
-                        if (accountType == _accountDetails.AccountType)
+                        // Check if the user has a product/plan already purchased and fill the structure to show it
+                        if (accountType == _accountDetails.AccountType && request.getPricing().getMonths(i) == 12)
                         {
-                            product.IsNewOffer = false;
-                            product.Purchased = true;
                             _upgradeAccount.ProductPurchased = product;
+                            _upgradeAccount.ProductPurchased.GbTransfer = request.getPricing().getGBTransfer(i) / 12;
+                            _upgradeAccount.ProductPurchased.IsNewOffer = false;
+                            _upgradeAccount.ProductPurchased.Purchased = true;
+                            
                         }
                     }
                 }

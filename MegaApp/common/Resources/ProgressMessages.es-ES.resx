@@ -223,4 +223,12 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Almacenando tarjeta de crédito...</value>
     <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
   </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Obteniendo métodos de pago...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>Obteniendo Url de pago...</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
 </root>

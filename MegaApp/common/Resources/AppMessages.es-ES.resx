@@ -863,4 +863,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>Error al obtener los métodos de pago</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
+    <value>Error recuperando Url de pago</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed" xml:space="preserve">
+    <value>No se ha podido recuperar la Url de pago. Por favor, vuelve a intentarlo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>No se han podido recuperar los métodos de pago. Por favor, vuelve a intentarlo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
 </root>

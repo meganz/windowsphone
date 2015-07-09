@@ -13,6 +13,7 @@ using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -318,15 +319,7 @@ namespace MegaApp.Pages
 
             this.LstYears.ItemsSource = years;
         }
-
-        private void ChangeVisibility(bool isProductSelected)
-        {
-            _creditCardPaymentViewModel.ProductSelectionIsEnabled = !isProductSelected;
-            _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = isProductSelected;
-
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = isProductSelected;            
-        }
-
+                
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _creditCardPaymentViewModel.Plan = (ProductBase)PhoneApplicationService.Current.State["SelectedPlan"];
@@ -358,35 +351,46 @@ namespace MegaApp.Pages
 
             // If a product has been selected, deselect it
             if (_creditCardPaymentViewModel.CreditCardPaymentIsEnabled)
+            {                
+                _creditCardPaymentViewModel.ProductSelectionIsEnabled = false;
+                _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = true;
+            }
+            else if(_creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled)
             {
                 _creditCardPaymentViewModel.SelectedProduct = null;
+                _creditCardPaymentViewModel.ProductSelectionIsEnabled = true;
+                _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = false;
             }
             // If not, come back to the update account pivot
             else if (_creditCardPaymentViewModel.ProductSelectionIsEnabled)
             {
                 NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
-            }                
+            }
 
-            this.ChangeVisibility(false);
+            _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = false;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = false;
+                        
             e.Cancel = true;
         }
 
         private void OnMonthlyTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             _creditCardPaymentViewModel.SelectedProduct = _creditCardPaymentViewModel.ProductMonthly;
-            this.ChangeVisibility(true);
+            LstPaymentMethods.ItemsSource = _creditCardPaymentViewModel.SelectedProduct.PaymentMethods;
+
+            _creditCardPaymentViewModel.ProductSelectionIsEnabled = false;
+            _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = true;
+            _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = false;
         }
 
         private void OnAnnualyTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             _creditCardPaymentViewModel.SelectedProduct = _creditCardPaymentViewModel.ProductAnnualy;
-            this.ChangeVisibility(true);
-        }
+            LstPaymentMethods.ItemsSource = _creditCardPaymentViewModel.SelectedProduct.PaymentMethods;
 
-        private void OnBackClick(object sender, EventArgs e)
-        {
-            _creditCardPaymentViewModel.SelectedProduct = null;
-            this.ChangeVisibility(false);
+            _creditCardPaymentViewModel.ProductSelectionIsEnabled = false;
+            _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = true;
+            _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = false;
         }
 
         private void OnAcceptClick(object sender, EventArgs e)
@@ -397,6 +401,7 @@ namespace MegaApp.Pages
         private void OnCancelClick(object sender, EventArgs e)
         {
             _creditCardPaymentViewModel.ProductSelectionIsEnabled = true;
+            _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = false;
             _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = false;
 
             NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
@@ -405,6 +410,23 @@ namespace MegaApp.Pages
         private void LstCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _creditCardPaymentViewModel.BillingDetails.CountryCode = countries.ElementAt(this.LstCountries.SelectedIndex).Item1;
+        }
+
+        private void OnSelectedPaymentMethod(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
+        {
+            switch(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType)
+            {
+                case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
+                    App.MegaSdk.getPaymentId(_creditCardPaymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener());
+                    break;
+
+                case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:
+                    _creditCardPaymentViewModel.ProductSelectionIsEnabled = false;
+                    _creditCardPaymentViewModel.PaymentMethodSelectionIsEnabled = false;
+                    _creditCardPaymentViewModel.CreditCardPaymentIsEnabled = true;
+                    ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = true;
+                    break;
+            }
         }
     }
 }

@@ -914,4 +914,32 @@ Preserve the {0} code because is for include the name/type in runtime.</comment>
     <value>Anual</value>
     <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
   </data>
+  <data name="PasteMegaDownloadLink" xml:space="preserve">
+    <value>Pega el enlace de descarga de MEGA:</value>
+    <comment>Label for dialog message to download via a MEGA link</comment>
+  </data>
+  <data name="ChoosePaymentMethod" xml:space="preserve">
+    <value>Elije el método de pago</value>
+    <comment>Label to indicate the user that is needed choose a payment method for upgrade his account.</comment>
+  </data>
+  <data name="NoPaymentMethodsAvailable" xml:space="preserve">
+    <value>En este momento, no hay disponible ningún método de pago para este plan</value>
+    <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
+  </data>
+  <data name="Recurring" xml:space="preserve">
+    <value>Recurrente</value>
+    <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
+  </data>
+  <data name="Punctual" xml:space="preserve">
+    <value>Puntual</value>
+    <comment>Label for any 'Punctual' payments - (String as short as possible).</comment>
+  </data>
+  <data name="PhoneBill" xml:space="preserve">
+    <value>Factura de Teléfono</value>
+    <comment>Label for any 'Phone Bill' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Tarjeta de Crédito</value>
+    <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

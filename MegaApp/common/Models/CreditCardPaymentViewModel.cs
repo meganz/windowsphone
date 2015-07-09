@@ -142,6 +142,17 @@ namespace MegaApp.Models
             }
         }
 
+        private bool _paymentMethodSelectionIsEnabled;
+        public bool PaymentMethodSelectionIsEnabled
+        {
+            get { return _paymentMethodSelectionIsEnabled; }
+            set
+            {
+                _paymentMethodSelectionIsEnabled = value;
+                OnPropertyChanged("PaymentMethodSelectionIsEnabled");
+            }
+        }
+
         private bool _creditCardPaymentIsEnabled;
         public bool CreditCardPaymentIsEnabled
         {

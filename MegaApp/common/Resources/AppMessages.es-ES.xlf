@@ -68,15 +68,26 @@
           </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" xml:space="preserve">
           <source>Error getting payment methods</source>
-          <target state="new">Error getting payment methods</target>
+          <target state="translated">Error al obtener los métodos de pago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" xml:space="preserve">
+          <source>Retrieving payment Url failed</source>
+          <target state="translated">Error recuperando Url de pago</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
+          <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
+          <target state="translated">No se ha podido recuperar la Url de pago. Por favor, vuelve a intentarlo. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
-          <target state="new">Failed to retrieve the available payment methods. Please try again. [{0}]</target>
+          <target state="translated">No se han podido recuperar los métodos de pago. Por favor, vuelve a intentarlo. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" xml:space="preserve">
           <source>Account successfully upgraded!</source>
           <target state="translated">¡Cuenta actualizada correctamente!</target>
