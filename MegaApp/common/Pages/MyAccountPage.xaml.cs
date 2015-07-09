@@ -72,7 +72,7 @@ namespace MegaApp.Pages
             var lastPage = backStack.FirstOrDefault();
             if (lastPage != null)
             {
-                if (lastPage.Source.ToString().Contains((typeof(CreditCardPaymentPage)).Name))
+                if (lastPage.Source.ToString().Contains((typeof(PaymentPage)).Name))
                     ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
             }
 
@@ -156,7 +156,7 @@ namespace MegaApp.Pages
             }
 
             PhoneApplicationService.Current.State["SelectedPlan"] = LstPlans.SelectedItem;
-            NavigationService.Navigate(new Uri("/Pages/CreditCardPaymentPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Pages/PaymentPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)

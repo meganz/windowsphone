@@ -11,11 +11,11 @@ using MegaApp.Resources;
 
 namespace MegaApp.Models
 {
-    class CreditCardPaymentViewModel : BaseViewModel
+    class PaymentViewModel : BaseViewModel
     {
         private readonly MegaSDK _megaSdk;
 
-        public CreditCardPaymentViewModel(MegaSDK megaSdk)
+        public PaymentViewModel(MegaSDK megaSdk)
         {
             this.ControlState = true;
             this._megaSdk = megaSdk;
