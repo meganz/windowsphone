@@ -11,14 +11,14 @@
     xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Inputs"
     xmlns:models="clr-namespace:MegaApp.Models"
     xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
-    x:Class="MegaApp.Pages.CreditCardPaymentPage"
+    x:Class="MegaApp.Pages.PaymentPage"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
-    d:DataContext="{d:DesignInstance models:CreditCardPaymentViewModel}">
+    d:DataContext="{d:DesignInstance models:PaymentViewModel}">
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>            

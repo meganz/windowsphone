@@ -464,9 +464,6 @@
     <Compile Include="..\common\Models\CreateAccountViewModel.cs">
       <Link>Models\CreateAccountViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\CreditCardPaymentViewModel.cs">
-      <Link>Models\CreditCardPaymentViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\DebugSettingsViewModel.cs">
       <Link>Models\DebugSettingsViewModel.cs</Link>
     </Compile>
@@ -512,6 +509,9 @@
     <Compile Include="..\common\Models\PasswordViewModel.cs">
       <Link>Models\PasswordViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\PaymentViewModel.cs">
+      <Link>Models\PaymentViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PreviewImageViewModel.cs">
       <Link>Models\PreviewImageViewModel.cs</Link>
     </Compile>
@@ -549,10 +549,6 @@
       <Link>Pages\CreateAccountPage.xaml.cs</Link>
       <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="..\common\Pages\CreditCardPaymentPage.xaml.cs">
-      <Link>Pages\CreditCardPaymentPage.xaml.cs</Link>
-      <DependentUpon>CreditCardPaymentPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
       <DependentUpon>DownloadPage.xaml</DependentUpon>
@@ -588,6 +584,10 @@
     <Compile Include="..\common\Pages\PasswordPage.xaml.cs">
       <Link>Pages\PasswordPage.xaml.cs</Link>
       <DependentUpon>PasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\PaymentPage.xaml.cs">
+      <Link>Pages\PaymentPage.xaml.cs</Link>
+      <DependentUpon>PaymentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\PhotoCameraPage.xaml.cs">
       <Link>Pages\PhotoCameraPage.xaml.cs</Link>
@@ -1321,10 +1321,6 @@
       <Link>Pages\CreateAccountPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\CreditCardPaymentPage.xaml">
-      <Link>Pages\CreditCardPaymentPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>
@@ -1359,6 +1355,10 @@
     </Page>
     <Page Include="..\common\Pages\PasswordPage.xaml">
       <Link>Pages\PasswordPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\PaymentPage.xaml">
+      <Link>Pages\PaymentPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\PhotoCameraPage.xaml">
