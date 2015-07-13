@@ -14,6 +14,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -220,18 +221,35 @@ namespace MegaApp.Pages
                 case NavigationParameter.Normal:
                     _mainPageViewModel.LoadFolders();
                     break;
-                case NavigationParameter.Login:
-                    // Remove the login page from the stack. If user presses back button it will then exit the application
+
+                case NavigationParameter.Login:                    
+                    // Get last page (previous page)            
+                    var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
+                    var lastPage = backStack.FirstOrDefault();
+                    if (lastPage != null)
+                    {
+                        String strLastPage = lastPage.Source.ToString();
+
+                        // If navigation is from the ConfirmAccountPage, active the flag indicating that is newly activated account
+                        if (lastPage.Source.ToString().Contains("confirm"))
+                        {
+                            App.IsNewlyActivatedAccount = true;                            
+                            NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));                            
+                        }                            
+                    }
+
+                    // Remove the login or confirm account page from the stack. 
+                    // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
                     _mainPageViewModel.FetchNodes();
                     break;
+
                 case NavigationParameter.PasswordLogin:
-                {
                     NavigationService.RemoveBackEntry();
                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                         new FastLoginRequestListener(_mainPageViewModel));
                     break;
-                }
+
                 case NavigationParameter.PictureSelected:
                     break;
                 case NavigationParameter.AlbumSelected:

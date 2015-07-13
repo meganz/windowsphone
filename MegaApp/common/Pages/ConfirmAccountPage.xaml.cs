@@ -35,7 +35,7 @@ namespace MegaApp.Pages
             {
                 _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
                 if(_confirmAccountViewModel.ConfirmCode.StartsWith("mega://"))
-                    _confirmAccountViewModel.ConfirmCode = _confirmAccountViewModel.ConfirmCode.Replace("mega://", "https://mega.co.nz/#");
+                    _confirmAccountViewModel.ConfirmCode = _confirmAccountViewModel.ConfirmCode.Replace("mega://", "https://mega.nz/#");
 
                 App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode, _confirmAccountViewModel);
             }                
