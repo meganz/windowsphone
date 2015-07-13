@@ -46,5 +46,23 @@ namespace MegaApp.Services
                 Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
             };
         }
+
+        public static RadMoveAnimation GetPageInAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.RightIn,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
+            };
+        }
+
+        public static RadMoveAnimation GetPageOutAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.LeftOut,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 100))
+            };
+        }
     }
 }

@@ -240,7 +240,19 @@ namespace MegaApp
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
-            RootFrame = new RadPhoneApplicationFrame();
+            RootFrame = new RadPhoneApplicationFrame
+            {
+                // Add default page transitions animations
+                Transition = new RadTransition()
+                {
+                    ForwardInAnimation = AnimationService.GetPageInAnimation(),
+                    ForwardOutAnimation = AnimationService.GetPageOutAnimation(),
+                    BackwardInAnimation = AnimationService.GetPageInAnimation(),
+                    BackwardOutAnimation = AnimationService.GetPageOutAnimation(),
+
+                }
+            };
+
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures
