@@ -500,6 +500,11 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Recurring</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Recurring' payments - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/Limited" translate="yes" xml:space="preserve">
+          <source>Limited</source>
+          <target state="new">Limited</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Punctual" translate="yes" xml:space="preserve">
           <source>Punctual</source>
           <target state="new">Punctual</target>

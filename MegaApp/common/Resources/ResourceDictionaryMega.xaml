@@ -529,7 +529,7 @@
                     </Run>
                 </Paragraph>
             </RichTextBox>
-            <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding ProductColorBrush}">
+            <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding ProductColorBrush}" Visibility="{Binding IsFree, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Paragraph>
                     <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                     <Run Text="{Binding BasePrice}"/>

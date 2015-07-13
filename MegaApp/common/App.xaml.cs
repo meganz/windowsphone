@@ -51,6 +51,8 @@ namespace MegaApp
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
+        public static bool IsNewlyActivatedAccount { get; set; }
+
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
