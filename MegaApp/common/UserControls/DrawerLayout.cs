@@ -186,9 +186,10 @@ namespace MegaApp.UserControls
                 DrawerOpened(this);
         }
         
-        public void CloseDrawer()
+        public void CloseDrawer(bool skipAnimation = false)
         {
             if (_fadeOutStoryboard == null || _mainFragment == null || _listFragment == null) return;
+           
             _fadeOutStoryboard.Begin();
             _fadeOutStoryboard.Completed += fadeOutStoryboard_Completed;
             IsDrawerOpen = false;
