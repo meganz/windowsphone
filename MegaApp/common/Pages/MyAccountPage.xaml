@@ -20,7 +20,7 @@
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
     d:DataContext="{d:DesignInstance models:MyAccountPageViewModel}">
 
-    <phone:PhoneApplicationPage.Resources>
+    <userControls:MegaPhoneApplicationPage.Resources>
         <converters:LongToReadableSizeConverter x:Key="LongToReadableSizeConverter"/>
 
         <shell:ApplicationBar x:Key="MyAccountMenu">
@@ -32,17 +32,17 @@
                 <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.Resources>
+    </userControls:MegaPhoneApplicationPage.Resources>
 
-    <phone:PhoneApplicationPage.FontFamily>
+    <userControls:MegaPhoneApplicationPage.FontFamily>
         <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
-    </phone:PhoneApplicationPage.FontFamily>
-    <phone:PhoneApplicationPage.FontSize>
+    </userControls:MegaPhoneApplicationPage.FontFamily>
+    <userControls:MegaPhoneApplicationPage.FontSize>
         <StaticResource ResourceKey="PhoneFontSizeNormal"/>
-    </phone:PhoneApplicationPage.FontSize>
-    <phone:PhoneApplicationPage.Foreground>
+    </userControls:MegaPhoneApplicationPage.FontSize>
+    <userControls:MegaPhoneApplicationPage.Foreground>
         <StaticResource ResourceKey="PhoneForegroundBrush"/>
-    </phone:PhoneApplicationPage.Foreground>
+    </userControls:MegaPhoneApplicationPage.Foreground>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <userControls:DrawerLayout x:Name="MainDrawerLayout">

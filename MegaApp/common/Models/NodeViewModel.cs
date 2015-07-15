@@ -134,7 +134,7 @@ namespace MegaApp.Models
             return NodeActionResult.Failed;
         }
 
-        public NodeActionResult Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
+        public async Task<NodeActionResult> Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
@@ -150,9 +150,15 @@ namespace MegaApp.Models
             if (absoluteParentNode.getType() == MNodeType.TYPE_RUBBISH)
             {
                 if (!isMultiRemove)
-                    if (MessageBox.Show(String.Format(AppMessages.RemoveItemQuestion, this.Name),
-                        AppMessages.RemoveItemQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-                            return NodeActionResult.Cancelled;
+                {
+                    var result = await new CustomMessageDialog(
+                        AppMessages.RemoveItemQuestion_Title,
+                        String.Format(AppMessages.RemoveItemQuestion, this.Name),
+                        App.AppInformation,
+                        MessageDialogButtons.OkCancel).ShowDialogAsync();
+
+                    if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
+                }
 
                 this.MegaSdk.remove(this.OriginalMNode, new RemoveNodeRequestListener(this, isMultiRemove, absoluteParentNode.getType(),
                     waitEventRequest));
@@ -162,9 +168,15 @@ namespace MegaApp.Models
 
             // if the node in in the Cloud Drive, move it to rubbish bin
             if (!isMultiRemove)
-                if (MessageBox.Show(String.Format(AppMessages.MoveToRubbishBinQuestion, this.Name),
-                    AppMessages.MoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-                    return NodeActionResult.Cancelled;
+            {
+                var result = await new CustomMessageDialog(
+                    AppMessages.MoveToRubbishBinQuestion_Title,
+                    String.Format(AppMessages.MoveToRubbishBinQuestion, this.Name),
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel).ShowDialogAsync();
+
+                if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
+            }
 
             this.MegaSdk.moveNode(this.OriginalMNode, this.MegaSdk.getRubbishNode(),
                 new RemoveNodeRequestListener(this, isMultiRemove, absoluteParentNode.getType(), waitEventRequest));
@@ -172,14 +184,19 @@ namespace MegaApp.Models
             return NodeActionResult.IsBusy;
         }
 
-        public NodeActionResult Delete()
+        public async Task<NodeActionResult> Delete()
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            if (MessageBox.Show(String.Format(AppMessages.DeleteNodeQuestion, this.Name),
-                    AppMessages.DeleteNodeQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel)
-                return NodeActionResult.Cancelled;
+
+            var result = await new CustomMessageDialog(
+                AppMessages.DeleteNodeQuestion_Title,
+                String.Format(AppMessages.DeleteNodeQuestion, this.Name),
+                App.AppInformation,
+                MessageDialogButtons.OkCancel).ShowDialogAsync();
+
+            if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
 
             this.MegaSdk.remove(this.OriginalMNode, new RemoveNodeRequestListener(this, false, this.Type, null));
 

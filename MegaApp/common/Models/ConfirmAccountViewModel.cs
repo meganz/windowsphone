@@ -37,8 +37,13 @@ namespace MegaApp.Models
             else
             {
                 if (String.IsNullOrEmpty(Password))
-                    MessageBox.Show(AppMessages.RequiredFieldsConfirmAccount, AppMessages.RequiredFields_Title,
-                        MessageBoxButton.OK);
+                {
+                    new CustomMessageDialog(
+                        AppMessages.RequiredFields_Title,
+                        AppMessages.RequiredFieldsConfirmAccount,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                }
                 else
                 {
                     this._megaSdk.confirmAccount(ConfirmCode, Password, this);
@@ -142,7 +147,7 @@ namespace MegaApp.Models
                             if(request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
                             {
                                 if (ShowSuccesMessage)
-                                    MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
+                                    new CustomMessageDialog(SuccessMessageTitle, SuccessMessage, App.AppInformation).ShowDialog();
 
                                 OnSuccesAction(request);
                             }
@@ -154,16 +159,24 @@ namespace MegaApp.Models
                             //Already confirmed account
                             if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
                             {
-                                MessageBox.Show(AppMessages.AlreadyConfirmedAccount, AppMessages.AlreadyConfirmedAccount_Title,
-                                    MessageBoxButton.OK);
+                                new CustomMessageDialog(
+                                        AppMessages.AlreadyConfirmedAccount_Title,
+                                        AppMessages.AlreadyConfirmedAccount,
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
 
                                 NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
                             }                                
 
                             //Wrong password
                             if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                                MessageBox.Show(AppMessages.WrongPassword, AppMessages.WrongPassword_Title,
-                                    MessageBoxButton.OK);
+                            {
+                                new CustomMessageDialog(
+                                        AppMessages.WrongPassword_Title,
+                                        AppMessages.WrongPassword,
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
+                            }
                             
                             break;
                         }
@@ -174,8 +187,11 @@ namespace MegaApp.Models
 
                     default: //Other error
                         {
-                            MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
-                                MessageBoxButton.OK);
+                            new CustomMessageDialog(
+                                    ErrorMessageTitle,
+                                    String.Format(ErrorMessage, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             break;
                         }
 

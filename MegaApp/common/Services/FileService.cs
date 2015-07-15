@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using MegaApp.Classes;
 using MegaApp.Resources;
 
 #if WINDOWS_PHONE_81
@@ -36,8 +37,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.DeleteNodeFailed, e.Message),
-                        AppMessages.DeleteNodeFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.DeleteNodeFailed_Title,
+                            String.Format(AppMessages.DeleteNodeFailed,  e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }
         }
@@ -62,8 +66,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(AppMessages.CopyFileUnauthorizedAccessException,
-                        AppMessages.CopyFileUnauthorizedAccessException_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CopyFileUnauthorizedAccessException_Title,
+                            AppMessages.CopyFileUnauthorizedAccessException,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }
@@ -71,8 +78,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.CopyFileFailed, e.Message),
-                        AppMessages.CopyFileFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CopyFileFailed_Title,
+                            String.Format(AppMessages.CopyFileFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }
@@ -88,13 +98,22 @@ namespace MegaApp.Services
 
                 if (file != null)
                     return await Windows.System.Launcher.LaunchFileAsync(file);
-                
-                MessageBox.Show(AppMessages.FileNotFound, AppMessages.FileNotFound_Title, MessageBoxButton.OK);
+
+                new CustomMessageDialog(
+                        AppMessages.FileNotFound_Title,
+                        AppMessages.FileNotFound,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+               
                 return false;
             }
             catch (Exception)
             {
-                MessageBox.Show(AppMessages.OpenFileFailed, AppMessages.OpenFileFailed_Title, MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.OpenFileFailed_Title,
+                        AppMessages.OpenFileFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 return false;
             }            
         }
@@ -119,8 +138,11 @@ namespace MegaApp.Services
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        MessageBox.Show(String.Format(AppMessages.SelectFileFailed, e.Message),
-                            AppMessages.SelectFileFailed_Title, MessageBoxButton.OK);
+                        new CustomMessageDialog(
+                                AppMessages.SelectFileFailed_Title,
+                                String.Format(AppMessages.SelectFileFailed, e.Message),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
                     });
                 }
             }

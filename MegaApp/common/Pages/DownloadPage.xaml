@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<userControls:MegaPhoneApplicationPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -7,21 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
 	xmlns:slideView="clr-namespace:Telerik.Windows.Controls.SlideView;assembly=Telerik.Windows.Controls.Primitives"
-    x:Class="MegaApp.Pages.DownloadPage"
+	xmlns:userControls="clr-namespace:MegaApp.UserControls"
+	x:Class="MegaApp.Pages.DownloadPage"
     SupportedOrientations="PortraitOrLandscape" 
     Orientation="Portrait"
-    mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-	<phone:PhoneApplicationPage.FontFamily>
+	<userControls:MegaPhoneApplicationPage.FontFamily>
 		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
-	</phone:PhoneApplicationPage.FontFamily>
-	<phone:PhoneApplicationPage.FontSize>
+	</userControls:MegaPhoneApplicationPage.FontFamily>
+	<userControls:MegaPhoneApplicationPage.FontSize>
 		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
-	</phone:PhoneApplicationPage.FontSize>
-	<phone:PhoneApplicationPage.Foreground>
+	</userControls:MegaPhoneApplicationPage.FontSize>
+	<userControls:MegaPhoneApplicationPage.Foreground>
 		<StaticResource ResourceKey="PhoneForegroundBrush"/>
-	</phone:PhoneApplicationPage.Foreground>
+	</userControls:MegaPhoneApplicationPage.Foreground>
 	
 	<Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding SelectedNode}">
 
@@ -71,11 +71,11 @@
         
 	</Grid>
 
-	<phone:PhoneApplicationPage.ApplicationBar>
+	<userControls:MegaPhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>				
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/save.png" Text="save" Click="OnSaveClick"/>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open.png" Text="open" Click="OnOpenClick"/>									
 		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.ApplicationBar>
+	</userControls:MegaPhoneApplicationPage.ApplicationBar>
 
-</phone:PhoneApplicationPage>
+</userControls:MegaPhoneApplicationPage>

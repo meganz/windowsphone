@@ -7,10 +7,12 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
@@ -19,7 +21,7 @@ using Telerik.Windows.Data;
 
 namespace MegaApp.Pages
 {
-    public partial class MediaSelectionPage : PhoneApplicationPage
+    public partial class MediaSelectionPage : MegaPhoneApplicationPage
     {
         private readonly MediaSelectionPageModel _mediaSelectionPageModel;
        
@@ -55,8 +57,11 @@ namespace MegaApp.Pages
         {
             if (LstMediaItems.CheckedItems == null || LstMediaItems.CheckedItems.Count < 1)
             {
-                MessageBox.Show(AppMessages.MinimalPictureSelection, AppMessages.MinimalPictureSelection_Title,
-                    MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.MinimalPictureSelection_Title,
+                        AppMessages.MinimalPictureSelection,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 return;
             }
 
@@ -90,8 +95,11 @@ namespace MegaApp.Pages
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(String.Format(AppMessages.PrepareImageForUploadFailed, item.Name),
-                        AppMessages.PrepareImageForUploadFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.PrepareImageForUploadFailed_Title,
+                            String.Format(AppMessages.PrepareImageForUploadFailed, item.Name),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 }
 
             }

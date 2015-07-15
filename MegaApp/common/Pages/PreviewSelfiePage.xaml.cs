@@ -7,17 +7,19 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
-    public partial class PreviewSelfiePage : PhoneApplicationPage
+    public partial class PreviewSelfiePage : MegaPhoneApplicationPage
     {
         private readonly PreviewSelfieViewModel _previewSelfieViewModel;
         public PreviewSelfiePage()
@@ -64,8 +66,11 @@ namespace MegaApp.Pages
             }
             catch (Exception)
             {
-                MessageBox.Show(AppMessages.UploadSelfieFailed, AppMessages.UploadSelfieFailed_Title,
-                    MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.UploadSelfieFailed_Title,
+                        AppMessages.UploadSelfieFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
             }
         }
     }

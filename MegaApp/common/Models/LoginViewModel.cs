@@ -45,16 +45,22 @@ namespace MegaApp.Models
         {
             if (String.IsNullOrEmpty(Email) || String.IsNullOrEmpty(Password))
             {
-                MessageBox.Show(AppMessages.RequiredFieldsLogin, AppMessages.RequiredFields_Title.ToUpper(),
-                        MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.RequiredFields_Title,
+                        AppMessages.RequiredFieldsLogin,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 return false;
             }
             
             if(!ValidationService.IsValidEmail(Email))
             {
-                MessageBox.Show(AppMessages.MalformedEmail, AppMessages.LoginFailed_Title.ToUpper(),
-                        MessageBoxButton.OK);
-                return false;
+                new CustomMessageDialog(
+                        AppMessages.LoginFailed_Title,
+                        AppMessages.MalformedEmail,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+               return false;
             }
 
             return true;
@@ -149,7 +155,13 @@ namespace MegaApp.Models
             if (e.getErrorCode() == MErrorType.API_ENOENT)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(AppMessages.WrongEmailPasswordLogin, ErrorMessageTitle, MessageBoxButton.OK));
+                {
+                    new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            AppMessages.WrongEmailPasswordLogin,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
                 return;
             }
 

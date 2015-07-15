@@ -46,7 +46,7 @@ namespace MegaApp.Models
                 if (e.getErrorCode() == MErrorType.API_OK)
                 {
                     if (ShowSuccesMessage)
-                        MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK);
+                        new CustomMessageDialog(SuccessMessageTitle, SuccessMessage, App.AppInformation).ShowDialog();
 
                     if (ActionOnSucces)
                         OnSuccesAction(request);
@@ -61,7 +61,7 @@ namespace MegaApp.Models
                     {
                         foreach (var item in App.MegaTransfers)
                         {
-                            var transferItem = (TransferObjectModel)item;
+                            var transferItem = (TransferObjectModel) item;
                             if (transferItem == null) continue;
 
                             if (transferItem.Type == TransferType.Upload)
@@ -78,8 +78,13 @@ namespace MegaApp.Models
                     Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
                 }
                 else
-                    MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle,
-                        MessageBoxButton.OK);
+                {
+                    new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            String.Format(ErrorMessage, e.getErrorString()),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                }
             });
         }
 
@@ -95,13 +100,7 @@ namespace MegaApp.Models
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));                    
-
-            /*Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.SetProgressIndicator(false);
-                MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            });*/
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));  
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)

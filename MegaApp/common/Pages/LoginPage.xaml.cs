@@ -13,10 +13,11 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Navigation;
 using mega;
+using MegaApp.UserControls;
 
 namespace MegaApp.Pages
 {
-    public partial class LoginPage : PhoneApplicationPage
+    public partial class LoginPage : MegaPhoneApplicationPage
     {
         private readonly LoginAndCreateAccountViewModelContainer _loginAndCreateAccountViewModelContainer;
         
@@ -56,9 +57,13 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
+            base.OnBackKeyPress(e);
+
+            if (e.Cancel) return;
+
             NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+            
             e.Cancel = true;
-            return;
         }
 
         private void OnAcceptClick(object sender, System.EventArgs e)        

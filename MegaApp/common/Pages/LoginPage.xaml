@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<userControls:MegaPhoneApplicationPage
     x:Class="MegaApp.Pages.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,11 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:classes="clr-namespace:MegaApp.Classes"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
-    mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}">
 
@@ -63,11 +63,11 @@
         </phone:Pivot>        
     </Grid>
 
-    <phone:PhoneApplicationPage.ApplicationBar>
+    <userControls:MegaPhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="OnCancelClick" />
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.ApplicationBar>
 
-</phone:PhoneApplicationPage>
+</userControls:MegaPhoneApplicationPage>

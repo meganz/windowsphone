@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MegaApp.Classes;
 using MegaApp.Resources;
 
 namespace MegaApp.Services
@@ -29,8 +30,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.SaveSettingsFailed, e.Message),
-                        AppMessages.SaveSettingsFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.SaveSettingsFailed_Title,
+                            String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }
@@ -51,8 +55,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.SaveSettingsFailed, e.Message),
-                        AppMessages.SaveSettingsFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.SaveSettingsFailed_Title,
+                            String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }

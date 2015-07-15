@@ -17,10 +17,11 @@ using MegaApp.MegaApi;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 
 namespace MegaApp.Pages
 {
-    public partial class PaymentPage : PhoneApplicationPage
+    public partial class PaymentPage : MegaPhoneApplicationPage
     {
         private readonly PaymentViewModel _paymentViewModel;
         private List<Tuple<string, string>> countries;

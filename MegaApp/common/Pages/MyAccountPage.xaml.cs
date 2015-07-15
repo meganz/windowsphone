@@ -98,7 +98,7 @@ namespace MegaApp.Pages
             //((PieSeries) sender).DataPoints[0].OffsetFromCenter = 0.05;
         }
 
-        private void OnLogoutClick(object sender, EventArgs e)
+        private async void OnLogoutClick(object sender, EventArgs e)
         {
             int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued ||
                 t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
@@ -106,8 +106,13 @@ namespace MegaApp.Pages
 
             if (numPendingTransfers > 0)
             {
-                if (MessageBox.Show(String.Format(AppMessages.PendingTransfersLogout, numPendingTransfers),
-                    AppMessages.PendingTransfersLogout_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+                var result = await new CustomMessageDialog(
+                    AppMessages.PendingTransfersLogout_Title,
+                    String.Format(AppMessages.PendingTransfersLogout, numPendingTransfers),
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialogAsync();
+
+                if (result == MessageDialogResult.CancelNo) return;
 
                 foreach (var item in App.MegaTransfers)
                 {

@@ -134,9 +134,11 @@ namespace MegaApp.MegaApi
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        MessageBox.Show(AppMessages.ShortCutFailed,
-                            AppMessages.ShortCutFailed_Title.ToUpper(),
-                            MessageBoxButton.OK);
+                        new CustomMessageDialog(
+                                AppMessages.ShortCutFailed_Title,
+                                AppMessages.ShortCutFailed,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
                     });
                 }
             }
@@ -185,8 +187,11 @@ namespace MegaApp.MegaApi
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(AppMessages.MemoryLimitError,
-                        AppMessages.MemoryLimitError_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.MemoryLimitError_Title,
+                            AppMessages.MemoryLimitError,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     Application.Current.Terminate();
                 });
 

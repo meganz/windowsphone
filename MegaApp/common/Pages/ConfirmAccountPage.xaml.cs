@@ -9,12 +9,13 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
-    public partial class ConfirmAccountPage : PhoneApplicationPage
+    public partial class ConfirmAccountPage : MegaPhoneApplicationPage
     {
         private readonly ConfirmAccountViewModel _confirmAccountViewModel;
         public ConfirmAccountPage()

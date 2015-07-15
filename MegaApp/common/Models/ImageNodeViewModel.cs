@@ -73,21 +73,39 @@ namespace MegaApp.Models
             GetImage(false);
         }
 
-        public void SaveImageToCameraRoll(bool showMessages = true)
+        public async void SaveImageToCameraRoll(bool showMessages = true)
         {
             if (this.ImageUri == null) return;
 
-            if(showMessages)
-                if (MessageBox.Show(AppMessages.SaveImageQuestion, AppMessages.SaveImageQuestion_Title,
-                        MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return;
+            if (showMessages)
+            {
+                var result = await new CustomMessageDialog(
+                    AppMessages.SaveImageQuestion_Title,
+                    AppMessages.SaveImageQuestion,
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel).ShowDialogAsync();
+                if (result == MessageDialogResult.CancelNo) return;
+            }
 
             if (ImageService.SaveToCameraRoll(this.Name, this.ImageUri))
             {
                 if (showMessages)
-                    MessageBox.Show(AppMessages.ImageSaved, AppMessages.ImageSaved_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.ImageSaved_Title, 
+                            AppMessages.ImageSaved, 
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+
             }
             else
-                MessageBox.Show(AppMessages.ImageSaveError, AppMessages.ImageSaveError_Title, MessageBoxButton.OK);
+            {
+                new CustomMessageDialog(
+                       AppMessages.ImageSaveError_Title,
+                       AppMessages.ImageSaveError,
+                       App.AppInformation,
+                       MessageDialogButtons.Ok).ShowDialog();
+            }
+               
         }
 
         #endregion

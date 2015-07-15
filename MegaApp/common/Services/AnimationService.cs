@@ -11,38 +11,29 @@ namespace MegaApp.Services
 {
     static class AnimationService
     {
-        public static RadFadeAnimation GetListViewAddAnimation()
-        {
-            return new RadFadeAnimation()
-            {
-                EndOpacity = 1.0,
-                StartOpacity = 0.0,
-                AutoReverse = false,
-                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
-            };
-        }
-
-        public static RadFadeAnimation GetListViewRemoveAnimation()
-        {
-            //return new RadMoveAnimation()
-            //{
-            //    MoveDirection = MoveDirection.BottomOut,
-            //    Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
-            //};
-            return new RadFadeAnimation()
-            {
-                EndOpacity = 0.0,
-                StartOpacity = 1.0,
-                AutoReverse = false,
-                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
-            };
-        }
-        
         public static RadMoveAnimation GetOpenDialogAnimation()
         {
             return new RadMoveAnimation()
             {
                 MoveDirection = MoveDirection.TopIn,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
+            };
+        }
+
+        public static RadMoveAnimation GetOpenMessageDialogAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.BottomIn,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
+            };
+        }
+
+        public static RadMoveAnimation GetCloseMessageDialogAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.TopOut,
                 Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
             };
         }

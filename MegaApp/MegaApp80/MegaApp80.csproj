@@ -638,6 +638,9 @@
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
     </Compile>
+    <Compile Include="..\common\UserControls\MegaPhoneApplicationPage.cs">
+      <Link>UserControls\MegaPhoneApplicationPage.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
@@ -2199,6 +2202,10 @@
     <ProjectReference Include="..\..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj">
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MegaApp81\MegaApp81.csproj">
+      <Project>{383E1B56-6F99-4B20-AA0E-D27790B93159}</Project>
+      <Name>MegaApp81</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

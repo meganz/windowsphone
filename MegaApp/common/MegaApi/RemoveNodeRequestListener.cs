@@ -144,8 +144,14 @@ namespace MegaApp.MegaApi
                     this._waitEventRequest.Set();
 
                 if (ShowSuccesMessage && !_isMultiRemove)
-                    Deployment.Current.Dispatcher.BeginInvoke(
-                        () => MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK));
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                    SuccessMessageTitle,
+                                    SuccessMessage,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                        });
 
                 if (ActionOnSucces)
                     OnSuccesAction(api, request);
@@ -156,7 +162,13 @@ namespace MegaApp.MegaApi
             else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
                 if (ShowErrorMessage)
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
+                    {
+                        new CustomMessageDialog(
+                                ErrorMessageTitle,
+                                String.Format(ErrorMessage, e.getErrorString()),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
 
         }
 

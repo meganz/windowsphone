@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<UserControls:MegaPhoneApplicationPage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -15,9 +15,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" 
     Orientation="Portrait"
-    mc:Ignorable="d"
     shell:SystemTray.IsVisible="False">
-	<phone:PhoneApplicationPage.Resources>
+	<UserControls:MegaPhoneApplicationPage.Resources>
 		<DataTemplate x:Key="PreviewOverlayTemplate">
 			<Border VerticalAlignment="Top">			
 				<Border.Background>
@@ -41,7 +40,7 @@
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
-	</phone:PhoneApplicationPage.Resources>	
+	</UserControls:MegaPhoneApplicationPage.Resources>	
 
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
         
@@ -66,4 +65,4 @@
         
 	</Grid>
 
-</phone:PhoneApplicationPage>
+</UserControls:MegaPhoneApplicationPage>

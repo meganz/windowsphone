@@ -7,6 +7,7 @@ using System.Windows;
 using Windows.ApplicationModel.Activation;
 using Windows.Devices.Geolocation;
 using Windows.Storage.Pickers;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -39,8 +40,11 @@ namespace MegaApp.Services
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.SelectFolderFailed, e.Message),
-                        AppMessages.SelectFolderFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.SelectFolderFailed_Title,
+                            String.Format(AppMessages.SelectFolderFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }

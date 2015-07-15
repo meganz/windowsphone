@@ -8,6 +8,7 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -17,7 +18,7 @@ using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 namespace MegaApp.Pages
 {
   
-    public partial class PreviewImagePage : PhoneApplicationPage
+    public partial class PreviewImagePage : MegaPhoneApplicationPage
     {
         private PreviewImageViewModel _previewImageViewModel;
         private Timer _overlayTimer;

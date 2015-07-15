@@ -5,6 +5,7 @@ using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Resources;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Xml;
 using Windows.ApplicationModel;
@@ -228,12 +229,17 @@ namespace MegaApp.Services
             SettingsService.SaveSetting(SettingsResources.LastAppVersion, AppService.GetAppVersion());
         }
 
-        public static bool DownloadLimitCheck(int downloadCount)
+        public static async Task<bool> DownloadLimitCheck(int downloadCount)
         {
             if (downloadCount <= DownloadLimit) return true;
 
-            return MessageBox.Show(String.Format(AppMessages.DownloadLimitMessage, downloadCount),
-                AppMessages.DownloadLimitMessage_Title, MessageBoxButton.OKCancel) == MessageBoxResult.OK;
+            var result = await new CustomMessageDialog(
+                AppMessages.DownloadLimitMessage_Title,
+                String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+                App.AppInformation,
+                MessageDialogButtons.Ok).ShowDialogAsync();
+
+            return result == MessageDialogResult.OkYes;
         }
     }
 }
