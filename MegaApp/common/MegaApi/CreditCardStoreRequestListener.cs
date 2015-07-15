@@ -106,8 +106,14 @@ namespace MegaApp.MegaApi
                     break;
                 default:
                     if (ShowErrorMessage)
-                        Deployment.Current.Dispatcher.BeginInvoke(
-                            () => MessageBox.Show(ErrorMessage,ErrorMessageTitle, MessageBoxButton.OK));
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                new CustomMessageDialog(
+                                        ErrorMessageTitle,
+                                        ErrorMessage,
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
+                            });
                     break;
             }            
         }

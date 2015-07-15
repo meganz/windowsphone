@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -139,8 +140,11 @@ namespace MegaApp.Services
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(AppMessages.PhotoUploadError, AppMessages.PhotoUploadError_Title,
-                        MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.PhotoUploadError_Title,
+                            AppMessages.PhotoUploadError,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 }
             };
             

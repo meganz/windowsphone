@@ -13,7 +13,7 @@ using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.UserControls
 {
-    public class PhoneDrawerLayoutPage: PhoneApplicationPage
+    public class PhoneDrawerLayoutPage : MegaPhoneApplicationPage
     {
         #region Methods
 
@@ -77,14 +77,16 @@ namespace MegaApp.UserControls
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
+            base.OnBackKeyPress(e);
+
+            if (e.Cancel) return;
+
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
+            
             // Check if Hamburger Menu is open in view. If open. First slide out before exit
             if (this.PageDrawerLayout != null)
                 e.Cancel = this.PageDrawerLayout.CloseIfOpen();
-
-            base.OnBackKeyPress(e);
         }
 
         #endregion

@@ -488,7 +488,13 @@ namespace MegaApp
 
                 // Show a message notifying the error
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(AppMessages.SessionIDError, AppMessages.SessionIDError_Title, MessageBoxButton.OK));
+                {
+                    new CustomMessageDialog(
+                            AppMessages.SessionIDError_Title,
+                            AppMessages.SessionIDError,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
             }
         }
 

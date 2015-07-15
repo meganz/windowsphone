@@ -20,12 +20,12 @@
     shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
     d:DataContext="{d:DesignInstance models:CameraUploadsViewModel}">
 
-    <phone:PhoneApplicationPage.Resources>        
+    <userControls:MegaPhoneApplicationPage.Resources>        
         <shell:ApplicationBar x:Key="InitCameraUploadsMenu">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="ok" Click="OnOkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cancel.png" Text="skip" Click="OnSkipClick" />            
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.Resources>
+    </userControls:MegaPhoneApplicationPage.Resources>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <userControls:DrawerLayout x:Name="MainDrawerLayout">

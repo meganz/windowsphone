@@ -10,10 +10,11 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Enums;
 using MegaApp.Services;
+using MegaApp.UserControls;
 
 namespace MegaApp.Pages
 {
-    public partial class InitTourPage : PhoneApplicationPage
+    public partial class InitTourPage : MegaPhoneApplicationPage
     {
         public InitTourPage()
         {

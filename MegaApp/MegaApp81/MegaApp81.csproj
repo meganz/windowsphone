@@ -704,6 +704,9 @@
     <Compile Include="..\common\UserControls\DrawerLayout.cs">
       <Link>UserControls\DrawerLayout.cs</Link>
     </Compile>
+    <Compile Include="..\common\UserControls\MegaPhoneApplicationPage.cs">
+      <Link>UserControls\MegaPhoneApplicationPage.cs</Link>
+    </Compile>
     <Compile Include="..\common\UserControls\MemoryControl.xaml.cs">
       <Link>UserControls\MemoryControl.xaml.cs</Link>
       <DependentUpon>MemoryControl.xaml</DependentUpon>
@@ -711,6 +714,7 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
+    <Compile Include="Classes\CustomMessageDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1532,6 +1536,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
       <culture>es-ES</culture>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.et-EE.resx">
       <Link>Resources\AppMessages.et-EE.resx</Link>

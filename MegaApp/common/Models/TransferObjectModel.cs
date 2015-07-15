@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Input;
 using Windows.UI.ViewManagement;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
@@ -365,16 +366,28 @@ namespace MegaApp.Models
                     Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                     switch (Type)
                     {
-                        case TransferType.Download:                        
+                        case TransferType.Download:
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                MessageBox.Show(String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
-                                    AppMessages.DownloadNodeFailed_Title, MessageBoxButton.OK));
+                            {
+                                new CustomMessageDialog(
+                                        AppMessages.DownloadNodeFailed_Title,
+                                        String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
+                            });
+                                
                             break;
 
                         case TransferType.Upload:
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                MessageBox.Show(String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
-                                    AppMessages.UploadNodeFailed_Title, MessageBoxButton.OK));
+                            {
+                                new CustomMessageDialog(
+                                        AppMessages.UploadNodeFailed_Title,
+                                        String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
+                            });
+                                
                             break;
 
                         default:

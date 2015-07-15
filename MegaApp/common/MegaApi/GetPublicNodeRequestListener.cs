@@ -113,7 +113,13 @@ namespace MegaApp.MegaApi
             }                
             else
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    MessageBox.Show(ErrorMessage, ErrorMessageTitle, MessageBoxButton.OK));
+                {
+                    new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            ErrorMessage,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
         }
 
         #endregion

@@ -20,7 +20,7 @@
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
     d:DataContext="{d:DesignInstance models:TransfersViewModel}">
 
-    <phone:PhoneApplicationPage.Resources>
+    <userControls:MegaPhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="TransferMenu">
             <shell:ApplicationBarIconButton x:Name="BtnPauseResume" IconUri="/Assets/AppBar/transport.pause.png" Text="pause" Click="OnPauseAllClick" />
             <shell:ApplicationBar.MenuItems>
@@ -28,7 +28,7 @@
                 <shell:ApplicationBarMenuItem Text="clean up transfers" Click="OnCleanUpTransfersClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.Resources>
+    </userControls:MegaPhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <userControls:DrawerLayout x:Name="MainDrawerLayout">

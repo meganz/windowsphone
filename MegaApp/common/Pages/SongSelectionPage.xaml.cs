@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
@@ -18,7 +19,7 @@ using Telerik.Windows.Data;
 
 namespace MegaApp.Pages
 {
-    public partial class SongSelectionPage : PhoneApplicationPage
+    public partial class SongSelectionPage : MegaPhoneApplicationPage
     {
         public SongSelectionPage()
         {

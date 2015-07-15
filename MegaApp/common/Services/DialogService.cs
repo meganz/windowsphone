@@ -22,33 +22,29 @@ namespace MegaApp.Services
 {
     static class DialogService
     {
-        public static async void ShowShareLink(string link)
+        public static void ShowShareLink(string link)
         {
-            var buttonsDataTemplate = (DataTemplate)Application.Current.Resources["ShowShareLinkButtons"];
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsDataTemplate,
-                buttonsContent: new[] { UiResources.Share.ToLower(), UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
-                title: UiResources.MegaLinkTitle,
-                message: link
-                );
+            var customMessageDialog = new CustomMessageDialog(UiResources.MegaLinkTitle, link, App.AppInformation,
+                new []
+                {
+                    new DialogButton(UiResources.Share, () =>
+                    {
+                        var shareLinkTask = new ShareLinkTask {LinkUri = new Uri(link), Title = UiResources.MegaShareLinkMessage};
+                        shareLinkTask.Show();
+                    }),
+                    new DialogButton(UiResources.Copy, () =>
+                    {
+                        Clipboard.SetText(link);
+                        new CustomMessageDialog(
+                                AppMessages.LinkCopiedToClipboard_Title,
+                                AppMessages.LinkCopiedToClipboard, 
+                                App.AppInformation, 
+                                MessageDialogButtons.Ok).ShowDialog();
+                    }),
+                    DialogButton.GetCancelButton(), 
+                });
 
-            switch (closedEventArgs.ButtonIndex)
-            {
-                // Share button clicked
-                case 0:
-                {
-                    var shareLinkTask = new ShareLinkTask {LinkUri = new Uri(link), Title = UiResources.MegaShareLinkMessage};
-                    shareLinkTask.Show();
-                    break;
-                }
-                // Copy button clicked
-                case 1:
-                {
-                    Clipboard.SetText(link);
-                    MessageBox.Show(AppMessages.LinkCopiedToClipboard, AppMessages.LinkCopiedToClipboard_Title, MessageBoxButton.OK);
-                    break;
-                }
-            }
+            customMessageDialog.ShowDialog();
         }
 
         #if WINDOWS_PHONE_80
@@ -80,49 +76,39 @@ namespace MegaApp.Services
             }
         }
         #elif WINDOWS_PHONE_81
-        public static async void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
+        public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new [] { UiResources.Import.ToLower(), UiResources.Download.ToLower() },
-                title: UiResources.LinkOptions,
-                message: publicNode.getName()
-                );
 
-            switch (closedEventArgs.ButtonIndex)
-            {
-                // Import button clicked
-                case 0:
+            var customMessageDialog = new CustomMessageDialog(UiResources.LinkOptions, publicNode.getName(), App.AppInformation,
+               new[]
                 {
-                    folderViewModel.ImportLink(link);
-                    break;
-                }
-                case 1: // Download button clicked
-                {
-                    folderViewModel.DownloadLink(publicNode);
-                    break;
-                }
-            }
+                    new DialogButton(UiResources.Import, () =>
+                    {
+                         folderViewModel.ImportLink(link);
+                    }),
+                    new DialogButton(UiResources.Download, () =>
+                    {
+                        folderViewModel.DownloadLink(publicNode);
+                    }),
+                });
+
+            customMessageDialog.ShowDialog();
+            
         }
         #endif
 
-        public static async void ShowOverquotaAlert()
+        public static void ShowOverquotaAlert()
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
-                title: AppMessages.OverquotaAlert_Title,
-                message: AppMessages.OverquotaAlert
-                );
-
-            switch (closedEventArgs.ButtonIndex)
+            var customMessageDialog = new CustomMessageDialog(AppMessages.OverquotaAlert_Title,
+                AppMessages.OverquotaAlert, App.AppInformation, MessageDialogButtons.YesNo);
+            
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
-                case 0: // "Yes" button clicked
-                    (Application.Current.RootVisual as PhoneApplicationFrame).Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
-                    break;
+                ((PhoneApplicationFrame) Application.Current.RootVisual).Navigate(
+                    new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+            };
 
-                case 1: // "No" button clicked
-                default:
-                    break;
-            }
+            customMessageDialog.ShowDialog();
         }
 
         public static void ShowUploadOptions(FolderViewModel folder)
@@ -500,8 +486,11 @@ namespace MegaApp.Services
                 }
                 else
                 {
-                    MessageBox.Show(AppMessages.RequiredFieldsCancelSubscription, 
-                        AppMessages.RequiredFields_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.RequiredFields_Title,
+                            AppMessages.RequiredFieldsCancelSubscription,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 }
             };
             
@@ -527,22 +516,15 @@ namespace MegaApp.Services
 
         private static async void ShowCancelSubscriptionDialog(string reason)
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new[] { UiResources.Yes.ToLower(), UiResources.No.ToLower() },
-                title: AppMessages.CancelSubscription_Title,
-                message: AppMessages.CancelSubscriptionConfirmation
-                );
+            var customMessageDialog = new CustomMessageDialog(AppMessages.CancelSubscription_Title,
+                AppMessages.CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
 
-            switch (closedEventArgs.ButtonIndex)
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
-                case 0: // "Yes" button clicked
-                    App.MegaSdk.creditCardCancelSubscriptions(reason, new CancelSubscriptionRequestListener());
-                    break;
+                 App.MegaSdk.creditCardCancelSubscriptions(reason, new CancelSubscriptionRequestListener());
+            };
 
-                case 1: // "No" button clicked
-                default:
-                    break;
-            }
+            customMessageDialog.ShowDialog();
         }
 
         public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
@@ -641,8 +623,11 @@ namespace MegaApp.Services
 
                         if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
                         {
-                            MessageBox.Show(AppMessages.CurrentPinLockCodeDoNotMatch, 
-                                AppMessages.CurrentPinLockCodeDoNotMatch_Title, MessageBoxButton.OK);
+                            new CustomMessageDialog(
+                                    AppMessages.CurrentPinLockCodeDoNotMatch_Title,
+                                    AppMessages.CurrentPinLockCodeDoNotMatch,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             return;
                         }
                     }
@@ -651,15 +636,21 @@ namespace MegaApp.Services
 
                 if (pinLock.Password.Length < 4)
                 {
-                    MessageBox.Show(AppMessages.PinLockTooShort, AppMessages.PinLockTooShort_Title,
-                                MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.PinLockTooShort_Title,
+                            AppMessages.PinLockTooShort,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     return;
                 }
 
                 if (!pinLock.Password.Equals(confirmPinLock.Password))
                 {
-                    MessageBox.Show(AppMessages.PinLockCodesDoNotMatch, AppMessages.PinLockCodesDoNotMatch_Title,
-                        MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.PinLockCodesDoNotMatch_Title,
+                            AppMessages.PinLockCodesDoNotMatch,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     return;
                 }
                
@@ -718,23 +709,16 @@ namespace MegaApp.Services
             return closedEventArgs.ButtonIndex;
         }
 
-        public static async void ShowViewMasterKey(string masterkey, Action copyAction)
+        public static void ShowViewMasterKey(string masterkey, Action copyAction)
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: new string[] { UiResources.Copy.ToLower(), UiResources.Cancel.ToLower() },
-                title: UiResources.MasterKey,
-                message: masterkey
-                );
+            var customMessageDialog = new CustomMessageDialog(UiResources.MasterKey, masterkey, App.AppInformation,
+                new[]
+                {
+                    new DialogButton(UiResources.Copy, copyAction),
+                    DialogButton.GetCancelButton(), 
+                });
 
-            switch (closedEventArgs.ButtonIndex)
-            {
-                // Share button clicked
-                case 0:
-                    {
-                        copyAction.Invoke();
-                        break;
-                    }
-            }
+            customMessageDialog.ShowDialog();
         }
     }
 }

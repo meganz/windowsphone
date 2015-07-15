@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
@@ -156,12 +157,10 @@ namespace MegaApp.Pages
             
             if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
             {
-                #if WINDOWS_PHONE_81
-                _mainPageViewModel.CloudDrive.NoFolderUpAction = false;
-
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
 
+#if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
                 var app = Application.Current as App;
                 if (app != null && app.FilePickerContinuationArgs != null)
@@ -174,7 +173,7 @@ namespace MegaApp.Pages
                 {
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
-                #endif
+#endif
 
                 if (ValidActiveAndOnlineSession() && navParam == NavigationParameter.None)
                 {
@@ -183,8 +182,11 @@ namespace MegaApp.Pages
                     {
                         if (!OpenShortCut())
                         {
-                            MessageBox.Show(AppMessages.ShortCutFailed.ToUpper(),
-                                AppMessages.ShortCutFailed_Title, MessageBoxButton.OK);
+                            new CustomMessageDialog(
+                                    AppMessages.ShortCutFailed_Title,
+                                    AppMessages.ShortCutFailed,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             
                             _mainPageViewModel.CloudDrive.BrowseToFolder(
                                 NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
@@ -200,19 +202,11 @@ namespace MegaApp.Pages
                         
             if (e.NavigationMode == NavigationMode.Back)
             {
-                if (!_mainPageViewModel.ActiveFolderView.NoFolderUpAction)
-                {
-                    _mainPageViewModel.ActiveFolderView.GoFolderUp();
-                    navParam = NavigationParameter.Browsing;
-                }
-                else
-                    navParam = NavigationParameter.Normal;
+                navParam = NavigationParameter.Browsing;
 
                 if (NavigateService.PreviousPage == typeof(MyAccountPage))
                     navParam = NavigationParameter.Browsing;
             }
-
-            _mainPageViewModel.ActiveFolderView.NoFolderUpAction = false;
 
 
             switch (navParam)
@@ -450,8 +444,11 @@ namespace MegaApp.Pages
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
-                        AppMessages.PrepareFileForUploadFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.PrepareFileForUploadFailed_Title,
+                            String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 }
             }
             ResetFilePicker();
@@ -473,14 +470,6 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-
-            // Check to see if any dialog is open
-            // Cancel backpress event so that the dialog can close first
-            if (App.AppInformation.PickerOrAsyncDialogIsOpen)
-            {
-                e.Cancel = true;
-                return;
-            }
 
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
@@ -916,9 +905,9 @@ namespace MegaApp.Pages
             MultiSelectRemoveAction();
         }
 
-        private void MultiSelectRemoveAction()
+        private async void MultiSelectRemoveAction()
         {
-            if (!_mainPageViewModel.ActiveFolderView.MultipleRemoveItems()) return;
+            if (! await _mainPageViewModel.ActiveFolderView.MultipleRemoveItems()) return;
 
             _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
 

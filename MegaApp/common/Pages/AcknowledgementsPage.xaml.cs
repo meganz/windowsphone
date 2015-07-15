@@ -6,12 +6,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Models;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
-    public partial class AcknowledgementsPage : PhoneApplicationPage
+    public partial class AcknowledgementsPage : MegaPhoneApplicationPage
     {
         public AcknowledgementsPage()
         {

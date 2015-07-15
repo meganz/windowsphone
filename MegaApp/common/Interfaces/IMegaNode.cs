@@ -37,13 +37,13 @@ namespace MegaApp.Interfaces
         /// <param name="isMultiRemove">True if the node is in a multi-select scenario</param>
         /// <param name="waitEventRequest"></param>
         /// <returns>Result of the action</returns>
-        NodeActionResult Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null);
+        Task<NodeActionResult> Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null);
 
         /// <summary>
         /// Delete the node permanently
         /// </summary>
         /// <returns>Result of the action</returns>
-        NodeActionResult Delete();
+        Task<NodeActionResult> Delete();
 
         /// <summary>
         /// Get the node link from the Mega SDK to share the node with others 

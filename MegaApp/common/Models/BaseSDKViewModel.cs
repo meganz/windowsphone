@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Resources;
 
 namespace MegaApp.Models
@@ -23,7 +24,14 @@ namespace MegaApp.Models
             bool isOnline = Convert.ToBoolean(this.MegaSdk.isLoggedIn());
 
             if (!isOnline)
-                OnUiThread(() => MessageBox.Show(AppMessages.UserNotOnline, AppMessages.UserNotOnline_Title, MessageBoxButton.OK));
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                            AppMessages.UserNotOnline_Title,
+                            AppMessages.UserNotOnline,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
 
             return isOnline;
         }

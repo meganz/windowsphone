@@ -61,8 +61,11 @@ namespace MegaApp.Models
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(AppMessages.RequiredFieldsCreditCardPayment,
-                        AppMessages.RequiredFields_Title.ToUpper(), MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.RequiredFields_Title,
+                            AppMessages.RequiredFieldsCreditCardPayment,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }                
@@ -74,8 +77,11 @@ namespace MegaApp.Models
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(AppMessages.WrongDataFormatCreditCardPayment,
-                        AppMessages.WrongDataFormat_Title.ToUpper(), MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.WrongDataFormat_Title,
+                            AppMessages.WrongDataFormatCreditCardPayment,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }

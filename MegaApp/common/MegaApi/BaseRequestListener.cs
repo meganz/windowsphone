@@ -47,8 +47,14 @@ namespace MegaApp.MegaApi
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 if (ShowSuccesMessage)
-                    Deployment.Current.Dispatcher.BeginInvoke(
-                        () => MessageBox.Show(SuccessMessage, SuccessMessageTitle, MessageBoxButton.OK));
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                    SuccessMessageTitle,
+                                    SuccessMessage,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                        });
 
                 if (ActionOnSucces)
                     OnSuccesAction(api, request);
@@ -84,7 +90,13 @@ namespace MegaApp.MegaApi
             {
                 if (ShowErrorMessage)
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK));
+                    {
+                        new CustomMessageDialog(
+                                ErrorMessageTitle,
+                                String.Format(ErrorMessage, e.getErrorString()),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
             }           
         }
 
@@ -104,13 +116,6 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
-
-            //Deployment.Current.Dispatcher.BeginInvoke(() =>
-            //{
-            //    ProgressService.SetProgressIndicator(false);
-            //    if (ShowErrorMessage)
-            //        MessageBox.Show(String.Format(ErrorMessage, e.getErrorString()), ErrorMessageTitle, MessageBoxButton.OK);
-            //});
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)

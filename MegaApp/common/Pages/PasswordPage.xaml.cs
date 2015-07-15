@@ -9,12 +9,13 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
-    public partial class PasswordPage : PhoneApplicationPage
+    public partial class PasswordPage : MegaPhoneApplicationPage
     {
         private readonly PasswordViewModel _passwordViewModel;
         public PasswordPage()

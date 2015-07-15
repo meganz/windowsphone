@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage
+﻿<userControls:MegaPhoneApplicationPage
     x:Class="MegaApp.Pages.CreateAccountPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,11 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:classes="clr-namespace:MegaApp.Classes"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
-    mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -47,10 +47,10 @@
 
     </Grid>
 
-    <phone:PhoneApplicationPage.ApplicationBar>
+    <userControls:MegaPhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="create account" Click="OnCreateAccountClick" />
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.ApplicationBar>
     
-</phone:PhoneApplicationPage>
+</userControls:MegaPhoneApplicationPage>

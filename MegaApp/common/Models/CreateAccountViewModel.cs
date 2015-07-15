@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -37,25 +38,39 @@ namespace MegaApp.Models
                             this._megaSdk.createAccount(Email, Password, Name, this);
                         }
                         else
-                            MessageBox.Show(AppMessages.AgreeTermsOfService, AppMessages.CreateAccountFailed_Title.ToUpper(),
-                                MessageBoxButton.OK);
+                        {
+                            new CustomMessageDialog(
+                                    AppMessages.CreateAccountFailed_Title,
+                                    AppMessages.AgreeTermsOfService,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show(AppMessages.PasswordsDoNotMatch, AppMessages.CreateAccountFailed_Title.ToUpper(),
-                            MessageBoxButton.OK);
+                        new CustomMessageDialog(
+                                AppMessages.CreateAccountFailed_Title,
+                                AppMessages.PasswordsDoNotMatch,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
                     }
                 }
                 else 
                 {
-                    MessageBox.Show(AppMessages.MalformedEmail, AppMessages.CreateAccountFailed_Title.ToUpper(),
-                            MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CreateAccountFailed_Title,
+                            AppMessages.MalformedEmail,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 }
             }
             else
             {
-                MessageBox.Show(AppMessages.RequiredFieldsCreateAccount, AppMessages.RequiredFields_Title.ToUpper(),
-                        MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.CreateAccountFailed_Title,
+                        AppMessages.RequiredFieldsCreateAccount,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
             }
             
         }

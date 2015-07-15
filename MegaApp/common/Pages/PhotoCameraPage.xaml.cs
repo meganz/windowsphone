@@ -18,11 +18,13 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using Windows.Phone.Media.Capture;
+using MegaApp.Classes;
+using MegaApp.UserControls;
 using Size = Windows.Foundation.Size;
 
 namespace MegaApp.Pages
 {
-    public partial class PhotoCameraPage : PhoneApplicationPage
+    public partial class PhotoCameraPage : MegaPhoneApplicationPage
     {
         public PhotoCaptureDevice PhotoCaptureDevice;
         
@@ -113,8 +115,11 @@ namespace MegaApp.Pages
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.CaptureVideoFailed, exception.Message),
-                        AppMessages.CaptureVideoFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CaptureVideoFailed_Title,
+                            String.Format(AppMessages.CaptureVideoFailed, exception.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }
@@ -266,8 +271,11 @@ namespace MegaApp.Pages
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.CapturePhotoFailed, exception.Message),
-                        AppMessages.CapturePhotoFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CapturePhotoFailed_Title,
+                            String.Format(AppMessages.CapturePhotoFailed, exception.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }
@@ -344,8 +352,11 @@ namespace MegaApp.Pages
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    MessageBox.Show(String.Format(AppMessages.CapturePhotoVideoFailed, e.Message),
-                        AppMessages.CapturePhotoVideoFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.CapturePhotoVideoFailed_Title,
+                            String.Format(AppMessages.CapturePhotoVideoFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }

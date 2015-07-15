@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
@@ -17,7 +18,7 @@ using Telerik.Windows.Controls.Primitives;
 
 namespace MegaApp.Pages
 {
-    public partial class CreateAccountPage : PhoneApplicationPage
+    public partial class CreateAccountPage : MegaPhoneApplicationPage
     {
         private readonly CreateAccountViewModel _createAccountViewModel;
 

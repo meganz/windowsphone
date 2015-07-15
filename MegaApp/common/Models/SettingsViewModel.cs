@@ -81,11 +81,19 @@ namespace MegaApp.Models
             try
             {
                 Clipboard.SetText(MegaSdk.exportMasterKey());
-                MessageBox.Show(AppMessages.MasterkeyCopied, AppMessages.MasterkeyCopied_Title, MessageBoxButton.OK);
+                new CustomMessageDialog(
+                           AppMessages.MasterkeyCopied_Title,
+                           AppMessages.MasterkeyCopied,
+                           App.AppInformation,
+                           MessageDialogButtons.Ok).ShowDialog();
             }
             catch (Exception)
             {
-                MessageBox.Show(AppMessages.ClipboardFailed, AppMessages.ClipboardFailed_Title, MessageBoxButton.OK);
+                new CustomMessageDialog(
+                           AppMessages.ClipboardFailed_Title,
+                           AppMessages.ClipboardFailed,
+                           App.AppInformation,
+                           MessageDialogButtons.Ok).ShowDialog();
             }
         }
         

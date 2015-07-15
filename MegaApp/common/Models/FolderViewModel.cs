@@ -112,7 +112,14 @@ namespace MegaApp.Models
             // FolderRootNode should not be null
             if (FolderRootNode == null)
             {
-                OnUiThread(() => MessageBox.Show(AppMessages.LoadNodesFailed, AppMessages.LoadNodesFailed_Title, MessageBoxButton.OK));
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                            AppMessages.LoadNodesFailed_Title,
+                            AppMessages.LoadNodesFailed,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
                 return;
             }
 
@@ -128,7 +135,11 @@ namespace MegaApp.Models
             {
                 OnUiThread(() =>
                 {
-                    MessageBox.Show(AppMessages.LoadNodesFailed, AppMessages.LoadNodesFailed_Title, MessageBoxButton.OK);
+                    new CustomMessageDialog(
+                            AppMessages.LoadNodesFailed_Title,
+                            AppMessages.LoadNodesFailed,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     SetEmptyContentTemplate(false);
                 });
 
@@ -211,35 +222,9 @@ namespace MegaApp.Models
                      new CreateFolderRequestListener());
             };
             inputDialog.ShowDialog();
-
-            // Only 1 RadInputPrompt can be open at the same time with ShowAsync.
-            //if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
-
-            //try
-            //{
-            //    this.AppInformation.PickerOrAsyncDialogIsOpen = true;
-
-            //    var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-            //        new[] { UiResources.Add.ToLower(), UiResources.Cancel.ToLower() }, UiResources.CreateFolder);
-
-            //    this.AppInformation.PickerOrAsyncDialogIsOpen = false;
-
-            //    if (inputPromptClosedEventArgs == null || inputPromptClosedEventArgs.Result != DialogResult.OK) return;
-
-            //    this.MegaSdk.createFolder(inputPromptClosedEventArgs.Text, this.FolderRootNode.OriginalMNode,
-            //        new CreateFolderRequestListener());
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show(AppMessages.FolderCreateFailed, AppMessages.FolderCreateFailed_Title,
-            //        MessageBoxButton.OK);
-            //}
-            //finally
-            //{
-            //    this.AppInformation.PickerOrAsyncDialogIsOpen = false;
-            //}
         }
-        public async void OpenLink()
+
+        public void OpenLink()
         {
             if (!IsUserOnline()) return;
 
@@ -252,17 +237,6 @@ namespace MegaApp.Models
                 this.MegaSdk.getPublicNode(args.InputText, new GetPublicNodeRequestListener(this));
             };
             inputDialog.ShowDialog();
-
-            //this.AppInformation.PickerOrAsyncDialogIsOpen = true;
-
-            //var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(
-            //    new[] { UiResources.Open, UiResources.Cancel }, UiResources.OpenLink);
-
-            //this.AppInformation.PickerOrAsyncDialogIsOpen = false;
-
-            //if (inputPromptClosedEventArgs.Result != DialogResult.OK) return;
-
-            //this.MegaSdk.getPublicNode(inputPromptClosedEventArgs.Text, new GetPublicNodeRequestListener(this));
         }
 
         public void ImportLink(string link)
@@ -514,7 +488,7 @@ namespace MegaApp.Models
 
             }
 
-            if (!AppService.DownloadLimitCheck(downloadCount))
+            if (! await AppService.DownloadLimitCheck(downloadCount))
             {
                 ProgressService.SetProgressIndicator(false);
                 return;
@@ -556,7 +530,7 @@ namespace MegaApp.Models
             return true;
         }
 
-        public bool MultipleRemoveItems()
+        public async Task<bool> MultipleRemoveItems()
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
@@ -564,61 +538,36 @@ namespace MegaApp.Models
 
             if (this.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
             {
-                if (MessageBox.Show(String.Format(AppMessages.MultiSelectRemoveQuestion, count),
-                    AppMessages.MultiSelectRemoveQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.MultiSelectRemoveQuestion_Title,
+                    String.Format(AppMessages.MultiSelectRemoveQuestion, count),
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel);
 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+                    RemoveOrRubbish(count);
+                };
+
+                return await customMessageDialog.ShowDialogAsync() == MessageDialogResult.OkYes;
             }
             else
             {
-                if (MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
-                    AppMessages.MultiMoveToRubbishBinQuestion_Title, MessageBoxButton.OKCancel) == MessageBoxResult.Cancel) return false;
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.MultiMoveToRubbishBinQuestion_Title,
+                    String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel);
 
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.NodeToTrash));
+                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.NodeToTrash));
+                    RemoveOrRubbish(count);
+                };
+                
+                return await customMessageDialog.ShowDialogAsync() == MessageDialogResult.OkYes;
             }
-
-            var helperList = new List<IMegaNode>(count);
-            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
-                helperList.Add(node);
-
-            Task.Run(() =>
-            {
-                AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
-
-                int index = 0;
-
-                foreach (var node in helperList)
-                {
-                    waitEventRequests[index] = new AutoResetEvent(false);
-                    node.Remove(true, waitEventRequests[index]);
-                    index++;
-                }
-
-                WaitHandle.WaitAll(waitEventRequests);
-
-                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
-
-                if (this.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        MessageBox.Show(String.Format(AppMessages.MultiRemoveSucces, count),
-                            AppMessages.MultiRemoveSucces_Title, MessageBoxButton.OK);
-                    });
-                }
-                else
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        MessageBox.Show(String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
-                            AppMessages.MultiMoveToRubbishBinSucces_Title, MessageBoxButton.OK);
-                    });
-                }
-            });
-
-            this.IsMultiSelectActive = false;
-
-            return true;
         }
 
         #endregion
@@ -701,6 +650,55 @@ namespace MegaApp.Models
                 this.IsBusy = onOff;
                 this.BusyText = busyText;
             });
+        }
+
+        private void RemoveOrRubbish(int count)
+        {
+            var helperList = new List<IMegaNode>(count);
+            helperList.AddRange(ChildNodes.Where(n => n.IsMultiSelected));
+
+            Task.Run(() =>
+            {
+                AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
+
+                int index = 0;
+
+                foreach (var node in helperList)
+                {
+                    waitEventRequests[index] = new AutoResetEvent(false);
+                    node.Remove(true, waitEventRequests[index]);
+                    index++;
+                }
+
+                WaitHandle.WaitAll(waitEventRequests);
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+
+                if (this.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                                AppMessages.MultiRemoveSucces_Title,
+                                String.Format(AppMessages.MultiRemoveSucces, count),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }
+                else
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                                AppMessages.MultiMoveToRubbishBinSucces_Title,
+                                String.Format(AppMessages.MultiMoveToRubbishBinSucces, count),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }
+            });
+
+            this.IsMultiSelectActive = false;
         }
 
         private void CreateChildren(MNodeList childList, int listSize)

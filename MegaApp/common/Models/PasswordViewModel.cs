@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -27,8 +28,11 @@ namespace MegaApp.Models
             string hashValue = CryptoService.HashData(Password);
             if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
             {
-                MessageBox.Show(AppMessages.WrongPassword, AppMessages.WrongPassword_Title,
-                    MessageBoxButton.OK);
+                new CustomMessageDialog(
+                        AppMessages.WrongPassword_Title,
+                        AppMessages.WrongPassword,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 return;
             }
 
