@@ -67,11 +67,12 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            // If navigation is from the CreditCardPayment page, remove the last entry of the back stack
+            // Get last page (previous page)            
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
             var lastPage = backStack.FirstOrDefault();
             if (lastPage != null)
             {
+                // If navigation is from the PaymentPage, remove the last entry of the back stack
                 if (lastPage.Source.ToString().Contains((typeof(PaymentPage)).Name))
                     ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
             }
@@ -140,8 +141,15 @@ namespace MegaApp.Pages
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
         {
-            //App.MegaSdk.getPaymentId(((Product)e.Item.DataContext).Handle, new GetPaymentUrlRequestListener());
-            
+            // In case that it is an account newly activated, the list of available plans shows the "Free" option. 
+            // If the user selects it, we only need to redirect it to the cloud drive
+            if(((ProductBase)LstPlans.SelectedItem).AccountType == MAccountType.ACCOUNT_TYPE_FREE)
+            {
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+                return;
+            }
+
+            // Else we need to identify the selected plan and send it along the Monthly and Annual plans of this type to the PaymentPage 
             for(int i=0; i < _myAccountPageViewModel.UpgradeAccount.Products.Count; i++)
             {
                 if(_myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
@@ -161,7 +169,7 @@ namespace MegaApp.Pages
             }
 
             PhoneApplicationService.Current.State["SelectedPlan"] = LstPlans.SelectedItem;
-            NavigationService.Navigate(new Uri("/Pages/PaymentPage.xaml", UriKind.RelativeOrAbsolute));
+            NavigateService.NavigateTo(typeof(PaymentPage), NavigationParameter.Normal);
         }
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)

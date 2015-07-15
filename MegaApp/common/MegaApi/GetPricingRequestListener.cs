@@ -95,6 +95,21 @@ namespace MegaApp.MegaApi
                 _upgradeAccount.Products.Clear();
                 _upgradeAccount.Plans.Clear();
 
+                if (App.IsNewlyActivatedAccount)
+                {
+                    var freePlan = new ProductBase
+                    {
+                        AccountType = MAccountType.ACCOUNT_TYPE_FREE,
+                        Name = UiResources.AccountTypeFree,
+                        ProductColor = Color.FromArgb(255, 19, 224, 60),
+                        ProductUri = new Uri("/Assets/Images/lite_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                        IsFree = true
+                    };
+
+                    _upgradeAccount.Plans.Add(freePlan);
+                    App.IsNewlyActivatedAccount = false;
+                }
+
                 int numberOfProducts = request.getPricing().getNumProducts();
 
                 for (int i = 0; i < numberOfProducts; i++)

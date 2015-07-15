@@ -24,6 +24,7 @@ namespace MegaApp.Classes
         [DataMember] public Color ProductColor { get; set; }        
         [DataMember] public bool IsNewOffer { get; set; }
         [DataMember] public bool Purchased { get; set; }
+        [DataMember] public bool IsFree { get; set; }
 
         public SolidColorBrush ProductColorBrush 
         {
@@ -35,23 +36,32 @@ namespace MegaApp.Classes
         {
             IsNewOffer = false;
             Purchased = false;
+            IsFree = false;
         }
 
         public string Storage
         {
             get
             {
-                switch (GbStorage)
+                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
                 {
-                    case 200:
-                        return "200 GB";
-                    case 500:
-                        return "500 GB";
-                    case 2048:
-                        return "2 TB";
-                    case 4096:
-                        return "4 TB";
+                    return "50 GB";
                 }
+                else
+                {
+                    switch (GbStorage)
+                    {                        
+                        case 200:
+                            return "200 GB";
+                        case 500:
+                            return "500 GB";
+                        case 2048:
+                            return "2 TB";
+                        case 4096:
+                            return "4 TB";
+                    }
+                }
+                
                 return null;
             }
         }
@@ -60,7 +70,10 @@ namespace MegaApp.Classes
         {
             get
             {
-                return String.Format("{0} TB", GbTransfer/1024);
+                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)                
+                    return "Limited";
+                else
+                    return String.Format("{0} TB", GbTransfer/1024);
             }
         }
 
@@ -68,7 +81,10 @@ namespace MegaApp.Classes
         {
             get
             {
-                return String.Format("{0:N} {1}", (double)(Amount/12) / 100, Currency);
+                if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
+                    return "Free";
+                else
+                    return String.Format("{0:N} {1}", (double)(Amount/12) / 100, Currency);
             }
         }
     }

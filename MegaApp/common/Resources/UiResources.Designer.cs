@@ -943,6 +943,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Limited.
+        /// </summary>
+        public static string Limited {
+            get {
+                return ResourceManager.GetString("Limited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Link options.
         /// </summary>
         public static string LinkOptions {

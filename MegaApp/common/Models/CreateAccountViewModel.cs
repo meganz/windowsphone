@@ -29,7 +29,7 @@ namespace MegaApp.Models
         {
             if (CheckInputParameters())
             {
-                if (!ValidationService.IsValidEmail(Email))
+                if (ValidationService.IsValidEmail(Email))
                 {
                     if (CheckPassword())
                     {
