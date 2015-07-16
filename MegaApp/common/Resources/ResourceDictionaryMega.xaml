@@ -562,7 +562,8 @@
                 <Border.Background>
                     <SolidColorBrush Color="{Binding ProductColor}"/>
                 </Border.Background>
-                <Image Source="{Binding ProductUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="60" Margin="36,18,36,18"/>
+                <Path Data="{Binding ProductPathData}" Fill="{StaticResource PhoneForegroundBrush}" Grid.Column="0" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="36,18,36,18"/>
+                <!--<Image Source="{Binding ProductUri}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Top" Width="60" Height="60" Margin="36,18,36,18"/>-->
             </Border>
             <TextBlock Text="{Binding Name}" FontSize="{StaticResource PhoneFontSizeMedium}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.RowSpan="3" FontWeight="Bold" Margin="0,0,0,12"/>
             <RichTextBox Grid.Column="1" Grid.Row="0" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
@@ -613,7 +614,7 @@
                     <ColumnDefinition Width="90"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding PaymentMethodUri}" Grid.Column="0" Width="76" Height="76" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <Path Data="{Binding PaymentMethodPathData}" Fill="{StaticResource PhoneForegroundBrush}" Grid.Column="0" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Margin="12,0,0,0"/>
             </Grid>
         </Border>

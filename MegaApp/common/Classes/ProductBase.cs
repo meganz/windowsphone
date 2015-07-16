@@ -15,12 +15,12 @@ namespace MegaApp.Classes
     public class ProductBase
     {
         [DataMember] public MAccountType AccountType { get; set; }
-        [DataMember] public string Name { get; set; }
+        [DataMember] public String Name { get; set; }
         [DataMember] public int Amount { get; set; }
-        [DataMember] public string Currency { get; set; }
+        [DataMember] public String Currency { get; set; }
         [DataMember] public int GbStorage { get; set; }
-        [DataMember] public int GbTransfer { get; set; }
-        [DataMember] public Uri ProductUri { get; set; }
+        [DataMember] public int GbTransfer { get; set; }        
+        [DataMember] public String ProductPathData { get; set; }
         [DataMember] public Color ProductColor { get; set; }        
         [DataMember] public bool IsNewOffer { get; set; }
         [DataMember] public bool Purchased { get; set; }
@@ -39,7 +39,7 @@ namespace MegaApp.Classes
             IsFree = false;
         }
 
-        public string Storage
+        public String Storage
         {
             get
             {
@@ -66,7 +66,7 @@ namespace MegaApp.Classes
             }
         }
 
-        public string Transfer
+        public String Transfer
         {
             get
             {
@@ -77,7 +77,7 @@ namespace MegaApp.Classes
             }
         }
 
-        public string BasePrice
+        public String BasePrice
         {
             get
             {
