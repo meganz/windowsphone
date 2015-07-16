@@ -976,4 +976,24 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <value>Limited</value>
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="GetProAccount" xml:space="preserve">
+    <value>You can be a PRO user!</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountQuestion" xml:space="preserve">
+    <value>Do you want to upgrade your account?</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeNow" xml:space="preserve">
+    <value>Upgrade now!</value>
+    <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
+  </data>
+  <data name="WarningOutOfSpace" xml:space="preserve">
+    <value>You're running out of space!</value>
+    <comment>Warning message in Cloud Drive when the user is running out of space</comment>
+  </data>
+  <data name="ImportLinkBorderText" xml:space="preserve">
+    <value>Browse to destination and import or download link</value>
+    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
 </root>

@@ -29,7 +29,7 @@ namespace MegaApp.Pages
         public MainPage()
         {
             // Set the main viewmodel of this page
-            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation);
+            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation, this);
             this.DataContext = _mainPageViewModel;
             
             InitializeComponent();
@@ -156,7 +156,7 @@ namespace MegaApp.Pages
                 _mainPageViewModel.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
             
-            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
+            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
             {
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
@@ -235,6 +235,7 @@ namespace MegaApp.Pages
                     // Remove the login or confirm account page from the stack. 
                     // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
+                    _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
                     break;
 
@@ -532,6 +533,18 @@ namespace MegaApp.Pages
                 default:
                     throw new ArgumentOutOfRangeException("driveDisplayMode");
             }
+        }
+
+        public void ChangeGetProAccountBorderVisibility(Visibility visibility)
+        {
+            GetProAccountCloudDrive.Visibility = visibility;
+            GetProAccountRubbishBin.Visibility = visibility;
+        }
+
+        public void ChangeWarningOutOfSpaceBorderVisibility(Visibility visibility)
+        {
+            WarningOutOfSpaceCloudDrive.Visibility = visibility;
+            WarningOutOfSpaceRubbishBin.Visibility = visibility;
         }
 
         private bool CheckAndGoFolderUp(bool isCancel)
@@ -993,6 +1006,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
+        #endregion        
     }
 }

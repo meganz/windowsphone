@@ -946,4 +946,24 @@ Preserve the {0} code because is for include the name/type in runtime.</comment>
     <value>Limitado</value>
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UpgradeNow" xml:space="preserve">
+    <value>¡Actualizar ahora!</value>
+    <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
+  </data>
+  <data name="GetProAccount" xml:space="preserve">
+    <value>¡Podrías ser un usuario PRO!</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountQuestion" xml:space="preserve">
+    <value>¿Quieres actualizar tu cuenta?</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="WarningOutOfSpace" xml:space="preserve">
+    <value>¡Te estás quedando sin espacio libre!</value>
+    <comment>Warning message in Cloud Drive when the user is running out of space</comment>
+  </data>
+  <data name="ImportLinkBorderText" xml:space="preserve">
+    <value>Navega al destino e importa o descarga el enlace</value>
+    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
 </root>

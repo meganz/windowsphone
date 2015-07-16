@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using mega;
@@ -14,14 +16,17 @@ using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
-    public class MainPageViewModel: BaseAppInfoAwareViewModel
+    public class MainPageViewModel : BaseAppInfoAwareViewModel, MRequestListenerInterface
     {
         public event EventHandler<CommandStatusArgs> CommandStatusChanged;
+        private readonly MainPage _mainPage;
 
-        public MainPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
+        public MainPageViewModel(MegaSDK megaSdk, AppInformation appInformation, MainPage mainPage)
             :base(megaSdk, appInformation)
         {
-            this.UpgradeAccountCommand = new DelegateCommand(this.UpgradeAccount);
+            _mainPage = mainPage;            
+            UpgradeAccountCommand = new DelegateCommand(UpgradeAccount);
+            CancelUpgradeAccountCommand = new DelegateCommand(CancelUpgradeAccount);
 
             InitializeModel();
 
@@ -33,6 +38,7 @@ namespace MegaApp.Models
         #region Commands
                 
         public ICommand UpgradeAccountCommand { get; set; }
+        public ICommand CancelUpgradeAccountCommand { get; set; }
 
         #endregion
 
@@ -164,13 +170,67 @@ namespace MegaApp.Models
             }
         }
 
+        public void GetAccountDetails()
+        {
+            MegaSdk.getAccountDetails(this);
+        }
+
         #endregion
 
         #region Private Methods
 
+        /// <summary>
+        /// Get a random visibility
+        /// </summary>
+        /// <param name="PercentOfTimes">Argument with the "%" of times that the visibility should be true</param>
+        private Visibility GetRandomVisibility(int PercentOfTimes)
+        {            
+            if (new Random().Next(100) < PercentOfTimes)
+                return Visibility.Visible;
+            else
+                return Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Timer for the visibility of the border/dialog to ask user to upgrade when is a free account
+        /// </summary>
+        /// <param name="milliseconds">Argument with the milliseconds that the visibility will be true and then will change to false</param>
+        private async void TimerGetProAccountVisibility(int milliseconds)
+        {            
+            await Task.Delay(milliseconds);
+            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed));
+        }
+
+        /// <summary>
+        /// Timer for the visibility of the warning border/dialog to ask user to upgrade because is going out of space
+        /// </summary>
+        /// <param name="milliseconds">Argument with the milliseconds that the visibility will be true and then will change to false</param>
+        private async void TimerWarningOutOfSpaceVisibility(int milliseconds)
+        {            
+            await Task.Delay(milliseconds);
+            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed));
+        }
+
         private void UpgradeAccount(object obj)
         {
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
+                _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
+            });
+
+            var extraParams = new Dictionary<string, string>(1);
+            extraParams.Add("Pivot", "1");
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);            
+        }
+
+        private void CancelUpgradeAccount(object obj)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
+                _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
+            });
         }
 
         private void InitializeModel()
@@ -214,6 +274,72 @@ namespace MegaApp.Models
         {
             get { return _activeFolderView; }
             set { SetField(ref _activeFolderView, value); }
+        }
+
+        #endregion
+
+        #region MRequestListenerInterface
+
+        public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            switch (request.getType())
+            {
+                case MRequestType.TYPE_ACCOUNT_DETAILS:                    
+
+                    ulong TotalSpace = request.getMAccountDetails().getStorageMax();
+                    ulong UsedSpace = request.getMAccountDetails().getStorageUsed();
+                    int usedSpacePercent;
+
+                    if ((TotalSpace > 0) && (UsedSpace > 0))
+                        usedSpacePercent = (int)(UsedSpace * 100 / TotalSpace);
+                    else
+                        usedSpacePercent = 0;
+
+                    // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
+                    if (usedSpacePercent <= 95)
+                    {
+                        if (request.getMAccountDetails().getProLevel() == MAccountType.ACCOUNT_TYPE_FREE)
+                        {
+                            Task.Run(() =>
+                            {
+                                Visibility visibility = GetRandomVisibility(5);
+                                Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
+                                
+                                if (visibility == Visibility.Visible)
+                                    this.TimerGetProAccountVisibility(30000);
+                            });
+                        }
+                    }
+                    // Else show a warning message indicating the user is running out of space
+                    else
+                    {
+                        Task.Run(() =>
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
+                            this.TimerWarningOutOfSpaceVisibility(15000);
+                        });
+                    }
+
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        public virtual void onRequestStart(MegaSDK api, MRequest request)
+        {
+            // Not necessary
+        }
+
+        public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        {
+            // Not necessary
+        }
+
+        public virtual void onRequestUpdate(MegaSDK api, MRequest request)
+        {
+            // Not necessary
         }
 
         #endregion
