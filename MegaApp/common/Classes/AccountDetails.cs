@@ -24,6 +24,8 @@ namespace MegaApp.Classes
         {
             _myAccountPage = myAccountPage;
 
+            IsFreeAccount = true; // Default value
+
             CacheSize = AppService.GetAppCacheSize();
         }
 
