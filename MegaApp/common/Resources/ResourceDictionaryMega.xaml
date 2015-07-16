@@ -300,7 +300,63 @@
             </Path>
         </Grid>
     </DataTemplate>
+    
+    <ControlTemplate x:Key="BorderGetProTemplate">
+        <Border BorderThickness="1">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="{StaticResource MegaRedColor}" Opacity="1"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource PhoneChromeColor}" Opacity="1"/>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.GetProAccount, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UpgradeAccountQuestion, Source={StaticResource LocalizedStrings}}" Margin="12,0,12,12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </StackPanel>
+                <Button Grid.Row="1" Grid.Column="0" Content="{Binding LocalizedUiResources.Cancel, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding CancelUpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="{Binding LocalizedUiResources.UpgradeNow, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding UpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="BorderWarningOutOfSpaceTemplate">
+        <Border BorderThickness="1">
+            <Border.BorderBrush>
+                <SolidColorBrush Color="{StaticResource MegaRedColor}" Opacity="1"/>
+            </Border.BorderBrush>
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource PhoneChromeColor}" Opacity="1"/>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.WarningOutOfSpace, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UpgradeAccountQuestion, Source={StaticResource LocalizedStrings}}" Margin="12,0,12,12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </StackPanel>
+                <Button Grid.Row="1" Grid.Column="0" Content="{Binding LocalizedUiResources.Cancel, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding CancelUpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="{Binding LocalizedUiResources.UpgradeNow, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding UpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    
     <DataTemplate x:Key="MegaTransferItemContent">
         <Grid Margin="0,0,0,12">
             <Grid.ColumnDefinitions>

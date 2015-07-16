@@ -772,6 +772,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You can be a PRO user!.
+        /// </summary>
+        public static string GetProAccount {
+            get {
+                return ResourceManager.GetString("GetProAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Help.
         /// </summary>
         public static string Help {
@@ -804,6 +813,15 @@ namespace MegaApp.Resources {
         public static string Import {
             get {
                 return ResourceManager.GetString("Import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Browse to destination and import or download link.
+        /// </summary>
+        public static string ImportLinkBorderText {
+            get {
+                return ResourceManager.GetString("ImportLinkBorderText", resourceCulture);
             }
         }
         
@@ -1879,6 +1897,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to upgrade your account?.
+        /// </summary>
+        public static string UpgradeAccountQuestion {
+            get {
+                return ResourceManager.GetString("UpgradeAccountQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upgrade now!.
+        /// </summary>
+        public static string UpgradeNow {
+            get {
+                return ResourceManager.GetString("UpgradeNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Upload.
         /// </summary>
         public static string Upload {
@@ -1938,6 +1974,15 @@ namespace MegaApp.Resources {
         public static string View {
             get {
                 return ResourceManager.GetString("View", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You&apos;re running out of space!.
+        /// </summary>
+        public static string WarningOutOfSpace {
+            get {
+                return ResourceManager.GetString("WarningOutOfSpace", resourceCulture);
             }
         }
         

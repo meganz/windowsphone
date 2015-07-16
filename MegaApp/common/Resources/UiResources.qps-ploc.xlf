@@ -544,6 +544,31 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Limited</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/GetProAccount" translate="yes" xml:space="preserve">
+          <source>You can be a PRO user!</source>
+          <target state="new">You can be a PRO user!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to upgrade your account?</source>
+          <target state="new">Do you want to upgrade your account?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeNow" translate="yes" xml:space="preserve">
+          <source>Upgrade now!</source>
+          <target state="new">Upgrade now!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/WarningOutOfSpace" translate="yes" xml:space="preserve">
+          <source>You're running out of space!</source>
+          <target state="new">You're running out of space!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImportLinkBorderText" translate="yes" xml:space="preserve">
+          <source>Browse to destination and import or download link</source>
+          <target state="new">Browse to destination and import or download link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Punctual" translate="yes" xml:space="preserve">
           <source>Punctual</source>
           <target state="new">Punctual</target>

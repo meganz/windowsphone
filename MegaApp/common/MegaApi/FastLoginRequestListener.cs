@@ -95,7 +95,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            _mainPageViewModel.FetchNodes();
+            _mainPageViewModel.GetAccountDetails();
+            _mainPageViewModel.FetchNodes();            
         }
 
         #endregion

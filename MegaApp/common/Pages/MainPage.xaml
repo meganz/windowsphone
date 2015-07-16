@@ -270,27 +270,17 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Border x:Name="BorderOverquotaText" BorderThickness="1" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="0" Visibility="Collapsed">
-                                <Border.BorderBrush>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}" Opacity="1"/>
-                                </Border.BorderBrush>
-                                <Border.Background>
-                                    <SolidColorBrush Color="Black" Opacity="1"/>
-                                </Border.Background>
-                                <StackPanel>
-                                    <TextBlock TextWrapping="Wrap" Text="You have exceeded the storage limit of your account" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                                    <Button x:Name="BtnUpgradeAccount" Content="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Command="{Binding UpgradeAccountCommand}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                                </StackPanel>
-                            </Border>
+                            </Grid.RowDefinitions>                            
+                            <ContentControl x:Name="GetProAccountCloudDrive" Template="{StaticResource BorderGetProTemplate}" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="0" Visibility="Collapsed" />
+                            <ContentControl x:Name="WarningOutOfSpaceCloudDrive" Template="{StaticResource BorderWarningOutOfSpaceTemplate}" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="0" Visibility="Collapsed" />
                             <Border x:Name="BorderLinkText" BorderThickness="1" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="1" Visibility="Collapsed">
                                 <Border.BorderBrush>
-                                    <SolidColorBrush Color="Black" Opacity="0.75"/>
+                                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.75"/>
                                 </Border.BorderBrush>
                                 <Border.Background>
-                                    <SolidColorBrush Color="Black" Opacity="0.75"/>
+                                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.75"/>
                                 </Border.Background>
-                                <TextBlock TextWrapping="Wrap" Text="Browse to destination and import or download link" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ImportLinkBorderText, Source={StaticResource LocalizedStrings}}" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                             </Border>
                         </Grid>
                     </Grid>
@@ -387,6 +377,8 @@
                                 </telerikPrimitives:RadContextMenu.ContextMenu>
                             </telerikPrimitives:RadDataBoundListBox>
                         </Grid>
+                        <ContentControl x:Name="GetProAccountRubbishBin" Template="{StaticResource BorderGetProTemplate}" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="1" Visibility="Collapsed" />
+                        <ContentControl x:Name="WarningOutOfSpaceRubbishBin" Template="{StaticResource BorderWarningOutOfSpaceTemplate}" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="1" Visibility="Collapsed" />
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>
