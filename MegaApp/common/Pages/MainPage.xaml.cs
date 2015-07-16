@@ -227,7 +227,7 @@ namespace MegaApp.Pages
                         // If navigation is from the ConfirmAccountPage, active the flag indicating that is newly activated account
                         if (lastPage.Source.ToString().Contains("confirm"))
                         {
-                            App.IsNewlyActivatedAccount = true;                            
+                            App.IsNewlyActivatedAccount = true;
                             NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));                            
                         }                            
                     }

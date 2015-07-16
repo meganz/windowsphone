@@ -10,7 +10,7 @@ namespace MegaApp.Classes
     public class PaymentMethod
     {
         public MPaymentMethod PaymentMethodType { get; set; }
-        public string Name { get; set; }        
-        public Uri PaymentMethodUri { get; set; }
+        public String Name { get; set; }
+        public String PaymentMethodPathData { get; set; }
     }
 }

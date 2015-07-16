@@ -102,7 +102,7 @@ namespace MegaApp.MegaApi
                         AccountType = MAccountType.ACCOUNT_TYPE_FREE,
                         Name = UiResources.AccountTypeFree,
                         ProductColor = Color.FromArgb(255, 19, 224, 60),
-                        ProductUri = new Uri("/Assets/Images/lite_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                        ProductPathData = VisualResources.CrestFreeAccountPathData,
                         IsFree = true
                     };
 
@@ -135,12 +135,12 @@ namespace MegaApp.MegaApi
                     {
                         case MAccountType.ACCOUNT_TYPE_FREE:
                             product.Name = UiResources.AccountTypeFree;
-                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductPathData = VisualResources.CrestFreeAccountPathData;
                             break;
                         case MAccountType.ACCOUNT_TYPE_LITE:
                             product.Name = UiResources.AccountTypeLite;
                             product.ProductColor = Color.FromArgb(255, 255, 165, 0);
-                            product.ProductUri = new Uri("/Assets/Images/lite_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductPathData = VisualResources.CrestLiteAccountPathData;
                             product.IsNewOffer = true;
 
                             // If fortumo payment method is active, and product is LITE monthly include it into the product
@@ -150,7 +150,7 @@ namespace MegaApp.MegaApi
                                 {
                                     PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_FORTUMO,
                                     Name = String.Format(UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
-                                    PaymentMethodUri = new Uri("/Assets/Images/mega_logo" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative)
+                                    PaymentMethodPathData = VisualResources.PhoneBillingPathData
                                 };
                                 product.PaymentMethods.Add(fortumoPaymentMethod);
                             }
@@ -158,20 +158,17 @@ namespace MegaApp.MegaApi
                         case MAccountType.ACCOUNT_TYPE_PROI:
                             product.Name = UiResources.AccountTypePro1;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
-                            product.ProductUri = new Uri("/Assets/Images/pro_1_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                            //product.ProductUri = new Uri("/Assets/Images/pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductPathData = VisualResources.CrestProIAccountPathData;                            
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROII:
                             product.Name = UiResources.AccountTypePro2;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
-                            product.ProductUri = new Uri("/Assets/Images/pro_2_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                            //product.ProductUri = new Uri("/Assets/Images/pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductPathData = VisualResources.CrestProIIAccountPathData;                            
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROIII:
                             product.Name = UiResources.AccountTypePro3;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
-                            product.ProductUri = new Uri("/Assets/Images/pro_3_crest_WP" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                            //product.ProductUri = new Uri("/Assets/Images/pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            product.ProductPathData = VisualResources.CrestProIIIAccountPathData;                            
                             break;
                         default:
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
@@ -185,7 +182,7 @@ namespace MegaApp.MegaApi
                         {
                             PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD,
                             Name = String.Format(UiResources.CreditCard + " (" + UiResources.Recurring.ToLower() + ")"),
-                            PaymentMethodUri = new Uri("/Assets/Images/mega_logo" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative)
+                            PaymentMethodPathData = VisualResources.CreditCardPathData
                         };
                         product.PaymentMethods.Add(creditCardPaymentMethod);
                     }                    
@@ -203,7 +200,7 @@ namespace MegaApp.MegaApi
                             Currency = product.Currency,
                             GbStorage = product.GbStorage,
                             GbTransfer = product.GbTransfer / 12,
-                            ProductUri = product.ProductUri,
+                            ProductPathData = product.ProductPathData,
                             ProductColor = product.ProductColor,
                             IsNewOffer = product.IsNewOffer
                         };

@@ -16,7 +16,7 @@
     <SilverlightVersion>
     </SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>es-ES%3bqps-ploc</SupportedCultures>
+    <SupportedCultures>es-ES</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>MegaApp_$(Configuration)_$(Platform).xap</XapFilename>
@@ -1715,13 +1715,6 @@
       <DependentUpon>AppMessages.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.qps-ploc.resx">
-      <Link>Resources\AppMessages.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.resx">
       <Link>Resources\AppMessages.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -2098,13 +2091,6 @@
       <DependentUpon>AppResources.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.qps-ploc.resx">
-      <Link>Resources\AppResources.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.resx">
       <Link>Resources\AppResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -2473,13 +2459,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.qps-ploc.resx">
-      <Link>Resources\ProgressMessages.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.resx">
       <Link>Resources\ProgressMessages.resx</Link>
@@ -2850,13 +2829,6 @@
       <DependentUpon>SettingsResources.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.qps-ploc.resx">
-      <Link>Resources\SettingsResources.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.resx">
       <Link>Resources\SettingsResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -3226,13 +3198,6 @@
       <DependentUpon>UiResources.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.qps-ploc.resx">
-      <Link>Resources\UiResources.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.ro-RO.resx">
       <Link>Resources\UiResources.ro-RO.resx</Link>
       <AutoGen>True</AutoGen>
@@ -3597,13 +3562,6 @@
       <DependentUpon>VisualResources.pt-PT.xlf</DependentUpon>
       <culture>pt-PT</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.qps-ploc.resx">
-      <Link>Resources\VisualResources.qps-ploc.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.qps-ploc.xlf</DependentUpon>
-      <culture>qps-ploc</culture>
-    </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.resx">
       <Link>Resources\VisualResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -3899,11 +3857,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.pt-PT.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.qps-ploc.xlf">
-      <Link>Resources\AppMessages.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.qps-ploc.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.ro-RO.xlf">
       <Link>Resources\AppMessages.ro-RO.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -4163,11 +4116,6 @@
       <Link>Resources\AppResources.pt-PT.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.pt-PT.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.qps-ploc.xlf">
-      <Link>Resources\AppResources.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.ro-RO.xlf">
       <Link>Resources\AppResources.ro-RO.xlf</Link>
@@ -4429,11 +4377,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.pt-PT.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.qps-ploc.xlf">
-      <Link>Resources\ProgressMessages.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.qps-ploc.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.ro-RO.xlf">
       <Link>Resources\ProgressMessages.ro-RO.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -4693,11 +4636,6 @@
       <Link>Resources\SettingsResources.pt-PT.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.pt-PT.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.qps-ploc.xlf">
-      <Link>Resources\SettingsResources.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.ro-RO.xlf">
       <Link>Resources\SettingsResources.ro-RO.xlf</Link>
@@ -4959,11 +4897,6 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.pt-PT.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.qps-ploc.xlf">
-      <Link>Resources\UiResources.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.qps-ploc.resx</LastGenOutput>
-    </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.ro-RO.xlf">
       <Link>Resources\UiResources.ro-RO.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
@@ -5223,11 +5156,6 @@
       <Link>Resources\VisualResources.pt-PT.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.pt-PT.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.qps-ploc.xlf">
-      <Link>Resources\VisualResources.qps-ploc.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.qps-ploc.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.ro-RO.xlf">
       <Link>Resources\VisualResources.ro-RO.xlf</Link>

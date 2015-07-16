@@ -341,9 +341,7 @@ namespace MegaApp.Pages
                 case MAccountType.ACCOUNT_TYPE_PROIII:
                     PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro3.ToUpper());
                     break;
-            }
-
-            PlanImage.Source = new BitmapImage(_paymentViewModel.Plan.ProductUri);
+            }            
         }        
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -353,11 +351,13 @@ namespace MegaApp.Pages
             // If a product has been selected, deselect it
             if (_paymentViewModel.CreditCardPaymentIsEnabled)
             {
+                PageSubtitle.Text = UiResources.ChoosePaymentMethod;
                 _paymentViewModel.ProductSelectionIsEnabled = false;
                 _paymentViewModel.PaymentMethodSelectionIsEnabled = true;
             }
             else if (_paymentViewModel.PaymentMethodSelectionIsEnabled)
             {
+                PageSubtitle.Text = UiResources.ChooseRenewalPeriod;
                 _paymentViewModel.SelectedProduct = null;
                 _paymentViewModel.ProductSelectionIsEnabled = true;
                 _paymentViewModel.PaymentMethodSelectionIsEnabled = false;
@@ -376,6 +376,8 @@ namespace MegaApp.Pages
 
         private void OnMonthlyTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            PageSubtitle.Text = UiResources.ChoosePaymentMethod;
+
             _paymentViewModel.SelectedProduct = _paymentViewModel.ProductMonthly;
             LstPaymentMethods.ItemsSource = _paymentViewModel.SelectedProduct.PaymentMethods;
 
@@ -386,6 +388,8 @@ namespace MegaApp.Pages
 
         private void OnAnnualyTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
+            PageSubtitle.Text = UiResources.ChoosePaymentMethod;
+
             _paymentViewModel.SelectedProduct = _paymentViewModel.ProductAnnualy;
             LstPaymentMethods.ItemsSource = _paymentViewModel.SelectedProduct.PaymentMethods;
 
@@ -401,6 +405,8 @@ namespace MegaApp.Pages
 
         private void OnCancelClick(object sender, EventArgs e)
         {
+            PageSubtitle.Text = UiResources.ChooseRenewalPeriod;
+
             _paymentViewModel.ProductSelectionIsEnabled = true;
             _paymentViewModel.PaymentMethodSelectionIsEnabled = false;
             _paymentViewModel.CreditCardPaymentIsEnabled = false;
@@ -422,6 +428,7 @@ namespace MegaApp.Pages
                     break;
 
                 case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:
+                    PageSubtitle.Text = UiResources.EnterPaymentDetails;
                     _paymentViewModel.ProductSelectionIsEnabled = false;
                     _paymentViewModel.PaymentMethodSelectionIsEnabled = false;
                     _paymentViewModel.CreditCardPaymentIsEnabled = true;
