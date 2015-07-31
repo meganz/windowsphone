@@ -57,6 +57,16 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="MegaListGroupHeaderTemplate">
+        <Border Background="Transparent">
+            <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" Width="64"
+                    Height="64" HorizontalAlignment="Left" Margin="0,6">
+                <TextBlock Text="{Binding Key}" Foreground="{StaticResource PhoneForegroundBrush}" FontSize="48" Padding="6" 
+                           FontFamily="{StaticResource PhoneFontFamilySemiLight}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            </Border>
+        </Border>
+    </DataTemplate>
+
     <DataTemplate x:Key="MegaNodeListFileItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
             <Grid Margin="0,6">
@@ -356,7 +366,113 @@
             </Grid>
         </Border>
     </ControlTemplate>
+
+    <DataTemplate x:Key="MegaContactListEmptyContent">
+        <selectors:CustomMultiResolutionImage Stretch="Uniform" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>        
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaContactItemContent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="64" Stretch="UniformToFill" Margin="0,0,8,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
+                <Image.Source>
+                    <BitmapImage 
+						UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+						DecodePixelHeight="64"
+						DecodePixelWidth="64"
+						DecodePixelType="Logical"
+						CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBlock Text="{Binding FirstName}" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                <TextBlock Text="{Binding LastName}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="6,0,0,0"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Email}" VerticalAlignment="Bottom"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaContactRequestsItemContent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="64" Stretch="UniformToFill" Margin="0,0,8,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
+                <Image.Source>
+                    <BitmapImage 
+						UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+						DecodePixelHeight="64"
+						DecodePixelWidth="64"
+						DecodePixelType="Logical"
+						CreateOptions="BackgroundCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Email}" VerticalAlignment="Top"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Bottom">
+                <TextBlock Text="{Binding RelativeCreationTimeSpan}"/>
+                <TextBlock Text="{Binding StatusText}" Margin="6,0,0,0"/>
+            </StackPanel>            
+        </Grid>
+    </DataTemplate>
     
+    <DataTemplate x:Key="MegaContactRequestsListSentEmptyContent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
+                <Paragraph TextAlignment="Right">
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.SentRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </Paragraph>
+            </RichTextBox>
+            <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaContactRequestsListReceivedEmptyContent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
+                <Paragraph TextAlignment="Right">
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.ReceivedRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                </Paragraph>
+            </RichTextBox>
+            <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
+        </Grid>
+    </DataTemplate>
+
     <DataTemplate x:Key="MegaTransferItemContent">
         <Grid Margin="0,0,0,12">
             <Grid.ColumnDefinitions>
@@ -432,6 +548,12 @@
                 </Paragraph>
             </RichTextBox>
             <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaSharedFoldersListEmptyContent">
+        <Grid>            
+            <selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>
         </Grid>
     </DataTemplate>
 
@@ -1056,6 +1178,23 @@
                         <Path x:Name="PathArrow" Data="{Binding LocalizedVisualResources.MegaHomeLogoData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Height="24" Width="24" Margin="0"></Path>
                     </Grid>
                 </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <phone:JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
+    <phone:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
+    <Style x:Key="MegaJumpListStyle" TargetType="phone:LongListSelector">
+        <Setter Property="GridCellSize"  Value="113,113"/>
+        <Setter Property="LayoutMode" Value="Grid" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Border Background="{Binding Converter={StaticResource BackgroundConverter}}" Width="113" Height="113" Margin="6" >
+                        <TextBlock Text="{Binding Key}" FontFamily="{StaticResource PhoneFontFamilySemiBold}" FontSize="48" Padding="6"
+                                   Foreground="{Binding Converter={StaticResource ForegroundConverter}}" VerticalAlignment="Center"/>
+                    </Border>
+                </DataTemplate>
             </Setter.Value>
         </Setter>
     </Style>

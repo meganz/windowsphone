@@ -996,4 +996,104 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <value>Browse to destination and import or download link</value>
     <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
+  <data name="AddContact" xml:space="preserve">
+    <value>Add contact</value>
+    <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreateContact" xml:space="preserve">
+    <value>Type email address:</value>
+    <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+    <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+    <comment>Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SendFile" xml:space="preserve">
+    <value>Send file</value>
+    <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ShareFolders" xml:space="preserve">
+    <value>Share folders</value>
+    <comment>Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+    <comment>Label for any 'Profile' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MEGAContacts" xml:space="preserve">
+    <value>MEGA contacts</value>
+    <comment>Label for any 'Yes' button, link, text, title, etc. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="SharedFolders" xml:space="preserve">
+    <value>Shared folders</value>
+    <comment>Label for any 'Shared folders' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ReceivedRequests" xml:space="preserve">
+    <value>Received requests</value>
+    <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
+  </data>
+  <data name="SentRequests" xml:space="preserve">
+    <value>Sent requests</value>
+    <comment>Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</comment>
+  </data>
+  <data name="Accepted" xml:space="preserve">
+    <value>Accepted</value>
+    <comment>Label for any 'Accepted' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted</value>
+    <comment>Label for any 'Deleted' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Denied</value>
+    <comment>Label for any 'Denied' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Ignored" xml:space="preserve">
+    <value>Ignored</value>
+    <comment>Label for any 'Ignored' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Pending</value>
+    <comment>Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Reminded" xml:space="preserve">
+    <value>Reminded</value>
+    <comment>Label for any 'Reminded' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
+    <comment>Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="TimeDaysAgo" xml:space="preserve">
+    <value>{0} days ago</value>
+    <comment>Laber to indicate "time ago" in days - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeHoursAgo" xml:space="preserve">
+    <value>{0} hours ago</value>
+    <comment>Laber to indicate "time ago" in hours - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeMinutesAgo" xml:space="preserve">
+    <value>{0} minutes ago</value>
+    <comment>Laber to indicate "time ago" in minutes - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeSecondsAgo" xml:space="preserve">
+    <value>{0} seconds ago</value>
+    <comment>Laber to indicate "time ago" in seconds - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
 </root>
