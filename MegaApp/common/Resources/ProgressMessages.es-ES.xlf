@@ -6,6 +6,11 @@
     </header>
     <body>
       <group id="Resx">
+        <trans-unit id="Resx/AddContact" translate="yes" xml:space="preserve">
+          <source>Adding contact...</source>
+          <target state="new">Adding contact...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when adding a MEGA contact - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/CancelSubscription" translate="yes" xml:space="preserve">
           <source>Canceling subscription...</source>
           <target state="translated">Cancelando subscripción...</target>
@@ -111,6 +116,11 @@
           <target state="translated">Obteniendo detalles de la cuenta...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting account details - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/GetContactData" translate="yes" xml:space="preserve">
+          <source>Getting contact data...</source>
+          <target state="new">Getting contact data...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting contact details - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" xml:space="preserve">
           <source>Fetching files and folders... [{0}]</source>
           <target state="translated">Obteniendo archivos y carpetas... [{0}]</target>

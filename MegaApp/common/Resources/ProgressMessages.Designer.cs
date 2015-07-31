@@ -61,6 +61,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Adding contact....
+        /// </summary>
+        public static string AddContact {
+            get {
+                return ResourceManager.GetString("AddContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Canceling subscription....
         /// </summary>
         public static string CancelSubscription {
@@ -147,6 +156,15 @@ namespace MegaApp.Resources {
         public static string GetAccountDetails {
             get {
                 return ResourceManager.GetString("GetAccountDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Getting contact data....
+        /// </summary>
+        public static string GetContactData {
+            get {
+                return ResourceManager.GetString("GetContactData", resourceCulture);
             }
         }
         
