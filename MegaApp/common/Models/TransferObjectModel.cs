@@ -271,8 +271,8 @@ namespace MegaApp.Models
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
                                 imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
-                            });
-                            imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
+                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
+                            });                            
 
                             #if WINDOWS_PHONE_80
                             bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
