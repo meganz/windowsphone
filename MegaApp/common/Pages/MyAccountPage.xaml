@@ -85,8 +85,8 @@
                             </Image.Clip>
                         </Image>
                         <StackPanel x:Name="StackUserInfo" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Text="{Binding AccountDetails.UserName}" Margin="0,0,0,10" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
-                            <TextBlock Text="{Binding AccountDetails.UserEmail}" Margin="0,0,0,10" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserName}" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserEmail}" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}"/>
                             <Grid HorizontalAlignment="Left">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
@@ -96,13 +96,13 @@
                                 <TextBlock Text="{Binding AccountDetails.AccountTypeText}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Segoe WP Semibold" Grid.Column="1" Margin="12,0"/>
                             </Grid>
                             <StackPanel Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <Paragraph>
                                         <Run Text="{Binding LocalizedUiResources.RenewsOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
                                         <Run Text="{Binding AccountDetails.SubscriptionRenewDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                                     </Paragraph>
                                 </RichTextBox>
-                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                                <RichTextBox Grid.Row="0" Margin="-12,0,0,10" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
                                     <Paragraph>
                                         <Run Text="{Binding LocalizedUiResources.ExpiresOn, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
                                         <Run Text="{Binding AccountDetails.ProExpirationDate}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>

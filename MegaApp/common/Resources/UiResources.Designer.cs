@@ -601,11 +601,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Decline.
+        /// </summary>
+        public static string Decline {
+            get {
+                return ResourceManager.GetString("Decline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Default download location.
         /// </summary>
         public static string DefaultDownloadLocationText {
             get {
                 return ResourceManager.GetString("DefaultDownloadLocationText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
         
@@ -840,6 +858,15 @@ namespace MegaApp.Resources {
         public static string HomeRoot {
             get {
                 return ResourceManager.GetString("HomeRoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ignore.
+        /// </summary>
+        public static string Ignore {
+            get {
+                return ResourceManager.GetString("Ignore", resourceCulture);
             }
         }
         
@@ -1533,6 +1560,15 @@ namespace MegaApp.Resources {
         public static string Refresh {
             get {
                 return ResourceManager.GetString("Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reinvite.
+        /// </summary>
+        public static string Reinvite {
+            get {
+                return ResourceManager.GetString("Reinvite", resourceCulture);
             }
         }
         

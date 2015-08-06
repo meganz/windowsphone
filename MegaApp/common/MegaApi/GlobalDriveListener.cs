@@ -18,6 +18,7 @@ namespace MegaApp.MegaApi
         {
             _appInformation = appInformation;
             this.Folders = new List<FolderViewModel>();
+            this.Contacts= new List<ContactsViewModel>();
         }
 
         #region MGlobalListenerInterface
@@ -295,6 +296,18 @@ namespace MegaApp.MegaApi
            // throw new NotImplementedException();
         }
 
+        public void onContactRequestsUpdate(MegaSDK api, MContactRequestList requests)
+        {            
+            foreach (var contacts in Contacts)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    contacts.GetReceivedContactRequests();
+                    contacts.GetSentContactRequests();
+                });
+            }
+        }
+
         public void onUsersUpdate(MegaSDK api, MUserList users)
         {
            // throw new NotImplementedException();
@@ -323,7 +336,8 @@ namespace MegaApp.MegaApi
 
         #region Properties
 
-        public IList<FolderViewModel> Folders { get; private set; } 
+        public IList<FolderViewModel> Folders { get; private set; }
+        public IList<ContactsViewModel> Contacts { get; private set; } 
 
         #endregion
     }

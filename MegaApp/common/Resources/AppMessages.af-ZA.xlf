@@ -784,27 +784,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Retrieving payment Url failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AddContactSuccess_Title" translate="yes" xml:space="preserve">
-          <source>Contact added</source>
-          <target state="new">Contact added</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when add a contact successfully - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AddContactSuccess" translate="yes" xml:space="preserve">
-          <source>Contact added successful</source>
-          <target state="new">Contact added successful</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when add a contact successfully.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AddContactFailed_Title" translate="yes" xml:space="preserve">
-          <source>Add contact failed</source>
-          <target state="new">Add contact failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the the process to add a contact failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AddContactFailed" translate="yes" xml:space="preserve">
-          <source>Failed to add the contact: [{0}]</source>
-          <target state="new">Failed to add the contact: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the the process to add a contact failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
           <target state="new">Failed to retrieve the payment Url. Please try again. [{0}]</target>

@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using mega;
+using MegaApp.Models;
 using MegaApp.Resources;
 
 namespace MegaApp.Classes
 {
-    class ContactRequest
+    public class ContactRequest : BaseViewModel
     {
         public ContactRequest(MContactRequest contactRequest)
         {
@@ -31,6 +34,31 @@ namespace MegaApp.Classes
         public int Status { get; set; }
         public bool IsOutgoing { get; set; }
 
+        private Uri _avatarUri;
+        public Uri AvatarUri 
+        {
+            get { return _avatarUri; }
+            set
+            {
+                _avatarUri = value;
+                OnPropertyChanged("AvatarUri");
+            }
+        }
+
+        public String AvatarPath
+        {
+            get
+            {
+                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                    AppResources.DownloadsDirectory, "RequestAvatarImage_" + Email);
+            }
+        }
+
+        public String AvatarLetter
+        {
+            get { return Email.Substring(0, 1).ToUpper(); }
+        }
+
         public String Email
         {
             get
@@ -47,7 +75,7 @@ namespace MegaApp.Classes
             get
             {
                 DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-                DateTime creation = start.AddSeconds(CreationTime);
+                DateTime creation = (start.AddSeconds(CreationTime)).ToLocalTime();
 
                 TimeSpan span = DateTime.Now - creation;
 

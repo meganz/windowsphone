@@ -6,11 +6,6 @@
     </header>
     <body>
       <group id="Resx">
-        <trans-unit id="Resx/AddContact" translate="yes" xml:space="preserve">
-          <source>Adding contact...</source>
-          <target state="new">Adding contact...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when adding a MEGA contact - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/CancelSubscription" translate="yes" xml:space="preserve">
           <source>Canceling subscription...</source>
           <target state="new">Canceling subscription...</target>
