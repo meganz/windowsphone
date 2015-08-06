@@ -88,6 +88,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Background agents for MEGA have been disabled by the user.
+        /// </summary>
+        public static string BackgroundAgentDisabled {
+            get {
+                return ResourceManager.GetString("BackgroundAgentDisabled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Background agents disabled.
+        /// </summary>
+        public static string BackgroundAgentDisabled_Title {
+            get {
+                return ResourceManager.GetString("BackgroundAgentDisabled_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cache has been succesfully cleared.
         /// </summary>
         public static string CacheCleared {
@@ -102,6 +120,24 @@ namespace MegaApp.Resources {
         public static string CacheCleared_Title {
             get {
                 return ResourceManager.GetString("CacheCleared_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In order for the automatic Camera Uploads to work correctly, you need to enable the option &quot;Stay logged in&quot;. Do you want to enable this option?.
+        /// </summary>
+        public static string CameraUploadNeedsStayLoggedIn {
+            get {
+                return ResourceManager.GetString("CameraUploadNeedsStayLoggedIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Auto Camera Uploads prerequisites.
+        /// </summary>
+        public static string CameraUploadNeedsStayLoggedIn_Title {
+            get {
+                return ResourceManager.GetString("CameraUploadNeedsStayLoggedIn_Title", resourceCulture);
             }
         }
         
@@ -308,8 +344,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Copy file failed.
         /// </summary>
-        public static string CopyFileFailed_Title
-        {
+        public static string CopyFileFailed_Title {
             get {
                 return ResourceManager.GetString("CopyFileFailed_Title", resourceCulture);
             }
@@ -877,8 +912,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Memory Limit.
         /// </summary>
-        public static string MemoryLimitError_Title
-        {
+        public static string MemoryLimitError_Title {
             get {
                 return ResourceManager.GetString("MemoryLimitError_Title", resourceCulture);
             }
@@ -1276,8 +1310,7 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Preparing image failed.
         /// </summary>
-        public static string PrepareImageForUploadFailed_Title
-        {
+        public static string PrepareImageForUploadFailed_Title {
             get {
                 return ResourceManager.GetString("PrepareImageForUploadFailed_Title", resourceCulture);
             }

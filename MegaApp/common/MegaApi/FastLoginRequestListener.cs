@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using Windows.ApplicationModel.DataTransfer;
-using Windows.Storage;
+using System.Windows.Threading;
 using mega;
-using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Extensions;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -95,6 +87,14 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                });
+            }
+
             _mainPageViewModel.GetAccountDetails();
             _mainPageViewModel.FetchNodes();            
         }

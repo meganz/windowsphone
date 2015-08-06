@@ -530,6 +530,21 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Browse to destination and import or download link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/General" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="new">General</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for "General" settings pivot</note>
+        </trans-unit>
+        <trans-unit id="Resx/Developer" translate="yes" xml:space="preserve">
+          <source>Developer</source>
+          <target state="new">Developer</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for "Developer" type of acknowledgement</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoUpload" translate="yes" xml:space="preserve">
+          <source>Auto Upload</source>
+          <target state="new">Auto Upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for "Auto Upload" settings pivot</note>
+        </trans-unit>
         <trans-unit id="Resx/Punctual" translate="yes" xml:space="preserve">
           <source>Punctual</source>
           <target state="new">Punctual</target>

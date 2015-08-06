@@ -76,6 +76,26 @@
           <target state="translated">Error recuperando Url de pago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" xml:space="preserve">
+          <source>Background agents disabled</source>
+          <target state="new">Background agents disabled</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" xml:space="preserve">
+          <source>Auto Camera Uploads prerequisites</source>
+          <target state="new">Auto Camera Uploads prerequisites</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" xml:space="preserve">
+          <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
+          <target state="new">In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" xml:space="preserve">
+          <source>Background agents for MEGA have been disabled by the user</source>
+          <target state="new">Background agents for MEGA have been disabled by the user</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
           <target state="translated">No se ha podido recuperar la Url de pago. Por favor, vuelve a intentarlo. [{0}]</target>

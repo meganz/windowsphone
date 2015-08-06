@@ -2143,10 +2143,6 @@
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MegaApp81\MegaApp81.csproj">
-      <Project>{383E1B56-6F99-4B20-AA0E-D27790B93159}</Project>
-      <Name>MegaApp81</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\common\Resources\AppMessages.af-ZA.resx">
@@ -2788,6 +2784,7 @@
       <Link>Resources\AppResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.ro-RO.resx">
       <Link>Resources\AppResources.ro-RO.resx</Link>
@@ -3526,6 +3523,7 @@
       <Link>Resources\SettingsResources.resx</Link>
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.ro-RO.resx">
       <Link>Resources\SettingsResources.ro-RO.resx</Link>

@@ -11,8 +11,11 @@ namespace MegaApp.Classes
         public AppInformation()
         {
             this.PickerOrAsyncDialogIsOpen = false;
+            this.IsStartedAsAutoUpload = false;
 
         }
         public bool PickerOrAsyncDialogIsOpen { get; set; }
+
+        public bool IsStartedAsAutoUpload { get; set; }
     }
 }

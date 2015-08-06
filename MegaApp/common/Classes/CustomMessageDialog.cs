@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Media;
+using System.Windows.Shapes;
+using MegaApp.Extensions;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Telerik.Windows.Controls;
@@ -37,6 +41,7 @@ namespace MegaApp.Classes
         private readonly IList<DialogButton> _buttons;
         private readonly Orientation _buttonOrientation;
         private TaskCompletionSource<MessageDialogResult> _taskCompletionSource;
+        private Path _image;
 
         #endregion
 
@@ -47,7 +52,9 @@ namespace MegaApp.Classes
         /// <param name="title">Title of the dialog</param>
         /// <param name="message">Main message of the dialog</param>
         /// <param name="appInformation">App information for restricting number of dialogs</param>
-        public CustomMessageDialog(string title, string message, AppInformation appInformation)
+        /// <param name="messageDialogImage">Extra image to display in top of dialog to the user. Default no image</param>
+        public CustomMessageDialog(string title, string message, AppInformation appInformation,
+            MessageDialogImage messageDialogImage = MessageDialogImage.None)
         {
             _title = title;
             _message = message;
@@ -61,6 +68,8 @@ namespace MegaApp.Classes
 
             // Set default result to Cancel or No
             this.DialogResult = MessageDialogResult.CancelNo;
+
+            SetDialogImage(messageDialogImage);
         }
 
         /// <summary>
@@ -70,8 +79,9 @@ namespace MegaApp.Classes
         /// <param name="message">Main message of the dialog</param>
         /// <param name="appInformation">App information for restricting number of dialogs</param>
         /// <param name="dialogButtons">A value that indicaties the button or buttons to display</param>
+        /// <param name="messageDialogImage">Extra image to display in top of dialog to the user. Default no image</param>
         public CustomMessageDialog(string title, string message, AppInformation appInformation,
-            MessageDialogButtons dialogButtons)
+            MessageDialogButtons dialogButtons, MessageDialogImage messageDialogImage = MessageDialogImage.None)
         {
             _title = title;
             _message = message;
@@ -101,6 +111,8 @@ namespace MegaApp.Classes
 
             // Set default result to Cancel or No
             this.DialogResult = MessageDialogResult.CancelNo;
+
+            SetDialogImage(messageDialogImage);
         }
 
         /// <summary>
@@ -111,8 +123,10 @@ namespace MegaApp.Classes
         /// <param name="appInformation">App information for restricting number of dialogs</param>
         /// <param name="dialogButtons">A value that indicaties the button or buttons to display</param>
         /// <param name="buttonOrientation">Show buttons on a horizntal row or vertical below each other</param>
+        /// <param name="messageDialogImage">Extra image to display in top of dialog to the user. Default no image</param>
         public CustomMessageDialog(string title, string message, AppInformation appInformation,
-           IEnumerable<DialogButton> dialogButtons, Orientation buttonOrientation = Orientation.Horizontal)
+           IEnumerable<DialogButton> dialogButtons, Orientation buttonOrientation = Orientation.Horizontal,
+           MessageDialogImage messageDialogImage = MessageDialogImage.None)
         {
             _title = title;
             _message = message;
@@ -122,6 +136,8 @@ namespace MegaApp.Classes
 
             // Set default result to custom when using defined buttons
             this.DialogResult = MessageDialogResult.Custom;
+
+            SetDialogImage(messageDialogImage);
         }
 
         /// <summary>
@@ -163,7 +179,7 @@ namespace MegaApp.Classes
 
                 // When back button is pressed also return a dialog result when ShowDialogAsync is used
                 if (_taskCompletionSource != null && DialogWindow.IsClosedOnBackButton)
-                    _taskCompletionSource.TrySetResult(this.DialogResult);
+                    _taskCompletionSource.TrySetResult(MessageDialogResult.CancelNo);
             };
 
             // Create a Grid to populate with UI controls
@@ -173,12 +189,21 @@ namespace MegaApp.Classes
                 VerticalAlignment = VerticalAlignment.Top,
                 RowDefinitions =
                 {
+                    new RowDefinition() { Height = GridLength.Auto}, // Optional Image row
                     new RowDefinition() { Height = GridLength.Auto}, // Title row
                     new RowDefinition() { Height = GridLength.Auto}, // Message row
                     new RowDefinition() { Height = GridLength.Auto}, // Response control(s) row
                 },
                 Margin = new Thickness(24, 0, 24, 0)
             };
+
+
+            if (_image != null)
+            {
+                // Add image to the view
+                mainGrid.Children.Add(_image);
+                Grid.SetRow(_image, 0);
+            }
 
             // Create title label
             var title = new TextBlock()
@@ -187,13 +212,13 @@ namespace MegaApp.Classes
                 FontFamily = new FontFamily("Segoe WP Semibold"),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
                 Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
-                Margin = new Thickness(0, 24, 0, 0),
+                Margin = _image == null ? new Thickness(0, 24, 0, 0) : new Thickness(0),
                 HorizontalAlignment = HorizontalAlignment.Left
             };
             
             // Add title to the view
             mainGrid.Children.Add(title);
-            Grid.SetRow(title, 0);
+            Grid.SetRow(title, 1);
 
             // Create message label
             var message = new TextBlock()
@@ -202,7 +227,7 @@ namespace MegaApp.Classes
                 FontFamily = new FontFamily("Segoe WP SemiLight"),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMediumLarge"]),
                 Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
-                Margin = new Thickness(0, 50, 0, 48),
+                Margin = _image == null ? new Thickness(0, 50, 0, 48) : new Thickness(0, 36, 0, 36),
                 HorizontalAlignment = HorizontalAlignment.Left,
                 VerticalAlignment = VerticalAlignment.Top,
                 TextWrapping = TextWrapping.Wrap // Needed for long strings / texts
@@ -210,7 +235,7 @@ namespace MegaApp.Classes
 
             // Add message to the view
             mainGrid.Children.Add(message);
-            Grid.SetRow(message, 1);
+            Grid.SetRow(message, 2);
 
             // Create response controls panel
             var buttonGrid = new Grid()
@@ -221,7 +246,7 @@ namespace MegaApp.Classes
 
             // Add response controls to the view
             mainGrid.Children.Add(buttonGrid);
-            Grid.SetRow(buttonGrid, 2);
+            Grid.SetRow(buttonGrid, 3);
 
             // Create the response control buttons
             foreach (var dialogButton in _buttons)
@@ -263,11 +288,17 @@ namespace MegaApp.Classes
                             case MessageDialogButton.Ok:
                             case MessageDialogButton.Yes:
                                 this.DialogResult = MessageDialogResult.OkYes;
+                                // Set result for ShowDialogAsync invocation
+                                if (_taskCompletionSource != null)
+                                    _taskCompletionSource.TrySetResult(this.DialogResult);
                                 OnOkOrYesButtonTapped(new EventArgs());
                                 break;
                             case MessageDialogButton.Cancel:
                             case MessageDialogButton.No:
                                 this.DialogResult = MessageDialogResult.CancelNo;
+                                // Set result for ShowDialogAsync invocation
+                                if (_taskCompletionSource != null)
+                                    _taskCompletionSource.TrySetResult(this.DialogResult);
                                 OnCancelOrNoButtonTapped(new EventArgs());
                                 break;
                             default:
@@ -280,7 +311,6 @@ namespace MegaApp.Classes
                     }
                     
                 };
-
 
                 buttonGrid.Children.Add(button);
 
@@ -329,6 +359,38 @@ namespace MegaApp.Classes
             return _taskCompletionSource.Task;
         }
 
+        #region Private Methods
+
+        private void SetDialogImage(MessageDialogImage messageDialogImage)
+        {
+            var iconPath = new Path()
+            {
+                Height = 120,
+                Width = 120,
+                Stretch = Stretch.Uniform,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(0, 24, 0, 40),
+                Fill = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"])
+            };
+            iconPath.Fill.Opacity = 0.2;
+
+            switch (messageDialogImage)
+            {
+                case MessageDialogImage.None:
+                    _image = null;
+                    break;
+                case MessageDialogImage.RubbishBin:
+                    iconPath.SetDataBinding(VisualResources.DialogRubbishBinPathData);
+                    _image = iconPath;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("messageDialogImage", messageDialogImage, null);
+            }
+        }
+
+        #endregion
+
         #region Virtual Methods
 
         /// <summary>
@@ -371,58 +433,7 @@ namespace MegaApp.Classes
 
     }
 
-    public enum MessageDialogButton
-    {
-        /// <summary>
-        /// The Ok button 
-        /// </summary>
-        Ok,
-        /// <summary>
-        /// The Cancel button
-        /// </summary>
-        Cancel,
-        /// <summary>
-        /// The Yes button
-        /// </summary>
-        Yes,
-        /// <summary>
-        /// The No button
-        /// </summary>
-        No,
-    }
-
-    public enum MessageDialogButtons
-    {
-        /// <summary>
-        /// Displays only an Ok button
-        /// </summary>
-        Ok,
-        /// <summary>
-        /// Displays an Ok and Cancel button
-        /// </summary>
-        OkCancel,
-        /// <summary>
-        /// Displays a Yes and No button
-        /// </summary>
-        YesNo,
-    }
-
-    public enum MessageDialogResult
-    {
-        /// <summary>
-        /// User has pressed Ok or Yes
-        /// </summary>
-        OkYes,
-        /// <summary>
-        /// User has pressed Cancel or No
-        /// </summary>
-        CancelNo,
-        /// <summary>
-        /// User has pressed a custom defined button
-        /// </summary>
-        Custom,
-    }
-
+    
     /// <summary>
     /// Class that defines the properties of a CustomMessageDialog button
     /// </summary>
@@ -500,5 +511,69 @@ namespace MegaApp.Classes
         public MessageDialogButton Type { get; private set; }
 
         #endregion
+    }
+
+    public enum MessageDialogButton
+    {
+        /// <summary>
+        /// The Ok button 
+        /// </summary>
+        Ok,
+        /// <summary>
+        /// The Cancel button
+        /// </summary>
+        Cancel,
+        /// <summary>
+        /// The Yes button
+        /// </summary>
+        Yes,
+        /// <summary>
+        /// The No button
+        /// </summary>
+        No,
+    }
+
+    public enum MessageDialogButtons
+    {
+        /// <summary>
+        /// Displays only an Ok button
+        /// </summary>
+        Ok,
+        /// <summary>
+        /// Displays an Ok and Cancel button
+        /// </summary>
+        OkCancel,
+        /// <summary>
+        /// Displays a Yes and No button
+        /// </summary>
+        YesNo,
+    }
+
+    public enum MessageDialogResult
+    {
+        /// <summary>
+        /// User has pressed Ok or Yes
+        /// </summary>
+        OkYes,
+        /// <summary>
+        /// User has pressed Cancel or No
+        /// </summary>
+        CancelNo,
+        /// <summary>
+        /// User has pressed a custom defined button
+        /// </summary>
+        Custom,
+    }
+
+    public enum MessageDialogImage
+    {
+        /// <summary>
+        /// Display no image
+        /// </summary>
+        None,
+        /// <summary>
+        /// Display a rubbish bin image
+        /// </summary>
+        RubbishBin
     }
 }

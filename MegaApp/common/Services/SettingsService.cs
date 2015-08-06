@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
+using System.Linq.Expressions;
+using System.Runtime.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Windows.Storage;
 using MegaApp.Classes;
 using MegaApp.Resources;
 
@@ -13,8 +14,11 @@ namespace MegaApp.Services
 {
     static class SettingsService
     {
+        private static readonly Mutex Mutex = new Mutex(false, "BackGroundAgentFileMutex");
+
         public static void SaveSetting<T>(string key, T value)
         {
+
             try
             {
                 var settings = IsolatedStorageSettings.ApplicationSettings;
@@ -104,22 +108,62 @@ namespace MegaApp.Services
             settings.Save();
         }
 
+        public static void SaveSettingToFile<T>(string key, T value)
+        {
+            var settings = ApplicationData.Current.LocalFolder;
+
+            Mutex.WaitOne();
+
+            try
+            {
+                Task.WaitAll(Task.Run(async () =>
+                {
+                    var file = await settings.CreateFileAsync(key, CreationCollisionOption.ReplaceExisting);
+
+                    using (var stream = await file.OpenStreamForWriteAsync())
+                    {
+                        var dataContractSerializer = new DataContractSerializer(typeof (T));
+                        dataContractSerializer.WriteObject(stream, value);
+                    }
+                }));
+            }
+            finally
+            {
+                Mutex.ReleaseMutex();
+            }
+        }
+
+        public static async Task<T> LoadSettingFromFile<T>(string key)
+        {
+            var settings = ApplicationData.Current.LocalFolder;
+
+            var file = await settings.GetFileAsync(key);
+
+            using (var stream = await file.OpenStreamForReadAsync())
+            {
+                var dataContractSerializer = new DataContractSerializer(typeof(T));
+                return (T)dataContractSerializer.ReadObject(stream);
+            }
+        }
+
         public static void SaveMegaLoginData(string email, string session, bool stayLoggedIn)
         {
-            SettingsService.SaveSetting(SettingsResources.StayLoggedIn, stayLoggedIn);
-            SettingsService.SaveSetting(SettingsResources.UserMegaEmailAddress, email);
-            SettingsService.SaveSetting(SettingsResources.UserMegaSession, session);
+            SaveSetting(SettingsResources.StayLoggedIn, stayLoggedIn);
+            SaveSetting(SettingsResources.UserMegaEmailAddress, email);
+            SaveSetting(SettingsResources.UserMegaSession, session);
+            // Save session for automatic camera upload agent
+            SaveSettingToFile(SettingsResources.UserMegaSession, session);
         }
 
         public static void ClearMegaLoginData()
         {
             //SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
-            SettingsService.DeleteSetting(SettingsResources.UserMegaEmailAddress);
-            SettingsService.DeleteSetting(SettingsResources.UserMegaSession);
-            SettingsService.DeleteSetting(SettingsResources.UserPinLockIsEnabled);
-            SettingsService.DeleteSetting(SettingsResources.UserPinLock);
+            DeleteSetting(SettingsResources.UserMegaEmailAddress);
+            DeleteSetting(SettingsResources.UserMegaSession);
+            DeleteSetting(SettingsResources.UserPinLockIsEnabled);
+            DeleteSetting(SettingsResources.UserPinLock);
 
-            SettingsService.DeleteSetting(SettingsResources.CameraUploadsFirstInit);
+            DeleteSetting(SettingsResources.CameraUploadsFirstInit);
         }
     }
 }

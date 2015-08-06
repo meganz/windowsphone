@@ -38,18 +38,7 @@ namespace MegaApp.Models
             this.BreadCrumbs = new ObservableCollection<IMegaNode>();
             this.SelectedNodes = new List<IMegaNode>();
             this.IsMultiSelectActive = false;
-
-            ////FolderRootNode depending on the container type
-            //switch (this.Type)
-            //{
-            //    case ContainerType.RubbishBin:
-            //        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
-            //        break;
-            //    case ContainerType.CloudDrive:            
-            //        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
-            //        break;
-            //}
-
+            
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
@@ -428,25 +417,23 @@ namespace MegaApp.Models
             #if WINDOWS_PHONE_80
             if (!SettingsService.LoadSetting<bool>(SettingsResources.QuestionAskedDownloadOption, false))
             {
-                switch (await DialogService.ShowOptionsDialog(AppMessages.QuestionAskedDownloadOption_Title, 
+                var result = await DialogService.ShowOptionsDialog(AppMessages.QuestionAskedDownloadOption_Title, 
                     AppMessages.QuestionAskedDownloadOption,
-                    new[] { AppMessages.QuestionAskedDownloadOption_YesButton, AppMessages.QuestionAskedDownloadOption_NoButton }))
-                {
-                    case -1:
+                    new[]
                     {
-                        return;
-                    }
-                    case 0:
-                    {
-                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
-                        break;
-                    }
-                    case 1:
-                    {
-                        SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
-                        break;
-                    }
-                }
+                        new DialogButton(AppMessages.QuestionAskedDownloadOption_YesButton, () =>
+                        {
+                            SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, true);
+                           
+                        }),
+                        new DialogButton(AppMessages.QuestionAskedDownloadOption_NoButton, () =>
+                        {
+                            SettingsService.SaveSetting(SettingsResources.ExportImagesToPhotoAlbum, false);
+                        })
+                    });
+
+                if (result == MessageDialogResult.CancelNo) return;
+
                 SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
             }
             #elif WINDOWS_PHONE_81
@@ -530,13 +517,62 @@ namespace MegaApp.Models
             return true;
         }
 
+        public void ClearAllNodes()
+        {
+            var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.MultiSelectRemoveQuestion_Title,
+                    String.Format(AppMessages.MultiSelectRemoveQuestion, this.ChildNodes.Count),
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(
+                    () => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+
+                Task.Run(async () =>
+                {
+                    int count = this.ChildNodes.Count;
+                    var helperList = new List<IMegaNode>(count);
+                    helperList.AddRange(this.ChildNodes);
+
+                    WaitHandle[] waitEventRequests = new WaitHandle[count];
+
+                    int index = 0;
+
+                    foreach (var node in helperList)
+                    {
+                        waitEventRequests[index] = new AutoResetEvent(false);
+                        await node.RemoveAsync(true, (AutoResetEvent) waitEventRequests[index]);
+                        index++;
+                    }
+
+                    WaitHandle.WaitAll(waitEventRequests);
+
+                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.MultiRemoveSucces_Title,
+                            String.Format(AppMessages.MultiRemoveSucces, count),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                });
+            };
+
+            customMessageDialog.ShowDialog();
+        }
+
+
         public async Task<bool> MultipleRemoveItems()
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
             if (count < 1) return false;
 
-            if (this.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
+            if (this.CurrentDisplayMode == DriveDisplayMode.RubbishBin)
             {
                 var customMessageDialog = new CustomMessageDialog(
                     AppMessages.MultiSelectRemoveQuestion_Title,
@@ -579,9 +615,9 @@ namespace MegaApp.Models
             this.IsMultiSelectActive = !this.IsMultiSelectActive;
         }
 
-        private void RemoveItem(object obj)
+        private async void RemoveItem(object obj)
         {
-            FocusedNode.Remove(false);
+            await FocusedNode.RemoveAsync(false);
         }
 
         private void RenameItem(object obj)
@@ -657,24 +693,24 @@ namespace MegaApp.Models
             var helperList = new List<IMegaNode>(count);
             helperList.AddRange(ChildNodes.Where(n => n.IsMultiSelected));
 
-            Task.Run(() =>
+            Task.Run(async() =>
             {
-                AutoResetEvent[] waitEventRequests = new AutoResetEvent[count];
+                WaitHandle[] waitEventRequests = new WaitHandle[count];
 
                 int index = 0;
 
                 foreach (var node in helperList)
                 {
                     waitEventRequests[index] = new AutoResetEvent(false);
-                    node.Remove(true, waitEventRequests[index]);
+                    await node.RemoveAsync(true, (AutoResetEvent) waitEventRequests[index]);
                     index++;
                 }
-
+          
                 WaitHandle.WaitAll(waitEventRequests);
 
                 Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
 
-                if (this.PreviousDisplayMode == DriveDisplayMode.RubbishBin)
+                if (this.CurrentDisplayMode == DriveDisplayMode.RubbishBin)
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {

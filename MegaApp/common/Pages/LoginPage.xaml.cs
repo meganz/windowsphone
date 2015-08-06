@@ -1,19 +1,15 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 using MegaApp.Containers;
 using MegaApp.Enums;
 using MegaApp.Extensions;
-using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using System;
-using System.ComponentModel;
-using System.Windows;
-using System.Windows.Navigation;
-using mega;
 using MegaApp.UserControls;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
@@ -49,8 +45,14 @@ namespace MegaApp.Pages
                 Pivot_LoginAndCreateAccount.SelectedIndex = indexParsed;
             }
 
+            var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+
+            _loginAndCreateAccountViewModelContainer.LoginViewModel.GoToAutoUploadSettingsAfterLogin =
+                navParam == NavigationParameter.AutoCameraUpload;
+
             // Remove the main page from the stack. If user presses back button it will then exit the application
             // Also removes the create account page after the user has created the account succesful
+            // Also removes the settings page when the user has selected app in auto upload but was not logged in.
             while (NavigationService.CanGoBack)
                 NavigationService.RemoveBackEntry();
         }
@@ -66,7 +68,7 @@ namespace MegaApp.Pages
             e.Cancel = true;
         }
 
-        private void OnAcceptClick(object sender, System.EventArgs e)        
+        private void OnAcceptClick(object sender, EventArgs e)        
         {
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
                 _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
@@ -74,12 +76,12 @@ namespace MegaApp.Pages
                 _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.CreateAccount();
         }
 
-        private void OnCancelClick(object sender, System.EventArgs e)
+        private void OnCancelClick(object sender, EventArgs e)
         {
             NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
         }        
 
-        private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void OnKeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key != Key.Enter) return;
             var control = sender as Control;

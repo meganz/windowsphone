@@ -49,7 +49,20 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            if (NavigateService.PreviousPage == typeof (PasswordPage))
+            var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+
+            if (navParam == NavigationParameter.AutoCameraUpload)
+            {
+                //if (!_settingsViewModel.IsUserOnline())
+                //{
+                //    NavigateService.NavigateTo(typeof (InitTourPage), NavigationParameter.AutoCameraUpload);
+                //    return;
+                //}
+                _settingsViewModel.AppInformation.IsStartedAsAutoUpload = false;
+                MainSettingsPivot.SelectedItem = PivotAutoUpload;
+            }
+
+            if (NavigateService.PreviousPage == typeof(PasswordPage))
                 NavigationService.RemoveBackEntry();
 
             DebugPanel.DataContext = DebugService.DebugSettings;

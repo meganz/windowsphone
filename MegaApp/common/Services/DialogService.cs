@@ -78,17 +78,20 @@ namespace MegaApp.Services
         #elif WINDOWS_PHONE_81
         public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
         {
+            // Needed to avoud "Implicity captured closure" compiler warning.
+            var importFolderViewModel = folderViewModel;
+            var downloadFolderViewModel = folderViewModel;
 
             var customMessageDialog = new CustomMessageDialog(UiResources.LinkOptions, publicNode.getName(), App.AppInformation,
                new[]
                 {
                     new DialogButton(UiResources.Import, () =>
                     {
-                         folderViewModel.ImportLink(link);
+                        importFolderViewModel.ImportLink(link);
                     }),
                     new DialogButton(UiResources.Download, () =>
                     {
-                        folderViewModel.DownloadLink(publicNode);
+                        downloadFolderViewModel.DownloadLink(publicNode);
                     }),
                 });
 
@@ -698,15 +701,11 @@ namespace MegaApp.Services
             pinLockRadWindow.IsOpen = true;
         }
 
-        public static async Task<int> ShowOptionsDialog(string title, string message, string[] buttons)
+        public static async Task<MessageDialogResult> ShowOptionsDialog(string title, string message, IEnumerable<DialogButton> buttons)
         {
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-               buttonsContent: buttons,
-               title: title,
-               message: message
-               );
-            
-            return closedEventArgs.ButtonIndex;
+            var customMessageDialog = new CustomMessageDialog(title, message, App.AppInformation, buttons);
+
+            return await customMessageDialog.ShowDialogAsync();
         }
 
         public static void ShowViewMasterKey(string masterkey, Action copyAction)

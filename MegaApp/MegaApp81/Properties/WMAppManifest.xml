@@ -18,6 +18,9 @@
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="Pages\MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="ScheduledCameraUploadTaskAgent" Source="ScheduledCameraUploadTaskAgent" Type="ScheduledCameraUploadTaskAgent.ScheduledAgent" />
+      </ExtendedTask>
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="MegaAppToken" TaskName="_default">
@@ -43,6 +46,7 @@
       </PrimaryToken>
     </Tokens>
     <Extensions>
+      <Extension ExtensionName="Photos_Auto_Upload" ConsumerID = "{5B04B775-356B-4AA0-AAF8-6491FFEA5632}" TaskID="_default"/>
       <Protocol Name="mega" NavUriFragment="encodedLaunchUri=%s" TaskID="_default" />
     </Extensions>
     <ScreenResolutions>
