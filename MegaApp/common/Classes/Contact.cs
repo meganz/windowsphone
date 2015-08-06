@@ -6,16 +6,79 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
+using MegaApp.Models;
 using MegaApp.Resources;
 
 namespace MegaApp.Classes
 {
-    class Contact
+    public class Contact : BaseViewModel
     {
-        public String Email { get; set; }
-        public String FirstName { get; set; }
-        public String LastName { get; set; }
-        public Uri AvatarUri { get; set; }
+        private String _email;
+        public String Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                OnPropertyChanged("Email");
+            }
+        }
+
+        private String _fistName;
+        public String FirstName
+        {
+            get { return _fistName; }
+            set
+            {
+                _fistName = value;
+                OnPropertyChanged("FullName");
+                OnPropertyChanged("AvatarLetter");
+                OnPropertyChanged("FirstName");
+            }
+        }
+
+        private String _lastName;
+        public String LastName
+        {
+            get { return _lastName; }
+            set
+            {
+                _lastName = value;
+                OnPropertyChanged("FullName");
+                OnPropertyChanged("AvatarLetter");
+                OnPropertyChanged("LastName");                
+            }
+        }
+
+        public String FullName
+        {
+            get { return String.Format(FirstName + " " + LastName); }
+        }
+
+        public String AvatarLetter
+        {
+            get 
+            {
+                if (!String.IsNullOrWhiteSpace(FirstName))
+                    return FullName.Substring(0, 1).ToUpper();
+                if (!String.IsNullOrWhiteSpace(LastName))
+                    return LastName.Substring(0, 1).ToUpper();
+                else
+                    return Email.Substring(0, 1).ToUpper();
+            }
+        }
+        
+        private Uri _avatarUri;
+        public Uri AvatarUri
+        {
+            get { return _avatarUri; }
+            set
+            {
+                _avatarUri = value;
+                OnPropertyChanged("AvatarUri");
+            }
+        }
+        
         public String AvatarPath 
         {
             get

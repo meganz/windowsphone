@@ -43,6 +43,18 @@ namespace MegaApp.Pages
             //((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.Select.ToLower();
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _contactsViewModel.Deinitialize(App.GlobalDriveListener);
+            base.OnNavigatedFrom(e);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            _contactsViewModel.Initialize(App.GlobalDriveListener);
+        }
+
         private void OnAddContactClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
@@ -101,6 +113,24 @@ namespace MegaApp.Pages
                 PhoneApplicationService.Current.State["SelectedContact"] = contact;
                 NavigateService.NavigateTo(typeof(ContactDetailsPage), NavigationParameter.Normal);
             }                
+        }
+
+        private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is ContactRequest))
+            {
+                // We don't want to open the menu if the focused element is not a list box item.
+                // If the list box is empty focusedItem will be null.
+                e.Cancel = true;
+            }
+            else
+            {
+                _contactsViewModel.FocusedContactRequest = (ContactRequest)focusedListBoxItem.DataContext;
+            }
         }
 
         protected override void OnDrawerClosed(object sender)

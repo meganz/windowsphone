@@ -1076,6 +1076,22 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <value>Unknown</value>
     <comment>Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
+  <data name="Decline" xml:space="preserve">
+    <value>Decline</value>
+    <comment>Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Ignore</value>
+    <comment>Label for any 'Ignore' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Reinvite" xml:space="preserve">
+    <value>Reinvite</value>
+    <comment>Label for any 'Reinvite' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
   <data name="TimeDaysAgo" xml:space="preserve">
     <value>{0} days ago</value>
     <comment>Laber to indicate "time ago" in days - (String as short as possible).
