@@ -111,9 +111,9 @@ namespace MegaApp.Pages
         {
             _previewImageViewModel.SelectedPreview.Rename();
         }
-        private void OnRemoveClick(object sender, EventArgs e)
+        private async void OnRemoveClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Remove(false);
+            await _previewImageViewModel.SelectedPreview.RemoveAsync(false);
         }
 
         private void OnPreviousClick(object sender, EventArgs e)

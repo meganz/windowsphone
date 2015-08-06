@@ -59,37 +59,26 @@ namespace MegaApp.Services
                 return false;
             }
 
-            if (SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation, null) == null)
-            {
-
-                switch (await DialogService.ShowOptionsDialog(UiResources.DownloadLocation, AppMessages.NoDownloadLocationSelected,
-                    new[] { UiResources.SelectFolder.ToLower(), UiResources.Settings.ToLower() }))
+            if (SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation, null) != null)
+                return true;
+            
+            await DialogService.ShowOptionsDialog(UiResources.DownloadLocation, AppMessages.NoDownloadLocationSelected,
+                new[]
                 {
-                    case -1:
-                        {
-                            // Back button is pressed
-                            App.CloudDrive.PickerOrDialogIsOpen = false;
-                            return false;
-                        }
-                    case 0:
-                        {
-                            // Ask the user a download location
-                            SelectFolder("SelectDownloadFolder", nodeViewModel);
-                            return false;
-                        }
-                    case 1:
-                        {
-                            // Go to preferences page
-                            App.CloudDrive.PickerOrDialogIsOpen = false;
-                            App.CloudDrive.NoFolderUpAction = true;
-                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
-                            return false;
-                        }
-                }
-
-            }
-
-            return true;
+                    new DialogButton(UiResources.SelectFolder, () =>
+                    {
+                        // Ask the user a download location
+                        SelectFolder("SelectDownloadFolder", nodeViewModel);
+                    }),
+                    new DialogButton(UiResources.Settings, () =>
+                    {
+                        // Go to preferences page
+                        App.CloudDrive.PickerOrDialogIsOpen = false;
+                        App.CloudDrive.NoFolderUpAction = true;
+                        NavigateService.NavigateTo(typeof (SettingsPage), NavigationParameter.Normal);
+                    })
+                });
+            return false;
         }
 
         public static void ContinueFolderOpenPicker(FolderPickerContinuationEventArgs args)

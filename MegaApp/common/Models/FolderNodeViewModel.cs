@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using MegaApp.Extensions;
 using Telerik.Windows.Controls;
 
 namespace MegaApp.Models
@@ -60,16 +61,8 @@ namespace MegaApp.Models
                 VerticalAlignment = VerticalAlignment.Center,
                 Fill = new SolidColorBrush(Colors.White)
             };
-            
-            // You cannot set the Data property of a Path object direct to a string source
-            // The data property is of type Geometry
-            // You need data binding to bind a string to the Geometry DataProperty
-            var binding = new Binding
-            {
-                Source = this.DefaultImagePathData,
-                Mode = BindingMode.OneWay,
-            };
-            BindingOperations.SetBinding(iconPath, Path.DataProperty, binding);
+
+            iconPath.SetDataBinding(this.DefaultImagePathData);
 
             var shortCutTile = new RadIconicTileData()
             {

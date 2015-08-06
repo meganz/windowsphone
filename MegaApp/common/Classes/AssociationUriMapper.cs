@@ -23,20 +23,35 @@ namespace MegaApp.Classes
                 {
                     // Go the confirm account page and add the confirm string as parameter
 
-                    var extraParams = new Dictionary<string, string>(1);
-
-                    extraParams.Add("confirm", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "confirm",
+                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=",String.Empty))
+                        }
+                    };
 
                     return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
                 }
                 else
                 {
-                    var extraParams = new Dictionary<string, string>(1);
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "filelink",
+                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty))
+                        }
+                    };
 
-                    extraParams.Add("filelink", System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty)));
-                    
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
                 }
+            }
+
+            // Users has selected MEGA app for operating system auto upload function 
+            if (tempUri.Contains("ConfigurePhotosUploadSettings"))
+            {
+                // Launch to the auto-upload settings page.
+                App.AppInformation.IsStartedAsAutoUpload = true;
             }
 
             // Otherwise perform normal launch.

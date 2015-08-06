@@ -21,7 +21,7 @@ namespace MegaApp.Models
 {
     public class BaseAppInfoAwareViewModel : BaseSdkViewModel, IHamburgerMenu, IApplicationBar
     {
-        public BaseAppInfoAwareViewModel(MegaSDK megaSdk, AppInformation appInformation): base(megaSdk)
+        protected BaseAppInfoAwareViewModel(MegaSDK megaSdk, AppInformation appInformation): base(megaSdk)
         {
             this.AppInformation = appInformation;
             this.MenuItems = new List<HamburgerMenuItem>();            

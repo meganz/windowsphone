@@ -69,6 +69,7 @@
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/remove.png" 
         		Text="remove" 
+                Click="OnEmptyRubbishBinClick"	
 			/>
         </shell:ApplicationBar>
 

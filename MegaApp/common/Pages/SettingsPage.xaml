@@ -40,12 +40,17 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="PivotSettingsPage" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="MainSettingsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
                 <!--Pivot item one-->
-                <phone:PivotItem x:Name="PivotSettings" Header="{Binding LocalizedUiResources.Settings, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+                <phone:PivotItem x:Name="PivotSettings" Header="{Binding LocalizedUiResources.General, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
                     <ScrollViewer Margin="-12,0,0,0" Height="624">
-                        <StackPanel x:Name="ContentPanel" Margin="12,24,12,0" Grid.Row="2" >
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0"/>
+                        <StackPanel x:Name="ContentPanel" Margin="12,24,12,0">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.MasterKey, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <Grid Margin="0,0,0,40">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -54,13 +59,13 @@
                                 <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding ViewMasterKeyCommand}"/>
                                 <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
                             </Grid>
-                            
+
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Security, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.PinLock, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <StackPanel Margin="0,0,0,40">
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnPinLockSwitch" VerticalAlignment="Center" Content="{Binding PinLockIsEnabledText}" IsChecked="{Binding PinLockIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
@@ -76,39 +81,12 @@
                                 <Button x:Name="BtnChangePinLock" Content="{Binding LocalizedUiResources.ChangePinLock, Source={StaticResource LocalizedStrings}}" Margin="0" HorizontalAlignment="Left" Visibility="{Binding PinLockIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}" Command="{Binding ChangePinLockCommand}"/>
                             </StackPanel>
 
-                            <!-- UNCOMMENT TO CONTINUE WORKING ON CAMERA UPLOADS -->
-                            <!--<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.CameraUploads, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" FontSize="{StaticResource PhoneFontSizeLarge}">
-                                <TextBlock.Foreground>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                </TextBlock.Foreground>
-                            </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
-                            <StackPanel Margin="0,0,0,40">
-                                <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
-                                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
-                                            <Setter Property="CheckBackground">
-                                                <Setter.Value>
-                                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                                </telerikPrimitives:RadToggleSwitch>
-                                <StackPanel Visibility="{Binding CameraUploadsIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="how to upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="wi-fi only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="file upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="photos only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
-                                </StackPanel>                                
-                            </StackPanel>-->
-                                                        
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Storage, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
+                            <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <Grid x:Name="GridAskDownloadLocation" Margin="0,0,0,20">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
@@ -144,21 +122,21 @@
                                     </telerikPrimitives:RadToggleSwitch.ButtonStyle>
                                 </telerikPrimitives:RadToggleSwitch>
                             </Grid>
-                            <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0"/>
+                            <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                            
+
                             <StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
                                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="memory statistics" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
                             </StackPanel>
-                            
+
                             <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.About, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <Grid x:Name="VersionGrid" Margin="12,0,12,0">
+                            <Grid x:Name="VersionGrid" Margin="12,0,12,40">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
@@ -181,7 +159,27 @@
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Version, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
                                     <TextBlock HorizontalAlignment="Left" Text=":" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
                                 </StackPanel>
-                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding MegaSDK_Version}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Row="1" Grid.Column="1">
+                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding MegaSdkVersion}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Row="1" Grid.Column="1">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Acknowledgements, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <Grid x:Name="AcknowledgementGrid" Margin="12,0,12,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <HyperlinkButton Content="GoedWare" HorizontalAlignment="Left" Command="{Binding GoedWareCommand}" VerticalAlignment="Center" Margin="-12,0,-4,0" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="Portable User Interface"/>
+                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Developer, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Column="1">
                                     <TextBlock.Foreground>
                                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                     </TextBlock.Foreground>
@@ -190,14 +188,38 @@
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>
-                <!--Pivot item two-->
-                <!--<phone:PivotItem x:Name="PivotAdvanced" Header="{Binding LocalizedUiResources.Advanced, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+                <phone:PivotItem x:Name="PivotAutoUpload" Header="{Binding LocalizedUiResources.AutoUpload, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+                    <ScrollViewer Margin="-12,0,0,0" Height="624">
+                        <StackPanel Margin="12,24,12,0">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.CameraUploads, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" FontSize="{StaticResource PhoneFontSizeLarge}">
+                                <TextBlock.Foreground>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </TextBlock.Foreground>
+                            </TextBlock>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <StackPanel Margin="0,0,0,40">
+                                <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
+                                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                            <Setter Property="CheckBackground">
+                                                <Setter.Value>
+                                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                </telerikPrimitives:RadToggleSwitch>
+                                <StackPanel Visibility="{Binding CameraUploadsIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="how to upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="wi-fi only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="file upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="photos only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                </StackPanel>
+                            </StackPanel>
 
-                </phone:PivotItem>-->
-                <!--Pivot item three-->
-                <!--<phone:PivotItem x:Name="PivotHelp" Header="{Binding LocalizedUiResources.Help, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
-
-                </phone:PivotItem>-->
+                        </StackPanel>
+                    </ScrollViewer>
+                </phone:PivotItem>
             </phone:Pivot>
         </Grid>
         <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">

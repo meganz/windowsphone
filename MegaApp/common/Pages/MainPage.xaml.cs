@@ -139,11 +139,32 @@ namespace MegaApp.Pages
             base.OnNavigatedFrom(e);
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
-            if (e.NavigationMode == NavigationMode.Reset) return;
+            switch (e.NavigationMode)
+            {
+                case NavigationMode.Reset:
+                    return;
+                case NavigationMode.New:
+                {
+                    //if (!SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsIsEnabled)) break;
+
+                    //if (MediaService.GetAutoCameraUploadStatus())
+                    //{
+                    //    MediaService.SetAutoCameraUpload(true);
+                    //}
+                    //else
+                    //{
+                    //    await new CustomMessageDialog(
+                    //        "Auto Camera Upload failed",
+                    //        "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+                    //        App.AppInformation).ShowDialogAsync();
+                    //}
+                    break;
+                }
+            }
 
             _mainPageViewModel.Initialize(App.GlobalDriveListener);
             
@@ -235,6 +256,10 @@ namespace MegaApp.Pages
                     // Remove the login or confirm account page from the stack. 
                     // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
+
+                    if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
+                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+
                     _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
                     break;
@@ -273,15 +298,11 @@ namespace MegaApp.Pages
                             _mainPageViewModel.LoadFolders();
                             _mainPageViewModel.ActiveImportLink = NavigationContext.QueryString["filelink"];
                             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
-                            //_mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
-                            //    this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
-                            //SetApplicationBarData();
                         }
                     }
 
                     if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                     {
-                        //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                         NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                         return;
                     }
@@ -302,14 +323,12 @@ namespace MegaApp.Pages
                                     new FastLoginRequestListener(_mainPageViewModel));
                             else
                             {
-                                //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                                 NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                 return;
                             }
                         }
                         catch (ArgumentNullException)
                         {
-                            //NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                             NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                             return;
                         }
@@ -317,115 +336,8 @@ namespace MegaApp.Pages
                     
                     break;
                 }
-                
             }
-
-            //_navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            //if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
-            //{
-            //    App.CloudDrive.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
-            //}
-
             
-
-            //if (e.NavigationMode == NavigationMode.Reset)
-            //{
-            //    return;
-            //}
-
-            //if (e.NavigationMode == NavigationMode.Back)
-            //{
-            //    if (!App.CloudDrive.NoFolderUpAction)
-            //    {
-            //        App.CloudDrive.GoFolderUp();                    
-            //        _navParam = NavigationParameter.Browsing;
-            //    }
-            //    else
-            //        _navParam = NavigationParameter.Normal;
-
-            //    if(NavigateService.PreviousPage == typeof(MyAccountPage))
-            //        _navParam = NavigationParameter.Browsing;
-            //}
-
-            //App.CloudDrive.NoFolderUpAction = false;
-
-            //switch (_navParam)
-            //{
-            //    case NavigationParameter.Login:
-            //    {
-            //        // Remove the login page from the stack. If user presses back button it will then exit the application
-            //        NavigationService.RemoveBackEntry();
-                    
-            //        App.CloudDrive.FetchNodes();
-            //        break;
-            //    }
-            //    case NavigationParameter.BreadCrumb:
-            //    {
-            //        int breadCrumbs = App.CloudDrive.CountBreadCrumbs();
-            //        for (int x = 0; x <= breadCrumbs; x++)
-            //            NavigationService.RemoveBackEntry();
-                   
-            //        break;
-            //    }
-            //    case NavigationParameter.PasswordLogin:
-            //    {
-            //        NavigationService.RemoveBackEntry();
-            //        App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
-            //        break;
-            //    }
-            //    case NavigationParameter.ImportLinkLaunch:
-            //    case NavigationParameter.Unknown:
-            //    {
-            //        if (e.NavigationMode != NavigationMode.Back)
-            //        {
-            //            if (NavigationContext.QueryString.ContainsKey("filelink"))
-            //            {
-            //                App.CloudDrive.LinkToImport = NavigationContext.QueryString["filelink"];
-            //                App.CloudDrive.CurrentDisplayMode = CurrentDisplayMode.ImportItem;
-            //                ChangeMenu();
-            //            }
-            //        }
-
-            //        if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-            //        {
-            //            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-            //            return;
-            //        }
-                    
-            //        if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-            //        {
-            //            NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
-            //            return;
-            //        }
-
-            //        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-
-            //        if (!isAlreadyOnline)
-            //        {
-            //            try
-            //            {
-            //                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
-            //                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession), new FastLoginRequestListener(App.CloudDrive));
-            //                else
-            //                {
-            //                    NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-            //                    return;
-            //                }
-            //            }
-            //            catch (ArgumentNullException)
-            //            {
-            //                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
-            //                return;
-            //            }
-                            
-            //        }
-                    
-            //        break;
-            //    }
-            //}
-            
-            //base.OnNavigatedTo(e);
-            //App.AppEvent = ApplicationEvent.None;
         }
         
 #if WINDOWS_PHONE_81
@@ -490,12 +402,26 @@ namespace MegaApp.Pages
         {
             base.OnBackKeyPress(e);
 
+            // Check if multi select is active on current view and disable it if so
+            e.Cancel = CheckMultiSelectActive(e.Cancel);
+
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
 
             // If no folder up action, but we are not in the cloud drive section
             // first slide to cloud drive before exiting the application
             e.Cancel = CheckPivotInView(e.Cancel);
+        }
+
+        private bool CheckMultiSelectActive(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (!_mainPageViewModel.ActiveFolderView.IsMultiSelectActive) return false;
+
+            ChangeMultiSelectMode();
+
+            return true;
         }
 
         private void SetApplicationBarData()
@@ -990,6 +916,11 @@ namespace MegaApp.Pages
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
+        
+        private void OnEmptyRubbishBinClick(object sender, EventArgs e)
+        {
+            _mainPageViewModel.RubbishBin.ClearAllNodes();
+        }
 
         #region Override Events
 
@@ -1007,5 +938,7 @@ namespace MegaApp.Pages
         }
 
         #endregion        
+        
     }
+
 }

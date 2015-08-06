@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows
+# Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaApp80", "MegaApp80\MegaApp80.csproj", "{7D8D3817-2EB5-416A-9147-ED5E83DEE03E}"
@@ -11,6 +11,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mega", "..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj", "{258D42D3-2556-46B1-AE8F-DA6C9F49CFFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaApp81", "MegaApp81\MegaApp81.csproj", "{383E1B56-6F99-4B20-AA0E-D27790B93159}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScheduledCameraUploadTaskAgent", "ScheduledCameraUploadTaskAgent\ScheduledCameraUploadTaskAgent.csproj", "{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -256,6 +258,61 @@ Global
 		{383E1B56-6F99-4B20-AA0E-D27790B93159}.Release|x86.ActiveCfg = Release|x86
 		{383E1B56-6F99-4B20-AA0E-D27790B93159}.Release|x86.Build.0 = Release|x86
 		{383E1B56-6F99-4B20-AA0E-D27790B93159}.Release|x86.Deploy.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|ARM.Build.0 = Debug|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Win32.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|Win32.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|x86.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Debug|x86.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|ARM.ActiveCfg = Debug|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|ARM.Build.0 = Debug|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Mixed Platforms.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Win32.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|Win32.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|x64.ActiveCfg = Debug|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|x86.ActiveCfg = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Debug|x86.Build.0 = Debug|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|ARM.ActiveCfg = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|ARM.Build.0 = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Mixed Platforms.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Mixed Platforms.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Win32.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|Win32.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|x64.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|x86.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Emulator Release|x86.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Any CPU.Build.0 = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|ARM.ActiveCfg = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|ARM.Build.0 = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Mixed Platforms.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Mixed Platforms.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Win32.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|Win32.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|x64.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|x86.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release Emulator|x86.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|ARM.ActiveCfg = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|ARM.Build.0 = Release|ARM
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Mixed Platforms.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Win32.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|Win32.Build.0 = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|x64.ActiveCfg = Release|Any CPU
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|x86.ActiveCfg = Release|x86
+		{FF8EEF06-D0C6-41BA-952C-A4B441C61A67}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

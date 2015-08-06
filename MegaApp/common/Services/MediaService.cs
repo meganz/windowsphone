@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -11,9 +9,9 @@ using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
+using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Tasks;
 using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
 namespace MegaApp.Services
 {
@@ -150,6 +148,61 @@ namespace MegaApp.Services
             
             cameraCaptureTask.Show();
         }
-        
+
+        public static bool SetAutoCameraUpload(bool onOff)
+        {
+            var resourceIntensiveTask = ScheduledActionService.Find("ScheduledCameraUploadTaskAgent") as ResourceIntensiveTask;
+            
+            // If the task already exists and background agents are enabled for the
+            // application, you must remove the task and then add it again to update 
+            // the schedule.
+            if (resourceIntensiveTask != null)
+            {
+                ScheduledActionService.Remove("ScheduledCameraUploadTaskAgent");
+            }
+
+            if (!onOff) return false;
+
+            resourceIntensiveTask = new ResourceIntensiveTask("ScheduledCameraUploadTaskAgent")
+            {
+                // The description is required for periodic agents. This is the string that the user
+                // will see in the background services Settings page on the device.
+                Description = "MEGA Auto Camera Upload"
+            };
+
+            
+            // Place the call to Add in a try block in case the user has disabled agents.
+            try
+            {
+                ScheduledActionService.Add(resourceIntensiveTask);
+                
+                // If debugging is enabled, use LaunchForTest to launch the agent in one minute.
+#if DEBUG
+                ScheduledActionService.LaunchForTest("ScheduledCameraUploadTaskAgent", TimeSpan.FromSeconds(5));
+#endif
+                return true;
+            }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("BNS Error: The action is disabled"))
+                {
+                    new CustomMessageDialog(AppMessages.BackgroundAgentDisabled_Title,
+                        AppMessages.BackgroundAgentDisabled, App.AppInformation).ShowDialog();
+                }
+            }
+            catch (SchedulerServiceException)
+            {
+               // Do nothing
+            }
+
+            return false;
+        }
+
+        public static bool GetAutoCameraUploadStatus()
+        {
+            var resourceIntensiveTask = ScheduledActionService.Find("ScheduledCameraUploadTaskAgent") as ResourceIntensiveTask;
+
+            return resourceIntensiveTask != null && resourceIntensiveTask.IsScheduled;
+        }
     }
 }

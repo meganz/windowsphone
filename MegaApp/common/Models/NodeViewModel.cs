@@ -101,22 +101,6 @@ namespace MegaApp.Models
             inputDialog.ShowDialog();
 
             return NodeActionResult.IsBusy;
-           
-            // Add the current name to the rename dialog textbox
-            //var textboxStyle = new Style(typeof(RadTextBox));
-            //textboxStyle.Setters.Add(new Setter(TextBox.TextProperty, this.Name));
-
-            //// Create the rename dialog and show it to the user
-            //var inputPromptClosedEventArgs = await RadInputPrompt.ShowAsync(new [] { UiResources.Rename.ToLower(), UiResources.Cancel.ToLower() },
-            //    UiResources.RenameItem, vibrate: false, inputStyle: textboxStyle);
-
-            //// If the user did not press OK, do nothing
-            //if (inputPromptClosedEventArgs.Result != DialogResult.OK) return NodeActionResult.Cancelled;
-
-            //// Rename the node
-            //this.MegaSdk.renameNode(this.OriginalMNode, inputPromptClosedEventArgs.Text, new RenameNodeRequestListener(this));
-            
-            //return NodeActionResult.IsBusy;
         }
 
         public NodeActionResult Move(IMegaNode newParentNode)
@@ -134,7 +118,7 @@ namespace MegaApp.Models
             return NodeActionResult.Failed;
         }
 
-        public async Task<NodeActionResult> Remove(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
+        public async Task<NodeActionResult> RemoveAsync(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
@@ -164,7 +148,7 @@ namespace MegaApp.Models
                     waitEventRequest));
                 
                 return NodeActionResult.IsBusy;
-        }
+            }
 
             // if the node in in the Cloud Drive, move it to rubbish bin
             if (!isMultiRemove)
@@ -173,7 +157,8 @@ namespace MegaApp.Models
                     AppMessages.MoveToRubbishBinQuestion_Title,
                     String.Format(AppMessages.MoveToRubbishBinQuestion, this.Name),
                     App.AppInformation,
-                    MessageDialogButtons.OkCancel).ShowDialogAsync();
+                    MessageDialogButtons.OkCancel,
+                    MessageDialogImage.RubbishBin).ShowDialogAsync();
 
                 if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
             }
@@ -184,7 +169,7 @@ namespace MegaApp.Models
             return NodeActionResult.IsBusy;
         }
 
-        public async Task<NodeActionResult> Delete()
+        public async Task<NodeActionResult> DeleteAsync()
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
@@ -229,7 +214,6 @@ namespace MegaApp.Models
 
             if (downloadPath == null)
             {
-                AppInformation.PickerOrAsyncDialogIsOpen = true;
                 if (!await FolderService.SelectDownloadFolder(this)) return;
             }
                 

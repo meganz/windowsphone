@@ -996,4 +996,16 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <value>Browse to destination and import or download link</value>
     <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
+  <data name="AutoUpload" xml:space="preserve">
+    <value>Auto Upload</value>
+    <comment>Label for "Auto Upload" settings pivot</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>General</value>
+    <comment>Label for "General" settings pivot</comment>
+  </data>
+  <data name="Developer" xml:space="preserve">
+    <value>Developer</value>
+    <comment>Label for "Developer" type of acknowledgement</comment>
+  </data>
 </root>

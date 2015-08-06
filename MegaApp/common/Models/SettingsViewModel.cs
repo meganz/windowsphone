@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Interop;
-using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.MegaApi;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Tasks;
@@ -25,25 +16,31 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation)
         {
             this.AppVersion = AppService.GetAppVersion();
-            this.MegaSDK_Version = AppService.GetMegaSDK_Version();
+            this.MegaSdkVersion = AppService.GetMegaSDK_Version();
             this.ShareMasterKeyCommand = new DelegateCommand(ShareMasterKey);
             this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
-            #if WINDOWS_PHONE_81
+
+#if WINDOWS_PHONE_81
             this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
-            #endif
+#endif
             this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
+            this.GoedWareCommand = new DelegateCommand(NavigateToGoedWare);
 
             this.PinLockIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled, false);
-            this.CameraUploadsIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsIsEnabled, false);
-            #if WINDOWS_PHONE_80
+            
+            // Do not set the property on initialize, because it fill fire the SetAutoCameraUploadStatus
+            _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
+            this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+
+#if WINDOWS_PHONE_80
             this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-            #elif WINDOWS_PHONE_81
+#elif WINDOWS_PHONE_81
             this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
-            #endif
+#endif
 
             UpdateUserData();
 
@@ -53,13 +50,16 @@ namespace MegaApp.Models
         #region Commands
 
         public ICommand ShareMasterKeyCommand { get; set; }
-        public ICommand CopyMasterKeyCommand { get; set; }
-        public ICommand ViewMasterKeyCommand { get; set; }
-        public ICommand ChangePinLockCommand { get; set; }
-        #if WINDOWS_PHONE_81
-        public ICommand SelectDownloadLocationCommand { get; set; }
-        #endif
-        public ICommand MegaSdkCommand { get; set; }
+        public ICommand CopyMasterKeyCommand { get; private set; }
+        public ICommand ViewMasterKeyCommand { get; private set; }
+        public ICommand ChangePinLockCommand { get; private set; }
+
+#if WINDOWS_PHONE_81
+        public ICommand SelectDownloadLocationCommand { get; private set; }
+#endif
+
+        public ICommand MegaSdkCommand { get; private set; }
+        public ICommand GoedWareCommand { get; private set; }
 
         #endregion
 
@@ -107,13 +107,13 @@ namespace MegaApp.Models
             DialogService.ShowPinLockDialog(true, this);
         }
 
-        #if WINDOWS_PHONE_81
+#if WINDOWS_PHONE_81
         private void SelectDownloadLocation(object obj)
         {
             if (App.FileOpenOrFolderPickerOpenend) return;
             FolderService.SelectFolder("SelectDefaultDownloadFolder");
         }
-        #endif
+#endif
 
         private void NavigateToMegaSdk(object obj)
         {
@@ -121,13 +121,19 @@ namespace MegaApp.Models
             webBrowserTask.Show();
         }
 
+        private void NavigateToGoedWare(object obj)
+        {
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.GoedWareUrl) };
+            webBrowserTask.Show();
+        }
+
         #endregion
 
         #region Properties
 
-        public string AppVersion { get; set; }
+        public string AppVersion { get; private set; }
 
-        public string MegaSDK_Version { get; set; }
+        public string MegaSdkVersion { get; private set; }
 
 //        #if WINDOWS_PHONE_80
         private bool _exportIsEnabled;
@@ -222,11 +228,38 @@ namespace MegaApp.Models
                 if (_cameraUploadsIsEnabled != value)
                     SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, value);
 
-                _cameraUploadsIsEnabled = value;
+                if (value && !SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+                {
+                    var customMessageDialog = new CustomMessageDialog(
+                           AppMessages.CameraUploadNeedsStayLoggedIn_Title,
+                           AppMessages.CameraUploadNeedsStayLoggedIn,
+                           this.AppInformation,
+                           MessageDialogButtons.YesNo);
 
-                CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-                                
-                OnPropertyChanged("CameraUploadsIsEnabled");
+                    customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                    {
+                        _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(true);
+                        this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+                        OnPropertyChanged("CameraUploadsIsEnabled");
+                        if (!_cameraUploadsIsEnabled) return;
+                        SettingsService.SaveMegaLoginData(this.MegaSdk.getMyEmail(),
+                            this.MegaSdk.dumpSession(), true);
+                    };
+                    customMessageDialog.CancelOrNoButtonTapped += (sender, args) =>
+                    {
+                        _cameraUploadsIsEnabled = false;
+                        this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+                        OnPropertyChanged("CameraUploadsIsEnabled");
+                    };
+
+                    customMessageDialog.ShowDialog();
+                }
+                else
+                {
+                    _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(value);
+                    this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+                    OnPropertyChanged("CameraUploadsIsEnabled");
+                }
             }
         }
 

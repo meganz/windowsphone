@@ -16,6 +16,11 @@
           <target state="new">please select a default download folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>
+        <trans-unit id="Resx/GoedWareUrl" translate="yes" xml:space="preserve">
+          <source>http://www.goedware.com</source>
+          <target state="new">http://www.goedware.com</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">URL to the GoedWare website - (NO-TRANSLATION).</note>
+        </trans-unit>
         <trans-unit id="Resx/MegaSdkUrl" translate="yes" xml:space="preserve">
           <source>https://github.com/meganz/sdk</source>
           <target state="new">https://github.com/meganz/sdk</target>

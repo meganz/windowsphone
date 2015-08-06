@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Navigation;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Devices.Sensors;
-using Microsoft.Phone.Controls;
 
 namespace MegaApp.Models
 {
@@ -28,7 +18,8 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
-            this.ControlState = true;            
+            this.ControlState = true;
+            this.GoToAutoUploadSettingsAfterLogin = false;
         }
 
         #region Methods
@@ -79,6 +70,7 @@ namespace MegaApp.Models
         public string Password { get; set; }
         public bool StayLoggedIn { get; set; }
         public string SessionKey { get; private set; }
+        public bool GoToAutoUploadSettingsAfterLogin { get; set; }
 
         #endregion
 
@@ -126,12 +118,24 @@ namespace MegaApp.Models
 
         protected override Type NavigateToPage
         {
-            get { return typeof(MainPage); }
+            get
+            {
+                if (GoToAutoUploadSettingsAfterLogin)
+                    return (typeof (SettingsPage));
+
+                return typeof(MainPage);
+            }
         }
 
         protected override NavigationParameter NavigationParameter
         {
-            get { return NavigationParameter.Login; }
+            get
+            {
+                if (GoToAutoUploadSettingsAfterLogin)
+                    return NavigationParameter.AutoCameraUpload;
+
+                return NavigationParameter.Login;
+            }
         }
 
         #endregion
