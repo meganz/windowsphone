@@ -280,64 +280,67 @@ namespace MegaApp.Models
 
         #region MRequestListenerInterface
 
-        public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            switch (request.getType())
+            if (e.getErrorCode() == MErrorType.API_OK)
             {
-                case MRequestType.TYPE_ACCOUNT_DETAILS:                    
+                switch (request.getType())
+                {
+                    case MRequestType.TYPE_ACCOUNT_DETAILS:
 
-                    ulong TotalSpace = request.getMAccountDetails().getStorageMax();
-                    ulong UsedSpace = request.getMAccountDetails().getStorageUsed();
-                    int usedSpacePercent;
+                        ulong TotalSpace = request.getMAccountDetails().getStorageMax();
+                        ulong UsedSpace = request.getMAccountDetails().getStorageUsed();
+                        int usedSpacePercent;
 
-                    if ((TotalSpace > 0) && (UsedSpace > 0))
-                        usedSpacePercent = (int)(UsedSpace * 100 / TotalSpace);
-                    else
-                        usedSpacePercent = 0;
+                        if ((TotalSpace > 0) && (UsedSpace > 0))
+                            usedSpacePercent = (int)(UsedSpace * 100 / TotalSpace);
+                        else
+                            usedSpacePercent = 0;
 
-                    // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
-                    if (usedSpacePercent <= 95)
-                    {
-                        if (request.getMAccountDetails().getProLevel() == MAccountType.ACCOUNT_TYPE_FREE)
+                        // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
+                        if (usedSpacePercent <= 95)
+                        {
+                            if (request.getMAccountDetails().getProLevel() == MAccountType.ACCOUNT_TYPE_FREE)
+                            {
+                                Task.Run(() =>
+                                {
+                                    Visibility visibility = GetRandomVisibility(5);
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
+
+                                    if (visibility == Visibility.Visible)
+                                        this.TimerGetProAccountVisibility(30000);
+                                });
+                            }
+                        }
+                        // Else show a warning message indicating the user is running out of space
+                        else
                         {
                             Task.Run(() =>
                             {
-                                Visibility visibility = GetRandomVisibility(5);
-                                Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
-                                
-                                if (visibility == Visibility.Visible)
-                                    this.TimerGetProAccountVisibility(30000);
+                                Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
+                                this.TimerWarningOutOfSpaceVisibility(15000);
                             });
                         }
-                    }
-                    // Else show a warning message indicating the user is running out of space
-                    else
-                    {
-                        Task.Run(() =>
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
-                            this.TimerWarningOutOfSpaceVisibility(15000);
-                        });
-                    }
 
-                    break;
+                        break;
 
-                default:
-                    break;
-            }
+                    default:
+                        break;
+                }
+            }            
         }
 
-        public virtual void onRequestStart(MegaSDK api, MRequest request)
+        public void onRequestStart(MegaSDK api, MRequest request)
         {
             // Not necessary
         }
 
-        public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
             // Not necessary
         }
 
-        public virtual void onRequestUpdate(MegaSDK api, MRequest request)
+        public void onRequestUpdate(MegaSDK api, MRequest request)
         {
             // Not necessary
         }

@@ -79,6 +79,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Accepted.
+        /// </summary>
+        public static string Accepted {
+            get {
+                return ResourceManager.GetString("Accepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have purchased a {0} account..
         ///   Looks up a localized string similar to You have purchased a {0} account..
         /// </summary>
         public static string AccountPurchased {
@@ -160,6 +170,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add contact.
+        /// </summary>
+        public static string AddContact {
+            get {
+                return ResourceManager.GetString("AddContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add folder.
         ///   Looks up a localized string similar to Add folder.
         /// </summary>
         public static string AddFolder {
@@ -529,6 +549,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Type email address:.
+        /// </summary>
+        public static string CreateContact {
+            get {
+                return ResourceManager.GetString("CreateContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Folder name:.
         ///   Looks up a localized string similar to Folder name:.
         /// </summary>
         public static string CreateFolder {
@@ -592,6 +622,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Deleted.
+        /// </summary>
+        public static string Deleted {
+            get {
+                return ResourceManager.GetString("Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Denied.
+        /// </summary>
+        public static string Denied {
+            get {
+                return ResourceManager.GetString("Denied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Dismiss.
         ///   Looks up a localized string similar to Developer.
         /// </summary>
         public static string Developer {
@@ -826,6 +875,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ignored.
+        /// </summary>
+        public static string Ignored {
+            get {
+                return ResourceManager.GetString("Ignored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Image upload.
         ///   Looks up a localized string similar to Image upload.
         /// </summary>
         public static string ImageUpload {
@@ -1060,6 +1119,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a MEGA contacts.
+        /// </summary>
+        public static string MEGAContacts {
+            get {
+                return ResourceManager.GetString("MEGAContacts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA link:.
         ///   Looks up a localized string similar to MEGA link:.
         /// </summary>
         public static string MegaLinkTitle {
@@ -1078,6 +1147,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Month.
         ///   Looks up a localized string similar to Month.
         /// </summary>
         public static string Month {
@@ -1366,6 +1445,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Pending.
+        /// </summary>
+        public static string Pending {
+            get {
+                return ResourceManager.GetString("Pending", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Phone Bill.
         ///   Looks up a localized string similar to Phone Bill.
         /// </summary>
         public static string PhoneBill {
@@ -1429,6 +1518,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Profile.
+        /// </summary>
+        public static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Province.
         ///   Looks up a localized string similar to Province.
         /// </summary>
         public static string Province {
@@ -1447,6 +1546,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Received requests.
+        /// </summary>
+        public static string ReceivedRequests {
+            get {
+                return ResourceManager.GetString("ReceivedRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recurring.
         ///   Looks up a localized string similar to Recurring.
         /// </summary>
         public static string Recurring {
@@ -1465,6 +1574,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Reminded.
+        /// </summary>
+        public static string Reminded {
+            get {
+                return ResourceManager.GetString("Reminded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove.
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string Remove {
@@ -1537,6 +1656,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Security.
         ///   Looks up a localized string similar to Security.
         /// </summary>
         public static string Security {
@@ -1546,6 +1675,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Select.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have selected the {0} Plan.
         ///   Looks up a localized string similar to You have selected the {0} Plan.
         /// </summary>
         public static string SelectedPlan {
@@ -1600,6 +1739,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Send file.
+        /// </summary>
+        public static string SendFile {
+            get {
+                return ResourceManager.GetString("SendFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sent requests.
+        /// </summary>
+        public static string SentRequests {
+            get {
+                return ResourceManager.GetString("SentRequests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings.
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -1636,6 +1794,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Shared folders.
+        /// </summary>
+        public static string SharedFolders {
+            get {
+                return ResourceManager.GetString("SharedFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Shared items.
         ///   Looks up a localized string similar to Shared items.
         /// </summary>
         public static string SharedItems {
@@ -1645,6 +1813,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Share folders.
+        /// </summary>
+        public static string ShareFolders {
+            get {
+                return ResourceManager.GetString("ShareFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a File.
         ///   Looks up a localized string similar to File.
         /// </summary>
         public static string SingleFile {
@@ -1744,6 +1922,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Status.
+        /// </summary>
+        public static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Stay logged in.
         ///   Looks up a localized string similar to Stay logged in.
         /// </summary>
         public static string StayLoggedInText {
@@ -1798,6 +1986,43 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a {0} days ago.
+        /// </summary>
+        public static string TimeDaysAgo {
+            get {
+                return ResourceManager.GetString("TimeDaysAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} hours ago.
+        /// </summary>
+        public static string TimeHoursAgo {
+            get {
+                return ResourceManager.GetString("TimeHoursAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} minutes ago.
+        /// </summary>
+        public static string TimeMinutesAgo {
+            get {
+                return ResourceManager.GetString("TimeMinutesAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {0} seconds ago.
+        /// </summary>
+        public static string TimeSecondsAgo {
+            get {
+                return ResourceManager.GetString("TimeSecondsAgo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total.
         ///   Looks up a localized string similar to Total.
         /// </summary>
         public static string Total {
@@ -1915,6 +2140,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Unknown.
+        /// </summary>
+        public static string Unknown {
+            get {
+                return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upgrade account.
         ///   Looks up a localized string similar to Upgrade account.
         /// </summary>
         public static string UpgradeAccount {
