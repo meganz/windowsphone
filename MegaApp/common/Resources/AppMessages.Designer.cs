@@ -61,42 +61,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to add the contact: [{0}].
-        /// </summary>
-        public static string AddContactFailed {
-            get {
-                return ResourceManager.GetString("AddContactFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Add contact failed.
-        /// </summary>
-        public static string AddContactFailed_Title {
-            get {
-                return ResourceManager.GetString("AddContactFailed_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Contact added successful.
-        /// </summary>
-        public static string AddContactSuccess {
-            get {
-                return ResourceManager.GetString("AddContactSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Contact added.
-        /// </summary>
-        public static string AddContactSuccess_Title {
-            get {
-                return ResourceManager.GetString("AddContactSuccess_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a You must agree with our Terms of Service.
         /// </summary>
         public static string AgreeTermsOfService {
