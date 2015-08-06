@@ -341,6 +341,9 @@
     <Compile Include="..\common\Extensions\NavigationExtensions.cs">
       <Link>Extensions\NavigationExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\common\Extensions\PathExtensions.cs">
+      <Link>Extensions\PathExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\common\Extensions\SizeExtensions.cs">
       <Link>Extensions\SizeExtensions.cs</Link>
     </Compile>
@@ -743,7 +746,6 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
-    <Compile Include="Extensions\PathExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1515,8 +1517,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
       <SubType>Designer</SubType>
+      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.et-EE.resx">
       <Link>Resources\AppMessages.et-EE.resx</Link>

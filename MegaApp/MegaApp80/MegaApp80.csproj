@@ -265,6 +265,9 @@
     <Compile Include="..\common\Extensions\NavigationExtensions.cs">
       <Link>Extensions\NavigationExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\common\Extensions\PathExtensions.cs">
+      <Link>Extensions\PathExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\common\Extensions\SizeExtensions.cs">
       <Link>Extensions\SizeExtensions.cs</Link>
     </Compile>
