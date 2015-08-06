@@ -570,6 +570,26 @@ Try to preserve the PIN uppercase word.</note>
           <target state="new">Unknown</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/Reinvite" translate="yes" xml:space="preserve">
+          <source>Reinvite</source>
+          <target state="new">Reinvite</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Reinvite' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Ignore" translate="yes" xml:space="preserve">
+          <source>Ignore</source>
+          <target state="new">Ignore</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Ignore' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Delete" translate="yes" xml:space="preserve">
+          <source>Delete</source>
+          <target state="new">Delete</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Decline" translate="yes" xml:space="preserve">
+          <source>Decline</source>
+          <target state="new">Decline</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/TimeSecondsAgo" translate="yes" xml:space="preserve">
           <source>{0} seconds ago</source>
           <target state="new">{0} seconds ago</target>

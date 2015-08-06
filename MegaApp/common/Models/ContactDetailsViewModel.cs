@@ -58,12 +58,7 @@ namespace MegaApp.Models
                 else
                     return UiResources.No.ToLower();
             }
-        }
-
-        public String ContactFullName
-        {
-            get { return String.Format(_selectedContact.FirstName + " " + _selectedContact.LastName); }
-        }
+        }        
 
         private FolderViewModel _inShares;
         public FolderViewModel InShares

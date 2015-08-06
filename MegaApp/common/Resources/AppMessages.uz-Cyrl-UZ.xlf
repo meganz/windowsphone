@@ -51,6 +51,7 @@
           <target state="new">Retrieving payment Url failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" xml:space="preserve">
           <source>Background agents disabled</source>
           <target state="new">Background agents disabled</target>
@@ -92,6 +93,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the the process to add a contact failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
+=======
+>>>>>>> bad9d2c901e9c6c17dcdb1805925a4bae2c7cce0
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
           <target state="new">Failed to retrieve the payment Url. Please try again. [{0}]</target>

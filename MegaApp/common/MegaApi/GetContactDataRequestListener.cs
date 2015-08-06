@@ -17,22 +17,11 @@ namespace MegaApp.MegaApi
 {
     class GetContactDataRequestListener : BaseRequestListener
     {
-        private readonly ObservableCollection<Contact> _megaContactsList;
         private readonly Contact _megaContact;
 
-        public GetContactDataRequestListener(String contactEmail, ObservableCollection<Contact> megaContactsList)
-        {
-            _megaContactsList = megaContactsList;
-            
-            var _contact = App.MegaSdk.getContact(contactEmail);
-
-            _megaContact = new Contact()
-            {
-                Email = _contact.getEmail(),
-                Timestamp = _contact.getTimestamp(),
-                Visibility = _contact.getVisibility()
-            };
-
+        public GetContactDataRequestListener(Contact megaContact)
+        {            
+            _megaContact = megaContact;
         }
 
         protected override string ProgressMessage
@@ -105,33 +94,26 @@ namespace MegaApp.MegaApi
                 ProgressService.SetProgressIndicator(false);
             });
 
-            if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
+            if (e.getErrorCode() == MErrorType.API_OK)
             {
-                switch (request.getParamType())
+                if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
                 {
-                    case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());
-                        api.getUserAttribute(api.getContact(request.getEmail()), (int)MUserAttrType.USER_ATTR_LASTNAME, this);
-                        break;
+                    switch (request.getParamType())
+                    {
+                        case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
+                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());                            
+                            break;
 
-                    case (int)MUserAttrType.USER_ATTR_LASTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());
-                        api.getUserAvatar(api.getContact(request.getEmail()), _megaContact.AvatarPath, this);                        
-                        break;
+                        case (int)MUserAttrType.USER_ATTR_LASTNAME:
+                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());                            
+                            break;
 
-                    default: // getUserAvatar()
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            if (e.getErrorCode() == MErrorType.API_OK)
-                            {
-                                _megaContact.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
-                            }
-
-                            _megaContactsList.Add(_megaContact);
-                        });
-                        break;
+                        default: // getUserAvatar()
+                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute));
+                            break;
+                    }
                 }
-            }
+            }            
         }
 
         #endregion
