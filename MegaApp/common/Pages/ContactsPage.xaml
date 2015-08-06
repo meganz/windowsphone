@@ -1,0 +1,158 @@
+﻿<userControls:PhoneDrawerLayoutPage
+    x:Class="MegaApp.Pages.ContactsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:selectors="clr-namespace:MegaApp.Classes"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:models="clr-namespace:MegaApp.Models"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    d:DataContext="{d:DesignInstance models:ContactsViewModel}">
+
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="ContactsMenu">
+            <shell:ApplicationBarIconButton x:Name="BtnAddContact" IconUri="/Assets/AppBar/add.png" Text="add contact" Click="OnAddContactClick" />
+            <!--<shell:ApplicationBarIconButton x:Name="BtnSearchContact" IconUri="/Assets/AppBar/search.png" Text="search" Click="OnSearchContactClick" />-->
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
+                <!--<shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
+                <shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <userControls:DrawerLayout x:Name="MainDrawerLayout">
+        <Grid x:Name="LayoutRoot" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="84"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-6,0,0">
+                <Button x:Name="BtnHamburger" HorizontalAlignment="Left" Style="{StaticResource AppBarButtonStyleNoBorder}" VerticalAlignment="Center" Width="48" Height="48" Margin="12,0,0,0" Tap="OnHamburgerTap">
+                    <Path Data="{Binding LocalizedVisualResources.HamburgerPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Height="20" Width="24" HorizontalAlignment="Left" Stretch="UniformToFill" VerticalAlignment="Center" FlowDirection="LeftToRight" StrokeThickness="0">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+            </Grid>
+
+            <!--Pivot Control-->
+            <phone:Pivot x:Name="ContactsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+                <!--Pivot item one-->
+                <phone:PivotItem x:Name="MegaContacts" Header="{Binding LocalizedUiResources.MEGAContacts, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
+                    <Grid Margin="12,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource PhoneFontSizeSmall}" VerticalAlignment="Top" Margin="0">
+                            <Paragraph>
+                                <Run Text="{Binding NumberOfMegaContactsText}"/>
+                                <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            </Paragraph>
+                        </RichTextBox>
+                        <Grid x:Name="MegaContactsContentPanel" Grid.Row="1" Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                            <phone:LongListSelector
+                                x:Name="LstMegaContacts"
+                                ItemsSource="{Binding MegaContactsDataSource}"
+                                JumpListStyle="{StaticResource MegaJumpListStyle}"
+                                Background="Transparent"
+                                GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
+                                ItemTemplate="{StaticResource MegaContactItemContent}"                                
+                                Tap="OnItemTap"
+                                LayoutMode="List"
+                                IsGroupingEnabled="True"
+                                HideEmptyGroups ="True"/>
+                        </Grid>
+                        <selectors:CustomMultiResolutionImage x:Name="ImgLstMegaContactsEmpty" Grid.Row="1" HorizontalAlignment="Center" Margin="0" 
+                                                              VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"
+                                                              Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    </Grid>
+                </phone:PivotItem>
+                
+                <!--Pivot item two-->
+                <phone:PivotItem x:Name="SentContactRequests" Header="{Binding LocalizedUiResources.SentRequests, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
+                    <Grid>
+                        <telerikPrimitives:RadDataBoundListBox 
+						    x:Name="LstSentContactRequests"
+						    ItemsSource="{Binding SentContactRequests}"                            
+						    EmptyContentTemplate="{StaticResource MegaContactRequestsListSentEmptyContent}"
+                            ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
+						    FontFamily="Portable User Interface"
+                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					    />                        
+                    </Grid>
+                </phone:PivotItem>
+
+                <!--Pivot item three-->
+                <phone:PivotItem x:Name="ReceivedContactRequests" Header="{Binding LocalizedUiResources.ReceivedRequests, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
+                    <Grid>
+                        <telerikPrimitives:RadDataBoundListBox 
+						    x:Name="LstReceivedContactRequests"
+						    ItemsSource="{Binding ReceivedContactRequests}"                            
+						    EmptyContentTemplate="{StaticResource MegaContactRequestsListReceivedEmptyContent}"
+                            ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
+						    FontFamily="Portable User Interface"
+                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
+					    />
+                    </Grid>
+                </phone:PivotItem>
+
+            </phone:Pivot>
+        </Grid>
+        <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="100" Margin="0,66,0,64">
+                <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Ellipse Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Image x:Name="ImgAvatarMenu" Source="{Binding UserData.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
+                            <Image.Clip>
+                                <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />
+                            </Image.Clip>
+                        </Image>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
+                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                        </StackPanel>
+                    </Grid>
+                </Button>
+            </Grid>
+            <telerikPrimitives:RadDataBoundListBox 
+                x:Name="LstHamburgerMenu" 
+                Grid.Row="1" 
+                ItemsSource="{Binding MenuItems}" 
+                ItemTap="OnHamburgerMenuItemTap" 
+                ItemTemplate="{StaticResource HamburgerMenuItem}" 
+                ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+             />
+        </Grid>
+    </userControls:DrawerLayout>
+</userControls:PhoneDrawerLayoutPage>

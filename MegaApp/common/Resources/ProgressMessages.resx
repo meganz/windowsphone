@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddContact" xml:space="preserve">
+    <value>Adding contact...</value>
+    <comment>Progress indicator message when adding a MEGA contact - (String as short as possible).</comment>
+  </data>
   <data name="CancelSubscription" xml:space="preserve">
     <value>Canceling subscription...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
@@ -158,6 +162,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="GetAccountDetails" xml:space="preserve">
     <value>Getting account details...</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Getting contact data...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
   <data name="GetLink" xml:space="preserve">
     <value>Getting link...</value>

@@ -106,6 +106,9 @@
     <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
       <Link>Classes\AdvancedMenuItem.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\AlphaKeyGroup.cs">
+      <Link>Classes\AlphaKeyGroup.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\AppInformation.cs">
       <Link>Classes\AppInformation.cs</Link>
     </Compile>
@@ -120,6 +123,12 @@
     </Compile>
     <Compile Include="..\common\Classes\CommandStatusArgs.cs">
       <Link>Classes\CommandStatusArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\Contact.cs">
+      <Link>Classes\Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\ContactRequest.cs">
+      <Link>Classes\ContactRequest.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\CreditCard.cs">
       <Link>Classes\CreditCard.cs</Link>
@@ -277,6 +286,9 @@
     <Compile Include="..\common\LocalizedStrings.cs">
       <Link>LocalizedStrings.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\AddContactRequestListener.cs">
+      <Link>MegaApi\AddContactRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\BaseRequestListener.cs">
       <Link>MegaApi\BaseRequestListener.cs</Link>
     </Compile>
@@ -303,6 +315,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GetContactDataRequestListener.cs">
+      <Link>MegaApi\GetContactDataRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GetPaymentMethodsRequestListener.cs">
       <Link>MegaApi\GetPaymentMethodsRequestListener.cs</Link>
@@ -388,6 +403,12 @@
     <Compile Include="..\common\Models\ConfirmAccountViewModel.cs">
       <Link>Models\ConfirmAccountViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\ContactDetailsViewModel.cs">
+      <Link>Models\ContactDetailsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\ContactsViewModel.cs">
+      <Link>Models\ContactsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\CreateAccountViewModel.cs">
       <Link>Models\CreateAccountViewModel.cs</Link>
     </Compile>
@@ -471,6 +492,14 @@
     <Compile Include="..\common\Pages\ConfirmAccountPage.xaml.cs">
       <Link>Pages\ConfirmAccountPage.xaml.cs</Link>
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\ContactDetailsPage.xaml.cs">
+      <Link>Pages\ContactDetailsPage.xaml.cs</Link>
+      <DependentUpon>ContactDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\ContactsPage.xaml.cs">
+      <Link>Pages\ContactsPage.xaml.cs</Link>
+      <DependentUpon>ContactsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\CreateAccountPage.xaml.cs">
       <Link>Pages\CreateAccountPage.xaml.cs</Link>
@@ -2014,6 +2043,14 @@
     </Page>
     <Page Include="..\common\Pages\ConfirmAccountPage.xaml">
       <Link>Pages\ConfirmAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\ContactDetailsPage.xaml">
+      <Link>Pages\ContactDetailsPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\ContactsPage.xaml">
+      <Link>Pages\ContactsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\CreateAccountPage.xaml">
