@@ -33,6 +33,8 @@ namespace MegaApp.Models
             
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
+            MegaContactsSortOrder = ContactSortOrderType.ORDER_ALPHABETICAL_ASC;
+
             MegaContactsList = new ObservableCollection<Contact>();
             MegaContactsList.CollectionChanged += MegaContacts_CollectionChanged;
 
@@ -53,7 +55,7 @@ namespace MegaApp.Models
                     else
                         return s.Email;
                 }, 
-                true);
+                true, MegaContactsSortOrder);
 
             OnPropertyChanged("NumberOfMegaContacts");
             OnPropertyChanged("IsMegaContactsListEmpty");
@@ -71,6 +73,8 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
+
+        public ContactSortOrderType MegaContactsSortOrder { get; set; }
 
         private List<AlphaKeyGroup<Contact>> _megaContactsDataSource;
         public List<AlphaKeyGroup<Contact>> MegaContactsDataSource

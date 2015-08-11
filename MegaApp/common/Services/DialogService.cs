@@ -415,6 +415,103 @@ namespace MegaApp.Services
             sortRadWindow.IsOpen = true;
         }
 
+        public static void ShowSortContactsDialog(ContactsViewModel contacts)
+        {            
+            if (contacts == null) return;
+
+            var sortRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+            };
+
+            var buttonStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+
+            var headerText = new TextBlock()
+            {
+                Text = UiResources.SortByMenuTitle.ToUpper(),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(20, 30, 20, 20)
+            };
+
+            var sortItems = new List<AdvancedMenuItem>();
+            
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = "name (ascending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+
+                    Task.Run(() =>
+                    {
+                        if (contacts.MegaContactsSortOrder != ContactSortOrderType.ORDER_ALPHABETICAL_ASC)
+                        {
+                            contacts.MegaContactsSortOrder = ContactSortOrderType.ORDER_ALPHABETICAL_ASC;
+                            contacts.GetMegaContacts();
+                        }
+                    });                  
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = "name (descending)",
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+
+                    Task.Run(() =>
+                    {
+                        if (contacts.MegaContactsSortOrder != ContactSortOrderType.ORDER_ALPHABETICAL_DESC)
+                        {
+                            contacts.MegaContactsSortOrder = ContactSortOrderType.ORDER_ALPHABETICAL_DESC;
+                            contacts.GetMegaContacts();
+                        }
+                    }); 
+                }
+            });
+
+
+            var sortList = new RadDataBoundListBox
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                ItemsSource = sortItems,
+                Margin = new Thickness(20),
+                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"],
+            };
+            ScrollViewer.SetVerticalScrollBarVisibility(sortList, ScrollBarVisibility.Disabled);
+            InteractionEffectManager.SetIsInteractionEnabled(sortList, true);
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
+            sortList.ItemTap += (sender, args) => ((AdvancedMenuItem)args.Item.DataContext).TapAction.Invoke();
+
+            buttonStackPanel.Children.Add(headerText);
+            buttonStackPanel.Children.Add(sortList);
+
+            sortRadWindow.Content = buttonStackPanel;
+
+            sortRadWindow.IsOpen = true;
+        }
+
         public static void ShowCancelSubscriptionFeedbackDialog()
         {
             var feedbackRadWindow = new RadModalWindow()

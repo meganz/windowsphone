@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Phone.Globalization;
+using MegaApp.Enums;
 
 namespace MegaApp.Classes
 {
@@ -51,8 +52,9 @@ namespace MegaApp.Classes
         /// <param name="ci">The CultureInfo to group and sort by.</param>
         /// <param name="getKey">A delegate to get the key from an item.</param>
         /// <param name="sort">Will sort the data if true.</param>
+        /// <param name="sortOrder">Order to sort the data.</param>
         /// <returns>An items source for a LongListSelector</returns>
-        public static List<AlphaKeyGroup<T>> CreateGroups(IEnumerable<T> items, CultureInfo ci, GetKeyDelegate getKey, bool sort)
+        public static List<AlphaKeyGroup<T>> CreateGroups(IEnumerable<T> items, CultureInfo ci, GetKeyDelegate getKey, bool sort, ContactSortOrderType sortOrder)
         {
             SortedLocaleGrouping slg = new SortedLocaleGrouping(ci);
             List<AlphaKeyGroup<T>> list = CreateGroups(slg);
@@ -82,6 +84,9 @@ namespace MegaApp.Classes
                 {
                     group.Sort((c0, c1) => { return ci.CompareInfo.Compare(getKey(c0), getKey(c1)); });
                 }
+
+                if (sortOrder == ContactSortOrderType.ORDER_ALPHABETICAL_DESC)
+                    list.Reverse();
             }
 
             return list;

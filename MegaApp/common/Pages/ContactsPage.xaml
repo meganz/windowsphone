@@ -26,8 +26,8 @@
             <!--<shell:ApplicationBarIconButton x:Name="BtnSearchContact" IconUri="/Assets/AppBar/search.png" Text="search" Click="OnSearchContactClick" />-->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
-                <!--<shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
-                <shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
+                <shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
+                <!--<shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
