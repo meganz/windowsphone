@@ -173,6 +173,7 @@ namespace MegaApp.Models
         public void GetAccountDetails()
         {
             MegaSdk.getAccountDetails(this);
+            UpdateUserData();
         }
 
         #endregion

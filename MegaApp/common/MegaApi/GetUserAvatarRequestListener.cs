@@ -101,7 +101,7 @@ namespace MegaApp.MegaApi
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _userData.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
+                    _userData.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);                    
                 });
             }
             else
@@ -111,6 +111,12 @@ namespace MegaApp.MegaApi
                     _userData.AvatarUri = null;
                 });
             }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (App.UserData != null)
+                    App.UserData.AvatarUri = _userData.AvatarUri;
+            });
         }
 
         #endregion

@@ -112,6 +112,12 @@ namespace MegaApp.MegaApi
                     //_userData.UserName = "";                    
                 });
             }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (App.UserData != null)
+                    App.UserData.AvatarUri = _userData.AvatarUri;
+            });
         }
 
         #endregion
