@@ -21,13 +21,27 @@
     d:DataContext="{d:DesignInstance models:ContactsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="ContactsEmptyMenu">
+            <shell:ApplicationBarIconButton Text="add contact" IconUri="/Assets/AppBar/add.png" Click="OnAddContactClick" />
+            <!--<shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/search.png" Click="OnSearchContactClick" />-->
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+        
         <shell:ApplicationBar x:Key="ContactsMenu">
-            <shell:ApplicationBarIconButton x:Name="BtnAddContact" IconUri="/Assets/AppBar/add.png" Text="add contact" Click="OnAddContactClick" />
-            <!--<shell:ApplicationBarIconButton x:Name="BtnSearchContact" IconUri="/Assets/AppBar/search.png" Text="search" Click="OnSearchContactClick" />-->
+            <shell:ApplicationBarIconButton Text="add contact" IconUri="/Assets/AppBar/add.png" Click="OnAddContactClick" />
+            <!--<shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/search.png" Click="OnSearchContactClick" />-->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
                 <shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
                 <!--<shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>        
+
+        <shell:ApplicationBar x:Key="ContactRequestMenu">            
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -51,7 +65,7 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="ContactsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="ContactsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0" SelectionChanged="OnPivotSelectionChanged">
                 <!--Pivot item one-->
                 <phone:PivotItem x:Name="MegaContacts" Header="{Binding LocalizedUiResources.MEGAContacts, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
                     <Grid Margin="12,0,0,0">

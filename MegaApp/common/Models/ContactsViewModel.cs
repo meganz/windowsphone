@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
@@ -13,16 +14,22 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
     public class ContactsViewModel : BaseAppInfoAwareViewModel, MRequestListenerInterface
     {
-        public ContactsViewModel(MegaSDK megaSdk, AppInformation appInformation)
+        private readonly ContactsPage _contactsPage;
+
+        public ContactsViewModel(MegaSDK megaSdk, AppInformation appInformation, ContactsPage contactsPage)
             : base(megaSdk, appInformation)
         {
+            _contactsPage = contactsPage;
+
             ReinviteRequestCommand = new DelegateCommand(ReinviteRequest);
             DeleteRequestCommand = new DelegateCommand(DeleteRequest);
             AcceptRequestCommand = new DelegateCommand(AcceptRequest);
@@ -60,6 +67,17 @@ namespace MegaApp.Models
             OnPropertyChanged("NumberOfMegaContacts");
             OnPropertyChanged("IsMegaContactsListEmpty");
             OnPropertyChanged("NumberOfMegaContactsText");
+
+            if (CurrentDisplayMode == ContactDisplayMode.EMPTY_CONTACTS ||
+                CurrentDisplayMode == ContactDisplayMode.CONTACTS)
+            {
+                if (IsMegaContactsListEmpty)
+                    CurrentDisplayMode = ContactDisplayMode.EMPTY_CONTACTS;
+                else
+                    CurrentDisplayMode = ContactDisplayMode.CONTACTS;
+            }
+
+            _contactsPage.SetApplicationBarData();
         }
 
         #region Commands
@@ -74,6 +92,7 @@ namespace MegaApp.Models
 
         #region Properties
 
+        public ContactDisplayMode CurrentDisplayMode { get; set; }
         public ContactSortOrderType MegaContactsSortOrder { get; set; }
 
         private List<AlphaKeyGroup<Contact>> _megaContactsDataSource;
@@ -327,6 +346,43 @@ namespace MegaApp.Models
                     MContactRequestInviteActionType.INVITE_ACTION_ADD, this);
             };
             inputDialog.ShowDialog();
+        }
+
+        public void ChangeMenu(IList iconButtons, IList menuItems)
+        {
+            switch (CurrentDisplayMode)
+            {
+                case ContactDisplayMode.EMPTY_CONTACTS:
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.AddContact/*, UiResources.Search*/ },
+                            new[] { UiResources.Refresh });
+                        break;
+                    }
+                case ContactDisplayMode.CONTACTS:
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.AddContact/*, UiResources.Search*/ },
+                            new[] { UiResources.Refresh, UiResources.Sort/*, UiResources.Select*/ });
+                        break;
+                    }
+                case ContactDisplayMode.SENT_REQUESTS:
+                case ContactDisplayMode.RECEIVED_REQUESTS:
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            null,
+                            new[] { UiResources.Refresh });
+                        break;
+                    }
+                default:
+                    throw new ArgumentOutOfRangeException("CurrentDisplayMode");
+            }
         }
 
         #endregion
