@@ -86,6 +86,8 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+
+            DialogService.ShowSortContactsDialog(_contactsViewModel);
         }
 
         private void OnSelectClick(object sender, EventArgs e)
