@@ -19,24 +19,26 @@ namespace MegaApp.Classes
             AvatarUri = new Uri(AvatarPath);
         }
 
-        private string _userEmail;
-        public string UserEmail
+        private String _userEmail;
+        public String UserEmail
         {
             get { return _userEmail; }
             set
             {
                 _userEmail = value;
-                OnPropertyChanged("UserEmail");
+                OnPropertyChanged("AvatarLetter");
+                OnPropertyChanged("UserEmail");                
             }
         }
 
-        private string _userName;
-        public string UserName
+        private String _userName;
+        public String UserName
         {
             get { return _userName; }
             set
             {
                 _userName = value;
+                OnPropertyChanged("AvatarLetter");
                 OnPropertyChanged("UserName");
             }
         }
@@ -52,12 +54,23 @@ namespace MegaApp.Classes
             }
         }
 
-        public string AvatarPath
+        public String AvatarPath
         {
             get
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory, "UserAvatarImage");
+            }
+        }
+
+        public String AvatarLetter
+        {
+            get
+            {
+                if (!String.IsNullOrWhiteSpace(UserName))
+                    return UserName.Substring(0, 1).ToUpper();                
+                else
+                    return UserEmail.Substring(0, 1).ToUpper();
             }
         }
     }
