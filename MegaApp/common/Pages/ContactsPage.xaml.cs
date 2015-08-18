@@ -144,16 +144,29 @@ namespace MegaApp.Pages
 
         private void OnItemTap(object sender, GestureEventArgs e)
         {
-            var contact = LstMegaContacts.SelectedItem as Contact;
-            
-            if(contact != null)
+            _contactsViewModel.FocusedContact = LstMegaContacts.SelectedItem as Contact;
+            _contactsViewModel.ViewContactDetails();
+        }        
+
+        private void OnContactsMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is Contact))
             {
-                PhoneApplicationService.Current.State["SelectedContact"] = contact;
-                NavigateService.NavigateTo(typeof(ContactDetailsPage), NavigationParameter.Normal);
-            }                
+                // We don't want to open the menu if the focused element is not a list box item.
+                // If the list box is empty focusedItem will be null.
+                e.Cancel = true;
+            }
+            else
+            {
+                _contactsViewModel.FocusedContact = (Contact)focusedListBoxItem.DataContext;
+            }
         }
 
-        private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        private void OnContactRequestsMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();

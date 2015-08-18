@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:selectors="clr-namespace:MegaApp.Classes"
+    xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
@@ -80,22 +81,41 @@
                                 <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
-                        <Grid x:Name="MegaContactsContentPanel" Grid.Row="1" Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
-                            <phone:LongListSelector
-                                x:Name="LstMegaContacts"
-                                ItemsSource="{Binding MegaContactsDataSource}"
-                                JumpListStyle="{StaticResource MegaJumpListStyle}"
-                                Background="Transparent"
-                                GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
-                                ItemTemplate="{StaticResource MegaContactItemContent}"                                
-                                Tap="OnItemTap"
-                                LayoutMode="List"
-                                IsGroupingEnabled="True"
-                                HideEmptyGroups ="True"/>
-                        </Grid>
-                        <selectors:CustomMultiResolutionImage x:Name="ImgLstMegaContactsEmpty" Grid.Row="1" HorizontalAlignment="Center" Margin="0" 
-                                                              VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"
-                                                              Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <telerikDataControls:RadJumpList
+                            x:Name="LstMegaContacts"
+                            Grid.Row="1"
+                            ItemsSource="{Binding MegaContactsList}"
+                            ItemTemplate="{StaticResource MegaContactItemContent}"
+                            Background="Transparent"
+                            IsGroupPickerEnabled="True"
+                            GroupDescriptorsSource="{Binding GroupDescriptors}"
+                            SortDescriptorsSource="{Binding SortDescriptors}"
+                            GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
+                            EmptyContentTemplate="{StaticResource MegaContactsListEmptyContent}"                            
+                            Tap="OnItemTap">
+                            <telerikDataControls:RadJumpList.GroupPickerItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <telerikPrimitives:RadWrapPanel Margin="6,6" ItemWidth="110" ItemHeight="110"/>
+                                </ItemsPanelTemplate>
+                            </telerikDataControls:RadJumpList.GroupPickerItemsPanel>
+                            <telerikPrimitives:RadContextMenu.ContextMenu>
+                                <telerikPrimitives:RadContextMenu 
+                                    OpenGesture="Hold" 
+                                    x:Name="MegaContactsMenu"
+                                    Opening="OnContactsMenuOpening">
+                                    <telerikPrimitives:RadContextMenuItem
+                                        x:Name="BtnContactDetails" 
+                                        Command="{Binding ViewContactCommand}"
+                                        Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                        />
+                                    <telerikPrimitives:RadContextMenuItem 
+                                        x:Name="BtnDeleteContact" 
+                                        Command="{Binding DeleteContactCommand}"
+                                        Content="{Binding LocalizedUiResources.Delete, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                        />
+                                </telerikPrimitives:RadContextMenu>
+                            </telerikPrimitives:RadContextMenu.ContextMenu>
+                        </telerikDataControls:RadJumpList>                            
                     </Grid>
                 </phone:PivotItem>
                 
@@ -113,7 +133,7 @@
                                 <telerikPrimitives:RadContextMenu 
                                     OpenGesture="Hold" 
                                     x:Name="SentContactRequestMenu"
-                                    Opening="OnMenuOpening">
+                                    Opening="OnContactRequestsMenuOpening">
                                     <telerikPrimitives:RadContextMenuItem 
                                         x:Name="BtnReinvite" 
                                         Command="{Binding ReinviteRequestCommand}"
@@ -144,7 +164,7 @@
                                 <telerikPrimitives:RadContextMenu 
                                     OpenGesture="Hold" 
                                     x:Name="ReceivedContactRequestMenu"
-                                    Opening="OnMenuOpening">
+                                    Opening="OnContactRequestsMenuOpening">
                                     <telerikPrimitives:RadContextMenuItem 
                                         x:Name="BtnAcceptContactRequest" 
                                         Command="{Binding AcceptRequestCommand}"

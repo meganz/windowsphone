@@ -367,50 +367,52 @@
         </Border>
     </ControlTemplate>
 
-    <DataTemplate x:Key="MegaContactListEmptyContent">
-        <selectors:CustomMultiResolutionImage Stretch="Uniform" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>        
+    <DataTemplate x:Key="MegaContactItemContent">
+        <StackPanel>            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="64" Stretch="UniformToFill" Margin="0,0,8,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Ellipse Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" >
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,9,1" Text="{Binding AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                    </TextBlock.Foreground>
+                </TextBlock>
+                <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
+                    <Image.Source>
+                        <BitmapImage
+                            UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+                            DecodePixelHeight="64"
+                            DecodePixelWidth="64"
+                            DecodePixelType="Logical"
+                            CreateOptions="BackgroundCreation"
+                            />
+                    </Image.Source>
+                </Image>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding FullName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
     </DataTemplate>
 
-    <DataTemplate x:Key="MegaContactItemContent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-
-            <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="64" Stretch="UniformToFill" Margin="0,0,8,0">
-                <Rectangle.Fill>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </Rectangle.Fill>
-            </Rectangle>
-            <Ellipse Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" >
-                <Ellipse.Fill>
-                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,9,1" Text="{Binding AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </TextBlock.Foreground>
-            </TextBlock>
-            <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
-                <Image.Source>
-                    <BitmapImage 
-						UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
-						DecodePixelHeight="64"
-						DecodePixelWidth="64"
-						DecodePixelType="Logical"
-						CreateOptions="BackgroundCreation"
-                        />
-                </Image.Source>
-            </Image>
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding FullName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" VerticalAlignment="Center"/>
-        </Grid>
+    <DataTemplate x:Key="MegaContactsListEmptyContent">
+        <selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaContactRequestsItemContent">
@@ -1202,7 +1204,7 @@
     <phone:JumpListItemBackgroundConverter x:Key="BackgroundConverter"/>
     <phone:JumpListItemForegroundConverter x:Key="ForegroundConverter"/>
     <Style x:Key="MegaJumpListStyle" TargetType="phone:LongListSelector">
-        <Setter Property="GridCellSize"  Value="113,113"/>
+        <Setter Property="GridCellSize" Value="113,113"/>
         <Setter Property="LayoutMode" Value="Grid" />
         <Setter Property="ItemTemplate">
             <Setter.Value>

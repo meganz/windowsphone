@@ -460,6 +460,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to remove the contact {0}?.
+        /// </summary>
+        public static string DeleteContactQuestion {
+            get {
+                return ResourceManager.GetString("DeleteContactQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove contact?.
+        /// </summary>
+        public static string DeleteContactQuestion_Title {
+            get {
+                return ResourceManager.GetString("DeleteContactQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to delete item. Please try again [{0}].
         /// </summary>
         public static string DeleteNodeFailed {
@@ -780,6 +798,42 @@ namespace MegaApp.Resources {
         public static string ImportFileFailed_Title {
             get {
                 return ResourceManager.GetString("ImportFileFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not send the contact invitation. Please, try again..
+        /// </summary>
+        public static string InviteContactFailed {
+            get {
+                return ResourceManager.GetString("InviteContactFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invite contact failed.
+        /// </summary>
+        public static string InviteContactFailed_Title {
+            get {
+                return ResourceManager.GetString("InviteContactFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a User {0} has been invited and will appear on your contact list once accepted the invitation..
+        /// </summary>
+        public static string InviteContactSuccessfully {
+            get {
+                return ResourceManager.GetString("InviteContactSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contact invited.
+        /// </summary>
+        public static string InviteContactSuccessfully_Title {
+            get {
+                return ResourceManager.GetString("InviteContactSuccessfully_Title", resourceCulture);
             }
         }
         
