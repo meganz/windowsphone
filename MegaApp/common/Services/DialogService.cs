@@ -14,6 +14,7 @@ using MegaApp.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Data;
 #if WINDOWS_PHONE_81
 
 #endif
@@ -283,7 +284,7 @@ namespace MegaApp.Services
             var sortItems = new List<AdvancedMenuItem>();
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (ascending)",
+                Name = UiResources.FilesAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -297,7 +298,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (descending)",
+                Name = UiResources.FilesDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -311,7 +312,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "largest",
+                Name = UiResources.LargestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -325,7 +326,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "smallest",
+                Name = UiResources.SmallestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -339,7 +340,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "newest",
+                Name = UiResources.NewestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -353,7 +354,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "oldest",
+                Name = UiResources.OldestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -367,7 +368,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (ascending)",
+                Name = UiResources.NameAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -381,7 +382,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (descending)",
+                Name = UiResources.NameDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -450,43 +451,27 @@ namespace MegaApp.Services
             
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (ascending)",
+                Name = UiResources.NameAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-
-                    Task.Run(() =>
-                    {
-                        if (contacts.MegaContactsSortOrder != ContactSortOrderType.ORDER_ALPHABETICAL_ASC)
-                        {
-                            contacts.MegaContactsSortOrder = ContactSortOrderType.ORDER_ALPHABETICAL_ASC;
-                            contacts.GetMegaContacts();
-                        }
-                    });                  
+                    Task.Run(() => contacts.SortContacts(ListSortMode.Ascending));       
                 }
             });
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (descending)",
+                Name = UiResources.NameDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-
-                    Task.Run(() =>
-                    {
-                        if (contacts.MegaContactsSortOrder != ContactSortOrderType.ORDER_ALPHABETICAL_DESC)
-                        {
-                            contacts.MegaContactsSortOrder = ContactSortOrderType.ORDER_ALPHABETICAL_DESC;
-                            contacts.GetMegaContacts();
-                        }
-                    }); 
+                    Task.Run(() => contacts.SortContacts(ListSortMode.Descending));
                 }
             });
 
