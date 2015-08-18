@@ -86,6 +86,38 @@
           <target state="new">Auto Camera Uploads prerequisites</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Remove contact?</source>
+          <target state="new">Remove contact?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactSuccessfully_Title" translate="yes" xml:space="preserve">
+          <source>Contact invited</source>
+          <target state="new">Contact invited</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactSuccessfully" translate="yes" xml:space="preserve">
+          <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
+          <target state="new">User {0} has been invited and will appear on your contact list once accepted the invitation.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactFailed_Title" translate="yes" xml:space="preserve">
+          <source>Invite contact failed</source>
+          <target state="new">Invite contact failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactFailed" translate="yes" xml:space="preserve">
+          <source>Could not send the contact invitation. Please, try again.</source>
+          <target state="new">Could not send the contact invitation. Please, try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to remove the contact {0}?</source>
+          <target state="new">Do you want to remove the contact {0}?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
+        </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" xml:space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
           <target state="new">In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</target>

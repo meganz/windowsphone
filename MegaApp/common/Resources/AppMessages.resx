@@ -897,4 +897,30 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Auto Camera Uploads prerequisites</value>
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>Do you want to remove the contact {0}?</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>Remove contact?</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactFailed" xml:space="preserve">
+    <value>Could not send the contact invitation. Please, try again.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="InviteContactFailed_Title" xml:space="preserve">
+    <value>Invite contact failed</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactSuccessfully" xml:space="preserve">
+    <value>User {0} has been invited and will appear on your contact list once accepted the invitation.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactSuccessfully_Title" xml:space="preserve">
+    <value>Contact invited</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
 </root>
