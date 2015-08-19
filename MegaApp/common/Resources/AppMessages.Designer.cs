@@ -804,36 +804,36 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Could not send the contact invitation. Please, try again..
         /// </summary>
-        public static string InviteContactFailed {
+        public static string InviteContactAddFailed {
             get {
-                return ResourceManager.GetString("InviteContactFailed", resourceCulture);
+                return ResourceManager.GetString("InviteContactAddFailed", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Invite contact failed.
         /// </summary>
-        public static string InviteContactFailed_Title {
+        public static string InviteContactAddFailed_Title {
             get {
-                return ResourceManager.GetString("InviteContactFailed_Title", resourceCulture);
+                return ResourceManager.GetString("InviteContactAddFailed_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a User {0} has been invited and will appear on your contact list once accepted the invitation..
         /// </summary>
-        public static string InviteContactSuccessfully {
+        public static string InviteContactAddSuccessfully {
             get {
-                return ResourceManager.GetString("InviteContactSuccessfully", resourceCulture);
+                return ResourceManager.GetString("InviteContactAddSuccessfully", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Busca una cadena traducida similar a Contact invited.
         /// </summary>
-        public static string InviteContactSuccessfully_Title {
+        public static string InviteContactAddSuccessfully_Title {
             get {
-                return ResourceManager.GetString("InviteContactSuccessfully_Title", resourceCulture);
+                return ResourceManager.GetString("InviteContactAddSuccessfully_Title", resourceCulture);
             }
         }
         

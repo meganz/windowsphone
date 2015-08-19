@@ -187,6 +187,18 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Importing file...</value>
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Sending contact request...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Deleting contact request...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Reminding contat request...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
   <data name="LoadNodes" xml:space="preserve">
     <value>Building view...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
@@ -219,6 +231,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Preparing uploads...</value>
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Removing contact...</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Removing...</value>
     <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
@@ -226,6 +242,18 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="RenameNode" xml:space="preserve">
     <value>Renaming...</value>
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Accepting contact request...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Denying contact request...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Ignoring contact request...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
     <value>Resuming transfers...</value>
