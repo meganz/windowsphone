@@ -19,12 +19,12 @@ namespace MegaApp.MegaApi
             offset = 0;
         }
 
-		public virtual ulong Length()
+        public virtual ulong Length()
         {
             return (ulong)inputStream.Length;
         }
 
-		public virtual bool Read(byte[] buffer, ulong size)
+        public virtual bool Read(byte[] buffer, ulong size)
         {
             if ((offset + (long)size) > inputStream.Length || (buffer != null && buffer.Length < (int)size))
             {
