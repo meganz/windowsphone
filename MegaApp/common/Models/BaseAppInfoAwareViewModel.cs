@@ -38,15 +38,19 @@ namespace MegaApp.Models
                 else if (UserData == null)
                     UserData = new UserDataViewModel { UserEmail = App.MegaSdk.getMyEmail() };
 
-                if (String.IsNullOrEmpty(UserData.UserEmail))
-                    accountChange = true;
-                else if (!UserData.UserEmail.Equals(App.MegaSdk.getMyEmail()))
-                    accountChange = true;
+                String currentEmail = App.MegaSdk.getMyEmail();
+                if (currentEmail != null && currentEmail.Length != 0)
+                {
+                    if (String.IsNullOrEmpty(UserData.UserEmail))
+                        accountChange = true;
+                    else if (!UserData.UserEmail.Equals(App.MegaSdk.getMyEmail()))
+                        accountChange = true;
+                }
 
                 if (accountChange || (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
-                    App.MegaSdk.getUserAvatar(App.MegaSdk.getContact(App.MegaSdk.getMyEmail()), UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
+                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
 
-                if (accountChange || String.IsNullOrEmpty(UserData.UserEmail))
+                if (accountChange)
                     UserData.UserEmail = App.MegaSdk.getMyEmail();
 
                 if (accountChange || (String.IsNullOrEmpty(UserData.UserName) || UserData.UserName.Equals(UiResources.MyAccount)))
