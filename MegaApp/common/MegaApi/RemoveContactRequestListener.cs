@@ -1,32 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using mega;
-using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
-using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetContactDataRequestListener : BaseRequestListener
+    class RemoveContactRequestListener : BaseRequestListener
     {
-        private readonly Contact _megaContact;
-
-        public GetContactDataRequestListener(Contact megaContact)
-        {            
-            _megaContact = megaContact;
-        }
-
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetContactData; }
+            get { return ProgressMessages.RemoveContact; }
         }
 
         protected override bool ShowProgressMessage
@@ -71,7 +57,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ActionOnSucces
         {
-            get { return true; }
+            get { return false; }
         }
 
         protected override Type NavigateToPage
@@ -83,26 +69,5 @@ namespace MegaApp.MegaApi
         {
             get { throw new NotImplementedException(); }
         }
-
-        #region Override Methods
-
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
-        {
-            if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
-            {
-                switch (request.getParamType())
-                {
-                    case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());
-                        break;
-
-                    case (int)MUserAttrType.USER_ATTR_LASTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());
-                        break;
-                }
-            }
-        }
-
-        #endregion
     }
 }

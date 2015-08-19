@@ -5,23 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
-using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetContactDataRequestListener : BaseRequestListener
+    class GetContactAvatarRequestListener : BaseRequestListener
     {
         private readonly Contact _megaContact;
+        private readonly ContactRequest _contactRequest;
 
-        public GetContactDataRequestListener(Contact megaContact)
-        {            
+        public GetContactAvatarRequestListener(Contact megaContact)
+        {
             _megaContact = megaContact;
+        }
+
+        public GetContactAvatarRequestListener(ContactRequest contactRequest)
+        {
+            _contactRequest = contactRequest;
         }
 
         protected override string ProgressMessage
@@ -90,16 +93,21 @@ namespace MegaApp.MegaApi
         {
             if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
             {
-                switch (request.getParamType())
+                if(_megaContact != null)
                 {
-                    case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());
-                        break;
-
-                    case (int)MUserAttrType.USER_ATTR_LASTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());
-                        break;
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _megaContact.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
+                    });
                 }
+
+                if (_contactRequest != null)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _contactRequest.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
+                    });
+                }                
             }
         }
 

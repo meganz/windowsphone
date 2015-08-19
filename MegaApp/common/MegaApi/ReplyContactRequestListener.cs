@@ -1,32 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
 using mega;
-using MegaApp.Classes;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
-using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetContactDataRequestListener : BaseRequestListener
+    class ReplyContactRequestListener : BaseRequestListener
     {
-        private readonly Contact _megaContact;
-
-        public GetContactDataRequestListener(Contact megaContact)
-        {            
-            _megaContact = megaContact;
-        }
+        private MContactRequestReplyActionType replyActionType;
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetContactData; }
+            get
+            {
+                switch (replyActionType)
+                {
+                    case MContactRequestReplyActionType.REPLY_ACTION_ACCEPT:
+                        return ProgressMessages.ReplyContactRequestAccept;
+                    case MContactRequestReplyActionType.REPLY_ACTION_IGNORE:
+                        return ProgressMessages.ReplyContactRequestIgnore;
+                    case MContactRequestReplyActionType.REPLY_ACTION_DENY:
+                        return ProgressMessages.ReplyContactRequestDeny;
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
         }
 
         protected override bool ShowProgressMessage
@@ -71,7 +73,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ActionOnSucces
         {
-            get { return true; }
+            get { return false; }
         }
 
         protected override Type NavigateToPage
@@ -86,21 +88,10 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
+        public override void onRequestStart(MegaSDK api, MRequest request)
         {
-            if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
-            {
-                switch (request.getParamType())
-                {
-                    case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());
-                        break;
-
-                    case (int)MUserAttrType.USER_ATTR_LASTNAME:
-                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());
-                        break;
-                }
-            }
+            replyActionType = (MContactRequestReplyActionType)request.getNumber();            
+            base.onRequestStart(api, request);
         }
 
         #endregion

@@ -31,6 +31,21 @@
           <target state="new">Renaming...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when renaming a node - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/ReplyContactRequestIgnore" translate="yes" xml:space="preserve">
+          <source>Ignoring contact request...</source>
+          <target state="new">Ignoring contact request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when ignoring a contact request - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ReplyContactRequestDeny" translate="yes" xml:space="preserve">
+          <source>Denying contact request...</source>
+          <target state="new">Denying contact request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when denying a contact request - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ReplyContactRequestAccept" translate="yes" xml:space="preserve">
+          <source>Accepting contact request...</source>
+          <target state="new">Accepting contact request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when accepting a contact request - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" xml:space="preserve">
           <source>Removing...</source>
           <target state="new">Removing...</target>
@@ -40,6 +55,11 @@
           <source>Preparing uploads...</source>
           <target state="new">Preparing uploads...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when preparing uploads - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveContact" translate="yes" xml:space="preserve">
+          <source>Removing contact...</source>
+          <target state="new">Removing contact...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a contact - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" xml:space="preserve">
           <source>Preparing downloads...</source>
@@ -80,6 +100,21 @@
           <source>Importing file...</source>
           <target state="new">Importing file...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a file - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactRemind" translate="yes" xml:space="preserve">
+          <source>Reminding contat request...</source>
+          <target state="new">Reminding contat request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when reminding a contact request - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactDelete" translate="yes" xml:space="preserve">
+          <source>Deleting contact request...</source>
+          <target state="new">Deleting contact request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a contact request - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAdd" translate="yes" xml:space="preserve">
+          <source>Sending contact request...</source>
+          <target state="new">Sending contact request...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when sending a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" xml:space="preserve">
           <source>Getting preview...</source>

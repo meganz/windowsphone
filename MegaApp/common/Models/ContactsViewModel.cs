@@ -22,7 +22,7 @@ using Telerik.Windows.Data;
 
 namespace MegaApp.Models
 {
-    public class ContactsViewModel : BaseAppInfoAwareViewModel, MRequestListenerInterface
+    public class ContactsViewModel : BaseAppInfoAwareViewModel
     {
         private readonly ContactsPage _contactsPage;
 
@@ -185,31 +185,31 @@ namespace MegaApp.Models
         private void ReinviteRequest(object obj)
         {
             MegaSdk.inviteContact(this.FocusedContactRequest.Email, this.FocusedContactRequest.SourceMessage,
-                MContactRequestInviteActionType.INVITE_ACTION_REMIND, this);
+                MContactRequestInviteActionType.INVITE_ACTION_REMIND, new InviteContactRequestListener());
         }
 
         private void DeleteRequest(object obj)
         {
             MegaSdk.inviteContact(this.FocusedContactRequest.Email, this.FocusedContactRequest.SourceMessage,
-                MContactRequestInviteActionType.INVITE_ACTION_DELETE, this);
+                MContactRequestInviteActionType.INVITE_ACTION_DELETE, new InviteContactRequestListener());
         }
 
         private void AcceptRequest(object obj)
         {
             MegaSdk.replyContactRequest(MegaSdk.getContactRequestByHandle(this.FocusedContactRequest.Handle),
-                MContactRequestReplyActionType.REPLY_ACTION_ACCEPT, this);
+                MContactRequestReplyActionType.REPLY_ACTION_ACCEPT, new ReplyContactRequestListener());
         }
 
         private void IgnoreRequest(object obj)
         {
             MegaSdk.replyContactRequest(MegaSdk.getContactRequestByHandle(this.FocusedContactRequest.Handle),
-                MContactRequestReplyActionType.REPLY_ACTION_IGNORE, this);
+                MContactRequestReplyActionType.REPLY_ACTION_IGNORE, new ReplyContactRequestListener());
         }
 
         private void DeclineRequest(object obj)
         {
             MegaSdk.replyContactRequest(MegaSdk.getContactRequestByHandle(this.FocusedContactRequest.Handle),
-                MContactRequestReplyActionType.REPLY_ACTION_DENY, this);
+                MContactRequestReplyActionType.REPLY_ACTION_DENY, new ReplyContactRequestListener());
         }
 
         private void ViewContact(object obj)
@@ -229,7 +229,7 @@ namespace MegaApp.Models
 
                 customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
                 {
-                    MegaSdk.removeContact(MegaSdk.getContact(FocusedContact.Email), this);
+                    MegaSdk.removeContact(MegaSdk.getContact(FocusedContact.Email), new RemoveContactRequestListener());
                 };
 
                 customMessageDialog.ShowDialog();
@@ -317,7 +317,7 @@ namespace MegaApp.Models
                                 MegaSdk.getUserAttribute(contactsList.get(i), (int)MUserAttrType.USER_ATTR_LASTNAME,
                                     new GetContactDataRequestListener(_megaContact));
                                 MegaSdk.getUserAvatar(contactsList.get(i), _megaContact.AvatarPath,
-                                    new GetContactDataRequestListener(_megaContact));
+                                    new GetContactAvatarRequestListener(_megaContact));
                             }
                         }
                     });                    
@@ -400,7 +400,8 @@ namespace MegaApp.Models
                 ContactRequest contactRequest = new ContactRequest(incomingContactRequestsList.get(i));
                 this.ReceivedContactRequests.Add(contactRequest);
 
-                MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, this);
+                MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, 
+                    new GetContactAvatarRequestListener(contactRequest));
             }
         }
 
@@ -417,7 +418,8 @@ namespace MegaApp.Models
                 ContactRequest contactRequest = new ContactRequest(outgoingContactRequestsList.get(i));
                 this.SentContactRequests.Add(contactRequest);
 
-                MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, this);
+                MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, 
+                    new GetContactAvatarRequestListener(contactRequest));
             }
         }        
 
@@ -431,8 +433,8 @@ namespace MegaApp.Models
             var inputDialog = new CustomInputDialog(UiResources.AddContact, UiResources.CreateContact, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {                
-                MegaSdk.inviteContact(args.InputText, "",
-                    MContactRequestInviteActionType.INVITE_ACTION_ADD, this);
+                MegaSdk.inviteContact(args.InputText, "", MContactRequestInviteActionType.INVITE_ACTION_ADD, 
+                    new InviteContactRequestListener());
             };
             inputDialog.ShowDialog();
         }
@@ -481,119 +483,6 @@ namespace MegaApp.Models
                 default:
                     throw new ArgumentOutOfRangeException("CurrentDisplayMode");
             }
-        }
-
-        #endregion
-
-        #region MRequestListenerInterface
-
-        public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(false);
-            });
-
-            switch(request.getType())
-            {
-                case MRequestType.TYPE_INVITE_CONTACT:
-                    if (e.getErrorCode() == MErrorType.API_OK)
-                    {
-                        switch (request.getNumber())
-                        {
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_ADD:
-                                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                {
-                                    new CustomMessageDialog(
-                                        AppMessages.InviteContactSuccessfully_Title,
-                                        String.Format(AppMessages.InviteContactSuccessfully, request.getEmail()),
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
-                                });
-                                break;
-
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_DELETE:
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_REMIND:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        switch (request.getNumber())
-                        {
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_ADD:
-                                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                {
-                                    new CustomMessageDialog(
-                                        AppMessages.InviteContactFailed_Title,
-                                        AppMessages.InviteContactFailed,
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
-                                });
-                                break;
-
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_DELETE:
-                            case (int)MContactRequestInviteActionType.INVITE_ACTION_REMIND:
-                                break;
-                        }
-                    }
-                    break;
-
-                case MRequestType.TYPE_REPLY_CONTACT_REQUEST:
-                    if (e.getErrorCode() == MErrorType.API_OK)
-                    {
-                        switch (request.getNumber())
-                        {
-                            case (int)MContactRequestReplyActionType.REPLY_ACTION_ACCEPT:
-                            case (int)MContactRequestReplyActionType.REPLY_ACTION_DENY:
-                            case (int)MContactRequestReplyActionType.REPLY_ACTION_IGNORE:
-                                break;
-                        }
-                    }
-                    break;
-
-                case MRequestType.TYPE_GET_ATTR_USER:
-                    if (e.getErrorCode() == MErrorType.API_OK)
-                    {
-                        foreach (var contactRequest in SentContactRequests)
-                        {
-                            if (contactRequest.Email.Equals(request.getEmail()))
-                                Deployment.Current.Dispatcher.BeginInvoke(() => contactRequest.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute));
-                        }
-
-                        foreach (var contactRequest in ReceivedContactRequests)
-                        {
-                            if (contactRequest.Email.Equals(request.getEmail()))
-                                Deployment.Current.Dispatcher.BeginInvoke(() => contactRequest.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute));
-                        }
-                    }
-                    break;
-
-                case MRequestType.TYPE_REMOVE_CONTACT:
-                    if (e.getErrorCode() == MErrorType.API_OK)
-                    {
-
-                    }
-                    break;
-            }            
-        }
-
-        public virtual void onRequestStart(MegaSDK api, MRequest request)
-        {
-            // Not necessary
-        }
-
-        public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
-        }
-
-        public virtual void onRequestUpdate(MegaSDK api, MRequest request)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]));
         }
 
         #endregion

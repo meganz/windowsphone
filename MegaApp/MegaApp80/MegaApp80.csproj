@@ -316,6 +316,9 @@
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\GetContactAvatarRequestListener.cs">
+      <Link>MegaApi\GetContactAvatarRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\GetContactDataRequestListener.cs">
       <Link>MegaApi\GetContactDataRequestListener.cs</Link>
     </Compile>
@@ -349,6 +352,9 @@
     <Compile Include="..\common\MegaApi\ImportFileRequestListener.cs">
       <Link>MegaApi\ImportFileRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
+      <Link>MegaApi\InviteContactRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
     </Compile>
@@ -364,11 +370,17 @@
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
+      <Link>MegaApi\RemoveContactRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\RemoveNodeRequestListener.cs">
       <Link>MegaApi\RemoveNodeRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\RenameNodeRequestListener.cs">
       <Link>MegaApi\RenameNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ReplyContactRequestListener.cs">
+      <Link>MegaApi\ReplyContactRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
