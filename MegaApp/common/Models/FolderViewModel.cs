@@ -59,6 +59,9 @@ namespace MegaApp.Models
                 case ContainerType.RubbishBin:
                     this.CurrentDisplayMode = DriveDisplayMode.RubbishBin;
                     break;
+                case ContainerType.InShares:
+                    this.CurrentDisplayMode = DriveDisplayMode.InShares;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("containerType");
             }
@@ -192,7 +195,7 @@ namespace MegaApp.Models
                         this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
                         break;
                 }
-            }            
+            }
 
             this.LoadChildNodes();
         }
@@ -333,11 +336,17 @@ namespace MegaApp.Models
             else
             {
                 var megaRoot = this.MegaSdk.getRootNode();
+                var megaRubbishBin = this.MegaSdk.getRubbishNode();
 
                 if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Handle.Equals(megaRoot.getHandle()))
                 {
                     OnUiThread(() =>
                         this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"]);
+                }
+                else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Handle.Equals(megaRubbishBin.getHandle()))
+                {
+                    OnUiThread(() =>
+                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"]);
                 }
                 else
                 {

@@ -6,6 +6,7 @@
         MoveItem,
         ImportItem,
         MultiSelect,
-        RubbishBin
+        RubbishBin,
+        InShares
     }
 }
