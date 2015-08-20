@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
@@ -21,7 +22,7 @@ namespace MegaApp.Models
             
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
-            //this.InShares = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.InShares);
+            this.InShares = new ObservableCollection<FolderViewModel>();
         }
 
         #region Properties
@@ -58,24 +59,55 @@ namespace MegaApp.Models
                 else
                     return UiResources.No.ToLower();
             }
-        }        
+        }
 
-        private FolderViewModel _inShares;
-        public FolderViewModel InShares
+        private ObservableCollection<FolderViewModel> _inShares;
+        public ObservableCollection<FolderViewModel> InShares
         {
             get { return _inShares; }
             private set { SetField(ref _inShares, value); }
         }
+        
+        private ObservableCollection<IMegaNode> _inSharesList;
+        public ObservableCollection<IMegaNode> InSharesList
+        {
+            get { return _inSharesList; }
+            set { SetField(ref _inSharesList, value); }
+        }
+
+        private CancellationTokenSource LoadingCancelTokenSource { get; set; }
+        private CancellationToken LoadingCancelToken { get; set; }
 
         #endregion
 
         #region Methods
 
+        private void CreateLoadCancelOption()
+        {
+            if (this.LoadingCancelTokenSource != null)
+            {
+                this.LoadingCancelTokenSource.Dispose();
+                this.LoadingCancelTokenSource = null;
+            }
+            this.LoadingCancelTokenSource = new CancellationTokenSource();
+            this.LoadingCancelToken = LoadingCancelTokenSource.Token;
+        }
+
+        /// <summary>
+        /// Cancel any running load process of contacts
+        /// </summary>
+        public void CancelLoad()
+        {
+            if (this.LoadingCancelTokenSource != null && LoadingCancelToken.CanBeCanceled)
+                LoadingCancelTokenSource.Cancel();
+        }
+
         public void GetContactSharedFolders()
         {
             NumberOfSharedFolders = 0;
 
-            //SharedFolders = MegaSdk.getInShares(MegaSdk.getContact(_selectedContact.Email));
+            OnUiThread(() => InSharesList.Clear());
+            MNodeList inSharesNodeList = MegaSdk.getInShares(MegaSdk.getContact(_selectedContact.Email));
         }
 
         #endregion

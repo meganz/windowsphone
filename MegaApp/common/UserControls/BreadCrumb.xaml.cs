@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
 
@@ -25,6 +26,12 @@ namespace MegaApp.UserControls
             typeof(ObservableCollection<IMegaNode>),
             typeof(BreadCrumb),
             new PropertyMetadata(null, OnItemsSourceChanged));
+
+        public static readonly DependencyProperty ItemsSourceTypeProperty = DependencyProperty.Register(
+            "ItemsSourceType",
+            typeof(ContainerType),
+            typeof(BreadCrumb),
+            new PropertyMetadata(ContainerType.CloudDrive, OnItemsSourceTypeChanged));
 
         #endregion
 
@@ -80,10 +87,12 @@ namespace MegaApp.UserControls
 
         private void DrawMegaHomeButton(Panel parentControl, bool allowTap)
         {
-            var homeButton = new Button
-            {
-                Style = (Style)Application.Current.Resources["HomeCrumbStyle"],
-            };
+            var homeButton = new Button();
+
+            if(ItemsSourceType == ContainerType.RubbishBin)
+                homeButton.Style = (Style)Application.Current.Resources["RubbishBinHomeCrumbStyle"];
+            else
+                homeButton.Style = (Style)Application.Current.Resources["CloudDriveHomeCrumbStyle"];
 
             if (allowTap)
             {
@@ -132,6 +141,12 @@ namespace MegaApp.UserControls
             set { SetValue(ItemsSourceProperty, value); }
         }
 
+        public ContainerType ItemsSourceType
+        {
+            get { return (ContainerType)GetValue(ItemsSourceTypeProperty); }
+            set { SetValue(ItemsSourceTypeProperty, value); }
+        }
+
         #endregion
 
         #region Private Static Methods
@@ -150,6 +165,16 @@ namespace MegaApp.UserControls
                 breadCrumb.Draw();
             };
 
+        }
+
+        private static void OnItemsSourceTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var breadCrumb = d as BreadCrumb;
+
+            if (breadCrumb == null) return;
+            if (breadCrumb.ItemsSource == null) return;
+
+            breadCrumb.Draw();
         }
 
         #endregion

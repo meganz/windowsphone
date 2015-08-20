@@ -18,7 +18,7 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
-    d:DataContext="{d:DesignInstance models:ContactsViewModel}">
+    d:DataContext="{d:DesignInstance models:ContactDetailsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="ContactDetailsMenu">
@@ -47,17 +47,38 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="ContactDetails" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="ContactDetails" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Style="{StaticResource PivotStyle}" Margin="0">
                 <!--Pivot item one-->
-                <phone:PivotItem x:Name="MegaContactDetails" Header="{Binding LocalizedUiResources.Profile, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="-8,24,0,0">
+                <phone:PivotItem x:Name="MegaContactDetails" Header="{Binding LocalizedUiResources.Profile, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                    <Grid Margin="0,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
-                        <Grid Grid.Row="1" Margin="0,0">
+
+                        <StackPanel Grid.Row="0" Margin="0">
+                            <Grid Margin="24,0,24,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="24"/>
+                                </Grid.RowDefinitions>
+                                <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
+                                    <Path.Fill>
+                                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                                    </Path.Fill>
+                                </Path>
+                                <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                                <!--<TextBlock Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>-->
+                            </Grid>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1" Margin="0,24,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -86,36 +107,49 @@
                         </Grid>
 
                         <!--<StackPanel x:Name="StackContactStatus" Grid.Row="2" Margin="0,24,0,0">
-                            <TextBlock Text="{Binding LocalizedUiResources.Status, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>                            
+                            <TextBlock Text="{Binding LocalizedUiResources.Status, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
                         </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>
                 <!--Pivot item two-->
-                <phone:PivotItem x:Name="SharedItems" Header="{Binding LocalizedUiResources.SharedItems, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="0,24,0,0">
+                <phone:PivotItem x:Name="SharedItems" Header="{Binding LocalizedUiResources.SharedItems, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                    <Grid Margin="0,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-
-                            <RichTextBox Grid.Column="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource PhoneFontSizeSmall}" VerticalAlignment="Top" Margin="0">
-                                <Paragraph>
-                                    <Run Text="{Binding NumberOfSharedFoldersText}"/>
-                                    <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
-                                </Paragraph>
-                            </RichTextBox>
-                        </Grid>
+                        <StackPanel Grid.Row="0" Margin="0">
+                            <Grid Margin="24,0,24,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="24"/>
+                                </Grid.RowDefinitions>
+                                <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
+                                    <Path.Fill>
+                                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                                    </Path.Fill>
+                                </Path>
+                                <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                                <RichTextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0">
+                                    <Paragraph>
+                                        <Run Text="{Binding NumberOfSharedFoldersText}"/>
+                                        <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                    </Paragraph>
+                                </RichTextBox>
+                            </Grid>
+                        </StackPanel>
                         
                         <Grid Grid.Row="1">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstSharedFolders"
-            					ItemsSource="{Binding SharedFolders}"            					
+                                DataContext="{Binding InShares}"
+            					ItemsSource="{Binding ChildNodes}"            					
             					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
             					RealizedItemsBufferScale="3" 
             					DataVirtualizationMode="Automatic" 
