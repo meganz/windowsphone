@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:selectors="clr-namespace:MegaApp.Classes"
+    xmlns:telerikDataControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Data"
     xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
     xmlns:userControls="clr-namespace:MegaApp.UserControls"
@@ -21,13 +22,27 @@
     d:DataContext="{d:DesignInstance models:ContactsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="ContactsMenu">
-            <shell:ApplicationBarIconButton x:Name="BtnAddContact" IconUri="/Assets/AppBar/add.png" Text="add contact" Click="OnAddContactClick" />
-            <!--<shell:ApplicationBarIconButton x:Name="BtnSearchContact" IconUri="/Assets/AppBar/search.png" Text="search" Click="OnSearchContactClick" />-->
+        <shell:ApplicationBar x:Key="ContactsEmptyMenu">
+            <shell:ApplicationBarIconButton Text="add contact" IconUri="/Assets/AppBar/add.png" Click="OnAddContactClick" />
+            <!--<shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/search.png" Click="OnSearchContactClick" />-->
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
-                <!--<shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
-                <shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+        
+        <shell:ApplicationBar x:Key="ContactsMenu">
+            <shell:ApplicationBarIconButton Text="add contact" IconUri="/Assets/AppBar/add.png" Click="OnAddContactClick" />
+            <!--<shell:ApplicationBarIconButton Text="search" IconUri="/Assets/AppBar/search.png" Click="OnSearchContactClick" />-->
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
+                <shell:ApplicationBarMenuItem Text="sort" Click="OnSortClick" />
+                <!--<shell:ApplicationBarMenuItem Text="select" Click="OnSelectClick" />-->
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>        
+
+        <shell:ApplicationBar x:Key="ContactRequestMenu">            
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="refresh" Click="OnRefreshClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -51,7 +66,7 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="ContactsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="ContactsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0" SelectionChanged="OnPivotSelectionChanged">
                 <!--Pivot item one-->
                 <phone:PivotItem x:Name="MegaContacts" Header="{Binding LocalizedUiResources.MEGAContacts, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
                     <Grid Margin="12,0,0,0">
@@ -66,22 +81,41 @@
                                 <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
-                        <Grid x:Name="MegaContactsContentPanel" Grid.Row="1" Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
-                            <phone:LongListSelector
-                                x:Name="LstMegaContacts"
-                                ItemsSource="{Binding MegaContactsDataSource}"
-                                JumpListStyle="{StaticResource MegaJumpListStyle}"
-                                Background="Transparent"
-                                GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
-                                ItemTemplate="{StaticResource MegaContactItemContent}"                                
-                                Tap="OnItemTap"
-                                LayoutMode="List"
-                                IsGroupingEnabled="True"
-                                HideEmptyGroups ="True"/>
-                        </Grid>
-                        <selectors:CustomMultiResolutionImage x:Name="ImgLstMegaContactsEmpty" Grid.Row="1" HorizontalAlignment="Center" Margin="0" 
-                                                              VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"
-                                                              Visibility="{Binding IsMegaContactsListEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <telerikDataControls:RadJumpList
+                            x:Name="LstMegaContacts"
+                            Grid.Row="1"
+                            ItemsSource="{Binding MegaContactsList}"
+                            ItemTemplate="{StaticResource MegaContactItemContent}"
+                            Background="Transparent"
+                            IsGroupPickerEnabled="True"
+                            GroupDescriptorsSource="{Binding GroupDescriptors}"
+                            SortDescriptorsSource="{Binding SortDescriptors}"
+                            GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
+                            EmptyContentTemplate="{StaticResource MegaContactsListEmptyContent}"                            
+                            Tap="OnItemTap">
+                            <telerikDataControls:RadJumpList.GroupPickerItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <telerikPrimitives:RadWrapPanel Margin="6,6" ItemWidth="110" ItemHeight="110"/>
+                                </ItemsPanelTemplate>
+                            </telerikDataControls:RadJumpList.GroupPickerItemsPanel>
+                            <telerikPrimitives:RadContextMenu.ContextMenu>
+                                <telerikPrimitives:RadContextMenu 
+                                    OpenGesture="Hold" 
+                                    x:Name="MegaContactsMenu"
+                                    Opening="OnContactsMenuOpening">
+                                    <telerikPrimitives:RadContextMenuItem
+                                        x:Name="BtnContactDetails" 
+                                        Command="{Binding ViewContactCommand}"
+                                        Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                        />
+                                    <telerikPrimitives:RadContextMenuItem 
+                                        x:Name="BtnDeleteContact" 
+                                        Command="{Binding DeleteContactCommand}"
+                                        Content="{Binding LocalizedUiResources.Delete, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                        />
+                                </telerikPrimitives:RadContextMenu>
+                            </telerikPrimitives:RadContextMenu.ContextMenu>
+                        </telerikDataControls:RadJumpList>                            
                     </Grid>
                 </phone:PivotItem>
                 
@@ -99,7 +133,7 @@
                                 <telerikPrimitives:RadContextMenu 
                                     OpenGesture="Hold" 
                                     x:Name="SentContactRequestMenu"
-                                    Opening="OnMenuOpening">
+                                    Opening="OnContactRequestsMenuOpening">
                                     <telerikPrimitives:RadContextMenuItem 
                                         x:Name="BtnReinvite" 
                                         Command="{Binding ReinviteRequestCommand}"
@@ -130,7 +164,7 @@
                                 <telerikPrimitives:RadContextMenu 
                                     OpenGesture="Hold" 
                                     x:Name="ReceivedContactRequestMenu"
-                                    Opening="OnMenuOpening">
+                                    Opening="OnContactRequestsMenuOpening">
                                     <telerikPrimitives:RadContextMenuItem 
                                         x:Name="BtnAcceptContactRequest" 
                                         Command="{Binding AcceptRequestCommand}"
@@ -166,11 +200,12 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Ellipse Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
+                        <Ellipse x:Name="HamburgerAvatarLetterBackgroud" Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
                             <Ellipse.Fill>
-                                <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                                <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                             </Ellipse.Fill>
                         </Ellipse>
+                        <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding UserData.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
                         <Image x:Name="ImgAvatarMenu" Source="{Binding UserData.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill">
                             <Image.Clip>
                                 <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />

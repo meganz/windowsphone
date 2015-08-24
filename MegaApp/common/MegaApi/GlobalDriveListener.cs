@@ -310,7 +310,13 @@ namespace MegaApp.MegaApi
 
         public void onUsersUpdate(MegaSDK api, MUserList users)
         {
-           // throw new NotImplementedException();
+            foreach (var contacts in Contacts)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    contacts.GetMegaContacts();
+                });
+            }
         }
 
         #endregion

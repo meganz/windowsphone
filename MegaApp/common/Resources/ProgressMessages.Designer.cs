@@ -214,6 +214,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sending contact request....
+        /// </summary>
+        public static string InviteContactAdd {
+            get {
+                return ResourceManager.GetString("InviteContactAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Deleting contact request....
+        /// </summary>
+        public static string InviteContactDelete {
+            get {
+                return ResourceManager.GetString("InviteContactDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reminding contat request....
+        /// </summary>
+        public static string InviteContactRemind {
+            get {
+                return ResourceManager.GetString("InviteContactRemind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Building view....
         /// </summary>
         public static string LoadNodes {
@@ -286,6 +313,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Removing contact....
+        /// </summary>
+        public static string RemoveContact {
+            get {
+                return ResourceManager.GetString("RemoveContact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Removing....
         /// </summary>
         public static string RemoveNode {
@@ -300,6 +336,33 @@ namespace MegaApp.Resources {
         public static string RenameNode {
             get {
                 return ResourceManager.GetString("RenameNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Accepting contact request....
+        /// </summary>
+        public static string ReplyContactRequestAccept {
+            get {
+                return ResourceManager.GetString("ReplyContactRequestAccept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Denying contact request....
+        /// </summary>
+        public static string ReplyContactRequestDeny {
+            get {
+                return ResourceManager.GetString("ReplyContactRequestDeny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ignoring contact request....
+        /// </summary>
+        public static string ReplyContactRequestIgnore {
+            get {
+                return ResourceManager.GetString("ReplyContactRequestIgnore", resourceCulture);
             }
         }
         

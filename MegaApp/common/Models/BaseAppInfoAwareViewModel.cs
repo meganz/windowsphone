@@ -31,18 +31,32 @@ namespace MegaApp.Models
         {
             if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
             {
-                if (App.UserData == null)
-                    App.UserData = new UserDataViewModel { UserEmail = App.MegaSdk.getMyEmail() };
+                bool accountChange = false;
 
-                if (String.IsNullOrEmpty(App.UserData.AvatarPath) || App.UserData.AvatarUri == null)
-                    App.MegaSdk.getUserAvatar(App.MegaSdk.getContact(App.MegaSdk.getMyEmail()), App.UserData.AvatarPath, new GetUserAvatarRequestListener(App.UserData));
+                if (App.UserData != null)
+                    UserData = App.UserData;
+                else if (UserData == null)
+                    UserData = new UserDataViewModel { UserEmail = App.MegaSdk.getMyEmail() };
 
-                if (String.IsNullOrEmpty(App.UserData.UserEmail))
-                    App.UserData.UserEmail = App.MegaSdk.getMyEmail();
-                if (String.IsNullOrEmpty(App.UserData.UserName))
-                    App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(App.UserData));
+                String currentEmail = App.MegaSdk.getMyEmail();
+                if (currentEmail != null && currentEmail.Length != 0)
+                {
+                    if (String.IsNullOrEmpty(UserData.UserEmail))
+                        accountChange = true;
+                    else if (!UserData.UserEmail.Equals(App.MegaSdk.getMyEmail()))
+                        accountChange = true;
+                }
 
-                UserData = App.UserData;
+                if (accountChange || (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
+                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
+
+                if (accountChange)
+                    UserData.UserEmail = App.MegaSdk.getMyEmail();
+
+                if (accountChange || (String.IsNullOrEmpty(UserData.UserName) || UserData.UserName.Equals(UiResources.MyAccount)))
+                    App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(UserData));
+
+                App.UserData = UserData;
             }
             else
             {

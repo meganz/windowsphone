@@ -684,6 +684,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Developer</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for "Developer" type of acknowledgement</note>
         </trans-unit>
+        <trans-unit id="Resx/ViewDetails" translate="yes" xml:space="preserve">
+          <source>View details</source>
+          <target state="new">View details</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/AutoUpload" translate="yes" xml:space="preserve">
           <source>Auto Upload</source>
           <target state="new">Auto Upload</target>
