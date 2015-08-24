@@ -182,9 +182,6 @@
     <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
       <Link>Classes\AdvancedMenuItem.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\AlphaKeyGroup.cs">
-      <Link>Classes\AlphaKeyGroup.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\AppInformation.cs">
       <Link>Classes\AppInformation.cs</Link>
     </Compile>
@@ -296,6 +293,9 @@
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\ContactsDisplayMode.cs">
+      <Link>Enums\ContactsDisplayMode.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\ContainerType.cs">
       <Link>Enums\ContainerType.cs</Link>
     </Compile>
@@ -340,6 +340,9 @@
     </Compile>
     <Compile Include="..\common\Extensions\NavigationExtensions.cs">
       <Link>Extensions\NavigationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Extensions\PathExtensions.cs">
+      <Link>Extensions\PathExtensions.cs</Link>
     </Compile>
     <Compile Include="..\common\Extensions\SizeExtensions.cs">
       <Link>Extensions\SizeExtensions.cs</Link>
@@ -389,6 +392,9 @@
     <Compile Include="..\common\MegaApi\GetAccountDetailsRequestListener.cs">
       <Link>MegaApi\GetAccountDetailsRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\GetContactAvatarRequestListener.cs">
+      <Link>MegaApi\GetContactAvatarRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\GetContactDataRequestListener.cs">
       <Link>MegaApi\GetContactDataRequestListener.cs</Link>
     </Compile>
@@ -422,8 +428,14 @@
     <Compile Include="..\common\MegaApi\ImportFileRequestListener.cs">
       <Link>MegaApi\ImportFileRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
+      <Link>MegaApi\InviteContactRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\MegaInputStream.cs">
+      <Link>MegaApi\MegaInputStream.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\MegaLogger.cs">
       <Link>MegaApi\MegaLogger.cs</Link>
@@ -437,11 +449,17 @@
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
+      <Link>MegaApi\RemoveContactRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\RemoveNodeRequestListener.cs">
       <Link>MegaApi\RemoveNodeRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\RenameNodeRequestListener.cs">
       <Link>MegaApi\RenameNodeRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ReplyContactRequestListener.cs">
+      <Link>MegaApi\ReplyContactRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
@@ -743,7 +761,6 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
-    <Compile Include="Extensions\PathExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1515,8 +1532,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppMessages.es-ES.xlf</DependentUpon>
-      <culture>es-ES</culture>
       <SubType>Designer</SubType>
+      <culture>es-ES</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.et-EE.resx">
       <Link>Resources\AppMessages.et-EE.resx</Link>

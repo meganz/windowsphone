@@ -71,7 +71,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ActionOnSucces
         {
-            get { return false; }
+            get { return true; }
         }
 
         protected override Type NavigateToPage
@@ -86,34 +86,21 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(false);
-            });
-
-            if (e.getErrorCode() == MErrorType.API_OK)
-            {
-                if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
+                switch (request.getParamType())
                 {
-                    switch (request.getParamType())
-                    {
-                        case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
-                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());                            
-                            break;
+                    case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
+                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.FirstName = request.getText());
+                        break;
 
-                        case (int)MUserAttrType.USER_ATTR_LASTNAME:
-                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());                            
-                            break;
-
-                        default: // getUserAvatar()
-                            Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute));
-                            break;
-                    }
+                    case (int)MUserAttrType.USER_ATTR_LASTNAME:
+                        Deployment.Current.Dispatcher.BeginInvoke(() => _megaContact.LastName = request.getText());
+                        break;
                 }
-            }            
+            }
         }
 
         #endregion

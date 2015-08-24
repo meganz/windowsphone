@@ -95,8 +95,11 @@ namespace MegaApp.MegaApi
                 });
             }
 
-            _mainPageViewModel.GetAccountDetails();
-            _mainPageViewModel.FetchNodes();            
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _mainPageViewModel.GetAccountDetails();
+                _mainPageViewModel.FetchNodes();
+            });
         }
 
         #endregion

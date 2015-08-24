@@ -14,6 +14,7 @@ using MegaApp.Resources;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Data;
 #if WINDOWS_PHONE_81
 
 #endif
@@ -283,7 +284,7 @@ namespace MegaApp.Services
             var sortItems = new List<AdvancedMenuItem>();
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (ascending)",
+                Name = UiResources.FilesAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -297,7 +298,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "files (descending)",
+                Name = UiResources.FilesDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -311,7 +312,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "largest",
+                Name = UiResources.LargestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -325,7 +326,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "smallest",
+                Name = UiResources.SmallestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -339,7 +340,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "newest",
+                Name = UiResources.NewestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -353,7 +354,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "oldest",
+                Name = UiResources.OldestSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -367,7 +368,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (ascending)",
+                Name = UiResources.NameAscendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -381,7 +382,7 @@ namespace MegaApp.Services
 
             sortItems.Add(new AdvancedMenuItem()
             {
-                Name = "name (descending)",
+                Name = UiResources.NameDescendingSortOption.ToLower(),
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
@@ -407,6 +408,87 @@ namespace MegaApp.Services
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
             sortList.ItemTap += (sender, args) => ((AdvancedMenuItem) args.Item.DataContext).TapAction.Invoke();
             
+            buttonStackPanel.Children.Add(headerText);
+            buttonStackPanel.Children.Add(sortList);
+
+            sortRadWindow.Content = buttonStackPanel;
+
+            sortRadWindow.IsOpen = true;
+        }
+
+        public static void ShowSortContactsDialog(ContactsViewModel contacts)
+        {            
+            if (contacts == null) return;
+
+            var sortRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+            };
+
+            var buttonStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+
+            var headerText = new TextBlock()
+            {
+                Text = UiResources.SortByMenuTitle.ToUpper(),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(20, 30, 20, 20)
+            };
+
+            var sortItems = new List<AdvancedMenuItem>();
+            
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.NameAscendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    Task.Run(() => contacts.SortContacts(ListSortMode.Ascending));       
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.NameDescendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    Task.Run(() => contacts.SortContacts(ListSortMode.Descending));
+                }
+            });
+
+
+            var sortList = new RadDataBoundListBox
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                ItemsSource = sortItems,
+                Margin = new Thickness(20),
+                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"],
+            };
+            ScrollViewer.SetVerticalScrollBarVisibility(sortList, ScrollBarVisibility.Disabled);
+            InteractionEffectManager.SetIsInteractionEnabled(sortList, true);
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
+            sortList.ItemTap += (sender, args) => ((AdvancedMenuItem)args.Item.DataContext).TapAction.Invoke();
+
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(sortList);
 
