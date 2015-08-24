@@ -9,6 +9,7 @@ using MegaApp.MegaApi;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
 namespace ScheduledCameraUploadTaskAgent
 {
