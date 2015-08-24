@@ -56,8 +56,8 @@
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding ViewMasterKeyCommand}"/>
-                                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
+                                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding ViewMasterKeyCommand}"/>
+                                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
                             </Grid>
 
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Security, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
@@ -196,7 +196,7 @@
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <StackPanel Margin="0,0,0,40">
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
@@ -212,6 +212,7 @@
                                 <StackPanel Visibility="{Binding CameraUploadsIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="how to upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneSubtleBrush}"/>
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="wi-fi only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="external power connected..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="file upload" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,20,0,0" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource PhoneSubtleBrush}"/>
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="photos only..." VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                                 </StackPanel>
