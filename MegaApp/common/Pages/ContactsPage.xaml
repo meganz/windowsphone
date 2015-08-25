@@ -74,8 +74,8 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
-                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource PhoneFontSizeSmall}" VerticalAlignment="Top" Margin="0">
+
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfMegaContactsText}"/>
                                 <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>

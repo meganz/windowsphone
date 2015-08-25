@@ -91,6 +91,8 @@ namespace MegaApp.UserControls
 
             if(ItemsSourceType == ContainerType.RubbishBin)
                 homeButton.Style = (Style)Application.Current.Resources["RubbishBinHomeCrumbStyle"];
+            else if((ItemsSourceType == ContainerType.InShares))
+                homeButton.Style = (Style)Application.Current.Resources["InSharesHomeCrumbStyle"];
             else
                 homeButton.Style = (Style)Application.Current.Resources["CloudDriveHomeCrumbStyle"];
 

@@ -487,8 +487,8 @@
             </Grid.RowDefinitions>
             <RichTextBox Grid.Row="0" VerticalAlignment="Top">
                 <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.SentRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource InformationFontSize}"/>
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.SentRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource InformationFontSize}"/>
                 </Paragraph>
             </RichTextBox>
             <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>-->
@@ -510,8 +510,8 @@
             </Grid.RowDefinitions>
             <RichTextBox Grid.Row="0" VerticalAlignment="Top">
                 <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.ReceivedRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource InformationFontSize}"/>
+                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.ReceivedRequests, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource InformationFontSize}"/>
                 </Paragraph>
             </RichTextBox>
             <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>-->
@@ -1285,6 +1285,44 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Path x:Name="PathArrow" Data="{Binding LocalizedVisualResources.RubbishBinHomeLogoData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Height="24" Width="24" Margin="0"></Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="InSharesHomeCrumbStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="PathArrow" Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Height="24" Width="24" Margin="0"></Path>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

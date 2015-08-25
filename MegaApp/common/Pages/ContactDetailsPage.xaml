@@ -59,22 +59,22 @@
 
                         <StackPanel Grid.Row="0" Margin="0">
                             <Grid Margin="24,0,24,5">
-                                <Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>                                    
+                                    <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
-                                <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
-                                    <Path.Fill>
-                                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                                    </Path.Fill>
-                                </Path>
-                                <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
-                                <!--<TextBlock Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>-->
+                                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                                    <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
+                                        <Path.Fill>
+                                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                                        </Path.Fill>
+                                    </Path>
+                                    <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0"/>
+                                </StackPanel>                                
                             </Grid>
                         </StackPanel>
 
@@ -121,41 +121,48 @@
 
                         <StackPanel Grid.Row="0" Margin="0">
                             <Grid Margin="24,0,24,5">
-                                <Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>                                    
+                                    <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
-                                <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
-                                    <Path.Fill>
-                                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                                    </Path.Fill>
-                                </Path>
-                                <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
-                                <RichTextBox Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0">
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding InShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <Path Data="{Binding LocalizedVisualResources.ContactsPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" VerticalAlignment="Center" Height="24" Width="24" Margin="0,0,12,0">
+                                        <Path.Fill>
+                                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                                        </Path.Fill>
+                                    </Path>
+                                    <TextBlock Text="{Binding SelectedContact.FullName}" HorizontalAlignment="Left" TextAlignment="Left" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0"/>
+                                </StackPanel>
+                                <RichTextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <Paragraph>
-                                        <Run Text="{Binding NumberOfSharedFoldersText}"/>
+                                        <Run Text="{Binding NumberOfInSharedFoldersText}"/>
                                         <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                                     </Paragraph>
                                 </RichTextBox>
+                                <userControls:BreadCrumb x:Name="InSharesBreadCrumb" ItemsSource="{Binding InShares.BreadCrumbs}" ItemsSourceType="{Binding InShares.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"/>
+                                <TextBlock Text="{Binding InShares.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"/>
                             </Grid>
                         </StackPanel>
                         
-                        <Grid Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="24,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
-            					x:Name="LstSharedFolders"
-                                DataContext="{Binding InShares}"
-            					ItemsSource="{Binding ChildNodes}"            					
+            					x:Name="LstInSharedFolders"                                
+            					DataContext="{Binding InShares}"                                
+            					ItemsSource="{Binding ChildNodes}"
+                                ItemTap="OnInSharedItemTap"
+                                ItemTemplateSelector="{Binding NodeTemplateSelector}" 
             					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-            					RealizedItemsBufferScale="3" 
-            					DataVirtualizationMode="Automatic" 
+                                ItemStateChanged="OnInSharedItemStateChanged" 
+                                RealizedItemsBufferScale="3" 
+            					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 
             					EmptyContent=""
-                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}" 
+                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}"                                 
             					IsAsyncBalanceEnabled="True"/>
                         </Grid>                        
                     </Grid>
