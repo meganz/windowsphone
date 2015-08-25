@@ -226,7 +226,11 @@ namespace MegaApp.Models
             set
             {
                 if (_cameraUploadsIsEnabled != value)
+                {
                     SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, value);
+                    if(!value)
+                        SettingsService.DeleteSetting("LastUploadDate");
+                }
 
                 if (value && !SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                 {
