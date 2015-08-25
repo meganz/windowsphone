@@ -143,26 +143,25 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            switch (e.NavigationMode)
-            {
-                case NavigationMode.Reset:
-                    return;
-                case NavigationMode.New:
-                {
-                    //if (!SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsIsEnabled)) break;
+            if(e.NavigationMode == NavigationMode.Reset) return;
 
-                    //if (MediaService.GetAutoCameraUploadStatus())
-                    //{
-                    //    MediaService.SetAutoCameraUpload(true);
-                    //}
-                    //else
-                    //{
-                    //    await new CustomMessageDialog(
-                    //        "Auto Camera Upload failed",
-                    //        "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
-                    //        App.AppInformation).ShowDialogAsync();
-                    //}
-                    break;
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                if (SettingsService.LoadSetting(SettingsResources.CameraUploadsIsEnabled, false))
+                {
+                    if (MediaService.GetAutoCameraUploadStatus())
+                    {
+                        MediaService.SetAutoCameraUpload(true);
+                    }
+                    else
+                    {
+                        await new CustomMessageDialog(
+                            "Auto Camera Upload failed",
+                            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+                            App.AppInformation).ShowDialogAsync();
+                        MediaService.SetAutoCameraUpload(false);
+                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+                    }
                 }
             }
 

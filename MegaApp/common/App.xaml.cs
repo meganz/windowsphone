@@ -235,7 +235,7 @@ namespace MegaApp
         private bool phoneApplicationInitialized = false;
 
         // Do not add any additional code to this method
-        private void InitializePhoneApplication()
+        private async void InitializePhoneApplication()
         {
             if (phoneApplicationInitialized)
                 return;
@@ -262,12 +262,13 @@ namespace MegaApp
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
-            #if WINDOWS_PHONE_81
+
+#if WINDOWS_PHONE_81
             RootFrame.Navigating += RootFrameOnNavigating;
 
             // Handle contract activation such as returned values from file open or save picker
             PhoneApplicationService.Current.ContractActivated += CurrentOnContractActivated;
-            #endif
+#endif
 
             // Assign the URI-mapper class to the application frame.
             RootFrame.UriMapper = new AssociationUriMapper();
@@ -318,6 +319,21 @@ namespace MegaApp
             AppService.SaveAppInformation();
             // Set MEGA red as Accent Color
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Resources["MegaRedColor"];
+
+            //if (SettingsService.LoadSetting(SettingsResources.CameraUploadsIsEnabled, false))
+            //{
+            //    if (MediaService.GetAutoCameraUploadStatus())
+            //    {
+            //        MediaService.SetAutoCameraUpload(true);
+            //    }
+            //    else
+            //    {
+            //        await new CustomMessageDialog(
+            //            "Auto Camera Upload failed",
+            //            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+            //            App.AppInformation).ShowDialogAsync();
+            //    }
+            //}
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
