@@ -68,9 +68,11 @@ namespace MegaApp.Classes
             get
             {
                 if (!String.IsNullOrWhiteSpace(UserName))
-                    return UserName.Substring(0, 1).ToUpper();                
-                else
+                    return UserName.Substring(0, 1).ToUpper();
+                if (!String.IsNullOrWhiteSpace(UserEmail))
                     return UserEmail.Substring(0, 1).ToUpper();
+
+                return null;
             }
         }
     }
