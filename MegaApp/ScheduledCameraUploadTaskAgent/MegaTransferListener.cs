@@ -30,8 +30,10 @@ namespace ScheduledCameraUploadTaskAgent
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)
         {
-            _timer = new Timer(state => api.retryPendingConnections(), 
-                null, TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(5));
+            _timer = new Timer(state =>
+            {
+                api.retryPendingConnections();
+            }, null, TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(5));
         }
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)

@@ -8,6 +8,7 @@ using mega;
 using MegaApp.MegaApi;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
@@ -36,6 +37,7 @@ namespace ScheduledCameraUploadTaskAgent
                 // An unhandled exception has occurred; break into the debugger
                 Debugger.Break();
             }
+            ShowAbortToast();
         }
 
         /// <summary>
@@ -69,6 +71,7 @@ namespace ScheduledCameraUploadTaskAgent
             {
                 if (!args.Succeeded)
                 {
+                    ShowAbortToast();
                     this.Abort();
                 }
                 else
@@ -88,6 +91,7 @@ namespace ScheduledCameraUploadTaskAgent
             {
                 if (!args.Succeeded)
                 {
+                    ShowAbortToast();
                     this.Abort();
                 }
                 else
@@ -109,40 +113,51 @@ namespace ScheduledCameraUploadTaskAgent
                 {
                     if(picture.Date <= lastUploadDate) continue;
 
-                    var imageStream = picture.GetImage();
-                    imageStream.Position = 0;
-
-                    string newFilePath = Path.Combine(
-                        Path.Combine(ApplicationData.Current.LocalFolder.Path, "uploads\\"), picture.Name);
-
-                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    using (var imageStream = picture.GetImage())
                     {
-                        await imageStream.CopyToAsync(fs);
-                        await fs.FlushAsync();
-                        fs.Close();
-                    }
+                        imageStream.Position = 0;
 
-                    string fingerprint = MegaSdk.getFileFingerprint(newFilePath);
+                        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                        TimeSpan diff = picture.Date.ToUniversalTime() - origin;
+                        ulong mtime = (ulong)Math.Floor(diff.TotalSeconds);
 
-                    var mNode = MegaSdk.getNodeByFingerprint(fingerprint);
+                        string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
 
-                    if (mNode == null)
-                    {
+                        var mNode = MegaSdk.getNodeByFingerprint(fingerprint);
+
                         lastUploadDate = picture.Date;
+
+                        if (mNode != null)
+                        {
+                            SettingsService.SaveSetting("LastUploadDate", lastUploadDate);
+                            continue;
+                        }
+                        
+                        string newFilePath = Path.Combine(
+                            Path.Combine(ApplicationData.Current.LocalFolder.Path, "uploads\\"), picture.Name);
+
+                        imageStream.Position = 0;
+
+                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        {
+                            await imageStream.CopyToAsync(fs);
+                            await fs.FlushAsync();
+                            fs.Close();
+                        }
+                        
                         var transferListener = new MegaTransferListener();
                         transferListener.TransferFinished += (sender, args) =>
                         {
-                            if(args.Succeeded)
+                            if (args.Succeeded)
                                 SettingsService.SaveSetting("LastUploadDate", lastUploadDate);
                             File.Delete(newFilePath);
                             Upload();
                         };
 
-                        MegaSdk.startUpload(newFilePath, await GetCameraUploadsNode(), transferListener);
+                        MegaSdk.startUploadWithMtime(newFilePath, await GetCameraUploadsNode(), mtime, transferListener);
                         break;
                     }
                     
-                    File.Delete(newFilePath);
                 }
 
             }
@@ -182,6 +197,16 @@ namespace ScheduledCameraUploadTaskAgent
         private static string GetBackgroundAgentUserAgent()
         {
             return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "1.0.0.0");
+        }
+
+        private static void ShowAbortToast()
+        {
+            ShellToast toast = new ShellToast
+            {
+                Title = "MEGA Camera Uploads",
+                Content = "Auto Camera Upload has been disabled"
+            };
+            toast.Show();
         }
     }
 }

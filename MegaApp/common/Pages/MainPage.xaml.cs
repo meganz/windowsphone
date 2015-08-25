@@ -145,6 +145,26 @@ namespace MegaApp.Pages
 
             if(e.NavigationMode == NavigationMode.Reset) return;
 
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                if (SettingsService.LoadSetting(SettingsResources.CameraUploadsIsEnabled, false))
+                {
+                    if (MediaService.GetAutoCameraUploadStatus())
+                    {
+                        MediaService.SetAutoCameraUpload(true);
+                    }
+                    else
+                    {
+                        await new CustomMessageDialog(
+                            "Auto Camera Upload failed",
+                            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+                            App.AppInformation).ShowDialogAsync();
+                        MediaService.SetAutoCameraUpload(false);
+                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+                    }
+                }
+            }
+
             _mainPageViewModel.Initialize(App.GlobalDriveListener);
             
             App.CloudDrive.ListBox = LstCloudDrive;
