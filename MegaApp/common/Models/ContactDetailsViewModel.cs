@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -22,8 +25,8 @@ namespace MegaApp.Models
             
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
-            this.InShares = new ObservableCollection<FolderViewModel>();
-        }
+            this.InShares = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.InShares);            
+        }        
 
         #region Properties
 
@@ -38,46 +41,48 @@ namespace MegaApp.Models
             }
         }
 
-        private int _numberOfSharedFolders;
-        public int NumberOfSharedFolders
+        private CancellationTokenSource LoadingCancelTokenSource { get; set; }
+        private CancellationToken LoadingCancelToken { get; set; }
+
+        private FolderViewModel _inShares;
+        public FolderViewModel InShares
         {
-            get { return _numberOfSharedFolders; }
+            get { return _inShares; }
             set
             {
-                _numberOfSharedFolders = value;
-                OnPropertyChanged("NumberOfSharedFolders");
-                OnPropertyChanged("NumberOfSharedFoldersText");
+                SetField(ref _inShares, value);
+                OnPropertyChanged("NumberOfInSharedFolders");
+                OnPropertyChanged("NumberOfInSharedFoldersText");
             }
         }
+                
+        public int NumberOfInSharedFolders
+        {
+            get { return InShares.ChildNodes.Count; }            
+        }
 
-        public String NumberOfSharedFoldersText
+        public String NumberOfInSharedFoldersText
         {
             get
             {
-                if (NumberOfSharedFolders != 0)
-                    return NumberOfSharedFolders.ToString();
+                if (NumberOfInSharedFolders != 0)
+                    return NumberOfInSharedFolders.ToString();
                 else
                     return UiResources.No.ToLower();
             }
         }
 
-        private ObservableCollection<FolderViewModel> _inShares;
-        public ObservableCollection<FolderViewModel> InShares
+        private bool _isInSharedItemsRootListView;
+        public bool IsInSharedItemsRootListView
         {
-            get { return _inShares; }
-            private set { SetField(ref _inShares, value); }
+            get { return _isInSharedItemsRootListView; }
+            set 
+            {
+                _isInSharedItemsRootListView = value;
+                OnPropertyChanged("IsInSharedItemsRootListView");
+            }
         }
         
-        private ObservableCollection<IMegaNode> _inSharesList;
-        public ObservableCollection<IMegaNode> InSharesList
-        {
-            get { return _inSharesList; }
-            set { SetField(ref _inSharesList, value); }
-        }
-
-        private CancellationTokenSource LoadingCancelTokenSource { get; set; }
-        private CancellationToken LoadingCancelToken { get; set; }
-
         #endregion
 
         #region Methods
@@ -104,10 +109,48 @@ namespace MegaApp.Models
 
         public void GetContactSharedFolders()
         {
-            NumberOfSharedFolders = 0;
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return;
 
-            OnUiThread(() => InSharesList.Clear());
-            MNodeList inSharesNodeList = MegaSdk.getInShares(MegaSdk.getContact(_selectedContact.Email));
+            // First cancel any other loading task that is busy
+            CancelLoad();
+
+            // Create the option to cancel
+            CreateLoadCancelOption();
+
+            OnUiThread(() => InShares.ChildNodes.Clear());
+            MNodeList inSharesList = MegaSdk.getInShares(MegaSdk.getContact(_selectedContact.Email));
+
+            Task.Factory.StartNew(() =>
+            {
+                try
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        for (int i = 0; i < inSharesList.size(); i++)
+                        {
+                            // If the task has been cancelled, stop processing
+                            if (LoadingCancelToken.IsCancellationRequested)
+                                LoadingCancelToken.ThrowIfCancellationRequested();
+
+                            // To avoid null values
+                            if (inSharesList.get(i) == null) continue;
+
+                            var _inSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, inSharesList.get(i), InShares.ChildNodes);
+                            _inSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared; 
+                            InShares.ChildNodes.Add(_inSharedFolder);
+                        }
+
+                        OnPropertyChanged("NumberOfInSharedFolders");
+                        OnPropertyChanged("NumberOfInSharedFoldersText");
+                    });
+                }
+                catch (OperationCanceledException)
+                {
+                    // Do nothing. Just exit this background process because a cancellation exception has been thrown
+                }
+
+            }, LoadingCancelToken, TaskCreationOptions.PreferFairness, TaskScheduler.Current);
         }
 
         #endregion

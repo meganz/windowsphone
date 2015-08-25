@@ -10,10 +10,11 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Enums;
 using MegaApp.Classes;
+using MegaApp.Interfaces;
 using MegaApp.Models;
-using MegaApp.UserControls;
 using MegaApp.Resources;
 using MegaApp.Services;
+using MegaApp.UserControls;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
@@ -21,7 +22,7 @@ namespace MegaApp.Pages
 {
     public partial class ContactDetailsPage : PhoneDrawerLayoutPage
     {
-        private readonly ContactDetailsViewModel _contactDetailsViewModel;
+        private readonly ContactDetailsViewModel _contactDetailsViewModel;        
 
         public ContactDetailsPage()
         {
@@ -32,7 +33,29 @@ namespace MegaApp.Pages
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.Contacts);
 
             SetApplicationBarData();
+
+            _contactDetailsViewModel.IsInSharedItemsRootListView = true;
+
+            InSharesBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
+            InSharesBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
         }
+
+        private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            _contactDetailsViewModel.GetContactSharedFolders();
+            _contactDetailsViewModel.IsInSharedItemsRootListView = true;            
+        }
+
+        private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+            
+            ((ContactDetailsViewModel)this.DataContext).InShares.BrowseToFolder((IMegaNode)e.Item);            
+        }        
 
         private void SetApplicationBarData()
         {
@@ -51,12 +74,37 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-
+            
+            // Check if we can go a folder up in the selected pivot view
+            e.Cancel = CheckAndGoFolderUp(e.Cancel);
+                        
             if (e.Cancel) return;
+
+            if (ContactDetails.SelectedItem.Equals(SharedItems))
+            {
+                if (!_contactDetailsViewModel.IsInSharedItemsRootListView)
+                {
+                    _contactDetailsViewModel.GetContactSharedFolders();
+                    _contactDetailsViewModel.IsInSharedItemsRootListView = true;
+                    e.Cancel = true; return;
+                }                    
+            }
 
             NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.Normal);
 
             e.Cancel = true;            
+        }
+
+        private bool CheckAndGoFolderUp(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (ContactDetails.SelectedItem.Equals(SharedItems))
+            {
+                return _contactDetailsViewModel.InShares.GoFolderUp();
+            }
+
+            return false;
         }
 
         private void OnMessageClick(object sender, EventArgs e)
@@ -91,6 +139,42 @@ namespace MegaApp.Pages
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
 
+        private void OnInSharedItemTap(object sender, ListBoxItemTapEventArgs e)
+        {
+            if (!CheckTappedItem(e.Item)) return;
+
+            this.LstInSharedFolders.SelectedItem = null;
+            _contactDetailsViewModel.IsInSharedItemsRootListView = false;
+
+            _contactDetailsViewModel.InShares.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
+        }
+
+        private void OnInSharedItemStateChanged(object sender, ItemStateChangedEventArgs e)
+        {
+            switch (e.State)
+            {
+                case ItemState.Recycling:
+                    break;
+                case ItemState.Recycled:
+                    break;
+                case ItemState.Realizing:
+                    break;
+                case ItemState.Realized:
+                    ((IMegaNode)e.DataItem).SetThumbnailImage();
+                    break;
+            }
+        }
+
+        private bool CheckTappedItem(RadDataBoundListBoxItem item)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            if (item == null || item.DataContext == null) return false;
+            if (!(item.DataContext is IMegaNode)) return false;
+            return true;
+        }
+
         #region Override Events
 
         // XAML can not bind them direct from the base class
@@ -106,6 +190,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
+        #endregion        
     }        
 }
