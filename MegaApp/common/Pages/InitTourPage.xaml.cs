@@ -9,8 +9,10 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Enums;
+using MegaApp.Classes;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using MegaApp.Resources;
 
 namespace MegaApp.Pages
 {
@@ -32,12 +34,23 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
+            base.OnNavigatedTo(e);            
 
             // Remove the main page from the stack. If user presses back button it will then exit the application
             // Also removes the login page and the create account page after the user has created the account succesful            
             while (NavigationService.CanGoBack)
                 NavigationService.RemoveBackEntry();
+
+            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            if (navParam == NavigationParameter.API_ESID)
+            {
+                // Show a message notifying the error
+                new CustomMessageDialog(
+                    AppMessages.SessionIDError_Title,
+                    AppMessages.SessionIDError,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)

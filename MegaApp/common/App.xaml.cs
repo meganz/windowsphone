@@ -490,29 +490,30 @@ namespace MegaApp
         {
             if (e.getErrorCode() == MErrorType.API_ESID)
             {
-                // Show the login page
-                Deployment.Current.Dispatcher.BeginInvoke(() => 
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal));
-
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        MainPageViewModel.CloudDrive.ChildNodes.Clear();
-                        MainPageViewModel.RubbishBin.ChildNodes.Clear();
-                    }                    
-                );
-                AppService.ClearAppCache(false);                
+                {
+                    MainPageViewModel.CloudDrive.ChildNodes.Clear();
+                    MainPageViewModel.RubbishBin.ChildNodes.Clear();
+                });
+                AppService.ClearAppCache(false);
 
                 // Show a message notifying the error
+                //Deployment.Current.Dispatcher.BeginInvoke(() =>
+                //    MessageBox.Show(AppMessages.SessionIDError, AppMessages.SessionIDError_Title, MessageBoxButton.OK));
+                //Deployment.Current.Dispatcher.BeginInvoke(() =>
+                //{
+                //    new CustomMessageDialog(
+                //        AppMessages.SessionIDError_Title,
+                //        AppMessages.SessionIDError,
+                //        App.AppInformation,
+                //        MessageDialogButtons.Ok).ShowDialog();
+                //});
+
+                // Show the init tour / login page
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                            AppMessages.SessionIDError_Title,
-                            AppMessages.SessionIDError,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                });
+                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESID));
             }
         }
 
