@@ -2,6 +2,8 @@
 {
     public enum NavigationParameter
     {
+        API_ESID = -15,
+
         Normal = 0,
         Login = 10,
         PasswordLogin = 20,
