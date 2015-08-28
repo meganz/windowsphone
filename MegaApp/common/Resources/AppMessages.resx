@@ -923,4 +923,8 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Contact invited</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>MEGA automatic camera uploads</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
 </root>

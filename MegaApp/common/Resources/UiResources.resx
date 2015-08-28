@@ -790,7 +790,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="WifiOnly" xml:space="preserve">
-    <value>Wifi only</value>
+    <value>Wi-fi only</value>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
@@ -1127,5 +1127,17 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="ViewDetails" xml:space="preserve">
     <value>View details</value>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
+  </data>
+  <data name="PhotosOnly" xml:space="preserve">
+    <value>Photos only</value>
+    <comment>Label for the "Photos only" auto camera upload settings</comment>
+  </data>
+  <data name="PowerConnected" xml:space="preserve">
+    <value>External power source connected</value>
+    <comment>Label for the "External power source connected" auto camera upload settings</comment>
+  </data>
+  <data name="UploadSettings" xml:space="preserve">
+    <value>Upload settings</value>
+    <comment>Label for the auto camera upload setting options</comment>
   </data>
 </root>
