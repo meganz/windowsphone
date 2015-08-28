@@ -320,21 +320,6 @@ namespace MegaApp
             // Set MEGA red as Accent Color
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Resources["MegaRedColor"];
 
-            //if (SettingsService.LoadSetting(SettingsResources.CameraUploadsIsEnabled, false))
-            //{
-            //    if (MediaService.GetAutoCameraUploadStatus())
-            //    {
-            //        MediaService.SetAutoCameraUpload(true);
-            //    }
-            //    else
-            //    {
-            //        await new CustomMessageDialog(
-            //            "Auto Camera Upload failed",
-            //            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
-            //            App.AppInformation).ShowDialogAsync();
-            //    }
-            //}
-
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
         }

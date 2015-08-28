@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="x7d8d3817y2eb5y416ay9147yed5e83dee03ex" Executable="AGHost.exe" EntryPoint="Pages\MainPage.xaml">
-      <m3:VisualElements DisplayName="MEGA Privacy" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="MEGA Cloud Service Application" ForegroundText="light" BackgroundColor="#464646">
+      <m3:VisualElements DisplayName="MEGA Privacy" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="MEGA Cloud Service Application" ForegroundText="light" BackgroundColor="#464646" ToastCapable="true">
         <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
         </m3:DefaultTile>
         <!--<m3:SplashScreen Image="Assets\Splashscreen.png" />-->
@@ -58,8 +58,8 @@
         </Extension>
         <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">
           <BackgroundTasks>
-            <Task Type="systemEvent"  />
-            <Task Type="timer"/>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
           </BackgroundTasks>
         </Extension>
       </Extensions>
