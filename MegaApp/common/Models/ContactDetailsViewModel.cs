@@ -25,7 +25,7 @@ namespace MegaApp.Models
             
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
-            this.InShares = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.InShares);            
+            this.InShares = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.ContactInShares);
         }        
 
         #region Properties

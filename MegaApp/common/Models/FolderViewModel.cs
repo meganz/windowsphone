@@ -62,6 +62,12 @@ namespace MegaApp.Models
                 case ContainerType.InShares:
                     this.CurrentDisplayMode = DriveDisplayMode.InShares;
                     break;
+                case ContainerType.OutShares:
+                    this.CurrentDisplayMode = DriveDisplayMode.OutShares;
+                    break;
+                case ContainerType.ContactInShares:
+                    this.CurrentDisplayMode = DriveDisplayMode.ContactInShares;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("containerType");
             }
