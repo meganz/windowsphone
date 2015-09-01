@@ -33,19 +33,19 @@
           </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestIgnore" translate="yes" xml:space="preserve">
           <source>Ignoring contact request...</source>
-          <target state="new">Ignoring contact request...</target>
+          <target state="translated">Ignorando petición de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when ignoring a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestDeny" translate="yes" xml:space="preserve">
           <source>Denying contact request...</source>
-          <target state="new">Denying contact request...</target>
+          <target state="translated">Denegando solicitud de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when denying a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestAccept" translate="yes" xml:space="preserve">
           <source>Accepting contact request...</source>
-          <target state="new">Accepting contact request...</target>
+          <target state="translated">Aceptando solicitud de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when accepting a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" xml:space="preserve">
           <source>Removing...</source>
           <target state="translated" state-qualifier="mt-suggestion">Eliminando...</target>
@@ -58,9 +58,9 @@
           </trans-unit>
         <trans-unit id="Resx/RemoveContact" translate="yes" xml:space="preserve">
           <source>Removing contact...</source>
-          <target state="new">Removing contact...</target>
+          <target state="translated">Eliminando contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a contact - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/PrepareDownloads" translate="yes" xml:space="preserve">
           <source>Preparing downloads...</source>
           <target state="translated">Preparando descargas...</target>
@@ -103,19 +103,19 @@
           </trans-unit>
         <trans-unit id="Resx/InviteContactRemind" translate="yes" xml:space="preserve">
           <source>Reminding contat request...</source>
-          <target state="new">Reminding contat request...</target>
+          <target state="translated">Recordando solicitud de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when reminding a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactDelete" translate="yes" xml:space="preserve">
           <source>Deleting contact request...</source>
-          <target state="new">Deleting contact request...</target>
+          <target state="translated">Eliminando solicitud de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAdd" translate="yes" xml:space="preserve">
           <source>Sending contact request...</source>
-          <target state="new">Sending contact request...</target>
+          <target state="translated">Enviando solicitud de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when sending a contact request - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/GetPreview" translate="yes" xml:space="preserve">
           <source>Getting preview...</source>
           <target state="translated">Obteniendo vista previa...</target>
@@ -148,9 +148,9 @@
           </trans-unit>
         <trans-unit id="Resx/GetContactData" translate="yes" xml:space="preserve">
           <source>Getting contact data...</source>
-          <target state="new">Getting contact data...</target>
+          <target state="translated">Obteniendo información de contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting contact details - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/FetchingNodes" translate="yes" xml:space="preserve">
           <source>Fetching files and folders... [{0}]</source>
           <target state="translated">Obteniendo archivos y carpetas... [{0}]</target>
