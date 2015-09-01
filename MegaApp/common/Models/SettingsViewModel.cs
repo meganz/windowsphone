@@ -229,7 +229,7 @@ namespace MegaApp.Models
                 {
                     SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, value);
                     if(!value)
-                        SettingsService.DeleteSetting("LastUploadDate");
+                        SettingsService.DeleteFileSetting("LastUploadDate");
                 }
 
                 if (value && !SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))

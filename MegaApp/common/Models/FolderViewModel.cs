@@ -268,8 +268,6 @@ namespace MegaApp.Models
                     break;
                 case MNodeType.TYPE_RUBBISH:
                     break;
-                case MNodeType.TYPE_MAIL:
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

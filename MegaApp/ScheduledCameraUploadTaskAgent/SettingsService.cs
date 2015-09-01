@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.IO.IsolatedStorage;
 using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
@@ -23,12 +22,18 @@ namespace ScheduledCameraUploadTaskAgent
             {
                 Task.WaitAll(Task.Run(async () =>
                 {
-                    var file = await settings.GetFileAsync(key);
-
-                    using (var stream = await file.OpenStreamForReadAsync())
+                    try
                     {
-                        var dataContractSerializer = new DataContractSerializer(typeof(T));
-                        result = (T)dataContractSerializer.ReadObject(stream);
+                        var file = await settings.GetFileAsync(key);
+                        using (var stream = await file.OpenStreamForReadAsync())
+                        {
+                            var dataContractSerializer = new DataContractSerializer(typeof(T));
+                            result = (T)dataContractSerializer.ReadObject(stream);
+                        }
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        // Do nothing and return the default type value
                     }
                 })); 
             }
@@ -40,26 +45,29 @@ namespace ScheduledCameraUploadTaskAgent
             return result;
         }
 
-        public static T LoadSetting<T>(string key, T defaultValue)
+        public static void SaveSettingToFile<T>(string key, T value)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            var settings = ApplicationData.Current.LocalFolder;
 
-            if (settings.Contains(key))
-                return (T)settings[key];
-            else
-                return defaultValue;
-        }
+            Mutex.WaitOne();
 
-        public static void SaveSetting<T>(string key, T value)
-        {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                Task.WaitAll(Task.Run(async () =>
+                {
+                    var file = await settings.CreateFileAsync(key, CreationCollisionOption.ReplaceExisting);
 
-            if (settings.Contains(key))
-                settings[key] = value;
-            else
-                settings.Add(key, value);
-
-            settings.Save();
+                    using (var stream = await file.OpenStreamForWriteAsync())
+                    {
+                        var dataContractSerializer = new DataContractSerializer(typeof(T));
+                        dataContractSerializer.WriteObject(stream, value);
+                    }
+                }));
+            }
+            finally
+            {
+                Mutex.ReleaseMutex();
+            }
         }
     }
 }

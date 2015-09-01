@@ -43,8 +43,6 @@ namespace MegaApp.Services
                     }
                     case MNodeType.TYPE_INCOMING:
                         break;
-                    case MNodeType.TYPE_MAIL:
-                        break;
                 }
             }
             catch (Exception)
