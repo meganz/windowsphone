@@ -210,6 +210,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion        
+        #endregion
     }
 }

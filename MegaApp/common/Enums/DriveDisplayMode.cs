@@ -7,6 +7,8 @@
         ImportItem,
         MultiSelect,
         RubbishBin,
-        InShares
+        InShares,
+        OutShares,
+        ContactInShares
     }
 }

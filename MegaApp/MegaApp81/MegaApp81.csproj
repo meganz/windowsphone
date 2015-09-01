@@ -560,6 +560,9 @@
     <Compile Include="..\common\Models\SettingsViewModel.cs">
       <Link>Models\SettingsViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\SharedItemsViewModel.cs">
+      <Link>Models\SharedItemsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\SongSelectionViewModel.cs">
       <Link>Models\SongSelectionViewModel.cs</Link>
     </Compile>
@@ -651,6 +654,10 @@
     <Compile Include="..\common\Pages\SettingsPage.xaml.cs">
       <Link>Pages\SettingsPage.xaml.cs</Link>
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\SharedItemsPage.xaml.cs">
+      <Link>Pages\SharedItemsPage.xaml.cs</Link>
+      <DependentUpon>SharedItemsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\SongSelectionPage.xaml.cs">
       <Link>Pages\SongSelectionPage.xaml.cs</Link>
@@ -1372,6 +1379,10 @@
     </Page>
     <Page Include="..\common\Pages\SettingsPage.xaml">
       <Link>Pages\SettingsPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\SharedItemsPage.xaml">
+      <Link>Pages\SharedItemsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\SongSelectionPage.xaml">

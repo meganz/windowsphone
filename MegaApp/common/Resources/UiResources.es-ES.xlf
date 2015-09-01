@@ -178,7 +178,7 @@
           </trans-unit>
         <trans-unit id="Resx/LargestSortOption" translate="yes" xml:space="preserve">
           <source>Largest</source>
-          <target state="translated">El más grandeme</target>
+          <target state="translated">El más grande</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/MasterKey" translate="no" xml:space="preserve">
@@ -535,160 +535,170 @@ Try to preserve the PIN uppercase word.</note>
           <source>Select</source>
           <target state="new">Select</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ShareFolders" translate="yes" xml:space="preserve">
           <source>Share folders</source>
           <target state="new">Share folders</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Profile" translate="yes" xml:space="preserve">
           <source>Profile</source>
           <target state="new">Profile</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Profile' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/MEGAContacts" translate="yes" xml:space="preserve">
           <source>MEGA contacts</source>
           <target state="new">MEGA contacts</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Yes' button, link, text, title, etc. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/SharedFolders" translate="yes" xml:space="preserve">
           <source>Shared folders</source>
           <target state="new">Shared folders</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Shared folders' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Status" translate="yes" xml:space="preserve">
           <source>Status</source>
           <target state="new">Status</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/SentRequests" translate="yes" xml:space="preserve">
           <source>Sent requests</source>
           <target state="new">Sent requests</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Unknown" translate="yes" xml:space="preserve">
           <source>Unknown</source>
           <target state="new">Unknown</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Reinvite" translate="yes" xml:space="preserve">
           <source>Reinvite</source>
           <target state="new">Reinvite</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Reinvite' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Ignore" translate="yes" xml:space="preserve">
           <source>Ignore</source>
           <target state="new">Ignore</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Ignore' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Delete" translate="yes" xml:space="preserve">
           <source>Delete</source>
           <target state="new">Delete</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Decline" translate="yes" xml:space="preserve">
           <source>Decline</source>
           <target state="new">Decline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/TimeSecondsAgo" translate="yes" xml:space="preserve">
           <source>{0} seconds ago</source>
           <target state="new">{0} seconds ago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in seconds - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/TimeMinutesAgo" translate="yes" xml:space="preserve">
           <source>{0} minutes ago</source>
           <target state="new">{0} minutes ago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in minutes - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/TimeHoursAgo" translate="yes" xml:space="preserve">
           <source>{0} hours ago</source>
           <target state="new">{0} hours ago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in hours - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/TimeDaysAgo" translate="yes" xml:space="preserve">
           <source>{0} days ago</source>
           <target state="new">{0} days ago</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in days - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Reminded" translate="yes" xml:space="preserve">
           <source>Reminded</source>
           <target state="new">Reminded</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Reminded' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Pending" translate="yes" xml:space="preserve">
           <source>Pending</source>
           <target state="new">Pending</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Ignored" translate="yes" xml:space="preserve">
           <source>Ignored</source>
           <target state="new">Ignored</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Ignored' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Denied" translate="yes" xml:space="preserve">
           <source>Denied</source>
           <target state="new">Denied</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Denied' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Deleted" translate="yes" xml:space="preserve">
           <source>Deleted</source>
           <target state="new">Deleted</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Deleted' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Accepted" translate="yes" xml:space="preserve">
           <source>Accepted</source>
           <target state="new">Accepted</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Accepted' button, link, text, label, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ReceivedRequests" translate="yes" xml:space="preserve">
           <source>Received requests</source>
           <target state="new">Received requests</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/SendFile" translate="yes" xml:space="preserve">
           <source>Send file</source>
           <target state="new">Send file</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Message" translate="yes" xml:space="preserve">
           <source>Message</source>
           <target state="new">Message</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" xml:space="preserve">
           <source>Search</source>
           <target state="new">Search</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Search' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" xml:space="preserve">
           <source>Add contact</source>
           <target state="new">Add contact</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" xml:space="preserve">
           <source>Type email address:</source>
           <target state="new">Type email address:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/General" translate="yes" xml:space="preserve">
           <source>General</source>
           <target state="new">General</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for "General" settings pivot</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Developer" translate="yes" xml:space="preserve">
           <source>Developer</source>
           <target state="new">Developer</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for "Developer" type of acknowledgement</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ViewDetails" translate="yes" xml:space="preserve">
           <source>View details</source>
           <target state="new">View details</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/Outgoing" translate="yes" xml:space="preserve">
+          <source>Outgoing</source>
+          <target state="new">Outgoing</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
+          <source>Incoming</source>
+          <target state="new">Incoming</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSettings" translate="yes" xml:space="preserve">
           <source>Upload settings</source>
@@ -709,7 +719,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Auto Upload</source>
           <target state="new">Auto Upload</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for "Auto Upload" settings pivot</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/Punctual" translate="yes" xml:space="preserve">
           <source>Punctual</source>
           <target state="translated">Puntual</target>

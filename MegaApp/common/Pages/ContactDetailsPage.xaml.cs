@@ -46,7 +46,7 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             _contactDetailsViewModel.GetContactSharedFolders();
-            _contactDetailsViewModel.IsInSharedItemsRootListView = true;            
+            _contactDetailsViewModel.IsInSharedItemsRootListView = true;
         }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)

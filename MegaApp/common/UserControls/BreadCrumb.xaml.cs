@@ -89,13 +89,26 @@ namespace MegaApp.UserControls
         {
             var homeButton = new Button();
 
-            if(ItemsSourceType == ContainerType.RubbishBin)
-                homeButton.Style = (Style)Application.Current.Resources["RubbishBinHomeCrumbStyle"];
-            else if((ItemsSourceType == ContainerType.InShares))
-                homeButton.Style = (Style)Application.Current.Resources["InSharesHomeCrumbStyle"];
-            else
-                homeButton.Style = (Style)Application.Current.Resources["CloudDriveHomeCrumbStyle"];
-
+            switch(ItemsSourceType)
+            {
+                case ContainerType.RubbishBin:
+                    homeButton.Style = (Style)Application.Current.Resources["RubbishBinHomeCrumbStyle"];
+                    break;
+                case ContainerType.ContactInShares:
+                    homeButton.Style = (Style)Application.Current.Resources["ContactInSharesHomeCrumbStyle"];
+                    break;
+                case ContainerType.InShares:
+                    homeButton.Style = (Style)Application.Current.Resources["InSharesHomeCrumbStyle"];
+                    break;
+                case ContainerType.OutShares:
+                    homeButton.Style = (Style)Application.Current.Resources["OutSharesHomeCrumbStyle"];
+                    break;
+                case ContainerType.CloudDrive:
+                default:
+                    homeButton.Style = (Style)Application.Current.Resources["CloudDriveHomeCrumbStyle"];
+                    break;
+            }
+            
             if (allowTap)
             {
                 homeButton.Tap += (sender, args) => OnMegaHomeTap();

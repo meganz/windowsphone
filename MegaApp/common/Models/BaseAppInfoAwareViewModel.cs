@@ -123,7 +123,10 @@ namespace MegaApp.Models
                 IconWidth = 45,
                 IconHeight = 36,
                 Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { },
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(SharedItemsPage), NavigationParameter.Normal);
+                },
                 IsActive = activeItem == HamburgerMenuItemType.SharedItems
             });
             this.MenuItems.Add(new HamburgerMenuItem()
