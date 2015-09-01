@@ -881,4 +881,50 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
+  <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
+    <value>Agentes en segundo plano deshabilitados</value>
+    <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
+    <value>Prerrequisitos de las Auto subidas de la cámara</value>
+    <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>¿Eliminar contacto?</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
+    <value>Contacto invitado</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>MEGA subidas automáticas de la cámara</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully" xml:space="preserve">
+    <value>El usuario {0} ha sido invitado y aparecerá en tu lista de contactos una vez aceptada la invitación.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactAddFailed_Title" xml:space="preserve">
+    <value>Error invitando contacto</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddFailed" xml:space="preserve">
+    <value>No se pudo enviar la invitación de contacto. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>¿Quieres eliminar el contacto {0}?</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
+    <value>Para que las subidas automáticas de la cámara funcionen correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</value>
+    <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="BackgroundAgentDisabled" xml:space="preserve">
+    <value>Los agentes MEGA en segundo plano han sido deshabilitados por el usuario</value>
+    <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
 </root>

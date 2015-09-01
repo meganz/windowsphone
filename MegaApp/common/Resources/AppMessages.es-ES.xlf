@@ -78,61 +78,61 @@
           </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" xml:space="preserve">
           <source>Background agents disabled</source>
-          <target state="new">Background agents disabled</target>
+          <target state="translated">Agentes en segundo plano deshabilitados</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" xml:space="preserve">
           <source>Auto Camera Uploads prerequisites</source>
-          <target state="new">Auto Camera Uploads prerequisites</target>
+          <target state="translated">Prerrequisitos de las Auto subidas de la cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" xml:space="preserve">
           <source>Remove contact?</source>
-          <target state="new">Remove contact?</target>
+          <target state="translated">¿Eliminar contacto?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" xml:space="preserve">
           <source>Contact invited</source>
-          <target state="new">Contact invited</target>
+          <target state="translated">Contacto invitado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" xml:space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="new">MEGA automatic camera uploads</target>
+          <target state="translated">MEGA subidas automáticas de la cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" xml:space="preserve">
           <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
-          <target state="new">User {0} has been invited and will appear on your contact list once accepted the invitation.</target>
+          <target state="translated">El usuario {0} ha sido invitado y aparecerá en tu lista de contactos una vez aceptada la invitación.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" xml:space="preserve">
           <source>Invite contact failed</source>
-          <target state="new">Invite contact failed</target>
+          <target state="translated">Error invitando contacto</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" xml:space="preserve">
           <source>Could not send the contact invitation. Please, try again.</source>
-          <target state="new">Could not send the contact invitation. Please, try again.</target>
+          <target state="translated">No se pudo enviar la invitación de contacto. Por favor, vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" xml:space="preserve">
           <source>Do you want to remove the contact {0}?</source>
-          <target state="new">Do you want to remove the contact {0}?</target>
+          <target state="translated">¿Quieres eliminar el contacto {0}?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" xml:space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="new">In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</target>
+          <target state="translated">Para que las subidas automáticas de la cámara funcionen correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" xml:space="preserve">
           <source>Background agents for MEGA have been disabled by the user</source>
-          <target state="new">Background agents for MEGA have been disabled by the user</target>
+          <target state="translated">Los agentes MEGA en segundo plano han sido deshabilitados por el usuario</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" xml:space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
           <target state="translated">No se ha podido recuperar la Url de pago. Por favor, vuelve a intentarlo. [{0}]</target>

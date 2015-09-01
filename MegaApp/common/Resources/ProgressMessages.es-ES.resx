@@ -231,4 +231,36 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Obteniendo Url de pago...</value>
     <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
   </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Ignorando petición de contacto...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Denegando solicitud de contacto...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Aceptando solicitud de contacto...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Eliminando contacto...</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Recordando solicitud de contacto...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Eliminando solicitud de contacto...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Enviando solicitud de contacto...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Obteniendo información de contacto...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
 </root>
