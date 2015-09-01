@@ -690,6 +690,21 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">View details</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UploadSettings" translate="yes" xml:space="preserve">
+          <source>Upload settings</source>
+          <target state="new">Upload settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload setting options</note>
+        </trans-unit>
+        <trans-unit id="Resx/PowerConnected" translate="yes" xml:space="preserve">
+          <source>External power source connected</source>
+          <target state="new">External power source connected</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "External power source connected" auto camera upload settings</note>
+        </trans-unit>
+        <trans-unit id="Resx/PhotosOnly" translate="yes" xml:space="preserve">
+          <source>Photos only</source>
+          <target state="new">Photos only</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Photos only" auto camera upload settings</note>
+        </trans-unit>
         <trans-unit id="Resx/AutoUpload" translate="yes" xml:space="preserve">
           <source>Auto Upload</source>
           <target state="new">Auto Upload</target>
@@ -825,9 +840,9 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/WifiOnly" translate="yes" xml:space="preserve">
-          <source>Wifi only</source>
-          <target state="translated">Solo Wifi</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</note>
+          <source>Wi-fi only</source>
+          <target state="needs-review-translation">Solo Wifi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
         <trans-unit id="Resx/WifiAndDataPlan" translate="yes" xml:space="preserve">
           <source>Wifi and Data plan</source>

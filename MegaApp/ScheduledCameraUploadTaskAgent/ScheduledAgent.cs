@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
@@ -10,7 +11,6 @@ using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Media.PhoneExtensions;
 
 namespace ScheduledCameraUploadTaskAgent
 {
@@ -32,12 +32,13 @@ namespace ScheduledCameraUploadTaskAgent
         /// Code to execute on Unhandled Exceptions
         private static void UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
+            ShowAbortToast();
+
             if (Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger
                 Debugger.Break();
             }
-            ShowAbortToast();
         }
 
         /// <summary>
@@ -80,8 +81,13 @@ namespace ScheduledCameraUploadTaskAgent
                 }
             };
 
-            MegaSdk.fastLogin(SettingsService.LoadSettingFromFile<string>("{85DBF3E5-51E8-40BB-968C-8857B4FC6EF4}"),
-                fastLoginListener);
+            
+            var sessionToken = SettingsService.LoadSettingFromFile<string>("{85DBF3E5-51E8-40BB-968C-8857B4FC6EF4}");
+
+            if (String.IsNullOrEmpty(sessionToken))
+                this.NotifyComplete();
+            else
+                MegaSdk.fastLogin(sessionToken, fastLoginListener);
         }
 
         private void FetchNodes()
@@ -105,14 +111,21 @@ namespace ScheduledCameraUploadTaskAgent
         
         private async void Upload()
         {
-            var lastUploadDate = SettingsService.LoadSetting("LastUploadDate", DateTime.MinValue);
+            var lastUploadDate = SettingsService.LoadSettingFromFile<DateTime>("LastUploadDate");
 
             using (var mediaLibrary = new MediaLibrary())
             {
-                foreach (var picture in mediaLibrary.Pictures)
-                {
-                    if(picture.Date <= lastUploadDate) continue;
+                var selectDate = lastUploadDate;
+                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).ToList();
 
+                if (!pictures.Any())
+                {
+                    this.NotifyComplete();
+                    return;
+                }
+                
+                foreach (var picture in pictures)
+                {
                     using (var imageStream = picture.GetImage())
                     {
                         imageStream.Position = 0;
@@ -123,14 +136,16 @@ namespace ScheduledCameraUploadTaskAgent
 
                         string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
 
-                        var mNode = MegaSdk.getNodeByFingerprint(fingerprint);
+                        var cameraUploadNode = await GetCameraUploadsNode();
+
+                        var mNode = MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
 
                         lastUploadDate = picture.Date;
 
                         if (mNode != null)
                         {
-                            SettingsService.SaveSetting("LastUploadDate", lastUploadDate);
-                            continue;
+                             SettingsService.SaveSettingToFile("LastUploadDate", lastUploadDate);
+                             continue;
                         }
                         
                         string newFilePath = Path.Combine(
@@ -149,12 +164,12 @@ namespace ScheduledCameraUploadTaskAgent
                         transferListener.TransferFinished += (sender, args) =>
                         {
                             if (args.Succeeded)
-                                SettingsService.SaveSetting("LastUploadDate", lastUploadDate);
+                                SettingsService.SaveSettingToFile("LastUploadDate", lastUploadDate);
                             File.Delete(newFilePath);
                             Upload();
                         };
 
-                        MegaSdk.startUploadWithMtime(newFilePath, await GetCameraUploadsNode(), mtime, transferListener);
+                        MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime, transferListener);
                         break;
                     }
                     
@@ -171,12 +186,14 @@ namespace ScheduledCameraUploadTaskAgent
 
             var cameraUploadNode = FindCameraUploadNode(rootNode);
 
-            if(cameraUploadNode == null)
-                MegaSdk.createFolder("Camera Uploads", rootNode);
-
-            await Task.Delay(5000);
-
-            return FindCameraUploadNode(rootNode); ;
+            if (cameraUploadNode != null) return cameraUploadNode;
+            
+            // Create the Camera Uploads folder
+            MegaSdk.createFolder("Camera Uploads", rootNode);
+            // Wait 10 seconds before continue
+            await Task.Delay(10000);
+            
+            return FindCameraUploadNode(rootNode);
         }
 
         private MNode FindCameraUploadNode(MNode rootNode)

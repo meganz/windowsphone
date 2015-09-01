@@ -108,6 +108,33 @@ namespace MegaApp.Services
             settings.Save();
         }
 
+        public static void DeleteFileSetting(string key)
+        {
+            var settings = ApplicationData.Current.LocalFolder;
+
+            Mutex.WaitOne();
+
+            try
+            {
+                Task.WaitAll(Task.Run(async () =>
+                {
+                    try
+                    {
+                        var file = await settings.GetFileAsync(key);
+                        file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        // Do nothing
+                    }
+                }));
+            }
+            finally
+            {
+                Mutex.ReleaseMutex();
+            }
+        }
+
         public static void SaveSettingToFile<T>(string key, T value)
         {
             var settings = ApplicationData.Current.LocalFolder;

@@ -167,7 +167,7 @@ namespace MegaApp.Services
             {
                 // The description is required for periodic agents. This is the string that the user
                 // will see in the background services Settings page on the device.
-                Description = "MEGA Auto Camera Upload"
+                Description = AppMessages.ResourceIntensiveTaskDescription
             };
 
             
