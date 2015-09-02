@@ -809,6 +809,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">MEGA automatic camera uploads</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
+        <trans-unit id="Resx/AccountUpdated_Title" translate="yes" xml:space="preserve">
+          <source>Updated account</source>
+          <target state="new">Updated account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountUpdate" translate="yes" xml:space="preserve">
+          <source>Your account has been updated. Do you want to check the new account details?</source>
+          <target state="new">Your account has been updated. Do you want to check the new account details?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" xml:space="preserve">
           <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
           <target state="new">User {0} has been invited and will appear on your contact list once accepted the invitation.</target>

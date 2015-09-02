@@ -77,8 +77,13 @@ namespace MegaApp.Pages
                     ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
             }
 
+            if(NavigateService.ProcessQueryString(NavigationContext.QueryString) == NavigationParameter.AccountUpdate)
+            {
+                _myAccountPageViewModel.IsAccountUpdate = true;
+                PivotAccountInformation.SelectedItem = PivotSubscription;
+            }
             // Check if the navigation destiny is a specific pivot item
-            if (NavigationContext.QueryString.ContainsKey("Pivot"))
+            else if (NavigationContext.QueryString.ContainsKey("Pivot"))
             {
                 var index = NavigationContext.QueryString["Pivot"];
                 if(!String.IsNullOrWhiteSpace(index))

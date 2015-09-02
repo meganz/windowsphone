@@ -25,6 +25,7 @@ namespace MegaApp.Models
 
             AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
             UpgradeAccount = new UpgradeAccountViewModel();
+            IsAccountUpdate = false;
 
             if (!File.Exists(AccountDetails.AvatarPath)) return;
             AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);            
@@ -85,6 +86,17 @@ namespace MegaApp.Models
             {
                 _upgradeAccount = value;
                 OnPropertyChanged("UpgradeAccount");
+            }
+        }
+
+        private bool _isAccountUpdate;
+        public bool IsAccountUpdate
+        {
+            get { return _isAccountUpdate; }
+            set
+            {
+                _isAccountUpdate = value;
+                OnPropertyChanged("IsAccountUpdate");
             }
         }
 

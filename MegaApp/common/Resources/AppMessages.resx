@@ -927,4 +927,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>MEGA automatic camera uploads</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>Your account has been updated. Do you want to check the new account details?</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>Updated account</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
 </root>
