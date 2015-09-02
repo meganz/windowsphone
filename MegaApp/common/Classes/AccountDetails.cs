@@ -197,7 +197,7 @@ namespace MegaApp.Classes
 
         public bool IsProAccount
         {
-            get { return !_isFreeAccount; }            
+            get { return !_isFreeAccount; }
         }
         
         private bool _isValidSubscription;

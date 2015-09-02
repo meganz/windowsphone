@@ -121,9 +121,21 @@
                 
                 <!--Pivot item two-->
                 <phone:PivotItem x:Name="SentContactRequests" Header="{Binding LocalizedUiResources.SentRequests, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="12,24,0,0">
+                    <Grid Margin="12,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
+                            <Paragraph>
+                                <Run Text="{Binding NumberOfSentContactRequestsText}"/>
+                                <Run Text="{Binding LocalizedUiResources.SentRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            </Paragraph>
+                        </RichTextBox>
                         <telerikPrimitives:RadDataBoundListBox 
 						    x:Name="LstSentContactRequests"
+                            Grid.Row="1"
 						    ItemsSource="{Binding SentContactRequests}"                            
 						    EmptyContentTemplate="{StaticResource MegaContactRequestsListSentEmptyContent}"
                             ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
@@ -152,9 +164,21 @@
 
                 <!--Pivot item three-->
                 <phone:PivotItem x:Name="ReceivedContactRequests" Header="{Binding LocalizedUiResources.ReceivedRequests, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="12,24,0,0">
+                    <Grid Margin="12,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
+                            <Paragraph>
+                                <Run Text="{Binding NumberOfReceivedContactRequestsText}"/>
+                                <Run Text="{Binding LocalizedUiResources.ReceivedRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                            </Paragraph>
+                        </RichTextBox>
                         <telerikPrimitives:RadDataBoundListBox 
 						    x:Name="LstReceivedContactRequests"
+                            Grid.Row="1"
 						    ItemsSource="{Binding ReceivedContactRequests}"                            
 						    EmptyContentTemplate="{StaticResource MegaContactRequestsListReceivedEmptyContent}"
                             ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
