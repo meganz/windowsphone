@@ -50,7 +50,9 @@ namespace MegaApp.Models
             CreateContactSortDescriptors();
 
             ReceivedContactRequests = new ObservableCollection<ContactRequest>();
-            SentContactRequests = new ObservableCollection<ContactRequest>();            
+            ReceivedContactRequests.CollectionChanged += ReceivedContactRequests_CollectionChanged;
+            SentContactRequests = new ObservableCollection<ContactRequest>();
+            SentContactRequests.CollectionChanged += SentContactRequests_CollectionChanged;
         }
 
         void MegaContacts_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -69,6 +71,20 @@ namespace MegaApp.Models
             }
 
             _contactsPage.SetApplicationBarData();
+        }
+
+        void ReceivedContactRequests_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("NumberOfReceivedContactRequests");
+            OnPropertyChanged("IsReceivedContactRequestsListEmpty");
+            OnPropertyChanged("NumberOfReceivedContactRequestsText");
+        }
+
+        void SentContactRequests_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("NumberOfSentContactRequests");
+            OnPropertyChanged("IsSentContactRequestsListEmpty");
+            OnPropertyChanged("NumberOfSentContactRequestsText");
         }
 
         #region Commands
@@ -146,7 +162,7 @@ namespace MegaApp.Models
                 else
                     return UiResources.No.ToLower();
             }            
-        }        
+        }
 
         private CancellationTokenSource LoadingCancelTokenSource { get; set; }
         private CancellationToken LoadingCancelToken { get; set; }
@@ -162,6 +178,27 @@ namespace MegaApp.Models
             }
         }
 
+        public int NumberOfReceivedContactRequests
+        {
+            get { return ReceivedContactRequests.Count; }
+        }
+
+        public bool IsReceivedContactRequestsListEmpty
+        {
+            get { return !Convert.ToBoolean(ReceivedContactRequests.Count); }
+        }
+
+        public String NumberOfReceivedContactRequestsText
+        {
+            get
+            {
+                if (NumberOfReceivedContactRequests != 0)
+                    return NumberOfReceivedContactRequests.ToString();
+                else
+                    return UiResources.No.ToLower();
+            }
+        }
+
         private ObservableCollection<ContactRequest> _sentContactRequests;
         public ObservableCollection<ContactRequest> SentContactRequests
         {
@@ -170,6 +207,27 @@ namespace MegaApp.Models
             {
                 _sentContactRequests = value;
                 OnPropertyChanged("SentContactRequests");
+            }
+        }
+
+        public int NumberOfSentContactRequests
+        {
+            get { return SentContactRequests.Count; }
+        }
+
+        public bool IsSentContactRequestsListEmpty
+        {
+            get { return !Convert.ToBoolean(SentContactRequests.Count); }
+        }
+
+        public String NumberOfSentContactRequestsText
+        {
+            get
+            {
+                if (NumberOfSentContactRequests != 0)
+                    return NumberOfSentContactRequests.ToString();
+                else
+                    return UiResources.No.ToLower();
             }
         }
 
