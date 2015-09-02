@@ -97,10 +97,38 @@ namespace MegaApp.MegaApi
                         _accountDetails.TotalSpaceUnits = _accountDetails.TotalSpace.ToReadableUnits();
                         _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
                         _accountDetails.CreateDataPoints();
-                        _accountDetails.AccountType = request.getMAccountDetails().getProLevel();                        
-                        
-                        if (_accountDetails.AccountType != MAccountType.ACCOUNT_TYPE_FREE)
+                        _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+
+                        if (_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
                         {
+                            _accountDetails.IsFreeAccount = true;
+                            _accountDetails.AccountTypeText = UiResources.AccountTypeFree;
+                            _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                        }
+                        else
+                        {
+                            switch (_accountDetails.AccountType)
+                            {
+                                case MAccountType.ACCOUNT_TYPE_LITE:
+                                    _accountDetails.AccountTypeText = UiResources.AccountTypeLite;
+                                    //_accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);                        
+                                    break;
+                                case MAccountType.ACCOUNT_TYPE_PROI:
+                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro1;
+                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    break;
+                                case MAccountType.ACCOUNT_TYPE_PROII:
+                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro2;
+                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    break;
+                                case MAccountType.ACCOUNT_TYPE_PROIII:
+                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro3;
+                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    break;
+                            }
+
+                            _accountDetails.IsFreeAccount = false;
+
                             DateTime date;
                             DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, 0);
 
@@ -113,39 +141,13 @@ namespace MegaApp.MegaApi
                                 _accountDetails.IsValidSubscription = true;
                             }
                             // Else get the expiration time for the current PRO status
-                            else 
+                            else
                             {
                                 date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
                                 _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
                                 _accountDetails.IsValidSubscription = false;
-                            }
+                            }                            
                         }
-
-                        switch (_accountDetails.AccountType)
-                        {
-                            case MAccountType.ACCOUNT_TYPE_FREE:
-                                _accountDetails.IsFreeAccount = true;
-                                _accountDetails.AccountTypeText = UiResources.AccountTypeFree;
-                                _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                                break;
-                            case MAccountType.ACCOUNT_TYPE_LITE:
-                                _accountDetails.AccountTypeText = UiResources.AccountTypeLite;
-                                //_accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);                        
-                                break;
-                            case MAccountType.ACCOUNT_TYPE_PROI:
-                                _accountDetails.AccountTypeText = UiResources.AccountTypePro1;
-                                _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                                break;
-                            case MAccountType.ACCOUNT_TYPE_PROII:
-                                _accountDetails.AccountTypeText = UiResources.AccountTypePro2;
-                                _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                                break;
-                            case MAccountType.ACCOUNT_TYPE_PROIII:
-                                _accountDetails.AccountTypeText = UiResources.AccountTypePro3;
-                                _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
-                                break;
-                        }
-
                     });
 
                     break;

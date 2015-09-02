@@ -17,7 +17,8 @@
         Uploads             = 80,
         Downloads           = 90,
         DisablePassword     = 100,
-        AutoCameraUpload    = 110,        
+        AutoCameraUpload    = 110,
+        AccountUpdate       = 200,
         None                = 999
     }
 }

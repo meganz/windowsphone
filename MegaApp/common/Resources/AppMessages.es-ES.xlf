@@ -101,6 +101,16 @@
           <target state="translated">MEGA subidas automáticas de la cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
           </trans-unit>
+        <trans-unit id="Resx/AccountUpdated_Title" translate="yes" xml:space="preserve">
+          <source>Updated account</source>
+          <target state="translated">Cuenta actualizada</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+          </trans-unit>
+        <trans-unit id="Resx/AccountUpdate" translate="yes" xml:space="preserve">
+          <source>Your account has been updated. Do you want to check the new account details?</source>
+          <target state="translated">Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+          </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" xml:space="preserve">
           <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
           <target state="translated">El usuario {0} ha sido invitado y aparecerá en tu lista de contactos una vez aceptada la invitación.</target>

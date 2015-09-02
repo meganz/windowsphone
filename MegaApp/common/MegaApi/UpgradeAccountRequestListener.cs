@@ -74,7 +74,7 @@ namespace MegaApp.MegaApi
 
         protected override NavigationParameter NavigationParameter
         {
-            get { return NavigationParameter.Normal; }
+            get { return NavigationParameter.AccountUpdate; }
         }
 
         #endregion

@@ -4,8 +4,11 @@ using System.Linq;
 using System.Windows;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.Models;
+using MegaApp.Pages;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.MegaApi
@@ -293,7 +296,21 @@ namespace MegaApp.MegaApi
 
         public void onAccountUpdate(MegaSDK api)
         {
-           // throw new NotImplementedException();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.AccountUpdated_Title,
+                    AppMessages.AccountUpdate,
+                    App.AppInformation,
+                    MessageDialogButtons.YesNo);
+
+                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                {
+                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
+                };                
+
+                customMessageDialog.ShowDialog();
+            });
         }
 
         public void onContactRequestsUpdate(MegaSDK api, MContactRequestList requests)

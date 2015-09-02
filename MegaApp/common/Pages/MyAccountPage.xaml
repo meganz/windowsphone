@@ -211,9 +211,9 @@
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
-                    <Grid>
-                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" Visibility="{Binding AccountDetails.IsFreeAccount, Converter={StaticResource BooleanToVisibilityConverter}}" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding UpgradeAccount.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" ItemTap="OnItemTap"/>
-                        <StackPanel Visibility="{Binding AccountDetails.IsProAccount, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Grid>                        
+                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" Visibility="{Binding IsAccountUpdate, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding UpgradeAccount.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" ItemTap="OnItemTap"/>
+                        <StackPanel Visibility="{Binding IsAccountUpdate, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <ContentPresenter x:Name="ProductPurchased" ContentTemplate="{StaticResource ProductItemTemplate}" Content="{Binding UpgradeAccount.ProductPurchased}"/>
                             <TextBlock Text="{Binding LocalizedUiResources.Awesome, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                             <TextBlock Text="{Binding AccountDetails.PurchaseAccountTypeText}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
