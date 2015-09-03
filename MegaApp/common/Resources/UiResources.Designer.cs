@@ -1492,7 +1492,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Phone Bill.
+        ///   Busca una cadena traducida similar a Mobile.
         /// </summary>
         public static string PhoneBill {
             get {

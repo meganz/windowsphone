@@ -135,7 +135,11 @@ namespace MegaApp.MegaApi
                             // If there is a valid subscription get the renew time
                             if (request.getMAccountDetails().getSubscriptionStatus() == MSubscriptionStatus.SUBSCRIPTION_STATUS_VALID)
                             {
-                                date = start.AddSeconds(request.getMAccountDetails().getSubscriptionRenewTime());
+                                if(request.getMAccountDetails().getSubscriptionRenewTime() != 0)
+                                    date = start.AddSeconds(request.getMAccountDetails().getSubscriptionRenewTime());
+                                else
+                                    date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
+                                                                
                                 _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
                                 _accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
                                 _accountDetails.IsValidSubscription = true;
