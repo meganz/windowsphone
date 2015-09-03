@@ -927,4 +927,12 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <value>Los agentes MEGA en segundo plano han sido deshabilitados por el usuario</value>
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>Cuenta actualizada</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
 </root>

@@ -149,7 +149,7 @@ namespace MegaApp.MegaApi
                                 var fortumoPaymentMethod = new PaymentMethod
                                 {
                                     PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_FORTUMO,
-                                    Name = String.Format(UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
+                                    Name = String.Format("Fortumo - " + UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
                                     PaymentMethodPathData = VisualResources.PhoneBillingPathData
                                 };
                                 product.PaymentMethods.Add(fortumoPaymentMethod);
@@ -204,8 +204,14 @@ namespace MegaApp.MegaApi
                             ProductColor = product.ProductColor,
                             IsNewOffer = product.IsNewOffer
                         };
-
-                        _upgradeAccount.Plans.Add(plan);
+                                                
+                        // Show only the plans that are equal or upper to the current user account type
+                        if(_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE ||
+                           _accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE ||
+                           (accountType >= _accountDetails.AccountType && accountType != MAccountType.ACCOUNT_TYPE_LITE))
+                        {
+                            _upgradeAccount.Plans.Add(plan);
+                        }                        
 
                         // Check if the user has a product/plan already purchased and fill the structure to show it
                         if (accountType == _accountDetails.AccountType && request.getPricing().getMonths(i) == 12)
