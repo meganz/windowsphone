@@ -473,7 +473,7 @@ namespace MegaApp
 
         public virtual void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            if (e.getErrorCode() == MErrorType.API_ESID)
+            if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_ESSL)
             {
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();
@@ -484,21 +484,17 @@ namespace MegaApp
                 });
                 AppService.ClearAppCache(false);
 
-                // Show a message notifying the error
-                //Deployment.Current.Dispatcher.BeginInvoke(() =>
-                //    MessageBox.Show(AppMessages.SessionIDError, AppMessages.SessionIDError_Title, MessageBoxButton.OK));
-                //Deployment.Current.Dispatcher.BeginInvoke(() =>
-                //{
-                //    new CustomMessageDialog(
-                //        AppMessages.SessionIDError_Title,
-                //        AppMessages.SessionIDError,
-                //        App.AppInformation,
-                //        MessageDialogButtons.Ok).ShowDialog();
-                //});
-
-                // Show the init tour / login page
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESID));
+                // Show the init tour / login page with the corresponding navigation parameter
+                if(e.getErrorCode() == MErrorType.API_ESID)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESID));
+                }                    
+                else if(e.getErrorCode() == MErrorType.API_ESSL)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_ESSL));
+                }                    
             }
         }
 

@@ -1686,6 +1686,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Our SSL key can&apos;t be verified. You could be affected by a man-in-the-middle attack..
+        /// </summary>
+        public static string SSLKeyError {
+            get {
+                return ResourceManager.GetString("SSLKeyError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Logged out.
+        /// </summary>
+        public static string SSLKeyError_Title {
+            get {
+                return ResourceManager.GetString("SSLKeyError_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The operation has not finished correctly. The credit card will not be charged..
         /// </summary>
         public static string UpgradeAccountFailed {
