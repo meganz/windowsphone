@@ -475,6 +475,10 @@ namespace MegaApp
         {
             if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_ESSL)
             {
+                // Disable the "camera upload" service
+                MediaService.SetAutoCameraUpload(false);
+                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+
                 // Clear settings, cache, previews, thumbnails, etc.
                 SettingsService.ClearMegaLoginData();
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -483,7 +487,7 @@ namespace MegaApp
                     MainPageViewModel.RubbishBin.ChildNodes.Clear();
                 });
                 AppService.ClearAppCache(false);
-
+                
                 // Show the init tour / login page with the corresponding navigation parameter
                 if(e.getErrorCode() == MErrorType.API_ESID)
                 {
