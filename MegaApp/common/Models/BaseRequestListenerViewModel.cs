@@ -69,10 +69,9 @@ namespace MegaApp.Models
                         }
                     }
 
-                    //**************************************************
-                    // TODO: Disable the "camera upload" (when availabe)
-                    //**************************************************
-
+                    // Disable the "camera upload" service
+                    MediaService.SetAutoCameraUpload(false);
+                    SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
 
                     // User notification message.
                     Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());

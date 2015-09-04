@@ -78,10 +78,10 @@ namespace MegaApp.MegaApi
                                 transferItem.CancelTransfer();
                         }
                     }
-
-                    //**************************************************
-                    // TODO: Disable the "camera upload" (when availabe)
-                    //**************************************************
+                                        
+                    // Disable the "camera upload" service
+                    MediaService.SetAutoCameraUpload(false);
+                    SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
 
                     DialogService.ShowOverquotaAlert();
                 });
