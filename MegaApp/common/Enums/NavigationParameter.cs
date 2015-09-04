@@ -2,8 +2,6 @@
 {
     public enum NavigationParameter
     {
-        API_ESID            = -15,
-
         Normal              = 0,
         Login               = 10,
         PasswordLogin       = 20,
@@ -19,6 +17,9 @@
         DisablePassword     = 100,
         AutoCameraUpload    = 110,
         AccountUpdate       = 200,
-        None                = 999
+        None                = 999,
+
+        API_ESID            = -15,
+        API_ESSL            = -23
     }
 }

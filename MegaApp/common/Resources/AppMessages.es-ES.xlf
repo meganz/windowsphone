@@ -106,6 +106,16 @@
           <target state="translated">Cuenta actualizada</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
           </trans-unit>
+        <trans-unit id="Resx/SSLKeyError_Title" translate="yes" xml:space="preserve">
+          <source>Logged out</source>
+          <target state="new">Logged out</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SSLKeyError" translate="yes" xml:space="preserve">
+          <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
+          <target state="new">Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" xml:space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
           <target state="translated">Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</target>

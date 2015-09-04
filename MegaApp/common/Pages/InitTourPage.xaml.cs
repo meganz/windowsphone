@@ -51,6 +51,15 @@ namespace MegaApp.Pages
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
             }
+            else if (navParam == NavigationParameter.API_ESSL)
+            {
+                // Show a message notifying the error
+                new CustomMessageDialog(
+                    AppMessages.SSLKeyError_Title,
+                    AppMessages.SSLKeyError,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
