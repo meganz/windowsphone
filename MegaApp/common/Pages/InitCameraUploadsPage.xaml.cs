@@ -48,14 +48,15 @@ namespace MegaApp.Pages
 
         private void OnOkClick(object sender, EventArgs e)
         {
-            // Establish the connection type selected by the user
-            if((bool)RadioButtonWifiOnly.IsChecked)
-                SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiOnly);
-            else if((bool)RadioButtonWifiAndData.IsChecked)
-                SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiAndDataPlan);
+            //// Establish the connection type selected by the user
+            //if((bool)RadioButtonWifiOnly.IsChecked)
+            //    SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiOnly);
+            //else if((bool)RadioButtonWifiAndData.IsChecked)
+            //    SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiAndDataPlan);
 
             // Enable or turn on the "Camera Uploads" service
             SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsIsEnabled, true);
+            MediaService.SetAutoCameraUpload(true);
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
         }
 

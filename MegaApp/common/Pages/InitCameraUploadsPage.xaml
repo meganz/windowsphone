@@ -52,7 +52,7 @@
                 <phone:PivotItem x:Name="PivotInitCameraUploads" Header="{Binding LocalizedUiResources.SetupCameraUploadsTitle, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>                            
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
@@ -61,15 +61,16 @@
                                 <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                             </Path.Fill>
                         </Path>
-                        <StackPanel Grid.Row="1">
+                        <TextBlock Grid.Row="1" Margin="12,0,0,48" Text="Do you want to enable the Auto Camera Uploads service?" TextWrapping="Wrap"/>
+                        <!--<StackPanel Grid.Row="1">
                             <RadioButton x:Name="RadioButtonWifiOnly" Content="{Binding LocalizedUiResources.WifiOnly, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" GroupName="Group1" IsChecked="True"/>
                             <RadioButton x:Name="RadioButtonWifiAndData" Content="{Binding LocalizedUiResources.WifiAndDataPlan, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" GroupName="Group1"/>
-                        </StackPanel>                        
+                        </StackPanel>-->
                     </Grid>
                 </phone:PivotItem>                
             </phone:Pivot>
         </Grid>
-        <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
+        <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
