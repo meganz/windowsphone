@@ -709,6 +709,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Outgoing</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to enable the Auto Camera Uploads service?</source>
+          <target state="new">Do you want to enable the Auto Camera Uploads service?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
+        </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
           <source>Incoming</source>
           <target state="new">Incoming</target>

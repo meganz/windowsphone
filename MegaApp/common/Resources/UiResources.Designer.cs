@@ -1834,6 +1834,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to enable the Auto Camera Uploads service?.
+        /// </summary>
+        public static string SetupCameraUploadsQuestion {
+            get {
+                return ResourceManager.GetString("SetupCameraUploadsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Set up camera uploads.
         /// </summary>
         public static string SetupCameraUploadsTitle {

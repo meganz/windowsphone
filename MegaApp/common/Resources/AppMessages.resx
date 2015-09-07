@@ -943,4 +943,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <value>Logged out</value>
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>Auto Camera Upload background task has failed. You can re-enable it on the settings page</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Auto Camera Upload failed</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
 </root>

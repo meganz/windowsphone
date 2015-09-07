@@ -108,14 +108,24 @@
           </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" xml:space="preserve">
           <source>Logged out</source>
-          <target state="new">Logged out</target>
+          <target state="translated">Desconectado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload failed</source>
+          <target state="translated">Error en las auto subidas de la cámara</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
+          </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
+          <target state="translated">El servicio de auto subidas de la cámara ha fallado. Puedes volver a activarlo en la página de configuración</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
+          </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" xml:space="preserve">
           <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="new">Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</target>
+          <target state="translated">No se puede verificar nuestra clave SSL. Podrías estar afectado por un ataque del tipo "man-in-the-middle".</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" xml:space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
           <target state="translated">Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</target>
