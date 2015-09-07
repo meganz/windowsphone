@@ -156,8 +156,8 @@ namespace MegaApp.Pages
                     else
                     {
                         await new CustomMessageDialog(
-                            "Auto Camera Upload failed",
-                            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+                            AppMessages.AutoCameraUploadFailed_Title,
+                            AppMessages.AutoCameraUploadFailed,
                             App.AppInformation).ShowDialogAsync();
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);

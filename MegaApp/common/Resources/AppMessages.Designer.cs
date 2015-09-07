@@ -106,6 +106,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Auto Camera Upload background task has failed. You can re-enable it on the settings page.
+        /// </summary>
+        public static string AutoCameraUploadFailed {
+            get {
+                return ResourceManager.GetString("AutoCameraUploadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Auto Camera Upload failed.
+        /// </summary>
+        public static string AutoCameraUploadFailed_Title {
+            get {
+                return ResourceManager.GetString("AutoCameraUploadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Background agents for MEGA have been disabled by the user.
         /// </summary>
         public static string BackgroundAgentDisabled {

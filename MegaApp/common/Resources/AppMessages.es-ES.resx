@@ -935,4 +935,20 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <value>Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>Desconectado</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Error en las auto subidas de la cámara</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>El servicio de auto subidas de la cámara ha fallado. Puedes volver a activarlo en la página de configuración</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>No se puede verificar nuestra clave SSL. Podrías estar afectado por un ataque del tipo "man-in-the-middle".</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
 </root>
