@@ -116,6 +116,29 @@
           <target state="translated">Error en las auto subidas de la cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
           </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" xml:space="preserve">
+          <source>Remove contact failed</source>
+          <target state="translated">Error al eliminar</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed" translate="yes" xml:space="preserve">
+          <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
+          <target state="translated">No se pudo eliminar el contacto {0}. Por favor, vuelve a intentarlo. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Remove contacts?</source>
+          <target state="translated">¿Eliminar contactos?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to remove {0} contacts?</source>
+          <target state="translated">¿Quieres eliminar {0} contactos?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
+          </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" xml:space="preserve">
           <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
           <target state="translated">El servicio de auto subidas de la cámara ha fallado. Puedes volver a activarlo en la página de configuración</target>

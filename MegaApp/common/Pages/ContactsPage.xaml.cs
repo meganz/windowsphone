@@ -51,9 +51,14 @@ namespace MegaApp.Pages
                 case ContactDisplayMode.CONTACTS:
                     this.ApplicationBar = (ApplicationBar)Resources["ContactsMenu"];
                     break;
+                case ContactDisplayMode.CONTACTS_MULTISELECT:
+                    this.ApplicationBar = (ApplicationBar)Resources["ContactsMultiSelectMenu"];
+                    break;
                 case ContactDisplayMode.SENT_REQUESTS:
+                    this.ApplicationBar = (ApplicationBar)Resources["SentContactRequestsMenu"];
+                    break;
                 case ContactDisplayMode.RECEIVED_REQUESTS:
-                    this.ApplicationBar = (ApplicationBar)Resources["ContactRequestMenu"];
+                    this.ApplicationBar = (ApplicationBar)Resources["ReceivedContactRequestsMenu"];
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("contactsDisplayMode");
@@ -107,10 +112,68 @@ namespace MegaApp.Pages
             DialogService.ShowSortContactsDialog(_contactsViewModel);
         }
 
-        private void OnSelectClick(object sender, EventArgs e)
+        private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+
+            ChangeMultiSelectMode();
+        }
+
+        private void ChangeMultiSelectMode()
+        {
+            if (ContactsPivot.SelectedItem == MegaContacts)
+                LstMegaContacts.IsCheckModeActive = !LstMegaContacts.IsCheckModeActive;
+        }
+
+        private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            ChangeCheckModeAction(e.CheckBoxesVisible, (RadJumpList)sender, e.TappedItem);
+
+            Dispatcher.BeginInvoke(SetApplicationBarData);
+        }
+
+        private void ChangeCheckModeAction(bool onOff, RadJumpList listBox, object item)
+        {
+            if (onOff)
+            {
+                if (item != null)
+                    listBox.CheckedItems.Add(item);
+
+                if (_contactsViewModel.CurrentDisplayMode != ContactDisplayMode.CONTACTS_MULTISELECT)
+                    _contactsViewModel.PreviousDisplayMode = _contactsViewModel.CurrentDisplayMode;
+                _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.CONTACTS_MULTISELECT;
+            }
+            else
+            {
+                listBox.CheckedItems.Clear();
+                _contactsViewModel.CurrentDisplayMode = _contactsViewModel.PreviousDisplayMode;
+            }
+        }
+
+        private void OnMultiSelectDeleteContactClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            MultiSelectDeleteContactAction();
+        }
+
+        private async void MultiSelectDeleteContactAction()
+        {
+            if (!await _contactsViewModel.MultipleDeleteContacts()) return;
+
+            _contactsViewModel.CurrentDisplayMode = _contactsViewModel.PreviousDisplayMode;
+
+            SetApplicationBarData();
+        }
+
+        private void OnMultiSelectShareFolderClick(object sender, EventArgs e)
+        {
+
         }
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
@@ -130,7 +193,12 @@ namespace MegaApp.Pages
                 if (_contactsViewModel.IsMegaContactsListEmpty)
                     _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.EMPTY_CONTACTS;
                 else
-                    _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.CONTACTS;                                
+                {
+                    if(!LstMegaContacts.IsCheckModeActive)
+                        _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.CONTACTS;
+                    else
+                        _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.CONTACTS_MULTISELECT;
+                }
             }
             
             if (e.AddedItems[0] == SentContactRequests)

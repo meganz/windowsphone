@@ -1879,6 +1879,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Share folder.
+        /// </summary>
+        public static string ShareFolder {
+            get {
+                return ResourceManager.GetString("ShareFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Share folders.
         /// </summary>
         public static string ShareFolders {
