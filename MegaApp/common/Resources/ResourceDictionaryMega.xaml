@@ -58,7 +58,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaListGroupHeaderTemplate">
-        <Border Background="Transparent">
+        <Border Background="Transparent" Margin="12,0,0,0">
             <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" Width="64"
                     Height="64" HorizontalAlignment="Left" Margin="0,6">
                 <TextBlock Text="{Binding Key}" Foreground="{StaticResource PhoneForegroundBrush}" FontSize="48" Padding="6" 
@@ -378,7 +378,7 @@
     </ControlTemplate>
 
     <DataTemplate x:Key="MegaContactItemContent">
-        <StackPanel>            
+        <StackPanel Margin="-12,0,0,0">            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>

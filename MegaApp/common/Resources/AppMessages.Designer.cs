@@ -496,6 +496,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to remove the contact {0}. Please try again. [{0}].
+        /// </summary>
+        public static string DeleteContactFailed {
+            get {
+                return ResourceManager.GetString("DeleteContactFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove contact failed.
+        /// </summary>
+        public static string DeleteContactFailed_Title {
+            get {
+                return ResourceManager.GetString("DeleteContactFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Do you want to remove the contact {0}?.
         /// </summary>
         public static string DeleteContactQuestion {
@@ -510,6 +528,24 @@ namespace MegaApp.Resources {
         public static string DeleteContactQuestion_Title {
             get {
                 return ResourceManager.GetString("DeleteContactQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to remove {0} contacts?.
+        /// </summary>
+        public static string DeleteMultipleContactsQuestion {
+            get {
+                return ResourceManager.GetString("DeleteMultipleContactsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove contacts?.
+        /// </summary>
+        public static string DeleteMultipleContactsQuestion_Title {
+            get {
+                return ResourceManager.GetString("DeleteMultipleContactsQuestion_Title", resourceCulture);
             }
         }
         

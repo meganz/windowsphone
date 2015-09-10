@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -42,6 +43,7 @@ namespace MegaApp.Models
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
             MegaContactsSortMode = ListSortMode.Ascending;
+            MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["DefaultCheckBoxStyle"];            
 
             MegaContactsList = new ObservableCollection<Contact>();
             MegaContactsList.CollectionChanged += MegaContacts_CollectionChanged;
@@ -103,7 +105,23 @@ namespace MegaApp.Models
         #region Properties
 
         public ContactDisplayMode CurrentDisplayMode { get; set; }
+        public ContactDisplayMode PreviousDisplayMode { get; set; }        
+
         public ListSortMode MegaContactsSortMode { get; set; }
+
+        private Style _multiSelectCheckBoxStyle;
+        public Style MultiSelectCheckBoxStyle
+        {
+            get { return _multiSelectCheckBoxStyle; }
+            private set { SetField(ref _multiSelectCheckBoxStyle, value); }
+        }
+
+        private bool _isMultiSelectActive;
+        public bool IsMultiSelectActive
+        {
+            get { return _isMultiSelectActive; }
+            private set { SetField(ref _isMultiSelectActive, value); }
+        }
         
         private ObservableCollection<GenericGroupDescriptor<Contact, String>> groupDescriptors;
         public ObservableCollection<GenericGroupDescriptor<Contact, String>> GroupDescriptors
@@ -114,7 +132,7 @@ namespace MegaApp.Models
                 groupDescriptors = value;
                 OnPropertyChanged("GroupDescriptors");
             }
-        }
+        }        
 
         private ObservableCollection<GenericSortDescriptor<Contact, String>> sortDescriptors;
         public ObservableCollection<GenericSortDescriptor<Contact, String>> SortDescriptors
@@ -284,12 +302,40 @@ namespace MegaApp.Models
 
                 customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
                 {
-                    MegaSdk.removeContact(MegaSdk.getContact(FocusedContact.Email), new RemoveContactRequestListener());
+                    MegaSdk.removeContact(MegaSdk.getContact(FocusedContact.Email), new RemoveContactRequestListener(this, FocusedContact));
                 };
 
                 customMessageDialog.ShowDialog();
             }
-        }        
+        }
+
+        public async Task<bool> MultipleDeleteContacts()
+        {
+            int count = MegaContactsList.Count(n => n.IsMultiSelected);
+            if (count < 1) return false;
+            
+            var customMessageDialog = new CustomMessageDialog(
+                AppMessages.DeleteMultipleContactsQuestion_Title,
+                String.Format(AppMessages.DeleteMultipleContactsQuestion, count),
+                App.AppInformation,
+                MessageDialogButtons.OkCancel);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveContact));
+                
+                var helperList = new List<Contact>(count);
+                helperList.AddRange(MegaContactsList.Where(n => n.IsMultiSelected));
+
+                foreach (var contact in helperList)
+                    MegaSdk.removeContact(MegaSdk.getContact(contact.Email), new RemoveContactRequestListener(this, contact));
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+                this.IsMultiSelectActive = false;
+            };
+
+            return await customMessageDialog.ShowDialogAsync() == MessageDialogResult.OkYes;
+        }
 
         #endregion
 
@@ -522,10 +568,27 @@ namespace MegaApp.Models
                             iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                             menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                             new[] { UiResources.AddContact/*, UiResources.Search*/ },
-                            new[] { UiResources.Refresh, UiResources.Sort/*, UiResources.Select*/ });
+                            new[] { UiResources.Refresh, UiResources.Sort, UiResources.Select });
+                        break;
+                    }
+                case ContactDisplayMode.CONTACTS_MULTISELECT:
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.ShareFolder, UiResources.Delete },
+                            new[] { UiResources.Cancel });
                         break;
                     }
                 case ContactDisplayMode.SENT_REQUESTS:
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.AddContact },
+                            new[] { UiResources.Refresh });
+                        break;
+                    }
                 case ContactDisplayMode.RECEIVED_REQUESTS:
                     {
                         this.TranslateAppBarItems(
