@@ -44,12 +44,7 @@ namespace MegaApp.Pages
                 var indexParsed = int.Parse(index);
                 Pivot_LoginAndCreateAccount.SelectedIndex = indexParsed;
             }
-
-            var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-
-            _loginAndCreateAccountViewModelContainer.LoginViewModel.GoToAutoUploadSettingsAfterLogin =
-                navParam == NavigationParameter.AutoCameraUpload;
-
+            
             // Remove the main page from the stack. If user presses back button it will then exit the application
             // Also removes the create account page after the user has created the account succesful
             // Also removes the settings page when the user has selected app in auto upload but was not logged in.

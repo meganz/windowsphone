@@ -52,6 +52,16 @@ namespace MegaApp.Classes
             {
                 // Launch to the auto-upload settings page.
                 App.AppInformation.IsStartedAsAutoUpload = true;
+
+                var extraParams = new Dictionary<string, string>(1)
+                {
+                    {
+                        "ConfigurePhotosUploadSettings",
+                        System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"?Action=ConfigurePhotosUploadSettings",String.Empty))
+                    }
+                };
+
+                return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.AutoCameraUpload, extraParams);
             }
 
             // Otherwise perform normal launch.

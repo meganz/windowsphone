@@ -205,7 +205,9 @@ namespace MegaApp.Models
                         
             if (isAlreadyOnline)
                 _megaSdk.logout(this);
-            
+
+            App.AppInformation.IsNewlyActivatedAccount = true;
+
             _megaSdk.login(request.getEmail(), request.getPassword(), new LoginViewModel(_megaSdk));            
         }
 

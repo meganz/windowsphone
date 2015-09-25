@@ -241,5 +241,21 @@ namespace MegaApp.Services
 
             return result == MessageDialogResult.OkYes;
         }
+
+        public static void LogoutActions()
+        {
+            // Disable the "camera upload" service
+            MediaService.SetAutoCameraUpload(false);
+            SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+
+            // Clear settings, cache, previews, thumbnails, etc.
+            SettingsService.ClearMegaLoginData();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
+                App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
+            });
+            AppService.ClearAppCache(false);            
+        }
     }
 }

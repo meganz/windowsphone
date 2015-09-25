@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -7,18 +8,14 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using mega;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
-using MegaApp.UserControls;
-using Telerik.Windows.Controls;
-using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
 {
-    public partial class InitCameraUploadsPage : PhoneDrawerLayoutPage
+    public partial class InitCameraUploadsPage
     {
         private readonly CameraUploadsViewModel _cameraUploadsViewModel;
 
@@ -27,8 +24,7 @@ namespace MegaApp.Pages
             _cameraUploadsViewModel = new CameraUploadsViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _cameraUploadsViewModel;
 
-            InitializeComponent();
-            InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.CameraUploads);
+            InitializeComponent();            
 
             SetApplicationBarData();
 
@@ -44,6 +40,27 @@ namespace MegaApp.Pages
 
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Ok.ToLower();
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Skip.ToLower();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // Remove the login or confirm account page from the stack. 
+            // If user presses back button it will then exit the application
+            NavigationService.RemoveBackEntry();
+
+            // Set to false the "CameraUploadsFirstInit" setting
+            if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            e.Cancel = true;
         }
 
         private void OnOkClick(object sender, EventArgs e)
@@ -63,34 +80,6 @@ namespace MegaApp.Pages
         private void OnSkipClick(object sender, EventArgs e)
         {
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
-        }
-
-        protected override void OnDrawerClosed(object sender)
-        {
-            base.OnDrawerClosed(sender);
-            SetApplicationBarData();
-        }
-
-        private void OnMyAccountTap(object sender, GestureEventArgs e)
-        {
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
-        }
-
-        #region Override Events
-
-        // XAML can not bind them direct from the base class
-        // That is why these are dummy event handlers
-
-        protected override void OnHamburgerTap(object sender, GestureEventArgs e)
-        {
-            base.OnHamburgerTap(sender, e);
-        }
-
-        protected override void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
-        {
-            base.OnHamburgerMenuItemTap(sender, e);
-        }
-
-        #endregion
+        }        
     }
 }

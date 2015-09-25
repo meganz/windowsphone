@@ -95,7 +95,7 @@ namespace MegaApp.MegaApi
                 _upgradeAccount.Products.Clear();
                 _upgradeAccount.Plans.Clear();
 
-                if (App.IsNewlyActivatedAccount)
+                if (App.AppInformation.IsNewlyActivatedAccount)
                 {
                     var freePlan = new ProductBase
                     {
@@ -107,7 +107,7 @@ namespace MegaApp.MegaApi
                     };
 
                     _upgradeAccount.Plans.Add(freePlan);
-                    App.IsNewlyActivatedAccount = false;
+                    App.AppInformation.IsNewlyActivatedAccount = false;
                 }
 
                 int numberOfProducts = request.getPricing().getNumProducts();

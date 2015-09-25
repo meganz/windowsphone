@@ -52,13 +52,8 @@ namespace MegaApp.Pages
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
             if (navParam == NavigationParameter.AutoCameraUpload)
-            {
-                //if (!_settingsViewModel.IsUserOnline())
-                //{
-                //    NavigateService.NavigateTo(typeof (InitTourPage), NavigationParameter.AutoCameraUpload);
-                //    return;
-                //}
-                _settingsViewModel.AppInformation.IsStartedAsAutoUpload = false;
+            {                
+                App.AppInformation.IsStartedAsAutoUpload = false;
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
 
@@ -86,6 +81,12 @@ namespace MegaApp.Pages
             //    () => DebugService.DebugSettings.IsDebugMode = !DebugService.DebugSettings.IsDebugMode);
         }
 
+        private void BtnCameraUploadsSwitch_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
+        }
+
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
@@ -106,6 +107,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
+        #endregion        
     }
 }

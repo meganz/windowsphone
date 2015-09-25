@@ -63,13 +63,13 @@ namespace MegaApp.Pages
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml?item=0", UriKind.RelativeOrAbsolute));
+        {            
+            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "item", "0" } });            
         }
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/LoginPage.xaml?item=1", UriKind.RelativeOrAbsolute));            
+            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "item", "1" } });            
         }
     }
 }

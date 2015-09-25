@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -196,23 +197,32 @@ namespace MegaApp.Pages
                 }
 #endif
 
-                if (ValidActiveAndOnlineSession() && navParam == NavigationParameter.None)
+                if (ValidActiveAndOnlineSession() &&
+                    (navParam == NavigationParameter.None || navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload))
                 {
+                    _mainPageViewModel.LoadFolders();
+
+                    // If is the first login, navigates to the camera upload service config page
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+
                     // If the user is trying to open a shortcut
                     if (_mainPageViewModel.ShortCutHandle.HasValue)
                     {
                         if (!OpenShortCut())
                         {
                             new CustomMessageDialog(
-                                    AppMessages.ShortCutFailed_Title,
-                                    AppMessages.ShortCutFailed,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            
+                                AppMessages.ShortCutFailed_Title,
+                                AppMessages.ShortCutFailed,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+
                             _mainPageViewModel.CloudDrive.BrowseToFolder(
                                 NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
                         }
-                    }                        
+                    }                      
 
                     return;
                 }                    
@@ -234,30 +244,16 @@ namespace MegaApp.Pages
             {
                 case NavigationParameter.Normal:
                     _mainPageViewModel.LoadFolders();
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                     break;
 
-                case NavigationParameter.Login:                    
-                    // Get last page (previous page)            
-                    var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
-                    var lastPage = backStack.FirstOrDefault();
-                    if (lastPage != null)
-                    {
-                        String strLastPage = lastPage.Source.ToString();
-
-                        // If navigation is from the ConfirmAccountPage, active the flag indicating that is newly activated account
-                        if (lastPage.Source.ToString().Contains("confirm"))
-                        {
-                            App.IsNewlyActivatedAccount = true;
-                            NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));                            
-                        }                            
-                    }
-
-                    // Remove the login or confirm account page from the stack. 
+                case NavigationParameter.Login:
+                    // Remove the last page from the stack. 
                     // If user presses back button it will then exit the application
-                    NavigationService.RemoveBackEntry();
-
-                    if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
-                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                    NavigationService.RemoveBackEntry();                    
 
                     _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
@@ -269,6 +265,11 @@ namespace MegaApp.Pages
                         new FastLoginRequestListener(_mainPageViewModel));
                     break;
 
+                case NavigationParameter.Browsing:
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                    break;
+
                 case NavigationParameter.PictureSelected:
                     break;
                 case NavigationParameter.AlbumSelected:
@@ -276,9 +277,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.SelfieSelected:
                     break;
                 case NavigationParameter.UriLaunch:
-                    break;
-                case NavigationParameter.Browsing:
-                    break;
+                    break;                
                 case NavigationParameter.BreadCrumb:
                     break;
                 case NavigationParameter.Uploads:
@@ -287,6 +286,7 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.DisablePassword:
                     break;
+                case NavigationParameter.AutoCameraUpload:
                 case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
                 {

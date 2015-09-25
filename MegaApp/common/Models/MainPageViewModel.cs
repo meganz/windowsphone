@@ -86,14 +86,7 @@ namespace MegaApp.Models
                 if (this.RubbishBin.FolderRootNode == null)
                     this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
 
-                this.RubbishBin.LoadChildNodes();
-
-                // If is the first login, navigates to the camera upload service config page
-                if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                {
-                    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
-                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                }
+                this.RubbishBin.LoadChildNodes();                
             }); 
         }
 
@@ -222,7 +215,7 @@ namespace MegaApp.Models
 
             var extraParams = new Dictionary<string, string>(1);
             extraParams.Add("Pivot", "1");
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);            
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);
         }
 
         private void CancelUpgradeAccount(object obj)

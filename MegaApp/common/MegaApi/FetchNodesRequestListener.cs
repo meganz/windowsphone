@@ -12,6 +12,7 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -158,8 +159,20 @@ namespace MegaApp.MegaApi
                 });
                 autoResetEvent.WaitOne();
             }
-
+                        
             _mainPageViewModel.LoadFolders();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                // If is a newly activated account, navigates to the upgrade account page
+                if (App.AppInformation.IsNewlyActivatedAccount)                                    
+                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });
+                // If is the first login, navigates to the camera upload service config page
+                else if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                else if (App.AppInformation.IsStartedAsAutoUpload)                
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+            });
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)
