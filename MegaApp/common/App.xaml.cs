@@ -50,9 +50,7 @@ namespace MegaApp
         public static GlobalDriveListener GlobalDriveListener { get; private set; }
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
-
-        public static bool IsNewlyActivatedAccount { get; set; }
-
+        
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
@@ -475,18 +473,7 @@ namespace MegaApp
         {
             if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_ESSL)
             {
-                // Disable the "camera upload" service
-                MediaService.SetAutoCameraUpload(false);
-                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
-                // Clear settings, cache, previews, thumbnails, etc.
-                SettingsService.ClearMegaLoginData();
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    MainPageViewModel.CloudDrive.ChildNodes.Clear();
-                    MainPageViewModel.RubbishBin.ChildNodes.Clear();
-                });
-                AppService.ClearAppCache(false);
+                AppService.LogoutActions();
                 
                 // Show the init tour / login page with the corresponding navigation parameter
                 if(e.getErrorCode() == MErrorType.API_ESID)

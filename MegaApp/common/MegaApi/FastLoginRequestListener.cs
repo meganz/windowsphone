@@ -87,14 +87,6 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
-                });
-            }
-
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 _mainPageViewModel.GetAccountDetails();
