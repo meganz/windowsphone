@@ -104,8 +104,7 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, ShortCutHandle);
-            ShortCutHandle = null;
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);            
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
@@ -239,8 +238,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
-        public ulong? ShortCutHandle { get; set; }
 
         private string _activeImportLink;
         public string ActiveImportLink

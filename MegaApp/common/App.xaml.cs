@@ -50,6 +50,8 @@ namespace MegaApp
         public static GlobalDriveListener GlobalDriveListener { get; private set; }
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
+
+        public static ulong? ShortCutHandle { get; set; }
         
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
@@ -139,6 +141,7 @@ namespace MegaApp
         {
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
+            AppInformation.IsStartupModeActivate = true;
             CheckChangesIP();
         }
 

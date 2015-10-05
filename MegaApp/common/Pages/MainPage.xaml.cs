@@ -95,7 +95,10 @@ namespace MegaApp.Pages
                 return false;
 
             if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            {
+                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
                 return false;
+            }                
 
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
@@ -113,7 +116,9 @@ namespace MegaApp.Pages
 
         private bool OpenShortCut()
         {
-            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(_mainPageViewModel.ShortCutHandle.Value);
+            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(App.ShortCutHandle.Value);
+            App.ShortCutHandle = null;
+
             if (shortCutMegaNode != null)
             {
                 // Looking for the absolute parent of the shortcut node to see the type
@@ -174,13 +179,15 @@ namespace MegaApp.Pages
 
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
-                _mainPageViewModel.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+                App.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
             
-            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
+            if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
+
+                App.AppInformation.IsStartupModeActivate = false;
 
 #if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
@@ -197,34 +204,37 @@ namespace MegaApp.Pages
                 }
 #endif
 
-                if (ValidActiveAndOnlineSession() &&
-                    (navParam == NavigationParameter.None || navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload))
+                if (ValidActiveAndOnlineSession())
                 {
-                    _mainPageViewModel.LoadFolders();
-
-                    // If is the first login, navigates to the camera upload service config page
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
-                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
-
-                    // If the user is trying to open a shortcut
-                    if (_mainPageViewModel.ShortCutHandle.HasValue)
+                    if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None || 
+                        navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
                     {
-                        if (!OpenShortCut())
+                        _mainPageViewModel.LoadFolders();
+
+                        // If is the first login, navigates to the camera upload service config page
+                        if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                            NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                        else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+
+                        // If the user is trying to open a shortcut
+                        if (App.ShortCutHandle.HasValue)
                         {
-                            new CustomMessageDialog(
-                                AppMessages.ShortCutFailed_Title,
-                                AppMessages.ShortCutFailed,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
+                            if (!OpenShortCut())
+                            {
+                                new CustomMessageDialog(
+                                    AppMessages.ShortCutFailed_Title,
+                                    AppMessages.ShortCutFailed,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
 
-                            _mainPageViewModel.CloudDrive.BrowseToFolder(
-                                NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
-                        }
-                    }                      
+                                _mainPageViewModel.CloudDrive.BrowseToFolder(
+                                    NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
+                            }
+                        }                      
 
-                    return;
+                        return;
+                    }
                 }                    
             }
 
