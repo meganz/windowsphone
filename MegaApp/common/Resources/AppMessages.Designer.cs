@@ -207,7 +207,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription..
+        ///   Busca una cadena traducida similar a The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription..
         /// </summary>
         public static string CancelSubscriptionFailed {
             get {
