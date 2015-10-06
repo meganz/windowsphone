@@ -14,6 +14,13 @@ namespace MegaApp.MegaApi
 {
     class GetPaymentUrlRequestListener : BaseRequestListener
     {
+        private readonly MPaymentMethod _paymentMethodType;
+
+        public GetPaymentUrlRequestListener(MPaymentMethod paymentMethodType)
+        {            
+            _paymentMethodType = paymentMethodType;
+        }
+
         protected override string ProgressMessage
         {
             get { return ProgressMessages.GetPaymentUrl; }
@@ -80,10 +87,19 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                var webBrowserTask = new WebBrowserTask
+                var webBrowserTask = new WebBrowserTask();
+
+                switch(_paymentMethodType)
                 {
-                    Uri = new Uri("http://fortumo.com/mobile_payments/f250460ec5d97fd27e361afaa366db0f?cuid=" + request.getLink())
-                };
+                    case MPaymentMethod.PAYMENT_METHOD_CENTILI:
+                        webBrowserTask.Uri = new Uri("https://www.centili.com/widget/WidgetModule?api=9e8eee856f4c048821954052a8d734ac&clientid=" + request.getLink());
+                        break;
+
+                    case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
+                        webBrowserTask.Uri = new Uri("http://fortumo.com/mobile_payments/f250460ec5d97fd27e361afaa366db0f?cuid=" + request.getLink());
+                        break;
+                }
+                
                 webBrowserTask.Show();
             });
         }

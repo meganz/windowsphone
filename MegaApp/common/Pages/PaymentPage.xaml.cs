@@ -423,8 +423,9 @@ namespace MegaApp.Pages
         {
             switch(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType)
             {
+                case MPaymentMethod.PAYMENT_METHOD_CENTILI:
                 case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
-                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener());
+                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType));
                     break;
 
                 case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:

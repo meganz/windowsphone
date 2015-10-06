@@ -91,7 +91,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                _upgradeAccount.FortumoPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_FORTUMO));
+                _upgradeAccount.CentiliPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_CENTILI));
+                _upgradeAccount.FortumoPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_FORTUMO));                
                 _upgradeAccount.CreditCardPaymentMethodAvailable = Convert.ToBoolean(request.getNumber() & (1 << (int)MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD));
             });
         }

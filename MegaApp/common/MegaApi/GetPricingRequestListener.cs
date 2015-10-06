@@ -143,7 +143,19 @@ namespace MegaApp.MegaApi
                             product.ProductPathData = VisualResources.CrestLiteAccountPathData;
                             product.IsNewOffer = true;
 
-                            // If fortumo payment method is active, and product is LITE monthly include it into the product
+                            // If Centili payment method is active, and product is LITE monthly include it into the product
+                            if (_upgradeAccount.CentiliPaymentMethodAvailable && product.Months == 1)
+                            {
+                                var centiliPaymentMethod = new PaymentMethod
+                                {
+                                    PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_CENTILI,
+                                    Name = String.Format("Centili - " + UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
+                                    PaymentMethodPathData = VisualResources.PhoneBillingPathData
+                                };
+                                product.PaymentMethods.Add(centiliPaymentMethod);
+                            }
+
+                            // If Fortumo payment method is active, and product is LITE monthly include it into the product
                             if(_upgradeAccount.FortumoPaymentMethodAvailable && product.Months == 1)
                             {
                                 var fortumoPaymentMethod = new PaymentMethod

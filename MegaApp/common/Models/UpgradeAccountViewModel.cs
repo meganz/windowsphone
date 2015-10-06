@@ -30,6 +30,17 @@ namespace MegaApp.Models
             }
         }
 
+        private bool _centiliPaymentMethodAvailable;
+        public bool CentiliPaymentMethodAvailable
+        {
+            get { return _centiliPaymentMethodAvailable; }
+            set
+            {
+                _centiliPaymentMethodAvailable = value;
+                OnPropertyChanged("CentiliPaymentMethodAvailable");
+            }
+        }
+
         private bool _fortumoPaymentMethodAvailable;
         public bool FortumoPaymentMethodAvailable
         {
@@ -39,7 +50,7 @@ namespace MegaApp.Models
                 _fortumoPaymentMethodAvailable = value;
                 OnPropertyChanged("FortumoPaymentMethodAvailable");
             }
-        }
+        }        
 
         private bool _creditCardPaymentMethodAvailable;
         public bool CreditCardPaymentMethodAvailable
