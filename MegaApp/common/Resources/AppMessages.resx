@@ -287,7 +287,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Passwords do not match. Please try again.</value>
+    <value>Passwords do not match.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
   </data>
   <data name="PictureSaved" xml:space="preserve">
@@ -969,5 +969,21 @@ Preserve the {0} code because is for include the number of contacts to be remove
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
     <value>Remove contacts?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Change password failed. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="ChangePasswordSucces" xml:space="preserve">
+    <value>Your password has been changed.</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>The new and the old password must not match.</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>Please fill in your old MEGA password and your new MEGA password.</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
 </root>

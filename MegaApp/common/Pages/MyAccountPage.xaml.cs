@@ -43,13 +43,14 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.SettingsShort.ToLower();
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
 
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ClearCache.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ChangePassword.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ClearCache.ToLower();            
             
             // Only if is a LITE account show a "cancel subscription" menu option
             if(_myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
                 _myAccountPageViewModel.AccountDetails.CreditCardSubscriptions != 0)
             {
-                if(ApplicationBar.MenuItems.Count == 1)
+                if(ApplicationBar.MenuItems.Count == 2)
                 {
                     ApplicationBarMenuItem cancelSubscription = new ApplicationBarMenuItem(UiResources.CancelSubscription.ToLower());
                     ApplicationBar.MenuItems.Add(cancelSubscription);
@@ -57,9 +58,9 @@ namespace MegaApp.Pages
                 }                
             }
             // Else remove the "cancel subscription" menu item if exists
-            else if(ApplicationBar.MenuItems.Count == 2)
+            else if(ApplicationBar.MenuItems.Count == 3)
             {
-                ApplicationBar.MenuItems.RemoveAt(1);
+                ApplicationBar.MenuItems.RemoveAt(2);
             }
         }
 
@@ -135,14 +136,24 @@ namespace MegaApp.Pages
         private void OnSettingsClick(object sender, EventArgs e)
         {
             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.Normal);
-        }       
+        }
 
         private void OnClearCacheClick(object sender, EventArgs e)
         {
             App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
             App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             _myAccountPageViewModel.ClearCache();
-        }        
+        }
+
+        private void OnChangePasswordClick(object sender, EventArgs e)
+        {
+            _myAccountPageViewModel.ChangePassword();
+        }
+
+        private void OnCancelSubscriptionClick(object sender, EventArgs e)
+        {
+            _myAccountPageViewModel.CancelSubscription();
+        }
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
         {
@@ -183,12 +194,7 @@ namespace MegaApp.Pages
                 _myAccountPageViewModel.GetAccountDetails();
             else
                 _myAccountPageViewModel.GetPricing();
-        }
-
-        private void OnCancelSubscriptionClick(object sender, EventArgs e)
-        {
-            DialogService.ShowCancelSubscriptionFeedbackDialog();
-        }
+        }        
                 
         protected override void OnDrawerClosed(object sender)
         {
@@ -219,6 +225,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion        
+        #endregion
     }
 }

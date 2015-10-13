@@ -27,8 +27,8 @@
             <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\settings.png" Text="settings" Click="OnSettingsClick"/>
             <shell:ApplicationBarIconButton IconUri="\Assets\Appbar\logout.png" Text="logout" Click="OnLogoutClick" />
             <shell:ApplicationBar.MenuItems>
-                <!--<shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />
-                <shell:ApplicationBarMenuItem Text="export masterkey" Click="OnExportMasterkeyClick" />-->
+                <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />
+                <!--<shell:ApplicationBarMenuItem Text="export masterkey" Click="OnExportMasterkeyClick" />-->
                 <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

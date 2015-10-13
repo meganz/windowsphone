@@ -331,7 +331,7 @@ Try to preserve the PIN uppercase word.</note>
           </trans-unit>
         <trans-unit id="Resx/PinLock" translate="yes" xml:space="preserve">
           <source>PIN Lock</source>
-          <target state="translated">Bloqueo con PIN</target>
+          <target state="translated">Bloqueo PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
           </trans-unit>
@@ -704,6 +704,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Share folder</source>
           <target state="translated">Compartir carpeta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/NewPasswordWatermark" translate="yes" xml:space="preserve">
+          <source>Your new password</source>
+          <target state="translated">Tu nueva contraseña</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
           <source>Incoming</source>

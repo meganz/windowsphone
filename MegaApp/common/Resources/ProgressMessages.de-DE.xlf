@@ -11,6 +11,11 @@
           <target state="new">Canceling subscription...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a subscription - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
+          <source>Changing password...</source>
+          <target state="new">Changing password...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
           <source>Confirming account...</source>
           <target state="new">Confirming account...</target>

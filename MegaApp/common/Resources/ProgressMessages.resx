@@ -121,6 +121,10 @@
     <value>Canceling subscription...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Changing password...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
   <data name="ConfirmAccount" xml:space="preserve">
     <value>Confirming account...</value>
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
