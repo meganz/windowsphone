@@ -1285,6 +1285,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your new password.
+        /// </summary>
+        public static string NewPasswordWatermark {
+            get {
+                return ResourceManager.GetString("NewPasswordWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Your new PIN lock.
         /// </summary>
         public static string NewPinLockWatermark {

@@ -108,6 +108,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Remove contacts?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" xml:space="preserve">
+          <source>Change password failed. Please try again.</source>
+          <target state="new">Change password failed. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" xml:space="preserve">
+          <source>Please fill in your old MEGA password and your new MEGA password.</source>
+          <target state="new">Please fill in your old MEGA password and your new MEGA password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" xml:space="preserve">
+          <source>The new and the old password must not match.</source>
+          <target state="new">The new and the old password must not match.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordSucces" translate="yes" xml:space="preserve">
+          <source>Your password has been changed.</source>
+          <target state="new">Your password has been changed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
+        </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" xml:space="preserve">
           <source>Do you want to remove {0} contacts?</source>
           <target state="new">Do you want to remove {0} contacts?</target>
@@ -858,8 +878,8 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" xml:space="preserve">
-          <source>Passwords do not match. Please try again.</source>
-          <target state="new">Passwords do not match. Please try again.</target>
+          <source>Passwords do not match.</source>
+          <target state="new">Passwords do not match.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveFailed_Title" translate="yes" xml:space="preserve">

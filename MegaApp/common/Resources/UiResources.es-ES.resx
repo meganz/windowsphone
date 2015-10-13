@@ -171,7 +171,7 @@
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLock" xml:space="preserve">
-    <value>Bloqueo con PIN</value>
+    <value>Bloqueo PIN</value>
     <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
@@ -1125,5 +1125,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="ShareFolder" xml:space="preserve">
     <value>Compartir carpeta</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NewPasswordWatermark" xml:space="preserve">
+    <value>Tu nueva contraseña</value>
+    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
 </root>

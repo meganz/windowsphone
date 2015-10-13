@@ -297,6 +297,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Change password failed. Please try again..
+        /// </summary>
+        public static string ChangePasswordFailed {
+            get {
+                return ResourceManager.GetString("ChangePasswordFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your password has been changed..
+        /// </summary>
+        public static string ChangePasswordSucces {
+            get {
+                return ResourceManager.GetString("ChangePasswordSucces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
         /// </summary>
         public static string ClipboardFailed {
@@ -1225,6 +1243,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The new and the old password must not match..
+        /// </summary>
+        public static string NewAndOldPasswordMatch {
+            get {
+                return ResourceManager.GetString("NewAndOldPasswordMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You have not selected a default download location for your files.
         ///
         ///To proceed with the download please select a destination folder or go to preferences in order to set up your default download location..
@@ -1272,7 +1299,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Passwords do not match. Please try again..
+        ///   Busca una cadena traducida similar a Passwords do not match..
         /// </summary>
         public static string PasswordsDoNotMatch {
             get {
@@ -1565,6 +1592,15 @@ namespace MegaApp.Resources {
         public static string RequiredFieldsCancelSubscription {
             get {
                 return ResourceManager.GetString("RequiredFieldsCancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please fill in your old MEGA password and your new MEGA password..
+        /// </summary>
+        public static string RequiredFieldsChangePassword {
+            get {
+                return ResourceManager.GetString("RequiredFieldsChangePassword", resourceCulture);
             }
         }
         
