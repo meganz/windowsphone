@@ -434,10 +434,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Elemento eliminado</value>
     <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
-  <data name="RemoveNodeSucces" xml:space="preserve">
-    <value>Elemento eliminado correctamente</value>
-    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
-  </data>
   <data name="RemoveNodeFailed_Title" xml:space="preserve">
     <value>Error al eliminar</value>
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
@@ -973,10 +969,6 @@ Preserve the {0} code because is for include the number of contacts to be remove
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
     <value>Por favor, introduce tu contraseña antigua y tu contraseña nueva.</value>
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
-  </data>
-  <data name="ChangePasswordSucces" xml:space="preserve">
-    <value>Tu contraseña ha sido cambiada.</value>
-    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
     <value>Error al cambiar la contraseña. Por favor, vuelve a intentarlo.</value>

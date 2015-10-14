@@ -434,6 +434,12 @@
     <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
       <Link>MegaApi\InviteContactRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\KillAllSessionsRequestListener.cs">
+      <Link>MegaApi\KillAllSessionsRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\KillSessionRequestListener.cs">
+      <Link>MegaApi\KillSessionRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
     </Compile>

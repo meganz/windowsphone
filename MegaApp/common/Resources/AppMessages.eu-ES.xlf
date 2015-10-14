@@ -113,20 +113,42 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Change password failed. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
         </trans-unit>
+        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" xml:space="preserve">
+          <source>Your password has been changed.</source>
+          <target state="new">Your password has been changed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
+        </trans-unit>
         <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" xml:space="preserve">
           <source>Please fill in your old MEGA password and your new MEGA password.</source>
           <target state="new">Please fill in your old MEGA password and your new MEGA password.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
+        <trans-unit id="Resx/CloseSessionSucces" translate="yes" xml:space="preserve">
+          <source>The session has been successfully closed.</source>
+          <target state="new">The session has been successfully closed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" xml:space="preserve">
+          <source>The remaining sessions are successfully closed.</source>
+          <target state="new">The remaining sessions are successfully closed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" xml:space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" xml:space="preserve">
           <source>The new and the old password must not match.</source>
           <target state="new">The new and the old password must not match.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
-        </trans-unit>
-        <trans-unit id="Resx/ChangePasswordSucces" translate="yes" xml:space="preserve">
-          <source>Your password has been changed.</source>
-          <target state="new">Your password has been changed.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" xml:space="preserve">
           <source>Do you want to remove {0} contacts?</source>
@@ -841,15 +863,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Item removed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/RemoveNodeSucces" translate="yes" xml:space="preserve">
-          <source>Item successful removed</source>
-          <target state="new">Item successful removed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
-        </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" xml:space="preserve">
           <source>Remove failed</source>
           <target state="new">Remove failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" xml:space="preserve">
+          <source>Item successful removed</source>
+          <target state="new">Item successful removed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed to remove item</source>

@@ -84,7 +84,7 @@ namespace MegaApp.MegaApi
             get 
             {
                 if (_nodeType == MNodeType.TYPE_RUBBISH)
-                    return AppMessages.RemoveNodeSucces;
+                    return AppMessages.RemoveNodeSuccess;
                 else
                     return AppMessages.MoveToRubbishBinSuccess;                    
             }

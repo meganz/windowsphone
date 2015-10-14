@@ -65,12 +65,17 @@ namespace MegaApp.Models
 
         public void ChangePassword()
         {
-            DialogService.ShowChangePasswrodDialog();
+            DialogService.ShowChangePasswordDialog();
         }
 
         public void CancelSubscription()
         {
             DialogService.ShowCancelSubscriptionFeedbackDialog();
+        }
+
+        public void CloseAllSessions()
+        {
+            MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
         }
 
         #endregion

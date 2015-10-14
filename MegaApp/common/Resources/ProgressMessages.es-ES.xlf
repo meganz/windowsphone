@@ -16,6 +16,16 @@
           <target state="translated">Cambiando contraseña...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/CloseAllSessions" translate="yes" xml:space="preserve">
+          <source>Closing all sessions...</source>
+          <target state="new">Closing all sessions...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing all sessions - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSession" translate="yes" xml:space="preserve">
+          <source>Closing session...</source>
+          <target state="new">Closing session...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
           <source>Confirming account...</source>
           <target state="translated">Confirmando la cuenta...</target>

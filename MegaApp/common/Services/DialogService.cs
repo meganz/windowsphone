@@ -786,7 +786,7 @@ namespace MegaApp.Services
             pinLockRadWindow.IsOpen = true;
         }
 
-        public static void ShowChangePasswrodDialog()
+        public static void ShowChangePasswordDialog()
         {
             var openAnimation = new RadMoveAnimation()
             {
