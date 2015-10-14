@@ -8,13 +8,13 @@ using MegaApp.Resources;
 
 namespace MegaApp.MegaApi
 {
-    class ChangePasswordRequestListener : BaseRequestListener
+    class KillSessionRequestListener : BaseRequestListener
     {
         #region Base Properties
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.ChangePassword; }
+            get { return ProgressMessages.CloseSession; }
         }
 
         protected override bool ShowProgressMessage
@@ -24,12 +24,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.ChangePasswordFailed; }
+            get { return AppMessages.CloseSessionFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.ChangePassword.ToUpper(); }
+            get { return UiResources.CloseSession.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -39,12 +39,12 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessage
         {
-            get { return AppMessages.ChangePasswordSuccess; }
+            get { return AppMessages.CloseSessionSucces; }
         }
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.ChangePassword.ToUpper(); }
+            get { return UiResources.CloseSession.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

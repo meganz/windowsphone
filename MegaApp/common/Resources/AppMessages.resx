@@ -315,7 +315,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <value>Remove failed</value>
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
-  <data name="RemoveNodeSucces" xml:space="preserve">
+  <data name="RemoveNodeSuccess" xml:space="preserve">
     <value>Item successful removed</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
@@ -974,7 +974,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>Change password failed. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
-  <data name="ChangePasswordSucces" xml:space="preserve">
+  <data name="ChangePasswordSuccess" xml:space="preserve">
     <value>Your password has been changed.</value>
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
@@ -985,5 +985,23 @@ Preserve the {0} code because is for include the number of contacts to be remove
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
     <value>Please fill in your old MEGA password and your new MEGA password.</value>
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>Close session failed. Please try again. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>The remaining sessions are successfully closed.</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>Close session failed. Please try again. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>The session has been successfully closed.</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
   </data>
 </root>

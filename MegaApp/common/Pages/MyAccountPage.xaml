@@ -30,6 +30,7 @@
                 <shell:ApplicationBarMenuItem Text="change password" Click="OnChangePasswordClick" />
                 <!--<shell:ApplicationBarMenuItem Text="export masterkey" Click="OnExportMasterkeyClick" />-->
                 <shell:ApplicationBarMenuItem Text="clear cache" Click="OnClearCacheClick"/>
+                <shell:ApplicationBarMenuItem Text="close all sessions" Click="OnCloseAllSessionsClick"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
