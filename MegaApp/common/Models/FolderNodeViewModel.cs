@@ -25,6 +25,9 @@ namespace MegaApp.Models
             this.IsDefaultImage = true;
             this.DefaultImagePathData = VisualResources.FolderTypePath_default;
 
+            if (megaSdk.isShared(megaNode))
+                this.DefaultImagePathData = VisualResources.FolderTypePath_shared;
+
             if (!megaNode.getName().ToLower().Equals("camera uploads")) return;
             this.DefaultImagePathData = VisualResources.FolderTypePath_photo;
         }
@@ -35,7 +38,6 @@ namespace MegaApp.Models
         {
             throw new NotSupportedException("Open file is not supported on folder nodes");
         }
-
        
         #endregion
 

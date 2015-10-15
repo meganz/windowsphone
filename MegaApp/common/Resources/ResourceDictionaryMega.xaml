@@ -77,8 +77,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Path.Fill>
@@ -97,7 +97,14 @@
                 </Image>
                 <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" FontWeight="Bold"/>
                 <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
-                <Image Margin="0" Source="/Assets/AppBar/save.png" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" Width="38" Height="38" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <Grid Margin="0,-19" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/AppBar/save.png" Stretch="Fill" Grid.Column="0" Width="38" Height="38" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/open_link.png" Stretch="Fill" Grid.Column="1" Width="38" Height="38" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </Grid>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>
@@ -112,17 +119,26 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0">
                     <Path.Fill>
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
-                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                <Grid Margin="0,-19" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Assets/AppBar/save.png" Stretch="Fill" Grid.Column="0" Width="38" Height="38" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/open_link.png" Stretch="Fill" Grid.Column="1" Width="38" Height="38" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </Grid>
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>
     </DataTemplate>
