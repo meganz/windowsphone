@@ -139,7 +139,8 @@ namespace MegaApp.Models
                         AppMessages.RemoveItemQuestion_Title,
                         String.Format(AppMessages.RemoveItemQuestion, this.Name),
                         App.AppInformation,
-                        MessageDialogButtons.OkCancel).ShowDialogAsync();
+                        MessageDialogButtons.OkCancel,
+                        MessageDialogImage.RubbishBin).ShowDialogAsync();
 
                     if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
                 }

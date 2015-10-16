@@ -315,6 +315,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Empty rubbish bin failed. Please try again..
+        /// </summary>
+        public static string CleanRubbishBinFailed {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to permanently delete all files of the rubbish bin?.
+        /// </summary>
+        public static string CleanRubbishBinQuestion {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The rubbish bin has been emptied successfully..
+        /// </summary>
+        public static string CleanRubbishBinSuccess {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
         /// </summary>
         public static string ClipboardFailed {

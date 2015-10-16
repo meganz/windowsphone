@@ -861,6 +861,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">The session has been successfully closed.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" xml:space="preserve">
+          <source>The rubbish bin has been emptied successfully.</source>
+          <target state="new">The rubbish bin has been emptied successfully.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" xml:space="preserve">
+          <source>Empty rubbish bin failed. Please try again.</source>
+          <target state="new">Empty rubbish bin failed. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
+          <target state="new">Are you sure you want to permanently delete all files of the rubbish bin?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
+        </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" xml:space="preserve">
           <source>You are trying to add your own e-mail as a contact.</source>
           <target state="new">You are trying to add your own e-mail as a contact.</target>

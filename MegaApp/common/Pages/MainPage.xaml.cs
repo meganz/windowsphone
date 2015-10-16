@@ -440,7 +440,7 @@ namespace MegaApp.Pages
 
             // Change and translate the current application bar
             _mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
-                this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+                this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);            
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
@@ -928,7 +928,7 @@ namespace MegaApp.Pages
         
         private void OnEmptyRubbishBinClick(object sender, EventArgs e)
         {
-            _mainPageViewModel.RubbishBin.ClearAllNodes();
+            _mainPageViewModel.CleanRubbishBin();
         }
 
         #region Override Events
