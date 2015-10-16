@@ -946,6 +946,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You are trying to add your own e-mail as a contact..
+        /// </summary>
+        public static string InviteContactAddFailedOwnEmail {
+            get {
+                return ResourceManager.GetString("InviteContactAddFailedOwnEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a User {0} has been invited and will appear on your contact list once accepted the invitation..
         /// </summary>
         public static string InviteContactAddSuccessfully {

@@ -533,7 +533,35 @@ namespace MegaApp.Models
 
             var inputDialog = new CustomInputDialog(UiResources.AddContact, UiResources.CreateContact, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
-            {                
+            {
+                if (String.IsNullOrWhiteSpace(args.InputText) || !ValidationService.IsValidEmail(args.InputText))
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.InviteContactAddFailed_Title.ToUpper(),
+                            AppMessages.MalformedEmail,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                    
+                    return;
+                }
+
+                if (args.InputText.Equals(App.MegaSdk.getMyEmail()))
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.InviteContactAddFailed_Title.ToUpper(),
+                            AppMessages.InviteContactAddFailedOwnEmail,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                    
+                    return;
+                }
+
                 MegaSdk.inviteContact(args.InputText, "", MContactRequestInviteActionType.INVITE_ACTION_ADD, 
                     new InviteContactRequestListener());
             };
