@@ -168,6 +168,25 @@ namespace MegaApp.Models
             UpdateUserData();
         }
 
+        public void CleanRubbishBin()
+        {
+            if (this.RubbishBin.ChildNodes.Count < 1) return;
+
+            var customMessageDialog = new CustomMessageDialog(
+                UiResources.ClearRubbishBin,
+                AppMessages.CleanRubbishBinQuestion,
+                App.AppInformation,
+                MessageDialogButtons.OkCancel,
+                MessageDialogImage.RubbishBin);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                MegaSdk.cleanRubbishBin(new CleanRubbishBinRequestListener());
+            };
+
+            customMessageDialog.ShowDialog();            
+        }
+
         #endregion
 
         #region Private Methods

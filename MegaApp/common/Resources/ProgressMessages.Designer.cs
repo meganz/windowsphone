@@ -79,6 +79,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Emptying the rubbish bin....
+        /// </summary>
+        public static string CleanRubbishBin {
+            get {
+                return ResourceManager.GetString("CleanRubbishBin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Closing all sessions....
         /// </summary>
         public static string CloseAllSessions {
