@@ -288,6 +288,11 @@ namespace MegaApp.Pages
                 case NavigationParameter.Browsing:
                     if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
                         NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+
+                    // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
+                    // Auto Camera Upload settings fetching has been skipped in the mainpage
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                        _mainPageViewModel.FetchNodes();
                     break;
 
                 case NavigationParameter.PictureSelected:
@@ -297,12 +302,6 @@ namespace MegaApp.Pages
                 case NavigationParameter.SelfieSelected:
                     break;
                 case NavigationParameter.UriLaunch:
-                    break;
-                case NavigationParameter.Browsing:
-                    // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
-                    // Auto Camera Upload settings fetching has been skipped in the mainpage
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
-                        _mainPageViewModel.FetchNodes();
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
