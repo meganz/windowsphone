@@ -106,7 +106,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Auto Camera Upload background task has failed. You can re-enable it on the settings page.
+        ///   Looks up a localized string similar to Auto Camera Upload background task has failed. You can re-enable it on the settings page.
         /// </summary>
         public static string AutoCameraUploadFailed {
             get {
@@ -207,7 +207,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription..
+        ///   Looks up a localized string similar to The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription..
         /// </summary>
         public static string CancelSubscriptionFailed {
             get {
@@ -297,7 +297,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Change password failed. Please try again..
+        ///   Looks up a localized string similar to Change password failed. Please try again..
         /// </summary>
         public static string ChangePasswordFailed {
             get {
@@ -306,7 +306,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your password has been changed..
+        ///   Looks up a localized string similar to Your password has been changed..
         /// </summary>
         public static string ChangePasswordSuccess {
             get {
@@ -315,7 +315,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty rubbish bin failed. Please try again..
+        ///   Looks up a localized string similar to Empty rubbish bin failed. Please try again..
         /// </summary>
         public static string CleanRubbishBinFailed {
             get {
@@ -324,7 +324,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Are you sure you want to permanently delete all files of the rubbish bin?.
+        ///   Looks up a localized string similar to Are you sure you want to permanently delete all files of the rubbish bin?.
         /// </summary>
         public static string CleanRubbishBinQuestion {
             get {
@@ -333,7 +333,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The rubbish bin has been emptied successfully..
+        ///   Looks up a localized string similar to The rubbish bin has been emptied successfully..
         /// </summary>
         public static string CleanRubbishBinSuccess {
             get {
@@ -342,7 +342,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
+        ///   Looks up a localized string similar to Failed to copy masterkey to clipboard. Please try again.
         /// </summary>
         public static string ClipboardFailed {
             get {
@@ -360,7 +360,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Close session failed. Please try again. [{0}].
+        ///   Looks up a localized string similar to Close session failed. Please try again. [{0}].
         /// </summary>
         public static string CloseAllSessionsFailed {
             get {
@@ -369,7 +369,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The remaining sessions are successfully closed..
+        ///   Looks up a localized string similar to The remaining sessions are successfully closed..
         /// </summary>
         public static string CloseAllSessionsSuccess {
             get {
@@ -378,7 +378,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Close session failed. Please try again. [{0}].
+        ///   Looks up a localized string similar to Close session failed. Please try again. [{0}].
         /// </summary>
         public static string CloseSessionFailed {
             get {
@@ -387,7 +387,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The session has been successfully closed..
+        ///   Looks up a localized string similar to The session has been successfully closed..
         /// </summary>
         public static string CloseSessionSucces {
             get {
@@ -577,7 +577,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to remove the contact {0}. Please try again. [{0}].
+        ///   Looks up a localized string similar to Failed to remove the contact {0}. Please try again. [{0}].
         /// </summary>
         public static string DeleteContactFailed {
             get {
@@ -586,7 +586,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Remove contact failed.
+        ///   Looks up a localized string similar to Remove contact failed.
         /// </summary>
         public static string DeleteContactFailed_Title {
             get {
@@ -595,7 +595,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Do you want to remove the contact {0}?.
+        ///   Looks up a localized string similar to Do you want to remove the contact {0}?.
         /// </summary>
         public static string DeleteContactQuestion {
             get {
@@ -613,7 +613,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Do you want to remove {0} contacts?.
+        ///   Looks up a localized string similar to Do you want to remove {0} contacts?.
         /// </summary>
         public static string DeleteMultipleContactsQuestion {
             get {
@@ -622,7 +622,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Remove contacts?.
+        ///   Looks up a localized string similar to Remove contacts?.
         /// </summary>
         public static string DeleteMultipleContactsQuestion_Title {
             get {
@@ -631,7 +631,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to delete item. Please try again [{0}].
+        ///   Looks up a localized string similar to Failed to delete item. Please try again [{0}].
         /// </summary>
         public static string DeleteNodeFailed {
             get {
@@ -973,7 +973,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You are trying to add your own e-mail as a contact..
+        ///   Looks up a localized string similar to You are trying to add your own e-mail as a contact..
         /// </summary>
         public static string InviteContactAddFailedOwnEmail {
             get {
@@ -1315,7 +1315,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The new and the old password must not match..
+        ///   Looks up a localized string similar to The new and the old password must not match..
         /// </summary>
         public static string NewAndOldPasswordMatch {
             get {
@@ -1324,7 +1324,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.
+        ///   Looks up a localized string similar to You have not selected a default download location for your files.
         ///
         ///To proceed with the download please select a destination folder or go to preferences in order to set up your default download location..
         /// </summary>
@@ -1371,7 +1371,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Passwords do not match. Please try again..
+        ///   Looks up a localized string similar to Passwords do not match..
         /// </summary>
         public static string PasswordsDoNotMatch {
             get {
@@ -1668,7 +1668,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your old MEGA password and your new MEGA password..
+        ///   Looks up a localized string similar to Please fill in your old MEGA password and your new MEGA password..
         /// </summary>
         public static string RequiredFieldsChangePassword {
             get {
@@ -1677,7 +1677,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Please fill in your choosen password..
+        ///   Looks up a localized string similar to Please fill in your choosen password..
         /// </summary>
         public static string RequiredFieldsConfirmAccount {
             get {
