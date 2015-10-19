@@ -529,68 +529,22 @@ namespace MegaApp.Models
             return true;
         }
 
-        public void ClearAllNodes()
-        {
-            var customMessageDialog = new CustomMessageDialog(
-                    AppMessages.MultiSelectRemoveQuestion_Title,
-                    String.Format(AppMessages.MultiSelectRemoveQuestion, this.ChildNodes.Count),
-                    App.AppInformation,
-                    MessageDialogButtons.OkCancel);
-
-            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(
-                    () => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
-
-                Task.Run(async () =>
-                {
-                    int count = this.ChildNodes.Count;
-                    var helperList = new List<IMegaNode>(count);
-                    helperList.AddRange(this.ChildNodes);
-
-                    WaitHandle[] waitEventRequests = new WaitHandle[count];
-
-                    int index = 0;
-
-                    foreach (var node in helperList)
-                    {
-                        waitEventRequests[index] = new AutoResetEvent(false);
-                        await node.RemoveAsync(true, (AutoResetEvent) waitEventRequests[index]);
-                        index++;
-                    }
-
-                    WaitHandle.WaitAll(waitEventRequests);
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        new CustomMessageDialog(
-                            AppMessages.MultiRemoveSucces_Title,
-                            String.Format(AppMessages.MultiRemoveSucces, count),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                    });
-                });
-            };
-
-            customMessageDialog.ShowDialog();
-        }
-
-
         public async Task<bool> MultipleRemoveItems()
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
             if (count < 1) return false;
 
-            if (this.CurrentDisplayMode == DriveDisplayMode.RubbishBin)
+            if (this.CurrentDisplayMode == DriveDisplayMode.RubbishBin ||
+                (this.CurrentDisplayMode == DriveDisplayMode.MultiSelect && 
+                this.PreviousDisplayMode == DriveDisplayMode.RubbishBin))
             {
                 var customMessageDialog = new CustomMessageDialog(
                     AppMessages.MultiSelectRemoveQuestion_Title,
                     String.Format(AppMessages.MultiSelectRemoveQuestion, count),
                     App.AppInformation,
-                    MessageDialogButtons.OkCancel);
+                    MessageDialogButtons.OkCancel,
+                    MessageDialogImage.RubbishBin);
 
                 customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
                 {
@@ -606,7 +560,8 @@ namespace MegaApp.Models
                     AppMessages.MultiMoveToRubbishBinQuestion_Title,
                     String.Format(AppMessages.MultiMoveToRubbishBinQuestion, count),
                     App.AppInformation,
-                    MessageDialogButtons.OkCancel);
+                    MessageDialogButtons.OkCancel,
+                    MessageDialogImage.RubbishBin);
 
                 customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
                 {

@@ -50,7 +50,7 @@ namespace MegaApp.Models
             {
                 this.IsDefaultImage = false;
                 this.ThumbnailImageUri = new Uri(ThumbnailPath);
-        }
+            }
             else
             {
                 this.IsDefaultImage = true;
@@ -139,7 +139,8 @@ namespace MegaApp.Models
                         AppMessages.RemoveItemQuestion_Title,
                         String.Format(AppMessages.RemoveItemQuestion, this.Name),
                         App.AppInformation,
-                        MessageDialogButtons.OkCancel).ShowDialogAsync();
+                        MessageDialogButtons.OkCancel,
+                        MessageDialogImage.RubbishBin).ShowDialogAsync();
 
                     if (result == MessageDialogResult.CancelNo) return NodeActionResult.Cancelled;
                 }
@@ -237,6 +238,7 @@ namespace MegaApp.Models
             this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
             this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
             this.Type = megaNode.getType();
+            this.IsExported = megaNode.isExported();
         }
 
         public virtual void Open()
@@ -270,7 +272,7 @@ namespace MegaApp.Models
         public string ModificationTime { get; private set; }
 
         public string ThumbnailPath
-            {
+        {
             get { return Path.Combine(ApplicationData.Current.LocalFolder.Path, 
                                       AppResources.ThumbnailsDirectory, 
                                       this.OriginalMNode.getBase64Handle());
@@ -332,6 +334,20 @@ namespace MegaApp.Models
         {
             get { return _defaultImagePathData; }
             set { SetField(ref _defaultImagePathData, value); }
+        }
+
+        private bool _isDownloadAvailable;
+        public bool IsDownloadAvailable
+        {
+            get { return _isDownloadAvailable; }
+            set { SetField(ref _isDownloadAvailable, value); }
+        }
+
+        private bool _isExported;
+        public bool IsExported
+        {
+            get { return _isExported; }
+            set { SetField(ref _isExported, value); }
         }
 
         public TransferObjectModel Transfer { get; set; }

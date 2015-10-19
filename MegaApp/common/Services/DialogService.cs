@@ -642,7 +642,8 @@ namespace MegaApp.Services
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
                 VerticalAlignment = VerticalAlignment.Top,
-                Margin = new Thickness(12)
+                Margin = new Thickness(12),
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
             };
 
             var pinLockButtonsGrid = new Grid()
@@ -659,6 +660,7 @@ namespace MegaApp.Services
             var titleLabel = new TextBlock()
             {
                 Margin = new Thickness(12),
+                FontFamily = new FontFamily("Segoe WP Semibold"),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])
             };
             pinLockStackPanel.Children.Add(titleLabel);
@@ -667,7 +669,7 @@ namespace MegaApp.Services
 
             if (isChange)
             {
-                titleLabel.Text = UiResources.ChangePinLock;
+                titleLabel.Text = UiResources.ChangePinLock.ToUpper();
                 currentPinLock = new NumericPasswordBox()
                 {
                     Watermark = UiResources.PinLockWatermark.ToLower(),
@@ -677,7 +679,7 @@ namespace MegaApp.Services
             }
             else
             {
-                titleLabel.Text = UiResources.MakePinLock;
+                titleLabel.Text = UiResources.MakePinLock.ToUpper();
             }
 
             var pinLock = new NumericPasswordBox()
@@ -772,7 +774,8 @@ namespace MegaApp.Services
             {
                 Width = Double.NaN,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
             };
 
             grid.Children.Add(pinLockStackPanel);
@@ -781,6 +784,158 @@ namespace MegaApp.Services
             pinLockRadWindow.Content = grid;
       
             pinLockRadWindow.IsOpen = true;
+        }
+
+        public static void ShowChangePasswordDialog()
+        {
+            var openAnimation = new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.TopIn
+            };
+
+            var closeAnimation = new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.BottomOut
+            };
+
+            var changePasswordRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = openAnimation,
+                CloseAnimation = closeAnimation
+            };            
+
+            var passwordStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Top,
+                Margin = new Thickness(12),
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+
+            var passwordButtonsGrid = new Grid()
+            {
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Bottom,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            passwordButtonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+
+
+            var titleLabel = new TextBlock()
+            {
+                Text = UiResources.ChangePassword.ToUpper(),
+                Margin = new Thickness(12),
+                FontFamily = new FontFamily("Segoe WP Semibold"),
+                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])                
+            };
+            passwordStackPanel.Children.Add(titleLabel);
+                        
+            var currentPassword = new RadPasswordBox()
+            {
+                Watermark = UiResources.PasswordWatermark.ToLower(),
+                ClearButtonVisibility = Visibility.Visible
+            };
+            passwordStackPanel.Children.Add(currentPassword);
+
+            var newPassword = new RadPasswordBox()
+            {
+                Watermark = UiResources.NewPasswordWatermark.ToLower(),
+                ClearButtonVisibility = Visibility.Visible                
+            };
+            passwordStackPanel.Children.Add(newPassword);
+
+            var confirmPassword = new RadPasswordBox()
+            {
+                Watermark = UiResources.ConfirmPasswordWatermark.ToLower(),
+                ClearButtonVisibility = Visibility.Visible
+            };
+            passwordStackPanel.Children.Add(confirmPassword);
+
+
+            var confirmButton = new Button()
+            {
+                Content = UiResources.Done.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            confirmButton.Tap += (sender, args) =>
+            {
+                if (!String.IsNullOrWhiteSpace(currentPassword.Password) && 
+                    !String.IsNullOrWhiteSpace(newPassword.Password) && !String.IsNullOrWhiteSpace(confirmPassword.Password))
+                {
+                    if(!newPassword.Password.Equals(confirmPassword.Password))
+                    {
+                        new CustomMessageDialog(
+                            UiResources.ChangePassword.ToUpper(),
+                            AppMessages.PasswordsDoNotMatch,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                        return;
+                    }
+
+                    if(newPassword.Password.Equals(currentPassword.Password))
+                    {
+                        new CustomMessageDialog(
+                            UiResources.ChangePassword.ToUpper(),
+                            AppMessages.NewAndOldPasswordMatch,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                        return;
+                    }
+
+                    App.MegaSdk.changePassword(currentPassword.Password, newPassword.Password, new ChangePasswordRequestListener());
+                }
+                else
+                {
+                    new CustomMessageDialog(
+                        AppMessages.RequiredFields_Title.ToUpper(),
+                        AppMessages.RequiredFieldsChangePassword,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                    return;
+                }
+
+                changePasswordRadWindow.IsOpen = false;
+            };
+
+            var cancelButton = new Button()
+            {
+                Content = UiResources.Cancel.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+            cancelButton.Tap += (sender, args) =>
+            {
+                changePasswordRadWindow.IsOpen = false;
+            };
+
+            passwordButtonsGrid.Children.Add(confirmButton);
+            passwordButtonsGrid.Children.Add(cancelButton);
+            Grid.SetColumn(confirmButton, 0);
+            Grid.SetColumn(cancelButton, 1);
+
+            var grid = new Grid()
+            {
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+
+            grid.Children.Add(passwordStackPanel);
+            grid.Children.Add(passwordButtonsGrid);
+
+            changePasswordRadWindow.Content = grid;
+
+            changePasswordRadWindow.IsOpen = true;
         }
 
         public static async Task<MessageDialogResult> ShowOptionsDialog(string title, string message, IEnumerable<DialogButton> buttons)

@@ -51,8 +51,8 @@ namespace MegaApp
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
-        public static bool IsNewlyActivatedAccount { get; set; }
-
+        public static ulong? ShortCutHandle { get; set; }
+        
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
         public FileOpenPickerContinuationEventArgs FilePickerContinuationArgs { get; set; }
@@ -141,6 +141,7 @@ namespace MegaApp
         {
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
+            AppInformation.IsStartupModeActivate = true;
             CheckChangesIP();
         }
 
@@ -475,18 +476,7 @@ namespace MegaApp
         {
             if (e.getErrorCode() == MErrorType.API_ESID || e.getErrorCode() == MErrorType.API_ESSL)
             {
-                // Disable the "camera upload" service
-                MediaService.SetAutoCameraUpload(false);
-                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
-                // Clear settings, cache, previews, thumbnails, etc.
-                SettingsService.ClearMegaLoginData();
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    MainPageViewModel.CloudDrive.ChildNodes.Clear();
-                    MainPageViewModel.RubbishBin.ChildNodes.Clear();
-                });
-                AppService.ClearAppCache(false);
+                AppService.LogoutActions();
                 
                 // Show the init tour / login page with the corresponding navigation parameter
                 if(e.getErrorCode() == MErrorType.API_ESID)

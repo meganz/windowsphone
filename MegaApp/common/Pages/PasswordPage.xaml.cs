@@ -36,13 +36,6 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            //if (NavigateService.ProcessQueryString(NavigationContext.QueryString) == NavigationParameter.DisablePassword)
-            //{
-            //    _passwordViewModel.IsDisablePassword = true;
-            //    return;
-            //}
-
             NavigationService.RemoveBackEntry();
         }
 
@@ -56,6 +49,9 @@ namespace MegaApp.Pages
         	_passwordViewModel.CheckPassword();
         }
 
-        
+        private void OnLogoutClick(object sender, EventArgs e)
+        {
+            _passwordViewModel.Logout();            
+        }
     }
 }

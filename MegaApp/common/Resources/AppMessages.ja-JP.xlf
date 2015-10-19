@@ -191,8 +191,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" xml:space="preserve">
-          <source>The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</source>
-          <target state="new">The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</target>
+          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="new">The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
           </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" xml:space="preserve">
@@ -798,16 +798,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Item removed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/RemoveNodeSucces" translate="yes" xml:space="preserve">
-          <source>Item successful removed</source>
-          <target state="new">Item successful removed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
-          </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" xml:space="preserve">
           <source>Remove failed</source>
           <target state="new">Remove failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" xml:space="preserve">
+          <source>Item successful removed</source>
+          <target state="new">Item successful removed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
+        </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed to remove item</source>
           <target state="new">Failed to remove item</target>
@@ -835,8 +835,8 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
           </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" xml:space="preserve">
-          <source>Passwords do not match. Please try again.</source>
-          <target state="new">Passwords do not match. Please try again.</target>
+          <source>Passwords do not match.</source>
+          <target state="new">Passwords do not match.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
           </trans-unit>
         <trans-unit id="Resx/MoveFailed_Title" translate="yes" xml:space="preserve">

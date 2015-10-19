@@ -434,10 +434,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Elemento eliminado</value>
     <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
-  <data name="RemoveNodeSucces" xml:space="preserve">
-    <value>Elemento eliminado correctamente</value>
-    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
-  </data>
   <data name="RemoveNodeFailed_Title" xml:space="preserve">
     <value>Error al eliminar</value>
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
@@ -464,7 +460,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Las contraseñas no coinciden. Por favor, vuelve a intentarlo.</value>
+    <value>Las contraseñas no coinciden.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
   </data>
   <data name="MoveFailed_Title" xml:space="preserve">
@@ -772,7 +768,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>La subscripción no ha sido cancelada correctamente. Por favor, contacta con support@mega.co.nz para cancelar tu subscripción.</value>
+    <value>La subscripción no ha sido cancelada correctamente. Por favor, contacta con support@mega.nz para cancelar tu subscripción.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionConfirmation" xml:space="preserve">
@@ -934,5 +930,52 @@ Preserve the {0} code because is for include email of the contact to be removed 
   <data name="AccountUpdate" xml:space="preserve">
     <value>Tu cuenta ha sido actualizada. ¿Quieres comprobar los nuevos detalles de la cuenta?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>Desconectado</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Error en las auto subidas de la cámara</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>El servicio de auto subidas de la cámara ha fallado. Puedes volver a activarlo en la página de configuración</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>No se puede verificar nuestra clave SSL. Podrías estar afectado por un ataque del tipo "man-in-the-middle".</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="DeleteContactFailed_Title" xml:space="preserve">
+    <value>Error al eliminar</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteContactFailed" xml:space="preserve">
+    <value>No se pudo eliminar el contacto {0}. Por favor, vuelve a intentarlo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
+    <value>¿Eliminar contactos?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
+    <value>¿Quieres eliminar {0} contactos?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>Por favor, introduce tu contraseña antigua y tu contraseña nueva.</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Error al cambiar la contraseña. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>La contraseña nueva y la antigua no pueden coincidir.</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
 </root>

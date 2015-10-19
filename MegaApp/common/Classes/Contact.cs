@@ -87,6 +87,13 @@ namespace MegaApp.Classes
                                     AppResources.DownloadsDirectory, "ContactAvatarImage_"+Email);
             }
         }
+
+        private bool _isMultiSelected;
+        public bool IsMultiSelected
+        {
+            get { return _isMultiSelected; }
+            set { SetField(ref _isMultiSelected, value); }
+        }
         
         public ulong Timestamp { get; set; }
         public MUserVisibility Visibility { get; set; }

@@ -72,17 +72,6 @@ namespace MegaApp.Models
             }
         }
 
-        private bool _isDownloadAvailable;
-        public bool IsDownloadAvailable
-        {
-            get { return _isDownloadAvailable; }
-            set
-            {
-                _isDownloadAvailable = value;
-                OnPropertyChanged("IsDownloadAvailable");
-            }
-        }
-
         #endregion
     }
 }

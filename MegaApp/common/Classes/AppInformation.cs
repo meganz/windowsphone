@@ -11,12 +11,15 @@ namespace MegaApp.Classes
         public AppInformation()
         {
             this.PickerOrAsyncDialogIsOpen = false;
+            this.IsNewlyActivatedAccount = false;
             this.IsStartedAsAutoUpload = false;
-
+            this.IsStartupModeActivate = false;
         }
+        
         public bool PickerOrAsyncDialogIsOpen { get; set; }
-
+        public bool IsNewlyActivatedAccount { get; set; }
         public bool IsStartedAsAutoUpload { get; set; }
+        public bool IsStartupModeActivate { get; set; }
 
         public bool HasFetchedNodes { get; set; }
     }

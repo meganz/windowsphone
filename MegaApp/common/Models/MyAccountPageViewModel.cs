@@ -63,6 +63,21 @@ namespace MegaApp.Models
             AccountDetails.CacheSize = AppService.GetAppCacheSize();
         }
 
+        public void ChangePassword()
+        {
+            DialogService.ShowChangePasswordDialog();
+        }
+
+        public void CancelSubscription()
+        {
+            DialogService.ShowCancelSubscriptionFeedbackDialog();
+        }
+
+        public void CloseAllSessions()
+        {
+            MegaSdk.killAllSessions(new KillAllSessionsRequestListener());
+        }
+
         #endregion
 
         #region Properties

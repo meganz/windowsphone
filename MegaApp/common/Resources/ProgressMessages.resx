@@ -121,6 +121,22 @@
     <value>Canceling subscription...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Changing password...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Emptying the rubbish bin...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Closing all sessions...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Closing session...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
   <data name="ConfirmAccount" xml:space="preserve">
     <value>Confirming account...</value>
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>

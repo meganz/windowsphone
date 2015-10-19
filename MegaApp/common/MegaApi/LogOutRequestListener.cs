@@ -79,17 +79,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            // Disable the "camera upload" service
-            MediaService.SetAutoCameraUpload(false);
-            SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
-            SettingsService.ClearMegaLoginData();
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
-                    App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
-                });
-            AppService.ClearAppCache(false);
+            AppService.LogoutActions();
         }
 
         #endregion
