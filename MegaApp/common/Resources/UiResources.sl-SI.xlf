@@ -709,6 +709,31 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Outgoing</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to enable the Auto Camera Uploads service?</source>
+          <target state="new">Do you want to enable the Auto Camera Uploads service?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShareFolder" translate="yes" xml:space="preserve">
+          <source>Share folder</source>
+          <target state="new">Share folder</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewPasswordWatermark" translate="yes" xml:space="preserve">
+          <source>Your new password</source>
+          <target state="new">Your new password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessions" translate="yes" xml:space="preserve">
+          <source>Close all sessions</source>
+          <target state="new">Close all sessions</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSession" translate="yes" xml:space="preserve">
+          <source>Close session</source>
+          <target state="new">Close session</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
           <source>Incoming</source>
           <target state="new">Incoming</target>

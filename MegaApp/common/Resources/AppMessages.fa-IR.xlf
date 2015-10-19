@@ -89,6 +89,101 @@
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" xml:space="preserve">
           <source>Auto Camera Upload failed</source>
           <target state="new">Auto Camera Upload failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" xml:space="preserve">
+          <source>Remove contact failed</source>
+          <target state="new">Remove contact failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed" translate="yes" xml:space="preserve">
+          <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
+          <target state="new">Failed to remove the contact {0}. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" xml:space="preserve">
+          <source>Remove contacts?</source>
+          <target state="new">Remove contacts?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" xml:space="preserve">
+          <source>Change password failed. Please try again.</source>
+          <target state="new">Change password failed. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" xml:space="preserve">
+          <source>Your password has been changed.</source>
+          <target state="new">Your password has been changed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" xml:space="preserve">
+          <source>Please fill in your old MEGA password and your new MEGA password.</source>
+          <target state="new">Please fill in your old MEGA password and your new MEGA password.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionSucces" translate="yes" xml:space="preserve">
+          <source>The session has been successfully closed.</source>
+          <target state="new">The session has been successfully closed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" xml:space="preserve">
+          <source>The rubbish bin has been emptied successfully.</source>
+          <target state="new">The rubbish bin has been emptied successfully.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" xml:space="preserve">
+          <source>Empty rubbish bin failed. Please try again.</source>
+          <target state="new">Empty rubbish bin failed. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
+          <target state="new">Are you sure you want to permanently delete all files of the rubbish bin?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" xml:space="preserve">
+          <source>You are trying to add your own e-mail as a contact.</source>
+          <target state="new">You are trying to add your own e-mail as a contact.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" xml:space="preserve">
+          <source>The remaining sessions are successfully closed.</source>
+          <target state="new">The remaining sessions are successfully closed.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" xml:space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" xml:space="preserve">
+          <source>The new and the old password must not match.</source>
+          <target state="new">The new and the old password must not match.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" xml:space="preserve">
+          <source>Do you want to remove {0} contacts?</source>
+          <target state="new">Do you want to remove {0} contacts?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
+          <target state="new">Auto Camera Upload background task has failed. You can re-enable it on the settings page</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload failed</source>
+          <target state="new">Auto Camera Upload failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the automatich camera upload background task has failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" xml:space="preserve">
@@ -191,8 +286,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" xml:space="preserve">
-          <source>The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</source>
-          <target state="new">The subscription has not been canceled correctly. Please contact support@mega.co.nz to cancel your subscription.</target>
+          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="new">The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
           </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" xml:space="preserve">
@@ -798,16 +893,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Item removed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/RemoveNodeSucces" translate="yes" xml:space="preserve">
-          <source>Item successful removed</source>
-          <target state="new">Item successful removed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
-          </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" xml:space="preserve">
           <source>Remove failed</source>
           <target state="new">Remove failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" xml:space="preserve">
+          <source>Item successful removed</source>
+          <target state="new">Item successful removed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
+        </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed to remove item</source>
           <target state="new">Failed to remove item</target>
@@ -835,8 +930,8 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
           </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" xml:space="preserve">
-          <source>Passwords do not match. Please try again.</source>
-          <target state="new">Passwords do not match. Please try again.</target>
+          <source>Passwords do not match.</source>
+          <target state="new">Passwords do not match.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
           </trans-unit>
         <trans-unit id="Resx/MoveFailed_Title" translate="yes" xml:space="preserve">

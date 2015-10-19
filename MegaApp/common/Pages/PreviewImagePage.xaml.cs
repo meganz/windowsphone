@@ -48,10 +48,12 @@ namespace MegaApp.Pages
         #if WINDOWS_PHONE_81
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (PhoneApplicationService.Current.StartupMode == StartupMode.Activate)            
+            if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
+
+                App.AppInformation.IsStartupModeActivate = false;
 
                 // Check to see if any files have been picked
                 var app = Application.Current as App;

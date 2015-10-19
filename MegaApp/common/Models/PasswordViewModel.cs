@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -16,7 +18,7 @@ namespace MegaApp.Models
     {
         public PasswordViewModel()
         {
-            //IsDisablePassword = false;
+            
         }
 
         #region Methods
@@ -34,25 +36,21 @@ namespace MegaApp.Models
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
                 return;
-            }
-
-            //if (IsDisablePassword)
-            //{
-            //    SettingsService.DeleteSetting(SettingsResources.UserPasswordIsEnabled);
-            //    SettingsService.DeleteSetting(SettingsResources.UserPassword);
-            //    NavigateService.GoBack();
-            //}
+            }            
             
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.PasswordLogin);
+        }
+
+        public void Logout()
+        {
+            App.MegaSdk.logout(new LogOutRequestListener());
         }
 
         #endregion
 
         #region Properties
 
-        public string Password { get; set; }
-
-        //public bool IsDisablePassword { get; set; }
+        public string Password { get; set; }        
 
         #endregion
     }

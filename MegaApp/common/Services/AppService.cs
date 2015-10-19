@@ -51,7 +51,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("9bc6b2b");
+            return String.Format("933e457");
         }
 
         public static string GetAppUserAgent()
@@ -240,6 +240,22 @@ namespace MegaApp.Services
                 MessageDialogButtons.Ok).ShowDialogAsync();
 
             return result == MessageDialogResult.OkYes;
+        }
+
+        public static void LogoutActions()
+        {
+            // Disable the "camera upload" service
+            MediaService.SetAutoCameraUpload(false);
+            SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+
+            // Clear settings, cache, previews, thumbnails, etc.
+            SettingsService.ClearMegaLoginData();
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
+                App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
+            });
+            AppService.ClearAppCache(false);            
         }
     }
 }

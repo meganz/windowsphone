@@ -12,6 +12,7 @@ using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -151,26 +152,39 @@ namespace MegaApp.MegaApi
             {
                 if(_mainPageViewModel != null)
                 {
-                    var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
-                                             NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
-                    var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
-                                             NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
+                var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
+                    NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
+                var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
+                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
 
-                    var autoResetEvent = new AutoResetEvent(false);
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
-                        _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
-                        autoResetEvent.Set();
-                    });
-                    autoResetEvent.WaitOne();
-                }
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
+                    _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();
+            }
                 else
                 {
                     var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
                         NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation, 
                             NodeService.FindCameraUploadNode(api, api.getRootNode()));
 
+            _mainPageViewModel.LoadFolders();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                // If is a newly activated account, navigates to the upgrade account page
+                if (App.AppInformation.IsNewlyActivatedAccount)                                    
+                    NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });
+                // If is the first login, navigates to the camera upload service config page
+                else if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                else if (App.AppInformation.IsStartedAsAutoUpload)                
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+            });
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {

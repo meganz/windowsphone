@@ -53,7 +53,7 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.AutoCameraUpload)
             {
-                _settingsViewModel.AppInformation.IsStartedAsAutoUpload = false;
+                App.AppInformation.IsStartedAsAutoUpload = false;
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
 
@@ -79,6 +79,12 @@ namespace MegaApp.Pages
         {
             //Dispatcher.BeginInvoke(
             //    () => DebugService.DebugSettings.IsDebugMode = !DebugService.DebugSettings.IsDebugMode);
+        }
+
+        private void BtnCameraUploadsSwitch_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)

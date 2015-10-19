@@ -298,6 +298,12 @@
     <Compile Include="..\common\MegaApi\CancelSubscriptionRequestListener.cs">
       <Link>MegaApi\CancelSubscriptionRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\ChangePasswordRequestListener.cs">
+      <Link>MegaApi\ChangePasswordRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\CleanRubbishBinRequestListener.cs">
+      <Link>MegaApi\CleanRubbishBinRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\CreateFolderRequestListener.cs">
       <Link>MegaApi\CreateFolderRequestListener.cs</Link>
     </Compile>
@@ -354,6 +360,12 @@
     </Compile>
     <Compile Include="..\common\MegaApi\InviteContactRequestListener.cs">
       <Link>MegaApi\InviteContactRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\KillAllSessionsRequestListener.cs">
+      <Link>MegaApi\KillAllSessionsRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\KillSessionRequestListener.cs">
+      <Link>MegaApi\KillSessionRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
@@ -744,8 +756,8 @@
     <Content Include="..\common\Assets\AppBar\cloud.upload.png">
       <Link>Assets\AppBar\cloud.upload.png</Link>
     </Content>
-    <Content Include="..\common\Assets\AppBar\delete.file.png">
-      <Link>Assets\AppBar\delete.file.png</Link>
+    <Content Include="..\common\Assets\AppBar\delete.png">
+      <Link>Assets\AppBar\delete.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\edit.png">
       <Link>Assets\AppBar\edit.png</Link>

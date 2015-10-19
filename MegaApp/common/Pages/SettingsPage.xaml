@@ -198,7 +198,7 @@
                             </TextBlock>
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <StackPanel Margin="0,0,0,40">
-                                <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface">
+                                <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" CheckedChanged="BtnCameraUploadsSwitch_CheckedChanged">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
                                         <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
                                             <Setter Property="CheckBackground">

@@ -74,6 +74,7 @@ namespace MegaApp.Models
             }
             
         }
+
         private static void NavigateTermsOfService(object obj)
         {
             var webBrowserTask = new WebBrowserTask {Uri = new Uri(AppResources.TermsOfServiceUrl)};

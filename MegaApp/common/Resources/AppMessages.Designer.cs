@@ -106,7 +106,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Auto Camera Upload background task has failed. You can re-enable it on the settings page.
+        ///   Busca una cadena traducida similar a Auto Camera Upload background task has failed. You can re-enable it on the settings page.
+        /// </summary>
+        public static string AutoCameraUploadFailed {
+            get {
+                return ResourceManager.GetString("AutoCameraUploadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Auto Camera Upload failed.
+        /// </summary>
+        public static string AutoCameraUploadFailed_Title {
+            get {
+                return ResourceManager.GetString("AutoCameraUploadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Background agents for MEGA have been disabled by the user.
         /// </summary>
         public static string AutoCameraUploadFailed {
             get {
@@ -297,7 +315,52 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to copy masterkey to clipboard. Please try again.
+        ///   Busca una cadena traducida similar a Change password failed. Please try again..
+        /// </summary>
+        public static string ChangePasswordFailed {
+            get {
+                return ResourceManager.GetString("ChangePasswordFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your password has been changed..
+        /// </summary>
+        public static string ChangePasswordSuccess {
+            get {
+                return ResourceManager.GetString("ChangePasswordSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empty rubbish bin failed. Please try again..
+        /// </summary>
+        public static string CleanRubbishBinFailed {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to permanently delete all files of the rubbish bin?.
+        /// </summary>
+        public static string CleanRubbishBinQuestion {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The rubbish bin has been emptied successfully..
+        /// </summary>
+        public static string CleanRubbishBinSuccess {
+            get {
+                return ResourceManager.GetString("CleanRubbishBinSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to copy masterkey to clipboard. Please try again.
         /// </summary>
         public static string ClipboardFailed {
             get {
@@ -311,6 +374,42 @@ namespace MegaApp.Resources {
         public static string ClipboardFailed_Title {
             get {
                 return ResourceManager.GetString("ClipboardFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Close session failed. Please try again. [{0}].
+        /// </summary>
+        public static string CloseAllSessionsFailed {
+            get {
+                return ResourceManager.GetString("CloseAllSessionsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The remaining sessions are successfully closed..
+        /// </summary>
+        public static string CloseAllSessionsSuccess {
+            get {
+                return ResourceManager.GetString("CloseAllSessionsSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Close session failed. Please try again. [{0}].
+        /// </summary>
+        public static string CloseSessionFailed {
+            get {
+                return ResourceManager.GetString("CloseSessionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The session has been successfully closed..
+        /// </summary>
+        public static string CloseSessionSucces {
+            get {
+                return ResourceManager.GetString("CloseSessionSucces", resourceCulture);
             }
         }
         
@@ -496,7 +595,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to remove the contact {0}?.
+        ///   Busca una cadena traducida similar a Failed to remove the contact {0}. Please try again. [{0}].
+        /// </summary>
+        public static string DeleteContactFailed {
+            get {
+                return ResourceManager.GetString("DeleteContactFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove contact failed.
+        /// </summary>
+        public static string DeleteContactFailed_Title {
+            get {
+                return ResourceManager.GetString("DeleteContactFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to remove the contact {0}?.
         /// </summary>
         public static string DeleteContactQuestion {
             get {
@@ -514,7 +631,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to delete item. Please try again [{0}].
+        ///   Busca una cadena traducida similar a Do you want to remove {0} contacts?.
+        /// </summary>
+        public static string DeleteMultipleContactsQuestion {
+            get {
+                return ResourceManager.GetString("DeleteMultipleContactsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove contacts?.
+        /// </summary>
+        public static string DeleteMultipleContactsQuestion_Title {
+            get {
+                return ResourceManager.GetString("DeleteMultipleContactsQuestion_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to delete item. Please try again [{0}].
         /// </summary>
         public static string DeleteNodeFailed {
             get {
@@ -856,6 +991,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You are trying to add your own e-mail as a contact..
+        /// </summary>
+        public static string InviteContactAddFailedOwnEmail {
+            get {
+                return ResourceManager.GetString("InviteContactAddFailedOwnEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User {0} has been invited and will appear on your contact list once accepted the invitation..
         /// </summary>
         public static string InviteContactAddSuccessfully {
@@ -1189,7 +1333,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You have not selected a default download location for your files.
+        ///   Busca una cadena traducida similar a The new and the old password must not match..
+        /// </summary>
+        public static string NewAndOldPasswordMatch {
+            get {
+                return ResourceManager.GetString("NewAndOldPasswordMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.
         ///
         ///To proceed with the download please select a destination folder or go to preferences in order to set up your default download location..
         /// </summary>
@@ -1481,9 +1634,9 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Item successful removed.
         /// </summary>
-        public static string RemoveNodeSucces {
+        public static string RemoveNodeSuccess {
             get {
-                return ResourceManager.GetString("RemoveNodeSucces", resourceCulture);
+                return ResourceManager.GetString("RemoveNodeSuccess", resourceCulture);
             }
         }
         
@@ -1533,7 +1686,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please fill in your choosen password..
+        ///   Busca una cadena traducida similar a Please fill in your old MEGA password and your new MEGA password..
+        /// </summary>
+        public static string RequiredFieldsChangePassword {
+            get {
+                return ResourceManager.GetString("RequiredFieldsChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please fill in your choosen password..
         /// </summary>
         public static string RequiredFieldsConfirmAccount {
             get {

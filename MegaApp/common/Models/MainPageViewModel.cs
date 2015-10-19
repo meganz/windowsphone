@@ -87,13 +87,6 @@ namespace MegaApp.Models
                     this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
 
                 this.RubbishBin.LoadChildNodes();
-
-                // If is the first login, navigates to the camera upload service config page
-                if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                {
-                    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
-                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                }
             }); 
         }
 
@@ -111,8 +104,8 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, ShortCutHandle);
-            this.ShortCutHandle = null;
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);          
+         
             this.AppInformation.HasFetchedNodes = false;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
@@ -175,6 +168,25 @@ namespace MegaApp.Models
         {
             MegaSdk.getAccountDetails(this);
             UpdateUserData();
+        }
+
+        public void CleanRubbishBin()
+        {
+            if (this.RubbishBin.ChildNodes.Count < 1) return;
+
+            var customMessageDialog = new CustomMessageDialog(
+                UiResources.ClearRubbishBin,
+                AppMessages.CleanRubbishBinQuestion,
+                App.AppInformation,
+                MessageDialogButtons.OkCancel,
+                MessageDialogImage.RubbishBin);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                MegaSdk.cleanRubbishBin(new CleanRubbishBinRequestListener());
+            };
+
+            customMessageDialog.ShowDialog();            
         }
 
         #endregion
@@ -247,8 +259,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
-        public ulong? ShortCutHandle { get; set; }
 
         private string _activeImportLink;
         public string ActiveImportLink

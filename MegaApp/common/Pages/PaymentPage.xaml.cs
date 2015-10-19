@@ -365,7 +365,7 @@ namespace MegaApp.Pages
             // If not, come back to the update account pivot
             else if (_paymentViewModel.ProductSelectionIsEnabled)
             {
-                NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+                NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });                
             }
 
             _paymentViewModel.CreditCardPaymentIsEnabled = false;
@@ -411,7 +411,7 @@ namespace MegaApp.Pages
             _paymentViewModel.PaymentMethodSelectionIsEnabled = false;
             _paymentViewModel.CreditCardPaymentIsEnabled = false;
 
-            NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });
         }
 
         private void LstCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -423,8 +423,9 @@ namespace MegaApp.Pages
         {
             switch(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType)
             {
+                case MPaymentMethod.PAYMENT_METHOD_CENTILI:
                 case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
-                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener());
+                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType));
                     break;
 
                 case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:

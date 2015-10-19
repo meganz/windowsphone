@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -94,7 +95,10 @@ namespace MegaApp.Pages
                 return false;
 
             if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            {
+                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
                 return false;
+            }                
 
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
@@ -112,7 +116,9 @@ namespace MegaApp.Pages
 
         private bool OpenShortCut()
         {
-            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(_mainPageViewModel.ShortCutHandle.Value);
+            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(App.ShortCutHandle.Value);
+            App.ShortCutHandle = null;
+
             if (shortCutMegaNode != null)
             {
                 // Looking for the absolute parent of the shortcut node to see the type
@@ -156,7 +162,7 @@ namespace MegaApp.Pages
                     else
                     {
                         await new CustomMessageDialog(
-                            AppMessages.AutoCameraUploadFailed_Title, 
+                            AppMessages.AutoCameraUploadFailed_Title,
                             AppMessages.AutoCameraUploadFailed,
                             App.AppInformation).ShowDialogAsync();
                         MediaService.SetAutoCameraUpload(false);
@@ -173,13 +179,15 @@ namespace MegaApp.Pages
 
             if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
             {
-                _mainPageViewModel.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+                App.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
             }
             
-            if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
+            if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
+
+                App.AppInformation.IsStartupModeActivate = false;
 
 #if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
@@ -196,10 +204,21 @@ namespace MegaApp.Pages
                 }
 #endif
 
-                if (ValidActiveAndOnlineSession() && navParam == NavigationParameter.None)
+                if (ValidActiveAndOnlineSession())
                 {
+                    if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None || 
+                        navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
+                    {
+                        _mainPageViewModel.LoadFolders();
+
+                        // If is the first login, navigates to the camera upload service config page
+                        if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                            NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                        else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+
                     // If the user is trying to open a shortcut
-                    if (_mainPageViewModel.ShortCutHandle.HasValue)
+                        if (App.ShortCutHandle.HasValue)
                     {
                         if (!OpenShortCut())
                         {
@@ -216,6 +235,7 @@ namespace MegaApp.Pages
 
                     return;
                 }                    
+            }
             }
 
             // Initialize the application bar of this page
@@ -235,29 +255,18 @@ namespace MegaApp.Pages
                     if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                         _mainPageViewModel.FetchNodes();
                     else
-                      _mainPageViewModel.LoadFolders();
+                    _mainPageViewModel.LoadFolders();
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                     break;
 
                 case NavigationParameter.Login:                    
-                    // Get last page (previous page)            
-                    var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
-                    var lastPage = backStack.FirstOrDefault();
-                    if (lastPage != null)
-                    {
-                        String strLastPage = lastPage.Source.ToString();
-
-                        // If navigation is from the ConfirmAccountPage, active the flag indicating that is newly activated account
-                        if (lastPage.Source.ToString().Contains("confirm"))
-                        {
-                            App.IsNewlyActivatedAccount = true;
-                            NavigationService.Navigate(new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));                            
-                        }                            
-                    }
-
-                    // Remove the login or confirm account page from the stack. 
+                    // Remove the last page from the stack. 
                     // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
-                  
+
                     _mainPageViewModel.GetAccountDetails();
 
                     if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
@@ -266,6 +275,7 @@ namespace MegaApp.Pages
                         return;
                     }
 
+                    _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
                     break;
 
@@ -273,6 +283,11 @@ namespace MegaApp.Pages
                     NavigationService.RemoveBackEntry();
                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                         new FastLoginRequestListener(_mainPageViewModel));
+                    break;
+
+                case NavigationParameter.Browsing:
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
                     break;
 
                 case NavigationParameter.PictureSelected:
@@ -297,6 +312,7 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.DisablePassword:
                     break;
+                case NavigationParameter.AutoCameraUpload:
                 case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
                 {
@@ -927,7 +943,7 @@ namespace MegaApp.Pages
         
         private void OnEmptyRubbishBinClick(object sender, EventArgs e)
         {
-            _mainPageViewModel.RubbishBin.ClearAllNodes();
+            _mainPageViewModel.CleanRubbishBin();
         }
 
         #region Override Events
