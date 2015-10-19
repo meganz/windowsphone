@@ -156,8 +156,8 @@ namespace MegaApp.Pages
                     else
                     {
                         await new CustomMessageDialog(
-                            "Auto Camera Upload failed",
-                            "Auto Camera Upload background task has failed. You can re-enable it on the settings page",
+                            AppMessages.AutoCameraUploadFailed_Title, 
+                            AppMessages.AutoCameraUploadFailed,
                             App.AppInformation).ShowDialogAsync();
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
@@ -224,16 +224,18 @@ namespace MegaApp.Pages
             if (e.NavigationMode == NavigationMode.Back)
             {
                 navParam = NavigationParameter.Browsing;
-
-                if (NavigateService.PreviousPage == typeof(MyAccountPage))
-                    navParam = NavigationParameter.Browsing;
             }
 
 
             switch (navParam)
             {
                 case NavigationParameter.Normal:
-                    _mainPageViewModel.LoadFolders();
+                    // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
+                    // Auto Camera Upload settings fetching has been skipped in the mainpage
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                        _mainPageViewModel.FetchNodes();
+                    else
+                      _mainPageViewModel.LoadFolders();
                     break;
 
                 case NavigationParameter.Login:                    
@@ -255,11 +257,15 @@ namespace MegaApp.Pages
                     // Remove the login or confirm account page from the stack. 
                     // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
+                  
+                    _mainPageViewModel.GetAccountDetails();
 
                     if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
+                    {
                         NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                        return;
+                    }
 
-                    _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
                     break;
 
@@ -278,6 +284,10 @@ namespace MegaApp.Pages
                 case NavigationParameter.UriLaunch:
                     break;
                 case NavigationParameter.Browsing:
+                    // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
+                    // Auto Camera Upload settings fetching has been skipped in the mainpage
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                        _mainPageViewModel.FetchNodes();
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
@@ -336,7 +346,6 @@ namespace MegaApp.Pages
                     break;
                 }
             }
-            
         }
         
 #if WINDOWS_PHONE_81

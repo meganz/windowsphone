@@ -819,6 +819,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Logged out</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload failed</source>
+          <target state="new">Auto Camera Upload failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the automatich camera upload background task has failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" xml:space="preserve">
+          <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
+          <target state="new">Auto Camera Upload background task has failed. You can re-enable it on the settings page</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the automatich camera upload background task has failed.</note>
+        </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" xml:space="preserve">
           <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
           <target state="new">Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</target>

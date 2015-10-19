@@ -360,7 +360,7 @@ namespace MegaApp.Models
             }
         }
 
-        public bool GoFolderUp()
+        public virtual bool GoFolderUp()
         {
             if (this.FolderRootNode == null) return false;
 
@@ -376,7 +376,7 @@ namespace MegaApp.Models
             return true;
         }
 
-        public void BrowseToHome()
+        public virtual void BrowseToHome()
         {
             if (this.FolderRootNode == null) return;
 
@@ -505,7 +505,6 @@ namespace MegaApp.Models
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            this.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 
@@ -647,7 +646,6 @@ namespace MegaApp.Models
 
         private void DownloadItem(object obj)
         {
-            this.NoFolderUpAction = true;
             FocusedNode.Download(App.MegaTransfers);
         }
 
@@ -750,6 +748,11 @@ namespace MegaApp.Models
             this.IsMultiSelectActive = false;
         }
 
+        protected virtual bool CanCreateChild(MNode node)
+        {
+            return !node.getName().ToLower().Equals("camera uploads");
+        }
+
         private void CreateChildren(MNodeList childList, int listSize)
         {
             // Set the parameters for the performance for the different view types of a folder
@@ -765,10 +768,14 @@ namespace MegaApp.Models
                 if (LoadingCancelToken.IsCancellationRequested)
                     LoadingCancelToken.ThrowIfCancellationRequested();
 
+                MNode child = childList.get(i);
                 // To avoid pass null values to CreateNew
-                if (childList.get(i) == null) continue;
+                if (child == null) continue;
 
-                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ChildNodes);
+                // Avoid creating Camera Upload folder
+                if (!CanCreateChild(child)) continue;
+
+                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, child, ChildNodes);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (node == null) continue;
@@ -952,8 +959,6 @@ namespace MegaApp.Models
         public DriveDisplayMode CurrentDisplayMode { get; set; }
         public DriveDisplayMode PreviousDisplayMode { get; set; }        
         public List<IMegaNode> SelectedNodes { get; set; }
-
-        public bool NoFolderUpAction { get; set; }
 
         private ObservableCollection<IMegaNode> _childNodes;
         public ObservableCollection<IMegaNode> ChildNodes

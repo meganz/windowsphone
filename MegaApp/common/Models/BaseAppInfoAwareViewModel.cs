@@ -112,7 +112,10 @@ namespace MegaApp.Models
                 IconWidth = 46,
                 IconHeight = 36,
                 Margin = new Thickness(37, 0, 36, 0),
-                TapAction = () => { },
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(CameraUploadsPage), NavigationParameter.Normal);
+                },
                 IsActive = activeItem == HamburgerMenuItemType.CameraUploads
             });
             this.MenuItems.Add(new HamburgerMenuItem()

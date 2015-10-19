@@ -89,10 +89,12 @@ namespace MegaApp.MegaApi
         {
             if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>{
+                    
                     NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                 });
+
+                return;
             }
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>

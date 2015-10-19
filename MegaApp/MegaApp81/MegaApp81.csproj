@@ -583,6 +583,9 @@
       <Link>Pages\AcknowledgementsPage.xaml.cs</Link>
       <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
+      <Link>Pages\CameraUploadsPage.xaml.cs</Link>
+    </Compile>
     <Compile Include="..\common\Pages\ConfirmAccountPage.xaml.cs">
       <Link>Pages\ConfirmAccountPage.xaml.cs</Link>
       <DependentUpon>ConfirmAccountPage.xaml</DependentUpon>
@@ -768,6 +771,8 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
+    <Compile Include="Models\CameraUploadsFolderViewModel.cs" />
+    <Compile Include="Models\CameraUploadsPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1307,6 +1312,11 @@
     </Page>
     <Page Include="..\common\Pages\AcknowledgementsPage.xaml">
       <Link>Pages\AcknowledgementsPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\CameraUploadsPage.xaml">
+      <Link>Pages\CameraUploadsPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\ConfirmAccountPage.xaml">
