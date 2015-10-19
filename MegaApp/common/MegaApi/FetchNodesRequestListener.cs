@@ -20,10 +20,13 @@ namespace MegaApp.MegaApi
     class FetchNodesRequestListener : BaseRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
+        private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;
         private readonly ulong? _shortCutHandle;
-        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, ulong? shortCutHandle = null)
+        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, ulong? shortCutHandle = null, 
+            CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
         {
             this._mainPageViewModel = mainPageViewModel;
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
             this._shortCutHandle = shortCutHandle;
         }
 
@@ -95,6 +98,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            App.AppInformation.HasFetchedNodes = true;
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 // Enable appbar buttons
@@ -144,22 +149,40 @@ namespace MegaApp.MegaApi
             }
             else
             {
-                var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
-                    NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
-                var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
-                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
-
-                var autoResetEvent = new AutoResetEvent(false);
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                if(_mainPageViewModel != null)
                 {
-                    _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
-                    _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
-                    autoResetEvent.Set();
-                });
-                autoResetEvent.WaitOne();
+                    var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
+                                             NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
+                    var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
+                                             NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
+
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
+                        _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
+                else
+                {
+                    var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
+                        NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation, 
+                            NodeService.FindCameraUploadNode(api, api.getRootNode()));
+
+                    var autoResetEvent = new AutoResetEvent(false);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _cameraUploadsPageViewModel.CameraUploads.FolderRootNode = cameraUploadsRootNode;
+                        autoResetEvent.Set();
+                    });
+                    autoResetEvent.WaitOne();
+                }
             }
 
-            _mainPageViewModel.LoadFolders();
+            if (_mainPageViewModel != null) _mainPageViewModel.LoadFolders();
+            if (_cameraUploadsPageViewModel != null) _cameraUploadsPageViewModel.LoadFolders();
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)

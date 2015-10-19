@@ -17,5 +17,7 @@ namespace MegaApp.Classes
         public bool PickerOrAsyncDialogIsOpen { get; set; }
 
         public bool IsStartedAsAutoUpload { get; set; }
+
+        public bool HasFetchedNodes { get; set; }
     }
 }

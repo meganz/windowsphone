@@ -83,5 +83,20 @@ namespace MegaApp.Services
         {
             return megaSdk.getChildren(rootNode.OriginalMNode, UiService.GetSortOrder(rootNode.Handle, rootNode.Name));
         }
+
+        public static MNode FindCameraUploadNode(MegaSDK megaSdk, MNode rootNode)
+        {
+            var childs = megaSdk.getChildren(rootNode);
+
+            for (int x = 0; x < childs.size(); x++)
+            {
+                var node = childs.get(x);
+                if (node.getType() != MNodeType.TYPE_FOLDER) continue;
+                if (!node.getName().ToLower().Equals("camera uploads")) continue;
+                return node;
+            }
+
+            return null;
+        }
     }
 }

@@ -53,11 +53,6 @@ namespace MegaApp.Pages
 
             if (navParam == NavigationParameter.AutoCameraUpload)
             {
-                //if (!_settingsViewModel.IsUserOnline())
-                //{
-                //    NavigateService.NavigateTo(typeof (InitTourPage), NavigationParameter.AutoCameraUpload);
-                //    return;
-                //}
                 _settingsViewModel.AppInformation.IsStartedAsAutoUpload = false;
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
