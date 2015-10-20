@@ -16,12 +16,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, containerType)
         {
            
-        }
-
-        protected override bool CanCreateChild(MNode node)
-        {
-            return true;
-        }
+        }        
 
         public override bool GoFolderUp()
         {

@@ -497,6 +497,12 @@
     <Compile Include="..\common\Models\BaseViewModel.cs">
       <Link>Models\BaseViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\CameraUploadsFolderViewModel.cs">
+      <Link>Models\CameraUploadsFolderViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\CameraUploadsPageViewModel.cs">
+      <Link>Models\CameraUploadsPageViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\CameraUploadsViewModel.cs">
       <Link>Models\CameraUploadsViewModel.cs</Link>
     </Compile>
@@ -646,6 +652,10 @@
       <Link>Pages\MyAccountPage.xaml.cs</Link>
       <DependentUpon>MyAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Pages\NodeDetailsPage.xaml.cs">
+      <Link>Pages\NodeDetailsPage.xaml.cs</Link>
+      <DependentUpon>NodeDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="..\common\Pages\PasswordPage.xaml.cs">
       <Link>Pages\PasswordPage.xaml.cs</Link>
       <DependentUpon>PasswordPage.xaml</DependentUpon>
@@ -783,8 +793,6 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
-    <Compile Include="Models\CameraUploadsFolderViewModel.cs" />
-    <Compile Include="Models\CameraUploadsPageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1377,6 +1385,10 @@
     </Page>
     <Page Include="..\common\Pages\MyAccountPage.xaml">
       <Link>Pages\MyAccountPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\NodeDetailsPage.xaml">
+      <Link>Pages\NodeDetailsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\PasswordPage.xaml">

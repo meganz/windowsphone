@@ -6,6 +6,7 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -46,6 +47,7 @@ namespace MegaApp.Models
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.GetLinkCommand = new DelegateCommand(this.GetLink);
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
+            this.ViewDetailsCommand = new DelegateCommand(this.ViewDetails);
 
             SetViewDefaults();
 
@@ -82,6 +84,7 @@ namespace MegaApp.Models
         public ICommand DownloadItemCommand { get; private set; }
         public ICommand CreateShortCutCommand { get; private set; }
         public ICommand MultiSelectCommand { get; set; }
+        public ICommand ViewDetailsCommand { get; private set; }
 
         #endregion
 
@@ -604,6 +607,12 @@ namespace MegaApp.Models
             FocusedNode.Download(App.MegaTransfers);
         }
 
+        private void ViewDetails(object obj)
+        {
+            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByHandle(FocusedNode.Handle));            
+            NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node);
+        }
+
         private void CreateShortCut(object obj)
         {
             var shortCutTile = new RadIconicTileData()
@@ -703,11 +712,6 @@ namespace MegaApp.Models
             this.IsMultiSelectActive = false;
         }
 
-        protected virtual bool CanCreateChild(MNode node)
-        {
-            return !node.getName().ToLower().Equals("camera uploads");
-        }
-
         private void CreateChildren(MNodeList childList, int listSize)
         {
             // Set the parameters for the performance for the different view types of a folder
@@ -722,15 +726,11 @@ namespace MegaApp.Models
                 // If the task has been cancelled, stop processing
                 if (LoadingCancelToken.IsCancellationRequested)
                     LoadingCancelToken.ThrowIfCancellationRequested();
-
-                MNode child = childList.get(i);
+                                
                 // To avoid pass null values to CreateNew
-                if (child == null) continue;
-
-                // Avoid creating Camera Upload folder
-                if (!CanCreateChild(child)) continue;
-
-                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, child, ChildNodes);
+                if (childList.get(i) == null) continue;
+                                
+                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ChildNodes);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (node == null) continue;

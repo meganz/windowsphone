@@ -9,6 +9,7 @@ using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
@@ -233,12 +234,33 @@ namespace MegaApp.Models
         {
             OriginalMNode = megaNode;
             this.Handle = megaNode.getHandle();
-            this.Name = megaNode.getName();
-            this.Size = megaNode.getSize();
-            this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
-            this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
             this.Type = megaNode.getType();
+            this.Name = megaNode.getName();
+            this.Size = MegaSdk.getSize(megaNode);
+            this.SizeText = this.Size.ToStringAndSuffix();
             this.IsExported = megaNode.isExported();
+            this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
+
+            if (this.Type == MNodeType.TYPE_FILE)
+            {
+                this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
+                
+                if (IsImage)
+                {
+                    this.IsDownloadAvailable = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory, String.Format("{0}{1}", this.OriginalMNode.getBase64Handle(),
+                        Path.GetExtension(this.Name))));
+                }
+                else
+                {
+                    this.IsDownloadAvailable = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory, this.Name));
+                }                    
+            }                
+            else
+            {
+                this.ModificationTime = this.CreationTime;
+            }                
         }
 
         public virtual void Open()
@@ -290,6 +312,13 @@ namespace MegaApp.Models
 
         public ulong Size { get; private set; }
 
+        private string _sizeText;
+        public string SizeText
+        {
+            get { return _sizeText; }
+            set { SetField(ref _sizeText, value); }
+        }
+
         public ObservableCollection<IMegaNode> ParentCollection { get; set; }
 
         public ObservableCollection<IMegaNode> ChildCollection { get; set; }
@@ -308,6 +337,11 @@ namespace MegaApp.Models
         {
             get { return _isMultiSelected; }
             set { SetField(ref _isMultiSelected, value); }
+        }
+
+        public bool IsFolder
+        {
+            get { return Type == MNodeType.TYPE_FOLDER ? true : false; }
         }
 
         public bool IsImage
@@ -340,7 +374,18 @@ namespace MegaApp.Models
         public bool IsDownloadAvailable
         {
             get { return _isDownloadAvailable; }
-            set { SetField(ref _isDownloadAvailable, value); }
+            set 
+            {
+                SetField(ref _isDownloadAvailable, value);
+                IsDownloadAvailableText = _isDownloadAvailable ? UiResources.On : UiResources.Off;
+            }
+        }
+
+        private String _isDownloadAvailableText;
+        public String IsDownloadAvailableText
+        {
+            get { return _isDownloadAvailableText; }
+            set { SetField(ref _isDownloadAvailableText, value); }
         }
 
         private bool _isExported;

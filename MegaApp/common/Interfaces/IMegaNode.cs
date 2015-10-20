@@ -135,6 +135,11 @@ namespace MegaApp.Interfaces
         bool IsMultiSelected { get; set; }
 
         /// <summary>
+        /// Returns if a node is a folder.        
+        /// </summary>
+        bool IsFolder { get; }
+
+        /// <summary>
         /// Returns if a node is an image. Based on its file extension.
         /// Not 100% proof because file extensions can be wrong
         /// </summary>

@@ -86,7 +86,7 @@ namespace MegaApp.Models
                 if (this.RubbishBin.FolderRootNode == null)
                     this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
 
-                this.RubbishBin.LoadChildNodes();
+                this.RubbishBin.LoadChildNodes();                
             }); 
         }
 
@@ -104,9 +104,7 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);          
-         
-            this.AppInformation.HasFetchedNodes = false;
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);            
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
@@ -235,7 +233,7 @@ namespace MegaApp.Models
 
             var extraParams = new Dictionary<string, string>(1);
             extraParams.Add("Pivot", "1");
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);            
+            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);
         }
 
         private void CancelUpgradeAccount(object obj)
