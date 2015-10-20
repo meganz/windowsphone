@@ -183,6 +183,8 @@ namespace MegaApp.Services
                         // TODO FONT PATH??
                         return VisualResources.FileTypePath_generic;
                     }
+                case ".jpg":
+                case ".jpeg":
                 case ".bmp":
                 case ".gif":
                 case ".tif":
@@ -191,6 +193,7 @@ namespace MegaApp.Services
                 case ".png":
                 case ".ico":
                     {
+                        // TODO IMAGE PATH DATA??
                         return VisualResources.FileTypePath_graphic;
                     }
                 case ".gpx":
@@ -352,13 +355,7 @@ namespace MegaApp.Services
                 case ".cdr":
                     {
                         return VisualResources.FileTypePath_vector;
-                    }
-                case ".jpg":
-                case ".jpeg":
-                    {
-                        // TODO IMAGE PATH DATA??
-                        return VisualResources.FileTypePath_generic;
-                    }
+                    }                
                 case ".mp3":
                 case ".wav":
                 case ".3ga":

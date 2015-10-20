@@ -1,120 +1,68 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
-    public class MainPageViewModel : BaseAppInfoAwareViewModel, MRequestListenerInterface
+    public class CameraUploadsPageViewModel : BaseAppInfoAwareViewModel
     {
-        public event EventHandler<CommandStatusArgs> CommandStatusChanged;
-        private readonly MainPage _mainPage;
-
-        public MainPageViewModel(MegaSDK megaSdk, AppInformation appInformation, MainPage mainPage)
+        public CameraUploadsPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
             :base(megaSdk, appInformation)
         {
-            _mainPage = mainPage;            
-            UpgradeAccountCommand = new DelegateCommand(UpgradeAccount);
-            CancelUpgradeAccountCommand = new DelegateCommand(CancelUpgradeAccount);
+            UpdateUserData();
 
             InitializeModel();
 
-            UpdateUserData();
-
-            InitializeMenu(HamburgerMenuItemType.CloudDrive);
+            InitializeMenu(HamburgerMenuItemType.CameraUploads);          
         }
-
-        #region Commands
-                
-        public ICommand UpgradeAccountCommand { get; set; }
-        public ICommand CancelUpgradeAccountCommand { get; set; }
-
-        #endregion
-
-        #region Events
-
-        private void OnCommandStatusChanged(bool status)
-        {
-            if (CommandStatusChanged == null) return;
-
-            CommandStatusChanged(this, new CommandStatusArgs(status));
-        }
-
-        #endregion
+        
 
         #region Public Methods
 
         public void Initialize(GlobalDriveListener globalDriveListener)
         {
             // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Add(this.CloudDrive);
-            globalDriveListener.Folders.Add(this.RubbishBin);
+            globalDriveListener.Folders.Add(this.CameraUploads);
         }
 
         public void Deinitialize(GlobalDriveListener globalDriveListener)
         {
             // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Remove(this.CloudDrive);
-            globalDriveListener.Folders.Remove(this.RubbishBin);
+            globalDriveListener.Folders.Remove(this.CameraUploads);
         }
 
-        public void SetCommandStatus(bool status)
+        public void FetchNodes()
         {
-            OnCommandStatusChanged(status);
+            if (this.CameraUploads != null)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => this.CameraUploads.SetEmptyContentTemplate(true));
+                this.CameraUploads.CancelLoad();
+            }
+
+            var fetchNodesRequestListener = new FetchNodesRequestListener(null, null, this);
+            this.AppInformation.HasFetchedNodes = false;
+            this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
+       
 
         public void LoadFolders()
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                if (this.CloudDrive.FolderRootNode == null)
-                    this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+                if (this.CameraUploads.FolderRootNode == null)
+                    this.CameraUploads.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, 
+                        NodeService.FindCameraUploadNode(this.MegaSdk, this.MegaSdk.getRootNode()));
 
-                this.CloudDrive.LoadChildNodes();
-
-                if (this.RubbishBin.FolderRootNode == null)
-                    this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
-
-                this.RubbishBin.LoadChildNodes();
-
-                // If is the first login, navigates to the camera upload service config page
-                if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                {
-                    SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
-                    NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                }
+                this.CameraUploads.LoadChildNodes();
             }); 
-        }
-
-        public void FetchNodes()
-        {
-            if (this.CloudDrive != null)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() => this.CloudDrive.SetEmptyContentTemplate(true));
-                this.CloudDrive.CancelLoad();
-            }
-
-            if (this.RubbishBin != null)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() => this.RubbishBin.SetEmptyContentTemplate(true));
-                this.RubbishBin.CancelLoad();
-            }
-
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, ShortCutHandle);
-            this.ShortCutHandle = null;
-            this.AppInformation.HasFetchedNodes = false;
-            this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
         public void ChangeMenu(FolderViewModel currentFolderViewModel, IList iconButtons, IList menuItems)
@@ -171,182 +119,27 @@ namespace MegaApp.Models
             }
         }
 
-        public void GetAccountDetails()
-        {
-            MegaSdk.getAccountDetails(this);
-            UpdateUserData();
-        }
-
         #endregion
 
         #region Private Methods
 
-        /// <summary>
-        /// Get a random visibility
-        /// </summary>
-        /// <param name="PercentOfTimes">Argument with the "%" of times that the visibility should be true</param>
-        private Visibility GetRandomVisibility(int PercentOfTimes)
-        {            
-            if (new Random().Next(100) < PercentOfTimes)
-                return Visibility.Visible;
-            else
-                return Visibility.Collapsed;
-        }
-
-        /// <summary>
-        /// Timer for the visibility of the border/dialog to ask user to upgrade when is a free account
-        /// </summary>
-        /// <param name="milliseconds">Argument with the milliseconds that the visibility will be true and then will change to false</param>
-        private async void TimerGetProAccountVisibility(int milliseconds)
-        {            
-            await Task.Delay(milliseconds);
-            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed));
-        }
-
-        /// <summary>
-        /// Timer for the visibility of the warning border/dialog to ask user to upgrade because is going out of space
-        /// </summary>
-        /// <param name="milliseconds">Argument with the milliseconds that the visibility will be true and then will change to false</param>
-        private async void TimerWarningOutOfSpaceVisibility(int milliseconds)
-        {            
-            await Task.Delay(milliseconds);
-            Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed));
-        }
-
-        private void UpgradeAccount(object obj)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
-                _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
-            });
-
-            var extraParams = new Dictionary<string, string>(1);
-            extraParams.Add("Pivot", "1");
-            NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, extraParams);            
-        }
-
-        private void CancelUpgradeAccount(object obj)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                _mainPage.ChangeGetProAccountBorderVisibility(Visibility.Collapsed);
-                _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Collapsed);
-            });
-        }
-
         private void InitializeModel()
         {
-            this.CloudDrive = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
-            this.RubbishBin = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.RubbishBin);
-            
-            // The Cloud Drive is always the first active folder on initalization
-            this.ActiveFolderView = this.CloudDrive;
+            this.CameraUploads = new CameraUploadsFolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
         }
         
         #endregion
 
         #region Properties
+     
 
-        public ulong? ShortCutHandle { get; set; }
-
-        private string _activeImportLink;
-        public string ActiveImportLink
+        private CameraUploadsFolderViewModel _cameraUploads;
+        public CameraUploadsFolderViewModel CameraUploads
         {
-            get { return _activeImportLink; }
-            set { SetField(ref _activeImportLink, value); }
+            get { return _cameraUploads; }
+            private set { SetField(ref _cameraUploads, value); }
         }
-
-        private FolderViewModel _cloudDrive;
-        public FolderViewModel CloudDrive
-        {
-            get { return _cloudDrive; }
-            private set { SetField(ref _cloudDrive, value); }
-        }
-
-        private FolderViewModel _rubbishBin;
-        public FolderViewModel RubbishBin
-        {
-            get { return _rubbishBin; }
-            private set { SetField(ref _rubbishBin, value); }
-        }
-
-        private FolderViewModel _activeFolderView;
-        public FolderViewModel ActiveFolderView
-        {
-            get { return _activeFolderView; }
-            set { SetField(ref _activeFolderView, value); }
-        }
-
-        #endregion
-
-        #region MRequestListenerInterface
-
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            if (e.getErrorCode() == MErrorType.API_OK)
-            {
-                switch (request.getType())
-                {
-                    case MRequestType.TYPE_ACCOUNT_DETAILS:
-
-                        ulong TotalSpace = request.getMAccountDetails().getStorageMax();
-                        ulong UsedSpace = request.getMAccountDetails().getStorageUsed();
-                        int usedSpacePercent;
-
-                        if ((TotalSpace > 0) && (UsedSpace > 0))
-                            usedSpacePercent = (int)(UsedSpace * 100 / TotalSpace);
-                        else
-                            usedSpacePercent = 0;
-
-                        // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
-                        if (usedSpacePercent <= 95)
-                        {
-                            if (request.getMAccountDetails().getProLevel() == MAccountType.ACCOUNT_TYPE_FREE)
-                            {
-                                Task.Run(() =>
-                                {
-                                    Visibility visibility = GetRandomVisibility(5);
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
-
-                                    if (visibility == Visibility.Visible)
-                                        this.TimerGetProAccountVisibility(30000);
-                                });
-                            }
-                        }
-                        // Else show a warning message indicating the user is running out of space
-                        else
-                        {
-                            Task.Run(() =>
-                            {
-                                Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
-                                this.TimerWarningOutOfSpaceVisibility(15000);
-                            });
-                        }
-
-                        break;
-
-                    default:
-                        break;
-                }
-            }            
-        }
-
-        public void onRequestStart(MegaSDK api, MRequest request)
-        {
-            // Not necessary
-        }
-
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            // Not necessary
-        }
-
-        public void onRequestUpdate(MegaSDK api, MRequest request)
-        {
-            // Not necessary
-        }
-
+        
         #endregion
     }
 }

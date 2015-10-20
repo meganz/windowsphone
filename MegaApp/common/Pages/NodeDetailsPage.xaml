@@ -1,0 +1,118 @@
+﻿<userControls:MegaPhoneApplicationPage
+    x:Class="MegaApp.Pages.NodeDetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerikToggleSwitch="clr-namespace:Telerik.Windows.Controls.ToggleSwitch;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:models="clr-namespace:MegaApp.Models"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
+    d:DataContext="{d:DesignInstance models:NodeViewModel}">
+
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="NodeDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="ok" Click="OnOkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+        </shell:ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.Resources>
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-6,0,0"/>
+
+        <Grid Grid.Row="2" Margin="12,12,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Data="{Binding DefaultImagePathData, Mode=OneWay}" Margin="0,12,0,0" Canvas.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Opacity="0.3">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Path.Fill>
+                </Path>
+                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,-2,0,0" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Path.Fill>
+                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    </Path.Fill>
+                </Path>
+                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Image Source="/Assets/AppBar/open_link.png" Margin="-16,0,0,-14" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+            
+            <TextBlock Grid.Row="1" Margin="0,24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap"/>
+
+            <Grid Grid.Row="2" Margin="-12,0" Background="{StaticResource PhoneChromeBrush}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="1" Margin="36,24,0,24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Available offline" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding IsDownloadAvailableText}" IsChecked="{Binding IsDownloadAvailable, Mode=TwoWay}" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
+                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                            <Setter Property="CheckBackground">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                </telerikPrimitives:RadToggleSwitch>
+            </Grid>
+
+            <Grid Grid.Row="3" Margin="24,24">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="12,0">
+                    <TextBlock Margin="0,6" Text="Size:" TextWrapping="Wrap"/>
+                    <TextBlock Margin="0,6" Text="Content:" TextWrapping="Wrap" Visibility="{Binding IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,6" Text="Added:" TextWrapping="Wrap"/>                    
+                    <TextBlock Margin="0,6" Text="Modified:" TextWrapping="Wrap"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="12,0">
+                    <TextBlock Margin="0,6" Text="{Binding SizeText}" TextWrapping="Wrap"/>
+                    <TextBlock Margin="0,6" Text="{Binding Information}" TextWrapping="Wrap" Visibility="{Binding IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,6" Text="{Binding CreationTime}" TextWrapping="Wrap"/>                    
+                    <TextBlock Margin="0,6" Text="{Binding ModificationTime}" TextWrapping="Wrap"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>    
+    </Grid>
+
+</userControls:MegaPhoneApplicationPage>

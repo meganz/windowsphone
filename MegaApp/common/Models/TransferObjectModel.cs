@@ -38,7 +38,8 @@ namespace MegaApp.Models
             FilePath = filePath;
             Status = TransferStatus.NotStarted;
             SelectedNode = selectedNode;
-            CancelButtonState = false;
+            CancelButtonState = true;
+            TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
             AutoLoadImageOnFinish = false;
             CancelTransferCommand = new DelegateCommand(CancelTransfer);
             SetThumbnail();

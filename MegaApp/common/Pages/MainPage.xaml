@@ -240,6 +240,11 @@
 									    Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
+									    x:Name="BtnViewDetailsCloudDrive" 
+									    Command="{Binding ViewDetailsCommand}"
+									    Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+								    />
+                                        <telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnCreateShortCutCloudDrive" 
 									    Command="{Binding CreateShortCutCommand}"
 									    Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 

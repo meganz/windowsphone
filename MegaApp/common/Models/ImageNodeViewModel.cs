@@ -24,6 +24,8 @@ namespace MegaApp.Models
 
             this.IsDownloadAvailable = File.Exists(LocalImagePath);
 
+            this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
+
             // Default false for preview slide
             InViewingRange = false;
         }
