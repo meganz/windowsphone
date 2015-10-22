@@ -1020,4 +1020,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>You are trying to add your own e-mail as a contact.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>Failed to remove link. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
 </root>

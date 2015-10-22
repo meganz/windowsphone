@@ -20,6 +20,7 @@ namespace MegaApp.MegaApi
         public GlobalDriveListener(AppInformation appInformation)
         {
             _appInformation = appInformation;
+            this.Nodes = new List<NodeDetailsViewModel>();
             this.Folders = new List<FolderViewModel>();
             this.Contacts= new List<ContactsViewModel>();
         }
@@ -44,7 +45,8 @@ namespace MegaApp.MegaApi
                     // and process no notification
                     MNode megaNode = nodes.get(i);
                     if (megaNode == null) return;
-                    
+
+                    // PROCESS THE FOLDERS LISTENERS
                     if (megaNode.isRemoved())
                     {
                         // REMOVED Scenario
@@ -116,6 +118,13 @@ namespace MegaApp.MegaApi
                     else
                     {
                         // UPDATE Scenario
+
+                        // PROCESS THE SINGLE NODE(S) LISTENER(S) (NodeDetailsPage live updates)
+                        foreach (var node in Nodes)
+                        {
+                            if (megaNode.getHandle() == node.getNodeHandle())
+                                Deployment.Current.Dispatcher.BeginInvoke(() => node.updateNode(megaNode));
+                        }
 
                         // Used in different scenario's
                         MNode parentNode = api.getParentNode(megaNode);
@@ -359,6 +368,7 @@ namespace MegaApp.MegaApi
 
         #region Properties
 
+        public IList<NodeDetailsViewModel> Nodes { get; private set; } 
         public IList<FolderViewModel> Folders { get; private set; }
         public IList<ContactsViewModel> Contacts { get; private set; } 
 

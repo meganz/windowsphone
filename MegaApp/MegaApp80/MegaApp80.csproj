@@ -310,6 +310,9 @@
     <Compile Include="..\common\MegaApi\CreditCardStoreRequestListener.cs">
       <Link>MegaApi\CreditCardStoreRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\DisableExportRequestListener.cs">
+      <Link>MegaApi\DisableExportRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\ExportNodeRequestListener.cs">
       <Link>MegaApi\ExportNodeRequestListener.cs</Link>
     </Compile>

@@ -20,7 +20,7 @@ namespace MegaApp.Models
             this.Information = this.Size.ToStringAndSuffix();
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
 
-            this.IsDownloadAvailable = File.Exists(this.LocalFilePath);
+            this.IsAvailableOffline = File.Exists(this.LocalFilePath);
         }
 
         #region Override Methods

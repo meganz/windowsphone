@@ -177,7 +177,7 @@
     <value>No transfers</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
-  <data name="GetPreviewLink" xml:space="preserve">
+  <data name="GetLink" xml:space="preserve">
     <value>Get link</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -1167,5 +1167,13 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="CloseSession" xml:space="preserve">
     <value>Close session</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ManageLink" xml:space="preserve">
+    <value>Manage link</value>
+    <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Remove link</value>
+    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

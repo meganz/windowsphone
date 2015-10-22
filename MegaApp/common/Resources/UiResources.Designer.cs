@@ -873,9 +873,9 @@ namespace MegaApp.Resources {
         /// <summary>
         ///   Busca una cadena traducida similar a Get link.
         /// </summary>
-        public static string GetPreviewLink {
+        public static string GetLink {
             get {
-                return ResourceManager.GetString("GetPreviewLink", resourceCulture);
+                return ResourceManager.GetString("GetLink", resourceCulture);
             }
         }
         
@@ -1146,6 +1146,15 @@ namespace MegaApp.Resources {
         public static string MakePinLock {
             get {
                 return ResourceManager.GetString("MakePinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Manage link.
+        /// </summary>
+        public static string ManageLink {
+            get {
+                return ResourceManager.GetString("ManageLink", resourceCulture);
             }
         }
         
@@ -1677,6 +1686,15 @@ namespace MegaApp.Resources {
         public static string Remove {
             get {
                 return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remove link.
+        /// </summary>
+        public static string RemoveLink {
+            get {
+                return ResourceManager.GetString("RemoveLink", resourceCulture);
             }
         }
         

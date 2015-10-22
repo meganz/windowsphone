@@ -358,6 +358,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Removing link....
+        /// </summary>
+        public static string RemoveLink {
+            get {
+                return ResourceManager.GetString("RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Removing....
         /// </summary>
         public static string RemoveNode {

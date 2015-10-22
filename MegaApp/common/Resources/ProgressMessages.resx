@@ -251,6 +251,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Removing contact...</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Removing link...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Removing...</value>
     <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>

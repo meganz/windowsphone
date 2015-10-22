@@ -252,7 +252,7 @@
                                         <telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnGetLinkCloudDrive" 
 									    Command="{Binding GetLinkCommand}"
-									    Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+									    Content="{Binding LocalizedUiResources.GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								    />
                                         <telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnRenameItemCloudDrive" 
@@ -361,8 +361,8 @@
 								        />-->
                                         <!--<telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnGetLinkRubbishBin" 
-											Command="{Binding GetPreviewLinkItemCommand}"
-											Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+											Command="{Binding GetLinkItemCommand}"
+											Content="{Binding LocalizedUiResources.GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								        />-->
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnRenameItemRubbishBin" 
