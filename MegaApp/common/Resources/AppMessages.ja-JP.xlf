@@ -96,6 +96,11 @@
           <target state="new">You are trying to add your own e-mail as a contact.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
         </trans-unit>
+        <trans-unit id="Resx/RemoveLinkFailed" translate="yes" xml:space="preserve">
+          <source>Failed to remove link. Please try again.</source>
+          <target state="new">Failed to remove link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
+        </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" xml:space="preserve">
           <source>The rubbish bin has been emptied successfully.</source>
           <target state="new">The rubbish bin has been emptied successfully.</target>

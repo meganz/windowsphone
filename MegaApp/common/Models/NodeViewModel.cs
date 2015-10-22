@@ -200,6 +200,18 @@ namespace MegaApp.Models
             return NodeActionResult.IsBusy;
         }
 
+        public NodeActionResult RemoveLink()
+        {
+            if (!IsExported) return NodeActionResult.Cancelled;
+
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+
+            this.MegaSdk.disableExport(this.OriginalMNode, new DisableExportRequestListener());
+
+            return NodeActionResult.IsBusy;
+        }
+
 #if WINDOWS_PHONE_80
         public virtual void Download(TransferQueu transferQueu, string downloadPath = null)
         {
@@ -217,8 +229,7 @@ namespace MegaApp.Models
             if (downloadPath == null)
             {
                 if (!await FolderService.SelectDownloadFolder(this)) return;
-            }
-                
+            }                
 
             this.Transfer.DownloadFolderPath = downloadPath;
             transferQueu.Add(this.Transfer);
@@ -247,13 +258,13 @@ namespace MegaApp.Models
                 
                 if (IsImage)
                 {
-                    this.IsDownloadAvailable = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    this.IsAvailableOffline = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
                         AppResources.DownloadsDirectory, String.Format("{0}{1}", this.OriginalMNode.getBase64Handle(),
                         Path.GetExtension(this.Name))));
                 }
                 else
                 {
-                    this.IsDownloadAvailable = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    this.IsAvailableOffline = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
                         AppResources.DownloadsDirectory, this.Name));
                 }                    
             }                
@@ -370,22 +381,22 @@ namespace MegaApp.Models
             set { SetField(ref _defaultImagePathData, value); }
         }
 
-        private bool _isDownloadAvailable;
-        public bool IsDownloadAvailable
+        private bool _isAvailableOffline;
+        public bool IsAvailableOffline
         {
-            get { return _isDownloadAvailable; }
+            get { return _isAvailableOffline; }
             set 
             {
-                SetField(ref _isDownloadAvailable, value);
-                IsDownloadAvailableText = _isDownloadAvailable ? UiResources.On : UiResources.Off;
+                SetField(ref _isAvailableOffline, value);
+                IsAvailableOfflineText = _isAvailableOffline ? UiResources.On : UiResources.Off;
             }
         }
 
-        private String _isDownloadAvailableText;
-        public String IsDownloadAvailableText
+        private String _isAvailableOfflineText;
+        public String IsAvailableOfflineText
         {
-            get { return _isDownloadAvailableText; }
-            set { SetField(ref _isDownloadAvailableText, value); }
+            get { return _isAvailableOfflineText; }
+            set { SetField(ref _isAvailableOfflineText, value); }
         }
 
         private bool _isExported;

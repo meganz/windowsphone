@@ -734,6 +734,16 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Close session</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/RemoveLink" translate="yes" xml:space="preserve">
+          <source>Remove link</source>
+          <target state="new">Remove link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ManageLink" translate="yes" xml:space="preserve">
+          <source>Manage link</source>
+          <target state="new">Manage link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
           <source>Incoming</source>
           <target state="new">Incoming</target>
@@ -1242,16 +1252,16 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="new">Login</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/GetPreviewLink" translate="yes" xml:space="preserve">
-          <source>Get link</source>
-          <target state="new">Get link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" xml:space="preserve">
           <source>No transfers</source>
           <target state="new">No transfers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/GetLink" translate="yes" xml:space="preserve">
+          <source>Get link</source>
+          <target state="new">Get link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" xml:space="preserve">
           <source>Empty folder</source>
           <target state="new">Empty folder</target>

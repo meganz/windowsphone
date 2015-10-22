@@ -255,7 +255,8 @@ namespace MegaApp.Pages
                     if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                         _mainPageViewModel.FetchNodes();
                     else
-                    _mainPageViewModel.LoadFolders();
+                        _mainPageViewModel.LoadFolders();
+
                     if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
                         NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
                     else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
@@ -293,6 +294,12 @@ namespace MegaApp.Pages
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
                     if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                         _mainPageViewModel.FetchNodes();
+
+                    if(NavigateService.PreviousPage == typeof(NodeDetailsPage))
+                    {                        
+                        App.MegaSdk.retryPendingConnections();
+                        _mainPageViewModel.ActiveFolderView.LoadChildNodes();
+                    }                    
                     break;
 
                 case NavigationParameter.PictureSelected:

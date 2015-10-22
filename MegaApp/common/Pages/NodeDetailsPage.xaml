@@ -19,13 +19,17 @@
     shell:SystemTray.IsVisible="True"
     shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
     shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
-    d:DataContext="{d:DesignInstance models:NodeViewModel}">
+    d:DataContext="{d:DesignInstance models:NodeDetailsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="NodeDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/check.png" Text="ok" Click="OnOkClick" />
+        <shell:ApplicationBar x:Key="NodeDetailsMenu">            
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
+                <shell:ApplicationBarMenuItem Text="get link" Click="OnGetLinkClick" />                
+                <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />                
+            </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
 
@@ -48,39 +52,39 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Path Data="{Binding DefaultImagePathData, Mode=OneWay}" Margin="0,12,0,0" Canvas.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Opacity="0.3">
+                <Path Data="{Binding Node.DefaultImagePathData, Mode=OneWay}" Margin="0,12,0,0" Canvas.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" Opacity="0.3">
                     <Path.Fill>
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,-2,0,0" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsDownloadAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,-2,0,0" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Path.Fill>
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Image Source="/Assets/AppBar/open_link.png" Margin="-16,0,0,-14" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <Image Source="/Assets/AppBar/open_link.png" Margin="-16,0,0,-14" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </Grid>
-            
-            <TextBlock Grid.Row="1" Margin="0,24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}" TextWrapping="Wrap"/>
 
-            <Grid Grid.Row="2" Margin="-12,0" Background="{StaticResource PhoneChromeBrush}">
+            <TextBlock Grid.Row="1" Margin="0,24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Node.Name}" TextWrapping="Wrap"/>
+
+            <Grid Grid.Row="2" Margin="-12,0" Background="{StaticResource PhoneChromeBrush}" Height="82">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Row="1" Margin="36,24,0,24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Available offline" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding IsDownloadAvailableText}" IsChecked="{Binding IsDownloadAvailable, Mode=TwoWay}" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
+                <TextBlock x:Name="TextAvailableOffline" Grid.Row="1" Margin="36,24,0,24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Available offline" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding Node.IsAvailableOfflineText}" IsChecked="{Binding Node.IsAvailableOffline, Mode=TwoWay}" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
                         <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
                             <Setter Property="CheckBackground">
@@ -100,15 +104,15 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="12,0">
                     <TextBlock Margin="0,6" Text="Size:" TextWrapping="Wrap"/>
-                    <TextBlock Margin="0,6" Text="Content:" TextWrapping="Wrap" Visibility="{Binding IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,6" Text="Content:" TextWrapping="Wrap" Visibility="{Binding Node.IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                     <TextBlock Margin="0,6" Text="Added:" TextWrapping="Wrap"/>                    
                     <TextBlock Margin="0,6" Text="Modified:" TextWrapping="Wrap"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="12,0">
-                    <TextBlock Margin="0,6" Text="{Binding SizeText}" TextWrapping="Wrap"/>
-                    <TextBlock Margin="0,6" Text="{Binding Information}" TextWrapping="Wrap" Visibility="{Binding IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                    <TextBlock Margin="0,6" Text="{Binding CreationTime}" TextWrapping="Wrap"/>                    
-                    <TextBlock Margin="0,6" Text="{Binding ModificationTime}" TextWrapping="Wrap"/>
+                    <TextBlock Margin="0,6" Text="{Binding Node.SizeText}" TextWrapping="Wrap"/>
+                    <TextBlock Margin="0,6" Text="{Binding Node.Information}" TextWrapping="Wrap" Visibility="{Binding Node.IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,6" Text="{Binding Node.CreationTime}" TextWrapping="Wrap"/>
+                    <TextBlock Margin="0,6" Text="{Binding Node.ModificationTime}" TextWrapping="Wrap"/>
                 </StackPanel>
             </Grid>
 

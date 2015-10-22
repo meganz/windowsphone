@@ -138,6 +138,8 @@ namespace MegaApp.Models
 
         public bool AutoLoadImageOnFinish { get; set; }
 
+        public bool IsSaveForOfflineTransfer { get; set; }
+
         private bool _cancelButtonState;
         public bool CancelButtonState
         {
@@ -261,7 +263,7 @@ namespace MegaApp.Models
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
                                 imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
+                                imageNode.IsAvailableOffline = File.Exists(imageNode.LocalImagePath);
                                 if (imageNode.OriginalMNode.hasPreview()) return;
                                 imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsBusy = false;
@@ -271,7 +273,7 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.IsDownloadAvailable = File.Exists(imageNode.LocalImagePath);
+                                imageNode.IsAvailableOffline = File.Exists(imageNode.LocalImagePath);
                                 imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
                             });                            
 
@@ -283,15 +285,18 @@ namespace MegaApp.Models
                         }
 
                         #if WINDOWS_PHONE_81
-                        bool result = await FileService.CopyFile(imageNode.LocalImagePath,
-                            DownloadFolderPath?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                        if(!IsSaveForOfflineTransfer)
+                        {
+                            bool result = await FileService.CopyFile(imageNode.LocalImagePath,
+                            DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                             null), imageNode.Name);
 
-                        if (!result)
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                            break;
-                        }
+                            if (!result)
+                            {
+                                Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                                break;
+                            }
+                        }                        
                         #endif
                     }
                     else
@@ -299,18 +304,21 @@ namespace MegaApp.Models
                         var node = SelectedNode as FileNodeViewModel;
                         if (node != null)
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => node.IsDownloadAvailable = File.Exists(node.LocalFilePath));
+                            Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = File.Exists(node.LocalFilePath));
 
                             #if WINDOWS_PHONE_81
-                            bool result = await FileService.CopyFile(node.LocalFilePath,
+                            if(!IsSaveForOfflineTransfer)
+                            {
+                                bool result = await FileService.CopyFile(node.LocalFilePath,
                                 DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                                 null), node.Name);
 
-                            if (!result)
-                            {
-                                Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                                break;
-                            }
+                                if (!result)
+                                {
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                                    break;
+                                }
+                            }                            
                             #endif
                         }
                     }                    

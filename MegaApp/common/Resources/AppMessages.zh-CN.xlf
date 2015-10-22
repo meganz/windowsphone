@@ -143,6 +143,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">You are trying to add your own e-mail as a contact.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
           </trans-unit>
+        <trans-unit id="Resx/RemoveLinkFailed" translate="yes" xml:space="preserve">
+          <source>Failed to remove link. Please try again.</source>
+          <target state="new">Failed to remove link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
+        </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="new">Close session failed. Please try again. [{0}]</target>

@@ -22,7 +22,7 @@ namespace MegaApp.Models
             // Image node downloads to the image path of the full original image
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
 
-            this.IsDownloadAvailable = File.Exists(LocalImagePath);
+            this.IsAvailableOffline = File.Exists(LocalImagePath);
 
             this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
 
@@ -69,7 +69,6 @@ namespace MegaApp.Models
 
         public void SetImage()
         {
-            if (this.ImageUri != null) return;
             if (this.IsBusy) return;
 
             GetImage(false);
