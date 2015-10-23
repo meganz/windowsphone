@@ -563,6 +563,9 @@
     <Compile Include="..\common\Models\MyAccountPageViewModel.cs">
       <Link>Models\MyAccountPageViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\NodeDetailsViewModel.cs">
+      <Link>Models\NodeDetailsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
     </Compile>
@@ -796,7 +799,6 @@
     <Compile Include="..\common\UserControls\PhoneDrawerLayoutPage.cs">
       <Link>UserControls\PhoneDrawerLayoutPage.cs</Link>
     </Compile>
-    <Compile Include="Models\NodeDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
