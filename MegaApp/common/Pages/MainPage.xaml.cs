@@ -217,25 +217,25 @@ namespace MegaApp.Pages
                         else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
                             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
 
-                    // If the user is trying to open a shortcut
-                        if (App.ShortCutHandle.HasValue)
-                    {
-                        if (!OpenShortCut())
+                        // If the user is trying to open a shortcut
+                            if (App.ShortCutHandle.HasValue)
                         {
-                            new CustomMessageDialog(
-                                    AppMessages.ShortCutFailed_Title,
-                                    AppMessages.ShortCutFailed,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
+                            if (!OpenShortCut())
+                            {
+                                new CustomMessageDialog(
+                                        AppMessages.ShortCutFailed_Title,
+                                        AppMessages.ShortCutFailed,
+                                        App.AppInformation,
+                                        MessageDialogButtons.Ok).ShowDialog();
                             
-                            _mainPageViewModel.CloudDrive.BrowseToFolder(
-                                NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
-                        }
-                    }                        
+                                _mainPageViewModel.CloudDrive.BrowseToFolder(
+                                    NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
+                            }
+                        }                        
 
-                    return;
-                }                    
-            }
+                        return;
+                    }                    
+                }
             }
 
             // Initialize the application bar of this page
@@ -246,6 +246,9 @@ namespace MegaApp.Pages
                 navParam = NavigationParameter.Browsing;
             }
 
+            // If the previous page is the InitCameraUploadsPage, remove it from the stack.
+            if (NavigateService.PreviousPage == typeof(InitCameraUploadsPage))
+                NavigationService.RemoveBackEntry();
 
             switch (navParam)
             {
@@ -293,9 +296,9 @@ namespace MegaApp.Pages
                     // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
                     if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
-                        _mainPageViewModel.FetchNodes();
+                        _mainPageViewModel.FetchNodes();                    
 
-                    if(NavigateService.PreviousPage == typeof(NodeDetailsPage))
+                    if (NavigateService.PreviousPage == typeof(NodeDetailsPage))
                     {                        
                         App.MegaSdk.retryPendingConnections();
                         _mainPageViewModel.ActiveFolderView.LoadChildNodes();
