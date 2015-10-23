@@ -45,11 +45,7 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            // Remove the login or confirm account page from the stack. 
-            // If user presses back button it will then exit the application
-            NavigationService.RemoveBackEntry();
-
+            
             // Set to false the "CameraUploadsFirstInit" setting
             if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
                 SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsFirstInit, false);
@@ -59,7 +55,11 @@ namespace MegaApp.Pages
         {
             base.OnBackKeyPress(e);
 
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            if(NavigateService.PreviousPage != null)
+                NavigateService.GoBack();
+            else
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+
             e.Cancel = true;
         }
 
@@ -74,12 +74,19 @@ namespace MegaApp.Pages
             // Enable or turn on the "Camera Uploads" service
             SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsIsEnabled, true);
             MediaService.SetAutoCameraUpload(true);
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+
+            if (NavigateService.PreviousPage != null)
+                NavigateService.GoBack();
+            else
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
         }
 
         private void OnSkipClick(object sender, EventArgs e)
         {
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            if (NavigateService.PreviousPage != null)
+                NavigateService.GoBack();
+            else
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
         }        
     }
 }
