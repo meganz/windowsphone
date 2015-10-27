@@ -114,7 +114,7 @@ namespace MegaApp.Models
                 this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode,
                     new MoveNodeRequestListener());
                 return NodeActionResult.IsBusy;
-        }
+            }
 
             return NodeActionResult.Failed;
         }

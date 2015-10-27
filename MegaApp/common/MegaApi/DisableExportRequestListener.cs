@@ -19,7 +19,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ShowProgressMessage
         {
-            get { return false; }
+            get { return true; }
         }
 
         protected override string ErrorMessage

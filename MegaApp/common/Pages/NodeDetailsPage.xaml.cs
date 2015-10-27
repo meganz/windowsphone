@@ -84,7 +84,8 @@ namespace MegaApp.Pages
                 App.MegaSdk.retryPendingConnections();
 
                 App.AppInformation.IsStartupModeActivate = false;
-
+                
+#if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
@@ -92,6 +93,7 @@ namespace MegaApp.Pages
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
                 return;
+#endif
             }
         }
 
