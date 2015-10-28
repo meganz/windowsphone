@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -28,6 +29,7 @@
     <ExpressionBlendVersion>12.0.50716.0</ExpressionBlendVersion>
     <TargetFrameworkProfile />
     <DefaultLanguage>en-US</DefaultLanguage>
+    <NuGetPackageImportStamp>f3f11b03</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +80,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Bin\ARM\Debug</OutputPath>
-    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;USE_WP8_NATIVE_SQLITE;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -89,7 +91,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>Bin\ARM\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;USE_WP8_NATIVE_SQLITE;WINDOWS_PHONE;WINDOWS_PHONE_81</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <NoConfig>true</NoConfig>
     <ErrorReport>prompt</ErrorReport>
@@ -221,9 +223,6 @@
     <Compile Include="..\common\Classes\MemoryInformation.cs">
       <Link>Classes\MemoryInformation.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\MenuType.cs">
-      <Link>Classes\MenuType.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\NodeTemplateSelector.cs">
       <Link>Classes\NodeTemplateSelector.cs</Link>
     </Compile>
@@ -241,6 +240,9 @@
     </Compile>
     <Compile Include="..\common\Classes\ResolutionHelper.cs">
       <Link>Classes\ResolutionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\SavedForOffline.cs">
+      <Link>Classes\SavedForOffline.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\TransferQueu.cs">
       <Link>Classes\TransferQueu.cs</Link>
@@ -290,6 +292,12 @@
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
     </Compile>
+    <Compile Include="..\common\Database\SQLite.cs">
+      <Link>Database\SQLite.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Database\SQLiteAsync.cs">
+      <Link>Database\SQLiteAsync.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\CameraUploadsConnectionType.cs">
       <Link>Enums\CameraUploadsConnectionType.cs</Link>
     </Compile>
@@ -313,6 +321,9 @@
     </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\MenuType.cs">
+      <Link>Enums\MenuType.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\NavigationParameter.cs">
       <Link>Enums\NavigationParameter.cs</Link>
@@ -609,6 +620,7 @@
     </Compile>
     <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
       <Link>Pages\CameraUploadsPage.xaml.cs</Link>
+      <DependentUpon>CameraUploadsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\ConfirmAccountPage.xaml.cs">
       <Link>Pages\ConfirmAccountPage.xaml.cs</Link>
@@ -805,6 +817,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -1342,7 +1355,6 @@
     </Page>
     <Page Include="..\common\Pages\CameraUploadsPage.xaml">
       <Link>Pages\CameraUploadsPage.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\ConfirmAccountPage.xaml">
@@ -1454,6 +1466,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="ShakeGestures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Sqlite, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlite-net-wp8.3.8.7.4-beta\lib\windowsphone8\Sqlite.winmd</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Telerik.Windows.Controls.Chart">
       <HintPath>..\lib\RCWP\2015.2.623.3040\Telerik.Windows.Controls.Chart.dll</HintPath>
       <Private>True</Private>
@@ -5274,7 +5290,11 @@
       <LastGenOutput>VisualResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.9.1">
+      <Name>SQLite for Windows Phone</Name>
+    </SDKReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" />
@@ -5286,4 +5306,12 @@
   </Target>
   -->
   <ProjectExtensions />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props'))" />
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets'))" />
+  </Target>
+  <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" />
 </Project>
