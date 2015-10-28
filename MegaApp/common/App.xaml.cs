@@ -1,6 +1,9 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -38,7 +41,7 @@ namespace MegaApp
         /// <summary>
         /// Provides easy access to usefull application information
         /// </summary>
-        public static AppInformation AppInformation { get; private set; }
+        public static AppInformation AppInformation { get; private set; }        
         public static String IpAddress { get; set; }
         public static MegaSDK MegaSdk { get; set; }
         public static CloudDriveViewModel CloudDrive { get; set; }
@@ -52,6 +55,9 @@ namespace MegaApp
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         public static ulong? ShortCutHandle { get; set; }
+
+        // DataBase Name
+        public static String DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "MEGA.sqlite"));
         
         #if WINDOWS_PHONE_81
         // Used for multiple file selection
@@ -115,6 +121,15 @@ namespace MegaApp
             Resources.Add("PhoneAccentColor", (Color)Current.Resources["MegaRedColor"]);
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
             ((SolidColorBrush)Resources["PhoneTextBoxEditBorderBrush"]).Color = (Color)Current.Resources["MegaRedColor"];
+
+            // Create the DB if not exists
+            if (!FileService.FileExists(DB_PATH))
+            {
+                using (var db = new SQLiteConnection(DB_PATH))
+                {
+                    db.CreateTable<SavedForOffline>();
+                }
+            }
         }
 
         // Code to execute when the application is launching (eg, from Start)
