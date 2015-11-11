@@ -424,7 +424,8 @@ namespace MegaApp.Models
             else
                 this.ModificationTime = this.CreationTime;
 
-            CheckAndUpdateSFO(megaNode);
+            if(!App.MegaSdk.isInShare(megaNode))
+                CheckAndUpdateSFO(megaNode);
         }
 
         private void CheckAndUpdateSFO(MNode megaNode)
@@ -459,8 +460,6 @@ namespace MegaApp.Models
                     this.IsAvailableOffline = true;
                     this.IsSelectedForOffline = false;
                 }
-                else
-                    SavedForOffline.DeleteNodeByLocalPath(nodeOfflineLocalPath);
             }
         }
 
