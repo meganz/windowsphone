@@ -53,12 +53,13 @@ namespace MegaApp.Models
 
         #region Methods
 
-        public void StartTransfer()
+        public void StartTransfer(bool isSaveForOffline = false)
         {
             switch (Type)
             {
                 case TransferType.Download:
                 {
+                    this.IsSaveForOfflineTransfer = isSaveForOffline;
                     this.MegaSdk.startDownload(SelectedNode.OriginalMNode, FilePath, this);
                     break;
                 }
@@ -90,19 +91,28 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                     {
+                        IsDefaultImage = true;
                         FileTypePathData = ImageService.GetDefaultFileTypePathData(SelectedNode.Name);
                         if (FileService.FileExists(SelectedNode.ThumbnailPath))
                         {
-                            ThumbnailUri = new Uri(SelectedNode.ThumbnailPath); ;
+                            IsDefaultImage = false;
+                            ThumbnailUri = new Uri(SelectedNode.ThumbnailPath);
                         }
                         break;
                     }
                 case TransferType.Upload:
                     {
                         if (ImageService.IsImage(FilePath))
+                        {
+                            IsDefaultImage = false;
                             ThumbnailUri = new Uri(FilePath);
+                        }                            
                         else
+                        {
+                            IsDefaultImage = true;
                             FileTypePathData = ImageService.GetDefaultFileTypePathData(FilePath);
+                        }
+                            
                         break;
                     }
                 default:
@@ -116,12 +126,19 @@ namespace MegaApp.Models
         #region Properties
 
         public string DisplayName { get; set; }
-        public string FilePath { get; private set; }
+        public string FilePath { get; set; }
         public string DownloadFolderPath { get; set; }
         public TransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
         public MTransfer Transfer { get; private set; }
-        
+
+        private bool _isDefaultImage;
+        public bool IsDefaultImage
+        {
+            get { return _isDefaultImage; }
+            set { SetField(ref _isDefaultImage, value); }
+        }
+
         private Uri _thumbnailUri;
         public Uri ThumbnailUri
         {
@@ -249,6 +266,26 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
+                    if(IsSaveForOfflineTransfer)
+                    {
+                        var node = SelectedNode as NodeViewModel;
+                        var sfoNode = new SavedForOffline()
+                        {
+                            Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
+                            Base64Handle = node.OriginalMNode.getBase64Handle(),
+                            LocalPath = this.FilePath,
+                            ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle(),
+                            IsSelectedForOffline = true
+                        };
+
+                        if (!(SavedForOffline.ExistsByLocalPath(sfoNode.LocalPath)))
+                            SavedForOffline.Insert(sfoNode);
+                        else
+                            SavedForOffline.UpdateNode(sfoNode);
+                                                
+                        Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
+                    }
+
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
@@ -262,8 +299,7 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
-                                imageNode.IsAvailableOffline = File.Exists(imageNode.LocalImagePath);
+                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);                                
                                 if (imageNode.OriginalMNode.hasPreview()) return;
                                 imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
                                 imageNode.IsBusy = false;
@@ -272,8 +308,7 @@ namespace MegaApp.Models
                         else
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                imageNode.IsAvailableOffline = File.Exists(imageNode.LocalImagePath);
+                            {                                
                                 imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
                             });                            
 
@@ -304,8 +339,6 @@ namespace MegaApp.Models
                         var node = SelectedNode as FileNodeViewModel;
                         if (node != null)
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = File.Exists(node.LocalFilePath));
-
                             #if WINDOWS_PHONE_81
                             if(!IsSaveForOfflineTransfer)
                             {

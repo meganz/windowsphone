@@ -18,9 +18,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
         {
             this.Information = this.Size.ToStringAndSuffix();
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
-
-            this.IsAvailableOffline = File.Exists(this.LocalFilePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);            
         }
 
         #region Override Methods

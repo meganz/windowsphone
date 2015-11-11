@@ -20,7 +20,9 @@ namespace MegaApp.Pages
     public partial class NodeDetailsPage : MegaPhoneApplicationPage
     {
         private readonly NodeDetailsViewModel _nodeDetailsViewModel;
-        private readonly NodeViewModel _nodeViewModel;        
+        private readonly NodeViewModel _nodeViewModel;
+
+        private bool isBtnAvailableOfflineSwitchLoaded = false;
 
         public NodeDetailsPage()
         {
@@ -31,13 +33,7 @@ namespace MegaApp.Pages
 
             InitializeComponent();
 
-            SetApplicationBar();
-
-            if (this._nodeViewModel.IsFolder)
-            {
-                this.TextAvailableOffline.Visibility = Visibility.Collapsed;
-                this.BtnAvailableOfflineSwitch.Visibility = Visibility.Collapsed;
-            }                
+            SetApplicationBar();            
         }
 
         public void SetApplicationBar()
@@ -46,10 +42,7 @@ namespace MegaApp.Pages
             
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Download.ToLower();            
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Remove.ToLower();
-
-            if (_nodeViewModel.IsFolder)
-                ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = false;
-
+            
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.Rename.ToLower();
             
             if(!_nodeViewModel.IsExported)
@@ -130,9 +123,15 @@ namespace MegaApp.Pages
             _nodeDetailsViewModel.Rename();
         }
 
+        private void BtnAvailableOfflineSwitch_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.isBtnAvailableOfflineSwitchLoaded = true;
+        }
+
         private void BtnAvailableOfflineSwitch_CheckedChanged(object sender, Telerik.Windows.Controls.CheckedChangedEventArgs e)
         {
-            _nodeDetailsViewModel.SaveForOffline(e.NewState);
-        }                
+            if(this.isBtnAvailableOfflineSwitchLoaded)
+                _nodeDetailsViewModel.SaveForOffline(e.NewState);
+        }        
     }
 }

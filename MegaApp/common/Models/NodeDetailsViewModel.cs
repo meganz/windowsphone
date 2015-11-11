@@ -4,10 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using mega;
 using MegaApp.Enums;
+using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
+using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -74,24 +78,46 @@ namespace MegaApp.Models
 
         public void SaveForOffline(bool newStatus)
         {
+            MNode parentNode = App.MegaSdk.getParentNode(_node.OriginalMNode);
+
+            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, 
+                AppResources.DownloadsDirectory.Replace("\\", ""),
+                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+
+            String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""));
+
             if (newStatus)
             {
-                _node.Transfer.IsSaveForOfflineTransfer = true;
-                _downloadViewModel = new DownloadNodeViewModel(_node);
+                _node.IsSelectedForOfflineText = Resources.UiResources.On;
+                _node.SaveForOffline(App.MegaTransfers, parentNodePath);
+                
+                while (String.Compare(parentNodePath, sfoRootPath) != 0)
+                {
+                    var folderPathToAdd = parentNodePath;
+                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                    if (!SavedForOffline.ExistsByLocalPath(folderPathToAdd))
+                        SavedForOffline.Insert(parentNode);
+
+                    parentNode = App.MegaSdk.getParentNode(parentNode);
+                }
             }
             else
             {
-                if (this._node.IsImage)
+                _node.IsSelectedForOfflineText = Resources.UiResources.Off;
+                _node.RemoveForOffline(parentNodePath);
+
+                while (String.Compare(parentNodePath, sfoRootPath) != 0)
                 {
-                    var node = _node as ImageNodeViewModel;
-                    if (File.Exists(node.LocalImagePath))
-                        File.Delete(node.LocalImagePath);
-                }
-                else
-                {
-                    var node = _node as FileNodeViewModel;
-                    if (File.Exists(node.LocalFilePath))
-                        File.Delete(node.LocalFilePath);
+                    var folderPathToRemove = parentNodePath;
+                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                    if (FolderService.IsEmptyFolder(folderPathToRemove))
+                    {
+                        FolderService.DeleteFolder(folderPathToRemove);
+                        SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
+                    }
                 }
             }
         }
