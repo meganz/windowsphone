@@ -93,6 +93,15 @@ namespace MegaApp.Services
             #endif
         }
 
+        public static ulong MaxMemoryUsage()
+        {
+            #if WINDOWS_PHONE_80
+                return (ulong) DeviceStatus.ApplicationMemoryUsageLimit;
+            #elif WINDOWS_PHONE_81
+                return MemoryManager.AppMemoryUsageLimit;
+            #endif
+        }
+
         /// <summary>
         /// Create working directories for the app to use if they do not exist yet
         /// </summary>
@@ -114,12 +123,13 @@ namespace MegaApp.Services
         public static ulong GetAppCacheSize()
         {
             var files = new List<string>();
-            //files.AddRange(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
+            
             files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath()));
-            files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));
-            files.AddRange(Directory.GetFiles(GetDownloadDirectoryPath()));            
+            files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));            
             files.AddRange(Directory.GetFiles(GetUploadDirectoryPath()));
 
+            files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath()));            
+            
             ulong totalSize = 0;
             foreach (var file in files)
             {
@@ -128,6 +138,21 @@ namespace MegaApp.Services
             }
 
             return totalSize;
+        }
+
+        private static List<string> GetDownloadDirectoryFiles(string path)
+        {
+            var files = new List<string>();
+            files.AddRange(Directory.GetFiles(path));
+
+            var folders = new List<string>();
+            folders.AddRange(Directory.GetDirectories(path));
+            foreach (var folder in folders)
+            {                
+                files.AddRange(GetDownloadDirectoryFiles(folder));
+            }
+
+            return files;
         }
 
         public static void ClearAppCache(bool includeLocalFolder)

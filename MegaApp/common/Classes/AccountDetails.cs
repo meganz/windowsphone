@@ -122,7 +122,8 @@ namespace MegaApp.Classes
 
         public ulong MaxCache
         {
-            get { return 100UL.FromMBToBytes(); }
+            //get { return 100UL.FromMBToBytes(); }
+            get { return AppService.MaxMemoryUsage(); }
         }
 
         private MAccountType _accountType;

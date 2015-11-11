@@ -19,7 +19,7 @@ namespace MegaApp.Services
     static class FolderService
     {
         public static bool FolderExists(string path)
-        {
+        {            
             return Directory.Exists(path);
         }
 
