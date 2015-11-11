@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading;
@@ -229,17 +230,183 @@ namespace MegaApp.Models
             if (downloadPath == null)
             {
                 if (!await FolderService.SelectDownloadFolder(this)) return;
-            }                
+            }
 
-            this.Transfer.DownloadFolderPath = downloadPath;
-            transferQueu.Add(this.Transfer);
-            this.Transfer.StartTransfer();
+            // If selected file is a folder then also select it childnodes to download
+            if(this.IsFolder)
+            {
+                RecursiveDownloadFolder(transferQueu, downloadPath, this);                
+            }
+            else
+            {
+                this.Transfer.DownloadFolderPath = downloadPath;
+                transferQueu.Add(this.Transfer);
+                this.Transfer.StartTransfer();
+            }            
 
             // TODO Remove this global declaration in method
             App.CloudDrive.NoFolderUpAction = true;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
+
+        private async void RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
+        {
+            String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
+            StorageFolder downloadFolder = await StorageFolder.GetFolderFromPathAsync(downloadPath);            
+
+            if(!FolderService.FolderExists(newDownloadPath))
+                await downloadFolder.CreateFolderAsync(folderNode.Name);
+            
+            MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
+            
+            for (int i=0; i < childList.size(); i++)
+            {
+                // To avoid pass null values to CreateNew
+                if (childList.get(i) == null) continue;
+
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+
+                // If node creation failed for some reason, continue with the rest and leave this one
+                if (childNode == null) continue;
+
+                if (childNode.IsFolder)
+                {
+                    RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
+                }                    
+                else
+                {
+                    childNode.Transfer.DownloadFolderPath = newDownloadPath;
+                    transferQueu.Add(childNode.Transfer);
+                    childNode.Transfer.StartTransfer();
+                }
+            }
+        }
 #endif
+
+        public async void SaveForOffline(TransferQueu transferQueu, String remoteParentNodePath)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return;
+
+            if (!FolderService.FolderExists(remoteParentNodePath))
+                FolderService.CreateFolder(remoteParentNodePath);
+
+            if (this.IsFolder)
+                RecursiveSaveForOffline(transferQueu, remoteParentNodePath, this, true);
+            else
+                await SaveFileForOffline(transferQueu, remoteParentNodePath, this);
+            
+            this.IsAvailableOffline = this.IsSelectedForOffline = true;
+        }
+
+        private async void RecursiveSaveForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node, bool fullFolder = false)
+        {
+            if (!FolderService.FolderExists(sfoPath))
+                FolderService.CreateFolder(sfoPath);
+
+            String newSfoPath = Path.Combine(sfoPath, node.Name);
+
+            if (!FolderService.FolderExists(newSfoPath))
+                FolderService.CreateFolder(newSfoPath);
+
+            if (!SavedForOffline.ExistsByLocalPath(newSfoPath))
+                SavedForOffline.Insert(node.OriginalMNode, true);
+            else
+                SavedForOffline.UpdateNode(node.OriginalMNode, true);
+
+            MNodeList childList = MegaSdk.getChildren(node.OriginalMNode);
+
+            for (int i = 0; i < childList.size(); i++)
+            {
+                // To avoid pass null values to CreateNew
+                if (childList.get(i) == null) continue;
+
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+
+                // If node creation failed for some reason, continue with the rest and leave this one
+                if (childNode == null) continue;
+
+                if (childNode.IsFolder)
+                    RecursiveSaveForOffline(transferQueu, newSfoPath, childNode);
+                else
+                    await SaveFileForOffline(transferQueu, newSfoPath, childNode);
+            }         
+        }
+
+        private async Task<bool> SaveFileForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node)
+        {
+            if (FileService.FileExists(Path.Combine(sfoPath, node.Name))) return true;
+
+            var existingNode = SavedForOffline.ReadNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            if (existingNode != null)
+            {                
+                bool result = await FileService.CopyFile(existingNode.LocalPath, sfoPath);
+
+                if (!result) return false;
+                
+                SavedForOffline.Insert(node.OriginalMNode, true);
+            }
+            else
+            {
+                node.Transfer.FilePath = Path.Combine(sfoPath, node.Name);
+                transferQueu.Add(node.Transfer);                
+                node.Transfer.StartTransfer(true);
+            }
+
+            return true;
+        }
+
+        public async void RemoveForOffline(String parentNodePath)
+        {
+            var nodePath = Path.Combine(parentNodePath, this.Name);
+
+            if (this.IsFolder)
+            {
+                await RecursiveRemoveForOffline(parentNodePath, this.Name);
+                FolderService.DeleteFolder(nodePath);
+            }                
+            else
+            {
+                FileService.DeleteFile(nodePath);                
+            }
+
+            SavedForOffline.DeleteNodeByLocalPath(nodePath);            
+            this.IsAvailableOffline = this.IsSelectedForOffline = false;
+        }
+
+        private async Task<bool> RecursiveRemoveForOffline(String sfoPath, String nodeName)
+        {
+            String newSfoPath = Path.Combine(sfoPath, nodeName);
+
+            IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
+            if (childFolders != null)
+            {
+                foreach (var folder in childFolders)
+                {
+                    if (folder != null)
+                    {
+                        await RecursiveRemoveForOffline(newSfoPath, folder);
+                        FolderService.DeleteFolder(Path.Combine(newSfoPath, folder));
+                        SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, folder));
+                    }
+                }
+            }
+
+            IEnumerable<string> childFiles = Directory.GetFiles(newSfoPath);
+            if (childFiles != null)
+            {
+                foreach (var file in childFiles)
+                {
+                    if (file != null)
+                    {
+                        FileService.DeleteFile(Path.Combine(newSfoPath, file));
+                        SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, file));
+                    }
+                }
+            }
+
+            return true;
+        }
 
         public void Update(MNode megaNode)
         {
@@ -253,25 +420,48 @@ namespace MegaApp.Models
             this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
 
             if (this.Type == MNodeType.TYPE_FILE)
+                this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");                
+            else
+                this.ModificationTime = this.CreationTime;
+
+            CheckAndUpdateSFO(megaNode);
+        }
+
+        private void CheckAndUpdateSFO(MNode megaNode)
+        {
+            this.IsAvailableOffline = false;
+
+            var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
+                    App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
+
+            if(SavedForOffline.ExistsByLocalPath(nodeOfflineLocalPath))
             {
-                this.ModificationTime = ConvertDateToString(megaNode.getModificationTime()).ToString("dd MMM yyyy");
-                
-                if (IsImage)
+                var existingNode = SavedForOffline.ReadNodeByLocalPath(nodeOfflineLocalPath);
+                if ((megaNode.getType() == MNodeType.TYPE_FILE && FileService.FileExists(nodeOfflineLocalPath)) ||
+                    (megaNode.getType() == MNodeType.TYPE_FOLDER && FolderService.FolderExists(nodeOfflineLocalPath)))
                 {
-                    this.IsAvailableOffline = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory, String.Format("{0}{1}", this.OriginalMNode.getBase64Handle(),
-                        Path.GetExtension(this.Name))));
-                }
-                else
-                {
-                    this.IsAvailableOffline = File.Exists(Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory, this.Name));
+                    this.IsAvailableOffline = true;
+                    this.IsSelectedForOffline = existingNode.IsSelectedForOffline;
                 }                    
-            }                
+                else
+                    SavedForOffline.DeleteNodeByLocalPath(nodeOfflineLocalPath);
+            }
             else
             {
-                this.ModificationTime = this.CreationTime;
-            }                
+                if (megaNode.getType() == MNodeType.TYPE_FILE && FileService.FileExists(nodeOfflineLocalPath))
+                {
+                    SavedForOffline.Insert(megaNode, true);
+                    this.IsAvailableOffline = this.IsSelectedForOffline = true;
+                }
+                else if (megaNode.getType() == MNodeType.TYPE_FOLDER && FolderService.FolderExists(nodeOfflineLocalPath))
+                {
+                    SavedForOffline.Insert(megaNode);
+                    this.IsAvailableOffline = true;
+                    this.IsSelectedForOffline = false;
+                }
+                else
+                    SavedForOffline.DeleteNodeByLocalPath(nodeOfflineLocalPath);
+            }
         }
 
         public virtual void Open()
@@ -381,6 +571,27 @@ namespace MegaApp.Models
             set { SetField(ref _defaultImagePathData, value); }
         }
 
+        private bool _isSelectedForOffline;
+        public bool IsSelectedForOffline
+        {
+            get { return _isSelectedForOffline; }
+            set
+            {
+                SetField(ref _isSelectedForOffline, value);
+                IsSelectedForOfflineText = _isSelectedForOffline ? UiResources.On : UiResources.Off;
+            }
+        }
+
+        private String _isSelectedForOfflineText;
+        public String IsSelectedForOfflineText
+        {
+            get { return _isSelectedForOfflineText; }
+            set
+            {
+                SetField(ref _isSelectedForOfflineText, value);
+            }
+        }
+
         private bool _isAvailableOffline;
         public bool IsAvailableOffline
         {
@@ -388,16 +599,8 @@ namespace MegaApp.Models
             set 
             {
                 SetField(ref _isAvailableOffline, value);
-                IsAvailableOfflineText = _isAvailableOffline ? UiResources.On : UiResources.Off;
             }
-        }
-
-        private String _isAvailableOfflineText;
-        public String IsAvailableOfflineText
-        {
-            get { return _isAvailableOfflineText; }
-            set { SetField(ref _isAvailableOfflineText, value); }
-        }
+        }        
 
         private bool _isExported;
         public bool IsExported

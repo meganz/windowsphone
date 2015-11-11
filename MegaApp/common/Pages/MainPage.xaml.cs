@@ -576,11 +576,9 @@ namespace MegaApp.Pages
             else
             {
                 _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;
-                var visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FILE 
-                    ? Visibility.Visible : Visibility.Collapsed;
+
                 BtnCreateShortCutCloudDrive.Visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FOLDER 
                     ? Visibility.Visible : Visibility.Collapsed;
-                BtnDownloadItemCloudDrive.Visibility = visibility;
             }
         }
 

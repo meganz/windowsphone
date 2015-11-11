@@ -22,8 +22,6 @@ namespace MegaApp.Models
             // Image node downloads to the image path of the full original image
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
 
-            this.IsAvailableOffline = File.Exists(LocalImagePath);
-
             this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
 
             // Default false for preview slide
@@ -194,9 +192,7 @@ namespace MegaApp.Models
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
-                                    String.Format("{0}{1}",
-                                        this.OriginalMNode.getBase64Handle(),
-                                        Path.GetExtension(base.Name)));
+                                    this.Name);
             }
         }
 

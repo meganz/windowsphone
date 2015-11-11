@@ -84,7 +84,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock x:Name="TextAvailableOffline" Grid.Row="1" Margin="36,24,0,24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Available offline" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding Node.IsAvailableOfflineText}" IsChecked="{Binding Node.IsAvailableOffline, Mode=TwoWay}" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding Node.IsSelectedForOfflineText}" IsChecked="{Binding Node.IsSelectedForOffline}" Loaded="BtnAvailableOfflineSwitch_Loaded" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
                         <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
                             <Setter Property="CheckBackground">

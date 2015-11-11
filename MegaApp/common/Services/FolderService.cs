@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,58 @@ namespace MegaApp.Services
 {
     static class FolderService
     {
+        public static bool FolderExists(string path)
+        {
+            return Directory.Exists(path);
+        }
+
+        public static bool IsEmptyFolder(string path)
+        {
+            int val1 = Directory.GetDirectories(path).Count();
+            int val2 = Directory.GetFiles(path).Count();
+
+            return (Directory.GetDirectories(path).Count() == 0 && Directory.GetFiles(path).Count() == 0) ? true : false;
+        }
+
+        public static void CreateFolder(string path)
+        {
+            Directory.CreateDirectory(path);
+        }
+
+        public static void DeleteFolder (string path)
+        {
+            Directory.Delete(path);
+        }
+
+        public static void Clear(string path)
+        {
+            try
+            {
+                IEnumerable<string> foldersToDelete = Directory.GetDirectories(path);
+                if (foldersToDelete != null)
+                {
+                    foreach (var folder in foldersToDelete)
+                    {
+                        if (folder != null)
+                            Directory.Delete(folder, true);
+                    }
+                }
+
+                FileService.ClearFiles(Directory.GetFiles(path));
+            }
+            catch (IOException e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                            AppMessages.DeleteNodeFailed_Title,
+                            String.Format(AppMessages.DeleteNodeFailed, e.Message),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
+        }
+
         #if WINDOWS_PHONE_81
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {

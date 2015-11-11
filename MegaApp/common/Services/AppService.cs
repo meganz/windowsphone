@@ -51,7 +51,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("bfbfe18");
+            return String.Format("7f488b0");
         }
 
         public static string GetAppUserAgent()
@@ -104,7 +104,7 @@ namespace MegaApp.Services
             string previewDir = GetPreviewDirectoryPath();
             if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
 
-            string downloadDir =GetDownloadDirectoryPath();
+            string downloadDir = GetDownloadDirectoryPath();
             if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
 
             string uploadDir = GetUploadDirectoryPath();
@@ -117,7 +117,7 @@ namespace MegaApp.Services
             //files.AddRange(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
             files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath()));
             files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));
-            files.AddRange(Directory.GetFiles(GetDownloadDirectoryPath()));
+            files.AddRange(Directory.GetFiles(GetDownloadDirectoryPath()));            
             files.AddRange(Directory.GetFiles(GetUploadDirectoryPath()));
 
             ulong totalSize = 0;
@@ -138,6 +138,13 @@ namespace MegaApp.Services
             ClearPreviewCache();
             ClearDownloadCache();
             ClearUploadCache();
+            
+            ClearAppDatabase();
+        }
+
+        public static void ClearAppDatabase()
+        {
+            SavedForOffline.DeleteAllNodes();
         }
 
         public static void ClearThumbnailCache()
@@ -163,7 +170,7 @@ namespace MegaApp.Services
             string downloadDir = GetDownloadDirectoryPath();
             if (Directory.Exists(downloadDir))
             {
-                FileService.ClearFiles(Directory.GetFiles(downloadDir));
+                FolderService.Clear(downloadDir);                
             }
         }
         public static void ClearUploadCache()
