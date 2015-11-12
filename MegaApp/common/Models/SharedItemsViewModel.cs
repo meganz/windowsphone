@@ -224,7 +224,7 @@ namespace MegaApp.Models
                             MShare sharedNode = outSharesList.get(i);
 
                             // To avoid null values and public links
-                            if ((outSharesList.get(i) != null) && !String.IsNullOrWhiteSpace(outSharesList.get(i).getUser()))
+                            if ((outSharesList.get(i) != null) && MegaSdk.isOutShare(MegaSdk.getNodeByHandle(outSharesList.get(i).getNodeHandle())))
                             {
                                 // To avoid repeated values, folders shared with more than one user
                                 MNode node = MegaSdk.getNodeByHandle(outSharesList.get(i).getNodeHandle());

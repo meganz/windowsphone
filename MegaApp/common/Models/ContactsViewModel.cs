@@ -402,7 +402,8 @@ namespace MegaApp.Models
                             // To avoid null values
                             if (contactsList.get(i) == null) continue;
 
-                            if (contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_VISIBLE)
+                            if ((contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_VISIBLE) ||
+                                ((contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_HIDDEN) && (App.MegaSdk.getInShares(contactsList.get(i)).size() > 0)))
                             {
                                 var _megaContact = new Contact()
                                 {
