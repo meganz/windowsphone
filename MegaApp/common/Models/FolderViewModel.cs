@@ -253,8 +253,7 @@ namespace MegaApp.Models
         }
 
         public void DownloadLink(MNode publicNode)
-        {
-            // Create a temporary DownloadNodeViewModel from the public Node created from the link
+        {            
             var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode);
             downloadNode.Download(App.MegaTransfers);
         }

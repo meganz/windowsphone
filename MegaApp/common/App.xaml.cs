@@ -13,6 +13,7 @@ using Windows.Networking.Connectivity;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.MegaApi;
 using MegaApp.Models;

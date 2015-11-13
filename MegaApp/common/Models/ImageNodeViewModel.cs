@@ -131,7 +131,7 @@ namespace MegaApp.Models
 
                 if (!isForPreview) return;
 
-                PreviewImageUri = new Uri(LocalImagePath);
+                PreviewImageUri = new Uri(PreviewPath);
 
             }
             else
@@ -192,7 +192,7 @@ namespace MegaApp.Models
             {
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.DownloadsDirectory,
-                                    this.Name);
+                                    MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
             }
         }
 

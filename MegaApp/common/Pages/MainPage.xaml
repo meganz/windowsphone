@@ -243,17 +243,12 @@
 									    x:Name="BtnViewDetailsCloudDrive" 
 									    Command="{Binding ViewDetailsCommand}"
 									    Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								    />
-                                        <telerikPrimitives:RadContextMenuItem 
-									    x:Name="BtnCreateShortCutCloudDrive" 
-									    Command="{Binding CreateShortCutCommand}"
-									    Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								    />
-                                        <telerikPrimitives:RadContextMenuItem 
+								    />                                        
+                                        <!--<telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnGetLinkCloudDrive" 
 									    Command="{Binding GetLinkCommand}"
 									    Content="{Binding LocalizedUiResources.GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								    />
+								    />-->
                                         <telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnRenameItemCloudDrive" 
 									    Command="{Binding RenameItemCommand}"
@@ -353,12 +348,7 @@
 											x:Name="BtnDownloadItemRubbishBin" 
 											Command="{Binding DownloadItemCommand}"
 											Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								        />
-                                        <!--<telerikPrimitives:RadContextMenuItem 
-											x:Name="BtnCreateShortCutRubbishBin" 
-											Command="{Binding CreateShortCutCommand}"
-											Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								        />-->
+								        />                                        
                                         <!--<telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnGetLinkRubbishBin" 
 											Command="{Binding GetLinkItemCommand}"

@@ -165,9 +165,6 @@
     <Compile Include="..\common\Classes\ResolutionHelper.cs">
       <Link>Classes\ResolutionHelper.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\SavedForOffline.cs">
-      <Link>Classes\SavedForOffline.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\TransferQueu.cs">
       <Link>Classes\TransferQueu.cs</Link>
     </Compile>
@@ -215,6 +212,12 @@
     </Compile>
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Database\DataBaseHelper.cs">
+      <Link>Database\DataBaseHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Database\SavedForOfflineDB.cs">
+      <Link>Database\SavedForOfflineDB.cs</Link>
     </Compile>
     <Compile Include="..\common\Database\SQLite.cs">
       <Link>Database\SQLite.cs</Link>

@@ -45,7 +45,6 @@ namespace MegaApp.Pages
             MemoryControl.StopMemoryCounter();
         }
 
-        #if WINDOWS_PHONE_81
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (App.AppInformation.IsStartupModeActivate)
@@ -55,6 +54,7 @@ namespace MegaApp.Pages
 
                 App.AppInformation.IsStartupModeActivate = false;
 
+                #if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
@@ -62,6 +62,7 @@ namespace MegaApp.Pages
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
                 return;
+                #endif
             }
 
             var folder = NavigateService.GetNavigationData<FolderViewModel>();
@@ -79,8 +80,7 @@ namespace MegaApp.Pages
             this.DataContext = _previewImageViewModel;
 
             base.OnNavigatedTo(e);
-        }
-        #endif
+        }        
 
         private void SetMoveButtons(bool isSlideview = true)
         {

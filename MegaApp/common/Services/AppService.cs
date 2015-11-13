@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Windows.Devices.Geolocation;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Extensions;
 using MegaApp.Resources;
 using System.IO;

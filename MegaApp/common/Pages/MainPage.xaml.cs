@@ -575,10 +575,7 @@ namespace MegaApp.Pages
             }
             else
             {
-                _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;
-
-                BtnCreateShortCutCloudDrive.Visibility = _mainPageViewModel.ActiveFolderView.FocusedNode.Type == MNodeType.TYPE_FOLDER 
-                    ? Visibility.Visible : Visibility.Collapsed;
+                _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;                
             }
         }
 

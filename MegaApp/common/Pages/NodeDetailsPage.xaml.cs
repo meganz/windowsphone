@@ -43,25 +43,34 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Download.ToLower();            
             ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Remove.ToLower();
             
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.Rename.ToLower();
-            
+            ApplicationBar.MenuItems.Clear();
+
+            ApplicationBarMenuItem rename = new ApplicationBarMenuItem(UiResources.Rename.ToLower());
+            ApplicationBar.MenuItems.Add(rename);
+            rename.Click += new EventHandler(OnRenameClick);
+                        
+            if (_nodeViewModel.IsFolder)
+            {
+                ApplicationBarMenuItem createShortcut = new ApplicationBarMenuItem(UiResources.CreateShortCut.ToLower());
+                ApplicationBar.MenuItems.Add(createShortcut);
+                createShortcut.Click += new EventHandler(OnCreateShortcutClick);
+            }
+                        
             if(!_nodeViewModel.IsExported)
             {
-                ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.GetLink.ToLower();
-
-                if (ApplicationBar.MenuItems.Count == 3)
-                    ApplicationBar.MenuItems.RemoveAt(2);                
+                ApplicationBarMenuItem getLink = new ApplicationBarMenuItem(UiResources.GetLink.ToLower());
+                ApplicationBar.MenuItems.Add(getLink);
+                getLink.Click += new EventHandler(OnGetLinkClick);
             }                
             else
             {
-                ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ManageLink.ToLower();
+                ApplicationBarMenuItem manageLink = new ApplicationBarMenuItem(UiResources.ManageLink.ToLower());
+                ApplicationBar.MenuItems.Add(manageLink);
+                manageLink.Click += new EventHandler(OnGetLinkClick);
 
-                if (ApplicationBar.MenuItems.Count == 2)
-                {
-                    ApplicationBarMenuItem removeLink = new ApplicationBarMenuItem(UiResources.RemoveLink.ToLower());
-                    ApplicationBar.MenuItems.Add(removeLink);
-                    removeLink.Click += new EventHandler(OnRemoveLinkClick);
-                }
+                ApplicationBarMenuItem removeLink = new ApplicationBarMenuItem(UiResources.RemoveLink.ToLower());
+                ApplicationBar.MenuItems.Add(removeLink);
+                removeLink.Click += new EventHandler(OnRemoveLinkClick);
             }
         }
 
@@ -123,6 +132,11 @@ namespace MegaApp.Pages
             _nodeDetailsViewModel.Rename();
         }
 
+        private void OnCreateShortcutClick(object sender, EventArgs e)
+        {
+            _nodeDetailsViewModel.CreateShortcut();
+        }
+
         private void BtnAvailableOfflineSwitch_Loaded(object sender, RoutedEventArgs e)
         {
             this.isBtnAvailableOfflineSwitchLoaded = true;
@@ -132,6 +146,6 @@ namespace MegaApp.Pages
         {
             if(this.isBtnAvailableOfflineSwitchLoaded)
                 _nodeDetailsViewModel.SaveForOffline(e.NewState);
-        }        
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
@@ -217,7 +218,17 @@ namespace MegaApp.Models
         public virtual void Download(TransferQueu transferQueu, string downloadPath = null)
         {
             if (!IsUserOnline()) return;
-            NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+            //NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
+
+            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
+
+            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                AppResources.DownloadsDirectory.Replace("\\", ""),
+                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));                      
+
+            SaveForOffline(transferQueu, parentNodePath);
+
+            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 #elif WINDOWS_PHONE_81
         public async void Download(TransferQueu transferQueu, string downloadPath = null)
@@ -309,7 +320,7 @@ namespace MegaApp.Models
             if (!FolderService.FolderExists(newSfoPath))
                 FolderService.CreateFolder(newSfoPath);
 
-            if (!SavedForOffline.ExistsByLocalPath(newSfoPath))
+            if (!SavedForOffline.ExistsNodeByLocalPath(newSfoPath))
                 SavedForOffline.Insert(node.OriginalMNode, true);
             else
                 SavedForOffline.UpdateNode(node.OriginalMNode, true);
@@ -347,8 +358,7 @@ namespace MegaApp.Models
                 SavedForOffline.Insert(node.OriginalMNode, true);
             }
             else
-            {
-                node.Transfer.FilePath = Path.Combine(sfoPath, node.Name);
+            {                
                 transferQueu.Add(node.Transfer);                
                 node.Transfer.StartTransfer(true);
             }
@@ -435,7 +445,7 @@ namespace MegaApp.Models
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
                     App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
 
-            if(SavedForOffline.ExistsByLocalPath(nodeOfflineLocalPath))
+            if(SavedForOffline.ExistsNodeByLocalPath(nodeOfflineLocalPath))            
             {
                 var existingNode = SavedForOffline.ReadNodeByLocalPath(nodeOfflineLocalPath);
                 if ((megaNode.getType() == MNodeType.TYPE_FILE && FileService.FileExists(nodeOfflineLocalPath)) ||

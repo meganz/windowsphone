@@ -54,22 +54,24 @@ namespace MegaApp.Models
 
         public void CreateShortCut()
         {
-            var iconPath = new Path()
-            {
-                Height = 150,
-                Width = 150,
-                Stretch = Stretch.Uniform,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                Fill = new SolidColorBrush(Colors.White)
-            };
+            //var iconPath = new Path()
+            //{
+            //    Height = 150,
+            //    Width = 150,
+            //    Stretch = Stretch.Uniform,
+            //    HorizontalAlignment = HorizontalAlignment.Center,
+            //    VerticalAlignment = VerticalAlignment.Center,
+            //    Fill = new SolidColorBrush(Colors.White)
+            //};
 
-            iconPath.SetDataBinding(this.DefaultImagePathData);
+            //iconPath.SetDataBinding(this.DefaultImagePathData);
 
             var shortCutTile = new RadIconicTileData()
             {
-                IconVisualElement = iconPath,
-                SmallIconVisualElement = iconPath,
+                //IconVisualElement = iconPath,
+                //SmallIconVisualElement = iconPath,
+                IconImage = new Uri("/Assets/Tiles/FolderIconImage.png", UriKind.Relative),
+                SmallIconImage = new Uri("/Assets/Tiles/FolderSmallIconImage.png", UriKind.Relative),
                 MeasureMode = MeasureMode.Tile,
                 Title = this.Name
             };

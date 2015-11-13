@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
 using MegaApp.Enums;
-using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -17,8 +17,7 @@ namespace MegaApp.Models
 {
     public class NodeDetailsViewModel : BaseViewModel
     {
-        private readonly NodeDetailsPage _nodeDetailsPage;
-        private DownloadNodeViewModel _downloadViewModel;
+        private readonly NodeDetailsPage _nodeDetailsPage;        
 
         public NodeDetailsViewModel(NodeDetailsPage nodeDetailsPage, NodeViewModel node)
         {
@@ -76,6 +75,12 @@ namespace MegaApp.Models
             _node.Rename();
         }
 
+        public void CreateShortcut()
+        {
+            var _folderNode = _node as FolderNodeViewModel;
+            _folderNode.CreateShortCut();
+        }
+
         public void SaveForOffline(bool newStatus)
         {
             MNode parentNode = App.MegaSdk.getParentNode(_node.OriginalMNode);
@@ -97,7 +102,7 @@ namespace MegaApp.Models
                     var folderPathToAdd = parentNodePath;
                     parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
 
-                    if (!SavedForOffline.ExistsByLocalPath(folderPathToAdd))
+                    if (!SavedForOffline.ExistsNodeByLocalPath(folderPathToAdd))
                         SavedForOffline.Insert(parentNode);
 
                     parentNode = App.MegaSdk.getParentNode(parentNode);
