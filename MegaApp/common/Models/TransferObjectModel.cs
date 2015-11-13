@@ -5,9 +5,11 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Input;
+using Windows.Storage;
 using Windows.UI.ViewManagement;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
@@ -126,7 +128,7 @@ namespace MegaApp.Models
         #region Properties
 
         public string DisplayName { get; set; }
-        public string FilePath { get; set; }
+        public string FilePath { get; private set; }
         public string DownloadFolderPath { get; set; }
         public TransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
@@ -268,17 +270,21 @@ namespace MegaApp.Models
                 {
                     if(IsSaveForOfflineTransfer)
                     {
+                        // Need get the path on the transfer finish because  the file name can be changed
+                        // if already exists in the destiny path.
+                        var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
+
                         var node = SelectedNode as NodeViewModel;
                         var sfoNode = new SavedForOffline()
                         {
                             Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
                             Base64Handle = node.OriginalMNode.getBase64Handle(),
-                            LocalPath = this.FilePath,
+                            LocalPath = newOfflineLocalPath,
                             ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle(),
                             IsSelectedForOffline = true
                         };
 
-                        if (!(SavedForOffline.ExistsByLocalPath(sfoNode.LocalPath)))
+                        if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
                             SavedForOffline.Insert(sfoNode);
                         else
                             SavedForOffline.UpdateNode(sfoNode);
@@ -299,9 +305,9 @@ namespace MegaApp.Models
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
-                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);                                
+                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
                                 if (imageNode.OriginalMNode.hasPreview()) return;
-                                imageNode.PreviewImageUri = new Uri(imageNode.LocalImagePath);
+                                imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
                                 imageNode.IsBusy = false;
                             });
                         }
