@@ -441,6 +441,7 @@ namespace MegaApp.Models
         private void CheckAndUpdateSFO(MNode megaNode)
         {
             this.IsAvailableOffline = false;
+            this.IsSelectedForOffline = false;
 
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
                     App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));

@@ -1861,6 +1861,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Service restrictions.
+        /// </summary>
+        public static string ServiceRestrictions {
+            get {
+                return ResourceManager.GetString("ServiceRestrictions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Settings.
         /// </summary>
         public static string Settings {

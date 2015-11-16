@@ -267,4 +267,20 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Cambiando contraseña...</value>
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Vaciando la papelera...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Cerrando todas las sesiones...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Cerrando sesión...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Eliminando enlace...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
 </root>
