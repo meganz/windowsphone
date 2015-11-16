@@ -103,8 +103,8 @@ namespace MegaApp.MegaApi
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                // Enable appbar buttons
-                _mainPageViewModel.SetCommandStatus(true);
+                // Enable MainPage appbar buttons
+                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
             });
 
             // If the user is trying to open a shortcut
@@ -113,7 +113,7 @@ namespace MegaApp.MegaApi
                 bool shortCutError = false;
 
                 MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                if (shortCutMegaNode != null)
+                if (mainPageViewModel != null && shortCutMegaNode != null)
                 {
                     // Looking for the absolute parent of the shortcut node to see the type
                     MNode parentNode;
@@ -203,8 +203,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                // Disable appbar buttons
-                _mainPageViewModel.SetCommandStatus(false);
+                // Disable MainPage appbar buttons
+                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(false);                
 
                 ProgressService.SetProgressIndicator(true,
                    String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));
