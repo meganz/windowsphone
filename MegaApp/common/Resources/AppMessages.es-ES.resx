@@ -974,4 +974,54 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <value>La contraseña nueva y la antigua no pueden coincidir.</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Tu contraseña se ha cambiado.</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>La sesión se ha cerrado correctamente.</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinSuccess" xml:space="preserve">
+    <value>La papelera se ha vaciado correctamente.</value>
+    <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinFailed" xml:space="preserve">
+    <value>Error al vaciar la papelera. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
+  </data>
+  <data name="CleanRubbishBinQuestion" xml:space="preserve">
+    <value>¿Estás seguro de que quieres eliminar permanentemente todos los archivos de la papelera?</value>
+    <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
+  </data>
+  <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
+    <value>Estás intentando añadir tu propio e-mail como contacto.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
+  </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>Error al eliminar el enlace. Por favor, vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>El resto de sesiones se ha cerrado correctamente.</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Error del servicio de Auto Subidas de la Cámara</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="RemoveNodeSuccess" xml:space="preserve">
+    <value>Elemento eliminado correctamente.</value>
+    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
 </root>

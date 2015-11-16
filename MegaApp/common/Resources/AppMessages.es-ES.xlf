@@ -135,7 +135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" xml:space="preserve">
           <source>Your password has been changed.</source>
-          <target state="new">Your password has been changed.</target>
+          <target state="translated">Tu contraseña se ha cambiado.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
           </trans-unit>
         <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" xml:space="preserve">
@@ -145,48 +145,48 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/CloseSessionSucces" translate="yes" xml:space="preserve">
           <source>The session has been successfully closed.</source>
-          <target state="new">The session has been successfully closed.</target>
+          <target state="translated">La sesión se ha cerrado correctamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
           </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" xml:space="preserve">
           <source>The rubbish bin has been emptied successfully.</source>
-          <target state="new">The rubbish bin has been emptied successfully.</target>
+          <target state="translated">La papelera se ha vaciado correctamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
           </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" xml:space="preserve">
           <source>Empty rubbish bin failed. Please try again.</source>
-          <target state="new">Empty rubbish bin failed. Please try again.</target>
+          <target state="translated">Error al vaciar la papelera. Por favor, vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
           </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" xml:space="preserve">
           <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
-          <target state="new">Are you sure you want to permanently delete all files of the rubbish bin?</target>
+          <target state="translated">¿Estás seguro de que quieres eliminar permanentemente todos los archivos de la papelera?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
           </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" xml:space="preserve">
           <source>You are trying to add your own e-mail as a contact.</source>
-          <target state="new">You are trying to add your own e-mail as a contact.</target>
+          <target state="translated">Estás intentando añadir tu propio e-mail como contacto.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
           </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" xml:space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="new">Failed to remove link. Please try again.</target>
+          <target state="translated">Error al eliminar el enlace. Por favor, vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
-          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
           </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" xml:space="preserve">
           <source>The remaining sessions are successfully closed.</source>
-          <target state="new">The remaining sessions are successfully closed.</target>
+          <target state="translated">El resto de sesiones se ha cerrado correctamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
           </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
-          <target state="new">Close session failed. Please try again. [{0}]</target>
+          <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
           </trans-unit>
@@ -208,7 +208,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
           </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" xml:space="preserve">
           <source>Auto Camera Upload failed</source>
-          <target state="new">Auto Camera Upload failed</target>
+          <target state="translated">Error del servicio de Auto Subidas de la Cámara</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
           </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" xml:space="preserve">
@@ -895,7 +895,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" xml:space="preserve">
           <source>Item successful removed</source>
-          <target state="new">Item successful removed</target>
+          <target state="translated">Elemento eliminado correctamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
           </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" xml:space="preserve">

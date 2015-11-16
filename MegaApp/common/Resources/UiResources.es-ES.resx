@@ -1126,4 +1126,28 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Tu nueva contraseña</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Cerrar todas las sesiones</value>
+    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Cerrar sesión</value>
+    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Eliminar enlace</value>
+    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ServiceRestrictions" xml:space="preserve">
+    <value>Restricciones del servicio</value>
+    <comment>Label for the auto camera upload service restrictions.</comment>
+  </data>
+  <data name="ManageLink" xml:space="preserve">
+    <value>Gestionar enlace</value>
+    <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Obtener enlace</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>
