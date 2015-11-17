@@ -113,7 +113,7 @@ namespace MegaApp.MegaApi
                 bool shortCutError = false;
 
                 MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
-                if (mainPageViewModel != null && shortCutMegaNode != null)
+                if (_mainPageViewModel != null && shortCutMegaNode != null)
                 {
                     // Looking for the absolute parent of the shortcut node to see the type
                     MNode parentNode;
