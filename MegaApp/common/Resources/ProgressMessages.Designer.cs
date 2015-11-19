@@ -70,6 +70,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Canceling transfer....
+        /// </summary>
+        public static string CancelTransfer {
+            get {
+                return ResourceManager.GetString("CancelTransfer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Changing password....
         /// </summary>
         public static string ChangePassword {
@@ -358,6 +367,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Removing from offline....
+        /// </summary>
+        public static string RemoveFromOffline {
+            get {
+                return ResourceManager.GetString("RemoveFromOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Removing link....
         /// </summary>
         public static string RemoveLink {
@@ -417,6 +435,15 @@ namespace MegaApp.Resources {
         public static string ResumeTransfers {
             get {
                 return ResourceManager.GetString("ResumeTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Saving for offline....
+        /// </summary>
+        public static string SaveForOffline {
+            get {
+                return ResourceManager.GetString("SaveForOffline", resourceCulture);
             }
         }
         

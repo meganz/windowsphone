@@ -119,8 +119,21 @@ namespace MegaApp.Models
                     }
                 default:
                     throw new ArgumentOutOfRangeException();
+            }            
+        }
+
+        public bool isAliveTransfer()
+        {
+            switch(this.Status)
+            {
+                case TransferStatus.Canceled:
+                case TransferStatus.Downloaded:
+                case TransferStatus.Uploaded:
+                case TransferStatus.Error:
+                    return false;
             }
-            
+
+            return true;
         }
 
         #endregion

@@ -11,6 +11,11 @@
           <target state="translated">Cancelando subscripción...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a subscription - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/CancelTransfer" translate="yes" xml:space="preserve">
+          <source>Canceling transfer...</source>
+          <target state="translated">Cancelando transferencia...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a transfer - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
           <source>Changing password...</source>
           <target state="translated">Cambiando contraseña...</target>
@@ -40,6 +45,11 @@
           <source>Resuming transfers...</source>
           <target state="translated">Reanudando transferencias...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/SaveForOffline" translate="yes" xml:space="preserve">
+          <source>Saving for offline...</source>
+          <target state="translated">Guardando para fuera de línea...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when saving folders/files for offline - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/UpgradeAccount" translate="yes" xml:space="preserve">
           <source>Upgrading account...</source>
@@ -80,6 +90,11 @@
           <source>Removing contact...</source>
           <target state="translated">Eliminando contacto...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a contact - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/RemoveFromOffline" translate="yes" xml:space="preserve">
+          <source>Removing from offline...</source>
+          <target state="translated">Eliminando de fuera de línea...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing folders/files from offline - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/RemoveLink" translate="yes" xml:space="preserve">
           <source>Removing link...</source>
