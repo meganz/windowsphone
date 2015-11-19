@@ -41,6 +41,11 @@ namespace MegaApp.Services
             Directory.Delete(path);
         }
 
+        public static void DeleteFolder(string path, bool recursive)
+        {
+            Directory.Delete(path, recursive);
+        }
+
         public static void Clear(string path)
         {
             try
