@@ -219,8 +219,22 @@ namespace MegaApp.Models
             var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.CreateFolder, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
+                if (this.FolderRootNode == null)
+                {
+                    OnUiThread(() =>
+                    {
+                        new CustomMessageDialog(
+                                AppMessages.CreateFolderFailed_Title,
+                                AppMessages.CreateFolderFailed,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();                        
+                    });
+
+                    return;
+                }                
+
                 this.MegaSdk.createFolder(args.InputText, this.FolderRootNode.OriginalMNode,
-                     new CreateFolderRequestListener());
+                     new CreateFolderRequestListener());                
             };
             inputDialog.ShowDialog();
         }

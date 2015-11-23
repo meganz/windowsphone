@@ -196,7 +196,7 @@ namespace MegaApp.Classes
         /// <param name="args">Argument with the input text at the moment the ok button was selected</param>
         protected virtual void OnOkButtonTapped(CustomInputDialogOkButtonArgs args)
         {
-            if (args.InputText.Length < 1) return;
+            if (String.IsNullOrWhiteSpace(args.InputText)) return;
 
             if (OkButtonTapped != null)
                 OkButtonTapped(this, args);
