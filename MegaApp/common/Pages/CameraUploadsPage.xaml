@@ -219,11 +219,11 @@
             						Command="{Binding CreateShortCutCommand}"
             						Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
 								    />
-            					<telerikPrimitives:RadContextMenuItem 
+            					<!--<telerikPrimitives:RadContextMenuItem 
             						x:Name="BtnGetLinkCloudDrive" 
             						Command="{Binding GetLinkCommand}"
             						Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								    />
+								    />-->
             					<telerikPrimitives:RadContextMenuItem 
             						x:Name="BtnRenameItemCloudDrive" 
             						Command="{Binding RenameItemCommand}"
@@ -249,7 +249,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Height="100" Margin="0,66,0,64">
+            <Grid Height="100" Margin="0,50,0,48">
                 <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
                         <Grid.ColumnDefinitions>

@@ -153,6 +153,9 @@
     <Compile Include="..\common\Classes\NumericPasswordBox.cs">
       <Link>Classes\NumericPasswordBox.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\OfflineNodeTemplateSelector.cs">
+      <Link>Classes\OfflineNodeTemplateSelector.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\PaymentMethod.cs">
       <Link>Classes\PaymentMethod.cs</Link>
     </Compile>
@@ -299,6 +302,9 @@
     </Compile>
     <Compile Include="..\common\Interfaces\IMegaService.cs">
       <Link>Interfaces\IMegaService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Interfaces\IOfflineNode.cs">
+      <Link>Interfaces\IOfflineNode.cs</Link>
     </Compile>
     <Compile Include="..\common\LocalizedStrings.cs">
       <Link>LocalizedStrings.cs</Link>
@@ -510,6 +516,18 @@
     <Compile Include="..\common\Models\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\OfflineFileNodeViewModel.cs">
+      <Link>Models\OfflineFileNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineFolderNodeViewModel.cs">
+      <Link>Models\OfflineFolderNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineFolderViewModel.cs">
+      <Link>Models\OfflineFolderViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineNodeViewModel.cs">
+      <Link>Models\OfflineNodeViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PasswordViewModel.cs">
       <Link>Models\PasswordViewModel.cs</Link>
     </Compile>
@@ -521,6 +539,9 @@
     </Compile>
     <Compile Include="..\common\Models\PreviewSelfieViewModel.cs">
       <Link>Models\PreviewSelfieViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\SavedForOfflineViewModel.cs">
+      <Link>Models\SavedForOfflineViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\SettingsViewModel.cs">
       <Link>Models\SettingsViewModel.cs</Link>
@@ -623,6 +644,10 @@
     <Compile Include="..\common\Pages\PreviewSelfiePage.xaml.cs">
       <Link>Pages\PreviewSelfiePage.xaml.cs</Link>
       <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\SavedForOfflinePage.xaml.cs">
+      <Link>Pages\SavedForOfflinePage.xaml.cs</Link>
+      <DependentUpon>SavedForOfflinePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\SettingsPage.xaml.cs">
       <Link>Pages\SettingsPage.xaml.cs</Link>
@@ -2187,6 +2212,10 @@
     </Page>
     <Page Include="..\common\Pages\PreviewSelfiePage.xaml">
       <Link>Pages\PreviewSelfiePage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\SavedForOfflinePage.xaml">
+      <Link>Pages\SavedForOfflinePage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\SettingsPage.xaml">

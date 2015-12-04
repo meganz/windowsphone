@@ -75,6 +75,14 @@ namespace MegaApp.Services
             }
         }
 
+        public static bool IsOfflineRootFolder(string path)
+        {
+            if (!path.Trim().EndsWith("\\"))
+                path = path.Insert(path.Length, "\\");
+
+            return (String.Compare(AppService.GetDownloadDirectoryPath(), path) == 0) ? true : false;
+        }
+
         #if WINDOWS_PHONE_81
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {

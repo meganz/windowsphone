@@ -19,6 +19,8 @@ namespace MegaApp.Services
         private static Dictionary<ulong, int> _folderSorting;
         private static Dictionary<ulong, int> _folderViewMode;
 
+        private static Dictionary<string, int> _offlineFolderViewMode;
+
         public static int GetSortOrder(ulong folderHandle, string folderName)
         {
             if (_folderSorting == null)
@@ -64,6 +66,28 @@ namespace MegaApp.Services
             else
                 _folderViewMode.Add(folderHandle, (int)viewMode);
 
+        }
+
+        public static ViewMode GetViewMode(string folderHandle, string folderName)
+        {
+            if (_offlineFolderViewMode == null)
+                _offlineFolderViewMode = new Dictionary<string, int>();
+
+            if (_offlineFolderViewMode.ContainsKey(folderHandle))
+                return (ViewMode)_offlineFolderViewMode[folderHandle];
+
+            return folderName.Equals("Camera Uploads") ? ViewMode.LargeThumbnails : ViewMode.ListView;
+        }
+
+        public static void SetViewMode(string folderHandle, ViewMode viewMode)
+        {
+            if (_offlineFolderViewMode == null)
+                _offlineFolderViewMode = new Dictionary<string, int>();
+
+            if (_offlineFolderViewMode.ContainsKey(folderHandle))
+                _offlineFolderViewMode[folderHandle] = (int)viewMode;
+            else
+                _offlineFolderViewMode.Add(folderHandle, (int)viewMode);
         }
 
         public static RadCustomHubTile CreateHubTile(string title, Uri bitmapUri, Thickness margin)

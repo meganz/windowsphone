@@ -63,8 +63,12 @@ namespace MegaApp.Pages
             e.Cancel = true;
         }
 
-        private void OnAcceptClick(object sender, EventArgs e)        
+        private void OnAcceptClick(object sender, EventArgs e)
         {
+            // To not allow cancel a request to login or 
+            // create account once that is started
+            this.ApplicationBar.IsVisible = false;            
+
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
                 _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
             else if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_CreateAccount)                
