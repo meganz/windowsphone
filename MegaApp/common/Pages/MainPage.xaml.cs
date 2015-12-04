@@ -902,7 +902,7 @@ namespace MegaApp.Pages
         private void OnPivotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems[0] == CloudDrivePivot)
-                _mainPageViewModel.ActiveFolderView = ((MainPageViewModel) this.DataContext).CloudDrive;
+                _mainPageViewModel.ActiveFolderView = ((MainPageViewModel) this.DataContext).CloudDrive;            
 
             if (e.AddedItems[0] == RubbishBinPivot)
                 _mainPageViewModel.ActiveFolderView = ((MainPageViewModel)this.DataContext).RubbishBin;

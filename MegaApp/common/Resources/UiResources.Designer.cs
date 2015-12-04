@@ -1762,6 +1762,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Saved for offline.
+        /// </summary>
+        public static string SavedForOffline {
+            get {
+                return ResourceManager.GetString("SavedForOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Search.
         /// </summary>
         public static string Search {

@@ -106,6 +106,20 @@ namespace MegaApp.Models
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {
+                Type = HamburgerMenuItemType.SavedForOffline,
+                DisplayName = UiResources.SavedForOffline.ToLower(),
+                IconPathData = VisualResources.SavedOfflineIcoData,
+                IconWidth = 44,
+                IconHeight = 44,
+                Margin = new Thickness(38, 0, 36, 0),
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(SavedForOfflinePage), NavigationParameter.Normal);
+                },
+                IsActive = activeItem == HamburgerMenuItemType.SavedForOffline
+            });
+            this.MenuItems.Add(new HamburgerMenuItem()
+            {
                 Type = HamburgerMenuItemType.CameraUploads,
                 DisplayName = UiResources.CameraUploads.ToLower(),
                 IconPathData = VisualResources.CameraUploadsPathData,
