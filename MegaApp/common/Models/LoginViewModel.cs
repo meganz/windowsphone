@@ -13,10 +13,12 @@ namespace MegaApp.Models
     class LoginViewModel : BaseRequestListenerViewModel
     {
         private readonly MegaSDK _megaSdk;
+        private readonly LoginPage _loginPage;
 
-        public LoginViewModel(MegaSDK megaSdk)
+        public LoginViewModel(MegaSDK megaSdk, LoginPage loginPage = null)
         {
             this._megaSdk = megaSdk;
+            this._loginPage = loginPage;
             this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
             this.ControlState = true;            
         }
@@ -26,9 +28,9 @@ namespace MegaApp.Models
         public void DoLogin()
         {
             if (CheckInputParameters())
-            {
                 this._megaSdk.login(Email, Password, this);
-            }
+            else if (_loginPage != null)
+                Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
         }
 
         private bool CheckInputParameters()
@@ -135,25 +137,32 @@ namespace MegaApp.Models
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(false);
 
-                this.ControlState = true;
+                this.ControlState = true;                
             });            
 
             if (e.getErrorCode() == MErrorType.API_OK)
-                SessionKey = api.dumpSession();
-
-            // E-mail unassociated with a MEGA account or Wrong password
-            if (e.getErrorCode() == MErrorType.API_ENOENT)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                            ErrorMessageTitle,
-                            AppMessages.WrongEmailPasswordLogin,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                });
-                return;
+                SessionKey = api.dumpSession();
             }
+            else
+            {
+                if (_loginPage != null)
+                    Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+
+                // E-mail unassociated with a MEGA account or Wrong password
+                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                                ErrorMessageTitle,
+                                AppMessages.WrongEmailPasswordLogin,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
+                    return;
+                }
+            }            
 
             base.onRequestFinish(api, request, e);
         }
