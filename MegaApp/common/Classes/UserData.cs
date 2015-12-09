@@ -15,7 +15,7 @@ namespace MegaApp.Classes
     {
         public UserDataViewModel()
         {
-            if (!File.Exists(AvatarPath)) return;
+            if (String.IsNullOrWhiteSpace(AvatarPath) || !File.Exists(AvatarPath)) return;
             AvatarUri = new Uri(AvatarPath);
         }
 
@@ -58,8 +58,10 @@ namespace MegaApp.Classes
         {
             get
             {
+                if (String.IsNullOrWhiteSpace(UserEmail)) return null;
+                
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory, "UserAvatarImage");
+                    AppResources.ThumbnailsDirectory, UserEmail);
             }
         }
 
