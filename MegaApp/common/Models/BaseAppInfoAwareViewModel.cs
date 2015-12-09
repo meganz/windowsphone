@@ -47,7 +47,7 @@ namespace MegaApp.Models
                         accountChange = true;
                 }
 
-                if (accountChange || (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
+                if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
                     App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
 
                 if (accountChange)
