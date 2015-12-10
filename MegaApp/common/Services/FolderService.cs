@@ -23,6 +23,29 @@ namespace MegaApp.Services
             return Directory.Exists(path);
         }
 
+        public static int GetNumChildFolders(string path)
+        {
+            return Directory.GetDirectories(path).Length;
+        }
+
+        public static int GetNumChildFiles(string path, bool isOfflineFolder = false)
+        {
+            string[] childFiles = Directory.GetFiles(path);
+
+            int num = 0;
+            if(!isOfflineFolder)
+            {
+                num = childFiles.Length;
+            }
+            else
+            {
+                foreach(var filename in childFiles)
+                    if (!FileService.IsPendingTransferFile(filename)) num++;
+            }
+
+            return num;
+        }
+
         public static bool IsEmptyFolder(string path)
         {
             int val1 = Directory.GetDirectories(path).Count();

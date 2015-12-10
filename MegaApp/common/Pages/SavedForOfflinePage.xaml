@@ -18,6 +18,40 @@
     shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
     d:DataContext="{d:DesignInstance models:SavedForOfflineViewModel}">
 
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="SavedForOfflineMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					Text="refresh"	
+					Click="OnRefreshClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="sort"	
+					Click="OnSortClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="select"	
+					Click="OnMultiSelectClick"			
+				/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+        
+        <shell:ApplicationBar x:Key="MultiSelectMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					Text="cancel"	
+					Click="OnMultiSelectClick"			
+				/>
+            </shell:ApplicationBar.MenuItems>            
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/remove.png" 
+        		Text="remove" 
+        		Click="OnMultiSelectRemoveClick" 
+			/>
+        </shell:ApplicationBar>
+
+    </userControls:MegaPhoneApplicationPage.Resources>
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
 
     <userControls:MegaPhoneApplicationPage.FontFamily>
@@ -99,7 +133,8 @@
             					ItemTap="OnItemTap"
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}"
             					telerik:InteractionEffectManager.IsInteractionEnabled="True"             					
-            					IsCheckModeEnabled="True"
+            					IsCheckModeEnabled="True"                                
+            					IsCheckModeActiveChanged="OnCheckModeChanged"
             					CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
             					ItemCheckedPath="IsMultiSelected" 
             					IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
@@ -107,7 +142,7 @@
             					DataVirtualizationMode="Automatic" 
             					EmptyContentDisplayMode="DataSourceEmpty"             					
             					EmptyContent="" 
-            					EmptyContentTemplate="{StaticResource MegaNodeListSavedForOfflineEmptyContent}"
+            					EmptyContentTemplate="{Binding EmptyContentTemplate}"
                                 VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
                                 IsAsyncBalanceEnabled="True">
 

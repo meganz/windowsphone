@@ -10,8 +10,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Extensions;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -31,20 +33,24 @@ namespace MegaApp.Models
             this.IsBusy = false;
             this.BusyText = null;
             this.ChildNodes = new ObservableCollection<IOfflineNode>();
-            this.BreadCrumbs = new ObservableCollection<IOfflineNode>();
+            this.BreadCrumbs = new ObservableCollection<IBaseNode>();
             this.SelectedNodes = new List<IOfflineNode>();
             this.IsMultiSelectActive = false;
 
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
+            this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
 
             SetViewDefaults();
 
             SetEmptyContentTemplate(true);
+
+            this.CurrentDisplayMode = DriveDisplayMode.SavedForOffline;
         }
 
         #region Commands
 
         public ICommand ChangeViewCommand { get; private set; }
+        public ICommand MultiSelectCommand { get; set; }
 
         #endregion
 
@@ -103,13 +109,15 @@ namespace MegaApp.Models
             {
                 try
                 {
+                    ObservableCollection<IOfflineNode> tempChildNodes = new ObservableCollection<IOfflineNode>();
+
                     String[] childFolders = Directory.GetDirectories(FolderRootNode.NodePath);
                     foreach (var folder in childFolders)
                     {
                         var childNode = new OfflineFolderNodeViewModel(new DirectoryInfo(folder));
                         if (childNode == null) continue;
 
-                        Deployment.Current.Dispatcher.BeginInvoke(() => ChildNodes.Add(childNode));
+                        Deployment.Current.Dispatcher.BeginInvoke(() => tempChildNodes.Add(childNode));
                     }
                                         
                     String[] childFiles = Directory.GetFiles(FolderRootNode.NodePath);
@@ -117,14 +125,16 @@ namespace MegaApp.Models
                     {
                         var fileInfo = new FileInfo(file);
 
-                        //if (String.Compare(fileInfo.Name, "UserAvatarImage") == 0) continue;
+                        if (FileService.IsPendingTransferFile(fileInfo.Name)) continue;
 
                         var childNode = new OfflineFileNodeViewModel(fileInfo);
                         if (childNode == null) continue;
 
-                        Deployment.Current.Dispatcher.BeginInvoke(() => ChildNodes.Add(childNode));
+                        Deployment.Current.Dispatcher.BeginInvoke(() => tempChildNodes.Add(childNode));
                     }
 
+                    OrderChildNodes(tempChildNodes);
+                    
                     // Show the user that processing the childnodes is done
                     SetProgressIndication(false);
 
@@ -342,8 +352,54 @@ namespace MegaApp.Models
 
             OnUiThread(() =>
             {
-                this.ChildNodes.Clear();
+                this.ChildNodes.Clear();                
             });
+        }
+
+        private void OrderChildNodes(ObservableCollection<IOfflineNode> nodes)
+        {
+            OnUiThread(() =>
+            {
+                IOrderedEnumerable<IOfflineNode> orderedNodes;
+
+                switch (UiService.GetSortOrder(FolderRootNode.Base64Handle, FolderRootNode.Name))
+                {
+                    case (int)MSortOrderType.ORDER_ALPHABETICAL_ASC:
+                        orderedNodes = nodes.OrderBy(node => node.Name);
+                        break;
+                    case (int)MSortOrderType.ORDER_ALPHABETICAL_DESC:
+                        orderedNodes = nodes.OrderByDescending(node => node.Name);
+                        break;
+                    case (int)MSortOrderType.ORDER_CREATION_ASC:
+                        orderedNodes = nodes.OrderBy(node => node.CreationTime);
+                        break;
+                    case (int)MSortOrderType.ORDER_CREATION_DESC:
+                        orderedNodes = nodes.OrderByDescending(node => node.CreationTime);
+                        break;
+                    case (int)MSortOrderType.ORDER_MODIFICATION_ASC:
+                        orderedNodes = nodes.OrderBy(node => node.ModificationTime);
+                        break;
+                    case (int)MSortOrderType.ORDER_MODIFICATION_DESC:
+                        orderedNodes = nodes.OrderByDescending(node => node.ModificationTime);
+                        break;
+                    case (int)MSortOrderType.ORDER_SIZE_ASC:
+                        orderedNodes = nodes.OrderBy(node => node.Size);
+                        break;
+                    case (int)MSortOrderType.ORDER_SIZE_DESC:
+                        orderedNodes = nodes.OrderByDescending(node => node.Size);
+                        break;
+                    case (int)MSortOrderType.ORDER_DEFAULT_DESC:
+                        orderedNodes = nodes.OrderBy(node => node.IsFolder);
+                        break;
+                    case (int)MSortOrderType.ORDER_DEFAULT_ASC:
+                    case (int)MSortOrderType.ORDER_NONE:
+                    default:
+                        orderedNodes = nodes.OrderByDescending(node => node.IsFolder);
+                        break;
+                }
+
+                ChildNodes = new ObservableCollection<IOfflineNode>(orderedNodes);
+            });            
         }
 
         private void SetViewOnLoad()
@@ -382,12 +438,12 @@ namespace MegaApp.Models
             if (this.FolderRootNode == null ||
                 FolderService.IsOfflineRootFolder(this.FolderRootNode.NodePath)) return;
 
-            this.BreadCrumbs.Add(this.FolderRootNode);
+            this.BreadCrumbs.Add((IBaseNode)this.FolderRootNode);
 
             DirectoryInfo parentNode = (new DirectoryInfo(this.FolderRootNode.NodePath)).Parent;
             while ((parentNode != null) && !FolderService.IsOfflineRootFolder(parentNode.FullName))
             {
-                this.BreadCrumbs.Insert(0, new OfflineFolderNodeViewModel(parentNode));
+                this.BreadCrumbs.Insert(0, (IBaseNode)new OfflineFolderNodeViewModel(parentNode));
                 parentNode = (new DirectoryInfo(parentNode.FullName)).Parent;
             }
         }
@@ -396,13 +452,15 @@ namespace MegaApp.Models
 
         #region IBreadCrumb
 
-        public ObservableCollection<IOfflineNode> BreadCrumbs { get; private set; }
+        public ObservableCollection<IBaseNode> BreadCrumbs { get; private set; }
 
         #endregion
 
         #region Properties
 
         public IOfflineNode FocusedNode { get; set; }
+        public DriveDisplayMode CurrentDisplayMode { get; set; }
+        public DriveDisplayMode PreviousDisplayMode { get; set; }
         public List<IOfflineNode> SelectedNodes { get; set; }
 
         private ObservableCollection<IOfflineNode> _childNodes;
@@ -411,6 +469,13 @@ namespace MegaApp.Models
             get { return _childNodes; }
             set { SetField(ref _childNodes, value); }
         }
+
+        //private IOrderedEnumerable<IOfflineNode> _orderedChildNodes;
+        //public IOrderedEnumerable<IOfflineNode> OrderedChildNodes
+        //{
+        //    get { return _orderedChildNodes; }
+        //    set { SetField(ref _orderedChildNodes, value); }
+        //}
 
         public ContainerType Type { get; private set; }
 

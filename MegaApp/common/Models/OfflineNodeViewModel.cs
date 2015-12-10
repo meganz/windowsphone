@@ -16,7 +16,7 @@ namespace MegaApp.Models
 {
     public abstract class OfflineNodeViewModel : BaseViewModel, IOfflineNode
     {
-        protected OfflineNodeViewModel(ObservableCollection<IOfflineNode> parentCollection = null, 
+        protected OfflineNodeViewModel(ObservableCollection<IOfflineNode> parentCollection = null,
             ObservableCollection<IOfflineNode> childCollection = null)
             : base()
         {

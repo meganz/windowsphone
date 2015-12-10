@@ -9,12 +9,13 @@ using MegaApp.Database;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
     public class OfflineFolderNodeViewModel : OfflineNodeViewModel
     {
-        public OfflineFolderNodeViewModel(DirectoryInfo folderInfo, ObservableCollection<IOfflineNode> parentCollection = null, 
+        public OfflineFolderNodeViewModel(DirectoryInfo folderInfo, ObservableCollection<IOfflineNode> parentCollection = null,
             ObservableCollection<IOfflineNode> childCollection = null)
             : base(parentCollection, childCollection)
         {
@@ -54,8 +55,8 @@ namespace MegaApp.Models
 
         public void SetFolderInfo()
         {
-            int childFolders = Directory.GetDirectories(this.NodePath).Length;
-            int childFiles = Directory.GetFiles(this.NodePath).Length;
+            int childFolders = FolderService.GetNumChildFolders(this.NodePath);
+            int childFiles = FolderService.GetNumChildFiles(this.NodePath, true);
             this.Information = String.Format("{0} {1} | {2} {3}",
                 childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
                 childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());

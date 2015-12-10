@@ -19,6 +19,7 @@ namespace MegaApp.Services
         private static Dictionary<ulong, int> _folderSorting;
         private static Dictionary<ulong, int> _folderViewMode;
 
+        private static Dictionary<string, int> _offlineFolderSorting;
         private static Dictionary<string, int> _offlineFolderViewMode;
 
         public static int GetSortOrder(ulong folderHandle, string folderName)
@@ -41,8 +42,30 @@ namespace MegaApp.Services
             if (_folderSorting.ContainsKey(folderHandle))
                 _folderSorting[folderHandle] = sortOrder;
             else
-                _folderSorting.Add(folderHandle, sortOrder);
-            
+                _folderSorting.Add(folderHandle, sortOrder);            
+        }
+
+        public static int GetSortOrder(string folderHandle, string folderName)
+        {
+            if (_offlineFolderSorting == null)
+                _offlineFolderSorting = new Dictionary<string, int>();
+
+            if (_offlineFolderSorting.ContainsKey(folderHandle))
+                return _offlineFolderSorting[folderHandle];
+
+            return folderName.Equals("Camera Uploads") ? (int)MSortOrderType.ORDER_MODIFICATION_DESC :
+                (int)MSortOrderType.ORDER_DEFAULT_ASC;
+        }
+
+        public static void SetSortOrder(string folderHandle, int sortOrder)
+        {
+            if (_offlineFolderSorting == null)
+                _offlineFolderSorting = new Dictionary<string, int>();
+
+            if (_offlineFolderSorting.ContainsKey(folderHandle))
+                _offlineFolderSorting[folderHandle] = sortOrder;
+            else
+                _offlineFolderSorting.Add(folderHandle, sortOrder);
         }
 
         public static ViewMode GetViewMode(ulong folderHandle, string folderName)

@@ -588,7 +588,7 @@ namespace MegaApp.Models
 
         public ulong Handle { get; set; }
 
-        public ulong Size { get; private set; }
+        public ulong Size { get; set; }
 
         private string _sizeText;
         public string SizeText
