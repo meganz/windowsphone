@@ -29,25 +29,46 @@ namespace MegaApp.Pages
             InitializeComponent();
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.SavedForOffline);
 
+            SetApplicationBarData();
+
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
 
             SavedForOfflineBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             SavedForOfflineBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
         }
 
+        private void SetApplicationBarData()
+        {
+            // Set the Applicatio Bar to one of the available menu resources in this page
+            SetAppbarResources(_savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode);
+
+            // Change and translate the current application bar
+            _savedForOfflineViewModel.ChangeMenu(_savedForOfflineViewModel.SavedForOffline,
+                this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+        }
+
+        private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
+        {            
+            switch (driveDisplayMode)
+            {
+                case DriveDisplayMode.SavedForOffline:
+                    this.ApplicationBar = (ApplicationBar)Resources["SavedForOfflineMenu"];
+                    break;                
+                case DriveDisplayMode.MultiSelect:
+                    this.ApplicationBar = (ApplicationBar)Resources["MultiSelectMenu"];
+                    break;                
+                default:
+                    throw new ArgumentOutOfRangeException("driveDisplayMode");
+            }
+        }
+
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
             ((SavedForOfflineViewModel)this.DataContext).SavedForOffline.BrowseToHome();
         }
 
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
-            // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
-
             ((SavedForOfflineViewModel)this.DataContext).SavedForOffline.BrowseToFolder((IOfflineNode)e.Item);
         }
 
@@ -103,6 +124,11 @@ namespace MegaApp.Pages
             return true;
         }
 
+        private void OnRefreshClick(object sender, EventArgs e)
+        {
+            _savedForOfflineViewModel.SavedForOffline.Refresh();
+        }
+
         private void OnGoToTopTap(object sender, GestureEventArgs e)
         {
             if (!_savedForOfflineViewModel.SavedForOffline.HasChildNodes()) return;
@@ -122,6 +148,11 @@ namespace MegaApp.Pages
             LstSavedForOffline.BringIntoView(bringIntoViewNode);
         }
 
+        private void OnSortClick(object sender, EventArgs e)
+        {
+            DialogService.ShowSortDialog(_savedForOfflineViewModel.SavedForOffline);
+        }
+
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             ChangeMultiSelectMode();
@@ -130,7 +161,37 @@ namespace MegaApp.Pages
         private void ChangeMultiSelectMode()
         {
             LstSavedForOffline.IsCheckModeActive = !LstSavedForOffline.IsCheckModeActive;
-        }        
+        }
+
+        private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
+        {
+            ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox)sender, e.TappedItem);
+
+            Dispatcher.BeginInvoke(SetApplicationBarData);
+        }
+
+        private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
+        {
+            if (onOff)
+            {
+                if (item != null)
+                    listBox.CheckedItems.Add(item);
+
+                if (_savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
+                    _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode = _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode;
+                _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode = DriveDisplayMode.MultiSelect;
+            }
+            else
+            {
+                listBox.CheckedItems.Clear();
+                _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode = _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode;
+            }
+        }
+
+        private void OnMultiSelectRemoveClick(object sender, EventArgs e)
+        {
+            //MultiSelectRemoveAction();
+        }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
@@ -152,6 +213,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
+        #endregion        
     }
 }

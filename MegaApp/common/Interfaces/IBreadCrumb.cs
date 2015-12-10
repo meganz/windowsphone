@@ -4,7 +4,7 @@ namespace MegaApp.Interfaces
 {
     public interface IBreadCrumb
     {
-        ObservableCollection<IMegaNode> BreadCrumbs { get;  }
+        ObservableCollection<IBaseNode> BreadCrumbs { get;  }
         void BuildBreadCrumbs();
     }
 }

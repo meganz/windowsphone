@@ -36,7 +36,7 @@ namespace MegaApp.Models
             this.IsBusy = false;
             this.BusyText = null;
             this.ChildNodes = new ObservableCollection<IMegaNode>();
-            this.BreadCrumbs = new ObservableCollection<IMegaNode>();
+            this.BreadCrumbs = new ObservableCollection<IBaseNode>();
             this.SelectedNodes = new List<IMegaNode>();
             this.IsMultiSelectActive = false;
             
@@ -901,14 +901,14 @@ namespace MegaApp.Models
                 this.FolderRootNode.Type == MNodeType.TYPE_ROOT ||
                 FolderRootNode.Type == MNodeType.TYPE_RUBBISH) return;
 
-            this.BreadCrumbs.Add(this.FolderRootNode);
+            this.BreadCrumbs.Add((IBaseNode)this.FolderRootNode);
 
             MNode parentNode = FolderRootNode.OriginalMNode;
             parentNode = this.MegaSdk.getParentNode(parentNode);
             while ((parentNode != null) && (parentNode.getType() != MNodeType.TYPE_ROOT) &&
                 (parentNode.getType() != MNodeType.TYPE_RUBBISH))
             {
-                this.BreadCrumbs.Insert(0, NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode));
+                this.BreadCrumbs.Insert(0, (IBaseNode)NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode));
                 parentNode = this.MegaSdk.getParentNode(parentNode);
             }
         }
@@ -917,7 +917,7 @@ namespace MegaApp.Models
 
         #region IBreadCrumb
 
-        public ObservableCollection<IMegaNode> BreadCrumbs { get; private set; }
+        public ObservableCollection<IBaseNode> BreadCrumbs { get; private set; }
 
         #endregion
 

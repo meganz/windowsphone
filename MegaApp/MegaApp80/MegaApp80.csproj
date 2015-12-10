@@ -291,6 +291,9 @@
     <Compile Include="..\common\Interfaces\IApplicationBar.cs">
       <Link>Interfaces\IApplicationBar.cs</Link>
     </Compile>
+    <Compile Include="..\common\Interfaces\IBaseNode.cs">
+      <Link>Interfaces\IBaseNode.cs</Link>
+    </Compile>
     <Compile Include="..\common\Interfaces\IBreadCrumb.cs">
       <Link>Interfaces\IBreadCrumb.cs</Link>
     </Compile>

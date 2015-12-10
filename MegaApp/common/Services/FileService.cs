@@ -21,6 +21,28 @@ namespace MegaApp.Services
             return File.Exists(path);
         }
 
+        public static bool IsPendingTransferFile(string filename)
+        {
+            try
+            {
+                string extension = Path.GetExtension(filename);
+
+                if (extension == null) return false;
+
+                switch (extension.ToLower())
+                {
+                    case ".mega":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static void DeleteFile(string path)
         {
             File.Delete(path);
