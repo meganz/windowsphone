@@ -104,7 +104,7 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);            
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutBase64Handle);            
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 

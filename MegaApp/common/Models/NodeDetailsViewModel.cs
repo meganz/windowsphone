@@ -43,6 +43,11 @@ namespace MegaApp.Models
             return _node.Handle;
         }
 
+        public string getNodeBase64Handle()
+        {
+            return _node.Base64Handle;
+        }
+
         public void updateNode(MNode megaNode)
         {
             _node.Update(megaNode);

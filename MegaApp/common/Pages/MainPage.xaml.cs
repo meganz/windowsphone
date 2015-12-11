@@ -116,8 +116,8 @@ namespace MegaApp.Pages
 
         private bool OpenShortCut()
         {
-            MNode shortCutMegaNode = App.MegaSdk.getNodeByHandle(App.ShortCutHandle.Value);
-            App.ShortCutHandle = null;
+            MNode shortCutMegaNode = App.MegaSdk.getNodeByBase64Handle(App.ShortCutBase64Handle);
+            App.ShortCutBase64Handle = null;
 
             if (shortCutMegaNode != null)
             {
@@ -177,9 +177,9 @@ namespace MegaApp.Pages
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
-            if (NavigationContext.QueryString.ContainsKey("ShortCutHandle"))
+            if (NavigationContext.QueryString.ContainsKey("ShortCutBase64Handle"))
             {
-                App.ShortCutHandle = Convert.ToUInt64(NavigationContext.QueryString["ShortCutHandle"]);
+                App.ShortCutBase64Handle = NavigationContext.QueryString["ShortCutBase64Handle"];
             }
             
             if (App.AppInformation.IsStartupModeActivate)
@@ -208,9 +208,7 @@ namespace MegaApp.Pages
                 {
                     if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None || 
                         navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
-                    {
-                        _mainPageViewModel.LoadFolders();
-
+                    {                        
                         // If is the first login, navigates to the camera upload service config page
                         if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
                             NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
@@ -218,7 +216,7 @@ namespace MegaApp.Pages
                             NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
 
                         // If the user is trying to open a shortcut
-                            if (App.ShortCutHandle.HasValue)
+                        if (App.ShortCutBase64Handle != null)
                         {
                             if (!OpenShortCut())
                             {
@@ -231,6 +229,10 @@ namespace MegaApp.Pages
                                 _mainPageViewModel.CloudDrive.BrowseToFolder(
                                     NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
                             }
+                        }
+                        else
+                        {
+                            _mainPageViewModel.LoadFolders();
                         }                        
 
                         return;

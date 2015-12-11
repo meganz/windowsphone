@@ -77,7 +77,7 @@ namespace MegaApp.Models
             };
 
             LiveTileHelper.CreateOrUpdateTile(shortCutTile,
-                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + this.OriginalMNode.getHandle(), UriKind.Relative),
+                new Uri("/Pages/MainPage.xaml?ShortCutBase64Handle=" + this.OriginalMNode.getBase64Handle(), UriKind.Relative),
                 false);
         }
 

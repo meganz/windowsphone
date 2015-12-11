@@ -291,7 +291,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -305,7 +305,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -319,7 +319,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -333,7 +333,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -347,7 +347,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -361,7 +361,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -375,7 +375,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -389,7 +389,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });

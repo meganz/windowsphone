@@ -55,7 +55,7 @@ namespace MegaApp
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
-        public static ulong? ShortCutHandle { get; set; }
+        public static String ShortCutBase64Handle { get; set; }
 
         // DataBase Name
         public static String DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "MEGA.sqlite"));

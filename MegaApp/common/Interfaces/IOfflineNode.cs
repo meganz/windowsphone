@@ -42,11 +42,6 @@ namespace MegaApp.Interfaces
         /// </summary>
         string NodePath { get; set; }
 
-        /// <summary>
-        /// Unique identifier of the node
-        /// </summary>
-        String Base64Handle { get; set; }
-
         #endregion
     }
 }

@@ -16,101 +16,52 @@ namespace MegaApp.Services
 {
     static class UiService
     {
-        private static Dictionary<ulong, int> _folderSorting;
-        private static Dictionary<ulong, int> _folderViewMode;
+        private static Dictionary<string, int> _folderSorting;
+        private static Dictionary<string, int> _folderViewMode;
 
-        private static Dictionary<string, int> _offlineFolderSorting;
-        private static Dictionary<string, int> _offlineFolderViewMode;
-
-        public static int GetSortOrder(ulong folderHandle, string folderName)
+        public static int GetSortOrder(string folderBase64Handle, string folderName)
         {
             if (_folderSorting == null)
-                _folderSorting = new Dictionary<ulong, int>();
+                _folderSorting = new Dictionary<string, int>();
 
-            if (_folderSorting.ContainsKey(folderHandle))
-                return _folderSorting[folderHandle];
-           
-            return folderName.Equals("Camera Uploads") ? (int)MSortOrderType.ORDER_MODIFICATION_DESC :
-                (int) MSortOrderType.ORDER_DEFAULT_ASC;
-        }
-
-        public static void SetSortOrder(ulong folderHandle, int sortOrder)
-        {
-            if (_folderSorting == null)
-                _folderSorting = new Dictionary<ulong, int>();
-
-            if (_folderSorting.ContainsKey(folderHandle))
-                _folderSorting[folderHandle] = sortOrder;
-            else
-                _folderSorting.Add(folderHandle, sortOrder);            
-        }
-
-        public static int GetSortOrder(string folderHandle, string folderName)
-        {
-            if (_offlineFolderSorting == null)
-                _offlineFolderSorting = new Dictionary<string, int>();
-
-            if (_offlineFolderSorting.ContainsKey(folderHandle))
-                return _offlineFolderSorting[folderHandle];
+            if (_folderSorting.ContainsKey(folderBase64Handle))
+                return _folderSorting[folderBase64Handle];
 
             return folderName.Equals("Camera Uploads") ? (int)MSortOrderType.ORDER_MODIFICATION_DESC :
                 (int)MSortOrderType.ORDER_DEFAULT_ASC;
         }
 
-        public static void SetSortOrder(string folderHandle, int sortOrder)
+        public static void SetSortOrder(string folderBase64Handle, int sortOrder)
         {
-            if (_offlineFolderSorting == null)
-                _offlineFolderSorting = new Dictionary<string, int>();
+            if (_folderSorting == null)
+                _folderSorting = new Dictionary<string, int>();
 
-            if (_offlineFolderSorting.ContainsKey(folderHandle))
-                _offlineFolderSorting[folderHandle] = sortOrder;
+            if (_folderSorting.ContainsKey(folderBase64Handle))
+                _folderSorting[folderBase64Handle] = sortOrder;
             else
-                _offlineFolderSorting.Add(folderHandle, sortOrder);
+                _folderSorting.Add(folderBase64Handle, sortOrder);
         }
 
-        public static ViewMode GetViewMode(ulong folderHandle, string folderName)
+        public static ViewMode GetViewMode(string folderBase64Handle, string folderName)
         {
             if (_folderViewMode == null)
-                _folderViewMode = new Dictionary<ulong, int>();
+                _folderViewMode = new Dictionary<string, int>();
 
-            if (_folderViewMode.ContainsKey(folderHandle))
-                return (ViewMode)_folderViewMode[folderHandle];
+            if (_folderViewMode.ContainsKey(folderBase64Handle))
+                return (ViewMode)_folderViewMode[folderBase64Handle];
 
             return folderName.Equals("Camera Uploads") ? ViewMode.LargeThumbnails : ViewMode.ListView;
         }
 
-        public static void SetViewMode(ulong folderHandle, ViewMode viewMode)
+        public static void SetViewMode(string folderBase64Handle, ViewMode viewMode)
         {
             if (_folderViewMode == null)
-                _folderViewMode = new Dictionary<ulong, int>();
+                _folderViewMode = new Dictionary<string, int>();
 
-            if (_folderViewMode.ContainsKey(folderHandle))
-                _folderViewMode[folderHandle] = (int)viewMode;
+            if (_folderViewMode.ContainsKey(folderBase64Handle))
+                _folderViewMode[folderBase64Handle] = (int)viewMode;
             else
-                _folderViewMode.Add(folderHandle, (int)viewMode);
-
-        }
-
-        public static ViewMode GetViewMode(string folderHandle, string folderName)
-        {
-            if (_offlineFolderViewMode == null)
-                _offlineFolderViewMode = new Dictionary<string, int>();
-
-            if (_offlineFolderViewMode.ContainsKey(folderHandle))
-                return (ViewMode)_offlineFolderViewMode[folderHandle];
-
-            return folderName.Equals("Camera Uploads") ? ViewMode.LargeThumbnails : ViewMode.ListView;
-        }
-
-        public static void SetViewMode(string folderHandle, ViewMode viewMode)
-        {
-            if (_offlineFolderViewMode == null)
-                _offlineFolderViewMode = new Dictionary<string, int>();
-
-            if (_offlineFolderViewMode.ContainsKey(folderHandle))
-                _offlineFolderViewMode[folderHandle] = (int)viewMode;
-            else
-                _offlineFolderViewMode.Add(folderHandle, (int)viewMode);
+                _folderViewMode.Add(folderBase64Handle, (int)viewMode);
         }
 
         public static RadCustomHubTile CreateHubTile(string title, Uri bitmapUri, Thickness margin)
