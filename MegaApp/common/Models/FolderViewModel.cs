@@ -358,12 +358,12 @@ namespace MegaApp.Models
                 var megaRoot = this.MegaSdk.getRootNode();
                 var megaRubbishBin = this.MegaSdk.getRubbishNode();
 
-                if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Handle.Equals(megaRoot.getHandle()))
+                if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Base64Handle.Equals(megaRoot.getBase64Handle()))
                 {
                     OnUiThread(() =>
                         this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"]);
                 }
-                else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Handle.Equals(megaRubbishBin.getHandle()))
+                else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Base64Handle.Equals(megaRubbishBin.getBase64Handle()))
                 {
                     OnUiThread(() =>
                         this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"]);
@@ -622,7 +622,9 @@ namespace MegaApp.Models
 
         private void ViewDetails(object obj)
         {
-            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByHandle(FocusedNode.Handle));            
+            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation,
+                App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle));
+
             NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node);
         }
 
@@ -636,7 +638,7 @@ namespace MegaApp.Models
             };
 
             LiveTileHelper.CreateOrUpdateTile(shortCutTile,
-                new Uri("/Pages/MainPage.xaml?ShortCutHandle=" + FocusedNode.OriginalMNode.getHandle(), UriKind.Relative),
+                new Uri("/Pages/MainPage.xaml?ShortCutBase64Handle=" + FocusedNode.OriginalMNode.getBase64Handle(), UriKind.Relative),
                 false);
         }
 
@@ -649,19 +651,19 @@ namespace MegaApp.Models
                 case ViewMode.ListView:
                     {
                         SetView(ViewMode.LargeThumbnails);
-                        UiService.SetViewMode(FolderRootNode.Handle, ViewMode.LargeThumbnails);
+                        UiService.SetViewMode(FolderRootNode.Base64Handle, ViewMode.LargeThumbnails);
                         break;
                     }
                 case ViewMode.LargeThumbnails:
                     {
                         SetView(ViewMode.SmallThumbnails);
-                        UiService.SetViewMode(FolderRootNode.Handle, ViewMode.SmallThumbnails);
+                        UiService.SetViewMode(FolderRootNode.Base64Handle, ViewMode.SmallThumbnails);
                         break;
                     }
                 case ViewMode.SmallThumbnails:
                     {
                         SetView(ViewMode.ListView);
-                        UiService.SetViewMode(FolderRootNode.Handle, ViewMode.ListView);
+                        UiService.SetViewMode(FolderRootNode.Base64Handle, ViewMode.ListView);
                         break;
                     }
             }
@@ -870,7 +872,7 @@ namespace MegaApp.Models
 
             OnUiThread(() =>
             {
-                SetView(UiService.GetViewMode(FolderRootNode.Handle, FolderRootNode.Name));
+                SetView(UiService.GetViewMode(FolderRootNode.Base64Handle, FolderRootNode.Name));
             });
         }
 

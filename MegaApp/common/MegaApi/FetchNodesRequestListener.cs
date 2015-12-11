@@ -22,13 +22,13 @@ namespace MegaApp.MegaApi
     {
         private readonly MainPageViewModel _mainPageViewModel;
         private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;
-        private readonly ulong? _shortCutHandle;
-        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, ulong? shortCutHandle = null, 
+        private readonly String _shortCutBase64Handle;
+        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, String shortCutBase64Handle = null, 
             CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
         {
             this._mainPageViewModel = mainPageViewModel;
             this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
-            this._shortCutHandle = shortCutHandle;
+            this._shortCutBase64Handle = shortCutBase64Handle;
         }
 
         #region Base Properties
@@ -108,11 +108,11 @@ namespace MegaApp.MegaApi
             });
 
             // If the user is trying to open a shortcut
-            if (_shortCutHandle.HasValue)
+            if (_shortCutBase64Handle != null)
             {
                 bool shortCutError = false;
 
-                MNode shortCutMegaNode = api.getNodeByHandle(_shortCutHandle.Value);
+                MNode shortCutMegaNode = api.getNodeByBase64Handle(_shortCutBase64Handle);
                 if (_mainPageViewModel != null && shortCutMegaNode != null)
                 {
                     // Looking for the absolute parent of the shortcut node to see the type

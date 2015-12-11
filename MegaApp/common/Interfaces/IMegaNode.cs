@@ -77,11 +77,11 @@ namespace MegaApp.Interfaces
         #endregion
 
         #region Properties
-        
+
         /// <summary>
         /// Unique identifier of the node
         /// </summary>
-        ulong Handle { get; set; }        
+        ulong Handle { get; set; }
         
         ObservableCollection<IMegaNode> ParentCollection { get; set; }
 

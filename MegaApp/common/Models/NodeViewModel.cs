@@ -489,6 +489,7 @@ namespace MegaApp.Models
         {
             OriginalMNode = megaNode;
             this.Handle = megaNode.getHandle();
+            this.Base64Handle = megaNode.getBase64Handle();
             this.Type = megaNode.getType();
             this.Name = megaNode.getName();
             this.Size = MegaSdk.getSize(megaNode);
@@ -587,6 +588,8 @@ namespace MegaApp.Models
         }
 
         public ulong Handle { get; set; }
+
+        public String Base64Handle { get; set; }
 
         public ulong Size { get; set; }
 

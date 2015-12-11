@@ -38,7 +38,12 @@ namespace MegaApp.Interfaces
         /// <summary>
         /// Get the readable information about a node
         /// </summary>
-        string Information { get; }        
+        string Information { get; }
+
+        /// <summary>
+        /// Unique identifier of the node
+        /// </summary>
+        String Base64Handle { get; set; }
 
         /// <summary>
         /// The size of the node in bytes

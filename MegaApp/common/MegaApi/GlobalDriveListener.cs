@@ -54,7 +54,7 @@ namespace MegaApp.MegaApi
                         foreach (var folder in Folders)
                         {
                             IMegaNode nodeToRemoveFromView = folder.ChildNodes.FirstOrDefault(
-                                node => node.Handle.Equals(megaNode.getHandle()));
+                                node => node.Base64Handle.Equals(megaNode.getBase64Handle()));
                             
                             // If node is found in current view, process the remove action
                             if (nodeToRemoveFromView != null)
@@ -91,7 +91,7 @@ namespace MegaApp.MegaApi
                                 foreach (var folder in Folders)
                                 {
                                     IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
-                                        node => node.Handle.Equals(parentNode.getHandle()));
+                                        node => node.Base64Handle.Equals(parentNode.getBase64Handle()));
 
                                     // If parent folder is found, process the update action
                                     if (nodeToUpdateInView != null)
@@ -122,7 +122,7 @@ namespace MegaApp.MegaApi
                         // PROCESS THE SINGLE NODE(S) LISTENER(S) (NodeDetailsPage live updates)
                         foreach (var node in Nodes)
                         {
-                            if (megaNode.getHandle() == node.getNodeHandle())
+                            if (megaNode.getBase64Handle() == node.getNodeBase64Handle())
                                 Deployment.Current.Dispatcher.BeginInvoke(() => node.updateNode(megaNode));
                         }
 
@@ -132,12 +132,12 @@ namespace MegaApp.MegaApi
                         foreach (var folder in Folders)
                         {
                             IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
-                                node => node.Handle.Equals(megaNode.getHandle()));
+                                node => node.Base64Handle.Equals(megaNode.getBase64Handle()));
 
                             // If node is found, process the update action
                             if (nodeToUpdateInView != null)
                             {
-                                bool isMoved = !folder.FolderRootNode.Handle.Equals(parentNode.getHandle());
+                                bool isMoved = !folder.FolderRootNode.Base64Handle.Equals(parentNode.getBase64Handle());
 
                                 // Is node is move to different folder. Remove from current folder view
                                 if (isMoved)
@@ -187,7 +187,7 @@ namespace MegaApp.MegaApi
                         {
                             foreach (var folder in Folders)
                             {
-                                bool isAddedInFolder = folder.FolderRootNode.Handle.Equals(parentNode.getHandle());
+                                bool isAddedInFolder = folder.FolderRootNode.Base64Handle.Equals(parentNode.getBase64Handle());
 
                                 // If node is added in current folder, process the add action
                                 if (isAddedInFolder)
@@ -195,7 +195,7 @@ namespace MegaApp.MegaApi
                                     // Retrieve the index from the SDK
                                     // Substract -1 to get a valid list index
                                     int insertIndex = api.getIndex(megaNode,
-                                        UiService.GetSortOrder(parentNode.getHandle(),
+                                        UiService.GetSortOrder(parentNode.getBase64Handle(),
                                             parentNode.getName())) - 1;
 
                                     // If the insert position is higher than the ChilNodes size insert in the last position
@@ -253,7 +253,7 @@ namespace MegaApp.MegaApi
                                     
                                 // ADDED in subfolder scenario
                                 IMegaNode nodeToUpdateInView = folder.ChildNodes.FirstOrDefault(
-                                    node => node.Handle.Equals(parentNode.getHandle()));
+                                    node => node.Base64Handle.Equals(parentNode.getBase64Handle()));
 
                                 if (nodeToUpdateInView != null)
                                 {
