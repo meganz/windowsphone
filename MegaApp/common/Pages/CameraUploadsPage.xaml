@@ -146,7 +146,7 @@
                         </Path>
                     </Button>
                     <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48">
-                        <Path Stretch="UniformToFill" Data="{Binding ViewStateButtonPathData}" Width="22" Height="22">
+                        <Path Stretch="UniformToFill" Data="{Binding NextViewButtonPathData}" Width="22" Height="22">
                             <Path.Fill>
                                 <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                             </Path.Fill>

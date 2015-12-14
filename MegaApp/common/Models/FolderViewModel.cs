@@ -314,7 +314,7 @@ namespace MegaApp.Models
                         };
 
                         this.ViewMode = ViewMode.LargeThumbnails;
-                        this.ViewStateButtonPathData = VisualResources.LargeThumbnailViewPathData;
+                        this.NextViewButtonPathData = VisualResources.SmallThumbnailViewPathData;
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
 
                         break;
@@ -334,7 +334,7 @@ namespace MegaApp.Models
                         };
 
                         this.ViewMode = ViewMode.SmallThumbnails;
-                        this.ViewStateButtonPathData = VisualResources.SmallThumbnailViewPathData;
+                        this.NextViewButtonPathData = VisualResources.ListViewPathData;
                         this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["MultiSelectItemCheckBoxStyle"];
 
                         break;
@@ -890,7 +890,7 @@ namespace MegaApp.Models
             };
 
             this.ViewMode = ViewMode.ListView;
-            this.ViewStateButtonPathData = VisualResources.ListViewPathData;
+            this.NextViewButtonPathData = VisualResources.LargeThumbnailViewPathData;
             this.MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["DefaultCheckBoxStyle"];
         }
 
@@ -958,11 +958,11 @@ namespace MegaApp.Models
             private set { SetField(ref _virtualizationStrategy, value); }
         }
 
-        private string _viewStateButtonPathData;
-        public string ViewStateButtonPathData
+        private string _nextViewButtonPathData;
+        public string NextViewButtonPathData
         {
-            get { return _viewStateButtonPathData; }
-            set { SetField(ref _viewStateButtonPathData, value); }
+            get { return _nextViewButtonPathData; }
+            set { SetField(ref _nextViewButtonPathData, value); }
         }
 
         private DataTemplateSelector _nodeTemplateSelector;
