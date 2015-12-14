@@ -291,6 +291,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Saving for offline...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servers too busy. Please wait…</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
   <data name="UpgradeAccount" xml:space="preserve">
     <value>Upgrading account...</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
