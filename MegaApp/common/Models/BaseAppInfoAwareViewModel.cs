@@ -47,12 +47,12 @@ namespace MegaApp.Models
                         accountChange = true;
                 }
 
-                if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
-                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
-
                 if (accountChange)
                     UserData.UserEmail = App.MegaSdk.getMyEmail();
 
+                if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
+                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
+                
                 if (accountChange || (String.IsNullOrEmpty(UserData.UserName) || UserData.UserName.Equals(UiResources.MyAccount)))
                     App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(UserData));
 
