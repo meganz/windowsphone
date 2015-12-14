@@ -448,6 +448,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Servers too busy. Please wait….
+        /// </summary>
+        public static string ServersTooBusy {
+            get {
+                return ResourceManager.GetString("ServersTooBusy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Upgrading account....
         /// </summary>
         public static string UpgradeAccount {

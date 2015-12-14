@@ -51,6 +51,11 @@
           <target state="new">Saving for offline...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when saving folders/files for offline - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/ServersTooBusy" translate="yes" xml:space="preserve">
+          <source>Servers too busy. Please wait…</source>
+          <target state="new">Servers too busy. Please wait…</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UpgradeAccount" translate="yes" xml:space="preserve">
           <source>Upgrading account...</source>
           <target state="new">Upgrading account...</target>
