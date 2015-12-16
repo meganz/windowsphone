@@ -151,7 +151,7 @@
                                     <telerikPrimitives:RadContextMenu
                                         OpenGesture="Hold" 
             							x:Name="SavedForOfflineMenu" 
-            							Opening="OnMenuOpening">                                        
+            							Opening="OnMenuOpening">
                                         <!--<telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnViewDetails" 
                                             Command="{Binding ViewDetailsCommand}"
