@@ -85,6 +85,9 @@ namespace MegaApp.Pages
         {
             base.OnBackKeyPress(e);
 
+            if (SavedForOfflineMenu.IsOpen) 
+                e.Cancel = true;
+
             // Check if multi select is active on current view and disable it if so
             e.Cancel = CheckMultiSelectActive(e.Cancel);
 

@@ -1,5 +1,6 @@
 ﻿using mega;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.MegaApi;
@@ -428,10 +429,19 @@ namespace MegaApp.Models
         {
             this.FocusedNode = node;
 
-            if (node.IsImage)
-                NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this);
+            var existingNode = SavedForOffline.ReadNodesByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            if(existingNode != null && !existingNode.IsEmpty())
+            {
+                var offlineNode = new OfflineFileNodeViewModel(new FileInfo(existingNode.ElementAt(0).LocalPath));
+                offlineNode.Open();
+            }
             else
-                this.FocusedNode.Download(App.MegaTransfers);
+            {
+                if (node.IsImage)
+                    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this);
+                else
+                    this.FocusedNode.Download(App.MegaTransfers);
+            }            
         }
 
         public async void MultipleDownload(StorageFolder downloadFolder = null)
