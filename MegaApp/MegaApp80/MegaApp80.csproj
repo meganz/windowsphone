@@ -733,6 +733,9 @@
     <Compile Include="..\common\Services\NavigateService.cs">
       <Link>Services\NavigateService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\NetworkService.cs">
+      <Link>Services\NetworkService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\NodeService.cs">
       <Link>Services\NodeService.cs</Link>
     </Compile>
