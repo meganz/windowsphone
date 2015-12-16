@@ -288,7 +288,10 @@ namespace MegaApp.Services
                 App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
                 App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             });
-            AppService.ClearAppCache(false);            
+            AppService.ClearAppCache(false);  
+          
+            // Delete the User Data
+            App.UserData = null;
         }
     }
 }
