@@ -61,7 +61,8 @@ namespace MegaApp.Services
 
         public static void DeleteFolder (string path)
         {
-            Directory.Delete(path);
+            if(Directory.Exists(path))
+                Directory.Delete(path);
         }
 
         public static void DeleteFolder(string path, bool recursive)

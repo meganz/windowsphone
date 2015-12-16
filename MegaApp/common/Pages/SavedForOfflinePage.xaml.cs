@@ -77,6 +77,8 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
 
             _savedForOfflineViewModel.LoadFolders();
+                        
+            SetApplicationBarData();
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -124,9 +126,71 @@ namespace MegaApp.Pages
             return true;
         }
 
+        private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
+        {
+            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IOfflineNode))
+            {
+                // We don't want to open the menu if the focused element is not a list box item.
+                // If the list box is empty focusedItem will be null.
+                e.Cancel = true;
+            }
+            else
+            {
+                _savedForOfflineViewModel.SavedForOffline.FocusedNode = (IOfflineNode)focusedListBoxItem.DataContext;
+            }
+        }
+
         private void OnRefreshClick(object sender, EventArgs e)
         {
             _savedForOfflineViewModel.SavedForOffline.Refresh();
+        }
+
+        private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
+        {
+            switch (e.State)
+            {
+                case ItemState.Recycling:
+                    break;
+                case ItemState.Recycled:
+                    break;
+                case ItemState.Realizing:
+                    break;
+                case ItemState.Realized:
+                    ((IOfflineNode)e.DataItem).SetThumbnailImage();
+                    break;
+            }
+        }
+
+        private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
+        {
+            switch (e.NewState)
+            {
+                case ScrollState.NotScrolling:
+                    //foreach (var frameworkElement in LstCloudDrive.ViewportItems)
+                    //{
+                    //    ((NodeViewModel)frameworkElement.DataContext).SetThumbnailImage();
+                    //}
+                    break;
+                case ScrollState.Scrolling:
+                    break;
+                case ScrollState.Flicking:
+                    break;
+                case ScrollState.TopStretch:
+                    break;
+                case ScrollState.LeftStretch:
+                    break;
+                case ScrollState.RightStretch:
+                    break;
+                case ScrollState.BottomStretch:
+                    break;
+                case ScrollState.ForceStopTopBottomScroll:
+                    break;
+                case ScrollState.ForceStopBottomTopScroll:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void OnGoToTopTap(object sender, GestureEventArgs e)
@@ -190,7 +254,22 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
-            //MultiSelectRemoveAction();
+            MultiSelectRemoveAction();
+        }
+
+        private async void MultiSelectRemoveAction()
+        {
+            if (!await _savedForOfflineViewModel.SavedForOffline.MultipleRemove()) return;
+
+            _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode = _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode;
+
+            SetApplicationBarData();
+        }
+
+        protected override void OnDrawerClosed(object sender)
+        {
+            base.OnDrawerClosed(sender);
+            SetApplicationBarData();
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)
@@ -213,6 +292,6 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion        
+        #endregion
     }
 }

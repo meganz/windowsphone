@@ -937,7 +937,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Importing file failed.
+        ///   Busca una cadena traducida similar a Importing file failed [{0}].
         /// </summary>
         public static string ImportFileFailed {
             get {

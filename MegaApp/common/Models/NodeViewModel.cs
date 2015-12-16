@@ -419,6 +419,7 @@ namespace MegaApp.Models
                         waitEventRequest.WaitOne();
                     }
                 }
+                
                 FileService.DeleteFile(nodePath);                
             }
 

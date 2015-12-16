@@ -50,6 +50,8 @@ namespace MegaApp.Models
             this.IsFolder = false;
             this.CreationTime = fileInfo.CreationTime.ToString("dd MMM yyyy");
             this.ModificationTime = fileInfo.LastWriteTime.ToString("dd MMM yyyy");
+
+            SetDefaultValues();
         }
 
         #endregion
