@@ -166,9 +166,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/ImportFileFailed" translate="yes" xml:space="preserve">
-          <source>Importing file failed</source>
-          <target state="new">Importing file failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.</note>
+          <source>Importing file failed [{0}]</source>
+          <target state="new">Importing file failed [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
           </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" xml:space="preserve">
           <source>Import file failed</source>

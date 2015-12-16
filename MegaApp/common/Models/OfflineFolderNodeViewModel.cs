@@ -51,6 +51,8 @@ namespace MegaApp.Models
             this.IsFolder = true;
             this.CreationTime = folderInfo.CreationTime.ToString("dd MMM yyyy");
             this.ModificationTime = folderInfo.LastWriteTime.ToString("dd MMM yyyy");
+
+            SetDefaultValues();
         }
 
         public void SetFolderInfo()

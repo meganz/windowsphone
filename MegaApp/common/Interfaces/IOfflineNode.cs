@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using MegaApp.Enums;
 
 namespace MegaApp.Interfaces
 {
@@ -17,12 +19,12 @@ namespace MegaApp.Interfaces
         /// <summary>
         /// Delete the node from offline
         /// </summary>        
-        Task DeleteAsync();
+        Task<NodeActionResult> RemoveAsync(bool isMultiRemove, AutoResetEvent waitEventRequest = null);
         
         /// <summary>
         /// Load node thumbnail if available on disk
         /// </summary>
-        //void SetThumbnailImage();
+        void SetThumbnailImage();
 
         /// <summary>
         /// Open the file that is represented by this node

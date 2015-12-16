@@ -132,7 +132,9 @@
             					ItemsSource="{Binding ChildNodes}"            					
             					ItemTap="OnItemTap"
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}"
-            					telerik:InteractionEffectManager.IsInteractionEnabled="True"             					
+            					telerik:InteractionEffectManager.IsInteractionEnabled="True"
+                                ItemStateChanged="OnItemStateChanged" 
+            					ScrollStateChanged="OnScrollStateChanged" 
             					IsCheckModeEnabled="True"                                
             					IsCheckModeActiveChanged="OnCheckModeChanged"
             					CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
@@ -145,7 +147,23 @@
             					EmptyContentTemplate="{Binding EmptyContentTemplate}"
                                 VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
                                 IsAsyncBalanceEnabled="True">
-
+                                <telerikPrimitives:RadContextMenu.ContextMenu>
+                                    <telerikPrimitives:RadContextMenu
+                                        OpenGesture="Hold" 
+            							x:Name="SavedForOfflineMenu" 
+            							Opening="OnMenuOpening">                                        
+                                        <!--<telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnViewDetails" 
+                                            Command="{Binding ViewDetailsCommand}"
+                                            Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                        />-->
+                                        <telerikPrimitives:RadContextMenuItem
+                                            x:Name="BtnRemoveDetails" 
+                                            Command="{Binding RemoveItemCommand}" 
+            								Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                        />
+                                    </telerikPrimitives:RadContextMenu>
+                                </telerikPrimitives:RadContextMenu.ContextMenu>
                             </telerikPrimitives:RadDataBoundListBox>
                         </Grid>
                         <ContentControl x:Name="GetProAccountSafeForOffline" Template="{StaticResource BorderGetProTemplate}" VerticalAlignment="Bottom" Margin="0,0,-12,0" Grid.Row="1" Visibility="Collapsed" />

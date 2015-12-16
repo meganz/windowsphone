@@ -10,8 +10,10 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
+using Windows.Storage;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
@@ -39,6 +41,8 @@ namespace MegaApp.Models
 
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
+            this.ViewDetailsCommand = new DelegateCommand(this.ViewDetails);
+            this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
 
             SetViewDefaults();
 
@@ -48,9 +52,11 @@ namespace MegaApp.Models
         }
 
         #region Commands
-
+        
         public ICommand ChangeViewCommand { get; private set; }
         public ICommand MultiSelectCommand { get; set; }
+        public ICommand ViewDetailsCommand { get; private set; }
+        public ICommand RemoveItemCommand { get; private set; }
 
         #endregion
 
@@ -114,7 +120,7 @@ namespace MegaApp.Models
                     String[] childFolders = Directory.GetDirectories(FolderRootNode.NodePath);
                     foreach (var folder in childFolders)
                     {
-                        var childNode = new OfflineFolderNodeViewModel(new DirectoryInfo(folder));
+                        var childNode = new OfflineFolderNodeViewModel(new DirectoryInfo(folder), tempChildNodes);
                         if (childNode == null) continue;
 
                         Deployment.Current.Dispatcher.BeginInvoke(() => tempChildNodes.Add(childNode));
@@ -127,7 +133,7 @@ namespace MegaApp.Models
 
                         if (FileService.IsPendingTransferFile(fileInfo.Name)) continue;
 
-                        var childNode = new OfflineFileNodeViewModel(fileInfo);
+                        var childNode = new OfflineFileNodeViewModel(fileInfo, tempChildNodes);
                         if (childNode == null) continue;
 
                         Deployment.Current.Dispatcher.BeginInvoke(() => tempChildNodes.Add(childNode));
@@ -166,15 +172,17 @@ namespace MegaApp.Models
             if(this.FolderRootNode == null)            
                 this.FolderRootNode = new OfflineFolderNodeViewModel(new DirectoryInfo(AppService.GetDownloadDirectoryPath()));
 
+            ((OfflineFolderNodeViewModel)this.FolderRootNode).SetFolderInfo();
+
             this.LoadChildNodes();
         }
 
         public void OnChildNodeTapped(IOfflineNode node)
         {
-            if(node.IsFolder)
+            if (node.IsFolder)
                 BrowseToFolder(node);
             else
-                ProcessFileNode(node);
+                node.Open();                
         }
 
         public void SetView(ViewMode viewMode)
@@ -278,16 +286,28 @@ namespace MegaApp.Models
             this.FolderRootNode = node;
 
             LoadChildNodes();
-        }
+        }        
 
-        public void ProcessFileNode(IOfflineNode node)
+        public async Task<bool> MultipleRemove()
         {
-            this.FocusedNode = node;
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
 
-            //if (node.IsImage)
-            //    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this);
-            //else
-            //    this.FocusedNode.Download(App.MegaTransfers);
+            if (count < 1) return false;
+
+            var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.MultiSelectRemoveQuestion_Title,
+                    String.Format(AppMessages.MultiSelectRemoveQuestion, count),
+                    App.AppInformation,
+                    MessageDialogButtons.OkCancel,
+                    MessageDialogImage.RubbishBin);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveNode));
+                MultipleRemoveItems(count);
+            };
+
+            return await customMessageDialog.ShowDialogAsync() == MessageDialogResult.OkYes;            
         }
 
         #endregion
@@ -297,6 +317,39 @@ namespace MegaApp.Models
         private void MultiSelect(object obj)
         {
             this.IsMultiSelectActive = !this.IsMultiSelectActive;
+        }
+
+        private async void RemoveItem(object obj)
+        {
+            if(await FocusedNode.RemoveAsync(false) != NodeActionResult.Cancelled)
+            {
+                String parentNodePath = ((new DirectoryInfo(FocusedNode.NodePath)).Parent).FullName;
+
+                String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory.Replace("\\", ""));
+
+                // Check if the previous folders of the path are empty and 
+                // remove from the offline and the DB on this case
+                while (String.Compare(parentNodePath, sfoRootPath) != 0)
+                {
+                    var folderPathToRemove = parentNodePath;
+                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                    if (FolderService.IsEmptyFolder(folderPathToRemove))
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() => GoFolderUp());
+                        FolderService.DeleteFolder(folderPathToRemove);
+                        SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
+                    }
+                }
+
+                Refresh();
+            }                
+        }
+
+        private void ViewDetails(object obj)
+        {
+
         }
 
         private void ChangeView(object obj)
@@ -333,6 +386,54 @@ namespace MegaApp.Models
                 this.IsBusy = onOff;
                 this.BusyText = busyText;
             });
+        }
+
+        private void MultipleRemoveItems(int count)
+        {
+            var helperList = new List<IOfflineNode>(count);
+            helperList.AddRange(ChildNodes.Where(n => n.IsMultiSelected));
+
+            Task.Run(async () =>
+            {
+                WaitHandle[] waitEventRequests = new WaitHandle[count];
+
+                int index = 0;
+
+                foreach (var node in helperList)
+                {
+                    waitEventRequests[index] = new AutoResetEvent(false);
+                    await node.RemoveAsync(true, (AutoResetEvent)waitEventRequests[index]);
+                    index++;
+                }
+
+                WaitHandle.WaitAll(waitEventRequests);
+
+                String parentNodePath = (new DirectoryInfo(this.FolderRootNode.NodePath)).FullName;
+                
+                String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""));
+
+                // Check if the previous folders of the path are empty and 
+                // remove from the offline and the DB on this case
+                while (String.Compare(parentNodePath, sfoRootPath) != 0)
+                {
+                    var folderPathToRemove = parentNodePath;
+                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                    if (FolderService.IsEmptyFolder(folderPathToRemove))
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() => GoFolderUp());
+                        FolderService.DeleteFolder(folderPathToRemove);
+                        SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
+                    }
+                }                
+
+                Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
+
+                Refresh();
+            });
+
+            this.IsMultiSelectActive = false;
         }
 
         private void CreateLoadCancelOption()
@@ -469,13 +570,6 @@ namespace MegaApp.Models
             get { return _childNodes; }
             set { SetField(ref _childNodes, value); }
         }
-
-        //private IOrderedEnumerable<IOfflineNode> _orderedChildNodes;
-        //public IOrderedEnumerable<IOfflineNode> OrderedChildNodes
-        //{
-        //    get { return _orderedChildNodes; }
-        //    set { SetField(ref _orderedChildNodes, value); }
-        //}
 
         public ContainerType Type { get; private set; }
 

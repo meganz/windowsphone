@@ -45,7 +45,8 @@ namespace MegaApp.Services
 
         public static void DeleteFile(string path)
         {
-            File.Delete(path);
+            if(File.Exists(path))
+                File.Delete(path);            
         }
 
         public static void ClearFiles(IEnumerable<string> filesToDelete)
