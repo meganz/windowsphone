@@ -139,7 +139,7 @@ namespace MegaApp
         {
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
-            CheckChangesIP();
+            NetworkService.CheckChangesIP();
 
             #if WINDOWS_PHONE_81
             // Code to intercept files that are send to MEGA as share target
@@ -158,7 +158,7 @@ namespace MegaApp
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
             AppInformation.IsStartupModeActivate = true;
-            CheckChangesIP();
+            NetworkService.CheckChangesIP();
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -182,49 +182,13 @@ namespace MegaApp
             {
                 case NetworkNotificationType.InterfaceConnected:                    
                 case NetworkNotificationType.InterfaceDisconnected:
-                    CheckChangesIP();
+                    NetworkService.CheckChangesIP();
                     break;
                 case NetworkNotificationType.CharacteristicUpdate:                    
                 default:
                     break;
             }
-        }
-
-        // Code to detect if the IP has changed and refresh all open connections on this case
-        private static void CheckChangesIP()
-        {
-            List<String> ipAddresses = null;
-
-            // Find the IP of all network devices
-            try
-            {
-                ipAddresses = new List<String>();
-                var hostnames = NetworkInformation.GetHostNames();
-                foreach (var hn in hostnames)
-                {
-                    if (hn.IPInformation != null)// && hn.Type == Windows.Networking.HostNameType.Ipv4)
-                    {
-                        string ipAddress = hn.DisplayName;
-                        ipAddresses.Add(ipAddress);
-                    }
-                }
-            }
-            catch(ArgumentException) { return; }
-
-            // If no network device is connected, do nothing
-            if ((ipAddresses == null) || (ipAddresses.Count < 1))
-            {
-                IpAddress = null;
-                return;
-            }                
-            
-            // If the primary IP has changed
-            if (ipAddresses[0] != IpAddress)
-            {
-                MegaSdk.reconnect();        // Refresh all open connections
-                IpAddress = ipAddresses[0]; // Storage the new primary IP address
-            }            
-        }
+        }        
 
         // Code to execute if a navigation fails
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
