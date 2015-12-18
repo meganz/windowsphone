@@ -17,6 +17,7 @@ using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -42,6 +43,54 @@ namespace MegaApp.Pages
             CloudDriveBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             RubbishBinBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             RubbishBinBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+        }
+
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);                    
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateGUI(bool isOnline = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isOnline)
+                {
+                    NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+
+                    if (navParam == NavigationParameter.None) 
+                        navParam = NavigationParameter.Normal;
+
+                    OnlineBehavior(navParam);
+                }
+                else
+                {
+                    _mainPageViewModel.CloudDrive.ClearChildNodes();
+                    _mainPageViewModel.CloudDrive.BreadCrumbs.Clear();
+                    _mainPageViewModel.CloudDrive.SetOfflineContentTemplate();
+                    
+                    _mainPageViewModel.RubbishBin.ClearChildNodes();
+                    _mainPageViewModel.RubbishBin.BreadCrumbs.Clear();
+                    _mainPageViewModel.RubbishBin.SetOfflineContentTemplate();                    
+                }
+
+                SetApplicationBarData(isOnline);
+            });            
         }
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
@@ -149,6 +198,12 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
+
             if(e.NavigationMode == NavigationMode.Reset) return;
 
             if (e.NavigationMode == NavigationMode.New)
@@ -252,6 +307,11 @@ namespace MegaApp.Pages
             if (NavigateService.PreviousPage == typeof(InitCameraUploadsPage))
                 NavigationService.RemoveBackEntry();
 
+            OnlineBehavior(navParam);
+        }
+
+        private void OnlineBehavior(NavigationParameter navParam)
+        {
             switch (navParam)
             {
                 case NavigationParameter.Normal:
@@ -264,11 +324,11 @@ namespace MegaApp.Pages
 
                     if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
                         NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                    else if (App.AppInformation.IsStartedAsAutoUpload)
                         NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                     break;
 
-                case NavigationParameter.Login:                    
+                case NavigationParameter.Login:
                     // Remove the last page from the stack. 
                     // If user presses back button it will then exit the application
                     NavigationService.RemoveBackEntry();
@@ -298,13 +358,13 @@ namespace MegaApp.Pages
                     // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
                     if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
-                        _mainPageViewModel.FetchNodes();                    
+                        _mainPageViewModel.FetchNodes();
 
                     if (NavigateService.PreviousPage == typeof(NodeDetailsPage))
-                    {                        
+                    {
                         App.MegaSdk.retryPendingConnections();
                         _mainPageViewModel.ActiveFolderView.LoadChildNodes();
-                    }                    
+                    }
                     break;
 
                 case NavigationParameter.PictureSelected:
@@ -326,53 +386,67 @@ namespace MegaApp.Pages
                 case NavigationParameter.AutoCameraUpload:
                 case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
-                {
-                    if (e.NavigationMode != NavigationMode.Back)
                     {
                         if (NavigationContext.QueryString.ContainsKey("filelink"))
+                            this.GetFileLink();
+
+                        if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
                         {
-                            _mainPageViewModel.LoadFolders();
-                            _mainPageViewModel.ActiveImportLink = NavigationContext.QueryString["filelink"];
-                            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                            return;
                         }
-                    }
 
-                    if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-                    {
-                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                        return;
-                    }
-                    
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-                    {
-                        NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
-                        return;
-                    }
-
-                    bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-                    if (!isAlreadyOnline)
-                    {
-                        try
+                        if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                         {
-                            if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
-                                App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
-                                    new FastLoginRequestListener(_mainPageViewModel));
-                            else
+                            NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
+                            return;
+                        }
+
+                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+                        if (!isAlreadyOnline)
+                        {
+                            try
+                            {
+                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
+                                        new FastLoginRequestListener(_mainPageViewModel));
+                                else
+                                {
+                                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                                    return;
+                                }
+                            }
+                            catch (ArgumentNullException)
                             {
                                 NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                 return;
                             }
                         }
-                        catch (ArgumentNullException)
+                        else
                         {
-                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                            return;
+                            _mainPageViewModel.LoadFolders();
                         }
+
+                        break;
                     }
-                    
-                    break;
-                }
             }
+        }
+
+        private void GetFileLink()
+        {
+            _mainPageViewModel.ActiveImportLink = NavigationContext.QueryString["filelink"];
+
+            if (_mainPageViewModel.ActiveImportLink.StartsWith("mega://"))
+                _mainPageViewModel.ActiveImportLink = _mainPageViewModel.ActiveImportLink.Replace("mega://", "https://mega.nz/#");
+
+            if (_mainPageViewModel.ActiveImportLink.EndsWith("/"))
+            {
+                _mainPageViewModel.ActiveImportLink = 
+                    _mainPageViewModel.ActiveImportLink.Remove(_mainPageViewModel.ActiveImportLink.Length-1, 1);
+            }
+
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+            SetApplicationBarData();
         }
         
 #if WINDOWS_PHONE_81
@@ -462,14 +536,17 @@ namespace MegaApp.Pages
             return true;
         }
 
-        private void SetApplicationBarData()
+        private void SetApplicationBarData(bool isOnline = true)
         {
-            // Set the Applicatio Bar to one of the available menu resources in this page
+            // Set the Application Bar to one of the available menu resources in this page
             SetAppbarResources(_mainPageViewModel.ActiveFolderView.CurrentDisplayMode);
 
             // Change and translate the current application bar
             _mainPageViewModel.ChangeMenu(_mainPageViewModel.ActiveFolderView,
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isOnline);
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
@@ -599,6 +676,8 @@ namespace MegaApp.Pages
 
         private void OnRefreshClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
@@ -838,7 +917,7 @@ namespace MegaApp.Pages
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
-            Dispatcher.BeginInvoke(SetApplicationBarData);
+            SetApplicationBarData();
         }
 
         private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
@@ -912,7 +991,7 @@ namespace MegaApp.Pages
             if (e.AddedItems[0] == RubbishBinPivot)
                 _mainPageViewModel.ActiveFolderView = ((MainPageViewModel)this.DataContext).RubbishBin;
 
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnImportLinkClick(object sender, EventArgs e)
@@ -942,7 +1021,7 @@ namespace MegaApp.Pages
         protected override void OnDrawerClosed(object sender)
         {
             base.OnDrawerClosed(sender);
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)
