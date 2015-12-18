@@ -38,8 +38,6 @@ namespace MegaApp.Models
 
                 if(String.IsNullOrWhiteSpace(UserData.UserName))
                     Deployment.Current.Dispatcher.BeginInvoke(() => UserData.UserName = UiResources.MyAccount);
-
-                return;
             }
             else
             {

@@ -11,6 +11,7 @@ using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -50,6 +51,8 @@ namespace MegaApp.Models
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
             this.ViewDetailsCommand = new DelegateCommand(this.ViewDetails);
 
+            this.ChildNodes.CollectionChanged += ChildNodes_CollectionChanged;
+
             SetViewDefaults();
 
             SetEmptyContentTemplate(true);
@@ -76,6 +79,11 @@ namespace MegaApp.Models
             }
         }
 
+        void ChildNodes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("HasChildNodesBinding");
+        }
+
         #region Commands
 
         public ICommand ChangeViewCommand { get; private set; }
@@ -100,6 +108,16 @@ namespace MegaApp.Models
             return ChildNodes.Count > 0;
         }
 
+        public void ClearChildNodes()
+        {
+            if (ChildNodes == null) return;
+
+            OnUiThread(() =>
+            {
+                this.ChildNodes.Clear();                
+            });
+        }
+        
         /// <summary>
         /// Load the mega nodes for this specific folder using the Mega SDK
         /// </summary>
@@ -352,7 +370,11 @@ namespace MegaApp.Models
         {
             if (isLoading)
             {
-                OnUiThread(() => this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"]);
+                OnUiThread(() => 
+                {
+                    this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"];
+                    this.EmptyInformationText = "";
+                });
             }
             else
             {
@@ -362,19 +384,37 @@ namespace MegaApp.Models
                 if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Base64Handle.Equals(megaRoot.getBase64Handle()))
                 {
                     OnUiThread(() =>
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"]);
+                    {
+                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"];
+                        this.EmptyInformationText = "no files on your cloud drive";
+                    });
                 }
                 else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Base64Handle.Equals(megaRubbishBin.getBase64Handle()))
                 {
                     OnUiThread(() =>
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"]);
+                    {
+                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"];
+                        this.EmptyInformationText = "empty rubbish bin";
+                    });
                 }
                 else
                 {
                     OnUiThread(() =>
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"]);
+                    {
+                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
+                        this.EmptyInformationText = "empty folder";
+                    });
                 }
             }
+        }
+
+        public void SetOfflineContentTemplate()
+        {
+            OnUiThread(() =>
+            {
+                this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.EmptyInformationText = "no internet connection";
+            });                
         }
 
         public virtual bool GoFolderUp()
@@ -830,6 +870,8 @@ namespace MegaApp.Models
                 waitHandleRestNodes.Set();
             });
             waitHandleRestNodes.WaitOne();
+
+            OnUiThread(() => OnPropertyChanged("HasChildNodesBinding"));
         }
 
         private void InitializePerformanceParameters(out int viewportItemCount, out int backgroundItemCount)
@@ -864,17 +906,7 @@ namespace MegaApp.Models
             }
             this.LoadingCancelTokenSource = new CancellationTokenSource();
             this.LoadingCancelToken = LoadingCancelTokenSource.Token;
-        }
-
-        private void ClearChildNodes()
-        {
-            if (ChildNodes == null) return;
-
-            OnUiThread(() =>
-            {
-                this.ChildNodes.Clear();
-            });
-        }
+        }        
 
         private void SetViewOnLoad()
         {
@@ -947,6 +979,11 @@ namespace MegaApp.Models
             set { SetField(ref _childNodes, value); }
         }
 
+        public bool HasChildNodesBinding
+        {
+            get { return HasChildNodes(); }
+        }
+
         public ContainerType Type { get; private set; }
 
         public ViewMode ViewMode { get; set; }
@@ -1001,6 +1038,13 @@ namespace MegaApp.Models
         {
             get { return _emptyContentTemplate; }
             private set { SetField(ref _emptyContentTemplate, value); }
+        }
+
+        private String _emptyInformationText;
+        public String EmptyInformationText
+        {
+            get { return _emptyInformationText; }
+            private set { SetField(ref _emptyInformationText, value); }
         }
 
         private string _busyText;

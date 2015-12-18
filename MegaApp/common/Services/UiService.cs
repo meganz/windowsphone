@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Converters;
 using MegaApp.Enums;
@@ -98,6 +100,21 @@ namespace MegaApp.Services
                 Height = 210,
                 Margin = margin
             };
+        }
+
+        public static void ChangeAppBarStatus(IList iconButtons, IList menuItems, bool enable)
+        {
+            if(iconButtons != null)
+            {
+                foreach (var button in iconButtons)
+                    ((ApplicationBarIconButton)button).IsEnabled = enable;
+            }
+
+            if (menuItems != null)
+            {
+                foreach (var menuItem in menuItems)
+                    ((ApplicationBarMenuItem)menuItem).IsEnabled = enable;
+            }            
         }
 
     }

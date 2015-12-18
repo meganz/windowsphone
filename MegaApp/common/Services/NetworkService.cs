@@ -3,16 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Microsoft.Phone.Net.NetworkInformation;
 using Windows.Networking.Connectivity;
+using MegaApp.Classes;
 
 namespace MegaApp.Services
 {
     static class NetworkService
     {
-        public static bool IsNetworkAvailable()
+        public static bool IsNetworkAvailable(bool showMessageDialog = false)
         {
-            return NetworkInterface.GetIsNetworkAvailable();
+            if (!NetworkInterface.GetIsNetworkAvailable())
+            {
+                if (showMessageDialog)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            "OFFLINE TITLE",
+                            "Offline message",
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });                    
+                }
+
+                return false;
+            }
+
+            return true;
         }
 
         // Code to detect if the IP has changed and refresh all open connections on this case
