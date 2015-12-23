@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -44,11 +45,18 @@ namespace MegaApp.Models
             this.ViewDetailsCommand = new DelegateCommand(this.ViewDetails);
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
 
+            this.ChildNodes.CollectionChanged += ChildNodes_CollectionChanged;
+
             SetViewDefaults();
 
             SetEmptyContentTemplate(true);
 
             this.CurrentDisplayMode = DriveDisplayMode.SavedForOffline;
+        }
+
+        void ChildNodes_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("HasChildNodesBinding");
         }
 
         #region Commands
@@ -146,6 +154,8 @@ namespace MegaApp.Models
 
                     // Set empty content to folder instead of loading view
                     SetEmptyContentTemplate(false);
+
+                    OnUiThread(() => OnPropertyChanged("HasChildNodesBinding"));
                 }
                 catch (OperationCanceledException)
                 {
@@ -241,12 +251,19 @@ namespace MegaApp.Models
         {
             if (isLoading)
             {
-                OnUiThread(() => this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"]);
+                OnUiThread(() =>
+                {
+                    this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"];
+                    this.EmptyInformationText = "";
+                });
             }
             else
             {
                 OnUiThread(() =>
-                    this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSavedForOfflineEmptyContent"]);
+                {
+                    this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListSavedForOfflineEmptyContent"];
+                    this.EmptyInformationText = UiResources.EmptyOffline.ToLower();
+                });                    
             }
         }
 
@@ -571,6 +588,11 @@ namespace MegaApp.Models
             set { SetField(ref _childNodes, value); }
         }
 
+        public bool HasChildNodesBinding
+        {
+            get { return HasChildNodes(); }
+        }
+
         public ContainerType Type { get; private set; }
 
         public ViewMode ViewMode { get; set; }
@@ -625,6 +647,13 @@ namespace MegaApp.Models
         {
             get { return _emptyContentTemplate; }
             private set { SetField(ref _emptyContentTemplate, value); }
+        }
+
+        private String _emptyInformationText;
+        public String EmptyInformationText
+        {
+            get { return _emptyInformationText; }
+            private set { SetField(ref _emptyInformationText, value); }
         }
 
         private string _busyText;

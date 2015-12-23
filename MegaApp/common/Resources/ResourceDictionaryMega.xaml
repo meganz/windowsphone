@@ -901,6 +901,11 @@
                         />
                 </Image.Source>
             </Image>
+            <Border Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="3" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.BorderBrush>
+            </Border>
             <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Text="{Binding DisplayName}" VerticalAlignment="Bottom" FontSize="22" TextTrimming="WordEllipsis" FontFamily="Segoe UI" Margin="0,0,0,-6"/>
             <ProgressBar VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="-10,0,-12,0" Minimum="0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" IsIndeterminate="False" FontFamily="Portable User Interface">
                 <ProgressBar.Foreground>
@@ -925,48 +930,22 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
-                <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                </Paragraph>
-            </RichTextBox>
-            <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>-->
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                    </Path.Fill>
-                </Path>
-            </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
-                <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                </Paragraph>
-            </RichTextBox>
-            <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>-->
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                    </Path.Fill>
-                </Path>
-            </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 

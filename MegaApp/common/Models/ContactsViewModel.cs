@@ -42,6 +42,8 @@ namespace MegaApp.Models
             
             InitializeMenu(HamburgerMenuItemType.Contacts);
 
+            SetEmptyContentTemplate(true);
+
             MegaContactsSortMode = ListSortMode.Ascending;
             MultiSelectCheckBoxStyle = (Style)Application.Current.Resources["DefaultCheckBoxStyle"];            
 
@@ -89,6 +91,11 @@ namespace MegaApp.Models
             OnPropertyChanged("NumberOfSentContactRequestsText");
         }
 
+        public void NetworkAvailabilityChanged()
+        {
+            OnUiThread(() => OnPropertyChanged("IsNetworkAvailable"));
+        }
+
         #region Commands
 
         public ICommand ReinviteRequestCommand { get; set; }
@@ -103,6 +110,11 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
+
+        public bool IsNetworkAvailable
+        {
+            get { return NetworkService.IsNetworkAvailable(); }
+        }
 
         public ContactDisplayMode CurrentDisplayMode { get; set; }
         public ContactDisplayMode PreviousDisplayMode { get; set; }        
@@ -143,6 +155,27 @@ namespace MegaApp.Models
                 sortDescriptors = value;
                 OnPropertyChanged("SortDescriptors");
             }
+        }
+
+        private DataTemplate _contactsEmptyContentTemplate;
+        public DataTemplate ContactsEmptyContentTemplate
+        {
+            get { return _contactsEmptyContentTemplate; }
+            private set { SetField(ref _contactsEmptyContentTemplate, value); }
+        }
+
+        private DataTemplate _receivedContactRequestsEmptyContentTemplate;
+        public DataTemplate ReceivedContactRequestsEmptyContentTemplate
+        {
+            get { return _receivedContactRequestsEmptyContentTemplate; }
+            private set { SetField(ref _receivedContactRequestsEmptyContentTemplate, value); }
+        }
+
+        private DataTemplate _sentContactRequestsEmptyContentTemplate;
+        public DataTemplate SentContactRequestsEmptyContentTemplate
+        {
+            get { return _sentContactRequestsEmptyContentTemplate; }
+            private set { SetField(ref _sentContactRequestsEmptyContentTemplate, value); }
         }
 
         private ObservableCollection<Contact> _megaContactsList;
@@ -341,6 +374,38 @@ namespace MegaApp.Models
 
         #region Public Methods
 
+        public void SetEmptyContentTemplate(bool isLoading)
+        {
+            if (isLoading)
+            {
+                OnUiThread(() =>
+                {
+                    this.ContactsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"];
+                    this.ReceivedContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"];
+                    this.SentContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListLoadingContent"];
+                });
+            }
+            else
+            {
+                OnUiThread(() =>
+                {
+                    this.ContactsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaContactsListEmptyContent"];
+                    this.ReceivedContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaContactRequestsListSentEmptyContent"];
+                    this.SentContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaContactRequestsListReceivedEmptyContent"];
+                });
+            }
+        }
+
+        public void SetOfflineContentTemplate()
+        {
+            OnUiThread(() =>
+            {
+                this.ContactsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.ReceivedContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.SentContactRequestsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+            });
+        }
+
         public void Initialize(GlobalDriveListener globalDriveListener)
         {
             // Add contacts to global drive listener to receive notifications
@@ -384,6 +449,8 @@ namespace MegaApp.Models
             // Create the option to cancel
             CreateLoadCancelOption();
 
+            SetEmptyContentTemplate(true);
+
             OnUiThread(() => MegaContactsList.Clear());
             MUserList contactsList = this.MegaSdk.getContacts();            
 
@@ -422,6 +489,8 @@ namespace MegaApp.Models
                                     new GetContactAvatarRequestListener(_megaContact));
                             }
                         }
+
+                        SetEmptyContentTemplate(false);
                     });                    
                 }
                 catch (OperationCanceledException)
@@ -491,6 +560,11 @@ namespace MegaApp.Models
 
         public void GetReceivedContactRequests()
         {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return;
+
+            SetEmptyContentTemplate(true);
+
             this.ReceivedContactRequests.Clear();
             MContactRequestList incomingContactRequestsList = MegaSdk.getIncomingContactRequests();
 
@@ -505,10 +579,17 @@ namespace MegaApp.Models
                 MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, 
                     new GetContactAvatarRequestListener(contactRequest));
             }
+
+            SetEmptyContentTemplate(false);
         }
 
         public void GetSentContactRequests()
         {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return;
+
+            SetEmptyContentTemplate(true);
+
             this.SentContactRequests.Clear();
             MContactRequestList outgoingContactRequestsList = MegaSdk.getOutgoingContactRequests();
 
@@ -523,6 +604,8 @@ namespace MegaApp.Models
                 MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, 
                     new GetContactAvatarRequestListener(contactRequest));
             }
+
+            SetEmptyContentTemplate(false);
         }        
 
         public void AddContact()

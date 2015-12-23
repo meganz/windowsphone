@@ -749,6 +749,41 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Saved for offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/NoInternetConnection" translate="yes" xml:space="preserve">
+          <source>No internet connection</source>
+          <target state="new">No internet connection</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty state when no internet connection - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoUploads" translate="yes" xml:space="preserve">
+          <source>No uploads</source>
+          <target state="new">No uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty uploads page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptySharedFolders" translate="yes" xml:space="preserve">
+          <source>No shared folders</source>
+          <target state="new">No shared folders</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty shared folders page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloads" translate="yes" xml:space="preserve">
+          <source>No downloads</source>
+          <target state="new">No downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty downloads page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptyRubbishBin" translate="yes" xml:space="preserve">
+          <source>Empty rubbish bin</source>
+          <target state="new">Empty rubbish bin</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptyOffline" translate="yes" xml:space="preserve">
+          <source>No items saved for offline</source>
+          <target state="new">No items saved for offline</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/EmptyCloudDrive" translate="yes" xml:space="preserve">
+          <source>No files on your cloud drive</source>
+          <target state="new">No files on your cloud drive</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" xml:space="preserve">
           <source>Manage link</source>
           <target state="new">Manage link</target>
@@ -1130,7 +1165,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         <trans-unit id="Resx/NoTransfers" translate="yes" xml:space="preserve">
           <source>No transfers</source>
           <target state="new">No transfers</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/Size" translate="yes" xml:space="preserve">
           <source>Size</source>

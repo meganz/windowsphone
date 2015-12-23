@@ -11,6 +11,7 @@ using MegaApp.UserControls;
 using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -30,15 +31,73 @@ namespace MegaApp.Pages
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.Contacts);
 
             SetApplicationBarData();
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
         }
 
-        public void SetApplicationBarData()
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+
+            _contactsViewModel.NetworkAvailabilityChanged();
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isNetworkConnected)
+                {
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    {
+                        _contactsViewModel.SetEmptyContentTemplate(true);
+
+                        _contactsViewModel.GetMegaContacts();
+                        _contactsViewModel.GetReceivedContactRequests();
+                        _contactsViewModel.GetSentContactRequests();
+                    }
+                    else
+                    {
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
+                        return;
+                    }
+                }
+                else
+                {
+                    _contactsViewModel.MegaContactsList.Clear();
+                    _contactsViewModel.ReceivedContactRequests.Clear();
+                    _contactsViewModel.SentContactRequests.Clear();
+
+                    _contactsViewModel.SetOfflineContentTemplate();
+                }
+
+                SetApplicationBarData(isNetworkConnected);
+            });
+        }
+
+        public void SetApplicationBarData(bool isNetworkConnected = true)
         {
             // Set the Application Bar to one of the available menu resources in this page
             SetAppbarResources(_contactsViewModel.CurrentDisplayMode);
             
             // Change and translate the current application bar
             _contactsViewModel.ChangeMenu(this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isNetworkConnected);
         }
 
         private void SetAppbarResources(ContactDisplayMode contactsDisplayMode)
@@ -75,6 +134,12 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
             _contactsViewModel.Initialize(App.GlobalDriveListener);
+
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
         }
 
         private void OnAddContactClick(object sender, EventArgs e)
@@ -133,7 +198,7 @@ namespace MegaApp.Pages
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadJumpList)sender, e.TappedItem);
 
-            Dispatcher.BeginInvoke(SetApplicationBarData);
+            SetApplicationBarData();
         }
 
         private void ChangeCheckModeAction(bool onOff, RadJumpList listBox, object item)
@@ -178,6 +243,8 @@ namespace MegaApp.Pages
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable()) return;
+
             if (sender == MegaContacts)
                 _contactsViewModel.GetMegaContacts();
             else if (sender == SentContactRequests)
@@ -207,7 +274,7 @@ namespace MegaApp.Pages
             if (e.AddedItems[0] == ReceivedContactRequests)
                 _contactsViewModel.CurrentDisplayMode = ContactDisplayMode.RECEIVED_REQUESTS;
 
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnItemTap(object sender, GestureEventArgs e)
@@ -255,7 +322,7 @@ namespace MegaApp.Pages
         protected override void OnDrawerClosed(object sender)
         {
             base.OnDrawerClosed(sender);
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)

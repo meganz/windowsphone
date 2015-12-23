@@ -65,11 +65,11 @@ namespace MegaApp.Pages
             }
         }
 
-        private void UpdateGUI(bool isOnline = true)
+        private void UpdateGUI(bool isNetworkConnected = true)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                if (isOnline)
+                if (isNetworkConnected)
                 {
                     NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
@@ -89,7 +89,7 @@ namespace MegaApp.Pages
                     _mainPageViewModel.RubbishBin.SetOfflineContentTemplate();                    
                 }
 
-                SetApplicationBarData(isOnline);
+                SetApplicationBarData(isNetworkConnected);
             });            
         }
 
@@ -130,7 +130,6 @@ namespace MegaApp.Pages
                 ((MainPageViewModel)this.DataContext).CloudDrive.BrowseToFolder(folderNode);
                 return;
             }
-
 
             if (breadCrumb.Equals(RubbishBinBreadCrumb))
             {
@@ -536,7 +535,7 @@ namespace MegaApp.Pages
             return true;
         }
 
-        private void SetApplicationBarData(bool isOnline = true)
+        private void SetApplicationBarData(bool isNetworkConnected = true)
         {
             // Set the Application Bar to one of the available menu resources in this page
             SetAppbarResources(_mainPageViewModel.ActiveFolderView.CurrentDisplayMode);
@@ -546,7 +545,7 @@ namespace MegaApp.Pages
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
 
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
-                this.ApplicationBar.MenuItems, isOnline);
+                this.ApplicationBar.MenuItems, isNetworkConnected);
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)

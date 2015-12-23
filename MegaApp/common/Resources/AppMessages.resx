@@ -1025,4 +1025,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Failed to remove link. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>You cannot perform this action. Please, connect to Internet and try again.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
 </root>

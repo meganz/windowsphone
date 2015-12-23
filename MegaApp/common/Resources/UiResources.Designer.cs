@@ -736,11 +736,47 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No files on your cloud drive.
+        /// </summary>
+        public static string EmptyCloudDrive {
+            get {
+                return ResourceManager.GetString("EmptyCloudDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Empty folder.
         /// </summary>
         public static string EmptyFolder {
             get {
                 return ResourceManager.GetString("EmptyFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No items saved for offline.
+        /// </summary>
+        public static string EmptyOffline {
+            get {
+                return ResourceManager.GetString("EmptyOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empty rubbish bin.
+        /// </summary>
+        public static string EmptyRubbishBin {
+            get {
+                return ResourceManager.GetString("EmptyRubbishBin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No shared folders.
+        /// </summary>
+        public static string EmptySharedFolders {
+            get {
+                return ResourceManager.GetString("EmptySharedFolders", resourceCulture);
             }
         }
         
@@ -1357,6 +1393,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No downloads.
+        /// </summary>
+        public static string NoDownloads {
+            get {
+                return ResourceManager.GetString("NoDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No internet connection.
+        /// </summary>
+        public static string NoInternetConnection {
+            get {
+                return ResourceManager.GetString("NoInternetConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a At this time, there is no payment method available for this plan.
         /// </summary>
         public static string NoPaymentMethodsAvailable {
@@ -1380,6 +1434,15 @@ namespace MegaApp.Resources {
         public static string NoTransfers {
             get {
                 return ResourceManager.GetString("NoTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No uploads.
+        /// </summary>
+        public static string NoUploads {
+            get {
+                return ResourceManager.GetString("NoUploads", resourceCulture);
             }
         }
         

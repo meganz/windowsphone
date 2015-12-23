@@ -7,6 +7,7 @@ using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -21,6 +22,8 @@ namespace MegaApp.Models
 
         public bool IsUserOnline()
         {
+            if (!NetworkService.IsNetworkAvailable()) return false;
+
             bool isOnline = Convert.ToBoolean(this.MegaSdk.isLoggedIn());
 
             if (!isOnline)
