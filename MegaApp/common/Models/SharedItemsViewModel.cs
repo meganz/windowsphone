@@ -27,6 +27,11 @@ namespace MegaApp.Models
 
         #region Properties
 
+        public bool IsNetworkAvailable
+        {
+            get { return NetworkService.IsNetworkAvailable(); }
+        }
+
         private CancellationTokenSource LoadingCancelTokenSource { get; set; }
         private CancellationToken LoadingCancelToken { get; set; }
 
@@ -37,9 +42,15 @@ namespace MegaApp.Models
             set
             {
                 SetField(ref _inShares, value);
+                OnPropertyChanged("HasInSharedFolders");
                 OnPropertyChanged("NumberOfInSharedFolders");
                 OnPropertyChanged("NumberOfInSharedFoldersText");
             }
+        }
+
+        public bool HasInSharedFolders
+        {
+            get { return InShares.ChildNodes.Count > 0; }
         }
 
         public int NumberOfInSharedFolders
@@ -65,9 +76,15 @@ namespace MegaApp.Models
             set
             {
                 SetField(ref _outShares, value);
+                OnPropertyChanged("HasOutSharedFolders");
                 OnPropertyChanged("NumberOfOutSharedFolders");
                 OnPropertyChanged("NumberOfOutSharedFoldersText");
             }
+        }
+
+        public bool HasOutSharedFolders
+        {
+            get { return OutShares.ChildNodes.Count > 0; }
         }
 
         public int NumberOfOutSharedFolders
@@ -119,6 +136,11 @@ namespace MegaApp.Models
 
         #region Methods
 
+        public void NetworkAvailabilityChanged()
+        {
+            OnUiThread(() => OnPropertyChanged("IsNetworkAvailable"));
+        }
+
         private void InitializeModel()
         {
             this.InShares = new FolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.InShares);
@@ -148,6 +170,18 @@ namespace MegaApp.Models
                 LoadingCancelTokenSource.Cancel();
         }
 
+        public void ClearIncomingSharedFolders()
+        {
+            InShares.ClearChildNodes();
+
+            OnUiThread(() =>
+            {
+                OnPropertyChanged("HasInSharedFolders");
+                OnPropertyChanged("NumberOfInSharedFolders");
+                OnPropertyChanged("NumberOfInSharedFoldersText");
+            });
+        }
+
         public void GetIncomingSharedFolders()
         {
             // User must be online to perform this operation
@@ -158,6 +192,11 @@ namespace MegaApp.Models
 
             // Create the option to cancel
             CreateLoadCancelOption();
+
+            InShares.SetProgressIndication(true);
+
+            // Process is started so we can set the empty content template to loading already
+            InShares.SetEmptyContentTemplate(true);
 
             OnUiThread(() => InShares.ChildNodes.Clear());
             MNodeList inSharesList = MegaSdk.getInShares();
@@ -182,8 +221,18 @@ namespace MegaApp.Models
                             InShares.ChildNodes.Add(_inSharedFolder);
                         }
 
-                        OnPropertyChanged("NumberOfInSharedFolders");
-                        OnPropertyChanged("NumberOfInSharedFoldersText");
+                        // Show the user that processing the childnodes is done
+                        InShares.SetProgressIndication(false);
+
+                        // Set empty content to folder instead of loading view
+                        InShares.SetEmptyContentTemplate(false);
+
+                        OnUiThread(() =>
+                        {
+                            OnPropertyChanged("HasInSharedFolders");
+                            OnPropertyChanged("NumberOfInSharedFolders");
+                            OnPropertyChanged("NumberOfInSharedFoldersText");                            
+                        });
                     });
                 }
                 catch (OperationCanceledException)
@@ -192,6 +241,18 @@ namespace MegaApp.Models
                 }
 
             }, LoadingCancelToken, TaskCreationOptions.PreferFairness, TaskScheduler.Current);
+        }
+
+        public void ClearOutgoingSharedFolders()
+        {
+            OutShares.ClearChildNodes();
+
+            OnUiThread(() =>
+            {
+                OnPropertyChanged("HasOutSharedFolders");
+                OnPropertyChanged("NumberOfOutSharedFolders");
+                OnPropertyChanged("NumberOfOutSharedFoldersText");
+            });
         }
 
         public void GetOutgoingSharedFolders()
@@ -204,6 +265,11 @@ namespace MegaApp.Models
 
             // Create the option to cancel
             CreateLoadCancelOption();
+
+            OutShares.SetProgressIndication(true);
+
+            // Process is started so we can set the empty content template to loading already
+            OutShares.SetEmptyContentTemplate(true);
 
             OnUiThread(() => OutShares.ChildNodes.Clear());
             MShareList outSharesList = MegaSdk.getOutShares();
@@ -234,13 +300,23 @@ namespace MegaApp.Models
 
                                     var _outSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, MegaSdk.getNodeByHandle(lastFolderHandle), OutShares.ChildNodes);
                                     _outSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
-                                    OutShares.ChildNodes.Add(_outSharedFolder);
-
-                                    OnPropertyChanged("NumberOfOutSharedFolders");
-                                    OnPropertyChanged("NumberOfOutSharedFoldersText");
+                                    OutShares.ChildNodes.Add(_outSharedFolder);                                    
                                 }
-                            }                                
-                        }                        
+                            }
+                        }
+
+                        // Show the user that processing the childnodes is done
+                        OutShares.SetProgressIndication(false);
+
+                        // Set empty content to folder instead of loading view
+                        OutShares.SetEmptyContentTemplate(false);
+
+                        OnUiThread(() =>
+                        {
+                            OnPropertyChanged("HasOutSharedFolders");
+                            OnPropertyChanged("NumberOfOutSharedFolders");
+                            OnPropertyChanged("NumberOfOutSharedFoldersText");
+                        });                        
                     });
                 }
                 catch (OperationCanceledException)

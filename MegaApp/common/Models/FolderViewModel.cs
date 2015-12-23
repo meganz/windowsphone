@@ -378,32 +378,57 @@ namespace MegaApp.Models
             }
             else
             {
-                var megaRoot = this.MegaSdk.getRootNode();
-                var megaRubbishBin = this.MegaSdk.getRubbishNode();
+                switch(this.Type)
+                {
+                    case ContainerType.CloudDrive:
+                    case ContainerType.RubbishBin:
+                        var megaRoot = this.MegaSdk.getRootNode();
+                        var megaRubbishBin = this.MegaSdk.getRubbishNode();
+                        if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Base64Handle.Equals(megaRoot.getBase64Handle()))
+                        {
+                            OnUiThread(() =>
+                            {
+                                this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"];
+                                this.EmptyInformationText = UiResources.EmptyCloudDrive.ToLower();
+                            });
+                        }
+                        else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Base64Handle.Equals(megaRubbishBin.getBase64Handle()))
+                        {
+                            OnUiThread(() =>
+                            {
+                                this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"];
+                                this.EmptyInformationText = UiResources.EmptyRubbishBin.ToLower();
+                            });
+                        }
+                        else
+                        {
+                            OnUiThread(() =>
+                            {
+                                this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
+                                this.EmptyInformationText = UiResources.EmptyFolder.ToLower();
+                            });
+                        }
+                        break;                    
 
-                if (this.FolderRootNode != null && megaRoot != null && this.FolderRootNode.Base64Handle.Equals(megaRoot.getBase64Handle()))
-                {
-                    OnUiThread(() =>
-                    {
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListCloudDriveEmptyContent"];
-                        this.EmptyInformationText = "no files on your cloud drive";
-                    });
-                }
-                else if (this.FolderRootNode != null && megaRubbishBin != null && this.FolderRootNode.Base64Handle.Equals(megaRubbishBin.getBase64Handle()))
-                {
-                    OnUiThread(() =>
-                    {
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"];
-                        this.EmptyInformationText = "empty rubbish bin";
-                    });
-                }
-                else
-                {
-                    OnUiThread(() =>
-                    {
-                        this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
-                        this.EmptyInformationText = "empty folder";
-                    });
+                    case ContainerType.InShares:
+                    case ContainerType.OutShares:
+                        OnUiThread(() =>
+                        {
+                            this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaSharedFoldersListEmptyContent"];
+                            this.EmptyInformationText = UiResources.EmptySharedFolders.ToLower();
+                        });
+                        break;
+                    
+                    case ContainerType.ContactInShares:
+                        break;
+
+                    case ContainerType.Offline:
+                        OnUiThread(() =>
+                        {
+                            this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"];
+                            this.EmptyInformationText = UiResources.EmptyOffline.ToLower();
+                        });
+                        break;
                 }
             }
         }
@@ -413,7 +438,7 @@ namespace MegaApp.Models
             OnUiThread(() =>
             {
                 this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
-                this.EmptyInformationText = "no internet connection";
+                this.EmptyInformationText = UiResources.NoInternetConnection.ToLower();
             });                
         }
 
@@ -719,7 +744,7 @@ namespace MegaApp.Models
             }
         }
 
-        private void SetProgressIndication(bool onOff, string busyText = null)
+        public void SetProgressIndication(bool onOff, string busyText = null)
         {
             OnUiThread(() =>
             {

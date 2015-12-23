@@ -145,16 +145,23 @@
                             </Path.Fill>
                         </Path>
                     </Button>
-                    <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48">
+                    <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" Visibility="{Binding HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
                         <Path Stretch="UniformToFill" Data="{Binding NextViewButtonPathData}" Width="22" Height="22">
                             <Path.Fill>
                                 <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                             </Path.Fill>
                         </Path>
                     </Button>
+                    <Button x:Name="BtnChangeViewDisabled" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" IsEnabled="False" Visibility="{Binding HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                        <Path Stretch="UniformToFill" Data="{Binding LocalizedVisualResources.LargeThumbnailViewPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Width="22" Height="22">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneDisabledColor}"/>
+                            </Path.Fill>
+                        </Path>
+                    </Button>
                 </StackPanel>
             </Grid>
-            <Grid x:Name="CameraUploadsRoot" Background="Transparent" Grid.Row="1">
+            <Grid x:Name="CameraUploadsRoot" Background="Transparent" Grid.Row="1" Margin="0,0,12,0">
                         <!--ContentPanel - place additional content here-->
             	<Grid.RowDefinitions>
             		<RowDefinition Height="Auto"/>
@@ -162,7 +169,7 @@
             	</Grid.RowDefinitions>
 
             	<StackPanel Grid.Row="0" Margin="0">
-            		<Grid Margin="24,0,24,5">
+            		<Grid Margin="24,0,12,5">
             			<Grid.ColumnDefinitions>
             				<ColumnDefinition/>
             				<ColumnDefinition Width="Auto"/>
@@ -173,7 +180,8 @@
             			</Grid.RowDefinitions>
             			<ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding CameraUploads.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             			<userControls:BreadCrumb x:Name="CameraUploadsBreadCrumb" ItemsSource="{Binding CameraUploads.BreadCrumbs}" ItemsSourceType="{Binding CameraUploads.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
-            			<TextBlock Text="{Binding CameraUploads.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                        <TextBlock Text="{Binding CameraUploads.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <TextBlock Text="{Binding CameraUploads.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             		</Grid>
             	</StackPanel>
             	<Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="0">

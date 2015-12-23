@@ -7,6 +7,7 @@ using System.Windows;
 using Microsoft.Phone.Net.NetworkInformation;
 using Windows.Networking.Connectivity;
 using MegaApp.Classes;
+using MegaApp.Resources;
 
 namespace MegaApp.Services
 {
@@ -21,8 +22,8 @@ namespace MegaApp.Services
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         new CustomMessageDialog(
-                            "OFFLINE TITLE",
-                            "Offline message",
+                            UiResources.NoInternetConnection.ToUpper(),
+                            AppMessages.NoInternetConnectionMessage,
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
                     });                    

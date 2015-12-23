@@ -9,6 +9,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -30,9 +31,58 @@ namespace MegaApp.Pages
             SetApplicationBarData();
 
             InteractionEffectManager.AllowedTypes.Add(typeof (RadDataBoundListBoxItem));
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
         }
 
-        private void SetApplicationBarData()
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isNetworkConnected)
+                {
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    {
+                        _transfersViewModel.SetEmptyContentTemplate();
+                        LstUploads.ItemsSource = _transfersViewModel.MegaTransfers.Uploads;
+                        LstDownloads.ItemsSource = _transfersViewModel.MegaTransfers.Downloads;
+                    }
+                    else
+                    {
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
+                        return;
+                    }
+                }
+                else
+                {
+                    _transfersViewModel.SetOfflineContentTemplate();
+                    LstUploads.ItemsSource = null;
+                    LstDownloads.ItemsSource = null;
+                }
+
+                SetApplicationBarData(isNetworkConnected);
+            });
+        }
+
+        private void SetApplicationBarData(bool isNetworkConnected = true)
         {
             this.ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
                         
@@ -40,6 +90,9 @@ namespace MegaApp.Pages
             
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.CancelAllTransfers.ToLower();
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.CleanUpTransfers.ToLower();
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isNetworkConnected);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -48,7 +101,7 @@ namespace MegaApp.Pages
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
             if (navParam == NavigationParameter.Downloads)
-                Transfers.SelectedItem = Downloads;
+                TransfersPivot.SelectedItem = DownloadsPivot;
 
             if (navParam == NavigationParameter.PictureSelected)
                 NavigationService.RemoveBackEntry();
@@ -57,6 +110,12 @@ namespace MegaApp.Pages
             {
                 NavigationService.RemoveBackEntry();
                 NavigationService.RemoveBackEntry();
+            }
+
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
             }
 
             // Needed on every UI interaction
@@ -188,7 +247,7 @@ namespace MegaApp.Pages
         protected override void OnDrawerClosed(object sender)
         {
             base.OnDrawerClosed(sender);
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)

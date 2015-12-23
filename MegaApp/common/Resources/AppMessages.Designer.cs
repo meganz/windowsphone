@@ -1335,6 +1335,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You cannot perform this action. Please, connect to Internet and try again..
+        /// </summary>
+        public static string NoInternetConnectionMessage {
+            get {
+                return ResourceManager.GetString("NoInternetConnectionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to open the selected file..
         /// </summary>
         public static string OpenFileFailed {

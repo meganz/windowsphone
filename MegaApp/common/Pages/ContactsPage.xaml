@@ -90,12 +90,14 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfMegaContactsText}"/>
                                 <Run Text="{Binding LocalizedUiResources.Contacts, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
+                        <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        
                         <Grid x:Name="ContactsContentPanel" Grid.Row="1">
                             <telerikDataControls:RadJumpList
                                 x:Name="LstMegaContacts"
@@ -114,7 +116,7 @@
                                 GroupDescriptorsSource="{Binding GroupDescriptors}"
                                 SortDescriptorsSource="{Binding SortDescriptors}"
                                 GroupHeaderTemplate="{StaticResource MegaListGroupHeaderTemplate}"
-                                EmptyContentTemplate="{StaticResource MegaContactsListEmptyContent}">
+                                EmptyContentTemplate="{Binding ContactsEmptyContentTemplate}">
                                 <telerikDataControls:RadJumpList.GroupPickerItemsPanel>
                                     <ItemsPanelTemplate>
                                         <telerikPrimitives:RadWrapPanel Margin="6,6" ItemWidth="110" ItemHeight="110"/>
@@ -150,17 +152,19 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfSentContactRequestsText}"/>
                                 <Run Text="{Binding LocalizedUiResources.SentRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
+                        <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        
                         <telerikPrimitives:RadDataBoundListBox 
 						    x:Name="LstSentContactRequests"
                             Grid.Row="1"
 						    ItemsSource="{Binding SentContactRequests}"                            
-						    EmptyContentTemplate="{StaticResource MegaContactRequestsListSentEmptyContent}"
+						    EmptyContentTemplate="{Binding SentContactRequestsEmptyContentTemplate}"
                             ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
 						    FontFamily="Portable User Interface"
                             telerik:InteractionEffectManager.IsInteractionEnabled="True">
@@ -193,17 +197,19 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0">
+                        <RichTextBox Grid.Row="0" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Top" Margin="0" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Paragraph>
                                 <Run Text="{Binding NumberOfReceivedContactRequestsText}"/>
                                 <Run Text="{Binding LocalizedUiResources.ReceivedRequests, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
                             </Paragraph>
                         </RichTextBox>
+                        <TextBlock Margin="0,0,12,0" Text="{Binding LocalizedUiResources.NoInternetConnection, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Grid.Row="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        
                         <telerikPrimitives:RadDataBoundListBox 
 						    x:Name="LstReceivedContactRequests"
                             Grid.Row="1"
 						    ItemsSource="{Binding ReceivedContactRequests}"                            
-						    EmptyContentTemplate="{StaticResource MegaContactRequestsListReceivedEmptyContent}"
+						    EmptyContentTemplate="{Binding ReceivedContactRequestsEmptyContentTemplate}"
                             ItemTemplate="{StaticResource MegaContactRequestsItemContent}"
 						    FontFamily="Portable User Interface"
                             telerik:InteractionEffectManager.IsInteractionEnabled="True">

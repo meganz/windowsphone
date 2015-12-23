@@ -124,10 +124,11 @@ namespace MegaApp.UserControls
             {
                 if (this.PageDrawerLayout != null)
                     this.PageDrawerLayout.CloseIfOpen();
-                return;
             }
-
-            menuItem.TapAction.Invoke();
+            else
+            {
+                menuItem.TapAction.Invoke();
+            }            
 
             this.HamburgerMenuListBox.SelectedItem = null;
         }
