@@ -503,8 +503,31 @@ namespace MegaApp.Models
             else
                 this.ModificationTime = this.CreationTime;
 
-            if(!App.MegaSdk.isInShare(megaNode))
+            if(!App.MegaSdk.isInShare(megaNode) && !IsInShareChild(megaNode))
                 CheckAndUpdateSFO(megaNode);
+        }
+
+        /// <summary>
+        /// Returns boolean value to indicatie if a node is a child node or a recursive child node
+        /// of an in shared folder.
+        /// </summary>
+        /// <param name="megaNode">Node to check.</param>
+        /// <returns>True if the node is an in shared folder children, False in other case.</returns>
+        private bool IsInShareChild(MNode megaNode)
+        {
+            MNode rootParentNode = null;
+            MNode parentNode = App.MegaSdk.getParentNode(megaNode);
+                        
+            while (parentNode != null)
+            {
+                rootParentNode = parentNode;
+                parentNode = App.MegaSdk.getParentNode(parentNode);
+            }
+
+            if (rootParentNode != null && App.MegaSdk.isInShare(rootParentNode))
+                return true;
+
+            return false;
         }
 
         private void CheckAndUpdateSFO(MNode megaNode)
