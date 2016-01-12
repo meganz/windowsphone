@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" />
+  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -26,7 +26,7 @@
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <ExpressionBlendVersion>12.0.50716.0</ExpressionBlendVersion>
-    <NuGetPackageImportStamp>bb43dd6f</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>b4c1965b</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -2258,7 +2258,7 @@
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="ShakeGestures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Sqlite, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\sqlite-net-wp8.3.8.7.4-beta\lib\windowsphone8\Sqlite.winmd</HintPath>
+      <HintPath>..\packages\sqlite-net-wp8.3.8.5\lib\windowsphone8\Sqlite.winmd</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Chart, Version=2015.2.623.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
@@ -6077,7 +6077,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.9.1">
+    <SDKReference Include="SQLite.WP80, Version=3.10.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>
@@ -6096,8 +6096,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props'))" />
-    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets'))" />
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props'))" />
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets'))" />
   </Target>
-  <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" />
+  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" />
 </Project>
