@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,11 @@ namespace MegaApp.MegaApi
 
         public virtual void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
+            if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
+            }            
         }
 
         public virtual void onTransferUpdate(MegaSDK api, MTransfer transfer)

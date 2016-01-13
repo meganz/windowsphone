@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -114,8 +115,11 @@ namespace MegaApp.MegaApi
 
         public virtual void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
+            if(DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
+            }            
         }
 
         public virtual void onRequestUpdate(MegaSDK api, MRequest request)
