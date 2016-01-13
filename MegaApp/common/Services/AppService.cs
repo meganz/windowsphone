@@ -244,7 +244,7 @@ namespace MegaApp.Services
         public static string GetSelectedDownloadDirectoryPath()
         {
             return Path.Combine(SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                AppResources.DefaultDownloadLocation));
+                UiResources.DefaultDownloadLocation));
         }
 
         public static void ClearObsoleteSettings()

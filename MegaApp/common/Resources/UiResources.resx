@@ -1212,4 +1212,8 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>No uploads</value>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
+  <data name="DefaultDownloadLocation" xml:space="preserve">
+    <value>please select a default download folder</value>
+    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
 </root>

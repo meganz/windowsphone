@@ -39,7 +39,7 @@ namespace MegaApp.Models
 #elif WINDOWS_PHONE_81
             this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
-                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
+                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
 #endif
 
             UpdateUserData();

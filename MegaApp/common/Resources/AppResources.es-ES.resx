@@ -117,13 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>por favor, selecciona una carpeta de descarga 
-predeterminada</value>
-    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
-  </data>
-  <data name="ResourceLanguage" xml:space="preserve">
-    <value>es-ES</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
-  </data>
 </root>
