@@ -64,7 +64,7 @@ namespace MegaApp.Pages
 
             #if WINDOWS_PHONE_81
             ((SettingsViewModel)this.DataContext).StandardDownloadLocation = SettingsService.LoadSetting<string>(
-                SettingsResources.DefaultDownloadLocation, AppResources.DefaultDownloadLocation);
+                SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
             #endif
         }
 

@@ -637,6 +637,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a please select a default download folder.
+        /// </summary>
+        public static string DefaultDownloadLocation {
+            get {
+                return ResourceManager.GetString("DefaultDownloadLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Default download location.
         /// </summary>
         public static string DefaultDownloadLocationText {

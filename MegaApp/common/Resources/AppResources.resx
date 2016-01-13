@@ -123,7 +123,7 @@
   </data>
   <data name="ResourceLanguage" xml:space="preserve">
     <value>en-US</value>
-    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language - (NO-TRANSLATION)</comment>
   </data>
   <data name="ApplicationTitle" xml:space="preserve">
     <value>MEGA Privacy</value>
@@ -176,10 +176,6 @@
   <data name="MegaSdkUrl" xml:space="preserve">
     <value>https://github.com/meganz/sdk</value>
     <comment>URL to the MEGA SDK repository - (NO-TRANSLATION).</comment>
-  </data>
-  <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>please select a default download folder</value>
-    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="GoedWareUrl" xml:space="preserve">
     <value>http://www.goedware.com</value>

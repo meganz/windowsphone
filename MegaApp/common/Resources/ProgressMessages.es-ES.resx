@@ -295,4 +295,8 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Eliminando de fuera de línea...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servidores ocupados. Por favor, espera...</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
 </root>

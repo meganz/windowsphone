@@ -175,9 +175,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" xml:space="preserve">
           <source>You cannot perform this action. Please, connect to Internet and try again.</source>
-          <target state="new">You cannot perform this action. Please, connect to Internet and try again.</target>
+          <target state="translated">No se puede realizar esta acción. Por favor, conéctate a Internet y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
@@ -982,9 +982,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/ImportFileFailed" translate="yes" xml:space="preserve">
           <source>Importing file failed [{0}]</source>
-          <target state="needs-review-translation">No se pudo importar el archivo</target>
+          <target state="translated">No se pudo importar el archivo [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
           </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" xml:space="preserve">
           <source>Failed to save image</source>
