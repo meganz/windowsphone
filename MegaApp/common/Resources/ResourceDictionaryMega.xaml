@@ -440,7 +440,7 @@
 
     <DataTemplate x:Key="OfflineEmptyContent">
         <Grid>
-            <Path Data="{Binding LocalizedVisualResources.EmptyCloudDrivePathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="208" Stretch="Uniform" Opacity="0.3">
+            <Path Data="{Binding LocalizedVisualResources.NoInternetConnectionViewPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="248" Stretch="Uniform" Opacity="0.3">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
