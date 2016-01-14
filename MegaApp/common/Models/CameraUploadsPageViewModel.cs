@@ -59,7 +59,8 @@ namespace MegaApp.Models
             {
                 if (this.CameraUploads.FolderRootNode == null)
                     this.CameraUploads.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, 
-                        NodeService.FindCameraUploadNode(this.MegaSdk, this.MegaSdk.getRootNode()));
+                        NodeService.FindCameraUploadNode(this.MegaSdk, this.MegaSdk.getRootNode()),
+                        ContainerType.CloudDrive);
 
                 this.CameraUploads.LoadChildNodes();
             }); 

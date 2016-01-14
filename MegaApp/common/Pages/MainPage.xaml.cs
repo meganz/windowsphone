@@ -178,7 +178,7 @@ namespace MegaApp.Pages
                 if (absoluteParentNode.getType() == MNodeType.TYPE_ROOT)
                 {
                     _mainPageViewModel.CloudDrive.BrowseToFolder(
-                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, shortCutMegaNode));
+                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, shortCutMegaNode, ContainerType.CloudDrive));
                 }
                 else return false;
             }
@@ -281,7 +281,7 @@ namespace MegaApp.Pages
                                         MessageDialogButtons.Ok).ShowDialog();
                             
                                 _mainPageViewModel.CloudDrive.BrowseToFolder(
-                                    NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode()));
+                                    NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode(), ContainerType.CloudDrive));
                             }
                         }
                         else

@@ -61,8 +61,9 @@ namespace MegaApp.Interfaces
         /// <summary>
         /// Update core date associated with the SDK MNode object
         /// </summary>
-        /// <param name="megaNode"></param>
-        void Update(MNode megaNode);
+        /// <param name="megaNode">Node to update</param>
+        /// <param name="parentContainerType">Container type of the parent of the node.</param>
+        void Update(MNode megaNode, ContainerType parentContainerType);
 
         /// <summary>
         /// Load node thumbnail if available on disk. If not availble download it with the Mega SDK

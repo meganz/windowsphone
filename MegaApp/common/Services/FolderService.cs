@@ -187,12 +187,12 @@ namespace MegaApp.Services
                 NodeViewModel node;
                 if (App.CloudDrive.PublicNode != null && base64Handle.Equals(App.CloudDrive.PublicNode.getBase64Handle()))
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.CloudDrive.PublicNode);
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.CloudDrive.PublicNode, ContainerType.CloudDrive);
                     App.CloudDrive.PublicNode = null;
                 }
                 else
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByBase64Handle(base64Handle));
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByBase64Handle(base64Handle), ContainerType.CloudDrive);
                 }
                
                 if(node != null)

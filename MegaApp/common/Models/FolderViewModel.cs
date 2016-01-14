@@ -217,10 +217,10 @@ namespace MegaApp.Models
                 switch (this.Type)
                 {
                     case ContainerType.RubbishBin:
-                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode(), this.Type);
                         break;
                     case ContainerType.CloudDrive:                    
-                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+                        this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode(), this.Type);
                         break;
                 }
             }
@@ -287,7 +287,7 @@ namespace MegaApp.Models
 
         public void DownloadLink(MNode publicNode)
         {            
-            var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode);
+            var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode, ContainerType.PublicLink);
             downloadNode.Download(App.MegaTransfers);
         }
 
@@ -451,7 +451,7 @@ namespace MegaApp.Models
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN)
                 return false;
 
-            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode, ChildNodes);
+            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode, this.Type, ChildNodes);
 
             LoadChildNodes();
 
@@ -476,7 +476,7 @@ namespace MegaApp.Models
 
             if (homeNode == null) return;
 
-            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, homeNode, ChildNodes);
+            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, homeNode, this.Type, ChildNodes);
 
             LoadChildNodes();
         }
@@ -698,7 +698,7 @@ namespace MegaApp.Models
         private void ViewDetails(object obj)
         {
             NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation,
-                App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle));
+                App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
 
             NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node);
         }
@@ -820,7 +820,7 @@ namespace MegaApp.Models
                 // To avoid pass null values to CreateNew
                 if (childList.get(i) == null) continue;
                                 
-                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ChildNodes);
+                var node = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), this.Type, ChildNodes);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (node == null) continue;
@@ -977,7 +977,7 @@ namespace MegaApp.Models
             while ((parentNode != null) && (parentNode.getType() != MNodeType.TYPE_ROOT) &&
                 (parentNode.getType() != MNodeType.TYPE_RUBBISH))
             {
-                this.BreadCrumbs.Insert(0, (IBaseNode)NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode));
+                this.BreadCrumbs.Insert(0, (IBaseNode)NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode, this.Type));
                 parentNode = this.MegaSdk.getParentNode(parentNode);
             }
         }

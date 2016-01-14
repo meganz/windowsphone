@@ -100,7 +100,7 @@ namespace MegaApp.MegaApi
                 bool isImage = false;
                 if (publicNode.isFile())
                 {
-                    FileNodeViewModel node = new FileNodeViewModel(api, null, publicNode);
+                    FileNodeViewModel node = new FileNodeViewModel(api, null, publicNode, ContainerType.PublicLink);
                     isImage = node.IsImage;
                 }   
 

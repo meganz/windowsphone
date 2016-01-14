@@ -13,9 +13,9 @@ namespace MegaApp.Models
 {
     class FileNodeViewModel: NodeViewModel
     {
-        public FileNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+        public FileNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
             ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
-            : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
+            : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             this.Information = this.Size.ToStringAndSuffix();
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);            

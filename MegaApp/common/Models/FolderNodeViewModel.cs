@@ -1,5 +1,6 @@
 ﻿using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.Resources;
 using System;
@@ -16,9 +17,9 @@ namespace MegaApp.Models
 {
     public class FolderNodeViewModel: NodeViewModel
     {
-        public FolderNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+        public FolderNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
             ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
-            : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
+            : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             SetFolderInfo();
             
