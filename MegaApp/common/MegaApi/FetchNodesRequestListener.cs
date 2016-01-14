@@ -143,7 +143,7 @@ namespace MegaApp.MegaApi
 
                     if (absoluteParentNode.getType() == MNodeType.TYPE_ROOT)
                     {
-                        var newRootNode = NodeService.CreateNew(api, _mainPageViewModel.AppInformation, shortCutMegaNode);
+                        var newRootNode = NodeService.CreateNew(api, _mainPageViewModel.AppInformation, shortCutMegaNode, ContainerType.CloudDrive);
                         var autoResetEvent = new AutoResetEvent(false);
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                         {
@@ -173,9 +173,9 @@ namespace MegaApp.MegaApi
                 if(_mainPageViewModel != null)
                 {
                     var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
-                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode());
+                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode(), ContainerType.CloudDrive);
                     var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
-                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode());
+                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode(), ContainerType.RubbishBin);
 
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -189,8 +189,8 @@ namespace MegaApp.MegaApi
                 else
                 {
                     var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
-                        NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation, 
-                        NodeService.FindCameraUploadNode(api, api.getRootNode()));
+                        NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation,
+                        NodeService.FindCameraUploadNode(api, api.getRootNode()), ContainerType.CloudDrive);
                     
                     var autoResetEvent = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>

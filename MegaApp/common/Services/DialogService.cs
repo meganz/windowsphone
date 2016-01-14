@@ -79,7 +79,7 @@ namespace MegaApp.Services
         #elif WINDOWS_PHONE_81
         public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
         {
-            // Needed to avoud "Implicity captured closure" compiler warning.
+            // Needed to avoid "Implicity captured closure" compiler warning.
             var importFolderViewModel = folderViewModel;
             var downloadFolderViewModel = folderViewModel;
 

@@ -50,7 +50,7 @@ namespace MegaApp.Models
 
         public void updateNode(MNode megaNode)
         {
-            _node.Update(megaNode);
+            _node.Update(megaNode, this._node.ParentContainerType);
             _nodeDetailsPage.SetApplicationBar();
         }
 

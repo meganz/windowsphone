@@ -100,7 +100,7 @@ namespace MegaApp.MegaApi
                                         {
                                             try
                                             {
-                                                nodeToUpdateInView.Update(parentNode);
+                                                nodeToUpdateInView.Update(parentNode, folder.Type);
                                                 var folderNode = nodeToUpdateInView as FolderNodeViewModel;
                                                 if (folderNode != null) folderNode.SetFolderInfo();
                                             }
@@ -167,7 +167,7 @@ namespace MegaApp.MegaApi
                                     {
                                         try
                                         {
-                                            nodeToUpdateInView.Update(megaNode);
+                                            nodeToUpdateInView.Update(megaNode, folder.Type);
                                         }
                                         catch (Exception)
                                         {
@@ -209,8 +209,8 @@ namespace MegaApp.MegaApi
                                             try
                                             {
                                                 currentFolder.ChildNodes.Add(NodeService.CreateNew(api,
-                                                    _appInformation,
-                                                    megaNode));
+                                                    _appInformation, megaNode, currentFolder.Type));
+                                                
                                                 ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
                                                 UpdateFolders(currentFolder);
                                             }
@@ -235,9 +235,8 @@ namespace MegaApp.MegaApi
                                             try
                                             {
                                                 currentFolder.ChildNodes.Insert(insertIndex,
-                                                    NodeService.CreateNew(api,
-                                                    _appInformation,
-                                                    megaNode));
+                                                    NodeService.CreateNew(api, _appInformation, megaNode, currentFolder.Type));
+
                                                 ((FolderNodeViewModel)currentFolder.FolderRootNode).SetFolderInfo();
                                                 UpdateFolders(currentFolder);
                                             }
@@ -261,7 +260,7 @@ namespace MegaApp.MegaApi
                                     {
                                         try
                                         {
-                                            nodeToUpdateInView.Update(parentNode);
+                                            nodeToUpdateInView.Update(parentNode, folder.Type);
                                             var folderNode = nodeToUpdateInView as FolderNodeViewModel;
                                             if (folderNode != null) folderNode.SetFolderInfo();
                                         }

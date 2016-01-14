@@ -27,13 +27,13 @@ namespace MegaApp.Models
     public abstract class NodeViewModel : BaseAppInfoAwareViewModel, IMegaNode
     {
         // Offset DateTime value to calculate the correct creation and modification time
-        private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);        
 
-        protected NodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+        protected NodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
             ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
             : base(megaSdk, appInformation)
         {
-            Update(megaNode);
+            Update(megaNode, parentContainerType);
             SetDefaultValues();
             
             this.ParentCollection = parentCollection;
@@ -269,7 +269,7 @@ namespace MegaApp.Models
                 // To avoid pass null values to CreateNew
                 if (childList.get(i) == null) continue;
 
-                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ContainerType.CloudDrive);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (childNode == null) continue;
@@ -349,7 +349,7 @@ namespace MegaApp.Models
                 // To avoid pass null values to CreateNew
                 if (childList.get(i) == null) continue;
 
-                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), this.ParentContainerType);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (childNode == null) continue;
@@ -486,12 +486,13 @@ namespace MegaApp.Models
             }
         }
 
-        public void Update(MNode megaNode)
+        public void Update(MNode megaNode, ContainerType parentContainerType)
         {
             OriginalMNode = megaNode;
             this.Handle = megaNode.getHandle();
             this.Base64Handle = megaNode.getBase64Handle();
             this.Type = megaNode.getType();
+            this.ParentContainerType = parentContainerType;
             this.Name = megaNode.getName();
             this.Size = MegaSdk.getSize(megaNode);
             this.SizeText = this.Size.ToStringAndSuffix();
@@ -503,32 +504,10 @@ namespace MegaApp.Models
             else
                 this.ModificationTime = this.CreationTime;
 
-            if(!App.MegaSdk.isInShare(megaNode) && !IsInShareChild(megaNode))
+            if(!App.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
+                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares)
                 CheckAndUpdateSFO(megaNode);
-        }
-
-        /// <summary>
-        /// Returns boolean value to indicatie if a node is a child node or a recursive child node
-        /// of an in shared folder.
-        /// </summary>
-        /// <param name="megaNode">Node to check.</param>
-        /// <returns>True if the node is an in shared folder children, False in other case.</returns>
-        private bool IsInShareChild(MNode megaNode)
-        {
-            MNode rootParentNode = null;
-            MNode parentNode = App.MegaSdk.getParentNode(megaNode);
-                        
-            while (parentNode != null)
-            {
-                rootParentNode = parentNode;
-                parentNode = App.MegaSdk.getParentNode(parentNode);
-            }
-
-            if (rootParentNode != null && App.MegaSdk.isInShare(rootParentNode))
-                return true;
-
-            return false;
-        }
+        }        
 
         private void CheckAndUpdateSFO(MNode megaNode)
         {
@@ -629,6 +608,8 @@ namespace MegaApp.Models
         public ObservableCollection<IMegaNode> ChildCollection { get; set; }
 
         public MNodeType Type { get; private set; }
+
+        public ContainerType ParentContainerType { get; private set; }
 
         private NodeDisplayMode _displayMode;
         public NodeDisplayMode DisplayMode

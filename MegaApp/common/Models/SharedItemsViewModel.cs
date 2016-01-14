@@ -216,7 +216,7 @@ namespace MegaApp.Models
                             // To avoid null values
                             if (inSharesList.get(i) == null) continue;
 
-                            var _inSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, inSharesList.get(i), InShares.ChildNodes);
+                            var _inSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, inSharesList.get(i), ContainerType.InShares, InShares.ChildNodes);
                             _inSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
                             InShares.ChildNodes.Add(_inSharedFolder);
                         }
@@ -298,7 +298,7 @@ namespace MegaApp.Models
                                 {
                                     lastFolderHandle = sharedNode.getNodeHandle();
 
-                                    var _outSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, MegaSdk.getNodeByHandle(lastFolderHandle), OutShares.ChildNodes);
+                                    var _outSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, MegaSdk.getNodeByHandle(lastFolderHandle), ContainerType.OutShares, OutShares.ChildNodes);
                                     _outSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
                                     OutShares.ChildNodes.Add(_outSharedFolder);                                    
                                 }
