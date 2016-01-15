@@ -52,7 +52,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("3ee0257");
+            return String.Format("1045225");
         }
 
         public static string GetAppUserAgent()
@@ -129,7 +129,7 @@ namespace MegaApp.Services
             files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));            
             files.AddRange(Directory.GetFiles(GetUploadDirectoryPath()));
 
-            files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath()));            
+            files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath()));
             
             ulong totalSize = 0;
             foreach (var file in files)
@@ -149,7 +149,7 @@ namespace MegaApp.Services
             var folders = new List<string>();
             folders.AddRange(Directory.GetDirectories(path));
             foreach (var folder in folders)
-            {                
+            {
                 files.AddRange(GetDownloadDirectoryFiles(folder));
             }
 
@@ -199,6 +199,7 @@ namespace MegaApp.Services
                 FolderService.Clear(downloadDir);                
             }
         }
+
         public static void ClearUploadCache()
         {
             string uploadDir = GetUploadDirectoryPath();
