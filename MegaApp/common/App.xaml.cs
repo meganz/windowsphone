@@ -57,6 +57,8 @@ namespace MegaApp
 
         public static String ShortCutBase64Handle { get; set; }
 
+        public static MNode PublicNode { get; set; }
+
         // DataBase Name
         public static String DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "MEGA.sqlite"));
         

@@ -117,6 +117,16 @@ namespace MegaApp.Services
 
             return copy != null;
         }
+
+        // Move a file. Copies the file and remove the source file if the copy was successful
+        public static async Task<bool> MoveFile(string sourcePath, string destinationFolderPath, string newFileName = null)
+        {
+            if(!await CopyFile(sourcePath, destinationFolderPath, newFileName)) return false;
+
+            DeleteFile(sourcePath);
+            
+            return true;
+        }
        
         public static async Task<bool> OpenFile(string filePath)
         {

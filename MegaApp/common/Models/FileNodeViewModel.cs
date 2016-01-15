@@ -18,7 +18,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             this.Information = this.Size.ToStringAndSuffix();
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);            
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
         }
 
         #region Override Methods
@@ -55,9 +55,17 @@ namespace MegaApp.Models
         {
             get
             {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory,
-                                    MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));                
+                if(ParentContainerType != ContainerType.PublicLink)
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory,
+                        MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                }
+                else
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory, this.Name);
+                }                
             }
         }
 
@@ -66,7 +74,7 @@ namespace MegaApp.Models
             get
             {
                 return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
-                                    this.Name);
+                                    this.Name);                
             }
         }
 

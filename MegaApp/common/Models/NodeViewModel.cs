@@ -295,12 +295,21 @@ namespace MegaApp.Models
 
             MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
 
-            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                AppResources.DownloadsDirectory.Replace("\\", ""),
-                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
-
             String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                     AppResources.DownloadsDirectory.Replace("\\", ""));
+
+            String parentNodePath;
+            if(ParentContainerType != ContainerType.PublicLink)
+            {
+                parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""),
+                    (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+            }
+            else 
+            {
+                // If is a public node (link) the destination folder is the SFO root
+                parentNodePath = sfoRootPath;
+            }            
 
             if (!FolderService.FolderExists(parentNodePath))
                 FolderService.CreateFolder(parentNodePath);

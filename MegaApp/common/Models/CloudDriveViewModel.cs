@@ -591,7 +591,7 @@ namespace MegaApp.Models
 
         //public NodeViewModel FocusedNode { get; set; }
 
-        public MNode PublicNode { get; set; }
+        //public MNode PublicNode { get; set; }
 
         //public string LinkToImport { get; set; }
 

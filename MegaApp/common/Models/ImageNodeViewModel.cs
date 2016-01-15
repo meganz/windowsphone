@@ -190,9 +190,17 @@ namespace MegaApp.Models
         {
             get
             {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory,
-                                    MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                if (ParentContainerType != ContainerType.PublicLink)
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory,
+                        MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                }
+                else
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory, this.Name);
+                }
             }
         }
 

@@ -287,15 +287,19 @@ namespace MegaApp.Models
                         // if already exists in the destiny path.
                         var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
 
-                        var node = SelectedNode as NodeViewModel;
-                        var sfoNode = new SavedForOffline()
-                        {
-                            Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
-                            Base64Handle = node.OriginalMNode.getBase64Handle(),
-                            LocalPath = newOfflineLocalPath,
-                            ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle(),
-                            IsSelectedForOffline = true
-                        };
+                        var node = SelectedNode as NodeViewModel;                        
+                        var sfoNode = new SavedForOffline();
+                        sfoNode.Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode);
+                        sfoNode.Base64Handle = node.OriginalMNode.getBase64Handle();
+                        sfoNode.LocalPath = newOfflineLocalPath;                        
+                        sfoNode.IsSelectedForOffline = true;
+
+                        // If is a public node (link) the destination folder is the SFO root, so the parent handle
+                        // is the handle of the root node.
+                        if(node.ParentContainerType != ContainerType.PublicLink)
+                            sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
+                        else
+                            sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
 
                         if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
                             SavedForOffline.Insert(sfoNode);
@@ -341,7 +345,7 @@ namespace MegaApp.Models
                         #if WINDOWS_PHONE_81
                         if(!IsSaveForOfflineTransfer)
                         {
-                            bool result = await FileService.CopyFile(imageNode.LocalImagePath,
+                            bool result = await FileService.MoveFile(imageNode.LocalImagePath,
                             DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                             null), imageNode.Name);
 
@@ -361,7 +365,7 @@ namespace MegaApp.Models
                             #if WINDOWS_PHONE_81
                             if(!IsSaveForOfflineTransfer)
                             {
-                                bool result = await FileService.CopyFile(node.LocalFilePath,
+                                bool result = await FileService.MoveFile(node.LocalFilePath,
                                 DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                                 null), node.Name);
 
