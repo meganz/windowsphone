@@ -92,7 +92,7 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            MNode publicNode = request.getPublicNode();
+            MNode publicNode = App.PublicNode = request.getPublicNode();
             if (publicNode != null)
             {
                 #if WINDOWS_PHONE_80
@@ -102,7 +102,7 @@ namespace MegaApp.MegaApi
                 {
                     FileNodeViewModel node = new FileNodeViewModel(api, null, publicNode, ContainerType.PublicLink);
                     isImage = node.IsImage;
-                }   
+                }
 
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel, isImage));

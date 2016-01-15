@@ -179,7 +179,7 @@ namespace MegaApp.Models
         /// </summary>
         public void Refresh()
         {
-            if(this.FolderRootNode == null)            
+            if(this.FolderRootNode == null)
                 this.FolderRootNode = new OfflineFolderNodeViewModel(new DirectoryInfo(AppService.GetDownloadDirectoryPath()));
 
             ((OfflineFolderNodeViewModel)this.FolderRootNode).SetFolderInfo();
