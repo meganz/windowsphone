@@ -13,6 +13,7 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -36,6 +37,54 @@ namespace MegaApp.Pages
 
             CameraUploadsBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             CameraUploadsBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+        }
+
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isNetworkConnected)
+                {
+                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    {
+                        _cameraUploadsPageViewModel.CameraUploads.SetEmptyContentTemplate(true);
+                        _cameraUploadsPageViewModel.LoadFolders();
+                    }
+                    else
+                    {
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
+                        return;
+                    }
+                }
+                else
+                {
+                    _cameraUploadsPageViewModel.CameraUploads.ClearChildNodes();
+                    _cameraUploadsPageViewModel.CameraUploads.BreadCrumbs.Clear();
+                    _cameraUploadsPageViewModel.CameraUploads.SetOfflineContentTemplate();
+                }
+
+                SetApplicationBarData(isNetworkConnected);
+            });
         }
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
@@ -70,9 +119,15 @@ namespace MegaApp.Pages
             base.OnNavigatedFrom(e);
         }
 
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
 
             if(e.NavigationMode == NavigationMode.Reset) return;
 
@@ -239,7 +294,7 @@ namespace MegaApp.Pages
             return true;
         }
 
-        private void SetApplicationBarData()
+        private void SetApplicationBarData(bool isNetworkConnected = true)
         {
             // Set the Applicatio Bar to one of the available menu resources in this page
             SetAppbarResources(_cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode);
@@ -247,6 +302,9 @@ namespace MegaApp.Pages
             // Change and translate the current application bar
             _cameraUploadsPageViewModel.ChangeMenu(_cameraUploadsPageViewModel.CameraUploads,
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isNetworkConnected);
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
@@ -540,7 +598,7 @@ namespace MegaApp.Pages
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
-            Dispatcher.BeginInvoke(SetApplicationBarData);
+            SetApplicationBarData();
         }
 
         private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
@@ -633,7 +691,7 @@ namespace MegaApp.Pages
         protected override void OnDrawerClosed(object sender)
         {
             base.OnDrawerClosed(sender);
-            SetApplicationBarData();
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)

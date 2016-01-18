@@ -501,8 +501,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="ImportFileFailed" xml:space="preserve">
-    <value>No se pudo importar el archivo</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.</comment>
+    <value>No se pudo importar el archivo [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
     <value>Error al guardar la imagen</value>
@@ -1023,5 +1024,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="RemoveNodeSuccess" xml:space="preserve">
     <value>Elemento eliminado correctamente.</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>No se puede realizar esta acción. Por favor, conéctate a Internet y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
 </root>

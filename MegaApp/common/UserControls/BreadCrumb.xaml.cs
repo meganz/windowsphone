@@ -23,7 +23,7 @@ namespace MegaApp.UserControls
 
         public static readonly DependencyProperty ItemsSourceProperty = DependencyProperty.Register(
             "ItemsSource",
-            typeof(ObservableCollection<IMegaNode>),
+            typeof(ObservableCollection<IBaseNode>),
             typeof(BreadCrumb),
             new PropertyMetadata(null, OnItemsSourceChanged));
 
@@ -103,6 +103,9 @@ namespace MegaApp.UserControls
                 case ContainerType.OutShares:
                     homeButton.Style = (Style)Application.Current.Resources["OutSharesHomeCrumbStyle"];
                     break;
+                case ContainerType.Offline:
+                    homeButton.Style = (Style)Application.Current.Resources["OfflineHomeCrumbStyle"];
+                    break;
                 case ContainerType.CloudDrive:
                 default:
                     homeButton.Style = (Style)Application.Current.Resources["CloudDriveHomeCrumbStyle"];
@@ -117,7 +120,7 @@ namespace MegaApp.UserControls
             parentControl.Children.Add(homeButton);
         }
 
-        private Button DrawMegaFolderButton(Panel parentControl, IMegaNode node)
+        private Button DrawMegaFolderButton(Panel parentControl, IBaseNode node)
         {
             var folderButton = new Button
             {
@@ -137,7 +140,7 @@ namespace MegaApp.UserControls
             HomeTap(this, new EventArgs());
         }
 
-        private void OnBreadCrumbTap(IMegaNode selectedNode)
+        private void OnBreadCrumbTap(IBaseNode selectedNode)
         {
             if (BreadCrumbTap == null) return;
             BreadCrumbTap(this, new BreadCrumbTapEventArgs()
@@ -150,9 +153,9 @@ namespace MegaApp.UserControls
 
         #region Properties
 
-        public ObservableCollection<IMegaNode> ItemsSource
+        public ObservableCollection<IBaseNode> ItemsSource
         {
-            get { return (ObservableCollection<IMegaNode>)GetValue(ItemsSourceProperty); }
+            get { return (ObservableCollection<IBaseNode>)GetValue(ItemsSourceProperty); }
             set { SetValue(ItemsSourceProperty, value); }
         }
 

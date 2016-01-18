@@ -29,7 +29,17 @@ namespace MegaApp.Models
 
         protected void UpdateUserData()
         {
-            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            if (!NetworkService.IsNetworkAvailable() || !Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            {
+                if (App.UserData != null)
+                    UserData = App.UserData;
+                else if (UserData == null)
+                    UserData = new UserDataViewModel();
+
+                if(String.IsNullOrWhiteSpace(UserData.UserName))
+                    Deployment.Current.Dispatcher.BeginInvoke(() => UserData.UserName = UiResources.MyAccount);
+            }
+            else
             {
                 bool accountChange = false;
 
@@ -47,23 +57,16 @@ namespace MegaApp.Models
                         accountChange = true;
                 }
 
-                if (accountChange || (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
-                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
-
                 if (accountChange)
                     UserData.UserEmail = App.MegaSdk.getMyEmail();
 
+                if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
+                    App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
+                
                 if (accountChange || (String.IsNullOrEmpty(UserData.UserName) || UserData.UserName.Equals(UiResources.MyAccount)))
                     App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(UserData));
 
                 App.UserData = UserData;
-            }
-            else
-            {
-                if (UserData == null)
-                    UserData = new UserDataViewModel();
-                
-                Deployment.Current.Dispatcher.BeginInvoke(() => UserData.UserName = UiResources.MyAccount);
             }
         }
 
@@ -103,6 +106,20 @@ namespace MegaApp.Models
                     NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
                 },
                 IsActive = activeItem == HamburgerMenuItemType.CloudDrive
+            });
+            this.MenuItems.Add(new HamburgerMenuItem()
+            {
+                Type = HamburgerMenuItemType.SavedForOffline,
+                DisplayName = UiResources.SavedForOffline.ToLower(),
+                IconPathData = VisualResources.SavedOfflineIcoData,
+                IconWidth = 44,
+                IconHeight = 44,
+                Margin = new Thickness(38, 0, 36, 0),
+                TapAction = () =>
+                {
+                    NavigateService.NavigateTo(typeof(SavedForOfflinePage), NavigationParameter.Normal);
+                },
+                IsActive = activeItem == HamburgerMenuItemType.SavedForOffline
             });
             this.MenuItems.Add(new HamburgerMenuItem()
             {

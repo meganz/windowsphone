@@ -4,10 +4,11 @@
     {
         MyAccount       = 0,
         CloudDrive      = 1,
-        CameraUploads   = 2,
-        SharedItems     = 3,
-        Contacts        = 4,
-        Transfers       = 5,
-        Settings        = 6
+        SavedForOffline = 2,
+        CameraUploads   = 3,
+        SharedItems     = 4,
+        Contacts        = 5,
+        Transfers       = 6,
+        Settings        = 7
     }
 }

@@ -63,7 +63,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="24,0,24,5">
+                            <Grid Margin="24,0,12,5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
@@ -73,14 +73,20 @@
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
                                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding InShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                                <RichTextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <Paragraph>
-                                        <Run Text="{Binding NumberOfInSharedFoldersText}"/>
-                                        <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
-                                    </Paragraph>
-                                </RichTextBox>
                                 <userControls:BreadCrumb x:Name="IncomingSharedBreadCrumb" ItemsSource="{Binding InShares.BreadCrumbs}" ItemsSourceType="{Binding InShares.Type}" Margin="0,0,6,0" Grid.Row="1" Grid.Column="0"/>
-                                <TextBlock Text="{Binding InShares.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"/>
+                                <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <RichTextBox TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Paragraph>
+                                            <Run Text="{Binding NumberOfInSharedFoldersText}"/>
+                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                        </Paragraph>
+                                    </RichTextBox>
+                                    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                                        <TextBlock Text="{Binding InShares.EmptyInformationText}" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding HasInSharedFolders, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        <TextBlock Text="{Binding InShares.FolderRootNode.Information}" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding HasInSharedFolders, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <TextBlock Text="{Binding InShares.EmptyInformationText}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
 
@@ -97,7 +103,7 @@
             					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 
             					EmptyContent=""
-                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}"
+                                EmptyContentTemplate="{Binding EmptyContentTemplate}"
                                 VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
             					IsAsyncBalanceEnabled="True"/>
                         </Grid>
@@ -113,7 +119,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="24,0,24,5">
+                            <Grid Margin="24,0,12,5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
@@ -123,14 +129,20 @@
                                     <RowDefinition Height="24"/>
                                 </Grid.RowDefinitions>
                                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding OutShares.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>                                
-                                <RichTextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0" Visibility="{Binding IsOutSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                    <Paragraph>
-                                        <Run Text="{Binding NumberOfOutSharedFoldersText}"/>
-                                        <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
-                                    </Paragraph>
-                                </RichTextBox>
                                 <userControls:BreadCrumb x:Name="OutgoingSharedBreadCrumb" ItemsSource="{Binding OutShares.BreadCrumbs}" ItemsSourceType="{Binding OutShares.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0"/>
-                                <TextBlock Text="{Binding OutShares.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding IsInSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"/>
+                                <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsNetworkAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <RichTextBox TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsOutSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Paragraph>
+                                            <Run Text="{Binding NumberOfOutSharedFoldersText}"/>
+                                            <Run Text="{Binding LocalizedUiResources.SharedFolders, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}" Foreground="{StaticResource MegaRedSolidColorBrush}"/>
+                                        </Paragraph>
+                                    </RichTextBox>
+                                    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="{Binding IsOutSharedItemsRootListView, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
+                                        <TextBlock Text="{Binding OutShares.EmptyInformationText}" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding OutShares.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                        <TextBlock Text="{Binding OutShares.FolderRootNode.Information}" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding OutShares.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <TextBlock Text="{Binding OutShares.EmptyInformationText}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Margin="0" Visibility="{Binding IsNetworkAvailable, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
 
@@ -147,7 +159,7 @@
             					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 
             					EmptyContent=""
-                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}"
+                                EmptyContentTemplate="{Binding EmptyContentTemplate}"
                                 VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
             					IsAsyncBalanceEnabled="True"/>
                         </Grid>
@@ -161,7 +173,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Height="100" Margin="0,66,0,64">
+            <Grid Height="100" Margin="0,50,0,48">
                 <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
                         <Grid.ColumnDefinitions>

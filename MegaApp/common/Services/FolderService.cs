@@ -23,6 +23,29 @@ namespace MegaApp.Services
             return Directory.Exists(path);
         }
 
+        public static int GetNumChildFolders(string path)
+        {
+            return Directory.GetDirectories(path).Length;
+        }
+
+        public static int GetNumChildFiles(string path, bool isOfflineFolder = false)
+        {
+            string[] childFiles = Directory.GetFiles(path);
+
+            int num = 0;
+            if(!isOfflineFolder)
+            {
+                num = childFiles.Length;
+            }
+            else
+            {
+                foreach(var filename in childFiles)
+                    if (!FileService.IsPendingTransferFile(filename)) num++;
+            }
+
+            return num;
+        }
+
         public static bool IsEmptyFolder(string path)
         {
             int val1 = Directory.GetDirectories(path).Count();
@@ -38,7 +61,13 @@ namespace MegaApp.Services
 
         public static void DeleteFolder (string path)
         {
-            Directory.Delete(path);
+            if(Directory.Exists(path))
+                Directory.Delete(path);
+        }
+
+        public static void DeleteFolder(string path, bool recursive)
+        {
+            Directory.Delete(path, recursive);
         }
 
         public static void Clear(string path)
@@ -70,6 +99,14 @@ namespace MegaApp.Services
             }
         }
 
+        public static bool IsOfflineRootFolder(string path)
+        {
+            if (!path.Trim().EndsWith("\\"))
+                path = path.Insert(path.Length, "\\");
+
+            return (String.Compare(AppService.GetDownloadDirectoryPath(), path) == 0) ? true : false;
+        }
+
         #if WINDOWS_PHONE_81
         public static void SelectFolder(string operation, NodeViewModel nodeViewModel = null)
         {
@@ -85,7 +122,7 @@ namespace MegaApp.Services
                 folderPicker.FileTypeFilter.Add("*");
 
                 folderPicker.ContinuationData["Operation"] = operation;
-                folderPicker.ContinuationData["NodeData"] = nodeViewModel != null ? nodeViewModel.Handle : 0;
+                folderPicker.ContinuationData["NodeData"] = nodeViewModel != null ? nodeViewModel.Base64Handle : null;
 
                 folderPicker.PickFolderAndContinue();
             }
@@ -144,18 +181,18 @@ namespace MegaApp.Services
 
             if (!App.CloudDrive.IsUserOnline()) return;
 
-            if (args.ContinuationData["NodeData"] != null && (ulong) args.ContinuationData["NodeData"] != 0)
+            if (args.ContinuationData["NodeData"] != null)
             {
-                var handle = (ulong)args.ContinuationData["NodeData"];
+                String base64Handle = (String)args.ContinuationData["NodeData"];
                 NodeViewModel node;
-                if (App.CloudDrive.PublicNode != null && handle.Equals(App.CloudDrive.PublicNode.getHandle()))
+                if (App.PublicNode != null && base64Handle.Equals(App.PublicNode.getBase64Handle()))
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.CloudDrive.PublicNode);
-                    App.CloudDrive.PublicNode = null;
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.PublicNode, ContainerType.PublicLink);
+                    App.PublicNode = null;
                 }
                 else
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByHandle(handle));
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByBase64Handle(base64Handle), ContainerType.CloudDrive);
                 }
                
                 if(node != null)
@@ -169,8 +206,7 @@ namespace MegaApp.Services
             }
 
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-            
-            //App.CloudDrive.MultipleDownload(args.Folder);
+                        
             App.MainPageViewModel.ActiveFolderView.MultipleDownload(args.Folder);
 
             ResetFolderPicker();

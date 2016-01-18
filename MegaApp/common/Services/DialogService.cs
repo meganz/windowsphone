@@ -79,7 +79,7 @@ namespace MegaApp.Services
         #elif WINDOWS_PHONE_81
         public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
         {
-            // Needed to avoud "Implicity captured closure" compiler warning.
+            // Needed to avoid "Implicity captured closure" compiler warning.
             var importFolderViewModel = folderViewModel;
             var downloadFolderViewModel = folderViewModel;
 
@@ -291,7 +291,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -305,7 +305,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -319,7 +319,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -333,7 +333,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -347,7 +347,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -361,7 +361,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -375,7 +375,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -389,7 +389,7 @@ namespace MegaApp.Services
                     App.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
-                    UiService.SetSortOrder(folder.FolderRootNode.Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
                     Task.Run(() => folder.LoadChildNodes());
                 }
             });
@@ -408,6 +408,173 @@ namespace MegaApp.Services
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
             sortList.ItemTap += (sender, args) => ((AdvancedMenuItem) args.Item.DataContext).TapAction.Invoke();
             
+            buttonStackPanel.Children.Add(headerText);
+            buttonStackPanel.Children.Add(sortList);
+
+            sortRadWindow.Content = buttonStackPanel;
+
+            sortRadWindow.IsOpen = true;
+        }
+
+        public static void ShowSortDialog(OfflineFolderViewModel folder)
+        {
+            // If rootnode is not determined yet. Do nothing
+            if (folder.FolderRootNode == null) return;
+
+            var sortRadWindow = new RadModalWindow()
+            {
+                IsFullScreen = true,
+                Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+            };
+
+            var buttonStackPanel = new StackPanel()
+            {
+                Orientation = Orientation.Vertical,
+                Width = Double.NaN,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"])
+            };
+
+            var headerText = new TextBlock()
+            {
+                Text = UiResources.SortByMenuTitle.ToUpper(),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                FontSize = (double)Application.Current.Resources["PhoneFontSizeLarge"],
+                FontWeight = FontWeights.SemiBold,
+                Margin = new Thickness(20, 30, 20, 20)
+            };
+
+            var sortItems = new List<AdvancedMenuItem>();
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.FilesAscendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.FilesDescendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.LargestSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.SmallestSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.NewestSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.OldestSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.NameAscendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+            sortItems.Add(new AdvancedMenuItem()
+            {
+                Name = UiResources.NameDescendingSortOption.ToLower(),
+                TapAction = () =>
+                {
+                    // Needed on every UI interaction
+                    App.MegaSdk.retryPendingConnections();
+
+                    sortRadWindow.IsOpen = false;
+                    UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
+                    Task.Run(() => folder.LoadChildNodes());
+                }
+            });
+
+
+            var sortList = new RadDataBoundListBox
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                VerticalAlignment = VerticalAlignment.Stretch,
+                ItemsSource = sortItems,
+                Margin = new Thickness(20),
+                ItemTemplate = (DataTemplate)Application.Current.Resources["AdvancedMenuItem"],
+            };
+            ScrollViewer.SetVerticalScrollBarVisibility(sortList, ScrollBarVisibility.Disabled);
+            InteractionEffectManager.SetIsInteractionEnabled(sortList, true);
+            InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
+            sortList.ItemTap += (sender, args) => ((AdvancedMenuItem)args.Item.DataContext).TapAction.Invoke();
+
             buttonStackPanel.Children.Add(headerText);
             buttonStackPanel.Children.Add(sortList);
 

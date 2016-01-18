@@ -79,12 +79,12 @@ namespace MegaApp.Models
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 if (this.CloudDrive.FolderRootNode == null)
-                    this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode());
+                    this.CloudDrive.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode(), ContainerType.CloudDrive);
 
                 this.CloudDrive.LoadChildNodes();
 
                 if (this.RubbishBin.FolderRootNode == null)
-                    this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode());
+                    this.RubbishBin.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode(), ContainerType.RubbishBin);
 
                 this.RubbishBin.LoadChildNodes();                
             }); 
@@ -104,7 +104,7 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutHandle);            
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutBase64Handle);            
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 

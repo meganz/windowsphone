@@ -9,6 +9,6 @@ namespace MegaApp.UserControls
 {
     public class BreadCrumbTapEventArgs: EventArgs
     {
-        public IMegaNode Item { get; set; }
+        public IBaseNode Item { get; set; }
     }
 }

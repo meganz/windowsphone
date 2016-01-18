@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using mega;
@@ -13,10 +14,28 @@ namespace MegaApp.MegaApi
     class FastLoginRequestListener: BaseRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
+
+        // Timer for ignore the received API_EAGAIN (-3) during login
+        private DispatcherTimer timerAPI_EAGAIN;
+        private bool isFirstAPI_EAGAIN;
         
         public FastLoginRequestListener(MainPageViewModel mainPageViewModel)
         {
             _mainPageViewModel = mainPageViewModel;
+
+            timerAPI_EAGAIN = new DispatcherTimer();
+            timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
+            timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);            
+        }
+
+        // Method which is call when the timer event is triggered
+        private void timerTickAPI_EAGAIN(object sender, object e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                timerAPI_EAGAIN.Stop();
+                ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);
+            });
         }
 
         #region Base Properties
@@ -85,14 +104,36 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Stop());
+            base.onRequestFinish(api, request, e);
+        }
+
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {
+            this.isFirstAPI_EAGAIN = true;
+            base.onRequestStart(api, request);
+        }
+
+        public override void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        {
+            // Starts the timer when receives the first API_EAGAIN (-3)
+            if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
+            {
+                this.isFirstAPI_EAGAIN = false;
+                Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Start());                
+            }
+
+            base.onRequestTemporaryError(api, request, e);
+        }
+
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>{
-                    
-                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
-                });
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload));
 
                 return;
             }

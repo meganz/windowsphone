@@ -27,13 +27,13 @@ namespace MegaApp.Models
     public abstract class NodeViewModel : BaseAppInfoAwareViewModel, IMegaNode
     {
         // Offset DateTime value to calculate the correct creation and modification time
-        private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        private static readonly DateTime OriginalDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);        
 
-        protected NodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+        protected NodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
             ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
             : base(megaSdk, appInformation)
         {
-            Update(megaNode);
+            Update(megaNode, parentContainerType);
             SetDefaultValues();
             
             this.ParentCollection = parentCollection;
@@ -219,14 +219,8 @@ namespace MegaApp.Models
         {
             if (!IsUserOnline()) return;
             //NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
-
-            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
-
-            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                AppResources.DownloadsDirectory.Replace("\\", ""),
-                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));                      
-
-            SaveForOffline(transferQueu, parentNodePath);
+            
+            SaveForOffline(transferQueu);
 
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
@@ -275,7 +269,7 @@ namespace MegaApp.Models
                 // To avoid pass null values to CreateNew
                 if (childList.get(i) == null) continue;
 
-                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ContainerType.CloudDrive);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (childNode == null) continue;
@@ -294,23 +288,55 @@ namespace MegaApp.Models
         }
 #endif
 
-        public async void SaveForOffline(TransferQueu transferQueu, String remoteParentNodePath)
+        public async Task<bool> SaveForOffline(TransferQueu transferQueu)
         {
             // User must be online to perform this operation
-            if (!IsUserOnline()) return;
+            if (!IsUserOnline()) return false;
 
-            if (!FolderService.FolderExists(remoteParentNodePath))
-                FolderService.CreateFolder(remoteParentNodePath);
+            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
+
+            String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""));
+
+            String parentNodePath;
+            if(ParentContainerType != ContainerType.PublicLink)
+            {
+                parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""),
+                    (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+            }
+            else 
+            {
+                // If is a public node (link) the destination folder is the SFO root
+                parentNodePath = sfoRootPath;
+            }            
+
+            if (!FolderService.FolderExists(parentNodePath))
+                FolderService.CreateFolder(parentNodePath);
 
             if (this.IsFolder)
-                RecursiveSaveForOffline(transferQueu, remoteParentNodePath, this, true);
+                await RecursiveSaveForOffline(transferQueu, parentNodePath, this);
             else
-                await SaveFileForOffline(transferQueu, remoteParentNodePath, this);
+                await SaveFileForOffline(transferQueu, parentNodePath, this);
             
             this.IsAvailableOffline = this.IsSelectedForOffline = true;
+
+            // Check and add to the DB if necessary the previous folders of the path
+            while (String.Compare(parentNodePath, sfoRootPath) != 0)
+            {
+                var folderPathToAdd = parentNodePath;
+                parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                if (!SavedForOffline.ExistsNodeByLocalPath(folderPathToAdd))
+                    SavedForOffline.Insert(parentNode);
+
+                parentNode = App.MegaSdk.getParentNode(parentNode);
+            }
+
+            return true;
         }
 
-        private async void RecursiveSaveForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node, bool fullFolder = false)
+        private async Task RecursiveSaveForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node)
         {
             if (!FolderService.FolderExists(sfoPath))
                 FolderService.CreateFolder(sfoPath);
@@ -332,16 +358,16 @@ namespace MegaApp.Models
                 // To avoid pass null values to CreateNew
                 if (childList.get(i) == null) continue;
 
-                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i));
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), this.ParentContainerType);
 
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (childNode == null) continue;
 
                 if (childNode.IsFolder)
-                    RecursiveSaveForOffline(transferQueu, newSfoPath, childNode);
+                    await RecursiveSaveForOffline(transferQueu, newSfoPath, childNode);
                 else
                     await SaveFileForOffline(transferQueu, newSfoPath, childNode);
-            }         
+            }
         }
 
         private async Task<bool> SaveFileForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node)
@@ -366,27 +392,84 @@ namespace MegaApp.Models
             return true;
         }
 
-        public async void RemoveForOffline(String parentNodePath)
+        public async Task RemoveForOffline()
         {
+            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
+
+            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                AppResources.DownloadsDirectory.Replace("\\", ""),
+                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+
+            String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory.Replace("\\", ""));
+
             var nodePath = Path.Combine(parentNodePath, this.Name);
 
             if (this.IsFolder)
             {
                 await RecursiveRemoveForOffline(parentNodePath, this.Name);
-                FolderService.DeleteFolder(nodePath);
+                FolderService.DeleteFolder(nodePath, true);
             }                
             else
             {
+                // Search if the file has a pending transfer for offline and cancel it on this case
+                foreach (var item in App.MegaTransfers.Downloads)
+                {
+                    WaitHandle waitEventRequest = new AutoResetEvent(false);
+
+                    var transferItem = (TransferObjectModel)item;
+                    if (transferItem == null || transferItem.Transfer == null) continue;
+
+                    if (String.Compare(nodePath, transferItem.Transfer.getPath()) == 0 &&
+                        transferItem.isAliveTransfer())
+                    {
+                        MegaSdk.cancelTransfer(transferItem.Transfer,
+                            new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
+                        waitEventRequest.WaitOne();
+                    }
+                }
+                
                 FileService.DeleteFile(nodePath);                
             }
 
             SavedForOffline.DeleteNodeByLocalPath(nodePath);            
             this.IsAvailableOffline = this.IsSelectedForOffline = false;
+
+            // Check if the previous folders of the path are empty and 
+            // remove from the offline and the DB on this case
+            while (String.Compare(parentNodePath, sfoRootPath) != 0)
+            {
+                var folderPathToRemove = parentNodePath;
+                parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+
+                if (FolderService.IsEmptyFolder(folderPathToRemove))
+                {
+                    FolderService.DeleteFolder(folderPathToRemove);
+                    SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
+                }
+            }
         }
 
-        private async Task<bool> RecursiveRemoveForOffline(String sfoPath, String nodeName)
+        private async Task RecursiveRemoveForOffline(String sfoPath, String nodeName)
         {
             String newSfoPath = Path.Combine(sfoPath, nodeName);
+
+            // Search if the folder has a pending transfer for offline and cancel it on this case
+            foreach (var item in App.MegaTransfers.Downloads)
+            {
+                WaitHandle waitEventRequest = new AutoResetEvent(false);
+
+                var transferItem = (TransferObjectModel)item;
+                if (transferItem == null || transferItem.Transfer == null) continue;
+
+                if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
+                    transferItem.isAliveTransfer())
+                {
+                    MegaSdk.cancelTransfer(transferItem.Transfer,
+                        new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
+                    waitEventRequest.WaitOne();
+                }
+            }
 
             IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
             if (childFolders != null)
@@ -395,8 +478,7 @@ namespace MegaApp.Models
                 {
                     if (folder != null)
                     {
-                        await RecursiveRemoveForOffline(newSfoPath, folder);
-                        FolderService.DeleteFolder(Path.Combine(newSfoPath, folder));
+                        await RecursiveRemoveForOffline(newSfoPath, folder);                        
                         SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, folder));
                     }
                 }
@@ -407,22 +489,19 @@ namespace MegaApp.Models
             {
                 foreach (var file in childFiles)
                 {
-                    if (file != null)
-                    {
-                        FileService.DeleteFile(Path.Combine(newSfoPath, file));
+                    if (file != null)        
                         SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, file));
-                    }
                 }
             }
-
-            return true;
         }
 
-        public void Update(MNode megaNode)
+        public void Update(MNode megaNode, ContainerType parentContainerType)
         {
             OriginalMNode = megaNode;
             this.Handle = megaNode.getHandle();
+            this.Base64Handle = megaNode.getBase64Handle();
             this.Type = megaNode.getType();
+            this.ParentContainerType = parentContainerType;
             this.Name = megaNode.getName();
             this.Size = MegaSdk.getSize(megaNode);
             this.SizeText = this.Size.ToStringAndSuffix();
@@ -434,9 +513,10 @@ namespace MegaApp.Models
             else
                 this.ModificationTime = this.CreationTime;
 
-            if(!App.MegaSdk.isInShare(megaNode))
+            if(!App.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
+                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares)
                 CheckAndUpdateSFO(megaNode);
-        }
+        }        
 
         private void CheckAndUpdateSFO(MNode megaNode)
         {
@@ -521,7 +601,9 @@ namespace MegaApp.Models
 
         public ulong Handle { get; set; }
 
-        public ulong Size { get; private set; }
+        public String Base64Handle { get; set; }
+
+        public ulong Size { get; set; }
 
         private string _sizeText;
         public string SizeText
@@ -535,6 +617,8 @@ namespace MegaApp.Models
         public ObservableCollection<IMegaNode> ChildCollection { get; set; }
 
         public MNodeType Type { get; private set; }
+
+        public ContainerType ParentContainerType { get; private set; }
 
         private NodeDisplayMode _displayMode;
         public NodeDisplayMode DisplayMode

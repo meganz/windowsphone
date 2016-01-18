@@ -167,10 +167,17 @@
                             </Path.Fill>
                         </Path>
                     </Button>
-                    <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48">
-                        <Path Stretch="UniformToFill" Data="{Binding ViewStateButtonPathData}" Width="22" Height="22">
+                    <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" Visibility="{Binding HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                        <Path Stretch="UniformToFill" Data="{Binding NextViewButtonPathData}" Width="22" Height="22">
                             <Path.Fill>
                                 <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            </Path.Fill>
+                        </Path>
+                    </Button>
+                    <Button x:Name="BtnChangeViewDisabled" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" IsEnabled="False" Visibility="{Binding HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                        <Path Stretch="UniformToFill" Data="{Binding LocalizedVisualResources.LargeThumbnailViewPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Width="22" Height="22">
+                            <Path.Fill>
+                                <SolidColorBrush Color="{StaticResource PhoneDisabledColor}"/>
                             </Path.Fill>
                         </Path>
                     </Button>
@@ -186,7 +193,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="24,0,24,5">
+                            <Grid Margin="24,0,12,5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
@@ -197,7 +204,8 @@
                                 </Grid.RowDefinitions>
                                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding CloudDrive.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                 <userControls:BreadCrumb x:Name="CloudDriveBreadCrumb" ItemsSource="{Binding CloudDrive.BreadCrumbs}" ItemsSourceType="{Binding CloudDrive.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
-                                <TextBlock Text="{Binding CloudDrive.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                                <TextBlock Text="{Binding CloudDrive.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CloudDrive.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <TextBlock Text="{Binding CloudDrive.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CloudDrive.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
                         <Grid x:Name="CloudDriveContentPanel" Grid.Row="1" Margin="0">
@@ -222,7 +230,7 @@
             					EmptyContentDisplayMode="DataSourceEmpty" 
             					EmptyContent="" 
             					EmptyContentTemplate="{Binding EmptyContentTemplate}" 
-            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 						
+            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
             					IsAsyncBalanceEnabled="True">
                                 <telerikPrimitives:RadContextMenu.ContextMenu>
                                     <telerikPrimitives:RadContextMenu 
@@ -295,7 +303,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="24,0,24,5">
+                            <Grid Margin="24,0,12,5">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
@@ -306,7 +314,8 @@
                                 </Grid.RowDefinitions>
                                 <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding RubbishBin.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                 <userControls:BreadCrumb x:Name="RubbishBinBreadCrumb" ItemsSource="{Binding RubbishBin.BreadCrumbs}" ItemsSourceType="{Binding RubbishBin.Type}" Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
-                                <TextBlock Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1"/>
+                                <TextBlock Text="{Binding RubbishBin.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding RubbishBin.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <TextBlock Text="{Binding RubbishBin.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding RubbishBin.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
 
@@ -332,8 +341,7 @@
             					IsAsyncBalanceEnabled="True" 
             					EmptyContent="" 
             					EmptyContentTemplate="{Binding EmptyContentTemplate}" 
-            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"  >
-                                <!--ItemTemplate="{StaticResource MegaNodeListFileItemContent}"-->
+            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}">                                
                                 <telerikPrimitives:RadContextMenu.ContextMenu>
                                     <telerikPrimitives:RadContextMenu 
 										OpenGesture="Hold" 
@@ -384,7 +392,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Height="100" Margin="0,66,0,64">
+            <Grid Height="100" Margin="0,50,0,48">
                 <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
                         <Grid.ColumnDefinitions>

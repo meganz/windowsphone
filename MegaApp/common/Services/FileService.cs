@@ -21,9 +21,32 @@ namespace MegaApp.Services
             return File.Exists(path);
         }
 
+        public static bool IsPendingTransferFile(string filename)
+        {
+            try
+            {
+                string extension = Path.GetExtension(filename);
+
+                if (extension == null) return false;
+
+                switch (extension.ToLower())
+                {
+                    case ".mega":
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static void DeleteFile(string path)
         {
-            File.Delete(path);
+            if(File.Exists(path))
+                File.Delete(path);            
         }
 
         public static void ClearFiles(IEnumerable<string> filesToDelete)
@@ -93,6 +116,16 @@ namespace MegaApp.Services
             }
 
             return copy != null;
+        }
+
+        // Move a file. Copies the file and remove the source file if the copy was successful
+        public static async Task<bool> MoveFile(string sourcePath, string destinationFolderPath, string newFileName = null)
+        {
+            if(!await CopyFile(sourcePath, destinationFolderPath, newFileName)) return false;
+
+            DeleteFile(sourcePath);
+            
+            return true;
         }
        
         public static async Task<bool> OpenFile(string filePath)

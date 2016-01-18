@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -13,12 +14,32 @@ namespace MegaApp.Models
     class LoginViewModel : BaseRequestListenerViewModel
     {
         private readonly MegaSDK _megaSdk;
+        private readonly LoginPage _loginPage;
 
-        public LoginViewModel(MegaSDK megaSdk)
+        // Timer for ignore the received API_EAGAIN (-3) during login
+        private DispatcherTimer timerAPI_EAGAIN;
+        private bool isFirstAPI_EAGAIN;
+
+        public LoginViewModel(MegaSDK megaSdk, LoginPage loginPage = null)
         {
             this._megaSdk = megaSdk;
+            this._loginPage = loginPage;
             this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
-            this.ControlState = true;            
+            this.ControlState = true;
+
+            timerAPI_EAGAIN = new DispatcherTimer();
+            timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
+            timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
+        }
+
+        // Method which is call when the timer event is triggered
+        private void timerTickAPI_EAGAIN(object sender, object e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                timerAPI_EAGAIN.Stop();
+                ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);
+            });
         }
 
         #region Methods
@@ -26,9 +47,9 @@ namespace MegaApp.Models
         public void DoLogin()
         {
             if (CheckInputParameters())
-            {
                 this._megaSdk.login(Email, Password, this);
-            }
+            else if (_loginPage != null)
+                Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
         }
 
         private bool CheckInputParameters()
@@ -135,27 +156,54 @@ namespace MegaApp.Models
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(false);
 
-                this.ControlState = true;
+                timerAPI_EAGAIN.Stop();
+
+                this.ControlState = true;                
             });            
 
             if (e.getErrorCode() == MErrorType.API_OK)
-                SessionKey = api.dumpSession();
-
-            // E-mail unassociated with a MEGA account or Wrong password
-            if (e.getErrorCode() == MErrorType.API_ENOENT)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                            ErrorMessageTitle,
-                            AppMessages.WrongEmailPasswordLogin,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                });
-                return;
+                SessionKey = api.dumpSession();
             }
+            else
+            {
+                if (_loginPage != null)
+                    Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
+
+                // E-mail unassociated with a MEGA account or Wrong password
+                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                                ErrorMessageTitle,
+                                AppMessages.WrongEmailPasswordLogin,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                    });
+                    return;
+                }
+            }            
 
             base.onRequestFinish(api, request, e);
+        }
+
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {
+            this.isFirstAPI_EAGAIN = true;
+            base.onRequestStart(api, request);
+        }
+
+        public override void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+        {
+            // Starts the timer when receives the first API_EAGAIN (-3)
+            if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
+            {
+                this.isFirstAPI_EAGAIN = false;
+                Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Start());
+            }
+
+            base.onRequestTemporaryError(api, request, e);
         }
 
         #endregion

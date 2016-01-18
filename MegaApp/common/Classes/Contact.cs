@@ -83,8 +83,10 @@ namespace MegaApp.Classes
         {
             get
             {
+                if (String.IsNullOrWhiteSpace(Email)) return null;
+
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory, "ContactAvatarImage_"+Email);
+                    AppResources.ThumbnailsDirectory, Email);
             }
         }
 
