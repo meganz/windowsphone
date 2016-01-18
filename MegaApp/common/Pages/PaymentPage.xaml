@@ -179,7 +179,13 @@
                                 <Run Text="{Binding LocalizedUiResources.ChoosePaymentMethod, Source={StaticResource LocalizedStrings}}"/>
                             </Paragraph>
                         </RichTextBox>
-                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPaymentMethods" Grid.Row="1" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource PaymentMethodTemplate}" EmptyContent="{Binding LocalizedUiResources.NoPaymentMethodsAvailable, Source={StaticResource LocalizedStrings}}" EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" ItemTap="OnSelectedPaymentMethod"/>
+                        <telerikPrimitives:RadDataBoundListBox 
+                            x:Name="LstPaymentMethods" Grid.Row="1" 
+                            telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+                            ItemTemplate="{StaticResource PaymentMethodTemplate}" 
+                            EmptyContent="{Binding LocalizedUiResources.NoPaymentMethodsAvailable, Source={StaticResource LocalizedStrings}}" 
+                            EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" 
+                            ItemTap="OnSelectedPaymentMethod"/>
                     </StackPanel>
 
                     <StackPanel x:Name="PanelBillingPaymentDetails" Grid.Row="1" Visibility="{Binding CreditCardPaymentIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">

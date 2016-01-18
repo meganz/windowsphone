@@ -13,6 +13,7 @@ using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
@@ -34,9 +35,29 @@ namespace MegaApp.Pages
             SetApplicationBarData();
 
             InteractionEffectManager.AllowedTypes.Add(typeof(RadDataBoundListBoxItem));
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
         }
 
-        public void SetApplicationBarData()
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+        }
+
+        public void SetApplicationBarData(bool isNetworkConnected = true)
         {
             this.ApplicationBar = (ApplicationBar)Resources["MyAccountMenu"];
 
@@ -63,6 +84,24 @@ namespace MegaApp.Pages
             {
                 ApplicationBar.MenuItems.RemoveAt(3);
             }
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isNetworkConnected)
+                {
+                    _myAccountPageViewModel.GetAccountDetails();
+                    _myAccountPageViewModel.GetPricing();
+                }
+                else
+                {
+                    _myAccountPageViewModel.SetOfflineContentTemplate();
+                }
+
+                SetApplicationBarData(isNetworkConnected);
+            });
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -98,6 +137,12 @@ namespace MegaApp.Pages
                     }                    
                 }                
             }
+
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
         }
 
         private void OnPieDataBindingComplete(object sender, EventArgs e)
@@ -108,6 +153,8 @@ namespace MegaApp.Pages
 
         private async void OnLogoutClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued ||
                 t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
                 t.Status == TransferStatus.Paused || t.Status == TransferStatus.Pausing));
@@ -148,16 +195,22 @@ namespace MegaApp.Pages
 
         private void OnChangePasswordClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             _myAccountPageViewModel.ChangePassword();
         }
 
         private void OnCancelSubscriptionClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             _myAccountPageViewModel.CancelSubscription();
         }
 
         private void OnCloseAllSessionsClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             _myAccountPageViewModel.CloseAllSessions();
         }
 
@@ -196,6 +249,8 @@ namespace MegaApp.Pages
 
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable()) return;
+
             if (sender == PivotAccount)
                 _myAccountPageViewModel.GetAccountDetails();
             else

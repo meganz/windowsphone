@@ -25,6 +25,7 @@ namespace MegaApp.Classes
             _myAccountPage = myAccountPage;
 
             IsFreeAccount = true; // Default value
+            IsDataLoaded = false; // Default value
 
             CacheSize = AppService.GetAppCacheSize();
         }
@@ -50,7 +51,17 @@ namespace MegaApp.Classes
                 OnPropertyChanged("UserName");
             }
         }*/
-        
+
+        private bool _isDataLoaded;
+        public bool IsDataLoaded
+        {
+            get { return _isDataLoaded; }
+            set 
+            {
+                _isDataLoaded = value;
+                OnPropertyChanged("IsDataLoaded");
+            }
+        }
 
         private ulong _totalSpace;
         public ulong TotalSpace

@@ -384,6 +384,10 @@ namespace MegaApp.Classes
                     iconPath.SetDataBinding(VisualResources.DialogRubbishBinPathData);
                     _image = iconPath;
                     break;
+                case MessageDialogImage.NoInternetConnection:
+                    iconPath.SetDataBinding(VisualResources.NoInternetConnectionViewPathData);
+                    _image = iconPath;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("messageDialogImage", messageDialogImage, null);
             }
@@ -574,6 +578,10 @@ namespace MegaApp.Classes
         /// <summary>
         /// Display a rubbish bin image
         /// </summary>
-        RubbishBin
+        RubbishBin,
+        /// <summary>
+        /// Display a no internet connection image
+        /// </summary>
+        NoInternetConnection
     }
 }

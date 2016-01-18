@@ -153,8 +153,8 @@
                                     <charting:AngleRange StartAngle="270" SweepAngle="360"/>
                                 </telerikChart:PieSeries.AngleRange>
                             </telerikChart:DoughnutSeries>
-                        </telerikChart:RadPieChart>                        
-                        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        </telerikChart:RadPieChart>
+                        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding AccountDetails.IsDataLoaded, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Text="{Binding AccountDetails.TotalSpaceSize}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                             <TextBlock Text="{Binding AccountDetails.TotalSpaceUnits}" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Center"/>
                         </StackPanel>
@@ -212,15 +212,33 @@
                     </Grid>
                 </phone:PivotItem>
                 <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
-                    <Grid>                        
-                        <telerikPrimitives:RadDataBoundListBox x:Name="LstPlans" Visibility="{Binding IsAccountUpdate, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}" telerik:InteractionEffectManager.IsInteractionEnabled="True" ItemTemplate="{StaticResource ProductItemTemplate}" ItemsSource="{Binding UpgradeAccount.Plans}" EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" EmptyContentTemplate="{StaticResource ListEmptyContentTemplate}" ItemTap="OnItemTap"/>
+                    <Grid>
+                        <Grid Visibility="{Binding IsAccountUpdate, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" VerticalAlignment="Center" Margin="0" Visibility="{Binding UpgradeAccount.HasAvailablePlans, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <telerikPrimitives:RadDataBoundListBox
+                                x:Name="LstPlans"
+                                Grid.Row="1"
+                                telerik:InteractionEffectManager.IsInteractionEnabled="True" 
+                                ItemTemplate="{StaticResource ProductItemTemplate}" 
+                                ItemsSource="{Binding UpgradeAccount.Plans}"
+                                EmptyContentDisplayMode="DataSourceEmpty"
+                                EmptyContent="{Binding LocalizedUiResources.NoPlansToDisplay, Source={StaticResource LocalizedStrings}}" 
+                                EmptyContentTemplate="{Binding EmptyContentTemplate}"
+                                ItemTap="OnItemTap"/>
+                        </Grid>                        
+                        
                         <StackPanel Visibility="{Binding IsAccountUpdate, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <ContentPresenter x:Name="ProductPurchased" ContentTemplate="{StaticResource ProductItemTemplate}" Content="{Binding UpgradeAccount.ProductPurchased}"/>
                             <TextBlock Text="{Binding LocalizedUiResources.Awesome, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                             <TextBlock Text="{Binding AccountDetails.PurchaseAccountTypeText}" TextWrapping="Wrap" Margin="12,24" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
                             <TextBlock Text="{Binding AccountDetails.PurchaseAccountRenewalText}" TextWrapping="Wrap" Visibility="{Binding AccountDetails.IsValidSubscription, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="12,24"/>
                         </StackPanel>
-                    </Grid>                    
+                    </Grid>
                 </phone:PivotItem>
             </phone:Pivot>
         </Grid>
@@ -248,8 +266,8 @@
                             </Image.Clip>
                         </Image>
                         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
-                            <TextBlock Text="{Binding AccountDetails.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
-                            <TextBlock Text="{Binding AccountDetails.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
                         </StackPanel>
                     </Grid>
                 </Button>
