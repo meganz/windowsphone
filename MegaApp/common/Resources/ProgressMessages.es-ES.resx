@@ -283,4 +283,20 @@ Preserve the '{0}' code because is for include node name.</comment>
     <value>Eliminando enlace...</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Cancelando transferencia...</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Guardando para fuera de línea...</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Eliminando de fuera de línea...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servidores ocupados. Por favor, espera...</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Converters;
 using MegaApp.Enums;
@@ -16,54 +18,52 @@ namespace MegaApp.Services
 {
     static class UiService
     {
-        private static Dictionary<ulong, int> _folderSorting;
-        private static Dictionary<ulong, int> _folderViewMode;
+        private static Dictionary<string, int> _folderSorting;
+        private static Dictionary<string, int> _folderViewMode;
 
-        public static int GetSortOrder(ulong folderHandle, string folderName)
+        public static int GetSortOrder(string folderBase64Handle, string folderName)
         {
             if (_folderSorting == null)
-                _folderSorting = new Dictionary<ulong, int>();
+                _folderSorting = new Dictionary<string, int>();
 
-            if (_folderSorting.ContainsKey(folderHandle))
-                return _folderSorting[folderHandle];
-           
+            if (_folderSorting.ContainsKey(folderBase64Handle))
+                return _folderSorting[folderBase64Handle];
+
             return folderName.Equals("Camera Uploads") ? (int)MSortOrderType.ORDER_MODIFICATION_DESC :
-                (int) MSortOrderType.ORDER_DEFAULT_ASC;
+                (int)MSortOrderType.ORDER_DEFAULT_ASC;
         }
 
-        public static void SetSortOrder(ulong folderHandle, int sortOrder)
+        public static void SetSortOrder(string folderBase64Handle, int sortOrder)
         {
             if (_folderSorting == null)
-                _folderSorting = new Dictionary<ulong, int>();
+                _folderSorting = new Dictionary<string, int>();
 
-            if (_folderSorting.ContainsKey(folderHandle))
-                _folderSorting[folderHandle] = sortOrder;
+            if (_folderSorting.ContainsKey(folderBase64Handle))
+                _folderSorting[folderBase64Handle] = sortOrder;
             else
-                _folderSorting.Add(folderHandle, sortOrder);
-            
+                _folderSorting.Add(folderBase64Handle, sortOrder);
         }
 
-        public static ViewMode GetViewMode(ulong folderHandle, string folderName)
+        public static ViewMode GetViewMode(string folderBase64Handle, string folderName)
         {
             if (_folderViewMode == null)
-                _folderViewMode = new Dictionary<ulong, int>();
+                _folderViewMode = new Dictionary<string, int>();
 
-            if (_folderViewMode.ContainsKey(folderHandle))
-                return (ViewMode)_folderViewMode[folderHandle];
+            if (_folderViewMode.ContainsKey(folderBase64Handle))
+                return (ViewMode)_folderViewMode[folderBase64Handle];
 
             return folderName.Equals("Camera Uploads") ? ViewMode.LargeThumbnails : ViewMode.ListView;
         }
 
-        public static void SetViewMode(ulong folderHandle, ViewMode viewMode)
+        public static void SetViewMode(string folderBase64Handle, ViewMode viewMode)
         {
             if (_folderViewMode == null)
-                _folderViewMode = new Dictionary<ulong, int>();
+                _folderViewMode = new Dictionary<string, int>();
 
-            if (_folderViewMode.ContainsKey(folderHandle))
-                _folderViewMode[folderHandle] = (int)viewMode;
+            if (_folderViewMode.ContainsKey(folderBase64Handle))
+                _folderViewMode[folderBase64Handle] = (int)viewMode;
             else
-                _folderViewMode.Add(folderHandle, (int)viewMode);
-
+                _folderViewMode.Add(folderBase64Handle, (int)viewMode);
         }
 
         public static RadCustomHubTile CreateHubTile(string title, Uri bitmapUri, Thickness margin)
@@ -100,6 +100,21 @@ namespace MegaApp.Services
                 Height = 210,
                 Margin = margin
             };
+        }
+
+        public static void ChangeAppBarStatus(IList iconButtons, IList menuItems, bool enable)
+        {
+            if(iconButtons != null)
+            {
+                foreach (var button in iconButtons)
+                    ((ApplicationBarIconButton)button).IsEnabled = enable;
+            }
+
+            if (menuItems != null)
+            {
+                foreach (var menuItem in menuItems)
+                    ((ApplicationBarMenuItem)menuItem).IsEnabled = enable;
+            }            
         }
 
     }

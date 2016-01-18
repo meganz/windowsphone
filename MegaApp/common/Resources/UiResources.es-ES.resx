@@ -398,7 +398,7 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>No hay transferencias</value>
-    <comment>Label shown when the app has no information about the subscription plans to show into 'transfers' page - (String as short as possible).</comment>
+    <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
   </data>
   <data name="Acknowledgements" xml:space="preserve">
     <value>Agradecimientos</value>
@@ -1145,5 +1145,41 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="GetLink" xml:space="preserve">
     <value>Obtener enlace</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SavedForOffline" xml:space="preserve">
+    <value>Guardado para fuera de línea</value>
+    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NoInternetConnection" xml:space="preserve">
+    <value>No hay conexión a Internet</value>
+    <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
+  </data>
+  <data name="NoUploads" xml:space="preserve">
+    <value>No hay subidas</value>
+    <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
+  </data>
+  <data name="DefaultDownloadLocation" xml:space="preserve">
+    <value>por favor, selecciona una carpeta por defecto para las descargas</value>
+    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
+  <data name="EmptySharedFolders" xml:space="preserve">
+    <value>No hay carpetas compartidas</value>
+    <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloads" xml:space="preserve">
+    <value>No hay descargas</value>
+    <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyRubbishBin" xml:space="preserve">
+    <value>Papelera vacía</value>
+    <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyOffline" xml:space="preserve">
+    <value>No hay elementos guardados para fuera de línea</value>
+    <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyCloudDrive" xml:space="preserve">
+    <value>No hay archivos en tu disco en la nube</value>
+    <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
 </root>

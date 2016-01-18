@@ -13,10 +13,12 @@ namespace MegaApp.Models
 {
     public class CameraUploadsFolderViewModel: FolderViewModel
     {
+        private readonly ContainerType _containerType;
+
         public CameraUploadsFolderViewModel(MegaSDK megaSdk, AppInformation appInformation, ContainerType containerType) 
             : base(megaSdk, appInformation, containerType)
         {
-           
+            this._containerType = containerType;
         }        
 
         public override bool GoFolderUp()
@@ -28,7 +30,7 @@ namespace MegaApp.Models
             if (parentNode == null || parentNode.getType() == MNodeType.TYPE_UNKNOWN || parentNode.getType() == MNodeType.TYPE_ROOT)
                 return false;
 
-            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode, ChildNodes);
+            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, parentNode, _containerType, ChildNodes);
 
             LoadChildNodes();
 
@@ -43,7 +45,7 @@ namespace MegaApp.Models
 
             if (homeNode == null) return;
 
-            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, homeNode, ChildNodes);
+            this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, homeNode, _containerType, ChildNodes);
 
             LoadChildNodes();
         }

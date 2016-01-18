@@ -121,6 +121,10 @@
     <value>Canceling subscription...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Canceling transfer...</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
   <data name="ChangePassword" xml:space="preserve">
     <value>Changing password...</value>
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
@@ -251,6 +255,10 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Removing contact...</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Removing from offline...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
   <data name="RemoveLink" xml:space="preserve">
     <value>Removing link...</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
@@ -278,6 +286,14 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="ResumeTransfers" xml:space="preserve">
     <value>Resuming transfers...</value>
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Saving for offline...</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servers too busy. Please wait…</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccount" xml:space="preserve">
     <value>Upgrading account...</value>

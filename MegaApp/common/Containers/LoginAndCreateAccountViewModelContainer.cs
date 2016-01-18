@@ -1,5 +1,6 @@
 ﻿using System;
 using MegaApp.Models;
+using MegaApp.Pages;
 
 namespace MegaApp.Containers
 {
@@ -8,10 +9,10 @@ namespace MegaApp.Containers
         public LoginViewModel LoginViewModel { get; private set; }
         public CreateAccountViewModel CreateAccountViewModel { get; private set; }
 
-        public LoginAndCreateAccountViewModelContainer()
+        public LoginAndCreateAccountViewModelContainer(LoginPage loginPage)
         {
-            LoginViewModel = new LoginViewModel(App.MegaSdk);
-            CreateAccountViewModel = new CreateAccountViewModel(App.MegaSdk);
+            LoginViewModel = new LoginViewModel(App.MegaSdk, loginPage);
+            CreateAccountViewModel = new CreateAccountViewModel(App.MegaSdk, loginPage);
         }
     }
 }

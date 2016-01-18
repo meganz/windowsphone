@@ -745,7 +745,34 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No transfers.
+        ///   Busca una cadena traducida similar a No items saved for offline.
+        /// </summary>
+        public static string EmptyOffline {
+            get {
+                return ResourceManager.GetString("EmptyOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Empty rubbish bin.
+        /// </summary>
+        public static string EmptyRubbishBin {
+            get {
+                return ResourceManager.GetString("EmptyRubbishBin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No shared folders.
+        /// </summary>
+        public static string EmptySharedFolders {
+            get {
+                return ResourceManager.GetString("EmptySharedFolders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No transfers.
         /// </summary>
         public static string EmptyTransfers {
             get {
@@ -1357,7 +1384,25 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to At this time, there is no payment method available for this plan.
+        ///   Busca una cadena traducida similar a No downloads.
+        /// </summary>
+        public static string NoDownloads {
+            get {
+                return ResourceManager.GetString("NoDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No internet connection.
+        /// </summary>
+        public static string NoInternetConnection {
+            get {
+                return ResourceManager.GetString("NoInternetConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a At this time, there is no payment method available for this plan.
         /// </summary>
         public static string NoPaymentMethodsAvailable {
             get {
@@ -1384,7 +1429,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Off.
+        ///   Busca una cadena traducida similar a No uploads.
+        /// </summary>
+        public static string NoUploads {
+            get {
+                return ResourceManager.GetString("NoUploads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Off.
         /// </summary>
         public static string Off {
             get {
@@ -1771,7 +1825,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
+        ///   Busca una cadena traducida similar a Saved for offline.
+        /// </summary>
+        public static string SavedForOffline {
+            get {
+                return ResourceManager.GetString("SavedForOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Search.
         /// </summary>
         public static string Search {
             get {

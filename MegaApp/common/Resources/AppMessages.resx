@@ -246,8 +246,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImportFileFailed" xml:space="preserve">
-    <value>Importing file failed</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.</comment>
+    <value>Importing file failed [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
     <value>Import file failed</value>
@@ -1023,5 +1024,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="RemoveLinkFailed" xml:space="preserve">
     <value>Failed to remove link. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>You cannot perform this action. Please, connect to Internet and try again.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
 </root>

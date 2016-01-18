@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Windows.Storage;
 using mega;
 using MegaApp.Enums;
@@ -42,9 +43,14 @@ namespace MegaApp.Models
             return _node.Handle;
         }
 
+        public string getNodeBase64Handle()
+        {
+            return _node.Base64Handle;
+        }
+
         public void updateNode(MNode megaNode)
         {
-            _node.Update(megaNode);
+            _node.Update(megaNode, this._node.ParentContainerType);
             _nodeDetailsPage.SetApplicationBar();
         }
 
@@ -81,50 +87,26 @@ namespace MegaApp.Models
             _folderNode.CreateShortCut();
         }
 
-        public void SaveForOffline(bool newStatus)
+        public async Task SaveForOffline(bool newStatus)
         {
-            MNode parentNode = App.MegaSdk.getParentNode(_node.OriginalMNode);
-
-            String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, 
-                AppResources.DownloadsDirectory.Replace("\\", ""),
-                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
-
-            String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                    AppResources.DownloadsDirectory.Replace("\\", ""));
-
             if (newStatus)
             {
-                _node.IsSelectedForOfflineText = Resources.UiResources.On;
-                _node.SaveForOffline(App.MegaTransfers, parentNodePath);
-                
-                while (String.Compare(parentNodePath, sfoRootPath) != 0)
-                {
-                    var folderPathToAdd = parentNodePath;
-                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    ProgressService.SetProgressIndicator(true, ProgressMessages.SaveForOffline));
 
-                    if (!SavedForOffline.ExistsNodeByLocalPath(folderPathToAdd))
-                        SavedForOffline.Insert(parentNode);
-
-                    parentNode = App.MegaSdk.getParentNode(parentNode);
-                }
+                _node.IsSelectedForOffline = true;                
+                await _node.SaveForOffline(App.MegaTransfers);
             }
             else
             {
-                _node.IsSelectedForOfflineText = Resources.UiResources.Off;
-                _node.RemoveForOffline(parentNodePath);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    ProgressService.SetProgressIndicator(true, ProgressMessages.RemoveFromOffline));
 
-                while (String.Compare(parentNodePath, sfoRootPath) != 0)
-                {
-                    var folderPathToRemove = parentNodePath;
-                    parentNodePath = ((new DirectoryInfo(parentNodePath)).Parent).FullName;
-
-                    if (FolderService.IsEmptyFolder(folderPathToRemove))
-                    {
-                        FolderService.DeleteFolder(folderPathToRemove);
-                        SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
-                    }
-                }
+                _node.IsSelectedForOffline = false;                
+                await _node.RemoveForOffline();
             }
+
+            Deployment.Current.Dispatcher.BeginInvoke(() => ProgressService.SetProgressIndicator(false));
         }
 
         #region Properties

@@ -96,6 +96,11 @@
                         />
                         </Image.Source>
                     </Image>
+                    <Border Margin="0,0,12,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Border.BorderBrush>
+                    </Border>
                     <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Ellipse.Fill>
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
@@ -269,28 +274,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </Border.BorderBrush>
-                <Border.Background>
-                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-                </Border.Background>
-                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
-                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
-                        <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                        </Path.Fill>
-                    </Path>
-                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
-                </Grid>
-            </Border>
-            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-                </Border.BorderBrush>
-            </Border>
+            </Grid.RowDefinitions>            
             <Path Grid.Row="0" Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
@@ -306,29 +290,17 @@
                         />
                 </Image.Source>
             </Image>
-            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Ellipse.Fill>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-4,-10,0,0" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Path.Fill>
+            <Border Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                </Path.Fill>
-            </Path>
-            <Ellipse Grid.Row="0" Margin="-4,0,0,-10" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Ellipse.Fill>
-                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-        </Grid>
-    </DataTemplate>
-
-    <DataTemplate x:Key="MegaNodeListSmallViewFileItemContent">
-        <Grid Width="64" Margin="6">
-            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                </Border.BorderBrush>
+            </Border>
+            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Border.BorderBrush>
@@ -343,12 +315,29 @@
                     </Path>
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                 </Grid>
-            </Border>
-            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Border.BorderBrush>
-                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
-                </Border.BorderBrush>
-            </Border>
+            </Border>            
+            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse.Fill>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-4,-10,0,0" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+            <Ellipse Grid.Row="0" Margin="-4,0,0,-10" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse.Fill>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Image Source="/Assets/AppBar/open_link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListSmallViewFileItemContent">
+        <Grid Width="64" Margin="6">                        
             <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" Width="64" Height="64" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
@@ -356,7 +345,7 @@
             </Path>
             <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="64" Height="64" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Image.Source>
-                    <BitmapImage 
+                    <BitmapImage
 						UriSource="{Binding ThumbnailImageUri}"
 						DecodePixelHeight="64"
 						DecodePixelType="Logical"
@@ -364,25 +353,51 @@
                     />
                 </Image.Source>
             </Image>
-            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Border Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsCheckModeActive, ElementName=LstCloudDrive, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="2" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-5,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-5,0,0" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </DataTemplate>
-
+    
     <DataTemplate x:Key="MegaNodeListEmptyContent">
         <Grid>
             <Path Data="{Binding LocalizedVisualResources.EmptyFolderPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="208" Stretch="Uniform" Opacity="0.3">
@@ -416,6 +431,261 @@
     <DataTemplate x:Key="MegaNodeListRubbishBinEmptyContent">
         <Grid>
             <Path Data="{Binding LocalizedVisualResources.EmptyRubbishBinPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="254" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineEmptyContent">
+        <Grid>
+            <Path Data="{Binding LocalizedVisualResources.NoInternetConnectionViewPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="248" Height="248" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListFileItemContent">
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+            <Grid Margin="0,3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Margin="0,0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
+                    <Path Data="{Binding DefaultImagePathData}" Canvas.ZIndex="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Image HorizontalAlignment="Center" Canvas.ZIndex="1" VerticalAlignment="Center" Width="64" Height="64" Stretch="UniformToFill" Margin="0,0,12,0" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Image.Source>
+                            <BitmapImage 
+        					UriSource="{Binding ThumbnailImageUri}"
+        					DecodePixelHeight="64"
+        					DecodePixelType="Logical"
+        					CreateOptions="BackgroundCreation, DelayCreation"
+                        />
+                        </Image.Source>
+                    </Image>
+                    <Border Margin="0,0,12,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Border.BorderBrush>
+                    </Border>
+                </Grid>
+
+                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListFolderItemContent">
+        <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
+            <Grid Margin="0,3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Margin="0,0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
+                    <Path Data="{Binding DefaultImagePathData}" Canvas.ZIndex="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Stretch="Uniform" Margin="0,0,12,0">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>                    
+                </Grid>
+
+                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
+                <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListLargeViewFolderItemContent">
+        <Grid Width="128" Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstSavedForOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" Stretch="Uniform">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>            
+            <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListSmallViewFolderItemContent">
+        <Grid Width="64" Height="64" Margin="6">
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="1" Visibility="{Binding IsCheckModeActive, ElementName=LstSavedForOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" Stretch="Uniform">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>            
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListLargeViewFileItemContent">
+        <Grid Width="128" Margin="12">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>            
+            <Path Grid.Row="0" Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+            <Image Grid.Row="0" Stretch="UniformToFill" Height="128" Width="128" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Image.Source>
+                    <BitmapImage 
+							UriSource="{Binding ThumbnailImageUri}"
+                            DecodePixelHeight="128"
+                            DecodePixelType="Logical"
+							CreateOptions="BackgroundCreation, DelayCreation"
+                        />
+                </Image.Source>
+            </Image>
+            <Border Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="128" Height="128" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Grid.Row="0" Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsCheckModeActive, ElementName=LstSavedForOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>            
+            <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OfflineNodeListSmallViewFileItemContent">
+        <Grid Width="64" Margin="6">            
+            <Path Data="{Binding DefaultImagePathData}" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" Width="64" Height="64" Stretch="Uniform" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+            <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="UniformToFill" Width="64" Height="64" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Image.Source>
+                    <BitmapImage 
+						UriSource="{Binding ThumbnailImageUri}"
+						DecodePixelHeight="64"
+						DecodePixelType="Logical"
+						CreateOptions="BackgroundCreation, DelayCreation"
+                    />
+                </Image.Source>
+            </Image>
+            <Border Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsCheckModeActive, ElementName=LstSavedForOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.BorderBrush>
+            </Border>
+            <Border Margin="0" BorderThickness="5" Canvas.ZIndex="2" Visibility="{Binding IsMultiSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                </Border.BorderBrush>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneInactiveColor}"/>
+                </Border.Background>
+                <Grid x:Name="SelectedCheckMark" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="1" Margin="0">
+                    <Path x:Name="SelectedEarmark" Data="M0,0 L40,0 L40,40 z" Stretch="Fill">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        </Path.Fill>
+                    </Path>
+                    <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
+                </Grid>
+            </Border>            
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MegaNodeListSavedForOfflineEmptyContent">
+        <Grid>
+            <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="254" Stretch="Uniform" Opacity="0.3">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
@@ -631,6 +901,11 @@
                         />
                 </Image.Source>
             </Image>
+            <Border Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="3" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Border.BorderBrush>
+            </Border>
             <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Text="{Binding DisplayName}" VerticalAlignment="Bottom" FontSize="22" TextTrimming="WordEllipsis" FontFamily="Segoe UI" Margin="0,0,0,-6"/>
             <ProgressBar VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="-10,0,-12,0" Minimum="0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" IsIndeterminate="False" FontFamily="Portable User Interface">
                 <ProgressBar.Foreground>
@@ -655,48 +930,22 @@
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListUploadEmptyContent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
-                <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                </Paragraph>
-            </RichTextBox>
-            <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/uploads_empty.png" Opacity="0.3"/>-->
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                    </Path.Fill>
-                </Path>
-            </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
     <DataTemplate x:Key="MegaTransferListDownloadEmptyContent">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <RichTextBox Grid.Row="0" VerticalAlignment="Top">
-                <Paragraph TextAlignment="Right">
-                    <Run Text="{Binding LocalizedUiResources.No, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                    <Run Foreground="{StaticResource MegaRedSolidColorBrush}" Text="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeSmall}"/>
-                </Paragraph>
-            </RichTextBox>
-            <!--<selectors:CustomMultiResolutionImage Grid.Row="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/downloads_empty.png" Opacity="0.3"/>-->
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
-                <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
-                    <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
-                    </Path.Fill>
-                </Path>
-            </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
         </Grid>
     </DataTemplate>
 
@@ -1122,7 +1371,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneButtonBasePressedForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1172,7 +1421,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneButtonBasePressedForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1222,7 +1471,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneButtonBasePressedForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneAccentBrush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneBackgroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -1482,6 +1731,44 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Path x:Name="PathArrow" Data="{Binding LocalizedVisualResources.MegaHomeLogoData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Height="24" Width="24" Margin="0"></Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="OfflineHomeCrumbStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="PathArrow">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource MegaRedSolidColorBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Path x:Name="PathArrow" Data="{Binding LocalizedVisualResources.SavedOfflineIcoData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Height="24" Width="24" Margin="0"></Path>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

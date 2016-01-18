@@ -9,6 +9,7 @@
         RubbishBin,
         InShares,
         OutShares,
-        ContactInShares
+        ContactInShares,
+        SavedForOffline
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -10,15 +11,16 @@ using MegaApp.Services;
 using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
-{
-    ///mobile_terms.html and /mobile_privacy.html
+{    
     class CreateAccountViewModel : BaseRequestListenerViewModel 
     {
         private readonly MegaSDK _megaSdk;
+        private readonly LoginPage _loginPage;
 
-        public CreateAccountViewModel(MegaSDK megaSdk)
+        public CreateAccountViewModel(MegaSDK megaSdk, LoginPage loginPage)
         {
             this._megaSdk = megaSdk;
+            this._loginPage = loginPage;
             this.ControlState = true;
             this.NavigateTermsOfServiceCommand = new DelegateCommand(NavigateTermsOfService);
         }
@@ -39,6 +41,7 @@ namespace MegaApp.Models
                         }
                         else
                         {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
                             new CustomMessageDialog(
                                     AppMessages.CreateAccountFailed_Title,
                                     AppMessages.AgreeTermsOfService,
@@ -48,6 +51,7 @@ namespace MegaApp.Models
                     }
                     else
                     {
+                        Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
                         new CustomMessageDialog(
                                 AppMessages.CreateAccountFailed_Title,
                                 AppMessages.PasswordsDoNotMatch,
@@ -57,6 +61,7 @@ namespace MegaApp.Models
                 }
                 else 
                 {
+                    Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
                     new CustomMessageDialog(
                             AppMessages.CreateAccountFailed_Title,
                             AppMessages.MalformedEmail,
@@ -66,13 +71,13 @@ namespace MegaApp.Models
             }
             else
             {
+                Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
                 new CustomMessageDialog(
                         AppMessages.CreateAccountFailed_Title,
                         AppMessages.RequiredFieldsCreateAccount,
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
-            }
-            
+            }            
         }
 
         private static void NavigateTermsOfService(object obj)
@@ -163,5 +168,24 @@ namespace MegaApp.Models
 
         #endregion
         
+        #region MRequestListenerInterface
+
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+
+                this.ControlState = true;
+
+                if (_loginPage != null)
+                    _loginPage.SetApplicationBar(true);
+            });
+
+            base.onRequestFinish(api, request, e);
+        }
+
+        #endregion
     }
 }

@@ -15,9 +15,9 @@ namespace MegaApp.Models
 {
     class ImageNodeViewModel: FileNodeViewModel
     {
-        public ImageNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode,
+        public ImageNodeViewModel(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
             ObservableCollection<IMegaNode> parentCollection = null, ObservableCollection<IMegaNode> childCollection = null)
-            : base(megaSdk, appInformation, megaNode, parentCollection, childCollection)
+            : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             // Image node downloads to the image path of the full original image
             this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
@@ -190,9 +190,17 @@ namespace MegaApp.Models
         {
             get
             {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory,
-                                    MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                if (ParentContainerType != ContainerType.PublicLink)
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory,
+                        MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                }
+                else
+                {
+                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                        AppResources.DownloadsDirectory, this.Name);
+                }
             }
         }
 

@@ -937,7 +937,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Importing file failed.
+        ///   Busca una cadena traducida similar a Importing file failed [{0}].
         /// </summary>
         public static string ImportFileFailed {
             get {
@@ -1331,6 +1331,15 @@ namespace MegaApp.Resources {
         public static string NoDownloadLocationSelected {
             get {
                 return ResourceManager.GetString("NoDownloadLocationSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You cannot perform this action. Please, connect to Internet and try again..
+        /// </summary>
+        public static string NoInternetConnectionMessage {
+            get {
+                return ResourceManager.GetString("NoInternetConnectionMessage", resourceCulture);
             }
         }
         

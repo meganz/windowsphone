@@ -27,7 +27,7 @@ namespace MegaApp.Models
             UpgradeAccount = new UpgradeAccountViewModel();
             IsAccountUpdate = false;
 
-            if (!File.Exists(AccountDetails.AvatarPath)) return;
+            if (String.IsNullOrWhiteSpace(AccountDetails.AvatarPath) || !File.Exists(AccountDetails.AvatarPath)) return;
             AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);            
         }
 

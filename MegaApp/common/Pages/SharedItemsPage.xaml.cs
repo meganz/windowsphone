@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Enums;
@@ -41,6 +42,66 @@ namespace MegaApp.Pages
             IncomingSharedBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             OutgoingSharedBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             OutgoingSharedBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+        }
+
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
+        {
+            switch (e.NotificationType)
+            {
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
+            }
+
+            _sharedItemsViewModel.NetworkAvailabilityChanged();
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                if (isNetworkConnected)
+                {
+                    if(Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    {
+                        _sharedItemsViewModel.IsInSharedItemsRootListView = true;
+                        _sharedItemsViewModel.IsOutSharedItemsRootListView = true;
+
+                        _sharedItemsViewModel.GetIncomingSharedFolders();
+                        _sharedItemsViewModel.GetOutgoingSharedFolders();
+                    }
+                    else
+                    {
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
+                        return;
+                    }                    
+                }
+                else
+                {
+                    _sharedItemsViewModel.IsInSharedItemsRootListView = false;
+                    _sharedItemsViewModel.IsOutSharedItemsRootListView = false;
+
+                    _sharedItemsViewModel.ClearIncomingSharedFolders();
+                    _sharedItemsViewModel.InShares.BreadCrumbs.Clear();
+                    _sharedItemsViewModel.InShares.SetOfflineContentTemplate();
+
+                    _sharedItemsViewModel.ClearOutgoingSharedFolders();
+                    _sharedItemsViewModel.OutShares.BreadCrumbs.Clear();
+                    _sharedItemsViewModel.OutShares.SetOfflineContentTemplate();
+                }
+
+                SetApplicationBarData(isNetworkConnected);
+            });
         }
 
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
@@ -57,14 +118,14 @@ namespace MegaApp.Pages
             {
                 _sharedItemsViewModel.IsInSharedItemsRootListView = true;
                 _sharedItemsViewModel.InShares.BreadCrumbs.Clear();
-                _sharedItemsViewModel.GetIncomingSharedFolders();
+                _sharedItemsViewModel.InShares.SetOfflineContentTemplate();
             }
 
             if (breadCrumb.Equals(OutgoingSharedBreadCrumb))
             {
                 _sharedItemsViewModel.IsOutSharedItemsRootListView = true;
                 _sharedItemsViewModel.OutShares.BreadCrumbs.Clear();
-                _sharedItemsViewModel.GetOutgoingSharedFolders();
+                _sharedItemsViewModel.OutShares.SetOfflineContentTemplate();
             }
         }
 
@@ -90,12 +151,26 @@ namespace MegaApp.Pages
             }
         }
 
-        private void SetApplicationBarData()
+        private void SetApplicationBarData(bool isNetworkConnected = true)
         {
             this.ApplicationBar = (ApplicationBar)Resources["SharedItemsMenu"];
 
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.Refresh.ToLower();
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.Sort.ToLower();            
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.Sort.ToLower();
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isNetworkConnected);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -194,10 +269,11 @@ namespace MegaApp.Pages
             if (sender == OutgoingPivotItem)
                 _sharedItemsViewModel.GetOutgoingSharedFolders();
         }
-                
+
         protected override void OnDrawerClosed(object sender)
         {
-            base.OnDrawerClosed(sender);            
+            base.OnDrawerClosed(sender);
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         private void OnMyAccountTap(object sender, GestureEventArgs e)

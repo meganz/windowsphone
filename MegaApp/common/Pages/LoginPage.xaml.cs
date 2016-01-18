@@ -19,19 +19,22 @@ namespace MegaApp.Pages
         
         public LoginPage()
         {
-            _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer();
+            _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer(this);
             
             this.DataContext = _loginAndCreateAccountViewModelContainer;
 
             InitializeComponent();
 
-            SetApplicationBar();
+            SetApplicationBar(true);
         }
 
-        private void SetApplicationBar()
+        public void SetApplicationBar(bool isEnabled)
         {
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = isEnabled;
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = isEnabled;
+
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Cancel.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Cancel.ToLower();            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -63,8 +66,12 @@ namespace MegaApp.Pages
             e.Cancel = true;
         }
 
-        private void OnAcceptClick(object sender, EventArgs e)        
+        private void OnAcceptClick(object sender, EventArgs e)
         {
+            // To not allow cancel a request to login or 
+            // create account once that is started
+            SetApplicationBar(false);
+
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
                 _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();
             else if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_CreateAccount)                

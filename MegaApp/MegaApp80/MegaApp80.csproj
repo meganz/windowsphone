@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" />
+  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -29,6 +29,7 @@
     <NuGetPackageImportStamp>bb43dd6f</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>b4c1965b</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -154,6 +155,9 @@
     </Compile>
     <Compile Include="..\common\Classes\NumericPasswordBox.cs">
       <Link>Classes\NumericPasswordBox.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Classes\OfflineNodeTemplateSelector.cs">
+      <Link>Classes\OfflineNodeTemplateSelector.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\PaymentMethod.cs">
       <Link>Classes\PaymentMethod.cs</Link>
@@ -290,6 +294,9 @@
     <Compile Include="..\common\Interfaces\IApplicationBar.cs">
       <Link>Interfaces\IApplicationBar.cs</Link>
     </Compile>
+    <Compile Include="..\common\Interfaces\IBaseNode.cs">
+      <Link>Interfaces\IBaseNode.cs</Link>
+    </Compile>
     <Compile Include="..\common\Interfaces\IBreadCrumb.cs">
       <Link>Interfaces\IBreadCrumb.cs</Link>
     </Compile>
@@ -302,6 +309,9 @@
     <Compile Include="..\common\Interfaces\IMegaService.cs">
       <Link>Interfaces\IMegaService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Interfaces\IOfflineNode.cs">
+      <Link>Interfaces\IOfflineNode.cs</Link>
+    </Compile>
     <Compile Include="..\common\LocalizedStrings.cs">
       <Link>LocalizedStrings.cs</Link>
     </Compile>
@@ -313,6 +323,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\CancelSubscriptionRequestListener.cs">
       <Link>MegaApi\CancelSubscriptionRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\CancelTransferRequestListener.cs">
+      <Link>MegaApi\CancelTransferRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\ChangePasswordRequestListener.cs">
       <Link>MegaApi\ChangePasswordRequestListener.cs</Link>
@@ -509,6 +522,18 @@
     <Compile Include="..\common\Models\NodeViewModel.cs">
       <Link>Models\NodeViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\OfflineFileNodeViewModel.cs">
+      <Link>Models\OfflineFileNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineFolderNodeViewModel.cs">
+      <Link>Models\OfflineFolderNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineFolderViewModel.cs">
+      <Link>Models\OfflineFolderViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\OfflineNodeViewModel.cs">
+      <Link>Models\OfflineNodeViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\PasswordViewModel.cs">
       <Link>Models\PasswordViewModel.cs</Link>
     </Compile>
@@ -520,6 +545,9 @@
     </Compile>
     <Compile Include="..\common\Models\PreviewSelfieViewModel.cs">
       <Link>Models\PreviewSelfieViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\SavedForOfflineViewModel.cs">
+      <Link>Models\SavedForOfflineViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\SettingsViewModel.cs">
       <Link>Models\SettingsViewModel.cs</Link>
@@ -562,10 +590,6 @@
     <Compile Include="..\common\Pages\ContactsPage.xaml.cs">
       <Link>Pages\ContactsPage.xaml.cs</Link>
       <DependentUpon>ContactsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\common\Pages\CreateAccountPage.xaml.cs">
-      <Link>Pages\CreateAccountPage.xaml.cs</Link>
-      <DependentUpon>CreateAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
@@ -622,6 +646,10 @@
     <Compile Include="..\common\Pages\PreviewSelfiePage.xaml.cs">
       <Link>Pages\PreviewSelfiePage.xaml.cs</Link>
       <DependentUpon>PreviewSelfiePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\SavedForOfflinePage.xaml.cs">
+      <Link>Pages\SavedForOfflinePage.xaml.cs</Link>
+      <DependentUpon>SavedForOfflinePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\SettingsPage.xaml.cs">
       <Link>Pages\SettingsPage.xaml.cs</Link>
@@ -710,6 +738,9 @@
     </Compile>
     <Compile Include="..\common\Services\NavigateService.cs">
       <Link>Services\NavigateService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\NetworkService.cs">
+      <Link>Services\NetworkService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\NodeService.cs">
       <Link>Services\NodeService.cs</Link>
@@ -2131,10 +2162,6 @@
       <Link>Pages\ContactsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\CreateAccountPage.xaml">
-      <Link>Pages\CreateAccountPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>
@@ -2191,6 +2218,10 @@
       <Link>Pages\PreviewSelfiePage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\common\Pages\SavedForOfflinePage.xaml">
+      <Link>Pages\SavedForOfflinePage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\common\Pages\SettingsPage.xaml">
       <Link>Pages\SettingsPage.xaml</Link>
       <SubType>Designer</SubType>
@@ -2237,7 +2268,7 @@
     </Reference>
     <Reference Include="ShakeGestures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Sqlite, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\sqlite-net-wp8.3.8.7.4-beta\lib\windowsphone8\Sqlite.winmd</HintPath>
+      <HintPath>..\packages\sqlite-net-wp8.3.8.5\lib\windowsphone8\Sqlite.winmd</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Chart, Version=2015.2.623.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
@@ -6056,7 +6087,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.9.1">
+    <SDKReference Include="SQLite.WP80, Version=3.10.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>
@@ -6081,4 +6112,8 @@
   </Target>
   <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.props'))" />
+    <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets'))" />
+  </Target>
+  <Import Project="..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.5\build\windowsphone8\sqlite-net-wp8.targets')" />
 </Project>

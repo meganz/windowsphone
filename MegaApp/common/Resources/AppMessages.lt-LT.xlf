@@ -148,6 +148,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Failed to remove link. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
+        <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" xml:space="preserve">
+          <source>You cannot perform this action. Please, connect to Internet and try again.</source>
+          <target state="new">You cannot perform this action. Please, connect to Internet and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="new">Close session failed. Please try again. [{0}]</target>
@@ -976,9 +981,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/ImportFileFailed" translate="yes" xml:space="preserve">
-          <source>Importing file failed</source>
-          <target state="new">Importing file failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.</note>
+          <source>Importing file failed [{0}]</source>
+          <target state="new">Importing file failed [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
           </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" xml:space="preserve">
           <source>Failed to save image</source>

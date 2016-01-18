@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Models
 {
@@ -19,7 +22,9 @@ namespace MegaApp.Models
             UpdateUserData();
             
             InitializeMenu(HamburgerMenuItemType.Transfers);
-        }
+
+            SetEmptyContentTemplate();
+        }        
 
         #region Methods
 
@@ -28,11 +33,85 @@ namespace MegaApp.Models
             MegaSdk.pauseTransfers(true);
         }
 
+        public void SetEmptyContentTemplate()
+        {
+            OnUiThread(() =>
+            {
+                this.UploadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListUploadEmptyContent"];
+                this.UploadsEmptyInformationText = UiResources.NoUploads.ToLower();
+
+                this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListDownloadEmptyContent"];
+                this.DownloadsEmptyInformationText = UiResources.NoDownloads.ToLower();
+            });
+        }
+
+        public void SetOfflineContentTemplate()
+        {
+            OnUiThread(() =>
+            {
+                this.UploadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.UploadsEmptyInformationText = UiResources.NoInternetConnection.ToLower();
+
+                this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.DownloadsEmptyInformationText = UiResources.NoInternetConnection.ToLower();
+            });
+        }
+
         #endregion
 
         #region Properties
 
         public TransferQueu MegaTransfers { get; set; }
+
+        public bool HasUploads
+        {
+            get 
+            {
+                if (NetworkService.IsNetworkAvailable())
+                    return MegaTransfers.Uploads.Count > 0;
+                else
+                    return false;
+            }
+        }
+
+        public bool HasDownloads
+        {
+            get 
+            { 
+                if(NetworkService.IsNetworkAvailable())
+                    return MegaTransfers.Downloads.Count > 0; 
+                else
+                    return false;
+            }
+        }
+
+        private DataTemplate _uploadsEmptyContentTemplate;
+        public DataTemplate UploadsEmptyContentTemplate
+        {
+            get { return _uploadsEmptyContentTemplate; }
+            private set { SetField(ref _uploadsEmptyContentTemplate, value); }
+        }
+
+        private String _uploadsEmptyInformationText;
+        public String UploadsEmptyInformationText
+        {
+            get { return _uploadsEmptyInformationText; }
+            private set { SetField(ref _uploadsEmptyInformationText, value); }
+        }
+
+        private DataTemplate _downloadsEmptyContentTemplate;
+        public DataTemplate DownloadsEmptyContentTemplate
+        {
+            get { return _downloadsEmptyContentTemplate; }
+            private set { SetField(ref _downloadsEmptyContentTemplate, value); }
+        }
+
+        private String _downloadsEmptyInformationText;
+        public String DownloadsEmptyInformationText
+        {
+            get { return _downloadsEmptyInformationText; }
+            private set { SetField(ref _downloadsEmptyInformationText, value); }
+        }
 
         #endregion
     }

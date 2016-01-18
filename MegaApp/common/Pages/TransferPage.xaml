@@ -49,33 +49,52 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="Transfers" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="TransfersPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
                 <!--Pivot item one-->
-                <phone:PivotItem x:Name="Uploads" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,28,12,0">
-                    <Grid>
-                        <telerikPrimitives:RadDataBoundListBox 
-						    x:Name="LstUploads"
-						    ItemsSource="{Binding MegaTransfers.Uploads}"
-						    EmptyContentTemplate="{StaticResource MegaTransferListUploadEmptyContent}" 
-						    ItemTemplate="{StaticResource MegaTransferItemContent}" 
-						    FontFamily="Portable User Interface"
-                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
-					    />
+                <phone:PivotItem x:Name="UploadsPivot" Margin="12,0,12,0" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
+                    <Grid Background="Transparent" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding UploadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding HasUploads, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                        <Grid x:Name="UploadsContentPanel" Grid.Row="1" Margin="12,12,0,0">
+                            <telerikPrimitives:RadDataBoundListBox                                 
+                                x:Name="LstUploads"
+                                ItemsSource="{Binding MegaTransfers.Uploads}"                                
+                                EmptyContentTemplate="{Binding UploadsEmptyContentTemplate}" 
+                                ItemTemplate="{StaticResource MegaTransferItemContent}" 
+                                FontFamily="Portable User Interface"
+                                telerik:InteractionEffectManager.IsInteractionEnabled="True"
+                                />
+                        </Grid>
                         <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
                     </Grid>
                 </phone:PivotItem>
                 <!--Pivot item two-->
-                <phone:PivotItem x:Name="Downloads" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
-                    <Grid>
-                        <telerikPrimitives:RadDataBoundListBox 
-						    x:Name="LstDownloads"
-						    ItemsSource="{Binding MegaTransfers.Downloads}"
-						    EmptyContentTemplate="{StaticResource MegaTransferListDownloadEmptyContent}" 
-						    ItemTemplate="{StaticResource MegaTransferItemContent}" 
-						    FontFamily="Portable User Interface" 
-                            telerik:InteractionEffectManager.IsInteractionEnabled="True"
-					    />
-                        <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+                <phone:PivotItem x:Name="DownloadsPivot" Margin="12,0,12,0" Header="{Binding LocalizedUiResources.Downloads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
+                    <Grid Background="Transparent" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding DownloadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding HasDownloads, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                        <Grid x:Name="DownloadsContentPanel" Grid.Row="1" Margin="12,12,0,0">
+                            <telerikPrimitives:RadDataBoundListBox 
+                                x:Name="LstDownloads"
+                                ItemsSource="{Binding MegaTransfers.Downloads}"
+                                EmptyContentTemplate="{Binding DownloadsEmptyContentTemplate}" 
+                                ItemTemplate="{StaticResource MegaTransferItemContent}" 
+                                FontFamily="Portable User Interface" 
+                                telerik:InteractionEffectManager.IsInteractionEnabled="True"
+                                />
+                            
+                            <selectors:CustomMultiResolutionImage x:Name="ImgDownloadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+                        </Grid>
                     </Grid>
                 </phone:PivotItem>
             </phone:Pivot>
@@ -85,7 +104,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Height="100" Margin="0,66,0,64">
+            <Grid Height="100" Margin="0,50,0,48">
                 <Button x:Name="BtnMyAccount" Width="420" Style="{StaticResource ButtonStyleNoBorder}" HorizontalAlignment="Left" VerticalAlignment="Center" Tap="OnMyAccountTap">
                     <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="420">
                         <Grid.ColumnDefinitions>
