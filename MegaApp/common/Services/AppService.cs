@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Windows.Devices.Geolocation;
 using MegaApp.Classes;
 using MegaApp.Database;
 using MegaApp.Extensions;
@@ -8,11 +7,8 @@ using MegaApp.Resources;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Xml;
 using Windows.ApplicationModel;
-using Windows.Phone.System.Memory;
 using Windows.Storage;
-using Windows.Storage.Pickers;
 using Microsoft.Phone.Info;
 
 #if WINDOWS_PHONE_81

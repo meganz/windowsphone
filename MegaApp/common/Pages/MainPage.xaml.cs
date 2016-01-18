@@ -155,18 +155,9 @@ namespace MegaApp.Pages
             {
                 if (SettingsService.LoadSetting(SettingsResources.CameraUploadsIsEnabled, false))
                 {
-                    if (MediaService.GetAutoCameraUploadStatus())
+                    if (!MediaService.GetAutoCameraUploadStatus())
                     {
                         MediaService.SetAutoCameraUpload(true);
-                    }
-                    else
-                    {
-                        await new CustomMessageDialog(
-                            AppMessages.AutoCameraUploadFailed_Title,
-                            AppMessages.AutoCameraUploadFailed,
-                            App.AppInformation).ShowDialogAsync();
-                        MediaService.SetAutoCameraUpload(false);
-                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
                     }
                 }
             }

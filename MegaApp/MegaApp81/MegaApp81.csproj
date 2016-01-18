@@ -30,6 +30,8 @@
     <TargetFrameworkProfile />
     <DefaultLanguage>en-US</DefaultLanguage>
     <NuGetPackageImportStamp>f3f11b03</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -773,6 +775,9 @@
     <Compile Include="..\common\Services\ImageService.cs">
       <Link>Services\ImageService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\LicenseService.cs">
+      <Link>Services\LicenseService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
     </Compile>
@@ -1468,6 +1473,10 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="MockIAPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MockIAPLib.1.0.0.1\lib\wp80\MockIAPLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ShakeGestures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Sqlite, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sqlite-net-wp8.3.8.7.4-beta\lib\windowsphone8\Sqlite.winmd</HintPath>
@@ -5315,6 +5324,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.props'))" />
     <Error Condition="!Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
   <Import Project="..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets" Condition="Exists('..\packages\sqlite-net-wp8.3.8.7.4-beta\build\windowsphone8\sqlite-net-wp8.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>
