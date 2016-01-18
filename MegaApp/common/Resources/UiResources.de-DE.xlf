@@ -739,9 +739,9 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">Remove link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ServiceRestrictions" translate="yes" xml:space="preserve">
-          <source>Service restrictions</source>
-          <target state="new">Service restrictions</target>
+        <trans-unit id="Resx/OSRestrictions" translate="yes" xml:space="preserve">
+          <source>Operating system restrictions</source>
+          <target state="new">Operating system restrictions</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" xml:space="preserve">

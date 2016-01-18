@@ -27,10 +27,13 @@ namespace MegaApp.Models
 
         #region Public Methods
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public async void Initialize(GlobalDriveListener globalDriveListener)
         {
             // Add folders to global drive listener to receive notifications
             globalDriveListener.Folders.Add(this.CameraUploads);
+
+            // Create Camera Uploads folder node if not exists
+            await this.CameraUploads.CreateRootNodeIfNotExists();
         }
 
         public void Deinitialize(GlobalDriveListener globalDriveListener)
@@ -123,7 +126,7 @@ namespace MegaApp.Models
 
         #region Private Methods
 
-        private void InitializeModel()
+        private async void InitializeModel()
         {
             this.CameraUploads = new CameraUploadsFolderViewModel(this.MegaSdk, this.AppInformation, ContainerType.CloudDrive);
         }

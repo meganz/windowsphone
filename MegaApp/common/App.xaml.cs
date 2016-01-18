@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -23,6 +22,7 @@ using MegaApp.Services;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
+using MockIAPLib;
 using Telerik.Windows.Controls;
 #if WINDOWS_PHONE_81
     using Windows.ApplicationModel.DataTransfer.ShareTarget;
@@ -131,6 +131,8 @@ namespace MegaApp
                     db.CreateTable<SavedForOffline>();
                 }
             }
+
+            SetupMockIAP();
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -485,6 +487,33 @@ namespace MegaApp
                 throw;
             }
         }
+
+        private void SetupMockIAP()
+        {
+#if DEBUG
+            MockIAP.Init();
+            MockIAP.ClearCache();
+
+            MockIAP.RunInMockMode(true);
+            MockIAP.SetListingInformation(1, "en-us", "A description", "1", "TestApp");
+
+            // Add some more items manually.
+            ProductListing p = new ProductListing
+            {
+                Name = "Pro1Monthly",
+                ImageUri = null,
+                ProductId = "Pro1Monthly",
+                ProductType = Windows.ApplicationModel.Store.ProductType.Durable,
+                Keywords = new string[] { "Pro1Monthly" },
+                Description = "Pro1Monthly",
+                FormattedPrice = "1.0",
+                Tag = string.Empty
+            };
+            
+            MockIAP.AddProductListing("Pro1Monthly", p);
+#endif
+        }
+
 
         #region MRequestListenerInterface
 

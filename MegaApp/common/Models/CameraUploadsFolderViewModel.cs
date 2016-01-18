@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Services;
 
 namespace MegaApp.Models
@@ -46,5 +47,65 @@ namespace MegaApp.Models
 
             LoadChildNodes();
         }
+
+        public async Task CreateRootNodeIfNotExists()
+        {
+            MNode cameraUploadsNode = NodeService.FindCameraUploadNode(this.MegaSdk, this.MegaSdk.getRootNode());
+
+            if (cameraUploadsNode != null) return;
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            var createFolderListener = new CreateCameraUploadsRequestListener();
+            createFolderListener.RequestFinished += (sender, args) =>
+            {
+                tcs.TrySetResult(args.Succeeded);
+            };
+
+            MegaSdk.createFolder("Camera Uploads", this.MegaSdk.getRootNode(), createFolderListener);
+
+            await tcs.Task;
+        }
+
+        #region Internal Classes
+
+        private class CreateCameraUploadsRequestListener : MRequestListenerInterface
+        {
+            public event EventHandler<SucceededEventArgs> RequestFinished;
+
+            public void onRequestFinish(MegaSDK api, MRequest request, MError e)
+            {
+                if (RequestFinished == null) return;
+
+                RequestFinished(this, new SucceededEventArgs(e.getErrorCode() == MErrorType.API_OK));
+            }
+
+            public void onRequestStart(MegaSDK api, MRequest request)
+            {
+                // Do nothing
+            }
+
+            public void onRequestUpdate(MegaSDK api, MRequest request)
+            {
+                // Do nothing
+            }
+
+            public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
+            {
+                // Do nothing
+            }
+        }
+
+        private class SucceededEventArgs : EventArgs
+        {
+            public SucceededEventArgs(bool succeeded)
+            {
+                this.Succeeded = succeeded;
+            }
+
+            public bool Succeeded { get; private set; }
+        }
+
+        #endregion
     }
 }

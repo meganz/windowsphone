@@ -9,14 +9,17 @@ using mega;
 using MegaApp.MegaApi;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
-using Microsoft.Phone.Shell;
 using Microsoft.Xna.Framework.Media;
 
 namespace ScheduledCameraUploadTaskAgent
 {
     public class ScheduledAgent : ScheduledTaskAgent
     {
+        /// <summary>
+        /// MEGA Software Development Kit reference
+        /// </summary>
         private static MegaSDK MegaSdk { get; set; }
+
         /// <remarks>
         /// ScheduledAgent constructor, initializes the UnhandledException handler
         /// </remarks>
@@ -32,8 +35,6 @@ namespace ScheduledCameraUploadTaskAgent
         /// Code to execute on Unhandled Exceptions
         private static void UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
-            ShowAbortToast();
-
             if (Debugger.IsAttached)
             {
                 // An unhandled exception has occurred; break into the debugger
@@ -52,150 +53,283 @@ namespace ScheduledCameraUploadTaskAgent
         /// </remarks>
         protected override void OnInvoke(ScheduledTask task)
         {
-            InitializeSdk();
-        }
+            if (!InitializeSdk())
+            {
+                // If initialisation of SDK failed
+                // Notify complete and retry next task run
+                this.NotifyComplete();
+                return;
+            }
 
-        private void InitializeSdk()
-        {
-            // Initialize MegaSDK 
-            MegaSdk = new MegaSDK("Z5dGhQhL", String.Format("{0}/{1}/{2}",
-                GetBackgroundAgentUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
-                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
-
+            // Initialisation SDK succeeded
+            // Fast login with session token that was saved during MEGA app initial login
             FastLogin();
         }
 
+        /// <summary>
+        /// Initialize the MegaSDK to be able to perform uploads
+        /// </summary>
+        /// <returns>True if creation succeeded and False if creation failed</returns>
+        private static bool InitializeSdk()
+        {
+            try
+            {
+                MegaSdk = new MegaSDK(
+                "Z5dGhQhL",
+                String.Format("{0}/{1}/{2}",
+                    GetBackgroundAgentUserAgent(),
+                    DeviceStatus.DeviceManufacturer,
+                    DeviceStatus.DeviceName),
+                ApplicationData.Current.LocalFolder.Path,
+                new MegaRandomNumberProvider());
+
+                return MegaSdk != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        /// <summary>
+        /// Fast login to MEGA account with user session token
+        /// </summary>
         private void FastLogin()
         {
+            string sessionToken = null;
+            try
+            {
+                // Try to load shared session token file
+                sessionToken = SettingsService.LoadSettingFromFile<string>("{85DBF3E5-51E8-40BB-968C-8857B4FC6EF4}");
+            }
+            catch (Exception)
+            {
+                // Failed to load shared session token file
+                // Notify complete and try next run to load the session string
+                this.NotifyComplete();
+                return;
+            }
+           
+
+            if (String.IsNullOrEmpty(sessionToken) || String.IsNullOrWhiteSpace(sessionToken))
+            {
+                // No shred session token found
+                // Notify complete and try next run to load the session string
+                this.NotifyComplete();
+                return;
+            }
+
+            // Do login
             var fastLoginListener = new MegaRequestListener();
+
+            // After the request is finished. Check for success or failure
             fastLoginListener.RequestFinished += (sender, args) =>
             {
                 if (!args.Succeeded)
                 {
-                    ShowAbortToast();
-                    this.Abort();
+                    // Login failed
+                    // Notify complete and try next run to load the session string
+                    this.NotifyComplete();
+                    return;
                 }
-                else
-                {
-                    FetchNodes();
-                }
+
+                // Login succeeded
+                // Fetch nodes. Needed to find the camera upload node later
+                FetchNodes();
             };
 
-            
-            var sessionToken = SettingsService.LoadSettingFromFile<string>("{85DBF3E5-51E8-40BB-968C-8857B4FC6EF4}");
-
-            if (String.IsNullOrEmpty(sessionToken))
-                this.NotifyComplete();
-            else
-                MegaSdk.fastLogin(sessionToken, fastLoginListener);
+            // Init fastlogin
+            MegaSdk.fastLogin(sessionToken, fastLoginListener);
         }
 
+        /// <summary>
+        /// Fetch the MEGA nodes from the server
+        /// </summary>
         private void FetchNodes()
         {
             var fetchNodesListener = new MegaRequestListener();
+
+            // After the request is finished. Check for success or failure
             fetchNodesListener.RequestFinished += (sender, args) =>
             {
                 if (!args.Succeeded)
                 {
-                    ShowAbortToast();
-                    this.Abort();
-                }
-                else
-                {
-                    Upload();
-                }
-            };
-
-            MegaSdk.fetchNodes(fetchNodesListener);
-        }
-        
-        private async void Upload()
-        {
-            var lastUploadDate = SettingsService.LoadSettingFromFile<DateTime>("LastUploadDate");
-
-            using (var mediaLibrary = new MediaLibrary())
-            {
-                var selectDate = lastUploadDate;
-                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).ToList();
-
-                if (!pictures.Any())
-                {
+                    // When failed to retreive nodes we can not proceed to upload
+                    // Notify complete and try next run to load the session string
                     this.NotifyComplete();
                     return;
                 }
-                
+
+                // If fetching nodes succeeded
+                // Begin uploading files
+                Upload();
+            };
+
+            // Init fetch nodes
+            MegaSdk.fetchNodes(fetchNodesListener);
+        }
+        
+        /// <summary>
+        /// Upload files to MEGA Cloud Service
+        /// </summary>
+        private async void Upload()
+        {
+            // Get the date of the last uploaded file
+            // Needed so that we do not upload the same file twice
+            var lastUploadDate = SettingsService.LoadSettingFromFile<DateTime>("LastUploadDate");
+
+            // Open the phone's Media Library
+            using (var mediaLibrary = new MediaLibrary())
+            {
+                var selectDate = lastUploadDate;
+                // Find all pictures taken after the last upload date
+                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).ToList();
+
+
+                if (!pictures.Any())
+                {
+                    // No pictures is not an error. Maybe all pictures have already been uploaded
+                    // Just finish the task for this run
+                    this.NotifyComplete();
+                    return;
+                }
+
+                var cameraUploadNode = await GetCameraUploadsNode();
+                if (cameraUploadNode == null)
+                {
+                    // No camera upload node found or created
+                    // Just finish this run and try again next time
+                    this.NotifyComplete();
+                    return;
+                }
+
+                // Loop all available pictures for upload action
                 foreach (var picture in pictures)
                 {
-                    using (var imageStream = picture.GetImage())
+                    try
                     {
-                        imageStream.Position = 0;
-
-                        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-                        TimeSpan diff = picture.Date.ToUniversalTime() - origin;
-                        ulong mtime = (ulong)Math.Floor(diff.TotalSeconds);
-
-                        string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
-
-                        var cameraUploadNode = await GetCameraUploadsNode();
-
-                        var mNode = MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
-
-                        lastUploadDate = picture.Date;
-
-                        if (mNode != null)
+                        // Retreive the picture bytes as stream
+                        using (var imageStream = picture.GetImage())
                         {
-                             SettingsService.SaveSettingToFile("LastUploadDate", lastUploadDate);
-                             continue;
-                        }
-                        
-                        string newFilePath = Path.Combine(
-                            Path.Combine(ApplicationData.Current.LocalFolder.Path, "uploads\\"), picture.Name);
+                            // Make sure the stream pointer is at the start of the stream
+                            imageStream.Position = 0;
 
-                        imageStream.Position = 0;
+                            // Calculate time for fingerprint check
+                            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                            TimeSpan diff = picture.Date.ToUniversalTime() - origin;
+                            ulong mtime = (ulong)Math.Floor(diff.TotalSeconds);
 
-                        using (var fs = new FileStream(newFilePath, FileMode.Create))
-                        {
-                            await imageStream.CopyToAsync(fs);
-                            await fs.FlushAsync();
-                            fs.Close();
-                        }
-                        
-                        var transferListener = new MegaTransferListener();
-                        transferListener.TransferFinished += (sender, args) =>
-                        {
-                            if (args.Succeeded)
+                            // Get the unique fingerprint of the file
+                            string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
+
+                            // Check if the fingerprint is already in the subfolders of the Camera Uploads
+                            var mNode = MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
+
+                            // Get the files create/modified date
+                            lastUploadDate = picture.Date;
+
+                            // If node already exists then save the node date and proceed with the next node
+                            if (mNode != null)
+                            {
                                 SettingsService.SaveSettingToFile("LastUploadDate", lastUploadDate);
-                            File.Delete(newFilePath);
-                            Upload();
-                        };
+                                continue; // skip to next picture
+                            }
 
-                        MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime, transferListener);
-                        break;
+                            // Create a temporary local path to save the picture for upload
+                            string newFilePath = Path.Combine(
+                                Path.Combine(ApplicationData.Current.LocalFolder.Path, @"uploads\"), picture.Name);
+
+                            // Reset back to start
+                            // Because fingerprint action has moved the position
+                            imageStream.Position = 0;
+
+                            // Copy file to local storage to be able to upload
+                            using (var fs = new FileStream(newFilePath, FileMode.Create))
+                            {
+                                await imageStream.CopyToAsync(fs);
+                                await fs.FlushAsync();
+                                fs.Close();
+                            }
+                            
+                            var transferListener = new MegaTransferListener();
+                            
+                            // Take action after the transfer is finished. 
+                            transferListener.TransferFinished += (sender, args) =>
+                            {
+
+                                try
+                                {
+                                    // Use selectdate against access modified closure 
+                                    if (args.Succeeded)
+                                        SettingsService.SaveSettingToFile("LastUploadDate", selectDate);
+                                    // Clean up after upload
+                                    File.Delete(newFilePath);
+                                    // Start a new upload action
+                                    Upload();
+                                }
+                                catch (Exception)
+                                {
+                                    // File could not be found for delete or setting could not be saved
+                                    // Just continue the run
+                                }
+                            };
+
+                            // Init the upload
+                            MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime, transferListener);
+                            break;
+                        }
                     }
-                    
+                    catch (Exception)
+                    {
+                        // Something went wrong (could be memory limit)
+                        // Just finish this run and try again next time
+                        this.NotifyComplete();
+                        return;
+                    }
                 }
 
             }
 
         }
        
+        /// <summary>
+        /// Locate the Camera Uploads folder node to use as parent for the uploads
+        /// </summary>
+        /// <returns>Camera Uploads folder node</returns>
         private async Task<MNode> GetCameraUploadsNode()
         {
+            // First try to retrieve the Cloud Drive root node
             var rootNode = MegaSdk.getRootNode();
             if (rootNode == null) return null;
 
+            // Locate the camera upload node
             var cameraUploadNode = FindCameraUploadNode(rootNode);
 
+            // If node found, return the node
             if (cameraUploadNode != null) return cameraUploadNode;
+
+            // Node not found, create a new Camera Uploads node
+            var tcs = new TaskCompletionSource<MNode>();
+
+            var createFolderListener = new MegaRequestListener();
+            // After reqyest finished, return the newly created Camera Uploads node
+            createFolderListener.RequestFinished += (sender, args) =>
+            {
+                tcs.TrySetResult(args.Succeeded ? FindCameraUploadNode(rootNode) : null);
+            };
             
-            // Create the Camera Uploads folder
-            MegaSdk.createFolder("Camera Uploads", rootNode);
-            // Wait 10 seconds before continue
-            await Task.Delay(10000);
-            
-            return FindCameraUploadNode(rootNode);
+            // Init folder creation
+            MegaSdk.createFolder("Camera Uploads", rootNode, createFolderListener);
+
+            return await tcs.Task;
         }
 
+        /// <summary>
+        /// Locate the Camera Uploads folder node in the specified root
+        /// </summary>
+        /// <param name="rootNode">Current root node</param>
+        /// <returns>Camera Uploads folder node in</returns>
         private MNode FindCameraUploadNode(MNode rootNode)
         {
             var childs = MegaSdk.getChildren(rootNode);
@@ -203,7 +337,9 @@ namespace ScheduledCameraUploadTaskAgent
             for (int x = 0; x < childs.size(); x++)
             {
                 var node = childs.get(x);
+                // Camera Uploads is a folder
                 if (node.getType() != MNodeType.TYPE_FOLDER) continue;
+                // Check the folder name
                 if (!node.getName().ToLower().Equals("camera uploads")) continue;
                 return node;
             }
@@ -216,14 +352,16 @@ namespace ScheduledCameraUploadTaskAgent
             return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "1.0.0.0");
         }
 
-        private static void ShowAbortToast()
-        {
-            ShellToast toast = new ShellToast
-            {
-                Title = "MEGA Camera Uploads",
-                Content = "Auto Camera Upload has been disabled"
-            };
-            toast.Show();
-        }
+        //private static void ShowAbortToast(string message)
+        //{
+        //    var toast = new ShellToast
+        //    {
+        //        Title = "MEGA Camera Uploads",
+        //        Content = String.Format("Message: {0}", message) 
+        //    };
+        //    toast.Show();
+        //}
+
+     
     }
 }
