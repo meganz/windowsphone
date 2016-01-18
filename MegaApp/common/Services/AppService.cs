@@ -7,6 +7,7 @@ using MegaApp.Resources;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml;
 using Windows.ApplicationModel;
 using Windows.Storage;
 using Microsoft.Phone.Info;
@@ -48,7 +49,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("1045225");
+            return String.Format("19f12a5");
         }
 
         public static string GetAppUserAgent()
