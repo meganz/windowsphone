@@ -637,6 +637,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to please select a default download folder.
+        /// </summary>
+        public static string DefaultDownloadLocation {
+            get {
+                return ResourceManager.GetString("DefaultDownloadLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Default download location.
         /// </summary>
         public static string DefaultDownloadLocationText {
@@ -736,6 +745,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No files on your cloud drive.
+        /// </summary>
+        public static string EmptyCloudDrive {
+            get {
+                return ResourceManager.GetString("EmptyCloudDrive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Empty folder.
         /// </summary>
         public static string EmptyFolder {
@@ -745,7 +763,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No items saved for offline.
+        ///   Looks up a localized string similar to No items saved for offline.
         /// </summary>
         public static string EmptyOffline {
             get {
@@ -754,7 +772,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty rubbish bin.
+        ///   Looks up a localized string similar to Empty rubbish bin.
         /// </summary>
         public static string EmptyRubbishBin {
             get {
@@ -763,7 +781,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No shared folders.
+        ///   Looks up a localized string similar to No shared folders.
         /// </summary>
         public static string EmptySharedFolders {
             get {
@@ -772,7 +790,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No transfers.
+        ///   Looks up a localized string similar to No transfers.
         /// </summary>
         public static string EmptyTransfers {
             get {
@@ -1384,7 +1402,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No downloads.
+        ///   Looks up a localized string similar to No downloads.
         /// </summary>
         public static string NoDownloads {
             get {
@@ -1393,7 +1411,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No internet connection.
+        ///   Looks up a localized string similar to No internet connection.
         /// </summary>
         public static string NoInternetConnection {
             get {
@@ -1402,7 +1420,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a At this time, there is no payment method available for this plan.
+        ///   Looks up a localized string similar to At this time, there is no payment method available for this plan.
         /// </summary>
         public static string NoPaymentMethodsAvailable {
             get {
@@ -1429,7 +1447,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No uploads.
+        ///   Looks up a localized string similar to No uploads.
         /// </summary>
         public static string NoUploads {
             get {
@@ -1438,7 +1456,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Off.
+        ///   Looks up a localized string similar to Off.
         /// </summary>
         public static string Off {
             get {
@@ -1825,7 +1843,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Saved for offline.
+        ///   Looks up a localized string similar to Saved for offline.
         /// </summary>
         public static string SavedForOffline {
             get {
@@ -1834,7 +1852,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Search.
+        ///   Looks up a localized string similar to Search.
         /// </summary>
         public static string Search {
             get {
