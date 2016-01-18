@@ -13,6 +13,11 @@ namespace MegaApp.Services
 {
     static class NetworkService
     {
+        /// <summary>
+        /// Returns if there is an available network connection.
+        /// </summary>        
+        /// <param name="showMessageDialog">Boolean parameter to indicate if show a message if no Intenert connection</param>
+        /// <returns>True if there is an available network connection., False in other case.</returns>
         public static bool IsNetworkAvailable(bool showMessageDialog = false)
         {
             if (!NetworkInterface.GetIsNetworkAvailable())
@@ -25,7 +30,8 @@ namespace MegaApp.Services
                             UiResources.NoInternetConnection.ToUpper(),
                             AppMessages.NoInternetConnectionMessage,
                             App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                            MessageDialogButtons.Ok,
+                            MessageDialogImage.NoInternetConnection).ShowDialog();
                     });                    
                 }
 

@@ -400,6 +400,8 @@ namespace MegaApp.Pages
 
         private void OnAcceptClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             _paymentViewModel.DoPayment();
         }
 
@@ -421,6 +423,8 @@ namespace MegaApp.Pages
 
         private void OnSelectedPaymentMethod(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             switch(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType)
             {
                 case MPaymentMethod.PAYMENT_METHOD_CENTILI:

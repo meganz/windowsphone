@@ -23,6 +23,8 @@ namespace MegaApp.Models
         {
             InitializeMenu(HamburgerMenuItemType.MyAccount);
 
+            UpdateUserData();
+
             AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
             UpgradeAccount = new UpgradeAccountViewModel();
             IsAccountUpdate = false;
@@ -33,12 +35,26 @@ namespace MegaApp.Models
 
         #region Methods
 
+        public void SetOfflineContentTemplate()
+        {
+            OnUiThread(() =>
+            {
+                this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
+                this.EmptyInformationText = UiResources.NoInternetConnection.ToLower();
+            });
+        }
+
         public void GetAccountDetails()
         {
-            MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
-            MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
-            MegaSdk.getOwnUserData(new GetUserDataRequestListener(AccountDetails));
-            MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
+            if(!_accountDetails.IsDataLoaded)
+            {
+                MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
+                MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
+                MegaSdk.getOwnUserData(new GetUserDataRequestListener(AccountDetails));
+                MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
+
+                _accountDetails.IsDataLoaded = true;
+            }            
         }
 
         public void GetPricing()
@@ -91,6 +107,20 @@ namespace MegaApp.Models
                 _accountDetails = value;                
                 OnPropertyChanged("AccountDetails");
             }
+        }
+
+        private DataTemplate _emptyContentTemplate;
+        public DataTemplate EmptyContentTemplate
+        {
+            get { return _emptyContentTemplate; }
+            private set { SetField(ref _emptyContentTemplate, value); }
+        }
+
+        private String _emptyInformationText;
+        public String EmptyInformationText
+        {
+            get { return _emptyInformationText; }
+            private set { SetField(ref _emptyInformationText, value); }
         }
 
         private UpgradeAccountViewModel _upgradeAccount;

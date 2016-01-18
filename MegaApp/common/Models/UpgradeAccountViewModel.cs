@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,33 @@ namespace MegaApp.Models
         {
             Plans = new ObservableCollection<ProductBase>();
             Products = new ObservableCollection<Product>();
+
+            this.Plans.CollectionChanged += Plans_CollectionChanged;
+            this.Products.CollectionChanged += Products_CollectionChanged;
+        }
+
+        void Plans_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("HasAvailablePlans");
+        }
+
+        void Products_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged("HasAvailableProducts");
         }
 
         public ObservableCollection<ProductBase> Plans { get; set; }
         public ObservableCollection<Product> Products { get; set; }
+
+        public bool HasAvailablePlans
+        {
+            get { return Plans.Count > 0; }
+        }
+
+        public bool HasAvailableProducts
+        {
+            get { return Products.Count > 0; }
+        }
 
         private Product _productPurchased;
         public Product ProductPurchased
