@@ -53,9 +53,9 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="SharedItemsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Style="{StaticResource PivotStyle}" Margin="0">
+            <phone:Pivot x:Name="SharedItemsPivot" Grid.Row="1" SelectionChanged="OnPivotSelectionChanged" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Style="{StaticResource PivotStyle}" Margin="0">
                 <!--Pivot item one-->
-                <phone:PivotItem x:Name="IncomingPivotItem" Header="{Binding LocalizedUiResources.Incoming, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                <phone:PivotItem x:Name="IncomingPivotItem" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.Incoming, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
                     <Grid Margin="0,0,12,0" Background="Transparent">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -90,7 +90,7 @@
                             </Grid>
                         </StackPanel>
 
-                        <Grid Grid.Row="1" Margin="24,0,0,0">
+                        <Grid Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstIncomingSharedFolders"                                
             					DataContext="{Binding InShares}"                                
@@ -98,7 +98,13 @@
                                 ItemTap="OnIncomingSharedItemTap"
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}" 
             					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
-                                ItemStateChanged="OnSharedItemStateChanged" 
+                                ItemStateChanged="OnSharedItemStateChanged"
+                                ScrollStateChanged="OnScrollStateChanged" 
+                                IsCheckModeEnabled="True" 
+                                IsCheckModeActiveChanged="OnCheckModeChanged"
+                                CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+                                ItemCheckedPath="IsMultiSelected" 
+                                IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
                                 RealizedItemsBufferScale="3" 
             					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 
@@ -111,7 +117,7 @@
                 </phone:PivotItem>
 
                 <!--Pivot item two-->
-                <phone:PivotItem x:Name="OutgoingPivotItem" Header="{Binding LocalizedUiResources.Outgoing, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                <phone:PivotItem x:Name="OutgoingPivotItem" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.Outgoing, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
                     <Grid Margin="0,0,12,0" Background="Transparent">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -146,7 +152,7 @@
                             </Grid>
                         </StackPanel>
 
-                        <Grid Grid.Row="1" Margin="24,0,0,0">
+                        <Grid Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstOutgoingSharedFolders"                                
             					DataContext="{Binding OutShares}"                                
@@ -155,6 +161,12 @@
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}" 
             					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
                                 ItemStateChanged="OnSharedItemStateChanged"
+                                ScrollStateChanged="OnScrollStateChanged"
+                                IsCheckModeEnabled="True" 
+            					IsCheckModeActiveChanged="OnCheckModeChanged"
+            					CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+            					ItemCheckedPath="IsMultiSelected" 
+            					IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
                                 RealizedItemsBufferScale="3" 
             					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 

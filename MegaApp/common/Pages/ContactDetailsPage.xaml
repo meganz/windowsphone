@@ -47,10 +47,10 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="ContactDetails" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Style="{StaticResource PivotStyle}" Margin="0">
+            <phone:Pivot x:Name="ContactDetailsPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Style="{StaticResource PivotStyle}" Margin="0">
                 <!--Pivot item one-->
-                <phone:PivotItem x:Name="MegaContactDetails" Header="{Binding LocalizedUiResources.Profile, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="0,0,12,0">
+                <phone:PivotItem x:Name="MegaContactDetailsPivotItem" Header="{Binding LocalizedUiResources.Profile, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                    <Grid Background="Transparent" Margin="0,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -112,15 +112,15 @@
                     </Grid>
                 </phone:PivotItem>
                 <!--Pivot item two-->
-                <phone:PivotItem x:Name="SharedItems" Header="{Binding LocalizedUiResources.SharedItems, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
-                    <Grid Margin="0,0,12,0">
+                <phone:PivotItem x:Name="SharedItemsPivotItem" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.SharedItems, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="0,-10,0,0" Loaded="OnPivotLoaded">
+                    <Grid Background="Transparent" Margin="0,0,12,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="0">
-                            <Grid Margin="24,0,24,5">
+                            <Grid Margin="24,0,12,5">
                                 <Grid.ColumnDefinitions>                                    
                                     <ColumnDefinition/>
                                     <ColumnDefinition Width="Auto"/>
@@ -149,7 +149,7 @@
                             </Grid>
                         </StackPanel>
                         
-                        <Grid Grid.Row="1" Margin="24,0,0,0">
+                        <Grid Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstInSharedFolders"                                
             					DataContext="{Binding InShares}"                                
@@ -158,12 +158,19 @@
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}" 
             					telerik:InteractionEffectManager.IsInteractionEnabled="True" 
                                 ItemStateChanged="OnInSharedItemStateChanged" 
+                                ScrollStateChanged="OnScrollStateChanged" 
+                                IsCheckModeEnabled="True" 
+                                IsCheckModeActiveChanged="OnCheckModeChanged"
+                                CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+                                ItemCheckedPath="IsMultiSelected" 
+            					IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
                                 RealizedItemsBufferScale="3" 
             					DataVirtualizationMode="Automatic"
             					EmptyContentDisplayMode="DataSourceEmpty" 
+                                IsAsyncBalanceEnabled="True" 
             					EmptyContent=""
-                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}"                                 
-            					IsAsyncBalanceEnabled="True"/>
+                                EmptyContentTemplate="{StaticResource MegaSharedFoldersListEmptyContent}"
+                                VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"/>
                         </Grid>                        
                     </Grid>
                 </phone:PivotItem>

@@ -133,7 +133,7 @@
                                 <TextBlock Text="{Binding SavedForOffline.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding SavedForOffline.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
-                        <Grid x:Name="SavedForOfflineContentPanel" Grid.Row="1" Margin="0">
+                        <Grid x:Name="SavedForOfflineContentPanel" Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstSavedForOffline" 	
             					DataContext="{Binding SavedForOffline}"								

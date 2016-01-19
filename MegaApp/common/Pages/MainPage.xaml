@@ -208,7 +208,7 @@
                                 <TextBlock Text="{Binding CloudDrive.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CloudDrive.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                             </Grid>
                         </StackPanel>
-                        <Grid x:Name="CloudDriveContentPanel" Grid.Row="1" Margin="0">
+                        <Grid x:Name="CloudDriveContentPanel" Grid.Row="1" Margin="12,0,0,0">
 
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstCloudDrive" 	
@@ -319,7 +319,7 @@
                             </Grid>
                         </StackPanel>
 
-                        <Grid x:Name="RubbishBinContentPanel" Grid.Row="1">
+                        <Grid x:Name="RubbishBinContentPanel" Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
             					x:Name="LstRubbishBin" 	
             					DataContext="{Binding RubbishBin}"								
@@ -341,7 +341,7 @@
             					IsAsyncBalanceEnabled="True" 
             					EmptyContent="" 
             					EmptyContentTemplate="{Binding EmptyContentTemplate}" 
-            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}">                                
+            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}">
                                 <telerikPrimitives:RadContextMenu.ContextMenu>
                                     <telerikPrimitives:RadContextMenu 
 										OpenGesture="Hold" 
