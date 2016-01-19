@@ -161,96 +161,100 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            <Grid x:Name="CameraUploadsRoot" Background="Transparent" Grid.Row="1" Margin="0,0,12,0">
+            <phone:Pivot x:Name="MainPivot" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Grid.Row="1" Style="{StaticResource PivotStyle}" Margin="0">
+                <phone:PivotItem x:Name="CameraUploadsPivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.CameraUploads, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
+                    <Grid x:Name="CameraUploadsRoot" Background="Transparent" Margin="0,0,12,0">
                         <!--ContentPanel - place additional content here-->
-            	<Grid.RowDefinitions>
-            		<RowDefinition Height="Auto"/>
-            		<RowDefinition Height="*"/>
-            	</Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-            	<StackPanel Grid.Row="0" Margin="0">
-            		<Grid Margin="24,0,12,5">
-            			<Grid.ColumnDefinitions>
-            				<ColumnDefinition/>
-            				<ColumnDefinition Width="Auto"/>
-            			</Grid.ColumnDefinitions>
-            			<Grid.RowDefinitions>
-            				<RowDefinition Height="16"/>
-            				<RowDefinition Height="24"/>
-            			</Grid.RowDefinitions>
-            			<ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding CameraUploads.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            			<userControls:BreadCrumb x:Name="CameraUploadsBreadCrumb" ItemsSource="{Binding CameraUploads.BreadCrumbs}" ItemsSourceType="{Binding CameraUploads.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
-                        <TextBlock Text="{Binding CameraUploads.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                        <TextBlock Text="{Binding CameraUploads.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            		</Grid>
-            	</StackPanel>
-            	<Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="0">
-
-            		<telerikPrimitives:RadDataBoundListBox 
-            			x:Name="LstCloudDrive" 	
-            			DataContext="{Binding CameraUploads}"								
-            			ItemsSource="{Binding ChildNodes}"
-            			ItemTap="OnCloudDriveItemTap"
-            			ItemTemplateSelector="{Binding NodeTemplateSelector}" 
-            			telerik:InteractionEffectManager.IsInteractionEnabled="True"             			
-            			ItemStateChanged="OnItemStateChanged" 
-            			ScrollStateChanged="OnScrollStateChanged" 
-            			IsCheckModeEnabled="True" 
-            			IsCheckModeActiveChanged="OnCheckModeChanged"
-            			CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
-            			ItemCheckedPath="IsMultiSelected" 
-            			IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
-            			RealizedItemsBufferScale="3" 
-            			DataVirtualizationMode="Automatic" 
-            			EmptyContentDisplayMode="DataSourceEmpty" 
-            			EmptyContent="" 
-            			EmptyContentTemplate="{Binding EmptyContentTemplate}" 
-            			VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 						
-            			IsAsyncBalanceEnabled="True">
-            			<telerikPrimitives:RadContextMenu.ContextMenu>
-            				<telerikPrimitives:RadContextMenu 
-            					OpenGesture="Hold" 
-            					x:Name="CloudDriveMenu" 
-            					Opening="OnMenuOpening">
+                        <StackPanel Grid.Row="0" Margin="0">
+                            <Grid Margin="24,0,12,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="24"/>
+                                </Grid.RowDefinitions>
+                                <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding CameraUploads.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <userControls:BreadCrumb x:Name="CameraUploadsBreadCrumb" ItemsSource="{Binding CameraUploads.BreadCrumbs}" ItemsSourceType="{Binding CameraUploads.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
+                                <TextBlock Text="{Binding CameraUploads.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                <TextBlock Text="{Binding CameraUploads.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding CameraUploads.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            </Grid>
+                        </StackPanel>
+                        
+                        <Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="12,0,0,0">
+                            <telerikPrimitives:RadDataBoundListBox 
+                                x:Name="LstCloudDrive" 	
+                                DataContext="{Binding CameraUploads}"								
+                                ItemsSource="{Binding ChildNodes}"
+                                ItemTap="OnCloudDriveItemTap"
+                                ItemTemplateSelector="{Binding NodeTemplateSelector}" 
+                                telerik:InteractionEffectManager.IsInteractionEnabled="True"             			
+                                ItemStateChanged="OnItemStateChanged" 
+                                ScrollStateChanged="OnScrollStateChanged" 
+                                IsCheckModeEnabled="True" 
+                                IsCheckModeActiveChanged="OnCheckModeChanged"
+                                CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+                                ItemCheckedPath="IsMultiSelected" 
+                                IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
+                                RealizedItemsBufferScale="3" 
+                                DataVirtualizationMode="Automatic" 
+                                EmptyContentDisplayMode="DataSourceEmpty" 
+                                EmptyContent="" 
+                                EmptyContentTemplate="{Binding EmptyContentTemplate}" 
+                                VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}" 						
+                                IsAsyncBalanceEnabled="True">
+                                <telerikPrimitives:RadContextMenu.ContextMenu>
+                                    <telerikPrimitives:RadContextMenu 
+                                        OpenGesture="Hold" 
+                                        x:Name="CloudDriveMenu" 
+                                        Opening="OnMenuOpening">
                                         <!--<telerikPrimitives:RadContextMenuItem 
                                         x:Name="BtnPreviewItem" 
                                         Command="{Binding PreviewItemCommand}"
                                         Content="{Binding LocalizedUiResources.Preview, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								    />-->
-            					<telerikPrimitives:RadContextMenuItem 
-            						x:Name="BtnDownloadItemCloudDrive" 
-            						Command="{Binding DownloadItemCommand}"
-            						Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								    />
-            					<telerikPrimitives:RadContextMenuItem 
-            						x:Name="BtnCreateShortCutCloudDrive" 
-            						Command="{Binding CreateShortCutCommand}"
-            						Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
-								    />
-            					<!--<telerikPrimitives:RadContextMenuItem 
-            						x:Name="BtnGetLinkCloudDrive" 
-            						Command="{Binding GetLinkCommand}"
-            						Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-								    />-->
-            					<telerikPrimitives:RadContextMenuItem 
-            						x:Name="BtnRenameItemCloudDrive" 
-            						Command="{Binding RenameItemCommand}"
-            						Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								    />
-            					<telerikPrimitives:RadContextMenuItem 
-            						x:Name="BtnMoveItemCloudDrive"
-            						Tapped="OnMoveItemTap"
-            						Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								    />
-            					<telerikPrimitives:RadContextMenuItem 
-            						Command="{Binding RemoveItemCommand}" 
-            						Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
-								    />
-            				</telerikPrimitives:RadContextMenu>
-            			</telerikPrimitives:RadContextMenu.ContextMenu>
-            		</telerikPrimitives:RadDataBoundListBox>
-            	</Grid>
-            </Grid>
+                                        />-->                                        
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnDownloadItemCloudDrive" 
+                                            Command="{Binding DownloadItemCommand}"
+                                            Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                            />
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnCreateShortCutCloudDrive" 
+                                            Command="{Binding CreateShortCutCommand}"
+                                            Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                            />
+                                        <!--<telerikPrimitives:RadContextMenuItem 
+                                        x:Name="BtnGetLinkCloudDrive" 
+                                        Command="{Binding GetLinkCommand}"
+                                        Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+                                        />-->
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnRenameItemCloudDrive" 
+                                            Command="{Binding RenameItemCommand}"
+                                            Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                            />
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnMoveItemCloudDrive"
+                                            Tapped="OnMoveItemTap"
+                                            Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                            />
+                                        <telerikPrimitives:RadContextMenuItem 
+                                            Command="{Binding RemoveItemCommand}" 
+                                            Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                            />
+                                    </telerikPrimitives:RadContextMenu>
+                                </telerikPrimitives:RadContextMenu.ContextMenu>
+                            </telerikPrimitives:RadDataBoundListBox>
+                        </Grid>
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>            
         </Grid>
         <Grid x:Name="SlideInGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-4,0,0">
             <Grid.RowDefinitions>

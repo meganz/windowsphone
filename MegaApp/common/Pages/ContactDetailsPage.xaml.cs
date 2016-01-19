@@ -74,13 +74,16 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
+
+            // Check if multi select is active on current view and disable it if so
+            e.Cancel = CheckMultiSelectActive(e.Cancel);
             
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
                         
             if (e.Cancel) return;
 
-            if (ContactDetails.SelectedItem.Equals(SharedItems))
+            if (ContactDetailsPivot.SelectedItem.Equals(SharedItemsPivotItem))
             {
                 if (!_contactDetailsViewModel.IsInSharedItemsRootListView)
                 {
@@ -95,11 +98,22 @@ namespace MegaApp.Pages
             e.Cancel = true;            
         }
 
+        private bool CheckMultiSelectActive(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (!_contactDetailsViewModel.InShares.IsMultiSelectActive) return false;
+
+            ChangeMultiSelectMode();
+
+            return true;
+        }
+
         private bool CheckAndGoFolderUp(bool isCancel)
         {
             if (isCancel) return true;
 
-            if (ContactDetails.SelectedItem.Equals(SharedItems))
+            if (ContactDetailsPivot.SelectedItem.Equals(SharedItemsPivotItem))
             {
                 return _contactDetailsViewModel.InShares.GoFolderUp();
             }
@@ -122,9 +136,101 @@ namespace MegaApp.Pages
 
         }
 
+        private void OnMultiSelectClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            ChangeMultiSelectMode();
+        }
+
+        private void ChangeMultiSelectMode()
+        {
+            if (ContactDetailsPivot.SelectedItem == SharedItemsPivotItem)
+                LstInSharedFolders.IsCheckModeActive = !LstInSharedFolders.IsCheckModeActive;
+        }
+
+        private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
+        {
+            switch (e.State)
+            {
+                case ItemState.Recycling:
+                    break;
+                case ItemState.Recycled:
+                    break;
+                case ItemState.Realizing:
+                    break;
+                case ItemState.Realized:
+                    ((IMegaNode)e.DataItem).SetThumbnailImage();
+                    break;
+            }
+        }
+
+        private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            switch (e.NewState)
+            {
+                case ScrollState.NotScrolling:
+                    //foreach (var frameworkElement in LstCloudDrive.ViewportItems)
+                    //{
+                    //    ((NodeViewModel)frameworkElement.DataContext).SetThumbnailImage();
+                    //}
+                    break;
+                case ScrollState.Scrolling:
+                    break;
+                case ScrollState.Flicking:
+                    break;
+                case ScrollState.TopStretch:
+                    break;
+                case ScrollState.LeftStretch:
+                    break;
+                case ScrollState.RightStretch:
+                    break;
+                case ScrollState.BottomStretch:
+                    break;
+                case ScrollState.ForceStopTopBottomScroll:
+                    break;
+                case ScrollState.ForceStopBottomTopScroll:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox)sender, e.TappedItem);
+
+            SetApplicationBarData();
+        }
+
+        private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
+        {
+            if (onOff)
+            {
+                if (item != null)
+                    listBox.CheckedItems.Add(item);
+
+                if (_contactDetailsViewModel.InShares.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
+                    _contactDetailsViewModel.InShares.PreviousDisplayMode = _contactDetailsViewModel.InShares.CurrentDisplayMode;
+                _contactDetailsViewModel.InShares.CurrentDisplayMode = DriveDisplayMode.MultiSelect;
+            }
+            else
+            {
+                listBox.CheckedItems.Clear();
+                _contactDetailsViewModel.InShares.CurrentDisplayMode = _contactDetailsViewModel.InShares.PreviousDisplayMode;
+            }
+        }
+
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
         {
-            if (sender == SharedItems)
+            if (sender == SharedItemsPivotItem)
                 _contactDetailsViewModel.GetContactSharedFolders();
         }
 

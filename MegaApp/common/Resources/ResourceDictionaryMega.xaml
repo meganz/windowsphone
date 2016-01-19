@@ -69,7 +69,7 @@
 
     <DataTemplate x:Key="MegaNodeListFileItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
-            <Grid Margin="0,3">
+            <Grid Margin="-12,3,12,3">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -128,7 +128,7 @@
 
     <DataTemplate x:Key="MegaNodeListFolderItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
-            <Grid Margin="0,3">
+            <Grid Margin="-12,3,12,3">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -450,7 +450,7 @@
 
     <DataTemplate x:Key="OfflineNodeListFileItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
-            <Grid Margin="0,3">
+            <Grid Margin="-12,3,12,3">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -493,7 +493,7 @@
 
     <DataTemplate x:Key="OfflineNodeListFolderItemContent">
         <Border BorderThickness="2, 2, 2, 2" Background="{Binding DisplayMode, ConverterParameter=0\,4, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}" BorderBrush="{Binding DisplayMode, ConverterParameter=1\,0, Converter={StaticResource NodeDisplayModeToColorBrushConverter}}">
-            <Grid Margin="0,3">
+            <Grid Margin="-12,3,12,3">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
