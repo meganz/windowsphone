@@ -72,19 +72,17 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if(Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                    {
-                        _sharedItemsViewModel.IsInSharedItemsRootListView = true;
-                        _sharedItemsViewModel.IsOutSharedItemsRootListView = true;
-
-                        _sharedItemsViewModel.GetIncomingSharedFolders();
-                        _sharedItemsViewModel.GetOutgoingSharedFolders();
-                    }
-                    else
+                    if(!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
-                    }                    
+                    }
+
+                    _sharedItemsViewModel.IsInSharedItemsRootListView = true;
+                    _sharedItemsViewModel.IsOutSharedItemsRootListView = true;
+
+                    _sharedItemsViewModel.GetIncomingSharedFolders();
+                    _sharedItemsViewModel.GetOutgoingSharedFolders();
                 }
                 else
                 {

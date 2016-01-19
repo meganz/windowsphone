@@ -59,17 +59,15 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                    {
-                        _transfersViewModel.SetEmptyContentTemplate();
-                        LstUploads.ItemsSource = _transfersViewModel.MegaTransfers.Uploads;
-                        LstDownloads.ItemsSource = _transfersViewModel.MegaTransfers.Downloads;
-                    }
-                    else
+                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
                     }
+
+                    _transfersViewModel.SetEmptyContentTemplate();
+                    LstUploads.ItemsSource = _transfersViewModel.MegaTransfers.Uploads;
+                    LstDownloads.ItemsSource = _transfersViewModel.MegaTransfers.Downloads;
                 }
                 else
                 {

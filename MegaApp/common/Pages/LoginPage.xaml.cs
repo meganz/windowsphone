@@ -68,6 +68,8 @@ namespace MegaApp.Pages
 
         private void OnAcceptClick(object sender, EventArgs e)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+            
             // To not allow cancel a request to login or 
             // create account once that is started
             SetApplicationBar(false);

@@ -65,16 +65,14 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                    {
-                        _cameraUploadsPageViewModel.CameraUploads.SetEmptyContentTemplate(true);
-                        _cameraUploadsPageViewModel.LoadFolders();
-                    }
-                    else
+                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
                     }
+
+                    _cameraUploadsPageViewModel.CameraUploads.SetEmptyContentTemplate(true);
+                    _cameraUploadsPageViewModel.LoadFolders();
                 }
                 else
                 {
