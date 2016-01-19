@@ -92,6 +92,12 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
+                    if(!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    {
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
+                        return;
+                    }
+
                     _myAccountPageViewModel.GetAccountDetails();
                     _myAccountPageViewModel.GetPricing();
                 }

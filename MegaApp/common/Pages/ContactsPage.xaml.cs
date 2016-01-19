@@ -61,19 +61,17 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                    {
-                        _contactsViewModel.SetEmptyContentTemplate(true);
-
-                        _contactsViewModel.GetMegaContacts();
-                        _contactsViewModel.GetReceivedContactRequests();
-                        _contactsViewModel.GetSentContactRequests();
-                    }
-                    else
+                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
                     }
+
+                    _contactsViewModel.SetEmptyContentTemplate(true);
+
+                    _contactsViewModel.GetMegaContacts();
+                    _contactsViewModel.GetReceivedContactRequests();
+                    _contactsViewModel.GetSentContactRequests();
                 }
                 else
                 {

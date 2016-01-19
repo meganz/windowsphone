@@ -32,6 +32,8 @@ namespace MegaApp.Models
 
         private void ConfirmAccount(object obj)
         {
+            if (!NetworkService.IsNetworkAvailable(true)) return;
+
             if (String.IsNullOrEmpty(ConfirmCode))
                 return;
             else

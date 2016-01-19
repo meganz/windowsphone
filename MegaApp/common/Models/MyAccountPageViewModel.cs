@@ -48,10 +48,14 @@ namespace MegaApp.Models
         {
             if(!_accountDetails.IsDataLoaded)
             {
-                MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));
-                MegaSdk.getUserAvatar(MegaSdk.getContact(MegaSdk.getMyEmail()), AccountDetails.AvatarPath, new GetUserAvatarRequestListener(AccountDetails));
-                MegaSdk.getOwnUserData(new GetUserDataRequestListener(AccountDetails));
+                MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));                
                 MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
+
+                OnUiThread(() =>
+                {
+                    AccountDetails.AvatarUri = UserData.AvatarUri;
+                    AccountDetails.UserName = UserData.UserName;
+                });                
 
                 _accountDetails.IsDataLoaded = true;
             }            

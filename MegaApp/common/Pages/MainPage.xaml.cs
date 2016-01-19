@@ -71,11 +71,9 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+                    if (!ValidActiveAndOnlineSession()) return;
 
-                    if (navParam == NavigationParameter.None) 
-                        navParam = NavigationParameter.Normal;
-
+                    NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);                    
                     OnlineBehavior(navParam);
                 }
                 else
@@ -140,7 +138,10 @@ namespace MegaApp.Pages
         private bool ValidActiveAndOnlineSession()
         {
             if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+            {
+                NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                 return false;
+            }                
 
             if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
             {
@@ -153,10 +154,17 @@ namespace MegaApp.Pages
             {
                 try
                 {
-                    if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) == null)                        
+                    if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) == null)
+                    {
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                         return false;
+                    }                        
                 }
-                catch (ArgumentNullException) { return false; }
+                catch (ArgumentNullException) 
+                {
+                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                    return false; 
+                }
             }
 
             return true;
@@ -249,39 +257,38 @@ namespace MegaApp.Pages
                 }
 #endif
 
-                if (ValidActiveAndOnlineSession())
-                {
-                    if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None || 
+                if (!ValidActiveAndOnlineSession()) return;
+
+                if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None ||
                         navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
-                    {                        
-                        // If is the first login, navigates to the camera upload service config page
-                        if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                            NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                        else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
-                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                {
+                    // If is the first login, navigates to the camera upload service config page
+                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                    else if (App.AppInformation.IsStartedAsAutoUpload && e.NavigationMode != NavigationMode.Back)
+                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
 
-                        // If the user is trying to open a shortcut
-                        if (App.ShortCutBase64Handle != null)
+                    // If the user is trying to open a shortcut
+                    if (App.ShortCutBase64Handle != null)
+                    {
+                        if (!OpenShortCut())
                         {
-                            if (!OpenShortCut())
-                            {
-                                new CustomMessageDialog(
-                                        AppMessages.ShortCutFailed_Title,
-                                        AppMessages.ShortCutFailed,
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
-                            
-                                _mainPageViewModel.CloudDrive.BrowseToFolder(
-                                    NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode(), ContainerType.CloudDrive));
-                            }
+                            new CustomMessageDialog(
+                                    AppMessages.ShortCutFailed_Title,
+                                    AppMessages.ShortCutFailed,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+
+                            _mainPageViewModel.CloudDrive.BrowseToFolder(
+                                NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode(), ContainerType.CloudDrive));
                         }
-                        else
-                        {
-                            _mainPageViewModel.LoadFolders();
-                        }                        
+                    }
+                    else
+                    {
+                        _mainPageViewModel.LoadFolders();
+                    }
 
-                        return;
-                    }                    
+                    return;
                 }
             }
 
@@ -304,20 +311,6 @@ namespace MegaApp.Pages
         {
             switch (navParam)
             {
-                case NavigationParameter.Normal:
-                    // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
-                    // Auto Camera Upload settings fetching has been skipped in the mainpage
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
-                        _mainPageViewModel.FetchNodes();
-                    else
-                        _mainPageViewModel.LoadFolders();
-
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                        NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                    else if (App.AppInformation.IsStartedAsAutoUpload)
-                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
-                    break;
-
                 case NavigationParameter.Login:
                     // Remove the last page from the stack. 
                     // If user presses back button it will then exit the application
@@ -375,6 +368,7 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.AutoCameraUpload:
                 case NavigationParameter.ImportLinkLaunch:
+                case NavigationParameter.Normal:
                 case NavigationParameter.None:
                     {
                         if (NavigationContext.QueryString.ContainsKey("filelink"))
@@ -391,9 +385,8 @@ namespace MegaApp.Pages
                             NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
                             return;
                         }
-
-                        bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-                        if (!isAlreadyOnline)
+                                                
+                        if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                         {
                             try
                             {
@@ -412,10 +405,21 @@ namespace MegaApp.Pages
                                 return;
                             }
                         }
+                        // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
+                        // Auto Camera Upload settings fetching has been skipped in the mainpage
+                        else if (!App.AppInformation.HasFetchedNodes)
+                        {
+                            _mainPageViewModel.FetchNodes();
+                        }
                         else
                         {
                             _mainPageViewModel.LoadFolders();
-                        }
+                        }                        
+
+                        if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                            NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                        else if (App.AppInformation.IsStartedAsAutoUpload)
+                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
 
                         break;
                     }
