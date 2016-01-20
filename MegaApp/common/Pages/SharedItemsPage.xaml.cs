@@ -231,8 +231,11 @@ namespace MegaApp.Pages
             if (SharedItemsPivot.SelectedItem.Equals(OutgoingPivotItem))
             {
                 // In this case, if is an OutShare root node, no go to the folder up
-                if (App.MegaSdk.isOutShare(_sharedItemsViewModel.OutShares.FolderRootNode.OriginalMNode))
+                if (_sharedItemsViewModel.OutShares.FolderRootNode == null || 
+                    App.MegaSdk.isOutShare(_sharedItemsViewModel.OutShares.FolderRootNode.OriginalMNode))
+                {
                     return false;
+                }                    
 
                 return _sharedItemsViewModel.OutShares.GoFolderUp();
             }
