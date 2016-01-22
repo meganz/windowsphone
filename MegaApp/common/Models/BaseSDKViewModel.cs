@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Resources;
 using MegaApp.Services;
+using IApplicationBar = MegaApp.Interfaces.IApplicationBar;
 
 namespace MegaApp.Models
 {
-    public abstract class BaseSdkViewModel: BaseViewModel
+    public abstract class BaseSdkViewModel : BaseViewModel, IApplicationBar
     {
         protected BaseSdkViewModel(MegaSDK megaSdk)
         {
@@ -38,6 +40,28 @@ namespace MegaApp.Models
 
             return isOnline;
         }
+
+        #endregion
+
+        #region IApplicationBar
+
+        public void TranslateAppBarItems(IList<ApplicationBarIconButton> iconButtons,
+            IList<ApplicationBarMenuItem> menuItems, IList<string> iconStrings, IList<string> menuStrings)
+        {
+            for (var i = 0; i < iconButtons.Count; i++)
+            {
+                if (iconStrings[i] == null) throw new IndexOutOfRangeException("iconStrings");
+
+                iconButtons[i].Text = iconStrings[i].ToLower();
+            }
+
+            for (var i = 0; i < menuItems.Count; i++)
+            {
+                if (menuStrings[i] == null) throw new IndexOutOfRangeException("menuStrings");
+
+                menuItems[i].Text = menuStrings[i].ToLower();
+            }
+        }        
 
         #endregion
 

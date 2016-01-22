@@ -9,6 +9,7 @@ using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -210,7 +211,8 @@ namespace MegaApp.Models
 
             App.AppInformation.IsNewlyActivatedAccount = true;
 
-            _megaSdk.login(request.getEmail(), request.getPassword(), new LoginViewModel(_megaSdk));            
+            _megaSdk.login(request.getEmail(), request.getPassword(), 
+                new LoginRequestListener(new LoginViewModel(_megaSdk)));
         }
 
         #endregion
