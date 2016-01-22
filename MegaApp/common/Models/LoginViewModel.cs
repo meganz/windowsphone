@@ -1,53 +1,35 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Threading;
 using mega;
 using MegaApp.Classes;
-using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class LoginViewModel : BaseRequestListenerViewModel
+    class LoginViewModel : BaseSdkViewModel
     {
         private readonly MegaSDK _megaSdk;
-        private readonly LoginPage _loginPage;
-
-        // Timer for ignore the received API_EAGAIN (-3) during login
-        private DispatcherTimer timerAPI_EAGAIN;
-        private bool isFirstAPI_EAGAIN;
+        private readonly LoginPage _loginPage;        
 
         public LoginViewModel(MegaSDK megaSdk, LoginPage loginPage = null)
+            :base(megaSdk)
         {
             this._megaSdk = megaSdk;
             this._loginPage = loginPage;
             this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
+
             this.ControlState = true;
-
-            timerAPI_EAGAIN = new DispatcherTimer();
-            timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
-            timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
-        }
-
-        // Method which is call when the timer event is triggered
-        private void timerTickAPI_EAGAIN(object sender, object e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                timerAPI_EAGAIN.Stop();
-                ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);
-            });
-        }
+        }        
 
         #region Methods
 
         public void DoLogin()
         {
             if (CheckInputParameters())
-                this._megaSdk.login(Email, Password, this);
+                this._megaSdk.login(Email, Password, new LoginRequestListener(this, _loginPage));
             else if (_loginPage != null)
                 Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
         }
@@ -75,12 +57,7 @@ namespace MegaApp.Models
             }
 
             return true;
-        }
-
-        private static void SaveLoginData(string email, string session, bool stayLoggedIn)
-        {
-            SettingsService.SaveMegaLoginData(email, session, stayLoggedIn);
-        }
+        }        
         
         #endregion
         
@@ -89,134 +66,8 @@ namespace MegaApp.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public bool StayLoggedIn { get; set; }
-        public string SessionKey { get; private set; }        
+        public string SessionKey { get; set; }        
 
         #endregion
-
-        #region  Base Properties
-
-        protected override string ProgressMessage
-        {
-            get { return ProgressMessages.Login; }
-        }
-
-        protected override string ErrorMessage
-        {
-            get { return AppMessages.LoginFailed; }
-        }
-
-        protected override string ErrorMessageTitle
-        {
-            get { return AppMessages.LoginFailed_Title.ToUpper(); }
-        }
-
-        protected override string SuccessMessage
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        protected override string SuccessMessageTitle
-        {
-            get { throw new NotImplementedException(); }
-        }
-
-        protected override bool ShowSuccesMessage
-        {
-            get { return false; }
-        }
-
-        protected override bool NavigateOnSucces
-        {
-            get { return true; }
-        }
-
-        protected override bool ActionOnSucces
-        {
-            get { return true; }
-        }
-
-        protected override Type NavigateToPage
-        {
-            get { return (typeof(MainPage)); }
-        }
-
-        protected override NavigationParameter NavigationParameter
-        {
-            get { return NavigationParameter.Login; }
-        }
-
-        #endregion
-
-        #region MRequestListenerInterface
-
-        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(false);
-
-                timerAPI_EAGAIN.Stop();
-
-                this.ControlState = true;                
-            });            
-
-            if (e.getErrorCode() == MErrorType.API_OK)
-            {
-                SessionKey = api.dumpSession();
-            }
-            else
-            {
-                if (_loginPage != null)
-                    Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
-
-                // E-mail unassociated with a MEGA account or Wrong password
-                if (e.getErrorCode() == MErrorType.API_ENOENT)
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        new CustomMessageDialog(
-                                ErrorMessageTitle,
-                                AppMessages.WrongEmailPasswordLogin,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                    });
-                    return;
-                }
-            }            
-
-            base.onRequestFinish(api, request, e);
-        }
-
-        public override void onRequestStart(MegaSDK api, MRequest request)
-        {
-            this.isFirstAPI_EAGAIN = true;
-            base.onRequestStart(api, request);
-        }
-
-        public override void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            // Starts the timer when receives the first API_EAGAIN (-3)
-            if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
-            {
-                this.isFirstAPI_EAGAIN = false;
-                Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Start());
-            }
-
-            base.onRequestTemporaryError(api, request, e);
-        }
-
-        #endregion
-
-        #region Override Methods
-
-        protected override void OnSuccesAction(MRequest request)
-        {
-            SaveLoginData(Email, SessionKey, StayLoggedIn);
-        }
-
-        #endregion
-        
-        
     }
 }
