@@ -13,8 +13,10 @@ namespace MegaApp.Services
 {
     static class NodeService
     {
-        public static IEnumerable<string> GetFiles(IEnumerable<IMegaNode> nodes, string directory)
+        public static IEnumerable<string> GetFiles(IList<IMegaNode> nodes, string directory)
         {
+            if (nodes == null || !nodes.Any()) return null;
+
             return nodes.Select(node => Path.Combine(directory, node.OriginalMNode.getBase64Handle())).ToList();
         }
 
