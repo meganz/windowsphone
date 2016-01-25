@@ -170,7 +170,7 @@ namespace MegaApp.MegaApi
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             SettingsService.SaveMegaLoginData(_loginViewModel.Email, 
-                _loginViewModel.SessionKey, _loginViewModel.StayLoggedIn);
+                _loginViewModel.SessionKey);
         }
 
         #endregion

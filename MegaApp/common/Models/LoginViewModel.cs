@@ -70,7 +70,7 @@ namespace MegaApp.Models
 
         public string Email { get; set; }
         public string Password { get; set; }
-        public string SessionKey { get; private set; }        
+        public string SessionKey { get; set; }        
 
         #endregion
     }
