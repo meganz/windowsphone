@@ -494,10 +494,11 @@ namespace MegaApp.Models
         {
             this.FocusedNode = node;
 
-            var existingNode = SavedForOffline.ReadNodesByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
-            if(existingNode != null && !existingNode.IsEmpty())
-            {
-                var offlineNode = new OfflineFileNodeViewModel(new FileInfo(existingNode.ElementAt(0).LocalPath));
+            var existingNode = SavedForOffline.ReadNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            if(existingNode != null && !String.IsNullOrWhiteSpace(existingNode.LocalPath) && 
+                FileService.FileExists(existingNode.LocalPath))
+            {                
+                var offlineNode = new OfflineFileNodeViewModel(new FileInfo(existingNode.LocalPath));
                 offlineNode.Open();
             }
             else
