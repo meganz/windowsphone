@@ -121,12 +121,6 @@ namespace MegaApp.MegaApi
         {
             App.AppInformation.HasFetchedNodes = true;
 
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                // Enable MainPage appbar buttons
-                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
-            });
-
             // If the user is trying to open a shortcut
             if (_shortCutBase64Handle != null)
             {
@@ -204,6 +198,12 @@ namespace MegaApp.MegaApi
 
             if (_mainPageViewModel != null) _mainPageViewModel.LoadFolders();
             if (_cameraUploadsPageViewModel != null) _cameraUploadsPageViewModel.LoadFolders();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                // Enable MainPage appbar buttons
+                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
+            });
 
             // KEEP ALWAYS AT THE END OF THE METHOD, AFTER THE "LoadForlders" call
             Deployment.Current.Dispatcher.BeginInvoke(() =>

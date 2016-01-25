@@ -7,7 +7,6 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Shell;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -21,6 +20,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Telerik.Windows.Controls;
 using Windows.Storage;
+using Microsoft.Phone.Scheduler;
 
 namespace MegaApp.Models
 {
@@ -110,11 +110,11 @@ namespace MegaApp.Models
 
         public void ClearChildNodes()
         {
-            if (ChildNodes == null) return;
-
+            if (ChildNodes == null || !ChildNodes.Any()) return;
+           
             OnUiThread(() =>
             {
-                this.ChildNodes.Clear();                
+                this.ChildNodes.Clear();
             });
         }
         
@@ -840,13 +840,11 @@ namespace MegaApp.Models
                     var waitHandleViewportNodes = new AutoResetEvent(false);
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        helperList.ForEach(n =>
+                        // If the task has been cancelled, stop processing
+                        foreach (var megaNode in helperList.TakeWhile(megaNode => !LoadingCancelToken.IsCancellationRequested))
                         {
-                            // If the task has been cancelled, stop processing
-                            if (LoadingCancelToken.IsCancellationRequested)
-                                LoadingCancelToken.ThrowIfCancellationRequested();
-                            ChildNodes.Add(n);
-                        });
+                            ChildNodes.Add(megaNode);
+                        }
                         waitHandleViewportNodes.Set();
                     });
                     waitHandleViewportNodes.WaitOne();
@@ -861,13 +859,11 @@ namespace MegaApp.Models
                 var waitHandleBackgroundNodes = new AutoResetEvent(false);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    helperList.ForEach(n =>
+                    // If the task has been cancelled, stop processing
+                    foreach (var megaNode in helperList.TakeWhile(megaNode => !LoadingCancelToken.IsCancellationRequested))
                     {
-                        // If the task has been cancelled, stop processing
-                        if (LoadingCancelToken.IsCancellationRequested)
-                            LoadingCancelToken.ThrowIfCancellationRequested();
-                        ChildNodes.Add(n);
-                    });
+                        ChildNodes.Add(megaNode);
+                    }
                     waitHandleBackgroundNodes.Set();
                 });
                 waitHandleBackgroundNodes.WaitOne();
@@ -885,13 +881,11 @@ namespace MegaApp.Models
                 // Set empty content to folder instead of loading view
                 SetEmptyContentTemplate(false);
 
-                helperList.ForEach(n =>
+                // If the task has been cancelled, stop processing
+                foreach (var megaNode in helperList.TakeWhile(megaNode => !LoadingCancelToken.IsCancellationRequested))
                 {
-                    // If the task has been cancelled, stop processing
-                    if (LoadingCancelToken.IsCancellationRequested)
-                        LoadingCancelToken.ThrowIfCancellationRequested();
-                    ChildNodes.Add(n);
-                });
+                    ChildNodes.Add(megaNode);
+                }
                 waitHandleRestNodes.Set();
             });
             waitHandleRestNodes.WaitOne();

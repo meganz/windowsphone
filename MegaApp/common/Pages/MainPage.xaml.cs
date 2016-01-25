@@ -20,6 +20,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
+using Telerik.Windows.Controls.DataForm;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.Pages
@@ -46,6 +47,12 @@ namespace MegaApp.Pages
 
             // Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            _mainPageViewModel.CommandStatusChanged += (sender, args) =>
+            {
+                if (ApplicationBar == null) return;
+                UiService.ChangeAppBarStatus(ApplicationBar.Buttons,  ApplicationBar.MenuItems, args.Status);
+            };
         }
 
         // Code to execute when a Network change is detected.
@@ -201,7 +208,7 @@ namespace MegaApp.Pages
             base.OnNavigatedFrom(e);
         }
 
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
