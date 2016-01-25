@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MegaApp.Enums;
 using MegaApp.Models;
@@ -65,28 +59,41 @@ namespace MegaApp.Pages
 
         private void OnOkClick(object sender, EventArgs e)
         {
-            //// Establish the connection type selected by the user
-            //if((bool)RadioButtonWifiOnly.IsChecked)
-            //    SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiOnly);
-            //else if((bool)RadioButtonWifiAndData.IsChecked)
-            //    SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiAndDataPlan);
+            ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled = false;
 
-            // Enable or turn on the "Camera Uploads" service
-            SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsIsEnabled, true);
-            MediaService.SetAutoCameraUpload(true);
+            try
+            {
+                // Enable or turn on the "Camera Uploads" service
+                SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsIsEnabled, true);
+                MediaService.SetAutoCameraUpload(true);
 
-            if (NavigateService.PreviousPage != null)
-                NavigateService.GoBack();
-            else
-                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+                if (NavigateService.PreviousPage != null)
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            finally
+            {
+                ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = true;
+            }
+           
         }
 
         private void OnSkipClick(object sender, EventArgs e)
         {
-            if (NavigateService.PreviousPage != null)
-                NavigateService.GoBack();
-            else
-                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = false;
+
+            try
+            {
+                if (NavigateService.PreviousPage != null)
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            finally
+            {
+                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = false;
+            }
         }        
     }
 }

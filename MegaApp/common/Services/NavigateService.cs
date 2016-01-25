@@ -1,13 +1,9 @@
-﻿using System.Linq;
-using System.Windows;
-using MegaApp.Classes;
+﻿using System.Windows;
 using MegaApp.Enums;
 using MegaApp.Extensions;
-using MegaApp.Pages;
 using MegaApp.Resources;
 using System;
 using System.Collections.Generic;
-using System.Windows.Controls;
 using Microsoft.Phone.Controls;
 
 namespace MegaApp.Services

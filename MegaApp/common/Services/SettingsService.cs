@@ -173,9 +173,8 @@ namespace MegaApp.Services
             }
         }
 
-        public static void SaveMegaLoginData(string email, string session, bool stayLoggedIn)
+        public static void SaveMegaLoginData(string email, string session)
         {
-            SaveSetting(SettingsResources.StayLoggedIn, stayLoggedIn);
             SaveSetting(SettingsResources.UserMegaEmailAddress, email);
             SaveSetting(SettingsResources.UserMegaSession, session);
             // Save session for automatic camera upload agent
