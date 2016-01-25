@@ -14,12 +14,10 @@ using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Shell;
-using IApplicationBar = MegaApp.Interfaces.IApplicationBar;
 
 namespace MegaApp.Models
 {
-    public class BaseAppInfoAwareViewModel : BaseSdkViewModel, IHamburgerMenu, IApplicationBar
+    public class BaseAppInfoAwareViewModel : BaseSdkViewModel, IHamburgerMenu
     {
         protected BaseAppInfoAwareViewModel(MegaSDK megaSdk, AppInformation appInformation): base(megaSdk)
         {
@@ -195,28 +193,6 @@ namespace MegaApp.Models
             });
         }
 
-        #endregion
-
-        #region IApplicationBar
-
-        public void TranslateAppBarItems(IList<ApplicationBarIconButton> iconButtons, 
-            IList<ApplicationBarMenuItem> menuItems, IList<string> iconStrings, IList<string> menuStrings)
-        {
-            for (var i = 0; i < iconButtons.Count; i++)
-            {
-                if (iconStrings[i] == null) throw new IndexOutOfRangeException("iconStrings");
-
-                iconButtons[i].Text = iconStrings[i].ToLower(); 
-            }
-
-            for (var i = 0; i < menuItems.Count; i++)
-            {
-                if (menuStrings[i] == null) throw new IndexOutOfRangeException("menuStrings");
-
-                menuItems[i].Text = menuStrings[i].ToLower();
-            }
-        }
-
-        #endregion
+        #endregion        
     }
 }
