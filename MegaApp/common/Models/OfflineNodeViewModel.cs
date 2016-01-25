@@ -14,6 +14,7 @@ using MegaApp.Database;
 using MegaApp.Enums;
 using MegaApp.Extensions;
 using MegaApp.Interfaces;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -121,21 +122,21 @@ namespace MegaApp.Models
             else
             {
                 // Search if the file has a pending transfer for offline and cancel it on this case
-                //foreach (var item in App.MegaTransfers.Downloads)
-                //{
-                //    WaitHandle waitEventRequest = new AutoResetEvent(false);
+                foreach (var item in App.MegaTransfers.Downloads)
+                {
+                    WaitHandle waitEventRequestTransfer = new AutoResetEvent(false);
 
-                //    var transferItem = (TransferObjectModel)item;
-                //    if (transferItem == null || transferItem.Transfer == null) continue;
+                    var transferItem = (TransferObjectModel)item;
+                    if (transferItem == null || transferItem.Transfer == null) continue;
 
-                //    if (String.Compare(nodePath, transferItem.Transfer.getPath()) == 0 &&
-                //        transferItem.isAliveTransfer())
-                //    {
-                //        MegaSdk.cancelTransfer(transferItem.Transfer,
-                //            new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
-                //        waitEventRequest.WaitOne();
-                //    }
-                //}
+                    if (String.Compare(this.NodePath, transferItem.Transfer.getPath()) == 0 &&
+                        transferItem.isAliveTransfer())
+                    {
+                        App.MegaSdk.cancelTransfer(transferItem.Transfer,
+                            new CancelTransferRequestListener((AutoResetEvent)waitEventRequestTransfer));
+                        waitEventRequest.WaitOne();
+                    }
+                }
                 
                 FileService.DeleteFile(this.NodePath);
             }
@@ -152,21 +153,21 @@ namespace MegaApp.Models
             String newSfoPath = Path.Combine(sfoPath, nodeName);
 
             // Search if the folder has a pending transfer for offline and cancel it on this case
-            //foreach (var item in App.MegaTransfers.Downloads)
-            //{
-            //    WaitHandle waitEventRequest = new AutoResetEvent(false);
+            foreach (var item in App.MegaTransfers.Downloads)
+            {
+                WaitHandle waitEventRequest = new AutoResetEvent(false);
 
-            //    var transferItem = (TransferObjectModel)item;
-            //    if (transferItem == null || transferItem.Transfer == null) continue;
+                var transferItem = (TransferObjectModel)item;
+                if (transferItem == null || transferItem.Transfer == null) continue;
 
-            //    if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
-            //        transferItem.isAliveTransfer())
-            //    {
-            //        MegaSdk.cancelTransfer(transferItem.Transfer,
-            //            new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
-            //        waitEventRequest.WaitOne();
-            //    }
-            //}
+                if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
+                    transferItem.isAliveTransfer())
+                {
+                    App.MegaSdk.cancelTransfer(transferItem.Transfer,
+                        new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
+                    waitEventRequest.WaitOne();
+                }
+            }
 
             IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
             if (childFolders != null)

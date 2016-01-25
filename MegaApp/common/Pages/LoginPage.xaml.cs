@@ -9,7 +9,6 @@ using MegaApp.Extensions;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
@@ -30,11 +29,12 @@ namespace MegaApp.Pages
 
         public void SetApplicationBar(bool isEnabled)
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = isEnabled;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = isEnabled;
+            // Change and translate the current application bar
+            _loginAndCreateAccountViewModelContainer.ChangeMenu(                
+                this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);            
 
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Cancel.ToLower();            
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isEnabled);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

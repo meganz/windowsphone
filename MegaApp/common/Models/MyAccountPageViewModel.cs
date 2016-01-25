@@ -149,15 +149,6 @@ namespace MegaApp.Models
             }
         }
 
-        /*private string AvatarPath
-        {
-            get
-            {
-                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                                    AppResources.DownloadsDirectory, "UserAvatarImage");
-            }
-        }*/
-
         #endregion
     }
 }

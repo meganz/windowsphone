@@ -118,12 +118,7 @@
 
                 <StackPanel Grid.Row="1">
                     <StackPanel x:Name="PanelMembership" Grid.Row="1" Margin="12,17,0,28" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <RichTextBox FontSize="{StaticResource PhoneFontSizeLarge}" Margin="-12,0,12,12">
-                            <Paragraph>
-                                <Run Text="{Binding LocalizedUiResources.SelectMembership, Source={StaticResource LocalizedStrings}}"/>
-                                <Run Text="*"/>
-                            </Paragraph>
-                        </RichTextBox>
+                        <TextBlock Text="{Binding LocalizedUiResources.SelectMembership, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeLarge}" Margin="0,0,12,12"/>                        
                         <Border HorizontalAlignment="Center" Height="90" VerticalAlignment="Center" Margin="0,0,12,0" Width="432" Tap="OnMonthlyTap">
                             <Border.Background>
                                 <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.20"/>
@@ -162,12 +157,6 @@
                                 <Paragraph>
                                     <Run Text="*"/>
                                     <Run Text="{Binding LocalizedUiResources.Get2MonthsFree, Source={StaticResource LocalizedStrings}}"/>
-                                </Paragraph>
-                            </RichTextBox>
-                            <RichTextBox TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeSmall}" Margin="-12,0,12,0">
-                                <Paragraph>
-                                    <Run Text="*"/>
-                                    <Run Text="{Binding LocalizedUiResources.CreditCardRecurringPayments, Source={StaticResource LocalizedStrings}}"/>
                                 </Paragraph>
                             </RichTextBox>
                         </StackPanel>

@@ -57,6 +57,8 @@ namespace MegaApp.Models
 
         public void SetFolderInfo()
         {
+            if (!Directory.Exists(this.NodePath)) Directory.CreateDirectory(this.NodePath);
+
             int childFolders = FolderService.GetNumChildFolders(this.NodePath);
             int childFiles = FolderService.GetNumChildFiles(this.NodePath, true);
             this.Information = String.Format("{0} {1} | {2} {3}",
