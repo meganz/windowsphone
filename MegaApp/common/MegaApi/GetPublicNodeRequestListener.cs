@@ -108,7 +108,20 @@ namespace MegaApp.MegaApi
                     DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel, isImage));
                 #elif WINDOWS_PHONE_81
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel));
+                {
+                    try
+                    {
+                        DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel);
+                    }
+                    catch (Exception)
+                    {
+                        new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            ErrorMessage,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    }
+                });
                 #endif
             }                
             else

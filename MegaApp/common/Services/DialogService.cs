@@ -79,6 +79,9 @@ namespace MegaApp.Services
         #elif WINDOWS_PHONE_81
         public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
         {
+            // Check if a folderviewmodel is available
+            if (folderViewModel == null) throw new ArgumentNullException("folderViewModel");
+
             // Needed to avoid "Implicity captured closure" compiler warning.
             var importFolderViewModel = folderViewModel;
             var downloadFolderViewModel = folderViewModel;

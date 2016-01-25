@@ -228,42 +228,12 @@ namespace MegaApp.Models
                 if (_cameraUploadsIsEnabled != value)
                 {
                     SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, value);
-                    if(!value)
-                        SettingsService.DeleteFileSetting("LastUploadDate");
+                    if(!value) SettingsService.DeleteFileSetting("LastUploadDate");
                 }
 
-                if (value && !SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-                {
-                    var customMessageDialog = new CustomMessageDialog(
-                           AppMessages.CameraUploadNeedsStayLoggedIn_Title,
-                           AppMessages.CameraUploadNeedsStayLoggedIn,
-                           this.AppInformation,
-                           MessageDialogButtons.YesNo);
-
-                    customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-                    {
-                        _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(true);
-                        this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-                        OnPropertyChanged("CameraUploadsIsEnabled");
-                        if (!_cameraUploadsIsEnabled) return;
-                        SettingsService.SaveMegaLoginData(this.MegaSdk.getMyEmail(),
-                            this.MegaSdk.dumpSession(), true);
-                    };
-                    customMessageDialog.CancelOrNoButtonTapped += (sender, args) =>
-                    {
-                        _cameraUploadsIsEnabled = false;
-                        this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-                        OnPropertyChanged("CameraUploadsIsEnabled");
-                    };
-
-                    customMessageDialog.ShowDialog();
-                }
-                else
-                {
-                    _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(value);
-                    this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
-                    OnPropertyChanged("CameraUploadsIsEnabled");
-                }
+                _cameraUploadsIsEnabled = MediaService.SetAutoCameraUpload(value);
+                this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
+                OnPropertyChanged("CameraUploadsIsEnabled");
             }
         }
 

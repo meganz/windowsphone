@@ -24,7 +24,6 @@ namespace MegaApp.Models
         {
             this._megaSdk = megaSdk;
             this._loginPage = loginPage;
-            this.StayLoggedIn = SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn, true);
             this.ControlState = true;
 
             timerAPI_EAGAIN = new DispatcherTimer();
@@ -77,9 +76,9 @@ namespace MegaApp.Models
             return true;
         }
 
-        private static void SaveLoginData(string email, string session, bool stayLoggedIn)
+        private static void SaveLoginData(string email, string session)
         {
-            SettingsService.SaveMegaLoginData(email, session, stayLoggedIn);
+            SettingsService.SaveMegaLoginData(email, session);
         }
         
         #endregion
@@ -88,7 +87,6 @@ namespace MegaApp.Models
 
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool StayLoggedIn { get; set; }
         public string SessionKey { get; private set; }        
 
         #endregion
@@ -212,7 +210,7 @@ namespace MegaApp.Models
 
         protected override void OnSuccesAction(MRequest request)
         {
-            SaveLoginData(Email, SessionKey, StayLoggedIn);
+            SaveLoginData(Email, SessionKey);
         }
 
         #endregion

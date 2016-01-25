@@ -137,11 +137,11 @@ namespace MegaApp.Pages
         
         private bool ValidActiveAndOnlineSession()
         {
-            if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-            {
-                NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                return false;
-            }                
+            //if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+            //{
+            //    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+            //    return false;
+            //}                
 
             if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
             {
@@ -374,11 +374,11 @@ namespace MegaApp.Pages
                         if (NavigationContext.QueryString.ContainsKey("filelink"))
                             this.GetFileLink();
 
-                        if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-                        {
-                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                            return;
-                        }
+                        //if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
+                        //{
+                        //    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                        //    return;
+                        //}
 
                         if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                         {
