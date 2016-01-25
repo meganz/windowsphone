@@ -154,7 +154,7 @@ namespace MegaApp.Database
                 IsSelectedForOffline = isSelectedForOffline
             };
 
-            DataBaseHelper<SavedForOffline>.UpdateNode(sfoNode);
+            UpdateNode(sfoNode);
         }
 
         // Insert the new node in the database. 
@@ -178,7 +178,7 @@ namespace MegaApp.Database
                 IsSelectedForOffline = isSelectedForOffline
             };
 
-            DataBaseHelper<SavedForOffline>.Insert(sfoNode);
+            Insert(sfoNode);            
         }
 
         // Delete the first node found with the specified field value

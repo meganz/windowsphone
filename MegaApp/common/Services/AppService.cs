@@ -105,17 +105,21 @@ namespace MegaApp.Services
         /// </summary>
         public static void InitializeAppFolders()
         {
-            string thumbnailDir = GetThumbnailDirectoryPath();
-            if (!Directory.Exists(thumbnailDir)) Directory.CreateDirectory(thumbnailDir);
+            try
+            {
+                string thumbnailDir = GetThumbnailDirectoryPath();
+                if (!Directory.Exists(thumbnailDir)) Directory.CreateDirectory(thumbnailDir);
 
-            string previewDir = GetPreviewDirectoryPath();
-            if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
+                string previewDir = GetPreviewDirectoryPath();
+                if (!Directory.Exists(previewDir)) Directory.CreateDirectory(previewDir);
 
-            string downloadDir = GetDownloadDirectoryPath();
-            if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
+                string downloadDir = GetDownloadDirectoryPath();
+                if (!Directory.Exists(downloadDir)) Directory.CreateDirectory(downloadDir);
 
-            string uploadDir = GetUploadDirectoryPath();
-            if (!Directory.Exists(uploadDir)) Directory.CreateDirectory(uploadDir);
+                string uploadDir = GetUploadDirectoryPath();
+                if (!Directory.Exists(uploadDir)) Directory.CreateDirectory(uploadDir);
+            }
+            catch (IOException) { }
         }
 
         public static ulong GetAppCacheSize()
