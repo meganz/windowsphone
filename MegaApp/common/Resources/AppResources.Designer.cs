@@ -151,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a en-US.
+        ///   Busca una cadena traducida similar a en.
         /// </summary>
         public static string ResourceLanguage {
             get {
