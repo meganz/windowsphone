@@ -45,33 +45,32 @@ namespace MegaApp.Services
 
         public static void DeleteFile(string path)
         {
-            if(File.Exists(path))
-                File.Delete(path);            
-        }
-
-        public static void ClearFiles(IEnumerable<string> filesToDelete)
-        {
             try
             {
-                if (filesToDelete == null) return;
-                
-                foreach (var file in filesToDelete)
-                {
-                    if (file != null)
-                        File.Delete(file);
-                }                
+                if (!String.IsNullOrWhiteSpace(path) && File.Exists(path))
+                    File.Delete(path);
             }
-            catch(IOException e)
+            catch (Exception e)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.DeleteNodeFailed_Title,
-                            String.Format(AppMessages.DeleteNodeFailed,  e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.DeleteNodeFailed_Title,
+                        String.Format(AppMessages.DeleteNodeFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
             }
+        }
+
+        public static void ClearFiles(IEnumerable<string> filesToDelete)
+        {
+            if (filesToDelete == null) return;
+
+            foreach (var file in filesToDelete)
+            {
+                DeleteFile(file);
+            }            
         }
 
         public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath, string newFileName = null)
