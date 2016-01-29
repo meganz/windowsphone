@@ -117,4 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Eşti pe cale de a anula abonamentul MEGA. Te rugăm să ne spui dacă există ceva ce putem face pentru a te răzgândi.</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Se anulează transferul...</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Schimbă parola</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Se curăţă coşul de gunoi...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Se închid toate sesiunile...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Se închide sesiunea...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Se confirmă contul...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Se creează contul...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Se creează folderul...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Se stochează cardul de credit...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Se şterge '{0}'...</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Se obţine adresa de descărcare...</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Se reia sesiunea...</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Se preiau fişierele şi folderele... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>Se obţin detaliile contului...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Se obţin datele contactului...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Se obţine linkul...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Se obţin metodele de plată...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>Se obţine URL-ul plăţii...</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>Se obţine previzualizarea...</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Se obţin date privind utilizatorul...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Se importă fişierul...</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Se trimite cererea de contact...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Se şterge cererea de contact...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Memento pentru contact cu privire la cerere...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>Se construieşte vizualizarea...</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Se autentifică...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Se deconectează...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Se mută...</value>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Se mută în coşul de gunoi...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Se pun pe pauză transferurile...</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Se pregătesc descărcările...</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Se pregătesc încărcările...</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Se elimină contactul...</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Se elimină din offline...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Se elimină linkul...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Se elimină...</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>Se redenumeşte...</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Se acceptă cererea de contact...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Se refuză cererea de contact...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Se ignoră cererea de contact...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Se reiau transferurile...</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Se salvează pentru offline...</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servere prea ocupate. Te rugăm să aştepţi…</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Se upgradează contul...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>

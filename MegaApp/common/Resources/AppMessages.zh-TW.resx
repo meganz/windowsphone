@@ -117,4 +117,911 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>您必須同意我們的條款</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>確認賬戶失敗，請重試。[{0}]</value>
+    <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>帳號狀態確認失敗</value>
+    <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>您的帳戶已創建，確認並啟用了。您將自動登入。</value>
+    <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>帳戶已啟用</value>
+    <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>檢查您的e-mail並點擊連結登入以確認您的帳號</value>
+    <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>需要確認</value>
+    <comment>Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>MEGA賬戶創建失敗，請重試。 [{0}]</value>
+    <comment>Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>賬戶創建失敗</value>
+    <comment>Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>無法創建資料夾</value>
+    <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>資料夾創建失敗</value>
+    <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>資料夾已創建</value>
+    <comment>Message of the dialog displayed when create a folder successfully.</comment>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>資料夾已創建</value>
+    <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>刪除項目失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>删除失敗</value>
+    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>無法檢索下載連結。請再試一次。</value>
+    <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>恢復連接失敗</value>
+    <comment>Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>下載檔案失敗，請重試 [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>下載失敗</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>無法從MEGA檢索這些檔案和資料夾。请重試。</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</comment>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>數據讀取失敗</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</comment>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>建立資料夾失敗。請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>資料夾創建失敗</value>
+    <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>生成連接失敗</value>
+    <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>生成連接失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>檢索縮略圖失敗</value>
+    <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>獲取縮略圖失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>圖像已導出至“已保存圖像”相冊</value>
+    <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>圖像已保存</value>
+    <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>導出圖像至“已保存圖像”相冊失敗，請重試。</value>
+    <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>保存圖像失敗</value>
+    <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>檔案匯入失敗</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>檔案匯入失敗</value>
+    <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>MEGA連接已複製到剪貼板</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>已複製到剪貼簿</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>登錄MEGA雲端硬碟失敗，請重試。[{0}]</value>
+    <comment>Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>登入失敗</value>
+    <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>目的地資料夾與來源資料夾相同。移動已取消。</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>移动失敗</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</comment>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>移除項目失敗。請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to move a file failed.</comment>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>移动失敗</value>
+    <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>密碼錯誤。請再試一次。</value>
+    <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>圖像已保存至您的相冊</value>
+    <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>圖像已保存</value>
+    <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>您確定要移除 {0} 嗎？</value>
+    <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>要刪除嗎？</value>
+    <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>移除項目失敗</value>
+    <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>刪除失敗</value>
+    <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeSuccess" xml:space="preserve">
+    <value>成功刪除檔案</value>
+    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>項目已移除</value>
+    <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>重命名失敗</value>
+    <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>重命名失敗</value>
+    <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>請填入您的密碼。</value>
+    <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>请输入您的名字、郵箱地址和密碼</value>
+    <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>請填入您的e-mail與您的MEGA密碼。</value>
+    <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>請完成必填字段</value>
+    <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>導出該圖像至“已保存圖像”相冊</value>
+    <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>儲存影像至相片</value>
+    <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>您未登入至MEGA。請再次登入。</value>
+    <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>不在線</value>
+    <comment>Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</comment>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>檢索預覽失敗[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>加載預覽失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>無法檢索您的賬戶信息，請重試。[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>恢復賬戶信息失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>您已登出</value>
+    <comment>Message of the dialog displayed when a user logged out successfully.</comment>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>已登出</value>
+    <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>無法登出，請重試。[{0}]</value>
+    <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>登出失敗</value>
+    <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion" xml:space="preserve">
+    <value>您確定要移除 {0}個項目嗎？</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
+    <value>要移除這些項目嗎？</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiRemoveSucces" xml:space="preserve">
+    <value>已移除 {0}個項目</value>
+    <comment>Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiRemoveSucces_Title" xml:space="preserve">
+    <value>項目已移除</value>
+    <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>移动至垃圾箱失敗，请重試。</value>
+    <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>移动至垃圾箱失敗</value>
+    <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>您確定要移动 {0}到垃圾箱嗎？</value>
+    <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>要移至垃圾箱嗎？</value>
+    <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>項目已成功移至垃圾桶</value>
+    <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>項目已移动</value>
+    <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>您確定要將 {0}個項目移至垃圾箱嗎？</value>
+    <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>要移动項目嗎？</value>
+    <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>移动 {0}個項目至垃圾箱</value>
+    <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>項目已移动</value>
+    <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersLogout" xml:space="preserve">
+    <value>您有 {0}個待定傳輸。這些待定傳輸將被取消。您確定要登出嗎？</value>
+    <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersLogout_Title" xml:space="preserve">
+    <value>待定傳輸</value>
+    <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersExit" xml:space="preserve">
+    <value>您有{0}個等待傳輸。等待傳輸將被取消。您確定要退出嗎？</value>
+    <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersExit_Title" xml:space="preserve">
+    <value>待定傳輸</value>
+    <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>您的賬戶已確認。您現在可以登錄了。</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>帳戶已確認</value>
+    <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>您輸入的密碼不正確</value>
+    <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>錯誤密碼</value>
+    <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>您已選中超過100個下載項目({0})。您要繼續嗎？</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
+Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>下載次數</value>
+    <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>您希望下載完成后自動導出圖像至您的相冊嗎？您之後可以通過設置頁面更改這一設置。其他文件類型將只被保存在app的本地存儲。</value>
+    <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>暫停傳輸失敗</value>
+    <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>暫停出錯</value>
+    <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>恢復傳輸失敗</value>
+    <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>恢復失敗</value>
+    <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="MinimalPictureSelection" xml:space="preserve">
+    <value>请至少選擇1張照片來上傳</value>
+    <comment>Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</comment>
+  </data>
+  <data name="MinimalPictureSelection_Title" xml:space="preserve">
+    <value>未選中照片</value>
+    <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed" xml:space="preserve">
+    <value>準備上傳：{0} 圖片失敗</value>
+    <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
+    <value>準備圖像失敗</value>
+    <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="PhotoUploadError" xml:space="preserve">
+    <value>上傳照片失敗</value>
+    <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
+  </data>
+  <data name="PhotoUploadError_Title" xml:space="preserve">
+    <value>上傳照片失敗</value>
+    <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>未找到選擇的檔案</value>
+    <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
+  </data>
+  <data name="FileNotFound_Title" xml:space="preserve">
+    <value>未找到檔案</value>
+    <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
+  </data>
+  <data name="OpenFileFailed" xml:space="preserve">
+    <value>打開選擇檔案失敗</value>
+    <comment>Message of the dialog displayed when the process to open a file failed.</comment>
+  </data>
+  <data name="OpenFileFailed_Title" xml:space="preserve">
+    <value>無法打開檔案</value>
+    <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadSelfieFailed" xml:space="preserve">
+    <value>上傳自拍照失敗</value>
+    <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
+  </data>
+  <data name="UploadSelfieFailed_Title" xml:space="preserve">
+    <value>自拍上傳失敗</value>
+    <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodesFailed" xml:space="preserve">
+    <value>無法從MEGA加載檔案或資料夾，請重試或者選擇刷新。</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
+  </data>
+  <data name="LoadNodesFailed_Title" xml:space="preserve">
+    <value>加載失敗</value>
+    <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>您的PIN碼不匹配。请重新輸入并保持一致。</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>PIN碼不匹配</value>
+    <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError" xml:space="preserve">
+    <value>您已從其他地點登出此設備</value>
+    <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
+  </data>
+  <data name="OverquotaAlert" xml:space="preserve">
+    <value>操作被禁，您將超過您的賬戶儲存限額。您要升級賬戶嗎？</value>
+    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="OverquotaAlert_Title" xml:space="preserve">
+    <value>超過配額警告！</value>
+    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>您還沒有設置默認的下載地址。要繼續下載，請選中一個目標資料夾，或從偏好中設置一個下載位置。</value>
+    <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>準備檔案失敗: {0} 個上傳</value>
+    <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>加載檔案失敗</value>
+    <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError_Title" xml:space="preserve">
+    <value>已登出</value>
+    <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>複製選中的檔案失敗： [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>複製檔案失敗</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>您沒有複製這種檔案類型到目標資料夾的權限。或許您正在嘗試保存或複製一個不支持的檔案類型到SD卡。請嘗試保存或複製該檔案到你設備的內部存儲器。</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>訪問未獲授權</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>複製萬能秘鑰到剪貼板失敗，請重試。</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>剪貼板出錯</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>當前的PIN碼不正確或不匹配</value>
+    <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>與當前的PIN碼不匹配</value>
+    <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>已複製萬能秘鑰至剪貼板</value>
+    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>萬能秘鑰已複製</value>
+    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>PIN碼至少为4位數</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN碼太短</value>
+    <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>已清除缓存</value>
+    <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>缓存已清除</value>
+    <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>沒有足夠的可用內存空間來完成此操作。App 即將關閉。</value>
+    <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>內存限制</value>
+    <comment>Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>不，僅本地</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>下載選項</value>
+    <comment>Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>好，導出</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>選擇資料夾失敗，請重試或者選擇另外一個資料夾：[{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFolderFailed_Title" xml:space="preserve">
+    <value>選擇資料夾失敗</value>
+    <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadNodeFailed" xml:space="preserve">
+    <value>上傳文件失敗，請重試。[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="UploadNodeFailed_Title" xml:space="preserve">
+    <value>上傳失敗</value>
+    <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFileFailed" xml:space="preserve">
+    <value>選取檔案失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFileFailed_Title" xml:space="preserve">
+    <value>選取檔案失敗</value>
+    <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>無法辨認的e-mail。請再試一次。</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>不正確的e-mail或密碼。請再試一次。</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
+  </data>
+  <data name="DeleteNodeQuestion" xml:space="preserve">
+    <value>您確定要永遠刪除{0}?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteNodeQuestion_Title" xml:space="preserve">
+    <value>刪除項目?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserDataFailed" xml:space="preserve">
+    <value>讀取您的使用者資料失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetUserDataFailed_Title" xml:space="preserve">
+    <value>檢索使用者數據失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoFailed" xml:space="preserve">
+    <value>選取照片失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoFailed_Title" xml:space="preserve">
+    <value>相片截取失敗</value>
+    <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed" xml:space="preserve">
+    <value>選取照片或影片失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
+    <value>相片/影片截取失敗</value>
+    <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CaptureVideoFailed" xml:space="preserve">
+    <value>選取影片失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CaptureVideoFailed_Title" xml:space="preserve">
+    <value>影片截取失敗</value>
+    <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
+  </data>
+  <data name="SaveSettingsFailed" xml:space="preserve">
+    <value>儲存設定失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SaveSettingsFailed_Title" xml:space="preserve">
+    <value>儲存設定錯誤</value>
+    <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>開啟捷徑時發生錯誤。也許是個無效的捷徑或目的地資料夾已被刪除。</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>捷徑錯誤</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>信用卡信息不正確。您的信用卡將不會被扣款。</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>儲存信用卡失敗</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>請填入所有必填欄位並再試一次。</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>信用卡號，有效月/年與CVV驗證碼應為數字。請檢查是否都正確並再試一次。</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>錯誤數據格式</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>您即將取消簽約MEGA，請告訴我們您的想法以便我們做出改善。</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>謝謝您的建議!</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>您的訂閱購買未完成取消程序。請連繫 support@mega.nz 以便取消。</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>取消訂閱失敗</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>訂閱已被取消。</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>訂購已取消</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>取消簽約</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>請不吝給予指教。謝謝。</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>該操作尚未正確地完成。信用卡將不會被扣款。</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>升級帳號錯誤</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>帳戶已成功升級！</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>帳戶已升級</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>選取可用的付款方式失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>取得付款方式錯誤</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed" xml:space="preserve">
+    <value>讀取付款連結失敗。請再試一次[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
+    <value>檢索付款連結失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
+  </data>
+  <data name="BackgroundAgentDisabled" xml:space="preserve">
+    <value>MEGA背景程式已被使用者停用</value>
+    <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
+    <value>背景程式停用</value>
+    <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
+    <value>為了使相機自動上傳功能正常執行，您需要啟用選項“保持登入”。確定要啟用這個選項嗎？</value>
+    <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
+    <value>相機自動上傳條件</value>
+    <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>您要移除聯絡人 {0} 嗎？</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>確定移除連絡人？</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddFailed" xml:space="preserve">
+    <value>無法發送聯絡人邀請，請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="InviteContactAddFailed_Title" xml:space="preserve">
+    <value>聯絡人邀請失敗</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully" xml:space="preserve">
+    <value>已邀請用戶{0}。他們接受邀請後，即會出現在您的聯絡人列表。</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
+    <value>已發出邀請</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>MEGA相機自動上傳</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>您的帳戶已更新。是否要檢查新帳戶的詳細資訊？</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>已更新之帳戶</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>我們的SSL/ TLS憑證無法被認證。您可能受到中間人攻擊。</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>已登出</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>相片自動上傳功能無法使用。您可以在設定頁面中重新啟用此功能。</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>相機自動上傳失敗</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="DeleteContactFailed" xml:space="preserve">
+    <value>刪除聯絡人失敗 {0}，請再試一次。 [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteContactFailed_Title" xml:space="preserve">
+    <value>刪除聯絡人失敗</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
+    <value>您要移除 {0} 個聯絡人嗎？</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
+    <value>移除聯絡人？</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>更換密碼失敗，請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>你的密碼已變更。</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>新的密碼不能與您現在的密碼相同。</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>請填寫您的舊MEGA密碼和新MEGA密碼。</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>無法關閉項目，請再試一次。[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>其餘項目皆已成功關閉。</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>無法關閉項目，請再試一次。[{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>此項目已被成功關閉。</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinFailed" xml:space="preserve">
+    <value>清空垃圾桶失敗，請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
+  </data>
+  <data name="CleanRubbishBinQuestion" xml:space="preserve">
+    <value>您確定要永久刪除所有垃圾桶中的文件？</value>
+    <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CleanRubbishBinSuccess" xml:space="preserve">
+    <value>已成功清空垃圾桶。</value>
+    <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
+  </data>
+  <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
+    <value>邀請失敗，您正在將自己加入聯絡人表單。</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
+  </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>移除連結失敗，請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>您不能執行此操作。請於連接網路後，再試一次。</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
 </root>

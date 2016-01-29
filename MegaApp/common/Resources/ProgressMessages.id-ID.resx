@@ -117,4 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Anda sedang akan membatalkan subskripsi MEGA anda. Harap beritahu kami, jika ada yang bisa kami lakukan untuk merubah pikiran anda.</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Membatalkan transfer...</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Ubah kata sandi</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Menghapus sampah...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Menutup semua sesi...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Menutup sesi...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Mengkonfirmasi akun...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Membuat akun...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Membuat folder...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Menyimpan kartu kredit...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Menghapus '{0}'...</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Mendapatkan link download...</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Melanjutkan sesi...</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Memuat file dan folder... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>Mendapatkan detil akun...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Mendapatkan kontak data...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Mendapatkan link...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Dapatkan metoda pembayaran...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>Mendapatkan URL pembayaran...</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>Mendapatkan preview...</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Mendapatkan data pengguna...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Meng-impor file...</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Mengirim request kontak...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Menghapus request kontak...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Mengingatkan kontak tentang request...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>Membuat view...</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Sedang masuk...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Keluar...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Memindahkan...</value>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Memindahkan ke Sampah...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Menghentikan transfer...</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Menyiapkan download...</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Menyiapkan upload...</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Menghapus kontak...</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Menghapus dari offline...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Menghapus link...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Menghapus...</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>Menamakan...</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Menerima request kontak...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Menolak request kontak...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Mengabaikan request kontak...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Melanjutkan tranfser...</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Menyimpan untuk offline...</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Server terlalu sibuk. Harap tunggu...</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Mengupgrade akun...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>
