@@ -117,4 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Du är på väg att avsluta ditt MEGA abonnemang. Låt oss veta om det finns något vi kan göra för att hjälpa dig att ändra dig.</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Avbryter överföring</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Ändra lösenord</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Tömmer papperskorgen...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Stänger alla sessioner</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Stänger session</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Bekräftar konto...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Skapar konto...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Skapar mapp...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Lagrar kreditkort...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Raderar '{0}'...</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Hämtar nedladdningslänk ...</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Återupptar session...</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Hämtar filer och mappar... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>Hämtar konto detaljer...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Hämtar kontakt data...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Hämtar länk...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Hämtar betalningsalternativ...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>Hämtar betalnings URL...</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>Hämtar förhandsvisning...</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Hämtar användar data...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Importerar fil...</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Skickar kontaktförfrågan...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Ta bort kontaktförfrågan...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Påminn kontakt om förfrågan...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>Byggnad vy...</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Loggar in...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Loggar ut...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Rörlig...</value>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Flyttar till papperskorgen...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Pausar överföringar...</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Förbereder nedladdingar...</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Förbereder uppladdningar</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Tar bort kontakt</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Tar bort från offline...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Tar bort länk</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Tar bort...</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>Byter namn...</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Acceptera kontaktförfrågan...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Nekar kontaktförfrågan...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Ignorera kontaktförfrågan...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Återupptar överföringar</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Sparar för offline</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servrarna är för upptagna. Var god vänta...</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Uppgraderar konto</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>

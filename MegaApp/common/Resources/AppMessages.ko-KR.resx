@@ -117,4 +117,911 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>이용 약관에 동의하셔야 합니다</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>계정 확인 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>계정 확인 실패</value>
+    <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>계정이 생성되고, 확인되고, 활성화 되었습니다. 자동으로 로그인될 것입니다.</value>
+    <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>계정이 활성화 되었습니다</value>
+    <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>계정을 확인하고 로그인하려면 이메일을 확인하고 링크를 클릭하세요</value>
+    <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>확인이 필요합니다</value>
+    <comment>Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>MEGA 클라우드 드라이드 계정 생성에 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>계정 생성 실패</value>
+    <comment>Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>폴더 생성 실패</value>
+    <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>폴더 생성 실패</value>
+    <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>폴더가 성공적으로 생성되었습니다</value>
+    <comment>Message of the dialog displayed when create a folder successfully.</comment>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>폴더가 생성되었습니다</value>
+    <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>항목 삭제에 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>삭제 실패</value>
+    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>다운로드 링크 수신에 실패하였습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>링크 수신 실패</value>
+    <comment>Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>파일 다운로드 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>다운로드 실패</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>MEGA에서 파일과 폴더를 수신하지 못했습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</comment>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>데이터 수신 실패</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</comment>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>폴더 생성을 실패하였습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>폴더 생성 실패</value>
+    <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>링크를 얻지 못했습니다</value>
+    <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>링크 얻기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>이미지 불러오기 실패</value>
+    <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>미리보기를 얻어오지 못하였습니다</value>
+    <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>이미지가 성공적으로 '저장된 사진' 앨범에 내보내졌습니다</value>
+    <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>이미지 저장됨</value>
+    <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>이미지를 '저장된 사진' 앨범에 내보내는 중 오류가 발생하였습니다. 다시 시도하세요</value>
+    <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>이미지 저장 실패</value>
+    <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>파일 들여오기 실패</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>파일 들여오기 실패</value>
+    <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>MEGA 링크가 클립보드에 저장되었습니다</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>클립보드로 복사되었습니다</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>MEGA 클라우드 드라이브 로그인 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>로그인 실패</value>
+    <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>목적지 폴더가 소스 폴더와 동일합니다. 이동이 취소되었습니다.</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>이동 실패</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</comment>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>항목 이동을 실패하였습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to move a file failed.</comment>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>이동 실패</value>
+    <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>비밀번호가 일치하지 않습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>이미지가 사진 앨범에 저장되었습니다</value>
+    <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>사진 저장됨</value>
+    <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>{0}개를 제거할까요?</value>
+    <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>제거할까요?</value>
+    <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>항목 제거 실패</value>
+    <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>제거 실패</value>
+    <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeSuccess" xml:space="preserve">
+    <value>항목이 성공적으로 삭제됨</value>
+    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>항목 제거됨</value>
+    <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>항목 이름 변경 실패</value>
+    <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>이름 바꾸기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>선택한 비밀번호를 입력하세요.</value>
+    <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>이름, 이메일 주소, 비밀번호를 입력하세요</value>
+    <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>이메일 주소와 MEGA 비밀번호를 입력하세요.</value>
+    <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>필수 항목을 입력하세요</value>
+    <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>현재 이미지를 '저장된 사진' 앨범으로 내보낼까요?</value>
+    <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>이미지를 사진 폴더에 저장</value>
+    <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>MEGA에 로그인되지 않았습니다. 다시 로그인하세요.</value>
+    <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>온라인이 아님</value>
+    <comment>Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</comment>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>썸네일 수신 실패 [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>썸네일 얻어오기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>계정 상세 정보를 받아오지 못했습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>계정 상세 정보 수신 실패</value>
+    <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>성공적으로 로그아웃 되었습니다.</value>
+    <comment>Message of the dialog displayed when a user logged out successfully.</comment>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>로그아웃됨</value>
+    <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>로그아웃을 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>로그아웃 실패</value>
+    <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion" xml:space="preserve">
+    <value>{0}개의 항목을 제거하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
+    <value>항목을 제거하시겠습니까?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiRemoveSucces" xml:space="preserve">
+    <value>{0}개의 항목이 제거됨</value>
+    <comment>Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiRemoveSucces_Title" xml:space="preserve">
+    <value>항목 제거됨</value>
+    <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>휴지통으로 옮기지 못했습니다. 다시 시도하세요</value>
+    <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>휴지통으로 옮기기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>{0}개를 휴지통으로 옮길까요?</value>
+    <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>휴지통으로 옮길까요?</value>
+    <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>항목이 성공적으로 휴지통으로 이동되었습니다</value>
+    <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>항목이 이동됨</value>
+    <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>[0}개의 항목을 휴지통으로 이동할까요?</value>
+    <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>항목을 이동할까요?</value>
+    <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>{0}개의 항목이 휴지통으로 이동되었습니다</value>
+    <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>항목이 이동됨</value>
+    <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersLogout" xml:space="preserve">
+    <value>현재 {0}개의 대기중인 전송이 있습니다. 대기중인 전송이 취소될 것입니다. 로그아웃 하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersLogout_Title" xml:space="preserve">
+    <value>대기중인 전송</value>
+    <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersExit" xml:space="preserve">
+    <value>현재 {0}개의 대기중인 전송이 있습니다. 대기중인 전송이 취소될 것입니다. 나가시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersExit_Title" xml:space="preserve">
+    <value>대기중인 전송</value>
+    <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>계정이 이미 확인되었습니다. 로그인할 수 있습니다.</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>계정이 이미 확인되었습니다</value>
+    <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>입력한 비밀번호가 올바르지 않습니다</value>
+    <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>잘못된 비밀번호</value>
+    <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>당신은 100개 이상({0})의 다운로드 항목을 선택하였습니다. 계속하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
+Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>다운로드 횟수</value>
+    <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>자동으로 이미지 파일을 다운로드 한 후 사진 앨범으로 내보내기를 원하십니까? 이 설정은 나중에 설정 화면에서 변경할 수 있습니다. 다른 유형의 파일은 앱의 로컬 저장소에 저장됩니다.</value>
+    <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>전송을 일시정지 하지 못하였습니다</value>
+    <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>일시정지 실패</value>
+    <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>전송을 계속 하지 못하였습니다</value>
+    <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>계속하기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="MinimalPictureSelection" xml:space="preserve">
+    <value>최소 1장의 업로드할 사진을 선택하세요</value>
+    <comment>Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</comment>
+  </data>
+  <data name="MinimalPictureSelection_Title" xml:space="preserve">
+    <value>사진이 선택되지 않았습니다</value>
+    <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed" xml:space="preserve">
+    <value>이미지 준비 실패: 업로드 {0}</value>
+    <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
+    <value>이미지 준비 실패</value>
+    <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="PhotoUploadError" xml:space="preserve">
+    <value>사진을 업로드하지 못했습니다</value>
+    <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
+  </data>
+  <data name="PhotoUploadError_Title" xml:space="preserve">
+    <value>사진 업로드 실패</value>
+    <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>선택한 파일을 찾을 수 없습니다</value>
+    <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
+  </data>
+  <data name="FileNotFound_Title" xml:space="preserve">
+    <value>파일이 발견되지 않음</value>
+    <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
+  </data>
+  <data name="OpenFileFailed" xml:space="preserve">
+    <value>선택한 파일을 열지 못했습니다</value>
+    <comment>Message of the dialog displayed when the process to open a file failed.</comment>
+  </data>
+  <data name="OpenFileFailed_Title" xml:space="preserve">
+    <value>파일 열기 실패</value>
+    <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadSelfieFailed" xml:space="preserve">
+    <value>셀피 사진을 업로드하지 못했습니다</value>
+    <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
+  </data>
+  <data name="UploadSelfieFailed_Title" xml:space="preserve">
+    <value>셀피 업로드 실패</value>
+    <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodesFailed" xml:space="preserve">
+    <value>MEGA에서 파일과 폴더를 불러올 수 없습니다. 다시 시도하거나 새로고침을 누르세요.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
+  </data>
+  <data name="LoadNodesFailed_Title" xml:space="preserve">
+    <value>불러오기 실패</value>
+    <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>당신의 PIN 잠금 코드가 일치하지 않습니다. 다시 입력하시고 일치하는지 확인하시기 바랍니다</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>PIN 잠금 코드가 일치하지 않습니다</value>
+    <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError" xml:space="preserve">
+    <value>다른 위치에서 이 기기를 로그아웃하였습니다.</value>
+    <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
+  </data>
+  <data name="OverquotaAlert" xml:space="preserve">
+    <value>계정의 저장 한도를 초과할 수 있어, 작업이 허가되지 않았습니다. 계정을 업그레이드 하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="OverquotaAlert_Title" xml:space="preserve">
+    <value>할당량 초과 경고!</value>
+    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>기본 다운로드 위치를 설정하지 않으셨습니다.다운로드를 진행하시려면 목적지 폴더를 선택하시거나 설정에 가서 기본 다운로드 위치를 설정하시기 바랍니다.</value>
+    <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>파일 준비 실패: 업로드 {0}</value>
+    <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>파일 준비 실패</value>
+    <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError_Title" xml:space="preserve">
+    <value>로그아웃됨</value>
+    <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>선택된 파일을 복사하는 것을 실패하였습니다: [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>파일 복사 실패</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>이 파일 유형을 목적지 폴더로 복사할 권한이 없습니다. 아마 파일을 SD 카드에 지원되지 않는 유형의 파일을 저장/복사하려고 했을 것입니다. 기기의 내부 메모리에 파일을 저장/복사하시기 바랍니다.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>승인되지 않은 접근</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>마스터키를 클립보드에 복사하는 것을 실패하였습니다. 다시 시도하세요</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>클립보드 실패</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>현재 PIN 잠금이 올바르지 않거나 일치하지 않습니다</value>
+    <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>현재 PIN 잠금이 일치하지 않습니다</value>
+    <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>마스터키가 클립보드에 복사되었습니다</value>
+    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>마스터키 복사됨</value>
+    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>PIN 잠금은 최소 4글자입니다.</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN 잠금이 너무 짧습니다</value>
+    <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>캐시가 성공적으로 비워졌습니다</value>
+    <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>캐시가 비워짐</value>
+    <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>이 작업을 수행하기에 여유 메모리 공간이 부족합니다. 앱이 꺼집니다</value>
+    <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>메모리 제한</value>
+    <comment>Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>아니오, 로컬만</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>다운로드 옵션</value>
+    <comment>Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>네, 내보냅니다</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>폴더 선택을 실패하였습니다. 다시 시도하거나 다른 폴더를 선택하세요: [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFolderFailed_Title" xml:space="preserve">
+    <value>실패한 폴더 선택</value>
+    <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadNodeFailed" xml:space="preserve">
+    <value>파일 업로드를 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="UploadNodeFailed_Title" xml:space="preserve">
+    <value>업로드 실패</value>
+    <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFileFailed" xml:space="preserve">
+    <value>파일 선택을 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFileFailed_Title" xml:space="preserve">
+    <value>파일 선택 실패</value>
+    <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>잘못된 형태의 이메일입니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>올바르지 않은 이메일 주소 또는 비밀번호입니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
+  </data>
+  <data name="DeleteNodeQuestion" xml:space="preserve">
+    <value>정말 영구적으로 {0} 항목을 삭제하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteNodeQuestion_Title" xml:space="preserve">
+    <value>삭제할까요?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserDataFailed" xml:space="preserve">
+    <value>이용자 데이터 수신에 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetUserDataFailed_Title" xml:space="preserve">
+    <value>이용자 데이터 받기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoFailed" xml:space="preserve">
+    <value>사진 캡처를 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoFailed_Title" xml:space="preserve">
+    <value>사진 캡처 실패</value>
+    <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed" xml:space="preserve">
+    <value>사진 또는 동영상 캡처를 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
+    <value>사진/동영상 캡처 실패</value>
+    <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CaptureVideoFailed" xml:space="preserve">
+    <value>비디오 캡처를 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CaptureVideoFailed_Title" xml:space="preserve">
+    <value>동영상 캡처 실패</value>
+    <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
+  </data>
+  <data name="SaveSettingsFailed" xml:space="preserve">
+    <value>설정 저장을 실패하였습니다. 다시 시도하세요 [{0}]</value>
+    <comment>Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SaveSettingsFailed_Title" xml:space="preserve">
+    <value>설정 저장중 오류</value>
+    <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>바로가기를 열던 중 오류가 발생하였습니다. 잘못된 바로가기 이거나 목적지 폴더가 삭제되었을 수 있습니다.</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>바로가기 오류</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>신용카드 정보가 올바르지 않습니다. 신용카드로 결제되지 않을 것입니다.</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>신용카드 저장 실패</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>필수 항목을 입력하고 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>신용카드 번호, 유효기간 월/연과 CVV는 숫자입니다. 모든 것이 올바른지 확인하고 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>잘못된 데이터 형식</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>메가 구독을 취소하려고 하고 있습니다. 당신의 마음을 바꿀 수 있는 무언가가 있다면 우리가 알 수 있도록 해주세요.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>피드백을 보내주셔서 고맙습니다!</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>구독이 올바르게 취소되지 않았습니다. 구독을 취소하려면 support@mega.nz로 연락하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>구독 취소 실패</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>구독이 취소되었습니다.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>구독 취소됨</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>구독 취소</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>저희에게 피드백을 보내주세요. 고맙습니다.</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>작업이 올바르게 종료되지 않았습니다. 신용카드 결제가 이루어지지 않을 것입니다.</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>계정 업그레이드 오류</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>계정이 성공적으로 업그레이드 되었습니다!</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>계정 업그레이드됨</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>사용가능한 결제 수단을 불러오는데에 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>결제 수단 받기 오류</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed" xml:space="preserve">
+    <value>결제 URL 수신에 실패하였습니다. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
+    <value>결제 URL 받기 실패</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
+  </data>
+  <data name="BackgroundAgentDisabled" xml:space="preserve">
+    <value>MEGA용 백그라운드 에이전트가 이용자에 의해 해제되었습니다</value>
+    <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
+    <value>백그라운드 에이전트 해제</value>
+    <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
+    <value>자동 카메라 업로드가 올바르게 작동하려면, "로그인 상태 유지"를 활성화해야합니다. 이 옵션을 활성화 하시겠습니까?</value>
+    <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
+    <value>자동 카메라 업로드 조건</value>
+    <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>{0}개의 연락처를 삭제하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>연락처를 제거할까요?</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddFailed" xml:space="preserve">
+    <value>연락처 초대가 발송되지 않았습니다. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="InviteContactAddFailed_Title" xml:space="preserve">
+    <value>연락처 초대 실패</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully" xml:space="preserve">
+    <value>이용자 {0}님이 초대되었고 초대장을 승인하면 연락처 목록에 나타납니다.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
+    <value>연락처가 초대되었습니다</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>MEGA 자동 카메라 업로드</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>계정이 업데이트되었습니다. 새 계정 정보를 확인하시겠습니까?</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>업데이트된 계정</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>우리의 SSL/TLS 인증서를 확인할 수 없습니다. 중간자 공격을 받고 있을 수 있습니다.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>로그아웃됨</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>자동 카메라 업로드 백그라운드 작업이 실패했습니다. 설정 페이지에서 다시 활성화할 수 있습니다.</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>자동 카메라 업로드 실패</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="DeleteContactFailed" xml:space="preserve">
+    <value>연락처 {0} 삭제 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteContactFailed_Title" xml:space="preserve">
+    <value>연락처 제거 실패</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
+    <value>{0}개의 연락처를 삭제하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
+    <value>연락체를 삭제할까요?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>비밀번호 변경 실패. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>비밀번호가 변경되었습니다.</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>새 비밀번호와 옛 비밀번호가 달라야합니다.</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>이전 MEGA 비밀번호와 새 MEGA 비밀번호를 입력하세요.</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>세션 닫기 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>남은 세션이 성공적으로 닫혔습니다.</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>세션 닫기 실패. 다시 시도하세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>세션이 완전히 닫혔습니다.</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinFailed" xml:space="preserve">
+    <value>휴지통 비우기 실패. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
+  </data>
+  <data name="CleanRubbishBinQuestion" xml:space="preserve">
+    <value>휴지통에 있는 모든 파일을 영구적으로 삭제하시겠습니까?</value>
+    <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CleanRubbishBinSuccess" xml:space="preserve">
+    <value>휴지통이 성공적으로 비워졌습니다.</value>
+    <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
+  </data>
+  <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
+    <value>당신의 이메일을 연락처에 추가하려고 하고 있습니다.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
+  </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>링크 제거 실패. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>이 행동을 할 수 없습니다. 인터넷에 연결하고 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
 </root>

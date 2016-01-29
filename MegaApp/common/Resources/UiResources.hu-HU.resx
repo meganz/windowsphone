@@ -117,4 +117,1103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+    <comment>Label for any 'Add' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AddFolder" xml:space="preserve">
+    <value>könyvtár hozzáadása</value>
+    <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AgreeCreateAccount" xml:space="preserve">
+    <value>Egyetértek a(z)</value>
+    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>MEGA Privacy</value>
+    <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégse</value>
+    <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CloudDriveName" xml:space="preserve">
+    <value>Tárhelyem </value>
+    <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>megerősítés</value>
+    <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Fiók megerősítése...</value>
+    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmPasswordWatermark" xml:space="preserve">
+    <value>erősítsd meg jelszavad</value>
+    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Másolás</value>
+    <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Fiók létrehozása...</value>
+    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Könyvtár létrehozása...</value>
+    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
+  </data>
+  <data name="EmailWatermark" xml:space="preserve">
+    <value>e-mail címed</value>
+    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyFolder" xml:space="preserve">
+    <value>üres könyvtár</value>
+    <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyTransfers" xml:space="preserve">
+    <value>Nincsenek átvitelek</value>
+    <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Link lekérése...</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="LoadingPreview" xml:space="preserve">
+    <value>Előnézet betöltése...</value>
+    <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Bejelentkezés...</value>
+    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MegaLinkTitle" xml:space="preserve">
+    <value>MEGA link:</value>
+    <comment>Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="MegaShareLinkMessage" xml:space="preserve">
+    <value>Meg szeretném osztani veled ezt a MEGA felhőszolgáltatásbeli fájlt</value>
+    <comment>Text used as title of the message to share a MEGA link.</comment>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Áthelyezés</value>
+    <comment>Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFiles" xml:space="preserve">
+    <value>fájlok</value>
+    <comment>Label for any 'Files' (multiple files) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultipleFolders" xml:space="preserve">
+    <value>mappák</value>
+    <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>fiókom</value>
+    <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NameWatermark" xml:space="preserve">
+    <value>neved</value>
+    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>tovább</value>
+    <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Megnyitás</value>
+    <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OpenLinkText" xml:space="preserve">
+    <value>MEGA letöltés link megnyitása:</value>
+    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
+  </data>
+  <data name="OpenLink" xml:space="preserve">
+    <value>MEGA letöltés link megnyitása:</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordWatermark" xml:space="preserve">
+    <value>jelszava</value>
+    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Előnézet</value>
+    <comment>Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>előző</value>
+    <comment>Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>frissítés</value>
+    <comment>Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StayLoggedInText" xml:space="preserve">
+    <value>Maradjon belépve</value>
+    <comment>Text placed into the 'login' page just after a checkbox to select the option to stay logged into the app.</comment>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Eltávolítás</value>
+    <comment>Label for any 'Remove' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Rename" xml:space="preserve">
+    <value>Átnevezés</value>
+    <comment>Label for any 'Rename' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RenameItem" xml:space="preserve">
+    <value>Adj meg egy új nevet:</value>
+    <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>mentés</value>
+    <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>megosztás</value>
+    <comment>Label for any 'Share' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFile" xml:space="preserve">
+    <value>fájl</value>
+    <comment>Label for any 'File' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SingleFolder" xml:space="preserve">
+    <value>mappa</value>
+    <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Méret:</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NoTransfers" xml:space="preserve">
+    <value>Nincsenek átvitelek</value>
+    <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>feltöltés</value>
+    <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Transfers" xml:space="preserve">
+    <value>átvitelek</value>
+    <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceled" xml:space="preserve">
+    <value>Megszakítva</value>
+    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Canceling" xml:space="preserve">
+    <value>Megszakítás...</value>
+    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Download" xml:space="preserve">
+    <value>Letöltés...</value>
+    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Error" xml:space="preserve">
+    <value>Hiba átvitelkor</value>
+    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_NotStarted" xml:space="preserve">
+    <value>Kész</value>
+    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Upload" xml:space="preserve">
+    <value>Feltöltés...</value>
+    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>letöltés</value>
+    <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>beállítások</value>
+    <comment>Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreateShortCut" xml:space="preserve">
+    <value>Parancsikon létrehozása</value>
+    <comment>Label for any 'Create shortcut' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>Több kiválasztása</value>
+    <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Paused" xml:space="preserve">
+    <value>Megállítva</value>
+    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Pausing" xml:space="preserve">
+    <value>Szüneteltetés...</value>
+    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
+  </data>
+  <data name="SpecialThankYou" xml:space="preserve">
+    <value>Külön köszönetet szeretnék adni a következő cégeknek/embereknek az app létrejöveteléért:</value>
+    <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
+  </data>
+  <data name="RubbishBinName" xml:space="preserve">
+    <value>Szemetesláda</value>
+    <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Off" xml:space="preserve">
+    <value>Ki</value>
+    <comment>Label for any 'Off' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="On" xml:space="preserve">
+    <value>Be</value>
+    <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>kész</value>
+    <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Kijelentkezés...</value>
+    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="HomeRoot" xml:space="preserve">
+    <value>Kezdőlap</value>
+    <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
+  </data>
+  <data name="RubbishBinRoot" xml:space="preserve">
+    <value>Szemetesláda</value>
+    <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
+  </data>
+  <data name="AccountTypeFree" xml:space="preserve">
+    <value>FREE</value>
+    <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypePro1" xml:space="preserve">
+    <value>PRO I</value>
+    <comment>Label for the name of the 'PRO I' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypePro2" xml:space="preserve">
+    <value>PRO II</value>
+    <comment>Label for the name of the 'PRO II' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AccountTypePro3" xml:space="preserve">
+    <value>PRO III</value>
+    <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="ConfirmPinLockWatermark" xml:space="preserve">
+    <value>erősítsd mega PIN zárad</value>
+    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLock" xml:space="preserve">
+    <value>PIN zár</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockWatermark" xml:space="preserve">
+    <value>PIN zárad</value>
+    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nem</value>
+    <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>igen</value>
+    <comment>Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="FileUpload" xml:space="preserve">
+    <value>Fájl feltöltés</value>
+    <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Importálás</value>
+    <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="LinkOptions" xml:space="preserve">
+    <value>Link beállítások</value>
+    <comment>Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SelectPhoto" xml:space="preserve">
+    <value>Kép kiválasztása</value>
+    <comment>Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SelfieMode" xml:space="preserve">
+    <value>Selfie mód</value>
+    <comment>Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="TakePhoto" xml:space="preserve">
+    <value>Kép készítése</value>
+    <comment>Label for 'Take photo' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="UploadOptionsTitle" xml:space="preserve">
+    <value>Feltöltési beállítások</value>
+    <comment>Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</comment>
+  </data>
+  <data name="ImageUpload" xml:space="preserve">
+    <value>Kép feltöltés</value>
+    <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
+  </data>
+  <data name="Storage" xml:space="preserve">
+    <value>Tárhely</value>
+    <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AccountTypeLite" xml:space="preserve">
+    <value>LITE</value>
+    <comment>Label for the name of the 'LITE' account type - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>elfogad</value>
+    <comment>Label for any 'Accept' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Acknowledgements" xml:space="preserve">
+    <value>Köszönetnyilvánítás</value>
+    <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Annually" xml:space="preserve">
+    <value>Évente</value>
+    <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="AppVersionText" xml:space="preserve">
+    <value>Alkalmazás verzió</value>
+    <comment>Text placed just before app version number into the 'about' page.</comment>
+  </data>
+  <data name="AskDownloadLocationText" xml:space="preserve">
+    <value>Mindig kérdezzen rá a letöltés helyére</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>érhető el</value>
+    <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
+  </data>
+  <data name="Bandwidth" xml:space="preserve">
+    <value>Sávszélesség</value>
+    <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Cache" xml:space="preserve">
+    <value>gyorsítótár</value>
+    <comment>Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelAll" xml:space="preserve">
+    <value>összes megszakítása</value>
+    <comment>Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Capture" xml:space="preserve">
+    <value>rögzítés</value>
+    <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePinLock" xml:space="preserve">
+    <value>PIN Zár módosítása</value>
+    <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="CleanUpTransfers" xml:space="preserve">
+    <value>átvitelek törlése</value>
+    <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
+  </data>
+  <data name="ClearCache" xml:space="preserve">
+    <value>gyorsítótár törlése</value>
+    <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ClearSelection" xml:space="preserve">
+    <value>kiválasztás törlése</value>
+    <comment>Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Clipboard" xml:space="preserve">
+    <value>vágólap</value>
+    <comment>Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DefaultDownloadLocationText" xml:space="preserve">
+    <value>Alapértelmezett letöltési hely</value>
+    <comment>Text placed just before a text label into the 'settings' page indicating the default download location.</comment>
+  </data>
+  <data name="Downloads" xml:space="preserve">
+    <value>letöltések</value>
+    <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ExportMasterKeyText" xml:space="preserve">
+    <value>Masterkulcs exportálása</value>
+    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
+  </data>
+  <data name="ExportPhotoAlbumText" xml:space="preserve">
+    <value>Képek exportálása a 'mentett képek' albumba letöltés után</value>
+    <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
+  </data>
+  <data name="FilesAscendingSortOption" xml:space="preserve">
+    <value>fájlok (növekvő)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="FilesDescendingSortOption" xml:space="preserve">
+    <value>fájlok (csökkenő)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by type - (String as short as possible).</comment>
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Szabad terület</value>
+    <comment>Text placed just before the amount free space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="LargestSortOption" xml:space="preserve">
+    <value>Legnagyobb</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
+  </data>
+  <data name="MakePinLock" xml:space="preserve">
+    <value>PIN zár létrehozása</value>
+    <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="MasterKey" xml:space="preserve">
+    <value>MasterKulcs</value>
+    <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="MEGA_SDK" xml:space="preserve">
+    <value>MEGA SDK</value>
+    <comment>Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Havonként</value>
+    <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NameAscendingSortOption" xml:space="preserve">
+    <value>név (növekvő)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="NameDescendingSortOption" xml:space="preserve">
+    <value>név (csökkenő)</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
+  </data>
+  <data name="NewestSortOption" xml:space="preserve">
+    <value>legújabb</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
+  </data>
+  <data name="NewPinLockWatermark" xml:space="preserve">
+    <value>új PIN zárad</value>
+    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="NoDataToShow" xml:space="preserve">
+    <value>Nincs adat</value>
+    <comment>Label shown when the app has no information about the user account to show into 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="NoPlansToDisplay" xml:space="preserve">
+    <value>Nincs megjelenítendő csomag</value>
+    <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
+  </data>
+  <data name="OldestSortOption" xml:space="preserve">
+    <value>legrégebbi</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseAll" xml:space="preserve">
+    <value>összes szüneteltetése</value>
+    <comment>Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>Adatvédelem</value>
+    <comment>Label for any 'Privacy policy' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SmallestSortOption" xml:space="preserve">
+    <value>legkisebb</value>
+    <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
+  </data>
+  <data name="SortByMenuTitle" xml:space="preserve">
+    <value>RENDEZÉS</value>
+    <comment>Label used like title for the sort menu.</comment>
+  </data>
+  <data name="StartResumeAll" xml:space="preserve">
+    <value>indítás/összes folytatása</value>
+    <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>előfizetés</value>
+    <comment>Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="TermsOfService" xml:space="preserve">
+    <value>Szabályzat</value>
+    <comment>Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>összesen</value>
+    <comment>Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
+  </data>
+  <data name="Uploads" xml:space="preserve">
+    <value>feltöltések</value>
+    <comment>Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Used" xml:space="preserve">
+    <value>felhasználva</value>
+    <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
+  </data>
+  <data name="UsedSpace" xml:space="preserve">
+    <value>Felhasznált terület</value>
+    <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>verzió</value>
+    <comment>Text placed just before the version number into the 'about' page - (String as short as possible).</comment>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>megtekintés</value>
+    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLocation" xml:space="preserve">
+    <value>Letöltési hely</value>
+    <comment>Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolder" xml:space="preserve">
+    <value>válassz könyvtárat</value>
+    <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Fiók bővítése...</value>
+    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>névjegy</value>
+    <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Pause" xml:space="preserve">
+    <value>Szüneteltetés</value>
+    <comment>Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Folytatás</value>
+    <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Kezdés</value>
+    <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelAllTransfers" xml:space="preserve">
+    <value>Minden átvitel megszakítása</value>
+    <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Downloaded" xml:space="preserve">
+    <value>Letöltve</value>
+    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Queued" xml:space="preserve">
+    <value>Sorban áll</value>
+    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
+  </data>
+  <data name="Transfer_Uploaded" xml:space="preserve">
+    <value>feltöltve</value>
+    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourAccess1" xml:space="preserve">
+    <value>szerezzen</value>
+    <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess2" xml:space="preserve">
+    <value>teljesen titkosított hozzáférést</value>
+    <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess3" xml:space="preserve">
+    <value>bárhol, bármikor.</value>
+    <comment>Label 'anywhere, anytime.' for the third part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourAccess_Title" xml:space="preserve">
+    <value>MEGA hozzáférés</value>
+    <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourPrivacy1" xml:space="preserve">
+    <value>tartsa biztonságban fájljait a MEGA</value>
+    <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
+  </data>
+  <data name="InitTourPrivacy2" xml:space="preserve">
+    <value>végponttól végpontig titkosításával.</value>
+    <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourPrivacy_Title" xml:space="preserve">
+    <value>MEGA adatvédelem</value>
+    <comment>Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpace1" xml:space="preserve">
+    <value>regisztráljon most és szerezzen</value>
+    <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpace2" xml:space="preserve">
+    <value>50 GB-nyi ingyenes tárterületet.</value>
+    <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
+  </data>
+  <data name="InitTourSpace_Title" xml:space="preserve">
+    <value>MEGA tárterület</value>
+    <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="InitTourSpeed1" xml:space="preserve">
+    <value>az átvitel gyors.</value>
+    <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed2" xml:space="preserve">
+    <value>gyorsan osszon meg fájlokat bárkivel.</value>
+    <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
+  </data>
+  <data name="InitTourSpeed_Title" xml:space="preserve">
+    <value>MEGA sebesség</value>
+    <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Jelszócsere</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value>Haladó</value>
+    <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Súgó</value>
+    <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CameraUploads" xml:space="preserve">
+    <value>Kamerafeltöltések</value>
+    <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Kapcsolatok</value>
+    <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SharedItems" xml:space="preserve">
+    <value>Megosztottak</value>
+    <comment>Label for any 'Shared items' button, link, text, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Sort" xml:space="preserve">
+    <value>Rendezés</value>
+    <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ClearRubbishBin" xml:space="preserve">
+    <value>Szemetes kiürítése</value>
+    <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SetupCameraUploadsTitle" xml:space="preserve">
+    <value>Kamera feltöltések beállítása</value>
+    <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
+  </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Kihagyás</value>
+    <comment>Label for any 'Skip' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="WifiAndDataPlan" xml:space="preserve">
+    <value>Wifi és adatcsomag</value>
+    <comment>Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</comment>
+  </data>
+  <data name="WifiOnly" xml:space="preserve">
+    <value>Csak wifi</value>
+    <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
+  </data>
+  <data name="EnableCameraUploads" xml:space="preserve">
+    <value>Fotók, videók feltöltésének engedélyezése</value>
+    <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Biztonság</value>
+    <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Vissza</value>
+    <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Meg akarod szűntetni a Mega előfizetésed. Kérjük mondd el, hogy mi volt az oka, hogy tehessünk annak érdekében, hogy változtassunk a gondolatodon.</value>
+    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Dismiss" xml:space="preserve">
+    <value>Elhagy</value>
+    <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Küldés</value>
+    <comment>Label for any 'Send' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Cím</value>
+    <comment>Label for any 'Address' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="BillingDetails" xml:space="preserve">
+    <value>Számlázási részletek</value>
+    <comment>Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ChooseRenewalPeriod" xml:space="preserve">
+    <value>Alább válasszon meghosszabbítási időtartamot</value>
+    <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Város</value>
+    <comment>Label for any 'City' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Ország</value>
+    <comment>Label for any 'Country' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardNumber" xml:space="preserve">
+    <value>Bankkártyaszám</value>
+    <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardRecurringPayments" xml:space="preserve">
+    <value>Hitelkártya megújuló fizetések</value>
+    <comment>Label to indicate the user that the Credit Card payments are recurring.</comment>
+  </data>
+  <data name="CVV" xml:space="preserve">
+    <value>CVV</value>
+    <comment>Label for the 'CVV' text when register a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="EnterPaymentDetails" xml:space="preserve">
+    <value>Alább adja meg fizetésének részleteit</value>
+    <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
+  </data>
+  <data name="ExpiresOn" xml:space="preserve">
+    <value>Lejár ekkor:</value>
+    <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Keresztknév</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Kezdőár</value>
+    <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
+  </data>
+  <data name="Get2MonthsFree" xml:space="preserve">
+    <value>Öné lehet 2 hónap ingyen, ha előfizet egy 1 éves Pro csomagra</value>
+    <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Vezetéknév</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Hónap</value>
+    <comment>Label for any 'Month' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Választható</value>
+    <comment>Label for any 'Optional' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OptionalParenthesis" xml:space="preserve">
+    <value>(Választható)</value>
+    <comment>Label for any 'Optional' text between parenthesis. - (String as short as possible).</comment>
+  </data>
+  <data name="PaymentDetails" xml:space="preserve">
+    <value>Fizetési részletek</value>
+    <comment>Label for any 'Payment details' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Irányítószám</value>
+    <comment>Label for any 'Postal Code' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>Tartomány</value>
+    <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SelectedPlan" xml:space="preserve">
+    <value>Ön a(z) {0} csomagot választotta</value>
+    <comment>Label to indicate the selected plan during the payment process.
+Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
+  </data>
+  <data name="SelectMembership" xml:space="preserve">
+    <value>Előfizetés kiválasztása</value>
+    <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
+  </data>
+  <data name="SettingsShort" xml:space="preserve">
+    <value>Beállítások</value>
+    <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Állam</value>
+    <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="StorageShort" xml:space="preserve">
+    <value>Tárhely</value>
+    <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Év</value>
+    <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PasteMegaDownloadLink" xml:space="preserve">
+    <value>Illessze be ide a MEGA letöltési linket:</value>
+    <comment>Label for dialog message to download via a MEGA link</comment>
+  </data>
+  <data name="RenewsOn" xml:space="preserve">
+    <value>Meghosszabbítás ideje</value>
+    <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="AccountPurchased" xml:space="preserve">
+    <value>Ön egy {0} fiókot vásárolt.</value>
+    <comment>Label to indicate the purchased account/subscription.
+Preserve the {0} code because is for include the name/type in runtime.</comment>
+  </data>
+  <data name="AccountRenewalNotice" xml:space="preserve">
+    <value>{0} előfizetése automatikusan újra lesz számlázva {0} évfordulóján, hacsak nem jelentkezik be fiókjába és szakítja meg ezen előfizetési kifizetést a meghosszabbítási dátumot megelőzően.</value>
+    <comment>Label to indicate the renewal period of the purchased subscription.
+Preserve the {0} code because is for include the renewal period string in runtime.</comment>
+  </data>
+  <data name="Annual" xml:space="preserve">
+    <value>Éves</value>
+    <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Awesome" xml:space="preserve">
+    <value>Király!</value>
+    <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ChoosePaymentMethod" xml:space="preserve">
+    <value>Válasszon fizetési módszert</value>
+    <comment>Label to indicate the user that is needed choose a payment method for upgrade his account.</comment>
+  </data>
+  <data name="NoPaymentMethodsAvailable" xml:space="preserve">
+    <value>Ezúttal nincs elérhető fizetési mód ezen csomaghoz</value>
+    <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
+  </data>
+  <data name="CreditCard" xml:space="preserve">
+    <value>Hitelkártya</value>
+    <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="PhoneBill" xml:space="preserve">
+    <value>Telefonszámla</value>
+    <comment>Label for any Phone Bill or Mobile payment button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Punctual" xml:space="preserve">
+    <value>Pontos</value>
+    <comment>Label for any 'Punctual' payments - (String as short as possible).</comment>
+  </data>
+  <data name="Recurring" xml:space="preserve">
+    <value>Megújuló</value>
+    <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
+  </data>
+  <data name="Limited" xml:space="preserve">
+    <value>Korlátozott</value>
+    <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="GetProAccount" xml:space="preserve">
+    <value>Ön is lehet PRO felhasználó!</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountQuestion" xml:space="preserve">
+    <value>Szeretné bővíteni fiókját?</value>
+    <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeNow" xml:space="preserve">
+    <value>Bővítsen most!</value>
+    <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
+  </data>
+  <data name="WarningOutOfSpace" xml:space="preserve">
+    <value>Kezd kifogyni a tárterületből!</value>
+    <comment>Warning message in Cloud Drive when the user is running out of space</comment>
+  </data>
+  <data name="ImportLinkBorderText" xml:space="preserve">
+    <value>Tallózás a célhelyre és a link importálása vagy letöltése</value>
+    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="AddContact" xml:space="preserve">
+    <value>Kapcsolat hozzáadása</value>
+    <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CreateContact" xml:space="preserve">
+    <value>Gépelje be az email címet:</value>
+    <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Keresés</value>
+    <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Kiválasztás</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Üzenet</value>
+    <comment>Label for any 'Message' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SendFile" xml:space="preserve">
+    <value>Fájl küldése</value>
+    <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ShareFolders" xml:space="preserve">
+    <value>Mappák megosztása</value>
+    <comment>Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+    <comment>Label for any 'Profile' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="MEGAContacts" xml:space="preserve">
+    <value>MEGA kapcsolatok</value>
+    <comment>Label for any 'Yes' button, link, text, title, etc. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
+  </data>
+  <data name="SharedFolders" xml:space="preserve">
+    <value>Megosztott mappák</value>
+    <comment>Label for any 'Shared folders' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Állapot</value>
+    <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ReceivedRequests" xml:space="preserve">
+    <value>Kapott kérelmek</value>
+    <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
+  </data>
+  <data name="SentRequests" xml:space="preserve">
+    <value>Elküldött kérelmek</value>
+    <comment>Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</comment>
+  </data>
+  <data name="Accepted" xml:space="preserve">
+    <value>Elfogadva</value>
+    <comment>Label for any 'Accepted' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Törölve</value>
+    <comment>Label for any 'Deleted' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Denied" xml:space="preserve">
+    <value>Elutasítva</value>
+    <comment>Label for any 'Denied' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Ignored" xml:space="preserve">
+    <value>Mellőzve</value>
+    <comment>Label for any 'Ignored' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Pending" xml:space="preserve">
+    <value>Folyamatban</value>
+    <comment>Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Reminded" xml:space="preserve">
+    <value>Emlékeztetve</value>
+    <comment>Label for any 'Reminded' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Ismeretlen</value>
+    <comment>Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Decline" xml:space="preserve">
+    <value>Elutasít</value>
+    <comment>Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+    <comment>Label for any 'Delete' button, link, text, label, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Mellőzés</value>
+    <comment>Label for any 'Ignore' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Reinvite" xml:space="preserve">
+    <value>Újrameghívás</value>
+    <comment>Label for any 'Reinvite' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="TimeDaysAgo" xml:space="preserve">
+    <value>{0} nappal ezelőtt</value>
+    <comment>Laber to indicate "time ago" in days - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeHoursAgo" xml:space="preserve">
+    <value>{0} órával ezelőtt</value>
+    <comment>Laber to indicate "time ago" in hours - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeMinutesAgo" xml:space="preserve">
+    <value>{0} perccel ezelőtt</value>
+    <comment>Laber to indicate "time ago" in minutes - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="TimeSecondsAgo" xml:space="preserve">
+    <value>{0} másodperccel ezelőtt</value>
+    <comment>Laber to indicate "time ago" in seconds - (String as short as possible).
+Preserve the {0} code because is for include a number in runtime.</comment>
+  </data>
+  <data name="AutoUpload" xml:space="preserve">
+    <value>Automatikus feltöltés</value>
+    <comment>Label for "Auto Upload" settings pivot</comment>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Általános</value>
+    <comment>Label for "General" settings pivot</comment>
+  </data>
+  <data name="Developer" xml:space="preserve">
+    <value>Fejlesztő</value>
+    <comment>Label for "Developer" type of acknowledgement</comment>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>Részletek</value>
+    <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
+  </data>
+  <data name="PhotosOnly" xml:space="preserve">
+    <value>Csak fényképek</value>
+    <comment>Label for the "Photos only" auto camera upload settings</comment>
+  </data>
+  <data name="PowerConnected" xml:space="preserve">
+    <value>External power source connected</value>
+    <comment>Label for the "External power source connected" auto camera upload settings</comment>
+  </data>
+  <data name="UploadSettings" xml:space="preserve">
+    <value>Feltöltési beállítások</value>
+    <comment>Label for the auto camera upload setting options</comment>
+  </data>
+  <data name="Incoming" xml:space="preserve">
+    <value>Bejövő</value>
+    <comment>Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="Outgoing" xml:space="preserve">
+    <value>Kimenő</value>
+    <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="SetupCameraUploadsQuestion" xml:space="preserve">
+    <value>Do you want to enable the Auto Camera Uploads service?</value>
+    <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
+  </data>
+  <data name="ShareFolder" xml:space="preserve">
+    <value>Mappa megosztása</value>
+    <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="NewPasswordWatermark" xml:space="preserve">
+    <value>Az új jelszó</value>
+    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Closing all sessions...</value>
+    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Munkamenet bezására...</value>
+    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="ManageLink" xml:space="preserve">
+    <value>Link kezelése</value>
+    <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Link törlése...</value>
+    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="OSRestrictions" xml:space="preserve">
+    <value>Operating system restrictions</value>
+    <comment>Label for the auto camera upload service restrictions.</comment>
+  </data>
+  <data name="SavedForOffline" xml:space="preserve">
+    <value>Mentve offline használatra</value>
+    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyCloudDrive" xml:space="preserve">
+    <value>No files in your cloud drive</value>
+    <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyOffline" xml:space="preserve">
+    <value>No items saved for offline</value>
+    <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptyRubbishBin" xml:space="preserve">
+    <value>Szemetesláda kiürítése</value>
+    <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
+  </data>
+  <data name="EmptySharedFolders" xml:space="preserve">
+    <value>Nincs megosztott mappa</value>
+    <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloads" xml:space="preserve">
+    <value>Nincs letöltés</value>
+    <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
+  </data>
+  <data name="NoInternetConnection" xml:space="preserve">
+    <value>Nincs internet kapcsolat</value>
+    <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
+  </data>
+  <data name="NoUploads" xml:space="preserve">
+    <value>Nincs feltöltés</value>
+    <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
+  </data>
+  <data name="DefaultDownloadLocation" xml:space="preserve">
+    <value>Please select a default download folder.</value>
+    <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
 </root>
