@@ -29,6 +29,7 @@
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
     <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
     <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
+    <converters:CountToVisibilityInverseConverter x:Key="CountToVisibilityInverseConverter"/>
     <converters:UriToResolutionUriConverter x:Key="UriToResolutionUriConverter"/>
     <converters:TextToUpperCaseConverter x:Key="TextToUpperCaseConverter"/>
     <converters:TextToLowerCaseConverter x:Key="TextToLowerCaseConverter"/>

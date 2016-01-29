@@ -345,9 +345,19 @@ namespace MegaApp.Models
                         #if WINDOWS_PHONE_81
                         if(!IsSaveForOfflineTransfer)
                         {
-                            bool result = await FileService.MoveFile(imageNode.LocalImagePath,
-                            DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                            null), imageNode.Name);
+                            bool result;
+                            if(!SavedForOffline.ExistsNodeByLocalPath(imageNode.LocalImagePath))
+                            {
+                                result = await FileService.MoveFile(imageNode.LocalImagePath,
+                                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                                    null), imageNode.Name);
+                            }
+                            else
+                            {
+                                result = await FileService.CopyFile(imageNode.LocalImagePath,
+                                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                                    null), imageNode.Name);
+                            }
 
                             if (!result)
                             {
@@ -365,9 +375,19 @@ namespace MegaApp.Models
                             #if WINDOWS_PHONE_81
                             if(!IsSaveForOfflineTransfer)
                             {
-                                bool result = await FileService.MoveFile(node.LocalFilePath,
-                                DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                null), node.Name);
+                                bool result;
+                                if (!SavedForOffline.ExistsNodeByLocalPath(imageNode.LocalImagePath))
+                                {
+                                    result = await FileService.MoveFile(imageNode.LocalFilePath,
+                                        DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                                        null), node.Name);
+                                }
+                                else
+                                {
+                                    result = await FileService.CopyFile(imageNode.LocalFilePath,
+                                        DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                                        null), node.Name);
+                                }                                
 
                                 if (!result)
                                 {

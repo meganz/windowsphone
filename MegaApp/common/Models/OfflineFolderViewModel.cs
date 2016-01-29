@@ -131,6 +131,12 @@ namespace MegaApp.Models
                         var childNode = new OfflineFolderNodeViewModel(new DirectoryInfo(folder), tempChildNodes);
                         if (childNode == null) continue;
 
+                        if (FolderService.IsEmptyFolder(childNode.NodePath))
+                        {
+                            FolderService.DeleteFolder(childNode.NodePath, true);
+                            continue;
+                        }                            
+
                         Deployment.Current.Dispatcher.BeginInvoke(() => tempChildNodes.Add(childNode));
                     }
                                         
@@ -139,7 +145,12 @@ namespace MegaApp.Models
                     {
                         var fileInfo = new FileInfo(file);
 
-                        if (FileService.IsPendingTransferFile(fileInfo.Name)) continue;
+                        if (FileService.IsPendingTransferFile(fileInfo.Name))
+                        {
+                            if (!(App.MegaTransfers.Downloads.Count > 0))
+                                FileService.DeleteFile(fileInfo.FullName);
+                            continue;
+                        }
 
                         var childNode = new OfflineFileNodeViewModel(fileInfo, tempChildNodes);
                         if (childNode == null) continue;
