@@ -244,6 +244,11 @@ namespace MegaApp.Models
             }
             else
             {
+                /* HOT FIX --> WILL BE REMOVED
+                 * REMOVE WHEN SEPARATE THE OFFLINE FOLDER AND THE DOWNLOAD FOLDER */
+                if (!FolderService.FolderExists(Path.GetDirectoryName(this.Transfer.FilePath)))
+                    FolderService.CreateFolder(Path.GetDirectoryName(this.Transfer.FilePath));
+
                 this.Transfer.DownloadFolderPath = downloadPath;
                 transferQueu.Add(this.Transfer);
                 this.Transfer.StartTransfer();
@@ -257,10 +262,10 @@ namespace MegaApp.Models
         private async void RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
         {
             String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
-            StorageFolder downloadFolder = await StorageFolder.GetFolderFromPathAsync(downloadPath);            
-
-            if(!FolderService.FolderExists(newDownloadPath))
-                await downloadFolder.CreateFolderAsync(folderNode.Name);
+            StorageFolder downloadFolder = await StorageFolder.GetFolderFromPathAsync(downloadPath);
+                        
+            if (!FolderService.FolderExists(newDownloadPath))            
+                await downloadFolder.CreateFolderAsync(folderNode.Name, CreationCollisionOption.OpenIfExists);
             
             MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
             
@@ -280,6 +285,11 @@ namespace MegaApp.Models
                 }                    
                 else
                 {
+                    /* HOT FIX --> WILL BE REMOVED
+                     * REMOVE WHEN SEPARATE THE OFFLINE FOLDER AND THE DOWNLOAD FOLDER */
+                    if (!FolderService.FolderExists(Path.GetDirectoryName(childNode.Transfer.FilePath)))
+                        FolderService.CreateFolder(Path.GetDirectoryName(childNode.Transfer.FilePath));
+
                     childNode.Transfer.DownloadFolderPath = newDownloadPath;
                     transferQueu.Add(childNode.Transfer);
                     childNode.Transfer.StartTransfer();
