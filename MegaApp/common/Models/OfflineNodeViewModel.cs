@@ -130,7 +130,7 @@ namespace MegaApp.Models
                     if (transferItem == null || transferItem.Transfer == null) continue;
 
                     if (String.Compare(this.NodePath, transferItem.Transfer.getPath()) == 0 &&
-                        transferItem.isAliveTransfer())
+                        transferItem.IsAliveTransfer())
                     {
                         App.MegaSdk.cancelTransfer(transferItem.Transfer,
                             new CancelTransferRequestListener((AutoResetEvent)waitEventRequestTransfer));
@@ -161,7 +161,7 @@ namespace MegaApp.Models
                 if (transferItem == null || transferItem.Transfer == null) continue;
 
                 if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
-                    transferItem.isAliveTransfer())
+                    transferItem.IsAliveTransfer())
                 {
                     App.MegaSdk.cancelTransfer(transferItem.Transfer,
                         new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));

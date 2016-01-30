@@ -122,7 +122,7 @@ namespace MegaApp.Models
             }            
         }
 
-        public bool isAliveTransfer()
+        public bool IsAliveTransfer()
         {
             switch(this.Status)
             {
@@ -286,13 +286,16 @@ namespace MegaApp.Models
                         // Need get the path on the transfer finish because  the file name can be changed
                         // if already exists in the destiny path.
                         var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
+                      
+                        var node = SelectedNode as NodeViewModel;
+                        var sfoNode = new SavedForOffline
+                        {
+                            Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
+                            Base64Handle = node.OriginalMNode.getBase64Handle(),
+                            LocalPath = newOfflineLocalPath,
+                            IsSelectedForOffline = true
+                        };
 
-                        var node = SelectedNode as NodeViewModel;                        
-                        var sfoNode = new SavedForOffline();
-                        sfoNode.Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode);
-                        sfoNode.Base64Handle = node.OriginalMNode.getBase64Handle();
-                        sfoNode.LocalPath = newOfflineLocalPath;                        
-                        sfoNode.IsSelectedForOffline = true;
 
                         // If is a public node (link) the destination folder is the SFO root, so the parent handle
                         // is the handle of the root node.
@@ -376,15 +379,15 @@ namespace MegaApp.Models
                             if(!IsSaveForOfflineTransfer)
                             {
                                 bool result;
-                                if (!SavedForOffline.ExistsNodeByLocalPath(imageNode.LocalImagePath))
+                                if (!SavedForOffline.ExistsNodeByLocalPath(node.LocalFilePath))
                                 {
-                                    result = await FileService.MoveFile(imageNode.LocalFilePath,
+                                    result = await FileService.MoveFile(node.LocalFilePath,
                                         DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                                         null), node.Name);
                                 }
                                 else
                                 {
-                                    result = await FileService.CopyFile(imageNode.LocalFilePath,
+                                    result = await FileService.CopyFile(node.LocalFilePath,
                                         DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                                         null), node.Name);
                                 }                                

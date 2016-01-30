@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.ApplicationModel.Activation;
-using Windows.Devices.Geolocation;
 using Windows.Storage.Pickers;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -19,7 +17,7 @@ namespace MegaApp.Services
     static class FolderService
     {
         public static bool FolderExists(string path)
-        {            
+        {  
             return Directory.Exists(path);
         }
 
@@ -48,9 +46,6 @@ namespace MegaApp.Services
 
         public static bool IsEmptyFolder(string path)
         {
-            int val1 = Directory.GetDirectories(path).Count();
-            int val2 = Directory.GetFiles(path).Count();
-
             return (Directory.GetDirectories(path).Count() == 0 && Directory.GetFiles(path).Count() == 0) ? true : false;
         }
 
@@ -61,13 +56,23 @@ namespace MegaApp.Services
 
         public static void DeleteFolder (string path)
         {
-            if(Directory.Exists(path))
+            if (Directory.Exists(path)) 
                 Directory.Delete(path);
         }
 
         public static void DeleteFolder(string path, bool recursive)
         {
             Directory.Delete(path, recursive);
+        }
+
+        public static bool HasIllegalChars(string path)
+        {
+            var invalidChars = Path.GetInvalidFileNameChars();
+            foreach (var c in invalidChars)
+            {
+                if (path.Contains(c.ToString())) return true;
+            }
+            return false;
         }
 
         public static void Clear(string path)

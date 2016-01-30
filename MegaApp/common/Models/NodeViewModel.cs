@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -240,7 +241,7 @@ namespace MegaApp.Models
             // If selected file is a folder then also select it childnodes to download
             if(this.IsFolder)
             {
-                RecursiveDownloadFolder(transferQueu, downloadPath, this);                
+                await RecursiveDownloadFolder(transferQueu, downloadPath, this);
             }
             else
             {
@@ -256,15 +257,25 @@ namespace MegaApp.Models
 
             // TODO Remove this global declaration in method
             App.CloudDrive.NoFolderUpAction = true;
+            if (!transferQueu.Any(t => t.IsAliveTransfer())) return;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 
-        private async void RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
+        private async Task RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
         {
+            // Check for illegal characters in the folder name and replace with _ to avoid errors
+            if (FolderService.HasIllegalChars(folderNode.Name))
+            {
+                await new CustomMessageDialog(AppMessages.IllegalChars_Title,
+                    String.Format(AppMessages.IllegalChars, folderNode.Name),
+                    this.AppInformation).ShowDialogAsync();
+                return;
+            }
+            
             String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
             StorageFolder downloadFolder = await StorageFolder.GetFolderFromPathAsync(downloadPath);
-                        
-            if (!FolderService.FolderExists(newDownloadPath))            
+
+            if (!FolderService.FolderExists(newDownloadPath))
                 await downloadFolder.CreateFolderAsync(folderNode.Name, CreationCollisionOption.OpenIfExists);
             
             MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
@@ -281,7 +292,7 @@ namespace MegaApp.Models
 
                 if (childNode.IsFolder)
                 {
-                    RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
+                    await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
                 }                    
                 else
                 {
@@ -431,7 +442,7 @@ namespace MegaApp.Models
                     if (transferItem == null || transferItem.Transfer == null) continue;
 
                     if (String.Compare(nodePath, transferItem.Transfer.getPath()) == 0 &&
-                        transferItem.isAliveTransfer())
+                        transferItem.IsAliveTransfer())
                     {
                         MegaSdk.cancelTransfer(transferItem.Transfer,
                             new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
@@ -473,7 +484,7 @@ namespace MegaApp.Models
                 if (transferItem == null || transferItem.Transfer == null) continue;
 
                 if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
-                    transferItem.isAliveTransfer())
+                    transferItem.IsAliveTransfer())
                 {
                     MegaSdk.cancelTransfer(transferItem.Transfer,
                         new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
