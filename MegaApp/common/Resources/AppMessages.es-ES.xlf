@@ -178,6 +178,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">No se puede realizar esta acción. Por favor, conéctate a Internet y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
           </trans-unit>
+        <trans-unit id="Resx/IllegalChars_Title" translate="yes" xml:space="preserve">
+          <source>Illegal chars</source>
+          <target state="new">Illegal chars</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the folder name for download contains illegal path/filename chars - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars" translate="yes" xml:space="preserve">
+          <source>Folder '{0}' has illegal characters. Please change name before download.</source>
+          <target state="new">Folder '{0}' has illegal characters. Please change name before download.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the folder name for download contains illegal path/filename chars.</note>
+        </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
