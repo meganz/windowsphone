@@ -3,39 +3,19 @@
   <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
     <Language code="ar" />
-    <Language code="bg-BG" />
-    <Language code="cs-CZ" />
     <Language code="da" />
     <Language code="de" />
     <Language code="es" />
-    <Language code="et-EE" />
-    <Language code="fa-IR" />
-    <Language code="fi-FI" />
     <Language code="fr" />
-    <Language code="he-IL" />
     <Language code="hr" />
-    <Language code="hu-HU" />
-    <Language code="id-ID" />
     <Language code="it" />
-    <Language code="ja-JP" />
-    <Language code="ka-GE" />
-    <Language code="ko-KR" />
     <Language code="nl" />
-    <Language code="pl-PL" />
     <Language code="pt-BR" />
     <Language code="pt" />
     <Language code="ro" />
     <Language code="ru" />
-    <Language code="sk-SK" />
-    <Language code="sl-SI" />
-    <Language code="sr-Cyrl" />
     <Language code="sv" />
-    <Language code="th-TH" />
     <Language code="tr" />
-    <Language code="uk-UA" />
-    <Language code="vi-VN" />
-    <Language code="zh-CN" />
-    <Language code="zh-TW" />
     <Language code="bg" />
     <Language code="cs" />
     <Language code="zh-Hans" />
@@ -82,13 +62,19 @@
           <Count>0</Count>
           <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <Message></Message>
-          <BackgroundColor></BackgroundColor>
+          <Message>
+          </Message>
+          <BackgroundColor>
+          </BackgroundColor>
           <HasLarge>False</HasLarge>
-          <LargeContent1></LargeContent1>
-          <LargeContent2></LargeContent2>
-          <LargeContent3></LargeContent3>
-          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
+          <LargeContent1>
+          </LargeContent1>
+          <LargeContent2>
+          </LargeContent2>
+          <LargeContent3>
+          </LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          </DeviceLockImageURI>
         </TemplateIconic>
       </PrimaryToken>
     </Tokens>
