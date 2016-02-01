@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="uk-UA" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="uk-UA" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
           <source>Your name</source>
-          <target state="translated">ваше ім&apos;я</target>
+          <target state="translated">ваше ім'я</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -188,7 +188,7 @@
         </trans-unit>
         <trans-unit id="Resx/RenameItem" translate="yes" space="preserve">
           <source>Type a new name:</source>
-          <target state="translated">Введіть своє ім&apos;я</target>
+          <target state="translated">Введіть своє ім'я</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
@@ -521,7 +521,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
-          <target state="translated">Експортувати зображення в &apos;збережені&apos; після завантаження альбому</target>
+          <target state="translated">Експортувати зображення в 'збережені' після завантаження альбому</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">
@@ -566,12 +566,12 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/NameAscendingSortOption" translate="yes" space="preserve">
           <source>Name (ascending)</source>
-          <target state="translated">им&apos;я (висхідно)</target>
+          <target state="translated">им'я (висхідно)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NameDescendingSortOption" translate="yes" space="preserve">
           <source>Name (descending)</source>
-          <target state="translated">им&apos;я (низхідно)</target>
+          <target state="translated">им'я (низхідно)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NewestSortOption" translate="yes" space="preserve">
@@ -932,7 +932,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/FirstName" translate="yes" space="preserve">
           <source>First name</source>
-          <target state="translated">Ім&apos;я</target>
+          <target state="translated">Ім'я</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/From" translate="yes" space="preserve">
@@ -1364,7 +1364,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnection" translate="yes" space="preserve">
           <source>No internet connection</source>
-          <target state="translated">Немає інтернет з&apos;єднання</target>
+          <target state="translated">Немає інтернет з'єднання</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty state when no internet connection - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoUploads" translate="yes" space="preserve">

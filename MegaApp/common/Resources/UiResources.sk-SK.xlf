@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="sk-SK" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="sk-SK" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -521,7 +521,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
-          <target state="translated">Po stiahnutí exportovať obrázky do albumu &apos;uložené obrázky&apos;</target>
+          <target state="translated">Po stiahnutí exportovať obrázky do albumu 'uložené obrázky'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="uk-UA" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="uk-UA" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -147,7 +147,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
           <source>Image successful exported to 'saved pictures' album.</source>
-          <target state="translated">Зображення успішно експортовано у альбом &apos;збережених зображень&apos;</target>
+          <target state="translated">Зображення успішно експортовано у альбом 'збережених зображень'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
@@ -280,7 +280,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
           <source>Please fill in your name, e-mail address and your MEGA password.</source>
-          <target state="translated">Будь ласка, заповніть ваше ім&apos;я, адресу електронної пошти та пароль</target>
+          <target state="translated">Будь ласка, заповніть ваше ім'я, адресу електронної пошти та пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
@@ -295,7 +295,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
           <source>Export current image to 'saved pictures' album?</source>
-          <target state="translated">Експортувати поточне зображення у альбом &apos;збережених знімків&apos;?</target>
+          <target state="translated">Експортувати поточне зображення у альбом 'збережених знімків'?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
@@ -486,7 +486,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
           <source>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
-          <target state="translated">Бажаєте автоматично експортувати зображення у альбом після завантаження? Згодом ви можете змінити цю установку на сторінці налаштувань.  Інші типи файлів можна зберігати тільки у пам&apos;яті додатку.</target>
+          <target state="translated">Бажаєте автоматично експортувати зображення у альбом після завантаження? Згодом ви можете змінити цю установку на сторінці налаштувань.  Інші типи файлів можна зберігати тільки у пам'яті додатку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
@@ -642,7 +642,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
 Please, try to save/copy the file into the your device internal memory.</source>
-          <target state="translated">Копіювання цього файлу у теку призначення заборонено. Можливо ви намагаєтесь скопіювати на SD карту файл непідтримуваного типу. Будь ласка, спробуйте зберегти/скопіювати файл на внутрішню пам&apos;ять пристрою.</target>
+          <target state="translated">Копіювання цього файлу у теку призначення заборонено. Можливо ви намагаєтесь скопіювати на SD карту файл непідтримуваного типу. Будь ласка, спробуйте зберегти/скопіювати файл на внутрішню пам'ять пристрою.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -702,12 +702,12 @@ Please, try to save/copy the file into the your device internal memory.</source>
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
           <source>Not enough free memory space to complete this operation. The app will shutdown now.</source>
-          <target state="translated">Недостатньо вільної пам&apos;яті для завершення операції. Додаток буде закрито.</target>
+          <target state="translated">Недостатньо вільної пам'яті для завершення операції. Додаток буде закрито.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the app exceeds the memory limit quota of the device.</note>
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" space="preserve">
           <source>Memory Limit</source>
-          <target state="translated">Обмеження пам&apos;яті</target>
+          <target state="translated">Обмеження пам'яті</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" space="preserve">
@@ -765,7 +765,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
           <source>E-mail is not associated with a MEGA account or wrong password. Please try again.</source>
-          <target state="translated">Електронну пошту не пов&apos;язано з акаунтом MEGA або невірний пароль. Будь ласка, спробуйте ще раз.</target>
+          <target state="translated">Електронну пошту не пов'язано з акаунтом MEGA або невірний пароль. Будь ласка, спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
@@ -856,7 +856,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
           <source>Please fill in all the required fields and try again.</source>
-          <target state="translated">Будь ласка, заповніть усі обов&apos;язкові поля і спробуйте ще раз.</target>
+          <target state="translated">Будь ласка, заповніть усі обов'язкові поля і спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
@@ -883,7 +883,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">Підписку було скасовано невірно. Будь ласка, зв&apos;яжіться з support@mega.nz для скасування підписки.</target>
+          <target state="translated">Підписку було скасовано невірно. Будь ласка, зв'яжіться з support@mega.nz для скасування підписки.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -908,7 +908,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
           <source>Please type a feedback message for us. Thanks.</source>
-          <target state="translated">Будь ласка, введіть повідомлення зворотнього зв&apos;язку. Дякуємо.</target>
+          <target state="translated">Будь ласка, введіть повідомлення зворотнього зв'язку. Дякуємо.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
@@ -1022,7 +1022,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Our SSL/TLS certificate can&apos;t be verified. You could be affected by a man-in-the-middle attack.</target>
+          <target state="translated">Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1134,6 +1134,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You cannot perform this action. Please, connect to Internet and try again.</source>
           <target state="translated">You cannot perform this action. Please connect to the Internet and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars_Title" translate="yes" xml:space="preserve">
+          <source>Illegal chars</source>
+          <target state="new">Illegal chars</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the folder name for download contains illegal path/filename chars - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars" translate="yes" xml:space="preserve">
+          <source>Folder '{0}' has illegal characters. Please change name before download.</source>
+          <target state="new">Folder '{0}' has illegal characters. Please change name before download.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the folder name for download contains illegal path/filename chars.</note>
         </trans-unit>
       </group>
     </body>

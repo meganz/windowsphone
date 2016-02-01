@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="nl" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="nl" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -521,7 +521,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
-          <target state="translated">Afbeeldingen exporteren naar het album &apos;opgeslagen foto&apos;s&apos; na het downloaden</target>
+          <target state="translated">Afbeeldingen exporteren naar het album 'opgeslagen foto's' na het downloaden</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">
@@ -742,7 +742,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy1" translate="yes" space="preserve">
           <source>keep your files safe with MEGA's</source>
-          <target state="translated">houd uw bestanden veilig met MEGA&apos;s</target>
+          <target state="translated">houd uw bestanden veilig met MEGA's</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
@@ -1269,7 +1269,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PhotosOnly" translate="yes" space="preserve">
           <source>Photos only</source>
-          <target state="translated">Alleen foto&apos;s</target>
+          <target state="translated">Alleen foto's</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "Photos only" auto camera upload settings</note>
         </trans-unit>
         <trans-unit id="Resx/PowerConnected" translate="yes" space="preserve">

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="pt" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="pt" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -147,7 +147,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
           <source>Image successful exported to 'saved pictures' album.</source>
-          <target state="translated">Imagem foi exportada com sucesso para o álbum &apos;fotografias guardadas&apos;</target>
+          <target state="translated">Imagem foi exportada com sucesso para o álbum 'fotografias guardadas'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
@@ -157,7 +157,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to 'saved pictures' album. Please try again.</source>
-          <target state="translated">Erro ao exportar imagem para o álbum das &apos;fotografias guardadas&apos;. Por favor tente novamente</target>
+          <target state="translated">Erro ao exportar imagem para o álbum das 'fotografias guardadas'. Por favor tente novamente</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -295,7 +295,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
           <source>Export current image to 'saved pictures' album?</source>
-          <target state="translated">Exportar imagem atual para o album das &apos;fotografias guardadas&apos;?</target>
+          <target state="translated">Exportar imagem atual para o album das 'fotografias guardadas'?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
@@ -965,7 +965,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">Para que os Carregamentos Automáticos da Câmara funcionem correctamente, deve activar a opção &quot;Continuar com a sessão activa&quot;. Quer activar esta opção?</target>
+          <target state="translated">Para que os Carregamentos Automáticos da Câmara funcionem correctamente, deve activar a opção "Continuar com a sessão activa". Quer activar esta opção?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
@@ -1134,6 +1134,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You cannot perform this action. Please, connect to Internet and try again.</source>
           <target state="translated">Não pode efectuar esta acção. Por favor ligue-se à Internet e tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars_Title" translate="yes" xml:space="preserve">
+          <source>Illegal chars</source>
+          <target state="new">Illegal chars</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the folder name for download contains illegal path/filename chars - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars" translate="yes" xml:space="preserve">
+          <source>Folder '{0}' has illegal characters. Please change name before download.</source>
+          <target state="new">Folder '{0}' has illegal characters. Please change name before download.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the folder name for download contains illegal path/filename chars.</note>
         </trans-unit>
       </group>
     </body>

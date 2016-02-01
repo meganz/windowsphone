@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="fr" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="fr" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/AgreeCreateAccount" translate="yes" space="preserve">
           <source>I agree with the</source>
-          <target state="translated">J&apos;accepte les</target>
+          <target state="translated">J'accepte les</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
@@ -88,7 +88,7 @@
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
           <source>Loading preview...</source>
-          <target state="translated">Chargement de l&apos;aperçu en cours...</target>
+          <target state="translated">Chargement de l'aperçu en cours...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Login" translate="yes" space="preserve">
@@ -411,7 +411,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UploadOptionsTitle" translate="yes" space="preserve">
           <source>Upload options</source>
-          <target state="translated">Options d&apos;uploads</target>
+          <target state="translated">Options d'uploads</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageUpload" translate="yes" space="preserve">
@@ -446,12 +446,12 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AppVersionText" translate="yes" space="preserve">
           <source>App version</source>
-          <target state="translated">Version de l&apos;Application</target>
+          <target state="translated">Version de l'Application</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before app version number into the 'about' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AskDownloadLocationText" translate="yes" space="preserve">
           <source>Always ask for download location</source>
-          <target state="translated">Toujours demander pour l&apos;emplacement des téléchargements</target>
+          <target state="translated">Toujours demander pour l'emplacement des téléchargements</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Available" translate="yes" space="preserve">
@@ -521,7 +521,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
           <source>Export images to 'saved pictures' album after download</source>
-          <target state="translated">Exporter les images vers &apos;</target>
+          <target state="translated">Exporter les images vers '</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">
@@ -632,7 +632,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" space="preserve">
           <source>Terms of Service</source>
-          <target state="translated">Conditions d&apos;Utilisation</target>
+          <target state="translated">Conditions d'Utilisation</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Total" translate="yes" space="preserve">
@@ -762,7 +762,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace2" translate="yes" space="preserve">
           <source>50 GB of free space.</source>
-          <target state="translated">50Go d&apos;espace de stockage gratuit</target>
+          <target state="translated">50Go d'espace de stockage gratuit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace_Title" translate="yes" space="preserve">
@@ -852,7 +852,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Activer l&apos;Envoi des Photos de la Caméra</target>
+          <target state="translated">Activer l'Envoi des Photos de la Caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -867,7 +867,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscription" translate="yes" space="preserve">
           <source>Cancel subscription</source>
-          <target state="translated">Vous êtes sur le point d&apos;annuler votre abonnement MEGA. Veuillez nous dire s&apos;il y a quelque chose que l&apos;on puisse faire pour changer votre avis.</target>
+          <target state="translated">Vous êtes sur le point d'annuler votre abonnement MEGA. Veuillez nous dire s'il y a quelque chose que l'on puisse faire pour changer votre avis.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Dismiss" translate="yes" space="preserve">
@@ -942,7 +942,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year pro plan</source>
-          <target state="translated">Gagnez 2 mois gratuits en prenant un abonnement d&apos;un an à un plan Pro.</target>
+          <target state="translated">Gagnez 2 mois gratuits en prenant un abonnement d'un an à un plan Pro.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -988,7 +988,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SelectMembership" translate="yes" space="preserve">
           <source>Select membership</source>
-          <target state="translated">Sélectionner le type d&apos;adhésion</target>
+          <target state="translated">Sélectionner le type d'adhésion</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
@@ -1050,7 +1050,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
         </trans-unit>
         <trans-unit id="Resx/NoPaymentMethodsAvailable" translate="yes" space="preserve">
           <source>At this time, there is no payment method available for this plan</source>
-          <target state="translated">En l&apos;état, il n&apos;existe pas de méthode de paiement pour ce plan</target>
+          <target state="translated">En l'état, il n'existe pas de méthode de paiement pour ce plan</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no available payment methods to the selected subscription plan.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCard" translate="yes" space="preserve">
@@ -1095,7 +1095,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
           <source>You're running out of space!</source>
-          <target state="translated">Vous commencez à manquer d&apos;espace libre !</target>
+          <target state="translated">Vous commencez à manquer d'espace libre !</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
         <trans-unit id="Resx/ImportLinkBorderText" translate="yes" space="preserve">
@@ -1110,7 +1110,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
           <source>Type email address:</source>
-          <target state="translated">Type d&apos;adresse e-mail :</target>
+          <target state="translated">Type d'adresse e-mail :</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" space="preserve">
@@ -1329,7 +1329,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
           <source>Operating system restrictions</source>
-          <target state="translated">Restrictions du système d&apos;exploitation</target>
+          <target state="translated">Restrictions du système d'exploitation</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es-ES" original="SettingsResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="es-ES" original="SettingsResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -50,11 +50,6 @@
           <source>{92C84A5F-1387-4A44-AFE8-C44154B264D1}</source>
           <target state="signed-off">{92C84A5F-1387-4A44-AFE8-C44154B264D1}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Resource key to store the MEGA e-mail address of the user - (NO-TRANSLATION).</note>
-          </trans-unit>
-        <trans-unit id="Resx/StayLoggedIn" translate="no" xml:space="preserve">
-          <source>{42A8FBE1-08A0-4E48-82C2-C90AFDAB2551}</source>
-          <target state="signed-off">{42A8FBE1-08A0-4E48-82C2-C90AFDAB2551}</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Resource key to store if the app should keep the user logged in - (NO-TRANSLATION).</note>
           </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="no" xml:space="preserve">
           <source>{A8659687-3710-4B8D-8D0E-CAF3C3B44434}</source>
