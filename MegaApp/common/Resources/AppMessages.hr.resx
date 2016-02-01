@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>Morate se složiti sa našim Uvjetima pružanja usluge</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>Pogreška pri potvrdi računa. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>Neuspješna potvrda računa</value>
+    <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>Vaš račun je kreiran, potvrđen i aktiviran. Automatski ćete biti prijavljeni.</value>
+    <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>Račun aktiviran</value>
+    <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>Provjerite svoj e-mail i kliknite na link kako bi se prijavili i potvrdili svoj račun.</value>
+    <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>Potrebna potvrda</value>
+    <comment>Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>MEGA Cloud spremište - pogreška pri kreiranju računa. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>Nemogućnost kreiranja računa</value>
+    <comment>Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>Nemogućnost kreiranja mape</value>
+    <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>Pogreška pri kreiranju mape</value>
+    <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>Uspješno kreirana mapa</value>
+    <comment>Message of the dialog displayed when create a folder successfully.</comment>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>Mapa kreirana</value>
+    <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>Pogreška pri brisanju stavke. Molimo pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>Pogreška pri brisanju</value>
+    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju linka za preuzimanje. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju linka</value>
+    <comment>Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>Pogreška pri preuzimanju. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>Preuzimanje neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>Nemogućnost dohvaćanja mapa i datoteka sa MEGA-e. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</comment>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju podataka</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</comment>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>Pogreška pri stvaranju mape. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>Pogreška pri kreiranju mape</value>
+    <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>Pogreška pri dobivanju linka</value>
+    <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju linka</value>
+    <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju pregleda</value>
+    <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>Neuspješno dohvaćanje pregleda</value>
+    <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Slika uspješno izvezena u album 'spremljene slike'</value>
+    <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>Slika spremljena</value>
+    <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>Pogreška pri izvozu slike u 'spremljene slike' album. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>Pogreška pri spremanju slike</value>
+    <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>Pogreška pri uvozu datoteke</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>Pogreška pri uvozu datoteke</value>
+    <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>MEGA link je kopiran u međuspremnik</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>Kopirano na clipboard</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Prijava na MEGA Cloud pogon neuspješna. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>Prijava neuspješna</value>
+    <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>Odredišna mapa je ista kao i izvorna mapa. Premještanje otkazano.</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>Pogreška pri premještanju</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</comment>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>Pogreška prilikom premještanja stavke. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to move a file failed.</comment>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>Pogreška pri premještanju</value>
+    <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Lozinke se ne podudaraju. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>Slika je spremljena u vaš foto album</value>
+    <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>Slika spremljena</value>
+    <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>Da li ste sigurni da želite ukolniti {0}?</value>
+    <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>Ukoniti?</value>
+    <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>Pogreška pri uklanjanju stavke</value>
+    <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>Neuspješno uklanjanje</value>
+    <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeSuccess" xml:space="preserve">
+    <value>Stavka uspješno premještena</value>
+    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>Uklonjeno</value>
+    <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>Neuspješno preimenovanje stavki</value>
+    <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>Neuspješno preimenovanje</value>
+    <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>Molimo unesite odabranu lozinku.</value>
+    <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>Molimo da popunite svoje ime, email adresu i lozinku</value>
+    <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>Molimo unesite svoju e-mail adresu i MEGA lozinku.</value>
+    <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>Popunite sva polja koja se zahtjevaju</value>
+    <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>Izvesti trenutnu sliku u album 'spremljene slike'?</value>
+    <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>Spremi sliku na fotografije</value>
+    <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>Niste prijavljeni na MEGA-u. Molimo da se ponovno prijavite.</value>
+    <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>Nije online</value>
+    <comment>Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</comment>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju pregleda [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju pregleda</value>
+    <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>Neuspješno dohvaćanje detalja vašeg računa. Pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>Pogreška pri dohvačanju detalja raćuna</value>
+    <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>Uspješno ste se odjavili</value>
+    <comment>Message of the dialog displayed when a user logged out successfully.</comment>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>Odjavljen</value>
+    <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>Nemogućnost odjave. Molimo pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>Pogreška pri odjavljivanju</value>
+    <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion" xml:space="preserve">
+    <value>Da li ste sigurni da želite ukloniti {0} stavki?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
+    <value>Ukoliniti stavke?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiRemoveSucces" xml:space="preserve">
+    <value>{0} stavki uklonjeno</value>
+    <comment>Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiRemoveSucces_Title" xml:space="preserve">
+    <value>Stavke uklonjene</value>
+    <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>Pogreška pri premještanju stavke u koš za smeće. Pokušajte ponovno</value>
+    <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>Premještanje u koš za smeće neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Da li  ste sigurni da želite premjestiti {0} u koš za smeće?</value>
+    <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Premjestiti u koš za smeće?</value>
+    <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>Stavka uspješno premještena u koš za smeće</value>
+    <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>Stavka premještena</value>
+    <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Da li ste sigurni da želite u kantu za smeće premjestiti {0} stavki?</value>
+    <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Premjestiti stavke?</value>
+    <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>{0} Stavki premješteno u kantu za smeće</value>
+    <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>Stavke prebačene</value>
+    <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersLogout" xml:space="preserve">
+    <value>Imate {0} transfera koji čekaju. Transferi koji čekaju biti će otkazani. Da li ste sigurni da se želite odjaviti?</value>
+    <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersLogout_Title" xml:space="preserve">
+    <value>Prijenosi koji čekaju</value>
+    <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersExit" xml:space="preserve">
+    <value>Imate {0} prijenosa koji čekaju. Ti prijenosi će biti otkazani. Da li ste sigurni da želite izaći?</value>
+    <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersExit_Title" xml:space="preserve">
+    <value>Prijenosi koji čekaju</value>
+    <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>Račun je već potvrđen. Možete se prijaviti.</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>Račun je već potvrđen</value>
+    <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Krivo ste unijeli lozinku</value>
+    <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>Kriva lozinka</value>
+    <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Odabrali ste preko 100 stavki [{0}] za preuzimanje. Želite li nastaviti?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
+Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>Brojač preuzimanja</value>
+    <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>Da li želite automatski izvoziti SLIKOVNE datoteke u vaš foto album nakon preuzimanja? Možete promjeniti ove postavke na sljedećoj stranici. Druge vrste datoteka će se spremati u lokalno spremište aplikacije.</value>
+    <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>Pogreška pri pauziranju preijnosa</value>
+    <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>Pogreška pauziranja</value>
+    <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>Pogreška pri nastavljanju prijenosa</value>
+    <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>Neuspješan nastavak</value>
+    <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="MinimalPictureSelection" xml:space="preserve">
+    <value>Molimo odaberite minimalno 1 sliku za upload</value>
+    <comment>Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</comment>
+  </data>
+  <data name="MinimalPictureSelection_Title" xml:space="preserve">
+    <value>Nema odabranih slika</value>
+    <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed" xml:space="preserve">
+    <value>Pogreška pri pripremanju slike: {0} za upload</value>
+    <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
+    <value>Neuspješna priprema slike</value>
+    <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="PhotoUploadError" xml:space="preserve">
+    <value>Nemogućnost uploada slike</value>
+    <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
+  </data>
+  <data name="PhotoUploadError_Title" xml:space="preserve">
+    <value>Neuspješan upload slike</value>
+    <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Nemogućnost pronalaženja odabrane datoteke</value>
+    <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
+  </data>
+  <data name="FileNotFound_Title" xml:space="preserve">
+    <value>Datoteka nije pronađena</value>
+    <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
+  </data>
+  <data name="OpenFileFailed" xml:space="preserve">
+    <value>Nemogućnost otvaranja odabrane datoteke</value>
+    <comment>Message of the dialog displayed when the process to open a file failed.</comment>
+  </data>
+  <data name="OpenFileFailed_Title" xml:space="preserve">
+    <value>Nemogućnost otvaranja datoteke</value>
+    <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadSelfieFailed" xml:space="preserve">
+    <value>Nemogućnost uploada selfija</value>
+    <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
+  </data>
+  <data name="UploadSelfieFailed_Title" xml:space="preserve">
+    <value>Nemogućnost uploada selfija</value>
+    <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodesFailed" xml:space="preserve">
+    <value>Nemogućnost učitavanja datoteka i mapa sa MEGA-e. Molimo pokušajte ponovno ili osvježite.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
+  </data>
+  <data name="LoadNodesFailed_Title" xml:space="preserve">
+    <value>Nemogućnost učitavanja</value>
+    <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>Vaši PIN kodovi se ne slažu. Molimo da ih ukucate ponovno kako bi bili sigurni da se slažu</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>PIN kodovi se ne podudaraju</value>
+    <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError" xml:space="preserve">
+    <value>Odjavljeni ste na ovom uređaju sa druge lokacije</value>
+    <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
+  </data>
+  <data name="OverquotaAlert" xml:space="preserve">
+    <value>Operacija nije dopuštena, Prekoračit ćete dozvoljeni limit pohrane za svoj račun. Želite li nadograditi svoj račun?</value>
+    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="OverquotaAlert_Title" xml:space="preserve">
+    <value>Upozorenje kvote!</value>
+    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>Niste odabrani odredišnu lokaciju za preuzimanje datoteka.Kako bi nastavili sa preuzimanjem molimo odaberite odredišnu lokaciju ili odite u postavke kako bi postavili defaultnu lokaciju preuzimanja.</value>
+    <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>Nemogućnost pripreme datoteke: [0] za upload</value>
+    <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>Priprema datoteke neuspješna</value>
+    <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError_Title" xml:space="preserve">
+    <value>Odjavljen</value>
+    <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>Nemogućnost kopiranja odabrane datoteke: [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>Kopiranje datoteke neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>Nemate dozvolu da kopirate ovaj tip datoteke u odredišnu mapu. Vjerojatno pokušavate spremiti/kopirati na SD karticu tip datoteke koji nije podržan. Molimo pokušajte spremiti/kopirati datoteku na unutarnju memoriju uređaja.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>Neautoriziran pristup</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>Pogreška pri kopiranju masterključa na clipboard. Molimo pokušajte ponovno</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>Neuspjeh clipboarda</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>Trenutni PIN kod nije točan ili se ne slaže</value>
+    <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>Trenutni PIN kodovi se ne slažu</value>
+    <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>Masterključ kopiran na clipboard</value>
+    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>Masterključ kopiran</value>
+    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>PIN kod mora biti barem 4 znamenke</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>PIN kod prekratak</value>
+    <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>Cache je uspješno očišćen</value>
+    <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>Cache očišćen</value>
+    <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>Nema dovoljno memorije da se završi operacija. Aplikacija će se ugasiti</value>
+    <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>Limit memorije</value>
+    <comment>Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>ne, samo lokalno</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>Opcije preuzimanja</value>
+    <comment>Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>da, izvezi</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>Pogreška pri odabiru mape. Molimo, pokušajte ponovno ili odaberite drugu mapu: [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFolderFailed_Title" xml:space="preserve">
+    <value>Odabrana mapa neuspjela</value>
+    <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadNodeFailed" xml:space="preserve">
+    <value>Pogreška pri uploadu. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="UploadNodeFailed_Title" xml:space="preserve">
+    <value>Slanje neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFileFailed" xml:space="preserve">
+    <value>Pogreška pri odabiranju datoteke(a). Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFileFailed_Title" xml:space="preserve">
+    <value>Izbor datoteke nije uspjelo</value>
+    <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>Neispravna e-mail adresa. Pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>Neispravna e-mail adresa ili lozinka. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
+  </data>
+  <data name="DeleteNodeQuestion" xml:space="preserve">
+    <value>Da li ste sigurni da želite trajno izbrisati {0}?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteNodeQuestion_Title" xml:space="preserve">
+    <value>Obrisati stavku?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserDataFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju vaših korisničkih podataka. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetUserDataFailed_Title" xml:space="preserve">
+    <value>Neuspješno dohvaćanje korisničkih podataka</value>
+    <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju slike. Molimo, pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoFailed_Title" xml:space="preserve">
+    <value>Foto snimanje nije uspjelo</value>
+    <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed" xml:space="preserve">
+    <value>Pogreška pri hvatanju slike ili videa. Molimo, pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
+    <value>Hvatanje slike/videa neuspješno</value>
+    <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CaptureVideoFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju videa. Molimo, pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CaptureVideoFailed_Title" xml:space="preserve">
+    <value>Hvatanje videa neuspješno</value>
+    <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
+  </data>
+  <data name="SaveSettingsFailed" xml:space="preserve">
+    <value>Pogreška pri spremanju postavki. Molimo, pokušajte ponovno [{0}]</value>
+    <comment>Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SaveSettingsFailed_Title" xml:space="preserve">
+    <value>Pogreška pri spremanju postavki</value>
+    <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>Pojavila se pogreška prilikom otvaranja prečaca. Možda je neispravan prečac ili je odredišna mapa izbrisana.</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>Greška prečaca</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>Podaci o kreditnoj kartici nisu točni. Kartica neće biti terećena.</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>Pohranjivanje kreditne kartice neuspještno</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>Molimo popunite sva zahtijevana polja i pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>Broj kreditne kartice, mjesec/godina isteka i CVV bi trebali biti numerički. Molimo provjerite da je sve ispravno i pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>Pogrešan format podataka</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Spremate se otkazati MEGA pretplatu. Molimo Vas da nam kažete ako postoji išta što bi mogli napraviti da se predomislite.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Hvala vam na povratnom odgovoru!Da li ste sigurni da želite otkazati MEGA pretplatu?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>Otkazivanje pretplate neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>Pretplata je otkazana.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>Pretplata otkazana</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>Otkaži pretplatu</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>Molimo da nam date povratne informacije. Hvala.</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>Operacija neuspješna. Vaša kreditna kartica nije terećena.</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>Pogreška pri nadogradnji računa</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>Račun uspješno nadograđen!</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>Račun nadograđen</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju dostupnih metoda plaćanja. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>Greška u dohvaćanju metoda plaćanja</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed" xml:space="preserve">
+    <value>Pogreška pri dohvaćanju URL-a plaćanja. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
+    <value>Dohvaćanje URL-a plaćanja neuspješno</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
+  </data>
+  <data name="BackgroundAgentDisabled" xml:space="preserve">
+    <value>Pozadinski agenti za MEGA-u su onemogućeni od strane korisnika</value>
+    <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
+    <value>Pozadinski agenti onemogućeni</value>
+    <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
+    <value>Kako bi automatska Učitavanja kamere radila ispravno, morate omogućiti opciju "Ostani prijavljen". Da li želite omogućiti ovo opciju?</value>
+    <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
+    <value>Preduvjeti za automatsko učitavanje kamere</value>
+    <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>Da li želite ukloniti kontakt {0}?</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>Ukloniti kontakt?</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddFailed" xml:space="preserve">
+    <value>Pozivnica za kontakta ne može biti poslana. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="InviteContactAddFailed_Title" xml:space="preserve">
+    <value>Neuspješno pozivanje kontakta</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully" xml:space="preserve">
+    <value>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
+    <value>Kontakt pozvan</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>MEGA automatski upload kamere</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>Vaš novi račun je ažuriran. Da li želite provjeriti nove detalje računa?</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>Račun ažuriran</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>Odjavljen</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Automatski upload kamere neuspješan</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="DeleteContactFailed" xml:space="preserve">
+    <value>Neuspješno uklanjanje kontakta {0}. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteContactFailed_Title" xml:space="preserve">
+    <value>Neuspješno uklanjanje kontakta</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
+    <value>Da li želite ukloniti {0} kontakta?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
+    <value>Ukloniti kontakte?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Pogreška pri zamjeni lozinke. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Vaša lozinka je promjenjena.</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>Nova i stara lozinka se ne smiju podudarati.</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>Molimo unesite svoju staru MEGA lozinku i svoju novu MEGA lozinku.</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>Pogreška pri zatvaranju sesije. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>Preostale sesije su uspješno zatvorene.</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>Pogreška pri zatvaranju sesije. Molimo pokušajte ponovno. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>Ova sesija je uspješno zatvorena.</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinFailed" xml:space="preserve">
+    <value>Pogreška pri pražnjenju koša za smeće. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
+  </data>
+  <data name="CleanRubbishBinQuestion" xml:space="preserve">
+    <value>Da li ste sigurni da želite trajno izbrisati sve datoteke iz koša za smeće?</value>
+    <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CleanRubbishBinSuccess" xml:space="preserve">
+    <value>Koš za smeće je uspješno ispražnjen.</value>
+    <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
+  </data>
+  <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
+    <value>Pokušavate dodati svoju email adresu kao kotakt.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
+  </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>Pogreška pri uklanjanju linka. Molimo pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>Ne možete izvesti ovu operaciju. Molimo spojite se na internet i pokušajte ponovno.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
+</root>
