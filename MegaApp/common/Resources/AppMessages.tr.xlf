@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="tr" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="tr" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resx">
@@ -107,7 +107,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
           <source>Could not retrieve files and folders from MEGA. Please try again.</source>
-          <target state="translated">MEGA&apos;dan dosya ve klasörler alınamadı. Lütfen tekrar deneyin.</target>
+          <target state="translated">MEGA'dan dosya ve klasörler alınamadı. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodesFailed_Title" translate="yes" space="preserve">
@@ -147,7 +147,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
           <source>Image successful exported to 'saved pictures' album.</source>
-          <target state="translated">Resim &apos;kaydedilen resimler&apos; albümüne başarılı bir şekilde aktarıldı</target>
+          <target state="translated">Resim 'kaydedilen resimler' albümüne başarılı bir şekilde aktarıldı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
@@ -295,7 +295,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
           <source>Export current image to 'saved pictures' album?</source>
-          <target state="translated">Mevcut görsel &apos;kaydedilen resimler&apos; albümüne aktarılsın mı?</target>
+          <target state="translated">Mevcut görsel 'kaydedilen resimler' albümüne aktarılsın mı?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
@@ -305,7 +305,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
           <source>You are not logged in at MEGA to do this action. Please re-login.</source>
-          <target state="translated">MEGA&apos;da oturum açmamışsınız. Lütfen tekrar oturum açın.</target>
+          <target state="translated">MEGA'da oturum açmamışsınız. Lütfen tekrar oturum açın.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
@@ -475,7 +475,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({0}) to download. Do you want to proceed?</source>
-          <target state="translated">İndirmek için 100&apos;ün üzerinde öğe ({0}) seçtiniz. Devam etmek istiyor musunuz?</target>
+          <target state="translated">İndirmek için 100'ün üzerinde öğe ({0}) seçtiniz. Devam etmek istiyor musunuz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
 Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
@@ -944,13 +944,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="translated">Ödeme URL\&apos;si alınamadı. Lütfen tekrar deneyin. [{0}]</target>
+          <target state="translated">Ödeme URL\'si alınamadı. Lütfen tekrar deneyin. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
           <source>Retrieving payment Url failed</source>
-          <target state="translated">Ödeme URL&apos;si alınamadı</target>
+          <target state="translated">Ödeme URL'si alınamadı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
@@ -965,7 +965,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">Otomatik Kamera Yüklemeleri&apos;nin doğru çalışması için, &quot;Oturumu açık tut&quot; seçeneğini etkinleştirmeniz gerekir. Bu seçeneği etkinleştirmek ister misiniz?</target>
+          <target state="translated">Otomatik Kamera Yüklemeleri'nin doğru çalışması için, "Oturumu açık tut" seçeneğini etkinleştirmeniz gerekir. Bu seçeneği etkinleştirmek ister misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
@@ -1134,6 +1134,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You cannot perform this action. Please, connect to Internet and try again.</source>
           <target state="translated">Bu eylemi gerçekleştiremezsiniz. Lütfen internete bağlanın ve tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars_Title" translate="yes" xml:space="preserve">
+          <source>Illegal chars</source>
+          <target state="new">Illegal chars</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the folder name for download contains illegal path/filename chars - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/IllegalChars" translate="yes" xml:space="preserve">
+          <source>Folder '{0}' has illegal characters. Please change name before download.</source>
+          <target state="new">Folder '{0}' has illegal characters. Please change name before download.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the folder name for download contains illegal path/filename chars.</note>
         </trans-unit>
       </group>
     </body>
