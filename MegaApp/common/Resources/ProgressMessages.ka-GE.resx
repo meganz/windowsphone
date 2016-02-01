@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -117,4 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>თქვენ ახლა აუქმებთ MEGA-ს ფასიან პაკეტს. გთხოვთ გვითხრათ რით დაგეხმაროთ რომ გადაიფიქროთ.</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Cancelling transfer...</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>პაროლის შეცვლა</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Clearing the rubbish bin...</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Closing all sessions...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Closing session...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>მიმდინარეობს ანგარიშის დადასტურება...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>მიმდინარეობს ანგარიშის შექმნა...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>იქმნება ფოლდერი...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>მიმდინარეობს საკრედიტო ბარათის შენახვა...</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>იშლება '{0}'...</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>მიმდინარეობს გადმოწერის ლინკის მიღება</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>მიმდინარეობს სესიის გაგრძელება</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>იტვირთება ფაილები და ფოლდერები... [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>მიმდინარეობს ანგარიშის დეტალების მიღება</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>იტვირთება კონტაქტის ინფო...</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>მიმდინარეობს ლინკის მიღება...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>იტვირთება გადახდის მეთოდები...</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>იტვირთება გადახდის Url...</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>მიმდინარეობს ესკიზიდ მიღება...</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>იკითხება მომხმარებლის ინფო...</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>მიმდინარეობს ფაილის იმპორტირება...</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Sending contact request...</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Deleting contact request...</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Reminding contact about the request...</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>მიმდინარეობს ხედის აწყობა...</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>მიმდინარეობს ავტორიზაცია...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>მიმდინარეობს სისტემიდან გამოსვლა...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>გადადის...</value>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>გადადის ნაგვის ყუთში...</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>მიმდინარეობს ფაილთა მოძრაობის დაპაუზება</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>მზადდება ჩამოტვირთვები...</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>მზადდება ატვირთვები...</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Removing contact...</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Removing from offline...</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Removing link...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>მიმდინარეობს წაშლა...</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>მიმდინარეობს სახელის შეცვლა...</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Accepting contact request...</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Denying contact request...</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Ignoring contact request...</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>გრძელდენა ფაილთა მოძრაობა...</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Saving for offline...</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Servers too busy. Please wait…</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>ყენდება ფასიანი პაკეტი...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>

@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="nl" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp80" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft"/>
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
+          <source>You must agree with our Terms of Service</source>
+          <target state="translated">U moet akkoord gaan met onze Algemene Voorwaarden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
+          <source>Failed to confirm account. Please try again. [{0}]</source>
+          <target state="translated">Mislukt account te bevestigen. Probeer het alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" space="preserve">
+          <source>Confirm account failed</source>
+          <target state="translated">Accountbevestiging is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
+          <source>Your account has been created, confirmed and activated. You will automatically logged in.</source>
+          <target state="translated">Uw account is aangemaakt, bevestigd en geactiveerd. U wordt automatisch ingelogd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" space="preserve">
+          <source>Account activated</source>
+          <target state="translated">Account geactiveerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
+          <source>Check your e-mail and click the link to login and confirm your account</source>
+          <target state="translated">Controleer uw e-mail en klik op de link om in te loggen en bevestig uw account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
+          <source>Confirmation needed</source>
+          <target state="translated">Bevestiging nodig</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed" translate="yes" space="preserve">
+          <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
+          <target state="translated">MEGA Cloud Schijf account aanmaak is mislukt. Probeer het alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed_Title" translate="yes" space="preserve">
+          <source>Account creation failed</source>
+          <target state="translated">Aanmaken van account mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed" translate="yes" space="preserve">
+          <source>Failed to create folder</source>
+          <target state="translated">Mislukt map aan te maken</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed_Title" translate="yes" space="preserve">
+          <source>Folder creation failed</source>
+          <target state="translated">Maken van map is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess" translate="yes" space="preserve">
+          <source>Folder created successful</source>
+          <target state="translated">Map succesvol aangemaakt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when create a folder successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess_Title" translate="yes" space="preserve">
+          <source>Folder created</source>
+          <target state="translated">Map aangemaakt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
+          <source>Failed to delete item. Please try again [{0}]</source>
+          <target state="translated">Verwijderen van item mislukt. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
+          <source>Delete failed</source>
+          <target state="translated">Verwijderen is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve a download link. Please try again.</source>
+          <target state="translated">Het ophalen van de download link is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when failed to retrieve a download link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving link failed</source>
+          <target state="translated">Ophalen koppeling mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed" translate="yes" space="preserve">
+          <source>Failed to download file. Please try again. [{0}]</source>
+          <target state="translated">Mislukt het bestand te downloaden. Probeer het alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" space="preserve">
+          <source>Download failed</source>
+          <target state="translated">Downloaden mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
+          <source>Could not retrieve files and folders from MEGA. Please try again.</source>
+          <target state="translated">Kon geen bestanden en mappen ophalen bij MEGA.  Probeer het alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed_Title" translate="yes" space="preserve">
+          <source>Fetching data failed</source>
+          <target state="translated">Het ophalen van gegevens is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed" translate="yes" space="preserve">
+          <source>Failed to create folder. Please try again.</source>
+          <target state="translated">Maken van een map is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to create a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed_Title" translate="yes" space="preserve">
+          <source>Folder creation failed</source>
+          <target state="translated">Maken van map is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
+          <source>Failed to get link.</source>
+          <target state="translated">Ophalen van link mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
+          <source>Get link failed</source>
+          <target state="translated">Verkrijgen van link mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve preview.</source>
+          <target state="translated">Mislukt om het voorbeeld op te halen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image preview failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed_Title" translate="yes" space="preserve">
+          <source>Getting preview failed</source>
+          <target state="translated">Verkrijging van voorvertoning mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
+          <source>Image successful exported to 'saved pictures' album.</source>
+          <target state="translated">Afbeelding succesvol geëxporteerd naar &apos;opgeslagen foto&apos;s&apos; album</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
+          <source>Image saved</source>
+          <target state="translated">Afbeelding opgeslagen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
+          <source>Error exporting image to 'saved pictures' album. Please try again.</source>
+          <target state="translated">Fout exporteren afbeelding om album &apos;opgeslagen foto&apos;s&apos;. Probeer het nogmaals</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
+          <source>Failed to save image</source>
+          <target state="translated">Mislukt afbeelding opslaan</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImportFileFailed" translate="yes" space="preserve">
+          <source>Importing file failed [{0}]</source>
+          <target state="translated">Importeren bestand mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
+          <source>Import file failed</source>
+          <target state="translated">Importeren bestand mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
+          <source>MEGA link is copied to your clipboard</source>
+          <target state="translated">MEGA koppeling is gekopieerd naar uw klembord</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
+          <source>Copied to clipboard</source>
+          <target state="translated">Gekopiëerd naar klembord</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
+          <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
+          <target state="translated">MEGA Cloud Schijf login mislukt. Probeer het opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoginFailed_Title" translate="yes" space="preserve">
+          <source>Login failed</source>
+          <target state="translated">Inloggen mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent" translate="yes" space="preserve">
+          <source>Destination folder is the same as the source folder. Moving canceled.</source>
+          <target state="translated">Doelmap is hetzelfde als de bronmap. Verplaatsing is geannuleerd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent_Title" translate="yes" space="preserve">
+          <source>Move failed</source>
+          <target state="translated">Verplaatsing mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed" translate="yes" space="preserve">
+          <source>Failed to move item. Please try again.</source>
+          <target state="translated">Verplaatsen van item is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move a file failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed_Title" translate="yes" space="preserve">
+          <source>Move failed</source>
+          <target state="translated">Verplaatsing mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" space="preserve">
+          <source>Passwords do not match.</source>
+          <target state="translated">Wachtwoorden komen niet overeen. Probeer opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved" translate="yes" space="preserve">
+          <source>The image is saved in your photo album.</source>
+          <target state="translated">De afbeelding is opgeslagen in uw foto album</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved_Title" translate="yes" space="preserve">
+          <source>Picture saved</source>
+          <target state="translated">Afbeelding opgeslagen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to remove {0}?</source>
+          <target state="translated">Weet u zeker dat u {0} wilt verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" space="preserve">
+          <source>Remove?</source>
+          <target state="translated">Verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
+          <source>Failed to remove item</source>
+          <target state="translated">Mislukt het artikel te verwijderen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" space="preserve">
+          <source>Remove failed</source>
+          <target state="translated">Verwijdering mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
+          <source>Item successful removed</source>
+          <target state="translated">Item succesvol verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
+          <source>Item removed</source>
+          <target state="translated">Bestand verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed" translate="yes" space="preserve">
+          <source>Renaming item failed</source>
+          <target state="translated">Hernamen van het bestand mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed_Title" translate="yes" space="preserve">
+          <source>Rename failed</source>
+          <target state="translated">Hernamen mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
+          <source>Please fill in your choosen password.</source>
+          <target state="translated">Vul alstublieft uw gekozen wachtwoord in.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
+          <source>Please fill in your name, e-mail address and your MEGA password.</source>
+          <target state="translated">Vul uw naam, e-mailadres en wachtwoord in</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
+          <source>Please fill in your e-mail address and your MEGA password.</source>
+          <target state="translated">Vul alstublieft uw e-mailadres en uw MEGA wachtwoord in.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFields_Title" translate="yes" space="preserve">
+          <source>Fill in required fields</source>
+          <target state="translated">Vul de verplichte velden in</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when any required field is not filled in - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
+          <source>Export current image to 'saved pictures' album?</source>
+          <target state="translated">Uw huidige afbeelding naar &apos;opgeslagen foto&apos; album exporteren?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
+          <source>Save image to photo's</source>
+          <target state="translated">Afbeelding opslaan voor foto&apos;s</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
+          <source>You are not logged in at MEGA to do this action. Please re-login.</source>
+          <target state="translated">U bent niet ingelogd bij MEGA. Log alstublieft opnieuw in.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
+          <source>Not online</source>
+          <target state="translated">Niet online</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve thumbnail [{0}]</source>
+          <target state="translated">Mislukt om miniatuur op te halen [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed_Title" translate="yes" space="preserve">
+          <source>Getting thumbnail failed</source>
+          <target state="translated">Ophalen van miniatuur mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve your account details. Please try again. [{0}]</source>
+          <target state="translated">Mislukt om uw accountgegevens op te halen. Gelieve opnieuw te proberen. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving account details failed</source>
+          <target state="translated">Ophalen accountgegevens mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
+          <source>You have successfully logged out.</source>
+          <target state="translated">U bent succesvol afgemeld</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user logged out successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Afgemeld</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user logged out successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
+          <source>Failed to logout. Please try again. [{0}]</source>
+          <target state="translated">Mislukt af te melden. </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed_Title" translate="yes" space="preserve">
+          <source>Logout failed</source>
+          <target state="translated">Afmelden mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to remove {0} items?</source>
+          <target state="translated">Weet u zeker dat u {0} artikelen wilt verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" space="preserve">
+          <source>Remove items?</source>
+          <target state="translated">Artikelen verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
+          <source>{0} Items removed.</source>
+          <target state="translated">{0} artikelen verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces_Title" translate="yes" space="preserve">
+          <source>Items removed</source>
+          <target state="translated">Bestanden verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to move item to rubbish bin. Please try again.</source>
+          <target state="translated">Mislukt het bestand naar prullenbak te verplaatsen. Probeer het alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" space="preserve">
+          <source>Move to rubbish bin failed</source>
+          <target state="translated">Mislukt verplaatsen naar prullenbak</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to move {0} to rubbish bin?</source>
+          <target state="translated">Weet u zeker dat u {0} wilt verplaatsen naar prullenbak?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
+          <source>Move item to rubbish bin?</source>
+          <target state="translated">Verplaatsen naar prullenbak?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
+          <source>Item successful moved to rubbish bin.</source>
+          <target state="translated">Het object is verplaatst naar prullenbak</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully one single node to the rubbish bin.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" space="preserve">
+          <source>Item moved</source>
+          <target state="translated">Artikel verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to move to rubbish bin {0} items?</source>
+          <target state="translated">Weet u zeker dat u {0} artikelen wilt verplaatsen naar prullenbak?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
+          <source>Move items to rubbish bin?</source>
+          <target state="translated">Artikelen verplaatsen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
+          <source>{0} Items moved to rubbish bin.</source>
+          <target state="translated">{0} Artikelen verplaatst naar prullenbak</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces_Title" translate="yes" space="preserve">
+          <source>Items moved</source>
+          <target state="translated">Artikel verplaatst</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
+          <target state="translated">U hebt {0} transfers in afwachting. Transfers in afwachting van overdrachten zullen worden geannuleerd. Weet u zeker dat u wil uitloggen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" space="preserve">
+          <source>Pending Transfers</source>
+          <target state="translated">Transfers in afwachting</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
+          <target state="translated">Je hebt {0} overdrachten in afwachting. Overdrachten  In afwachting van worden geannuleerd. Weet u zeker dat u wilt afsluiten?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" space="preserve">
+          <source>Pending Transfers</source>
+          <target state="translated">Transfers in afwachting</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
+          <source>The account is already confirmed. You can now login.</source>
+          <target state="translated">Het account is al bevestigd. U kunt nu inloggen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
+          <source>Account already confirmed</source>
+          <target state="translated">Account al bevestigd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword" translate="yes" space="preserve">
+          <source>The typed password is incorrect.</source>
+          <target state="translated">De getypte wachtwoord is onjuist</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword_Title" translate="yes" space="preserve">
+          <source>Wrong password</source>
+          <target state="translated">Verkeerde wachtwoord</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
+          <source>You have selected over {0} items ({0}) to download. Do you want to proceed?</source>
+          <target state="translated">U heeft gekozen om meer dan 100 artikelen ({0}) te downloaden. Wilt u doorgaan?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
+Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" space="preserve">
+          <source>Download count</source>
+          <target state="translated">Aantal downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
+          <source>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
+          <target state="translated">Wilt u de beeldbestanden automatisch exporteren naar uw fotoalbum na het downloaden? U kunt deze instelling op de pagina met instellingen achteraf wijzigen. Andere bestandstypen zullen alleen worden opgeslagen in de lokale opslag van de app.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
+          <source>Failed to pause transfers.</source>
+          <target state="translated">Mislukt transfers te pauzeren</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to pause transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" space="preserve">
+          <source>Pause failed</source>
+          <target state="translated">Pauze mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
+          <source>Failed to resume transfers.</source>
+          <target state="translated">Hervatten transfers mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to resume transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed_Title" translate="yes" space="preserve">
+          <source>Resume failed</source>
+          <target state="translated">Hervatten mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to resume transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection" translate="yes" space="preserve">
+          <source>Please select minimal 1 picture for upload.</source>
+          <target state="translated">Selecteer minimaal 1 foto voor upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection_Title" translate="yes" space="preserve">
+          <source>No pictures selected</source>
+          <target state="translated">Geen afbeeldingen geselecteerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare image: {0} for upload.</source>
+          <target state="translated">Mislukt afbeelding voor te bereiden: {0} voor upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed_Title" translate="yes" space="preserve">
+          <source>Preparing image failed</source>
+          <target state="translated">Mislukt voorbereiden afbeelding</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError" translate="yes" space="preserve">
+          <source>Failed to upload photo.</source>
+          <target state="translated">Mislukt om de foto te uploaden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a photo failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError_Title" translate="yes" space="preserve">
+          <source>Upload photo failed</source>
+          <target state="translated">Foto upload mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound" translate="yes" space="preserve">
+          <source>Could not find the selected file.</source>
+          <target state="translated">Kon het geselecteerde bestand niet vinden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound_Title" translate="yes" space="preserve">
+          <source>File not found</source>
+          <target state="translated">File niet gevonden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
+          <source>Failed to open the selected file.</source>
+          <target state="translated">Mislukt geselecteerde file te openen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a file failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
+          <source>Open file failed</source>
+          <target state="translated">Open bestand mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
+          <source>Failed to upload the selfie picture.</source>
+          <target state="translated">Het updaten van selfie afbeelding is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a selfie picture failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed_Title" translate="yes" space="preserve">
+          <source>Selfie upload failed</source>
+          <target state="translated">Selfie upload mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed" translate="yes" space="preserve">
+          <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Kon geen bestanden en mappen laden van MEGA. Probeer het opnieuw of klik op refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">Laden mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" space="preserve">
+          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal.</source>
+          <target state="translated">Uw PIN slot codes komen niet overheen. Typ ze opnieuw in en zorg dat ze hetzelfde zijn.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" space="preserve">
+          <source>PIN lock codes do not match</source>
+          <target state="translated">PIN slot codes komen niet overeen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError" translate="yes" space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="translated">U bent afgemeld op dit apparaat vanaf een andere locatie</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
+          <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
+          <target state="translated">Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschrijden. Wilt u uw account upgraden?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
+          <source>Overquota Alert!</source>
+          <target state="translated">Overquota Alert!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
+          <source>You have not selected a default download location for your files.
+
+To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="translated">U heeft geen standaard downloadlocatie voor uw bestanden geselecteerd.Om verder te gaan met het downloaden, selecteert u een doelmap of gaat u naar voorkeuren om uw standaard downloadlocatie in te stellen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file: {0} for upload.</source>
+          <target state="translated">Mislukt bestand voor te bereiden: {0} voor uploaden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" space="preserve">
+          <source>Preparing file failed</source>
+          <target state="translated">Het voorbereiden van het bestand mislukte</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Afgemeld</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed" translate="yes" space="preserve">
+          <source>Failed to copy the selected file: [{0}]</source>
+          <target state="translated">Mislukt om het geselecteerde bestand te kopiëren: [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" space="preserve">
+          <source>Copy file failed</source>
+          <target state="translated">Kopiëren van het bestand mislukte</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
+          <source>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
+Please, try to save/copy the file into the your device internal memory.</source>
+          <target state="translated">U hebt geen toestemming om dit type bestand te kopiëren naar de doelmap. Waarschijnlijk hebt u het  geprobeert op te slaan/te kopiëren naar een SD-kaart, een bestand van een niet ondersteunde type.Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw apparaat.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
+          <source>Unauthorized access</source>
+          <target state="translated">ongeautoriseerde toegang</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy masterkey to clipboard. Please try again</source>
+          <target state="translated">Mislukt master key te kopiëren naar het klembord. Probeer het nogmaals</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Clipboard failed</source>
+          <target state="translated">Klembord mislukte</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
+          <source>Current PIN lock is not correct or does not match</source>
+          <target state="translated">Huidige PIN slot is niet correct of komt niet overeen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
+          <source>Current PIN lock no match</source>
+          <target state="translated">Huiige PIN slot komt niet overeen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied" translate="yes" space="preserve">
+          <source>Masterkey copied to clipboard</source>
+          <target state="translated">Masterkey gekopieerd naar klembord</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" space="preserve">
+          <source>Masterkey copied</source>
+          <target state="translated">Masterkey gekopieerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
+          <source>PIN lock must be at least 4 digits.</source>
+          <target state="translated">PIN slot moet minstens 4 cijfers bevatten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" space="preserve">
+          <source>PIN lock too short</source>
+          <target state="translated">PIN sleutel te kort</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared" translate="yes" space="preserve">
+          <source>Cache has been succesfully cleared</source>
+          <target state="translated">Cache is met succes verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the cache memory is successfully cleared by user request.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared_Title" translate="yes" space="preserve">
+          <source>Cache cleared</source>
+          <target state="translated">Cache verwijderd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the cache memory is successfully cleared by user request.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
+          <source>Not enough free memory space to complete this operation. The app will shutdown now.</source>
+          <target state="translated">Onvoldoende geheugen om deze bewerking te voltooien. De app wordt nu stilgelegd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the app exceeds the memory limit quota of the device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" space="preserve">
+          <source>Memory Limit</source>
+          <target state="translated">Geheugen Limiet</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" space="preserve">
+          <source>no, only local</source>
+          <target state="translated">nee, alleen lokaal</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" space="preserve">
+          <source>Download options</source>
+          <target state="translated">Download opties</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" space="preserve">
+          <source>yes, export</source>
+          <target state="translated">ja, exporteer</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
+          <target state="translated">Mislukt om de map te selecteren. Probeer het nog eens of selecteer een andere map: [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
+          <source>Select folder failed</source>
+          <target state="translated">Selecteer de map mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed" translate="yes" space="preserve">
+          <source>Failed to upload file. Please try again. [{0}]</source>
+          <target state="translated">Mislukt om bestand te uploaden. Gelieve opnieuw te proberen. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed_Title" translate="yes" space="preserve">
+          <source>Upload failed</source>
+          <target state="translated">Uploaden mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
+          <source>Failed to select file(s). Please, try again [{0}]</source>
+          <target state="translated">Het selecteren van bestand(en) is mislukt. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
+          <source>Select file(s) failed</source>
+          <target state="translated">Bestand selecteren is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
+          <source>Malformed e-mail. Please try again.</source>
+          <target state="translated">Onjuiste e-mail. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
+          <source>E-mail is not associated with a MEGA account or wrong password. Please try again.</source>
+          <target state="translated">Onjuist e-mailadres of wachtwoord. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to permanent delete {0}?</source>
+          <target state="translated">Weet u zeker dat u {0} definitief wilt verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" space="preserve">
+          <source>Delete item?</source>
+          <target state="translated">verwijder item?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve your user data. Please try again. [{0}]</source>
+          <target state="translated">Het ophalen van uw gebruikersgegevens is mislukt.  Probeer alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving user data failed</source>
+          <target state="translated">Ophalen van gebruikersgegevens is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed" translate="yes" space="preserve">
+          <source>Failed to capture photo. Please, try again [{0}]</source>
+          <target state="translated">Vastleggen van de foto is mislukt. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
+          <source>Capture photo failed</source>
+          <target state="translated">Vastleggen van foto&apos;s  is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
+          <source>Failed to capture photo or video. Please, try again [{0}]</source>
+          <target state="translated">Vastleggen van foto of video is mislukt. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" space="preserve">
+          <source>Capture photo/video failed</source>
+          <target state="translated">Foto- / video-opname is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed" translate="yes" space="preserve">
+          <source>Failed to capture video. Please, try again [{0}]</source>
+          <target state="translated">Vastleggen van de video is mislukt. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
+          <source>Capture video failed</source>
+          <target state="translated">Video-opname is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to save settings. Please, try again [{0}]</source>
+          <target state="translated">Instellingen opslaan is mislukt.  Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Save settings failed</source>
+          <target state="translated">Fout bij opslaan instellingen </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
+          <source>An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</source>
+          <target state="translated">Er is een fout opgetreden bij de poging om een snelkoppeling te openen. Misschien is het een ongeldige snelkoppeling of de doelmap is verwijderd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
+          <source>Shortcut error</source>
+          <target state="translated">Snelkoppeling fout</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
+          <source>The credit card information is not correct. The credit card will not be charged.</source>
+          <target state="translated">De creditcardinformatie is niet correct. De creditcard wordt niet belast.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
+          <source>Storing credit card failed</source>
+          <target state="translated">Opslaan creditcard is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
+          <source>Please fill in all the required fields and try again.</source>
+          <target state="translated">Vul alstublieft alle gevraagde velden in en probeer opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
+          <source>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</source>
+          <target state="translated">Het creditcardnummer, maand/jaar geldig tot en het cvv nummer moeten nummeriek zijn. Controleer alstublieft of alles correct is en probeer opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
+          <source>Wrong data format</source>
+          <target state="translated">Dataformaat verkeerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscription" translate="yes" space="preserve">
+          <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
+          <target state="translated">U gaat uw MEGA abonnement annuleren. Laat ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" space="preserve">
+          <source>Thank you for your feedback!
+
+Are you sure you want to cancel your Mega subscription?</source>
+          <target state="translated">Dank u voor uw feedback! </target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
+          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="translated">Het abonnement is niet correct opgezegd. Neem alstublieft contact op met support@mega.nz om uw abonnement op te zeggen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
+          <source>Cancel subscription failed</source>
+          <target state="translated">Annulering van het abonnement is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
+          <source>The subscription has been canceled correctly.</source>
+          <target state="translated">Het abonnement is geannuleerd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully_Title" translate="yes" space="preserve">
+          <source>Subscription cancelled</source>
+          <target state="translated">Abonnement geannuleerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
+          <source>Cancel Subscription</source>
+          <target state="translated">Abonnement opzeggen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
+          <source>Please type a feedback message for us. Thanks.</source>
+          <target state="translated">We ontvangen graag uw feedback. Bedankt.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
+          <source>The operation has not finished correctly. The credit card will not be charged.</source>
+          <target state="translated">De handeling is niet goed afgerond. De creditcard wordt niet belast.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
+          <source>Upgrade account failed</source>
+          <target state="translated">Fout bij upgraden account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
+          <source>Account successfully upgraded!</source>
+          <target state="translated">Account met succes opgewaardeerd!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" space="preserve">
+          <source>Account upgraded</source>
+          <target state="translated">Account opgewaardeerd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
+          <target state="translated">Het ophalen van beschikbare betaalmethodes is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" space="preserve">
+          <source>Error getting payment methods</source>
+          <target state="translated">Fout bij het ophalen van betaalmethodes</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
+          <target state="translated">Het ophalen van de betalings url is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving payment Url failed</source>
+          <target state="translated">Ophalen betalings URL is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
+          <source>Background agents for MEGA have been disabled by the user</source>
+          <target state="translated">Agents op achtergrond voor MEGA zijn uitgeschakeld door gebruiker</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
+          <source>Background agents disabled</source>
+          <target state="translated">Agents op achtergrond uitgeschakeld</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
+          <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
+          <target state="translated">Om de automatische camera uploads correct te laten werken, moet u de optie  &quot;Blijf ingelogd &quot; mogelijk  maken. Wilt u deze optie inschakelen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
+          <source>Auto Camera Uploads prerequisites</source>
+          <target state="translated">Auto Camera Uploads vereisten</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
+          <source>Do you want to remove the contact {0}?</source>
+          <target state="translated">Wil u het contact {0} verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" space="preserve">
+          <source>Remove contact?</source>
+          <target state="translated">Contact verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
+          <source>Could not send the contact invitation. Please, try again.</source>
+          <target state="translated">Het contactverzoek kon niet worden verzonden. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
+          <source>Invite contact failed</source>
+          <target state="translated">Uitnodigen contact is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
+          <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
+          <target state="translated">Gebruiker {0} is uitgenodigd en zal op uw lijst met contactpersonen worden weergegeven wanneer ze de uitnodiging hebben geaccepteerd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
+          <source>Contact invited</source>
+          <target state="translated">Contact uitgenodigd</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
+          <source>MEGA automatic camera uploads</source>
+          <target state="translated">MEGA automatische camera uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
+          <source>Your account has been updated. Do you want to check the new account details?</source>
+          <target state="translated">Uw account is bijgewerkt. Wilt u uw nieuwe accountgegevens controleren?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
+          <source>Updated account</source>
+          <target state="translated">Bijgewerkt account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
+          <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
+          <target state="translated">Onze SSL/TLS-certificaat kan niet worden geverifieerd. Je zou kunnen worden getroffen door een man-in-the-middle-aanval.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Afgemeld</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
+          <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
+          <target state="translated">De Auto Camera Upload achtergrondtaak is mislukt. U kunt deze opnieuw inschakelen op de pagina instellingen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
+          <source>Auto Camera Upload failed</source>
+          <target state="translated">Auto Camera Upload is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
+          <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
+          <target state="translated">Verwijderen van contactpersoon is mislukt {0}. Probeer alstublieft opnieuw [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" space="preserve">
+          <source>Remove contact failed</source>
+          <target state="translated">Verwijderen van contact is mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
+          <source>Do you want to remove {0} contacts?</source>
+          <target state="translated">Wilt u {0} contacten verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" space="preserve">
+          <source>Remove contacts?</source>
+          <target state="translated">Contacten verwijderen?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
+          <source>Change password failed. Please try again.</source>
+          <target state="translated">Wijzigen wachtwoord is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
+          <source>Your password has been changed.</source>
+          <target state="translated">Uw wachtwoord is gewijzigd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
+          <source>The new and the old password must not match.</source>
+          <target state="translated">Het nieuwe en oude wachtwoord kunnen niet overeen komen.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
+          <source>Please fill in your old MEGA password and your new MEGA password.</source>
+          <target state="translated">Vul alstublieft uw oude MEGA wachtwoord en uw nieuwe MEGA wachtwoord in.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="translated">Sluiten van de sessie is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" space="preserve">
+          <source>The remaining sessions are successfully closed.</source>
+          <target state="translated">De overige sessies werden succesvol afgesloten.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
+          <source>Close session failed. Please try again. [{0}]</source>
+          <target state="translated">Sluiten van de sessie is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionSucces" translate="yes" space="preserve">
+          <source>The session has been successfully closed.</source>
+          <target state="translated">De sessie is met succes afgesloten.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
+          <source>Empty rubbish bin failed. Please try again.</source>
+          <target state="translated">Het legen van de prullenbak is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
+          <target state="translated">Weet u zeker dat u alle bestanden uit de prullenbak definitief wil verwijderen ?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
+          <source>The rubbish bin has been emptied successfully.</source>
+          <target state="translated">De prullenbak is met succes geleegd.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
+          <source>You are trying to add your own e-mail as a contact.</source>
+          <target state="translated">U probeert uw eigen e-mailadres toe te voegen als contactpersoon.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
+          <source>Failed to remove link. Please try again.</source>
+          <target state="translated">Link verwijderen is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
+          <source>You cannot perform this action. Please, connect to Internet and try again.</source>
+          <target state="translated">U kunt deze actie niet uitvoeren. Maak alstublieft verbinding met het internet en probeer het opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

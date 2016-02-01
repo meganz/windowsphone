@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -117,4 +117,186 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Ви збираєтесь скасувати MEGA підписку. Будь ласка, дайте нам знати, якщо існує щось, що ми можемо вам надати, щоб змінити вашу думку.</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="CancelTransfer" xml:space="preserve">
+    <value>Скасування передачі…</value>
+    <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Змінити пароль</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="CleanRubbishBin" xml:space="preserve">
+    <value>Очищення кошику для сміття…</value>
+    <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="CloseAllSessions" xml:space="preserve">
+    <value>Закриття усіх сесій…</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="CloseSession" xml:space="preserve">
+    <value>Закриття сесії…</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccount" xml:space="preserve">
+    <value>Підтвердження акаунту…</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Створення облікового запису…</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolder" xml:space="preserve">
+    <value>Створення теки…</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStore" xml:space="preserve">
+    <value>Збереження кредитної карти…</value>
+    <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNode" xml:space="preserve">
+    <value>Видалення '{0}'…</value>
+    <comment>Progress indicator message when deleting a node (folder or file) indicating the name - (String as short as possible).
+Preserve the '{0}' code because is for include node name.</comment>
+  </data>
+  <data name="DownloadLink" xml:space="preserve">
+    <value>Отримання ланки…</value>
+    <comment>Progress indicator message when retieving a download link - (String as short as possible).</comment>
+  </data>
+  <data name="FastLogin" xml:space="preserve">
+    <value>Поновлення сесії…</value>
+    <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodes" xml:space="preserve">
+    <value>Отримання файлів і тек… [{0}]</value>
+    <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
+Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
+  </data>
+  <data name="GetAccountDetails" xml:space="preserve">
+    <value>Отримання деталей акаунту…</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="GetContactData" xml:space="preserve">
+    <value>Отримання контактів…</value>
+    <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
+  </data>
+  <data name="GetLink" xml:space="preserve">
+    <value>Отримання ланки…</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethods" xml:space="preserve">
+    <value>Отримання способу оплати…</value>
+    <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrl" xml:space="preserve">
+    <value>Отримання URL оплати…</value>
+    <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreview" xml:space="preserve">
+    <value>Отримання попереднього перегляду…</value>
+    <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserData" xml:space="preserve">
+    <value>Отримання даних…</value>
+    <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFile" xml:space="preserve">
+    <value>Імпорт файлу…</value>
+    <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAdd" xml:space="preserve">
+    <value>Надсилання запиту контакту…</value>
+    <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactDelete" xml:space="preserve">
+    <value>Видалення запиту контакту…</value>
+    <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactRemind" xml:space="preserve">
+    <value>Нагадування про запит контакту…</value>
+    <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodes" xml:space="preserve">
+    <value>Відображення…</value>
+    <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Вхід у систему…</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Вихід…</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="MoveNode" xml:space="preserve">
+    <value>Перенесення…</value>
+    <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="NodeToTrash" xml:space="preserve">
+    <value>Перенесення у кошик для сміття…</value>
+    <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
+  </data>
+  <data name="PauseTransfers" xml:space="preserve">
+    <value>Призупинення передачі…</value>
+    <comment>Progress indicator message when pausing transfers - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareDownloads" xml:space="preserve">
+    <value>Підготовка завантаження…</value>
+    <comment>Progress indicator message when preparing downloads - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareUploads" xml:space="preserve">
+    <value>Підготовка відвантаження…</value>
+    <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveContact" xml:space="preserve">
+    <value>Видалення контакту…</value>
+    <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveFromOffline" xml:space="preserve">
+    <value>Видалення з автономного режиму…</value>
+    <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveLink" xml:space="preserve">
+    <value>Ланка видалення…</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNode" xml:space="preserve">
+    <value>Видалення…</value>
+    <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNode" xml:space="preserve">
+    <value>Перейменування…</value>
+    <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestAccept" xml:space="preserve">
+    <value>Ухвалення запиту контакту…</value>
+    <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestDeny" xml:space="preserve">
+    <value>Відхилення запиту контакту…</value>
+    <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ReplyContactRequestIgnore" xml:space="preserve">
+    <value>Ігнорування запиту контакту…</value>
+    <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
+  </data>
+  <data name="ResumeTransfers" xml:space="preserve">
+    <value>Відновлення передачі…</value>
+    <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
+  </data>
+  <data name="SaveForOffline" xml:space="preserve">
+    <value>Зберегти автономно…</value>
+    <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
+  </data>
+  <data name="ServersTooBusy" xml:space="preserve">
+    <value>Сервер зайнятий. Будь ласка, зачекайте…</value>
+    <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccount" xml:space="preserve">
+    <value>Покращення акаунту…</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>

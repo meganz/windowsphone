@@ -59,7 +59,7 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
@@ -117,4 +117,911 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AgreeTermsOfService" xml:space="preserve">
+    <value>Bạn cần phải đồng ý với Điều Khoản Dịch Vụ</value>
+    <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
+  </data>
+  <data name="ConfirmAccountFailed" xml:space="preserve">
+    <value>Quá trình xác thực tài khoản thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ConfirmAccountFailed_Title" xml:space="preserve">
+    <value>Xác thực tài khoản thất bại</value>
+    <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmAccountSucces" xml:space="preserve">
+    <value>Việc tạo tài khoản đã hoàn tất, đã xác thực và kích hoạt. Tài khoản sẽ tự động đăng nhập.</value>
+    <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
+  </data>
+  <data name="ConfirmAccountSucces_Title" xml:space="preserve">
+    <value>Tài khoản đã kích hoạt</value>
+    <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
+  </data>
+  <data name="ConfirmNeeded" xml:space="preserve">
+    <value>Xin kiểm tra hộp thư email của bạn và click vào đường liên kết để xác thực tài khoản của bạn</value>
+    <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
+  </data>
+  <data name="ConfirmNeeded_Title" xml:space="preserve">
+    <value>Yêu cầu xác thực</value>
+    <comment>Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</comment>
+  </data>
+  <data name="CreateAccountFailed" xml:space="preserve">
+    <value>Quá trình tạo tài khoản dịch vụ Ổ Mây MEGA thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CreateAccountFailed_Title" xml:space="preserve">
+    <value>Quá trình tạo tài khoản thất bại</value>
+    <comment>Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderFailed" xml:space="preserve">
+    <value>Tạo thư mục không thành công</value>
+    <comment>Message of the dialog displayed when the creation of a folder failed.</comment>
+  </data>
+  <data name="CreateFolderFailed_Title" xml:space="preserve">
+    <value>Quá trình tạo thư mục thất bại</value>
+    <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="CreateFolderSuccess" xml:space="preserve">
+    <value>Thư mục đã được tạo xong</value>
+    <comment>Message of the dialog displayed when create a folder successfully.</comment>
+  </data>
+  <data name="CreateFolderSuccess_Title" xml:space="preserve">
+    <value>Thư mục đã được tạo</value>
+    <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteNodeFailed" xml:space="preserve">
+    <value>Lỗi, không xóa được mục vừa chọn. Xin thử lại [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteNodeFailed_Title" xml:space="preserve">
+    <value>Xóa thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLinkFailed" xml:space="preserve">
+    <value>Lấy liên kết download thất bại. Xin thư lại sau.</value>
+    <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
+  </data>
+  <data name="DownloadLinkFailed_Title" xml:space="preserve">
+    <value>Lấy đường liên kết thất bại</value>
+    <comment>Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadNodeFailed" xml:space="preserve">
+    <value>Tải tệp tin thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DownloadNodeFailed_Title" xml:space="preserve">
+    <value>Lỗi tải xuống</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="FetchingNodesFailed" xml:space="preserve">
+    <value>Không thể lấy được bất kỳ dữ liệu từ MEGA. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</comment>
+  </data>
+  <data name="FetchingNodesFailed_Title" xml:space="preserve">
+    <value>Quá trình lấy dữ liệu thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</comment>
+  </data>
+  <data name="FolderCreateFailed" xml:space="preserve">
+    <value>Không tạo được thư mục. Xin thử lại sau.</value>
+    <comment>Message of the dialog displayed when the process/request to create a folder failed.</comment>
+  </data>
+  <data name="FolderCreateFailed_Title" xml:space="preserve">
+    <value>Quá trình tạo thư mục thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetLinkFailed" xml:space="preserve">
+    <value>Lấy đường liên kết thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
+  </data>
+  <data name="GetLinkFailed_Title" xml:space="preserve">
+    <value>Lấy đường liên kết bị thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPreviewFailed" xml:space="preserve">
+    <value>Chuẩn bị bản xem trước thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
+  </data>
+  <data name="GetPreviewFailed_Title" xml:space="preserve">
+    <value>Xem nhanh thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaved" xml:space="preserve">
+    <value>Đã hoàn tất xuất hình ảnh vào album 'saved pictures'</value>
+    <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaved_Title" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+    <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImageSaveError" xml:space="preserve">
+    <value>Lỗi xảy ra khi xuất ảnh vào album 'saved pictures'. Vui lòng thử lại sau</value>
+    <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
+  </data>
+  <data name="ImageSaveError_Title" xml:space="preserve">
+    <value>Lưu ảnh bị thất bại</value>
+    <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
+  </data>
+  <data name="ImportFileFailed" xml:space="preserve">
+    <value>Chuyển nhập tệp tin thất bại</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="ImportFileFailed_Title" xml:space="preserve">
+    <value>Chuyển nhập thất bại</value>
+    <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
+  </data>
+  <data name="LinkCopiedToClipboard" xml:space="preserve">
+    <value>Liên kết MEGA link này đã được sao chép vào bộ nhớ</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
+    <value>Đã sao chép vào bộ nhớ</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="LoginFailed" xml:space="preserve">
+    <value>Đăng  nhập vào Dịch vụ MEGA thất bại. Vui lòng thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LoginFailed_Title" xml:space="preserve">
+    <value>Đăng nhập thất bại</value>
+    <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MoveEqualsParent" xml:space="preserve">
+    <value>Điểm đến cho thư mục bị trùng với thư mục gốc. Việc di chuyển đã bị hủy bỏ.</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
+  </data>
+  <data name="MoveEqualsParent_Title" xml:space="preserve">
+    <value>Việc di chuyển thất bại</value>
+    <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</comment>
+  </data>
+  <data name="MoveFailed" xml:space="preserve">
+    <value>Di chuyển mục thất bại. Xin thử lại sau.</value>
+    <comment>Message of the dialog displayed when the process/request to move a file failed.</comment>
+  </data>
+  <data name="MoveFailed_Title" xml:space="preserve">
+    <value>Việc di chuyển thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="PasswordsDoNotMatch" xml:space="preserve">
+    <value>Mật khẩu nhập không trùng khớp với nhau. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
+  </data>
+  <data name="PictureSaved" xml:space="preserve">
+    <value>Hình ảnh đã được lưu vào photo album</value>
+    <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
+  </data>
+  <data name="PictureSaved_Title" xml:space="preserve">
+    <value>Đã lưu hình ảnh</value>
+    <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveItemQuestion" xml:space="preserve">
+    <value>Bạn có chắc muốn xỏa bỏ {0} không?</value>
+    <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
+  </data>
+  <data name="RemoveItemQuestion_Title" xml:space="preserve">
+    <value>Xóa không?</value>
+    <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeFailed" xml:space="preserve">
+    <value>Việc xóa bỏ bị thất bại</value>
+    <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
+  </data>
+  <data name="RemoveNodeFailed_Title" xml:space="preserve">
+    <value>Xóa bỏ thất bại</value>
+    <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RemoveNodeSuccess" xml:space="preserve">
+    <value>Đã xóa mục thành công</value>
+    <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
+  </data>
+  <data name="RemoveNodeSuccess_Title" xml:space="preserve">
+    <value>Đã xóa</value>
+    <comment>Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="RenameNodeFailed" xml:space="preserve">
+    <value>Đổi tên thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
+  </data>
+  <data name="RenameNodeFailed_Title" xml:space="preserve">
+    <value>Đổi tên thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
+    <value>Xin nhập mật khẩu cho tài khoản.</value>
+    <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsCreateAccount" xml:space="preserve">
+    <value>Xin điền tên bạn, địa chỉ email và mật khẩu</value>
+    <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
+  </data>
+  <data name="RequiredFieldsLogin" xml:space="preserve">
+    <value>Xin điền địa chỉ email và mật khẩu MEGA của bạn.</value>
+    <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
+  </data>
+  <data name="RequiredFields_Title" xml:space="preserve">
+    <value>Điền vào những khung được yêu cầu</value>
+    <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
+  </data>
+  <data name="SaveImageQuestion" xml:space="preserve">
+    <value>Bạn có muốn xuất hình này vào album 'saved pictures' không?</value>
+    <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
+  </data>
+  <data name="SaveImageQuestion_Title" xml:space="preserve">
+    <value>Lưu vào album điện thoại</value>
+    <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
+  </data>
+  <data name="UserNotOnline" xml:space="preserve">
+    <value>Bạn chưa đăng nhập vào MEGA. Xin mời đăng nhập lại.</value>
+    <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
+  </data>
+  <data name="UserNotOnline_Title" xml:space="preserve">
+    <value>Không online</value>
+    <comment>Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</comment>
+  </data>
+  <data name="GetThumbnailFailed" xml:space="preserve">
+    <value>Thất bại việc tạo ảnh nhỏ [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetThumbnailFailed_Title" xml:space="preserve">
+    <value>Tảo ảnh nhỏ thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetAccountDetailsFailed" xml:space="preserve">
+    <value>Khai thác chi tiết tài khoản thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
+    <value>Lấy thông tin chi tiết tài khoản bị thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoggedOut" xml:space="preserve">
+    <value>Đã đăng xuất</value>
+    <comment>Message of the dialog displayed when a user logged out successfully.</comment>
+  </data>
+  <data name="LoggedOut_Title" xml:space="preserve">
+    <value>Đã đăng xuất</value>
+    <comment>Title of the dialog displayed when a user logged out successfully - (String as short as possible).</comment>
+  </data>
+  <data name="LogoutFailed" xml:space="preserve">
+    <value>Không đăng xuất được. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="LogoutFailed_Title" xml:space="preserve">
+    <value>Đăng xuất ra thất bại</value>
+    <comment>Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa {0} mục này không?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
+  </data>
+  <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
+    <value>Xóa không?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiRemoveSucces" xml:space="preserve">
+    <value>{0} Mục đã bị xóa</value>
+    <comment>Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiRemoveSucces_Title" xml:space="preserve">
+    <value>Đã xóa</value>
+    <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed" xml:space="preserve">
+    <value>Thất bại trong việc chuyển vào thùng rác. Xin thử lại sau</value>
+    <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
+  </data>
+  <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
+    <value>Chuyển vào thùng rác không thành công</value>
+    <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Bạn có muốn chuyển {0} mục này vào thùng rác không?</value>
+    <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
+  </data>
+  <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Bỏ vào thùng rác?</value>
+    <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess" xml:space="preserve">
+    <value>Đã hoàn tất chuyển vào thùng rác</value>
+    <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
+  </data>
+  <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
+    <value>Đã chuyển</value>
+    <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
+    <value>Bạn có muốn chuyển {0} mục này vào thùng rác không?</value>
+    <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
+    <value>Xóa những mục này đi?</value>
+    <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
+    <value>Đã dời {0} Mục vào thùng rác</value>
+    <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
+  </data>
+  <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
+    <value>Đã di chuyển tệp tin</value>
+    <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersLogout" xml:space="preserve">
+    <value>Bạn đang có {0} mục đang chờ truyền tải. Các mục này này sẽ bị hủy khi bạn đăng xuất ra, bạn có chắc không?</value>
+    <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersLogout_Title" xml:space="preserve">
+    <value>Các Truyền Tải Đang Chờ</value>
+    <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
+  </data>
+  <data name="PendingTransfersExit" xml:space="preserve">
+    <value>Bạn hiện còn {0} mục đang chờ truyền tải. Nếu bạn thoát, những mục này sẽ bị hủy. Bạn có chắc muốn thoát không?</value>
+    <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
+  </data>
+  <data name="PendingTransfersExit_Title" xml:space="preserve">
+    <value>Các Truyền Tải Đang Chờ</value>
+    <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount" xml:space="preserve">
+    <value>Tài khoản đã được xác thực rồi. Bạn có thể dùng được ngay.</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
+  </data>
+  <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
+    <value>Tài khoản đã được xác thực rồi</value>
+    <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Mật khẩu vừa nhập không đúng</value>
+    <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
+  </data>
+  <data name="WrongPassword_Title" xml:space="preserve">
+    <value>Sai mật khẩu</value>
+    <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Bạn đã chọn hơn 100 mục ({0}) để tải về. Bạn chắc muốn tiến hành không?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
+Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="DownloadLimitMessage_Title" xml:space="preserve">
+    <value>Lượng tải về</value>
+    <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption" xml:space="preserve">
+    <value>Bạn có muốn tự động hóa việc xuất các tệp hình ảnh vào album sau khi tải về xong không? Bạn có thể thay đổi bằng cách vào trang thiết đặt ngay bây giờ. Những định dạng tệp tin khác sẽ chỉ được chứa vào không gian của ứng dụng này.</value>
+    <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
+  </data>
+  <data name="PausingTransfersFailed" xml:space="preserve">
+    <value>Tạm dừng các truyền tải thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
+  </data>
+  <data name="PausingTransfersFailed_Title" xml:space="preserve">
+    <value>Tạm dùng thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
+  </data>
+  <data name="ResumingTransfersFailed" xml:space="preserve">
+    <value>Khôi phục truyền tải thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="ResumingTransfersFailed_Title" xml:space="preserve">
+    <value>Khôi phục thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
+  </data>
+  <data name="MinimalPictureSelection" xml:space="preserve">
+    <value>Xin chọn ít nhất một tấm ảnh để tải lên</value>
+    <comment>Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</comment>
+  </data>
+  <data name="MinimalPictureSelection_Title" xml:space="preserve">
+    <value>Chưa có tấm ảnh nào được chọn</value>
+    <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed" xml:space="preserve">
+    <value>Chuẩn bị ảnh thất bại: {0} để tải lên</value>
+    <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareImageForUploadFailed_Title" xml:space="preserve">
+    <value>Chuẩn bị hình ảnh thất bại</value>
+    <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="PhotoUploadError" xml:space="preserve">
+    <value>Lỗi đăng ảnh</value>
+    <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
+  </data>
+  <data name="PhotoUploadError_Title" xml:space="preserve">
+    <value>Đăng tải hình không thành công</value>
+    <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Không thể tìm thấy tệp bạn vừa chọn</value>
+    <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
+  </data>
+  <data name="FileNotFound_Title" xml:space="preserve">
+    <value>Không tìm thấy tệp tin</value>
+    <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
+  </data>
+  <data name="OpenFileFailed" xml:space="preserve">
+    <value>Không mở được tệp bạn vừa chọn</value>
+    <comment>Message of the dialog displayed when the process to open a file failed.</comment>
+  </data>
+  <data name="OpenFileFailed_Title" xml:space="preserve">
+    <value>Không mở được tệp tin</value>
+    <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadSelfieFailed" xml:space="preserve">
+    <value>Tải lên ảnh tự sướng của bạn bị thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
+  </data>
+  <data name="UploadSelfieFailed_Title" xml:space="preserve">
+    <value>Đăng ảnh tự sướng thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</comment>
+  </data>
+  <data name="LoadNodesFailed" xml:space="preserve">
+    <value>Không thể tải dữ liệu và thư mục từ MEGA. Xin thử lại hoặc làm mới (refresh).</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</comment>
+  </data>
+  <data name="LoadNodesFailed_Title" xml:space="preserve">
+    <value>Tải thất bại</value>
+    <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch" xml:space="preserve">
+    <value>Hai mã PIN bạn vừa nhập không khớp. Xin nhập lại cho giống nhau</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
+    <value>Hai mã PIN vừa nhập không khớp</value>
+    <comment>Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError" xml:space="preserve">
+    <value>Bạn bị đẩy đăng xuất ra ngoài vì đã đăng nhập ở một thiết bị khác</value>
+    <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
+  </data>
+  <data name="OverquotaAlert" xml:space="preserve">
+    <value>Thao tác bị từ chối, vì bạn sẽ vượt mức không gian lưu trữ. Bạn có muốn nâng cấp tài khoản để thêm không gian không?</value>
+    <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
+  </data>
+  <data name="OverquotaAlert_Title" xml:space="preserve">
+    <value>Cảnh báo, Quá mức!</value>
+    <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
+  </data>
+  <data name="NoDownloadLocationSelected" xml:space="preserve">
+    <value>Bạn chưa có chọn một thư mục mặc định để lưu các tệp tin tải về.Để tiến hành download, xin chọn một thư mục đích hoặc tới phần tùy chỉnh để chọn ra một thư mục để lưu các tải về sau này.</value>
+    <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed" xml:space="preserve">
+    <value>Quá trình chuẩn bị tệp tin {0} để tải lên bị thất bại</value>
+    <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
+    <value>Quá trình chuẩn bị tệp tin thất bại</value>
+    <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="SessionIDError_Title" xml:space="preserve">
+    <value>Đã đăng xuất</value>
+    <comment>Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileFailed" xml:space="preserve">
+    <value>Quá trình sao chép tệp tin [{0}] thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CopyFileFailed_Title" xml:space="preserve">
+    <value>Sao chép không thành công</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
+    <value>Ban không có quyền truy cập và sao chép dạng tệp tin này tới thư mục bạn muốn. Có phải bạn đang cố sao chép hay lưu một tệp tin không được hỗ trợ vào thẻ nhớ SD?Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của bạn trước.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
+  </data>
+  <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
+    <value>Truy cập trái phép</value>
+    <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
+  </data>
+  <data name="ClipboardFailed" xml:space="preserve">
+    <value>Sao chép mã masterkey không thành công. Vui lòng thử lại</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="ClipboardFailed_Title" xml:space="preserve">
+    <value>Clipboard không hoạt động</value>
+    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
+    <value>Mã PIN vừa nhập không đúng hoặc không trùng khớp</value>
+    <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
+    <value>Không trùng với mã PIN hiện thời</value>
+    <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="MasterkeyCopied" xml:space="preserve">
+    <value>Đã sao chép mã masterkey vào bộ nhớ</value>
+    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="MasterkeyCopied_Title" xml:space="preserve">
+    <value>Đã sao chép mã masterkey</value>
+    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="PinLockTooShort" xml:space="preserve">
+    <value>Mã PIN cần ít nhất 4 con số</value>
+    <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="PinLockTooShort_Title" xml:space="preserve">
+    <value>Mã PIN này quá ngắn</value>
+    <comment>Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="CacheCleared" xml:space="preserve">
+    <value>Đã dọn xong</value>
+    <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="CacheCleared_Title" xml:space="preserve">
+    <value>Đã dọn xong</value>
+    <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
+  </data>
+  <data name="MemoryLimitError" xml:space="preserve">
+    <value>Không đủ không gian trống để thực hiện tiến trình này. Ứng dụng sẽ bị đóng</value>
+    <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
+  </data>
+  <data name="MemoryLimitError_Title" xml:space="preserve">
+    <value>Giới hạn Bộ nhớ</value>
+    <comment>Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_NoButton" xml:space="preserve">
+    <value>không, chỉ nội bộ</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_Title" xml:space="preserve">
+    <value>Tuỳ chọn tải</value>
+    <comment>Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</comment>
+  </data>
+  <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
+    <value>vâng, xuất ra</value>
+    <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>Chọn thư mục thất bại. Xin thử lại hoặc chọn một thư mục khác: [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFolderFailed_Title" xml:space="preserve">
+    <value>Không chọn được thư mục</value>
+    <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
+  </data>
+  <data name="UploadNodeFailed" xml:space="preserve">
+    <value>Đăng tải thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="UploadNodeFailed_Title" xml:space="preserve">
+    <value>Tải lên thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFileFailed" xml:space="preserve">
+    <value>Lỗi khi chọn tệp tin. Xin thử lại sau [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SelectFileFailed_Title" xml:space="preserve">
+    <value>Lỗi chọn tệp tin</value>
+    <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
+  </data>
+  <data name="MalformedEmail" xml:space="preserve">
+    <value>Email viết không đúng. Xin viết lại.</value>
+    <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
+  </data>
+  <data name="WrongEmailPasswordLogin" xml:space="preserve">
+    <value>Sai email hoặc mật khẩu. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
+  </data>
+  <data name="DeleteNodeQuestion" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa {0} vĩnh viễn?</value>
+    <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteNodeQuestion_Title" xml:space="preserve">
+    <value>Xóa mục này?</value>
+    <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="GetUserDataFailed" xml:space="preserve">
+    <value>Lấy dữ liệu người dùng thất bại. Xin thử lại.  [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetUserDataFailed_Title" xml:space="preserve">
+    <value>Lấy dữ liệu người dùng thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoFailed" xml:space="preserve">
+    <value>Lỗi chụp hình. Xin thử lại  [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoFailed_Title" xml:space="preserve">
+    <value>Chụp ảnh thất bại</value>
+    <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed" xml:space="preserve">
+    <value>Lỗi chụp ảnh/video.  Xin thử lại sau [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
+    <value>Quay phim / chụp ảnh thất bại</value>
+    <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
+  </data>
+  <data name="CaptureVideoFailed" xml:space="preserve">
+    <value>Lỗi quay phim. Xin thử lại  [{0}]</value>
+    <comment>Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CaptureVideoFailed_Title" xml:space="preserve">
+    <value>Quay phim thất bại</value>
+    <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
+  </data>
+  <data name="SaveSettingsFailed" xml:space="preserve">
+    <value>Lỗi, không lưu lại được các tùy chỉnh. Xin thử lại [{0}]</value>
+    <comment>Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="SaveSettingsFailed_Title" xml:space="preserve">
+    <value>Lỗi lưu các thiết đặt</value>
+    <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="ShortCutFailed" xml:space="preserve">
+    <value>Lỗi phát sinh khi mở một lối tắt (shortcut). Có thể là do nó không hợp lệ hoặc thư mục đích đã bị xóa.</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
+  </data>
+  <data name="ShortCutFailed_Title" xml:space="preserve">
+    <value>Lối tắt hỏng</value>
+    <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
+  </data>
+  <data name="CreditCardStoreFailed" xml:space="preserve">
+    <value>Thông tin thẻ tín dụng bạn vừa nhập không chính xác. Giao dịch chưa thể diễn ra.</value>
+    <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
+  </data>
+  <data name="CreditCardStoreFailed_Title" xml:space="preserve">
+    <value>Lưu thông tin thẻ thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
+    <value>Xin điền các thông tin cần thiết vào chỗ trống và thử lại.</value>
+    <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
+  </data>
+  <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
+    <value>Số thẻ tín dụng, tháng/năm của ngày hết hạn và mã CVV phải viết bằng số. Xin kiểm tra lại nếu chưa đúng và thử lại.</value>
+    <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
+  </data>
+  <data name="WrongDataFormat_Title" xml:space="preserve">
+    <value>Sai định dạng data</value>
+    <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription" xml:space="preserve">
+    <value>Bạn đang chuẩn bị hủy bỏ thuê bao MEGA hiện hành. Xin cho chúng tôi biết bất cứ điều gì chúng tôi có thể làm để giúp bạn tốt hơn.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Cám ơn lời phản hồi của quý khách!Quý khách có chắc muốn hủy bỏ hạng thuê bao MEGA không?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed" xml:space="preserve">
+    <value>Thuê bao dịch vụ không được hủy đúng cách. Xin liên hệ support@mega.nz để được giúp đỡ hủy bỏ dịch vụ.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
+  </data>
+  <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
+    <value>Hủy bỏ thuê bao thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
+    <value>Gói thuê bao đã bị hủy.</value>
+    <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
+  </data>
+  <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
+    <value>Thuê bao đã được hủy</value>
+    <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="CancelSubscription_Title" xml:space="preserve">
+    <value>Hủy Thuê Bao</value>
+    <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
+    <value>Xin gửi phản hồi cho chúng tôi. Xin cảm ơn.</value>
+    <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
+  </data>
+  <data name="UpgradeAccountFailed" xml:space="preserve">
+    <value>Quá trình chưa hoàn tất một cách chính xác. Giao dịch chưa thể diễn ra.</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
+  </data>
+  <data name="UpgradeAccountFailed_Title" xml:space="preserve">
+    <value>Lỗi nâng cấp tài khoản</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully" xml:space="preserve">
+    <value>Tài khoản đã được nâng cấp thành công!</value>
+    <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
+  </data>
+  <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
+    <value>Đã nâng cấp tài khoản</value>
+    <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed" xml:space="preserve">
+    <value>Lấy phương thức thanh toán thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
+    <value>Lỗi khi khai thác phương thức thanh toán</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
+  </data>
+  <data name="GetPaymentUrlFailed" xml:space="preserve">
+    <value>Lỗi lấy đường dẫn liễn kết thanh toán. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
+    <value>Lấy URL thanh toán không thành công</value>
+    <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
+  </data>
+  <data name="BackgroundAgentDisabled" xml:space="preserve">
+    <value>Tiến trình chạy nền MEGA bị vô hiệu bởi người dùng</value>
+    <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
+    <value>Tiến trình chạy nền bị vô hiệu</value>
+    <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
+    <value>Để chức năng Camera Uploads hoạt động tốt, bạn cần phải bật tùy chọn "Giữ đăng nhập". Bạn có muốn bật ngay không?</value>
+    <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
+    <value>Điều kiện yêu cầu cho Camera Uploads Tự Động</value>
+    <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
+  </data>
+  <data name="DeleteContactQuestion" xml:space="preserve">
+    <value>Bạn có muốn xóa tên liên lạc {0} không?</value>
+    <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteContactQuestion_Title" xml:space="preserve">
+    <value>Xóa tên liên lạc?</value>
+    <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddFailed" xml:space="preserve">
+    <value>Lời mời liên lạc đã không được gửi đi thành công. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
+  </data>
+  <data name="InviteContactAddFailed_Title" xml:space="preserve">
+    <value>Gửi lời mời tới tên liên lạc thất bại</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully" xml:space="preserve">
+    <value>Người dùng {0} đã nhận được lời mời và sẽ xuất hiện trong danh bạ của bạn khi họ chấp nhận lời mời đó.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</comment>
+  </data>
+  <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
+    <value>Liên lạc được mời</value>
+    <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
+  </data>
+  <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
+    <value>Tự động upload ảnh MEGA</value>
+    <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
+  </data>
+  <data name="AccountUpdate" xml:space="preserve">
+    <value>Tài khoản của bạn đã được cập nhật. Bạn có muốn xem qua thông tin tài khoản không?</value>
+    <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="AccountUpdated_Title" xml:space="preserve">
+    <value>Đã cập nhật thông tin tài khoản</value>
+    <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
+  </data>
+  <data name="SSLKeyError" xml:space="preserve">
+    <value>Giao thức SSL/TLS gặp trục trặc và không thể xác thực được. Bạn có thể đang bị hack trung gian.</value>
+    <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="SSLKeyError_Title" xml:space="preserve">
+    <value>Đã đăng xuất</value>
+    <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
+  </data>
+  <data name="AutoCameraUploadFailed" xml:space="preserve">
+    <value>Tác vụ ngầm cho tính năng Tự Động Upload Ảnh bị ngưng hoạt động. Bạn có thể tìm lại các thiết đặt để bật lại.</value>
+    <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
+    <value>Tự Động Upload Ảnh bị lỗi</value>
+    <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
+  </data>
+  <data name="DeleteContactFailed" xml:space="preserve">
+    <value>Xóa tên liên lạc {0} thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
+Preserve the {0} code because is for include the contact email in runtime.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DeleteContactFailed_Title" xml:space="preserve">
+    <value>Xóa tên liên lạc thất bại</value>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
+    <value>Bạn có muốn xóa {0} tên liên lạc này không?</value>
+    <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
+  </data>
+  <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
+    <value>Xóa các tên liên lạc này?</value>
+    <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
+  </data>
+  <data name="ChangePasswordFailed" xml:space="preserve">
+    <value>Thay đổi mật khẩu thất bại. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được đổi.</value>
+    <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
+  </data>
+  <data name="NewAndOldPasswordMatch" xml:space="preserve">
+    <value>Mật khẩu mới và cũ không được giống nhau.</value>
+    <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
+  </data>
+  <data name="RequiredFieldsChangePassword" xml:space="preserve">
+    <value>Xin điền vào mật khẩu cũ bạn dùng cho MEGA trước đây, và mật khẩu mới bạn muốn dùng.</value>
+    <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
+  </data>
+  <data name="CloseAllSessionsFailed" xml:space="preserve">
+    <value>Đóng phiên hoạt động thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseAllSessionsSuccess" xml:space="preserve">
+    <value>Tất cả các phiên hoạt động đã được đóng lại thành công.</value>
+    <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
+  </data>
+  <data name="CloseSessionFailed" xml:space="preserve">
+    <value>Đóng phiên hoạt động thất bại. Xin thử lại. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="CloseSessionSucces" xml:space="preserve">
+    <value>Phiên hoạt động đã được đóng lại thành công.</value>
+    <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
+  </data>
+  <data name="CleanRubbishBinFailed" xml:space="preserve">
+    <value>Dọn thùng rác không thành công. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
+  </data>
+  <data name="CleanRubbishBinQuestion" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa vĩnh viễn các tệp tin trong thùng rác hay không?</value>
+    <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
+  </data>
+  <data name="CleanRubbishBinSuccess" xml:space="preserve">
+    <value>Đã dọn sạch thùng rác thành công.</value>
+    <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
+  </data>
+  <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
+    <value>Bạn đang tự điền tên của mình vào danh bạ.</value>
+    <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
+  </data>
+  <data name="RemoveLinkFailed" xml:space="preserve">
+    <value>Xóa đường dẫn liên kết thất bại. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
+  </data>
+  <data name="NoInternetConnectionMessage" xml:space="preserve">
+    <value>Bạn không thể thực hiện hành động này. Xin kết nối Internet và thử lại.</value>
+    <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
 </root>

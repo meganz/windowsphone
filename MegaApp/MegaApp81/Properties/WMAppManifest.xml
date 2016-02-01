@@ -1,8 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
-  <DefaultLanguage xmlns="" code="en-US" />
+  <DefaultLanguage xmlns="" code="en" />
   <Languages xmlns="">
-    <Language code="es-ES" />
+    <Language code="ar" />
+    <Language code="da" />
+    <Language code="de" />
+    <Language code="es" />
+    <Language code="fr" />
+    <Language code="hr" />
+    <Language code="it" />
+    <Language code="nl" />
+    <Language code="pt-BR" />
+    <Language code="pt" />
+    <Language code="ro" />
+    <Language code="ru" />
+    <Language code="sv" />
+    <Language code="tr" />
+    <Language code="bg" />
+    <Language code="cs" />
+    <Language code="zh-Hans" />
+    <Language code="zh-Hant" />
+    <Language code="ko" />
+    <Language code="sk" />
+    <Language code="sl" />
+    <Language code="et" />
+    <Language code="fi" />
+    <Language code="ka" />
+    <Language code="he" />
+    <Language code="id" />
+    <Language code="hu" />
+    <Language code="en" />
+    <Language code="ja" />
+    <Language code="fa" />
+    <Language code="pl" />
+    <Language code="sr" />
+    <Language code="th" />
+    <Language code="uk" />
+    <Language code="vi" />
   </Languages>
   <App xmlns="" ProductID="{7d8d3817-2eb5-416a-9147-ed5e83dee03e}" Title="MEGA Privacy" RuntimeType="Silverlight" Version="3.0.0.81" Genre="apps.normal" Author="Mega Limited (GoedWare)" Description="MEGA Cloud Service Application" Publisher="Mega Limited" PublisherID="{78b72e51-6188-4f93-9245-24d5c79f8840}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
@@ -29,19 +63,13 @@
           <Count>0</Count>
           <IconImageURI IsRelative="true" IsResource="false">Assets\Tiles\IconImage.png</IconImageURI>
           <Title>MEGA</Title>
-          <Message>
-          </Message>
-          <BackgroundColor>
-          </BackgroundColor>
+          <Message></Message>
+          <BackgroundColor></BackgroundColor>
           <HasLarge>False</HasLarge>
-          <LargeContent1>
-          </LargeContent1>
-          <LargeContent2>
-          </LargeContent2>
-          <LargeContent3>
-          </LargeContent3>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
-          </DeviceLockImageURI>
+          <LargeContent1></LargeContent1>
+          <LargeContent2></LargeContent2>
+          <LargeContent3></LargeContent3>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
         </TemplateIconic>
       </PrimaryToken>
     </Tokens>
