@@ -40,8 +40,14 @@ namespace MegaApp.Pages
         {
             this.ApplicationBar = (ApplicationBar)Resources["NodeDetailsMenu"];
             
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Download.ToLower();            
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Remove.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Download.ToLower();
+
+            if (!_nodeViewModel.IsExported)
+                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.GetLink.ToLower();
+            else
+                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ManageLink.ToLower();
+
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.Remove.ToLower();            
             
             ApplicationBar.MenuItems.Clear();
 
@@ -56,18 +62,8 @@ namespace MegaApp.Pages
                 createShortcut.Click += new EventHandler(OnCreateShortcutClick);
             }
                         
-            if(!_nodeViewModel.IsExported)
+            if(_nodeViewModel.IsExported)
             {
-                ApplicationBarMenuItem getLink = new ApplicationBarMenuItem(UiResources.GetLink.ToLower());
-                ApplicationBar.MenuItems.Add(getLink);
-                getLink.Click += new EventHandler(OnGetLinkClick);
-            }                
-            else
-            {
-                ApplicationBarMenuItem manageLink = new ApplicationBarMenuItem(UiResources.ManageLink.ToLower());
-                ApplicationBar.MenuItems.Add(manageLink);
-                manageLink.Click += new EventHandler(OnGetLinkClick);
-
                 ApplicationBarMenuItem removeLink = new ApplicationBarMenuItem(UiResources.RemoveLink.ToLower());
                 ApplicationBar.MenuItems.Add(removeLink);
                 removeLink.Click += new EventHandler(OnRemoveLinkClick);

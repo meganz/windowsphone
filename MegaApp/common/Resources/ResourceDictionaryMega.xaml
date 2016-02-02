@@ -117,7 +117,7 @@
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <Image Source="/Assets/AppBar/open_link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Grid>                
                 
                 <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
@@ -161,7 +161,7 @@
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <Image Source="/Assets/AppBar/open_link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Grid>
                 
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
@@ -218,7 +218,7 @@
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-7,0,0,-1" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-7,0,0,-1" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
         </Grid>
     </DataTemplate>
@@ -266,7 +266,7 @@
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </DataTemplate>
 
@@ -332,7 +332,7 @@
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
         </Grid>
     </DataTemplate>
@@ -395,7 +395,7 @@
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </DataTemplate>
     
