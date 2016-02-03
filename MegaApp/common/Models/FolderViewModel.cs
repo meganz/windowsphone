@@ -810,7 +810,9 @@ namespace MegaApp.Models
             InitializePerformanceParameters(out viewportItemCount, out backgroundItemCount);
 
             // We will not add nodes one by one in the dispatcher but in groups
-            var helperList = new List<IMegaNode>(1024);
+            List<IMegaNode> helperList;
+            try { helperList = new List<IMegaNode>(1024); }
+            catch (ArgumentOutOfRangeException) { helperList = new List<IMegaNode>(); }
 
             for (int i = 0; i < listSize; i++)
             {
