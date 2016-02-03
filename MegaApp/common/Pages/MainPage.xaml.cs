@@ -591,19 +591,23 @@ namespace MegaApp.Pages
 
         private bool CheckAndGoFolderUp(bool isCancel)
         {
-            if (isCancel) return true;
-
-            if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
+            try 
             {
-                return _mainPageViewModel.CloudDrive.GoFolderUp();
-            }
+                if (isCancel) return true;
 
-            if(MainPivot.SelectedItem.Equals(RubbishBinPivot))
-            {
-                return _mainPageViewModel.RubbishBin.GoFolderUp();
-            }
+                if (MainPivot.SelectedItem.Equals(CloudDrivePivot) && _mainPageViewModel.CloudDrive != null)
+                {
+                    return _mainPageViewModel.CloudDrive.GoFolderUp();
+                }
 
-            return false;
+                if (MainPivot.SelectedItem.Equals(RubbishBinPivot) && _mainPageViewModel.RubbishBin != null)
+                {
+                    return _mainPageViewModel.RubbishBin.GoFolderUp();
+                }
+
+                return false;
+            }
+            catch (Exception) { return false; }
         }
 
         private bool CheckPivotInView(bool isCancel)
