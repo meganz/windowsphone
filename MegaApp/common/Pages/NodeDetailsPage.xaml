@@ -58,17 +58,17 @@
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,-2,0,0" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        <SolidColorBrush Color="White"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
