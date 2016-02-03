@@ -20,8 +20,6 @@ namespace MegaApp.Models
             this._megaSdk = megaSdk;
             this._loginPage = loginPage;
             this.ControlState = true;
-
-            this.ControlState = true;
         }
 
         #region Methods
