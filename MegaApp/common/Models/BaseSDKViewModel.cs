@@ -48,20 +48,28 @@ namespace MegaApp.Models
         public void TranslateAppBarItems(IList<ApplicationBarIconButton> iconButtons,
             IList<ApplicationBarMenuItem> menuItems, IList<string> iconStrings, IList<string> menuStrings)
         {
-            for (var i = 0; i < iconButtons.Count; i++)
+            if (iconButtons != null && iconStrings != null)
             {
-                if (iconStrings[i] == null) throw new IndexOutOfRangeException("iconStrings");
+                for (var i = 0; i < iconButtons.Count; i++)
+                {
+                    if (iconButtons[i] == null) throw new IndexOutOfRangeException("iconButtons");
+                    if (iconStrings[i] == null) throw new IndexOutOfRangeException("iconStrings");
 
-                iconButtons[i].Text = iconStrings[i].ToLower();
+                    iconButtons[i].Text = iconStrings[i].ToLower();
+                }
             }
 
-            for (var i = 0; i < menuItems.Count; i++)
+            if (menuItems != null && menuStrings != null)
             {
-                if (menuStrings[i] == null) throw new IndexOutOfRangeException("menuStrings");
+                for (var i = 0; i < menuItems.Count; i++)
+                {
+                    if (menuItems[i] == null) throw new IndexOutOfRangeException("menuItems");
+                    if (menuStrings[i] == null) throw new IndexOutOfRangeException("menuStrings");
 
-                menuItems[i].Text = menuStrings[i].ToLower();
+                    menuItems[i].Text = menuStrings[i].ToLower();
+                }
             }
-        }        
+        }
 
         #endregion
 

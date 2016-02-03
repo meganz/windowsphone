@@ -30,7 +30,7 @@ namespace MegaApp.MegaApi
             timerAPI_EAGAIN = new DispatcherTimer();
             timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
             timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);            
-        }        
+        }
 
         // Method which is call when the timer event is triggered
         private void timerTickAPI_EAGAIN(object sender, object e)
@@ -114,6 +114,8 @@ namespace MegaApp.MegaApi
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(false);
+
+                _loginViewModel.ControlState = true;
 
                 timerAPI_EAGAIN.Stop();                
             });            
