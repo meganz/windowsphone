@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
-using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
@@ -12,12 +11,13 @@ using Microsoft.Phone.Tasks;
 
 namespace MegaApp.Models
 {    
-    class CreateAccountViewModel : BaseRequestListenerViewModel 
+    class CreateAccountViewModel : BaseSdkViewModel 
     {
         private readonly MegaSDK _megaSdk;
         private readonly LoginPage _loginPage;
 
         public CreateAccountViewModel(MegaSDK megaSdk, LoginPage loginPage)
+            : base(megaSdk)
         {
             this._megaSdk = megaSdk;
             this._loginPage = loginPage;
@@ -37,7 +37,8 @@ namespace MegaApp.Models
                     {
                         if (TermOfService)
                         {
-                            this._megaSdk.createAccount(Email, Password, Name, this);
+                            this._megaSdk.createAccount(Email, Password, Name, 
+                                new CreateAccountRequestListener(this, _loginPage));
                         }
                         else
                         {
@@ -112,80 +113,6 @@ namespace MegaApp.Models
         public string Name { get; set; }
         public bool TermOfService { get; set; }
         
-        #endregion
-
-        #region Base Properties
-
-        protected override string ProgressMessage
-        {
-            get { return ProgressMessages.CreateAccount; }
-        }
-
-        protected override string ErrorMessage
-        {
-            get { return AppMessages.CreateAccountFailed; }
-        }
-
-        protected override string ErrorMessageTitle
-        {
-            get { return AppMessages.CreateAccountFailed_Title.ToUpper(); }
-        }
-
-        protected override string SuccessMessage
-        {
-            get { return AppMessages.ConfirmNeeded; }
-        }
-
-        protected override string SuccessMessageTitle
-        {
-            get { return AppMessages.ConfirmNeeded_Title.ToUpper(); }
-        }
-
-        protected override bool ShowSuccesMessage
-        {
-            get { return true; }
-        }
-
-        protected override bool NavigateOnSucces
-        {
-            get { return true; }
-        }
-
-        protected override bool ActionOnSucces
-        {
-            get { return false; }
-        }
-
-        protected override Type NavigateToPage
-        {
-            get { return typeof (InitTourPage); }
-        }
-
-        protected override NavigationParameter NavigationParameter
-        {
-            get { return NavigationParameter.Normal; }
-        }
-
-        #endregion
-        
-        #region MRequestListenerInterface
-
-        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(false);
-
-                this.ControlState = true;
-
-                if (_loginPage != null)
-                    _loginPage.SetApplicationBar(true);
-            });
-
-            base.onRequestFinish(api, request, e);
-        }
-
-        #endregion
+        #endregion        
     }
 }
