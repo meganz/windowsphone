@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="es-ES" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="es" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -182,46 +182,46 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Path too long</source>
           <target state="new">Path too long</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" xml:space="preserve">
           <source>Invalid name or path</source>
           <target state="new">Invalid name or path</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" xml:space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
           <target state="new">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" xml:space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
           <target state="new">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
           <source>Access denied</source>
           <target state="new">Access denied</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" xml:space="preserve">
           <source>Invalid file name</source>
           <target state="new">Invalid file name</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" xml:space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
           <target state="new">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" xml:space="preserve">
           <source>You don't have access to the path '{0}'. Please, select another one and try again.</source>
           <target state="new">You don't have access to the path '{0}'. Please, select another one and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
@@ -489,7 +489,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" xml:space="preserve">
           <source>Failed to select folder. Please, try again or select another folder.</source>
           <target state="needs-review-translation">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
           <source>yes, export</source>
@@ -501,7 +502,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Failed to select folder. Please, try again or select another folder: [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" xml:space="preserve">
           <source>Download options</source>
           <target state="translated">Opciones de descarga</target>
