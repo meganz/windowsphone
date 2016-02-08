@@ -63,6 +63,16 @@ namespace MegaApp.Services
             }
         }
 
+        public static bool HasIllegalChars(string name)
+        {
+            var invalidChars = Path.GetInvalidFileNameChars();
+            foreach (var c in invalidChars)
+            {
+                if (name.Contains(c.ToString())) return true;
+            }
+            return false;
+        }
+
         public static void ClearFiles(IEnumerable<string> filesToDelete)
         {
             if (filesToDelete == null) return;
