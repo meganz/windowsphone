@@ -697,7 +697,7 @@ Please, try to save/copy the file into the your device internal memory.</value>
     <value>yes, export</value>
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
-  <data name="SelectFolderFailed" xml:space="preserve">
+  <data name="SelectFolderFailedWithErrorCode" xml:space="preserve">
     <value>Failed to select folder. Please, try again or select another folder: [{0}]</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1029,12 +1029,44 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>You cannot perform this action. Please, connect to Internet and try again.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
-  <data name="IllegalChars" xml:space="preserve">
-    <value>Folder '{0}' has illegal characters. Please change name before download.</value>
-    <comment>Message of the dialog displayed in cases that the folder name for download contains illegal path/filename chars.</comment>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>You don't have access to the path '{0}'. Please, select another one and try again.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
-  <data name="IllegalChars_Title" xml:space="preserve">
-    <value>Illegal chars</value>
-    <comment>Title of the dialog displayed in cases that the folder name for download contains illegal path/filename chars - (String as short as possible).</comment>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Access denied</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>Invalid file name</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>Path too long</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>Invalid name or path</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="SelectFolderFailed" xml:space="preserve">
+    <value>Failed to select folder. Please, try again or select another folder.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
 </root>
