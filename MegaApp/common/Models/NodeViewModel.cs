@@ -234,42 +234,45 @@ namespace MegaApp.Models
             if (AppInformation.PickerOrAsyncDialogIsOpen) return;
 
             if (downloadPath == null)
-            {
                 if (!await FolderService.SelectDownloadFolder(this)) return;
-            }
 
+            if (String.IsNullOrWhiteSpace(downloadPath))
+            {
+                await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
+                    AppMessages.SelectFolderFailed, App.AppInformation, 
+                    MessageDialogButtons.Ok).ShowDialogAsync();
+                return;
+            }
+                        
             // If selected file is a folder then also select it childnodes to download
+            bool result;
             if(this.IsFolder)
-            {
-                await RecursiveDownloadFolder(transferQueu, downloadPath, this);
-            }
+                result = await RecursiveDownloadFolder(transferQueu, downloadPath, this);
             else
-            {
-                /* HOT FIX --> WILL BE REMOVED
-                 * REMOVE WHEN SEPARATE THE OFFLINE FOLDER AND THE DOWNLOAD FOLDER */
-                if (!FolderService.FolderExists(Path.GetDirectoryName(this.Transfer.FilePath)))
-                    FolderService.CreateFolder(Path.GetDirectoryName(this.Transfer.FilePath));
-
-                this.Transfer.DownloadFolderPath = downloadPath;
-                transferQueu.Add(this.Transfer);
-                this.Transfer.StartTransfer();
-            }            
+                result = await DownloadFile(transferQueu, downloadPath, this);
 
             // TODO Remove this global declaration in method
             App.CloudDrive.NoFolderUpAction = true;
-            if (!transferQueu.Any(t => t.IsAliveTransfer())) return;
+            if (!result || !transferQueu.Any(t => t.IsAliveTransfer())) return;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
-        }
+        }        
 
-        private async Task RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
-        {
-            // Check for illegal characters in the folder name and replace with _ to avoid errors
+        private async Task<bool> RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
+        {            
+            if (String.IsNullOrWhiteSpace(folderNode.Name))
+            {
+                await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                    AppMessages.DownloadNodeFailed, this.AppInformation).ShowDialogAsync();
+                return false;
+            }
+
+            // Check for illegal characters in the folder name
             if (FolderService.HasIllegalChars(folderNode.Name))
             {
-                await new CustomMessageDialog(AppMessages.IllegalChars_Title,
-                    String.Format(AppMessages.IllegalChars, folderNode.Name),
+                await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                    String.Format(AppMessages.InvalidFolderNameOrPath, folderNode.Name),
                     this.AppInformation).ShowDialogAsync();
-                return;
+                return false;
             }
             
             String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
@@ -279,7 +282,8 @@ namespace MegaApp.Models
                 await downloadFolder.CreateFolderAsync(folderNode.Name, CreationCollisionOption.OpenIfExists);
             
             MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
-            
+
+            bool result = true; // Default value in case that the folder is empty
             for (int i=0; i < childList.size(); i++)
             {
                 // To avoid pass null values to CreateNew
@@ -290,22 +294,59 @@ namespace MegaApp.Models
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (childNode == null) continue;
 
+                bool partialResult;
                 if (childNode.IsFolder)
-                {
-                    await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
-                }                    
+                    partialResult = await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
                 else
-                {
-                    /* HOT FIX --> WILL BE REMOVED
-                     * REMOVE WHEN SEPARATE THE OFFLINE FOLDER AND THE DOWNLOAD FOLDER */
-                    if (!FolderService.FolderExists(Path.GetDirectoryName(childNode.Transfer.FilePath)))
-                        FolderService.CreateFolder(Path.GetDirectoryName(childNode.Transfer.FilePath));
+                    partialResult= await DownloadFile(transferQueu, newDownloadPath, childNode);
 
-                    childNode.Transfer.DownloadFolderPath = newDownloadPath;
-                    transferQueu.Add(childNode.Transfer);
-                    childNode.Transfer.StartTransfer();
-                }
+                // Only change the global result if the partial result indicates an error
+                if (!partialResult) result = partialResult;
             }
+
+            return result;
+        }
+
+        private async Task<bool> DownloadFile(TransferQueu transferQueu, String downloadPath, NodeViewModel fileNode)
+        {
+            if (String.IsNullOrWhiteSpace(fileNode.Name) || FileService.HasIllegalChars(fileNode.Name))
+            {
+                await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                    String.Format(AppMessages.InvalidFileName, fileNode.Name),
+                    App.AppInformation).ShowDialogAsync();
+                return false;
+            }
+                        
+            try
+            {
+                if (!FolderService.FolderExists(Path.GetDirectoryName(fileNode.Transfer.FilePath)))
+                    FolderService.CreateFolder(Path.GetDirectoryName(fileNode.Transfer.FilePath));
+
+                fileNode.Transfer.DownloadFolderPath = downloadPath;
+                transferQueu.Add(fileNode.Transfer);
+                fileNode.Transfer.StartTransfer();
+            }
+            catch (Exception e)
+            {
+                if (e is ArgumentException || e is NotSupportedException)
+                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                        String.Format(AppMessages.InvalidFileName, fileNode.Transfer.FilePath),
+                        App.AppInformation).ShowDialog();
+
+                if (e is PathTooLongException)
+                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                        String.Format(AppMessages.PathTooLong, fileNode.Transfer.FilePath),
+                        App.AppInformation).ShowDialog();
+
+                if (e is UnauthorizedAccessException)
+                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                        String.Format(AppMessages.FolderUnauthorizedAccess, Path.GetDirectoryName(fileNode.Transfer.FilePath)),
+                        App.AppInformation).ShowDialog();
+
+                return false;
+            }
+
+            return true;
         }
 #endif
 
