@@ -51,7 +51,7 @@ namespace MegaApp.Services
 
         public static void CreateFolder(string path)
         {
-            Directory.CreateDirectory(path);
+            Directory.CreateDirectory(path);            
         }
 
         public static void DeleteFolder (string path)
@@ -67,13 +67,13 @@ namespace MegaApp.Services
 
         public static bool HasIllegalChars(string path)
         {
-            var invalidChars = Path.GetInvalidFileNameChars();
+            var invalidChars = Path.GetInvalidPathChars();
             foreach (var c in invalidChars)
             {
                 if (path.Contains(c.ToString())) return true;
             }
             return false;
-        }
+        }        
 
         public static void Clear(string path)
         {
@@ -137,7 +137,7 @@ namespace MegaApp.Services
                 {
                     new CustomMessageDialog(
                             AppMessages.SelectFolderFailed_Title,
-                            String.Format(AppMessages.SelectFolderFailed, e.Message),
+                            String.Format(AppMessages.SelectFolderFailedWithErrorCode, e.Message),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
                 });
@@ -146,7 +146,6 @@ namespace MegaApp.Services
 
         public static async Task<bool> SelectDownloadFolder(NodeViewModel nodeViewModel = null)
         {
-
             if (SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false))
             {
                 // Ask the user a download location when alsways asking is ON
