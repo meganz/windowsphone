@@ -654,7 +654,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="UpgradeAccount" xml:space="preserve">
-    <value>Upgrading account...</value>
+    <value>ترقية الحساب</value>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="About" xml:space="preserve">
@@ -674,7 +674,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Start' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CancelAllTransfers" xml:space="preserve">
-    <value>Cancel all transfers</value>
+    <value>إلغاء جميع عمليات النقل</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Downloaded" xml:space="preserve">
@@ -706,7 +706,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourPrivacy1" xml:space="preserve">
-    <value>keep your files safe with MEGA's</value>
+    <value>ابق ملفاتك آمنة مع خدمة MEGA السحابية</value>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
@@ -718,11 +718,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpace1" xml:space="preserve">
-    <value>register now and get</value>
+    <value>سجل الآن واحصل على </value>
     <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpace2" xml:space="preserve">
-    <value>50 GB of free space.</value>
+    <value>50 جيجابايت مساحة مجانية '.'</value>
     <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
   </data>
   <data name="InitTourSpace_Title" xml:space="preserve">
@@ -730,11 +730,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpeed1" xml:space="preserve">
-    <value>transfers are fast.</value>
+    <value>عمليات نقل سريعة  '.'</value>
     <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed2" xml:space="preserve">
-    <value>quickly share files with everyone.</value>
+    <value>شارك ملفاتك مع أي شخص بسرعة عالية</value>
     <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed_Title" xml:space="preserve">
@@ -778,7 +778,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>Set up camera uploads</value>
+    <value>إعداد تحميلات الكاميرا</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
@@ -786,7 +786,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Skip' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="WifiAndDataPlan" xml:space="preserve">
-    <value>Wifi and Data plan</value>
+    <value>شبكة الواي فاي والبيانات الخلوية</value>
     <comment>Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="WifiOnly" xml:space="preserve">
@@ -826,7 +826,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChooseRenewalPeriod" xml:space="preserve">
-    <value>Choose renewal period below</value>
+    <value>اختر فترة إعادة التجديد في الأسفل </value>
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
@@ -842,7 +842,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardRecurringPayments" xml:space="preserve">
-    <value>Credit Card recurring payments</value>
+    <value>دفع متكرر من البطاقة الائتمانية</value>
     <comment>Label to indicate the user that the Credit Card payments are recurring.</comment>
   </data>
   <data name="CVV" xml:space="preserve">
@@ -898,7 +898,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Province' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectedPlan" xml:space="preserve">
-    <value>You have selected the {0} Plan</value>
+    <value>لقد اخترت الخطة {0}</value>
     <comment>Label to indicate the selected plan during the payment process.
 Preserve the {0} code because is for include the name/type of the selected plan in runtime.</comment>
   </data>
@@ -923,7 +923,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>Paste MEGA download link:</value>
+    <value>لصق رابط تحميل MEGA </value>
     <comment>Label for dialog message to download via a MEGA link</comment>
   </data>
   <data name="RenewsOn" xml:space="preserve">
@@ -931,7 +931,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
   </data>
   <data name="AccountPurchased" xml:space="preserve">
-    <value>You have purchased a {0} account.</value>
+    <value>لقد اشتريت {0} اشتراكات</value>
     <comment>Label to indicate the purchased account/subscription.
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
@@ -981,7 +981,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>Do you want to upgrade your account?</value>
+    <value>هل تريد ترقية حسابك؟</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
@@ -989,7 +989,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
-    <value>You're running out of space!</value>
+    <value>قاربت مساحتك على الامتلاء</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="ImportLinkBorderText" xml:space="preserve">
@@ -1041,7 +1041,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
     <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ReceivedRequests" xml:space="preserve">
-    <value>Received requests</value>
+    <value>الطلبات المستلمة</value>
     <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
   </data>
   <data name="SentRequests" xml:space="preserve">
@@ -1133,7 +1133,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
-    <value>External power source connected</value>
+    <value>تم إيصال مصدر طاقة خارجية</value>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
@@ -1161,11 +1161,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="CloseAllSessions" xml:space="preserve">
-    <value>Closing all sessions...</value>
+    <value>إغلاق جميع الجلسات...</value>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloseSession" xml:space="preserve">
-    <value>Closing session...</value>
+    <value>إغلاق الجلسة</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -1173,23 +1173,23 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="RemoveLink" xml:space="preserve">
-    <value>Removing link...</value>
+    <value>حذف الرابط</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
-    <value>Operating system restrictions</value>
+    <value>قيود نظام التشغيل</value>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>Saved for offline use</value>
+    <value>حفظ للاستخدام من دون اتصال</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>No files in your cloud drive</value>
+    <value>لا توجد ملفات بوحدة التخزين السحابي لديك</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
-    <value>No items saved for offline</value>
+    <value>لا عناصر محفوظة للتصفح دون اتصال </value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
@@ -1197,15 +1197,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>No shared folders</value>
+    <value>لا مجلدات مشاركة</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
-    <value>No downloads</value>
+    <value>لا يوجد ملفات محملة</value>
     <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>الاتصال غير متوفر</value>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
@@ -1213,7 +1213,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>Please select a default download folder.</value>
+    <value>الرجاء اختيار مجلد التحميل الافتراضي</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
 </root>

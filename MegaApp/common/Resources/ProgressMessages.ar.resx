@@ -122,7 +122,7 @@
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>Cancelling transfer...</value>
+    <value>يتم إلغاء النقل...</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="ChangePassword" xml:space="preserve">
@@ -130,15 +130,15 @@
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Clearing the rubbish bin...</value>
+    <value>يتم تنظيف سلة المهملات...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CloseAllSessions" xml:space="preserve">
-    <value>Closing all sessions...</value>
+    <value>إغلاق جميع الجلسات...</value>
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="CloseSession" xml:space="preserve">
-    <value>Closing session...</value>
+    <value>إغلاق الجلسة</value>
     <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
   </data>
   <data name="ConfirmAccount" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
-    <value>Storing credit card...</value>
+    <value>يتم تخزين البطاقة الإئتمانية</value>
     <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
   </data>
   <data name="DeleteNode" xml:space="preserve">
@@ -171,7 +171,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Fetching files and folders... [{0}]</value>
+    <value>جاري إحضار الملفات والمجلدات... [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
 Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
@@ -180,7 +180,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetContactData" xml:space="preserve">
-    <value>Getting contact data...</value>
+    <value>الحصول على بيانات جهة الاتصال...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
   <data name="GetLink" xml:space="preserve">
@@ -200,7 +200,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="GetUserData" xml:space="preserve">
-    <value>Getting user data...</value>
+    <value>جاري تحصيل معلوماتك</value>
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
@@ -208,15 +208,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
-    <value>Sending contact request...</value>
+    <value>جاري إرسال طلب جهة اتصال</value>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Deleting contact request...</value>
+    <value>يتم حذف طلب جهة اتصال...</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
-    <value>Reminding contact about the request...</value>
+    <value>جاري تذكير جهة الاتصال عن الطلب...</value>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
@@ -252,15 +252,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>يتم إزالة جهة الاتصال</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Removing from offline...</value>
+    <value>يتم الإزالة من التوفر دون اتصال...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="RemoveLink" xml:space="preserve">
-    <value>Removing link...</value>
+    <value>حذف الرابط</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
@@ -272,15 +272,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>الموافقة على طلب جهة اتصال...</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denying contact request...</value>
+    <value>رفض طلب جهة اتصال</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignoring contact request...</value>
+    <value>تجاهل طلب جهة اتصال</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
@@ -288,15 +288,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Saving for offline...</value>
+    <value>يتم الحفظ من دون اتصال</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servers too busy. Please wait…</value>
+    <value>الخوادم مشغولة. الرجاء الانتظار...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccount" xml:space="preserve">
-    <value>Upgrading account...</value>
+    <value>ترقية الحساب</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
 </root>
