@@ -469,7 +469,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</value>
+    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="QuestionAskedDownloadOption_YesButton" xml:space="preserve">
@@ -1026,6 +1026,47 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="ConfirmAccountFailed" xml:space="preserve">
     <value>No se pudo confirmar la cuenta. Vuelve a intentarlo. [{0}]</value>
     <comment>Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>Ruta demasiado larga</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>Nombre o ruta no válida</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>El nombre o la ruta de la carpeta '{0}' no es válido o tiene caracteres ilegales. Por favor, cámbialo y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>La ruta del archivo/carpeta '{0}' es demasiado largo. Por favor, cámbiala y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Acceso denegado</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>Nombre de ficher no válido</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>El nombre del archivo '{0}' no es válido o tiene caracteres ilegales. Por favor, cámbialo y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>No tienes acceso a la ruta '{0}'. Por favor, selecciona otra y vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+  </data>
+  <data name="SelectFolderFailedWithErrorCode" xml:space="preserve">
+    <value>Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
 </root>
