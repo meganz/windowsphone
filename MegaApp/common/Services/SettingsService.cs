@@ -18,7 +18,6 @@ namespace MegaApp.Services
 
         public static void SaveSetting<T>(string key, T value)
         {
-
             try
             {
                 var settings = IsolatedStorageSettings.ApplicationSettings;
@@ -173,6 +172,18 @@ namespace MegaApp.Services
             }
         }
 
+        public static bool HasValidSession()
+        {
+            try
+            {
+                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
+                    return true;
+                else
+                    return false;
+            }
+            catch (ArgumentNullException) { return false; }
+        }
+
         public static void SaveMegaLoginData(string email, string session)
         {
             SaveSetting(SettingsResources.UserMegaEmailAddress, email);
@@ -183,7 +194,6 @@ namespace MegaApp.Services
 
         public static void ClearMegaLoginData()
         {
-            //SettingsService.DeleteSetting(SettingsResources.StayLoggedIn);
             DeleteSetting(SettingsResources.UserMegaEmailAddress);
             DeleteSetting(SettingsResources.UserMegaSession);
             DeleteSetting(SettingsResources.UserPinLockIsEnabled);
