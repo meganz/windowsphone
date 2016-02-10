@@ -53,16 +53,11 @@ namespace MegaApp.Services
         {
             Directory.CreateDirectory(path);            
         }
-
-        public static void DeleteFolder (string path)
+        
+        public static void DeleteFolder(string path, bool recursive = false)
         {
-            if (Directory.Exists(path)) 
-                Directory.Delete(path);
-        }
-
-        public static void DeleteFolder(string path, bool recursive)
-        {
-            Directory.Delete(path, recursive);
+            if (Directory.Exists(path))
+                Directory.Delete(path, recursive);            
         }
 
         public static bool HasIllegalChars(string path)

@@ -124,25 +124,26 @@ namespace MegaApp.Models
                 // Search if the file has a pending transfer for offline and cancel it on this case
                 foreach (var item in App.MegaTransfers.Downloads)
                 {
-                    WaitHandle waitEventRequestTransfer = new AutoResetEvent(false);
-
                     var transferItem = (TransferObjectModel)item;
                     if (transferItem == null || transferItem.Transfer == null) continue;
 
+                    WaitHandle waitEventRequestTransfer = new AutoResetEvent(false);
                     if (String.Compare(this.NodePath, transferItem.Transfer.getPath()) == 0 &&
                         transferItem.IsAliveTransfer())
                     {
                         App.MegaSdk.cancelTransfer(transferItem.Transfer,
                             new CancelTransferRequestListener((AutoResetEvent)waitEventRequestTransfer));
-                        waitEventRequest.WaitOne();
+                        waitEventRequestTransfer.WaitOne();
                     }
                 }
                 
                 FileService.DeleteFile(this.NodePath);
             }
 
-            Deployment.Current.Dispatcher.BeginInvoke(() => this.ParentCollection.Remove((IOfflineNode)this));
             SavedForOffline.DeleteNodeByLocalPath(this.NodePath);
+
+            if (this.ParentCollection != null)
+                this.ParentCollection.Remove((IOfflineNode)this);
 
             if (waitEventRequest != null)
                 waitEventRequest.Set();
