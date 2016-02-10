@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,14 +14,16 @@ using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
-    public class NodeDetailsViewModel : BaseViewModel
+    public class NodeDetailsViewModel : BaseSdkViewModel
     {
         private readonly NodeDetailsPage _nodeDetailsPage;        
 
         public NodeDetailsViewModel(NodeDetailsPage nodeDetailsPage, NodeViewModel node)
+            : base(App.MegaSdk)
         {
             this._nodeDetailsPage = nodeDetailsPage;
             this._node = node;
@@ -36,6 +39,48 @@ namespace MegaApp.Models
         {
             // Add folders to global drive listener to receive notifications
             globalDriveListener.Nodes.Remove(this);
+        }
+
+        public void ChangeMenu(IList iconButtons, IList menuItems)
+        {
+            if (this._node.IsFolder)
+            {
+                if (this._node.IsExported)
+                {
+                    this.TranslateAppBarItems(
+                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                        new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
+                        new[] { UiResources.Rename, UiResources.CreateShortCut, UiResources.RemoveLink });
+                }
+                else
+                {
+                    this.TranslateAppBarItems(
+                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                        new[] { UiResources.Download, UiResources.GetLink, UiResources.Remove },
+                        new[] { UiResources.Rename, UiResources.CreateShortCut });
+                }
+            }
+            else //Node is a File
+            {
+                if (this._node.IsExported)
+                {
+                    this.TranslateAppBarItems(
+                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                        new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
+                        new[] { UiResources.Rename, UiResources.RemoveLink });
+                }
+                else
+                {
+                    this.TranslateAppBarItems(
+                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                        new[] { UiResources.Download, UiResources.GetLink, UiResources.Remove },
+                        new[] { UiResources.Rename });
+                }            
+            }
         }
 
         public ulong getNodeHandle()
