@@ -144,12 +144,6 @@ namespace MegaApp.Pages
         
         private bool ValidActiveAndOnlineSession()
         {
-            //if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-            //{
-            //    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-            //    return false;
-            //}                
-
             if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
             {
                 NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
@@ -159,18 +153,10 @@ namespace MegaApp.Pages
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
             {
-                try
-                {
-                    if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) == null)
-                    {
-                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                        return false;
-                    }                        
-                }
-                catch (ArgumentNullException) 
+                if (!SettingsService.HasValidSession())
                 {
                     NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                    return false; 
+                    return false;
                 }
             }
 
@@ -290,10 +276,6 @@ namespace MegaApp.Pages
                                 NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode(), ContainerType.CloudDrive));
                         }
                     }
-                    else
-                    {
-                        _mainPageViewModel.LoadFolders();
-                    }
 
                     return;
                 }
@@ -324,19 +306,18 @@ namespace MegaApp.Pages
                     NavigationService.RemoveBackEntry();
 
                     _mainPageViewModel.GetAccountDetails();
-
-                    if (_mainPageViewModel.AppInformation.IsStartedAsAutoUpload)
-                    {
-                        NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
-                        return;
-                    }
-
-                    _mainPageViewModel.GetAccountDetails();
                     _mainPageViewModel.FetchNodes();
                     break;
 
                 case NavigationParameter.PasswordLogin:
                     NavigationService.RemoveBackEntry();
+                    
+                    if (!SettingsService.HasValidSession())
+                    {
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                        return;
+                    }
+
                     App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                         new FastLoginRequestListener(_mainPageViewModel));
                     break;
@@ -378,39 +359,28 @@ namespace MegaApp.Pages
                 case NavigationParameter.Normal:
                 case NavigationParameter.None:
                     {
-                        if (NavigationContext.QueryString.ContainsKey("filelink"))
-                            this.GetFileLink();
-
-                        //if (!SettingsService.LoadSetting<bool>(SettingsResources.StayLoggedIn))
-                        //{
-                        //    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                        //    return;
-                        //}
-
-                        if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                        if(navParam != NavigationParameter.Normal)
                         {
-                            NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
-                            return;
-                        }
+                            if (NavigationContext.QueryString.ContainsKey("filelink"))
+                                this.GetFileLink();
+
+                            if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                            {
+                                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
+                                return;
+                            }                            
+                        }                        
                                                 
                         if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
                         {
-                            try
-                            {
-                                if (SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession) != null)
-                                    App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
-                                        new FastLoginRequestListener(_mainPageViewModel));
-                                else
-                                {
-                                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                                    return;
-                                }
-                            }
-                            catch (ArgumentNullException)
+                            if (!SettingsService.HasValidSession())
                             {
                                 NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                                 return;
                             }
+
+                            App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
+                                new FastLoginRequestListener(_mainPageViewModel));
                         }
                         // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                         // Auto Camera Upload settings fetching has been skipped in the mainpage
@@ -421,12 +391,12 @@ namespace MegaApp.Pages
                         else
                         {
                             _mainPageViewModel.LoadFolders();
-                        }                        
 
-                        if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
-                            NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
-                        else if (App.AppInformation.IsStartedAsAutoUpload)
-                            NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                            if (SettingsService.LoadSetting<bool>(SettingsResources.CameraUploadsFirstInit, true))
+                                NavigateService.NavigateTo(typeof(InitCameraUploadsPage), NavigationParameter.Normal);
+                            else if (App.AppInformation.IsStartedAsAutoUpload)
+                                NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
+                        }
 
                         break;
                     }
