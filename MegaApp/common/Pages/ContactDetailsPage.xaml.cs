@@ -68,6 +68,7 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
             _contactDetailsViewModel.SelectedContact = (Contact)PhoneApplicationService.Current.State["SelectedContact"];
         }
 

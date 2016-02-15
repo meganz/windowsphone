@@ -151,6 +151,13 @@ namespace MegaApp.Pages
             }
         }
 
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            e.Cancel = true;
+        }
+
         private void OnPieDataBindingComplete(object sender, EventArgs e)
         {
             // Focus on the first datapoint (= Used space)

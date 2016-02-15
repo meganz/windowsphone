@@ -90,6 +90,12 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
+        public override void onRequestFinish(mega.MegaSDK api, mega.MRequest request, mega.MError e)
+        {
+            base.onRequestFinish(api, request, e);
+            App.ActiveImportLink = null;
+        }
+
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
             MNode publicNode = App.PublicNode = request.getPublicNode();
