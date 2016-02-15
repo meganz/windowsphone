@@ -1069,4 +1069,8 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <value>Failed to select folder. Please, try again or select another folder.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
 </root>
