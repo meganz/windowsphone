@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -138,6 +139,13 @@ namespace MegaApp.Pages
                 UpdateGUI(false);
                 return;
             }
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);            
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);            
+            e.Cancel = true;
         }
 
         private void OnAddContactClick(object sender, EventArgs e)
