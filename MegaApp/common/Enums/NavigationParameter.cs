@@ -2,7 +2,7 @@
 {
     public enum NavigationParameter
     {
-        Normal              = 0,        
+        Normal              = 0,
         Login               = 10,
         PasswordLogin       = 15,
         CreateAccount       = 20,
