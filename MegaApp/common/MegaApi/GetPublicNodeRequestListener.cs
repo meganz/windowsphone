@@ -89,11 +89,42 @@ namespace MegaApp.MegaApi
         #endregion
 
         #region Override Methods
-
-        public override void onRequestFinish(mega.MegaSDK api, mega.MRequest request, mega.MError e)
+        
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            base.onRequestFinish(api, request, e);
             App.ActiveImportLink = null;
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                //If getFlag() returns true, the file link key is invalid.
+                if (request.getFlag() && ShowErrorMessage)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            AppMessages.AM_InvalidLink,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }                    
+            }
+            else if (e.getErrorCode() == MErrorType.API_EINCOMPLETE)
+            {
+                if (ShowErrorMessage)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            String.Format(ErrorMessage, e.getErrorString()),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }                    
+            }
+            
+            base.onRequestFinish(api, request, e);            
         }
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
