@@ -102,22 +102,22 @@
                             <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                         </Border.BorderBrush>
                     </Border>
-                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Ellipse.Fill>
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Path.Fill>                            
-                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            <SolidColorBrush Color="White"/>
                         </Path.Fill>
                     </Path>
-                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Ellipse.Fill>
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <Image Source="/Assets/AppBar/open_link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Grid>                
                 
                 <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
@@ -146,22 +146,22 @@
                             <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                         </Path.Fill>
                     </Path>
-                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Ellipse.Fill>
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
                     <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Path.Fill>
-                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                            <SolidColorBrush Color="White"/>
                         </Path.Fill>
                     </Path>
-                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Ellipse Margin="-5,-2,0,0" Height="20" Width="20" Canvas.ZIndex="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                         <Ellipse.Fill>
                             <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                         </Ellipse.Fill>
                     </Ellipse>
-                    <Image Source="/Assets/AppBar/open_link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Grid>
                 
                 <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
@@ -203,22 +203,22 @@
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-4,-10,0,0" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
-                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    <SolidColorBrush Color="White"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-7,0,0,-1" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-7,0,0,-1" Height="30" Width="30" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-7,0,0,-1" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-7,0,0,-1" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
         </Grid>
     </DataTemplate>
@@ -251,22 +251,22 @@
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-5,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
-                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    <SolidColorBrush Color="White"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </DataTemplate>
 
@@ -317,22 +317,22 @@
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                 </Grid>
             </Border>            
-            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-4,-10,0,0" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-4,-10,0,0" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
-                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    <SolidColorBrush Color="White"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Grid.Row="0" Margin="-4,0,0,-10" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Grid.Row="0" Margin="-4,0,0,-10" Height="30" Width="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
         </Grid>
     </DataTemplate>
@@ -380,22 +380,22 @@
                     <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                 </Grid>
             </Border>
-            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-5,-5,0,0" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
             <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-5,-5,0,0" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
-                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                    <SolidColorBrush Color="White"/>
                 </Path.Fill>
             </Path>
-            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Ellipse Margin="-5,0,0,-5" Height="20" Width="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Ellipse.Fill>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </Ellipse.Fill>
             </Ellipse>
-            <Image Source="/Assets/AppBar/open_link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Image Source="/Assets/AppBar/link.png" Margin="-5,0,0,-5" Width="20" Height="20" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
         </Grid>
     </DataTemplate>
     

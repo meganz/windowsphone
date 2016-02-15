@@ -491,6 +491,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="needs-review-translation">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
           </trans-unit>
+        <trans-unit id="Resx/AM_InvalidLink" translate="yes" xml:space="preserve">
+          <source>Invalid link</source>
+          <target state="new">Invalid link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
+        </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
           <source>yes, export</source>
           <target state="translated">sí, exportar</target>

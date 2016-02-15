@@ -45,7 +45,7 @@
         		Click="OnAddFolderClick" 
 			/>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/open_link.png" 
+        		IconUri="/Assets/AppBar/link.png" 
         		Text="open link" 
         		Click="OnOpenLinkClick" 				
 			/>
@@ -66,7 +66,7 @@
 
         <shell:ApplicationBar x:Key="ImportItemMenu">
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/open_link.png" 
+        		IconUri="/Assets/AppBar/link.png" 
         		Text="import" 
         		Click="OnImportLinkClick" 
 			/>

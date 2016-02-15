@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invalid link.
+        /// </summary>
+        public static string AM_InvalidLink {
+            get {
+                return ResourceManager.GetString("AM_InvalidLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Auto Camera Upload background task has failed. You can re-enable it on the settings page.
         /// </summary>
         public static string AutoCameraUploadFailed {

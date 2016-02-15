@@ -6,13 +6,16 @@ using System.Windows.Navigation;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Pages;
+using MegaApp.Resources;
 using MegaApp.Services;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace MegaApp.UserControls
 {
+
     public class PhoneDrawerLayoutPage : MegaPhoneApplicationPage
     {
         #region Methods
@@ -73,6 +76,20 @@ namespace MegaApp.UserControls
         {
             base.OnNavigatedTo(e);
             ProcessBackstack(this.GetType(), true);
+
+            if (App.AppInformation.IsStartupModeActivate)
+            {
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+
+                if (!(this.GetType().Equals(typeof(MainPage))))
+                {
+                    App.AppInformation.IsStartupModeActivate = false;
+                }
+            }
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)

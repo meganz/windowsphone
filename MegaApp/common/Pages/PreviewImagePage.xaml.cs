@@ -52,6 +52,12 @@ namespace MegaApp.Pages
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
 
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+
                 App.AppInformation.IsStartupModeActivate = false;
 
                 #if WINDOWS_PHONE_81

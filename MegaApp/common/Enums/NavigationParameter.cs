@@ -2,9 +2,10 @@
 {
     public enum NavigationParameter
     {
-        Normal              = 0,
+        Normal              = 0,        
         Login               = 10,
-        PasswordLogin       = 20,
+        PasswordLogin       = 15,
+        CreateAccount       = 20,
         PictureSelected     = 30,
         AlbumSelected       = 35,
         SelfieSelected      = 36,
