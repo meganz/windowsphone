@@ -696,7 +696,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Folderauswahl fehlgeschlagen. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Ordner aus: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Folderauswahl fehlgeschlagen</value>
@@ -809,10 +810,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="WrongDataFormat_Title" xml:space="preserve">
     <value>Ungültiges Format</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Sie sind dabei, Ihr MEGA-Abonnement zu stornieren. Können wir Sie irgendwie umstimmen?</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="CancelSubscriptionConfirmation" xml:space="preserve">
     <value>Danke für Ihre Rückmeldung!</value>
@@ -943,7 +940,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>Auto Camera Upload failed</value>
+    <value>Automatischer Kameraupload fehlgeschlagen</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">

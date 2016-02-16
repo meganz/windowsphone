@@ -51,14 +51,14 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
-                        new[] { UiResources.Rename, UiResources.CreateShortCut, UiResources.RemoveLink });
+                        new[] { UiResources.Rename, UiResources.CreateShortCut, UiResources.UI_RemoveLink });
                 }
                 else
                 {
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.GetLink, UiResources.Remove },
+                        new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
                         new[] { UiResources.Rename, UiResources.CreateShortCut });
                 }
             }
@@ -70,14 +70,14 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
-                        new[] { UiResources.Rename, UiResources.RemoveLink });
+                        new[] { UiResources.Rename, UiResources.UI_RemoveLink });
                 }
                 else
                 {
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.GetLink, UiResources.Remove },
+                        new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
                         new[] { UiResources.Rename });
                 }            
             }

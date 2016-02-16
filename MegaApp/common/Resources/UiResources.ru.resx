@@ -145,10 +145,6 @@
     <value>подтвердить</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Подтверждение аккаунта:</value>
-    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ConfirmPasswordWatermark" xml:space="preserve">
     <value>подтвердите пароль</value>
     <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
@@ -156,14 +152,6 @@
   <data name="Copy" xml:space="preserve">
     <value>Скопировать</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Создание учётной записи:</value>
-    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Создание папки...</value>
-    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="EmailWatermark" xml:space="preserve">
     <value>ваша электронная почта</value>
@@ -177,17 +165,9 @@
     <value>Нет передач</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Получение ссылки...</value>
-    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="LoadingPreview" xml:space="preserve">
     <value>Загрузка предпросмотра...</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Вход...</value>
-    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MegaLinkTitle" xml:space="preserve">
     <value>Ссылка MEGA:</value>
@@ -364,10 +344,6 @@
   <data name="Done" xml:space="preserve">
     <value>готово</value>
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Выход...</value>
-    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
     <value>Домой</value>
@@ -653,10 +629,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>выбрать папку</value>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
-    <value>Обновление аккаунта...</value>
-    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="About" xml:space="preserve">
     <value>о приложении</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -741,10 +713,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>МЕГА скорость</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Изменить пароль</value>
-    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Продвинутые</value>
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -804,10 +772,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Back" xml:space="preserve">
     <value>Назад</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Вы собираетесь отменить подписку MEGA. Пожалуйста дайте нам знать, мы можем ли мы что-нибудь предпринять, чтобы помочь вам изменить ваше решение.</value>
-    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
     <value>Отклонить</value>
@@ -1160,21 +1124,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Новый пароль</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Завершение всех сеансов…</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Завершение сеанса…</value>
-    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ManageLink" xml:space="preserve">
     <value>Управление ссылкой</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Удаление ссылки…</value>
-    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
     <value>Ограничения операционной системы</value>

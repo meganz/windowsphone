@@ -14,7 +14,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.CloseSession; }
+            get { return ProgressMessages.PM_CloseSession; }
         }
 
         protected override bool ShowProgressMessage
@@ -29,7 +29,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.CloseSession.ToUpper(); }
+            get { return UiResources.UI_CloseSession.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -44,7 +44,7 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.CloseSession.ToUpper(); }
+            get { return UiResources.UI_CloseSession.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

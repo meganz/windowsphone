@@ -62,11 +62,11 @@ namespace MegaApp.Pages
             this.ApplicationBar = (ApplicationBar)Resources["MyAccountMenu"];
 
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.SettingsShort.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.UI_Logout.ToLower();
 
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.ChangePassword.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.UI_ChangePassword.ToLower();
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.ClearCache.ToLower();
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.CloseAllSessions.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.UI_CloseAllSessions.ToLower();
             
             // Only if is a LITE account show a "cancel subscription" menu option
             if(_myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
@@ -74,7 +74,7 @@ namespace MegaApp.Pages
             {
                 if(ApplicationBar.MenuItems.Count == 3)
                 {
-                    ApplicationBarMenuItem cancelSubscription = new ApplicationBarMenuItem(UiResources.CancelSubscription.ToLower());
+                    ApplicationBarMenuItem cancelSubscription = new ApplicationBarMenuItem(UiResources.UI_CancelSubscription.ToLower());
                     ApplicationBar.MenuItems.Add(cancelSubscription);
                     cancelSubscription.Click += new EventHandler(OnCancelSubscriptionClick);
                 }                

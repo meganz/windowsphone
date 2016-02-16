@@ -211,7 +211,7 @@
                         </Grid>
                     </Grid>
                 </phone:PivotItem>
-                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
+                <phone:PivotItem x:Name="PivotSubscription" CacheMode="{x:Null}" Header="{Binding LocalizedUiResources.UI_UpgradeAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Loaded="OnPivotLoaded">
                     <Grid>
                         <Grid Visibility="{Binding IsAccountUpdate, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Grid.RowDefinitions>

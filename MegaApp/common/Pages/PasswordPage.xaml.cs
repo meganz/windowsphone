@@ -33,7 +33,7 @@ namespace MegaApp.Pages
         private void SetApplicationBar()
         {
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Done.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Logout.ToLower();
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.UI_Logout.ToLower();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

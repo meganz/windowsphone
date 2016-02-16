@@ -21,7 +21,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.GetLink; }
+            get { return ProgressMessages.PM_GetLink; }
         }
 
         protected override bool ShowProgressMessage
