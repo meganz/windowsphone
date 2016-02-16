@@ -80,7 +80,7 @@ namespace MegaApp.Pages
             _previewImageViewModel.TranslateAppBarItems(
                         ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
                         ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Previous, UiResources.Download, UiResources.GetLink, UiResources.Next.ToLower() },
+                        new[] { UiResources.Previous, UiResources.Download, UiResources.UI_GetLink, UiResources.Next.ToLower() },
                         new[] { UiResources.Rename, UiResources.Remove });
             
             this.DataContext = _previewImageViewModel;

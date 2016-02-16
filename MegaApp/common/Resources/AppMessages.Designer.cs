@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind..
+        /// </summary>
+        public static string AM_CancelSubscription {
+            get {
+                return ResourceManager.GetString("AM_CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Invalid link.
         /// </summary>
         public static string AM_InvalidLink {
@@ -183,15 +192,6 @@ namespace MegaApp.Resources {
         public static string CameraUploadNeedsStayLoggedIn_Title {
             get {
                 return ResourceManager.GetString("CameraUploadNeedsStayLoggedIn_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind..
-        /// </summary>
-        public static string CancelSubscription {
-            get {
-                return ResourceManager.GetString("CancelSubscription", resourceCulture);
             }
         }
         
@@ -1893,7 +1893,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder..
+        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder: [{0}].
         /// </summary>
         public static string SelectFolderFailed {
             get {
@@ -1911,11 +1911,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder: [{0}].
+        ///   Busca una cadena traducida similar a Failed to select folder. Please, try again or select another folder..
         /// </summary>
-        public static string SelectFolderFailedWithErrorCode {
+        public static string SelectFolderFailedNoErrorCode {
             get {
-                return ResourceManager.GetString("SelectFolderFailedWithErrorCode", resourceCulture);
+                return ResourceManager.GetString("SelectFolderFailedNoErrorCode", resourceCulture);
             }
         }
         

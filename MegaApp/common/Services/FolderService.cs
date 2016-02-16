@@ -131,10 +131,10 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.SelectFolderFailed_Title,
-                            String.Format(AppMessages.SelectFolderFailedWithErrorCode, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.SelectFolderFailed_Title,
+                        String.Format(AppMessages.SelectFolderFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }

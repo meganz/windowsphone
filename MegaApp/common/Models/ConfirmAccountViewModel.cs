@@ -73,7 +73,7 @@ namespace MegaApp.Models
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.ConfirmAccount; }
+            get { return ProgressMessages.PM_ConfirmAccount; }
         }
 
         protected override string ErrorMessage

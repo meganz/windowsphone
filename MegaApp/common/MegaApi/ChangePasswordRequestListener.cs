@@ -14,7 +14,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.ChangePassword; }
+            get { return ProgressMessages.PM_ChangePassword; }
         }
 
         protected override bool ShowProgressMessage
@@ -29,7 +29,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.ChangePassword.ToUpper(); }
+            get { return UiResources.UI_ChangePassword.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -44,7 +44,7 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessageTitle
         {
-            get { return UiResources.ChangePassword.ToUpper(); }
+            get { return UiResources.UI_ChangePassword.ToUpper(); }
         }
 
         protected override bool ShowSuccesMessage

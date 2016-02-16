@@ -235,7 +235,7 @@ namespace MegaApp.Models
             // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-            var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.CreateFolder, this.AppInformation);
+            var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.UI_CreateFolder, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
                 if (this.FolderRootNode == null)

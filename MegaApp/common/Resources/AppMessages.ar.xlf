@@ -19,7 +19,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" space="preserve">
           <source>Confirm account failed</source>
-          <target state="translated">Account confirmation failed</target>
+          <target state="translated">فشل تأكيد الحساب</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
@@ -167,13 +167,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed" translate="yes" space="preserve">
           <source>Importing file failed [{0}]</source>
-          <target state="translated">File import failed</target>
+          <target state="translated">فشل استيراد الملف</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>Import file failed</source>
-          <target state="translated">File import failed</target>
+          <target state="translated">فشل استيراد الملف</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MoveFailed" translate="yes" space="preserve">
           <source>Failed to move item. Please try again.</source>
-          <target state="translated">Failed to move item. Please try again.</target>
+          <target state="translated">فشل في نقل العنصر. حاول مرة أخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move a file failed.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveFailed_Title" translate="yes" space="preserve">
@@ -255,7 +255,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successful removed</source>
-          <target state="translated">Item successfully removed</target>
+          <target state="translated">عنصر تم إزالته بنجاح</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -300,7 +300,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
           <source>Save image to photo's</source>
-          <target state="translated">Save image to photos</target>
+          <target state="translated">حفظ الصورة إلى ألبوم الصور</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
@@ -725,23 +725,22 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <target state="translated">نعم، تصدير</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailedWithErrorCode" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
           <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
-          <target state="new">Failed to select folder. Please, try again or select another folder: [{0}]</target>
+          <target state="translated">فشل تحديد المجلد. من فضلك، حاول مرة أخرى أو اختر مجلد آخر: [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
-          <source>Failed to select folder. Please, try again or select another folder.</source>
-          <target state="needs-review-translation">فشل تحديد المجلد. من فضلك، حاول مرة أخرى أو اختر مجلد آخر: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" xml:space="preserve">
           <source>Invalid link</source>
           <target state="new">Invalid link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" xml:space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder.</source>
+          <target state="new">Failed to select folder. Please, try again or select another folder.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
+          </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
           <target state="translated">فشل تحديد المجلد</target>
@@ -766,12 +765,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
           <source>Select file(s) failed</source>
-          <target state="translated">File selection failed</target>
+          <target state="translated">فشل اختيار الملف</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
           <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">Malformed e-mail. Please try again.</target>
+          <target state="translated">بريد إلكتروني غير صحيح ، الرجاء المحاولة مرة أخرى</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
@@ -798,7 +797,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetUserDataFailed_Title" translate="yes" space="preserve">
           <source>Retrieving user data failed</source>
-          <target state="translated">Retrieving user data failed</target>
+          <target state="translated">استعادة بيانات المستخدم فشلت</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed" translate="yes" space="preserve">
@@ -809,7 +808,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
           <source>Capture photo failed</source>
-          <target state="translated">Photo capture failed</target>
+          <target state="translated">إخفاق في التقاط الصورة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
@@ -820,7 +819,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" space="preserve">
           <source>Capture photo/video failed</source>
-          <target state="translated">Photo/video capture failed</target>
+          <target state="translated">التقاط صورة/فيديو فاشل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed" translate="yes" space="preserve">
@@ -831,7 +830,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
           <source>Capture video failed</source>
-          <target state="translated">Video capture failed</target>
+          <target state="translated">إلتقاط فيديو فاشل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
@@ -842,7 +841,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
           <source>Save settings failed</source>
-          <target state="translated">Error saving settings</target>
+          <target state="translated">خطأ في حفظ الإعدادات</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
@@ -852,7 +851,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
           <source>Shortcut error</source>
-          <target state="translated">Shortcut error</target>
+          <target state="translated">خطأ بالاختصار</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
@@ -862,7 +861,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
           <source>Storing credit card failed</source>
-          <target state="translated">Storing credit card failed</target>
+          <target state="translated">تخزين بطاقة ائتمانية فاشل </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
@@ -877,14 +876,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
           <source>Wrong data format</source>
-          <target state="translated">Wrong data format</target>
+          <target state="translated">صيغة البيانات خاطئة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/CancelSubscription" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_CancelSubscription" translate="yes" xml:space="preserve">
           <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
-          <target state="translated">انتا علي وشك الغاء اشتراكك في Mega . يرجي اخبارنا سبب ذلك حتي اذا كان لدينا اي مساعدة نستطيع القيام بها لتغيير رأيك.</target>
+          <target state="new">You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback!
 
@@ -899,7 +898,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
           <source>Cancel subscription failed</source>
-          <target state="translated">Subscription cancellation failed</target>
+          <target state="translated">فشل في إلغاء الاشتراك </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
@@ -909,7 +908,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully_Title" translate="yes" space="preserve">
           <source>Subscription cancelled</source>
-          <target state="translated">Subscription cancelled</target>
+          <target state="translated">تم إلغاء الاشتراك</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
@@ -929,7 +928,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
           <source>Upgrade account failed</source>
-          <target state="translated">Error upgrading account</target>
+          <target state="translated">خطأ في ترقية الحساب</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
@@ -950,7 +949,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" space="preserve">
           <source>Error getting payment methods</source>
-          <target state="translated">Error getting payment methods</target>
+          <target state="translated">خطأ في طرق الدفع </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
@@ -961,7 +960,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
           <source>Retrieving payment Url failed</source>
-          <target state="translated">Retrieving payment URL failed</target>
+          <target state="translated">فشل في استعادة رابط الدفع</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
@@ -971,7 +970,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
           <source>Background agents disabled</source>
-          <target state="translated">Background agents disabled</target>
+          <target state="translated">عناصر الخلفية معطلة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
@@ -986,7 +985,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
           <source>Do you want to remove the contact {0}?</source>
-          <target state="translated">Do you want to remove the contact {0}?</target>
+          <target state="translated">هل تريد إزالة جهة الاتصال {0}؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
         </trans-unit>
@@ -1002,7 +1001,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
           <source>Invite contact failed</source>
-          <target state="translated">Failed to invite the contact</target>
+          <target state="translated">فشل في دعوة جهة الاتصال </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
@@ -1018,7 +1017,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="translated">MEGA automatic camera uploads</target>
+          <target state="translated">تحميلات الكاميرا التلقائية من MEGA </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
@@ -1048,7 +1047,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
           <source>Auto Camera Upload failed</source>
-          <target state="translated">Auto Camera Upload failed</target>
+          <target state="translated">تحميل الكاميرا التلقائي فشل </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
@@ -1060,12 +1059,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" space="preserve">
           <source>Remove contact failed</source>
-          <target state="translated">Failed to remove the contact</target>
+          <target state="translated">فشل في إزالة جهة الاتصال</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
           <source>Do you want to remove {0} contacts?</source>
-          <target state="translated">Do you want to remove {0} contacts?</target>
+          <target state="translated">هل تريد جذف {0} جهة اتصال؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
         </trans-unit>
@@ -1113,7 +1112,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CloseSessionSucces" translate="yes" space="preserve">
           <source>The session has been successfully closed.</source>
-          <target state="translated">The session has been successfully closed.</target>
+          <target state="translated">الجلسة أغلقت بنجاح</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
@@ -1123,7 +1122,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
-          <target state="translated">Are you sure you want to permanently delete all files from the rubbish bin?</target>
+          <target state="translated">هل أنت متأكد أنك تريد حذف جميع الملفات نهائيا من سلة المهملات؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
@@ -1138,7 +1137,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="translated">Failed to remove link. Please try again.</target>
+          <target state="translated">فشل في إزالة الرابط. الرجاء المحاولة لاحقا</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
@@ -1146,50 +1145,50 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">You cannot perform this action. Please connect to the Internet and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
-        <trans-unit id="Resx/PathTooLong_Title" translate="yes" xml:space="preserve">
-          <source>Path too long</source>
-          <target state="new">Path too long</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" xml:space="preserve">
           <source>Invalid name or path</source>
           <target state="new">Invalid name or path</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" xml:space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
           <target state="new">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/PathTooLong_Title" translate="yes" xml:space="preserve">
+          <source>Path too long</source>
+          <target state="new">Path too long</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" xml:space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
           <target state="new">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
-          <source>Access denied</source>
-          <target state="new">Access denied</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" xml:space="preserve">
           <source>Invalid file name</source>
           <target state="new">Invalid file name</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" xml:space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
           <target state="new">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
+          <source>Access denied</source>
+          <target state="new">Access denied</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
+          </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" xml:space="preserve">
           <source>You don't have access to the path '{0}'. Please, select another one and try again.</source>
           <target state="new">You don't have access to the path '{0}'. Please, select another one and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
-        </trans-unit>
+          </trans-unit>
       </group>
     </body>
   </file>
