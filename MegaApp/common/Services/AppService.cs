@@ -287,14 +287,8 @@ namespace MegaApp.Services
             SettingsService.ClearMegaLoginData();
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                // Added extra checks preventing null reference exceptions
-                if (App.MainPageViewModel == null) return;
-                
-                if (App.MainPageViewModel.CloudDrive != null) 
-                    App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
-
-                if (App.MainPageViewModel.RubbishBin != null) 
-                    App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
+                App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
+                App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             });
             AppService.ClearAppCache(false);  
           

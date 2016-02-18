@@ -20,7 +20,7 @@ namespace MegaApp.Models
         public NodeViewModel SelectedNode
         {
             get { return _selectedNode; }
-            private set
+            set
             {
                 _selectedNode = value;
                 var image = _selectedNode as ImageNodeViewModel;
