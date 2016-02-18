@@ -699,7 +699,7 @@ namespace MegaApp.Services
 
             var textMessage = new TextBlock()
             {
-                Text = AppMessages.CancelSubscription,
+                Text = AppMessages.AM_CancelSubscription,
                 TextWrapping = TextWrapping.Wrap,
                 Margin = new Thickness(24, 12, 24, 12)
             };
@@ -1003,7 +1003,7 @@ namespace MegaApp.Services
 
             var titleLabel = new TextBlock()
             {
-                Text = UiResources.ChangePassword.ToUpper(),
+                Text = UiResources.UI_ChangePassword.ToUpper(),
                 Margin = new Thickness(12),
                 FontFamily = new FontFamily("Segoe WP Semibold"),
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeLarge"])                
@@ -1045,7 +1045,7 @@ namespace MegaApp.Services
                     if(!newPassword.Password.Equals(confirmPassword.Password))
                     {
                         new CustomMessageDialog(
-                            UiResources.ChangePassword.ToUpper(),
+                            UiResources.UI_ChangePassword.ToUpper(),
                             AppMessages.PasswordsDoNotMatch,
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
@@ -1055,7 +1055,7 @@ namespace MegaApp.Services
                     if(newPassword.Password.Equals(currentPassword.Password))
                     {
                         new CustomMessageDialog(
-                            UiResources.ChangePassword.ToUpper(),
+                            UiResources.UI_ChangePassword.ToUpper(),
                             AppMessages.NewAndOldPasswordMatch,
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();

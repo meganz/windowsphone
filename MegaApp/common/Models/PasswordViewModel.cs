@@ -23,9 +23,9 @@ namespace MegaApp.Models
 
         #region Methods
 
-        public void CheckPassword()
+        public bool CheckPassword()
         {
-            if (String.IsNullOrEmpty(Password) || String.IsNullOrWhiteSpace(Password)) return;
+            if (String.IsNullOrWhiteSpace(Password)) return false;
 
             string hashValue = CryptoService.HashData(Password);
             if (!hashValue.Equals(SettingsService.LoadSetting<string>(SettingsResources.UserPinLock)))
@@ -35,10 +35,10 @@ namespace MegaApp.Models
                         AppMessages.WrongPassword,
                         App.AppInformation,
                         MessageDialogButtons.Ok).ShowDialog();
-                return;
-            }            
-            
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.PasswordLogin);
+                return false;
+            }
+
+            return true;
         }
 
         public void Logout()

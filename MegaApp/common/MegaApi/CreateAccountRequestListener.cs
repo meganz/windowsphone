@@ -29,7 +29,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.CreateAccount; }
+            get { return ProgressMessages.PM_CreateAccount; }
         }
 
         protected override bool ShowProgressMessage
@@ -64,7 +64,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ShowSuccesMessage
         {
-            get { return true; }
+            get { return false; } //Shown when navigates to the "InitTourPage"
         }
 
         protected override bool NavigateOnSucces
@@ -84,7 +84,7 @@ namespace MegaApp.MegaApi
 
         protected override NavigationParameter NavigationParameter
         {
-            get { return NavigationParameter.Normal; }
+            get { return NavigationParameter.CreateAccount; }
         }
 
         #endregion

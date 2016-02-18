@@ -15,7 +15,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.CancelSubscription; }
+            get { return ProgressMessages.PM_CancelSubscription; }
         }
 
         protected override bool ShowProgressMessage

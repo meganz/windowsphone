@@ -57,6 +57,8 @@ namespace MegaApp
 
         public static String ShortCutBase64Handle { get; set; }
 
+        public static String ActiveImportLink { get; set; }
+
         public static MNode PublicNode { get; set; }
 
         // DataBase Name
@@ -143,6 +145,7 @@ namespace MegaApp
         {
             // Initialize Telerik Diagnostics with the actual app version information
             ApplicationUsageHelper.Init(AppService.GetAppVersion());
+            AppInformation.HasPinLockIntroduced = false;
             NetworkService.CheckChangesIP();
 
             #if WINDOWS_PHONE_81
@@ -162,6 +165,7 @@ namespace MegaApp
             // Telerik Diagnostics
             ApplicationUsageHelper.OnApplicationActivated();
             AppInformation.IsStartupModeActivate = true;
+            AppInformation.HasPinLockIntroduced = false;
             NetworkService.CheckChangesIP();
         }
 

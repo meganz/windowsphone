@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using System.Threading.Tasks;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using MegaApp.Enums;
 using MegaApp.Models;
@@ -32,41 +33,66 @@ namespace MegaApp.Pages
             this.DataContext = _nodeDetailsViewModel;
 
             InitializeComponent();
+            SetApplicationBar();
 
-            SetApplicationBar();            
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
         }
 
-        public void SetApplicationBar()
+        // Code to execute when a Network change is detected.
+        private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
         {
-            this.ApplicationBar = (ApplicationBar)Resources["NodeDetailsMenu"];
-            
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Download.ToLower();
-
-            if (!_nodeViewModel.IsExported)
-                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.GetLink.ToLower();
-            else
-                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ManageLink.ToLower();
-
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.Remove.ToLower();            
-            
-            ApplicationBar.MenuItems.Clear();
-
-            ApplicationBarMenuItem rename = new ApplicationBarMenuItem(UiResources.Rename.ToLower());
-            ApplicationBar.MenuItems.Add(rename);
-            rename.Click += new EventHandler(OnRenameClick);
-                        
-            if (_nodeViewModel.IsFolder)
+            switch (e.NotificationType)
             {
-                ApplicationBarMenuItem createShortcut = new ApplicationBarMenuItem(UiResources.CreateShortCut.ToLower());
-                ApplicationBar.MenuItems.Add(createShortcut);
-                createShortcut.Click += new EventHandler(OnCreateShortcutClick);
+                case NetworkNotificationType.InterfaceConnected:
+                    UpdateGUI();
+                    break;
+                case NetworkNotificationType.InterfaceDisconnected:
+                    UpdateGUI(false);
+                    break;
+                case NetworkNotificationType.CharacteristicUpdate:
+                default:
+                    break;
             }
-                        
-            if(_nodeViewModel.IsExported)
+        }
+
+        private void UpdateGUI(bool isNetworkConnected = true)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {                
+                BtnAvailableOfflineSwitch.IsEnabled = isNetworkConnected;
+                SetApplicationBar(isNetworkConnected);
+            });
+        }
+
+        public void SetApplicationBar(bool isNetworkConnected = true)
+        {
+            // Set the Application Bar to one of the available menu resources in this page
+            SetAppbarResources();
+
+            // Change and translate the current application bar
+            _nodeDetailsViewModel.ChangeMenu(this.ApplicationBar.Buttons, 
+                this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isNetworkConnected);
+        }
+
+        private void SetAppbarResources()
+        {
+            if(_nodeViewModel.IsFolder)
             {
-                ApplicationBarMenuItem removeLink = new ApplicationBarMenuItem(UiResources.RemoveLink.ToLower());
-                ApplicationBar.MenuItems.Add(removeLink);
-                removeLink.Click += new EventHandler(OnRemoveLinkClick);
+                if(_nodeViewModel.IsExported)
+                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFolderDetailsMenu"];
+                else
+                    this.ApplicationBar = (ApplicationBar)Resources["FolderDetailsMenu"];
+            }
+            else //Node is a File
+            {
+                if(_nodeViewModel.IsExported)
+                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFileDetailsMenu"];
+                else
+                    this.ApplicationBar = (ApplicationBar)Resources["FileDetailsMenu"];
             }
         }
 
@@ -74,12 +100,24 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
+            if (!NetworkService.IsNetworkAvailable())
+            {
+                UpdateGUI(false);
+                return;
+            }
+
             _nodeDetailsViewModel.Initialize(App.GlobalDriveListener);
 
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
+
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
 
                 App.AppInformation.IsStartupModeActivate = false;
                 
@@ -90,8 +128,8 @@ namespace MegaApp.Pages
                 {
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
                 }
-                return;
 #endif
+                return;
             }
         }
 

@@ -145,10 +145,6 @@
     <value>bestätigen</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Account wird bestätigt...</value>
-    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ConfirmPasswordWatermark" xml:space="preserve">
     <value>Passwortbestätigung</value>
     <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
@@ -156,14 +152,6 @@
   <data name="Copy" xml:space="preserve">
     <value>Kopieren</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Account wird erstellt...</value>
-    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Ordner wird erstellt...</value>
-    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="EmailWatermark" xml:space="preserve">
     <value>Ihre E-Mail-Adresse</value>
@@ -177,17 +165,9 @@
     <value>Keine Transfers</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Link wird erstellt...</value>
-    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="LoadingPreview" xml:space="preserve">
     <value>Vorschau wird geladen..</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Anmeldung...</value>
-    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MegaLinkTitle" xml:space="preserve">
     <value>MEGA-Link:</value>
@@ -364,10 +344,6 @@
   <data name="Done" xml:space="preserve">
     <value>fertig</value>
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Abmeldung...</value>
-    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
     <value>Startseite</value>
@@ -653,10 +629,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Ordner auswählen</value>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
-    <value>Account-Upgrade...</value>
-    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="About" xml:space="preserve">
     <value>über</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -741,10 +713,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>MEGA-schnell</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Passwort ändern</value>
-    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Erweitert</value>
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -804,10 +772,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Back" xml:space="preserve">
     <value>Zurück</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Sie sind dabei, Ihr MEGA-Abonnement zu stornieren. Können wir Sie irgendwie umstimmen?</value>
-    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
     <value>Später</value>
@@ -1160,24 +1124,12 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Ihr neues Passwort</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Alle Sitzungen werden geschlossen...</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Sitzung wird geschlossen...</value>
-    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ManageLink" xml:space="preserve">
     <value>Link bearbeiten</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Link wird entfernt...</value>
-    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="OSRestrictions" xml:space="preserve">
-    <value>Operating system restrictions</value>
+    <value>Systemeinschränkungen</value>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
@@ -1197,7 +1149,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>No shared folders</value>
+    <value>Keine Ordnerfreigaben</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">

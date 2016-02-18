@@ -696,7 +696,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Mislukt om de map te selecteren. Probeer het nog eens of selecteer een andere map: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Selecteer de map mislukt</value>
@@ -809,10 +810,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="WrongDataFormat_Title" xml:space="preserve">
     <value>Dataformaat verkeerd</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>U gaat uw MEGA abonnement annuleren. Laat ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="CancelSubscriptionConfirmation" xml:space="preserve">
     <value>Dank u voor uw feedback! </value>
