@@ -14,7 +14,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.RemoveLink; }
+            get { return ProgressMessages.PM_RemoveLink; }
         }
 
         protected override bool ShowProgressMessage
@@ -29,7 +29,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessageTitle
         {
-            get { return UiResources.RemoveLink.ToUpper(); }
+            get { return UiResources.UI_RemoveLink.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage

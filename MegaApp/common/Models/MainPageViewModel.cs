@@ -104,7 +104,7 @@ namespace MegaApp.Models
                 this.RubbishBin.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(this, App.ShortCutBase64Handle);            
+            var fetchNodesRequestListener = new FetchNodesRequestListener(this);
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
@@ -257,14 +257,7 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
-        private string _activeImportLink;
-        public string ActiveImportLink
-        {
-            get { return _activeImportLink; }
-            set { SetField(ref _activeImportLink, value); }
-        }
-
+        
         private FolderViewModel _cloudDrive;
         public FolderViewModel CloudDrive
         {

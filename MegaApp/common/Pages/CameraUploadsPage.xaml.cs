@@ -203,10 +203,10 @@ namespace MegaApp.Pages
                 case NavigationParameter.ImportLinkLaunch:
                 case NavigationParameter.None:
                 {
-                    
-                    if (SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                    if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                     {
-                        NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal);
+                        NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                        return;
                     }
                     break;
                 }

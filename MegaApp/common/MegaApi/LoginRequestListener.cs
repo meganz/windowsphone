@@ -46,7 +46,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.Login; }
+            get { return ProgressMessages.PM_Login; }
         }
 
         protected override bool ShowProgressMessage

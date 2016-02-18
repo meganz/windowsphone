@@ -145,7 +145,7 @@
     <value>Confirm</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmAccount" xml:space="preserve">
+  <data name="UI_ConfirmAccount" xml:space="preserve">
     <value>Confirm account</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -157,11 +157,11 @@
     <value>Copy</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="CreateAccount" xml:space="preserve">
+  <data name="UI_CreateAccount" xml:space="preserve">
     <value>Create account</value>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="CreateFolder" xml:space="preserve">
+  <data name="UI_CreateFolder" xml:space="preserve">
     <value>Folder name:</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
@@ -177,7 +177,7 @@
     <value>No transfers</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
-  <data name="GetLink" xml:space="preserve">
+  <data name="UI_GetLink" xml:space="preserve">
     <value>Get link</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -185,7 +185,7 @@
     <value>Loading preview...</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
+  <data name="UI_Login" xml:space="preserve">
     <value>Login</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -365,7 +365,7 @@
     <value>Done</value>
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Logout" xml:space="preserve">
+  <data name="UI_Logout" xml:space="preserve">
     <value>Logout</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -653,7 +653,7 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Select folder</value>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
+  <data name="UI_UpgradeAccount" xml:space="preserve">
     <value>Upgrade account</value>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -741,7 +741,7 @@ Try to preserve the PIN uppercase word.</comment>
     <value>MEGA speed</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
+  <data name="UI_ChangePassword" xml:space="preserve">
     <value>Change password</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -805,7 +805,7 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Back</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscription" xml:space="preserve">
+  <data name="UI_CancelSubscription" xml:space="preserve">
     <value>Cancel subscription</value>
     <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
@@ -1160,11 +1160,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Your new password</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
-  <data name="CloseAllSessions" xml:space="preserve">
+  <data name="UI_CloseAllSessions" xml:space="preserve">
     <value>Close all sessions</value>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="CloseSession" xml:space="preserve">
+  <data name="UI_CloseSession" xml:space="preserve">
     <value>Close session</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
@@ -1172,7 +1172,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Manage link</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="RemoveLink" xml:space="preserve">
+  <data name="UI_RemoveLink" xml:space="preserve">
     <value>Remove link</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>

@@ -53,16 +53,11 @@ namespace MegaApp.Services
         {
             Directory.CreateDirectory(path);            
         }
-
-        public static void DeleteFolder (string path)
+        
+        public static void DeleteFolder(string path, bool recursive = false)
         {
-            if (Directory.Exists(path)) 
-                Directory.Delete(path);
-        }
-
-        public static void DeleteFolder(string path, bool recursive)
-        {
-            Directory.Delete(path, recursive);
+            if (Directory.Exists(path))
+                Directory.Delete(path, recursive);            
         }
 
         public static bool HasIllegalChars(string path)
@@ -136,10 +131,10 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.SelectFolderFailed_Title,
-                            String.Format(AppMessages.SelectFolderFailedWithErrorCode, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.SelectFolderFailed_Title,
+                        String.Format(AppMessages.SelectFolderFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
             }            
         }

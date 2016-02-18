@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
-    <SupportedCultures>ar%3bda%3bde%3bes%3bfr%3bhr%3bit%3bnl%3bpt-BR%3bpt%3bro%3bru%3bsv%3btr%3bbg%3bcs%3bzh-Hans%3bzh-Hant%3bko%3bsk%3bsl%3bet%3bfi%3bka%3bhe%3bhu%3bid%3bja%3bfa%3bpl%3bsr%3bth%3buk%3bvi</SupportedCultures>
+    <SupportedCultures>ar;bg;cs;de;es;fa;fi;fr;he;hu;id;it;ja;ko;nl;pl;pt-BR;pt;ro;ru;sk;sl;sr;sv;th;tr;uk;vi;zh-Hans;zh-Hant</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>MegaApp_$(Configuration)_$(Platform).xap</XapFilename>
@@ -845,6 +845,9 @@
     <Content Include="..\common\Assets\AppBar\folder_add.png">
       <Link>Assets\AppBar\folder_add.png</Link>
     </Content>
+    <Content Include="..\common\Assets\AppBar\link.png">
+      <Link>Assets\AppBar\link.png</Link>
+    </Content>
     <Content Include="..\common\Assets\AppBar\login.png">
       <Link>Assets\AppBar\login.png</Link>
     </Content>
@@ -859,9 +862,6 @@
     </Content>
     <Content Include="..\common\Assets\AppBar\open.png">
       <Link>Assets\AppBar\open.png</Link>
-    </Content>
-    <Content Include="..\common\Assets\AppBar\open_link.png">
-      <Link>Assets\AppBar\open_link.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\refresh.png">
       <Link>Assets\AppBar\refresh.png</Link>
@@ -2320,26 +2320,19 @@
       <DependentUpon>AppMessages.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.bg-BG.resx">
-      <Link>Resources\AppMessages.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.bg.resx">
+      <Link>Resources\AppMessages.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
+      <DependentUpon>AppMessages.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.cs-CZ.resx">
-      <Link>Resources\AppMessages.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.cs.resx">
+      <Link>Resources\AppMessages.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.da.resx">
-      <Link>Resources\AppMessages.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>AppMessages.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.de.resx">
       <Link>Resources\AppMessages.de.resx</Link>
@@ -2355,26 +2348,19 @@
       <DependentUpon>AppMessages.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.et-EE.resx">
-      <Link>Resources\AppMessages.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.fa.resx">
+      <Link>Resources\AppMessages.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>AppMessages.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.fa-IR.resx">
-      <Link>Resources\AppMessages.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.fi.resx">
+      <Link>Resources\AppMessages.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.fi-FI.resx">
-      <Link>Resources\AppMessages.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>AppMessages.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.fr.resx">
       <Link>Resources\AppMessages.fr.resx</Link>
@@ -2383,33 +2369,26 @@
       <DependentUpon>AppMessages.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.he-IL.resx">
-      <Link>Resources\AppMessages.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.he.resx">
+      <Link>Resources\AppMessages.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>AppMessages.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.hr.resx">
-      <Link>Resources\AppMessages.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.hu.resx">
+      <Link>Resources\AppMessages.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>AppMessages.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.hu-HU.resx">
-      <Link>Resources\AppMessages.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.id.resx">
+      <Link>Resources\AppMessages.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.id-ID.resx">
-      <Link>Resources\AppMessages.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>AppMessages.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.it.resx">
       <Link>Resources\AppMessages.it.resx</Link>
@@ -2418,26 +2397,19 @@
       <DependentUpon>AppMessages.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.ja-JP.resx">
-      <Link>Resources\AppMessages.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.ja.resx">
+      <Link>Resources\AppMessages.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>AppMessages.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.ka-GE.resx">
-      <Link>Resources\AppMessages.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.ko.resx">
+      <Link>Resources\AppMessages.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.ko-KR.resx">
-      <Link>Resources\AppMessages.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>AppMessages.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.nl.resx">
       <Link>Resources\AppMessages.nl.resx</Link>
@@ -2446,12 +2418,12 @@
       <DependentUpon>AppMessages.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.pl-PL.resx">
-      <Link>Resources\AppMessages.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.pl.resx">
+      <Link>Resources\AppMessages.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>AppMessages.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.pt-BR.resx">
       <Link>Resources\AppMessages.pt-BR.resx</Link>
@@ -2486,26 +2458,26 @@
       <DependentUpon>AppMessages.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.sk-SK.resx">
-      <Link>Resources\AppMessages.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.sk.resx">
+      <Link>Resources\AppMessages.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>AppMessages.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.sl-SI.resx">
-      <Link>Resources\AppMessages.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.sl.resx">
+      <Link>Resources\AppMessages.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>AppMessages.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.sr-Cyrl.resx">
-      <Link>Resources\AppMessages.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.sr.resx">
+      <Link>Resources\AppMessages.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>AppMessages.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.sv.resx">
       <Link>Resources\AppMessages.sv.resx</Link>
@@ -2514,12 +2486,12 @@
       <DependentUpon>AppMessages.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.th-TH.resx">
-      <Link>Resources\AppMessages.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.th.resx">
+      <Link>Resources\AppMessages.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>AppMessages.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppMessages.tr.resx">
       <Link>Resources\AppMessages.tr.resx</Link>
@@ -2528,33 +2500,33 @@
       <DependentUpon>AppMessages.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.uk-UA.resx">
-      <Link>Resources\AppMessages.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.uk.resx">
+      <Link>Resources\AppMessages.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>AppMessages.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.vi-VN.resx">
-      <Link>Resources\AppMessages.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.vi.resx">
+      <Link>Resources\AppMessages.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>AppMessages.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.zh-CN.resx">
-      <Link>Resources\AppMessages.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.zh-Hans.resx">
+      <Link>Resources\AppMessages.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>AppMessages.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppMessages.zh-TW.resx">
-      <Link>Resources\AppMessages.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppMessages.zh-Hant.resx">
+      <Link>Resources\AppMessages.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppMessages.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>AppMessages.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.ar.resx">
       <Link>Resources\AppResources.ar.resx</Link>
@@ -2563,26 +2535,19 @@
       <DependentUpon>AppResources.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.bg-BG.resx">
-      <Link>Resources\AppResources.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.bg.resx">
+      <Link>Resources\AppResources.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
+      <DependentUpon>AppResources.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.cs-CZ.resx">
-      <Link>Resources\AppResources.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.cs.resx">
+      <Link>Resources\AppResources.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.da.resx">
-      <Link>Resources\AppResources.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>AppResources.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.de.resx">
       <Link>Resources\AppResources.de.resx</Link>
@@ -2598,26 +2563,19 @@
       <DependentUpon>AppResources.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.et-EE.resx">
-      <Link>Resources\AppResources.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.fa.resx">
+      <Link>Resources\AppResources.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>AppResources.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.fa-IR.resx">
-      <Link>Resources\AppResources.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.fi.resx">
+      <Link>Resources\AppResources.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.fi-FI.resx">
-      <Link>Resources\AppResources.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>AppResources.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.fr.resx">
       <Link>Resources\AppResources.fr.resx</Link>
@@ -2626,33 +2584,26 @@
       <DependentUpon>AppResources.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.he-IL.resx">
-      <Link>Resources\AppResources.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.he.resx">
+      <Link>Resources\AppResources.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>AppResources.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.hr.resx">
-      <Link>Resources\AppResources.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.hu.resx">
+      <Link>Resources\AppResources.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>AppResources.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.hu-HU.resx">
-      <Link>Resources\AppResources.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.id.resx">
+      <Link>Resources\AppResources.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.id-ID.resx">
-      <Link>Resources\AppResources.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>AppResources.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.it.resx">
       <Link>Resources\AppResources.it.resx</Link>
@@ -2661,26 +2612,19 @@
       <DependentUpon>AppResources.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.ja-JP.resx">
-      <Link>Resources\AppResources.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.ja.resx">
+      <Link>Resources\AppResources.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>AppResources.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.ka-GE.resx">
-      <Link>Resources\AppResources.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.ko.resx">
+      <Link>Resources\AppResources.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.ko-KR.resx">
-      <Link>Resources\AppResources.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>AppResources.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.nl.resx">
       <Link>Resources\AppResources.nl.resx</Link>
@@ -2689,12 +2633,12 @@
       <DependentUpon>AppResources.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.pl-PL.resx">
-      <Link>Resources\AppResources.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.pl.resx">
+      <Link>Resources\AppResources.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>AppResources.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.pt-BR.resx">
       <Link>Resources\AppResources.pt-BR.resx</Link>
@@ -2730,26 +2674,26 @@
       <DependentUpon>AppResources.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.sk-SK.resx">
-      <Link>Resources\AppResources.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.sk.resx">
+      <Link>Resources\AppResources.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>AppResources.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.sl-SI.resx">
-      <Link>Resources\AppResources.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.sl.resx">
+      <Link>Resources\AppResources.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>AppResources.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.sr-Cyrl.resx">
-      <Link>Resources\AppResources.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.sr.resx">
+      <Link>Resources\AppResources.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>AppResources.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.sv.resx">
       <Link>Resources\AppResources.sv.resx</Link>
@@ -2758,12 +2702,12 @@
       <DependentUpon>AppResources.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.th-TH.resx">
-      <Link>Resources\AppResources.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.th.resx">
+      <Link>Resources\AppResources.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>AppResources.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\AppResources.tr.resx">
       <Link>Resources\AppResources.tr.resx</Link>
@@ -2772,33 +2716,33 @@
       <DependentUpon>AppResources.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.uk-UA.resx">
-      <Link>Resources\AppResources.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.uk.resx">
+      <Link>Resources\AppResources.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>AppResources.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.vi-VN.resx">
-      <Link>Resources\AppResources.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.vi.resx">
+      <Link>Resources\AppResources.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>AppResources.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.zh-CN.resx">
-      <Link>Resources\AppResources.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.zh-Hans.resx">
+      <Link>Resources\AppResources.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>AppResources.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\AppResources.zh-TW.resx">
-      <Link>Resources\AppResources.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\AppResources.zh-Hant.resx">
+      <Link>Resources\AppResources.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AppResources.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>AppResources.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.ar.resx">
       <Link>Resources\ProgressMessages.ar.resx</Link>
@@ -2807,27 +2751,19 @@
       <DependentUpon>ProgressMessages.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.bg-BG.resx">
-      <Link>Resources\ProgressMessages.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.bg.resx">
+      <Link>Resources\ProgressMessages.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
-      <SubType>Designer</SubType>
+      <DependentUpon>ProgressMessages.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.cs-CZ.resx">
-      <Link>Resources\ProgressMessages.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.cs.resx">
+      <Link>Resources\ProgressMessages.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.da.resx">
-      <Link>Resources\ProgressMessages.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>ProgressMessages.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.de.resx">
       <Link>Resources\ProgressMessages.de.resx</Link>
@@ -2843,26 +2779,19 @@
       <DependentUpon>ProgressMessages.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.et-EE.resx">
-      <Link>Resources\ProgressMessages.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.fa.resx">
+      <Link>Resources\ProgressMessages.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>ProgressMessages.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.fa-IR.resx">
-      <Link>Resources\ProgressMessages.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.fi.resx">
+      <Link>Resources\ProgressMessages.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.fi-FI.resx">
-      <Link>Resources\ProgressMessages.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>ProgressMessages.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.fr.resx">
       <Link>Resources\ProgressMessages.fr.resx</Link>
@@ -2871,33 +2800,26 @@
       <DependentUpon>ProgressMessages.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.he-IL.resx">
-      <Link>Resources\ProgressMessages.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.he.resx">
+      <Link>Resources\ProgressMessages.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>ProgressMessages.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.hr.resx">
-      <Link>Resources\ProgressMessages.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.hu.resx">
+      <Link>Resources\ProgressMessages.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>ProgressMessages.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.hu-HU.resx">
-      <Link>Resources\ProgressMessages.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.id.resx">
+      <Link>Resources\ProgressMessages.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.id-ID.resx">
-      <Link>Resources\ProgressMessages.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>ProgressMessages.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.it.resx">
       <Link>Resources\ProgressMessages.it.resx</Link>
@@ -2906,26 +2828,19 @@
       <DependentUpon>ProgressMessages.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.ja-JP.resx">
-      <Link>Resources\ProgressMessages.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.ja.resx">
+      <Link>Resources\ProgressMessages.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>ProgressMessages.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.ka-GE.resx">
-      <Link>Resources\ProgressMessages.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.ko.resx">
+      <Link>Resources\ProgressMessages.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.ko-KR.resx">
-      <Link>Resources\ProgressMessages.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>ProgressMessages.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.nl.resx">
       <Link>Resources\ProgressMessages.nl.resx</Link>
@@ -2934,12 +2849,12 @@
       <DependentUpon>ProgressMessages.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.pl-PL.resx">
-      <Link>Resources\ProgressMessages.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.pl.resx">
+      <Link>Resources\ProgressMessages.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>ProgressMessages.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.pt-BR.resx">
       <Link>Resources\ProgressMessages.pt-BR.resx</Link>
@@ -2954,7 +2869,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ProgressMessages.pt.xlf</DependentUpon>
       <culture>pt</culture>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.resx">
       <Link>Resources\ProgressMessages.resx</Link>
@@ -2975,26 +2889,26 @@
       <DependentUpon>ProgressMessages.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sk-SK.resx">
-      <Link>Resources\ProgressMessages.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sk.resx">
+      <Link>Resources\ProgressMessages.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>ProgressMessages.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sl-SI.resx">
-      <Link>Resources\ProgressMessages.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sl.resx">
+      <Link>Resources\ProgressMessages.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>ProgressMessages.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sr-Cyrl.resx">
-      <Link>Resources\ProgressMessages.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.sr.resx">
+      <Link>Resources\ProgressMessages.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>ProgressMessages.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.sv.resx">
       <Link>Resources\ProgressMessages.sv.resx</Link>
@@ -3003,12 +2917,12 @@
       <DependentUpon>ProgressMessages.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.th-TH.resx">
-      <Link>Resources\ProgressMessages.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.th.resx">
+      <Link>Resources\ProgressMessages.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>ProgressMessages.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\ProgressMessages.tr.resx">
       <Link>Resources\ProgressMessages.tr.resx</Link>
@@ -3017,33 +2931,33 @@
       <DependentUpon>ProgressMessages.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.uk-UA.resx">
-      <Link>Resources\ProgressMessages.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.uk.resx">
+      <Link>Resources\ProgressMessages.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>ProgressMessages.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.vi-VN.resx">
-      <Link>Resources\ProgressMessages.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.vi.resx">
+      <Link>Resources\ProgressMessages.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>ProgressMessages.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.zh-CN.resx">
-      <Link>Resources\ProgressMessages.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.zh-Hans.resx">
+      <Link>Resources\ProgressMessages.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>ProgressMessages.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\ProgressMessages.zh-TW.resx">
-      <Link>Resources\ProgressMessages.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\ProgressMessages.zh-Hant.resx">
+      <Link>Resources\ProgressMessages.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ProgressMessages.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>ProgressMessages.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.ar.resx">
       <Link>Resources\SettingsResources.ar.resx</Link>
@@ -3052,26 +2966,19 @@
       <DependentUpon>SettingsResources.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.bg-BG.resx">
-      <Link>Resources\SettingsResources.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.bg.resx">
+      <Link>Resources\SettingsResources.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
+      <DependentUpon>SettingsResources.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.cs-CZ.resx">
-      <Link>Resources\SettingsResources.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.cs.resx">
+      <Link>Resources\SettingsResources.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.da.resx">
-      <Link>Resources\SettingsResources.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>SettingsResources.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.de.resx">
       <Link>Resources\SettingsResources.de.resx</Link>
@@ -3087,26 +2994,19 @@
       <DependentUpon>SettingsResources.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.et-EE.resx">
-      <Link>Resources\SettingsResources.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.fa.resx">
+      <Link>Resources\SettingsResources.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>SettingsResources.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.fa-IR.resx">
-      <Link>Resources\SettingsResources.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.fi.resx">
+      <Link>Resources\SettingsResources.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.fi-FI.resx">
-      <Link>Resources\SettingsResources.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>SettingsResources.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.fr.resx">
       <Link>Resources\SettingsResources.fr.resx</Link>
@@ -3115,33 +3015,26 @@
       <DependentUpon>SettingsResources.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.he-IL.resx">
-      <Link>Resources\SettingsResources.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.he.resx">
+      <Link>Resources\SettingsResources.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>SettingsResources.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.hr.resx">
-      <Link>Resources\SettingsResources.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.hu.resx">
+      <Link>Resources\SettingsResources.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>SettingsResources.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.hu-HU.resx">
-      <Link>Resources\SettingsResources.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.id.resx">
+      <Link>Resources\SettingsResources.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.id-ID.resx">
-      <Link>Resources\SettingsResources.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>SettingsResources.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.it.resx">
       <Link>Resources\SettingsResources.it.resx</Link>
@@ -3150,26 +3043,19 @@
       <DependentUpon>SettingsResources.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.ja-JP.resx">
-      <Link>Resources\SettingsResources.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.ja.resx">
+      <Link>Resources\SettingsResources.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>SettingsResources.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.ka-GE.resx">
-      <Link>Resources\SettingsResources.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.ko.resx">
+      <Link>Resources\SettingsResources.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.ko-KR.resx">
-      <Link>Resources\SettingsResources.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>SettingsResources.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.nl.resx">
       <Link>Resources\SettingsResources.nl.resx</Link>
@@ -3178,12 +3064,12 @@
       <DependentUpon>SettingsResources.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.pl-PL.resx">
-      <Link>Resources\SettingsResources.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.pl.resx">
+      <Link>Resources\SettingsResources.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>SettingsResources.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.pt-BR.resx">
       <Link>Resources\SettingsResources.pt-BR.resx</Link>
@@ -3219,26 +3105,26 @@
       <DependentUpon>SettingsResources.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.sk-SK.resx">
-      <Link>Resources\SettingsResources.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.sk.resx">
+      <Link>Resources\SettingsResources.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>SettingsResources.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.sl-SI.resx">
-      <Link>Resources\SettingsResources.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.sl.resx">
+      <Link>Resources\SettingsResources.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>SettingsResources.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.sr-Cyrl.resx">
-      <Link>Resources\SettingsResources.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.sr.resx">
+      <Link>Resources\SettingsResources.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>SettingsResources.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.sv.resx">
       <Link>Resources\SettingsResources.sv.resx</Link>
@@ -3247,12 +3133,12 @@
       <DependentUpon>SettingsResources.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.th-TH.resx">
-      <Link>Resources\SettingsResources.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.th.resx">
+      <Link>Resources\SettingsResources.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>SettingsResources.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\SettingsResources.tr.resx">
       <Link>Resources\SettingsResources.tr.resx</Link>
@@ -3261,33 +3147,33 @@
       <DependentUpon>SettingsResources.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.uk-UA.resx">
-      <Link>Resources\SettingsResources.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.uk.resx">
+      <Link>Resources\SettingsResources.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>SettingsResources.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.vi-VN.resx">
-      <Link>Resources\SettingsResources.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.vi.resx">
+      <Link>Resources\SettingsResources.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>SettingsResources.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.zh-CN.resx">
-      <Link>Resources\SettingsResources.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.zh-Hans.resx">
+      <Link>Resources\SettingsResources.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>SettingsResources.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\SettingsResources.zh-TW.resx">
-      <Link>Resources\SettingsResources.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\SettingsResources.zh-Hant.resx">
+      <Link>Resources\SettingsResources.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SettingsResources.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>SettingsResources.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.ar.resx">
       <Link>Resources\UiResources.ar.resx</Link>
@@ -3296,26 +3182,19 @@
       <DependentUpon>UiResources.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.bg-BG.resx">
-      <Link>Resources\UiResources.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.bg.resx">
+      <Link>Resources\UiResources.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
+      <DependentUpon>UiResources.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.cs-CZ.resx">
-      <Link>Resources\UiResources.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.cs.resx">
+      <Link>Resources\UiResources.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.da.resx">
-      <Link>Resources\UiResources.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>UiResources.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.de.resx">
       <Link>Resources\UiResources.de.resx</Link>
@@ -3331,26 +3210,19 @@
       <DependentUpon>UiResources.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.et-EE.resx">
-      <Link>Resources\UiResources.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.fa.resx">
+      <Link>Resources\UiResources.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>UiResources.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.fa-IR.resx">
-      <Link>Resources\UiResources.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.fi.resx">
+      <Link>Resources\UiResources.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.fi-FI.resx">
-      <Link>Resources\UiResources.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>UiResources.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.fr.resx">
       <Link>Resources\UiResources.fr.resx</Link>
@@ -3359,33 +3231,26 @@
       <DependentUpon>UiResources.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.he-IL.resx">
-      <Link>Resources\UiResources.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.he.resx">
+      <Link>Resources\UiResources.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>UiResources.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.hr.resx">
-      <Link>Resources\UiResources.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.hu.resx">
+      <Link>Resources\UiResources.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>UiResources.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.hu-HU.resx">
-      <Link>Resources\UiResources.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.id.resx">
+      <Link>Resources\UiResources.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.id-ID.resx">
-      <Link>Resources\UiResources.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>UiResources.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.it.resx">
       <Link>Resources\UiResources.it.resx</Link>
@@ -3394,26 +3259,19 @@
       <DependentUpon>UiResources.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.ja-JP.resx">
-      <Link>Resources\UiResources.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.ja.resx">
+      <Link>Resources\UiResources.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>UiResources.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.ka-GE.resx">
-      <Link>Resources\UiResources.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.ko.resx">
+      <Link>Resources\UiResources.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.ko-KR.resx">
-      <Link>Resources\UiResources.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>UiResources.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.nl.resx">
       <Link>Resources\UiResources.nl.resx</Link>
@@ -3422,12 +3280,12 @@
       <DependentUpon>UiResources.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.pl-PL.resx">
-      <Link>Resources\UiResources.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.pl.resx">
+      <Link>Resources\UiResources.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>UiResources.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.pt-BR.resx">
       <Link>Resources\UiResources.pt-BR.resx</Link>
@@ -3462,26 +3320,26 @@
       <DependentUpon>UiResources.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.sk-SK.resx">
-      <Link>Resources\UiResources.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.sk.resx">
+      <Link>Resources\UiResources.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>UiResources.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.sl-SI.resx">
-      <Link>Resources\UiResources.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.sl.resx">
+      <Link>Resources\UiResources.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>UiResources.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.sr-Cyrl.resx">
-      <Link>Resources\UiResources.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.sr.resx">
+      <Link>Resources\UiResources.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>UiResources.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.sv.resx">
       <Link>Resources\UiResources.sv.resx</Link>
@@ -3490,12 +3348,12 @@
       <DependentUpon>UiResources.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.th-TH.resx">
-      <Link>Resources\UiResources.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.th.resx">
+      <Link>Resources\UiResources.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>UiResources.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\UiResources.tr.resx">
       <Link>Resources\UiResources.tr.resx</Link>
@@ -3504,33 +3362,33 @@
       <DependentUpon>UiResources.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.uk-UA.resx">
-      <Link>Resources\UiResources.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.uk.resx">
+      <Link>Resources\UiResources.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>UiResources.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.vi-VN.resx">
-      <Link>Resources\UiResources.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.vi.resx">
+      <Link>Resources\UiResources.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>UiResources.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.zh-CN.resx">
-      <Link>Resources\UiResources.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.zh-Hans.resx">
+      <Link>Resources\UiResources.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>UiResources.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\UiResources.zh-TW.resx">
-      <Link>Resources\UiResources.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\UiResources.zh-Hant.resx">
+      <Link>Resources\UiResources.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UiResources.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>UiResources.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.ar.resx">
       <Link>Resources\VisualResources.ar.resx</Link>
@@ -3539,26 +3397,19 @@
       <DependentUpon>VisualResources.ar.xlf</DependentUpon>
       <culture>ar</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.bg-BG.resx">
-      <Link>Resources\VisualResources.bg-BG.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.bg.resx">
+      <Link>Resources\VisualResources.bg.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.bg-BG.xlf</DependentUpon>
-      <culture>bg-BG</culture>
+      <DependentUpon>VisualResources.bg.xlf</DependentUpon>
+      <culture>bg</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.cs-CZ.resx">
-      <Link>Resources\VisualResources.cs-CZ.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.cs.resx">
+      <Link>Resources\VisualResources.cs.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.cs-CZ.xlf</DependentUpon>
-      <culture>cs-CZ</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.da.resx">
-      <Link>Resources\VisualResources.da.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.da.xlf</DependentUpon>
-      <culture>da</culture>
+      <DependentUpon>VisualResources.cs.xlf</DependentUpon>
+      <culture>cs</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.de.resx">
       <Link>Resources\VisualResources.de.resx</Link>
@@ -3574,26 +3425,19 @@
       <DependentUpon>VisualResources.es.xlf</DependentUpon>
       <culture>es</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.et-EE.resx">
-      <Link>Resources\VisualResources.et-EE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.fa.resx">
+      <Link>Resources\VisualResources.fa.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.et-EE.xlf</DependentUpon>
-      <culture>et-EE</culture>
+      <DependentUpon>VisualResources.fa.xlf</DependentUpon>
+      <culture>fa</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.fa-IR.resx">
-      <Link>Resources\VisualResources.fa-IR.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.fi.resx">
+      <Link>Resources\VisualResources.fi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.fa-IR.xlf</DependentUpon>
-      <culture>fa-IR</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.fi-FI.resx">
-      <Link>Resources\VisualResources.fi-FI.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.fi-FI.xlf</DependentUpon>
-      <culture>fi-FI</culture>
+      <DependentUpon>VisualResources.fi.xlf</DependentUpon>
+      <culture>fi</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.fr.resx">
       <Link>Resources\VisualResources.fr.resx</Link>
@@ -3602,33 +3446,26 @@
       <DependentUpon>VisualResources.fr.xlf</DependentUpon>
       <culture>fr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.he-IL.resx">
-      <Link>Resources\VisualResources.he-IL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.he.resx">
+      <Link>Resources\VisualResources.he.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.he-IL.xlf</DependentUpon>
-      <culture>he-IL</culture>
+      <DependentUpon>VisualResources.he.xlf</DependentUpon>
+      <culture>he</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.hr.resx">
-      <Link>Resources\VisualResources.hr.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.hu.resx">
+      <Link>Resources\VisualResources.hu.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.hr.xlf</DependentUpon>
-      <culture>hr</culture>
+      <DependentUpon>VisualResources.hu.xlf</DependentUpon>
+      <culture>hu</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.hu-HU.resx">
-      <Link>Resources\VisualResources.hu-HU.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.id.resx">
+      <Link>Resources\VisualResources.id.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.hu-HU.xlf</DependentUpon>
-      <culture>hu-HU</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.id-ID.resx">
-      <Link>Resources\VisualResources.id-ID.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.id-ID.xlf</DependentUpon>
-      <culture>id-ID</culture>
+      <DependentUpon>VisualResources.id.xlf</DependentUpon>
+      <culture>id</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.it.resx">
       <Link>Resources\VisualResources.it.resx</Link>
@@ -3637,26 +3474,19 @@
       <DependentUpon>VisualResources.it.xlf</DependentUpon>
       <culture>it</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.ja-JP.resx">
-      <Link>Resources\VisualResources.ja-JP.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.ja.resx">
+      <Link>Resources\VisualResources.ja.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.ja-JP.xlf</DependentUpon>
-      <culture>ja-JP</culture>
+      <DependentUpon>VisualResources.ja.xlf</DependentUpon>
+      <culture>ja</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.ka-GE.resx">
-      <Link>Resources\VisualResources.ka-GE.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.ko.resx">
+      <Link>Resources\VisualResources.ko.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.ka-GE.xlf</DependentUpon>
-      <culture>ka-GE</culture>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.ko-KR.resx">
-      <Link>Resources\VisualResources.ko-KR.resx</Link>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.ko-KR.xlf</DependentUpon>
-      <culture>ko-KR</culture>
+      <DependentUpon>VisualResources.ko.xlf</DependentUpon>
+      <culture>ko</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.nl.resx">
       <Link>Resources\VisualResources.nl.resx</Link>
@@ -3665,12 +3495,12 @@
       <DependentUpon>VisualResources.nl.xlf</DependentUpon>
       <culture>nl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.pl-PL.resx">
-      <Link>Resources\VisualResources.pl-PL.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.pl.resx">
+      <Link>Resources\VisualResources.pl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.pl-PL.xlf</DependentUpon>
-      <culture>pl-PL</culture>
+      <DependentUpon>VisualResources.pl.xlf</DependentUpon>
+      <culture>pl</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.pt-BR.resx">
       <Link>Resources\VisualResources.pt-BR.resx</Link>
@@ -3705,26 +3535,26 @@
       <DependentUpon>VisualResources.ru.xlf</DependentUpon>
       <culture>ru</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.sk-SK.resx">
-      <Link>Resources\VisualResources.sk-SK.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.sk.resx">
+      <Link>Resources\VisualResources.sk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.sk-SK.xlf</DependentUpon>
-      <culture>sk-SK</culture>
+      <DependentUpon>VisualResources.sk.xlf</DependentUpon>
+      <culture>sk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.sl-SI.resx">
-      <Link>Resources\VisualResources.sl-SI.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.sl.resx">
+      <Link>Resources\VisualResources.sl.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.sl-SI.xlf</DependentUpon>
-      <culture>sl-SI</culture>
+      <DependentUpon>VisualResources.sl.xlf</DependentUpon>
+      <culture>sl</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.sr-Cyrl.resx">
-      <Link>Resources\VisualResources.sr-Cyrl.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.sr.resx">
+      <Link>Resources\VisualResources.sr.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.sr-Cyrl.xlf</DependentUpon>
-      <culture>sr-Cyrl</culture>
+      <DependentUpon>VisualResources.sr.xlf</DependentUpon>
+      <culture>sr</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.sv.resx">
       <Link>Resources\VisualResources.sv.resx</Link>
@@ -3733,12 +3563,12 @@
       <DependentUpon>VisualResources.sv.xlf</DependentUpon>
       <culture>sv</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.th-TH.resx">
-      <Link>Resources\VisualResources.th-TH.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.th.resx">
+      <Link>Resources\VisualResources.th.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.th-TH.xlf</DependentUpon>
-      <culture>th-TH</culture>
+      <DependentUpon>VisualResources.th.xlf</DependentUpon>
+      <culture>th</culture>
     </EmbeddedResource>
     <EmbeddedResource Include="..\common\Resources\VisualResources.tr.resx">
       <Link>Resources\VisualResources.tr.resx</Link>
@@ -3747,34 +3577,39 @@
       <DependentUpon>VisualResources.tr.xlf</DependentUpon>
       <culture>tr</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.uk-UA.resx">
-      <Link>Resources\VisualResources.uk-UA.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.uk.resx">
+      <Link>Resources\VisualResources.uk.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.uk-UA.xlf</DependentUpon>
-      <culture>uk-UA</culture>
+      <DependentUpon>VisualResources.uk.xlf</DependentUpon>
+      <culture>uk</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.vi-VN.resx">
-      <Link>Resources\VisualResources.vi-VN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.vi.resx">
+      <Link>Resources\VisualResources.vi.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.vi-VN.xlf</DependentUpon>
-      <culture>vi-VN</culture>
+      <DependentUpon>VisualResources.vi.xlf</DependentUpon>
+      <culture>vi</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.zh-CN.resx">
-      <Link>Resources\VisualResources.zh-CN.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.zh-Hans.resx">
+      <Link>Resources\VisualResources.zh-Hans.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.zh-CN.xlf</DependentUpon>
-      <culture>zh-CN</culture>
+      <DependentUpon>VisualResources.zh-Hans.xlf</DependentUpon>
+      <culture>zh-Hans</culture>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\common\Resources\VisualResources.zh-TW.resx">
-      <Link>Resources\VisualResources.zh-TW.resx</Link>
+    <EmbeddedResource Include="..\common\Resources\VisualResources.zh-Hant.resx">
+      <Link>Resources\VisualResources.zh-Hant.resx</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>VisualResources.zh-TW.xlf</DependentUpon>
-      <culture>zh-TW</culture>
+      <DependentUpon>VisualResources.zh-Hant.xlf</DependentUpon>
+      <culture>zh-Hant</culture>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.10.2">
+      <Name>SQLite for Windows Phone</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="..\common\Resources\AppMessages.ar.xlf">
@@ -3782,20 +3617,15 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.bg-BG.xlf">
-      <Link>Resources\AppMessages.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.bg.xlf">
+      <Link>Resources\AppMessages.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.cs-CZ.xlf">
-      <Link>Resources\AppMessages.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.cs.xlf">
+      <Link>Resources\AppMessages.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.da.xlf">
-      <Link>Resources\AppMessages.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.da.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.de.xlf">
       <Link>Resources\AppMessages.de.xlf</Link>
@@ -3807,75 +3637,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.et-EE.xlf">
-      <Link>Resources\AppMessages.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.fa.xlf">
+      <Link>Resources\AppMessages.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.et-EE.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.fa-IR.xlf">
-      <Link>Resources\AppMessages.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.fi.xlf">
+      <Link>Resources\AppMessages.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.fi-FI.xlf">
-      <Link>Resources\AppMessages.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.fr.xlf">
       <Link>Resources\AppMessages.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.he-IL.xlf">
-      <Link>Resources\AppMessages.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.he.xlf">
+      <Link>Resources\AppMessages.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.he-IL.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.hr.xlf">
-      <Link>Resources\AppMessages.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.hu.xlf">
+      <Link>Resources\AppMessages.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.hr.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.hu-HU.xlf">
-      <Link>Resources\AppMessages.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.id.xlf">
+      <Link>Resources\AppMessages.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.id-ID.xlf">
-      <Link>Resources\AppMessages.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.id-ID.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.it.xlf">
       <Link>Resources\AppMessages.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.ja-JP.xlf">
-      <Link>Resources\AppMessages.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.ja.xlf">
+      <Link>Resources\AppMessages.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.ka-GE.xlf">
-      <Link>Resources\AppMessages.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.ko.xlf">
+      <Link>Resources\AppMessages.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.ko-KR.xlf">
-      <Link>Resources\AppMessages.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.nl.xlf">
       <Link>Resources\AppMessages.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.pl-PL.xlf">
-      <Link>Resources\AppMessages.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.pl.xlf">
+      <Link>Resources\AppMessages.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.pt-BR.xlf">
       <Link>Resources\AppMessages.pt-BR.xlf</Link>
@@ -3897,75 +3712,70 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.sk-SK.xlf">
-      <Link>Resources\AppMessages.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.sk.xlf">
+      <Link>Resources\AppMessages.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.sl-SI.xlf">
-      <Link>Resources\AppMessages.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.sl.xlf">
+      <Link>Resources\AppMessages.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.sr-Cyrl.xlf">
-      <Link>Resources\AppMessages.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.sr.xlf">
+      <Link>Resources\AppMessages.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.sv.xlf">
       <Link>Resources\AppMessages.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.th-TH.xlf">
-      <Link>Resources\AppMessages.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.th.xlf">
+      <Link>Resources\AppMessages.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.th-TH.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.tr.xlf">
       <Link>Resources\AppMessages.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.uk-UA.xlf">
-      <Link>Resources\AppMessages.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.uk.xlf">
+      <Link>Resources\AppMessages.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.vi-VN.xlf">
-      <Link>Resources\AppMessages.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.vi.xlf">
+      <Link>Resources\AppMessages.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.zh-CN.xlf">
-      <Link>Resources\AppMessages.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.zh-Hans.xlf">
+      <Link>Resources\AppMessages.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppMessages.zh-TW.xlf">
-      <Link>Resources\AppMessages.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppMessages.zh-Hant.xlf">
+      <Link>Resources\AppMessages.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppMessages.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>AppMessages.zh-Hant.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.ar.xlf">
       <Link>Resources\AppResources.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.bg-BG.xlf">
-      <Link>Resources\AppResources.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.bg.xlf">
+      <Link>Resources\AppResources.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>AppResources.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.cs-CZ.xlf">
-      <Link>Resources\AppResources.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.cs.xlf">
+      <Link>Resources\AppResources.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.da.xlf">
-      <Link>Resources\AppResources.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.da.resx</LastGenOutput>
+      <LastGenOutput>AppResources.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.de.xlf">
       <Link>Resources\AppResources.de.xlf</Link>
@@ -3977,75 +3787,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.et-EE.xlf">
-      <Link>Resources\AppResources.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.fa.xlf">
+      <Link>Resources\AppResources.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.et-EE.resx</LastGenOutput>
+      <LastGenOutput>AppResources.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.fa-IR.xlf">
-      <Link>Resources\AppResources.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.fi.xlf">
+      <Link>Resources\AppResources.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.fi-FI.xlf">
-      <Link>Resources\AppResources.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>AppResources.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.fr.xlf">
       <Link>Resources\AppResources.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.he-IL.xlf">
-      <Link>Resources\AppResources.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.he.xlf">
+      <Link>Resources\AppResources.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.he-IL.resx</LastGenOutput>
+      <LastGenOutput>AppResources.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.hr.xlf">
-      <Link>Resources\AppResources.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.hu.xlf">
+      <Link>Resources\AppResources.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.hr.resx</LastGenOutput>
+      <LastGenOutput>AppResources.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.hu-HU.xlf">
-      <Link>Resources\AppResources.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.id.xlf">
+      <Link>Resources\AppResources.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.id-ID.xlf">
-      <Link>Resources\AppResources.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.id-ID.resx</LastGenOutput>
+      <LastGenOutput>AppResources.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.it.xlf">
       <Link>Resources\AppResources.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.ja-JP.xlf">
-      <Link>Resources\AppResources.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.ja.xlf">
+      <Link>Resources\AppResources.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>AppResources.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.ka-GE.xlf">
-      <Link>Resources\AppResources.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.ko.xlf">
+      <Link>Resources\AppResources.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.ko-KR.xlf">
-      <Link>Resources\AppResources.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>AppResources.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.nl.xlf">
       <Link>Resources\AppResources.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.pl-PL.xlf">
-      <Link>Resources\AppResources.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.pl.xlf">
+      <Link>Resources\AppResources.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>AppResources.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.pt-BR.xlf">
       <Link>Resources\AppResources.pt-BR.xlf</Link>
@@ -4067,75 +3862,70 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.sk-SK.xlf">
-      <Link>Resources\AppResources.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.sk.xlf">
+      <Link>Resources\AppResources.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>AppResources.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.sl-SI.xlf">
-      <Link>Resources\AppResources.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.sl.xlf">
+      <Link>Resources\AppResources.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>AppResources.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.sr-Cyrl.xlf">
-      <Link>Resources\AppResources.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.sr.xlf">
+      <Link>Resources\AppResources.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>AppResources.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.sv.xlf">
       <Link>Resources\AppResources.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.th-TH.xlf">
-      <Link>Resources\AppResources.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.th.xlf">
+      <Link>Resources\AppResources.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.th-TH.resx</LastGenOutput>
+      <LastGenOutput>AppResources.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppResources.tr.xlf">
       <Link>Resources\AppResources.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppResources.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.uk-UA.xlf">
-      <Link>Resources\AppResources.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.uk.xlf">
+      <Link>Resources\AppResources.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>AppResources.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.vi-VN.xlf">
-      <Link>Resources\AppResources.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.vi.xlf">
+      <Link>Resources\AppResources.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>AppResources.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.zh-CN.xlf">
-      <Link>Resources\AppResources.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.zh-Hans.xlf">
+      <Link>Resources\AppResources.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>AppResources.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\AppResources.zh-TW.xlf">
-      <Link>Resources\AppResources.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\AppResources.zh-Hant.xlf">
+      <Link>Resources\AppResources.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>AppResources.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>AppResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.ar.xlf">
       <Link>Resources\ProgressMessages.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.bg-BG.xlf">
-      <Link>Resources\ProgressMessages.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.bg.xlf">
+      <Link>Resources\ProgressMessages.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.cs-CZ.xlf">
-      <Link>Resources\ProgressMessages.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.cs.xlf">
+      <Link>Resources\ProgressMessages.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.da.xlf">
-      <Link>Resources\ProgressMessages.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.da.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.de.xlf">
       <Link>Resources\ProgressMessages.de.xlf</Link>
@@ -4147,75 +3937,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.et-EE.xlf">
-      <Link>Resources\ProgressMessages.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.fa.xlf">
+      <Link>Resources\ProgressMessages.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.et-EE.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.fa-IR.xlf">
-      <Link>Resources\ProgressMessages.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.fi.xlf">
+      <Link>Resources\ProgressMessages.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.fi-FI.xlf">
-      <Link>Resources\ProgressMessages.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.fr.xlf">
       <Link>Resources\ProgressMessages.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.he-IL.xlf">
-      <Link>Resources\ProgressMessages.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.he.xlf">
+      <Link>Resources\ProgressMessages.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.he-IL.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.hr.xlf">
-      <Link>Resources\ProgressMessages.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.hu.xlf">
+      <Link>Resources\ProgressMessages.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.hr.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.hu-HU.xlf">
-      <Link>Resources\ProgressMessages.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.id.xlf">
+      <Link>Resources\ProgressMessages.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.id-ID.xlf">
-      <Link>Resources\ProgressMessages.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.id-ID.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.it.xlf">
       <Link>Resources\ProgressMessages.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.ja-JP.xlf">
-      <Link>Resources\ProgressMessages.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.ja.xlf">
+      <Link>Resources\ProgressMessages.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.ka-GE.xlf">
-      <Link>Resources\ProgressMessages.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.ko.xlf">
+      <Link>Resources\ProgressMessages.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.ko-KR.xlf">
-      <Link>Resources\ProgressMessages.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.nl.xlf">
       <Link>Resources\ProgressMessages.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.pl-PL.xlf">
-      <Link>Resources\ProgressMessages.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.pl.xlf">
+      <Link>Resources\ProgressMessages.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.pt-BR.xlf">
       <Link>Resources\ProgressMessages.pt-BR.xlf</Link>
@@ -4237,75 +4012,70 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.sk-SK.xlf">
-      <Link>Resources\ProgressMessages.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.sk.xlf">
+      <Link>Resources\ProgressMessages.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.sl-SI.xlf">
-      <Link>Resources\ProgressMessages.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.sl.xlf">
+      <Link>Resources\ProgressMessages.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.sr-Cyrl.xlf">
-      <Link>Resources\ProgressMessages.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.sr.xlf">
+      <Link>Resources\ProgressMessages.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.sv.xlf">
       <Link>Resources\ProgressMessages.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.th-TH.xlf">
-      <Link>Resources\ProgressMessages.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.th.xlf">
+      <Link>Resources\ProgressMessages.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.th-TH.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\ProgressMessages.tr.xlf">
       <Link>Resources\ProgressMessages.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>ProgressMessages.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.uk-UA.xlf">
-      <Link>Resources\ProgressMessages.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.uk.xlf">
+      <Link>Resources\ProgressMessages.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.vi-VN.xlf">
-      <Link>Resources\ProgressMessages.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.vi.xlf">
+      <Link>Resources\ProgressMessages.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.zh-CN.xlf">
-      <Link>Resources\ProgressMessages.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.zh-Hans.xlf">
+      <Link>Resources\ProgressMessages.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\ProgressMessages.zh-TW.xlf">
-      <Link>Resources\ProgressMessages.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\ProgressMessages.zh-Hant.xlf">
+      <Link>Resources\ProgressMessages.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>ProgressMessages.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>ProgressMessages.zh-Hant.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.ar.xlf">
       <Link>Resources\SettingsResources.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.bg-BG.xlf">
-      <Link>Resources\SettingsResources.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.bg.xlf">
+      <Link>Resources\SettingsResources.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.cs-CZ.xlf">
-      <Link>Resources\SettingsResources.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.cs.xlf">
+      <Link>Resources\SettingsResources.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.da.xlf">
-      <Link>Resources\SettingsResources.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.da.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.de.xlf">
       <Link>Resources\SettingsResources.de.xlf</Link>
@@ -4317,75 +4087,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.et-EE.xlf">
-      <Link>Resources\SettingsResources.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.fa.xlf">
+      <Link>Resources\SettingsResources.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.et-EE.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.fa-IR.xlf">
-      <Link>Resources\SettingsResources.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.fi.xlf">
+      <Link>Resources\SettingsResources.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.fi-FI.xlf">
-      <Link>Resources\SettingsResources.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.fr.xlf">
       <Link>Resources\SettingsResources.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.he-IL.xlf">
-      <Link>Resources\SettingsResources.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.he.xlf">
+      <Link>Resources\SettingsResources.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.he-IL.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.hr.xlf">
-      <Link>Resources\SettingsResources.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.hu.xlf">
+      <Link>Resources\SettingsResources.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.hr.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.hu-HU.xlf">
-      <Link>Resources\SettingsResources.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.id.xlf">
+      <Link>Resources\SettingsResources.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.id-ID.xlf">
-      <Link>Resources\SettingsResources.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.id-ID.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.it.xlf">
       <Link>Resources\SettingsResources.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.ja-JP.xlf">
-      <Link>Resources\SettingsResources.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.ja.xlf">
+      <Link>Resources\SettingsResources.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.ka-GE.xlf">
-      <Link>Resources\SettingsResources.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.ko.xlf">
+      <Link>Resources\SettingsResources.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.ko-KR.xlf">
-      <Link>Resources\SettingsResources.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.nl.xlf">
       <Link>Resources\SettingsResources.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.pl-PL.xlf">
-      <Link>Resources\SettingsResources.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.pl.xlf">
+      <Link>Resources\SettingsResources.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.pt-BR.xlf">
       <Link>Resources\SettingsResources.pt-BR.xlf</Link>
@@ -4407,75 +4162,70 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.sk-SK.xlf">
-      <Link>Resources\SettingsResources.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.sk.xlf">
+      <Link>Resources\SettingsResources.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.sl-SI.xlf">
-      <Link>Resources\SettingsResources.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.sl.xlf">
+      <Link>Resources\SettingsResources.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.sr-Cyrl.xlf">
-      <Link>Resources\SettingsResources.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.sr.xlf">
+      <Link>Resources\SettingsResources.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.sv.xlf">
       <Link>Resources\SettingsResources.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.th-TH.xlf">
-      <Link>Resources\SettingsResources.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.th.xlf">
+      <Link>Resources\SettingsResources.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.th-TH.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\SettingsResources.tr.xlf">
       <Link>Resources\SettingsResources.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>SettingsResources.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.uk-UA.xlf">
-      <Link>Resources\SettingsResources.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.uk.xlf">
+      <Link>Resources\SettingsResources.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.vi-VN.xlf">
-      <Link>Resources\SettingsResources.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.vi.xlf">
+      <Link>Resources\SettingsResources.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.zh-CN.xlf">
-      <Link>Resources\SettingsResources.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.zh-Hans.xlf">
+      <Link>Resources\SettingsResources.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\SettingsResources.zh-TW.xlf">
-      <Link>Resources\SettingsResources.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\SettingsResources.zh-Hant.xlf">
+      <Link>Resources\SettingsResources.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>SettingsResources.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>SettingsResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.ar.xlf">
       <Link>Resources\UiResources.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.bg-BG.xlf">
-      <Link>Resources\UiResources.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.bg.xlf">
+      <Link>Resources\UiResources.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>UiResources.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.cs-CZ.xlf">
-      <Link>Resources\UiResources.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.cs.xlf">
+      <Link>Resources\UiResources.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.da.xlf">
-      <Link>Resources\UiResources.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.da.resx</LastGenOutput>
+      <LastGenOutput>UiResources.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.de.xlf">
       <Link>Resources\UiResources.de.xlf</Link>
@@ -4487,75 +4237,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.et-EE.xlf">
-      <Link>Resources\UiResources.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.fa.xlf">
+      <Link>Resources\UiResources.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.et-EE.resx</LastGenOutput>
+      <LastGenOutput>UiResources.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.fa-IR.xlf">
-      <Link>Resources\UiResources.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.fi.xlf">
+      <Link>Resources\UiResources.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.fi-FI.xlf">
-      <Link>Resources\UiResources.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>UiResources.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.fr.xlf">
       <Link>Resources\UiResources.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.he-IL.xlf">
-      <Link>Resources\UiResources.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.he.xlf">
+      <Link>Resources\UiResources.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.he-IL.resx</LastGenOutput>
+      <LastGenOutput>UiResources.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.hr.xlf">
-      <Link>Resources\UiResources.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.hu.xlf">
+      <Link>Resources\UiResources.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.hr.resx</LastGenOutput>
+      <LastGenOutput>UiResources.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.hu-HU.xlf">
-      <Link>Resources\UiResources.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.id.xlf">
+      <Link>Resources\UiResources.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.id-ID.xlf">
-      <Link>Resources\UiResources.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.id-ID.resx</LastGenOutput>
+      <LastGenOutput>UiResources.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.it.xlf">
       <Link>Resources\UiResources.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.ja-JP.xlf">
-      <Link>Resources\UiResources.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.ja.xlf">
+      <Link>Resources\UiResources.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>UiResources.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.ka-GE.xlf">
-      <Link>Resources\UiResources.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.ko.xlf">
+      <Link>Resources\UiResources.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.ko-KR.xlf">
-      <Link>Resources\UiResources.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>UiResources.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.nl.xlf">
       <Link>Resources\UiResources.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.pl-PL.xlf">
-      <Link>Resources\UiResources.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.pl.xlf">
+      <Link>Resources\UiResources.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>UiResources.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.pt-BR.xlf">
       <Link>Resources\UiResources.pt-BR.xlf</Link>
@@ -4577,75 +4312,70 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.sk-SK.xlf">
-      <Link>Resources\UiResources.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.sk.xlf">
+      <Link>Resources\UiResources.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>UiResources.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.sl-SI.xlf">
-      <Link>Resources\UiResources.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.sl.xlf">
+      <Link>Resources\UiResources.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>UiResources.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.sr-Cyrl.xlf">
-      <Link>Resources\UiResources.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.sr.xlf">
+      <Link>Resources\UiResources.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>UiResources.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.sv.xlf">
       <Link>Resources\UiResources.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.th-TH.xlf">
-      <Link>Resources\UiResources.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.th.xlf">
+      <Link>Resources\UiResources.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.th-TH.resx</LastGenOutput>
+      <LastGenOutput>UiResources.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\UiResources.tr.xlf">
       <Link>Resources\UiResources.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>UiResources.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.uk-UA.xlf">
-      <Link>Resources\UiResources.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.uk.xlf">
+      <Link>Resources\UiResources.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>UiResources.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.vi-VN.xlf">
-      <Link>Resources\UiResources.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.vi.xlf">
+      <Link>Resources\UiResources.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>UiResources.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.zh-CN.xlf">
-      <Link>Resources\UiResources.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.zh-Hans.xlf">
+      <Link>Resources\UiResources.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>UiResources.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\UiResources.zh-TW.xlf">
-      <Link>Resources\UiResources.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\UiResources.zh-Hant.xlf">
+      <Link>Resources\UiResources.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>UiResources.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>UiResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.ar.xlf">
       <Link>Resources\VisualResources.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.ar.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.bg-BG.xlf">
-      <Link>Resources\VisualResources.bg-BG.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.bg.xlf">
+      <Link>Resources\VisualResources.bg.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.bg-BG.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.bg.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.cs-CZ.xlf">
-      <Link>Resources\VisualResources.cs-CZ.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.cs.xlf">
+      <Link>Resources\VisualResources.cs.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.cs-CZ.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.da.xlf">
-      <Link>Resources\VisualResources.da.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.da.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.cs.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.de.xlf">
       <Link>Resources\VisualResources.de.xlf</Link>
@@ -4657,75 +4387,60 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.es.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.et-EE.xlf">
-      <Link>Resources\VisualResources.et-EE.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.fa.xlf">
+      <Link>Resources\VisualResources.fa.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.et-EE.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.fa.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.fa-IR.xlf">
-      <Link>Resources\VisualResources.fa-IR.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.fi.xlf">
+      <Link>Resources\VisualResources.fi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.fa-IR.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.fi-FI.xlf">
-      <Link>Resources\VisualResources.fi-FI.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.fi-FI.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.fi.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.fr.xlf">
       <Link>Resources\VisualResources.fr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.fr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.he-IL.xlf">
-      <Link>Resources\VisualResources.he-IL.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.he.xlf">
+      <Link>Resources\VisualResources.he.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.he-IL.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.he.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.hr.xlf">
-      <Link>Resources\VisualResources.hr.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.hu.xlf">
+      <Link>Resources\VisualResources.hu.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.hr.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.hu.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.hu-HU.xlf">
-      <Link>Resources\VisualResources.hu-HU.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.id.xlf">
+      <Link>Resources\VisualResources.id.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.hu-HU.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.id-ID.xlf">
-      <Link>Resources\VisualResources.id-ID.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.id-ID.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.id.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.it.xlf">
       <Link>Resources\VisualResources.it.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.it.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.ja-JP.xlf">
-      <Link>Resources\VisualResources.ja-JP.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.ja.xlf">
+      <Link>Resources\VisualResources.ja.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.ja-JP.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.ja.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.ka-GE.xlf">
-      <Link>Resources\VisualResources.ka-GE.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.ko.xlf">
+      <Link>Resources\VisualResources.ko.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.ka-GE.resx</LastGenOutput>
-    </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.ko-KR.xlf">
-      <Link>Resources\VisualResources.ko-KR.xlf</Link>
-      <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.ko-KR.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.ko.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.nl.xlf">
       <Link>Resources\VisualResources.nl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.nl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.pl-PL.xlf">
-      <Link>Resources\VisualResources.pl-PL.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.pl.xlf">
+      <Link>Resources\VisualResources.pl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.pl-PL.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.pl.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.pt-BR.xlf">
       <Link>Resources\VisualResources.pt-BR.xlf</Link>
@@ -4747,61 +4462,56 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.ru.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.sk-SK.xlf">
-      <Link>Resources\VisualResources.sk-SK.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.sk.xlf">
+      <Link>Resources\VisualResources.sk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.sk-SK.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.sk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.sl-SI.xlf">
-      <Link>Resources\VisualResources.sl-SI.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.sl.xlf">
+      <Link>Resources\VisualResources.sl.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.sl-SI.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.sl.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.sr-Cyrl.xlf">
-      <Link>Resources\VisualResources.sr-Cyrl.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.sr.xlf">
+      <Link>Resources\VisualResources.sr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.sr-Cyrl.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.sr.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.sv.xlf">
       <Link>Resources\VisualResources.sv.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.sv.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.th-TH.xlf">
-      <Link>Resources\VisualResources.th-TH.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.th.xlf">
+      <Link>Resources\VisualResources.th.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.th-TH.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.th.resx</LastGenOutput>
     </XliffResource>
     <XliffResource Include="..\common\Resources\VisualResources.tr.xlf">
       <Link>Resources\VisualResources.tr.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.tr.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.uk-UA.xlf">
-      <Link>Resources\VisualResources.uk-UA.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.uk.xlf">
+      <Link>Resources\VisualResources.uk.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.uk-UA.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.uk.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.vi-VN.xlf">
-      <Link>Resources\VisualResources.vi-VN.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.vi.xlf">
+      <Link>Resources\VisualResources.vi.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.vi-VN.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.vi.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.zh-CN.xlf">
-      <Link>Resources\VisualResources.zh-CN.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.zh-Hans.xlf">
+      <Link>Resources\VisualResources.zh-Hans.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.zh-CN.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.zh-Hans.resx</LastGenOutput>
     </XliffResource>
-    <XliffResource Include="..\common\Resources\VisualResources.zh-TW.xlf">
-      <Link>Resources\VisualResources.zh-TW.xlf</Link>
+    <XliffResource Include="..\common\Resources\VisualResources.zh-Hant.xlf">
+      <Link>Resources\VisualResources.zh-Hant.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
-      <LastGenOutput>VisualResources.zh-TW.resx</LastGenOutput>
+      <LastGenOutput>VisualResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.10.2">
-      <Name>SQLite for Windows Phone</Name>
-    </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

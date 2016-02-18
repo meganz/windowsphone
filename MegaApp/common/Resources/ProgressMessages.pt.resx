@@ -117,41 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Está prestes a cancelar a sua subscrição Mega. Por favor, diga-nos se há algo que possamos fazer para o ajudar a mudar de opinião.</value>
-    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
-  </data>
   <data name="CancelTransfer" xml:space="preserve">
     <value>A cancelar a transferência...</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Alterar palavra-chave</value>
-    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
-  </data>
   <data name="CleanRubbishBin" xml:space="preserve">
     <value>A esvaziar o caixote do lixo...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
-  </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>A fechar todas as sessões...</value>
-    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>A fechar a sessão...</value>
-    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>A confirmar conta...</value>
-    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>A criar conta...</value>
-    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>A criar pasta...</value>
-    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
     <value>A armazenar o cartão de crédito...</value>
@@ -182,10 +154,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="GetContactData" xml:space="preserve">
     <value>A obter dados do contacto...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
-  </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>A obter hiperligação...</value>
-    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
     <value>A obter métodos de pagamento...</value>
@@ -223,14 +191,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>A criar a vista...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>A entrar...</value>
-    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>A sair da conta...</value>
-    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
-  </data>
   <data name="MoveNode" xml:space="preserve">
     <value>A mover...</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
@@ -258,10 +218,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="RemoveFromOffline" xml:space="preserve">
     <value>A remover de offline...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>A apagar endereço...</value>
-    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>A remover...</value>
@@ -294,9 +250,5 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="ServersTooBusy" xml:space="preserve">
     <value>Servidores ocupados. Por favor aguarde...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
-  </data>
-  <data name="UpgradeAccount" xml:space="preserve">
-    <value>A fazer o upgrade da conta...</value>
-    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
 </root>

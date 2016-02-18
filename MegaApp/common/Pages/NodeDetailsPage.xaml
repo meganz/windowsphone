@@ -22,14 +22,43 @@
     d:DataContext="{d:DesignInstance models:NodeDetailsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="NodeDetailsMenu">            
+        <shell:ApplicationBar x:Key="FileDetailsMenu">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="ExportedFileDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
+                <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="FolderDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
+                <shell:ApplicationBarMenuItem Text="create shortcut" Click="OnCreateShortcutClick" />                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="ExportedFolderDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
                 <shell:ApplicationBarMenuItem Text="create shortcut" Click="OnCreateShortcutClick" />
-                <shell:ApplicationBarMenuItem Text="get link" Click="OnGetLinkClick" />
-                <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />                
+                <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -58,22 +87,22 @@
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,-2,0,0" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="White" StrokeThickness="2" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
                 </Ellipse>
                 <Path Data="{Binding LocalizedVisualResources.SavedOfflineViewData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Margin="-16,-2,0,0" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform" Visibility="{Binding Node.IsAvailableOffline, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Path.Fill>
-                        <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        <SolidColorBrush Color="White"/>
                     </Path.Fill>
                 </Path>
-                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="2" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Ellipse Margin="-16,0,0,-14" Height="40" Width="40" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stroke="White" StrokeThickness="2" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Ellipse.Fill>
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Image Source="/Assets/AppBar/open_link.png" Margin="-16,0,0,-14" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <Image Source="/Assets/AppBar/link.png" Margin="-16,0,0,-14" Width="40" Height="40" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding Node.IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </Grid>
 
             <TextBlock Grid.Row="1" Margin="0,24" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Node.Name}" TextWrapping="Wrap"/>

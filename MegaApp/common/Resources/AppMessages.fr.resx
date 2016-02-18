@@ -696,7 +696,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Impossible de sélectionner le dossier. Veuillez ressayer ou sélectionner un autre dossier: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Échec de la sélection du dossier</value>
@@ -809,10 +810,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="WrongDataFormat_Title" xml:space="preserve">
     <value>Format de quota incorrect</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Vous êtes sur le point d'annuler votre abonnement MEGA. Veuillez nous dire s'il y a quelque chose que l'on puisse faire pour changer votre avis.</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="CancelSubscriptionConfirmation" xml:space="preserve">
     <value>Merci pour votre avis !</value>
