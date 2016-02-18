@@ -807,6 +807,11 @@ namespace MegaApp.Pages
 
         private void MoveItemTapAction()
         {
+            // Extra null reference exceptions checks
+            if (_mainPageViewModel == null || 
+                _mainPageViewModel.ActiveFolderView == null ||
+                _mainPageViewModel.ActiveFolderView.FocusedNode == null) return;
+            
             _mainPageViewModel.ActiveFolderView.SelectedNodes.Add(_mainPageViewModel.ActiveFolderView.FocusedNode);
             _mainPageViewModel.ActiveFolderView.PreviousDisplayMode = _mainPageViewModel.ActiveFolderView.CurrentDisplayMode;
             _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = DriveDisplayMode.MoveItem;
