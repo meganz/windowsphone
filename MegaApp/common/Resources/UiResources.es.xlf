@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="es-ES" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="es" original="UiResources.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -41,11 +41,11 @@
           <target state="translated">Selec. carpeta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</note>
           </trans-unit>
-        <trans-unit id="Resx/UpgradeAccount" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UpgradeAccount" translate="yes" xml:space="preserve">
           <source>Upgrade account</source>
-          <target state="translated">Actualizar cuenta</target>
+          <target state="new">Upgrade account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/DownloadLocation" translate="yes" xml:space="preserve">
           <source>Download location</source>
           <target state="translated">Localización de descargas</target>
@@ -371,11 +371,6 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated" state-qualifier="tm-suggestion">Inicio</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/Logout" translate="yes" xml:space="preserve">
-          <source>Logout</source>
-          <target state="translated">Cerrar sesión</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/On" translate="yes" xml:space="preserve">
           <source>On</source>
           <target state="translated" state-qualifier="tm-suggestion">Activado</target>
@@ -386,6 +381,11 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Hecho</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_Logout" translate="yes" xml:space="preserve">
+          <source>Logout</source>
+          <target state="new">Logout</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Off" translate="yes" xml:space="preserve">
           <source>Off</source>
           <target state="translated" state-qualifier="tm-suggestion">Desactivado</target>
@@ -710,21 +710,16 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Tu nueva contraseña</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/CloseAllSessions" translate="yes" xml:space="preserve">
-          <source>Close all sessions</source>
-          <target state="translated">Cerrar todas las sesiones</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/CloseSession" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CloseSession" translate="yes" xml:space="preserve">
           <source>Close session</source>
-          <target state="translated">Cerrar sesión</target>
+          <target state="new">Close session</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/RemoveLink" translate="yes" xml:space="preserve">
-          <source>Remove link</source>
-          <target state="translated">Eliminar enlace</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" xml:space="preserve">
+          <source>Close all sessions</source>
+          <target state="new">Close all sessions</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" xml:space="preserve">
           <source>Operating system restrictions</source>
           <target state="translated">Restricciones del sistema operativo</target>
@@ -780,6 +775,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Gestionar enlace</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_RemoveLink" translate="yes" xml:space="preserve">
+          <source>Remove link</source>
+          <target state="new">Remove link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" xml:space="preserve">
           <source>Incoming</source>
           <target state="translated">Entrante</target>
@@ -909,11 +909,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Apellidos</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/CancelSubscription" translate="yes" xml:space="preserve">
-          <source>Cancel subscription</source>
-          <target state="translated">Cancelar subscripción</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
         <trans-unit id="Resx/Dismiss" translate="yes" xml:space="preserve">
           <source>Dismiss</source>
           <target state="translated">Descartar</target>
@@ -924,6 +919,11 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Atrás</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_CancelSubscription" translate="yes" xml:space="preserve">
+          <source>Cancel subscription</source>
+          <target state="new">Cancel subscription</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" xml:space="preserve">
           <source>Security</source>
           <target state="translated">Seguridad</target>
@@ -1009,11 +1009,11 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">MEGA velocidad</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/ChangePassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ChangePassword" translate="yes" xml:space="preserve">
           <source>Change password</source>
-          <target state="translated">Cambiar contraseña</target>
+          <target state="new">Change password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/Help" translate="yes" xml:space="preserve">
           <source>Help</source>
           <target state="translated">Ayuda</target>
@@ -1299,21 +1299,21 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated" state-qualifier="mt-suggestion">Cargando vista previa...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/Login" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Login" translate="yes" xml:space="preserve">
           <source>Login</source>
-          <target state="translated">Iniciar sesión</target>
+          <target state="new">Login</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/EmptyTransfers" translate="yes" xml:space="preserve">
           <source>No transfers</source>
           <target state="translated" state-qualifier="mt-suggestion">No hay transferencias</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/GetLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_GetLink" translate="yes" xml:space="preserve">
           <source>Get link</source>
-          <target state="translated">Obtener enlace</target>
+          <target state="new">Get link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" xml:space="preserve">
           <source>Empty folder</source>
           <target state="translated">Carpeta vacía</target>
@@ -1323,16 +1323,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <source>Your e-mail address</source>
           <target state="translated">Tu dirección de e-mail</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/CreateFolder" translate="yes" xml:space="preserve">
-          <source>Folder name:</source>
-          <target state="translated">Nombre de la carpeta:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
-          </trans-unit>
-        <trans-unit id="Resx/CreateAccount" translate="yes" xml:space="preserve">
-          <source>Create account</source>
-          <target state="translated">Crear cuenta</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" xml:space="preserve">
           <source>Confirm your password</source>
@@ -1344,16 +1334,26 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Copy</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/ConfirmAccount" translate="yes" xml:space="preserve">
-          <source>Confirm account</source>
-          <target state="translated">Confirmar cuenta</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
-          </trans-unit>
+        <trans-unit id="Resx/UI_CreateFolder" translate="yes" xml:space="preserve">
+          <source>Folder name:</source>
+          <target state="new">Folder name:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CreateAccount" translate="yes" xml:space="preserve">
+          <source>Create account</source>
+          <target state="new">Create account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" xml:space="preserve">
           <source>Confirm</source>
           <target state="translated">Confirmar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</note>
           </trans-unit>
+        <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" xml:space="preserve">
+          <source>Confirm account</source>
+          <target state="new">Confirm account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" xml:space="preserve">
           <source>Cloud Drive</source>
           <target state="translated">Disco en la nube</target>

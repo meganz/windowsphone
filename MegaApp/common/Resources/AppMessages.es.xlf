@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="es-ES" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+  <file datatype="xml" source-language="en" target-language="es" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
     </header>
@@ -180,48 +180,48 @@ Preserve the [{0}] code because is for include the error code or the error messa
           </trans-unit>
         <trans-unit id="Resx/PathTooLong_Title" translate="yes" xml:space="preserve">
           <source>Path too long</source>
-          <target state="new">Path too long</target>
+          <target state="translated">Ruta demasiado larga</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" xml:space="preserve">
           <source>Invalid name or path</source>
-          <target state="new">Invalid name or path</target>
+          <target state="translated">Nombre o ruta no válida</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" xml:space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="new">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">El nombre o la ruta de la carpeta '{0}' no es válido o tiene caracteres ilegales. Por favor, cámbialo y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" xml:space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="new">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">La ruta del archivo/carpeta '{0}' es demasiado largo. Por favor, cámbiala y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
           <source>Access denied</source>
-          <target state="new">Access denied</target>
+          <target state="translated">Acceso denegado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" xml:space="preserve">
           <source>Invalid file name</source>
-          <target state="new">Invalid file name</target>
+          <target state="translated">Nombre de ficher no válido</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" xml:space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="new">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">El nombre del archivo '{0}' no es válido o tiene caracteres ilegales. Por favor, cámbialo y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" xml:space="preserve">
           <source>You don't have access to the path '{0}'. Please, select another one and try again.</source>
-          <target state="new">You don't have access to the path '{0}'. Please, select another one and try again.</target>
+          <target state="translated">No tienes acceso a la ruta '{0}'. Por favor, selecciona otra y vuelve a intentarlo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" xml:space="preserve">
           <source>Close session failed. Please try again. [{0}]</source>
           <target state="translated">Error al cerrar la sesión. Por favor, vuelve a intentarlo. [{0}]</target>
@@ -368,15 +368,15 @@ Are you sure you want to cancel your Mega subscription?</source>
 ¿Estás seguro de que quieres cancelar tu subscripción a Mega?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</note>
           </trans-unit>
-        <trans-unit id="Resx/CancelSubscription" translate="yes" xml:space="preserve">
-          <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
-          <target state="translated">Estás a punto de cancelar tu subscripción a Mega. Por favor, dinos si hay algo que podamos hacer para hacerte cambiar de opinión.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
-          </trans-unit>
         <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" xml:space="preserve">
           <source>Wrong data format</source>
           <target state="translated">Formato de datos incorrecto</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
+          </trans-unit>
+        <trans-unit id="Resx/AM_CancelSubscription" translate="yes" xml:space="preserve">
+          <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
+          <target state="new">You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
           </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" xml:space="preserve">
           <source>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</source>
@@ -487,21 +487,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</note>
           </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed" translate="yes" xml:space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
+          <target state="translated">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          </trans-unit>
+        <trans-unit id="Resx/AM_InvalidLink" translate="yes" xml:space="preserve">
+          <source>Invalid link</source>
+          <target state="translated">Link no válido</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
+          </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" xml:space="preserve">
           <source>Failed to select folder. Please, try again or select another folder.</source>
-          <target state="needs-review-translation">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note><note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Error al seleccionar la carpeta. Por favor, inténtalo de nuevo o selecciona otra carpeta.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
           </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" xml:space="preserve">
           <source>yes, export</source>
           <target state="translated">sí, exportar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
           </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailedWithErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
-          <target state="new">Failed to select folder. Please, try again or select another folder: [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" xml:space="preserve">
           <source>Download options</source>
           <target state="translated">Opciones de descarga</target>

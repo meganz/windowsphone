@@ -49,7 +49,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("90d7b72");
+            return String.Format("fc12194");
         }
 
         public static string GetAppUserAgent()

@@ -145,10 +145,6 @@
     <value>Selec. carpeta</value>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
-    <value>Actualizar cuenta</value>
-    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="DownloadLocation" xml:space="preserve">
     <value>Localización de descargas</value>
     <comment>Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -385,10 +381,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="HomeRoot" xml:space="preserve">
     <value>Inicio</value>
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Cerrar sesión</value>
-    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="On" xml:space="preserve">
     <value>Activado</value>
@@ -654,18 +646,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Tu nueva contraseña</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Cerrar todas las sesiones</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Cerrar sesión</value>
-    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Eliminar enlace</value>
-    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="SavedForOffline" xml:space="preserve">
     <value>Guardado para fuera de línea</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -810,10 +790,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Apellidos</value>
     <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Cancelar subscripción</value>
-    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Dismiss" xml:space="preserve">
     <value>Descartar</value>
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -889,10 +865,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="InitTourSpeed_Title" xml:space="preserve">
     <value>MEGA velocidad</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
-  </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Cambiar contraseña</value>
-    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Ayuda</value>
@@ -1122,17 +1094,9 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Cargando vista previa...</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Iniciar sesión</value>
-    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="EmptyTransfers" xml:space="preserve">
     <value>No hay transferencias</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
-  </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Obtener enlace</value>
-    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
     <value>Carpeta vacía</value>
@@ -1142,14 +1106,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Tu dirección de e-mail</value>
     <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
   </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Nombre de la carpeta:</value>
-    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Crear cuenta</value>
-    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ConfirmPasswordWatermark" xml:space="preserve">
     <value>Confirma tu contraseña</value>
     <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
@@ -1157,10 +1113,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Confirmar cuenta</value>
-    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirmar</value>

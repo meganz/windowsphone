@@ -61,15 +61,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceling subscription....
-        /// </summary>
-        public static string CancelSubscription {
-            get {
-                return ResourceManager.GetString("CancelSubscription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Canceling transfer....
         /// </summary>
         public static string CancelTransfer {
@@ -79,65 +70,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Changing password....
-        /// </summary>
-        public static string ChangePassword {
-            get {
-                return ResourceManager.GetString("ChangePassword", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Emptying the rubbish bin....
         /// </summary>
         public static string CleanRubbishBin {
             get {
                 return ResourceManager.GetString("CleanRubbishBin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Closing all sessions....
-        /// </summary>
-        public static string CloseAllSessions {
-            get {
-                return ResourceManager.GetString("CloseAllSessions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Closing session....
-        /// </summary>
-        public static string CloseSession {
-            get {
-                return ResourceManager.GetString("CloseSession", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Confirming account....
-        /// </summary>
-        public static string ConfirmAccount {
-            get {
-                return ResourceManager.GetString("ConfirmAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Creating account....
-        /// </summary>
-        public static string CreateAccount {
-            get {
-                return ResourceManager.GetString("CreateAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Creating folder....
-        /// </summary>
-        public static string CreateFolder {
-            get {
-                return ResourceManager.GetString("CreateFolder", resourceCulture);
             }
         }
         
@@ -201,15 +138,6 @@ namespace MegaApp.Resources {
         public static string GetContactData {
             get {
                 return ResourceManager.GetString("GetContactData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Getting link....
-        /// </summary>
-        public static string GetLink {
-            get {
-                return ResourceManager.GetString("GetLink", resourceCulture);
             }
         }
         
@@ -295,24 +223,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Logging in....
-        /// </summary>
-        public static string Login {
-            get {
-                return ResourceManager.GetString("Login", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Logging out....
-        /// </summary>
-        public static string Logout {
-            get {
-                return ResourceManager.GetString("Logout", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Moving....
         /// </summary>
         public static string MoveNode {
@@ -336,6 +246,114 @@ namespace MegaApp.Resources {
         public static string PauseTransfers {
             get {
                 return ResourceManager.GetString("PauseTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Canceling subscription....
+        /// </summary>
+        public static string PM_CancelSubscription {
+            get {
+                return ResourceManager.GetString("PM_CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Changing password....
+        /// </summary>
+        public static string PM_ChangePassword {
+            get {
+                return ResourceManager.GetString("PM_ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Closing all sessions....
+        /// </summary>
+        public static string PM_CloseAllSessions {
+            get {
+                return ResourceManager.GetString("PM_CloseAllSessions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Closing session....
+        /// </summary>
+        public static string PM_CloseSession {
+            get {
+                return ResourceManager.GetString("PM_CloseSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirming account....
+        /// </summary>
+        public static string PM_ConfirmAccount {
+            get {
+                return ResourceManager.GetString("PM_ConfirmAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Creating account....
+        /// </summary>
+        public static string PM_CreateAccount {
+            get {
+                return ResourceManager.GetString("PM_CreateAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Creating folder....
+        /// </summary>
+        public static string PM_CreateFolder {
+            get {
+                return ResourceManager.GetString("PM_CreateFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Getting link....
+        /// </summary>
+        public static string PM_GetLink {
+            get {
+                return ResourceManager.GetString("PM_GetLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Logging in....
+        /// </summary>
+        public static string PM_Login {
+            get {
+                return ResourceManager.GetString("PM_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Logging out....
+        /// </summary>
+        public static string PM_Logout {
+            get {
+                return ResourceManager.GetString("PM_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Removing link....
+        /// </summary>
+        public static string PM_RemoveLink {
+            get {
+                return ResourceManager.GetString("PM_RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upgrading account....
+        /// </summary>
+        public static string PM_UpgradeAccount {
+            get {
+                return ResourceManager.GetString("PM_UpgradeAccount", resourceCulture);
             }
         }
         
@@ -372,15 +390,6 @@ namespace MegaApp.Resources {
         public static string RemoveFromOffline {
             get {
                 return ResourceManager.GetString("RemoveFromOffline", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Removing link....
-        /// </summary>
-        public static string RemoveLink {
-            get {
-                return ResourceManager.GetString("RemoveLink", resourceCulture);
             }
         }
         
@@ -453,15 +462,6 @@ namespace MegaApp.Resources {
         public static string ServersTooBusy {
             get {
                 return ResourceManager.GetString("ServersTooBusy", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Upgrading account....
-        /// </summary>
-        public static string UpgradeAccount {
-            get {
-                return ResourceManager.GetString("UpgradeAccount", resourceCulture);
             }
         }
     }

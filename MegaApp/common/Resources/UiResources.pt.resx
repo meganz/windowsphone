@@ -145,10 +145,6 @@
     <value>confirmar</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>A confirmar conta...</value>
-    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ConfirmPasswordWatermark" xml:space="preserve">
     <value>confirma a tua palavra-chave</value>
     <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
@@ -156,14 +152,6 @@
   <data name="Copy" xml:space="preserve">
     <value>Copiar</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>A criar conta...</value>
-    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>A criar pasta...</value>
-    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="EmailWatermark" xml:space="preserve">
     <value>o seu endereço de e-mail</value>
@@ -177,17 +165,9 @@
     <value>Sem transferências</value>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>A obter hiperligação...</value>
-    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="LoadingPreview" xml:space="preserve">
     <value>A carregar pré-visualização...</value>
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>A entrar...</value>
-    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MegaLinkTitle" xml:space="preserve">
     <value>Hiperligação do MEGA:</value>
@@ -364,10 +344,6 @@
   <data name="Done" xml:space="preserve">
     <value>feito</value>
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>A sair da conta...</value>
-    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
     <value>Início</value>
@@ -653,10 +629,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>selecionar pasta</value>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
-    <value>A fazer o upgrade da conta...</value>
-    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="About" xml:space="preserve">
     <value>sobre</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -741,10 +713,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Velocidade MEGA</value>
     <comment>Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Alterar palavra-chave</value>
-    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Advanced" xml:space="preserve">
     <value>Avançado</value>
     <comment>Label for any 'Advanced' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -804,10 +772,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="Back" xml:space="preserve">
     <value>Atrás</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Está prestes a cancelar a sua subscrição Mega. Por favor, diga-nos se há algo que possamos fazer para o ajudar a mudar de opinião.</value>
-    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
     <value>Fechar</value>
@@ -1160,21 +1124,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>A sua nova palavra-passe</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>A fechar todas as sessões...</value>
-    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>A fechar a sessão...</value>
-    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
-  </data>
   <data name="ManageLink" xml:space="preserve">
     <value>Gerir endereço eletrónico</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>A apagar endereço...</value>
-    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
     <value>Restrições do sistema operativo</value>

@@ -22,10 +22,39 @@
     d:DataContext="{d:DesignInstance models:NodeDetailsViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="NodeDetailsMenu">            
+        <shell:ApplicationBar x:Key="FileDetailsMenu">
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="ExportedFileDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
+                <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="FolderDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
+                <shell:ApplicationBarMenuItem Text="create shortcut" Click="OnCreateShortcutClick" />                
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="ExportedFolderDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="rename" Click="OnRenameClick" />
                 <shell:ApplicationBarMenuItem Text="create shortcut" Click="OnCreateShortcutClick" />
