@@ -107,26 +107,21 @@ namespace MegaApp.Pages
 
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
-            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
-                _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+            _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);            
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
         {
-            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null) 
-                _previewImageViewModel.SelectedPreview.GetLink();
+            _previewImageViewModel.SelectedPreview.GetLink();
         }
 
         private void OnRenameItemClick(object sender, EventArgs e)
         {
-            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null) 
-                _previewImageViewModel.SelectedPreview.Rename();
+            _previewImageViewModel.SelectedPreview.Rename();
         }
-
         private async void OnRemoveClick(object sender, EventArgs e)
         {
-            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
-                await _previewImageViewModel.SelectedPreview.RemoveAsync(false);
+            await _previewImageViewModel.SelectedPreview.RemoveAsync(false);
         }
 
         private void OnPreviousClick(object sender, EventArgs e)

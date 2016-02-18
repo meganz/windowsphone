@@ -856,7 +856,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. [{0}]</value>
+    <value>Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. {{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
