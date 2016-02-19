@@ -238,17 +238,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>שגיאה בייצוא התמונה לאלבור "תמונות שמורות".אנא נסה שוב</value>
+    <value>שגיאה בייצוא התמונה לאלבור "תמונות שמורות".
+אנא נסה שוב</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
     <value>שגיאה בשמירת התמונה</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
-  </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>ייבוא קובץ נכשל</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
     <value>ייבוא קובץ נכשל</value>
@@ -494,11 +490,6 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <value>סיסמא לא נכונה</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
-  <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>בחרת מעל 100 קבצים ({0}) להורדה. האם הינך רוצה להמשיך?</value>
-    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
-  </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>מספר הורדות</value>
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
@@ -601,7 +592,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>לא בחרת את מיקום ברירת המחדל עבור ההורדות שלך.על מנת להמשיך עם ההורדה אנא בחר תיקיית יעד או הכנס לאפשרויות ובחר בתיקיית הורדות ברירת מחדל.</value>
+    <value>לא בחרת את מיקום ברירת המחדל עבור ההורדות שלך.
+
+על מנת להמשיך עם ההורדה אנא בחר תיקיית יעד או הכנס לאפשרויות ובחר בתיקיית הורדות ברירת מחדל.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -627,7 +620,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>אין הרשאות מספקות להעתק הקובץ הנבחר לתיקיית היעד. ככל הנראה הינך מנסה להעתיק/לשמור לתוך כרטיס הזכרון קובץ בעל סיומת לא נתמכת.אנא נסה להעתיק/לשמור את הקובץ לזכרון הפנימי של המכשיר.</value>
+    <value>אין הרשאות מספקות להעתק הקובץ הנבחר לתיקיית היעד. ככל הנראה הינך מנסה להעתיק/לשמור לתוך כרטיס הזכרון קובץ בעל סיומת לא נתמכת.
+אנא נסה להעתיק/לשמור את הקובץ לזכרון הפנימי של המכשיר.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -811,12 +805,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>פורמט המידע שגוי</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>תודה על משובך!</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
-  </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>הרישום לא בוטל.אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
+    <value>הרישום לא בוטל.
+אנא צור קשר עם support@mega.nz לביטול הרישום.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -945,9 +936,8 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
     <value>שגיאה במחלקת איש קשר {0}.אנא נסה שוב. [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>שגיאה במחלקת איש קשר</value>
@@ -1019,5 +1009,75 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="NoInternetConnectionMessage" xml:space="preserve">
     <value>אינך יכול לבצע פעולה זו. אנא התחבר לאינטרנט ונסה שוב. </value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
+  <data name="AM_CancelSubscription" xml:space="preserve">
+    <value>הינך עומד לבטל את ההרשה אל MEGA.
+אנא הודיע לנו אם יש משהו שאנו יכולים לעזור בו על מנת לשנות את דעתך.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>אין לך גישה אל '{0}'. אנא בחר אחר ונסה שוב.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>הגישה נדחתה</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>שם הקובץ '{0}' אינו תקין או יש בו אותיות לא חוקיות. אנא שנה אותו ונסה שוב.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>שם לא תקין</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>הנתיב לתיקייה/קובץ '{0}' ארוך מדי. אנא שנה אותו ונסה שוב.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>נתיב ארוך מדי</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>שם התיקייה '{0}' אינו תקין או יש בו אותיות לא חוקיות. אנא שנה אותו ונסה שוב.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>שם או נתיב לא תקינים</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>קישור לא תקין</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
+  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
+    <value>שגיאה בבחירת התיקייה. אנא נסה שוב או בחר בתיקייה אחרת.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+  </data>
+  <data name="AM_ImportFileFailed" xml:space="preserve">
+    <value>File import failed [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
+    <value>ייבוא קובץ נכשל</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>בחרת ביותר מ-{0} קבצים להורדה ({1}). האם אתה רוצה להמשיך</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>תודה על המשוב! האם אתה בטוח שאתה רוצה לבטל את המנוי ל-MEGA?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
 </root>

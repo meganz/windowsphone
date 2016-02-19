@@ -270,7 +270,7 @@ namespace MegaApp.Services
 
             var result = await new CustomMessageDialog(
                 AppMessages.DownloadLimitMessage_Title,
-                String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+                String.Format(AppMessages.DownloadLimitMessage, DownloadLimit, downloadCount),
                 App.AppInformation,
                 MessageDialogButtons.Ok).ShowDialogAsync();
 

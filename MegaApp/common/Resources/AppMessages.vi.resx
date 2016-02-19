@@ -245,11 +245,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Lưu ảnh bị thất bại</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>Chuyển nhập tệp tin thất bại</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
     <value>Chuyển nhập thất bại</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
@@ -494,11 +489,6 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <value>Sai mật khẩu</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
-  <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>Bạn đã chọn hơn 100 mục ({0}) để tải về. Bạn chắc muốn tiến hành không?</value>
-    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
-  </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>Lượng tải về</value>
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
@@ -601,7 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Bạn chưa có chọn một thư mục mặc định để lưu các tệp tin tải về.Để tiến hành download, xin chọn một thư mục đích hoặc tới phần tùy chỉnh để chọn ra một thư mục để lưu các tải về sau này.</value>
+    <value>Bạn chưa có chọn một thư mục mặc định để lưu các tệp tin tải về.
+
+Để tiến hành download, xin chọn một thư mục đích hoặc tới phần tùy chỉnh để chọn ra một thư mục để lưu các tải về sau này.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -627,7 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Ban không có quyền truy cập và sao chép dạng tệp tin này tới thư mục bạn muốn. Có phải bạn đang cố sao chép hay lưu một tệp tin không được hỗ trợ vào thẻ nhớ SD?Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của bạn trước.</value>
+    <value>Ban không có quyền truy cập và sao chép dạng tệp tin này tới thư mục bạn muốn. Có phải bạn đang cố sao chép hay lưu một tệp tin không được hỗ trợ vào thẻ nhớ SD?
+Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của bạn trước.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -811,10 +804,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Sai định dạng data</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Cám ơn lời phản hồi của quý khách!Quý khách có chắc muốn hủy bỏ hạng thuê bao MEGA không?</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
-  </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
     <value>Thuê bao dịch vụ không được hủy đúng cách. Xin liên hệ support@mega.nz để được giúp đỡ hủy bỏ dịch vụ.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
@@ -945,9 +934,8 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
     <value>Xóa tên liên lạc {0} thất bại. Xin thử lại. [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>Xóa tên liên lạc thất bại</value>
@@ -1019,5 +1007,74 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="NoInternetConnectionMessage" xml:space="preserve">
     <value>Bạn không thể thực hiện hành động này. Xin kết nối Internet và thử lại.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
+  <data name="AM_CancelSubscription" xml:space="preserve">
+    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Truy cập bị từ chối</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>Invalid file name</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>Path too long</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>Invalid name or path</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
+  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
+    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+  </data>
+  <data name="AM_ImportFileFailed" xml:space="preserve">
+    <value>File import failed [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
+    <value>Chuyển nhập tệp tin thất bại</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Bạn vừa chọn tới {0} mục ({1}) để định tải về. Bạn có muốn tiến hành không?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Cảm ơn lời nhận xét của quý khách! Quý khách có muốn hủy thuê bao MEGA ngay không?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
 </root>

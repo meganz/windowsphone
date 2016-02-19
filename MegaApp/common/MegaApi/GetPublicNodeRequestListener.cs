@@ -38,7 +38,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.ImportFileFailed; }
+            get { return AppMessages.AM_ImportFileFailed; }
         }
 
         protected override string ErrorMessageTitle
@@ -150,11 +150,11 @@ namespace MegaApp.MegaApi
                     {
                         DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         new CustomMessageDialog(
                             ErrorMessageTitle,
-                            ErrorMessage,
+                            String.Format(ErrorMessage, e.Message),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
                     }
@@ -165,10 +165,10 @@ namespace MegaApp.MegaApi
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            ErrorMessageTitle,
-                            ErrorMessage,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        ErrorMessageTitle,
+                        AppMessages.AM_ImportFileFailedNoErrorCode,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
         }
 

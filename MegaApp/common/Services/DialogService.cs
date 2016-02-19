@@ -772,7 +772,7 @@ namespace MegaApp.Services
         private static async void ShowCancelSubscriptionDialog(string reason)
         {
             var customMessageDialog = new CustomMessageDialog(AppMessages.CancelSubscription_Title,
-                AppMessages.CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
+                AppMessages.AM_CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
 
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
