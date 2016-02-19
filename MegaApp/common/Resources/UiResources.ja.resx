@@ -214,7 +214,8 @@
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PasswordWatermark" xml:space="preserve">
-    <value>あなたのパスワード</value>
+    <value>あなたのパスワード
+</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
@@ -901,8 +902,8 @@ Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
     <value> {0} 定期契約の料金は、前もってキャンセルされない限り、 {0} 後の更新時に自動的に請求されます。</value>
-    <comment>Label to indicate the renewal period of the purchased subscription.
-Preserve the {0} code because is for include the renewal period string in runtime.</comment>
+    <comment>Label to indicate the renewal period of the purchased subscription. 
+Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
   <data name="Annual" xml:space="preserve">
     <value>年間</value>
@@ -1134,7 +1135,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
     <value>Saved for offline use</value>
-    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
+    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
     <value>No files in your cloud drive</value>
@@ -1167,5 +1168,53 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="DefaultDownloadLocation" xml:space="preserve">
     <value>Please select a default download folder.</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
+  <data name="UI_ConfirmAccount" xml:space="preserve">
+    <value>Confirm account</value>
+    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CreateAccount" xml:space="preserve">
+    <value>アカウントを作成する</value>
+    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CreateFolder" xml:space="preserve">
+    <value>Folder name:</value>
+    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
+  </data>
+  <data name="UI_GetLink" xml:space="preserve">
+    <value>リンクを取得</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Login" xml:space="preserve">
+    <value>ログイン</value>
+    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Logout" xml:space="preserve">
+    <value>ログアウト</value>
+    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UpgradeAccount" xml:space="preserve">
+    <value>アカウントをアップグレードする</value>
+    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ChangePassword" xml:space="preserve">
+    <value>パスワードを変更する</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelSubscription" xml:space="preserve">
+    <value>定期契約キャンセル</value>
+    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseAllSessions" xml:space="preserve">
+    <value>全てのセッションを閉じる</value>
+    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseSession" xml:space="preserve">
+    <value>Close session</value>
+    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_RemoveLink" xml:space="preserve">
+    <value>リンクを外す</value>
+    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

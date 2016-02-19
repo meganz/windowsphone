@@ -18,12 +18,12 @@
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" space="preserve">
-          <source>Confirm account failed</source>
+          <source>Account confirmation failed</source>
           <target state="translated">Fiók megerősítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
-          <source>Your account has been created, confirmed and activated. You will automatically logged in.</source>
+          <source>Your account has been created, confirmed and activated. You will be logged in automatically.</source>
           <target state="translated">Fiókod létrejött, megerősítve és aktiválva. Automatikusan be lesz jelentkezve.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
         </trans-unit>
@@ -64,7 +64,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolderSuccess" translate="yes" space="preserve">
-          <source>Folder created successful</source>
+          <source>Folder created successfully</source>
           <target state="translated">A mappa sikeresen létrehozva</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when create a folder successfully.</note>
         </trans-unit>
@@ -80,7 +80,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
-          <source>Delete failed</source>
+          <source>Deletion failed</source>
           <target state="translated">Törlés sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
         </trans-unit>
@@ -126,27 +126,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
-          <source>Failed to get link.</source>
+          <source>Failed to get link</source>
           <target state="translated">Link beszerzése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
-          <source>Get link failed</source>
+          <source>Link creation failed</source>
           <target state="translated">A link elérése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
-          <source>Failed to retrieve preview.</source>
+          <source>Failed to retrieve preview</source>
           <target state="translated">Az előnézet lekérése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image preview failed.</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed_Title" translate="yes" space="preserve">
-          <source>Getting preview failed</source>
+          <source>Preview failed</source>
           <target state="translated">Az előnézet elérése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
-          <source>Image successful exported to 'saved pictures' album.</source>
+          <source>Image successfully exported to 'saved pictures' album</source>
           <target state="translated">A kép sikeresen exportálva a 'mentett képek' albumba</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
@@ -156,8 +156,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
-          <source>Error exporting image to 'saved pictures' album. Please try again.</source>
-          <target state="translated">Hiba a kép exportálásakor a 'mentett képek' albumba. Kérjük próbálja újra</target>
+          <source>Error exporting image to  'saved pictures' album. Please try again</source>
+          <target state="needs-review-translation">Hiba a kép exportálásakor a 'mentett képek' albumba. Kérjük próbálja újra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -165,19 +165,20 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">A kép mentése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ImportFileFailed" translate="yes" space="preserve">
-          <source>Importing file failed [{0}]</source>
-          <target state="translated">Fájl importálása sikertelen</target>
+        <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
+          <source>File import failed [{0}]</source>
+          <target state="translated">File import failed [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
-          <source>Import file failed</source>
+          <source>File import failed</source>
           <target state="translated">Fájl importálása sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
-          <source>MEGA link is copied to your clipboard</source>
+          <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">A MEGA link rámásolva a vágólapra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
@@ -198,7 +199,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveEqualsParent" translate="yes" space="preserve">
-          <source>Destination folder is the same as the source folder. Moving canceled.</source>
+          <source>Destination folder is the same as the source folder. Move cancelled.</source>
           <target state="translated">A célmappa ugyanaz, mint a forrásmappa. Áthelyezés megszakítva.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</note>
         </trans-unit>
@@ -218,12 +219,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" space="preserve">
-          <source>Passwords do not match.</source>
+          <source>Passwords do not match. Please try again.</source>
           <target state="translated">A jelszavak nem egyeznek. Kérjük próbálja újra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
         </trans-unit>
         <trans-unit id="Resx/PictureSaved" translate="yes" space="preserve">
-          <source>The image is saved in your photo album.</source>
+          <source>The image was saved to your photo album</source>
           <target state="translated">A kép elmentve a fotó albumodban</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
         </trans-unit>
@@ -254,7 +255,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
-          <source>Item successful removed</source>
+          <source>Item successfully removed</source>
           <target state="translated">Item successfully removed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
@@ -274,12 +275,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
-          <source>Please fill in your choosen password.</source>
+          <source>Please fill in your chosen password.</source>
           <target state="translated">Kérjük töltse ki választott jelszavát.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
-          <source>Please fill in your name, e-mail address and your MEGA password.</source>
+          <source>Please fill in your name, e-mail address and password</source>
           <target state="translated">Kérlek töltsd ki a neved, email címed és jelszavad</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
         </trans-unit>
@@ -299,12 +300,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
-          <source>Save image to photo's</source>
+          <source>Save image to photos</source>
           <target state="translated">Kép mentése a fényképekhez</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
-          <source>You are not logged in at MEGA to do this action. Please re-login.</source>
+          <source>You are not logged into MEGA. Please re-login.</source>
           <target state="translated">Nincs bejelentkezve a MEGÁ-ra. Kérjük lépjen be újra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
         </trans-unit>
@@ -336,7 +337,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
-          <source>You have successfully logged out.</source>
+          <source>You have successfully logged out</source>
           <target state="translated">Sikeresen kijelentkeztél.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user logged out successfully.</note>
         </trans-unit>
@@ -368,7 +369,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
-          <source>{0} Items removed.</source>
+          <source>{0} items removed</source>
           <target state="translated">{0} Tétel eltávolítva</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
@@ -379,7 +380,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
-          <source>Failed to move item to rubbish bin. Please try again.</source>
+          <source>Failed to move item to rubbish bin. Please try again</source>
           <target state="translated">Tétel áthelyezése a lomtárba sikertelen. Kérlek próbáld újra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
         </trans-unit>
@@ -389,18 +390,18 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to move {0} to rubbish bin?</source>
+          <source>Are you sure you want to move {0} to the rubbish bin?</source>
           <target state="translated">Biztosan át akarja helyezni a(z) {0}-t a szemetesládába?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
-          <source>Move item to rubbish bin?</source>
+          <source>Move to rubbish bin?</source>
           <target state="translated">Áthelyezés a lomtárba?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
-          <source>Item successful moved to rubbish bin.</source>
+          <source>Item successfully moved to the rubbish bin</source>
           <target state="translated">Tétel sikeresen áthelyezve a lomtárba</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully one single node to the rubbish bin.</note>
         </trans-unit>
@@ -410,18 +411,18 @@ Preserve the {0} code because is for include the name of the node to be moved in
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to move to rubbish bin {0} items?</source>
+          <source>Are you sure you want to move {0} items to the rubbish bin?</source>
           <target state="translated">Biztos vagy benne hogy áthelyezed a(z) {0} tételt a lomtárba?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
-          <source>Move items to rubbish bin?</source>
+          <source>Move items?</source>
           <target state="translated">Tételek áthelyezése?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
-          <source>{0} Items moved to rubbish bin.</source>
+          <source>{0} items moved to the rubbish bin</source>
           <target state="translated">{0} Tétel lett áthelyezve a lomtárba</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
@@ -464,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WrongPassword" translate="yes" space="preserve">
-          <source>The typed password is incorrect.</source>
+          <source>The typed password is incorrect</source>
           <target state="translated">A megadott jelszó érvénytelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</note>
         </trans-unit>
@@ -474,10 +475,10 @@ Preserve the {0} code because is for include the number of pending transfers in 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
-          <source>You have selected over {0} items ({0}) to download. Do you want to proceed?</source>
-          <target state="translated">Több mint 100 tételt ({0}) választottál ki letöltésre. Folytatod?</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
+          <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
+          <target state="translated">Ön több mint {0} elemet ({1}) jelölt ki letöltésre. Szeretné folytatni?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" space="preserve">
           <source>Download count</source>
@@ -485,12 +486,12 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
-          <source>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
+          <source>Do you want to automatically export image files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
           <target state="translated">Szeretnéd automatikusan exportálni a KÉP fájlokat a fotó albumodba letöltés után? Ezt megváltoztathatod a beállítások oldal alatt. Más fájltípusok csak az app helyi tárhelyén lesznek tárolva.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
-          <source>Failed to pause transfers.</source>
+          <source>Failed to pause transfers</source>
           <target state="translated">Átvitelek szüneteltetése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to pause transfers failed.</note>
         </trans-unit>
@@ -500,7 +501,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
-          <source>Failed to resume transfers.</source>
+          <source>Failed to resume transfers</source>
           <target state="translated">Átvitelek folytatása sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to resume transfers failed.</note>
         </trans-unit>
@@ -510,7 +511,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to resume transfers failed.</note>
         </trans-unit>
         <trans-unit id="Resx/MinimalPictureSelection" translate="yes" space="preserve">
-          <source>Please select minimal 1 picture for upload.</source>
+          <source>Please select at least one picture for upload</source>
           <target state="translated">Kérlek válassz ki legalább 1 képet feltöltésre</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</note>
         </trans-unit>
@@ -520,7 +521,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareImageForUploadFailed" translate="yes" space="preserve">
-          <source>Failed to prepare image: {0} for upload.</source>
+          <source>Failed to prepare image: {0} for upload</source>
           <target state="translated">Kép előkészítése sikertelen: {0} feltöltésre</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a image for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</note>
@@ -531,17 +532,17 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PhotoUploadError" translate="yes" space="preserve">
-          <source>Failed to upload photo.</source>
+          <source>Failed to upload photo</source>
           <target state="translated">A fénykép feltöltése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a photo failed.</note>
         </trans-unit>
         <trans-unit id="Resx/PhotoUploadError_Title" translate="yes" space="preserve">
-          <source>Upload photo failed</source>
+          <source>Photo upload failed</source>
           <target state="translated">Fotó feltöltése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FileNotFound" translate="yes" space="preserve">
-          <source>Could not find the selected file.</source>
+          <source>Could not find the selected file</source>
           <target state="translated">Kiválasztott fájl nem található</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</note>
         </trans-unit>
@@ -551,17 +552,17 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
-          <source>Failed to open the selected file.</source>
+          <source>Failed to open the selected file</source>
           <target state="translated">Kiválasztott fájl megnyitása sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a file failed.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
-          <source>Open file failed</source>
+          <source>File failed to open</source>
           <target state="translated">Fájl megnyitása sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
-          <source>Failed to upload the selfie picture.</source>
+          <source>Failed to upload the selfie picture</source>
           <target state="translated">Selfie kép feltöltése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a selfie picture failed.</note>
         </trans-unit>
@@ -581,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" space="preserve">
-          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal.</source>
+          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal</source>
           <target state="translated">PIN zár kódjait nem egyeznek. Kérlek írd be újra és győződj meg róla, hogy egyeznek</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -606,20 +607,20 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
-          <source>You have not selected a default download location for your files.
+          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="needs-review-translation">Nem választottál ki alapértelmezett letöltési helyet a fájljaidnak.
 
-To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="translated">Nem választottál ki alapértelmezett letöltési helyet a fájljaidnak.A letöltés folytatásához kérlek válassz ki egy célkönyvtárt vagy menj a beállításokba és válaszd ki az alapértelmezett letöltési könyvtárat.</target>
+A letöltés folytatásához kérlek válassz ki egy célkönyvtárt vagy menj a beállításokba és válaszd ki az alapértelmezett letöltési könyvtárat.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
-          <source>Failed to prepare file: {0} for upload.</source>
+          <source>Failed to prepare file: {0} for upload</source>
           <target state="translated">Fájl előkészítése sikertelen: {0} feltöltésre</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" space="preserve">
-          <source>Preparing file failed</source>
+          <source>Error preparing file</source>
           <target state="translated">Fájl előkészítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</note>
         </trans-unit>
@@ -635,14 +636,13 @@ Preserve the {0} code because is for include the file name in runtime.</note>
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" space="preserve">
-          <source>Copy file failed</source>
+          <source>Error copying file</source>
           <target state="translated">Fájl másolása sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
-Please, try to save/copy the file into the your device internal memory.</source>
-          <target state="translated">Nincs jogosultságod a fájl másolásához. Valószínűleg egy nem támogatott típusú fájlt próbálsz menteni/másolni az SD kártyára. Kérlek próbáld az eszköz belső memóriájára menteni/másolni.</target>
+          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
+          <target state="needs-review-translation">Nincs jogosultságod a fájl másolásához. Valószínűleg egy nem támogatott típusú fájlt próbálsz menteni/másolni az SD kártyára. Kérlek próbáld az eszköz belső memóriájára menteni/másolni.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -651,7 +651,7 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ClipboardFailed" translate="yes" space="preserve">
-          <source>Failed to copy masterkey to clipboard. Please try again</source>
+          <source>Failed to copy master key to clipboard. Please try again.</source>
           <target state="translated">Masterkulcs másolása vágólapra sikertelen. Kérlek próbáld újra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</note>
         </trans-unit>
@@ -671,17 +671,17 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/MasterkeyCopied" translate="yes" space="preserve">
-          <source>Masterkey copied to clipboard</source>
+          <source>Master key copied to clipboard</source>
           <target state="translated">Főkulcs vágólapra másolva</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" space="preserve">
-          <source>Masterkey copied</source>
+          <source>Master key copied</source>
           <target state="translated">Masterkulcs másolva</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
-          <source>PIN lock must be at least 4 digits.</source>
+          <source>PIN lock must be at least four digits</source>
           <target state="translated">PIN zárnak legalább 4 számjegyből kell állnia</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -701,7 +701,7 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the cache memory is successfully cleared by user request.</note>
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
-          <source>Not enough free memory space to complete this operation. The app will shutdown now.</source>
+          <source>Not enough free memory space to complete this operation. The app will shut down now</source>
           <target state="translated">Nincs elég szabad memória terület a művelet befejezéséhez. Az app most leáll</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the app exceeds the memory limit quota of the device.</note>
         </trans-unit>
@@ -731,16 +731,6 @@ Please, try to save/copy the file into the your device internal memory.</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InvalidLink" translate="yes" xml:space="preserve">
-          <source>Invalid link</source>
-          <target state="new">Invalid link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
-          </trans-unit>
-        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to select folder. Please, try again or select another folder.</source>
-          <target state="new">Failed to select folder. Please, try again or select another folder.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
-          </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
           <target state="translated">Könyvtár kiválasztás sikertelen</target>
@@ -764,7 +754,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
-          <source>Select file(s) failed</source>
+          <source>File selection failed</source>
           <target state="translated">Fájl(ok) kijelölése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
         </trans-unit>
@@ -774,12 +764,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
-          <source>E-mail is not associated with a MEGA account or wrong password. Please try again.</source>
+          <source>Incorrect e-mail address or password. Please try again.</source>
           <target state="translated">Az email nincs összefüggésben MEGA fiókkal, vagy helytelen a jelszó. Kérjük próbálja újra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to permanent delete {0}?</source>
+          <source>Are you sure you want to permanently delete {0}?</source>
           <target state="translated">Biztosan szeretné véglegesen törölni a(z) {0}-t?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
@@ -807,7 +797,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
-          <source>Capture photo failed</source>
+          <source>Photo capture failed</source>
           <target state="translated">Fénykép rögzítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
         </trans-unit>
@@ -818,7 +808,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" space="preserve">
-          <source>Capture photo/video failed</source>
+          <source>Photo/video capture failed</source>
           <target state="translated">Fénykép/videó rögzítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
         </trans-unit>
@@ -829,7 +819,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
-          <source>Capture video failed</source>
+          <source>Video capture failed</source>
           <target state="translated">Videó rögzítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
         </trans-unit>
@@ -840,12 +830,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
-          <source>Save settings failed</source>
+          <source>Error saving settings</source>
           <target state="translated">Beállítások mentése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
-          <source>An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</source>
+          <source>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</source>
           <target state="translated">Hiba lépett fel egy parancsikon megnyitásakor. Talán érvénytelen, vagy a célmappa törölve lett.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
         </trans-unit>
@@ -870,7 +860,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
-          <source>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</source>
+          <source>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</source>
           <target state="translated">A hitelkártyaszám, hónap, év, és CVV számokat kell tartalmazzon. Kérjük ellenőrizze, hogy a kitöltött adatok helyesek-e, majd próbálja újra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
         </trans-unit>
@@ -879,17 +869,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Helytelen adatformátum</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_CancelSubscription" translate="yes" xml:space="preserve">
-          <source>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</source>
-          <target state="new">You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</target>
+        <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
+          <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
+          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
-          </trans-unit>
-        <trans-unit id="Resx/CancelSubscriptionConfirmation" translate="yes" space="preserve">
-          <source>Thank you for your feedback!
-
-Are you sure you want to cancel your Mega subscription?</source>
-          <target state="translated">Köszönjük visszajelzését!</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
+          <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
+          <target state="translated">Köszönjük a visszajelzést! Biztosan megszakítod a Mega előfizetésed?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
@@ -897,12 +885,12 @@ Are you sure you want to cancel your Mega subscription?</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
-          <source>Cancel subscription failed</source>
+          <source>Subscription cancellation failed</source>
           <target state="translated">Előfizetés megszakítása siekrtelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
-          <source>The subscription has been canceled correctly.</source>
+          <source>The subscription has been cancelled.</source>
           <target state="translated">Az előfizetés megszakításra került.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</note>
         </trans-unit>
@@ -917,17 +905,17 @@ Are you sure you want to cancel your Mega subscription?</source>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
-          <source>Please type a feedback message for us. Thanks.</source>
+          <source>Please give us your feedback. Thanks.</source>
           <target state="translated">Kérjük írjon nekünk visszajelzést. Köszönjük.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
-          <source>The operation has not finished correctly. The credit card will not be charged.</source>
+          <source>The operation failed. Your credit card has not been charged.</source>
           <target state="translated">A műveletet nem fejeződött be megfelelően. Nem lesz terhelve a kártya.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
-          <source>Upgrade account failed</source>
+          <source>Error upgrading account</source>
           <target state="translated">Fiók bővítése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
         </trans-unit>
@@ -954,12 +942,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="translated">A fizetési Url lekérése sikertelen. Kérjük próbálja újra. [{0}]</target>
+          <target state="needs-review-translation">A fizetési Url lekérése sikertelen. Kérjük próbálja újra. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
-          <source>Retrieving payment Url failed</source>
+          <source>Retrieving payment URL failed</source>
           <target state="translated">Fizetési Url lekérése sikertelen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
@@ -995,17 +983,17 @@ Preserve the {0} code because is for include email of the contact to be removed 
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
-          <source>Could not send the contact invitation. Please, try again.</source>
+          <source>The contact invitation could not be sent. Please try again.</source>
           <target state="translated">The contact invitation could not be sent. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
-          <source>Invite contact failed</source>
+          <source>Failed to invite the contact</source>
           <target state="translated">Failed to invite the contact</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
-          <source>User {0} has been invited and will appear on your contact list once accepted the invitation.</source>
+          <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
           <target state="translated">User {0} has been invited and will appear on your contact list once they have accepted the invitation.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
@@ -1031,7 +1019,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
-          <source>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</source>
+          <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
           <target state="translated">Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
@@ -1041,7 +1029,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
-          <source>Auto Camera Upload background task has failed. You can re-enable it on the settings page</source>
+          <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
           <target state="translated">The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
@@ -1052,13 +1040,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="translated">Failed to remove the contact {0}. Please try again. [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          <target state="needs-review-translation">Failed to remove the contact {0}. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" space="preserve">
-          <source>Remove contact failed</source>
+          <source>Failed to remove the contact</source>
           <target state="translated">Failed to remove the contact</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
         </trans-unit>
@@ -1074,7 +1061,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
-          <source>Change password failed. Please try again.</source>
+          <source>Failed to change password. Please try again.</source>
           <target state="translated">Failed to change password. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
         </trans-unit>
@@ -1094,18 +1081,18 @@ Preserve the {0} code because is for include the number of contacts to be remove
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
-          <source>Close session failed. Please try again. [{0}]</source>
+          <source>Failed to close the session. Please try again. [{0}]</source>
           <target state="translated">Failed to close the session. Please try again. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" space="preserve">
-          <source>The remaining sessions are successfully closed.</source>
+          <source>The remaining sessions were successfully closed.</source>
           <target state="translated">The remaining sessions were successfully closed.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
-          <source>Close session failed. Please try again. [{0}]</source>
+          <source>Failed to close the session. Please try again. [{0}]</source>
           <target state="translated">Failed to close the session. Please try again. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -1116,22 +1103,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
-          <source>Empty rubbish bin failed. Please try again.</source>
+          <source>Failed to clear the rubbish bin. Please try again.</source>
           <target state="translated">Failed to clear the rubbish bin. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
-          <source>Are you sure you want to permanently delete all files of the rubbish bin?</source>
+          <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
           <target state="translated">Are you sure you want to permanently delete all files from the rubbish bin?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
-          <source>The rubbish bin has been emptied successfully.</source>
+          <source>The rubbish bin has been cleared successfully.</source>
           <target state="translated">The rubbish bin has been cleared successfully.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
-          <source>You are trying to add your own e-mail as a contact.</source>
+          <source>You are trying to add your own email as a contact.</source>
           <target state="translated">You are trying to add your own email as a contact.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
         </trans-unit>
@@ -1141,54 +1128,71 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
-          <source>You cannot perform this action. Please, connect to Internet and try again.</source>
+          <source>You cannot perform this action. Please connect to the Internet and try again.</source>
           <target state="translated">You cannot perform this action. Please connect to the Internet and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
-        <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" xml:space="preserve">
-          <source>Invalid name or path</source>
-          <target state="new">Invalid name or path</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" xml:space="preserve">
-          <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="new">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
-Preserve the '{0}' code because is for include the file name in runtime.</note>
-          </trans-unit>
-        <trans-unit id="Resx/PathTooLong_Title" translate="yes" xml:space="preserve">
-          <source>Path too long</source>
-          <target state="new">Path too long</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/PathTooLong" translate="yes" xml:space="preserve">
-          <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="new">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
-Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
-          </trans-unit>
-        <trans-unit id="Resx/InvalidFileName_Title" translate="yes" xml:space="preserve">
-          <source>Invalid file name</source>
-          <target state="new">Invalid file name</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/InvalidFileName" translate="yes" xml:space="preserve">
-          <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="new">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
-Preserve the '{0}' code because is for include the file name in runtime.</note>
-          </trans-unit>
-        <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
-          <source>Access denied</source>
-          <target state="new">Access denied</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
-          </trans-unit>
-        <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" xml:space="preserve">
-          <source>You don't have access to the path '{0}'. Please, select another one and try again.</source>
-          <target state="new">You don't have access to the path '{0}'. Please, select another one and try again.</target>
+        <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
+          <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
+          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
-          </trans-unit>
+        </trans-unit>
+        <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
+          <source>Access denied</source>
+          <target state="translated">Hozzáférés megtagadva</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
+          <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
+          <source>Invalid file name</source>
+          <target state="translated">Invalid file name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
+          <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
+          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PathTooLong_Title" translate="yes" space="preserve">
+          <source>Path too long</source>
+          <target state="translated">Path too long</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
+          <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
+          <source>Invalid name or path</source>
+          <target state="translated">Invalid name or path</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
+          <source>Invalid link</source>
+          <target state="translated">Invalid link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to select the folder. Please try again or select another folder.</source>
+          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
+          <source>File import failed</source>
+          <target state="translated">Fájl importálása sikertelen</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+
+</note>
+        </trans-unit>
       </group>
     </body>
   </file>

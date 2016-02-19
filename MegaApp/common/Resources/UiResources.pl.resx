@@ -901,8 +901,8 @@ Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
     <value>Twoja subskrypcja {0} będzie automatycznie opłacona każdego {0} roku, do czasu jej anulowania przed datą odnowienia.</value>
-    <comment>Label to indicate the renewal period of the purchased subscription.
-Preserve the {0} code because is for include the renewal period string in runtime.</comment>
+    <comment>Label to indicate the renewal period of the purchased subscription. 
+Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
   <data name="Annual" xml:space="preserve">
     <value>Roczne</value>
@@ -1134,7 +1134,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
     <value>Zapisano do użytku offline</value>
-    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</comment>
+    <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
     <value>Brak plików na dysku</value>
@@ -1167,5 +1167,53 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="DefaultDownloadLocation" xml:space="preserve">
     <value>Wybierz domyślny katalog dla plików.</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
+  <data name="UI_ConfirmAccount" xml:space="preserve">
+    <value>Potwierdź konto</value>
+    <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CreateAccount" xml:space="preserve">
+    <value>Utwórz konto</value>
+    <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CreateFolder" xml:space="preserve">
+    <value>Nazwa katalogu:</value>
+    <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
+  </data>
+  <data name="UI_GetLink" xml:space="preserve">
+    <value>Pobierz link</value>
+    <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Login" xml:space="preserve">
+    <value>Logowanie</value>
+    <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Logout" xml:space="preserve">
+    <value>Wyloguj się</value>
+    <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_UpgradeAccount" xml:space="preserve">
+    <value>Zmień konto</value>
+    <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ChangePassword" xml:space="preserve">
+    <value>Zmień hasło</value>
+    <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelSubscription" xml:space="preserve">
+    <value>Anuluj subskrypcję</value>
+    <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseAllSessions" xml:space="preserve">
+    <value>Zamknij wszystkie sesje</value>
+    <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CloseSession" xml:space="preserve">
+    <value>Zamknij sesję</value>
+    <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_RemoveLink" xml:space="preserve">
+    <value>Usuń link</value>
+    <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

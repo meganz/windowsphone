@@ -61,7 +61,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a About.
+        ///   Busca una cadena traducida similar a about.
         /// </summary>
         public static string About {
             get {
@@ -70,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Accept.
+        ///   Busca una cadena traducida similar a accept.
         /// </summary>
         public static string Accept {
             get {
@@ -97,7 +97,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel this subscription payment prior to the renewal date..
+        ///   Busca una cadena traducida similar a Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date..
         /// </summary>
         public static string AccountRenewalNotice {
             get {
@@ -169,7 +169,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Add contact.
+        ///   Busca una cadena traducida similar a Add Contact.
         /// </summary>
         public static string AddContact {
             get {
@@ -178,7 +178,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Add folder.
+        ///   Busca una cadena traducida similar a add folder.
         /// </summary>
         public static string AddFolder {
             get {
@@ -268,7 +268,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Available.
+        ///   Busca una cadena traducida similar a available.
         /// </summary>
         public static string Available {
             get {
@@ -313,7 +313,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cache.
+        ///   Busca una cadena traducida similar a cache.
         /// </summary>
         public static string Cache {
             get {
@@ -340,7 +340,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancel all.
+        ///   Busca una cadena traducida similar a cancel all.
         /// </summary>
         public static string CancelAll {
             get {
@@ -358,7 +358,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Capture.
+        ///   Busca una cadena traducida similar a capture.
         /// </summary>
         public static string Capture {
             get {
@@ -403,7 +403,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clean up transfers.
+        ///   Busca una cadena traducida similar a clean up transfers.
         /// </summary>
         public static string CleanUpTransfers {
             get {
@@ -412,7 +412,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clear cache.
+        ///   Busca una cadena traducida similar a clear cache.
         /// </summary>
         public static string ClearCache {
             get {
@@ -421,7 +421,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty rubbish.
+        ///   Busca una cadena traducida similar a Empty rubbish bin.
         /// </summary>
         public static string ClearRubbishBin {
             get {
@@ -430,7 +430,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clear selection.
+        ///   Busca una cadena traducida similar a clear selection.
         /// </summary>
         public static string ClearSelection {
             get {
@@ -439,7 +439,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clipboard.
+        ///   Busca una cadena traducida similar a clipboard.
         /// </summary>
         public static string Clipboard {
             get {
@@ -457,7 +457,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Confirm.
+        ///   Busca una cadena traducida similar a confirm.
         /// </summary>
         public static string Confirm {
             get {
@@ -466,7 +466,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Confirm your password.
+        ///   Busca una cadena traducida similar a confirm your password.
         /// </summary>
         public static string ConfirmPasswordWatermark {
             get {
@@ -475,7 +475,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Confirm your PIN lock.
+        ///   Busca una cadena traducida similar a confirm your PIN lock.
         /// </summary>
         public static string ConfirmPinLockWatermark {
             get {
@@ -511,7 +511,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Type email address:.
+        ///   Busca una cadena traducida similar a Type e-mail address:.
         /// </summary>
         public static string CreateContact {
             get {
@@ -529,7 +529,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Credit Card.
+        ///   Busca una cadena traducida similar a Credit card.
         /// </summary>
         public static string CreditCard {
             get {
@@ -574,7 +574,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a please select a default download folder.
+        ///   Busca una cadena traducida similar a Please select a default download folder..
         /// </summary>
         public static string DefaultDownloadLocation {
             get {
@@ -637,7 +637,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Done.
+        ///   Busca una cadena traducida similar a done.
         /// </summary>
         public static string Done {
             get {
@@ -646,7 +646,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Download.
+        ///   Busca una cadena traducida similar a download.
         /// </summary>
         public static string Download {
             get {
@@ -664,7 +664,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Downloads.
+        ///   Busca una cadena traducida similar a downloads.
         /// </summary>
         public static string Downloads {
             get {
@@ -673,7 +673,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your e-mail address.
+        ///   Busca una cadena traducida similar a your e-mail address.
         /// </summary>
         public static string EmailWatermark {
             get {
@@ -682,7 +682,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a No files on your cloud drive.
+        ///   Busca una cadena traducida similar a No files in your cloud drive.
         /// </summary>
         public static string EmptyCloudDrive {
             get {
@@ -691,7 +691,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Empty folder.
+        ///   Busca una cadena traducida similar a empty folder.
         /// </summary>
         public static string EmptyFolder {
             get {
@@ -763,7 +763,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export MasterKey.
+        ///   Busca una cadena traducida similar a Export masterkey.
         /// </summary>
         public static string ExportMasterKeyText {
             get {
@@ -781,7 +781,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Files (ascending).
+        ///   Busca una cadena traducida similar a files (ascending).
         /// </summary>
         public static string FilesAscendingSortOption {
             get {
@@ -790,7 +790,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Files (descending).
+        ///   Busca una cadena traducida similar a files (descending).
         /// </summary>
         public static string FilesDescendingSortOption {
             get {
@@ -844,7 +844,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Get 2 months free if you subscribe to a one-year pro plan.
+        ///   Busca una cadena traducida similar a Get 2 months free if you subscribe to a one-year Pro plan.
         /// </summary>
         public static string Get2MonthsFree {
             get {
@@ -853,7 +853,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You can be a PRO user!.
+        ///   Busca una cadena traducida similar a You can be a Pro user!.
         /// </summary>
         public static string GetProAccount {
             get {
@@ -1114,7 +1114,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MasterKey.
+        ///   Busca una cadena traducida similar a Master Key.
         /// </summary>
         public static string MasterKey {
             get {
@@ -1195,7 +1195,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Files.
+        ///   Busca una cadena traducida similar a files.
         /// </summary>
         public static string MultipleFiles {
             get {
@@ -1204,7 +1204,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Folders.
+        ///   Busca una cadena traducida similar a folders.
         /// </summary>
         public static string MultipleFolders {
             get {
@@ -1222,7 +1222,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a My account.
+        ///   Busca una cadena traducida similar a my account.
         /// </summary>
         public static string MyAccount {
             get {
@@ -1249,7 +1249,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your name.
+        ///   Busca una cadena traducida similar a your name.
         /// </summary>
         public static string NameWatermark {
             get {
@@ -1276,7 +1276,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your new PIN lock.
+        ///   Busca una cadena traducida similar a your new PIN lock.
         /// </summary>
         public static string NewPinLockWatermark {
             get {
@@ -1285,7 +1285,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Next.
+        ///   Busca una cadena traducida similar a next.
         /// </summary>
         public static string Next {
             get {
@@ -1411,7 +1411,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Open link.
+        ///   Busca una cadena traducida similar a Open MEGA download link:.
         /// </summary>
         public static string OpenLink {
             get {
@@ -1465,7 +1465,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your password.
+        ///   Busca una cadena traducida similar a your password.
         /// </summary>
         public static string PasswordWatermark {
             get {
@@ -1492,7 +1492,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Pause all.
+        ///   Busca una cadena traducida similar a pause all.
         /// </summary>
         public static string PauseAll {
             get {
@@ -1519,7 +1519,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Mobile.
+        ///   Busca una cadena traducida similar a Phone Bill.
         /// </summary>
         public static string PhoneBill {
             get {
@@ -1546,7 +1546,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your PIN lock.
+        ///   Busca una cadena traducida similar a your PIN lock.
         /// </summary>
         public static string PinLockWatermark {
             get {
@@ -1582,7 +1582,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Previous.
+        ///   Busca una cadena traducida similar a previous.
         /// </summary>
         public static string Previous {
             get {
@@ -1645,7 +1645,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Refresh.
+        ///   Busca una cadena traducida similar a refresh.
         /// </summary>
         public static string Refresh {
             get {
@@ -1726,7 +1726,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Rubbish bin.
+        ///   Busca una cadena traducida similar a Rubbish Bin.
         /// </summary>
         public static string RubbishBinRoot {
             get {
@@ -1735,7 +1735,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Save.
+        ///   Busca una cadena traducida similar a save.
         /// </summary>
         public static string Save {
             get {
@@ -1744,7 +1744,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Saved for offline.
+        ///   Busca una cadena traducida similar a Saved for offline use.
         /// </summary>
         public static string SavedForOffline {
             get {
@@ -1789,7 +1789,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Select folder.
+        ///   Busca una cadena traducida similar a select folder.
         /// </summary>
         public static string SelectFolder {
             get {
@@ -1852,7 +1852,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Settings.
+        ///   Busca una cadena traducida similar a settings.
         /// </summary>
         public static string Settings {
             get {
@@ -1888,7 +1888,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Share.
+        ///   Busca una cadena traducida similar a share.
         /// </summary>
         public static string Share {
             get {
@@ -1933,7 +1933,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a File.
+        ///   Busca una cadena traducida similar a file.
         /// </summary>
         public static string SingleFile {
             get {
@@ -1942,7 +1942,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Folder.
+        ///   Busca una cadena traducida similar a folder.
         /// </summary>
         public static string SingleFolder {
             get {
@@ -1951,7 +1951,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Size.
+        ///   Busca una cadena traducida similar a Size:.
         /// </summary>
         public static string Size {
             get {
@@ -2014,7 +2014,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Start/resume all.
+        ///   Busca una cadena traducida similar a start/resume all.
         /// </summary>
         public static string StartResumeAll {
             get {
@@ -2068,7 +2068,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Subscribe.
+        ///   Busca una cadena traducida similar a subscribe.
         /// </summary>
         public static string Subscribe {
             get {
@@ -2086,7 +2086,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Terms of Service.
+        ///   Busca una cadena traducida similar a Terms of service.
         /// </summary>
         public static string TermsOfService {
             get {
@@ -2131,7 +2131,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Total.
+        ///   Busca una cadena traducida similar a total.
         /// </summary>
         public static string Total {
             get {
@@ -2149,7 +2149,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceling.
+        ///   Busca una cadena traducida similar a Canceling....
         /// </summary>
         public static string Transfer_Canceling {
             get {
@@ -2158,7 +2158,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Downloading.
+        ///   Busca una cadena traducida similar a Downloading....
         /// </summary>
         public static string Transfer_Download {
             get {
@@ -2176,7 +2176,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error.
+        ///   Busca una cadena traducida similar a Error on transfer.
         /// </summary>
         public static string Transfer_Error {
             get {
@@ -2185,7 +2185,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Not started.
+        ///   Busca una cadena traducida similar a Ready.
         /// </summary>
         public static string Transfer_NotStarted {
             get {
@@ -2203,7 +2203,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Pausing.
+        ///   Busca una cadena traducida similar a Pausing....
         /// </summary>
         public static string Transfer_Pausing {
             get {
@@ -2221,7 +2221,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploading.
+        ///   Busca una cadena traducida similar a Uploading....
         /// </summary>
         public static string Transfer_Upload {
             get {
@@ -2230,7 +2230,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploaded.
+        ///   Busca una cadena traducida similar a uploaded.
         /// </summary>
         public static string Transfer_Uploaded {
             get {
@@ -2239,7 +2239,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Transfers.
+        ///   Busca una cadena traducida similar a transfers.
         /// </summary>
         public static string Transfers {
             get {
@@ -2383,7 +2383,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Upload.
+        ///   Busca una cadena traducida similar a upload.
         /// </summary>
         public static string Upload {
             get {
@@ -2401,7 +2401,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Uploads.
+        ///   Busca una cadena traducida similar a uploads.
         /// </summary>
         public static string Uploads {
             get {
@@ -2419,7 +2419,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Used.
+        ///   Busca una cadena traducida similar a used.
         /// </summary>
         public static string Used {
             get {
@@ -2428,7 +2428,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Used space.
+        ///   Busca una cadena traducida similar a Used Space.
         /// </summary>
         public static string UsedSpace {
             get {
@@ -2437,7 +2437,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Version.
+        ///   Busca una cadena traducida similar a version.
         /// </summary>
         public static string Version {
             get {
@@ -2446,7 +2446,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a View.
+        ///   Busca una cadena traducida similar a view.
         /// </summary>
         public static string View {
             get {
@@ -2482,7 +2482,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Wi-fi only.
+        ///   Busca una cadena traducida similar a Wifi only.
         /// </summary>
         public static string WifiOnly {
             get {
@@ -2500,7 +2500,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Yes.
+        ///   Busca una cadena traducida similar a yes.
         /// </summary>
         public static string Yes {
             get {
