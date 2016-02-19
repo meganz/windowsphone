@@ -943,7 +943,7 @@ Are you sure you want to cancel your Mega subscription?</source>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
-          <target state="translated">Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. {{0}]</target>
+          <target state="translated">Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
