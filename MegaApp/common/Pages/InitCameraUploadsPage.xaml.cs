@@ -18,22 +18,25 @@ namespace MegaApp.Pages
             _cameraUploadsViewModel = new CameraUploadsViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _cameraUploadsViewModel;
 
-            InitializeComponent();            
+            InitializeComponent();
 
-            SetApplicationBarData();
+            SetApplicationBar();
 
             // If user skips the initialization of the "Camera Uploads" service, by default 
             // the connection type is 'Wifi only' and the service is disabled or turned off
             SettingsService.SaveSetting<bool>(SettingsResources.CameraUploadsIsEnabled, false);
             SettingsService.SaveSetting<int>(SettingsResources.CameraUploadsConnectionType, (int)CameraUploadsConnectionType.WifiOnly);
-        }
+        }        
 
-        private void SetApplicationBarData()
+        public void SetApplicationBar(bool isEnabled = true)
         {
             this.ApplicationBar = (ApplicationBar)Resources["InitCameraUploadsMenu"];
 
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Ok.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.Skip.ToLower();
+            // Change and translate the current application bar
+            _cameraUploadsViewModel.ChangeMenu(this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isEnabled);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -59,7 +62,7 @@ namespace MegaApp.Pages
 
         private void OnOkClick(object sender, EventArgs e)
         {
-            ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled = false;
+            SetApplicationBar(false);
 
             try
             {
@@ -72,16 +75,20 @@ namespace MegaApp.Pages
                 else
                     NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("NavigateService - GoBack"))
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
             finally
             {
-                ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = true;
-            }
-           
+                SetApplicationBar(true);
+            }           
         }
 
         private void OnSkipClick(object sender, EventArgs e)
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = false;
+            SetApplicationBar(false);
 
             try
             {
@@ -90,9 +97,14 @@ namespace MegaApp.Pages
                 else
                     NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("NavigateService - GoBack"))
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
             finally
             {
-                ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = false;
+                SetApplicationBar(true);
             }
         }        
     }
