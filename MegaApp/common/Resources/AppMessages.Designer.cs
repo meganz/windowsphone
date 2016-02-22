@@ -151,6 +151,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to prepare file(s) for upload. Please try again..
+        /// </summary>
+        public static string AM_PrepareFilesForUploadFailed {
+            get {
+                return ResourceManager.GetString("AM_PrepareFilesForUploadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error preparing file(s).
+        /// </summary>
+        public static string AM_PrepareFilesForUploadFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_PrepareFilesForUploadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The Auto Camera Upload background task has failed. You can re-enable it on the settings page..
         /// </summary>
         public static string AutoCameraUploadFailed {
@@ -493,7 +511,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card? Please try to save/copy the file to the your device&apos;s internal memory instead..
+        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device&apos;s internal memory instead..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {
@@ -601,7 +619,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to remove the contact {0}. Please try again. [{1}].
+        ///   Busca una cadena traducida similar a Failed to remove the contact {0}. Please try again. [{0}].
         /// </summary>
         public static string DeleteContactFailed {
             get {
@@ -871,7 +889,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to retrieve the payment URL. Please try again. [{0}].
+        ///   Busca una cadena traducida similar a Failed to retrieve the payment Url. Please try again. [{0}].
         /// </summary>
         public static string GetPaymentUrlFailed {
             get {
@@ -961,7 +979,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error exporting image to &apos;saved pictures&apos; album. Please try again.
+        ///   Busca una cadena traducida similar a Error exporting image to  &apos;saved pictures&apos; album. Please try again.
         /// </summary>
         public static string ImageSaveError {
             get {
@@ -1393,7 +1411,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You have not selected a default download location for your files. To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location..
+        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location..
         /// </summary>
         public static string NoDownloadLocationSelected {
             get {

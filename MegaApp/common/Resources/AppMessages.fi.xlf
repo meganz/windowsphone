@@ -1193,6 +1193,16 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
 
 </note>
         </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error preparing file(s)</source>
+          <target state="new">Error preparing file(s)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
