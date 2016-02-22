@@ -245,11 +245,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Nepodařilo se uložit obrázek</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>Importování souboru selhalo</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
     <value>Import souboru selhal</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
@@ -494,11 +489,6 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <value>Špatné heslo</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
-  <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>Vybrali jste přes 100 položek ({0}) ke stažení. Chcete pokračovat?</value>
-    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
-  </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>Počet stažení</value>
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
@@ -601,7 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Nevybrali jste výchozí umístění pro stahování svých souborů.Pro pokračování ve stahování vyberte cílovou složku nebo přejděte do předvoleb, abyste nastavili své výchozí umístění pro stahování.</value>
+    <value>Nevybrali jste výchozí umístění pro stahování svých souborů.
+
+Pro pokračování ve stahování vyberte cílovou složku nebo přejděte do předvoleb, abyste nastavili své výchozí umístění pro stahování.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -627,7 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Nemáte oprávnění pro kopírování tohoto typu souboru do cílové složky. Pravděpodobně se pokoušíte uložit nebo zkopírovat soubor nepodporovaného typu na kartu SD.Zkuste uložit nebo zkopírovat soubor do vnitřní paměti vašeho zařízení.</value>
+    <value>Nemáte oprávnění pro kopírování tohoto typu souboru do cílové složky. Pravděpodobně se pokoušíte uložit nebo zkopírovat soubor nepodporovaného typu na kartu SD.
+Zkuste uložit nebo zkopírovat soubor do vnitřní paměti vašeho zařízení.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -811,10 +804,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Špatný formát data</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Děkujeme vám za zpětnou vazbu!Opravdu chcete zrušit své předplatné MEGA?</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
-  </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
     <value>Předplatné nebylo správně zrušeno. Obraťte se na support@mega.nz pro zrušení vašeho předplatného.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
@@ -945,9 +934,8 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
     <value>Nepodařilo se odebrat kontakt {0}. Zkuste to znovu. [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>Nepodařilo se odebrat kontakt</value>
@@ -1019,5 +1007,74 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="NoInternetConnectionMessage" xml:space="preserve">
     <value>Nemůžete provést tuto akci. Připojte se k internetu a zkuste to znovu.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
+  <data name="AM_CancelSubscription" xml:space="preserve">
+    <value>Chystáte se zrušit své předplatné MEGA. Dejte nám vědět, jestli můžeme udělat něco, čím pomůžeme změnit vaše rozhodnutí.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>Nemáte přístup k cestě '{0}'. Vyberte jinou a zkuste to znovu.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Přístup odepřen</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>Název souboru '{0}' není platný nebo má nepovolené znaky. Změňte jej a zkuste to znovu.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>Neplatný název souboru</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>Cesta souboru nebo složky '{0}' je příliš dlouhá. Změňte ji a zkuste to znovu.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>Cesta je příliš dlouhá</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>Název nebo cesta složky '{0}' nejsou platné nebo mají nepovolené znaky. Změňte je a zkuste to znovu.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>Neplatný název nebo cesta</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>Neplatný odkaz</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
+  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
+    <value>Nepodařilo se vybrat složku. Zkuste to znovu nebo vyberte jinou složku.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+  </data>
+  <data name="AM_ImportFileFailed" xml:space="preserve">
+    <value>File import failed [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
+    <value>Importování souboru selhalo</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Máte vybráno více než {0} položek ({1}) ke stažení. Chcete pokračovat?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Děkujeme vám za zpětnou vazbu! Opravdu chcete zrušit své předplatné Mega?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
 </root>

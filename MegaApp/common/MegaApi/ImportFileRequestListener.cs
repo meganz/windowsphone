@@ -31,7 +31,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.ImportFileFailed; }
+            get { return AppMessages.AM_ImportFileFailed; }
         }
 
         protected override string ErrorMessageTitle

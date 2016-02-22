@@ -251,4 +251,52 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Server occupato. Si prega di attendere...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
+  <data name="PM_CancelSubscription" xml:space="preserve">
+    <value>Canceling subscription...</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ChangePassword" xml:space="preserve">
+    <value>Changing password...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseAllSessions" xml:space="preserve">
+    <value>Chiusura di tutte le sessioni in corso...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseSession" xml:space="preserve">
+    <value>Chiusura sessione in corso...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConfirmAccount" xml:space="preserve">
+    <value>Confermando account...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateAccount" xml:space="preserve">
+    <value>Creando l'account...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateFolder" xml:space="preserve">
+    <value>Creando cartella ...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_GetLink" xml:space="preserve">
+    <value>Ottenendo link..</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Login" xml:space="preserve">
+    <value>Accesso...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Logout" xml:space="preserve">
+    <value>Disconnessione...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="PM_RemoveLink" xml:space="preserve">
+    <value>Rimozione link in corso...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_UpgradeAccount" xml:space="preserve">
+    <value>Aggiornamento account...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
 </root>

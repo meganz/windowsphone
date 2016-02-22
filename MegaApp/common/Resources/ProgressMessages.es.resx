@@ -130,11 +130,11 @@
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Guardando para fuera de línea...</value>
+    <value>Guardando para uso sin conexión...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servidores ocupados. Por favor, espera...</value>
+    <value>Servidores ocupados. Por favor, espere...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
@@ -142,11 +142,11 @@
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignorando petición de contacto...</value>
+    <value>Ignorando la invitación de contacto...</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denegando solicitud de contacto...</value>
+    <value>Rechazando la invitación de contacto...</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
@@ -166,7 +166,7 @@
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Eliminando de fuera de línea...</value>
+    <value>Eliminando de 'sin conexión' ...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="PrepareDownloads" xml:space="preserve">
@@ -194,7 +194,7 @@
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
-    <value>Recordando solicitud de contacto...</value>
+    <value>Reenviando la invitación de contacto...</value>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
@@ -214,11 +214,11 @@
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
-    <value>Obteniendo métodos de pago...</value>
+    <value>Obteniendo formas de pago...</value>
     <comment>Progress indicator message when getting payment methods - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrl" xml:space="preserve">
-    <value>Obteniendo Url de pago...</value>
+    <value>Obteniendo URL de pago...</value>
     <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetails" xml:space="preserve">
@@ -226,11 +226,11 @@
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="GetContactData" xml:space="preserve">
-    <value>Obteniendo información de contacto...</value>
+    <value>Obteniendo datos de contacto...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Obteniendo archivos y carpetas... [{0}]</value>
+    <value>Cargando archivos y carpetas... [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
 Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
@@ -250,5 +250,53 @@ Preserve the '{0}' code because is for include node name.</comment>
   <data name="CreditCardStore" xml:space="preserve">
     <value>Almacenando tarjeta de crédito...</value>
     <comment>Progress indicator message when storing a credit card - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CancelSubscription" xml:space="preserve">
+    <value>Cancelando subscripción...</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ChangePassword" xml:space="preserve">
+    <value>Cambiando contraseña...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseAllSessions" xml:space="preserve">
+    <value>Cerrando sesiones...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseSession" xml:space="preserve">
+    <value>Cerrando sesión...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConfirmAccount" xml:space="preserve">
+    <value>Confirmando cuenta...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateAccount" xml:space="preserve">
+    <value>Creando cuenta...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateFolder" xml:space="preserve">
+    <value>Creando carpeta...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_GetLink" xml:space="preserve">
+    <value>Obteniendo enlace...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Login" xml:space="preserve">
+    <value>Iniciando sesión...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Logout" xml:space="preserve">
+    <value>Cerrando sesión...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="PM_RemoveLink" xml:space="preserve">
+    <value>Eliminando enlace...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_UpgradeAccount" xml:space="preserve">
+    <value>Mejorando cuenta...</value>
+    <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
 </root>

@@ -86,15 +86,18 @@ namespace MegaApp.Services
             var importFolderViewModel = folderViewModel;
             var downloadFolderViewModel = folderViewModel;
 
+            if (publicNode == null) throw new ArgumentNullException("publicNode");
+
             var customMessageDialog = new CustomMessageDialog(UiResources.LinkOptions, publicNode.getName(), App.AppInformation,
                new[]
                 {
                     new DialogButton(UiResources.Import, () =>
                     {
+                        if (String.IsNullOrWhiteSpace(link)) throw new ArgumentNullException("link");
                         importFolderViewModel.ImportLink(link);
                     }),
                     new DialogButton(UiResources.Download, () =>
-                    {
+                    {                        
                         downloadFolderViewModel.DownloadLink(publicNode);
                     }),
                 });
@@ -772,7 +775,7 @@ namespace MegaApp.Services
         private static async void ShowCancelSubscriptionDialog(string reason)
         {
             var customMessageDialog = new CustomMessageDialog(AppMessages.CancelSubscription_Title,
-                AppMessages.CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
+                AppMessages.AM_CancelSubscriptionConfirmation, App.AppInformation, MessageDialogButtons.YesNo);
 
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
