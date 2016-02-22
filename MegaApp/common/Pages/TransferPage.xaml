@@ -74,8 +74,9 @@
                                 FontFamily="Portable User Interface"
                                 telerik:InteractionEffectManager.IsInteractionEnabled="True"
                                 />
-                        </Grid>
-                        <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+
+                            <selectors:CustomMultiResolutionImage x:Name="ImgUploadsPaused" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/transfers_paused.png" Opacity="0.3" Visibility="Collapsed"/>
+                        </Grid>                        
                     </Grid>
                 </phone:PivotItem>
                 <!--Pivot item two-->

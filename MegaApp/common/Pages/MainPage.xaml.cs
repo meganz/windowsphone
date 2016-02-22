@@ -455,8 +455,8 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||
-                args.Files.Count <= 0)
+            if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" || 
+                args.Files == null || args.Files.Count <= 0)
             {
                 ResetFilePicker();
                 return;
@@ -469,37 +469,51 @@ namespace MegaApp.Pages
             // Set upload directory only once for speed improvement and if not exists, create dir
             var uploadDir = AppService.GetUploadDirectoryPath(true);
 
-            foreach (var file in args.Files)
+            try
             {
-                try
+                foreach (var file in args.Files)
                 {
-                    string newFilePath = Path.Combine(uploadDir, file.Name);
-                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    try
                     {
-                        var stream = await file.OpenStreamForReadAsync();
-                        await stream.CopyToAsync(fs);
-                        await fs.FlushAsync();
-                        fs.Close();
+                        string newFilePath = Path.Combine(uploadDir, file.Name);
+                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        {
+                            var stream = await file.OpenStreamForReadAsync();
+                            await stream.CopyToAsync(fs);
+                            await fs.FlushAsync();
+                            fs.Close();
+                        }
+                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                        App.MegaTransfers.Add(uploadTransfer);
+                        uploadTransfer.StartTransfer();
                     }
-                    var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                    App.MegaTransfers.Add(uploadTransfer);
-                    uploadTransfer.StartTransfer();
-                }
-                catch (Exception)
-                {
-                    new CustomMessageDialog(
+                    catch (Exception)
+                    {
+                        new CustomMessageDialog(
                             AppMessages.PrepareFileForUploadFailed_Title,
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
+                    }
                 }
             }
-            ResetFilePicker();
+            catch (Exception)
+            {
+                new CustomMessageDialog(
+                    AppMessages.AM_PrepareFilesForUploadFailed_Title,
+                    String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
+            finally
+            {
+                ResetFilePicker();
 
-            ProgressService.SetProgressIndicator(false);
+                ProgressService.SetProgressIndicator(false);
 
-            App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+                App.CloudDrive.NoFolderUpAction = true;
+                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+            }
         }
 
         private static void ResetFilePicker()
