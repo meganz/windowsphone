@@ -12,7 +12,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AddFolder" translate="yes" space="preserve">
-          <source>Add folder</source>
+          <source>add folder</source>
           <target state="translated">добавить папку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add folder' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -37,17 +37,17 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
-          <source>Confirm</source>
+          <source>confirm</source>
           <target state="translated">подтвердить</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirm account</source>
-          <target state="new">Confirm account</target>
+          <target state="translated">Подтвердить уч. запись</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" space="preserve">
-          <source>Confirm your password</source>
+          <source>confirm your password</source>
           <target state="translated">подтвердите пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</note>
         </trans-unit>
@@ -56,23 +56,23 @@
           <target state="translated">Скопировать</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CreateFolder" translate="yes" xml:space="preserve">
-          <source>Folder name:</source>
-          <target state="new">Folder name:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_CreateAccount" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
           <source>Create account</source>
-          <target state="new">Create account</target>
+          <target state="translated">Создать учётную запись</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
+          <source>Folder name:</source>
+          <target state="translated">Название папки:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
+        </trans-unit>
         <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
-          <source>Your e-mail address</source>
+          <source>your e-mail address</source>
           <target state="translated">ваша электронная почта</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
-          <source>Empty folder</source>
+          <source>empty folder</source>
           <target state="translated">пустая папка</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty forder page - (String as short as possible).</note>
         </trans-unit>
@@ -81,9 +81,9 @@
           <target state="translated">Нет передач</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_GetLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="new">Get link</target>
+          <target state="translated">Получить ссылку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -91,9 +91,9 @@
           <target state="translated">Загрузка предпросмотра...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown with an animation when the app is loading a preview - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Login" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Login" translate="yes" space="preserve">
           <source>Login</source>
-          <target state="new">Login</target>
+          <target state="translated">Вход</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MegaLinkTitle" translate="yes" space="preserve">
@@ -112,27 +112,27 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Move' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultipleFiles" translate="yes" space="preserve">
-          <source>Files</source>
+          <source>files</source>
           <target state="translated">файлов(а)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Files' (multiple files) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultipleFolders" translate="yes" space="preserve">
-          <source>Folders</source>
+          <source>folders</source>
           <target state="translated">Папки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MyAccount" translate="yes" space="preserve">
-          <source>My account</source>
+          <source>my account</source>
           <target state="translated">мой аккаунт</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
-          <source>Your name</source>
+          <source>your name</source>
           <target state="translated">ваше имя</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
-          <source>Next</source>
+          <source>next</source>
           <target state="translated">следующий</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -147,12 +147,12 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenLink" translate="yes" space="preserve">
-          <source>Open link</source>
+          <source>Open MEGA download link:</source>
           <target state="translated">Открыть MEGA-ссылку:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
-          <source>Your password</source>
+          <source>your password</source>
           <target state="translated">ваш пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</note>
         </trans-unit>
@@ -162,12 +162,12 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Previous" translate="yes" space="preserve">
-          <source>Previous</source>
+          <source>previous</source>
           <target state="translated">Назад</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Previous' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Refresh" translate="yes" space="preserve">
-          <source>Refresh</source>
+          <source>refresh</source>
           <target state="translated">обновить</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Refresh' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -192,27 +192,27 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
-          <source>Save</source>
+          <source>save</source>
           <target state="translated">сохранить</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
-          <source>Share</source>
+          <source>share</source>
           <target state="translated">поделиться</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SingleFile" translate="yes" space="preserve">
-          <source>File</source>
+          <source>file</source>
           <target state="translated">файл</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SingleFolder" translate="yes" space="preserve">
-          <source>Folder</source>
+          <source>folder</source>
           <target state="translated">Папка</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Size" translate="yes" space="preserve">
-          <source>Size</source>
+          <source>Size:</source>
           <target state="translated">Размер:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -222,12 +222,12 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Upload" translate="yes" space="preserve">
-          <source>Upload</source>
+          <source>upload</source>
           <target state="translated">загрузка</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfers" translate="yes" space="preserve">
-          <source>Transfers</source>
+          <source>transfers</source>
           <target state="translated">передачи</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
         </trans-unit>
@@ -237,37 +237,37 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Canceling" translate="yes" space="preserve">
-          <source>Canceling</source>
+          <source>Canceling...</source>
           <target state="translated">Отмена...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being canceling - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Download" translate="yes" space="preserve">
-          <source>Downloading</source>
+          <source>Downloading...</source>
           <target state="translated">Скачивание...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Error" translate="yes" space="preserve">
-          <source>Error</source>
+          <source>Error on transfer</source>
           <target state="translated">Ошибка передачи</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_NotStarted" translate="yes" space="preserve">
-          <source>Not started</source>
+          <source>Ready</source>
           <target state="translated">Готово</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Upload" translate="yes" space="preserve">
-          <source>Uploading</source>
+          <source>Uploading...</source>
           <target state="translated">Загрузка...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" space="preserve">
-          <source>Download</source>
+          <source>download</source>
           <target state="translated">Скачать</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Settings" translate="yes" space="preserve">
-          <source>Settings</source>
+          <source>settings</source>
           <target state="translated">настройки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Settings' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -287,7 +287,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Pausing" translate="yes" space="preserve">
-          <source>Pausing</source>
+          <source>Pausing...</source>
           <target state="translated">Приостановка...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being pausing - (String as short as possible).</note>
         </trans-unit>
@@ -312,13 +312,13 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Done" translate="yes" space="preserve">
-          <source>Done</source>
+          <source>done</source>
           <target state="translated">готово</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Logout" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Logout" translate="yes" space="preserve">
           <source>Logout</source>
-          <target state="new">Logout</target>
+          <target state="translated">Выход</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/HomeRoot" translate="yes" space="preserve">
@@ -327,7 +327,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
-          <source>Rubbish bin</source>
+          <source>Rubbish Bin</source>
           <target state="translated">Корзина</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
@@ -352,7 +352,7 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" space="preserve">
-          <source>Confirm your PIN lock</source>
+          <source>confirm your PIN lock</source>
           <target state="translated">подтвердите PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
@@ -364,7 +364,7 @@ Try to preserve the PIN uppercase word.</note>
 Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockWatermark" translate="yes" space="preserve">
-          <source>Your PIN lock</source>
+          <source>your PIN lock</source>
           <target state="translated">ваш PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
@@ -375,7 +375,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'No' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Yes" translate="yes" space="preserve">
-          <source>Yes</source>
+          <source>yes</source>
           <target state="translated">да</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -430,7 +430,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'LITE' account type - (NO-TRANSLATION).</note>
         </trans-unit>
         <trans-unit id="Resx/Accept" translate="yes" space="preserve">
-          <source>Accept</source>
+          <source>accept</source>
           <target state="translated">принять</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Accept' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -455,7 +455,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Available" translate="yes" space="preserve">
-          <source>Available</source>
+          <source>available</source>
           <target state="translated">доступно</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</note>
         </trans-unit>
@@ -465,17 +465,17 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
-          <source>Cache</source>
+          <source>cache</source>
           <target state="translated">кэш</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelAll" translate="yes" space="preserve">
-          <source>Cancel all</source>
+          <source>cancel all</source>
           <target state="translated">отменить все</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Capture" translate="yes" space="preserve">
-          <source>Capture</source>
+          <source>capture</source>
           <target state="translated">захват</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Capture' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -485,22 +485,22 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
-          <source>Clean up transfers</source>
+          <source>clean up transfers</source>
           <target state="translated">очистить передачи</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearCache" translate="yes" space="preserve">
-          <source>Clear cache</source>
+          <source>clear cache</source>
           <target state="translated">отчистить кэш</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearSelection" translate="yes" space="preserve">
-          <source>Clear selection</source>
+          <source>clear selection</source>
           <target state="translated">отчистить выделение</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Clipboard" translate="yes" space="preserve">
-          <source>Clipboard</source>
+          <source>clipboard</source>
           <target state="translated">буфер</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -510,12 +510,12 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a text label into the 'settings' page indicating the default download location.</note>
         </trans-unit>
         <trans-unit id="Resx/Downloads" translate="yes" space="preserve">
-          <source>Downloads</source>
+          <source>downloads</source>
           <target state="translated">скачки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ExportMasterKeyText" translate="yes" space="preserve">
-          <source>Export MasterKey</source>
+          <source>Export masterkey</source>
           <target state="translated">Экспорт мастер-ключа</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</note>
         </trans-unit>
@@ -525,12 +525,12 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</note>
         </trans-unit>
         <trans-unit id="Resx/FilesAscendingSortOption" translate="yes" space="preserve">
-          <source>Files (ascending)</source>
+          <source>files (ascending)</source>
           <target state="translated">файлы (по возрастанию)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FilesDescendingSortOption" translate="yes" space="preserve">
-          <source>Files (descending)</source>
+          <source>files (descending)</source>
           <target state="translated">файлы (по убыванию)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by type - (String as short as possible).</note>
         </trans-unit>
@@ -550,7 +550,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MasterKey" translate="yes" space="preserve">
-          <source>MasterKey</source>
+          <source>Master Key</source>
           <target state="translated">Мастер-ключ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
@@ -580,7 +580,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NewPinLockWatermark" translate="yes" space="preserve">
-          <source>Your new PIN lock</source>
+          <source>your new PIN lock</source>
           <target state="translated">ваш новый PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
@@ -601,7 +601,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseAll" translate="yes" space="preserve">
-          <source>Pause all</source>
+          <source>pause all</source>
           <target state="translated">приостановить все</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -621,47 +621,47 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
         </trans-unit>
         <trans-unit id="Resx/StartResumeAll" translate="yes" space="preserve">
-          <source>Start/resume all</source>
+          <source>start/resume all</source>
           <target state="translated">начать/продолжить все</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Subscribe" translate="yes" space="preserve">
-          <source>Subscribe</source>
+          <source>subscribe</source>
           <target state="translated">подписаться</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Subscribe' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/TermsOfService" translate="yes" space="preserve">
-          <source>Terms of Service</source>
+          <source>Terms of service</source>
           <target state="translated">Условия предоставления услуг</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Terms of Service' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Total" translate="yes" space="preserve">
-          <source>Total</source>
+          <source>total</source>
           <target state="translated">всего</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Uploads" translate="yes" space="preserve">
-          <source>Uploads</source>
+          <source>uploads</source>
           <target state="translated">загрузки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Used" translate="yes" space="preserve">
-          <source>Used</source>
+          <source>used</source>
           <target state="translated">используется</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UsedSpace" translate="yes" space="preserve">
-          <source>Used space</source>
+          <source>Used Space</source>
           <target state="translated">Использовано</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the amount used space into the 'my account' page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Version" translate="yes" space="preserve">
-          <source>Version</source>
+          <source>version</source>
           <target state="translated">версия</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the version number into the 'about' page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/View" translate="yes" space="preserve">
-          <source>View</source>
+          <source>view</source>
           <target state="translated">показать</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</note>
         </trans-unit>
@@ -671,17 +671,17 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Download location' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolder" translate="yes" space="preserve">
-          <source>Select folder</source>
+          <source>select folder</source>
           <target state="translated">выбрать папку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_UpgradeAccount" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_UpgradeAccount" translate="yes" space="preserve">
           <source>Upgrade account</source>
-          <target state="new">Upgrade account</target>
+          <target state="translated">Улучшить аккаунт</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
-          <source>About</source>
+          <source>about</source>
           <target state="translated">о приложении</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -716,7 +716,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Uploaded" translate="yes" space="preserve">
-          <source>Uploaded</source>
+          <source>uploaded</source>
           <target state="translated">загружено</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
@@ -785,9 +785,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">МЕГА скорость</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the title of the init tour page dedicated to the speed. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ChangePassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ChangePassword" translate="yes" space="preserve">
           <source>Change password</source>
-          <target state="new">Change password</target>
+          <target state="translated">Изменить пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Advanced" translate="yes" space="preserve">
@@ -821,7 +821,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Sort' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
-          <source>Empty rubbish</source>
+          <source>Empty rubbish bin</source>
           <target state="translated">Очистить корзину</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -846,7 +846,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Wifi and data plan' option in the 'set up camera uploads' page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WifiOnly" translate="yes" space="preserve">
-          <source>Wi-fi only</source>
+          <source>Wifi only</source>
           <target state="translated">Только Wi-Fi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</note>
         </trans-unit>
@@ -865,9 +865,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Назад</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CancelSubscription" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CancelSubscription" translate="yes" space="preserve">
           <source>Cancel subscription</source>
-          <target state="new">Cancel subscription</target>
+          <target state="translated">Отменить подписку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Dismiss" translate="yes" space="preserve">
@@ -941,7 +941,7 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
-          <source>Get 2 months free if you subscribe to a one-year pro plan</source>
+          <source>Get 2 months free if you subscribe to a one-year Pro plan</source>
           <target state="translated">Выберите годовой Про план и получите 2 бесплатных месяца</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
@@ -1028,10 +1028,10 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name/type in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AccountRenewalNotice" translate="yes" space="preserve">
-          <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel this subscription payment prior to the renewal date.</source>
+          <source>Your {0} subscription will be automatically rebilled on your {0} anniversary unless you log in to your account and cancel the subscription prior to the renewal date.</source>
           <target state="translated">Ваша {0} подписка будет автоматически продляться на {0} ежегодно,  до тех пор, пока вы не войдете в свой аккаунт и не отмените подписку.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription.
-Preserve the {0} code because is for include the renewal period string in runtime.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the renewal period of the purchased subscription. 
+Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/Annual" translate="yes" space="preserve">
           <source>Annual</source>
@@ -1054,12 +1054,12 @@ Preserve the {0} code because is for include the renewal period string in runtim
           <note from="MultilingualBuild" annotates="source" priority="2">Label shown when the app has no available payment methods to the selected subscription plan.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCard" translate="yes" space="preserve">
-          <source>Credit Card</source>
+          <source>Credit card</source>
           <target state="translated">Кредитная карта</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PhoneBill" translate="yes" space="preserve">
-          <source>Mobile</source>
+          <source>Phone Bill</source>
           <target state="translated">Телефонный счет</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any Phone Bill or Mobile payment button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
@@ -1079,7 +1079,7 @@ Preserve the {0} code because is for include the renewal period string in runtim
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
-          <source>You can be a PRO user!</source>
+          <source>You can be a Pro user!</source>
           <target state="translated">Вы можете стать Про пользователем!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
@@ -1104,12 +1104,12 @@ Preserve the {0} code because is for include the renewal period string in runtim
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
-          <source>Add contact</source>
+          <source>Add Contact</source>
           <target state="translated">Добавить контакт</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add contact' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
-          <source>Type email address:</source>
+          <source>Type e-mail address:</source>
           <target state="translated">Введите email адрес: </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
@@ -1307,24 +1307,24 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Новый пароль</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_CloseSession" translate="yes" xml:space="preserve">
-          <source>Close session</source>
-          <target state="new">Close session</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
           <source>Close all sessions</source>
-          <target state="new">Close all sessions</target>
+          <target state="translated">Закрыть все сессии</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
+          <source>Close session</source>
+          <target state="translated">Закончить сеанс</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" space="preserve">
           <source>Manage link</source>
           <target state="translated">Управление ссылкой</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_RemoveLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_RemoveLink" translate="yes" space="preserve">
           <source>Remove link</source>
-          <target state="new">Remove link</target>
+          <target state="translated">Удалить ссылку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
@@ -1333,12 +1333,12 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
-          <source>Saved for offline</source>
+          <source>Saved for offline use</source>
           <target state="translated">Сохранено для локального использования</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
-          <source>No files on your cloud drive</source>
+          <source>No files in your cloud drive</source>
           <target state="translated">На облачном диске нет файлов</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
@@ -1373,7 +1373,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty uploads page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocation" translate="yes" space="preserve">
-          <source>please select a default download folder</source>
+          <source>Please select a default download folder.</source>
           <target state="translated">Выберите папку для загрузок по умолчанию.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>

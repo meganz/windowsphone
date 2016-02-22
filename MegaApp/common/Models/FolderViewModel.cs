@@ -288,7 +288,9 @@ namespace MegaApp.Models
         public void DownloadLink(MNode publicNode)
         {            
             var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode, ContainerType.PublicLink);
-            downloadNode.Download(App.MegaTransfers);
+
+            if(downloadNode != null)
+                downloadNode.Download(App.MegaTransfers);
         }
 
         public void OnChildNodeTapped(IMegaNode node)

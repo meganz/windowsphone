@@ -246,12 +246,12 @@ namespace MegaApp.Classes
                 if(String.Compare(_subscriptionCycle,"1 M") == 0)
                 {
                     PurchaseAccountRenewalText = String.Format(UiResources.AccountRenewalNotice,
-                        UiResources.Monthly.ToLower(), UiResources.Monthly.ToLower());
+                        UiResources.Monthly.ToLower());
                 }
                 else if (String.Compare(_subscriptionCycle, "1 Y") == 0)
                 {
                     PurchaseAccountRenewalText = String.Format(UiResources.AccountRenewalNotice,
-                        UiResources.Annual.ToLower(), UiResources.Annual.ToLower());
+                        UiResources.Annual.ToLower());
                 }                
             }
         }

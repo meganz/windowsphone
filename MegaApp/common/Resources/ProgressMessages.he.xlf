@@ -6,50 +6,50 @@
     </header>
     <body>
       <group id="Resx">
-        <trans-unit id="Resx/PM_CancelSubscription" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_CancelSubscription" translate="yes" space="preserve">
           <source>Canceling subscription...</source>
-          <target state="new">Canceling subscription...</target>
+          <target state="translated">מבטל הרשמה...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelTransfer" translate="yes" space="preserve">
-          <source>Canceling transfer...</source>
+          <source>Cancelling transfer...</source>
           <target state="translated">מבטל העברה... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a transfer - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_ChangePassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_ChangePassword" translate="yes" space="preserve">
           <source>Changing password...</source>
-          <target state="new">Changing password...</target>
+          <target state="translated">מחליף סיסמא...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBin" translate="yes" space="preserve">
-          <source>Emptying the rubbish bin...</source>
+          <source>Clearing the rubbish bin...</source>
           <target state="translated">מנקה את פח המחזור... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when emptying the rubbish bin - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_CreateFolder" translate="yes" xml:space="preserve">
-          <source>Creating folder...</source>
-          <target state="new">Creating folder...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
+        <trans-unit id="Resx/PM_CloseAllSessions" translate="yes" space="preserve">
+          <source>Closing all sessions...</source>
+          <target state="translated">סוגר את כל הסשנס...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing all sessions - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_CreateAccount" translate="yes" xml:space="preserve">
-          <source>Creating account...</source>
-          <target state="new">Creating account...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" xml:space="preserve">
-          <source>Confirming account...</source>
-          <target state="new">Confirming account...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/PM_CloseSession" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_CloseSession" translate="yes" space="preserve">
           <source>Closing session...</source>
-          <target state="new">Closing session...</target>
+          <target state="translated">סוגר סשן... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_CloseAllSessions" translate="yes" xml:space="preserve">
-          <source>Closing all sessions...</source>
-          <target state="new">Closing all sessions...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing all sessions - (String as short as possible).</note>
+        <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
+          <source>Confirming account...</source>
+          <target state="translated">מאשר חשבון...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when confirming a MEGA account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_CreateAccount" translate="yes" space="preserve">
+          <source>Creating account...</source>
+          <target state="translated">יוצר חשבון...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a MEGA account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_CreateFolder" translate="yes" space="preserve">
+          <source>Creating folder...</source>
+          <target state="translated">יוצר תיקייה...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when creating a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStore" translate="yes" space="preserve">
           <source>Storing credit card...</source>
@@ -88,9 +88,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">מקבל מידע ליצירת קשר...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting contact details - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_GetLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_GetLink" translate="yes" space="preserve">
           <source>Getting link...</source>
-          <target state="new">Getting link...</target>
+          <target state="translated">טוען קישור...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethods" translate="yes" space="preserve">
@@ -99,7 +99,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting payment methods - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrl" translate="yes" space="preserve">
-          <source>Getting payment Url...</source>
+          <source>Getting payment URL...</source>
           <target state="translated">מקבל כתובת לתשלום...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when getting a payment Url - (String as short as possible).</note>
         </trans-unit>
@@ -129,7 +129,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactRemind" translate="yes" space="preserve">
-          <source>Reminding contat request...</source>
+          <source>Reminding contact about the request...</source>
           <target state="translated">שולח תזכורת לאיש הקשר לגבי ההזמנה. </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when reminding a contact request - (String as short as possible).</note>
         </trans-unit>
@@ -138,15 +138,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">בונה תצוגה...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when building a nodes view - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_Logout" translate="yes" xml:space="preserve">
-          <source>Logging out...</source>
-          <target state="new">Logging out...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/PM_Login" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_Login" translate="yes" space="preserve">
           <source>Logging in...</source>
-          <target state="new">Logging in...</target>
+          <target state="translated">מתחבר...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging in - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_Logout" translate="yes" space="preserve">
+          <source>Logging out...</source>
+          <target state="translated">מתנתק...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when logging out - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveNode" translate="yes" space="preserve">
           <source>Moving...</source>
@@ -154,7 +154,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to a different parent - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" space="preserve">
-          <source>Moving to rubbish bin...</source>
+          <source>Moving to Rubbish bin...</source>
           <target state="translated">מעביר אל פח האשפה...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note>
         </trans-unit>
@@ -183,9 +183,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">מוחק מקבצים לא מקוונים... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing folders/files from offline - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_RemoveLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_RemoveLink" translate="yes" space="preserve">
           <source>Removing link...</source>
-          <target state="new">Removing link...</target>
+          <target state="translated">מוחק קישור... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" space="preserve">
@@ -228,9 +228,9 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">השרתים עמוסים. אנא המתן... </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when servers are too busy - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_UpgradeAccount" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_UpgradeAccount" translate="yes" space="preserve">
           <source>Upgrading account...</source>
-          <target state="new">Upgrading account...</target>
+          <target state="translated">משדרג חשבון...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when upgrading an account - (String as short as possible).</note>
         </trans-unit>
       </group>
