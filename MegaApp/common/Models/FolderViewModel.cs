@@ -235,7 +235,7 @@ namespace MegaApp.Models
             // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-            var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.CreateFolder, this.AppInformation);
+            var inputDialog = new CustomInputDialog(UiResources.AddFolder, UiResources.UI_CreateFolder, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
                 if (this.FolderRootNode == null)
@@ -277,6 +277,20 @@ namespace MegaApp.Models
         {
             if (String.IsNullOrEmpty(link) || String.IsNullOrWhiteSpace(link)) return;
 
+            if (this.FolderRootNode == null)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.ImportFileFailed_Title,
+                        AppMessages.AM_ImportFileFailedNoErrorCode,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
+                return;
+            }
+
             this.MegaSdk.importFileLink(
                 link,
                 this.FolderRootNode.OriginalMNode,
@@ -288,7 +302,9 @@ namespace MegaApp.Models
         public void DownloadLink(MNode publicNode)
         {            
             var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode, ContainerType.PublicLink);
-            downloadNode.Download(App.MegaTransfers);
+
+            if(downloadNode != null)
+                downloadNode.Download(App.MegaTransfers);
         }
 
         public void OnChildNodeTapped(IMegaNode node)

@@ -49,13 +49,13 @@ namespace MegaApp.MegaApi
             {
                 if (ShowSuccesMessage)
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            new CustomMessageDialog(
-                                    SuccessMessageTitle,
-                                    SuccessMessage,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                        });
+                    {
+                        new CustomMessageDialog(
+                            SuccessMessageTitle,
+                            SuccessMessage,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
 
                 if (ActionOnSucces)
                     OnSuccesAction(api, request);
@@ -93,10 +93,10 @@ namespace MegaApp.MegaApi
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         new CustomMessageDialog(
-                                ErrorMessageTitle,
-                                String.Format(ErrorMessage, e.getErrorString()),
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
+                            ErrorMessageTitle,
+                            String.Format(ErrorMessage, e.getErrorString()),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     });
             }           
         }

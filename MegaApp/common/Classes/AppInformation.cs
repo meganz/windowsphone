@@ -14,12 +14,18 @@ namespace MegaApp.Classes
             this.IsNewlyActivatedAccount = false;
             this.IsStartedAsAutoUpload = false;
             this.IsStartupModeActivate = false;
+            
+            this.HasPinLockIntroduced = false;
+
+            this.HasFetchedNodes = false;
         }
         
         public bool PickerOrAsyncDialogIsOpen { get; set; }
         public bool IsNewlyActivatedAccount { get; set; }
         public bool IsStartedAsAutoUpload { get; set; }
         public bool IsStartupModeActivate { get; set; }
+        
+        public bool HasPinLockIntroduced { get; set; }
 
         public bool HasFetchedNodes { get; set; }
     }

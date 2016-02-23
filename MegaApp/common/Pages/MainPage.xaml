@@ -45,7 +45,7 @@
         		Click="OnAddFolderClick" 
 			/>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/open_link.png" 
+        		IconUri="/Assets/AppBar/link.png" 
         		Text="open link" 
         		Click="OnOpenLinkClick" 				
 			/>
@@ -88,7 +88,7 @@
 
         <shell:ApplicationBar x:Key="ImportItemMenu">
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/open_link.png" 
+        		IconUri="/Assets/AppBar/link.png" 
         		Text="import" 
         		Click="OnImportLinkClick" 
 			/>
@@ -255,7 +255,7 @@
                                         <!--<telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnGetLinkCloudDrive" 
 									    Command="{Binding GetLinkCommand}"
-									    Content="{Binding LocalizedUiResources.GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+									    Content="{Binding LocalizedUiResources.UI_GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								    />-->
                                         <telerikPrimitives:RadContextMenuItem 
 									    x:Name="BtnRenameItemCloudDrive" 
@@ -360,7 +360,7 @@
                                         <!--<telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnGetLinkRubbishBin" 
 											Command="{Binding GetLinkItemCommand}"
-											Content="{Binding LocalizedUiResources.GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
+											Content="{Binding LocalizedUiResources.UI_GetLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
 								        />-->
                                         <telerikPrimitives:RadContextMenuItem 
 											x:Name="BtnRenameItemRubbishBin" 

@@ -49,7 +49,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("90d7b72");
+            return String.Format("ad50d11");
         }
 
         public static string GetAppUserAgent()
@@ -270,7 +270,7 @@ namespace MegaApp.Services
 
             var result = await new CustomMessageDialog(
                 AppMessages.DownloadLimitMessage_Title,
-                String.Format(AppMessages.DownloadLimitMessage, downloadCount),
+                String.Format(AppMessages.DownloadLimitMessage, DownloadLimit, downloadCount),
                 App.AppInformation,
                 MessageDialogButtons.Ok).ShowDialogAsync();
 
@@ -287,8 +287,14 @@ namespace MegaApp.Services
             SettingsService.ClearMegaLoginData();
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
-                App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
+                // Added extra checks preventing null reference exceptions
+                if (App.MainPageViewModel == null) return;
+                
+                if (App.MainPageViewModel.CloudDrive != null) 
+                    App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
+
+                if (App.MainPageViewModel.RubbishBin != null) 
+                    App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
             });
             AppService.ClearAppCache(false);  
           

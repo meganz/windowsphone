@@ -117,41 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>U gaat uw MEGA abonnement annuleren. Laat ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</value>
-    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
-  </data>
   <data name="CancelTransfer" xml:space="preserve">
     <value>Overdracht wordt geannuleerd...</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Wijzig wachtwoord</value>
-    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
-  </data>
   <data name="CleanRubbishBin" xml:space="preserve">
     <value>Prullenbak wordt geleegd...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
-  </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Alle sessies worden gesloten...</value>
-    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Sessie wordt gesloten...</value>
-    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Account bevestigen...</value>
-    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Account creëren...</value>
-    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Folder creëren...</value>
-    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
     <value>Storing creditcard...</value>
@@ -182,10 +154,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="GetContactData" xml:space="preserve">
     <value>Verkrijgen van contactgegevens...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
-  </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Verkrijgen van link...</value>
-    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
     <value>Verkrijgen van betaalmethodes...</value>
@@ -223,14 +191,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Opstellen weergave ...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Aanmelden...</value>
-    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Uitloggen...</value>
-    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
-  </data>
   <data name="MoveNode" xml:space="preserve">
     <value>Verplaatsen...</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
@@ -258,10 +218,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="RemoveFromOffline" xml:space="preserve">
     <value>Verwijderen van offline...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Link wordt verwijderd...</value>
-    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Verwijderen...</value>
@@ -295,7 +251,51 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Servers te druk. Even geduld alstublieft...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
+  <data name="PM_CancelSubscription" xml:space="preserve">
+    <value>Canceling subscription...</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ChangePassword" xml:space="preserve">
+    <value>Changing password...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseAllSessions" xml:space="preserve">
+    <value>Alle sessies worden gesloten...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseSession" xml:space="preserve">
+    <value>Sessie wordt gesloten...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConfirmAccount" xml:space="preserve">
+    <value>Account bevestigen...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateAccount" xml:space="preserve">
+    <value>Account creëren...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateFolder" xml:space="preserve">
+    <value>Map aanmaken...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_GetLink" xml:space="preserve">
+    <value>Verkrijgen van link...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Login" xml:space="preserve">
+    <value>Aanmelden...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Logout" xml:space="preserve">
+    <value>Uitloggen...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="PM_RemoveLink" xml:space="preserve">
+    <value>Link wordt verwijderd...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>Opwaarderen account</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>

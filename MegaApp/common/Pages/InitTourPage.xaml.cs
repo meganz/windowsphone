@@ -42,23 +42,35 @@ namespace MegaApp.Pages
                 NavigationService.RemoveBackEntry();
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-            if (navParam == NavigationParameter.API_ESID)
+
+            switch(navParam)
             {
-                // Show a message notifying the error
-                new CustomMessageDialog(
-                    AppMessages.SessionIDError_Title,
-                    AppMessages.SessionIDError,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            }
-            else if (navParam == NavigationParameter.API_ESSL)
-            {
-                // Show a message notifying the error
-                new CustomMessageDialog(
-                    AppMessages.SSLKeyError_Title,
-                    AppMessages.SSLKeyError,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
+                case NavigationParameter.CreateAccount:
+                    // Show the success message
+                    new CustomMessageDialog(
+                        AppMessages.ConfirmNeeded_Title,
+                        AppMessages.ConfirmNeeded,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                    break;
+
+                case NavigationParameter.API_ESID:
+                    // Show a message notifying the error
+                    new CustomMessageDialog(
+                        AppMessages.SessionIDError_Title,
+                        AppMessages.SessionIDError,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                    break;
+
+                case NavigationParameter.API_ESSL:
+                    // Show a message notifying the error
+                    new CustomMessageDialog(
+                        AppMessages.SSLKeyError_Title,
+                        AppMessages.SSLKeyError,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                    break;
             }
         }
 

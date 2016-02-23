@@ -104,10 +104,10 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.CopyFileUnauthorizedAccessException_Title,
-                            AppMessages.CopyFileUnauthorizedAccessException,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.CopyFileUnauthorizedAccessException_Title,
+                        AppMessages.CopyFileUnauthorizedAccessException,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }
@@ -116,10 +116,10 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.CopyFileFailed_Title,
-                            String.Format(AppMessages.CopyFileFailed, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.CopyFileFailed_Title,
+                        String.Format(AppMessages.CopyFileFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
                 return false;
             }

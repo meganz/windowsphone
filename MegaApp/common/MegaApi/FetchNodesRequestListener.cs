@@ -22,19 +22,17 @@ namespace MegaApp.MegaApi
     class FetchNodesRequestListener : BaseRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
-        private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;
-        private readonly String _shortCutBase64Handle;
+        private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;        
 
         // Timer for ignore the received API_EAGAIN (-3) during login
         private DispatcherTimer timerAPI_EAGAIN;
         private bool isFirstAPI_EAGAIN;
 
-        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel, String shortCutBase64Handle = null, 
+        public FetchNodesRequestListener(MainPageViewModel mainPageViewModel,
             CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
         {
             this._mainPageViewModel = mainPageViewModel;
-            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
-            this._shortCutBase64Handle = shortCutBase64Handle;
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
 
             timerAPI_EAGAIN = new DispatcherTimer();
             timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
@@ -122,11 +120,13 @@ namespace MegaApp.MegaApi
             App.AppInformation.HasFetchedNodes = true;
 
             // If the user is trying to open a shortcut
-            if (_shortCutBase64Handle != null)
+            if (App.ShortCutBase64Handle != null)
             {
                 bool shortCutError = false;
 
-                MNode shortCutMegaNode = api.getNodeByBase64Handle(_shortCutBase64Handle);
+                MNode shortCutMegaNode = api.getNodeByBase64Handle(App.ShortCutBase64Handle);
+                App.ShortCutBase64Handle = null;
+
                 if (_mainPageViewModel != null && shortCutMegaNode != null)
                 {
                     // Looking for the absolute parent of the shortcut node to see the type
@@ -196,13 +196,18 @@ namespace MegaApp.MegaApi
                 }
             }
 
-            if (_mainPageViewModel != null) _mainPageViewModel.LoadFolders();
-            if (_cameraUploadsPageViewModel != null) _cameraUploadsPageViewModel.LoadFolders();
-
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                // Enable MainPage appbar buttons
-                if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
+                if (_mainPageViewModel != null)
+                {
+                    _mainPageViewModel.LoadFolders();
+                    _mainPageViewModel.GetAccountDetails();
+
+                    // Enable MainPage appbar buttons
+                    if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
+                }
+
+                if (_cameraUploadsPageViewModel != null) _cameraUploadsPageViewModel.LoadFolders();                
             });
 
             // KEEP ALWAYS AT THE END OF THE METHOD, AFTER THE "LoadForlders" call
