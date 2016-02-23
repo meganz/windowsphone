@@ -277,6 +277,20 @@ namespace MegaApp.Models
         {
             if (String.IsNullOrEmpty(link) || String.IsNullOrWhiteSpace(link)) return;
 
+            if (this.FolderRootNode == null)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.ImportFileFailed_Title,
+                        AppMessages.AM_ImportFileFailedNoErrorCode,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
+                return;
+            }
+
             this.MegaSdk.importFileLink(
                 link,
                 this.FolderRootNode.OriginalMNode,
