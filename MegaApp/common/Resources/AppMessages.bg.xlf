@@ -1,0 +1,1209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="bg" original="AppMessages.resx" tool-id="MultilingualAppToolkit" product-name="MegaApp81" product-version="1.0.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
+          <source>You must agree with our Terms of Service</source>
+          <target state="translated">Трябва да се съгласите с нашите Условия за Ползване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
+          <source>Failed to confirm account. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно потвърждение на акаунта. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the confirmation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" space="preserve">
+          <source>Account confirmation failed</source>
+          <target state="translated">Потвърждаването на профила се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
+          <source>Your account has been created, confirmed and activated. You will be logged in automatically.</source>
+          <target state="translated">Вашият акаунт е създаден, потвърден и активиран. Ще влезете в системата автоматично.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" space="preserve">
+          <source>Account activated</source>
+          <target state="translated">Неуспешна активация</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
+          <source>Check your e-mail and click the link to login and confirm your account</source>
+          <target state="translated">Проверете електронната си поща и кликнете върху линка, за да влезете и да потвърдите профила си</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
+          <source>Confirmation needed</source>
+          <target state="translated">Има нужда от потвърждение</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed" translate="yes" space="preserve">
+          <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
+          <target state="translated">MEGA Cloud Drive акаунтът не беше създаден успешно. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a MEGA account failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateAccountFailed_Title" translate="yes" space="preserve">
+          <source>Account creation failed</source>
+          <target state="translated">Неуспешно създаване на акаунт</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a MEGA account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed" translate="yes" space="preserve">
+          <source>Failed to create folder</source>
+          <target state="translated">Неуспешно създаване на папка</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderFailed_Title" translate="yes" space="preserve">
+          <source>Folder creation failed</source>
+          <target state="translated">Неуспешно създаване на папка</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess" translate="yes" space="preserve">
+          <source>Folder created successfully</source>
+          <target state="translated">Папката е създадена успешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when create a folder successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreateFolderSuccess_Title" translate="yes" space="preserve">
+          <source>Folder created</source>
+          <target state="translated">Папката беше създадена</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
+          <source>Failed to delete item. Please try again [{0}]</source>
+          <target state="translated">Неуспешно изтриване на елемент. Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
+          <source>Deletion failed</source>
+          <target state="translated">Неуспешно изтриване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve a download link. Please try again.</source>
+          <target state="translated">Неуспешно извличане на линк за сваляне. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when failed to retrieve a download link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving link failed</source>
+          <target state="translated">Неуспешно зареждане на линк</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed" translate="yes" space="preserve">
+          <source>Failed to download file. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно изтегляне на файл. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" space="preserve">
+          <source>Download failed</source>
+          <target state="translated">Изтеглянето е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
+          <source>Could not retrieve files and folders from MEGA. Please try again.</source>
+          <target state="translated">Неуспешно зареждане на файлове и папки от MEGA. Моля опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FetchingNodesFailed_Title" translate="yes" space="preserve">
+          <source>Fetching data failed</source>
+          <target state="translated">Неуспешно зареждане на данните</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to fetch nodes from the MEGA cloud service failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed" translate="yes" space="preserve">
+          <source>Failed to create folder. Please try again.</source>
+          <target state="translated">Неуспешно създаване на папка. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to create a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderCreateFailed_Title" translate="yes" space="preserve">
+          <source>Folder creation failed</source>
+          <target state="translated">Неуспешно създаване на папка</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
+          <source>Failed to get link</source>
+          <target state="translated">Неуспешно зареждане на линк</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
+          <source>Link creation failed</source>
+          <target state="translated">Науспешно зареждане на линк</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve preview</source>
+          <target state="translated">Неуспешно зареждане на предварителен преглед</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image preview failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPreviewFailed_Title" translate="yes" space="preserve">
+          <source>Preview failed</source>
+          <target state="translated">Неуспешно зареждане на предварителния преглед</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
+          <source>Image successfully exported to 'saved pictures' album</source>
+          <target state="translated">Изображението е успешно експортирано в албума 'saved pictures'</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
+          <source>Image saved</source>
+          <target state="translated">Изображението е запазено</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
+          <source>Error exporting image to  'saved pictures' album. Please try again</source>
+          <target state="needs-review-translation">Грешка при експортирането на изображението в албума 'saved pictures'. Моля опитайте отново</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
+          <source>Failed to save image</source>
+          <target state="translated">Неуспешно запазване на изображението</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
+          <source>File import failed [{0}]</source>
+          <target state="translated">File import failed [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
+          <source>File import failed</source>
+          <target state="translated">Импортирането на файл се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
+          <source>The MEGA link was copied to your clipboard</source>
+          <target state="translated">MEGA линк-а е копиран във вашия клипборд</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
+          <source>Copied to clipboard</source>
+          <target state="translated">Копирано в буфера</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
+          <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
+          <target state="translated">Влизането в системата на MEGA Cloud Drive е неуспешно. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the login to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoginFailed_Title" translate="yes" space="preserve">
+          <source>Login failed</source>
+          <target state="translated">Неуспешно влизане</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent" translate="yes" space="preserve">
+          <source>Destination folder is the same as the source folder. Move cancelled.</source>
+          <target state="translated">Целевата папка е същата като папката източник. Преместването е отменено.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveEqualsParent_Title" translate="yes" space="preserve">
+          <source>Move failed</source>
+          <target state="translated">Преместването е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed" translate="yes" space="preserve">
+          <source>Failed to move item. Please try again.</source>
+          <target state="translated">Грешка при преместване на елемента. Моля опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move a file failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveFailed_Title" translate="yes" space="preserve">
+          <source>Move failed</source>
+          <target state="translated">Преместването е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" space="preserve">
+          <source>Passwords do not match. Please try again.</source>
+          <target state="translated">Паролите не съвпадат. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved" translate="yes" space="preserve">
+          <source>The image was saved to your photo album</source>
+          <target state="translated">Изображението е запазено във вашия албум със снимки</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PictureSaved_Title" translate="yes" space="preserve">
+          <source>Picture saved</source>
+          <target state="translated">Снимката е запазена</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to remove {0}?</source>
+          <target state="translated">Сигурни ли сте че искате да премахнете {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
+Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" space="preserve">
+          <source>Remove?</source>
+          <target state="translated">Прамахни?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
+          <source>Failed to remove item</source>
+          <target state="translated">Неуспешно премахване на файл</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" space="preserve">
+          <source>Remove failed</source>
+          <target state="translated">Неуспешно премахване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
+          <source>Item successfully removed</source>
+          <target state="translated">Елементър беше успешно премахнат</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
+          <source>Item removed</source>
+          <target state="translated">Файлът е премахнат</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully a node definitely from the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed" translate="yes" space="preserve">
+          <source>Renaming item failed</source>
+          <target state="translated">Неуспешно преименуване на файла</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RenameNodeFailed_Title" translate="yes" space="preserve">
+          <source>Rename failed</source>
+          <target state="translated">Преименуването беше неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
+          <source>Please fill in your chosen password.</source>
+          <target state="translated">Моля въведете избраната от вас парола.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
+          <source>Please fill in your name, e-mail address and password</source>
+          <target state="translated">Моля попълнете вашето име, електронна поща и парола</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
+          <source>Please fill in your e-mail address and your MEGA password.</source>
+          <target state="translated">Моля въведете своя имейл адрес и своята MEGA парола.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFields_Title" translate="yes" space="preserve">
+          <source>Fill in required fields</source>
+          <target state="translated">Попълнете задължителните полета</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when any required field is not filled in - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
+          <source>Export current image to 'saved pictures' album?</source>
+          <target state="translated">Да се експортира ли текущото изображение в албума 'запазени снимки'?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
+          <source>Save image to photos</source>
+          <target state="translated">Запази изображението в снимки</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
+          <source>You are not logged into MEGA. Please re-login.</source>
+          <target state="translated">Вие не сте влезли в MEGA. Моля, влезте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
+          <source>Not online</source>
+          <target state="translated">Не е на линия</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve thumbnail [{0}]</source>
+          <target state="translated">Неуспешно зареждане на умалената снимка [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a image thumbnail failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetThumbnailFailed_Title" translate="yes" space="preserve">
+          <source>Getting thumbnail failed</source>
+          <target state="translated">Зареждането на умалената снимка е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve your account details. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно зареждане на детайлите за акаунта ви. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user account details failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetAccountDetailsFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving account details failed</source>
+          <target state="translated">Неуспешно зареждане на детайлите за акаунта ви</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
+          <source>You have successfully logged out</source>
+          <target state="translated">Успешно излязохте от системата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user logged out successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoggedOut_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Излязохте от системата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user logged out successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
+          <source>Failed to logout. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно излизане от системата. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LogoutFailed_Title" translate="yes" space="preserve">
+          <source>Logout failed</source>
+          <target state="translated">Неуспешно излизане от системата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the logout to the MEGA cloud service api fails - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to remove {0} items?</source>
+          <target state="translated">Сигурни ли сте че искате да премахнете {0} файла?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" space="preserve">
+          <source>Remove items?</source>
+          <target state="translated">Премахване на файловете?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
+          <source>{0} items removed</source>
+          <target state="translated">{0} Файла бяха премахнати</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiRemoveSucces_Title" translate="yes" space="preserve">
+          <source>Items removed</source>
+          <target state="translated">Файловете са премахнати</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to move item to rubbish bin. Please try again</source>
+          <target state="translated">Неуспешно преместване на файла в кошчето. Моля опитайте отново</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" space="preserve">
+          <source>Move to rubbish bin failed</source>
+          <target state="translated">Преместването в кошчето беше неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to move {0} to the rubbish bin?</source>
+          <target state="translated">Сигурни ли сте че искате да преместите {0} в кошчето?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
+          <source>Move to rubbish bin?</source>
+          <target state="translated">Да се премести ли в кошчето?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
+          <source>Item successfully moved to the rubbish bin</source>
+          <target state="translated">Файлът е успешно преместен в кошчето</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully one single node to the rubbish bin.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" space="preserve">
+          <source>Item moved</source>
+          <target state="translated">Файлът е преместен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to move {0} items to the rubbish bin?</source>
+          <target state="translated">Сигурни ли сте че искате да преместите в кошчето {0} файла?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
+          <source>Move items?</source>
+          <target state="translated">Да се преместят ли файловете?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
+          <source>{0} items moved to the rubbish bin</source>
+          <target state="translated">{0} файла бяха преместени в кошчето</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
+Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MultiMoveToRubbishBinSucces_Title" translate="yes" space="preserve">
+          <source>Items moved</source>
+          <target state="translated">Файловете са преместени</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
+          <target state="translated">Имате {0} чакащи трансфери. Чакащите трансфери ще бъдат отменени. Сигурни ли сте че искате да излезете от системата?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" space="preserve">
+          <source>Pending Transfers</source>
+          <target state="translated">Чакащи Трансфери</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
+          <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
+          <target state="translated">Имате {0} чакащи трансфера. Чакащите трансфери ще бъдат отменени. Сигурни ли сте че искате да излезете?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
+Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" space="preserve">
+          <source>Pending Transfers</source>
+          <target state="translated">Чакащи Трансфери</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
+          <source>The account is already confirmed. You can now login.</source>
+          <target state="translated">Този акаунт вече е потвърден. Вече можете да влезете в системата.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
+          <source>Account already confirmed</source>
+          <target state="translated">Акаунтът е вече потвърден</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword" translate="yes" space="preserve">
+          <source>The typed password is incorrect</source>
+          <target state="translated">Въведената парола е грешна</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongPassword_Title" translate="yes" space="preserve">
+          <source>Wrong password</source>
+          <target state="translated">Грешна парола</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
+          <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
+          <target state="translated">Избрали сте над {0} елемента ({1}) за изтегляне. Искате ли да продължите?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" space="preserve">
+          <source>Download count</source>
+          <target state="translated">Брой сваляния</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
+          <source>Do you want to automatically export image files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
+          <target state="translated">Искате ли автоматично да експортирате всички изображения във вашия албум след изтегляне? Можете да промените тази настройка в страницата за настройки след това. Други типове файлове ще бъдат съхранени само в локалното пространство на приложението.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
+          <source>Failed to pause transfers</source>
+          <target state="translated">Неуспешно паузиране на трансферите</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to pause transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" space="preserve">
+          <source>Pause failed</source>
+          <target state="translated">Паузирането е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
+          <source>Failed to resume transfers</source>
+          <target state="translated">Неуспешно възобновяване на трансферите</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to resume transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResumingTransfersFailed_Title" translate="yes" space="preserve">
+          <source>Resume failed</source>
+          <target state="translated">Неуспешно възобновяване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to resume transfers failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection" translate="yes" space="preserve">
+          <source>Please select at least one picture for upload</source>
+          <target state="translated">Моля изберете минмум 1 изображение за качване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MinimalPictureSelection_Title" translate="yes" space="preserve">
+          <source>No pictures selected</source>
+          <target state="translated">Няма избрани изображения</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare image: {0} for upload</source>
+          <target state="translated">Неуспешна подготовка на изображението: {0} за качване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a image for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareImageForUploadFailed_Title" translate="yes" space="preserve">
+          <source>Preparing image failed</source>
+          <target state="translated">Неуспешна подготовка на изображението</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError" translate="yes" space="preserve">
+          <source>Failed to upload photo</source>
+          <target state="translated">Неуспешно качване на снимката</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a photo failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PhotoUploadError_Title" translate="yes" space="preserve">
+          <source>Photo upload failed</source>
+          <target state="translated">Неуспешно качване на снимката</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound" translate="yes" space="preserve">
+          <source>Could not find the selected file</source>
+          <target state="translated">Избраният файл не е открит</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FileNotFound_Title" translate="yes" space="preserve">
+          <source>File not found</source>
+          <target state="translated">Файлът не е намерен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
+          <source>Failed to open the selected file</source>
+          <target state="translated">Отварянето на избрания файл беше неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a file failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
+          <source>File failed to open</source>
+          <target state="translated">Отварянето на файла беше неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
+          <source>Failed to upload the selfie picture</source>
+          <target state="translated">Неуспешно отваряне на селфи снимката</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a selfie picture failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadSelfieFailed_Title" translate="yes" space="preserve">
+          <source>Selfie upload failed</source>
+          <target state="translated">Качването на селфито е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a selfie picture failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed" translate="yes" space="preserve">
+          <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Неуспешно зареждане на файловете и папките от MEGA. Моля опитайте отново или обновете страницата.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</note>
+        </trans-unit>
+        <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">Неуспешно зареждане</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" space="preserve">
+          <source>Your PIN lock codes do not match. Please re-type them and make sure they are equal</source>
+          <target state="translated">PIN кодовете ви не съвпадат. Моля въведете ги отново и се уверете, че са еднакви</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockCodesDoNotMatch_Title" translate="yes" space="preserve">
+          <source>PIN lock codes do not match</source>
+          <target state="translated">PIN кодовете не съвпадат</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title  of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError" translate="yes" space="preserve">
+          <source>You have been logged out on this device from another location</source>
+          <target state="translated">Излезли сте от профила си на това устройство от друго място</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
+          <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
+          <target state="translated">Операцията не е позволена, ще надвишите лимита за съхранение на вашия акаунт. Искате ли да ъпгрейднете акаунта си?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
+        </trans-unit>
+        <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
+          <source>Overquota Alert!</source>
+          <target state="translated">Предупреждение за превишена квота!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
+          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
+          <target state="needs-review-translation">Не сте избрали място за изтегляне по подразбиране за вашите файлове.
+
+За да продължите с изтеглянето, моля изберете папка за изтегляне или отидете в настройки, за да изберете място за изтегляне по подразбиране.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file: {0} for upload</source>
+          <target state="translated">Неуспешна подготовка на файла: {0} за качване</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file for upload failed.
+Preserve the {0} code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" space="preserve">
+          <source>Error preparing file</source>
+          <target state="translated">Неуспешна подготовка на файла</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Излязохте от системата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed" translate="yes" space="preserve">
+          <source>Failed to copy the selected file: [{0}]</source>
+          <target state="translated">Неуспешно копиране на избрания файл: [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed by a non specific cause.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" space="preserve">
+          <source>Error copying file</source>
+          <target state="translated">Копирането на файла беше неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
+          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
+          <target state="needs-review-translation">Нямате разрешение да копирате този тип файл в избраната папка. Най-вероятно се опитвате да запазите / копирате в SD карта файл, който е от неподдържан тип. Моля опитайте да запазите / копирате файла във вътрешната памет на устройството си.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
+          <source>Unauthorized access</source>
+          <target state="translated">Неавторизиран достъп</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy master key to clipboard. Please try again.</source>
+          <target state="translated">Неуспешно копиране на masterkey в клипборда. Моля опитайте отново</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Clipboard failed</source>
+          <target state="translated">Грешка в клипборда</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
+          <source>Current PIN lock is not correct or does not match</source>
+          <target state="translated">Текущия PIN код е неправилен или не съвпада</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
+          <source>Current PIN lock no match</source>
+          <target state="translated">Текущият PIN код не съвпада</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied" translate="yes" space="preserve">
+          <source>Master key copied to clipboard</source>
+          <target state="translated">Masterkey е копиран в клипборда</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" space="preserve">
+          <source>Master key copied</source>
+          <target state="translated">Masterkey е копиран</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
+          <source>PIN lock must be at least four digits</source>
+          <target state="translated">PIN кодът трябва да има поне 4 цифри</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PinLockTooShort_Title" translate="yes" space="preserve">
+          <source>PIN lock too short</source>
+          <target state="translated">PIN кода е твърде къс</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared" translate="yes" space="preserve">
+          <source>Cache has been succesfully cleared</source>
+          <target state="translated">Кешът е успешно изчистен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the cache memory is successfully cleared by user request.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CacheCleared_Title" translate="yes" space="preserve">
+          <source>Cache cleared</source>
+          <target state="translated">Кешът е изчистен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the cache memory is successfully cleared by user request.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
+          <source>Not enough free memory space to complete this operation. The app will shut down now</source>
+          <target state="translated">Няма достатъчно свободно място в паметта за да завърши тази операция. Приложението ще се затвори сега</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the app exceeds the memory limit quota of the device.</note>
+        </trans-unit>
+        <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" space="preserve">
+          <source>Memory Limit</source>
+          <target state="translated">Лимит на паметта</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the app exceeds the memory limit quota of the device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_NoButton" translate="yes" space="preserve">
+          <source>no, only local</source>
+          <target state="translated">не, само локално</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option to only download into the local folder of the app and don't export automatically to the photo album after downloads - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_Title" translate="yes" space="preserve">
+          <source>Download options</source>
+          <target state="translated">Опции за сваляне</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/QuestionAskedDownloadOption_YesButton" translate="yes" space="preserve">
+          <source>yes, export</source>
+          <target state="translated">да, експортирай</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed" translate="yes" space="preserve">
+          <source>Failed to select folder. Please, try again or select another folder: [{0}]</source>
+          <target state="translated">Неуспешно избиране на папка. Моля опитайте отново или изберете друга папка: [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
+          <source>Select folder failed</source>
+          <target state="translated">Изборът на папка е неуспешен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed" translate="yes" space="preserve">
+          <source>Failed to upload file. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно качване на файл. Моля опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a node failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UploadNodeFailed_Title" translate="yes" space="preserve">
+          <source>Upload failed</source>
+          <target state="translated">Качването е неуспешно</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
+          <source>Failed to select file(s). Please, try again [{0}]</source>
+          <target state="translated">Неуспех при избор на файл(ове). Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
+          <source>File selection failed</source>
+          <target state="translated">Неуспешен избор на файлове</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
+          <source>Malformed e-mail. Please try again.</source>
+          <target state="translated">Непълен имейл. Моля опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
+          <source>Incorrect e-mail address or password. Please try again.</source>
+          <target state="translated">Неправилна електронна поща или парола. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to permanently delete {0}?</source>
+          <target state="translated">Сигурни ли сте, че искате да изтриете завинаги {0}?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
+Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" space="preserve">
+          <source>Delete item?</source>
+          <target state="translated">Изтрий елемент?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve your user data. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно извличане на потребителските ви данни. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user data failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetUserDataFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving user data failed</source>
+          <target state="translated">Зареждането на потребителските данни се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed" translate="yes" space="preserve">
+          <source>Failed to capture photo. Please, try again [{0}]</source>
+          <target state="translated">Неуспешна направа на снимка. Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
+          <source>Photo capture failed</source>
+          <target state="translated">Фото заснемането се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
+          <source>Failed to capture photo or video. Please, try again [{0}]</source>
+          <target state="translated">Неуспешно създаване на снимка или видео. Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" space="preserve">
+          <source>Photo/video capture failed</source>
+          <target state="translated">Фото/Видео заснемането се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed" translate="yes" space="preserve">
+          <source>Failed to capture video. Please, try again [{0}]</source>
+          <target state="translated">Неуспешна направа на видео. Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture video failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
+          <source>Video capture failed</source>
+          <target state="translated">Видео заснемането се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to save settings. Please, try again [{0}]</source>
+          <target state="translated">Неуспешно запазване на настройките. Моля, опитайте отново [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error saving settings</source>
+          <target state="translated">Грешка при запазване на настройките</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
+          <source>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</source>
+          <target state="translated">Възникна грешка при опит за отваряне на прекия път. Може би прекият път е невалиден или папката е била изтрита.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
+          <source>Shortcut error</source>
+          <target state="translated">Грешка в пътя</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
+          <source>The credit card information is not correct. The credit card will not be charged.</source>
+          <target state="translated">Информацията за кредитната карта не е правилна. Кредитната карта няма да бъде таксувана.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
+          <source>Storing credit card failed</source>
+          <target state="translated">Грешка при съхраняване на кредитна карта</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
+          <source>Please fill in all the required fields and try again.</source>
+          <target state="translated">Моля, попълнете всички задължителни полета и опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
+          <source>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</source>
+          <target state="translated">Номерът на кредитната карта, месец/година на изтичане и CVV трябва да са цифрови. Моля, проверете дали всичко е наред и опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
+        </trans-unit>
+        <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
+          <source>Wrong data format</source>
+          <target state="translated">Грешен формат на данните</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
+          <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
+          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
+          <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
+          <target state="translated">Благодарим Ви за обратната връзка! Наистина ли искате да се откажете от Mega абонамента си?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
+          <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
+          <target state="translated">Абонаментът не е бил отменен правилно. Моля, свържете се с support@mega.nz за да прекратите абонамента си.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
+          <source>Subscription cancellation failed</source>
+          <target state="translated">Прекратяването на абонамента се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
+          <source>The subscription has been cancelled.</source>
+          <target state="translated">Абонаментът беше прекратен.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscriptionSuccessfully_Title" translate="yes" space="preserve">
+          <source>Subscription cancelled</source>
+          <target state="translated">Абонаментът беше прекратен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
+          <source>Cancel Subscription</source>
+          <target state="translated">Отмени Абонамента</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
+          <source>Please give us your feedback. Thanks.</source>
+          <target state="translated">Моля да ни дадете обратна връзка. Благодарим.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
+          <source>The operation failed. Your credit card has not been charged.</source>
+          <target state="translated">Операцията не е завършила правилно. Кредитната карта няма да бъде таксувана.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
+          <source>Error upgrading account</source>
+          <target state="translated">Грешка при надстрояване на профила</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
+          <source>Account successfully upgraded!</source>
+          <target state="translated">Профилът беше актуализиран успешно!</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" space="preserve">
+          <source>Account upgraded</source>
+          <target state="translated">Акаунтът бе надстроен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
+          <target state="translated">Неуспешно извличане на начините за плащане. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" space="preserve">
+          <source>Error getting payment methods</source>
+          <target state="translated">Грешка при зареждане методите на плащане</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
+          <target state="needs-review-translation">Грешка при извличане на линк за плащане. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
+          <source>Retrieving payment URL failed</source>
+          <target state="translated">Зареждането на линка за плащане се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
+          <source>Background agents for MEGA have been disabled by the user</source>
+          <target state="translated">Процесите на заден план на MEGA са изключени от потребителя</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
+        <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
+          <source>Background agents disabled</source>
+          <target state="translated">Процесите на заден план са изключени</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
+          <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
+          <target state="translated">За да могат автоматичните Качвания от Камерата да работят правилно, трябва да включите опцията "Остани логнат". Искате ли да включите тази опция?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
+          <source>Auto Camera Uploads prerequisites</source>
+          <target state="translated">Изисквания за Автоматични Качвания от Камерата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
+          <source>Do you want to remove the contact {0}?</source>
+          <target state="translated">Искате ли да премахнете контакта {0}?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
+Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" space="preserve">
+          <source>Remove contact?</source>
+          <target state="translated">Изтрий контакт?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
+          <source>The contact invitation could not be sent. Please try again.</source>
+          <target state="translated">Поканата за контакт не може да бъде изпратена. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
+          <source>Failed to invite the contact</source>
+          <target state="translated">Неуспех за покана на контакта</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
+          <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
+          <target state="translated">Потребителят {0} е бил поканен и ще се появи във вашия списък с контакти, след като приеме поканата.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
+Preserve the [{0}] code because is for include the contact email in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
+          <source>Contact invited</source>
+          <target state="translated">Контактът беше поканен</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
+          <source>MEGA automatic camera uploads</source>
+          <target state="translated">MEGA автоматични качвания от камерата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
+          <source>Your account has been updated. Do you want to check the new account details?</source>
+          <target state="translated">Профилът ви беше актуализиран. Искате ли да проверите новите детайли на профила?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
+          <source>Updated account</source>
+          <target state="translated">Обновен профил</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
+          <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
+          <target state="translated">Нашият SSL/TLS сертификат не може да бъде потвърден. Възможно е да сте засегнати от атака  "човек-в-средата".</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
+          <source>Logged out</source>
+          <target state="translated">Излязохте от системата</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
+          <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
+          <target state="translated">Възникна грешка във фоновата задача Автоматично Качване от Камерата. Можете да го активирате отново от страницата за настройки.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
+          <source>Auto Camera Upload failed</source>
+          <target state="translated">Автоматичното Качване от Камерата се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
+          <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
+          <target state="needs-review-translation">Неуспешно премахване на контакта {0}. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteContactFailed_Title" translate="yes" space="preserve">
+          <source>Failed to remove the contact</source>
+          <target state="translated">Неуспех за изтриване на контакта</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
+          <source>Do you want to remove {0} contacts?</source>
+          <target state="translated">Искате ли да премахнете {0} контакта?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
+Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" space="preserve">
+          <source>Remove contacts?</source>
+          <target state="translated">Изтрий контакти?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
+          <source>Failed to change password. Please try again.</source>
+          <target state="translated">Неуспех при промяна на паролата. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
+          <source>Your password has been changed.</source>
+          <target state="translated">Вашата парола беше променена.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
+          <source>The new and the old password must not match.</source>
+          <target state="translated">Новата и старата парола не трябва да съвпадат.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
+          <source>Please fill in your old MEGA password and your new MEGA password.</source>
+          <target state="translated">Моля въведете вашата стара MEGA парола и вашата нова MEGA парола.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
+          <source>Failed to close the session. Please try again. [{0}]</source>
+          <target state="translated">Неуспех при затваряне на сесията. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" space="preserve">
+          <source>The remaining sessions were successfully closed.</source>
+          <target state="translated">Останалите сесии бяха успешно приключени.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
+          <source>Failed to close the session. Please try again. [{0}]</source>
+          <target state="translated">Неуспех при затваряне на сесията. Моля, опитайте отново. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CloseSessionSucces" translate="yes" space="preserve">
+          <source>The session has been successfully closed.</source>
+          <target state="translated">Сесията бе успешно приключена.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
+          <source>Failed to clear the rubbish bin. Please try again.</source>
+          <target state="translated">Неуспех при изчистване на Кошчето. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
+          <target state="translated">Сигурни ли сте, че искате окончателно да изтриете всички файлове от Кошчето?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
+        </trans-unit>
+        <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
+          <source>The rubbish bin has been cleared successfully.</source>
+          <target state="translated">Кошчето беше изчистено успешно.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
+          <source>You are trying to add your own email as a contact.</source>
+          <target state="translated">Вие се опитвате да добавите свой собствен имейл като контакт.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
+        </trans-unit>
+        <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
+          <source>Failed to remove link. Please try again.</source>
+          <target state="translated">Неуспешно премахване на връзката. Моля, опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
+          <source>You cannot perform this action. Please connect to the Internet and try again.</source>
+          <target state="translated">Не можете да извършите това действие. Моля, свържете се с интернет и опитайте отново.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
+          <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
+          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
+          <source>Access denied</source>
+          <target state="translated">Достъпът е отказан</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
+          <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
+          <source>Invalid file name</source>
+          <target state="translated">Invalid file name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
+          <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
+          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/PathTooLong_Title" translate="yes" space="preserve">
+          <source>Path too long</source>
+          <target state="translated">Path too long</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
+          <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
+          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
+          <source>Invalid name or path</source>
+          <target state="translated">Invalid name or path</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
+          <source>Invalid link</source>
+          <target state="translated">Invalid link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to select the folder. Please try again or select another folder.</source>
+          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
+          <source>File import failed</source>
+          <target state="translated">Импортирането на файл се провали</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
+
+</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error preparing file(s)</source>
+          <target state="new">Error preparing file(s)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -323,6 +323,19 @@ namespace MegaApp.Pages
                 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
+            if (App.AppInformation.IsStartupModeActivate)
+            {
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+                
+                App.AppInformation.IsStartupModeActivate = false;
+            }
+
             _paymentViewModel.Plan = (ProductBase)PhoneApplicationService.Current.State["SelectedPlan"];
             _paymentViewModel.ProductMonthly = (Product)PhoneApplicationService.Current.State["SelectedPlanMonthly"];
             _paymentViewModel.ProductAnnualy = (Product)PhoneApplicationService.Current.State["SelectedPlanAnnualy"];
@@ -341,7 +354,7 @@ namespace MegaApp.Pages
                 case MAccountType.ACCOUNT_TYPE_PROIII:
                     PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro3.ToUpper());
                     break;
-            }            
+            }
         }        
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -365,6 +378,7 @@ namespace MegaApp.Pages
             // If not, come back to the update account pivot
             else if (_paymentViewModel.ProductSelectionIsEnabled)
             {
+                ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
                 NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });                
             }
 

@@ -38,7 +38,7 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.ImportFileFailed; }
+            get { return AppMessages.AM_ImportFileFailed; }
         }
 
         protected override string ErrorMessageTitle
@@ -89,6 +89,43 @@ namespace MegaApp.MegaApi
         #endregion
 
         #region Override Methods
+        
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
+        {
+            App.ActiveImportLink = null;
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                //If getFlag() returns true, the file link key is invalid.
+                if (request.getFlag() && ShowErrorMessage)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            AppMessages.AM_InvalidLink,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }                    
+            }
+            else if (e.getErrorCode() == MErrorType.API_EINCOMPLETE)
+            {
+                if (ShowErrorMessage)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            ErrorMessageTitle,
+                            String.Format(ErrorMessage, e.getErrorString()),
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }                    
+            }
+            
+            base.onRequestFinish(api, request, e);            
+        }
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
@@ -113,11 +150,11 @@ namespace MegaApp.MegaApi
                     {
                         DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         new CustomMessageDialog(
                             ErrorMessageTitle,
-                            ErrorMessage,
+                            String.Format(ErrorMessage, e.Message),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
                     }
@@ -128,10 +165,10 @@ namespace MegaApp.MegaApi
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            ErrorMessageTitle,
-                            ErrorMessage,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        ErrorMessageTitle,
+                        AppMessages.AM_ImportFileFailedNoErrorCode,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
         }
 

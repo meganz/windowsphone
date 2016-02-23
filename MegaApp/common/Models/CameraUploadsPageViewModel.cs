@@ -50,7 +50,7 @@ namespace MegaApp.Models
                 this.CameraUploads.CancelLoad();
             }
 
-            var fetchNodesRequestListener = new FetchNodesRequestListener(null, null, this);
+            var fetchNodesRequestListener = new FetchNodesRequestListener(null, this);
             this.AppInformation.HasFetchedNodes = false;
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }

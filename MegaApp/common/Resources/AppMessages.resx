@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -127,11 +127,11 @@
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ConfirmAccountFailed_Title" xml:space="preserve">
-    <value>Confirm account failed</value>
+    <value>Account confirmation failed</value>
     <comment>Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</comment>
   </data>
   <data name="ConfirmAccountSucces" xml:space="preserve">
-    <value>Your account has been created, confirmed and activated. You will automatically logged in.</value>
+    <value>Your account has been created, confirmed and activated. You will be logged in automatically.</value>
     <comment>Message of the dialog displayed when confirm a MEGA account succesfully.</comment>
   </data>
   <data name="ConfirmAccountSucces_Title" xml:space="preserve">
@@ -164,7 +164,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the creation of a folder failed - (String as short as possible).</comment>
   </data>
   <data name="CreateFolderSuccess" xml:space="preserve">
-    <value>Folder created successful</value>
+    <value>Folder created successfully</value>
     <comment>Message of the dialog displayed when create a folder successfully.</comment>
   </data>
   <data name="CreateFolderSuccess_Title" xml:space="preserve">
@@ -177,7 +177,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>Delete failed</value>
+    <value>Deletion failed</value>
     <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
@@ -214,23 +214,23 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
-    <value>Failed to get link.</value>
+    <value>Failed to get link</value>
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Get link failed</value>
+    <value>Link creation failed</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
-    <value>Failed to retrieve preview.</value>
+    <value>Failed to retrieve preview</value>
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetPreviewFailed_Title" xml:space="preserve">
-    <value>Getting preview failed</value>
+    <value>Preview failed</value>
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
-    <value>Image successful exported to 'saved pictures' album.</value>
+    <value>Image successfully exported to 'saved pictures' album</value>
     <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaved_Title" xml:space="preserve">
@@ -238,24 +238,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Error exporting image to 'saved pictures' album. Please try again.</value>
+    <value>Error exporting image to  'saved pictures' album. Please try again</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
     <value>Failed to save image</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>Importing file failed [{0}]</value>
+  <data name="AM_ImportFileFailed" xml:space="preserve">
+    <value>File import failed [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
+
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>Import file failed</value>
+    <value>File import failed</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
-    <value>MEGA link is copied to your clipboard</value>
+    <value>The MEGA link was copied to your clipboard</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
@@ -272,7 +273,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MoveEqualsParent" xml:space="preserve">
-    <value>Destination folder is the same as the source folder. Moving canceled.</value>
+    <value>Destination folder is the same as the source folder. Move cancelled.</value>
     <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -288,11 +289,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to move a file failed - (String as short as possible).</comment>
   </data>
   <data name="PasswordsDoNotMatch" xml:space="preserve">
-    <value>Passwords do not match.</value>
+    <value>Passwords do not match. Please try again.</value>
     <comment>Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</comment>
   </data>
   <data name="PictureSaved" xml:space="preserve">
-    <value>The image is saved in your photo album.</value>
+    <value>The image was saved to your photo album</value>
     <comment>Message of the dialog displayed when save successfully a single picture in the photo album.</comment>
   </data>
   <data name="PictureSaved_Title" xml:space="preserve">
@@ -317,7 +318,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item successful removed</value>
+    <value>Item successfully removed</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -333,11 +334,11 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
-    <value>Please fill in your choosen password.</value>
+    <value>Please fill in your chosen password.</value>
     <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Please fill in your name, e-mail address and your MEGA password.</value>
+    <value>Please fill in your name, e-mail address and password</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
@@ -353,11 +354,11 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
-    <value>Save image to photo's</value>
+    <value>Save image to photos</value>
     <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
   </data>
   <data name="UserNotOnline" xml:space="preserve">
-    <value>You are not logged in at MEGA to do this action. Please re-login.</value>
+    <value>You are not logged into MEGA. Please re-login.</value>
     <comment>Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</comment>
   </data>
   <data name="UserNotOnline_Title" xml:space="preserve">
@@ -383,7 +384,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
   </data>
   <data name="LoggedOut" xml:space="preserve">
-    <value>You have successfully logged out.</value>
+    <value>You have successfully logged out</value>
     <comment>Message of the dialog displayed when a user logged out successfully.</comment>
   </data>
   <data name="LoggedOut_Title" xml:space="preserve">
@@ -409,7 +410,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
     <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiRemoveSucces" xml:space="preserve">
-    <value>{0} Items removed.</value>
+    <value>{0} items removed</value>
     <comment>Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
@@ -418,7 +419,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinFailed" xml:space="preserve">
-    <value>Failed to move item to rubbish bin. Please try again.</value>
+    <value>Failed to move item to rubbish bin. Please try again</value>
     <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
   </data>
   <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
@@ -426,16 +427,16 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Are you sure you want to move {0} to rubbish bin?</value>
+    <value>Are you sure you want to move {0} to the rubbish bin?</value>
     <comment>Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
   <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Move item to rubbish bin?</value>
+    <value>Move to rubbish bin?</value>
     <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinSuccess" xml:space="preserve">
-    <value>Item successful moved to rubbish bin.</value>
+    <value>Item successfully moved to the rubbish bin</value>
     <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
   </data>
   <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
@@ -443,16 +444,16 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
-    <value>Are you sure you want to move to rubbish bin {0} items?</value>
+    <value>Are you sure you want to move {0} items to the rubbish bin?</value>
     <comment>Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Move items to rubbish bin?</value>
+    <value>Move items?</value>
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
-    <value>{0} Items moved to rubbish bin.</value>
+    <value>{0} items moved to the rubbish bin</value>
     <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
@@ -487,7 +488,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</comment>
   </data>
   <data name="WrongPassword" xml:space="preserve">
-    <value>The typed password is incorrect.</value>
+    <value>The typed password is incorrect</value>
     <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
   </data>
   <data name="WrongPassword_Title" xml:space="preserve">
@@ -495,20 +496,20 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>You have selected over {0} items ({0}) to download. Do you want to proceed?</value>
-    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+    <value>You have selected over {0} items ({1}) to download. Do you want to proceed?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>Download count</value>
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
   </data>
   <data name="QuestionAskedDownloadOption" xml:space="preserve">
-    <value>Do you want to automatic export IMAGE files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</value>
+    <value>Do you want to automatically export image files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</value>
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
-    <value>Failed to pause transfers.</value>
+    <value>Failed to pause transfers</value>
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
@@ -516,7 +517,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
-    <value>Failed to resume transfers.</value>
+    <value>Failed to resume transfers</value>
     <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="ResumingTransfersFailed_Title" xml:space="preserve">
@@ -524,7 +525,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
     <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="MinimalPictureSelection" xml:space="preserve">
-    <value>Please select minimal 1 picture for upload.</value>
+    <value>Please select at least one picture for upload</value>
     <comment>Message of the dialog displayed when a user want to do a multi image upload and haven't selected any element.</comment>
   </data>
   <data name="MinimalPictureSelection_Title" xml:space="preserve">
@@ -532,7 +533,7 @@ Preserve the ({0}) codes because is for include the maximum reliable download nu
     <comment>Title of the dialog displayed when a user want to do a multi image upload and haven't selected any element - (String as short as possible).</comment>
   </data>
   <data name="PrepareImageForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare image: {0} for upload.</value>
+    <value>Failed to prepare image: {0} for upload</value>
     <comment>Message of the dialog displayed when the process to prepare a image for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
@@ -541,15 +542,15 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process to prepare a image for upload failed - (String as short as possible).</comment>
   </data>
   <data name="PhotoUploadError" xml:space="preserve">
-    <value>Failed to upload photo.</value>
+    <value>Failed to upload photo</value>
     <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
   </data>
   <data name="PhotoUploadError_Title" xml:space="preserve">
-    <value>Upload photo failed</value>
+    <value>Photo upload failed</value>
     <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
   </data>
   <data name="FileNotFound" xml:space="preserve">
-    <value>Could not find the selected file.</value>
+    <value>Could not find the selected file</value>
     <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
   </data>
   <data name="FileNotFound_Title" xml:space="preserve">
@@ -557,15 +558,15 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
   </data>
   <data name="OpenFileFailed" xml:space="preserve">
-    <value>Failed to open the selected file.</value>
+    <value>Failed to open the selected file</value>
     <comment>Message of the dialog displayed when the process to open a file failed.</comment>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
-    <value>Open file failed</value>
+    <value>File failed to open</value>
     <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
-    <value>Failed to upload the selfie picture.</value>
+    <value>Failed to upload the selfie picture</value>
     <comment>Message of the dialog displayed when the process/request to upload a selfie picture failed.</comment>
   </data>
   <data name="UploadSelfieFailed_Title" xml:space="preserve">
@@ -581,7 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</comment>
   </data>
   <data name="PinLockCodesDoNotMatch" xml:space="preserve">
-    <value>Your PIN lock codes do not match. Please re-type them and make sure they are equal.</value>
+    <value>Your PIN lock codes do not match. Please re-type them and make sure they are equal</value>
     <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced codes don't match. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockCodesDoNotMatch_Title" xml:space="preserve">
@@ -601,18 +602,16 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.
-
-To proceed with the download please select a destination folder or go to preferences in order to set up your default download location.</value>
+    <value>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file: {0} for upload.</value>
+    <value>Failed to prepare file: {0} for upload</value>
     <comment>Message of the dialog displayed when the process to prepare a file for upload failed.
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
   <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
-    <value>Preparing file failed</value>
+    <value>Error preparing file</value>
     <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError_Title" xml:space="preserve">
@@ -625,12 +624,11 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
-    <value>Copy file failed</value>
+    <value>Error copying file</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You don't have permission to copy this file type into the destination folder. Probably you are trying to save/copy into a SD card a file of an unsupported type.
-Please, try to save/copy the file into the your device internal memory.</value>
+    <value>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -638,7 +636,7 @@ Please, try to save/copy the file into the your device internal memory.</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="ClipboardFailed" xml:space="preserve">
-    <value>Failed to copy masterkey to clipboard. Please try again</value>
+    <value>Failed to copy master key to clipboard. Please try again.</value>
     <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
   </data>
   <data name="ClipboardFailed_Title" xml:space="preserve">
@@ -654,15 +652,15 @@ Please, try to save/copy the file into the your device internal memory.</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="MasterkeyCopied" xml:space="preserve">
-    <value>Masterkey copied to clipboard</value>
+    <value>Master key copied to clipboard</value>
     <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
   </data>
   <data name="MasterkeyCopied_Title" xml:space="preserve">
-    <value>Masterkey copied</value>
+    <value>Master key copied</value>
     <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
-    <value>PIN lock must be at least 4 digits.</value>
+    <value>PIN lock must be at least four digits</value>
     <comment>Message of the dialog displayed when a user are trying to create or change a PIN lock code and the introduced code is too short (less than 4 digits). Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockTooShort_Title" xml:space="preserve">
@@ -678,7 +676,7 @@ Please, try to save/copy the file into the your device internal memory.</value>
     <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="MemoryLimitError" xml:space="preserve">
-    <value>Not enough free memory space to complete this operation. The app will shutdown now.</value>
+    <value>Not enough free memory space to complete this operation. The app will shut down now</value>
     <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
   </data>
   <data name="MemoryLimitError_Title" xml:space="preserve">
@@ -697,7 +695,7 @@ Please, try to save/copy the file into the your device internal memory.</value>
     <value>yes, export</value>
     <comment>Button of the dialog displayed the first time that a user want to download a image. Option automatically download to the photo album after downloads - (String as short as possible).</comment>
   </data>
-  <data name="SelectFolderFailedWithErrorCode" xml:space="preserve">
+  <data name="SelectFolderFailed" xml:space="preserve">
     <value>Failed to select folder. Please, try again or select another folder: [{0}]</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -721,7 +719,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFileFailed_Title" xml:space="preserve">
-    <value>Select file(s) failed</value>
+    <value>File selection failed</value>
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="MalformedEmail" xml:space="preserve">
@@ -729,11 +727,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
-    <value>E-mail is not associated with a MEGA account or wrong password. Please try again.</value>
+    <value>Incorrect e-mail address or password. Please try again.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value>Are you sure you want to permanent delete {0}?</value>
+    <value>Are you sure you want to permanently delete {0}?</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -756,7 +754,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CapturePhotoFailed_Title" xml:space="preserve">
-    <value>Capture photo failed</value>
+    <value>Photo capture failed</value>
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
@@ -765,7 +763,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CapturePhotoVideoFailed_Title" xml:space="preserve">
-    <value>Capture photo/video failed</value>
+    <value>Photo/video capture failed</value>
     <comment>Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</comment>
   </data>
   <data name="CaptureVideoFailed" xml:space="preserve">
@@ -774,7 +772,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CaptureVideoFailed_Title" xml:space="preserve">
-    <value>Capture video failed</value>
+    <value>Video capture failed</value>
     <comment>Title of the dialog displayed when the process to capture video failed - (String as short as possible).</comment>
   </data>
   <data name="SaveSettingsFailed" xml:space="preserve">
@@ -783,11 +781,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SaveSettingsFailed_Title" xml:space="preserve">
-    <value>Save settings failed</value>
+    <value>Error saving settings</value>
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
-    <value>An error occurred when try to open a shortcut. Maybe it is an invalid shortcut or the destiny folder was deleted.</value>
+    <value>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</value>
     <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
   </data>
   <data name="ShortCutFailed_Title" xml:space="preserve">
@@ -807,33 +805,31 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
   </data>
   <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
-    <value>The Credit Card Number, Month, Year and CVV should be numbers. Please, check that the filled data are correct and try again.</value>
+    <value>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</value>
     <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
   </data>
   <data name="WrongDataFormat_Title" xml:space="preserve">
     <value>Wrong data format</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your Mega subscription. Please let us know, if there is anything we can do to help change your mind.</value>
+  <data name="AM_CancelSubscription" xml:space="preserve">
+    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
-  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Thank you for your feedback!
-
-Are you sure you want to cancel your Mega subscription?</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
+  <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
     <value>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
-    <value>Cancel subscription failed</value>
+    <value>Subscription cancellation failed</value>
     <comment>Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionSuccessfully" xml:space="preserve">
-    <value>The subscription has been canceled correctly.</value>
+    <value>The subscription has been cancelled.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</comment>
   </data>
   <data name="CancelSubscriptionSuccessfully_Title" xml:space="preserve">
@@ -845,15 +841,15 @@ Are you sure you want to cancel your Mega subscription?</value>
     <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
-    <value>Please type a feedback message for us. Thanks.</value>
+    <value>Please give us your feedback. Thanks.</value>
     <comment>Message of the dialog displayed when required fields for cancel subscription are not filled in.</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
-    <value>The operation has not finished correctly. The credit card will not be charged.</value>
+    <value>The operation failed. Your credit card has not been charged.</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account failed.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
-    <value>Upgrade account failed</value>
+    <value>Error upgrading account</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountSuccessfully" xml:space="preserve">
@@ -879,7 +875,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetPaymentUrlFailed_Title" xml:space="preserve">
-    <value>Retrieving payment Url failed</value>
+    <value>Retrieving payment URL failed</value>
     <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
   </data>
   <data name="BackgroundAgentDisabled" xml:space="preserve">
@@ -908,15 +904,15 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
-    <value>Could not send the contact invitation. Please, try again.</value>
+    <value>The contact invitation could not be sent. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>Invite contact failed</value>
+    <value>Failed to invite the contact</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>User {0} has been invited and will appear on your contact list once accepted the invitation.</value>
+    <value>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -937,7 +933,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL key can't be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -945,7 +941,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>Auto Camera Upload background task has failed. You can re-enable it on the settings page</value>
+    <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
@@ -954,12 +950,11 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
     <value>Failed to remove the contact {0}. Please try again. [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
-    <value>Remove contact failed</value>
+    <value>Failed to remove the contact</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
@@ -972,7 +967,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Change password failed. Please try again.</value>
+    <value>Failed to change password. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
@@ -988,16 +983,16 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
-    <value>Close session failed. Please try again. [{0}]</value>
+    <value>Failed to close the session. Please try again. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseAllSessionsSuccess" xml:space="preserve">
-    <value>The remaining sessions are successfully closed.</value>
+    <value>The remaining sessions were successfully closed.</value>
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
-    <value>Close session failed. Please try again. [{0}]</value>
+    <value>Failed to close the session. Please try again. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -1006,19 +1001,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
   </data>
   <data name="CleanRubbishBinFailed" xml:space="preserve">
-    <value>Empty rubbish bin failed. Please try again.</value>
+    <value>Failed to clear the rubbish bin. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Are you sure you want to permanently delete all files of the rubbish bin?</value>
+    <value>Are you sure you want to permanently delete all files from the rubbish bin?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
-    <value>The rubbish bin has been emptied successfully.</value>
+    <value>The rubbish bin has been cleared successfully.</value>
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
-    <value>You are trying to add your own e-mail as a contact.</value>
+    <value>You are trying to add your own email as a contact.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
@@ -1026,11 +1021,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
-    <value>You cannot perform this action. Please, connect to Internet and try again.</value>
+    <value>You cannot perform this action. Please connect to the Internet and try again.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please, select another one and try again.</value>
+    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1065,8 +1060,26 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <value>Invalid name or path</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
-  <data name="SelectFolderFailed" xml:space="preserve">
-    <value>Failed to select folder. Please, try again or select another folder.</value>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
+  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
+    <value>Failed to select the folder. Please try again or select another folder.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+  </data>
+  <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
+    <value>File import failed</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
+    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
+    <value>Error preparing file(s)</value>
+    <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
 </root>

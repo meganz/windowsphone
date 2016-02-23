@@ -52,6 +52,12 @@ namespace MegaApp.Pages
                 // Needed on every UI interaction
                 App.MegaSdk.retryPendingConnections();
 
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+
                 App.AppInformation.IsStartupModeActivate = false;
 
                 #if WINDOWS_PHONE_81
@@ -74,7 +80,7 @@ namespace MegaApp.Pages
             _previewImageViewModel.TranslateAppBarItems(
                         ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
                         ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Previous, UiResources.Download, UiResources.GetLink, UiResources.Next.ToLower() },
+                        new[] { UiResources.Previous, UiResources.Download, UiResources.UI_GetLink, UiResources.Next.ToLower() },
                         new[] { UiResources.Rename, UiResources.Remove });
             
             this.DataContext = _previewImageViewModel;
@@ -101,21 +107,26 @@ namespace MegaApp.Pages
 
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);            
+            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
+                _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.GetLink();
+            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null) 
+                _previewImageViewModel.SelectedPreview.GetLink();
         }
 
         private void OnRenameItemClick(object sender, EventArgs e)
         {
-            _previewImageViewModel.SelectedPreview.Rename();
+            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null) 
+                _previewImageViewModel.SelectedPreview.Rename();
         }
+
         private async void OnRemoveClick(object sender, EventArgs e)
         {
-            await _previewImageViewModel.SelectedPreview.RemoveAsync(false);
+            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
+                await _previewImageViewModel.SelectedPreview.RemoveAsync(false);
         }
 
         private void OnPreviousClick(object sender, EventArgs e)

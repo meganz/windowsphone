@@ -28,7 +28,7 @@
         <!--Pivot Control-->
         <phone:Pivot x:Name="Pivot_LoginAndCreateAccount" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
             <!--Pivot item one-->
-            <phone:PivotItem x:Name="PivotItem_Login" Header="{Binding LocalizedUiResources.Login, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+            <phone:PivotItem x:Name="PivotItem_Login" Header="{Binding LocalizedUiResources.UI_Login, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
                 <ScrollViewer x:Name="ContentPanel_Login" Grid.Row="1">
                     <StackPanel x:Name="stackLogin" VerticalAlignment="Top">
                         <telerikPrimitives:RadTextBox x:Name="txtEmail_Login" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding LoginViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding LoginViewModel.ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
@@ -38,7 +38,7 @@
             </phone:PivotItem>
 
             <!--Pivot item two-->
-            <phone:PivotItem x:Name="PivotItem_CreateAccount" Header="{Binding LocalizedUiResources.CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
+            <phone:PivotItem x:Name="PivotItem_CreateAccount" Header="{Binding LocalizedUiResources.UI_CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
                 <ScrollViewer x:Name="ContentPanel_CreateAccount" Grid.Row="1">
                     <StackPanel x:Name="stackCreateAccount">
                         <telerikPrimitives:RadTextBox x:Name="txtName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.NameWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.Name, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>

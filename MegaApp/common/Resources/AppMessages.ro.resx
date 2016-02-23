@@ -245,11 +245,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Eşec la salvarea imaginii</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
-  <data name="ImportFileFailed" xml:space="preserve">
-    <value>Importarea fişierului a eşuat</value>
-    <comment>Message of the dialog displayed when fails the process/request to import an image.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
     <value>Importarea fişierului a eşuat</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
@@ -494,11 +489,6 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <value>Parolă greşită</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
-  <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>Ai selectat peste 100 de elemente ({0}) pentru descărcare. Doreşti să continui?</value>
-    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process.
-Preserve the ({0}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
-  </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
     <value>Număr de descărcări</value>
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
@@ -601,7 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Nu ai selectat o locaţie implicită de descărcare pentru fişierele tale.Pentru a continua cu descărcarea selectează un folder de destinaţie sau du-te la preferinţe pentru a configura locaţia implicită de descărcare.</value>
+    <value>Nu ai selectat o locaţie implicită de descărcare pentru fişierele tale.
+
+Pentru a continua cu descărcarea selectează un folder de destinaţie sau du-te la preferinţe pentru a configura locaţia implicită de descărcare.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -696,7 +688,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="SelectFolderFailed" xml:space="preserve">
     <value>Eşec la selectarea folderului. Încearcă din nou sau selectează alt folder: [{0}]</value>
-    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+    <comment>Message of the dialog displayed when the process to select a folder failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
     <value>Selectarea folderului a eşuat</value>
@@ -810,14 +803,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Format greşit al datei</value>
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Eşti pe cale de a anula abonamentul MEGA. Te rugăm să ne spui dacă există ceva ce putem face pentru a te răzgândi.</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
-  </data>
-  <data name="CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Îţi mulţumim pentru feedback!</value>
-    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking for confirmation to do it.</comment>
-  </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
     <value>Abonamentul nu a fost anulat corect. Te rugăm să contactezi support@mega.nz pentru a anula abonamentul.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
@@ -859,7 +844,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. {{0}]</value>
+    <value>Eşec la obţinerea de metode de plată disponibile. Te rugăm să reîncerci. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -948,9 +933,8 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
     <value>Eşec la eliminarea contactului {0}. Te rugăm să reîncerci. [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to remove a contact failed.
-Preserve the {0} code because is for include the contact email in runtime.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+    <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
+Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
     <value>Eşec la eliminarea contactului</value>
@@ -1022,5 +1006,74 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="NoInternetConnectionMessage" xml:space="preserve">
     <value>Nu poţi efectua această acţiune. Te rugăm să te conectezi la internet şi să reîncerci.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
+  </data>
+  <data name="AM_CancelSubscription" xml:space="preserve">
+    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess" xml:space="preserve">
+    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
+Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
+  </data>
+  <data name="FolderUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Acces interzis</value>
+    <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
+  </data>
+  <data name="InvalidFileName" xml:space="preserve">
+    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFileName_Title" xml:space="preserve">
+    <value>Invalid file name</value>
+    <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="PathTooLong" xml:space="preserve">
+    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that the file/folder path is too long.
+Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
+  </data>
+  <data name="PathTooLong_Title" xml:space="preserve">
+    <value>Path too long</value>
+    <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath" xml:space="preserve">
+    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
+Preserve the '{0}' code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
+    <value>Invalid name or path</value>
+    <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
+  </data>
+  <data name="AM_InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+    <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
+  </data>
+  <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
+    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
+  </data>
+  <data name="AM_ImportFileFailed" xml:space="preserve">
+    <value>File import failed [{0}]</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="DownloadLimitMessage" xml:space="preserve">
+    <value>Ai selectat peste {0} elemente ({1}) pentru descărcare. Doreşti să continui?</value>
+    <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
+Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
+  </data>
+  <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
+    <value>Îţi mulţumim pentru feedback! Sigur doreşti să anulezi abonamentul MEGA?</value>
+    <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
+  </data>
+  <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
+    <value>Importarea fişierului a eşuat</value>
+    <comment>Message of the dialog displayed when fails the process/request to import an image.
+
+</comment>
   </data>
 </root>

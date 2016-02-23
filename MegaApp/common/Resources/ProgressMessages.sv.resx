@@ -117,41 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Du är på väg att avsluta ditt MEGA abonnemang. Låt oss veta om det finns något vi kan göra för att hjälpa dig att ändra dig.</value>
-    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
-  </data>
   <data name="CancelTransfer" xml:space="preserve">
     <value>Avbryter överföring</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Ändra lösenord</value>
-    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
-  </data>
   <data name="CleanRubbishBin" xml:space="preserve">
     <value>Tömmer papperskorgen...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
-  </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Stänger alla sessioner</value>
-    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Stänger session</value>
-    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Bekräftar konto...</value>
-    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Skapar konto...</value>
-    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Skapar mapp...</value>
-    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
     <value>Lagrar kreditkort...</value>
@@ -182,10 +154,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="GetContactData" xml:space="preserve">
     <value>Hämtar kontakt data...</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
-  </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Hämtar länk...</value>
-    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
     <value>Hämtar betalningsalternativ...</value>
@@ -223,14 +191,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Byggnad vy...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Loggar in...</value>
-    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Loggar ut...</value>
-    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
-  </data>
   <data name="MoveNode" xml:space="preserve">
     <value>Rörlig...</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
@@ -258,10 +218,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="RemoveFromOffline" xml:space="preserve">
     <value>Tar bort från offline...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Tar bort länk</value>
-    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Tar bort...</value>
@@ -295,7 +251,51 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Servrarna är för upptagna. Var god vänta...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
+  <data name="PM_CancelSubscription" xml:space="preserve">
+    <value>Avslutar prenumeration</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ChangePassword" xml:space="preserve">
+    <value>Ändrar lösenord</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseAllSessions" xml:space="preserve">
+    <value>Stänger alla sessioner</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseSession" xml:space="preserve">
+    <value>Stänger session</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConfirmAccount" xml:space="preserve">
+    <value>Bekräftar konto...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateAccount" xml:space="preserve">
+    <value>Skapar konto...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateFolder" xml:space="preserve">
+    <value>Skapar mapp...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_GetLink" xml:space="preserve">
+    <value>Hämtar länk...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Login" xml:space="preserve">
+    <value>Loggar in...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Logout" xml:space="preserve">
+    <value>Loggar ut...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="PM_RemoveLink" xml:space="preserve">
+    <value>Tar bort länk</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>Uppgraderar konto</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>

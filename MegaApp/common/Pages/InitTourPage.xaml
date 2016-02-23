@@ -105,8 +105,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnLogin" Grid.Column="0" Margin="12,0,0,12" Content="{Binding LocalizedUiResources.Login, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnLogin_Click" />
-            <Button x:Name="btnCreateAccount" Grid.Column="1" Margin="0,0,12,12" Content="{Binding LocalizedUiResources.CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnCreateAccount_Click" />
+            <Button x:Name="btnLogin" Grid.Column="0" Margin="12,0,0,12" Content="{Binding LocalizedUiResources.UI_Login, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnLogin_Click" />
+            <Button x:Name="btnCreateAccount" Grid.Column="1" Margin="0,0,12,12" Content="{Binding LocalizedUiResources.UI_CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="btnCreateAccount_Click" />
         </Grid>
 
     </Grid>    

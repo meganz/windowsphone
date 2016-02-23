@@ -117,41 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CancelSubscription" xml:space="preserve">
-    <value>Sie sind dabei, Ihr MEGA-Abonnement zu stornieren. Können wir Sie irgendwie umstimmen?</value>
-    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
-  </data>
   <data name="CancelTransfer" xml:space="preserve">
     <value>Transfer wird abgebrochen</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
-  <data name="ChangePassword" xml:space="preserve">
-    <value>Passwort ändern</value>
-    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
-  </data>
   <data name="CleanRubbishBin" xml:space="preserve">
     <value>Papierkorb wird geleert...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
-  </data>
-  <data name="CloseAllSessions" xml:space="preserve">
-    <value>Alle Sitzungen werden geschlossen...</value>
-    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
-  </data>
-  <data name="CloseSession" xml:space="preserve">
-    <value>Sitzung wird geschlossen...</value>
-    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmAccount" xml:space="preserve">
-    <value>Account wird bestätigt...</value>
-    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateAccount" xml:space="preserve">
-    <value>Account wird erstellt...</value>
-    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
-  </data>
-  <data name="CreateFolder" xml:space="preserve">
-    <value>Ordner wird erstellt...</value>
-    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
     <value>Kreditkarte wird gespeichert...</value>
@@ -182,10 +154,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="GetContactData" xml:space="preserve">
     <value>Kontaktdaten werden angefordert</value>
     <comment>Progress indicator message when getting contact details - (String as short as possible).</comment>
-  </data>
-  <data name="GetLink" xml:space="preserve">
-    <value>Link wird erstellt...</value>
-    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethods" xml:space="preserve">
     <value>Hole verfügbare Zahlungsmethoden</value>
@@ -223,14 +191,6 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Ansicht wird aufgebaut...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Anmeldung...</value>
-    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
-  </data>
-  <data name="Logout" xml:space="preserve">
-    <value>Abmeldung...</value>
-    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
-  </data>
   <data name="MoveNode" xml:space="preserve">
     <value>Verschiebe...</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
@@ -252,16 +212,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>Kontakt wird entfernt...</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
     <value>Lösche Offline-Daten...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
-  </data>
-  <data name="RemoveLink" xml:space="preserve">
-    <value>Link wird entfernt...</value>
-    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
     <value>Entferne...</value>
@@ -272,7 +228,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>Kontaktanfrage wird bestätigt...</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
@@ -292,10 +248,54 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servers too busy. Please wait…</value>
+    <value>Server überlastet. Bitte warten...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
-  <data name="UpgradeAccount" xml:space="preserve">
+  <data name="PM_CancelSubscription" xml:space="preserve">
+    <value>Canceling subscription...</value>
+    <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ChangePassword" xml:space="preserve">
+    <value>Changing password...</value>
+    <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseAllSessions" xml:space="preserve">
+    <value>Alle Sitzungen werden geschlossen...</value>
+    <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CloseSession" xml:space="preserve">
+    <value>Sitzung wird geschlossen...</value>
+    <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ConfirmAccount" xml:space="preserve">
+    <value>Account wird bestätigt...</value>
+    <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateAccount" xml:space="preserve">
+    <value>Account wird erstellt...</value>
+    <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_CreateFolder" xml:space="preserve">
+    <value>Erstelle Ordner...</value>
+    <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_GetLink" xml:space="preserve">
+    <value>Link wird erstellt...</value>
+    <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Login" xml:space="preserve">
+    <value>Anmeldung...</value>
+    <comment>Progress indicator message when logging in - (String as short as possible).</comment>
+  </data>
+  <data name="PM_Logout" xml:space="preserve">
+    <value>Abmeldung...</value>
+    <comment>Progress indicator message when logging out - (String as short as possible).</comment>
+  </data>
+  <data name="PM_RemoveLink" xml:space="preserve">
+    <value>Link wird entfernt...</value>
+    <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
+  </data>
+  <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>Account-Upgrade...</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>

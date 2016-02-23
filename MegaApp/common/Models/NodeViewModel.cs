@@ -239,7 +239,7 @@ namespace MegaApp.Models
             if (String.IsNullOrWhiteSpace(downloadPath))
             {
                 await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
-                    AppMessages.SelectFolderFailed, App.AppInformation, 
+                    AppMessages.SelectFolderFailedNoErrorCode, App.AppInformation, 
                     MessageDialogButtons.Ok).ShowDialogAsync();
                 return;
             }

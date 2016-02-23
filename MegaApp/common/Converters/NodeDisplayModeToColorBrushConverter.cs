@@ -25,7 +25,14 @@ namespace MegaApp.Converters
                 {
                     var solidColor = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"])
                     {
-                        Opacity = System.Convert.ToDouble(parameter)
+                        // Specify culture independent number information
+                        // Parameter is always with , (resource)
+                        // Else the number will be converted by the current culture on the phone
+                        Opacity = System.Convert.ToDouble(parameter, new NumberFormatInfo()
+                        {
+                            NumberDecimalSeparator = ","
+                           
+                        })
                     };
                     return solidColor;
                 }

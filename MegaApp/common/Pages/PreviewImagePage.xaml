@@ -37,7 +37,7 @@
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/open_link.png" Text="get link" Click="OnGetLinkClick"/>					
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
 	</UserControls:MegaPhoneApplicationPage.Resources>	

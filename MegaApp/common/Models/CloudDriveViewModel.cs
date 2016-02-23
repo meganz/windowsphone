@@ -27,7 +27,7 @@ namespace MegaApp.Models
 {
     public class CloudDriveViewModel : BaseAppInfoAwareViewModel
     {
-        private const int DownloadLimitMessage = 100;
+        //private const int DownloadLimitMessage = 100;
         //private CancellationTokenSource cancellationTokenSource;
         //private CancellationToken cancellationToken;
         //private bool asyncInputPromptDialogIsOpen;
