@@ -52,12 +52,22 @@ namespace MegaApp.Pages
         {
             base.OnBackKeyPress(e);
 
-            if(NavigateService.PreviousPage != null)
-                NavigateService.GoBack();
-            else
-                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
-
-            e.Cancel = true;
+            try
+            {
+                if (NavigateService.PreviousPage != null)
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("NavigateService - GoBack"))
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            finally
+            {
+                e.Cancel = true;
+            }            
         }
 
         private void OnOkClick(object sender, EventArgs e)
