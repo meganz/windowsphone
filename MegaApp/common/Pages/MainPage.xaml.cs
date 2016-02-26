@@ -628,12 +628,16 @@ namespace MegaApp.Pages
 
         private bool CheckPivotInView(bool isCancel)
         {
-            if (isCancel) return true;
+            try
+            {
+                if (isCancel) return true;
 
-            if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
-            
-            MainPivot.SelectedItem = CloudDrivePivot;
-            return true;
+                if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
+
+                MainPivot.SelectedItem = CloudDrivePivot;
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
         private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
