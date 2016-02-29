@@ -14,7 +14,7 @@ namespace MegaApp.Pages
 {
     public partial class LoginPage : MegaPhoneApplicationPage
     {
-        private readonly LoginAndCreateAccountViewModelContainer _loginAndCreateAccountViewModelContainer;
+        private LoginAndCreateAccountViewModelContainer _loginAndCreateAccountViewModelContainer;
         
         public LoginPage()
         {
@@ -29,6 +29,11 @@ namespace MegaApp.Pages
 
         public void SetApplicationBar(bool isEnabled)
         {
+            if (this.ApplicationBar == null) return;
+
+            if (_loginAndCreateAccountViewModelContainer == null)
+                _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer(this);
+            
             // Change and translate the current application bar
             _loginAndCreateAccountViewModelContainer.ChangeMenu(                
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);            
@@ -73,6 +78,9 @@ namespace MegaApp.Pages
             // To not allow cancel a request to login or 
             // create account once that is started
             SetApplicationBar(false);
+
+            if (_loginAndCreateAccountViewModelContainer == null)
+                _loginAndCreateAccountViewModelContainer = new LoginAndCreateAccountViewModelContainer(this);
 
             if (Pivot_LoginAndCreateAccount.SelectedItem == PivotItem_Login)                
                 _loginAndCreateAccountViewModelContainer.LoginViewModel.DoLogin();

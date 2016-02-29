@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -121,12 +122,29 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
+        private static void DialogOpening(CancelEventArgs args)
+        {
+            // Do not show dialog when another dialog is already open
+            if (App.AppInformation.PickerOrAsyncDialogIsOpen)
+            {
+                args.Cancel = true;
+                return;
+            }
+
+            // Needed to only display 1 dialog at a time and to check for in back button press event
+            // on the page where the dialog is used to cancel other back button logic
+            App.AppInformation.PickerOrAsyncDialogIsOpen = true;
+        }
+
+        private static void DialogClosed()
+        {
+            // When the dialog is closed and finished remove this helper property
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
+        }
+
         public static void ShowUploadOptions(FolderViewModel folder)
         {
-            if (folder.AppInformation.PickerOrAsyncDialogIsOpen) return;
-
-            App.CloudDrive.CurrentRootNode = (NodeViewModel)folder.FolderRootNode;
-            folder.AppInformation.PickerOrAsyncDialogIsOpen = true;
+            App.CloudDrive.CurrentRootNode = (NodeViewModel)folder.FolderRootNode;            
 
             var uploadRadWindow = new RadModalWindow()
             {
@@ -135,11 +153,14 @@ namespace MegaApp.Services
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment= HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Top,
+                IsAnimationEnabled = true,
                 OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation(),
                 Margin = new Thickness(0)
             };
 
-            uploadRadWindow.WindowClosed += (sender, args) => folder.AppInformation.PickerOrAsyncDialogIsOpen = false;
+            uploadRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            uploadRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var grid = new Grid()
             {
@@ -267,7 +288,13 @@ namespace MegaApp.Services
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
             };
+
+            sortRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            sortRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var buttonStackPanel = new StackPanel()
             {
@@ -434,7 +461,13 @@ namespace MegaApp.Services
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
             };
+
+            sortRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            sortRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var buttonStackPanel = new StackPanel()
             {
@@ -600,7 +633,13 @@ namespace MegaApp.Services
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
             };
+
+            sortRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            sortRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var buttonStackPanel = new StackPanel()
             {
@@ -678,8 +717,14 @@ namespace MegaApp.Services
                 Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0)),
                 WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
-                VerticalContentAlignment = VerticalAlignment.Stretch,                
+                VerticalContentAlignment = VerticalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
             };
+
+            feedbackRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            feedbackRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var feedbackStackPanel = new StackPanel()
             {
@@ -787,16 +832,6 @@ namespace MegaApp.Services
 
         public static void ShowPinLockDialog(bool isChange, SettingsViewModel settingsViewModel)
         {
-            var openAnimation = new RadMoveAnimation()
-            {
-                MoveDirection = MoveDirection.TopIn
-            };
-
-            var closeAnimation = new RadMoveAnimation()
-            {
-                MoveDirection = MoveDirection.BottomOut
-            };
-
             var pinLockRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
@@ -805,9 +840,12 @@ namespace MegaApp.Services
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Stretch,
                 IsAnimationEnabled = true,
-                OpenAnimation = openAnimation,
-                CloseAnimation = closeAnimation
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
             };
+
+            pinLockRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            pinLockRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var pinLockStackPanel = new StackPanel()
             {
@@ -961,16 +999,6 @@ namespace MegaApp.Services
 
         public static void ShowChangePasswordDialog()
         {
-            var openAnimation = new RadMoveAnimation()
-            {
-                MoveDirection = MoveDirection.TopIn
-            };
-
-            var closeAnimation = new RadMoveAnimation()
-            {
-                MoveDirection = MoveDirection.BottomOut
-            };
-
             var changePasswordRadWindow = new RadModalWindow()
             {
                 IsFullScreen = true,
@@ -979,9 +1007,12 @@ namespace MegaApp.Services
                 HorizontalContentAlignment = HorizontalAlignment.Stretch,
                 VerticalContentAlignment = VerticalAlignment.Stretch,
                 IsAnimationEnabled = true,
-                OpenAnimation = openAnimation,
-                CloseAnimation = closeAnimation
-            };            
+                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseDialogAnimation()
+            };
+
+            changePasswordRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+            changePasswordRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
             var passwordStackPanel = new StackPanel()
             {
