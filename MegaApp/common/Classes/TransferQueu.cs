@@ -113,8 +113,10 @@ namespace MegaApp.Classes
 
         private void UploadSort(TransferObjectModel transferObject)
         {
+            if (Uploads.Contains(transferObject))
+                if (!Uploads.Remove(transferObject)) return;
+
             var inserted = false;
-            Uploads.Remove(transferObject);
 
             for (var i = 0; i <= Uploads.Count - 1; i++)
             {
@@ -132,8 +134,10 @@ namespace MegaApp.Classes
 
         private void DownloadSort(TransferObjectModel transferObject)
         {
+            if (Downloads.Contains(transferObject))
+                if (!Downloads.Remove(transferObject)) return;
+
             var inserted = false;
-            Downloads.Remove(transferObject);
 
             for (var i = 0; i <= Downloads.Count - 1; i++)
             {

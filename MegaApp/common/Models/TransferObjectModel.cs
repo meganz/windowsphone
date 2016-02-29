@@ -281,6 +281,13 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        TransferedBytes = TotalBytes;
+                        TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
+                        TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
+                    });                    
+
                     if(IsSaveForOfflineTransfer)
                     {
                         // Need get the path on the transfer finish because  the file name can be changed
@@ -296,7 +303,6 @@ namespace MegaApp.Models
                             IsSelectedForOffline = true
                         };
 
-
                         // If is a public node (link) the destination folder is the SFO root, so the parent handle
                         // is the handle of the root node.
                         if(node.ParentContainerType != ContainerType.PublicLink)
@@ -311,12 +317,6 @@ namespace MegaApp.Models
                                                 
                         Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
                     }
-
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
-                        TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
-                    });
 
                     var imageNode = SelectedNode as ImageNodeViewModel;
                     if (imageNode != null)

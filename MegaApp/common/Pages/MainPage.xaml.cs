@@ -1029,8 +1029,19 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            if(App.ActiveImportLink != null)
+            {
+                App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            }
+            else
+            {
+                new CustomMessageDialog(
+                    AppMessages.ImportFileFailed_Title,
+                    AppMessages.AM_InvalidLink,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
