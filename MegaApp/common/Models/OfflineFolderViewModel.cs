@@ -436,7 +436,7 @@ namespace MegaApp.Models
 
                 WaitHandle.WaitAll(waitEventRequests);
 
-                String parentNodePath = (new DirectoryInfo(this.FolderRootNode.NodePath)).FullName;
+                String parentNodePath = Path.GetDirectoryName(this.FolderRootNode.NodePath);
                 
                 String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                     AppResources.DownloadsDirectory.Replace("\\", ""));

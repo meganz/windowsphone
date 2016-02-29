@@ -628,12 +628,16 @@ namespace MegaApp.Pages
 
         private bool CheckPivotInView(bool isCancel)
         {
-            if (isCancel) return true;
+            try
+            {
+                if (isCancel) return true;
 
-            if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
-            
-            MainPivot.SelectedItem = CloudDrivePivot;
-            return true;
+                if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
+
+                MainPivot.SelectedItem = CloudDrivePivot;
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
         private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
@@ -1025,8 +1029,19 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            if(App.ActiveImportLink != null)
+            {
+                App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            }
+            else
+            {
+                new CustomMessageDialog(
+                    AppMessages.ImportFileFailed_Title,
+                    AppMessages.AM_InvalidLink,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
