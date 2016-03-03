@@ -955,6 +955,8 @@ namespace MegaApp.Services
                 SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(pinLock.Password));
                 SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
 
+                App.AppInformation.HasPinLockIntroduced = true;
+
                 pinLockRadWindow.IsOpen = false;
             };
 
