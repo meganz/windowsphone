@@ -1082,4 +1082,8 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <value>Error preparing file(s)</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>Failed to download file. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
 </root>
