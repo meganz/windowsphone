@@ -122,7 +122,7 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
-        private static void DialogOpening(CancelEventArgs args)
+        public static void DialogOpening(CancelEventArgs args)
         {
             // Do not show dialog when another dialog is already open
             if (App.AppInformation.PickerOrAsyncDialogIsOpen)
@@ -136,7 +136,7 @@ namespace MegaApp.Services
             App.AppInformation.PickerOrAsyncDialogIsOpen = true;
         }
 
-        private static void DialogClosed()
+        public static void DialogClosed()
         {
             // When the dialog is closed and finished remove this helper property
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
@@ -954,6 +954,8 @@ namespace MegaApp.Services
                
                 SettingsService.SaveSetting(SettingsResources.UserPinLock, CryptoService.HashData(pinLock.Password));
                 SettingsService.SaveSetting(SettingsResources.UserPinLockIsEnabled, true);
+
+                App.AppInformation.HasPinLockIntroduced = true;
 
                 pinLockRadWindow.IsOpen = false;
             };

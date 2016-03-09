@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to download file. Please try again..
+        /// </summary>
+        public static string AM_DownloadNodeFailedNoErrorCode {
+            get {
+                return ResourceManager.GetString("AM_DownloadNodeFailedNoErrorCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File import failed [{0}].
         /// </summary>
         public static string AM_ImportFileFailed {

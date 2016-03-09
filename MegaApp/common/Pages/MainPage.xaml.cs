@@ -44,16 +44,13 @@ namespace MegaApp.Pages
             CloudDriveBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             RubbishBinBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             RubbishBinBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
-
-            // Subscribe to the NetworkAvailabilityChanged event
-            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
-
+            
             _mainPageViewModel.CommandStatusChanged += (sender, args) =>
             {
                 if (ApplicationBar == null) return;
                 UiService.ChangeAppBarStatus(ApplicationBar.Buttons,  ApplicationBar.MenuItems, args.Status);
             };
-        }
+        }        
 
         // Code to execute when a Network change is detected.
         private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
@@ -78,8 +75,6 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (!ValidActiveAndOnlineSession()) return;
-
                     NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);                    
                     OnlineBehavior(navParam);
                 }
@@ -141,15 +136,9 @@ namespace MegaApp.Pages
                 ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
             }
         }
-        
-        private bool ValidActiveAndOnlineSession()
-        {
-            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-            {
-                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
-                return false;
-            }
 
+        private bool CheckActiveAndOnlineSession()
+        {
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
             {
@@ -160,6 +149,24 @@ namespace MegaApp.Pages
                 }
             }
 
+            return true;
+        }
+
+        private bool CheckPinLock()
+        {
+            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            {
+                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                return false;
+            }
+
+            return true;
+        }
+        
+        private bool CheckSessionAndPinLock()
+        {
+            if (!CheckActiveAndOnlineSession()) return false;
+            if (!CheckPinLock()) return false;
             return true;
         }
 
@@ -216,6 +223,9 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            // Un-Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged -= new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
             _mainPageViewModel.Deinitialize(App.GlobalDriveListener);
             base.OnNavigatedFrom(e);
         }
@@ -223,6 +233,13 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            // Need to check it always and no only in StartupMode, 
+            // because this is the first page loaded
+            if (!CheckSessionAndPinLock()) return;
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -258,9 +275,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
-
-                if (!ValidActiveAndOnlineSession()) return;
+                App.MegaSdk.retryPendingConnections();                
 
                 App.AppInformation.IsStartupModeActivate = false;
 
@@ -282,8 +297,7 @@ namespace MegaApp.Pages
                         navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
                 {
                     if (this.SpecialNavigation()) return;
-                    CheckNavigationParameters();
-                    return;
+                    CheckNavigationParameters();                    
                 }
             }
 
@@ -364,11 +378,7 @@ namespace MegaApp.Pages
                             if (NavigationContext.QueryString.ContainsKey("filelink"))
                                 this.GetFileLink();
 
-                            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-                            {
-                                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
-                                return;
-                            }                            
+                            if (!CheckPinLock()) return;
                         }
 
                         checkSpecialNavigation = Load();
@@ -384,14 +394,8 @@ namespace MegaApp.Pages
 
         private bool Load()
         {
-            if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            if (CheckActiveAndOnlineSession() && !Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
             {
-                if (!SettingsService.HasValidSession())
-                {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                    return false;
-                }
-
                 App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                     new FastLoginRequestListener(_mainPageViewModel));
                 return false;

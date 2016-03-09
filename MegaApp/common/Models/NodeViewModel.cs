@@ -243,6 +243,15 @@ namespace MegaApp.Models
                     MessageDialogButtons.Ok).ShowDialogAsync();
                 return;
             }
+
+            // Check for illegal characters in the download path
+            if (FolderService.HasIllegalChars(downloadPath))
+            {
+                await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
+                    String.Format(AppMessages.InvalidFolderNameOrPath, downloadPath),
+                    this.AppInformation).ShowDialogAsync();
+                return;
+            }
                         
             // If selected file is a folder then also select it childnodes to download
             bool result;
@@ -262,7 +271,7 @@ namespace MegaApp.Models
             if (String.IsNullOrWhiteSpace(folderNode.Name))
             {
                 await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
-                    AppMessages.DownloadNodeFailed, this.AppInformation).ShowDialogAsync();
+                    AppMessages.AM_DownloadNodeFailedNoErrorCode, this.AppInformation).ShowDialogAsync();
                 return false;
             }
 
@@ -309,7 +318,14 @@ namespace MegaApp.Models
 
         private async Task<bool> DownloadFile(TransferQueu transferQueu, String downloadPath, NodeViewModel fileNode)
         {
-            if (String.IsNullOrWhiteSpace(fileNode.Name) || FileService.HasIllegalChars(fileNode.Name))
+            if (String.IsNullOrWhiteSpace(fileNode.Name))
+            {
+                await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                    AppMessages.AM_DownloadNodeFailedNoErrorCode, App.AppInformation).ShowDialogAsync();
+                return false;
+            }
+
+            if (FileService.HasIllegalChars(fileNode.Name))
             {
                 await new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
                     String.Format(AppMessages.InvalidFileName, fileNode.Name),
