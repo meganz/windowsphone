@@ -470,13 +470,18 @@ namespace MegaApp.Pages
 
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
 
-            // Set upload directory only once for speed improvement and if not exists, create dir
-            var uploadDir = AppService.GetUploadDirectoryPath(true);
-
+            bool exceptionCatched = false;
             try
             {
-                foreach (var file in args.Files)
+                // Set upload directory only once for speed improvement and if not exists, create dir
+                var uploadDir = AppService.GetUploadDirectoryPath(true);
+
+                // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
+                var pickedFiles = args.Files;
+                foreach (var file in pickedFiles)
                 {
+                    if (file == null) continue; // To avoid null references
+
                     try
                     {
                         string newFilePath = Path.Combine(uploadDir, file.Name);
@@ -498,6 +503,8 @@ namespace MegaApp.Pages
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
+
+                        exceptionCatched = true;
                     }
                 }
             }
@@ -508,6 +515,8 @@ namespace MegaApp.Pages
                     String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
+
+                exceptionCatched = true;
             }
             finally
             {
@@ -516,7 +525,9 @@ namespace MegaApp.Pages
                 ProgressService.SetProgressIndicator(false);
 
                 App.CloudDrive.NoFolderUpAction = true;
-                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+
+                if(!exceptionCatched)
+                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
         }
 
