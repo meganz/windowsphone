@@ -15,7 +15,7 @@ namespace MegaApp.Services
     {
         public static IEnumerable<string> GetFiles(IList<IMegaNode> nodes, string directory)
         {
-            if (nodes == null || !nodes.Any()) return null;
+            if (nodes == null || !nodes.Any() || String.IsNullOrWhiteSpace(directory)) return null;
 
             return nodes.Select(node => Path.Combine(directory, node.OriginalMNode.getBase64Handle())).ToList();
         }
