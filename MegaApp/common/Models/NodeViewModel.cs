@@ -234,8 +234,12 @@ namespace MegaApp.Models
             if (AppInformation.PickerOrAsyncDialogIsOpen) return;
 
             if (downloadPath == null)
-                if (!await FolderService.SelectDownloadFolder(this)) return;
+            {
+                if (!await FolderService.SelectDownloadFolder(this)) { return; }
+                else { downloadPath = AppService.GetSelectedDownloadDirectoryPath(); }
+            }                
 
+            // Extra check to try avoid null values
             if (String.IsNullOrWhiteSpace(downloadPath))
             {
                 await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
