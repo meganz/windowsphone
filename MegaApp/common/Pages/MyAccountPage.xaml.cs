@@ -154,6 +154,8 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
+            if (e.Cancel) return;
+
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             e.Cancel = true;
         }

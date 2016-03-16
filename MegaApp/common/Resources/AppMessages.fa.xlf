@@ -157,7 +157,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="needs-review-translation">خطا در صادر کردن تصویر به البوم "saved pictures". لطفا دوباره تلاش کنید</target>
+          <target state="translated">خطا در صادر کردن تصویر به البوم "saved pictures". لطفا دوباره تلاش کنید</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -610,7 +610,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="needs-review-translation">شما یک مکان دانلود پیش فرض برای فایل هایتان انتخاب نکرده اید.
+          <target state="translated">شما یک مکان دانلود پیش فرض برای فایل هایتان انتخاب نکرده اید.
 برای ادامه فرایند دانلود, لطفا یک پوشه ی مقصد انتخاب کنید و یا اینکه به preferences  بروید برای اینکه بتوانید مکان پیش فرض دانلود خودتان را انتخاب کنید.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
@@ -643,7 +643,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="needs-review-translation">شما اجازه ی  کپی کردن این نوع فایل را به روی پوشه ی مقصد ندارید. احتمالا شما دارید سعی می کنید که یک فایل ازنوعی پشتیبانی نشده را  بر روی کارد SD  ذخیره کنید یا کپی کنید.
+          <target state="translated">شما اجازه ی  کپی کردن این نوع فایل را به روی پوشه ی مقصد ندارید. احتمالا شما دارید سعی می کنید که یک فایل ازنوعی پشتیبانی نشده را  بر روی کارد SD  ذخیره کنید یا کپی کنید.
 لطفا سعی کنید فایل را در داخل حافظه ی داخلی دستگاه خودتان ذخیره یا کپی نمایید.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -944,7 +944,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="needs-review-translation">بازگردانی صفحه پرداخت ناموفق بود. لطفا" دوباره سعی کنید.[{0}]</target>
+          <target state="translated">بازگردانی صفحه پرداخت ناموفق بود. لطفا" دوباره سعی کنید.[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1043,7 +1043,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Failed to remove the contact {0}. Please try again. [{0}]</target>
+          <target state="translated">Failed to remove the contact {0}. Please try again. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1196,15 +1196,35 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
 
 </note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="translated">Failed to prepare file(s) for upload. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="new">Error preparing file(s)</target>
+          <target state="translated">Error preparing file(s)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
-          <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
+          <source>Failed to download file. Please try again.</source>
+          <target state="new">Failed to download file. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

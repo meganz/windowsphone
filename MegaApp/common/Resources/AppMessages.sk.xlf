@@ -157,7 +157,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="needs-review-translation">Chyba pri exportovaní obrázku do albumu 'uložené obrázky'. Prosím skúste to znovu</target>
+          <target state="translated">Chyba pri exportovaní obrázku do albumu 'uložené obrázky'. Prosím skúste to znovu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="needs-review-translation">Nezvolili ste si predvolené umiestneni pre vaše sťahované súbory.
+          <target state="translated">Nezvolili ste si predvolené umiestneni pre vaše sťahované súbory.
 
 Pre pokračovanie na sťahovanie si prosím vyberte cieľový priečinok alebo choďte do nastavení pre zvolenie predvoleného miesta pre sťahovanie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -642,7 +642,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="needs-review-translation">Na kopírovanie tohoto dátového typu na cielové miesto nemáte povolenie. Pravdepodobne sa snažíte ukladať/kopírovať nepodporovaný dátovy typ na SD kartu. prosím, skúste uložiť/skopírovať súbor do vnútornej pamäte vášho zariadenia.</target>
+          <target state="translated">Na kopírovanie tohoto dátového typu na cielové miesto nemáte povolenie. Pravdepodobne sa snažíte ukladať/kopírovať nepodporovaný dátovy typ na SD kartu. prosím, skúste uložiť/skopírovať súbor do vnútornej pamäte vášho zariadenia.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -871,7 +871,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">Chystáte sa zrušiť svoje MEGA predplatné. Prosím dajte nám vedieť, ak je niečo, čím by sme vám pomohli zmeniť rozhodnutie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -942,7 +942,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Chyba pri získavaní platobnej Url. Prosím skúste to znovu. [{0}]</target>
+          <target state="translated">Chyba pri získavaní platobnej Url. Prosím skúste to znovu. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1040,7 +1040,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Zlyhalo odstraňovanie kontaktu {0}. Prosím skúste to znovu. [{0}]</target>
+          <target state="translated">Zlyhalo odstraňovanie kontaktu {0}. Prosím skúste to znovu. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1134,7 +1134,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">K ceste '{0}' nemáte prístup. Prosím vyberte inú a skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1145,7 +1145,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Názov súboru '{0}' nie je platný, alebo obsahuje neplatné znaky. Prosím zmeňte ho a skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1156,7 +1156,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">Cesta k súboru/priečinku '{0}' je príliš dlhá. Prosím zmeňte ju a skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1167,7 +1167,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Názov alebo cesta k priečinku '{0}' sú neplatné, alebo obsahujú neplatné znaky. Prosím zmeňte ho a skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1193,15 +1193,35 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
 
 </note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="translated">Zlyhala príprava súboru(ov) na upload. Prosím skúste to znovu.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="new">Error preparing file(s)</target>
+          <target state="translated">Chyba pri pripravovaní súboru(ov)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
-          <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
+          <source>Failed to download file. Please try again.</source>
+          <target state="new">Failed to download file. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

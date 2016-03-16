@@ -86,26 +86,8 @@
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
-                            <Grid x:Name="GridAskDownloadLocation" Margin="0,0,0,20">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <telerikPrimitives:RadToggleSwitch x:Name="BtnAskDownloadLocation" VerticalAlignment="Center" Content="{Binding AskDownloadLocationIsEnabledText}" IsChecked="{Binding AskDownloadLocationIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
-                                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
-                                            <Setter Property="CheckBackground">
-                                                <Setter.Value>
-                                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                                </Setter.Value>
-                                            </Setter>
-                                        </Style>
-                                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
-                                </telerikPrimitives:RadToggleSwitch>
-                            </Grid>
                             <TextBlock x:Name="TextExportPhotoAlbumSwitch" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportPhotoAlbumText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0"/>
-                            <Grid x:Name="GridExportPhotoAlbumSwitch" Margin="0,0,0,20">
+                            <Grid x:Name="GridExportPhotoAlbumSwitch" Margin="0,0,0,30">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -122,6 +104,24 @@
                                     </telerikPrimitives:RadToggleSwitch.ButtonStyle>
                                 </telerikPrimitives:RadToggleSwitch>
                             </Grid>
+                            <TextBlock x:Name="TextAskDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.AskDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <Grid x:Name="GridAskDownloadLocation" Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <telerikPrimitives:RadToggleSwitch x:Name="BtnAskDownloadLocation" VerticalAlignment="Center" Content="{Binding AskDownloadLocationIsEnabledText}" IsChecked="{Binding AskDownloadLocationIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" Grid.ColumnSpan="2">
+                                    <telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                        <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
+                                            <Setter Property="CheckBackground">
+                                                <Setter.Value>
+                                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </telerikPrimitives:RadToggleSwitch.ButtonStyle>
+                                </telerikPrimitives:RadToggleSwitch>
+                            </Grid>                            
                             <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 

@@ -34,7 +34,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
           <source>Check your e-mail and click the link to login and confirm your account</source>
-          <target state="translated">Check your e-mail and click the link to login and confirm your account</target>
+          <target state="translated">تأكد من البريد الإلكتروني الخاص بك وانقر على الرابط للدخول وتأكيد حسابك</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
@@ -86,7 +86,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
-          <target state="translated">Failed to retrieve a download link. Please try again.</target>
+          <target state="translated">فشل استعادة رابط التحميل.يرجي المحاولة مرة اخري.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when failed to retrieve a download link.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" space="preserve">
@@ -157,7 +157,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="needs-review-translation">خطأ في تصدير الصورة إلى ألبوم "الصور المحفوظة". حاول مرة اخرى</target>
+          <target state="translated">خطأ في تصدير الصورة إلى ألبوم "الصور المحفوظة". حاول مرة اخرى</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">فشل في توريد الملف [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -200,7 +200,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MoveEqualsParent" translate="yes" space="preserve">
           <source>Destination folder is the same as the source folder. Move cancelled.</source>
-          <target state="translated">Destination folder is the same as the source folder. Move cancelled.</target>
+          <target state="translated">مجلد الوجهة نفس المصدر. تم إلغاء النقل</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveEqualsParent_Title" translate="yes" space="preserve">
@@ -286,7 +286,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
           <source>Please fill in your e-mail address and your MEGA password.</source>
-          <target state="translated">Please fill in your e-mail address and your MEGA password.</target>
+          <target state="translated">يرجى ملء عنوان البريد الإلكتروني وكلمة المرور الخاصة بك في MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFields_Title" translate="yes" space="preserve">
@@ -476,7 +476,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
-          <target state="translated">You have selected over {0} items ({1}) to download. Do you want to proceed?</target>
+          <target state="translated">لقد حددت أكثر من {0} عناصر ({1}) للتحميل. هل تريد المتابعة؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="needs-review-translation">لم تقم بتحديد تحميل المكان الافتراضي للملفات.
+          <target state="translated">لم تقم بتحديد تحميل المكان الافتراضي للملفات.
 للمضي قدما مع التحميل يرجى تحديد مجلد وجهة أو الذهاب إلى التفضيلات من أجل تحديد مكان التحميل الافتراضي.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
@@ -641,7 +641,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="needs-review-translation">لا يوجد لديك تصريح لنسخ هذا النوع من الملفات إلى مجلد الوجهة. ربما كنت تحاول حفظ / نسخ ملف غير مدعم الي كارت SD.
+          <target state="translated">لا يوجد لديك تصريح لنسخ هذا النوع من الملفات إلى مجلد الوجهة. ربما كنت تحاول حفظ / نسخ ملف غير مدعم الي كارت SD.
 يرجى محاولة حفظ / نسخ الملف إلى الذاكرة الداخلية في جهازك.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -749,7 +749,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
-          <target state="translated">Failed to select file(s). Please, try again [{0}]</target>
+          <target state="translated">فشل في اختيار الملف(ات). الرجاء المحاولة ثانية  [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -781,7 +781,7 @@ Preserve the {0} code because is for include name of the node to be removed in r
         </trans-unit>
         <trans-unit id="Resx/GetUserDataFailed" translate="yes" space="preserve">
           <source>Failed to retrieve your user data. Please try again. [{0}]</source>
-          <target state="translated">Failed to retrieve your user data. Please try again. [{0}]</target>
+          <target state="translated">فشل في استرداد بيانات المستخدم الخاص بك. حاول مرة اخرى. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -803,7 +803,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo or video. Please, try again [{0}]</source>
-          <target state="translated">Failed to capture photo or video. Please, try again [{0}]</target>
+          <target state="translated">فشل في التقاط صورة أو فيديو. الرجاء المحاولة ثانية [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -836,7 +836,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
           <source>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</source>
-          <target state="translated">An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</target>
+          <target state="translated">خطأ في فتح الاختصار. ربما الاختصار غير متوفر أو مجلد الوجهة محذوف.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
@@ -856,12 +856,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
           <source>Please fill in all the required fields and try again.</source>
-          <target state="translated">Please fill in all the required fields and try again.</target>
+          <target state="translated">يرجى تعبئة جميع البيانات المطلوبة وحاول مرة أخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
           <source>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</source>
-          <target state="translated">The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</target>
+          <target state="translated">رقم بطاقة الائتمان، تاريخ الانتهاء شهر/سنة وCVV يجب ان يكون رقمي. الرجاء التأكد من كل شيء صحيح والمحاولة ثانية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
@@ -871,7 +871,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">أنت على وشك إلغاء اشتراكك ب MEGA. فضلا أخبرنا إن كان هناك أي شيء نستطيع فعله لك لنساعدك فيه ونغير رأيك حول الحذف.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -881,7 +881,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</target>
+          <target state="translated">لم يتم إلغاء الاشتراك بشكل صحيح. يرجى الاتصال support@mega.nz لإلغاء اشتراكك.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -931,7 +931,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
-          <target state="translated">Failed to retrieve the available payment methods. Please try again. [{0}]</target>
+          <target state="translated">فشل في استرداد وسائل الدفع المتاحة. حاول مرة اخرى. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -942,7 +942,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Failed to retrieve the payment Url. Please try again. [{0}]</target>
+          <target state="translated">فشل في استرجاع رابط عملية الدفع. الرجاء المحاولة ثانية. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -953,7 +953,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
           <source>Background agents for MEGA have been disabled by the user</source>
-          <target state="translated">Background agents for MEGA have been disabled by the user</target>
+          <target state="translated">عناصر الخلفية لMEGA  تم تعطيلها من قبل المستخدم</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
@@ -963,7 +963,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</target>
+          <target state="translated">من أجل عمل تحميلات الكاميرا التلقائية بشكل صحيح، فعل خيار "البقاء مسجلا للدخول". هل تود تفعيل هذا الخيار؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
@@ -984,7 +984,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
           <source>The contact invitation could not be sent. Please try again.</source>
-          <target state="translated">The contact invitation could not be sent. Please try again.</target>
+          <target state="translated">لا يمكن أن يتم إرسال دعوة الاتصال. حاول مرة اخرى.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
@@ -994,7 +994,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
           <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
-          <target state="translated">User {0} has been invited and will appear on your contact list once they have accepted the invitation.</target>
+          <target state="translated">المستخدم {0} قد تم دعوته وسيظر على لائحة جهات اتصالك حالما يقبل الدعوة </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
         </trans-unit>
@@ -1010,7 +1010,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
-          <target state="translated">Your account has been updated. Do you want to check the new account details?</target>
+          <target state="translated">تم تحديث الحساب الخاص بك. هل ترغب في التحقق من تفاصيل حساب جديد؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
@@ -1020,7 +1020,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</target>
+          <target state="translated">شهادتنا SSL/TLS لايمكن توثيقها، ربما تتأثر بهجوم رجل في الوسط.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1030,7 +1030,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</target>
+          <target state="translated">مهمة تحميلات الكاميرا التلقائية قد فشل. تستطيع إعادة تفعيله من صفحة الإعدادات.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
@@ -1040,7 +1040,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Failed to remove the contact {0}. Please try again. [{0}]</target>
+          <target state="translated">فشل في حذف جهة الاتصال {0}. الرجاء المحاولة ثانية. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1077,12 +1077,12 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
           <source>Please fill in your old MEGA password and your new MEGA password.</source>
-          <target state="translated">Please fill in your old MEGA password and your new MEGA password.</target>
+          <target state="translated">يرجى ملء كلمة السر MEGA القديمة و كلمة السر MEGA الجديدة.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
-          <target state="translated">Failed to close the session. Please try again. [{0}]</target>
+          <target state="translated">فشل اغلاق الجلسة. يرجي المحاولة مرة اخري. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1093,7 +1093,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
-          <target state="translated">Failed to close the session. Please try again. [{0}]</target>
+          <target state="translated">فشل اغلاق الجلسة. يرجي المحاولة مرة اخري. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1104,7 +1104,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to clear the rubbish bin. Please try again.</source>
-          <target state="translated">Failed to clear the rubbish bin. Please try again.</target>
+          <target state="translated">فشل في إفراغ سلة المحذوفات. الرجاء المحاولة ثانية.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
@@ -1129,12 +1129,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
           <source>You cannot perform this action. Please connect to the Internet and try again.</source>
-          <target state="translated">You cannot perform this action. Please connect to the Internet and try again.</target>
+          <target state="translated">لايمكن تنفيذ هذه الخطوة. الرجاء الاتصال بالانترنت ثم المحاولة ثانية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">ليس لديك إذن بالولوج إلى المسار '{0}'. الرجاء اختيار مسار آخر والمحاولة ثانية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1145,7 +1145,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">اسم الملف  '{0}' غير متوفر أو لديه رموز غير مسموح بها، الرجاء تغيير الاسم ثم المحاولة ثانية.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1156,7 +1156,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">مسار الملف/المجلد '{0}' طويل جدا. الرجاء تغييره ثم المحاولة ثانية</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1167,7 +1167,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">اسم مسار المجلد '{0}' غير متوفر أو يحتوي على عناصر غير مسموح بها، الرجاء تغيير الاسم والمحاولة ثانية.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1183,7 +1183,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <target state="translated">فشل تحديد المجلد. يرجى المحاولة مرة أخرى أو اختيار مجلد آخر.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
@@ -1193,15 +1193,35 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
 
 </note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="translated">فشل في تجهيز الملف (ملفات) للرفع. حاول مرة أخرى</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="new">Error preparing file(s)</target>
+          <target state="translated">خطأ في تحضير ملف (ملفات)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
-          <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
+          <source>Failed to download file. Please try again.</source>
+          <target state="new">Failed to download file. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

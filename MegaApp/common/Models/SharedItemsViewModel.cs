@@ -198,8 +198,24 @@ namespace MegaApp.Models
             // Process is started so we can set the empty content template to loading already
             InShares.SetEmptyContentTemplate(true);
 
-            OnUiThread(() => InShares.ChildNodes.Clear());
             MNodeList inSharesList = MegaSdk.getInShares();
+            if (inSharesList == null)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadFailed_Title,
+                        AppMessages.AM_LoadInSharesFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+
+                    InShares.SetEmptyContentTemplate(false);
+                });
+
+                return;
+            }
+
+            OnUiThread(() => InShares.ChildNodes.Clear());            
 
             Task.Factory.StartNew(() =>
             {
@@ -270,9 +286,25 @@ namespace MegaApp.Models
 
             // Process is started so we can set the empty content template to loading already
             OutShares.SetEmptyContentTemplate(true);
+                        
+            MShareList outSharesList = MegaSdk.getOutShares();
+            if (outSharesList == null)
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadFailed_Title,
+                        AppMessages.AM_LoadOutSharesFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+
+                    OutShares.SetEmptyContentTemplate(false);
+                });
+
+                return;
+            }
 
             OnUiThread(() => OutShares.ChildNodes.Clear());
-            MShareList outSharesList = MegaSdk.getOutShares();
 
             Task.Factory.StartNew(() =>
             {

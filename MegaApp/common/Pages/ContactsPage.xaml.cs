@@ -143,9 +143,24 @@ namespace MegaApp.Pages
 
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            base.OnBackKeyPress(e);            
+            base.OnBackKeyPress(e);
+            
+            e.Cancel = CheckMultiSelectActive(e.Cancel);
+            if (e.Cancel) return;
+
             NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);            
             e.Cancel = true;
+        }
+
+        private bool CheckMultiSelectActive(bool isCancel)
+        {
+            if (isCancel) return true;
+
+            if (!_contactsViewModel.IsMultiSelectActive) return false;
+
+            ChangeMultiSelectMode();
+
+            return true;
         }
 
         private void OnAddContactClick(object sender, EventArgs e)

@@ -22,9 +22,12 @@ namespace MegaApp.Models
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
             this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
 
-#if WINDOWS_PHONE_81
+            #if WINDOWS_PHONE_80
+            this.SelectDownloadLocationCommand = null;
+            #elif WINDOWS_PHONE_81
             this.SelectDownloadLocationCommand = new DelegateCommand(SelectDownloadLocation);
-#endif
+            #endif
+
             this.MegaSdkCommand = new DelegateCommand(NavigateToMegaSdk);
             this.GoedWareCommand = new DelegateCommand(NavigateToGoedWare);
 
@@ -34,13 +37,13 @@ namespace MegaApp.Models
             _cameraUploadsIsEnabled = MediaService.GetAutoCameraUploadStatus();
             this.CameraUploadsIsEnabledText = _cameraUploadsIsEnabled ? UiResources.On : UiResources.Off;
 
-#if WINDOWS_PHONE_80
+            #if WINDOWS_PHONE_80
             this.ExportIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-#elif WINDOWS_PHONE_81
+            #elif WINDOWS_PHONE_81
             this.AskDownloadLocationIsEnabled = SettingsService.LoadSetting<bool>(SettingsResources.AskDownloadLocationIsEnabled, false);
             this.StandardDownloadLocation = SettingsService.LoadSetting<string>(
                 SettingsResources.DefaultDownloadLocation, UiResources.DefaultDownloadLocation);
-#endif
+            #endif
 
             UpdateUserData();
 
@@ -53,11 +56,7 @@ namespace MegaApp.Models
         public ICommand CopyMasterKeyCommand { get; private set; }
         public ICommand ViewMasterKeyCommand { get; private set; }
         public ICommand ChangePinLockCommand { get; private set; }
-
-#if WINDOWS_PHONE_81
         public ICommand SelectDownloadLocationCommand { get; private set; }
-#endif
-
         public ICommand MegaSdkCommand { get; private set; }
         public ICommand GoedWareCommand { get; private set; }
 
@@ -107,13 +106,13 @@ namespace MegaApp.Models
             DialogService.ShowPinLockDialog(true, this);
         }
 
-#if WINDOWS_PHONE_81
+        #if WINDOWS_PHONE_81
         private void SelectDownloadLocation(object obj)
         {
             if (App.FileOpenOrFolderPickerOpenend) return;
             FolderService.SelectFolder("SelectDefaultDownloadFolder");
         }
-#endif
+        #endif
 
         private void NavigateToMegaSdk(object obj)
         {
@@ -135,7 +134,6 @@ namespace MegaApp.Models
 
         public string MegaSdkVersion { get; private set; }
 
-//        #if WINDOWS_PHONE_80
         private bool _exportIsEnabled;
         public bool ExportIsEnabled
         {
@@ -152,9 +150,7 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabled");
             }
         }
-//        #endif
 
-//        #if WINDOWS_PHONE_81
         private bool _askDownloadLocationIsEnabled;
         public bool AskDownloadLocationIsEnabled
         {
@@ -183,7 +179,6 @@ namespace MegaApp.Models
                 OnPropertyChanged("DownloadLocationSelectionIsEnabled");
             }
         }
-//        #endif
 
         private bool _pinLockIsEnabled;
         public bool PinLockIsEnabled
@@ -248,7 +243,6 @@ namespace MegaApp.Models
             }
         }
 
-//        #if WINDOWS_PHONE_80
         private string _exportIsEnabledText;
         public string ExportIsEnabledText
         {
@@ -259,9 +253,7 @@ namespace MegaApp.Models
                 OnPropertyChanged("ExportIsEnabledText");
             }
         }
-  //      #endif
 
-//        #if WINDOWS_PHONE_81
         private string _askDownloadLocationIsEnabledText;
         public string AskDownloadLocationIsEnabledText
         {
@@ -283,7 +275,6 @@ namespace MegaApp.Models
                 OnPropertyChanged("StandardDownloadLocation");
             }
         }
-//        #endif
 
         #endregion
     }

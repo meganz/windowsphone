@@ -1076,4 +1076,12 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <value>Kiitos palautteestasi! Haluatko varmasti lopettaa Megan tilauksen?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
+  <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
+    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
+    <value>Error preparing file(s)</value>
+    <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
+  </data>
 </root>

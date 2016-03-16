@@ -61,9 +61,13 @@ namespace MegaApp.Models
 
             int childFolders = FolderService.GetNumChildFolders(this.NodePath);
             int childFiles = FolderService.GetNumChildFiles(this.NodePath, true);
-            this.Information = String.Format("{0} {1} | {2} {3}",
-                childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
-                childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
+
+            OnUiThread(() =>
+            {
+                this.Information = String.Format("{0} {1} | {2} {3}",
+                    childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
+                    childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
+            });
         }
 
         #endregion

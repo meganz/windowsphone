@@ -127,7 +127,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
           <source>Failed to get link</source>
-          <target state="translated">Ophalen van link mislukt</target>
+          <target state="translated">Ophalen van link is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
@@ -142,7 +142,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed_Title" translate="yes" space="preserve">
           <source>Preview failed</source>
-          <target state="translated">Verkrijging van voorvertoning mislukt</target>
+          <target state="translated">Tonen van voorbeeld mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
@@ -157,24 +157,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="needs-review-translation">Fout exporteren afbeelding om album 'opgeslagen foto's'. Probeer het nogmaals</target>
+          <target state="translated">Fout exporteren afbeelding om album 'opgeslagen foto's'. Probeer het nogmaals</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
           <source>Failed to save image</source>
-          <target state="translated">Mislukt afbeelding opslaan</target>
+          <target state="translated">Afbeelding opslaan is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">Bestand importeren mislukt [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Importeren bestand mislukt</target>
+          <target state="translated">Importeren van bestand is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
@@ -246,7 +246,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
           <source>Failed to remove item</source>
-          <target state="translated">Mislukt het artikel te verwijderen</target>
+          <target state="translated">Bestand verwijderen is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" space="preserve">
@@ -271,7 +271,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RenameNodeFailed_Title" translate="yes" space="preserve">
           <source>Rename failed</source>
-          <target state="translated">Hernamen mislukt</target>
+          <target state="translated">Hernoemen mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
@@ -301,7 +301,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
           <source>Save image to photos</source>
-          <target state="translated">Afbeelding opslaan voor foto's</target>
+          <target state="translated">Afbeelding opslaan in foto's</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
@@ -365,7 +365,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion_Title" translate="yes" space="preserve">
           <source>Remove items?</source>
-          <target state="translated">Artikelen verwijderen?</target>
+          <target state="translated">Bestanden verwijderen?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
@@ -407,7 +407,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" space="preserve">
           <source>Item moved</source>
-          <target state="translated">Artikel verwijderd</target>
+          <target state="translated">Item verplaatst</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
@@ -418,7 +418,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move items?</source>
-          <target state="translated">Artikelen verplaatsen?</target>
+          <target state="translated">Items verplaatsten?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
@@ -429,7 +429,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces_Title" translate="yes" space="preserve">
           <source>Items moved</source>
-          <target state="translated">Artikel verplaatst</target>
+          <target state="translated">Items verplaatst</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
@@ -440,7 +440,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">Transfers in afwachting</target>
+          <target state="translated">Wachtende overdrachten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
@@ -451,7 +451,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">Transfers in afwachting</target>
+          <target state="translated">Wachtende overdrachten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
@@ -471,7 +471,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/WrongPassword_Title" translate="yes" space="preserve">
           <source>Wrong password</source>
-          <target state="translated">Verkeerde wachtwoord</target>
+          <target state="translated">Verkeerd wachtwoord</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
@@ -497,7 +497,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" space="preserve">
           <source>Pause failed</source>
-          <target state="translated">Pauze mislukt</target>
+          <target state="translated">Pauzeren mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
@@ -538,7 +538,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PhotoUploadError_Title" translate="yes" space="preserve">
           <source>Photo upload failed</source>
-          <target state="translated">Foto upload mislukt</target>
+          <target state="translated">Foto uploaden is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FileNotFound" translate="yes" space="preserve">
@@ -548,7 +548,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/FileNotFound_Title" translate="yes" space="preserve">
           <source>File not found</source>
-          <target state="translated">File niet gevonden</target>
+          <target state="translated">Bestand niet gevonden</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed" translate="yes" space="preserve">
@@ -558,7 +558,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OpenFileFailed_Title" translate="yes" space="preserve">
           <source>File failed to open</source>
-          <target state="translated">Open bestand mislukt</target>
+          <target state="translated">Openen bestand is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a file failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSelfieFailed" translate="yes" space="preserve">
@@ -609,7 +609,7 @@ Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschr
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="needs-review-translation">U heeft geen standaard downloadlocatie voor uw bestanden geselecteerd.
+          <target state="translated">U heeft geen standaard downloadlocatie voor uw bestanden geselecteerd.
 
 Om verder te gaan met het downloaden, selecteert u een doelmap of gaat u naar voorkeuren om uw standaard downloadlocatie in te stellen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -638,12 +638,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed_Title" translate="yes" space="preserve">
           <source>Error copying file</source>
-          <target state="translated">Kopiëren van het bestand mislukte</target>
+          <target state="translated">Kopiëren van het bestand is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="needs-review-translation">U hebt geen toestemming om dit type bestand te kopiëren naar de doelmap. Waarschijnlijk hebt u het  geprobeert op te slaan/te kopiëren naar een SD-kaart, een bestand van een niet ondersteunde type.
+          <target state="translated">U hebt geen toestemming om dit type bestand te kopiëren naar de doelmap. Waarschijnlijk hebt u het  geprobeert op te slaan/te kopiëren naar een SD-kaart, een bestand van een niet ondersteunde type.
 Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw apparaat.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
@@ -659,7 +659,7 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
         </trans-unit>
         <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" space="preserve">
           <source>Clipboard failed</source>
-          <target state="translated">Klembord mislukte</target>
+          <target state="translated">Kopiëren naar klembord mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
@@ -735,7 +735,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailed_Title" translate="yes" space="preserve">
           <source>Select folder failed</source>
-          <target state="translated">Selecteer de map mislukt</target>
+          <target state="translated">Selecteren van map is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UploadNodeFailed" translate="yes" space="preserve">
@@ -800,7 +800,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
           <source>Photo capture failed</source>
-          <target state="translated">Vastleggen van foto's  is mislukt</target>
+          <target state="translated">Foto nemen is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
@@ -873,7 +873,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">Je gaat je MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om je te helpen van gedachten te veranderen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -944,7 +944,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Het ophalen van de betalings url is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
+          <target state="translated">Het ophalen van de betalings url is mislukt. Probeer alstublieft opnieuw. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1042,7 +1042,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="needs-review-translation">Verwijderen van contactpersoon is mislukt {0}. Probeer alstublieft opnieuw [{0}]</target>
+          <target state="translated">Verwijderen van contactpersoon is mislukt {0}. Probeer alstublieft opnieuw [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1136,7 +1136,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">Je hebt geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1147,35 +1147,35 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">De naam van het bestand '{0}' is niet geldig of heeft ongeldige tekens. Verander het alstublieft en probeer het opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
           <source>Invalid file name</source>
-          <target state="translated">Invalid file name</target>
+          <target state="translated">Ongeldige bestandsnaam</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">Het pad van bestand/folder '{0}' is te lang. Wijzig deze a.u.b. en probeer opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong_Title" translate="yes" space="preserve">
           <source>Path too long</source>
-          <target state="translated">Path too long</target>
+          <target state="translated">Pad is te lang</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">De naam of het pad van folder '{0}' is niet geldig. Wijzig deze a.u.b. en probeer opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
           <source>Invalid name or path</source>
-          <target state="translated">Invalid name or path</target>
+          <target state="translated">Ongeldig pad of naam</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
@@ -1185,25 +1185,45 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <target state="translated">Selecteren van map is mislukt. Probeer alstublieft opnieuw of selecteer een andere map.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Importeren bestand mislukt</target>
+          <target state="translated">Importeren van bestand is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 </note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
+          <source>Failed to prepare file(s) for upload. Please try again.</source>
+          <target state="translated">Het voorbereiden van bestand(en) voor de upload is mislukt. Probeer alstublieft opnieuw.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="new">Error preparing file(s)</target>
+          <target state="translated">Fout tijdens het voorbereiden van bestand(en)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
-          <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
+          <source>Failed to download file. Please try again.</source>
+          <target state="new">Failed to download file. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -20,6 +20,15 @@ namespace MegaApp.Services
             };
         }
 
+        public static RadMoveAnimation GetCloseDialogAnimation()
+        {
+            return new RadMoveAnimation()
+            {
+                MoveDirection = MoveDirection.BottomOut,
+                Duration = new Duration(new TimeSpan(0, 0, 0, 0, 200))
+            };
+        }
+
         public static RadMoveAnimation GetOpenMessageDialogAnimation()
         {
             return new RadMoveAnimation()

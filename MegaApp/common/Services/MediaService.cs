@@ -106,45 +106,56 @@ namespace MegaApp.Services
 
         public static void CaptureCameraImage(FolderViewModel currentFolder)
         {
-            var cameraCaptureTask = new CameraCaptureTask();
-
-            cameraCaptureTask.Completed += async (sender, result) =>
+            try
             {
-                if (result == null || result.TaskResult != TaskResult.OK) return;
+                var cameraCaptureTask = new CameraCaptureTask();                
 
-                try
+                cameraCaptureTask.Completed += async (sender, result) =>
                 {
-                    string fileName = Path.GetFileName(result.OriginalFileName);
-                    if (fileName != null)
+                    if (result == null || result.TaskResult != TaskResult.OK) return;
+
+                    try
                     {
-                        string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
-                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        string fileName = Path.GetFileName(result.OriginalFileName);
+                        if (fileName != null)
                         {
-                            await result.ChosenPhoto.CopyToAsync(fs);
-                            await fs.FlushAsync();
-                            fs.Close();
+                            string newFilePath = Path.Combine(AppService.GetUploadDirectoryPath(), fileName);
+                            using (var fs = new FileStream(newFilePath, FileMode.Create))
+                            {
+                                await result.ChosenPhoto.CopyToAsync(fs);
+                                await fs.FlushAsync();
+                                fs.Close();
+                            }
+                            var uploadTransfer = new TransferObjectModel(currentFolder.MegaSdk,
+                                currentFolder.FolderRootNode,
+                                TransferType.Upload,
+                                newFilePath);
+                            App.MegaTransfers.Insert(0, uploadTransfer);
+                            uploadTransfer.StartTransfer();
                         }
-                        var uploadTransfer = new TransferObjectModel(currentFolder.MegaSdk,
-                            currentFolder.FolderRootNode, 
-                            TransferType.Upload,
-                            newFilePath);
-                        App.MegaTransfers.Insert(0, uploadTransfer);
-                        uploadTransfer.StartTransfer();
-                    }
 
-                    NavigateService.NavigateTo(typeof (TransferPage), NavigationParameter.Normal);
-                }
-                catch (Exception)
-                {
-                    new CustomMessageDialog(
+                        NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+                    }
+                    catch (Exception)
+                    {
+                        new CustomMessageDialog(
                             AppMessages.PhotoUploadError_Title,
                             AppMessages.PhotoUploadError,
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
-                }
-            };
-            
-            cameraCaptureTask.Show();
+                    }
+                };
+
+                cameraCaptureTask.Show();
+            }
+            catch (InvalidOperationException e)
+            {
+                new CustomMessageDialog(
+                    AppMessages.CapturePhotoFailed_Title,
+                    String.Format(AppMessages.CapturePhotoFailed, e.Message),
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
         }
 
         public static bool SetAutoCameraUpload(bool onOff)
