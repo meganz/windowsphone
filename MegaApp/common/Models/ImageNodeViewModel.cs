@@ -20,7 +20,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             // Image node downloads to the image path of the full original image
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalImagePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
 
             this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
 
@@ -32,7 +32,7 @@ namespace MegaApp.Models
 
         public override async void Open()
         {
-            await FileService.OpenFile(LocalImagePath);
+            await FileService.OpenFile(LocalFilePath);
         }
 
         #endregion
@@ -125,9 +125,9 @@ namespace MegaApp.Models
 
         private void GetImage(bool isForPreview)
         {
-            if (FileService.FileExists(LocalImagePath))
+            if (FileService.FileExists(LocalFilePath))
             {
-                ImageUri = new Uri(LocalImagePath);
+                ImageUri = new Uri(LocalFilePath);
 
                 if (!isForPreview) return;
 
@@ -183,35 +183,6 @@ namespace MegaApp.Models
                 return Path.Combine(ApplicationData.Current.LocalFolder.Path,
                                     AppResources.PreviewsDirectory,
                                     this.OriginalMNode.getBase64Handle());
-            }
-        }
-
-        public string LocalImagePath
-        {
-            get
-            {
-                if (ParentContainerType != ContainerType.PublicLink)
-                {
-                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory,
-                        MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
-                }
-                else
-                {
-                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory, this.Name);
-                }
-            }
-        }
-
-        public string PublicImagePath
-        {
-            get
-            {
-                return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
-                                    String.Format("{0}{1}",
-                                        this.OriginalMNode.getBase64Handle(),
-                                        Path.GetExtension(base.Name)));
             }
         }
 
