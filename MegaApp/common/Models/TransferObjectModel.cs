@@ -346,13 +346,13 @@ namespace MegaApp.Models
                                     var imageNode = node as ImageNodeViewModel;
                                     if (imageNode != null)
                                     {
-                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(imageNode.LocalImagePath));
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
 
                                         bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
                                         if (exportToPhotoAlbum)
                                             Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
                                     }
-                                    #endif
+#endif
                                 }
                             }
                             else //If is a standard download transfer (no for save for offline)
@@ -361,7 +361,7 @@ namespace MegaApp.Models
                                 var imageNode = SelectedNode as ImageNodeViewModel;
                                 if (imageNode != null)
                                 {
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(imageNode.LocalImagePath));
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
 
                                     if (AutoLoadImageOnFinish)
                                     {
@@ -374,7 +374,7 @@ namespace MegaApp.Models
                                     }
                                     
                                     #if WINDOWS_PHONE_81
-                                    if(!await FinishDownload(imageNode.LocalImagePath,imageNode.Name))
+                                    if(!await FinishDownload(FilePath,imageNode.Name))
                                     {
                                         Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                                         break;
@@ -388,7 +388,7 @@ namespace MegaApp.Models
                                     if (node != null)
                                     {
                                         
-                                        if (!await FinishDownload(node.LocalFilePath, node.Name))
+                                        if (!await FinishDownload(FilePath, node.Name))
                                         {
                                             Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
                                             break;

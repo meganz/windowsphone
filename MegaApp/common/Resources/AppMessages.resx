@@ -1086,4 +1086,16 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <value>Failed to download file. Please try again.</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>Failed to load</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>Could not load incoming shared items from MEGA. Please try again or click on refresh.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
 </root>
