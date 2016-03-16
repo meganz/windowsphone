@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/PM_CancelSubscription" translate="yes" space="preserve">
           <source>Canceling subscription...</source>
-          <target state="translated">Canceling subscription...</target>
+          <target state="translated">Annuleren abonnement...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelTransfer" translate="yes" space="preserve">
@@ -18,7 +18,7 @@
         </trans-unit>
         <trans-unit id="Resx/PM_ChangePassword" translate="yes" space="preserve">
           <source>Changing password...</source>
-          <target state="translated">Changing password...</target>
+          <target state="translated">Wachtwoord wijzigen...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBin" translate="yes" space="preserve">
@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/PM_CloseSession" translate="yes" space="preserve">
           <source>Closing session...</source>
-          <target state="translated">Sessie wordt gesloten...</target>
+          <target state="translated">Sessie wordt afgesloten...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
@@ -215,12 +215,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" space="preserve">
           <source>Resuming transfers...</source>
-          <target state="translated">Hervatten transfers...</target>
+          <target state="translated">Hervatten overdrachten...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when resuming transfers - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveForOffline" translate="yes" space="preserve">
           <source>Saving for offline...</source>
-          <target state="translated">Wordt opgeslagen voor offline...</target>
+          <target state="translated">Opslaan voor offline gebruik...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when saving folders/files for offline - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ServersTooBusy" translate="yes" space="preserve">

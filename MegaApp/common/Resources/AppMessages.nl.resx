@@ -214,7 +214,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
-    <value>Ophalen van link mislukt</value>
+    <value>Ophalen van link is mislukt</value>
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
@@ -226,7 +226,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a image preview failed.</comment>
   </data>
   <data name="GetPreviewFailed_Title" xml:space="preserve">
-    <value>Verkrijging van voorvertoning mislukt</value>
+    <value>Tonen van voorbeeld mislukt</value>
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
@@ -242,11 +242,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
-    <value>Mislukt afbeelding opslaan</value>
+    <value>Afbeelding opslaan is mislukt</value>
     <comment>Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImportFileFailed_Title" xml:space="preserve">
-    <value>Importeren bestand mislukt</value>
+    <value>Importeren van bestand is mislukt</value>
     <comment>Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</comment>
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
@@ -304,7 +304,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeFailed" xml:space="preserve">
-    <value>Mislukt het artikel te verwijderen</value>
+    <value>Bestand verwijderen is mislukt</value>
     <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
   </data>
   <data name="RemoveNodeFailed_Title" xml:space="preserve">
@@ -324,7 +324,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed.</comment>
   </data>
   <data name="RenameNodeFailed_Title" xml:space="preserve">
-    <value>Hernamen mislukt</value>
+    <value>Hernoemen mislukt</value>
     <comment>Title of the dialog displayed when the process/request to remove definitely an item node from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsConfirmAccount" xml:space="preserve">
@@ -348,7 +348,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
-    <value>Afbeelding opslaan voor foto's</value>
+    <value>Afbeelding opslaan in foto's</value>
     <comment>Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</comment>
   </data>
   <data name="UserNotOnline" xml:space="preserve">
@@ -400,7 +400,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
   </data>
   <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
-    <value>Artikelen verwijderen?</value>
+    <value>Bestanden verwijderen?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiRemoveSucces" xml:space="preserve">
@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
     <comment>Message of the dialog displayed when move successfully one single node to the rubbish bin.</comment>
   </data>
   <data name="MoveToRubbishBinSuccess_Title" xml:space="preserve">
-    <value>Artikel verwijderd</value>
+    <value>Item verplaatst</value>
     <comment>Title of the dialog displayed when move successfully one single node to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion" xml:space="preserve">
@@ -443,7 +443,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>Artikelen verplaatsen?</value>
+    <value>Items verplaatsten?</value>
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
@@ -452,7 +452,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces_Title" xml:space="preserve">
-    <value>Artikel verplaatst</value>
+    <value>Items verplaatst</value>
     <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
@@ -461,7 +461,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersLogout_Title" xml:space="preserve">
-    <value>Transfers in afwachting</value>
+    <value>Wachtende overdrachten</value>
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
@@ -470,7 +470,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersExit_Title" xml:space="preserve">
-    <value>Transfers in afwachting</value>
+    <value>Wachtende overdrachten</value>
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
@@ -486,7 +486,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Message of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password.</comment>
   </data>
   <data name="WrongPassword_Title" xml:space="preserve">
-    <value>Verkeerde wachtwoord</value>
+    <value>Verkeerd wachtwoord</value>
     <comment>Title of the dialog displayed in cases that the app requires that the user type the password and the user types a wrong password - (String as short as possible).</comment>
   </data>
   <data name="DownloadLimitMessage_Title" xml:space="preserve">
@@ -502,7 +502,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
-    <value>Pauze mislukt</value>
+    <value>Pauzeren mislukt</value>
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
@@ -535,7 +535,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when the process/request to upload a photo failed.</comment>
   </data>
   <data name="PhotoUploadError_Title" xml:space="preserve">
-    <value>Foto upload mislukt</value>
+    <value>Foto uploaden is mislukt</value>
     <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
   </data>
   <data name="FileNotFound" xml:space="preserve">
@@ -543,7 +543,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
   </data>
   <data name="FileNotFound_Title" xml:space="preserve">
-    <value>File niet gevonden</value>
+    <value>Bestand niet gevonden</value>
     <comment>Title of the dialog displayed when a user try to open a file that can't be found and the process failed - (String as short as possible).</comment>
   </data>
   <data name="OpenFileFailed" xml:space="preserve">
@@ -551,7 +551,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when the process to open a file failed.</comment>
   </data>
   <data name="OpenFileFailed_Title" xml:space="preserve">
-    <value>Open bestand mislukt</value>
+    <value>Openen bestand is mislukt</value>
     <comment>Title of the dialog displayed when the process to open a file failed - (String as short as possible).</comment>
   </data>
   <data name="UploadSelfieFailed" xml:space="preserve">
@@ -616,7 +616,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
-    <value>Kopiëren van het bestand mislukte</value>
+    <value>Kopiëren van het bestand is mislukt</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
@@ -633,7 +633,7 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
     <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
   </data>
   <data name="ClipboardFailed_Title" xml:space="preserve">
-    <value>Klembord mislukte</value>
+    <value>Kopiëren naar klembord mislukt</value>
     <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
@@ -694,7 +694,7 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SelectFolderFailed_Title" xml:space="preserve">
-    <value>Selecteer de map mislukt</value>
+    <value>Selecteren van map is mislukt</value>
     <comment>Title of the dialog displayed when the process to select a folder failed - (String as short as possible).</comment>
   </data>
   <data name="UploadNodeFailed" xml:space="preserve">
@@ -747,7 +747,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CapturePhotoFailed_Title" xml:space="preserve">
-    <value>Vastleggen van foto's  is mislukt</value>
+    <value>Foto nemen is mislukt</value>
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
@@ -1010,11 +1010,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <value>Je gaat je MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om je te helpen van gedachten te veranderen.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <value>Je hebt geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1023,30 +1023,30 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>De naam van het bestand '{0}' is niet geldig of heeft ongeldige tekens. Verander het alstublieft en probeer het opnieuw.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Invalid file name</value>
+    <value>Ongeldige bestandsnaam</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <value>Het pad van bestand/folder '{0}' is te lang. Wijzig deze a.u.b. en probeer opnieuw.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>Path too long</value>
+    <value>Pad is te lang</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>De naam of het pad van folder '{0}' is niet geldig. Wijzig deze a.u.b. en probeer opnieuw.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
-    <value>Invalid name or path</value>
+    <value>Ongeldig pad of naam</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
@@ -1054,11 +1054,11 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <value>Selecteren van map is mislukt. Probeer alstublieft opnieuw of selecteer een andere map.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>File import failed [{0}]</value>
+    <value>Bestand importeren mislukt [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1073,9 +1073,17 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_ImportFileFailedNoErrorCode" xml:space="preserve">
-    <value>Importeren bestand mislukt</value>
+    <value>Importeren van bestand is mislukt</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 </comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
+    <value>Het voorbereiden van bestand(en) voor de upload is mislukt. Probeer alstublieft opnieuw.</value>
+    <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
+    <value>Fout tijdens het voorbereiden van bestand(en)</value>
+    <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
 </root>
