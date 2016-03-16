@@ -1026,7 +1026,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Invalid file name</value>
+    <value>Неисправно име датотеке</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
@@ -1035,7 +1035,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>Path too long</value>
+    <value>Предугачка путања</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
@@ -1048,7 +1048,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
-    <value>Invalid link</value>
+    <value>Неисправан линк</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
@@ -1075,5 +1075,13 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
     <value>Хвала Вам на коментару! Да ли сте сигурни да желите да откажете Вашу MEGA претплату?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
+    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
+    <value>Error preparing file(s)</value>
+    <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
 </root>
