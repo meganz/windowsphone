@@ -1203,6 +1203,21 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <target state="new">Failed to download file. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
+          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Failed to load</source>
+          <target state="new">Failed to load</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" xml:space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
           <target state="new">Failed to prepare file(s) for upload. Please try again.</target>
