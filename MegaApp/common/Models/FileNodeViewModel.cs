@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using Windows.Storage;
 using mega;
@@ -55,26 +56,23 @@ namespace MegaApp.Models
         {
             get
             {
-                if(ParentContainerType != ContainerType.PublicLink)
+                String nodePath = MegaSdk.getNodePath(this.OriginalMNode);
+
+                if (String.IsNullOrWhiteSpace(nodePath) || ParentContainerType == ContainerType.PublicLink)
                 {
-                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory,
-                        MegaSdk.getNodePath(this.OriginalMNode).Remove(0, 1).Replace("/", "\\"));
+                    nodePath = this.Name;
                 }
                 else
                 {
-                    return Path.Combine(ApplicationData.Current.LocalFolder.Path,
-                        AppResources.DownloadsDirectory, this.Name);
-                }                
-            }
-        }
+                    // If node container is Rubbish Bin
+                    if (nodePath.StartsWith("//bin"))
+                        nodePath = nodePath.Remove(0, 7).Replace("/", "\\"); //Need to remove the "//bin//" of the beginning of the path
+                    else
+                        nodePath = nodePath.Remove(0, 1).Replace("/", "\\"); //Need to remove the "/" of the beginning of the path
+                }
 
-        public string PublicFilePath
-        {
-            get
-            {
-                return Path.Combine(AppService.GetSelectedDownloadDirectoryPath(),
-                                    this.Name);                
+                return Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                    AppResources.DownloadsDirectory, nodePath);
             }
         }
 

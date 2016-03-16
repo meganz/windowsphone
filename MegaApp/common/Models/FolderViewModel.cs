@@ -559,8 +559,7 @@ namespace MegaApp.Models
             }
             #elif WINDOWS_PHONE_81
             if (downloadFolder == null)
-            {
-                this.AppInformation.PickerOrAsyncDialogIsOpen = true;
+            {                
                 if (!await FolderService.SelectDownloadFolder()) return;
             }
             #endif

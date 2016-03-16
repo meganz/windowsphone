@@ -139,7 +139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
   </data>
   <data name="ConfirmNeeded" xml:space="preserve">
-    <value>Check your e-mail and click the link to login and confirm your account</value>
+    <value>تأكد من البريد الإلكتروني الخاص بك وانقر على الرابط للدخول وتأكيد حسابك</value>
     <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
   </data>
   <data name="ConfirmNeeded_Title" xml:space="preserve">
@@ -181,7 +181,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
-    <value>Failed to retrieve a download link. Please try again.</value>
+    <value>فشل استعادة رابط التحميل.يرجي المحاولة مرة اخري.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
   </data>
   <data name="DownloadLinkFailed_Title" xml:space="preserve">
@@ -267,7 +267,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MoveEqualsParent" xml:space="preserve">
-    <value>Destination folder is the same as the source folder. Move cancelled.</value>
+    <value>مجلد الوجهة نفس المصدر. تم إلغاء النقل</value>
     <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -336,7 +336,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Please fill in your e-mail address and your MEGA password.</value>
+    <value>يرجى ملء عنوان البريد الإلكتروني وكلمة المرور الخاصة بك في MEGA.</value>
     <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
@@ -705,7 +705,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upload a node failed - (String as short as possible).</comment>
   </data>
   <data name="SelectFileFailed" xml:space="preserve">
-    <value>Failed to select file(s). Please, try again [{0}]</value>
+    <value>فشل في اختيار الملف(ات). الرجاء المحاولة ثانية  [{0}]</value>
     <comment>Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -731,7 +731,7 @@ Preserve the {0} code because is for include name of the node to be removed in r
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
-    <value>Failed to retrieve your user data. Please try again. [{0}]</value>
+    <value>فشل في استرداد بيانات المستخدم الخاص بك. حاول مرة اخرى. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -749,7 +749,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</comment>
   </data>
   <data name="CapturePhotoVideoFailed" xml:space="preserve">
-    <value>Failed to capture photo or video. Please, try again [{0}]</value>
+    <value>فشل في التقاط صورة أو فيديو. الرجاء المحاولة ثانية [{0}]</value>
     <comment>Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -776,7 +776,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
-    <value>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</value>
+    <value>خطأ في فتح الاختصار. ربما الاختصار غير متوفر أو مجلد الوجهة محذوف.</value>
     <comment>Message of the dialog displayed when the user is trying to open an invalid shortcut.</comment>
   </data>
   <data name="ShortCutFailed_Title" xml:space="preserve">
@@ -792,11 +792,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCreditCardPayment" xml:space="preserve">
-    <value>Please fill in all the required fields and try again.</value>
+    <value>يرجى تعبئة جميع البيانات المطلوبة وحاول مرة أخرى.</value>
     <comment>Message of the dialog displayed when required fields for credit card payment are not filled in.</comment>
   </data>
   <data name="WrongDataFormatCreditCardPayment" xml:space="preserve">
-    <value>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</value>
+    <value>رقم بطاقة الائتمان، تاريخ الانتهاء شهر/سنة وCVV يجب ان يكون رقمي. الرجاء التأكد من كل شيء صحيح والمحاولة ثانية</value>
     <comment>Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</comment>
   </data>
   <data name="WrongDataFormat_Title" xml:space="preserve">
@@ -804,7 +804,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscriptionFailed" xml:space="preserve">
-    <value>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</value>
+    <value>لم يتم إلغاء الاشتراك بشكل صحيح. يرجى الاتصال support@mega.nz لإلغاء اشتراكك.</value>
     <comment>Message of the dialog displayed when the process/request to cancel a subscription failed.</comment>
   </data>
   <data name="CancelSubscriptionFailed_Title" xml:space="preserve">
@@ -844,7 +844,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed" xml:space="preserve">
-    <value>Failed to retrieve the available payment methods. Please try again. [{0}]</value>
+    <value>فشل في استرداد وسائل الدفع المتاحة. حاول مرة اخرى. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -853,7 +853,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentUrlFailed" xml:space="preserve">
-    <value>Failed to retrieve the payment Url. Please try again. [{0}]</value>
+    <value>فشل في استرجاع رابط عملية الدفع. الرجاء المحاولة ثانية. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -862,7 +862,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</comment>
   </data>
   <data name="BackgroundAgentDisabled" xml:space="preserve">
-    <value>Background agents for MEGA have been disabled by the user</value>
+    <value>عناصر الخلفية لMEGA  تم تعطيلها من قبل المستخدم</value>
     <comment>Message of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="BackgroundAgentDisabled_Title" xml:space="preserve">
@@ -870,7 +870,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</value>
+    <value>من أجل عمل تحميلات الكاميرا التلقائية بشكل صحيح، فعل خيار "البقاء مسجلا للدخول". هل تود تفعيل هذا الخيار؟</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -887,7 +887,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
-    <value>The contact invitation could not be sent. Please try again.</value>
+    <value>لا يمكن أن يتم إرسال دعوة الاتصال. حاول مرة اخرى.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
@@ -895,7 +895,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</value>
+    <value>المستخدم {0} قد تم دعوته وسيظر على لائحة جهات اتصالك حالما يقبل الدعوة </value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -908,7 +908,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Your account has been updated. Do you want to check the new account details?</value>
+    <value>تم تحديث الحساب الخاص بك. هل ترغب في التحقق من تفاصيل حساب جديد؟</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -916,7 +916,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>شهادتنا SSL/TLS لايمكن توثيقها، ربما تتأثر بهجوم رجل في الوسط.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -924,7 +924,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
+    <value>مهمة تحميلات الكاميرا التلقائية قد فشل. تستطيع إعادة تفعيله من صفحة الإعدادات.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
@@ -932,7 +932,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
-    <value>Failed to remove the contact {0}. Please try again. [{0}]</value>
+    <value>فشل في حذف جهة الاتصال {0}. الرجاء المحاولة ثانية. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -962,11 +962,11 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Please fill in your old MEGA password and your new MEGA password.</value>
+    <value>يرجى ملء كلمة السر MEGA القديمة و كلمة السر MEGA الجديدة.</value>
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
-    <value>Failed to close the session. Please try again. [{0}]</value>
+    <value>فشل اغلاق الجلسة. يرجي المحاولة مرة اخري. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -975,7 +975,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
-    <value>Failed to close the session. Please try again. [{0}]</value>
+    <value>فشل اغلاق الجلسة. يرجي المحاولة مرة اخري. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
@@ -984,7 +984,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
   </data>
   <data name="CleanRubbishBinFailed" xml:space="preserve">
-    <value>Failed to clear the rubbish bin. Please try again.</value>
+    <value>فشل في إفراغ سلة المحذوفات. الرجاء المحاولة ثانية.</value>
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
@@ -1004,15 +1004,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
-    <value>You cannot perform this action. Please connect to the Internet and try again.</value>
+    <value>لايمكن تنفيذ هذه الخطوة. الرجاء الاتصال بالانترنت ثم المحاولة ثانية</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <value>أنت على وشك إلغاء اشتراكك ب MEGA. فضلا أخبرنا إن كان هناك أي شيء نستطيع فعله لك لنساعدك فيه ونغير رأيك حول الحذف.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <value>ليس لديك إذن بالولوج إلى المسار '{0}'. الرجاء اختيار مسار آخر والمحاولة ثانية</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1021,7 +1021,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>اسم الملف  '{0}' غير متوفر أو لديه رموز غير مسموح بها، الرجاء تغيير الاسم ثم المحاولة ثانية.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1030,7 +1030,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <value>مسار الملف/المجلد '{0}' طويل جدا. الرجاء تغييره ثم المحاولة ثانية</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -1039,7 +1039,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>اسم مسار المجلد '{0}' غير متوفر أو يحتوي على عناصر غير مسموح بها، الرجاء تغيير الاسم والمحاولة ثانية.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1052,11 +1052,11 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <value>فشل تحديد المجلد. يرجى المحاولة مرة أخرى أو اختيار مجلد آخر.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>File import failed [{0}]</value>
+    <value>فشل في توريد الملف [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1068,12 +1068,20 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>You have selected over {0} items ({1}) to download. Do you want to proceed?</value>
+    <value>لقد حددت أكثر من {0} عناصر ({1}) للتحميل. هل تريد المتابعة؟</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
     <value>شكرا لأفادتك! هل أنت متأكد أنك تريد إلغاء اشتراك Mega؟</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
+    <value>فشل في تجهيز الملف (ملفات) للرفع. حاول مرة أخرى</value>
+    <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
+  </data>
+  <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
+    <value>خطأ في تحضير ملف (ملفات)</value>
+    <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
 </root>

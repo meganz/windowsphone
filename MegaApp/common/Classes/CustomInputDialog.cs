@@ -105,25 +105,8 @@ namespace MegaApp.Classes
                 InputControl.Focus(); 
             };
 
-            DialogWindow.WindowOpening += (sender, args) =>
-            {
-                // If a dialog is already open, cancel openening
-                if (_appInformation.PickerOrAsyncDialogIsOpen)
-                {
-                    args.Cancel = true;
-                    return;
-                }
-
-                // Needed to only display 1 dialog at a time and to check for in back button press event
-                // on the page where the dialog is used to cancel other back button logic
-                _appInformation.PickerOrAsyncDialogIsOpen = true;
-            };
-
-            DialogWindow.WindowClosed += (sender, args) =>
-            {
-                // When the dialog is closed and finished remove this helper property
-                _appInformation.PickerOrAsyncDialogIsOpen = false;
-            };
+            DialogWindow.WindowOpening += (sender, args) => DialogService.DialogOpening(args);
+            DialogWindow.WindowClosed += (sender, args) => DialogService.DialogClosed();
 
             // Create a Grid to populate with UI controls
             var mainGrid = new Grid()

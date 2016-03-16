@@ -25,6 +25,8 @@ namespace MegaApp.Services
         {
             try
             {
+                if (String.IsNullOrWhiteSpace(filename) || HasIllegalChars(filename)) return false;
+
                 string extension = Path.GetExtension(filename);
 
                 if (extension == null) return false;

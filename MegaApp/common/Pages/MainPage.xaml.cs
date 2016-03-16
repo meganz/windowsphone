@@ -44,16 +44,13 @@ namespace MegaApp.Pages
             CloudDriveBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
             RubbishBinBreadCrumb.BreadCrumbTap += BreadCrumbControlOnOnBreadCrumbTap;
             RubbishBinBreadCrumb.HomeTap += BreadCrumbControlOnOnHomeTap;
-
-            // Subscribe to the NetworkAvailabilityChanged event
-            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
-
+            
             _mainPageViewModel.CommandStatusChanged += (sender, args) =>
             {
                 if (ApplicationBar == null) return;
                 UiService.ChangeAppBarStatus(ApplicationBar.Buttons,  ApplicationBar.MenuItems, args.Status);
             };
-        }
+        }        
 
         // Code to execute when a Network change is detected.
         private void NetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs e)
@@ -78,8 +75,6 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (!ValidActiveAndOnlineSession()) return;
-
                     NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);                    
                     OnlineBehavior(navParam);
                 }
@@ -141,15 +136,9 @@ namespace MegaApp.Pages
                 ((MainPageViewModel)this.DataContext).RubbishBin.BrowseToFolder(folderNode);
             }
         }
-        
-        private bool ValidActiveAndOnlineSession()
-        {
-            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-            {
-                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
-                return false;
-            }
 
+        private bool CheckActiveAndOnlineSession()
+        {
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
             {
@@ -160,6 +149,24 @@ namespace MegaApp.Pages
                 }
             }
 
+            return true;
+        }
+
+        private bool CheckPinLock()
+        {
+            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            {
+                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                return false;
+            }
+
+            return true;
+        }
+        
+        private bool CheckSessionAndPinLock()
+        {
+            if (!CheckActiveAndOnlineSession()) return false;
+            if (!CheckPinLock()) return false;
             return true;
         }
 
@@ -216,6 +223,9 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            // Un-Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged -= new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
             _mainPageViewModel.Deinitialize(App.GlobalDriveListener);
             base.OnNavigatedFrom(e);
         }
@@ -223,6 +233,13 @@ namespace MegaApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            // Subscribe to the NetworkAvailabilityChanged event
+            DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            // Need to check it always and no only in StartupMode, 
+            // because this is the first page loaded
+            if (!CheckSessionAndPinLock()) return;
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -258,9 +275,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
-
-                if (!ValidActiveAndOnlineSession()) return;
+                App.MegaSdk.retryPendingConnections();                
 
                 App.AppInformation.IsStartupModeActivate = false;
 
@@ -282,8 +297,7 @@ namespace MegaApp.Pages
                         navParam == NavigationParameter.Normal || navParam == NavigationParameter.AutoCameraUpload)
                 {
                     if (this.SpecialNavigation()) return;
-                    CheckNavigationParameters();
-                    return;
+                    CheckNavigationParameters();                    
                 }
             }
 
@@ -364,11 +378,7 @@ namespace MegaApp.Pages
                             if (NavigationContext.QueryString.ContainsKey("filelink"))
                                 this.GetFileLink();
 
-                            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
-                            {
-                                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
-                                return;
-                            }                            
+                            if (!CheckPinLock()) return;
                         }
 
                         checkSpecialNavigation = Load();
@@ -384,14 +394,8 @@ namespace MegaApp.Pages
 
         private bool Load()
         {
-            if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            if (CheckActiveAndOnlineSession() && !Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
             {
-                if (!SettingsService.HasValidSession())
-                {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
-                    return false;
-                }
-
                 App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                     new FastLoginRequestListener(_mainPageViewModel));
                 return false;
@@ -466,13 +470,18 @@ namespace MegaApp.Pages
 
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
 
-            // Set upload directory only once for speed improvement and if not exists, create dir
-            var uploadDir = AppService.GetUploadDirectoryPath(true);
-
+            bool exceptionCatched = false;
             try
             {
-                foreach (var file in args.Files)
+                // Set upload directory only once for speed improvement and if not exists, create dir
+                var uploadDir = AppService.GetUploadDirectoryPath(true);
+
+                // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
+                var pickedFiles = args.Files;
+                foreach (var file in pickedFiles)
                 {
+                    if (file == null) continue; // To avoid null references
+
                     try
                     {
                         string newFilePath = Path.Combine(uploadDir, file.Name);
@@ -494,6 +503,8 @@ namespace MegaApp.Pages
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
+
+                        exceptionCatched = true;
                     }
                 }
             }
@@ -504,6 +515,8 @@ namespace MegaApp.Pages
                     String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
+
+                exceptionCatched = true;
             }
             finally
             {
@@ -512,7 +525,9 @@ namespace MegaApp.Pages
                 ProgressService.SetProgressIndicator(false);
 
                 App.CloudDrive.NoFolderUpAction = true;
-                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+
+                if(!exceptionCatched)
+                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
         }
 
@@ -628,12 +643,16 @@ namespace MegaApp.Pages
 
         private bool CheckPivotInView(bool isCancel)
         {
-            if (isCancel) return true;
+            try
+            {
+                if (isCancel) return true;
 
-            if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
-            
-            MainPivot.SelectedItem = CloudDrivePivot;
-            return true;
+                if (MainPivot.SelectedItem.Equals(CloudDrivePivot)) return false;
+
+                MainPivot.SelectedItem = CloudDrivePivot;
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
         private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
@@ -1025,8 +1044,19 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            if(App.ActiveImportLink != null)
+            {
+                App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+            }
+            else
+            {
+                new CustomMessageDialog(
+                    AppMessages.ImportFileFailed_Title,
+                    AppMessages.AM_InvalidLink,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 

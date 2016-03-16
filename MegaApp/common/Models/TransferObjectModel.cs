@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Input;
@@ -135,6 +136,24 @@ namespace MegaApp.Models
 
             return true;
         }
+
+        #if WINDOWS_PHONE_81
+        private async Task<bool> FinishDownload(String sourcePath, String newFileName)
+        {
+            if (!SavedForOffline.ExistsNodeByLocalPath(sourcePath))
+            {
+                return await FileService.MoveFile(sourcePath,
+                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                    null), newFileName);
+            }
+            else
+            {
+                return await FileService.CopyFile(sourcePath,
+                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                    null), newFileName);
+            }
+        }
+        #endif
 
         #endregion
 
@@ -281,130 +300,104 @@ namespace MegaApp.Models
             {
                 case MErrorType.API_OK:
                 {
-                    if(IsSaveForOfflineTransfer)
-                    {
-                        // Need get the path on the transfer finish because  the file name can be changed
-                        // if already exists in the destiny path.
-                        var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
-                      
-                        var node = SelectedNode as NodeViewModel;
-                        var sfoNode = new SavedForOffline
-                        {
-                            Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
-                            Base64Handle = node.OriginalMNode.getBase64Handle(),
-                            LocalPath = newOfflineLocalPath,
-                            IsSelectedForOffline = true
-                        };
-
-
-                        // If is a public node (link) the destination folder is the SFO root, so the parent handle
-                        // is the handle of the root node.
-                        if(node.ParentContainerType != ContainerType.PublicLink)
-                            sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
-                        else
-                            sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
-
-                        if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
-                            SavedForOffline.Insert(sfoNode);
-                        else
-                            SavedForOffline.UpdateNode(sfoNode);
-                                                
-                        Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
-                    }
-
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
+                        TransferedBytes = TotalBytes;
                         TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
                         TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
-                    });
-
-                    var imageNode = SelectedNode as ImageNodeViewModel;
-                    if (imageNode != null)
-                    {
-                        if (AutoLoadImageOnFinish)
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
-                                if (imageNode.OriginalMNode.hasPreview()) return;
-                                imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
-                                imageNode.IsBusy = false;
-                            });
-                        }
-                        else
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {                                
-                                imageNode.ImageUri = new Uri(imageNode.LocalImagePath);
-                            });                            
-
-                            #if WINDOWS_PHONE_80
-                            bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                            if (exportToPhotoAlbum)
-                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
-                            #endif
-                        }
-
-                        #if WINDOWS_PHONE_81
-                        if(!IsSaveForOfflineTransfer)
-                        {
-                            bool result;
-                            if(!SavedForOffline.ExistsNodeByLocalPath(imageNode.LocalImagePath))
-                            {
-                                result = await FileService.MoveFile(imageNode.LocalImagePath,
-                                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                    null), imageNode.Name);
-                            }
-                            else
-                            {
-                                result = await FileService.CopyFile(imageNode.LocalImagePath,
-                                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                    null), imageNode.Name);
-                            }
-
-                            if (!result)
-                            {
-                                Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                                break;
-                            }
-                        }                        
-                        #endif
-                    }
-                    else
-                    {
-                        var node = SelectedNode as FileNodeViewModel;
-                        if (node != null)
-                        {
-                            #if WINDOWS_PHONE_81
-                            if(!IsSaveForOfflineTransfer)
-                            {
-                                bool result;
-                                if (!SavedForOffline.ExistsNodeByLocalPath(node.LocalFilePath))
-                                {
-                                    result = await FileService.MoveFile(node.LocalFilePath,
-                                        DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                        null), node.Name);
-                                }
-                                else
-                                {
-                                    result = await FileService.CopyFile(node.LocalFilePath,
-                                        DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                                        null), node.Name);
-                                }                                
-
-                                if (!result)
-                                {
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                                    break;
-                                }
-                            }                            
-                            #endif
-                        }
-                    }                    
-
+                    });                    
+                    
                     switch(Type)
                     {
                         case TransferType.Download:
+                            if (IsSaveForOfflineTransfer) //If is a save for offline download transfer
+                            {
+                                var node = SelectedNode as NodeViewModel;
+                                if (node != null)
+                                {
+                                    // Need get the path on the transfer finish because  the file name can be changed
+                                    // if already exists in the destiny path.
+                                    var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
+
+                                    var sfoNode = new SavedForOffline
+                                    {
+                                        Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
+                                        Base64Handle = node.OriginalMNode.getBase64Handle(),
+                                        LocalPath = newOfflineLocalPath,
+                                        IsSelectedForOffline = true
+                                    };
+
+                                    // If is a public node (link) the destination folder is the SFO root, so the parent handle
+                                    // is the handle of the root node.
+                                    if (node.ParentContainerType != ContainerType.PublicLink)
+                                        sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
+                                    else
+                                        sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
+
+                                    if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
+                                        SavedForOffline.Insert(sfoNode);
+                                    else
+                                        SavedForOffline.UpdateNode(sfoNode);
+
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
+
+                                    #if WINDOWS_PHONE_80
+                                    //If is download transfer of an image file
+                                    var imageNode = node as ImageNodeViewModel;
+                                    if (imageNode != null)
+                                    {
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
+
+                                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                                        if (exportToPhotoAlbum)
+                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                                    }
+#endif
+                                }
+                            }
+                            else //If is a standard download transfer (no for save for offline)
+                            {
+                                //If is download transfer of an image file 
+                                var imageNode = SelectedNode as ImageNodeViewModel;
+                                if (imageNode != null)
+                                {
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
+
+                                    if (AutoLoadImageOnFinish)
+                                    {
+                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                        {
+                                            if (imageNode.OriginalMNode.hasPreview()) return;
+                                            imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
+                                            imageNode.IsBusy = false;
+                                        });
+                                    }
+                                    
+                                    #if WINDOWS_PHONE_81
+                                    if(!await FinishDownload(FilePath,imageNode.Name))
+                                    {
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                                        break;
+                                    }
+                                    #endif
+                                }
+                                #if WINDOWS_PHONE_81
+                                else //If is a download transfer of other file type 
+                                {
+                                    var node = SelectedNode as FileNodeViewModel;
+                                    if (node != null)
+                                    {
+                                        
+                                        if (!await FinishDownload(FilePath, node.Name))
+                                        {
+                                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
+                                            break;
+                                        }                                        
+                                    }
+                                }
+                                #endif
+                            }
+
                             Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Downloaded);
                             break;
                      
@@ -458,10 +451,10 @@ namespace MegaApp.Models
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
                                 new CustomMessageDialog(
-                                        AppMessages.DownloadNodeFailed_Title,
-                                        String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
+                                    AppMessages.DownloadNodeFailed_Title,
+                                    String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             });
                                 
                             break;
@@ -470,10 +463,10 @@ namespace MegaApp.Models
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
                                 new CustomMessageDialog(
-                                        AppMessages.UploadNodeFailed_Title,
-                                        String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
+                                    AppMessages.UploadNodeFailed_Title,
+                                    String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             });
                                 
                             break;

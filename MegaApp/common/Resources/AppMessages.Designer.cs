@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to download file. Please try again..
+        /// </summary>
+        public static string AM_DownloadNodeFailedNoErrorCode {
+            get {
+                return ResourceManager.GetString("AM_DownloadNodeFailedNoErrorCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File import failed [{0}].
         /// </summary>
         public static string AM_ImportFileFailed {
@@ -147,6 +156,33 @@ namespace MegaApp.Resources {
         public static string AM_InvalidLink {
             get {
                 return ResourceManager.GetString("AM_InvalidLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to load.
+        /// </summary>
+        public static string AM_LoadFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_LoadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not load incoming shared items from MEGA. Please try again or click on refresh..
+        /// </summary>
+        public static string AM_LoadInSharesFailed {
+            get {
+                return ResourceManager.GetString("AM_LoadInSharesFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not load outgoing shared items from MEGA. Please try again or click on refresh..
+        /// </summary>
+        public static string AM_LoadOutSharesFailed {
+            get {
+                return ResourceManager.GetString("AM_LoadOutSharesFailed", resourceCulture);
             }
         }
         
