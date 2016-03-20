@@ -124,6 +124,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to delete settings. Please, try again [{0}].
+        /// </summary>
+        public static string AM_DeleteSettingsFailed {
+            get {
+                return ResourceManager.GetString("AM_DeleteSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error deleting settings.
+        /// </summary>
+        public static string AM_DeleteSettingsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_DeleteSettingsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to download file. Please try again..
         /// </summary>
         public static string AM_DownloadNodeFailedNoErrorCode {
@@ -183,6 +201,24 @@ namespace MegaApp.Resources {
         public static string AM_LoadOutSharesFailed {
             get {
                 return ResourceManager.GetString("AM_LoadOutSharesFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to load settings. Please, try again [{0}].
+        /// </summary>
+        public static string AM_LoadSettingsFailed {
+            get {
+                return ResourceManager.GetString("AM_LoadSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error loading settings.
+        /// </summary>
+        public static string AM_LoadSettingsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_LoadSettingsFailed_Title", resourceCulture);
             }
         }
         
