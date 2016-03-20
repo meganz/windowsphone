@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -477,8 +478,8 @@ namespace MegaApp.Pages
                 var uploadDir = AppService.GetUploadDirectoryPath(true);
 
                 // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
-                var pickedFiles = args.Files;
-                foreach (var file in pickedFiles)
+                IReadOnlyList<StorageFile> pickedFiles = args.Files;
+                foreach (StorageFile file in pickedFiles)
                 {
                     if (file == null) continue; // To avoid null references
 

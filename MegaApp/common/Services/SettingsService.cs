@@ -69,12 +69,28 @@ namespace MegaApp.Services
 
         public static T LoadSetting<T>(string key, T defaultValue)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            if (settings.Contains(key))
-                return (T)settings[key];
-            else
+                if (settings.Contains(key))
+                    return (T)settings[key];
+                else
+                    return defaultValue;
+            }
+            catch(Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadSettingsFailed_Title,
+                        String.Format(AppMessages.AM_LoadSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
                 return defaultValue;
+            }            
         }
 
         public static string SecureLoadSetting(string key)
@@ -84,12 +100,28 @@ namespace MegaApp.Services
 
         public static string SecureLoadSetting(string key, string defaultValue)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            if (settings.Contains(key))
-                return CryptoService.DecryptData((string)settings[key]);
-            else
+                if (settings.Contains(key))
+                    return CryptoService.DecryptData((string)settings[key]);
+                else
+                    return defaultValue;
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadSettingsFailed_Title,
+                        String.Format(AppMessages.AM_LoadSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
                 return defaultValue;
+            }            
         }
 
         public static T LoadSetting<T>(string key)
@@ -99,12 +131,26 @@ namespace MegaApp.Services
 
         public static void DeleteSetting(string key)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                var settings = IsolatedStorageSettings.ApplicationSettings;
 
-            if (!settings.Contains(key)) return;
-            
-            settings.Remove(key);
-            settings.Save();
+                if (!settings.Contains(key)) return;
+
+                settings.Remove(key);
+                settings.Save();
+            }
+            catch(Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_DeleteSettingsFailed_Title,
+                        String.Format(AppMessages.AM_DeleteSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
         }
 
         public static void DeleteFileSetting(string key)
