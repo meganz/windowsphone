@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>Le lien MEGA a été copié dans votre presse-papier</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>Copié dans le presse-papier</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>Échec de l'authentification sur l'Espace de Stockage MEGA. Veuillez essayer à nouveau [{0}]</value>

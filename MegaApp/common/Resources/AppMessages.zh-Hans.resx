@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>MEGA链接已复制至剪贴板</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>已复制到剪贴板</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>登录MEGA云端失败。请重试。[{0}]</value>

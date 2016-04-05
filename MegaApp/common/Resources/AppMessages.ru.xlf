@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">MEGA-ссылка скопирована в буфер обмена</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">Скопировано</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -1250,6 +1250,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Error loading settings</source>
           <target state="translated">Ошибка загрузки настроек</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error copying link</source>
+          <target state="new">Error copying link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="new">Failed to copy the MEGA link to your clipboard.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
       </group>
     </body>
