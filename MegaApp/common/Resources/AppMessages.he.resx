@@ -1088,4 +1088,38 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <value>שגיאה בהכנת הקובץ (קבצים)</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>שגיאה בהורדת הקובץ. אנא נסה שוב.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>שגיאה בטעינה</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>שגיאה בטעינת קבצים נכנסים בתיקייה המשותפת מ-MEGA. אנא נסה שוב או לחץ על רענון.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>שגיאה בטעינת קבצים יוצאים בתיקייה המשותפת מ-MEGA. אנא נסה שוב או לחץ על רענון.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>שגיאה במחיקת ההגדרות. אנא נסה שוב. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>שגיאה במחיקת ההגדרות</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>שגיאה בטעינת ההגדרות. אנא נסה שוב. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>שגיאה בטעינת ההגדרות</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
 </root>

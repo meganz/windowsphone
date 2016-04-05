@@ -1084,4 +1084,38 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <value>Error preparing file(s)</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>Failed to download the file. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>Учитавање неуспешно</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>Failed to delete settings. Please try again. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>Error deleting settings</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>Failed to load settings. Please try again. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>Error loading settings</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
 </root>

@@ -1085,4 +1085,38 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <value>Chyba při přípravě souborů</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>Nepodařilo se stáhnout soubor. Zkuste to znovu.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>Nepodařilo se načíst</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>Nepadařilo se načíst příchozí sdílené položky z MEGA. Zkuste to znovu nebo klikněte na Obnovit.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>Nepadařilo se načíst odchozí sdílené položky z MEGA. Zkuste to znovu nebo klikněte na Obnovit.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>Nepodařilo se odstranit nastavení. Zkuste to znovu. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>Chyba při odstraňování nastavení</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>Nepodařilo se načíst nastavení. Zkuste to znovu. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>Chyba při načítání nastavení</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
 </root>
