@@ -529,7 +529,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="MasterKey" xml:space="preserve">
-    <value>万能秘钥</value>
+    <value>主密钥</value>
     <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
@@ -1101,7 +1101,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
-    <value>Upload settings</value>
+    <value>上传设置</value>
     <comment>Label for the auto camera upload setting options</comment>
   </data>
   <data name="Incoming" xml:space="preserve">
@@ -1121,7 +1121,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Your new password</value>
+    <value>您的新密码</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -1149,7 +1149,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>No shared folders</value>
+    <value>无共享文件夹</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
@@ -1169,7 +1169,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>Confirm account</value>
+    <value>确认账户</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1177,7 +1177,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateFolder" xml:space="preserve">
-    <value>Folder name:</value>
+    <value>文件夹名:</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
@@ -1209,7 +1209,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
-    <value>Close session</value>
+    <value>关闭会话</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
