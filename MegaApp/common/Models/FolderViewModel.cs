@@ -314,9 +314,13 @@ namespace MegaApp.Models
                 case MNodeType.TYPE_UNKNOWN:
                     break;
                 case MNodeType.TYPE_FILE:
-                    ProcessFileNode(node);
+                    // If the user is moving nodes don't process the file node
+                    if (CurrentDisplayMode != DriveDisplayMode.MoveItem)
+                        ProcessFileNode(node);
                     break;
                 case MNodeType.TYPE_FOLDER:
+                    // If the user is moving nodes and the folder is one of the selected nodes don't navigate to it
+                    if ((CurrentDisplayMode == DriveDisplayMode.MoveItem) && (IsSelectedNode(node))) return;
                     BrowseToFolder(node);
                     break;
                 case MNodeType.TYPE_ROOT:
@@ -328,6 +332,32 @@ namespace MegaApp.Models
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        /// <summary>
+        /// Check if a node is in the selected nodes group for move, copy or any other action.
+        /// </summary>        
+        /// <param name="node">Node to check if is in the selected node list</param>        
+        /// <returns>True if is a selected node or false in other case</returns>
+        private bool IsSelectedNode(IMegaNode node)
+        {
+            if ((SelectedNodes != null) && (SelectedNodes.Count > 0))
+            {
+                for (int index = 0; index < SelectedNodes.Count; index++)
+                {
+                    var selectedNode = SelectedNodes[index];
+                    if ((selectedNode != null) && (node.OriginalMNode.getBase64Handle() == selectedNode.OriginalMNode.getBase64Handle()))
+                    {   
+                        //Update the selected nodes list values
+                        node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                        SelectedNodes[index] = node;
+
+                        return true;
+                    }
+                }
+            }            
+
+            return false;
         }
 
         public void SetView(ViewMode viewMode)
@@ -843,12 +873,20 @@ namespace MegaApp.Models
                 // If node creation failed for some reason, continue with the rest and leave this one
                 if (node == null) continue;
 
-                //if (CurrentDisplayMode == CurrentDisplayMode.MoveItem && FocusedNode != null &&
-                //    node.OriginalMNode.getBase64Handle() == FocusedNode.OriginalMNode.getBase64Handle())
-                //{
-                //    node.DisplayMode = NodeDisplayMode.SelectedForMove;
-                //    FocusedNode = node;
-                //}
+                // If the user is moving nodes, check if the node had been selected to move 
+                // and establish the corresponding display mode
+                if (CurrentDisplayMode == DriveDisplayMode.MoveItem)
+                {
+                    // Check if it is the only focused node
+                    if((FocusedNode != null) && (node.OriginalMNode.getBase64Handle() == FocusedNode.OriginalMNode.getBase64Handle()))
+                    {
+                        node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                        FocusedNode = node;
+                    }
+
+                    // Check if it is one of the multiple selected nodes
+                    IsSelectedNode(node);
+                }
 
                 helperList.Add(node);
 

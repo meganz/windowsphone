@@ -689,6 +689,10 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
+            // If the user is moving nodes, don't show the contextual menu
+            if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode == DriveDisplayMode.MoveItem) 
+                e.Cancel = true;
+
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
             if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
             {
@@ -768,33 +772,42 @@ namespace MegaApp.Pages
         private void CancelMoveAction()
         {
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
-        {
+            {
                 LstCloudDrive.IsCheckModeActive = false;
                 LstCloudDrive.CheckedItems.Clear();
             }
             
-            if (MainPivot.SelectedItem.Equals(RubbishBinPivot)){
-
+            if (MainPivot.SelectedItem.Equals(RubbishBinPivot))
+            {
                 LstRubbishBin.IsCheckModeActive = false;
                 LstRubbishBin.CheckedItems.Clear();
-        }
-
-            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
-            
-            if (_mainPageViewModel.ActiveFolderView.FocusedNode != null)
-                _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-            
-            _mainPageViewModel.ActiveFolderView.FocusedNode = null;
-
-            if (_mainPageViewModel.ActiveFolderView.SelectedNodes != null && 
-                _mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
-            {
-                foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
-                {
-                    node.DisplayMode = NodeDisplayMode.Normal;
-                }
-                _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
             }
+
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
+
+            if(_mainPageViewModel.SourceFolderView != null)
+            {
+                // Release the focused node
+                if (_mainPageViewModel.SourceFolderView.FocusedNode != null)
+                {
+                    _mainPageViewModel.SourceFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                    _mainPageViewModel.SourceFolderView.FocusedNode = null;
+                }
+
+                // Clear and release the selected nodes list
+                if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
+                {
+                    foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
+                    {
+                        node.DisplayMode = NodeDisplayMode.Normal;
+                    }
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                }
+
+                _mainPageViewModel.SourceFolderView = null;
+            }            
         }
 
         private void OnAcceptMoveClick(object sender, EventArgs e)
@@ -809,24 +822,33 @@ namespace MegaApp.Pages
 
         private void AcceptMoveAction()
         {
-            if (_mainPageViewModel.ActiveFolderView.FocusedNode != null)
+            if(_mainPageViewModel.SourceFolderView != null)
             {
-                _mainPageViewModel.ActiveFolderView.FocusedNode.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
-                _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-            }
-
-            if (_mainPageViewModel.ActiveFolderView.SelectedNodes != null && 
-                _mainPageViewModel.ActiveFolderView.SelectedNodes.Count > 0)
-            {
-                foreach (var node in _mainPageViewModel.ActiveFolderView.SelectedNodes)
+                // Move the focused node and then release it
+                if (_mainPageViewModel.SourceFolderView.FocusedNode != null)
                 {
-                    node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
-                    node.DisplayMode = NodeDisplayMode.Normal;
+                    _mainPageViewModel.SourceFolderView.FocusedNode.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                    _mainPageViewModel.SourceFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                    _mainPageViewModel.SourceFolderView.FocusedNode = null;
                 }
-                _mainPageViewModel.ActiveFolderView.SelectedNodes.Clear();
-            }
 
-            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = _mainPageViewModel.ActiveFolderView.PreviousDisplayMode;
+                // Move all the selected nodes and then clear and release the selected nodes list
+                if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
+                {
+                    foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
+                    {
+                        node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                        node.DisplayMode = NodeDisplayMode.Normal;
+                    }
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                }
+
+                _mainPageViewModel.SourceFolderView = null;
+            }            
+                        
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
         }
 
         private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
@@ -845,11 +867,16 @@ namespace MegaApp.Pages
             if (_mainPageViewModel == null || 
                 _mainPageViewModel.ActiveFolderView == null ||
                 _mainPageViewModel.ActiveFolderView.FocusedNode == null) return;
-            
-            _mainPageViewModel.ActiveFolderView.SelectedNodes.Add(_mainPageViewModel.ActiveFolderView.FocusedNode);
-            _mainPageViewModel.ActiveFolderView.PreviousDisplayMode = _mainPageViewModel.ActiveFolderView.CurrentDisplayMode;
-            _mainPageViewModel.ActiveFolderView.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+
             _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
+            _mainPageViewModel.ActiveFolderView.SelectedNodes.Add(_mainPageViewModel.ActiveFolderView.FocusedNode);            
+
+            _mainPageViewModel.CloudDrive.PreviousDisplayMode = _mainPageViewModel.CloudDrive.CurrentDisplayMode;
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            _mainPageViewModel.RubbishBin.PreviousDisplayMode = _mainPageViewModel.RubbishBin.CurrentDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.MoveItem;            
+
+            _mainPageViewModel.SourceFolderView = _mainPageViewModel.ActiveFolderView;            
         }
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -960,10 +987,23 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-
+            
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
             SetApplicationBarData();
+        }
+
+        private void OnCheckModeChanging(object sender, IsCheckModeActiveChangingEventArgs e)
+        {
+            // If the user is moving nodes don't allow change to check mode in the Cloud Drive
+            if ((MainPivot.SelectedItem == CloudDrivePivot) && 
+                (_mainPageViewModel.CloudDrive.CurrentDisplayMode == DriveDisplayMode.MoveItem))
+                e.Cancel = true;
+
+            // If the user is moving nodes don't allow change to check mode in the Rubbis Bin
+            if ((MainPivot.SelectedItem == RubbishBinPivot) && 
+                (_mainPageViewModel.RubbishBin.CurrentDisplayMode == DriveDisplayMode.MoveItem))
+                e.Cancel = true;
         }
 
         private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
@@ -1007,8 +1047,26 @@ namespace MegaApp.Pages
 
         private void MultiSelectMoveAction()
         {
+            // Set the selected nodes list and change the display mode of the current active folder
             if (!_mainPageViewModel.ActiveFolderView.SelectMultipleItemsForMove()) return;
 
+            // Also change the display mode of the Cloud Drive if is necessary
+            if(!_mainPageViewModel.ActiveFolderView.Equals(_mainPageViewModel.CloudDrive))
+            {
+                _mainPageViewModel.CloudDrive.PreviousDisplayMode = _mainPageViewModel.CloudDrive.CurrentDisplayMode;
+                _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            }
+
+            // Also change the display mode of the Rubbish Bin if is necessary
+            if (!_mainPageViewModel.ActiveFolderView.Equals(_mainPageViewModel.RubbishBin))
+            {
+                _mainPageViewModel.RubbishBin.PreviousDisplayMode = _mainPageViewModel.RubbishBin.CurrentDisplayMode;
+                _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            }            
+
+            // Set the source folder as the current active folder
+            _mainPageViewModel.SourceFolderView = _mainPageViewModel.ActiveFolderView;
+            
             SetApplicationBarData();
         }
         
@@ -1107,7 +1165,6 @@ namespace MegaApp.Pages
         }
 
         #endregion        
-        
     }
 
 }
