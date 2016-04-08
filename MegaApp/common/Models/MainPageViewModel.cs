@@ -279,6 +279,16 @@ namespace MegaApp.Models
             set { SetField(ref _activeFolderView, value); }
         }
 
+        /// <summary>
+        /// Property needed to store the source folder in a move/copy action 
+        /// </summary>
+        private FolderViewModel _sourceFolderView;
+        public FolderViewModel SourceFolderView
+        {
+            get { return _sourceFolderView; }
+            set { SetField(ref _sourceFolderView, value); }
+        }
+
         #endregion
 
         #region MRequestListenerInterface
