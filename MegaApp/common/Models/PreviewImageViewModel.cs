@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Windows;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -16,6 +17,20 @@ namespace MegaApp.Models
         public PreviewImageViewModel(MegaSDK megaSdk, AppInformation appInformation, FolderViewModel folder)
             : base(megaSdk, appInformation)
         {
+            if(folder == null)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.GetPreviewFailed_Title,
+                        AppMessages.GetPreviewFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });                
+
+                return;
+            }
+
             PreviewItems = new ObservableCollection<ImageNodeViewModel>(
                 folder.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
 
@@ -28,6 +43,8 @@ namespace MegaApp.Models
                 PreviewItems.Remove(PreviewItems.FirstOrDefault(n => n.OriginalMNode.getBase64Handle() ==
                     removedNode.OriginalMNode.getBase64Handle()));
             };
+
+            SelectedPreview = (ImageNodeViewModel)folder.FocusedNode;
         }
 
         #region Properties
