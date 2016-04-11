@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>MEGA link panoya kopyalanır</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>Panoya kopyalandı</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>MEGA Bulut Sürücü oturum açma başarısız oldu. Lütfen tekrar deneyin. [{0}]</value>
@@ -457,21 +457,21 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when move successfully multiple nodes to the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersLogout" xml:space="preserve">
-    <value>{0} bekleyen aktarımınız var. Bekleyen transferler iptal edilecektir. Oturumu kapatmak istediğinizden emin misiniz?</value>
+    <value>{0} bekleyen aktarmanız var. Bekleyen aktarmalar iptal edilecektir. Oturumu kapatmak istediğinizden emin misiniz?</value>
     <comment>Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersLogout_Title" xml:space="preserve">
-    <value>Bekleyen Aktarımlar</value>
+    <value>Bekleyen Aktarmalar</value>
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>{0} bekleyen aktarımınız var. Bekleyen transferler iptal edilecektir. Çıkmak istediğinizden emin misiniz?</value>
+    <value>{0} bekleyen aktarmanız var. Bekleyen aktarmalar iptal edilecektir. Çıkmak istediğinizden emin misiniz?</value>
     <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
   <data name="PendingTransfersExit_Title" xml:space="preserve">
-    <value>Bekleyen Aktarımlar</value>
+    <value>Bekleyen Aktarmalar</value>
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
@@ -499,7 +499,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
-    <value>Aktarımlar duraklatılamadı</value>
+    <value>Aktarmalar duraklatılamadı</value>
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
@@ -507,7 +507,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
-    <value>Aktarımlar devam ettirilemedi</value>
+    <value>Aktarmalar sürdürülemedi</value>
     <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="ResumingTransfersFailed_Title" xml:space="preserve">
@@ -1086,5 +1086,39 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
     <value>Dosya(lar) hazırlanırken hata</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>Dosya indirilemedi. Lütfen tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>Yükleme başarısız</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>MEGA'dan gelen paylaşılan öğeler yüklenemedi. Tekrar deneyin ya da yenile butonuna tıklayın.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>MEGA'dan giden paylaşılan öğeler yüklenemedi. Tekrar deneyin ya da yenile butonuna tıklayın.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>Ayarlar silinemedi. Lütfen tekrar deneyin. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>Ayarlar silinemedi</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>Aarlar yüklenemedi. Lütfen tekrar deneyin. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>Ayarlar yüklenemedi</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
 </root>

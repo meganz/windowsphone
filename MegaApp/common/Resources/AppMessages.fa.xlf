@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">لینک MEGA به روی clipboard کپی گردید</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">به کلیپ بورد کپی شد</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -1206,25 +1206,62 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <target state="translated">Error preparing file(s)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to download file. Please try again.</source>
-          <target state="new">Failed to download file. Please try again.</target>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to download the file. Please try again.</source>
+          <target state="needs-review-translation">Failed to download the file. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
           <source>Failed to load</source>
-          <target state="new">Failed to load</target>
+          <target state="translated">لودکردن فایل ناموفق بود</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="needs-review-translation">Failed to load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="needs-review-translation">Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to delete settings. Please try again. [{0}]</source>
+          <target state="needs-review-translation">Failed to delete settings. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error deleting settings</source>
+          <target state="translated">Error deleting settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to load settings. Please try again. [{0}]</source>
+          <target state="needs-review-translation">Failed to load settings. Please try again. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error loading settings</source>
+          <target state="translated">Error loading settings</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error copying link</source>
+          <target state="new">Error copying link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="new">Failed to copy the MEGA link to your clipboard.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
       </group>
     </body>

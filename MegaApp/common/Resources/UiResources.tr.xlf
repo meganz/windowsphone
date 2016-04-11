@@ -248,7 +248,7 @@
         </trans-unit>
         <trans-unit id="Resx/Transfer_Error" translate="yes" space="preserve">
           <source>Error on transfer</source>
-          <target state="translated">Aktarım hatası</target>
+          <target state="translated">Aktarmada hata</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_NotStarted" translate="yes" space="preserve">
@@ -486,7 +486,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
           <source>clean up transfers</source>
-          <target state="translated">aktarımları temizle</target>
+          <target state="translated">aktarmaları temizle</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearCache" translate="yes" space="preserve">
@@ -772,7 +772,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpeed1" translate="yes" space="preserve">
           <source>transfers are fast.</source>
-          <target state="translated">aktarımlar hızlı.</target>
+          <target state="translated">aktarmalar hızlı.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpeed2" translate="yes" space="preserve">

@@ -73,10 +73,7 @@ namespace MegaApp.Pages
 
             var folder = NavigateService.GetNavigationData<FolderViewModel>();
 
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, folder)
-            {
-                SelectedPreview = (ImageNodeViewModel) folder.FocusedNode
-            };
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, folder);
             _previewImageViewModel.TranslateAppBarItems(
                         ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
                         ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
