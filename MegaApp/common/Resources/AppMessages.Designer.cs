@@ -124,7 +124,43 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to download file. Please try again..
+        ///   Busca una cadena traducida similar a Failed to copy the MEGA link to your clipboard..
+        /// </summary>
+        public static string AM_CopyLinkToClipboardFailed {
+            get {
+                return ResourceManager.GetString("AM_CopyLinkToClipboardFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error copying link.
+        /// </summary>
+        public static string AM_CopyLinkToClipboardFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_CopyLinkToClipboardFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to delete settings. Please try again. [{0}].
+        /// </summary>
+        public static string AM_DeleteSettingsFailed {
+            get {
+                return ResourceManager.GetString("AM_DeleteSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error deleting settings.
+        /// </summary>
+        public static string AM_DeleteSettingsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_DeleteSettingsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to download the file. Please try again..
         /// </summary>
         public static string AM_DownloadNodeFailedNoErrorCode {
             get {
@@ -169,7 +205,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Could not load incoming shared items from MEGA. Please try again or click on refresh..
+        ///   Busca una cadena traducida similar a Failed to load incoming shared items from MEGA. Please try again or click on refresh..
         /// </summary>
         public static string AM_LoadInSharesFailed {
             get {
@@ -178,11 +214,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Could not load outgoing shared items from MEGA. Please try again or click on refresh..
+        ///   Busca una cadena traducida similar a Failed to load outgoing shared items from MEGA. Please try again or click on refresh..
         /// </summary>
         public static string AM_LoadOutSharesFailed {
             get {
                 return ResourceManager.GetString("AM_LoadOutSharesFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to load settings. Please try again. [{0}].
+        /// </summary>
+        public static string AM_LoadSettingsFailed {
+            get {
+                return ResourceManager.GetString("AM_LoadSettingsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error loading settings.
+        /// </summary>
+        public static string AM_LoadSettingsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_LoadSettingsFailed_Title", resourceCulture);
             }
         }
         

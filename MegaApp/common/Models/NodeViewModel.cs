@@ -237,7 +237,7 @@ namespace MegaApp.Models
             {
                 if (!await FolderService.SelectDownloadFolder(this)) { return; }
                 else { downloadPath = AppService.GetSelectedDownloadDirectoryPath(); }
-            }                
+            }
 
             // Extra check to try avoid null values
             if (String.IsNullOrWhiteSpace(downloadPath))
@@ -256,6 +256,8 @@ namespace MegaApp.Models
                     this.AppInformation).ShowDialogAsync();
                 return;
             }
+
+            await CheckDownloadPath(downloadPath);
                         
             // If selected file is a folder then also select it childnodes to download
             bool result;
@@ -268,7 +270,51 @@ namespace MegaApp.Models
             App.CloudDrive.NoFolderUpAction = true;
             if (!result || !transferQueu.Any(t => t.IsAliveTransfer())) return;
             NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
-        }        
+        }
+
+        private async Task<bool> CheckDownloadPath(String downloadPath)
+        {
+            bool folderExists = true; //Suppose that exists
+            try { await StorageFolder.GetFolderFromPathAsync(downloadPath); }
+            catch (FileNotFoundException) { folderExists = false; }
+
+            if (!folderExists) await CreateDownloadPath(downloadPath);
+
+            return true;
+        }
+
+        private async Task<bool> CreateDownloadPath(String downloadPath)
+        {
+            String rootPath = Path.GetPathRoot(downloadPath);
+            String tempDownloadPath = downloadPath;
+                        
+            List<String> foldersNames = new List<String>();
+            List<String> foldersPaths = new List<String>();
+
+            // Get each folder name in the download path
+            while (String.Compare(tempDownloadPath, rootPath) != 0)
+            {                
+                foldersNames.Insert(0, Path.GetFileName(tempDownloadPath));
+                tempDownloadPath = new DirectoryInfo(tempDownloadPath).Parent.FullName;
+                foldersPaths.Insert(0, tempDownloadPath);
+            }                       
+            
+            // Create each necessary folder of the download path
+            for (int i = 0; i < foldersNames.Count; i++)
+            {
+                try
+                {
+                    StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(foldersPaths.ElementAt(i));
+                    await folder.CreateFolderAsync(Path.GetFileName(foldersNames.ElementAt(i)), CreationCollisionOption.OpenIfExists);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    // Do nothing. Probably is a restricted access system folder in the download path
+                }
+            }
+
+            return true;
+        }
 
         private async Task<bool> RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
         {            
