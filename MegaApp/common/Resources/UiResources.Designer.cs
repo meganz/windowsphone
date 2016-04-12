@@ -1249,15 +1249,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a your name.
-        /// </summary>
-        public static string NameWatermark {
-            get {
-                return ResourceManager.GetString("NameWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Newest.
         /// </summary>
         public static string NewestSortOption {
@@ -2311,11 +2302,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a your first name.
+        /// </summary>
+        public static string UI_FirstNameWatermark {
+            get {
+                return ResourceManager.GetString("UI_FirstNameWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Get link.
         /// </summary>
         public static string UI_GetLink {
             get {
                 return ResourceManager.GetString("UI_GetLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a your last name.
+        /// </summary>
+        public static string UI_LastNameWatermark {
+            get {
+                return ResourceManager.GetString("UI_LastNameWatermark", resourceCulture);
             }
         }
         
