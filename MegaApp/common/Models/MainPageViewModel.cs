@@ -136,7 +136,7 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.Move, UiResources.Remove },
-                        new[] { UiResources.Cancel});
+                        new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll});
                     break;
                 }
                 case DriveDisplayMode.RubbishBin:

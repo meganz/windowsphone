@@ -108,6 +108,22 @@ namespace MegaApp.Models
             return ChildNodes.Count > 0;
         }
 
+        public void SelectAll()
+        {
+            foreach (var childNode in ChildNodes)
+            {
+                childNode.IsMultiSelected = true;
+            }
+        }
+
+        public void DeselectAll()
+        {
+            foreach (var childNode in ChildNodes)
+            {
+                childNode.IsMultiSelected = false;
+            }
+        }
+
         public void ClearChildNodes()
         {
             if (ChildNodes == null || !ChildNodes.Any()) return;

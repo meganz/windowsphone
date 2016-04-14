@@ -1382,6 +1382,16 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="new">your last name</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/SelectAll" translate="yes" xml:space="preserve">
+          <source>Select all</source>
+          <target state="new">Select all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeselectAll" translate="yes" xml:space="preserve">
+          <source>Deselect all</source>
+          <target state="new">Deselect all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>
