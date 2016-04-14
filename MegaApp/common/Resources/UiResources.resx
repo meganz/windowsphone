@@ -1220,4 +1220,12 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>your last name</value>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
 </root>
