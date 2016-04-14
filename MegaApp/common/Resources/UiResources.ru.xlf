@@ -126,10 +126,10 @@
           <target state="translated">мой аккаунт</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
-          <source>your name</source>
-          <target state="translated">ваше имя</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" xml:space="preserve">
+          <source>your first name</source>
+          <target state="new">your first name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
@@ -1376,6 +1376,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Please select a default download folder.</source>
           <target state="translated">Выберите папку для загрузок по умолчанию.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" xml:space="preserve">
+          <source>your last name</source>
+          <target state="new">your last name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
