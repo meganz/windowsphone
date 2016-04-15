@@ -1149,6 +1149,16 @@ namespace MegaApp.Pages
             _mainPageViewModel.CleanRubbishBin();
         }
 
+        private void OnSelectAllClick(object sender, EventArgs e)
+        {
+            _mainPageViewModel.ActiveFolderView.SelectAll();
+        }
+
+        private void OnDeselectAllClick(object sender, EventArgs e)
+        {
+            _mainPageViewModel.ActiveFolderView.DeselectAll();
+        }
+
         #region Override Events
 
         // XAML can not bind them direct from the base class
@@ -1164,7 +1174,8 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion        
+        #endregion
+        
     }
 
 }

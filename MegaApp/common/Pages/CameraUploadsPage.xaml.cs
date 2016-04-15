@@ -696,6 +696,16 @@ namespace MegaApp.Pages
         {
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
+
+        private void OnSelectAllClick(object sender, EventArgs e)
+        {
+            _cameraUploadsPageViewModel.CameraUploads.SelectAll();
+        }
+
+        private void OnDeselectAllClick(object sender, EventArgs e)
+        {
+            _cameraUploadsPageViewModel.CameraUploads.DeselectAll();
+        }
         
 
         #region Override Events

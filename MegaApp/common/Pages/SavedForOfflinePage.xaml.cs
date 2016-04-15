@@ -280,6 +280,16 @@ namespace MegaApp.Pages
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
 
+        private void OnSelectAllClick(object sender, EventArgs e)
+        {
+            _savedForOfflineViewModel.SavedForOffline.SelectAll();
+        }
+
+        private void OnDeselectAllClick(object sender, EventArgs e)
+        {
+            _savedForOfflineViewModel.SavedForOffline.DeselectAll();
+        }
+
         #region Override Events
 
         // XAML can not bind them direct from the base class
