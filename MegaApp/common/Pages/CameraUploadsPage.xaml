@@ -83,6 +83,14 @@
 					Text="cancel"	
 					Click="OnMultiSelectClick"			
 				/>
+                <shell:ApplicationBarMenuItem
+					Text="select all"	
+					Click="OnSelectAllClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="deselect all"	
+					Click="OnDeselectAllClick"			
+				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/cloud.download.png" 
