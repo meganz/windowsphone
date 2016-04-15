@@ -42,15 +42,15 @@ namespace MegaApp.Pages
 
         private void SetApplicationBar()
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Accept.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.ClearSelection.ToLower();
+            // Change and translate the current application bar
+            _mediaSelectionPageModel.ChangeMenu(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems);
         }
 
         private void SetControlState(bool state)
         {
-            LstMediaItems.IsEnabled = state;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = state;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = state;
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, state);
         }
 
         private async void OnAcceptClick(object sender, System.EventArgs e)
@@ -58,10 +58,10 @@ namespace MegaApp.Pages
             if (LstMediaItems.CheckedItems == null || LstMediaItems.CheckedItems.Count < 1)
             {
                 new CustomMessageDialog(
-                        AppMessages.MinimalPictureSelection_Title,
-                        AppMessages.MinimalPictureSelection,
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
+                    AppMessages.MinimalPictureSelection_Title,
+                    AppMessages.MinimalPictureSelection,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
                 return;
             }
 
@@ -96,13 +96,14 @@ namespace MegaApp.Pages
                 catch (Exception)
                 {
                     new CustomMessageDialog(
-                            AppMessages.PrepareImageForUploadFailed_Title,
-                            String.Format(AppMessages.PrepareImageForUploadFailed, item.Name),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.PrepareImageForUploadFailed_Title,
+                        String.Format(AppMessages.PrepareImageForUploadFailed, item.Name),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 }
 
             }
+
             ProgressService.SetProgressIndicator(false);
             SetControlState(true);
 
@@ -117,8 +118,10 @@ namespace MegaApp.Pages
 
         private void OnItemCheckedStateChanged(object sender, Telerik.Windows.Controls.ItemCheckedStateChangedEventArgs e)
         {
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = LstMediaItems.CheckedItems.Count > 0;
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).IsEnabled = LstMediaItems.CheckedItems.Count > 0;
+            if (LstMediaItems != null && LstMediaItems.CheckedItems != null)
+                SetControlState(LstMediaItems.CheckedItems.Count > 0);
+            else
+                SetControlState(false);
         }
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
