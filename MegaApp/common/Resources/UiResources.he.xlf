@@ -126,9 +126,9 @@
           <target state="translated">החשבון שלי</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
           <source>your first name</source>
-          <target state="new">your first name</target>
+          <target state="translated">שם פרטי</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -1377,19 +1377,19 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">אנא בחר תיקיית הורדות ברירת מחדל. </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
           <source>your last name</source>
-          <target state="new">your last name</target>
+          <target state="translated">שם משפחה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/SelectAll" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="new">Select all</target>
+          <target state="translated">Select all</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/DeselectAll" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
           <source>Deselect all</source>
-          <target state="new">Deselect all</target>
+          <target state="translated">Deselect all</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

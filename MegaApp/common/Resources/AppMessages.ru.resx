@@ -1119,4 +1119,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Ошибка загрузки настроек</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>Не удалось скопировать MEGA-ссылку в буфер обмена.</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>Ошибка копирования ссылки</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
 </root>

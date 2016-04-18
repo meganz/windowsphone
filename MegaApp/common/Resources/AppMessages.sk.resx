@@ -539,7 +539,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when the process/request to upload a photo failed - (String as short as possible).</comment>
   </data>
   <data name="FileNotFound" xml:space="preserve">
-    <value>Nemožné nájsť zvolený súbor</value>
+    <value>Nebolo možné nájsť vybraný súbor</value>
     <comment>Message of the dialog displayed when a user try to open a file that can't be found and the process failed.</comment>
   </data>
   <data name="FileNotFound_Title" xml:space="preserve">
@@ -1117,5 +1117,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
     <value>Chyba pri načítaní nastavení</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>Chyba pri kopírovaní MEGA odkazu do vašej schránky.</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>Chyba pri kopírovaní odkazu</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
 </root>
