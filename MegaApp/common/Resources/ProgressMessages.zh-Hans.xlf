@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/PM_CloseSession" translate="yes" space="preserve">
           <source>Closing session...</source>
-          <target state="translated">Closing session...</target>
+          <target state="translated">正在关闭会话...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
@@ -185,7 +185,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_RemoveLink" translate="yes" space="preserve">
           <source>Removing link...</source>
-          <target state="translated">Removing link...</target>
+          <target state="translated">正在删除链接...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" space="preserve">

@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">파일 들여오기 실패 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">MEGA 링크가 클립보드에 저장되었습니다</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">클립보드로 복사되었습니다</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -871,7 +871,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">MEGA 구독을 취소하려고 합니다. 당신의 생각을 바꾸게 하기 위해 우리가 뭘 해야할지 알려주세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -1195,33 +1195,65 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Failed to prepare file(s) for upload. Please try again.</target>
+          <target state="translated">파일 업로드 준비 실패. 다시 시도하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">Error preparing file(s)</target>
+          <target state="translated">파일 준비 중 오류</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to download file. Please try again.</source>
-          <target state="new">Failed to download file. Please try again.</target>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to download the file. Please try again.</source>
+          <target state="translated">파일 다운로드 실패. 다시 시도하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">불러오기 실패</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">MEGA에서 들어오는 공유 항목을 불러오는 것을 실패하였습니다. 다시 시도하거나 새로고침을 클릭하세요.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed to load</source>
-          <target state="new">Failed to load</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">MEGA에서 나가는 공유 항목을 불러오는 것을 실패하였습니다. 다시 시도하거나 새로고침을 클릭하세요.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to delete settings. Please try again. [{0}]</source>
+          <target state="translated">설정 삭제 실패. 다시 시도하세요. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error deleting settings</source>
+          <target state="translated">설정 삭제 중 오류</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to load settings. Please try again. [{0}]</source>
+          <target state="translated">설정 불러오기 실패. 다시 시도하세요. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error loading settings</source>
+          <target state="translated">설정 불러오는 중 오류</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="translated">Failed to copy the MEGA link to your clipboard.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Error copying link</source>
+          <target state="translated">Error copying link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

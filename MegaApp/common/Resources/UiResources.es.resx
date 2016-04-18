@@ -1061,10 +1061,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Abrir</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>Tu nombre</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
   <data name="MyAccount" xml:space="preserve">
     <value>Mi cuenta</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -1216,5 +1212,21 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Eliminar enlace</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>tu nombre</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>tu apellido</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Seleccionar todo</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deseleccionar todo</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

@@ -148,7 +148,7 @@ namespace MegaApp.Services
 
                 cameraCaptureTask.Show();
             }
-            catch (InvalidOperationException e)
+            catch (Exception e)
             {
                 new CustomMessageDialog(
                     AppMessages.CapturePhotoFailed_Title,

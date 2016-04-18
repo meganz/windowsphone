@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>MEGA-ссылка скопирована в буфер обмена</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>Скопировано</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>Не удалось войти в облачный диск MEGA. Пожалуйста, попробуйте ещё раз. [{0}]</value>
@@ -723,7 +723,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
-    <value>Вы уверены, что что хотите навсегда удалить {0]?</value>
+    <value>Вы уверены, что что хотите навсегда удалить {0}?</value>
     <comment>Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
@@ -1084,5 +1084,47 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
     <value>Ошибка при подготовке файла(ов)</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>Не удалось загрузить файл. Попробуйте снова.</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>Не удалось загрузить</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>Не удалось загрузить входящие общие элементы из MEGA. Попробуйте снова или нажмите, чтобы обновить.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>Не удалось загрузить исходящие общие элементы из MEGA. Попробуйте снова или нажмите, чтобы обновить.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>Не удалось удалить настройки. Попробуйте снова. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>Ошибка удаления настроек</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>Не удалось загрузить настройки. Попробуйте снова. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>Ошибка загрузки настроек</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>Не удалось скопировать MEGA-ссылку в буфер обмена.</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>Ошибка копирования ссылки</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
 </root>

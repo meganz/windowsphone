@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">MEGA link panoya kopyalanır</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">Panoya kopyalandı</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -435,24 +435,24 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">{0} bekleyen aktarımınız var. Bekleyen transferler iptal edilecektir. Oturumu kapatmak istediğinizden emin misiniz?</target>
+          <target state="translated">{0} bekleyen aktarmanız var. Bekleyen aktarmalar iptal edilecektir. Oturumu kapatmak istediğinizden emin misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">Bekleyen Aktarımlar</target>
+          <target state="translated">Bekleyen Aktarmalar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
-          <target state="translated">{0} bekleyen aktarımınız var. Bekleyen transferler iptal edilecektir. Çıkmak istediğinizden emin misiniz?</target>
+          <target state="translated">{0} bekleyen aktarmanız var. Bekleyen aktarmalar iptal edilecektir. Çıkmak istediğinizden emin misiniz?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit_Title" translate="yes" space="preserve">
           <source>Pending Transfers</source>
-          <target state="translated">Bekleyen Aktarımlar</target>
+          <target state="translated">Bekleyen Aktarmalar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
@@ -493,7 +493,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
           <source>Failed to pause transfers</source>
-          <target state="translated">Aktarımlar duraklatılamadı</target>
+          <target state="translated">Aktarmalar duraklatılamadı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to pause transfers failed.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed_Title" translate="yes" space="preserve">
@@ -503,7 +503,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed" translate="yes" space="preserve">
           <source>Failed to resume transfers</source>
-          <target state="translated">Aktarımlar devam ettirilemedi</target>
+          <target state="translated">Aktarmalar sürdürülemedi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to resume transfers failed.</note>
         </trans-unit>
         <trans-unit id="Resx/ResumingTransfersFailed_Title" translate="yes" space="preserve">
@@ -1206,25 +1206,57 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <target state="translated">Dosya(lar) hazırlanırken hata</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to download file. Please try again.</source>
-          <target state="new">Failed to download file. Please try again.</target>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to download the file. Please try again.</source>
+          <target state="translated">Dosya indirilemedi. Lütfen tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">Yükleme başarısız</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">MEGA'dan gelen paylaşılan öğeler yüklenemedi. Tekrar deneyin ya da yenile butonuna tıklayın.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed to load</source>
-          <target state="new">Failed to load</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">MEGA'dan giden paylaşılan öğeler yüklenemedi. Tekrar deneyin ya da yenile butonuna tıklayın.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to delete settings. Please try again. [{0}]</source>
+          <target state="translated">Ayarlar silinemedi. Lütfen tekrar deneyin. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error deleting settings</source>
+          <target state="translated">Ayarlar silinemedi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to load settings. Please try again. [{0}]</source>
+          <target state="translated">Aarlar yüklenemedi. Lütfen tekrar deneyin. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error loading settings</source>
+          <target state="translated">Ayarlar yüklenemedi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="translated">Panoya MEGA bağlantısını kopyalama başarısız oldu.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Error copying link</source>
+          <target state="translated">Bağlantı kopyalanırken hata oluştu</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

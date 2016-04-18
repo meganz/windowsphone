@@ -36,12 +36,23 @@ namespace MegaApp.Services
                     }),
                     new DialogButton(UiResources.Copy, () =>
                     {
-                        Clipboard.SetText(link);
-                        new CustomMessageDialog(
+                        try
+                        {
+                            Clipboard.SetText(link);
+                            new CustomMessageDialog(
                                 AppMessages.LinkCopiedToClipboard_Title,
-                                AppMessages.LinkCopiedToClipboard, 
-                                App.AppInformation, 
+                                AppMessages.LinkCopiedToClipboard,
+                                App.AppInformation,
                                 MessageDialogButtons.Ok).ShowDialog();
+                        }
+                        catch(Exception)
+                        {
+                            new CustomMessageDialog(
+                                AppMessages.AM_CopyLinkToClipboardFailed_Title,
+                                AppMessages.AM_CopyLinkToClipboardFailed,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        }
                     }),
                     DialogButton.GetCancelButton(), 
                 });

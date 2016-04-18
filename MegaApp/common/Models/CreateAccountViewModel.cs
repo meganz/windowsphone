@@ -37,7 +37,7 @@ namespace MegaApp.Models
                     {
                         if (TermOfService)
                         {
-                            this._megaSdk.createAccount(Email, Password, Name, 
+                            this._megaSdk.createAccount(Email, Password, FirstName, LastName,
                                 new CreateAccountRequestListener(this, _loginPage));
                         }
                         else
@@ -89,7 +89,8 @@ namespace MegaApp.Models
 
         private bool CheckInputParameters()
         {
-            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(Name) && !String.IsNullOrEmpty(ConfirmPassword);
+            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(FirstName) && 
+                !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(ConfirmPassword);
         }
 
         private bool CheckPassword()
@@ -110,7 +111,8 @@ namespace MegaApp.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public bool TermOfService { get; set; }
         
         #endregion        

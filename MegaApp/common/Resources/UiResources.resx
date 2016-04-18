@@ -213,9 +213,9 @@
     <value>my account</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>your name</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>your first name</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
     <value>next</value>
@@ -1215,5 +1215,17 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="DefaultDownloadLocation" xml:space="preserve">
     <value>Please select a default download folder.</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>your last name</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

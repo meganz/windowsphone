@@ -126,10 +126,10 @@
           <target state="translated">我的帳戶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
-          <source>your name</source>
+        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
+          <source>your first name</source>
           <target state="translated">您的名字</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
@@ -556,7 +556,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
           <source>MEGA SDK</source>
-          <target state="translated">MEGA 軟件開發包</target>
+          <target state="translated">MEGA軟體開發包</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
@@ -1376,6 +1376,21 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Please select a default download folder.</source>
           <target state="translated">請選擇預設檔案下載儲存位置。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
+          <source>your last name</source>
+          <target state="translated">您的姓氏</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
+          <source>Select all</source>
+          <target state="translated">選擇全部</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
+          <source>Deselect all</source>
+          <target state="translated">取消全選</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

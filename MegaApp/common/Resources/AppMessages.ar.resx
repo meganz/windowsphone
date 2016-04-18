@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>تم نسخ رابط MEGA الي الحافظة</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>تم النسخ الى حافظة النصوص</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>فشل تسجيل الدخول الي محرك السحابة MEGA. حاول مرة اخرى. [{0}]</value>
@@ -1083,5 +1083,47 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
     <value>خطأ في تحضير ملف (ملفات)</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>فشل في تحميل الملف، الرجاء حاول ثانية </value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>فشل التحميل</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>فشل في تحميل العناصر المشاركة من MEGA. الرجاء المحاولة مرة أخرى أو اضغط على التحديث </value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>فشل في تحميل العناصر المشاركة الصادرة من MEGA. الرجاء المحاولة مرة أخرى أو الضغط على التحديث.</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>فشل في حذف الإعدادات. الرجاء المحاولة ثانية. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>خطأ في حذف الإعدادات</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>فشل في تحميل الإعدادات. الرجاء المحاولة ثانية. [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>خطأ في تحميل الإعدادات</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>فشتل في نسخ رابط MEGA لحافظتك </value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>خطأ في نسخ الرابط</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
 </root>

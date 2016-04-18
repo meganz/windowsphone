@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">Невдалий імпорт файлу [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">Ланку MEGA скопійовано до буферу</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">Скопійовано в буфер обміну</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -476,7 +476,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
-          <target state="translated">You have selected over {0} items ({1}) to download. Do you want to proceed?</target>
+          <target state="translated">Ви вибрали більш {0} елементів ({1}) для завантаження. Бажаєте продовжити?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
@@ -871,7 +871,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">Ви збираєтесь скасувати підписку MEGA. Будь ласка, дайте нам знати, якщо є можливість змінити вашу думку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -994,7 +994,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
           <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
-          <target state="translated">User {0} has been invited and will appear on your contact list once they have accepted the invitation.</target>
+          <target state="translated">Користувач {0} був запрошений і з'явиться у вашому листі контактів, як тільки прийме запрошення.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
         </trans-unit>
@@ -1010,7 +1010,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
-          <target state="translated">Your account has been updated. Do you want to check the new account details?</target>
+          <target state="translated">Ваш акаунт було оновлено. Бажаєте перевірити нові дані облікового запису?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
@@ -1020,7 +1020,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</target>
+          <target state="translated">Наш SSL/TLS сертифікат не можливо перевірити. Ви можете бути уражені атакою людина-по-середині.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1030,7 +1030,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</target>
+          <target state="translated">Фонове автозавантаження з камери не вдалося. Ви можете повторно включити його на сторінці налаштувань.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
@@ -1109,7 +1109,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">Are you sure you want to permanently delete all files from the rubbish bin?</target>
+          <target state="translated">Ви впевнені, що хочете назавжди видалити всі файли зі сміттєвого відра?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
@@ -1129,12 +1129,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
           <source>You cannot perform this action. Please connect to the Internet and try again.</source>
-          <target state="translated">You cannot perform this action. Please connect to the Internet and try again.</target>
+          <target state="translated">Ви не можете виконати цю дію. Будь ласка, під'єднайтесь до інтернету і спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">У вас немає доступу до шляху '{0}'. Будь ласка, виберіть інший і спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1145,45 +1145,45 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Назва файлу '{0}' не дійсна або має неприпустимі символи. Будь ласка, внесіть зміни та спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
           <source>Invalid file name</source>
-          <target state="translated">Invalid file name</target>
+          <target state="translated">Невірне ім'я</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">Шлях до файлу/теки '{0}' занадто довгий. Будь ласка, змініть його і спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong_Title" translate="yes" space="preserve">
           <source>Path too long</source>
-          <target state="translated">Path too long</target>
+          <target state="translated">Занадто довгий пінг</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Назва файлу або шлях до теки '{0}' не дійсні або мають неприпустимі символи. Будь ласка, внесіть зміни та спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
           <source>Invalid name or path</source>
-          <target state="translated">Invalid name or path</target>
+          <target state="translated">Невірна назва чи шлях</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
           <source>Invalid link</source>
-          <target state="translated">Invalid link</target>
+          <target state="translated">Невірна ланка</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <target state="translated">Не вдалося вибрати теку. Будь ласка, спробуйте ще раз або виберіть іншу теку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
@@ -1195,33 +1195,65 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Failed to prepare file(s) for upload. Please try again.</target>
+          <target state="translated">Не вдалося підготувати файл(и) для відвантаження. Будь ласка, спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">Error preparing file(s)</target>
+          <target state="translated">Помилка підготовки файлів</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to download file. Please try again.</source>
-          <target state="new">Failed to download file. Please try again.</target>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to download the file. Please try again.</source>
+          <target state="translated">Не вдалося завантажити файл. Будь ласка, спробуйте ще раз.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">Помилка завантаження</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Не вдалося загрузити вхідні спільні елементи з MEGA. Будь ласка, спробуйте ще раз, або натисніть оновлення.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed to load</source>
-          <target state="new">Failed to load</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Не вдалося загрузити вихідні спільні елементи з MEGA. Будь ласка, спробуйте ще раз, або натисніть оновлення.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to delete settings. Please try again. [{0}]</source>
+          <target state="translated">Не вдалося видалити налаштування. Будь ласка, спробуйте ще раз. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error deleting settings</source>
+          <target state="translated">Помилка видалення налаштувань</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to load settings. Please try again. [{0}]</source>
+          <target state="translated">Не вдалося завантажити налаштування. Будь ласка, спробуйте ще раз. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error loading settings</source>
+          <target state="translated">Помилка під час завантаження налаштувань</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="translated">Не вдалося скопіювати ланку MEGA до буферу.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Error copying link</source>
+          <target state="translated">Помилка копіювання</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
