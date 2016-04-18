@@ -1121,4 +1121,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>載入設定失敗</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>複製MEGA連結至剪貼簿失敗</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>複製連結失敗</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
 </root>

@@ -1212,4 +1212,20 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>移除連結</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>您的名字</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>您的姓氏</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>選擇全部</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>取消全選</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
 </root>

@@ -798,7 +798,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Country' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardNumber" xml:space="preserve">
-    <value>Credit Card Number</value>
+    <value>หมายเลขบัตรเครดิต</value>
     <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardRecurringPayments" xml:space="preserve">
@@ -1121,7 +1121,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
-    <value>Manage link</value>
+    <value>จัดการลิงก์</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
@@ -1153,7 +1153,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
-    <value>No internet connection</value>
+    <value>ไม่มีการเชื่อมต่ออินเทอร์เน็ต</value>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
@@ -1197,11 +1197,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
-    <value>Cancel subscription</value>
+    <value>ยกเลิกการสมัครใช้งาน</value>
     <comment>Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseAllSessions" xml:space="preserve">
-    <value>Close all sessions</value>
+    <value>ปิดทุกเซสชัน</value>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
@@ -1211,5 +1211,21 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Remove link</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>your first name</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>your last name</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

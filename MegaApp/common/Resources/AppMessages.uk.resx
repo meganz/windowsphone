@@ -895,7 +895,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</value>
+    <value>Користувач {0} був запрошений і з'явиться у вашому листі контактів, як тільки прийме запрошення.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -908,7 +908,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Your account has been updated. Do you want to check the new account details?</value>
+    <value>Ваш акаунт було оновлено. Бажаєте перевірити нові дані облікового запису?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -916,7 +916,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>Наш SSL/TLS сертифікат не можливо перевірити. Ви можете бути уражені атакою людина-по-середині.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -924,7 +924,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
+    <value>Фонове автозавантаження з камери не вдалося. Ви можете повторно включити його на сторінці налаштувань.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
@@ -988,7 +988,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Are you sure you want to permanently delete all files from the rubbish bin?</value>
+    <value>Ви впевнені, що хочете назавжди видалити всі файли зі сміттєвого відра?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
@@ -1004,15 +1004,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
-    <value>You cannot perform this action. Please connect to the Internet and try again.</value>
+    <value>Ви не можете виконати цю дію. Будь ласка, під'єднайтесь до інтернету і спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <value>Ви збираєтесь скасувати підписку MEGA. Будь ласка, дайте нам знати, якщо є можливість змінити вашу думку.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <value>У вас немає доступу до шляху '{0}'. Будь ласка, виберіть інший і спробуйте ще раз.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1021,7 +1021,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Назва файлу '{0}' не дійсна або має неприпустимі символи. Будь ласка, внесіть зміни та спробуйте ще раз.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1030,7 +1030,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <value>Шлях до файлу/теки '{0}' занадто довгий. Будь ласка, змініть його і спробуйте ще раз.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -1039,7 +1039,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Назва файлу або шлях до теки '{0}' не дійсні або мають неприпустимі символи. Будь ласка, внесіть зміни та спробуйте ще раз.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1068,7 +1068,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>You have selected over {0} items ({1}) to download. Do you want to proceed?</value>
+    <value>Ви вибрали більш {0} елементів ({1}) для завантаження. Бажаєте продовжити?</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
@@ -1093,11 +1093,11 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Не вдалося загрузити вхідні спільні елементи з MEGA. Будь ласка, спробуйте ще раз, або натисніть оновлення.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
-    <value>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Не вдалося загрузити вихідні спільні елементи з MEGA. Будь ласка, спробуйте ще раз, або натисніть оновлення.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
@@ -1117,5 +1117,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
     <value>Помилка під час завантаження налаштувань</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>Не вдалося скопіювати ланку MEGA до буферу.</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>Помилка копіювання</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
 </root>
