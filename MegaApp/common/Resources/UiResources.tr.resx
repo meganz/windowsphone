@@ -193,10 +193,6 @@
     <value>hesabım</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>adınız</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>sonraki</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -290,7 +286,7 @@
     <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Error" xml:space="preserve">
-    <value>Aktarım hatası</value>
+    <value>Aktarmada hata</value>
     <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
   </data>
   <data name="Transfer_NotStarted" xml:space="preserve">
@@ -477,7 +473,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
-    <value>aktarımları temizle</value>
+    <value>aktarmaları temizle</value>
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
@@ -702,7 +698,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpeed1" xml:space="preserve">
-    <value>aktarımlar hızlı.</value>
+    <value>aktarmalar hızlı.</value>
     <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed2" xml:space="preserve">
@@ -1215,5 +1211,21 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Bağlantıyı kaldır</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>adınız</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>soyadınız</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

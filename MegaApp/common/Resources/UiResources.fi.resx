@@ -193,10 +193,6 @@
     <value>käyttäjätilini</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>nimi</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>seuraava</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -909,7 +905,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Awesome" xml:space="preserve">
-    <value>Awesome!</value>
+    <value>Mahtava!</value>
     <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChoosePaymentMethod" xml:space="preserve">
@@ -1161,7 +1157,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
-    <value>No uploads</value>
+    <value>Ei lähetyksiä</value>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
@@ -1169,7 +1165,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>Confirm account</value>
+    <value>Vahvista tili</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1209,11 +1205,27 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
-    <value>Close session</value>
+    <value>Sulje istunto</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Poista linkki</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>your first name</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>your last name</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Deselect all</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

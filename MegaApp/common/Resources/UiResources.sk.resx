@@ -193,10 +193,6 @@
     <value>môj účet</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>vaše meno</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>nasledujúce</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -814,7 +810,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'CVV' text when register a credit card - (String as short as possible).</comment>
   </data>
   <data name="EnterPaymentDetails" xml:space="preserve">
-    <value>Nižšie zadajte vaše platobné údaje</value>
+    <value>Vaše platobné údaje zadajte nižšie</value>
     <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
@@ -1215,5 +1211,21 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Odstrániť link</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>vaše krstné meno</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>vaše priezvisko</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Označiť všetko</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>Odznačiť všetko</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

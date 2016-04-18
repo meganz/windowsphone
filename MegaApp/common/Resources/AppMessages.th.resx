@@ -251,11 +251,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="LinkCopiedToClipboard" xml:space="preserve">
     <value>ลิงก์ MEGA ถูกคัดลอกไปยังคลิปบอร์ดแล้ว</value>
-    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+    <comment>Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</comment>
   </data>
   <data name="LinkCopiedToClipboard_Title" xml:space="preserve">
     <value>คัดลอกไปยังคลิปบอร์ดเรียบร้อยแล้ว</value>
-    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</comment>
   </data>
   <data name="LoginFailed" xml:space="preserve">
     <value>เข้าสู่ระบบคลาวด์ไดร์ฟของ MEGA ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง [{0}]</value>
@@ -583,11 +583,11 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</comment>
   </data>
   <data name="OverquotaAlert" xml:space="preserve">
-    <value>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</value>
+    <value>ไม่อนุญาตให้ดำเนินการ พื้นที่จัดเก็บในบัญชีของคุณเกินขีดจำกัดแล้ว คุณต้องการอัปเกรดบัญชีของคุณหรือไม่</value>
     <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Overquota Alert!</value>
+    <value>แจ้งเตือนโควต้าใกล้จะเต็ม</value>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
@@ -602,7 +602,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the {0} code because is for include the file name in runtime.</comment>
   </data>
   <data name="PrepareFileForUploadFailed_Title" xml:space="preserve">
-    <value>การเตรียมไฟล์ล้มเหลว</value>
+    <value>มีข้อผิดพลาดในการเตรียมไฟล์</value>
     <comment>Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</comment>
   </data>
   <data name="SessionIDError_Title" xml:space="preserve">
@@ -615,7 +615,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
-    <value>คัดลอกไฟล์ล้มเหลว</value>
+    <value>มีข้อผิดพลาดในการคัดลอกไฟล์</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
@@ -773,7 +773,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="SaveSettingsFailed_Title" xml:space="preserve">
-    <value>บันทึกการตั้งค่าไม่สำเร็จ</value>
+    <value>มีข้อผิดพลาดในการบันทึกการตั้งค่า</value>
     <comment>Title of the dialog displayed when the process to save settings failed - (String as short as possible).</comment>
   </data>
   <data name="ShortCutFailed" xml:space="preserve">
@@ -821,7 +821,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to cancel a subscription finished successfully - (String as short as possible).</comment>
   </data>
   <data name="CancelSubscription_Title" xml:space="preserve">
-    <value>Cancel Subscription</value>
+    <value>ยกเลิกการสมัครใช้งาน</value>
     <comment>Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</comment>
   </data>
   <data name="RequiredFieldsCancelSubscription" xml:space="preserve">
@@ -959,7 +959,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when change a MEGA account password succesfully.</comment>
   </data>
   <data name="NewAndOldPasswordMatch" xml:space="preserve">
-    <value>The new and the old password must not match.</value>
+    <value>รหัสผ่านใหม่และเก่าจะต้องไม่เหมือนกัน</value>
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
@@ -1049,7 +1049,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
-    <value>Invalid link</value>
+    <value>ลิงก์ไม่ถูกต้อง</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
@@ -1057,7 +1057,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>ไม่สามารถนำเข้าไฟล์ [{0}]</value>
+    <value>นำเข้าไฟล์ไม่สำเร็จ [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1078,11 +1078,53 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <value>ไม่สามารถเตรียมไฟล์เพื่ออัปโหลดได้ กรุณาลองใหม่อีกครั้ง</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
-    <value>Error preparing file(s)</value>
+    <value>มีข้อผิดพลาดในการเตรียมไฟล์</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
+    <value>ไม่สามารถดาวน์โหลดไฟล์ได้ กรุณาลองใหม่อีกครั้ง</value>
+    <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
+  </data>
+  <data name="AM_LoadFailed_Title" xml:space="preserve">
+    <value>ไม่สามารถโหลดได้</value>
+    <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadInSharesFailed" xml:space="preserve">
+    <value>ไม่สามารถโหลดรายการที่แชร์ขาเข้าจาก MEGA ได้ กรุณาลองใหม่อีกครั้งหรือคลิกที่รีเฟรช</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
+  </data>
+  <data name="AM_LoadOutSharesFailed" xml:space="preserve">
+    <value>ไม่สามารถโหลดรายการที่แชร์ขาออกจาก MEGA ได้ กรุณาลองใหม่อีกครั้งหรือคลิกที่รีเฟรช</value>
+    <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed" xml:space="preserve">
+    <value>ไม่สามารถลบการตั้งค่าได้ กรุณาลองใหม่อีกครั้ง [{0}]</value>
+    <comment>Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
+    <value>มีข้อผิดพลาดในการลบการตั้งค่า</value>
+    <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed" xml:space="preserve">
+    <value>ไม่สามารถโหลดการตั้งค่าได้ กรุณาลองใหม่อีกครั้ง [{0}]</value>
+    <comment>Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
+    <value>มีข้อผิดพลาดในการโหลดการตั้งค่า</value>
+    <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
+    <value>ไม่สามารถคัดลอกลิงก์ MEGA ไปยังคลิปบอร์ดได้</value>
+    <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
+  </data>
+  <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
+    <value>มีข้อผิดพลาดในการคัดลอกลิงก์</value>
+    <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
 </root>

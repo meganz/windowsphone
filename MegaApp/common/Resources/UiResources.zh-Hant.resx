@@ -193,10 +193,6 @@
     <value>我的帳戶</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NameWatermark" xml:space="preserve">
-    <value>您的名字</value>
-    <comment>Watermark label for the user's name field when create account - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>下一個</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -533,7 +529,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
-    <value>MEGA 軟件開發包</value>
+    <value>MEGA軟體開發包</value>
     <comment>Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</comment>
   </data>
   <data name="Monthly" xml:space="preserve">
@@ -1215,5 +1211,21 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>移除連結</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstNameWatermark" xml:space="preserve">
+    <value>您的名字</value>
+    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastNameWatermark" xml:space="preserve">
+    <value>您的姓氏</value>
+    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>選擇全部</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="DeselectAll" xml:space="preserve">
+    <value>取消全選</value>
+    <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
 </root>

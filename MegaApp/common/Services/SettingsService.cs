@@ -14,12 +14,15 @@ namespace MegaApp.Services
 {
     static class SettingsService
     {
-        private static readonly Mutex Mutex = new Mutex(false, "BackGroundAgentFileMutex");
+        private static readonly Mutex FileSettingMutex = new Mutex(false, "FileSettingMutex");
+        private static readonly Mutex SettingsMutex = new Mutex(false, "SettingsMutex");
 
         public static void SaveSetting<T>(string key, T value)
         {
             try
             {
+                SettingsMutex.WaitOne();
+
                 var settings = IsolatedStorageSettings.ApplicationSettings;
 
                 if (settings.Contains(key))
@@ -34,17 +37,24 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.SaveSettingsFailed_Title,
-                            String.Format(AppMessages.SaveSettingsFailed, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.SaveSettingsFailed_Title,
+                        String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
-            }            
+            }
+            finally
+            {
+                SettingsMutex.ReleaseMutex();
+            }
         }
+
         public static void SecureSaveSetting(string key, string value)
         {
             try
             {
+                SettingsMutex.WaitOne();
+
                 var settings = IsolatedStorageSettings.ApplicationSettings;
 
                 if (settings.Contains(key))
@@ -59,22 +69,48 @@ namespace MegaApp.Services
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
-                            AppMessages.SaveSettingsFailed_Title,
-                            String.Format(AppMessages.SaveSettingsFailed, e.Message),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        AppMessages.SaveSettingsFailed_Title,
+                        String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
                 });
-            }            
+            }
+            finally
+            {
+                SettingsMutex.ReleaseMutex();
+            }
         }
 
         public static T LoadSetting<T>(string key, T defaultValue)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            var returnValue = defaultValue;
 
-            if (settings.Contains(key))
-                return (T)settings[key];
-            else
-                return defaultValue;
+            try
+            {
+                SettingsMutex.WaitOne();
+
+                var settings = IsolatedStorageSettings.ApplicationSettings;                
+
+                if (settings.Contains(key))
+                    returnValue = (T)settings[key];
+            }
+            catch(Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadSettingsFailed_Title,
+                        String.Format(AppMessages.AM_LoadSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });                
+            }
+            finally
+            {
+                SettingsMutex.ReleaseMutex();                
+            }
+
+            return returnValue;
         }
 
         public static string SecureLoadSetting(string key)
@@ -84,12 +120,34 @@ namespace MegaApp.Services
 
         public static string SecureLoadSetting(string key, string defaultValue)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            var returnValue = defaultValue;
 
-            if (settings.Contains(key))
-                return CryptoService.DecryptData((string)settings[key]);
-            else
-                return defaultValue;
+            try
+            {
+                SettingsMutex.WaitOne();
+
+                var settings = IsolatedStorageSettings.ApplicationSettings;                
+
+                if (settings.Contains(key))
+                    returnValue = CryptoService.DecryptData((string)settings[key]);
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadSettingsFailed_Title,
+                        String.Format(AppMessages.AM_LoadSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });                
+            }
+            finally
+            {
+                SettingsMutex.ReleaseMutex();
+            }
+
+            return returnValue;
         }
 
         public static T LoadSetting<T>(string key)
@@ -99,49 +157,77 @@ namespace MegaApp.Services
 
         public static void DeleteSetting(string key)
         {
-            var settings = IsolatedStorageSettings.ApplicationSettings;
+            try
+            {
+                SettingsMutex.WaitOne();
 
-            if (!settings.Contains(key)) return;
-            
-            settings.Remove(key);
-            settings.Save();
+                var settings = IsolatedStorageSettings.ApplicationSettings;
+
+                if (!settings.Contains(key)) return;
+
+                settings.Remove(key);
+                settings.Save();
+            }
+            catch(Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_DeleteSettingsFailed_Title,
+                        String.Format(AppMessages.AM_DeleteSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
+            finally
+            {
+                SettingsMutex.ReleaseMutex();
+            }
         }
 
         public static void DeleteFileSetting(string key)
         {
-            var settings = ApplicationData.Current.LocalFolder;
-
-            Mutex.WaitOne();
-
             try
             {
+                FileSettingMutex.WaitOne();
+
+                var settings = ApplicationData.Current.LocalFolder;
+
                 Task.WaitAll(Task.Run(async () =>
                 {
                     try
                     {
                         var file = await settings.GetFileAsync(key);
-                        file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
                     }
-                    catch (FileNotFoundException)
-                    {
-                        // Do nothing
-                    }
+                    catch (FileNotFoundException) { /* Do nothing */ }
                 }));
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_DeleteSettingsFailed_Title,
+                        String.Format(AppMessages.AM_DeleteSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
             }
             finally
             {
-                Mutex.ReleaseMutex();
+                FileSettingMutex.ReleaseMutex();
             }
         }
 
         public static void SaveSettingToFile<T>(string key, T value)
         {
-            var settings = ApplicationData.Current.LocalFolder;
-
-            Mutex.WaitOne();
-
             try
             {
+                FileSettingMutex.WaitOne();
+                
+                var settings = ApplicationData.Current.LocalFolder;
+                
                 Task.WaitAll(Task.Run(async () =>
                 {
                     var file = await settings.CreateFileAsync(key, CreationCollisionOption.ReplaceExisting);
@@ -153,23 +239,58 @@ namespace MegaApp.Services
                     }
                 }));
             }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.SaveSettingsFailed_Title,
+                        String.Format(AppMessages.SaveSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
             finally
             {
-                Mutex.ReleaseMutex();
+                FileSettingMutex.ReleaseMutex();
             }
         }
 
         public static async Task<T> LoadSettingFromFile<T>(string key)
         {
-            var settings = ApplicationData.Current.LocalFolder;
+            var returnValue = default(T);
 
-            var file = await settings.GetFileAsync(key);
-
-            using (var stream = await file.OpenStreamForReadAsync())
+            try
             {
-                var dataContractSerializer = new DataContractSerializer(typeof(T));
-                return (T)dataContractSerializer.ReadObject(stream);
+                FileSettingMutex.WaitOne();
+
+                var settings = ApplicationData.Current.LocalFolder;
+
+                var file = await settings.GetFileAsync(key);
+
+                using (var stream = await file.OpenStreamForReadAsync())
+                {
+                    var dataContractSerializer = new DataContractSerializer(typeof(T));
+                    returnValue = (T)dataContractSerializer.ReadObject(stream);
+                }
             }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_LoadSettingsFailed_Title,
+                        String.Format(AppMessages.AM_LoadSettingsFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
+            finally
+            {
+                FileSettingMutex.ReleaseMutex();
+            }
+
+            return returnValue;
         }
 
         public static bool HasValidSession()
@@ -188,6 +309,7 @@ namespace MegaApp.Services
         {
             SaveSetting(SettingsResources.UserMegaEmailAddress, email);
             SaveSetting(SettingsResources.UserMegaSession, session);
+            
             // Save session for automatic camera upload agent
             SaveSettingToFile(SettingsResources.UserMegaSession, session);
         }

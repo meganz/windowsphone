@@ -180,12 +180,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
           <target state="translated">MEGA povezava je bila kopirana na odložišče</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
           <target state="translated">Kopirano na odložišče</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
@@ -1203,25 +1203,57 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
           <target state="translated">Napaka pri pripravi datotek(e)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" xml:space="preserve">
-          <source>Failed to download file. Please try again.</source>
-          <target state="new">Failed to download file. Please try again.</target>
+        <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
+          <source>Failed to download the file. Please try again.</source>
+          <target state="translated">Prevzemanje datoteke neuspešno. Prosim, poskusite ponovno.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load outgoing shared items from MEGA. Please try again or click on refresh.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
+          <source>Failed to load</source>
+          <target state="translated">Nalaganje ni uspelo</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" xml:space="preserve">
-          <source>Could not load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="new">Could not load incoming shared items from MEGA. Please try again or click on refresh.</target>
+        <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Neuspešno nalaganje dohodnih deljenih predmetov z MEGA. Prosim, poskusite ponovno ali kliktnine na Osveži.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed to load</source>
-          <target state="new">Failed to load</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
+          <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
+          <target state="translated">Neuspešno nalaganje odhodnih deljenih predmetov z MEGA. Prosim, poskusite ponovno ali kliknite na Osveži.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to delete settings. Please try again. [{0}]</source>
+          <target state="translated">Napaka pri brisanju nastavitev. Prosim, poskusite ponovno. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error deleting settings</source>
+          <target state="translated">Napaka pri brisanju nastavitev</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
+          <source>Failed to load settings. Please try again. [{0}]</source>
+          <target state="translated">Napaka pri nalaganju nastavitev. Prosim, poskusite ponovno.  [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
+          <source>Error loading settings</source>
+          <target state="translated">Napaka pri nalaganju nastavitev</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy the MEGA link to your clipboard.</source>
+          <target state="translated">Neuspešno kopiranje MEGA povezave na odlagališče.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Error copying link</source>
+          <target state="translated">Napaka pri kopiranju povezave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

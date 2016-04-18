@@ -126,10 +126,10 @@
           <target state="translated">บัญชีของฉัน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
-          <source>your name</source>
-          <target state="translated">ชื่อของคุณ</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
+          <source>your first name</source>
+          <target state="translated">your first name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
@@ -867,7 +867,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelSubscription" translate="yes" space="preserve">
           <source>Cancel subscription</source>
-          <target state="translated">Cancel subscription</target>
+          <target state="translated">ยกเลิกการสมัครใช้งาน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel subscription' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Dismiss" translate="yes" space="preserve">
@@ -907,7 +907,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardNumber" translate="yes" space="preserve">
           <source>Credit Card Number</source>
-          <target state="translated">Credit Card Number</target>
+          <target state="translated">หมายเลขบัตรเครดิต</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardRecurringPayments" translate="yes" space="preserve">
@@ -1309,7 +1309,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
           <source>Close all sessions</source>
-          <target state="translated">Close all sessions</target>
+          <target state="translated">ปิดทุกเซสชัน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
@@ -1319,7 +1319,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" space="preserve">
           <source>Manage link</source>
-          <target state="translated">Manage link</target>
+          <target state="translated">จัดการลิงก์</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RemoveLink" translate="yes" space="preserve">
@@ -1364,7 +1364,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnection" translate="yes" space="preserve">
           <source>No internet connection</source>
-          <target state="translated">No internet connection</target>
+          <target state="translated">ไม่มีการเชื่อมต่ออินเทอร์เน็ต</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty state when no internet connection - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoUploads" translate="yes" space="preserve">
@@ -1376,6 +1376,21 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Please select a default download folder.</source>
           <target state="translated">กรุณาเลือกโฟลเดอร์ดาวน์โหลดเริ่มต้น</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
+          <source>your last name</source>
+          <target state="translated">your last name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
+          <source>Select all</source>
+          <target state="translated">Select all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
+          <source>Deselect all</source>
+          <target state="translated">Deselect all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

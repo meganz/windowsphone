@@ -234,7 +234,10 @@ namespace MegaApp.Pages
                     transfersToRemove.Add(transfer);
                     // Clean up: remove the upload copied file from the cache
                     if (transfer.Type == TransferType.Upload)
-                        File.Delete(transfer.FilePath);
+                    {
+                        try { File.Delete(transfer.FilePath); }
+                        catch (IOException) { /* Do nothing */ }
+                    }                        
                 }
             }
 

@@ -136,7 +136,7 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.Move, UiResources.Remove },
-                        new[] { UiResources.Cancel});
+                        new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll});
                     break;
                 }
                 case DriveDisplayMode.RubbishBin:
@@ -277,6 +277,16 @@ namespace MegaApp.Models
         {
             get { return _activeFolderView; }
             set { SetField(ref _activeFolderView, value); }
+        }
+
+        /// <summary>
+        /// Property needed to store the source folder in a move/copy action 
+        /// </summary>
+        private FolderViewModel _sourceFolderView;
+        public FolderViewModel SourceFolderView
+        {
+            get { return _sourceFolderView; }
+            set { SetField(ref _sourceFolderView, value); }
         }
 
         #endregion

@@ -43,7 +43,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirm account</source>
-          <target state="translated">Confirm account</target>
+          <target state="translated">确认账户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" space="preserve">
@@ -63,7 +63,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
           <source>Folder name:</source>
-          <target state="translated">Folder name:</target>
+          <target state="translated">文件夹名:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
         </trans-unit>
         <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
@@ -126,10 +126,10 @@
           <target state="translated">我的账户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NameWatermark" translate="yes" space="preserve">
-          <source>your name</source>
-          <target state="translated">您的名字</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's name field when create account - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
+          <source>your first name</source>
+          <target state="translated">your first name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
@@ -551,7 +551,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/MasterKey" translate="yes" space="preserve">
           <source>Master Key</source>
-          <target state="translated">万能秘钥</target>
+          <target state="translated">主密钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
@@ -1279,7 +1279,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSettings" translate="yes" space="preserve">
           <source>Upload settings</source>
-          <target state="translated">Upload settings</target>
+          <target state="translated">上传设置</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload setting options</note>
         </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" space="preserve">
@@ -1304,7 +1304,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NewPasswordWatermark" translate="yes" space="preserve">
           <source>Your new password</source>
-          <target state="translated">Your new password</target>
+          <target state="translated">您的新密码</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
@@ -1314,7 +1314,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
-          <target state="translated">Close session</target>
+          <target state="translated">关闭会话</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" space="preserve">
@@ -1354,7 +1354,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
           <source>No shared folders</source>
-          <target state="translated">No shared folders</target>
+          <target state="translated">无共享文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty shared folders page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloads" translate="yes" space="preserve">
@@ -1376,6 +1376,21 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Please select a default download folder.</source>
           <target state="translated">Please select a default download folder.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
+          <source>your last name</source>
+          <target state="translated">your last name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
+          <source>Select all</source>
+          <target state="translated">Select all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
+          <source>Deselect all</source>
+          <target state="translated">Deselect all</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

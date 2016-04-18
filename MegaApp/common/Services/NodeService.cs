@@ -17,7 +17,15 @@ namespace MegaApp.Services
         {
             if (nodes == null || !nodes.Any() || String.IsNullOrWhiteSpace(directory)) return null;
 
-            return nodes.Select(node => Path.Combine(directory, node.OriginalMNode.getBase64Handle())).ToList();
+            // Needed to try avoid NullReferenceException (Bug #3626)
+            var nodeList = new List<string>();
+            foreach(var node in nodes)
+            {                
+                if (node != null && node.OriginalMNode != null)
+                    nodeList.Add(Path.Combine(directory, node.OriginalMNode.getBase64Handle()));
+            }
+
+            return nodeList;
         }
 
         public static NodeViewModel CreateNew(MegaSDK megaSdk, AppInformation appInformation, MNode megaNode, ContainerType parentContainerType,
