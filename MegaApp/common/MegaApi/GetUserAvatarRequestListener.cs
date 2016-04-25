@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -84,11 +85,6 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
-        {
-            
-        }
-
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -101,13 +97,19 @@ namespace MegaApp.MegaApi
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    _userData.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);                    
+                    _userData.HasAvatarImage = true;
+
+                    var img = new BitmapImage();
+                    img.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    img.UriSource = new Uri(request.getFile());
+                    _userData.AvatarUri = img.UriSource;
                 });
             }
             else
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
+                    _userData.HasAvatarImage = false;
                     _userData.AvatarUri = null;
                 });
             }

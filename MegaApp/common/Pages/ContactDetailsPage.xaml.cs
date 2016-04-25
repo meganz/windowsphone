@@ -66,9 +66,16 @@ namespace MegaApp.Pages
             ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.ShareFolders.ToLower();
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _contactDetailsViewModel.Deinitialize(App.GlobalDriveListener);
+            base.OnNavigatedFrom(e);
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            _contactDetailsViewModel.Initialize(App.GlobalDriveListener);
             _contactDetailsViewModel.SelectedContact = (Contact)PhoneApplicationService.Current.State["SelectedContact"];
         }
 

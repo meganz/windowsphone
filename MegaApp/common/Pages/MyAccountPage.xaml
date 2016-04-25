@@ -86,13 +86,16 @@
                             </Ellipse.Fill>
                         </Ellipse>
                         <TextBlock x:Name="AvatarLetter" Margin="0,0,0,8" Text="{Binding AccountDetails.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
-                        <Image x:Name="ImgAvatar" Source="{Binding AccountDetails.AvatarUri}" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180" Stretch="UniformToFill">
+                        <Image x:Name="ImgAvatar" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180" Stretch="UniformToFill" Visibility="{Binding AccountDetails.HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Image.Clip>
                                 <EllipseGeometry Center="90,90" RadiusX="90" RadiusY="90" />
                             </Image.Clip>
+                            <Image.Source>
+                                <BitmapImage UriSource="{Binding AccountDetails.AvatarUri}" />
+                            </Image.Source>
                         </Image>
                         <StackPanel x:Name="StackUserInfo" Grid.Column="1" VerticalAlignment="Center">
-                            <TextBlock Text="{Binding AccountDetails.UserName}" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserName}" TextTrimming="WordEllipsis" MaxHeight="128" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeLarge}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
                             <TextBlock Text="{Binding AccountDetails.UserEmail}" Margin="0,0,0,10" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeNormal}" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}"/>
                             <Grid HorizontalAlignment="Left">
                                 <Grid.ColumnDefinitions>
@@ -265,9 +268,9 @@
                                 <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />
                             </Image.Clip>
                         </Image>
-                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,0,0">
-                            <TextBlock Text="{Binding UserData.UserName}" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
-                            <TextBlock Text="{Binding UserData.UserEmail}" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,12,0">
+                            <TextBlock Text="{Binding UserData.UserName}" TextTrimming="WordEllipsis" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding UserData.UserEmail}" TextTrimming="WordEllipsis" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
                         </StackPanel>
                     </Grid>
                 </Button>
