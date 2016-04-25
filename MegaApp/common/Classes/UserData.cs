@@ -30,16 +30,54 @@ namespace MegaApp.Classes
                 OnPropertyChanged("UserEmail");                
             }
         }
-
-        private String _userName;
+                
         public String UserName
+        {            
+            get 
+            {
+                if (!String.IsNullOrWhiteSpace(Firstname) && !String.IsNullOrWhiteSpace(Lastname))
+                    return String.Format("{0} {1}", Firstname, Lastname);
+                else if (!String.IsNullOrWhiteSpace(Firstname))
+                    return Firstname;
+                else
+                    return String.Empty;
+            }
+        }
+
+        private String _firstname;
+        public String Firstname
         {
-            get { return _userName; }
+            get { return _firstname; }
             set
             {
-                _userName = value;
-                OnPropertyChanged("AvatarLetter");
+                _firstname = value;
+                OnPropertyChanged("Firstname");
                 OnPropertyChanged("UserName");
+                OnPropertyChanged("AvatarLetter");
+            }
+        }
+
+        private String _lastname;
+        public String Lastname
+        {
+            get { return _lastname; }
+            set
+            {
+                _lastname = value;
+                OnPropertyChanged("Lastname");
+                OnPropertyChanged("UserName");
+                OnPropertyChanged("AvatarLetter");
+            }
+        }
+
+        private bool _hasAvatarImage;
+        public bool HasAvatarImage
+        {
+            get { return _hasAvatarImage; }
+            set 
+            {
+                _hasAvatarImage = value;
+                OnPropertyChanged("HasAvatarImage");
             }
         }
 
