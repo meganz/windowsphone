@@ -19,21 +19,8 @@ namespace MegaApp.Classes
             // URI association launch for MEGA.
             if (tempUri.Contains("mega://"))
             {
-                if (tempUri.Contains("confirm"))
-                {
-                    // Go the confirm account page and add the confirm string as parameter
-
-                    var extraParams = new Dictionary<string, string>(1)
-                    {
-                        {
-                            "confirm",
-                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=",String.Empty))
-                        }
-                    };
-
-                    return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
-                }
-                else
+                //File link - Open file link to import or download
+                if (tempUri.Contains("mega:///#!") || tempUri.Contains("mega://!"))
                 {
                     var extraParams = new Dictionary<string, string>(1)
                     {
@@ -44,6 +31,55 @@ namespace MegaApp.Classes
                     };
 
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                }                
+                // Confirm account link
+                else if (tempUri.Contains("mega:///#confirm"))
+                {
+                    // Go the confirm account page and add the confirm string as parameter
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "confirm",
+                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=",String.Empty))
+                        }
+                    };
+
+                    return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
+                }
+                //Folder link - Open folder link to import or download
+                else if (tempUri.Contains("mega:///#F!"))
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Master Key backup link
+                else if (tempUri.Contains("mega:///#backup")) 
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //New sign up link - Incoming share or contact request (no MEGA account)
+                else if (tempUri.Contains("mega:///#newsignup")) 
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Confirm cancel a MEGA account
+                else if (tempUri.Contains("mega:///#cancel")) 
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Recover link - Recover the password with the master key or park the account
+                else if (tempUri.Contains("mega:///#recover")) 
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Verify the change of the email address of the MEGA account
+                else if (tempUri.Contains("mega:///#verify"))
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Contact request to an email with an associated account of MEGA
+                else if (tempUri.Contains("mega:///#fm/ipc"))
+                {
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
             }
 

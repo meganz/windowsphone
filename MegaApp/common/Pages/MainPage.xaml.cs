@@ -447,8 +447,10 @@ namespace MegaApp.Pages
         {
             App.ActiveImportLink = NavigationContext.QueryString["filelink"];
 
-            if (App.ActiveImportLink.StartsWith("mega://"))
-                App.ActiveImportLink = App.ActiveImportLink.Replace("mega://", "https://mega.nz/#");
+            if (App.ActiveImportLink.StartsWith("mega:///#!"))
+                App.ActiveImportLink = App.ActiveImportLink.Replace("mega:///#!", "https://mega.nz/#!");
+            else if (App.ActiveImportLink.StartsWith("mega://!"))
+                App.ActiveImportLink = App.ActiveImportLink.Replace("mega://!", "https://mega.nz/#!");
 
             if (App.ActiveImportLink.EndsWith("/"))
             {
