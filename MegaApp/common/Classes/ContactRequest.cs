@@ -34,6 +34,13 @@ namespace MegaApp.Classes
         public int Status { get; set; }
         public bool IsOutgoing { get; set; }
 
+        private bool _hasAvatarImage;
+        public bool HasAvatarImage
+        {
+            get { return _hasAvatarImage; }
+            set { SetField(ref _hasAvatarImage, value); }
+        }
+
         private Uri _avatarUri;
         public Uri AvatarUri 
         {

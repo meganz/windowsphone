@@ -22,7 +22,9 @@ namespace MegaApp.MegaApi
             _appInformation = appInformation;
             this.Nodes = new List<NodeDetailsViewModel>();
             this.Folders = new List<FolderViewModel>();
-            this.Contacts= new List<ContactsViewModel>();
+            this.Contacts = new List<ContactsViewModel>();
+            this.ContactsDetails = new List<ContactDetailsViewModel>();
+            this.Accounts = new List<MyAccountPageViewModel>();
         }
 
         #region MGlobalListenerInterface
@@ -335,12 +337,182 @@ namespace MegaApp.MegaApi
 
         public void onUsersUpdate(MegaSDK api, MUserList users)
         {
-            foreach (var contacts in Contacts)
+            if (users == null || users.size() < 1) return;
+
+            for (int i = 0; i < users.size(); i++)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                MUser user = users.get(i);
+                if (user == null) continue;
+
+                // If the change is on the current user                
+                if(user.getHandle().Equals(api.getMyUser().getHandle()))
                 {
-                    contacts.GetMegaContacts();
-                });
+                    if (App.UserData == null)
+                        App.UserData = new UserDataViewModel { UserEmail = user.getEmail() };
+
+                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) && 
+                        !String.IsNullOrWhiteSpace(App.UserData.AvatarPath))
+                    {
+                        api.getUserAvatar(user, App.UserData.AvatarPath,
+                            new GetUserAvatarRequestListener(App.UserData));                        
+                    }
+
+                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            App.UserData.UserEmail = user.getEmail());
+                    }
+
+                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
+                    {
+                        api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME,
+                            new GetUserDataRequestListener(App.UserData));
+                    }
+
+                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
+                    {
+                        api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME,
+                            new GetUserDataRequestListener(App.UserData));
+                    }
+
+                    // If there are any MyAccountPageViewModel active
+                    foreach (var account in Accounts)
+                    {
+                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
+                            !String.IsNullOrWhiteSpace(account.AccountDetails.AvatarPath))
+                        {
+                            api.getUserAvatar(user, account.AccountDetails.AvatarPath, 
+                                new GetUserAvatarRequestListener(account.AccountDetails));
+                        }                            
+
+                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                account.AccountDetails.UserEmail = user.getEmail());
+                        }                            
+
+                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
+                        {
+                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME,
+                                new GetUserDataRequestListener(account.AccountDetails));
+                        }
+
+                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
+                        {
+                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME,
+                                new GetUserDataRequestListener(account.AccountDetails));
+                        }
+                    }
+                }
+                else // If the change is on a contact
+                {
+                    // If there are any ContactsViewModel active
+                    foreach (var contactViewModel in Contacts)
+                    {
+                        Contact existingContact = contactViewModel.MegaContactsList.FirstOrDefault(
+                            contact => contact.Handle.Equals(user.getHandle()));
+
+                        // If the contact exists in the contact list
+                        if(existingContact != null)
+                        {
+                            // If the contact is no longer a contact (REMOVE CONTACT SCENARIO)
+                            if (!existingContact.Visibility.Equals(user.getVisibility()) && !(user.getVisibility().Equals(MUserVisibility.VISIBILITY_VISIBLE)))
+                            {
+                                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                {
+                                    contactViewModel.MegaContactsList.Remove(existingContact);
+                                    contactViewModel.GetMegaContacts();
+                                });
+                            }
+                            else // If the contact has been changed (UPDATE CONTACT SCENARIO)
+                            {                                
+                                if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
+                                    !String.IsNullOrWhiteSpace(existingContact.AvatarPath))
+                                {
+                                    api.getUserAvatar(user, existingContact.AvatarPath, 
+                                        new GetContactAvatarRequestListener(existingContact));
+                                }
+                                
+                                if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
+                                {
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                        existingContact.Email = user.getEmail());
+                                }
+                                
+                                if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
+                                {
+                                    api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME, 
+                                        new GetContactDataRequestListener(existingContact));
+                                }
+
+                                if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
+                                {
+                                    api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME, 
+                                        new GetContactDataRequestListener(existingContact));
+                                }
+                            }
+                        }                        
+                        else if (user.getVisibility().Equals(MUserVisibility.VISIBILITY_VISIBLE))
+                        {
+                            // If is a new contact (ADD CONTACT SCENARIO - REQUEST ACCEPTED)
+                            var _megaContact = new Contact()
+                            {
+                                Handle = user.getHandle(),
+                                Email = user.getEmail(),
+                                Timestamp = user.getTimestamp(),
+                                Visibility = user.getVisibility()
+                            };
+
+                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                contactViewModel.MegaContactsList.Add(_megaContact));
+
+                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME, 
+                                new GetContactDataRequestListener(_megaContact));
+                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME, 
+                                new GetContactDataRequestListener(_megaContact));
+                            api.getUserAvatar(user, _megaContact.AvatarPath, 
+                                new GetContactAvatarRequestListener(_megaContact));                            
+                        }
+                        else
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                contactViewModel.GetMegaContacts());
+                        }
+                    }
+
+                    // If there are any ContactDetailsViewModel active
+                    foreach (var contactDetailsViewModel in ContactsDetails)
+                    {
+                        // If the selected contact has been changed (UPDATE CONTACT SCENARIO)
+                        if (contactDetailsViewModel.SelectedContact.Handle.Equals(user.getHandle()))
+                        {                            
+                            if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
+                                !String.IsNullOrWhiteSpace(contactDetailsViewModel.SelectedContact.AvatarPath))
+                            {
+                                api.getUserAvatar(user, contactDetailsViewModel.SelectedContact.AvatarPath,
+                                    new GetContactAvatarRequestListener(contactDetailsViewModel.SelectedContact));
+                            }
+
+                            if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
+                            {
+                                Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                    contactDetailsViewModel.SelectedContact.Email = user.getEmail());
+                            }
+
+                            if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
+                            {
+                                api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME,
+                                        new GetContactDataRequestListener(contactDetailsViewModel.SelectedContact));                                
+                            }
+
+                            if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
+                            {
+                                api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME,
+                                        new GetContactDataRequestListener(contactDetailsViewModel.SelectedContact));
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -370,6 +542,8 @@ namespace MegaApp.MegaApi
         public IList<NodeDetailsViewModel> Nodes { get; private set; } 
         public IList<FolderViewModel> Folders { get; private set; }
         public IList<ContactsViewModel> Contacts { get; private set; } 
+        public IList<ContactDetailsViewModel> ContactsDetails { get; private set; }
+        public IList<MyAccountPageViewModel> Accounts { get; private set; }
 
         #endregion
     }

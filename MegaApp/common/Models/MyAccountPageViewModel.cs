@@ -16,7 +16,7 @@ using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class MyAccountPageViewModel : BaseAppInfoAwareViewModel
+    public class MyAccountPageViewModel : BaseAppInfoAwareViewModel
     {
         public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation, MyAccountPage myAccountPage)
             : base(megaSdk, appInformation)
@@ -44,6 +44,18 @@ namespace MegaApp.Models
             });
         }
 
+        public void Initialize(GlobalDriveListener globalDriveListener)
+        {
+            // Add contacts to global drive listener to receive notifications
+            globalDriveListener.Accounts.Add(this);
+        }
+
+        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        {
+            // Remove contacts of global drive listener
+            globalDriveListener.Accounts.Remove(this);
+        }
+
         public void GetAccountDetails()
         {
             if(!_accountDetails.IsDataLoaded)
@@ -53,8 +65,10 @@ namespace MegaApp.Models
 
                 OnUiThread(() =>
                 {
-                    AccountDetails.AvatarUri = UserData.AvatarUri;
-                    AccountDetails.UserName = UserData.UserName;
+                    AccountDetails.HasAvatarImage = UserData.HasAvatarImage;                    
+                    AccountDetails.AvatarUri = UserData.AvatarUri;                    
+                    AccountDetails.Firstname = UserData.Firstname;
+                    AccountDetails.Lastname = UserData.Lastname;
                 });                
 
                 _accountDetails.IsDataLoaded = true;

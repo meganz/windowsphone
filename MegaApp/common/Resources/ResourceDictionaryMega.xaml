@@ -118,9 +118,9 @@
                         </Ellipse.Fill>
                     </Ellipse>
                     <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                </Grid>                
-                
-                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                </Grid>
+
+                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>                
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
@@ -163,8 +163,8 @@
                     </Ellipse>
                     <Image Source="/Assets/AppBar/link.png" Margin="-5,-2,0,0" Width="20" Height="20" Canvas.ZIndex="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                 </Grid>
-                
-                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+
+                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>                
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
@@ -220,7 +220,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <Image Source="/Assets/AppBar/link.png" Margin="-7,0,0,-1" Width="30" Height="30" Canvas.ZIndex="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
             </Grid>
         </Border>
     </DataTemplate>
@@ -338,7 +338,7 @@
                     </Ellipse.Fill>
                 </Ellipse>
                 <Image Source="/Assets/AppBar/link.png" Grid.Row="0" Margin="-4,0,0,-10" Width="30" Height="30" Canvas.ZIndex="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="{Binding IsExported, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>
     </DataTemplate>
@@ -493,7 +493,7 @@
                     </Border>
                 </Grid>
 
-                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtFileName" HorizontalAlignment="Left" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding ModificationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
@@ -521,7 +521,7 @@
                     </Path>                    
                 </Grid>
 
-                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
+                <TextBlock x:Name="txtFolderName" HorizontalAlignment="Left" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="Bold"/>
                 <TextBlock x:Name="txtCount" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Information}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="1"/>
                 <TextBlock x:Name="txtCreated" HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding CreationTime}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
@@ -561,7 +561,7 @@
                         <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                     </Path.Fill>
                 </Path>
-                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
+                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Center" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}" />
             </Grid>
         </Border>
     </DataTemplate>
@@ -647,7 +647,7 @@
                         <Path Data="F1 M133.1,17.9 L137.2,13.2 L144.6,19.6 L156.4,5.8 L161.2,9.9 L145.6,28.4 z" Height="13" Stretch="Fill" Width="15" HorizontalAlignment="Right" Margin="0,5.5,5.5,0" VerticalAlignment="Top" FlowDirection="LeftToRight" StrokeThickness="0" Fill="White"/>
                     </Grid>
                 </Border>
-                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                <TextBlock Margin="0,12,0,0" HorizontalAlignment="Stretch" TextAlignment="Center" Text="{Binding Name}" TextTrimming="WordEllipsis" VerticalAlignment="Bottom" Grid.Row="1" FontSize="{StaticResource PhoneFontSizeSmall}"/>
             </Grid>
         </Border>
     </DataTemplate>
@@ -793,10 +793,10 @@
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </TextBlock.Foreground>
                 </TextBlock>
-                <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
+                <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill" Visibility="{Binding HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Image.Source>
                         <BitmapImage
-                            UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+                            UriSource="{Binding AvatarUri}"
                             DecodePixelHeight="64"
                             DecodePixelWidth="64"
                             DecodePixelType="Logical"
@@ -804,8 +804,8 @@
                             />
                     </Image.Source>
                 </Image>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding FullName}" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding FullName}" TextTrimming="WordEllipsis" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeLarge}"/>
+                <TextBlock Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" TextTrimming="WordEllipsis" VerticalAlignment="Center"/>
             </Grid>
         </StackPanel>
     </DataTemplate>
@@ -848,10 +848,10 @@
                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                     </TextBlock.Foreground>
                 </TextBlock>
-                <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill">
+                <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill" Visibility="{Binding HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Image.Source>
                         <BitmapImage
-                            UriSource="{Binding AvatarUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
+                            UriSource="{Binding AvatarUri}"
                             DecodePixelHeight="64"
                             DecodePixelWidth="64"
                             DecodePixelType="Logical"
@@ -859,7 +859,7 @@
                             />
                     </Image.Source>
                 </Image>
-                <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="8,0,0,0" Text="{Binding Email}" TextTrimming="WordEllipsis" VerticalAlignment="Center"/>
                 <StackPanel Grid.Row="1" Grid.Column="1" Margin="8,0,0,0" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBlock Text="{Binding RelativeCreationTimeSpan}"/>
                     <TextBlock Text="{Binding StatusText}" Margin="6,0,0,0"/>

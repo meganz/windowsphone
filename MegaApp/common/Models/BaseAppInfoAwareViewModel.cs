@@ -35,7 +35,7 @@ namespace MegaApp.Models
                     UserData = new UserDataViewModel();
 
                 if(String.IsNullOrWhiteSpace(UserData.UserName))
-                    Deployment.Current.Dispatcher.BeginInvoke(() => UserData.UserName = UiResources.MyAccount);
+                    Deployment.Current.Dispatcher.BeginInvoke(() => UserData.Firstname = UiResources.MyAccount);
 
                 App.UserData = UserData;
             }
@@ -63,8 +63,11 @@ namespace MegaApp.Models
                 if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
                     App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
                 
-                if (accountChange || (String.IsNullOrEmpty(UserData.UserName) || UserData.UserName.Equals(UiResources.MyAccount)))
-                    App.MegaSdk.getOwnUserData(new GetUserDataRequestListener(UserData));
+                if (accountChange || (String.IsNullOrEmpty(UserData.Firstname) || UserData.Firstname.Equals(UiResources.MyAccount)))
+                    App.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_FIRSTNAME, new GetUserDataRequestListener(UserData));
+                    
+                if (accountChange || (String.IsNullOrEmpty(UserData.Lastname)))
+                    App.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_LASTNAME, new GetUserDataRequestListener(UserData));
 
                 App.UserData = UserData;
             }

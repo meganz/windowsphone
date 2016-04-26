@@ -469,11 +469,11 @@ namespace MegaApp.Models
                             // To avoid null values
                             if (contactsList.get(i) == null) continue;
 
-                            if ((contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_VISIBLE) ||
-                                ((contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_HIDDEN) && (App.MegaSdk.getInShares(contactsList.get(i)).size() > 0)))
+                            if ((contactsList.get(i).getVisibility() == MUserVisibility.VISIBILITY_VISIBLE))
                             {
                                 var _megaContact = new Contact()
                                 {
+                                    Handle = contactsList.get(i).getHandle(),
                                     Email = contactsList.get(i).getEmail(),
                                     Timestamp = contactsList.get(i).getTimestamp(),
                                     Visibility = contactsList.get(i).getVisibility()

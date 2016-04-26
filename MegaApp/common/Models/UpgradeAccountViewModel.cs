@@ -9,7 +9,7 @@ using MegaApp.Classes;
 
 namespace MegaApp.Models
 {
-    class UpgradeAccountViewModel : BaseViewModel
+    public class UpgradeAccountViewModel : BaseViewModel
     {
         public UpgradeAccountViewModel()
         {
