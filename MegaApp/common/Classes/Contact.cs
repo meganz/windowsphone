@@ -67,7 +67,18 @@ namespace MegaApp.Classes
                     return Email.Substring(0, 1).ToUpper();
             }
         }
-        
+
+        private bool _hasAvatarImage;
+        public bool HasAvatarImage
+        {
+            get { return _hasAvatarImage; }
+            set
+            {
+                _hasAvatarImage = value;
+                OnPropertyChanged("HasAvatarImage");
+            }
+        }
+
         private Uri _avatarUri;
         public Uri AvatarUri
         {
@@ -96,7 +107,8 @@ namespace MegaApp.Classes
             get { return _isMultiSelected; }
             set { SetField(ref _isMultiSelected, value); }
         }
-        
+
+        public ulong Handle { get; set; }
         public ulong Timestamp { get; set; }
         public MUserVisibility Visibility { get; set; }
     }

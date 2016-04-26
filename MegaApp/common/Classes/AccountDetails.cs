@@ -16,7 +16,7 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Classes
 {
-    class AccountDetailsViewModel: UserDataViewModel
+    public class AccountDetailsViewModel: UserDataViewModel
     {
         private readonly MyAccountPage _myAccountPage;
 
