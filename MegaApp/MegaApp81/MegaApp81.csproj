@@ -352,6 +352,9 @@
     <Compile Include="..\common\Enums\TransferType.cs">
       <Link>Enums\TransferType.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\UriLinkType.cs">
+      <Link>Enums\UriLinkType.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\ViewMode.cs">
       <Link>Enums\ViewMode.cs</Link>
     </Compile>
@@ -2852,7 +2855,7 @@
       <culture>zh-Hant</culture>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <SDKReference Include="SQLite.WP80, Version=3.12.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>

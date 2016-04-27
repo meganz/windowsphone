@@ -266,12 +266,6 @@ namespace MegaApp.Pages
             App.CloudDrive.ListBox = LstCloudDrive;
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-
-            if (NavigationContext.QueryString.ContainsKey("ShortCutBase64Handle"))
-                App.ShortCutBase64Handle = NavigationContext.QueryString["ShortCutBase64Handle"];
-
-            if (NavigationContext.QueryString.ContainsKey("filelink"))
-                this.GetFileLink();
             
             if (App.AppInformation.IsStartupModeActivate)
             {
@@ -360,6 +354,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.SelfieSelected:
                     break;
                 case NavigationParameter.UriLaunch:
+                    checkSpecialNavigation = Load();
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
@@ -375,12 +370,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.None:
                     {
                         if(navParam != NavigationParameter.Normal)
-                        {
-                            if (NavigationContext.QueryString.ContainsKey("filelink"))
-                                this.GetFileLink();
-
                             if (!CheckPinLock()) return;
-                        }
 
                         checkSpecialNavigation = Load();
                         break;
@@ -413,12 +403,13 @@ namespace MegaApp.Pages
             return true;
         }
         
-        private bool SpecialNavigation()
+        public bool SpecialNavigation()
         {
             // If is a newly activated account, navigates to the upgrade account page
             if (App.AppInformation.IsNewlyActivatedAccount)
             {
-                NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });
+                NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, 
+                    new Dictionary<string, string> { { "Pivot", "1" } });
                 return true;
             }
             // If is the first login, navigates to the camera upload service config page
@@ -439,25 +430,24 @@ namespace MegaApp.Pages
                 NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                 return true;
             }
+            
+            switch(App.AppInformation.UriLink)
+            {
+                case UriLinkType.Backup:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.UriLaunch, 
+                        new Dictionary<string, string> { { "backup", "backup" } });
+                    return true;
+
+                case UriLinkType.FmIpc:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string> { { "Pivot", "2" } });
+                    return true;
+            }            
 
             return false;                
-        }
-
-        private void GetFileLink()
-        {
-            App.ActiveImportLink = NavigationContext.QueryString["filelink"];
-
-            if (App.ActiveImportLink.StartsWith("mega:///#!"))
-                App.ActiveImportLink = App.ActiveImportLink.Replace("mega:///#!", "https://mega.nz/#!");
-            else if (App.ActiveImportLink.StartsWith("mega://!"))
-                App.ActiveImportLink = App.ActiveImportLink.Replace("mega://!", "https://mega.nz/#!");
-
-            if (App.ActiveImportLink.EndsWith("/"))
-            {
-                App.ActiveImportLink = 
-                    App.ActiveImportLink.Remove(App.ActiveImportLink.Length-1, 1);
-            }            
-        }
+        }        
         
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)

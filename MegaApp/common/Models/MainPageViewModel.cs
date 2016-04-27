@@ -108,6 +108,14 @@ namespace MegaApp.Models
             this.MegaSdk.fetchNodes(fetchNodesRequestListener);
         }
 
+        public bool SpecialNavigation()
+        {
+            if(_mainPage != null)
+                return _mainPage.SpecialNavigation();
+
+            return false;
+        }
+
         public void ChangeMenu(FolderViewModel currentFolderViewModel, IList iconButtons, IList menuItems)
         {
             switch (currentFolderViewModel.CurrentDisplayMode)
