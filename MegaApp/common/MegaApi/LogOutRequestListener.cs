@@ -15,6 +15,20 @@ namespace MegaApp.MegaApi
 {
     class LogOutRequestListener: BaseRequestListener
     {
+        private readonly bool _navigateOnSucces;
+
+        /// <summary>
+        /// LogOutRequestListener constructor
+        /// </summary>
+        /// <param name="navigateOnSucces">
+        /// Boolean value to allow the developer decide if the app should go to the
+        /// "InitTourPage" after logout or no. The default value is TRUE.
+        /// </param>        
+        public LogOutRequestListener(bool navigateOnSucces = true)
+        {
+            _navigateOnSucces = navigateOnSucces;
+        }
+
         protected override string ProgressMessage
         {
             get { return ProgressMessages.PM_Logout; }
@@ -57,7 +71,7 @@ namespace MegaApp.MegaApi
 
         protected override bool NavigateOnSucces
         {
-            get { return true; }
+            get { return _navigateOnSucces; }
         }
 
         protected override bool ActionOnSucces

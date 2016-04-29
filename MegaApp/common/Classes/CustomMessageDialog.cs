@@ -192,7 +192,8 @@ namespace MegaApp.Classes
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
                 Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
                 Margin = _image == null ? new Thickness(0, 24, 0, 0) : new Thickness(0),
-                HorizontalAlignment = HorizontalAlignment.Left
+                HorizontalAlignment = HorizontalAlignment.Left,
+                TextWrapping = TextWrapping.Wrap
             };
             
             // Add title to the view

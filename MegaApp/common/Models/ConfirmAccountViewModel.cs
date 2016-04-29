@@ -127,15 +127,12 @@ namespace MegaApp.Models
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
-            MRequestType type = request.getType();
-            MErrorType error = e.getErrorCode();
-
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(false);
-                this.ControlState = true;                
-
+                this.ControlState = true;
+                
                 switch (e.getErrorCode())
                 {
                     case MErrorType.API_OK: //Request finish successfully
@@ -149,10 +146,14 @@ namespace MegaApp.Models
                             //Successfull confirmation process
                             if(request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
                             {
-                                if (ShowSuccesMessage)
-                                    new CustomMessageDialog(SuccessMessageTitle, SuccessMessage, App.AppInformation).ShowDialog();
+                                var customMessageDialog = new CustomMessageDialog(
+                                    SuccessMessageTitle, SuccessMessage,
+                                    App.AppInformation, MessageDialogButtons.Ok);
 
-                                OnSuccesAction(request);
+                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                                    OnSuccesAction(request);
+                                
+                                customMessageDialog.ShowDialog();
                             }
                             break;
                         }
@@ -162,23 +163,26 @@ namespace MegaApp.Models
                             //Already confirmed account
                             if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
                             {
-                                new CustomMessageDialog(
-                                        AppMessages.AlreadyConfirmedAccount_Title,
-                                        AppMessages.AlreadyConfirmedAccount,
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
+                                var customMessageDialog = new CustomMessageDialog(
+                                    AppMessages.AlreadyConfirmedAccount_Title,
+                                    AppMessages.AlreadyConfirmedAccount,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok);
 
-                                NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                                    NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+
+                                customMessageDialog.ShowDialog();
                             }                                
 
                             //Wrong password
                             if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
                             {
                                 new CustomMessageDialog(
-                                        AppMessages.WrongPassword_Title,
-                                        AppMessages.WrongPassword,
-                                        App.AppInformation,
-                                        MessageDialogButtons.Ok).ShowDialog();
+                                    AppMessages.WrongPassword_Title,
+                                    AppMessages.WrongPassword,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
                             }
                             
                             break;
@@ -191,10 +195,10 @@ namespace MegaApp.Models
                     default: //Other error
                         {
                             new CustomMessageDialog(
-                                    ErrorMessageTitle,
-                                    String.Format(ErrorMessage, e.getErrorString()),
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
+                                ErrorMessageTitle,
+                                String.Format(ErrorMessage, e.getErrorString()),
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
                             break;
                         }
 
@@ -204,10 +208,8 @@ namespace MegaApp.Models
 
         protected override void OnSuccesAction(MRequest request)
         {
-            bool isAlreadyOnline = Convert.ToBoolean(_megaSdk.isLoggedIn());
-                        
-            if (isAlreadyOnline)
-                _megaSdk.logout(this);
+            if (Convert.ToBoolean(_megaSdk.isLoggedIn()))
+                _megaSdk.logout(new LogOutRequestListener(false));
 
             App.AppInformation.IsNewlyActivatedAccount = true;
 
