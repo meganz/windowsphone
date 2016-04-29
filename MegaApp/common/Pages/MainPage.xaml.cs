@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -145,7 +146,25 @@ namespace MegaApp.Pages
             {
                 if (!SettingsService.HasValidSession())
                 {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                    if(App.AppInformation.UriLink == UriLinkType.Confirm)
+                    {
+                        App.AppInformation.UriLink = UriLinkType.None;
+                        if(NavigationContext.QueryString.ContainsKey("confirm"))
+                        {
+                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                            NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                                new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUri) } });
+                        }
+                    }
+                    else if(App.AppInformation.UriLink != UriLinkType.None)
+                    {
+                        NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                    }
+                    else
+                    {                        
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                    }
+                    
                     return false;
                 }
             }
@@ -430,13 +449,41 @@ namespace MegaApp.Pages
                 NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.AutoCameraUpload);
                 return true;
             }
-            
+
+            // Manage URI links
             switch(App.AppInformation.UriLink)
             {
+                case UriLinkType.Confirm:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    if (NavigationContext.QueryString.ContainsKey("confirm"))
+                    {
+                        var customMessageDialog = new CustomMessageDialog(
+                            AppMessages.AM_AlreadyLoggedInAlert_Title,
+                            AppMessages.AM_AlreadyLoggedInAlert,
+                            App.AppInformation,
+                            MessageDialogButtons.YesNo);
+
+                        customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                        {
+                            // First log out of the current account
+                            App.MegaSdk.logout(new LogOutRequestListener(false));
+
+                            // Go to the ConfirmAccountPage to confirm the new account
+                            string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                            NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                                new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUrl) } });
+                        };
+
+                        customMessageDialog.ShowDialog();
+                                                
+                        return true;
+                    }
+                    break;
+
                 case UriLinkType.Backup:
                     App.AppInformation.UriLink = UriLinkType.None;
-                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.UriLaunch, 
-                        new Dictionary<string, string> { { "backup", "backup" } });
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string> { { "backup", String.Empty } });                        
                     return true;
 
                 case UriLinkType.FmIpc:
@@ -444,7 +491,7 @@ namespace MegaApp.Pages
                     NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string> { { "Pivot", "2" } });
                     return true;
-            }            
+            }
 
             return false;                
         }        

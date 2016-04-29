@@ -106,6 +106,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?.
+        /// </summary>
+        public static string AM_AlreadyLoggedInAlert {
+            get {
+                return ResourceManager.GetString("AM_AlreadyLoggedInAlert", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You are logged in with another account.
+        /// </summary>
+        public static string AM_AlreadyLoggedInAlert_Title {
+            get {
+                return ResourceManager.GetString("AM_AlreadyLoggedInAlert_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind..
         /// </summary>
         public static string AM_CancelSubscription {
