@@ -91,6 +91,12 @@ namespace MegaApp.MegaApi
 
         #region MRequestListenerInterface
 
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {            
+            if (request.getType() == MRequestType.TYPE_CREATE_ACCOUNT)
+                base.onRequestStart(api, request);
+        }
+
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -99,10 +105,27 @@ namespace MegaApp.MegaApi
                 ProgressService.SetProgressIndicator(false);
                 
                 _createAccountViewModel.ControlState = true;
-                _loginPage.SetApplicationBar(true);
+                _loginPage.SetApplicationBar(true);                
             });
 
-            base.onRequestFinish(api, request, e);
+            //Valid and operative #newsignup link
+            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
+            {
+                if(e.getErrorCode() == MErrorType.API_OK)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _createAccountViewModel.Email = request.getEmail();
+                        //this._loginPage.txtEmail_CreateAccount.Text = request.getEmail();
+                        if (!String.IsNullOrWhiteSpace(_createAccountViewModel.Email))
+                            this._loginPage.txtEmail_CreateAccount.IsReadOnly = true;                        
+                    });
+                }                
+            }
+
+            //Successfull create account process
+            if (request.getType() == MRequestType.TYPE_CREATE_ACCOUNT)
+                base.onRequestFinish(api, request, e);
         }
 
         #endregion

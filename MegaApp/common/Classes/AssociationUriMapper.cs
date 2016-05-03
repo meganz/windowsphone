@@ -78,7 +78,8 @@ namespace MegaApp.Classes
                 else if (tempUri.Contains("https://mega.nz/#newsignup")) 
                 {
                     App.AppInformation.UriLink = UriLinkType.NewSignUp;
-                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string>(1) { { "newsignup", System.Net.HttpUtility.UrlEncode(tempUri) } });
                 }
                 //Confirm cancel a MEGA account
                 else if (tempUri.Contains("https://mega.nz/#cancel")) 

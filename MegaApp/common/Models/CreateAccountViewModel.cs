@@ -108,7 +108,15 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public string Email { get; set; }
+        public string NewSignUpCode { get; set; }
+
+        private string _email;
+        public string Email 
+        {
+            get { return _email; }
+            set { SetField(ref _email, value); }
+        }
+        
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string FirstName { get; set; }
