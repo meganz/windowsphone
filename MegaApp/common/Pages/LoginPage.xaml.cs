@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Net;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using MegaApp.Containers;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
@@ -46,9 +48,12 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            if (NavigationContext.QueryString.ContainsKey("item"))
+            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                App.MegaSdk.logout(new LogOutRequestListener(false));
+
+            if (NavigationContext.QueryString.ContainsKey("Pivot"))
             {
-                var index = NavigationContext.QueryString["item"];
+                var index = NavigationContext.QueryString["Pivot"];
                 var indexParsed = int.Parse(index);
                 Pivot_LoginAndCreateAccount.SelectedIndex = indexParsed;
             }
@@ -58,6 +63,16 @@ namespace MegaApp.Pages
             // Also removes the settings page when the user has selected app in auto upload but was not logged in.
             while (NavigationService.CanGoBack)
                 NavigationService.RemoveBackEntry();
+
+            if (NavigateService.ProcessQueryString(NavigationContext.QueryString) == NavigationParameter.UriLaunch
+                && NavigationContext.QueryString.ContainsKey("newsignup"))
+            {
+                _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.NewSignUpCode = 
+                    HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+
+                App.MegaSdk.querySignupLink(_loginAndCreateAccountViewModelContainer.CreateAccountViewModel.NewSignUpCode,
+                    new CreateAccountRequestListener(_loginAndCreateAccountViewModelContainer.CreateAccountViewModel, this));
+            }
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)

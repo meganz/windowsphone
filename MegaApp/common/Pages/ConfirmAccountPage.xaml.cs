@@ -23,7 +23,7 @@ namespace MegaApp.Pages
         private readonly ConfirmAccountViewModel _confirmAccountViewModel;
         public ConfirmAccountPage()
         {
-            _confirmAccountViewModel = new ConfirmAccountViewModel(App.MegaSdk, this);
+            _confirmAccountViewModel = new ConfirmAccountViewModel(App.MegaSdk);
             this.DataContext = _confirmAccountViewModel;
 
             InitializeComponent();

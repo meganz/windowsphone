@@ -18,14 +18,12 @@ namespace MegaApp.Models
 {
     class ConfirmAccountViewModel: BaseRequestListenerViewModel
     {
-        private readonly MegaSDK _megaSdk;
-        private readonly ConfirmAccountPage _confirmAccountPage;
+        private readonly MegaSDK _megaSdk;        
 
-        public ConfirmAccountViewModel(MegaSDK megaSdk, ConfirmAccountPage confirmAccountPage)
+        public ConfirmAccountViewModel(MegaSDK megaSdk)
         {
             this.ControlState = true;
-            this._megaSdk = megaSdk;
-            this._confirmAccountPage = confirmAccountPage;
+            this._megaSdk = megaSdk;            
             this.ConfirmAccountCommand = new DelegateCommand(this.ConfirmAccount);
         }
 
@@ -66,6 +64,13 @@ namespace MegaApp.Models
 
         public string ConfirmCode { get; set; }
         public string Password { get; set; }
+
+        private string _email;
+        public string Email
+        {
+            get { return _email; }
+            set { SetField(ref _email, value); }
+        }
 
         #endregion
 
@@ -125,6 +130,15 @@ namespace MegaApp.Models
 
         #region MRequestListenerInterface
 
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                this.ControlState = false);
+
+            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
+                base.onRequestStart(api, request);
+        }
+
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -140,7 +154,7 @@ namespace MegaApp.Models
                             //Valid and operative confirmation link
                             if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
                             {
-                                this._confirmAccountPage.txtEmail.Text = request.getEmail();                                
+                                this.Email = request.getEmail();
                             }
 
                             //Successfull confirmation process

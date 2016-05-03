@@ -156,6 +156,16 @@ namespace MegaApp.Pages
                                 new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUri) } });
                         }
                     }
+                    else if (App.AppInformation.UriLink == UriLinkType.NewSignUp)
+                    {
+                        App.AppInformation.UriLink = UriLinkType.None;
+                        if (NavigationContext.QueryString.ContainsKey("newsignup"))
+                        {
+                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
+                                new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUri) } });
+                        }
+                    }
                     else if(App.AppInformation.UriLink != UriLinkType.None)
                     {
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
@@ -453,9 +463,11 @@ namespace MegaApp.Pages
             // Manage URI links
             switch(App.AppInformation.UriLink)
             {
+                case UriLinkType.NewSignUp:
                 case UriLinkType.Confirm:
                     App.AppInformation.UriLink = UriLinkType.None;
-                    if (NavigationContext.QueryString.ContainsKey("confirm"))
+                    if (NavigationContext.QueryString.ContainsKey("newsignup") || 
+                        NavigationContext.QueryString.ContainsKey("confirm"))
                     {
                         var customMessageDialog = new CustomMessageDialog(
                             AppMessages.AM_AlreadyLoggedInAlert_Title,
@@ -468,10 +480,21 @@ namespace MegaApp.Pages
                             // First log out of the current account
                             App.MegaSdk.logout(new LogOutRequestListener(false));
 
-                            // Go to the ConfirmAccountPage to confirm the new account
-                            string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
-                            NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
-                                new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUrl) } });
+                            if (NavigationContext.QueryString.ContainsKey("newsignup"))
+                            {
+                                // Go to the CreateAccountPage to create a new account
+                                string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
+                                    new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUrl) } });
+                            }
+
+                            if(NavigationContext.QueryString.ContainsKey("confirm"))
+                            {
+                                // Go to the ConfirmAccountPage to confirm the new account
+                                string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                                NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                                    new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUrl) } });
+                            }
                         };
 
                         customMessageDialog.ShowDialog();
