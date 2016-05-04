@@ -45,7 +45,8 @@ namespace MegaApp.Pages
                 && NavigationContext.QueryString.ContainsKey("confirm"))
             {
                 _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);                
-                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode, _confirmAccountViewModel);
+                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode,
+                    new ConfirmAccountRequestListener(_confirmAccountViewModel));
             }
         }
 
