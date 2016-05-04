@@ -16,7 +16,7 @@ using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class ConfirmAccountViewModel: BaseRequestListenerViewModel
+    class ConfirmAccountViewModel : BaseViewModel
     {
         private readonly MegaSDK _megaSdk;        
 
@@ -47,7 +47,8 @@ namespace MegaApp.Models
                 }
                 else
                 {
-                    this._megaSdk.confirmAccount(ConfirmCode, Password, this);
+                    this._megaSdk.confirmAccount(ConfirmCode, Password,
+                        new ConfirmAccountRequestListener(this));
                 }
             }
         }
@@ -70,165 +71,6 @@ namespace MegaApp.Models
         {
             get { return _email; }
             set { SetField(ref _email, value); }
-        }
-
-        #endregion
-
-        #region Base Properties
-
-        protected override string ProgressMessage
-        {
-            get { return ProgressMessages.PM_ConfirmAccount; }
-        }
-
-        protected override string ErrorMessage
-        {
-            get { return AppMessages.ConfirmAccountFailed; }
-        }
-
-        protected override string ErrorMessageTitle
-        {
-            get { return AppMessages.ConfirmAccountFailed_Title; }
-        }
-
-        protected override string SuccessMessage
-        {
-            get { return AppMessages.ConfirmAccountSucces; }
-        }
-
-        protected override string SuccessMessageTitle
-        {
-            get { return AppMessages.ConfirmAccountSucces_Title; }
-        }
-
-        protected override bool ShowSuccesMessage
-        {
-            get { return true; }
-        }
-
-        protected override bool NavigateOnSucces
-        {
-            get { return true; }
-        }
-
-        protected override bool ActionOnSucces
-        {
-            get { return false; }
-        }
-
-        protected override Type NavigateToPage
-        {
-            get { return typeof(LoginPage); }
-        }
-
-        protected override NavigationParameter NavigationParameter
-        {
-            get { return NavigationParameter.Normal; }
-        }
-
-        #endregion
-
-        #region MRequestListenerInterface
-
-        public override void onRequestStart(MegaSDK api, MRequest request)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                this.ControlState = false);
-
-            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                base.onRequestStart(api, request);
-        }
-
-        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                ProgressService.SetProgressIndicator(false);
-                this.ControlState = true;
-                
-                switch (e.getErrorCode())
-                {
-                    case MErrorType.API_OK: //Request finish successfully
-                        {
-                            //Valid and operative confirmation link
-                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
-                            {
-                                this.Email = request.getEmail();
-                            }
-
-                            //Successfull confirmation process
-                            if(request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                            {
-                                var customMessageDialog = new CustomMessageDialog(
-                                    SuccessMessageTitle, SuccessMessage,
-                                    App.AppInformation, MessageDialogButtons.Ok);
-
-                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-                                    OnSuccesAction(request);
-                                
-                                customMessageDialog.ShowDialog();
-                            }
-                            break;
-                        }
-
-                    case MErrorType.API_ENOENT: //Useful errors for users
-                        {
-                            //Already confirmed account
-                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
-                            {
-                                var customMessageDialog = new CustomMessageDialog(
-                                    AppMessages.AlreadyConfirmedAccount_Title,
-                                    AppMessages.AlreadyConfirmedAccount,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok);
-
-                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-                                    NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
-
-                                customMessageDialog.ShowDialog();
-                            }                                
-
-                            //Wrong password
-                            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                            {
-                                new CustomMessageDialog(
-                                    AppMessages.WrongPassword_Title,
-                                    AppMessages.WrongPassword,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            }
-                            
-                            break;
-                        }
-                    
-                    case MErrorType.API_EOVERQUOTA:
-                        base.onRequestFinish(api, request, e);
-                        break;
-
-                    default: //Other error
-                        {
-                            new CustomMessageDialog(
-                                ErrorMessageTitle,
-                                String.Format(ErrorMessage, e.getErrorString()),
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                            break;
-                        }
-
-                }
-            });            
-        }
-
-        protected override void OnSuccesAction(MRequest request)
-        {
-            if (Convert.ToBoolean(_megaSdk.isLoggedIn()))
-                _megaSdk.logout(new LogOutRequestListener(false));
-
-            App.AppInformation.IsNewlyActivatedAccount = true;
-
-            _megaSdk.login(request.getEmail(), request.getPassword(), 
-                new LoginRequestListener(new LoginViewModel(_megaSdk)));
         }
 
         #endregion

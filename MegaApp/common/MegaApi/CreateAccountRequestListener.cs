@@ -116,7 +116,7 @@ namespace MegaApp.MegaApi
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         _createAccountViewModel.Email = request.getEmail();
-                        //this._loginPage.txtEmail_CreateAccount.Text = request.getEmail();
+                        
                         if (!String.IsNullOrWhiteSpace(_createAccountViewModel.Email))
                             this._loginPage.txtEmail_CreateAccount.IsReadOnly = true;                        
                     });
