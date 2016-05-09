@@ -140,15 +140,17 @@ namespace MegaApp.MegaApi
                     FileNodeViewModel node = new FileNodeViewModel(api, null, publicNode, ContainerType.PublicLink);
                     isImage = node.IsImage;
                 }
-
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel, isImage));
-                #elif WINDOWS_PHONE_81
+                #endif                
+                
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     try
                     {
+                        #if WINDOWS_PHONE_80
+                        DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel, isImage);
+                        #elif WINDOWS_PHONE_81
                         DialogService.ShowOpenLink(publicNode, request.getLink(), _folderViewModel);
+                        #endif
                     }
                     catch (Exception e)
                     {
@@ -159,7 +161,6 @@ namespace MegaApp.MegaApi
                             MessageDialogButtons.Ok).ShowDialog();
                     }
                 });
-                #endif
             }                
             else
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
