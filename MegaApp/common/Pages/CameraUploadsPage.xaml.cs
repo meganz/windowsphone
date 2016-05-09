@@ -1,10 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Navigation;
 using Windows.ApplicationModel.Activation;
+using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -216,8 +218,8 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            if ((args.ContinuationData["Operation"] as string) != "SelectedFiles" || args.Files == null ||
-                args.Files.Count <= 0)
+            if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" || 
+                args.Files == null || args.Files.Count <= 0)
             {
                 ResetFilePicker();
                 return;
@@ -227,39 +229,64 @@ namespace MegaApp.Pages
 
             ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
 
-            // Set upload directory only once for speed improvement and if not exists, create dir
-            var uploadDir = AppService.GetUploadDirectoryPath(true);
-
-            foreach (var file in args.Files)
+            bool exceptionCatched = false;
+            try
             {
-                try
+                // Set upload directory only once for speed improvement and if not exists, create dir
+                var uploadDir = AppService.GetUploadDirectoryPath(true);
+
+                // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
+                IReadOnlyList<StorageFile> pickedFiles = args.Files;
+                foreach (StorageFile file in pickedFiles)
                 {
-                    string newFilePath = Path.Combine(uploadDir, file.Name);
-                    using (var fs = new FileStream(newFilePath, FileMode.Create))
+                    if (file == null) continue; // To avoid null references
+
+                    try
                     {
-                        var stream = await file.OpenStreamForReadAsync();
-                        await stream.CopyToAsync(fs);
-                        await fs.FlushAsync();
-                        fs.Close();
+                        string newFilePath = Path.Combine(uploadDir, file.Name);
+                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        {
+                            var stream = await file.OpenStreamForReadAsync();
+                            await stream.CopyToAsync(fs);
+                            await fs.FlushAsync();
+                            fs.Close();
+                        }
+                        var uploadTransfer = new TransferObjectModel(
+                            App.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, TransferType.Upload, newFilePath);
+                        App.MegaTransfers.Add(uploadTransfer);
+                        uploadTransfer.StartTransfer();
                     }
-                    var uploadTransfer = new TransferObjectModel(
-                        App.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, TransferType.Upload, newFilePath);
-                    App.MegaTransfers.Add(uploadTransfer);
-                    uploadTransfer.StartTransfer();
-                }
-                catch (Exception)
-                {
-                    new CustomMessageDialog(
+                    catch (Exception)
+                    {
+                        new CustomMessageDialog(
                             AppMessages.PrepareFileForUploadFailed_Title,
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
+
+                        exceptionCatched = true;
+                    }
                 }
             }
-            ResetFilePicker();
+            catch (Exception)
+            {
+                new CustomMessageDialog(
+                    AppMessages.AM_PrepareFilesForUploadFailed_Title,
+                    String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
 
-            ProgressService.SetProgressIndicator(false);
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+                exceptionCatched = true;
+            }
+            finally
+            {
+                ResetFilePicker();
+
+                ProgressService.SetProgressIndicator(false);
+
+                if (!exceptionCatched)
+                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
+            }
         }
 
         private static void ResetFilePicker()
