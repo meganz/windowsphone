@@ -112,14 +112,19 @@ namespace MegaApp.Models
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() == MErrorType.API_OK)
+            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() != MErrorType.API_OK)
             {
-                this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode,
-                    new MoveNodeRequestListener());
-                return NodeActionResult.IsBusy;
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                });
+                
+                return NodeActionResult.Failed;
             }
 
-            return NodeActionResult.Failed;
+            this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode, new MoveNodeRequestListener());
+            return NodeActionResult.IsBusy;
         }
 
         public async Task<NodeActionResult> RemoveAsync(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
