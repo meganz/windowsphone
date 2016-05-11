@@ -306,6 +306,9 @@ namespace MegaApp.Pages
 
             // Check if we can go a folder up in the selected pivot view
             e.Cancel = CheckAndGoFolderUp(e.Cancel);
+
+            // Check if can go back in the stack of pages
+            e.Cancel = CheckGoBack(e.Cancel);
         }
 
         private bool CheckMultiSelectActive(bool isCancel)
