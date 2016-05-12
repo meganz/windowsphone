@@ -57,9 +57,6 @@ namespace MegaApp.Pages
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
 
-            if (NavigateService.PreviousPage == typeof(PasswordPage))
-                NavigationService.RemoveBackEntry();
-
             DebugPanel.DataContext = DebugService.DebugSettings;
 
             #if WINDOWS_PHONE_81
@@ -73,6 +70,14 @@ namespace MegaApp.Pages
             // Deinitialize ShakeGestures to disable shake detection
             ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
             ShakeGesturesHelper.Instance.Active = false;
+        }
+
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+
+            // Check if can go back in the stack of pages
+            e.Cancel = CheckGoBack(e.Cancel);
         }
                 
         private void InstanceOnShakeGesture(object sender, ShakeGestureEventArgs e)
