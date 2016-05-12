@@ -1256,6 +1256,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Error copying link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
+          <source>Unauthorized access</source>
+          <target state="new">Unauthorized access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" xml:space="preserve">
+          <source>You don't have access permission to the selected download path. Please, select a different download path and try again.</source>
+          <target state="new">You don't have access permission to the selected download path. Please, select a different download path and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
+        </trans-unit>
       </group>
     </body>
   </file>

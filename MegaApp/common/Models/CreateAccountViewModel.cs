@@ -89,8 +89,13 @@ namespace MegaApp.Models
 
         private bool CheckInputParameters()
         {
-            return !String.IsNullOrEmpty(Email) && !String.IsNullOrEmpty(FirstName) && 
-                !String.IsNullOrEmpty(Password) && !String.IsNullOrEmpty(ConfirmPassword);
+            // Because lastname is not an obligatory parameter, If the lastname field is null or empty, 
+            // force it to be an empty string to avoid "ArgumentNullException" when call the createAccount method.
+            if (String.IsNullOrWhiteSpace(LastName))
+                LastName = String.Empty;
+            
+            return !String.IsNullOrWhiteSpace(Email) && !String.IsNullOrWhiteSpace(FirstName) &&
+                !String.IsNullOrWhiteSpace(Password) && !String.IsNullOrWhiteSpace(ConfirmPassword);
         }
 
         private bool CheckPassword()

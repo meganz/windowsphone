@@ -566,7 +566,7 @@ namespace MegaApp.Models
             else
             {
                 if (node.IsImage)
-                    NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this);
+                    OnUiThread(() => NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this));
                 else
                     this.FocusedNode.Download(App.MegaTransfers);
             }            
@@ -658,7 +658,7 @@ namespace MegaApp.Models
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+            OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
         }
 
         public bool SelectMultipleItemsForMove()
@@ -762,7 +762,7 @@ namespace MegaApp.Models
             NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation,
                 App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
 
-            NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node);
+            OnUiThread(() => NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node));
         }
 
         private void CreateShortCut(object obj)
