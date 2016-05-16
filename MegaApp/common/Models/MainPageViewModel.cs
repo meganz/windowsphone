@@ -116,6 +116,12 @@ namespace MegaApp.Models
             return false;
         }
 
+        public void SetImportMode()
+        {
+            if(_mainPage != null)
+                _mainPage.SetImportMode();
+        }
+
         public void ChangeMenu(FolderViewModel currentFolderViewModel, IList iconButtons, IList menuItems)
         {
             switch (currentFolderViewModel.CurrentDisplayMode)
@@ -125,7 +131,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.OpenLink},
+                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.UI_OpenLink},
                         new []{ UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect});
                     break;
                 }
@@ -161,7 +167,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Import, UiResources.Cancel},
+                        new[] { UiResources.Import, UiResources.Cancel, UiResources.AddFolder},
                         null);
                     break;
                 }

@@ -130,7 +130,8 @@ namespace MegaApp.Classes
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMediumLarge"]),
                 Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
                 Margin = new Thickness(0, 28, 0, 0),
-                HorizontalAlignment = HorizontalAlignment.Left
+                HorizontalAlignment = HorizontalAlignment.Left,
+                TextWrapping = TextWrapping.Wrap
             };
 
             // Add title to the view
@@ -145,7 +146,8 @@ namespace MegaApp.Classes
                 FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeSmall"]),
                 Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneSubtleColor"]),
                 Margin = new Thickness(0, 50, 0, 22),
-                HorizontalAlignment = HorizontalAlignment.Left
+                HorizontalAlignment = HorizontalAlignment.Left,
+                TextWrapping = TextWrapping.Wrap
             };
 
             // Add message to the view

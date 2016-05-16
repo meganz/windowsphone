@@ -78,7 +78,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.OpenLink},
+                        new[] { UiResources.Upload, UiResources.AddFolder, UiResources.UI_OpenLink},
                         new []{ UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect});
                     break;
                 }

@@ -160,6 +160,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link..
+        /// </summary>
+        public static string AM_DecryptionKeyAlertMessage {
+            get {
+                return ResourceManager.GetString("AM_DecryptionKeyAlertMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enter decryption key.
+        /// </summary>
+        public static string AM_DecryptionKeyAlertTitle {
+            get {
+                return ResourceManager.GetString("AM_DecryptionKeyAlertTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid decryption key.
+        /// </summary>
+        public static string AM_DecryptionKeyNotValid {
+            get {
+                return ResourceManager.GetString("AM_DecryptionKeyNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to delete settings. Please try again. [{0}].
         /// </summary>
         public static string AM_DeleteSettingsFailed {
@@ -187,6 +214,30 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This could be due to the following reasons:
+        ///- The file has been removed because of a ToS/AUP violation.
+        ///- Invalid URL – the link you are trying to access does not exist.
+        ///- The file has been deleted by the user..
+        /// </summary>
+        public static string AM_FileLinkUnavailable {
+            get {
+                return ResourceManager.GetString("AM_FileLinkUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This could be due to the following reasons:
+        ///- The folder link has been removed because of a ToS/AUP violation.
+        ///- Invalid URL – the link you are trying to access does not exist.
+        ///- The folder link has been deleted by the user..
+        /// </summary>
+        public static string AM_FolderLinkUnavailable {
+            get {
+                return ResourceManager.GetString("AM_FolderLinkUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File import failed [{0}].
         /// </summary>
         public static string AM_ImportFileFailed {
@@ -210,6 +261,15 @@ namespace MegaApp.Resources {
         public static string AM_InvalidLink {
             get {
                 return ResourceManager.GetString("AM_InvalidLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unavailable link.
+        /// </summary>
+        public static string AM_LinkUnavailableTitle {
+            get {
+                return ResourceManager.GetString("AM_LinkUnavailableTitle", resourceCulture);
             }
         }
         
@@ -255,6 +315,24 @@ namespace MegaApp.Resources {
         public static string AM_LoadSettingsFailed_Title {
             get {
                 return ResourceManager.GetString("AM_LoadSettingsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Open link failed [{0}].
+        /// </summary>
+        public static string AM_OpenLinkFailed {
+            get {
+                return ResourceManager.GetString("AM_OpenLinkFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Open link failed.
+        /// </summary>
+        public static string AM_OpenLinkFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_OpenLinkFailed_Title", resourceCulture);
             }
         }
         

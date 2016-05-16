@@ -201,14 +201,6 @@
     <value>เปิด</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="OpenLinkText" xml:space="preserve">
-    <value>เปิดลิงก์ดาวน์โหลด MEGA:</value>
-    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>เปิดลิงก์ดาวน์โหลด MEGA:</value>
-    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>รหัสผ่านของคุณ</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
@@ -882,10 +874,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>ปี</value>
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>วางลิงก์ดาวน์โหลด MEGA:</value>
-    <comment>Label for dialog message to download via a MEGA link</comment>
-  </data>
   <data name="RenewsOn" xml:space="preserve">
     <value>ต่ออายุใน</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
@@ -951,10 +939,6 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
   <data name="WarningOutOfSpace" xml:space="preserve">
     <value>พื้นที่ของคุณใกล้จะเต็มแล้ว</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
-  </data>
-  <data name="ImportLinkBorderText" xml:space="preserve">
-    <value>เรียกดูไปยังปลายทางและนำเข้าหรือลิงก์ดาวน์โหลด</value>
-    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
     <value>เพิ่มรายการติดต่อ</value>

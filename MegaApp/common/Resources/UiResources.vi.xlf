@@ -141,15 +141,10 @@
           <target state="translated">Mở</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/OpenLinkText" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Mở liên kết tải về:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</note>
-        </trans-unit>
-        <trans-unit id="Resx/OpenLink" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Mở liên kết tải về:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" xml:space="preserve">
+          <source>Open MEGA link</source>
+          <target state="new">Open MEGA link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
           <source>your password</source>
@@ -1011,10 +1006,10 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Năm</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PasteMegaDownloadLink" translate="yes" space="preserve">
-          <source>Paste MEGA download link:</source>
-          <target state="translated">Dán MEGA link vào đây để tải:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
+        <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" xml:space="preserve">
+          <source>Paste MEGA link:</source>
+          <target state="new">Paste MEGA link:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
@@ -1098,10 +1093,11 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <target state="translated">Bạn sắp hết không gian lưu trữ!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
-        <trans-unit id="Resx/ImportLinkBorderText" translate="yes" space="preserve">
-          <source>Browse to destination and import or download link</source>
-          <target state="translated">Duyệt đến vị trí đích và chuyển nhập (hoặc tải) link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" xml:space="preserve">
+          <source>Import to {0}</source>
+          <target state="new">Import to {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
@@ -1391,6 +1387,31 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Deselect all</source>
           <target state="translated">Deselect all</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DecryptionKey" translate="yes" xml:space="preserve">
+          <source>Decryption key</source>
+          <target state="new">Decryption key</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FolderLink" translate="yes" xml:space="preserve">
+          <source>Folder link</source>
+          <target state="new">Folder link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FileLink" translate="yes" xml:space="preserve">
+          <source>File link</source>
+          <target state="new">File link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenLink" translate="yes" xml:space="preserve">
+          <source>Open link</source>
+          <target state="new">Open link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Decrypt" translate="yes" xml:space="preserve">
+          <source>Decrypt</source>
+          <target state="new">Decrypt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
