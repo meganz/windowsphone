@@ -1261,23 +1261,23 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>You are logged in with another account</source>
           <target state="new">You are logged in with another account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" xml:space="preserve">
           <source>Unavailable link</source>
           <target state="new">Unavailable link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" xml:space="preserve">
           <source>Open link failed</source>
           <target state="new">Open link failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" xml:space="preserve">
           <source>Open link failed [{0}]</source>
           <target state="new">Open link failed [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" xml:space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
@@ -1288,7 +1288,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" xml:space="preserve">
           <source>This could be due to the following reasons:
 - The file has been removed because of a ToS/AUP violation.
@@ -1299,27 +1299,37 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" xml:space="preserve">
           <source>Invalid decryption key</source>
           <target state="new">Invalid decryption key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" xml:space="preserve">
           <source>Enter decryption key</source>
           <target state="new">Enter decryption key</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" xml:space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
           <target state="new">To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
-        </trans-unit>
+          </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" xml:space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
           <target state="new">If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
-        </trans-unit>
+          </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" xml:space="preserve">
+          <source>Unauthorized access</source>
+          <target state="new">Unauthorized access</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
+          </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" xml:space="preserve">
+          <source>You don't have access permission to the selected download path. Please, select a different download path and try again.</source>
+          <target state="new">You don't have access permission to the selected download path. Please, select a different download path and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
+          </trans-unit>
       </group>
     </body>
   </file>
