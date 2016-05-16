@@ -205,6 +205,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You don&apos;t have access permission to the selected download path. Please, select a different download path and try again..
+        /// </summary>
+        public static string AM_DowloadPathUnauthorizedAccess {
+            get {
+                return ResourceManager.GetString("AM_DowloadPathUnauthorizedAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Unauthorized access.
+        /// </summary>
+        public static string AM_DowloadPathUnauthorizedAccess_Title {
+            get {
+                return ResourceManager.GetString("AM_DowloadPathUnauthorizedAccess_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to download the file. Please try again..
         /// </summary>
         public static string AM_DownloadNodeFailedNoErrorCode {
