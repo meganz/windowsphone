@@ -221,8 +221,8 @@ namespace MegaApp.Pages
             // If the user is trying to open a MEGA link
             if (App.ActiveImportLink != null)
             {
-                _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
-                SetApplicationBarData();
+                App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
             }
         }
 
@@ -669,6 +669,12 @@ namespace MegaApp.Pages
                 default:
                     throw new ArgumentOutOfRangeException("driveDisplayMode");
             }
+        }
+
+        public void SetImportMode()
+        {
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+            SetApplicationBarData();
         }
 
         public void ChangeGetProAccountBorderVisibility(Visibility visibility)
@@ -1167,8 +1173,7 @@ namespace MegaApp.Pages
 
             if(App.ActiveImportLink != null)
             {
-                App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                _mainPageViewModel.ActiveFolderView.ImportLink(App.ActiveImportLink);                
             }
             else
             {
@@ -1179,8 +1184,9 @@ namespace MegaApp.Pages
                     MessageDialogButtons.Ok).ShowDialog();
             }
 
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
+            App.ActiveImportLink = null;
 
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
         }
 
@@ -1190,8 +1196,8 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             App.ActiveImportLink = null;
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
         }
 

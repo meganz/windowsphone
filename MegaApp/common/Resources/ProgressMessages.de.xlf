@@ -233,6 +233,16 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">Account-Upgrade...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when upgrading an account - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/PM_OpenFolderLink" translate="yes" xml:space="preserve">
+          <source>Opening folder link...</source>
+          <target state="new">Opening folder link...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a folder link to import/download - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/PM_OpenFileLink" translate="yes" xml:space="preserve">
+          <source>Opening file link...</source>
+          <target state="new">Opening file link...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a file link to import/download - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>

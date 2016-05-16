@@ -88,7 +88,7 @@
 
         <shell:ApplicationBar x:Key="ImportItemMenu">
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/link.png" 
+        		IconUri="/Assets/AppBar/check.png" 
         		Text="import" 
         		Click="OnImportLinkClick" 
 			/>
@@ -96,6 +96,11 @@
         		IconUri="/Assets/AppBar/cancel.png" 
         		Text="cancel" 
         		Click="OnCancelImportClick" 				
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
 			/>
         </shell:ApplicationBar>
 
@@ -298,7 +303,7 @@
                                 <Border.Background>
                                     <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}" Opacity="0.75"/>
                                 </Border.Background>
-                                <TextBlock TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ImportLinkBorderText, Source={StaticResource LocalizedStrings}}" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
+                                <TextBlock TextWrapping="Wrap" Text="{Binding CloudDrive.ImportLinkBorderText}" Margin="12" HorizontalAlignment="Center" FontSize="{StaticResource PhoneFontSizeSmall}"/>
                             </Border>
                         </Grid>
                     </Grid>

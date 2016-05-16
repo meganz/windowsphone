@@ -61,8 +61,12 @@ namespace MegaApp.Services
         }
 
         #if WINDOWS_PHONE_80
-        public static async void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel, bool isImage = false)
+        public static async void ShowOpenLink(MNode publicNode, FolderViewModel folderViewModel, bool isImage = false)
         {
+            // Check if a "folderviewmodel" and "publicNode" is available
+            if (folderViewModel == null) throw new ArgumentNullException("folderViewModel");
+            if (publicNode == null) throw new ArgumentNullException("publicNode");
+
             IEnumerable<string> buttons;
 
             // Only allows download directly if is an image file
@@ -70,17 +74,17 @@ namespace MegaApp.Services
                 buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
             else
                 buttons = new string[] { UiResources.Import.ToLower() };
-
+            
             MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
                 buttonsContent: buttons,
-                title: UiResources.LinkOptions,
+                title: GetShowOpenLinkTitle(publicNode),
                 message: publicNode.getName()
                 );
 
             switch (closedEventArgs.ButtonIndex)
             {
                 case 0: // Import button clicked
-                    folderViewModel.ImportLink(link);
+                    App.MainPageViewModel.SetImportMode();
                     break;
 
                 case 1: // Download button clicked
@@ -89,35 +93,42 @@ namespace MegaApp.Services
             }
         }
         #elif WINDOWS_PHONE_81
-        public static void ShowOpenLink(MNode publicNode, string link, FolderViewModel folderViewModel)
+        public static void ShowOpenLink(MNode publicNode, FolderViewModel folderViewModel)
         {
-            // Check if a folderviewmodel is available
+            // Check if a "folderviewmodel" and "publicNode" is available
             if (folderViewModel == null) throw new ArgumentNullException("folderViewModel");
-
-            // Needed to avoid "Implicity captured closure" compiler warning.
-            var importFolderViewModel = folderViewModel;
-            var downloadFolderViewModel = folderViewModel;
-
             if (publicNode == null) throw new ArgumentNullException("publicNode");
 
-            var customMessageDialog = new CustomMessageDialog(UiResources.LinkOptions, publicNode.getName(), App.AppInformation,
-               new[]
+            var customMessageDialog = new CustomMessageDialog(GetShowOpenLinkTitle(publicNode), 
+                publicNode.getName(), App.AppInformation,
+                new[]
                 {
                     new DialogButton(UiResources.Import, () =>
                     {
-                        if (String.IsNullOrWhiteSpace(link)) throw new ArgumentNullException("link");
-                        importFolderViewModel.ImportLink(link);
+                        App.MainPageViewModel.SetImportMode();
                     }),
                     new DialogButton(UiResources.Download, () =>
                     {                        
-                        downloadFolderViewModel.DownloadLink(publicNode);
+                        folderViewModel.DownloadLink(publicNode);
                     }),
                 });
 
             customMessageDialog.ShowDialog();
-            
         }
         #endif
+
+        private static String GetShowOpenLinkTitle(MNode publicNode)
+        {
+            switch (publicNode.getType())
+            {
+                case MNodeType.TYPE_FILE:
+                    return UiResources.UI_FileLink;
+                case MNodeType.TYPE_FOLDER:
+                    return UiResources.UI_FolderLink;
+                default:
+                    return UiResources.LinkOptions;
+            }
+        }
 
         public static void ShowOverquotaAlert()
         {
