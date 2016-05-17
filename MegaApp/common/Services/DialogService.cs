@@ -61,36 +61,33 @@ namespace MegaApp.Services
         }
 
         #if WINDOWS_PHONE_80
-        public static async void ShowOpenLink(MNode publicNode, FolderViewModel folderViewModel, bool isImage = false)
+        public static void ShowOpenLink(MNode publicNode, FolderViewModel folderViewModel, bool isImage = false)
         {
             // Check if a "folderviewmodel" and "publicNode" is available
             if (folderViewModel == null) throw new ArgumentNullException("folderViewModel");
             if (publicNode == null) throw new ArgumentNullException("publicNode");
 
-            IEnumerable<string> buttons;
+            IEnumerable<DialogButton> buttons;
 
             // Only allows download directly if is an image file
             if (isImage)
-                buttons = new string[] { UiResources.Import.ToLower(), UiResources.Download.ToLower() };
-            else
-                buttons = new string[] { UiResources.Import.ToLower() };
-            
-            MessageBoxClosedEventArgs closedEventArgs = await RadMessageBox.ShowAsync(
-                buttonsContent: buttons,
-                title: GetShowOpenLinkTitle(publicNode),
-                message: publicNode.getName()
-                );
-
-            switch (closedEventArgs.ButtonIndex)
             {
-                case 0: // Import button clicked
-                    App.MainPageViewModel.SetImportMode();
-                    break;
+                buttons = new[]
+                {
+                    new DialogButton(UiResources.Import, () => App.MainPageViewModel.SetImportMode()),
+                    new DialogButton(UiResources.Download, () => folderViewModel.DownloadLink(publicNode))
+                };
+            }                
+            else
+            {
+                buttons = new[]
+                {
+                    new DialogButton(UiResources.Import, () => App.MainPageViewModel.SetImportMode())
+                };
+            }                
 
-                case 1: // Download button clicked
-                    folderViewModel.DownloadLink(publicNode);
-                    break;
-            }
+            new CustomMessageDialog(GetShowOpenLinkTitle(publicNode),
+                publicNode.getName(), App.AppInformation, buttons).ShowDialog();
         }
         #elif WINDOWS_PHONE_81
         public static void ShowOpenLink(MNode publicNode, FolderViewModel folderViewModel)
@@ -103,14 +100,8 @@ namespace MegaApp.Services
                 publicNode.getName(), App.AppInformation,
                 new[]
                 {
-                    new DialogButton(UiResources.Import, () =>
-                    {
-                        App.MainPageViewModel.SetImportMode();
-                    }),
-                    new DialogButton(UiResources.Download, () =>
-                    {                        
-                        folderViewModel.DownloadLink(publicNode);
-                    }),
+                    new DialogButton(UiResources.Import, () => App.MainPageViewModel.SetImportMode()),
+                    new DialogButton(UiResources.Download, () => folderViewModel.DownloadLink(publicNode))
                 });
 
             customMessageDialog.ShowDialog();
