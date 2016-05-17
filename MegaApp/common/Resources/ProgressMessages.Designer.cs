@@ -61,7 +61,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceling transfer....
+        ///   Busca una cadena traducida similar a Cancelling transfer....
         /// </summary>
         public static string CancelTransfer {
             get {
@@ -70,7 +70,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Emptying the rubbish bin....
+        ///   Busca una cadena traducida similar a Clearing the rubbish bin....
         /// </summary>
         public static string CleanRubbishBin {
             get {
@@ -151,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Getting payment Url....
+        ///   Busca una cadena traducida similar a Getting payment URL....
         /// </summary>
         public static string GetPaymentUrl {
             get {
@@ -205,7 +205,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Reminding contat request....
+        ///   Busca una cadena traducida similar a Reminding contact about the request....
         /// </summary>
         public static string InviteContactRemind {
             get {
@@ -232,7 +232,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Moving to rubbish bin....
+        ///   Busca una cadena traducida similar a Moving to Rubbish bin....
         /// </summary>
         public static string NodeToTrash {
             get {
@@ -336,6 +336,24 @@ namespace MegaApp.Resources {
         public static string PM_Logout {
             get {
                 return ResourceManager.GetString("PM_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Opening file link....
+        /// </summary>
+        public static string PM_OpenFileLink {
+            get {
+                return ResourceManager.GetString("PM_OpenFileLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Opening folder link....
+        /// </summary>
+        public static string PM_OpenFolderLink {
+            get {
+                return ResourceManager.GetString("PM_OpenFolderLink", resourceCulture);
             }
         }
         

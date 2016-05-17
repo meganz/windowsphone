@@ -454,10 +454,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Año</value>
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>Pega el enlace de descarga MEGA:</value>
-    <comment>Label for dialog message to download via a MEGA link</comment>
-  </data>
   <data name="RenewsOn" xml:space="preserve">
     <value>Renovación el</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
@@ -497,10 +493,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="WarningOutOfSpace" xml:space="preserve">
     <value>¡Te estás quedando sin espacio!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
-  </data>
-  <data name="ImportLinkBorderText" xml:space="preserve">
-    <value>Localiza el destino e importa o descarga el enlace</value>
-    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
     <value>Seleccionar </value>
@@ -1045,17 +1037,9 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Tú contraseña</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
   </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>Abrir enlace</value>
-    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>siguiente</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="OpenLinkText" xml:space="preserve">
-    <value>Abrir enlace</value>
-    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
   </data>
   <data name="Open" xml:space="preserve">
     <value>Abrir</value>

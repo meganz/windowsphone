@@ -276,6 +276,9 @@
     <Compile Include="..\common\Enums\TransferType.cs">
       <Link>Enums\TransferType.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\UriLinkType.cs">
+      <Link>Enums\UriLinkType.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\ViewMode.cs">
       <Link>Enums\ViewMode.cs</Link>
     </Compile>
@@ -335,6 +338,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\CleanRubbishBinRequestListener.cs">
       <Link>MegaApi\CleanRubbishBinRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ConfirmAccountRequestListener.cs">
+      <Link>MegaApi\ConfirmAccountRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\CreateAccountRequestListener.cs">
       <Link>MegaApi\CreateAccountRequestListener.cs</Link>
@@ -452,9 +458,6 @@
     </Compile>
     <Compile Include="..\common\Models\BaseMediaViewModel.cs">
       <Link>Models\BaseMediaViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\BaseRequestListenerViewModel.cs">
-      <Link>Models\BaseRequestListenerViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\BaseSDKViewModel.cs">
       <Link>Models\BaseSDKViewModel.cs</Link>

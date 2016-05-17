@@ -112,19 +112,14 @@ namespace MegaApp.Models
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() != MErrorType.API_OK)
+            if (this.MegaSdk.checkMove(this.OriginalMNode, newParentNode.OriginalMNode).getErrorCode() == MErrorType.API_OK)
             {
-                OnUiThread(() =>
-                {
-                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                });
-                
-                return NodeActionResult.Failed;
+                this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode,
+                    new MoveNodeRequestListener());
+                return NodeActionResult.IsBusy;
             }
 
-            this.MegaSdk.moveNode(this.OriginalMNode, newParentNode.OriginalMNode, new MoveNodeRequestListener());
-            return NodeActionResult.IsBusy;
+            return NodeActionResult.Failed;
         }
 
         public async Task<NodeActionResult> RemoveAsync(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
@@ -244,8 +239,6 @@ namespace MegaApp.Models
                 else { downloadPath = AppService.GetSelectedDownloadDirectoryPath(); }
             }
 
-            OnUiThread(() => ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareDownloads));
-
             // Extra check to try avoid null values
             if (String.IsNullOrWhiteSpace(downloadPath))
             {
@@ -264,7 +257,7 @@ namespace MegaApp.Models
                 return;
             }
 
-            if (!await CheckDownloadPath(downloadPath)) return;
+            await CheckDownloadPath(downloadPath);
                         
             // If selected file is a folder then also select it childnodes to download
             bool result;
@@ -272,8 +265,6 @@ namespace MegaApp.Models
                 result = await RecursiveDownloadFolder(transferQueu, downloadPath, this);
             else
                 result = await DownloadFile(transferQueu, downloadPath, this);
-
-            OnUiThread(() => ProgressService.SetProgressIndicator(false));
 
             // TODO Remove this global declaration in method
             App.CloudDrive.NoFolderUpAction = true;
@@ -283,20 +274,11 @@ namespace MegaApp.Models
 
         private async Task<bool> CheckDownloadPath(String downloadPath)
         {
-            bool pathExists = true; //Suppose that exists
-
+            bool folderExists = true; //Suppose that exists
             try { await StorageFolder.GetFolderFromPathAsync(downloadPath); }
-            catch (FileNotFoundException) { pathExists = false; }
-            catch (UnauthorizedAccessException)
-            {
-                new CustomMessageDialog(AppMessages.AM_DowloadPathUnauthorizedAccess_Title,
-                    AppMessages.AM_DowloadPathUnauthorizedAccess,
-                    this.AppInformation).ShowDialog();
-                return false;
-            }
+            catch (FileNotFoundException) { folderExists = false; }
 
-            if (!pathExists)
-                return await CreateDownloadPath(downloadPath);
+            if (!folderExists) await CreateDownloadPath(downloadPath);
 
             return true;
         }
@@ -306,31 +288,17 @@ namespace MegaApp.Models
             String rootPath = Path.GetPathRoot(downloadPath);
             String tempDownloadPath = downloadPath;
                         
-            List<String> foldersNames = new List<String>(); //Folders that will be needed create
-            List<String> foldersPaths = new List<String>(); //Paths where will needed create the folders
+            List<String> foldersNames = new List<String>();
+            List<String> foldersPaths = new List<String>();
 
-            //Loop to follow the reverse path to search the first missing folder
+            // Get each folder name in the download path
             while (String.Compare(tempDownloadPath, rootPath) != 0)
             {                
-                try { await StorageFolder.GetFolderFromPathAsync(tempDownloadPath); }
-                catch (UnauthorizedAccessException)
-                {
-                    //The folder exists, but probably is a restricted access system folder in the download path. 
-                    break; // Exit the loop.
-                }
-                catch (FileNotFoundException) //Folder not exists
-                {
-                    //Include the folder name that will be needed create and the corresponding path
-                    foldersNames.Insert(0, Path.GetFileName(tempDownloadPath));                    
-                    foldersPaths.Insert(0, new DirectoryInfo(tempDownloadPath).Parent.FullName);
-                }
-                finally 
-                {
-                    //Upgrade to the next path to check (parent folder)
-                    tempDownloadPath = new DirectoryInfo(tempDownloadPath).Parent.FullName; 
-                }
-            }            
-
+                foldersNames.Insert(0, Path.GetFileName(tempDownloadPath));
+                tempDownloadPath = new DirectoryInfo(tempDownloadPath).Parent.FullName;
+                foldersPaths.Insert(0, tempDownloadPath);
+            }                       
+            
             // Create each necessary folder of the download path
             for (int i = 0; i < foldersNames.Count; i++)
             {
@@ -339,17 +307,10 @@ namespace MegaApp.Models
                     StorageFolder folder = await StorageFolder.GetFolderFromPathAsync(foldersPaths.ElementAt(i));
                     await folder.CreateFolderAsync(Path.GetFileName(foldersNames.ElementAt(i)), CreationCollisionOption.OpenIfExists);
                 }
-                catch (Exception e) 
+                catch (UnauthorizedAccessException)
                 {
-                    OnUiThread(() =>
-                    {
-                        new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
-                            String.Format(AppMessages.DownloadNodeFailed, e.Message),
-                            App.AppInformation).ShowDialog();
-                    });
-
-                    return false; 
-                }                
+                    // Do nothing. Probably is a restricted access system folder in the download path
+                }
             }
 
             return true;
@@ -372,48 +333,37 @@ namespace MegaApp.Models
                     this.AppInformation).ShowDialogAsync();
                 return false;
             }
+            
+            String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
+            StorageFolder downloadFolder = await StorageFolder.GetFolderFromPathAsync(downloadPath);
 
-            try
+            if (!FolderService.FolderExists(newDownloadPath))
+                await downloadFolder.CreateFolderAsync(folderNode.Name, CreationCollisionOption.OpenIfExists);
+            
+            MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
+
+            bool result = true; // Default value in case that the folder is empty
+            for (int i=0; i < childList.size(); i++)
             {
-                String newDownloadPath = Path.Combine(downloadPath, folderNode.Name);
-                if (!await CheckDownloadPath(newDownloadPath)) return false;
+                // To avoid pass null values to CreateNew
+                if (childList.get(i) == null) continue;
 
-                MNodeList childList = MegaSdk.getChildren(folderNode.OriginalMNode);
+                var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ContainerType.CloudDrive);
 
-                bool result = true; // Default value in case that the folder is empty                
-                for (int i = 0; i < childList.size(); i++)
-                {
-                    // To avoid pass null values to CreateNew
-                    if (childList.get(i) == null) continue;
+                // If node creation failed for some reason, continue with the rest and leave this one
+                if (childNode == null) continue;
 
-                    var childNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, childList.get(i), ContainerType.CloudDrive);
+                bool partialResult;
+                if (childNode.IsFolder)
+                    partialResult = await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
+                else
+                    partialResult= await DownloadFile(transferQueu, newDownloadPath, childNode);
 
-                    // If node creation failed for some reason, continue with the rest and leave this one
-                    if (childNode == null) continue;
-
-                    bool partialResult;
-                    if (childNode.IsFolder)
-                        partialResult = await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
-                    else
-                        partialResult = await DownloadFile(transferQueu, newDownloadPath, childNode);
-
-                    // Only change the global result if the partial result indicates an error
-                    if (!partialResult) result = partialResult;
-                }
-
-                return result;
+                // Only change the global result if the partial result indicates an error
+                if (!partialResult) result = partialResult;
             }
-            catch (Exception e) 
-            {
-                OnUiThread(() =>
-                {
-                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
-                        String.Format(AppMessages.DownloadNodeFailed, e.Message),
-                        App.AppInformation).ShowDialog();
-                });
 
-                return false; 
-            }
+            return result;
         }
 
         private async Task<bool> DownloadFile(TransferQueu transferQueu, String downloadPath, NodeViewModel fileNode)
@@ -435,8 +385,8 @@ namespace MegaApp.Models
                         
             try
             {
-                if (!await CheckDownloadPath(Path.GetDirectoryName(fileNode.Transfer.FilePath)))
-                    return false;                
+                if (!FolderService.FolderExists(Path.GetDirectoryName(fileNode.Transfer.FilePath)))
+                    FolderService.CreateFolder(Path.GetDirectoryName(fileNode.Transfer.FilePath));
 
                 fileNode.Transfer.DownloadFolderPath = downloadPath;
                 transferQueu.Add(fileNode.Transfer);
@@ -444,21 +394,20 @@ namespace MegaApp.Models
             }
             catch (Exception e)
             {
-                String message;
                 if (e is ArgumentException || e is NotSupportedException)
-                    message = String.Format(AppMessages.InvalidFileName, fileNode.Transfer.FilePath);
-                else if (e is PathTooLongException)
-                    message = String.Format(AppMessages.PathTooLong, fileNode.Transfer.FilePath);
-                else if (e is UnauthorizedAccessException)
-                    message = String.Format(AppMessages.FolderUnauthorizedAccess, Path.GetDirectoryName(fileNode.Transfer.FilePath));                
-                else
-                    message = String.Format(AppMessages.DownloadNodeFailed, e.Message);
-
-                OnUiThread(() =>
-                {
                     new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
-                        message, App.AppInformation).ShowDialog();
-                });                
+                        String.Format(AppMessages.InvalidFileName, fileNode.Transfer.FilePath),
+                        App.AppInformation).ShowDialog();
+
+                if (e is PathTooLongException)
+                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                        String.Format(AppMessages.PathTooLong, fileNode.Transfer.FilePath),
+                        App.AppInformation).ShowDialog();
+
+                if (e is UnauthorizedAccessException)
+                    new CustomMessageDialog(AppMessages.DownloadNodeFailed_Title,
+                        String.Format(AppMessages.FolderUnauthorizedAccess, Path.GetDirectoryName(fileNode.Transfer.FilePath)),
+                        App.AppInformation).ShowDialog();
 
                 return false;
             }

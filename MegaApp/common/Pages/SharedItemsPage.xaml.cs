@@ -204,8 +204,9 @@ namespace MegaApp.Pages
                 }
             }
 
-            // Check if can go back in the stack of pages
-            e.Cancel = CheckGoBack(e.Cancel);
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+
+            e.Cancel = true;
         }
 
         private bool CheckMultiSelectActive(bool isCancel)
