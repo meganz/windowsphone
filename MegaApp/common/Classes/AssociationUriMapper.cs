@@ -24,6 +24,8 @@ namespace MegaApp.Classes
 
                 if (tempUri.StartsWith("mega:///#"))
                     tempUri = tempUri.Replace("mega:///#", "https://mega.nz/#");
+                else if (tempUri.StartsWith("mega://#"))
+                    tempUri = tempUri.Replace("mega://#", "https://mega.nz/#");
                 else if (tempUri.StartsWith("mega://"))
                     tempUri = tempUri.Replace("mega://", "https://mega.nz/#");
                                 
