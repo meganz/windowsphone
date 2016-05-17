@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Navigation;
@@ -119,14 +118,6 @@ namespace MegaApp.Pages
 
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
-        }
-
-        protected override void OnBackKeyPress(CancelEventArgs e)
-        {
-            base.OnBackKeyPress(e);
-            
-            // Check if can go back in the stack of pages
-            e.Cancel = CheckGoBack(e.Cancel);
         }
 
         private void OnPauseAllClick(object sender, EventArgs e)

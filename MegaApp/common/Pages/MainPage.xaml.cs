@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -145,7 +146,35 @@ namespace MegaApp.Pages
             {
                 if (!SettingsService.HasValidSession())
                 {
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                    if(App.AppInformation.UriLink == UriLinkType.Confirm)
+                    {
+                        App.AppInformation.UriLink = UriLinkType.None;
+                        if(NavigationContext.QueryString.ContainsKey("confirm"))
+                        {
+                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                            NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                                new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUri) } });
+                        }
+                    }
+                    else if (App.AppInformation.UriLink == UriLinkType.NewSignUp)
+                    {
+                        App.AppInformation.UriLink = UriLinkType.None;
+                        if (NavigationContext.QueryString.ContainsKey("newsignup"))
+                        {
+                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
+                                new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUri) } });
+                        }
+                    }
+                    else if(App.AppInformation.UriLink != UriLinkType.None)
+                    {
+                        NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+                    }
+                    else
+                    {                        
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                    }
+                    
                     return false;
                 }
             }
@@ -192,8 +221,8 @@ namespace MegaApp.Pages
             // If the user is trying to open a MEGA link
             if (App.ActiveImportLink != null)
             {
-                _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
-                SetApplicationBarData();
+                App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
             }
         }
 
@@ -266,12 +295,6 @@ namespace MegaApp.Pages
             App.CloudDrive.ListBox = LstCloudDrive;
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-
-            if (NavigationContext.QueryString.ContainsKey("ShortCutBase64Handle"))
-                App.ShortCutBase64Handle = NavigationContext.QueryString["ShortCutBase64Handle"];
-
-            if (NavigationContext.QueryString.ContainsKey("filelink"))
-                this.GetFileLink();
             
             if (App.AppInformation.IsStartupModeActivate)
             {
@@ -360,6 +383,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.SelfieSelected:
                     break;
                 case NavigationParameter.UriLaunch:
+                    checkSpecialNavigation = Load();
                     break;
                 case NavigationParameter.BreadCrumb:
                     break;
@@ -375,12 +399,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.None:
                     {
                         if(navParam != NavigationParameter.Normal)
-                        {
-                            if (NavigationContext.QueryString.ContainsKey("filelink"))
-                                this.GetFileLink();
-
                             if (!CheckPinLock()) return;
-                        }
 
                         checkSpecialNavigation = Load();
                         break;
@@ -413,12 +432,13 @@ namespace MegaApp.Pages
             return true;
         }
         
-        private bool SpecialNavigation()
+        public bool SpecialNavigation()
         {
             // If is a newly activated account, navigates to the upgrade account page
             if (App.AppInformation.IsNewlyActivatedAccount)
             {
-                NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });
+                NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal, 
+                    new Dictionary<string, string> { { "Pivot", "1" } });
                 return true;
             }
             // If is the first login, navigates to the camera upload service config page
@@ -440,22 +460,64 @@ namespace MegaApp.Pages
                 return true;
             }
 
-            return false;                
-        }
-
-        private void GetFileLink()
-        {
-            App.ActiveImportLink = NavigationContext.QueryString["filelink"];
-
-            if (App.ActiveImportLink.StartsWith("mega://"))
-                App.ActiveImportLink = App.ActiveImportLink.Replace("mega://", "https://mega.nz/#");
-
-            if (App.ActiveImportLink.EndsWith("/"))
+            // Manage URI links
+            switch(App.AppInformation.UriLink)
             {
-                App.ActiveImportLink = 
-                    App.ActiveImportLink.Remove(App.ActiveImportLink.Length-1, 1);
-            }            
-        }
+                case UriLinkType.NewSignUp:
+                case UriLinkType.Confirm:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    if (NavigationContext.QueryString.ContainsKey("newsignup") || 
+                        NavigationContext.QueryString.ContainsKey("confirm"))
+                    {
+                        var customMessageDialog = new CustomMessageDialog(
+                            AppMessages.AM_AlreadyLoggedInAlert_Title,
+                            AppMessages.AM_AlreadyLoggedInAlert,
+                            App.AppInformation,
+                            MessageDialogButtons.YesNo);
+
+                        customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                        {
+                            // First log out of the current account
+                            App.MegaSdk.logout(new LogOutRequestListener(false));
+
+                            if (NavigationContext.QueryString.ContainsKey("newsignup"))
+                            {
+                                // Go to the CreateAccountPage to create a new account
+                                string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+                                NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
+                                    new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUrl) } });
+                            }
+
+                            if(NavigationContext.QueryString.ContainsKey("confirm"))
+                            {
+                                // Go to the ConfirmAccountPage to confirm the new account
+                                string tempUrl = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                                NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                                    new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUrl) } });
+                            }
+                        };
+
+                        customMessageDialog.ShowDialog();
+                                                
+                        return true;
+                    }
+                    break;
+
+                case UriLinkType.Backup:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string> { { "backup", String.Empty } });                        
+                    return true;
+
+                case UriLinkType.FmIpc:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string> { { "Pivot", "2" } });
+                    return true;
+            }
+
+            return false;                
+        }        
         
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
@@ -607,6 +669,12 @@ namespace MegaApp.Pages
                 default:
                     throw new ArgumentOutOfRangeException("driveDisplayMode");
             }
+        }
+
+        public void SetImportMode()
+        {
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
+            SetApplicationBarData();
         }
 
         public void ChangeGetProAccountBorderVisibility(Visibility visibility)
@@ -832,25 +900,17 @@ namespace MegaApp.Pages
                     _mainPageViewModel.SourceFolderView.FocusedNode = null;
                 }
 
-                try
+                // Move all the selected nodes and then clear and release the selected nodes list
+                if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
                 {
-                    // Move all the selected nodes and then clear and release the selected nodes list
-                    if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
-                        _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
+                    foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
                     {
-                        foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
-                        {
-                            node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
-                            node.DisplayMode = NodeDisplayMode.Normal;
-                        }
-                        _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                        node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                        node.DisplayMode = NodeDisplayMode.Normal;
                     }
+                    _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
                 }
-                catch(InvalidOperationException)
-                {
-                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                }                
 
                 _mainPageViewModel.SourceFolderView = null;
             }            
@@ -1113,8 +1173,7 @@ namespace MegaApp.Pages
 
             if(App.ActiveImportLink != null)
             {
-                App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                _mainPageViewModel.ActiveFolderView.ImportLink(App.ActiveImportLink);                
             }
             else
             {
@@ -1125,8 +1184,9 @@ namespace MegaApp.Pages
                     MessageDialogButtons.Ok).ShowDialog();
             }
 
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
+            App.ActiveImportLink = null;
 
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
         }
 
@@ -1136,8 +1196,8 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             App.ActiveImportLink = null;
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
 
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
         }
 

@@ -42,11 +42,8 @@ namespace MegaApp.Pages
             NavigationService.RemoveBackEntry();
 
             _originPage = NavigateService.GetNavigationData<Type>();
-            if (_originPage == null || _originPage == typeof(NodeDetailsPage) ||
-                _originPage == typeof(PreviewImagePage) || _originPage == typeof(PhotoCameraPage))
-            {
+            if (_originPage == null || _originPage == typeof(NodeDetailsPage) || _originPage == typeof(PreviewImagePage))
                 _originPage = typeof(MainPage);
-            }                
         }
 
         private void OnPasswordLoaded(object sender, System.Windows.RoutedEventArgs e)
@@ -57,7 +54,8 @@ namespace MegaApp.Pages
         private void OnDoneClick(object sender, System.EventArgs e)
         {
         	if (!_passwordViewModel.CheckPassword()) return;
-            
+
+            NavigationService.RemoveBackEntry();
             App.AppInformation.HasPinLockIntroduced = true;
             NavigateService.NavigateTo(_originPage, NavigationParameter.PasswordLogin);    
         }

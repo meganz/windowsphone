@@ -50,12 +50,19 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
 
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            
+            if (navParam == NavigationParameter.UriLaunch &&
+                NavigationContext.QueryString.ContainsKey("backup"))
+                    _settingsViewModel.ProcessBackupLink();
 
             if (navParam == NavigationParameter.AutoCameraUpload)
             {
                 App.AppInformation.IsStartedAsAutoUpload = false;
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
+
+            if (NavigateService.PreviousPage == typeof(PasswordPage))
+                NavigationService.RemoveBackEntry();
 
             DebugPanel.DataContext = DebugService.DebugSettings;
 
@@ -70,14 +77,6 @@ namespace MegaApp.Pages
             // Deinitialize ShakeGestures to disable shake detection
             ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
             ShakeGesturesHelper.Instance.Active = false;
-        }
-
-        protected override void OnBackKeyPress(CancelEventArgs e)
-        {
-            base.OnBackKeyPress(e);
-
-            // Check if can go back in the stack of pages
-            e.Cancel = CheckGoBack(e.Cancel);
         }
                 
         private void InstanceOnShakeGesture(object sender, ShakeGestureEventArgs e)
