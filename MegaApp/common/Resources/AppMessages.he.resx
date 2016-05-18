@@ -1130,4 +1130,59 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>שגיאה בהעתקת הקישור</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>אם הינך מסכים, החשבון הנוכחי ינותק וכל המידע שהורד יימחק. האם אתה רוצה להמשיך?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>הינך מחובר עם חשבון אחר</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>על מנת לגשת לתיקייה/קובץ הזה, תצטרך את מפתח הפיענוח שלו. אם אין לך את המפתח, צור קשר עם יוצר הקישור.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>הכנס מפתח לפיענוח</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>מפתח פיענוח לא תקין</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>זה יכול להיגרם מכמה סיבות:
+- הקובץ נמחק עקב פגיעה בתנאי השימור או זכויות יוצרים.
+- קישור לא תקין - הקישור אליו אתה מנסה להיכנס לא קיים.
+- הקובץ נמחק על ידי המשתמש.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>זה יכול להיגרם מכמה סיבות:
+- הקובץ נמחק עקב פגיעה בתנאי השימור או זכויות יוצרים.
+- קישור לא תקין - הקישור אליו אתה מנסה להיכנס לא קיים.
+- הקובץ נמחק על ידי המשתמש.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>קישור לא זמין</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Open link failed [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Open link failed</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>אין לך גישה לקישור. אנא בחר קישור אחר ונסה שוב.</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>גישה לא מאושרת</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
 </root>

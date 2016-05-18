@@ -201,14 +201,6 @@
     <value>열기</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="OpenLinkText" xml:space="preserve">
-    <value>MEGA 다운로드 링크 열기:</value>
-    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>MEGA 다운로드 링크 열기:</value>
-    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>비밀번호</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
@@ -882,10 +874,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>연</value>
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>MEGA 다운로드 링크를 붙여넣으세요:</value>
-    <comment>Label for dialog message to download via a MEGA link</comment>
-  </data>
   <data name="RenewsOn" xml:space="preserve">
     <value>재결제일</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
@@ -951,10 +939,6 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
   <data name="WarningOutOfSpace" xml:space="preserve">
     <value>공간이 부족합니다!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
-  </data>
-  <data name="ImportLinkBorderText" xml:space="preserve">
-    <value>목적지를 선택하고 링크를 들여오거나 다운로드하세요</value>
-    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
     <value>연락처 추가</value>
@@ -1213,19 +1197,52 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>your first name</value>
+    <value>성</value>
     <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
   </data>
   <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>your last name</value>
+    <value>이름</value>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>모두 선택</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Deselect all</value>
+    <value>모두 해제</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenMegaLink" xml:space="preserve">
+    <value>MEGA 링크 열기</value>
+    <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PasteMegaLink" xml:space="preserve">
+    <value>MEGA 링크 붙여넣기:</value>
+    <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ImportLinkBorderText" xml:space="preserve">
+    <value>{0}으로 내보내기</value>
+    <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
+  </data>
+  <data name="UI_Decrypt" xml:space="preserve">
+    <value>해독</value>
+    <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DecryptionKey" xml:space="preserve">
+    <value>해독 키</value>
+    <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FileLink" xml:space="preserve">
+    <value>파일 링크</value>
+    <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FolderLink" xml:space="preserve">
+    <value>폴더 링크</value>
+    <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenLink" xml:space="preserve">
+    <value>링크 열기</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

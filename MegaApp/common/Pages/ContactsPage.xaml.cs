@@ -134,6 +134,21 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
             _contactsViewModel.Initialize(App.GlobalDriveListener);
 
+            // Check if the navigation destiny is a specific pivot item
+            if (NavigationContext.QueryString.ContainsKey("Pivot"))
+            {
+                var index = NavigationContext.QueryString["Pivot"];
+                if(!String.IsNullOrWhiteSpace(index))
+                {
+                    int indexParsed;
+                    if((int.TryParse(index, out indexParsed)) && 
+                        (indexParsed < ContactsPivot.Items.Count))
+                    {
+                        ContactsPivot.SelectedIndex = indexParsed;
+                    }                    
+                }                
+            }
+
             if (!NetworkService.IsNetworkAvailable())
             {
                 UpdateGUI(false);

@@ -238,7 +238,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Virhe viedessä kuvaa kansioon "kuvatallennukset". Yritä uudelleen.</value>
+    <value>Virhe viedessä kuvaa kansioon "kuvatallennukset". Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -312,7 +312,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>Item successfully removed</value>
+    <value>Kohde poistettu onnistuneesti</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -494,15 +494,15 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
   </data>
   <data name="QuestionAskedDownloadOption" xml:space="preserve">
-    <value>Haluatko viedä automaattisesti KUVA-tiedostot kuva-albumiisi latauksen jälkeen? Voit muuttaa tätä asetusta asetukset -sivulla myöhemmin. Muut tiedostotyypit tallennetaan pelkästään sovelluksen paikallismuistiin.</value>
+    <value>Haluatko viedä automaattisesti kuvatiedostot kuva-albumiisi latauksen jälkeen? Voit muuttaa tätä asetusta asetukset -sivulla myöhemmin. Muut tiedostotyypit tallennetaan pelkästään sovelluksen paikallismuistiin.</value>
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
-    <value>Lähetysten keskeytys epäonnistui</value>
+    <value>Lähetysten tauottaminen epäonnistui</value>
     <comment>Message of the dialog displayed when the process/request to pause transfers failed.</comment>
   </data>
   <data name="PausingTransfersFailed_Title" xml:space="preserve">
-    <value>Keskeytys epäonnistui</value>
+    <value>Taoutus epäonnistui</value>
     <comment>Title of the dialog displayed when the process/request to pause transfers failed - (String as short as possible).</comment>
   </data>
   <data name="ResumingTransfersFailed" xml:space="preserve">
@@ -510,7 +510,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Message of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="ResumingTransfersFailed_Title" xml:space="preserve">
-    <value>Jatka-toiminto epäonnistui</value>
+    <value>Jatkaminen epäonnistui</value>
     <comment>Title of the dialog displayed when the process/request to resume transfers failed.</comment>
   </data>
   <data name="MinimalPictureSelection" xml:space="preserve">
@@ -615,7 +615,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
-    <value>Tiedostokopiointi epäonnistui</value>
+    <value>Virhe tiedostoa kopioitaessa</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
@@ -874,28 +874,28 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
-    <value>Automaattisen kameralähetyksen edellytys </value>
+    <value>Automaattisen kameralähetyksen edellytykset</value>
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion" xml:space="preserve">
-    <value>Do you want to remove the contact {0}?</value>
+    <value>Haluatko poistaa kontaktin {0}?</value>
     <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
   </data>
   <data name="DeleteContactQuestion_Title" xml:space="preserve">
-    <value>Remove contact?</value>
+    <value>Poista kontakti?</value>
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
-    <value>The contact invitation could not be sent. Please try again.</value>
+    <value>Kontaktikutsua ei voitu lähettää. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>Failed to invite the contact</value>
+    <value>Kontaktin kutsuminen epäonnistui</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
-    <value>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</value>
+    <value>Käyttäjä {0} on kutsuttu ja hän näkyy kontakteissa kutsun hyväksymisen jälkeen.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
@@ -904,19 +904,19 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>MEGA automatic camera uploads</value>
+    <value>MEGAn automaattiset kameralähetykset </value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
-    <value>Your account has been updated. Do you want to check the new account details?</value>
+    <value>Käyttäjätilisi on päivitetty. Haluatko tarkistaa tilin uudet tiedot?</value>
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
-    <value>Updated account</value>
+    <value>Käyttäjätili päivitetty</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>SSL/TLS-varmennetta ei voida todentaa. Saatat olla altistunut niin sanotulle mies välissä -hyökkäykselle.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -924,33 +924,33 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</value>
+    <value>Automaattisen kameralähetyksen taustasovellus on pysähtynyt. Sen voi ottaa käyttöön uudelleen asetuksista.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>Auto Camera Upload failed</value>
+    <value>Automaattinen kameralähetys epäonnistui</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
-    <value>Failed to remove the contact {0}. Please try again. [{0}]</value>
+    <value>Kontaktin {0} poistaminen epäonnistui. Ole hyvä ja yritä uudelleen. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
-    <value>Failed to remove the contact</value>
+    <value>Kontaktin poistaminen epäonnistui</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
-    <value>Do you want to remove {0} contacts?</value>
+    <value>Haluatko poistaa {0} kontaktia?</value>
     <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
-    <value>Remove contacts?</value>
+    <value>Poista kontaktit?</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
-    <value>Failed to change password. Please try again.</value>
+    <value>Salasanan vaihtaminen epäonnistui. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process/request to change the MEGA account password failed.</comment>
   </data>
   <data name="ChangePasswordSuccess" xml:space="preserve">
@@ -962,57 +962,57 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Please fill in your old MEGA password and your new MEGA password.</value>
+    <value>Syötä MEGAn vanha salasana ja MEGAn uusi salasana.</value>
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
-    <value>Failed to close the session. Please try again. [{0}]</value>
+    <value>Istunnon sulkeminen epäonnistui. Ole hyvä ja yritä uudelleen. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseAllSessionsSuccess" xml:space="preserve">
-    <value>The remaining sessions were successfully closed.</value>
+    <value>Loput istunnot suljettiin onnistuneesti.</value>
     <comment>Message of the dialog displayed when close or kill all sessions (except current) successfully.</comment>
   </data>
   <data name="CloseSessionFailed" xml:space="preserve">
-    <value>Failed to close the session. Please try again. [{0}]</value>
+    <value>Istunnon sulkeminen epäonnistui. Ole hyvä ja yritä uudelleen. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="CloseSessionSucces" xml:space="preserve">
-    <value>The session has been successfully closed.</value>
+    <value>Istunto on suljettu onnistuneesti.</value>
     <comment>Message of the dialog displayed when close or kill a session succesfully.</comment>
   </data>
   <data name="CleanRubbishBinFailed" xml:space="preserve">
-    <value>Failed to clear the rubbish bin. Please try again.</value>
+    <value>Roskakorin tyhjentäminen epäonnistui. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process/request to empty the rubbish bin failed.</comment>
   </data>
   <data name="CleanRubbishBinQuestion" xml:space="preserve">
-    <value>Are you sure you want to permanently delete all files from the rubbish bin?</value>
+    <value>Haluatko varmasti poistaa lopullisesti kaikki tiedostot roskakorista?</value>
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
-    <value>The rubbish bin has been cleared successfully.</value>
+    <value>Roskakori tyhjennettiin onnistuneesti.</value>
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
-    <value>You are trying to add your own email as a contact.</value>
+    <value>Yrität lisätä omaa sähköpostiasi kontaktiksi.</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>Failed to remove link. Please try again.</value>
+    <value>Linkin poistaminen epäonnistui. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
-    <value>You cannot perform this action. Please connect to the Internet and try again.</value>
+    <value>Tämä toimintoa ei voida suorittaa. Ole hyvä ja yhdistä Internettiin ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <value>Olet lopettamassa MEGA-tilaustasi. Ole hyvä ja ota meihin yhteyttä, mikäli voimme tehdä jotain mielesi muuttamiseksi.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <value>Ei pääsyä polkuun '{0}'. Ole hyvä ja valitse toinen polku ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1021,30 +1021,30 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Tiedoston nimi '{0}' ei ole kelvollinen tai siinä on kiellettyjä merkkejä. Ole hyvä ja vaihda se ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Invalid file name</value>
+    <value>Virheellinen tiedostonimi</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <value>Tiedoston/kansion polku '{0}' on liian pitkä. Ole hyvä ja muuta se ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>Path too long</value>
+    <value>Liian pitkä polku</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Kansion nimi tai polku '{0}' ei ole kelvollinen tai siinä on kiellettyjä merkkejä. Ole hyvä ja vaihda se ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
-    <value>Invalid name or path</value>
+    <value>virheellinen nimi tai polku</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
@@ -1052,11 +1052,11 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <value>Kansion valinta epäonnistui. Ole hyvä ja yritä uudelleen tai valitse toinen kansio.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>File import failed [{0}]</value>
+    <value>Tiedoston tuonti epäonnistui {0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1068,24 +1068,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
 </comment>
   </data>
   <data name="DownloadLimitMessage" xml:space="preserve">
-    <value>You have selected over {0} items ({1}) to download. Do you want to proceed?</value>
+    <value>Olet valinnut ladattavaksi yli {0} kohdetta ({0}). Haluatko jatkaa?</value>
     <comment>Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Kiitos palautteestasi! Haluatko varmasti lopettaa Megan tilauksen?</value>
+    <value>Kiitos palautteestasi! Haluatko varmasti lopettaa MEGAn tilauksen?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <value>Tiedosto(je)n lähetysvalmistelu epäonnistui. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
-    <value>Error preparing file(s)</value>
+    <value>Virhe tiedosto(j)a valmistellessa</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to download the file. Please try again.</value>
+    <value>Tiedoston lataus epäonnistui. Ole hyvä ja yritä uudelleen.</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
@@ -1093,37 +1093,86 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Saapuvien jaettujen kohteiden lataaminen MEGAsta epäonnistui. Ole hyvä ja yritä uudelleen tai päivitä.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
-    <value>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Lähtevien jaettujen kohteiden lataaminen MEGAsta epäonnistui. Ole hyvä ja yritä uudelleen tai päivitä.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
-    <value>Failed to delete settings. Please try again. [{0}]</value>
+    <value>Asetusten poistaminen epäonnistui. Ole hyvä ja yritä uudelleen. [{0}]</value>
     <comment>Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
-    <value>Error deleting settings</value>
+    <value>Virhe asetuksia poistaessa</value>
     <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadSettingsFailed" xml:space="preserve">
-    <value>Failed to load settings. Please try again. [{0}]</value>
+    <value>Asetusten lataaminen epäonnistui. Ole hyvä ja yritä uudelleen. [{0}]</value>
     <comment>Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
-    <value>Error loading settings</value>
+    <value>Virhe asetuksia ladatessa</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Failed to copy the MEGA link to your clipboard.</value>
+    <value>MEGA-linkin kopioiminen leikepöydälle epäonnistui.</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
-    <value>Error copying link</value>
+    <value>Virhe linkkiä kopioitaessa</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>Jos hyväksyt, käyttäjätililtä kirjaudutaan ulos ja kaikki paikallinen tieto poistetaan. Haluatko jatkaa?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>Olet kirjautunut sisään toisella käyttäjätilillä</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>Avataksesi tämän kansion/tiedoston tarvitset sen purkuavaimen. Jos sinulla ei ole avainta, ota yhteyttä linkin tekijään.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>Syötä purkuavain</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>Virheellinen purkuavain</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>Syynä voi olla:\n- Tiedosto on poistettu ToS/AUP-rikkomuksen takia.\n- Virheellinen URL - linkkiä ei löydy.\n-Käyttäjä on poistanut tiedoston.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>Syynä voi olla:\n- Kansiolinkki on poistettu ToS/AUP-rikkomuksen takia.\n- Virheellinen URL - linkkiä ei löydy.\n-Käyttäjä on poistanut kansion.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>Linkki ei saatavilla</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Linkin avaus epäonnistui [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Linkin avaus epäonnistui</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>Ei pääsyä valittuun latauspolkuun. Ole hyvä ja valitse toinen latauspolku ja yritä uudelleen.</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Pääsy kielletty</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
 </root>

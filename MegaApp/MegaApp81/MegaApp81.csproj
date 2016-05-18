@@ -352,6 +352,9 @@
     <Compile Include="..\common\Enums\TransferType.cs">
       <Link>Enums\TransferType.cs</Link>
     </Compile>
+    <Compile Include="..\common\Enums\UriLinkType.cs">
+      <Link>Enums\UriLinkType.cs</Link>
+    </Compile>
     <Compile Include="..\common\Enums\ViewMode.cs">
       <Link>Enums\ViewMode.cs</Link>
     </Compile>
@@ -411,6 +414,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\CleanRubbishBinRequestListener.cs">
       <Link>MegaApi\CleanRubbishBinRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\ConfirmAccountRequestListener.cs">
+      <Link>MegaApi\ConfirmAccountRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\CreateAccountRequestListener.cs">
       <Link>MegaApi\CreateAccountRequestListener.cs</Link>
@@ -528,9 +534,6 @@
     </Compile>
     <Compile Include="..\common\Models\BaseMediaViewModel.cs">
       <Link>Models\BaseMediaViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\BaseRequestListenerViewModel.cs">
-      <Link>Models\BaseRequestListenerViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\BaseSDKViewModel.cs">
       <Link>Models\BaseSDKViewModel.cs</Link>
@@ -2852,11 +2855,6 @@
       <culture>zh-Hant</culture>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>    
-    <SDKReference Include="SQLite.WP80, Version=3.12.1">
-      <Name>SQLite for Windows Phone</Name>
-    </SDKReference>
-  </ItemGroup>
   <ItemGroup>
     <XliffResource Include="..\common\Resources\AppMessages.ar.xlf">
       <Link>Resources\AppMessages.ar.xlf</Link>
@@ -3758,6 +3756,11 @@
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>VisualResources.zh-Hant.resx</LastGenOutput>
     </XliffResource>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.WP80, Version=3.12.2">
+      <Name>SQLite for Windows Phone</Name>
+    </SDKReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

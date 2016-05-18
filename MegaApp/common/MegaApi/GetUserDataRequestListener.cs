@@ -84,11 +84,6 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
-        {
-
-        }
-
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -99,25 +94,45 @@ namespace MegaApp.MegaApi
 
             if (e.getErrorCode() == MErrorType.API_OK)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
                 {
-                    _userData.UserName = request.getName();                    
-                });
+                    switch (request.getParamType())
+                    {
+                        case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                _userData.Firstname = request.getText();
+                                if (App.UserData != null)
+                                    App.UserData.Firstname = _userData.Firstname;
+                            });
+                            break;
+
+                        case (int)MUserAttrType.USER_ATTR_LASTNAME:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                _userData.Lastname = request.getText();
+                                if (App.UserData != null)
+                                    App.UserData.Lastname = _userData.Lastname;
+                            });
+                            break;
+                    }
+                }                
             }
             else
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
                 {
-                    _userData.UserName = UiResources.MyAccount;
-                    //_userData.UserName = "";                    
-                });
+                    if (request.getParamType() == (int)MUserAttrType.USER_ATTR_FIRSTNAME)
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            _userData.Firstname = UiResources.MyAccount;
+                            if (App.UserData != null)
+                                App.UserData.Firstname = _userData.Firstname;
+                        });                            
+                    }
+                }
             }
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                if (App.UserData != null)
-                    App.UserData.AvatarUri = _userData.AvatarUri;
-            });
         }
 
         #endregion

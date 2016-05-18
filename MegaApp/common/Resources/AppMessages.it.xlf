@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">Importazione del file fallita [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -872,7 +872,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">Stai per annullare la tua iscrizione a MEGA. Per favore, facci sapere se c'è qualcosa che possiamo fare per farti cambiare idea.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -1135,7 +1135,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">Non hai accesso al percorso '{0}'. Per favore, selezionane un altro e riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1146,45 +1146,45 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Il nome del file '{0}' non è valido o contiene caratteri non autorizzati. Per favore, cambialo e riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
           <source>Invalid file name</source>
-          <target state="translated">Invalid file name</target>
+          <target state="translated">Nome del file non valido</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">Il percorso del/la file/cartella '{0}' è troppo lungo. Per favore, cambialo e riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong_Title" translate="yes" space="preserve">
           <source>Path too long</source>
-          <target state="translated">Path too long</target>
+          <target state="translated">Percorso troppo lungo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Il nome del/la file/cartella '{0}' non è valido o contiene caratteri non autorizzati. Per favore, cambialo e riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
           <source>Invalid name or path</source>
-          <target state="translated">Invalid name or path</target>
+          <target state="translated">Nome o percorso non valido</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
           <source>Invalid link</source>
-          <target state="translated">Invalid link</target>
+          <target state="translated">Link non valido</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <target state="translated">Selezione della cartella fallita. Per favore, prova di nuovo o seleziona un'altra cartella.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
@@ -1196,17 +1196,17 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Failed to prepare file(s) for upload. Please try again.</target>
+          <target state="translated">Preparazione del/i file in caricamento fallita. Per favore, riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">Error preparing file(s)</target>
+          <target state="translated">Errore nel caricamento del/i file</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to download the file. Please try again.</source>
-          <target state="translated">Failed to download the file. Please try again.</target>
+          <target state="translated">Download del file fallito. Per favore, riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
@@ -1216,45 +1216,121 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Caricamento degli oggetti in arrivo condivisi da MEGA fallito. Per favore, riprova o clicca su aggiorna.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Caricamento degli oggetti in uscita condivisi da MEGA fallito. Per favore, riprova o clicca su aggiorna.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
           <source>Failed to delete settings. Please try again. [{0}]</source>
-          <target state="translated">Failed to delete settings. Please try again. [{0}]</target>
+          <target state="translated">Cancellazione delle impostazioni fallita. Per favore, ritenta. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error deleting settings</source>
-          <target state="translated">Error deleting settings</target>
+          <target state="translated">Errore nella cancellazione delle impostazioni</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
           <source>Failed to load settings. Please try again. [{0}]</source>
-          <target state="translated">Failed to load settings. Please try again. [{0}]</target>
+          <target state="translated">Caricamento delle impostazioni fallito. Per favore, ritenta. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error loading settings</source>
-          <target state="translated">Error loading settings</target>
+          <target state="translated">Errore nel caricamento delle impostazioni</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Failed to copy the MEGA link to your clipboard.</target>
+          <target state="translated">Copia del link MEGA negli appunti fallita.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
           <source>Error copying link</source>
-          <target state="translated">Error copying link</target>
+          <target state="translated">Errore nella copia del link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
+          <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
+          <target state="translated">Se acconsenti, l'account corrente verrà disconnesso e tutti i dati non in linea saranno cancellati. Vuoi continuare?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
+          <source>You are logged in with another account</source>
+          <target state="translated">Sei collegato con un altro account</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
+          <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
+          <target state="translated">Per accedere a questo/a file/cartella, devi essere in possesso della sua chiave di decriptazione. Se non la hai, contatta il creatore del link.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
+          <source>Enter decryption key</source>
+          <target state="translated">Inserisci la chiave di decrittazione</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
+          <source>Invalid decryption key</source>
+          <target state="translated">Chiave di decriptazione non valida</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The file has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The file has been deleted by the user.</source>
+          <target state="needs-review-translation">Questo può accadere per diverse ragioni:
+- Il file è stato rimosso per una violazione delle ToS/AUP
+- URL non valido - il collegamento cui stai tentando di accedere non esiste.
+- Il file è stato eliminato dall'utente.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The folder link has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The folder link has been deleted by the user.</source>
+          <target state="needs-review-translation">Questo può accadere per diverse ragioni:
+- Il file è stato rimosso per una violazione delle ToS/AUP
+- URL non valido - il collegamento cui stai tentando di accedere non esiste.
+- Il file è stato eliminato dall'utente.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
+          <source>Unavailable link</source>
+          <target state="translated">Link non raggiungibile</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
+          <source>Open link failed [{0}]</source>
+          <target state="translated">Open link failed [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
+          <source>Open link failed</source>
+          <target state="translated">Open link failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
+          <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
+          <target state="needs-review-translation">Non hai accesso al percorso di download selezionato. Per favore, seleziona un percorso di download differente e riprova.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
+          <source>Unauthorized access</source>
+          <target state="translated">Accesso non autorizzato</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
       </group>
     </body>

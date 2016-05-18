@@ -101,6 +101,11 @@ namespace MegaApp.Models
             DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
+        public void ProcessBackupLink()
+        {
+            DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
+        }
+
         private void ChangePinLock(object obj)
         {
             DialogService.ShowPinLockDialog(true, this);

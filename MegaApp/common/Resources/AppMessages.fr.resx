@@ -1119,11 +1119,66 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Failed to copy the MEGA link to your clipboard.</value>
+    <value>Impossible de copier le lien MEGA dans votre presse-papier.</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
-    <value>Error copying link</value>
+    <value>Erreur lors de la copie du lien</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>Si vous acceptez, vous serez déconnecté(e) de votre compte et toutes les données Hors-ligne seront effacées. Voulez-vous continuer?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>Vous êtes authentifié(e) avec un autre compte</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>Pour accéder à ce dossier/fichier, vous aurez besoin de sa Clef de Déchiffrement. Si vous ne possédez pas cette clef, veuillez contacter le créateur de ce lien.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>Entrez la clé de déchiffrage</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>Clef de déchiffrement invalide</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>Cela peut être dû aux raisons suivantes :
+- Le fichier a été supprimé en raison d'une violation des Conditions d'Utilisation de MEGA.
+- URL invalide - le lien que vous essayez d'accéder n'existe pas.
+- Le fichier a été supprimé par l'utilisateur.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>Cela peut être dû aux raisons suivantes :
+- Le dossier a été supprimé en raison d'une violation des Conditions d'Utilisation de MEGA.
+- URL invalide - le lien que vous essayez d'accéder n'existe pas.
+- Le lien du dossier a été supprimé par l'utilisateur.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>Lien non disponible</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Open link failed [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Open link failed</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>Vous n'avez pas accès au chemin de téléchargement sélectionné. Veuillez en sélectionner un autre et essayer à nouveau.</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Accès non autorisé</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
 </root>

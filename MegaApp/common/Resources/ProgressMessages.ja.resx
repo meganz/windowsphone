@@ -299,4 +299,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>アップグレード中</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
+  <data name="PM_OpenFileLink" xml:space="preserve">
+    <value>Opening file link...</value>
+    <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFolderLink" xml:space="preserve">
+    <value>Opening folder link...</value>
+    <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
+  </data>
 </root>

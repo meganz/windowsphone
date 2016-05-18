@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>Cancelling transfer...</value>
+    <value>Keskeytetään siirto...</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Clearing the rubbish bin...</value>
+    <value>Tyhjennetään roskakori...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
@@ -143,7 +143,7 @@ Preserve the '{0}' code because is for include node name.</comment>
     <comment>Progress indicator message when resuming a session - (String as short as possible).</comment>
   </data>
   <data name="FetchingNodes" xml:space="preserve">
-    <value>Fetching files and folders... [{0}]</value>
+    <value>Haetaan tiedostoja ja kansioita... [{0}]</value>
     <comment>Progress indicator message when loading nodes from MEGA web service - (String as short as possible).
 Preserve the [{0}] code because is for include current number of fetched nodes.</comment>
   </data>
@@ -176,15 +176,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
-    <value>Sending contact request...</value>
+    <value>Lähetetään kontaktipyyntö</value>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Deleting contact request...</value>
+    <value>Poistetaan kontaktipyyntö...</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
-    <value>Reminding contact about the request...</value>
+    <value>Muistutetaan kontaktia pyynnöstä...</value>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
@@ -196,7 +196,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
-    <value>Siirretään Roskakoriin...</value>
+    <value>Siirretään roskakoriin...</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
@@ -212,11 +212,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>Poistetaan kontakti...</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Removing from offline...</value>
+    <value>Poistetaan offline-käytöstä...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
@@ -228,15 +228,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>Hyväksytään kontaktipyyntö...</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denying contact request...</value>
+    <value>Kieltäydytään kontaktipyynnöstä</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignoring contact request...</value>
+    <value>Sivuutetaan kontaktipyyntö...</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
@@ -244,15 +244,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Saving for offline...</value>
+    <value>Tallennetaan offline-käyttöä varten...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servers too busy. Please wait…</value>
+    <value>Palvelimet ovat liian kiireisiä. Ole hyvä ja odota...</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
-    <value>Canceling subscription...</value>
+    <value>Peruutetaan tilaus...</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
@@ -260,11 +260,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseAllSessions" xml:space="preserve">
-    <value>Closing all sessions...</value>
+    <value>Suljetaan kaikki istunnot...</value>
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseSession" xml:space="preserve">
-    <value>Closing session...</value>
+    <value>Suljetaan istuntoa...</value>
     <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
   </data>
   <data name="PM_ConfirmAccount" xml:space="preserve">
@@ -292,11 +292,19 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
-    <value>Removing link...</value>
+    <value>Poistetaan linkki...</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>Käyttäjätilin päivitys...</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFileLink" xml:space="preserve">
+    <value>Avataan tiedostolinkkiä...</value>
+    <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFolderLink" xml:space="preserve">
+    <value>Avataan kansiolinkkiä...</value>
+    <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
 </root>

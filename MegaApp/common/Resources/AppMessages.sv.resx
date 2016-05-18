@@ -1129,4 +1129,60 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Fel vid kopiering av länk</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>Om du accepterar, kommer bytesbalansen loggas ut och alla Offline data kommer att raderas. Vill du fortsätta?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>Du är inloggad med ett annat konto</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>För att komma åt den här mappen / filen, behöver du dess dekrypteringsnyckel. Om du inte har nyckeln, kontakta skaparen av länken.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>Ange dekrypteringsnyckel</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>Ogiltig krypteringsnyckel</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>Detta skulle kunna bero på följande orsaker:
+- Filen har tagits bort på grund av en ToS/AUP kränkning.
+- Ogiltig webbadress - länken du försöker komma åt existerar inte.
+- Filen har tagits bort av användaren.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>Detta kan bero på följande orsaker:
+- Länken mapp har tagits bort på grund av en ToS / AUP kränkning.
+- Ogiltig webbadress - länken du försöker komma åt existerar inte.
+- Länken mappen har tagits bort av användaren.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>Otillgänglig länk</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Kunde inte öppna länk [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Kunde inte öppna länk</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>Du har inte tillgång till den valda nedladdningen. Välj en annan nedladdning och försök igen.
+</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>obehörig åtkomst</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
 </root>

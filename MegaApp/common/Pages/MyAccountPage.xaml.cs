@@ -110,9 +110,16 @@ namespace MegaApp.Pages
             });
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _myAccountPageViewModel.Deinitialize(App.GlobalDriveListener);
+            base.OnNavigatedFrom(e);
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            _myAccountPageViewModel.Initialize(App.GlobalDriveListener);
 
             // Get last page (previous page)            
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;

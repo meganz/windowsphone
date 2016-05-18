@@ -76,12 +76,12 @@ namespace MegaApp.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {            
-            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "item", "0" } });            
+            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "0" } });            
         }
 
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "item", "1" } });            
+            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });            
         }
     }
 }
