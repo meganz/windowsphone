@@ -122,7 +122,7 @@
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Clearing the rubbish bin...</value>
+    <value>正在清除回收站...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
@@ -176,11 +176,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
-    <value>Sending contact request...</value>
+    <value>正在发送联系人请求...</value>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Deleting contact request...</value>
+    <value>正在删除联系人请求...</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
@@ -212,7 +212,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>正在删除联系人...</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
@@ -228,7 +228,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>正在接受联系人请求...</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
@@ -256,11 +256,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
-    <value>Changing password...</value>
+    <value>正在更改密码...</value>
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseAllSessions" xml:space="preserve">
-    <value>Closing all sessions...</value>
+    <value>正在关闭所有会话...</value>
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseSession" xml:space="preserve">
@@ -298,5 +298,13 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>正在升级账户...</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFileLink" xml:space="preserve">
+    <value>Opening file link...</value>
+    <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFolderLink" xml:space="preserve">
+    <value>Opening folder link...</value>
+    <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
 </root>

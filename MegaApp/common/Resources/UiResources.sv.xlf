@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
           <source>your first name</source>
-          <target state="translated">your first name</target>
+          <target state="translated">ditt förnamn</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -141,9 +141,9 @@
           <target state="translated">Öppen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
           <source>Open MEGA link</source>
-          <target state="new">Open MEGA link</target>
+          <target state="translated">Öppna MEGA länk</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
@@ -1006,9 +1006,9 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">År</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
           <source>Paste MEGA link:</source>
-          <target state="new">Paste MEGA link:</target>
+          <target state="translated">Klistra in MEGA länk: </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
@@ -1093,9 +1093,9 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <target state="translated">Du är nära på att använda upp allt ditt minne!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">
           <source>Import to {0}</source>
-          <target state="new">Import to {0}</target>
+          <target state="translated">Importera till {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
 Preserve the {0} code because is for include the name of the destination folder in runtime.</note>
         </trans-unit>
@@ -1375,43 +1375,43 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
           <source>your last name</source>
-          <target state="translated">your last name</target>
+          <target state="translated">ditt efternamn</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="translated">Select all</target>
+          <target state="translated">Markera alla</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
           <source>Deselect all</source>
-          <target state="translated">Deselect all</target>
+          <target state="translated">Avmarkera alla</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DecryptionKey" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Decrypt" translate="yes" space="preserve">
+          <source>Decrypt</source>
+          <target state="translated">Dekryptera</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DecryptionKey" translate="yes" space="preserve">
           <source>Decryption key</source>
-          <target state="new">Decryption key</target>
+          <target state="translated">Dekrypteringsnyckel</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FolderLink" translate="yes" xml:space="preserve">
-          <source>Folder link</source>
-          <target state="new">Folder link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_FileLink" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FileLink" translate="yes" space="preserve">
           <source>File link</source>
-          <target state="new">File link</target>
+          <target state="translated">Fil länk</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_OpenLink" translate="yes" xml:space="preserve">
-          <source>Open link</source>
-          <target state="new">Open link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FolderLink" translate="yes" space="preserve">
+          <source>Folder link</source>
+          <target state="translated">Mapp länk</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Decrypt" translate="yes" xml:space="preserve">
-          <source>Decrypt</source>
-          <target state="new">Decrypt</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_OpenLink" translate="yes" space="preserve">
+          <source>Open link</source>
+          <target state="translated">Öppna länk</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

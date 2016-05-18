@@ -1212,4 +1212,37 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Зняти все виділення</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_OpenMegaLink" xml:space="preserve">
+    <value>Відрити ланку MEGA</value>
+    <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PasteMegaLink" xml:space="preserve">
+    <value>Вставити ланку MEGA:</value>
+    <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ImportLinkBorderText" xml:space="preserve">
+    <value>Імпорт в {0}</value>
+    <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
+  </data>
+  <data name="UI_Decrypt" xml:space="preserve">
+    <value>Розшифровувати</value>
+    <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DecryptionKey" xml:space="preserve">
+    <value>Ключ розшифровки</value>
+    <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FileLink" xml:space="preserve">
+    <value>Ланка на файл</value>
+    <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FolderLink" xml:space="preserve">
+    <value>Ланка на теку</value>
+    <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenLink" xml:space="preserve">
+    <value>Відкрити ланку</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

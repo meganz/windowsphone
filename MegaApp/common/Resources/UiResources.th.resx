@@ -905,7 +905,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
   </data>
   <data name="CreditCard" xml:space="preserve">
-    <value>Credit card</value>
+    <value>บัตรเครดิต</value>
     <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PhoneBill" xml:space="preserve">
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>คุณสามารถเป็นผู้ใช้โปรได้</value>
+    <value>คุณสามารถเป็นผู้ใช้แบบโปรได้</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
@@ -1193,23 +1193,56 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
-    <value>Remove link</value>
+    <value>เอาลิงก์ออก</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>your first name</value>
+    <value>ชื่อของคุณ</value>
     <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
   </data>
   <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>your last name</value>
+    <value>นามสกุลของคุณ</value>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>เลือกทั้งหมด</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Deselect all</value>
+    <value>ยกเลิกการเลือกทั้งหมด</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenMegaLink" xml:space="preserve">
+    <value>เปิดลิงก์ MEGA</value>
+    <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PasteMegaLink" xml:space="preserve">
+    <value>วางลิงก์ MEGA:</value>
+    <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ImportLinkBorderText" xml:space="preserve">
+    <value>นำเข้าไปยัง {0}</value>
+    <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
+  </data>
+  <data name="UI_Decrypt" xml:space="preserve">
+    <value>ถอดรหัสลับ</value>
+    <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DecryptionKey" xml:space="preserve">
+    <value>คีย์ถอดรหัสลับ</value>
+    <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FileLink" xml:space="preserve">
+    <value>ลิงก์ไฟล์</value>
+    <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FolderLink" xml:space="preserve">
+    <value>ลิงก์โฟลเดอร์</value>
+    <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenLink" xml:space="preserve">
+    <value>เปิดลิงก์</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
