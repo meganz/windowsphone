@@ -1009,11 +1009,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</value>
+    <value>Stai per annullare la tua iscrizione a MEGA. Per favore, facci sapere se c'è qualcosa che possiamo fare per farti cambiare idea.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
+    <value>Non hai accesso al percorso '{0}'. Per favore, selezionane un altro e riprova.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1022,42 +1022,42 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Il nome del file '{0}' non è valido o contiene caratteri non autorizzati. Per favore, cambialo e riprova.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Invalid file name</value>
+    <value>Nome del file non valido</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
+    <value>Il percorso del/la file/cartella '{0}' è troppo lungo. Per favore, cambialo e riprova.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>Path too long</value>
+    <value>Percorso troppo lungo</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
+    <value>Il nome del/la file/cartella '{0}' non è valido o contiene caratteri non autorizzati. Per favore, cambialo e riprova.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFolderNameOrPath_Title" xml:space="preserve">
-    <value>Invalid name or path</value>
+    <value>Nome o percorso non valido</value>
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
-    <value>Invalid link</value>
+    <value>Link non valido</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <value>Selezione della cartella fallita. Per favore, prova di nuovo o seleziona un'altra cartella.</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>File import failed [{0}]</value>
+    <value>Importazione del file fallita [{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1078,15 +1078,15 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
 </comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <value>Preparazione del/i file in caricamento fallita. Per favore, riprova.</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
-    <value>Error preparing file(s)</value>
+    <value>Errore nel caricamento del/i file</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to download the file. Please try again.</value>
+    <value>Download del file fallito. Per favore, riprova.</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
@@ -1094,37 +1094,92 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Caricamento degli oggetti in arrivo condivisi da MEGA fallito. Per favore, riprova o clicca su aggiorna.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
-    <value>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</value>
+    <value>Caricamento degli oggetti in uscita condivisi da MEGA fallito. Per favore, riprova o clicca su aggiorna.</value>
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
-    <value>Failed to delete settings. Please try again. [{0}]</value>
+    <value>Cancellazione delle impostazioni fallita. Per favore, ritenta. [{0}]</value>
     <comment>Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
-    <value>Error deleting settings</value>
+    <value>Errore nella cancellazione delle impostazioni</value>
     <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadSettingsFailed" xml:space="preserve">
-    <value>Failed to load settings. Please try again. [{0}]</value>
+    <value>Caricamento delle impostazioni fallito. Per favore, ritenta. [{0}]</value>
     <comment>Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
-    <value>Error loading settings</value>
+    <value>Errore nel caricamento delle impostazioni</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Failed to copy the MEGA link to your clipboard.</value>
+    <value>Copia del link MEGA negli appunti fallita.</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
-    <value>Error copying link</value>
+    <value>Errore nella copia del link</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>Se acconsenti, l'account corrente verrà disconnesso e tutti i dati non in linea saranno cancellati. Vuoi continuare?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>Sei collegato con un altro account</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>Per accedere a questo/a file/cartella, devi essere in possesso della sua chiave di decriptazione. Se non la hai, contatta il creatore del link.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>Inserisci la chiave di decrittazione</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>Chiave di decriptazione non valida</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>Questo può accadere per diverse ragioni:
+- Il file è stato rimosso per una violazione delle ToS/AUP
+- URL non valido - il collegamento cui stai tentando di accedere non esiste.
+- Il file è stato eliminato dall'utente.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>Questo può accadere per diverse ragioni:
+- Il file è stato rimosso per una violazione delle ToS/AUP
+- URL non valido - il collegamento cui stai tentando di accedere non esiste.
+- Il file è stato eliminato dall'utente.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>Link non raggiungibile</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Open link failed [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Open link failed</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>Non hai accesso al percorso di download selezionato. Per favore, seleziona un percorso di download differente e riprova.</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Accesso non autorizzato</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
 </root>

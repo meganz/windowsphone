@@ -39,6 +39,7 @@ namespace MegaApp.Models
             this.BusyText = null;
             this.ChildNodes = new ObservableCollection<IMegaNode>();
             this.BreadCrumbs = new ObservableCollection<IBaseNode>();
+            this.BreadCrumbs.CollectionChanged += BreadCrumbs_CollectionChanged;
             this.SelectedNodes = new List<IMegaNode>();
             this.IsMultiSelectActive = false;
             
@@ -281,7 +282,7 @@ namespace MegaApp.Models
             // Only 1 CustomInputDialog should be open at the same time.
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
 
-            var inputDialog = new CustomInputDialog(UiResources.OpenLink, UiResources.PasteMegaDownloadLink, this.AppInformation);
+            var inputDialog = new CustomInputDialog(UiResources.UI_OpenMegaLink, UiResources.UI_PasteMegaLink, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
                 this.MegaSdk.getPublicNode(args.InputText, new GetPublicNodeRequestListener(this));
@@ -311,8 +312,6 @@ namespace MegaApp.Models
                 link,
                 this.FolderRootNode.OriginalMNode,
                 new ImportFileRequestListener());
-
-            //LinkToImport = null;
         }
 
         public void DownloadLink(MNode publicNode)
@@ -1048,6 +1047,29 @@ namespace MegaApp.Models
             }
         }
 
+        void BreadCrumbs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (this.FolderRootNode == null) return;
+
+            String folderName = String.Empty;
+            switch(this.FolderRootNode.Type)
+            {
+                case MNodeType. TYPE_ROOT:
+                    folderName = UiResources.CloudDriveName;
+                    break;
+
+                case MNodeType.TYPE_RUBBISH:
+                    folderName = UiResources.RubbishBinName;
+                    break;
+
+                case MNodeType.TYPE_FOLDER:
+                    folderName = this.FolderRootNode.Name;
+                    break;
+            }
+
+            this.ImportLinkBorderText = String.Format(UiResources.UI_ImportLinkBorderText, folderName);
+        }
+
         #endregion
 
         #region IBreadCrumb
@@ -1154,6 +1176,16 @@ namespace MegaApp.Models
         {
             get { return _hasBusyText; }
             private set { SetField(ref _hasBusyText, value); }
+        }
+
+        /// <summary>
+        /// Property needed show a dynamic import text.
+        /// </summary>        
+        private String _importLinkBorderText;
+        public String ImportLinkBorderText
+        {
+            get { return _importLinkBorderText; }
+            private set { SetField(ref _importLinkBorderText, value); }
         }
 
         #endregion

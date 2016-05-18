@@ -204,10 +204,13 @@ namespace MegaApp.MegaApi
                     _mainPageViewModel.GetAccountDetails();
 
                     // Enable MainPage appbar buttons
-                    if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(true);
+                    _mainPageViewModel.SetCommandStatus(true);
+
+                    if (_mainPageViewModel.SpecialNavigation()) return;
                 }
 
-                if (_cameraUploadsPageViewModel != null) _cameraUploadsPageViewModel.LoadFolders();                
+                if (_cameraUploadsPageViewModel != null) 
+                    _cameraUploadsPageViewModel.LoadFolders();                
             });
 
             // KEEP ALWAYS AT THE END OF THE METHOD, AFTER THE "LoadForlders" call

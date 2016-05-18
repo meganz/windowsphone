@@ -63,7 +63,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
           <source>Folder name:</source>
-          <target state="translated">Folder name:</target>
+          <target state="translated">Kansion nimi:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
         </trans-unit>
         <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
           <source>your first name</source>
-          <target state="translated">your first name</target>
+          <target state="translated">etunimesi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -141,15 +141,10 @@
           <target state="translated">Avaa</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/OpenLinkText" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Avaa MEGA-latauslinkki:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</note>
-        </trans-unit>
-        <trans-unit id="Resx/OpenLink" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Avaa MEGA-latauslinkki:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
+          <source>Open MEGA link</source>
+          <target state="translated">Avaa MEGA-linkki</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
           <source>your password</source>
@@ -283,7 +278,7 @@
         </trans-unit>
         <trans-unit id="Resx/Transfer_Paused" translate="yes" space="preserve">
           <source>Paused</source>
-          <target state="translated">Keskeytetty</target>
+          <target state="translated">Tauotettu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a paused transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Pausing" translate="yes" space="preserve">
@@ -456,7 +451,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Available" translate="yes" space="preserve">
           <source>available</source>
-          <target state="translated">saatavilla</target>
+          <target state="translated">vapaa</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
@@ -486,7 +481,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanUpTransfers" translate="yes" space="preserve">
           <source>clean up transfers</source>
-          <target state="translated">siisti siirrot</target>
+          <target state="translated">puhdista siirrot</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearCache" translate="yes" space="preserve">
@@ -602,7 +597,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/PauseAll" translate="yes" space="preserve">
           <source>pause all</source>
-          <target state="translated">keskeytä kaikki</target>
+          <target state="translated">tauota kaikki</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PrivacyPolicy" translate="yes" space="preserve">
@@ -687,7 +682,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
           <source>Pause</source>
-          <target state="translated">Keskeytä</target>
+          <target state="translated">Tauota</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Resume" translate="yes" space="preserve">
@@ -1011,10 +1006,10 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Vuosi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PasteMegaDownloadLink" translate="yes" space="preserve">
-          <source>Paste MEGA download link:</source>
-          <target state="translated">Sijoita MEGA-latauslinkki:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
+        <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
+          <source>Paste MEGA link:</source>
+          <target state="translated">Liitä MEGA-linkki:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
@@ -1095,13 +1090,14 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
           <source>You're running out of space!</source>
-          <target state="translated">Pilvilevysi tila on ehtymässä!</target>
+          <target state="translated">Pilvilevysi tila on loppumassa!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
-        <trans-unit id="Resx/ImportLinkBorderText" translate="yes" space="preserve">
-          <source>Browse to destination and import or download link</source>
-          <target state="translated">Valitse kohde ja tuo tai lataa linkki</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">
+          <source>Import to {0}</source>
+          <target state="translated">Tuo kohteeseen {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
@@ -1165,7 +1161,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/SentRequests" translate="yes" space="preserve">
           <source>Sent requests</source>
-          <target state="translated">Lähetyspyynnöt</target>
+          <target state="translated">Lähetetyt pyynnöt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Accepted" translate="yes" space="preserve">
@@ -1264,7 +1260,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ViewDetails" translate="yes" space="preserve">
           <source>View details</source>
-          <target state="translated">View details</target>
+          <target state="translated">Näytä tiedot</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PhotosOnly" translate="yes" space="preserve">
@@ -1274,27 +1270,27 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PowerConnected" translate="yes" space="preserve">
           <source>External power source connected</source>
-          <target state="translated">External power source connected</target>
+          <target state="translated">Ulkoinen virtalähde kytketty</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "External power source connected" auto camera upload settings</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSettings" translate="yes" space="preserve">
           <source>Upload settings</source>
-          <target state="translated">Upload settings</target>
+          <target state="translated">Lähetysasetukset</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload setting options</note>
         </trans-unit>
         <trans-unit id="Resx/Incoming" translate="yes" space="preserve">
           <source>Incoming</source>
-          <target state="translated">Incoming</target>
+          <target state="translated">Saapuvat</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Outgoing" translate="yes" space="preserve">
           <source>Outgoing</source>
-          <target state="translated">Outgoing</target>
+          <target state="translated">Lähtevät</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" space="preserve">
           <source>Do you want to enable the Auto Camera Uploads service?</source>
-          <target state="translated">Do you want to enable the Auto Camera Uploads service?</target>
+          <target state="translated">Haluatko ottaa käyttöön automaattisen kameralähetyksen?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
@@ -1304,7 +1300,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NewPasswordWatermark" translate="yes" space="preserve">
           <source>Your new password</source>
-          <target state="translated">Your new password</target>
+          <target state="translated">Uusi salasana</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
@@ -1329,22 +1325,22 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
           <source>Operating system restrictions</source>
-          <target state="translated">Operating system restrictions</target>
+          <target state="translated">Käyttöjärjestelmärajoitukset</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
           <source>Saved for offline use</source>
-          <target state="translated">Saved for offline use</target>
+          <target state="translated">Tallennettu offline-käyttöä varten</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your cloud drive</source>
-          <target state="translated">No files in your cloud drive</target>
+          <target state="translated">Ei tiedostoja pilvilevyllä</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
-          <target state="translated">No items saved for offline</target>
+          <target state="translated">Ei tallennettuja offline-kohteita</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
@@ -1354,12 +1350,12 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
           <source>No shared folders</source>
-          <target state="translated">No shared folders</target>
+          <target state="translated">Ei jaettuja kansioita</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty shared folders page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloads" translate="yes" space="preserve">
           <source>No downloads</source>
-          <target state="translated">No downloads</target>
+          <target state="translated">Ei latauksia</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty downloads page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnection" translate="yes" space="preserve">
@@ -1374,23 +1370,48 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DefaultDownloadLocation" translate="yes" space="preserve">
           <source>Please select a default download folder.</source>
-          <target state="translated">Please select a default download folder.</target>
+          <target state="translated">Valitse oletuslatauskansio.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
           <source>your last name</source>
-          <target state="translated">your last name</target>
+          <target state="translated">sukunimesi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="translated">Select all</target>
+          <target state="translated">Valitse kaikki</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
           <source>Deselect all</source>
-          <target state="translated">Deselect all</target>
+          <target state="translated">Poista valinta</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Decrypt" translate="yes" space="preserve">
+          <source>Decrypt</source>
+          <target state="translated">Pura salaus</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DecryptionKey" translate="yes" space="preserve">
+          <source>Decryption key</source>
+          <target state="translated">Purkuavain</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FileLink" translate="yes" space="preserve">
+          <source>File link</source>
+          <target state="translated">Tiedostolinkki</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FolderLink" translate="yes" space="preserve">
+          <source>Folder link</source>
+          <target state="translated">Kansiolinkki</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenLink" translate="yes" space="preserve">
+          <source>Open link</source>
+          <target state="translated">Avaa linkki</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

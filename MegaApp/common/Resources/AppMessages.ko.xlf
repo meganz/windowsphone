@@ -1247,13 +1247,89 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Failed to copy the MEGA link to your clipboard.</target>
+          <target state="translated">MEGA 링크를 클립보드에 복사하지 못했습니다.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
           <source>Error copying link</source>
-          <target state="translated">Error copying link</target>
+          <target state="translated">링크 복사 중 오류</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
+          <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
+          <target state="translated">동의하면, 현재 계정이 로그아웃되고 모든 오프라인 데이터가 삭제됩니다. 계속하시겠습니까?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
+          <source>You are logged in with another account</source>
+          <target state="translated">다른 계정으로 로그인하였습니다</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
+          <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
+          <target state="translated">이 폴더/파일에 접근하려면, 해독 키가 필요합니다. 키가 없다면, 이 링크의 생성자에게 연락하세요.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
+          <source>Enter decryption key</source>
+          <target state="translated">해독 키를 입력하세요</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
+          <source>Invalid decryption key</source>
+          <target state="translated">잘못된 해독 키</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The file has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The file has been deleted by the user.</source>
+          <target state="needs-review-translation">이것은 다음과 같은 이유로 발생할 수 있습니다:
+- 파일이 ToS/AUP 위반으로 제거됨.
+- 잘못된 URL - 접속하려는 링크가 존재하지 않음.
+- 이용자에 의해 파일이 삭제됨.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The folder link has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The folder link has been deleted by the user.</source>
+          <target state="needs-review-translation">아래의 이유로 발생한 문제일 수 있습니다:
+- 폴더 링크가 ToS/AUP 위반으로 삭제됨.
+- 잘못된 URL - 접속하려는 링크가 존재하지 않음.
+- 폴더 링크가 이용자에 의해 삭제됨.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
+          <source>Unavailable link</source>
+          <target state="translated">사용할 수 없는 링크</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
+          <source>Open link failed [{0}]</source>
+          <target state="translated">링크 열기 실패 [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
+          <source>Open link failed</source>
+          <target state="translated">링크 열기 실패</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
+          <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
+          <target state="needs-review-translation">선택한 다운로드 경로에 접근 권한이 없습니다. 다른 다운로드 경로를 선택하고 다시 시도하세요.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
+          <source>Unauthorized access</source>
+          <target state="translated">승인되지 않은 접근</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
       </group>
     </body>

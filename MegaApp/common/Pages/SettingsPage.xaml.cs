@@ -50,6 +50,10 @@ namespace MegaApp.Pages
             base.OnNavigatedTo(e);
 
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            
+            if (navParam == NavigationParameter.UriLaunch &&
+                NavigationContext.QueryString.ContainsKey("backup"))
+                    _settingsViewModel.ProcessBackupLink();
 
             if (navParam == NavigationParameter.AutoCameraUpload)
             {

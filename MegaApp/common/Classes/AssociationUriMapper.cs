@@ -19,35 +19,104 @@ namespace MegaApp.Classes
             // URI association launch for MEGA.
             if (tempUri.Contains("mega://"))
             {
-                if (tempUri.Contains("confirm"))
-                {
-                    // Go the confirm account page and add the confirm string as parameter
+                // Process the URI
+                tempUri = tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty);
 
-                    var extraParams = new Dictionary<string, string>(1)
-                    {
-                        {
-                            "confirm",
-                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=",String.Empty))
-                        }
-                    };
-
-                    return NavigateService.BuildNavigationUri(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch, extraParams);
-                }
-                else
+                if (tempUri.StartsWith("mega:///#"))
+                    tempUri = tempUri.Replace("mega:///#", "https://mega.nz/#");
+                else if (tempUri.StartsWith("mega://#"))
+                    tempUri = tempUri.Replace("mega://#", "https://mega.nz/#");
+                else if (tempUri.StartsWith("mega://"))
+                    tempUri = tempUri.Replace("mega://", "https://mega.nz/#");
+                                
+                //File link - Open file link to import or download
+                if (tempUri.Contains("https://mega.nz/#!"))
                 {
                     var extraParams = new Dictionary<string, string>(1)
                     {
                         {
                             "filelink",
-                            System.Net.HttpUtility.UrlEncode(tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty))
+                            System.Net.HttpUtility.UrlEncode(tempUri)
                         }
                     };
 
+                    // Needed to get the file link properly
+                    if (tempUri.EndsWith("/"))
+                        tempUri = tempUri.Remove(tempUri.Length - 1, 1);
+
+                    App.ActiveImportLink = tempUri;
+                    App.AppInformation.UriLink = UriLinkType.File;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                }                
+                // Confirm account link
+                else if (tempUri.Contains("https://mega.nz/#confirm"))
+                {
+                    // Go the confirm account page and add the confirm string as parameter
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "confirm",
+                            System.Net.HttpUtility.UrlEncode(tempUri)
+                        }
+                    };
+
+                    App.AppInformation.UriLink = UriLinkType.Confirm;                    
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch, extraParams);
+                }
+                //Folder link - Open folder link to import or download
+                else if (tempUri.Contains("https://mega.nz/#F!"))
+                {
+                    App.AppInformation.UriLink = UriLinkType.Folder;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Master Key backup link
+                else if (tempUri.Contains("https://mega.nz/#backup")) 
+                {
+                    App.AppInformation.UriLink = UriLinkType.Backup;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string>(1) { { "backup", String.Empty } });
+                }
+                //New sign up link - Incoming share or contact request (no MEGA account)
+                else if (tempUri.Contains("https://mega.nz/#newsignup")) 
+                {
+                    App.AppInformation.UriLink = UriLinkType.NewSignUp;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string>(1) { { "newsignup", System.Net.HttpUtility.UrlEncode(tempUri) } });
+                }
+                //Confirm cancel a MEGA account
+                else if (tempUri.Contains("https://mega.nz/#cancel")) 
+                {
+                    App.AppInformation.UriLink = UriLinkType.Cancel;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Recover link - Recover the password with the master key or park the account
+                else if (tempUri.Contains("https://mega.nz/#recover")) 
+                {
+                    App.AppInformation.UriLink = UriLinkType.Recover;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Verify the change of the email address of the MEGA account
+                else if (tempUri.Contains("https://mega.nz/#verify"))
+                {
+                    App.AppInformation.UriLink = UriLinkType.Verify;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                }
+                //Contact request to an email with an associated account of MEGA
+                else if (tempUri.Contains("https://mega.nz/#fm/ipc"))
+                {
+                    App.AppInformation.UriLink = UriLinkType.FmIpc;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
+                        new Dictionary<string, string>(1) { { "fm/ipc", String.Empty } });
                 }
             }
 
-            // Users has selected MEGA app for operating system auto upload function 
+            // User has selected a folder shortcut
+            if (tempUri.Contains("ShortCutBase64Handle"))
+            {
+                App.ShortCutBase64Handle = tempUri.Replace(@"/Pages/MainPage.xaml?ShortCutBase64Handle=", String.Empty);
+            }
+
+            // User has selected MEGA app for operating system auto upload function 
             if (tempUri.Contains("ConfigurePhotosUploadSettings"))
             {
                 // Launch to the auto-upload settings page.

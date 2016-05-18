@@ -43,7 +43,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_ConfirmAccount" translate="yes" space="preserve">
           <source>Confirm account</source>
-          <target state="translated">Confirm account</target>
+          <target state="translated">Потвърди профила</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" space="preserve">
@@ -63,7 +63,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_CreateFolder" translate="yes" space="preserve">
           <source>Folder name:</source>
-          <target state="translated">Folder name:</target>
+          <target state="translated">Име на папка:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
         </trans-unit>
         <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
           <source>your first name</source>
-          <target state="translated">your first name</target>
+          <target state="translated">вашето име</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -141,15 +141,10 @@
           <target state="translated">Отвори</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/OpenLinkText" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Отвори MEGA линка за сваляне:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</note>
-        </trans-unit>
-        <trans-unit id="Resx/OpenLink" translate="yes" space="preserve">
-          <source>Open MEGA download link:</source>
-          <target state="translated">Отвори MEGA линка за сваляне:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
+          <source>Open MEGA link</source>
+          <target state="translated">Open MEGA link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
           <source>your password</source>
@@ -1011,10 +1006,10 @@ Preserve the {0} code because is for include the name/type of the selected plan 
           <target state="translated">Година</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PasteMegaDownloadLink" translate="yes" space="preserve">
-          <source>Paste MEGA download link:</source>
-          <target state="translated">Постави MEGA линк за сваляне:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to download via a MEGA link</note>
+        <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
+          <source>Paste MEGA link:</source>
+          <target state="translated">Paste MEGA link:</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
@@ -1098,10 +1093,11 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <target state="translated">Пространството ви скоро ще се запълни!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
-        <trans-unit id="Resx/ImportLinkBorderText" translate="yes" space="preserve">
-          <source>Browse to destination and import or download link</source>
-          <target state="translated">Изберете дестинацията и импортирайте или свалете линка</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">
+          <source>Import to {0}</source>
+          <target state="translated">Import to {0}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AddContact" translate="yes" space="preserve">
           <source>Add Contact</source>
@@ -1314,7 +1310,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseSession" translate="yes" space="preserve">
           <source>Close session</source>
-          <target state="translated">Close session</target>
+          <target state="translated">Затвори сесия</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Close session' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" space="preserve">
@@ -1329,7 +1325,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
           <source>Operating system restrictions</source>
-          <target state="translated">Operating system restrictions</target>
+          <target state="translated">Ограничения на операционната система</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
@@ -1379,18 +1375,43 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
           <source>your last name</source>
-          <target state="translated">your last name</target>
+          <target state="translated">вашата фамилия</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="translated">Select all</target>
+          <target state="translated">Маркирай всички</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
           <source>Deselect all</source>
-          <target state="translated">Deselect all</target>
+          <target state="translated">Размаркирай всички</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Decrypt" translate="yes" space="preserve">
+          <source>Decrypt</source>
+          <target state="translated">Разшифровай</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DecryptionKey" translate="yes" space="preserve">
+          <source>Decryption key</source>
+          <target state="translated">Декриптиращ ключ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FileLink" translate="yes" space="preserve">
+          <source>File link</source>
+          <target state="translated">File link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_FolderLink" translate="yes" space="preserve">
+          <source>Folder link</source>
+          <target state="translated">Folder link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_OpenLink" translate="yes" space="preserve">
+          <source>Open link</source>
+          <target state="translated">Отвори връзка</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

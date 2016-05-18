@@ -201,14 +201,6 @@
     <value>פתח</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="OpenLinkText" xml:space="preserve">
-    <value>פתח קישור להורדה מ-MEGA:</value>
-    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>פתח קישור להורדה מ-MEGA:</value>
-    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>סיסמתך</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
@@ -882,10 +874,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>שנה</value>
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>העתק קישור להורדה מ-MEGA:</value>
-    <comment>Label for dialog message to download via a MEGA link</comment>
-  </data>
   <data name="RenewsOn" xml:space="preserve">
     <value>מתחדש ב-</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
@@ -951,10 +939,6 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
   <data name="WarningOutOfSpace" xml:space="preserve">
     <value>בקרוב ייגמר לך מקום האחסון!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
-  </data>
-  <data name="ImportLinkBorderText" xml:space="preserve">
-    <value>גלוש אל היעד וייבא או קישור להורדה</value>
-    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
     <value>הוסף איש קשר</value>
@@ -1221,11 +1205,44 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>סמן הכל</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Deselect all</value>
+    <value>בטל סימון מהכל</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenMegaLink" xml:space="preserve">
+    <value>Open MEGA link</value>
+    <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PasteMegaLink" xml:space="preserve">
+    <value>Paste MEGA link:</value>
+    <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ImportLinkBorderText" xml:space="preserve">
+    <value>Import to {0}</value>
+    <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
+  </data>
+  <data name="UI_Decrypt" xml:space="preserve">
+    <value>פענח</value>
+    <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DecryptionKey" xml:space="preserve">
+    <value>מפתח פיענוח</value>
+    <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FileLink" xml:space="preserve">
+    <value>File link</value>
+    <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FolderLink" xml:space="preserve">
+    <value>Folder link</value>
+    <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenLink" xml:space="preserve">
+    <value>פתח קישור</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

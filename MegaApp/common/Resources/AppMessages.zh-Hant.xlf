@@ -609,8 +609,9 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="translated">您還沒有設置默認的下載地址。
-要繼續下載，請選中一個目標資料夾，或從偏好中設置一個下載位置。</target>
+          <target state="translated">您還沒有選擇預設的檔案下載地址。
+
+要繼續下載，請選擇一個目標資料夾，或從偏好中設定一個預設下載位置。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -1257,6 +1258,82 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Error copying link</source>
           <target state="translated">複製連結失敗</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
+          <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
+          <target state="translated">如果您同意，當前的賬戶將被登出並且所有離線數據將被刪除。是否要繼續？</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
+          <source>You are logged in with another account</source>
+          <target state="translated">您已經使用其他賬戶登錄了</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
+          <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
+          <target state="translated">要進入此資料夾/檔案，您需要它的解密密鑰。如果沒有密鑰，請聯絡此連結的創建者。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
+          <source>Enter decryption key</source>
+          <target state="translated">請輸入解密金鑰</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
+          <source>Invalid decryption key</source>
+          <target state="translated">無效的密鑰</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The file has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The file has been deleted by the user.</source>
+          <target state="needs-review-translation">這可能是由於下列原因：
+﹣該檔案由於違反服務條款或產品使用政策已被刪除。
+﹣ 無效的網址: 您試圖訪問的連接不存在。
+﹣ 該檔案已被用戶刪除。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
+          <source>This could be due to the following reasons:
+- The folder link has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The folder link has been deleted by the user.</source>
+          <target state="needs-review-translation">這可能是由於下列原因：
+﹣該資料夾由於違反服務條款或產品使用政策已被刪除。
+﹣ 無效的網址: 您試圖訪問的連接不存在。
+﹣ 該連接的資料夾已被用戶刪除。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
+          <source>Unavailable link</source>
+          <target state="translated">不可用的連結</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
+          <source>Open link failed [{0}]</source>
+          <target state="translated">開啟檔案連結失敗 [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
+          <source>Open link failed</source>
+          <target state="translated">開啟連結失敗</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
+          <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
+          <target state="needs-review-translation">你無權取得您所選擇的下載路徑資料。請選擇其他不同的下載路徑，然後再試一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
+          <source>Unauthorized access</source>
+          <target state="translated">訪問未獲授權</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
       </group>
     </body>

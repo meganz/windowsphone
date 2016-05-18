@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -7,7 +8,9 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.MegaApi;
 using MegaApp.Models;
+using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
 using Microsoft.Phone.Controls;
@@ -20,7 +23,7 @@ namespace MegaApp.Pages
         private readonly ConfirmAccountViewModel _confirmAccountViewModel;
         public ConfirmAccountPage()
         {
-            _confirmAccountViewModel = new ConfirmAccountViewModel(App.MegaSdk, this);
+            _confirmAccountViewModel = new ConfirmAccountViewModel(App.MegaSdk);
             this.DataContext = _confirmAccountViewModel;
 
             InitializeComponent();
@@ -30,16 +33,32 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            if (NavigateService.ProcessQueryString(NavigationContext.QueryString) != NavigationParameter.UriLaunch) return;
+            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                App.MegaSdk.logout(new LogOutRequestListener(false));
 
-            if (NavigationContext.QueryString.ContainsKey("confirm"))
+            // Remove all pages from the stack (including the MainPage).
+            // If user presses back button should go to InitTourPage or exit the application            
+            while (NavigationService.CanGoBack)
+                NavigationService.RemoveBackEntry();
+
+            if (NavigateService.ProcessQueryString(NavigationContext.QueryString) == NavigationParameter.UriLaunch
+                && NavigationContext.QueryString.ContainsKey("confirm"))
             {
-                _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
-                if(_confirmAccountViewModel.ConfirmCode.StartsWith("mega://"))
-                    _confirmAccountViewModel.ConfirmCode = _confirmAccountViewModel.ConfirmCode.Replace("mega://", "https://mega.nz/#");
+                _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);                
+                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode,
+                    new ConfirmAccountRequestListener(_confirmAccountViewModel));
+            }
+        }
 
-                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode, _confirmAccountViewModel);
-            }                
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+
+            if (e.Cancel) return;
+
+            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+
+            e.Cancel = true;
         }
     }
 }

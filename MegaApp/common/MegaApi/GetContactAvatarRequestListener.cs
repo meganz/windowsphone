@@ -5,10 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
@@ -89,25 +92,54 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
-        protected override void OnSuccesAction(MegaSDK api, MRequest request)
+        public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
+
             if (request.getType() == MRequestType.TYPE_GET_ATTR_USER)
             {
-                if(_megaContact != null)
+                if (e.getErrorCode() == MErrorType.API_OK)
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        _megaContact.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
-                    });
-                }
+                        var img = new BitmapImage();
+                        img.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        img.UriSource = new Uri(request.getFile());
 
-                if (_contactRequest != null)
+                        if (_megaContact != null)
+                        {
+                            _megaContact.HasAvatarImage = true;
+                            _megaContact.AvatarUri = img.UriSource;
+                        }
+
+                        if (_contactRequest != null)
+                        {
+                            _contactRequest.HasAvatarImage = true;
+                            _contactRequest.AvatarUri = img.UriSource;
+                        }
+                    });                    
+                }
+                else
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        _contactRequest.AvatarUri = new Uri(request.getFile(), UriKind.RelativeOrAbsolute);
-                    });
-                }                
+                        if (_megaContact != null)
+                        {
+                            _megaContact.HasAvatarImage = false;
+                            _megaContact.AvatarUri = null;                            
+                        }
+
+                        if (_contactRequest != null)
+                        {
+                            _contactRequest.HasAvatarImage = false;
+                            _contactRequest.AvatarUri = null;                            
+                        }
+                    });                    
+                }
             }
         }
 

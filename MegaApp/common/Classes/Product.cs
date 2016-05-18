@@ -12,7 +12,7 @@ namespace MegaApp.Classes
     // "DataContact" and "DataMember" necessary for serialization during app deactivation
     // when the app opened the Web Browser for the Fortumo Payment
     [DataContract]
-    class Product : ProductBase
+    public class Product : ProductBase
     {
         [DataMember] public int Months { get; set; }
         [DataMember] public ulong Handle { get; set; }

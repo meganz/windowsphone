@@ -201,14 +201,6 @@
     <value>Deschide</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="OpenLinkText" xml:space="preserve">
-    <value>Deschide linkul de descărcare MEGA:</value>
-    <comment>Text placed into the dialog to write/paste the MEGA link to be downloaded. Try to preserve the MEGA uppercase word.</comment>
-  </data>
-  <data name="OpenLink" xml:space="preserve">
-    <value>Deschide linkul de descărcare MEGA:</value>
-    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="PasswordWatermark" xml:space="preserve">
     <value>parola ta</value>
     <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
@@ -477,11 +469,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Clean up transfers' button, link, text, title, etc. - (String as short as possible, MAX 15 characters).</comment>
   </data>
   <data name="ClearCache" xml:space="preserve">
-    <value>curăţă cache-ul</value>
+    <value>şterge cache-ul</value>
     <comment>Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearSelection" xml:space="preserve">
-    <value>curăţă selecţia</value>
+    <value>şterge selecţia</value>
     <comment>Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Clipboard" xml:space="preserve">
@@ -738,7 +730,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
-    <value>OK</value>
+    <value>Ok</value>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
@@ -882,10 +874,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>An</value>
     <comment>Label for any 'Year' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasteMegaDownloadLink" xml:space="preserve">
-    <value>Lipeşte linkul de descărcare MEGA:</value>
-    <comment>Label for dialog message to download via a MEGA link</comment>
-  </data>
   <data name="RenewsOn" xml:space="preserve">
     <value>Reînnoiri pe</value>
     <comment>Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</comment>
@@ -951,10 +939,6 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
   <data name="WarningOutOfSpace" xml:space="preserve">
     <value>Ai rămas fără spaţiu!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
-  </data>
-  <data name="ImportLinkBorderText" xml:space="preserve">
-    <value>Răsfoieşte la destinaţie şi importă sau descarcă linkul</value>
-    <comment>Label for the dialog shown when a user are trying to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
     <value>Adaugă contact</value>
@@ -1165,7 +1149,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>Confirm account</value>
+    <value>Confirmă contul</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1173,7 +1157,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateFolder" xml:space="preserve">
-    <value>Folder name:</value>
+    <value>Numele folderului:</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
@@ -1205,7 +1189,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
-    <value>Close session</value>
+    <value>Închide sesiunea</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
@@ -1213,19 +1197,52 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>your first name</value>
+    <value>prenumele tău</value>
     <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
   </data>
   <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>your last name</value>
+    <value>numele tău</value>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>Selectează toate</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Deselect all</value>
+    <value>Deselectează toate</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenMegaLink" xml:space="preserve">
+    <value>Open MEGA link</value>
+    <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
+  </data>
+  <data name="UI_PasteMegaLink" xml:space="preserve">
+    <value>Paste MEGA link:</value>
+    <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ImportLinkBorderText" xml:space="preserve">
+    <value>Import to {0}</value>
+    <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
+Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
+  </data>
+  <data name="UI_Decrypt" xml:space="preserve">
+    <value>Decriptează</value>
+    <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DecryptionKey" xml:space="preserve">
+    <value>Cheie de decriptare</value>
+    <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FileLink" xml:space="preserve">
+    <value>File link</value>
+    <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FolderLink" xml:space="preserve">
+    <value>Folder link</value>
+    <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_OpenLink" xml:space="preserve">
+    <value>Deschide linkul</value>
+    <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

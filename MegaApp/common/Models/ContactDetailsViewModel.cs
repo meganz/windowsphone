@@ -11,12 +11,13 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
+using MegaApp.MegaApi;
 using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    class ContactDetailsViewModel : BaseAppInfoAwareViewModel
+    public class ContactDetailsViewModel : BaseAppInfoAwareViewModel
     {
         public ContactDetailsViewModel(MegaSDK megaSdk, AppInformation appInformation)
             : base(megaSdk, appInformation)
@@ -86,6 +87,18 @@ namespace MegaApp.Models
         #endregion
 
         #region Methods
+
+        public void Initialize(GlobalDriveListener globalDriveListener)
+        {
+            // Add contacts to global drive listener to receive notifications
+            globalDriveListener.ContactsDetails.Add(this);
+        }
+
+        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        {
+            // Remove contacts of global drive listener
+            globalDriveListener.ContactsDetails.Remove(this);
+        }
 
         private void CreateLoadCancelOption()
         {
