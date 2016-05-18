@@ -1126,4 +1126,59 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Помилка копіювання</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>Якщо ви згодні, відбудеться вихід з вашого поточного акаунту і всі локальні дані буде стерто. Бажаєте продовжити?</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>Ви увійшли в інший обліковий запис</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>Для доступу до цієї теки/файлу, вам потрібен ключ розшифровки. Якщо у вас його немає, зверніться до творця посилання.</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>Введіть ключ розшифрування</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>Невірний ключ розшифровки</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>Це може бути пов'язане з наступними причинами:
+- Файл був видалений через порушення ToS/AUP.
+- Невірний URL — ланка, до якої ви намагаєтесь отримати доступ не існує.
+- Файл було вилучено користувачем.</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>Це може бути пов'язане з наступними причинами:
+- Ланку на теку було видалено через порушення ToS/AUP.
+- Невірний URL — ланка, до якої ви намагаєтесь отримати доступ не існує.
+- Ланку на теку було вилучено користувачем.</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>Не дійсна ланка</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>Невдале відкриття ланки [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>Невдале відкриття ланки</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>Ви не маєте доступу до обраного шляху завантаження. Будь ласка, виберіть інший шлях і спробуйте ще раз.</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>Несанкціонований доступ</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
 </root>

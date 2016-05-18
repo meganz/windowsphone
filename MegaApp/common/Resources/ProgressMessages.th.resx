@@ -284,7 +284,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
-    <value>Logging in...</value>
+    <value>กำลังเข้าสู่ระบบ...</value>
     <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="PM_Logout" xml:space="preserve">
@@ -298,5 +298,13 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
   <data name="PM_UpgradeAccount" xml:space="preserve">
     <value>กำลังอัปเกรดบัญชี...</value>
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFileLink" xml:space="preserve">
+    <value>กำลังเปิดลิงก์ไฟล์...</value>
+    <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
+  </data>
+  <data name="PM_OpenFolderLink" xml:space="preserve">
+    <value>กำลังเปิดลิงก์โฟลเดอร์...</value>
+    <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
 </root>

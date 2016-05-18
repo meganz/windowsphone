@@ -295,7 +295,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</comment>
   </data>
   <data name="RemoveItemQuestion" xml:space="preserve">
-    <value>คุณแน่ใจหรือว่าต้องการลบรายการ {0} นี้</value>
+    <value>คุณแน่ใจหรือว่าต้องการเอารายการ {0} นี้ออก</value>
     <comment>Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</comment>
   </data>
@@ -308,7 +308,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed.</comment>
   </data>
   <data name="RemoveNodeFailed_Title" xml:space="preserve">
-    <value>ลบไม่สำเร็จ</value>
+    <value>ไม่สามารถเอาออกได้</value>
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
@@ -400,7 +400,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</comment>
   </data>
   <data name="MultiSelectRemoveQuestion_Title" xml:space="preserve">
-    <value>ลบรายการหรือไม่</value>
+    <value>ลบรายการใช่หรือไม่</value>
     <comment>Title of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiRemoveSucces" xml:space="preserve">
@@ -593,7 +593,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>คุณยังไม่ได้เลือกตำแหน่งการดาวน์โหลดเริ่มต้นสำหรับไฟล์ของคุณ
 
-หากต้องการดาวน์โหลด กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การตั้งค่า เพื่อตั้งค่าตำแหน่งการดาวน์โหลดเริ่มต้นของคุณ</value>
+หากต้องการดาวน์โหลด กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การกำหนดลักษณะ เพื่อตั้งค่าตำแหน่งการดาวน์โหลดเริ่มต้นของคุณ</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -785,7 +785,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStoreFailed" xml:space="preserve">
-    <value>The credit card information is not correct. The credit card will not be charged.</value>
+    <value>ข้อมูลบัตรเครดิตไม่ถูกต้อง บัตรเครดิตจะไม่ถูกคิดค่าบริการ</value>
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
@@ -837,7 +837,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountSuccessfully" xml:space="preserve">
-    <value>Account successfully upgraded!</value>
+    <value>อัปเกรดบัญชีเรียบร้อยแล้ว</value>
     <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
   </data>
   <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
@@ -879,12 +879,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion" xml:space="preserve">
-    <value>คุณต้องการที่จะลบผู้ติดต่อ {0} หรือไม่</value>
+    <value>คุณต้องการที่จะเอาผู้ติดต่อ {0} ออกหรือไม่</value>
     <comment>Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
   </data>
   <data name="DeleteContactQuestion_Title" xml:space="preserve">
-    <value>ลบผู้ติดต่อหรือไม่</value>
+    <value>ลบรายการผู้ติดต่อใช่หรือไม่</value>
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
@@ -942,12 +942,12 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
-    <value>คุณต้องการที่จะลบผู้ติดต่อ {0} รายการหรือไม่</value>
+    <value>คุณต้องการนำผู้ติดต่อออก {0} รายการหรือไม่</value>
     <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion_Title" xml:space="preserve">
-    <value>ลบผู้ติดต่อหรือไม่</value>
+    <value>ลบรายการผู้ติดต่อใช่หรือไม่</value>
     <comment>Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="ChangePasswordFailed" xml:space="preserve">
@@ -1001,7 +1001,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>ไม่สามารถลบลิงก์ได้ กรุณาลองใหม่อีกครั้ง</value>
+    <value>ไม่สามารถนำออกลิงก์ได้ กรุณาลองใหม่อีกครั้ง</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
@@ -1074,7 +1074,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</value>
+    <value>ขอบคุณสำหรับคำติชมของคุณ คุณแน่ใจหรือว่าจะยกเลิกการสมัครใช้งาน MEGA ของคุณ</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
@@ -1126,5 +1126,60 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
     <value>มีข้อผิดพลาดในการคัดลอกลิงก์</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
+    <value>ถ้าคุณเห็นด้วย บัญชีปัจจุบันของคุณจะออกจากระบบและข้อมูลออฟไลน์ทั้งหมดจะถูกลบเช่นเดียวกัน คุณต้องการที่จะดำเนินการต่อหรือไม่</value>
+    <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
+  </data>
+  <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
+    <value>คุณได้เข้าสู่ระบบด้วยบัญชีอื่น</value>
+    <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
+    <value>ในการเข้าถึงโฟลเดอร์/ไฟล์นี้ คุณจะต้องมีคีย์สำหรับถอดรหัส แต่หากไม่มี กรุณาติดต่อผู้ที่สร้างลิงก์นี้</value>
+    <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
+  </data>
+  <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
+    <value>กรอกคีย์เพื่อถอดรหัสลับ</value>
+    <comment>Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DecryptionKeyNotValid" xml:space="preserve">
+    <value>คีย์ถอดรหัสลับไม่ถูกต้อง</value>
+    <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
+  </data>
+  <data name="AM_FileLinkUnavailable" xml:space="preserve">
+    <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
+- ไฟล์ถูกลบออกเพราะมีการละเมิด ToS/AUP
+- URL ไม่ถูกต้อง - ลิงค์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+- ไฟล์ถูกลบโดยผู้ใช้</value>
+    <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
+  </data>
+  <data name="AM_FolderLinkUnavailable" xml:space="preserve">
+    <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
+- โฟลเดอร์ถูกลบออกเพราะมีการละเมิด ToS/AUP
+- URL ไม่ถูกต้อง - ลิงค์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+- โฟลเดอร์ถูกลบโดยผู้ใช้</value>
+    <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
+  </data>
+  <data name="AM_LinkUnavailableTitle" xml:space="preserve">
+    <value>ลิงก์ใช้งานไม่ได้</value>
+    <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
+  </data>
+  <data name="AM_OpenLinkFailed" xml:space="preserve">
+    <value>เปิดลิงก์ไม่สำเร็จ [{0}]</value>
+    <comment>Message of the dialog displayed when the process to open a link failed.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
+    <value>เปิดลิงก์ไม่สำเร็จ</value>
+    <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
+    <value>คุณไม่สามารถเข้าถึงเส้นทางดาวน์โหลดตามที่เลือกได้ กรุณาเลือกเส้นทางดาวน์โหลดอื่นและลองใหม่อีกครั้ง</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
+  </data>
+  <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
+    <value>ไม่ได้รับอนุญาตให้เข้าถึง</value>
+    <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
 </root>
