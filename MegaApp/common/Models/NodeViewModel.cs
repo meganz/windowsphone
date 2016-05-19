@@ -257,7 +257,7 @@ namespace MegaApp.Models
                 return;
             }
 
-            await CheckDownloadPath(downloadPath);
+            if (!await CheckDownloadPath(downloadPath)) return;
                         
             // If selected file is a folder then also select it childnodes to download
             bool result;
@@ -277,6 +277,12 @@ namespace MegaApp.Models
             bool folderExists = true; //Suppose that exists
             try { await StorageFolder.GetFolderFromPathAsync(downloadPath); }
             catch (FileNotFoundException) { folderExists = false; }
+            catch (UnauthorizedAccessException)
+            {
+                new CustomMessageDialog(AppMessages.AM_DowloadPathUnauthorizedAccess_Title,
+                    AppMessages.AM_DowloadPathUnauthorizedAccess,
+                    this.AppInformation).ShowDialog();
+            }
 
             if (!folderExists) await CreateDownloadPath(downloadPath);
 
