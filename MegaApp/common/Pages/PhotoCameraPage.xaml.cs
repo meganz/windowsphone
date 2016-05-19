@@ -162,6 +162,20 @@ namespace MegaApp.Pages
 
         protected override async void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            if (App.AppInformation.IsStartupModeActivate)
+            {
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+                
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+                
+                App.AppInformation.IsStartupModeActivate = false;
+            }
+
             try
             {
                 ProgressService.SetProgressIndicator(true, "Loading camera...");
