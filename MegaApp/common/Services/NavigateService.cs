@@ -27,20 +27,32 @@ namespace MegaApp.Services
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)
         {
-            PreviousPage = navPage;
-            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
+            try
+            {
+                PreviousPage = navPage;
+                ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam, extraParams));
+            }
+            catch (InvalidOperationException) { }
         }
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam, object data)
         {
-            PreviousPage = navPage;
-            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam), data);
+            try
+            {
+                PreviousPage = navPage;
+                ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam), data);
+            }
+            catch (InvalidOperationException) { }
         }
 
         public static void NavigateTo(Type navPage, NavigationParameter navParam)
         {
-            PreviousPage = navPage;
-            ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
+            try
+            {
+                PreviousPage = navPage;
+                ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(BuildNavigationUri(navPage, navParam));
+            }
+            catch (InvalidOperationException) { }
         }
         
         public static Uri BuildNavigationUri(Type navPage, NavigationParameter navParam, IDictionary<string, string> extraParams)

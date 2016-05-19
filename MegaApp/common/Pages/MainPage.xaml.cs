@@ -900,16 +900,24 @@ namespace MegaApp.Pages
                     _mainPageViewModel.SourceFolderView.FocusedNode = null;
                 }
 
-                // Move all the selected nodes and then clear and release the selected nodes list
-                if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
-                    _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
+                try
                 {
-                    foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
+                    // Move all the selected nodes and then clear and release the selected nodes list
+                    if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
+                        _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
                     {
-                        node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
-                        node.DisplayMode = NodeDisplayMode.Normal;
-                    }
-                    _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                        foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
+                        {
+                            node.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                            node.DisplayMode = NodeDisplayMode.Normal;
+                        }
+                        _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                    }                    
+                }
+                catch(InvalidOperationException)
+                {
+                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
                 }
 
                 _mainPageViewModel.SourceFolderView = null;
