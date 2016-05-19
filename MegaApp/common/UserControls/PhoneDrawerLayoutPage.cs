@@ -32,6 +32,16 @@ namespace MegaApp.UserControls
             bool isMainPage = page == typeof(MainPage);
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
 
+            // If the previous page is the PasswordPage (PIN lock page), delete it from the stack
+            var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+            if (navParam == NavigationParameter.PasswordLogin)
+            {
+                var lastPage = backStack.FirstOrDefault();
+                if (lastPage == null) return;
+                if (lastPage.Source.ToString().Contains(typeof(PasswordPage).Name))
+                    ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+            } 
+
             if (isMainPage)
             {
                 if (navigateTo)
@@ -52,6 +62,29 @@ namespace MegaApp.UserControls
                 if (navigateTo) return;
                 ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
             }
+        }
+
+        /// <summary>
+        /// Check if can go back in the stack of pages.
+        /// <para>
+        /// Custom check to see if can go back normally in the stack of pages when the user press the back key. 
+        /// If can't go back, goes to the "MainPage" (always that the current page isn't the "MainPage").
+        /// </para>
+        /// </summary>
+        /// <param name="isCancel">Value that indicates if the go back operation should be canceled.</param>
+        /// <seealso cref="OnBackKeyPress"/>
+        /// <returns>Boolean value that indicates if the go back operation should be canceled.</returns>
+        protected bool CheckGoBack(bool isCancel)
+        {
+            if (isCancel) return true;
+            
+            if((!NavigationService.CanGoBack) && (this.GetType() != typeof(MainPage)))
+            {
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+                return true;
+            }
+            
+            return false;
         }
 
         #endregion
