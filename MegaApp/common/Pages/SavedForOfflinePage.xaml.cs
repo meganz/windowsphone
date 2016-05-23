@@ -8,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Windows.Storage;
 using MegaApp.Enums;
 using MegaApp.Interfaces;
 using MegaApp.Models;
@@ -24,7 +25,9 @@ namespace MegaApp.Pages
 
         public SavedForOfflinePage()
         {
-            this.DataContext = _savedForOfflineViewModel = new SavedForOfflineViewModel();
+            // Set the main viewmodel of this page
+            App.SavedForOfflineViewModel = _savedForOfflineViewModel = new SavedForOfflineViewModel();
+            this.DataContext = _savedForOfflineViewModel;
 
             InitializeComponent();
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.SavedForOffline);
@@ -144,6 +147,11 @@ namespace MegaApp.Pages
             else
             {
                 _savedForOfflineViewModel.SavedForOffline.FocusedNode = (IOfflineNode)focusedListBoxItem.DataContext;
+
+                if(_savedForOfflineViewModel.SavedForOffline.FocusedNode.IsFolder)
+                    this.BtnShare.Visibility = Visibility.Collapsed;
+                else
+                    this.BtnShare.Visibility = Visibility.Visible;
             }
         }
 
@@ -270,6 +278,19 @@ namespace MegaApp.Pages
             _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode = _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode;
 
             SetApplicationBarData();
+        }
+
+        /// <summary>
+        /// Method triggered when the user touch the "share" button in the "multi-select" mode.
+        /// </summary>
+        /// <param name="sender">Object that triggers the action.</param>
+        /// <param name="e">Event data</param>
+        private async void OnMultiSelectShareClick(object sender, EventArgs e)
+        {
+            if (!await _savedForOfflineViewModel.SavedForOffline.MultipleShare()) return;
+
+            _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode = _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode;
+            SetApplicationBarData();            
         }
 
         protected override void OnDrawerClosed(object sender)

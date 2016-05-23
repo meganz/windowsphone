@@ -16,6 +16,9 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Data;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation;
+using Windows.Storage;
 #if WINDOWS_PHONE_81
 
 #endif
@@ -1174,6 +1177,64 @@ namespace MegaApp.Services
                 });
 
             customMessageDialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// Shows an alert dialog to inform that the DEBUG mode is enabled.
+        /// <para>Also asks if the user wants to disable it.</para>
+        /// </summary>
+        public static void ShowDebugModeAlert()
+        {
+            var customMessageDialog = new CustomMessageDialog(
+                AppMessages.AM_DebugModeEnabled_Title,
+                AppMessages.AM_DebugModeEnabled_Message,
+                App.AppInformation, MessageDialogButtons.YesNo);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+            {
+                DebugService.DebugSettings.ShowDebugAlert = false;
+                DebugService.DebugSettings.DisableDebugMode();
+            };
+
+            customMessageDialog.CancelOrNoButtonTapped += (sender, args) =>
+            {
+                DebugService.DebugSettings.ShowDebugAlert = false;                
+            };
+
+            customMessageDialog.ShowDialog();
+        }
+
+        /// <summary>
+        /// Prepares and launch the task to share items with other app.
+        /// </summary>
+        /// <param name="storageItems">Items to share.</param>
+        public static void ShowShareMediaTask(List<StorageFile> storageItems)
+        {
+            if (storageItems == null || storageItems.Count < 1) return;
+
+            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+            dataTransferManager.DataRequested += (sender, args) =>
+            {
+                DataPackage requestData = args.Request.Data;
+                requestData.Properties.ApplicationName = AppResources.ApplicationTitle;
+
+                if(storageItems.Count() > 1)
+                {
+                    requestData.Properties.Title = AppMessages.AM_ShareMultipleItemsFromMega_Title;
+                    requestData.Properties.Description = AppMessages.AM_ShareMultipleItemsFromMega_Message;
+                    requestData.SetText(AppMessages.AM_ShareMultipleItemsFromMega_Message);                    
+                }
+                else
+                {
+                    requestData.Properties.Title = AppMessages.AM_ShareItemFromMega_Title;
+                    requestData.Properties.Description = AppMessages.AM_ShareItemFromMega_Message;
+                    requestData.SetText(AppMessages.AM_ShareItemFromMega_Message);
+                }                
+
+                requestData.SetStorageItems(storageItems);
+            };
+
+            DataTransferManager.ShowShareUI();
         }
     }
 }

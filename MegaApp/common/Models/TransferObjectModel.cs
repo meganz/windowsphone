@@ -499,7 +499,7 @@ namespace MegaApp.Models
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            if (DebugService.DebugSettings.IsDebugMode)
+            if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));

@@ -106,6 +106,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a MEGA_WP.log.
+        /// </summary>
+        public static string LogFileName {
+            get {
+                return ResourceManager.GetString("LogFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a https://github.com/meganz/sdk.
         /// </summary>
         public static string MegaSdkUrl {
