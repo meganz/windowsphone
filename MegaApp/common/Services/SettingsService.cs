@@ -322,6 +322,8 @@ namespace MegaApp.Services
             DeleteSetting(SettingsResources.UserPinLock);
 
             DeleteSetting(SettingsResources.CameraUploadsFirstInit);
+
+            DeleteSetting(SettingsResources.DebugModeIsEnabled);
         }
     }
 }

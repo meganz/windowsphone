@@ -44,6 +44,7 @@ namespace MegaApp.Models
             this.MultiSelectCommand = new DelegateCommand(this.MultiSelect);
             this.ViewDetailsCommand = new DelegateCommand(this.ViewDetails);
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
+            this.ShareItemCommand = new DelegateCommand(this.Share);
 
             this.ChildNodes.CollectionChanged += ChildNodes_CollectionChanged;
 
@@ -65,6 +66,7 @@ namespace MegaApp.Models
         public ICommand MultiSelectCommand { get; set; }
         public ICommand ViewDetailsCommand { get; private set; }
         public ICommand RemoveItemCommand { get; private set; }
+        public ICommand ShareItemCommand { get; private set; }
 
         #endregion
 
@@ -354,6 +356,33 @@ namespace MegaApp.Models
             return await customMessageDialog.ShowDialogAsync() == MessageDialogResult.OkYes;            
         }
 
+        /// <summary>
+        /// Prepare multiple offline files to share with other app.
+        /// </summary>
+        /// <returns>Boolean value indicating if all went well or not.</returns>
+        public async Task<bool> MultipleShare()
+        {
+            int count = ChildNodes.Count(n => n.IsMultiSelected);
+            if (count < 1) return false;
+
+            List<StorageFile> storageItems = new List<StorageFile>(count);
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            {
+                if (node == null || node.IsFolder) continue;
+
+                StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(node.NodePath);
+                storageItems.Add(selectedNode);
+            }
+
+            if (storageItems == null || storageItems.Count < 1) return false;
+
+            DialogService.ShowShareMediaTask(storageItems);
+
+            this.IsMultiSelectActive = false;
+
+            return true;
+        }
+
         #endregion
 
         #region Private Methods
@@ -389,6 +418,23 @@ namespace MegaApp.Models
 
                 Refresh();
             }                
+        }
+
+        /// <summary>
+        /// Prepare the selectec offline file to share with other app.
+        /// </summary>
+        /// <param name="obj">Object that triggers the action.</param>
+        private async void Share(object obj)
+        {
+            List<StorageFile> storageItems = new List<StorageFile>();
+
+            if (FocusedNode != null)
+            {
+                StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(FocusedNode.NodePath);
+                storageItems.Add(selectedNode);
+                
+                DialogService.ShowShareMediaTask(storageItems);
+            }
         }
 
         private void ViewDetails(object obj)

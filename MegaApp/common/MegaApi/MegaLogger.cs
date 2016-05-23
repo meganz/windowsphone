@@ -5,12 +5,15 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows;
 using mega;
+using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
@@ -37,7 +40,7 @@ namespace MegaApp.MegaApi
                     logLevelString = " (verb):  ";
                     break;
                 case MLogLevel.LOG_LEVEL_WARNING:
-                    logLevelString =  " (warn):  ";
+                    logLevelString = " (warn):  ";
                     break;
                 default:
                     logLevelString = " (none):  ";
@@ -55,6 +58,19 @@ namespace MegaApp.MegaApi
             }
 
             Debug.WriteLine("{0}{1}{2}", time, logLevelString, message);
+
+            if (DebugService.DebugSettings != null &&
+                DebugService.DebugSettings.IsDebugMode)
+            {
+                try 
+                {
+                    using (StreamWriter sw = File.AppendText(AppService.GetFileLogPath()))
+                    {
+                        sw.WriteLine("{0}{1}{2}", time, logLevelString, message);
+                    }
+                }
+                catch (Exception) { }                
+            }
         }
     }
 }
