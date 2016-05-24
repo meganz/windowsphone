@@ -142,6 +142,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to copy item. Please try again..
+        /// </summary>
+        public static string AM_CopyFailed {
+            get {
+                return ResourceManager.GetString("AM_CopyFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Copy failed.
+        /// </summary>
+        public static string AM_CopyFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_CopyFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy the MEGA link to your clipboard..
         /// </summary>
         public static string AM_CopyLinkToClipboardFailed {
@@ -205,7 +223,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have access permission to the selected download path. Please, select a different download path and try again..
+        ///   Busca una cadena traducida similar a You don&apos;t have access to the selected download path. Please select a different download path and try again..
         /// </summary>
         public static string AM_DowloadPathUnauthorizedAccess {
             get {

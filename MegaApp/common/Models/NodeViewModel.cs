@@ -127,6 +127,20 @@ namespace MegaApp.Models
             return NodeActionResult.IsBusy;
         }
 
+        /// <summary>
+        /// Move the node from its current location to a new folder destination
+        /// </summary>
+        /// <param name="newParentNode">The root node of the destination folder</param>
+        /// <returns>Result of the action</returns>
+        public NodeActionResult Copy(IMegaNode newParentNode)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;            
+
+            this.MegaSdk.copyNode(this.OriginalMNode, newParentNode.OriginalMNode, new CopyNodeRequestListener());
+            return NodeActionResult.IsBusy;
+        }
+
         public async Task<NodeActionResult> RemoveAsync(bool isMultiRemove, AutoResetEvent waitEventRequest = null)
         {
             // User must be online to perform this operation

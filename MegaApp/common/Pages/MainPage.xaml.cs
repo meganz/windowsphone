@@ -52,6 +52,9 @@ namespace MegaApp.Pages
                 if (ApplicationBar == null) return;
                 UiService.ChangeAppBarStatus(ApplicationBar.Buttons,  ApplicationBar.MenuItems, args.Status);
             };
+
+            BtnCopyOrMoveItemCloudDrive.Content = BtnCopyOrMoveItemRubbishBin.Content = 
+                String.Format("{0}/{1}", UiResources.Copy.ToLower(), UiResources.Move.ToLower());
         }        
 
         // Code to execute when a Network change is detected.
@@ -653,8 +656,8 @@ namespace MegaApp.Pages
                 case DriveDisplayMode.CloudDrive:
                     this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
                     break;
-                case DriveDisplayMode.MoveItem:
-                    this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+                case DriveDisplayMode.CopyOrMoveItem:
+                    this.ApplicationBar = (ApplicationBar)Resources["CopyOrMoveItemMenu"];
                     break;
                 case DriveDisplayMode.ImportItem:
                     BorderLinkText.Visibility = Visibility.Visible;
@@ -758,7 +761,7 @@ namespace MegaApp.Pages
             App.MegaSdk.retryPendingConnections();
 
             // If the user is moving nodes, don't show the contextual menu
-            if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode == DriveDisplayMode.MoveItem) 
+            if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem) 
                 e.Cancel = true;
 
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
@@ -827,17 +830,17 @@ namespace MegaApp.Pages
                 DialogService.ShowUploadOptions(_mainPageViewModel.CloudDrive);
         }
 
-        private void OnCancelMoveClick(object sender, EventArgs e)
+        private void OnCancelCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            CancelMoveAction();
+            CancelCopyOrMoveAction();
 
             SetApplicationBarData();
         }
 
-        private void CancelMoveAction()
+        private void CancelCopyOrMoveAction()
         {
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
             {
@@ -878,6 +881,54 @@ namespace MegaApp.Pages
             }            
         }
 
+        private void OnAcceptCopyClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            AcceptCopyAction();
+
+            SetApplicationBarData();
+        }
+
+        private void AcceptCopyAction()
+        {
+            if (_mainPageViewModel.SourceFolderView != null)
+            {
+                try
+                {
+                    // Copy all the selected nodes and then clear and release the selected nodes list
+                    if (_mainPageViewModel.SourceFolderView.SelectedNodes != null &&
+                        _mainPageViewModel.SourceFolderView.SelectedNodes.Count > 0)
+                    {
+                        foreach (var node in _mainPageViewModel.SourceFolderView.SelectedNodes)
+                        {
+                            node.Copy(_mainPageViewModel.ActiveFolderView.FolderRootNode);
+                            node.DisplayMode = NodeDisplayMode.Normal;
+                        }
+                        _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
+                    }
+
+                    // Release the focused node
+                    if (_mainPageViewModel.SourceFolderView.FocusedNode != null)
+                    {
+                        _mainPageViewModel.SourceFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                        _mainPageViewModel.SourceFolderView.FocusedNode = null;
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    new CustomMessageDialog(AppMessages.AM_CopyFailed_Title, AppMessages.AM_CopyFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                }
+
+                _mainPageViewModel.SourceFolderView = null;
+            }
+
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
+        }
+
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
@@ -892,14 +943,6 @@ namespace MegaApp.Pages
         {
             if(_mainPageViewModel.SourceFolderView != null)
             {
-                // Move the focused node and then release it
-                if (_mainPageViewModel.SourceFolderView.FocusedNode != null)
-                {
-                    _mainPageViewModel.SourceFolderView.FocusedNode.Move(_mainPageViewModel.ActiveFolderView.FolderRootNode);
-                    _mainPageViewModel.SourceFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-                    _mainPageViewModel.SourceFolderView.FocusedNode = null;
-                }
-
                 try
                 {
                     // Move all the selected nodes and then clear and release the selected nodes list
@@ -912,7 +955,14 @@ namespace MegaApp.Pages
                             node.DisplayMode = NodeDisplayMode.Normal;
                         }
                         _mainPageViewModel.SourceFolderView.SelectedNodes.Clear();
-                    }                    
+                    }
+
+                    // Release the focused node
+                    if (_mainPageViewModel.SourceFolderView.FocusedNode != null)
+                    {
+                        _mainPageViewModel.SourceFolderView.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                        _mainPageViewModel.SourceFolderView.FocusedNode = null;
+                    }
                 }
                 catch(InvalidOperationException)
                 {
@@ -921,36 +971,36 @@ namespace MegaApp.Pages
                 }
 
                 _mainPageViewModel.SourceFolderView = null;
-            }            
+            }
                         
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = _mainPageViewModel.CloudDrive.PreviousDisplayMode;
             _mainPageViewModel.RubbishBin.CurrentDisplayMode = _mainPageViewModel.RubbishBin.PreviousDisplayMode;
         }
 
-        private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
+        private void OnCopyOrMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            this.MoveItemTapAction();
+            this.CopyOrMoveItemTapAction();
           
             this.SetApplicationBarData();
         }
 
-        private void MoveItemTapAction()
+        private void CopyOrMoveItemTapAction()
         {
             // Extra null reference exceptions checks
             if (_mainPageViewModel == null || 
                 _mainPageViewModel.ActiveFolderView == null ||
                 _mainPageViewModel.ActiveFolderView.FocusedNode == null) return;
 
-            _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
+            _mainPageViewModel.ActiveFolderView.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForCopyOrMove;
             _mainPageViewModel.ActiveFolderView.SelectedNodes.Add(_mainPageViewModel.ActiveFolderView.FocusedNode);            
 
             _mainPageViewModel.CloudDrive.PreviousDisplayMode = _mainPageViewModel.CloudDrive.CurrentDisplayMode;
-            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
             _mainPageViewModel.RubbishBin.PreviousDisplayMode = _mainPageViewModel.RubbishBin.CurrentDisplayMode;
-            _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.MoveItem;            
+            _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;            
 
             _mainPageViewModel.SourceFolderView = _mainPageViewModel.ActiveFolderView;            
         }
@@ -1073,12 +1123,12 @@ namespace MegaApp.Pages
         {
             // If the user is moving nodes don't allow change to check mode in the Cloud Drive
             if ((MainPivot.SelectedItem == CloudDrivePivot) && 
-                (_mainPageViewModel.CloudDrive.CurrentDisplayMode == DriveDisplayMode.MoveItem))
+                (_mainPageViewModel.CloudDrive.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem))
                 e.Cancel = true;
 
             // If the user is moving nodes don't allow change to check mode in the Rubbis Bin
             if ((MainPivot.SelectedItem == RubbishBinPivot) && 
-                (_mainPageViewModel.RubbishBin.CurrentDisplayMode == DriveDisplayMode.MoveItem))
+                (_mainPageViewModel.RubbishBin.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem))
                 e.Cancel = true;
         }
 
@@ -1113,15 +1163,15 @@ namespace MegaApp.Pages
             _mainPageViewModel.ActiveFolderView.MultipleDownload();
         }
 
-        private void OnMultiSelectMoveClick(object sender, EventArgs e)
+        private void OnMultiSelectCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            MultiSelectMoveAction();
+            MultiSelectCopyOrMoveAction();
         }
 
-        private void MultiSelectMoveAction()
+        private void MultiSelectCopyOrMoveAction()
         {
             // Set the selected nodes list and change the display mode of the current active folder
             if (!_mainPageViewModel.ActiveFolderView.SelectMultipleItemsForMove()) return;
@@ -1130,14 +1180,14 @@ namespace MegaApp.Pages
             if(!_mainPageViewModel.ActiveFolderView.Equals(_mainPageViewModel.CloudDrive))
             {
                 _mainPageViewModel.CloudDrive.PreviousDisplayMode = _mainPageViewModel.CloudDrive.CurrentDisplayMode;
-                _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+                _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
             }
 
             // Also change the display mode of the Rubbish Bin if is necessary
             if (!_mainPageViewModel.ActiveFolderView.Equals(_mainPageViewModel.RubbishBin))
             {
                 _mainPageViewModel.RubbishBin.PreviousDisplayMode = _mainPageViewModel.RubbishBin.CurrentDisplayMode;
-                _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+                _mainPageViewModel.RubbishBin.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
             }            
 
             // Set the source folder as the current active folder
@@ -1250,8 +1300,7 @@ namespace MegaApp.Pages
             base.OnHamburgerMenuItemTap(sender, e);
         }
 
-        #endregion
-        
+        #endregion        
     }
 
 }

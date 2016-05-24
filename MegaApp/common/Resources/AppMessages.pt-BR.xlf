@@ -1333,6 +1333,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Acesso não autorizado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_CopyFailed_Title" translate="yes" xml:space="preserve">
+          <source>Copy failed</source>
+          <target state="new">Copy failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CopyFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy item. Please try again.</source>
+          <target state="new">Failed to copy item. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a node failed.</note>
+        </trans-unit>
       </group>
     </body>
   </file>

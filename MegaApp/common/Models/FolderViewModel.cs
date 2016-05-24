@@ -330,12 +330,12 @@ namespace MegaApp.Models
                     break;
                 case MNodeType.TYPE_FILE:
                     // If the user is moving nodes don't process the file node
-                    if (CurrentDisplayMode != DriveDisplayMode.MoveItem)
+                    if (CurrentDisplayMode != DriveDisplayMode.CopyOrMoveItem)
                         ProcessFileNode(node);
                     break;
                 case MNodeType.TYPE_FOLDER:
                     // If the user is moving nodes and the folder is one of the selected nodes don't navigate to it
-                    if ((CurrentDisplayMode == DriveDisplayMode.MoveItem) && (IsSelectedNode(node))) return;
+                    if ((CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem) && (IsSelectedNode(node))) return;
                     BrowseToFolder(node);
                     break;
                 case MNodeType.TYPE_ROOT:
@@ -364,7 +364,7 @@ namespace MegaApp.Models
                     if ((selectedNode != null) && (node.OriginalMNode.getBase64Handle() == selectedNode.OriginalMNode.getBase64Handle()))
                     {   
                         //Update the selected nodes list values
-                        node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                        node.DisplayMode = NodeDisplayMode.SelectedForCopyOrMove;
                         SelectedNodes[index] = node;
 
                         return true;
@@ -670,13 +670,13 @@ namespace MegaApp.Models
 
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
             {
-                node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                node.DisplayMode = NodeDisplayMode.SelectedForCopyOrMove;
                 SelectedNodes.Add(node);
             }
 
             this.IsMultiSelectActive = false;
             this.PreviousDisplayMode = this.CurrentDisplayMode;
-            this.CurrentDisplayMode = DriveDisplayMode.MoveItem;
+            this.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
 
             return true;
         }
@@ -890,12 +890,12 @@ namespace MegaApp.Models
 
                 // If the user is moving nodes, check if the node had been selected to move 
                 // and establish the corresponding display mode
-                if (CurrentDisplayMode == DriveDisplayMode.MoveItem)
+                if (CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem)
                 {
                     // Check if it is the only focused node
                     if((FocusedNode != null) && (node.OriginalMNode.getBase64Handle() == FocusedNode.OriginalMNode.getBase64Handle()))
                     {
-                        node.DisplayMode = NodeDisplayMode.SelectedForMove;
+                        node.DisplayMode = NodeDisplayMode.SelectedForCopyOrMove;
                         FocusedNode = node;
                     }
 
