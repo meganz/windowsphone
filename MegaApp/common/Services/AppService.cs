@@ -249,6 +249,15 @@ namespace MegaApp.Services
                 UiResources.DefaultDownloadLocation));
         }
 
+        /// <summary>
+        /// Gets the log file path created in DEBUG mode.
+        /// </summary>
+        /// <returns>Log file path.</returns>
+        public static string GetFileLogPath()
+        {
+            return Path.Combine(GetDownloadDirectoryPath(), AppResources.LogFileName);
+        }
+
         public static void ClearObsoleteSettings()
         {
             var lastAppVersion = SettingsService.LoadSetting<string>(SettingsResources.LastAppVersion, null);

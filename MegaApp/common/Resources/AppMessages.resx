@@ -1179,4 +1179,46 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Unauthorized access</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
+  <data name="AM_DisableDebugMode_Message" xml:space="preserve">
+    <value>The log ({0}) will be deleted from the Offline section.</value>
+    <comment>Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Title" xml:space="preserve">
+    <value>Disable DEBUG mode</value>
+    <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Message" xml:space="preserve">
+    <value>A log will be created in the Offline section ({0}).</value>
+    <comment>Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Title" xml:space="preserve">
+    <value>Enable DEBUG mode</value>
+    <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
+    <value>Debug mode is enabled. Do you want to disable it?</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
+    <value>Debug mode</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
+    <value>Item shared with the Windows Phone app of MEGA.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
+    <value>Item shared from MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
+    <value>Items shared with the Windows Phone app of MEGA.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
+    <value>Items shared from MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
 </root>
