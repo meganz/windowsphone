@@ -178,6 +178,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Debug mode is enabled. Do you want to disable it?.
+        /// </summary>
+        public static string AM_DebugModeEnabled_Message {
+            get {
+                return ResourceManager.GetString("AM_DebugModeEnabled_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Debug mode.
+        /// </summary>
+        public static string AM_DebugModeEnabled_Title {
+            get {
+                return ResourceManager.GetString("AM_DebugModeEnabled_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link..
         /// </summary>
         public static string AM_DecryptionKeyAlertMessage {
@@ -223,6 +241,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The log ({0}) will be deleted from the Offline section..
+        /// </summary>
+        public static string AM_DisableDebugMode_Message {
+            get {
+                return ResourceManager.GetString("AM_DisableDebugMode_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Disable DEBUG mode.
+        /// </summary>
+        public static string AM_DisableDebugMode_Title {
+            get {
+                return ResourceManager.GetString("AM_DisableDebugMode_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You don&apos;t have access to the selected download path. Please select a different download path and try again..
         /// </summary>
         public static string AM_DowloadPathUnauthorizedAccess {
@@ -246,6 +282,24 @@ namespace MegaApp.Resources {
         public static string AM_DownloadNodeFailedNoErrorCode {
             get {
                 return ResourceManager.GetString("AM_DownloadNodeFailedNoErrorCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A log will be created in the Offline section ({0})..
+        /// </summary>
+        public static string AM_EnableDebugMode_Message {
+            get {
+                return ResourceManager.GetString("AM_EnableDebugMode_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable DEBUG mode.
+        /// </summary>
+        public static string AM_EnableDebugMode_Title {
+            get {
+                return ResourceManager.GetString("AM_EnableDebugMode_Title", resourceCulture);
             }
         }
         
@@ -387,6 +441,42 @@ namespace MegaApp.Resources {
         public static string AM_PrepareFilesForUploadFailed_Title {
             get {
                 return ResourceManager.GetString("AM_PrepareFilesForUploadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Item shared with the Windows Phone app of MEGA..
+        /// </summary>
+        public static string AM_ShareItemFromMega_Message {
+            get {
+                return ResourceManager.GetString("AM_ShareItemFromMega_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Item shared from MEGA.
+        /// </summary>
+        public static string AM_ShareItemFromMega_Title {
+            get {
+                return ResourceManager.GetString("AM_ShareItemFromMega_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Items shared with the Windows Phone app of MEGA..
+        /// </summary>
+        public static string AM_ShareMultipleItemsFromMega_Message {
+            get {
+                return ResourceManager.GetString("AM_ShareMultipleItemsFromMega_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Items shared from MEGA.
+        /// </summary>
+        public static string AM_ShareMultipleItemsFromMega_Title {
+            get {
+                return ResourceManager.GetString("AM_ShareMultipleItemsFromMega_Title", resourceCulture);
             }
         }
         
