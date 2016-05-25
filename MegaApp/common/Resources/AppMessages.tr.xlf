@@ -1334,6 +1334,58 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">İzinsiz erişim</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" xml:space="preserve">
+          <source>Enable DEBUG mode</source>
+          <target state="new">Enable DEBUG mode</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is enabled - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" xml:space="preserve">
+          <source>Debug mode</source>
+          <target state="new">Debug mode</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" xml:space="preserve">
+          <source>Debug mode is enabled. Do you want to disable it?</source>
+          <target state="new">Debug mode is enabled. Do you want to disable it?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" xml:space="preserve">
+          <source>Item shared from MEGA</source>
+          <target state="new">Item shared from MEGA</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" xml:space="preserve">
+          <source>Items shared from MEGA</source>
+          <target state="new">Items shared from MEGA</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" xml:space="preserve">
+          <source>Items shared with the Windows Phone app of MEGA.</source>
+          <target state="new">Items shared with the Windows Phone app of MEGA.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" xml:space="preserve">
+          <source>Item shared with the Windows Phone app of MEGA.</source>
+          <target state="new">Item shared with the Windows Phone app of MEGA.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" xml:space="preserve">
+          <source>A log will be created in the Offline section ({0}).</source>
+          <target state="new">A log will be created in the Offline section ({0}).</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DisableDebugMode_Title" translate="yes" xml:space="preserve">
+          <source>Disable DEBUG mode</source>
+          <target state="new">Disable DEBUG mode</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is disabled - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" xml:space="preserve">
+          <source>The log ({0}) will be deleted from the Offline section.</source>
+          <target state="new">The log ({0}) will be deleted from the Offline section.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
