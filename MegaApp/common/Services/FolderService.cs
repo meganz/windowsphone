@@ -68,8 +68,22 @@ namespace MegaApp.Services
         
         public static void DeleteFolder(string path, bool recursive = false)
         {
-            if (Directory.Exists(path))
-                Directory.Delete(path, recursive);            
+            try
+            {
+                if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))
+                    Directory.Delete(path, recursive);
+            }
+            catch (Exception e)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.DeleteNodeFailed_Title,
+                        String.Format(AppMessages.DeleteNodeFailed, e.Message),
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+            }
         }
 
         public static bool HasIllegalChars(string path)
