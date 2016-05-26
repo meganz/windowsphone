@@ -42,6 +42,9 @@ namespace MegaApp.Pages
 
             // Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            BtnCopyOrMoveItem.Content = String.Format("{0}/{1}", 
+                UiResources.Copy.ToLower(), UiResources.Move.ToLower());
         }
 
         // Code to execute when a Network change is detected.
@@ -342,8 +345,8 @@ namespace MegaApp.Pages
                 case DriveDisplayMode.CloudDrive:
                     this.ApplicationBar = (ApplicationBar)Resources["CloudDriveMenu"];
                     break;
-                case DriveDisplayMode.MoveItem:
-                    this.ApplicationBar = (ApplicationBar)Resources["MoveItemMenu"];
+                case DriveDisplayMode.CopyOrMoveItem:
+                    this.ApplicationBar = (ApplicationBar)Resources["CopyOrMoveItemMenu"];
                     break;
                 case DriveDisplayMode.ImportItem:
                     this.ApplicationBar = (ApplicationBar)Resources["ImportItemMenu"];
@@ -366,11 +369,11 @@ namespace MegaApp.Pages
             return _cameraUploadsPageViewModel.CameraUploads.GoFolderUp();
         }
         
-        private void OnCloudDriveItemTap(object sender, ListBoxItemTapEventArgs e)
+        private void OnCameraUploadsItemTap(object sender, ListBoxItemTapEventArgs e)
         {
             if(!CheckTappedItem(e.Item)) return;
 
-            LstCloudDrive.SelectedItem = null;
+            LstCameraUploads.SelectedItem = null;
 
             _cameraUploadsPageViewModel.CameraUploads.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
         }
@@ -390,6 +393,10 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
+            // If the user is moving nodes, don't show the contextual menu
+            if (_cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem)
+                e.Cancel = true;
+
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
             if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
             {
@@ -400,11 +407,6 @@ namespace MegaApp.Pages
             else
             {
                 _cameraUploadsPageViewModel.CameraUploads.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;
-                var visibility = _cameraUploadsPageViewModel.CameraUploads.FocusedNode.Type == MNodeType.TYPE_FILE 
-                    ? Visibility.Visible : Visibility.Collapsed;
-                BtnCreateShortCutCloudDrive.Visibility = _cameraUploadsPageViewModel.CameraUploads.FocusedNode.Type == MNodeType.TYPE_FOLDER 
-                    ? Visibility.Visible : Visibility.Collapsed;
-                BtnDownloadItemCloudDrive.Visibility = visibility;
             }
         }
 
@@ -440,28 +442,31 @@ namespace MegaApp.Pages
             DialogService.ShowUploadOptions(_cameraUploadsPageViewModel.CameraUploads);
         }
 
-        private void OnCancelMoveClick(object sender, EventArgs e)
+        private void OnCancelCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            CancelMoveAction();
+            CancelCopyOrMoveAction();
 
             SetApplicationBarData();
         }
 
-        private void CancelMoveAction()
+        private void CancelCopyOrMoveAction()
         {
-            LstCloudDrive.IsCheckModeActive = false;
-            LstCloudDrive.CheckedItems.Clear();
+            LstCameraUploads.IsCheckModeActive = false;
+            LstCameraUploads.CheckedItems.Clear();
 
             _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
 
+            // Release the focused node
             if (_cameraUploadsPageViewModel.CameraUploads.FocusedNode != null)
+            {
                 _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                _cameraUploadsPageViewModel.CameraUploads.FocusedNode = null;
+            }
 
-            _cameraUploadsPageViewModel.CameraUploads.FocusedNode = null;
-
+            // Clear and release the selected nodes list
             if (_cameraUploadsPageViewModel.CameraUploads.SelectedNodes != null &&
                 _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Count > 0)
             {
@@ -471,6 +476,53 @@ namespace MegaApp.Pages
                 }
                 _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
             }
+        }
+
+        private void OnAcceptCopyClick(object sender, EventArgs e)
+        {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
+
+            AcceptCopyAction();
+
+            SetApplicationBarData();
+        }
+
+        private void AcceptCopyAction()
+        {
+            if (_cameraUploadsPageViewModel.CameraUploads != null)
+            {
+                try
+                {
+                    // Copy all the selected nodes and then clear and release the selected nodes list
+                    if (_cameraUploadsPageViewModel.CameraUploads.SelectedNodes != null &&
+                        _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Count > 0)
+                    {
+                        foreach (var node in _cameraUploadsPageViewModel.CameraUploads.SelectedNodes)
+                        {
+                            node.Copy(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
+                            node.DisplayMode = NodeDisplayMode.Normal;
+                        }
+                        _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
+                    }
+
+                    // Release the focused node
+                    if (_cameraUploadsPageViewModel.CameraUploads.FocusedNode != null)
+                    {
+                        _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                        _cameraUploadsPageViewModel.CameraUploads.FocusedNode = null;
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    new CustomMessageDialog(AppMessages.AM_CopyFailed_Title, AppMessages.AM_CopyFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                }
+                finally
+                {
+                    _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
+                }
+            }            
         }
 
         private void OnAcceptMoveClick(object sender, EventArgs e)
@@ -485,42 +537,57 @@ namespace MegaApp.Pages
 
         private void AcceptMoveAction()
         {
-            if (_cameraUploadsPageViewModel.CameraUploads.FocusedNode != null)
+            if(_cameraUploadsPageViewModel.CameraUploads != null)
             {
-                _cameraUploadsPageViewModel.CameraUploads.FocusedNode.Move(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
-                _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
-            }
-
-            if (_cameraUploadsPageViewModel.CameraUploads.SelectedNodes != null &&
-                _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Count > 0)
-            {
-                foreach (var node in _cameraUploadsPageViewModel.CameraUploads.SelectedNodes)
+                try
                 {
-                    node.Move(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
-                    node.DisplayMode = NodeDisplayMode.Normal;
-                }
-                _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
-            }
+                    // Move all the selected nodes and then clear and release the selected nodes list
+                    if (_cameraUploadsPageViewModel.CameraUploads.SelectedNodes != null &&
+                        _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Count > 0)
+                    {
+                        foreach (var node in _cameraUploadsPageViewModel.CameraUploads.SelectedNodes)
+                        {
+                            node.Move(_cameraUploadsPageViewModel.CameraUploads.FolderRootNode);
+                            node.DisplayMode = NodeDisplayMode.Normal;
+                        }
+                        _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Clear();
+                    }
 
-            _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
+                    // Release the focused node
+                    if (_cameraUploadsPageViewModel.CameraUploads.FocusedNode != null)
+                    {
+                        _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.Normal;
+                        _cameraUploadsPageViewModel.CameraUploads.FocusedNode = null;
+                    }
+                }
+                catch(InvalidOperationException)
+                {
+                    new CustomMessageDialog(AppMessages.MoveFailed_Title, AppMessages.MoveFailed,
+                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                }
+                finally
+                {
+                    _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
+                }
+            }
         }
 
-        private void OnMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
+        private void OnCopyOrMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            this.MoveItemTapAction();
+            this.CopyOrMoveItemTapAction();
           
             this.SetApplicationBarData();
         }
 
-        private void MoveItemTapAction()
+        private void CopyOrMoveItemTapAction()
         {
             _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Add(_cameraUploadsPageViewModel.CameraUploads.FocusedNode);
             _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode = _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode;
-            _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = DriveDisplayMode.MoveItem;
-            _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForMove;
+            _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
+            _cameraUploadsPageViewModel.CameraUploads.FocusedNode.DisplayMode = NodeDisplayMode.SelectedForCopyOrMove;
         }
 
         private void OnItemStateChanged(object sender, ItemStateChangedEventArgs e)
@@ -595,7 +662,7 @@ namespace MegaApp.Pages
 
         private void GoToAction(IMegaNode bringIntoViewNode)
         {
-            LstCloudDrive.BringIntoView(bringIntoViewNode);
+            LstCameraUploads.BringIntoView(bringIntoViewNode);
         }
 
         private void OnSortClick(object sender, EventArgs e)
@@ -616,7 +683,7 @@ namespace MegaApp.Pages
 
         private void ChangeMultiSelectMode()
         {
-            LstCloudDrive.IsCheckModeActive = !LstCloudDrive.IsCheckModeActive;
+            LstCameraUploads.IsCheckModeActive = !LstCameraUploads.IsCheckModeActive;
         }
 
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
