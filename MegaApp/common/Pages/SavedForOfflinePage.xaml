@@ -56,6 +56,11 @@
         		Text="remove" 
         		Click="OnMultiSelectRemoveClick" 
 			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/open.png" 
+        		Text="share" 
+        		Click="OnMultiSelectShareClick" 
+			/>
         </shell:ApplicationBar>
 
     </userControls:MegaPhoneApplicationPage.Resources>
@@ -174,9 +179,14 @@
                                             Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                                         />-->
                                         <telerikPrimitives:RadContextMenuItem
-                                            x:Name="BtnRemoveDetails" 
+                                            x:Name="BtnRemove" 
                                             Command="{Binding RemoveItemCommand}" 
             								Content="{Binding LocalizedUiResources.Remove, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                        />
+                                        <telerikPrimitives:RadContextMenuItem
+                                            x:Name="BtnShare" 
+                                            Command="{Binding ShareItemCommand}" 
+            								Content="{Binding LocalizedUiResources.Share, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                                         />
                                     </telerikPrimitives:RadContextMenu>
                                 </telerikPrimitives:RadContextMenu.ContextMenu>

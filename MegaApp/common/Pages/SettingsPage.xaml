@@ -125,13 +125,17 @@
                             <TextBlock x:Name="TextDefaultDownloadLocation" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.DefaultDownloadLocationText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,10,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <HyperlinkButton x:Name="LinkDefaultDownloadLocation" Command="{Binding SelectDownloadLocationCommand}" IsEnabled="{Binding DownloadLocationSelectionIsEnabled}" VerticalAlignment="Center" Margin="0,10,0,40" FontFamily="Portable User Interface" HorizontalAlignment="Left" Content="{Binding StandardDownloadLocation}" FontSize="{StaticResource PhoneFontSizeNormal}"/>
 
-                            <StackPanel x:Name="DebugPanel" Margin="0" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
-                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="debug mode" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,20" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="memory statistics" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <StackPanel x:Name="DebugPanel" Margin="0,0,0,40" Visibility="{Binding IsDebugMode, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_DebugMode, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,12,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_MemoryStatistics, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Margin="12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnMemorySwitch" VerticalAlignment="Center" Content="{Binding ShowMemoryInformationText}" IsChecked="{Binding ShowMemoryInformation, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface"/>
                             </StackPanel>
 
-                            <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.About, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
+                            <TextBlock HorizontalAlignment="Left" Margin="12,0,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.About, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>

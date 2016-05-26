@@ -16,6 +16,11 @@
           <target state="signed-off">http://www.goedware.com</target>
           <note from="MultilingualBuild" annotates="source" priority="2">URL to the GoedWare website - (NO-TRANSLATION).</note>
           </trans-unit>
+        <trans-unit id="Resx/LogFileName" translate="yes" xml:space="preserve">
+          <source>MEGA_WP.log</source>
+          <target state="new">MEGA_WP.log</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Name of the log file created in DEBUG mode - (NO-TRANSLATION)</note>
+        </trans-unit>
         <trans-unit id="Resx/MegaSdkUrl" translate="no" xml:space="preserve">
           <source>https://github.com/meganz/sdk</source>
           <target state="signed-off">https://github.com/meganz/sdk</target>

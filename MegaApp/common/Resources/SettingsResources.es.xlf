@@ -16,6 +16,11 @@
           <target state="signed-off">{ED012CA3-EA51-45B0-BC66-3D585C612E74}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store if the Camera Uploads feature is enabled or not - (NO-TRANSLATION).</note>
           </trans-unit>
+        <trans-unit id="Resx/DebugModeIsEnabled" translate="yes" xml:space="preserve">
+          <source>{46806F2D-6F8E-4A6F-851A-0F4BAABC2F7D}</source>
+          <target state="new">{46806F2D-6F8E-4A6F-851A-0F4BAABC2F7D}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store if the DEBUG mode is enabled or not - (NO-TRANSLATION).</note>
+        </trans-unit>
         <trans-unit id="Resx/CameraUploadsFirstInit" translate="no" xml:space="preserve">
           <source>{6F9C35B2-2139-48B6-908A-C4950A6BB624}</source>
           <target state="signed-off">{6F9C35B2-2139-48B6-908A-C4950A6BB624}</target>

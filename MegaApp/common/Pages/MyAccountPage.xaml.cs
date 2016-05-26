@@ -161,10 +161,9 @@ namespace MegaApp.Pages
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
             base.OnBackKeyPress(e);
-            if (e.Cancel) return;
 
-            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
-            e.Cancel = true;
+            // Check if can go back in the stack of pages
+            e.Cancel = CheckGoBack(e.Cancel);
         }
 
         private void OnPieDataBindingComplete(object sender, EventArgs e)

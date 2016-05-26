@@ -1413,6 +1413,16 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Відкрити ланку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" xml:space="preserve">
+          <source>Memory statistics</source>
+          <target state="new">Memory statistics</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_DebugMode" translate="yes" xml:space="preserve">
+          <source>Debug mode</source>
+          <target state="new">Debug mode</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>
