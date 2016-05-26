@@ -2284,6 +2284,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Debug mode.
+        /// </summary>
+        public static string UI_DebugMode {
+            get {
+                return ResourceManager.GetString("UI_DebugMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Decrypt.
         /// </summary>
         public static string UI_Decrypt {
@@ -2370,6 +2379,15 @@ namespace MegaApp.Resources {
         public static string UI_Logout {
             get {
                 return ResourceManager.GetString("UI_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Memory statistics.
+        /// </summary>
+        public static string UI_MemoryStatistics {
+            get {
+                return ResourceManager.GetString("UI_MemoryStatistics", resourceCulture);
             }
         }
         

@@ -295,6 +295,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Copying....
+        /// </summary>
+        public static string PM_CopyNode {
+            get {
+                return ResourceManager.GetString("PM_CopyNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Creating account....
         /// </summary>
         public static string PM_CreateAccount {

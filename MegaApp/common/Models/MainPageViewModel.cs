@@ -135,12 +135,12 @@ namespace MegaApp.Models
                         new []{ UiResources.Refresh, UiResources.Sort, UiResources.MultiSelect});
                     break;
                 }
-                case DriveDisplayMode.MoveItem:
+                case DriveDisplayMode.CopyOrMoveItem:
                 {
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Move, UiResources.Cancel, },
+                        new[] { UiResources.Copy, UiResources.Move, UiResources.Cancel, },
                         null);
                     break;
                 }
@@ -149,7 +149,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.Move, UiResources.Remove },
+                        new[] { UiResources.Download, String.Format("{0}/{1}", UiResources.Copy, UiResources.Move), UiResources.Remove },
                         new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll});
                     break;
                 }

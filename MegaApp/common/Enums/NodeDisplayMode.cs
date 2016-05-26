@@ -3,6 +3,6 @@
     public enum NodeDisplayMode
     {
         Normal,
-        SelectedForMove
+        SelectedForCopyOrMove
     }
 }

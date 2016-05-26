@@ -19,7 +19,7 @@
 	d:DataContext="{d:DesignInstance models:CameraUploadsPageViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="CloudDriveMenu">
+        <shell:ApplicationBar x:Key="CameraUploadsMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
 					Text="refresh"	
@@ -51,16 +51,21 @@
 			/>
         </shell:ApplicationBar>
 
-        <shell:ApplicationBar x:Key="MoveItemMenu">
+        <shell:ApplicationBar x:Key="CopyOrMoveItemMenu">
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/accept_move.png" 
+        		IconUri="/Assets/AppBar/copy.png" 
+        		Text="copy" 
+        		Click="OnAcceptCopyClick" 
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/move.png" 
         		Text="move" 
         		Click="OnAcceptMoveClick" 
 			/>
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/cancel.png" 
         		Text="cancel" 
-        		Click="OnCancelMoveClick" 				
+        		Click="OnCancelCopyOrMoveClick" 				
 			/>
         </shell:ApplicationBar>
 
@@ -98,8 +103,8 @@
         		Click="OnMultiSelectDownloadClick" 				
 			/>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/move.png" 
-        		Text="move" 
+        		IconUri="/Assets/AppBar/move-copy.png" 
+        		Text="copy/move" 
         		Click="OnMultiSelectMoveClick" 
 			/>
             <shell:ApplicationBarIconButton 
@@ -197,10 +202,10 @@
                         
                         <Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
-                                x:Name="LstCloudDrive" 	
+                                x:Name="LstCameraUploads" 	
                                 DataContext="{Binding CameraUploads}"								
                                 ItemsSource="{Binding ChildNodes}"
-                                ItemTap="OnCloudDriveItemTap"
+                                ItemTap="OnCameraUploadsItemTap"
                                 ItemTemplateSelector="{Binding NodeTemplateSelector}" 
                                 telerik:InteractionEffectManager.IsInteractionEnabled="True"             			
                                 ItemStateChanged="OnItemStateChanged" 
@@ -220,37 +225,27 @@
                                 <telerikPrimitives:RadContextMenu.ContextMenu>
                                     <telerikPrimitives:RadContextMenu 
                                         OpenGesture="Hold" 
-                                        x:Name="CloudDriveMenu" 
-                                        Opening="OnMenuOpening">
-                                        <!--<telerikPrimitives:RadContextMenuItem 
-                                        x:Name="BtnPreviewItem" 
-                                        Command="{Binding PreviewItemCommand}"
-                                        Content="{Binding LocalizedUiResources.Preview, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-                                        />-->                                        
+                                        x:Name="CameraUploadsMenu" 
+                                        Opening="OnMenuOpening">                     
                                         <telerikPrimitives:RadContextMenuItem 
-                                            x:Name="BtnDownloadItemCloudDrive" 
+                                            x:Name="BtnDownloadItem" 
                                             Command="{Binding DownloadItemCommand}"
                                             Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
                                             />
                                         <telerikPrimitives:RadContextMenuItem 
-                                            x:Name="BtnCreateShortCutCloudDrive" 
+                                            x:Name="BtnCreateShortCut" 
                                             Command="{Binding CreateShortCutCommand}"
                                             Content="{Binding LocalizedUiResources.CreateShortCut, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
                                             />
-                                        <!--<telerikPrimitives:RadContextMenuItem 
-                                        x:Name="BtnGetLinkCloudDrive" 
-                                        Command="{Binding GetLinkCommand}"
-                                        Content="{Binding LocalizedUiResources.GetPreviewLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"  
-                                        />-->
                                         <telerikPrimitives:RadContextMenuItem 
-                                            x:Name="BtnRenameItemCloudDrive" 
+                                            x:Name="BtnRenameItem" 
                                             Command="{Binding RenameItemCommand}"
                                             Content="{Binding LocalizedUiResources.Rename, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                                             />
                                         <telerikPrimitives:RadContextMenuItem 
-                                            x:Name="BtnMoveItemCloudDrive"
-                                            Tapped="OnMoveItemTap"
-                                            Content="{Binding LocalizedUiResources.Move, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
+                                            x:Name="BtnCopyOrMoveItem"
+                                            Tapped="OnCopyOrMoveItemTap"
+                                            Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}"
                                             />
                                         <telerikPrimitives:RadContextMenuItem 
                                             Command="{Binding RemoveItemCommand}" 

@@ -418,6 +418,9 @@
     <Compile Include="..\common\MegaApi\ConfirmAccountRequestListener.cs">
       <Link>MegaApi\ConfirmAccountRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\CopyNodeRequestListener.cs">
+      <Link>MegaApi\CopyNodeRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\CreateAccountRequestListener.cs">
       <Link>MegaApi\CreateAccountRequestListener.cs</Link>
     </Compile>
@@ -877,9 +880,6 @@
     <Content Include="..\common\Assets\AlignmentGrid.png">
       <Link>Assets\AlignmentGrid.png</Link>
     </Content>
-    <Content Include="..\common\Assets\AppBar\accept_move.png">
-      <Link>Assets\AppBar\accept_move.png</Link>
-    </Content>
     <Content Include="..\common\Assets\AppBar\add.png">
       <Link>Assets\AppBar\add.png</Link>
     </Content>
@@ -907,6 +907,9 @@
     <Content Include="..\common\Assets\AppBar\cloud.upload.png">
       <Link>Assets\AppBar\cloud.upload.png</Link>
     </Content>
+    <Content Include="..\common\Assets\AppBar\copy.png">
+      <Link>Assets\AppBar\copy.png</Link>
+    </Content>
     <Content Include="..\common\Assets\AppBar\delete.png">
       <Link>Assets\AppBar\delete.png</Link>
     </Content>
@@ -927,6 +930,9 @@
     </Content>
     <Content Include="..\common\Assets\AppBar\logout.png">
       <Link>Assets\AppBar\logout.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\move-copy.png">
+      <Link>Assets\AppBar\move-copy.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\move.png">
       <Link>Assets\AppBar\move.png</Link>
@@ -3758,7 +3764,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.12.2">
+    <SDKReference Include="SQLite.WP80, Version=3.13.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

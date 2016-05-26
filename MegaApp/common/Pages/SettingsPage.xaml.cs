@@ -7,7 +7,6 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using ShakeGestures;
 using Telerik.Windows.Controls;
 using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
@@ -21,11 +20,6 @@ namespace MegaApp.Pages
         {
             _settingsViewModel = new SettingsViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _settingsViewModel;
-
-            // Initialize ShakeGestures to display debug settings
-            ShakeGesturesHelper.Instance.ShakeGesture += InstanceOnShakeGesture;
-            ShakeGesturesHelper.Instance.MinimumRequiredMovesForShake = 12;
-            ShakeGesturesHelper.Instance.Active = true;
                         
             Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
@@ -60,10 +54,7 @@ namespace MegaApp.Pages
                 App.AppInformation.IsStartedAsAutoUpload = false;
                 MainSettingsPivot.SelectedItem = PivotAutoUpload;
             }
-
-            if (NavigateService.PreviousPage == typeof(PasswordPage))
-                NavigationService.RemoveBackEntry();
-
+            
             DebugPanel.DataContext = DebugService.DebugSettings;
 
             #if WINDOWS_PHONE_81
@@ -72,17 +63,12 @@ namespace MegaApp.Pages
             #endif
         }
 
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        protected override void OnBackKeyPress(CancelEventArgs e)
         {
-            // Deinitialize ShakeGestures to disable shake detection
-            ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
-            ShakeGesturesHelper.Instance.Active = false;
-        }
-                
-        private void InstanceOnShakeGesture(object sender, ShakeGestureEventArgs e)
-        {
-            //Dispatcher.BeginInvoke(
-            //    () => DebugService.DebugSettings.IsDebugMode = !DebugService.DebugSettings.IsDebugMode);
+            base.OnBackKeyPress(e);
+            
+            // Check if can go back in the stack of pages
+            e.Cancel = CheckGoBack(e.Cancel);
         }
 
         private void BtnCameraUploadsSwitch_CheckedChanged(object sender, CheckedChangedEventArgs e)

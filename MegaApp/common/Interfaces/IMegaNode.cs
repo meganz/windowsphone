@@ -25,11 +25,18 @@ namespace MegaApp.Interfaces
         NodeActionResult Rename();
 
         /// <summary>
-        /// Move the node from its current location to a new folder destionation
+        /// Move the node from its current location to a new folder destination
         /// </summary>
-        /// <param name="newParentNode">The root node of the destionation folder</param>
+        /// <param name="newParentNode">The root node of the destination folder</param>
         /// <returns>Result of the action</returns>
         NodeActionResult Move(IMegaNode newParentNode);
+
+        /// <summary>
+        /// Copy the node from its current location to a new folder destination
+        /// </summary>
+        /// <param name="newParentNode">The root node of the destination folder</param>
+        /// <returns>Result of the action</returns>
+        NodeActionResult Copy(IMegaNode newParentNode);
 
         /// <summary>
         /// Remove the node from the cloud drive to the rubbish bin

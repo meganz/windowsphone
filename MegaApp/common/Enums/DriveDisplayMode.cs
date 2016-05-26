@@ -3,7 +3,7 @@
     public enum DriveDisplayMode
     {
         CloudDrive,
-        MoveItem,
+        CopyOrMoveItem,
         ImportItem,
         MultiSelect,
         RubbishBin,

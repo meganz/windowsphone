@@ -243,6 +243,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
           <target state="translated">กำลังเปิดลิงก์โฟลเดอร์...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a folder link to import/download - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/PM_CopyNode" translate="yes" xml:space="preserve">
+          <source>Copying...</source>
+          <target state="new">Copying...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when copying a node to a different parent - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>
