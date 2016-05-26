@@ -21,7 +21,7 @@ namespace MegaApp.Converters
             {
                 case NodeDisplayMode.Normal:
                     return new SolidColorBrush(Colors.Transparent);
-                case NodeDisplayMode.SelectedForMove:
+                case NodeDisplayMode.SelectedForCopyOrMove:
                 {
                     var solidColor = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"])
                     {

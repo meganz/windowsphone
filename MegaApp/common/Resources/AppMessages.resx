@@ -1179,6 +1179,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Unauthorized access</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
+  <data name="AM_CopyFailed" xml:space="preserve">
+    <value>Failed to copy item. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
+  </data>
+  <data name="AM_CopyFailed_Title" xml:space="preserve">
+    <value>Copy failed</value>
+    <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
+  </data>
   <data name="AM_DisableDebugMode_Message" xml:space="preserve">
     <value>The log ({0}) will be deleted from the Offline section.</value>
     <comment>Alert message shown when the DEBUG mode is disabled.
