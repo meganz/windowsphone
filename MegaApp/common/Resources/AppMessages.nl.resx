@@ -628,14 +628,6 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
     <value>ongeautoriseerde toegang</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
-  <data name="ClipboardFailed" xml:space="preserve">
-    <value>Mislukt master key te kopiëren naar het klembord. Probeer het nogmaals</value>
-    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
-  </data>
-  <data name="ClipboardFailed_Title" xml:space="preserve">
-    <value>Kopiëren naar klembord mislukt</value>
-    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
-  </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
     <value>Huidige PIN slot is niet correct of komt niet overeen</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
@@ -643,14 +635,6 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
     <value>Huiige PIN slot komt niet overeen</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="MasterkeyCopied" xml:space="preserve">
-    <value>Masterkey gekopieerd naar klembord</value>
-    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
-  </data>
-  <data name="MasterkeyCopied_Title" xml:space="preserve">
-    <value>Masterkey gekopieerd</value>
-    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
     <value>PIN slot moet minstens 4 cijfers bevatten</value>

@@ -651,15 +651,15 @@ Por favor, tente salvar / copiar o arquivo para a memória interna do dispositiv
           <target state="translated">Acesso não autorizado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ClipboardFailed" translate="yes" space="preserve">
-          <source>Failed to copy master key to clipboard. Please try again.</source>
-          <target state="translated">Falha ao copiar a chave mestra para a área de transferência. Tente novamente</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</note>
-        </trans-unit>
-        <trans-unit id="Resx/ClipboardFailed_Title" translate="yes" space="preserve">
+        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" xml:space="preserve">
           <source>Clipboard failed</source>
-          <target state="translated">Falha ao copiar para área de transferência</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+          <target state="new">Clipboard failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" xml:space="preserve">
+          <source>Failed to copy Recovery Key to clipboard. Please try again.</source>
+          <target state="new">Failed to copy Recovery Key to clipboard. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN lock is not correct or does not match</source>
@@ -671,15 +671,15 @@ Por favor, tente salvar / copiar o arquivo para a memória interna do dispositiv
           <target state="translated">Código PIN não combina com o atual</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
-        <trans-unit id="Resx/MasterkeyCopied" translate="yes" space="preserve">
-          <source>Master key copied to clipboard</source>
-          <target state="translated">Chave mestra copiada para a área de transferência</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</note>
+        <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" xml:space="preserve">
+          <source>Recovery Key copied</source>
+          <target state="new">Recovery Key copied</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/MasterkeyCopied_Title" translate="yes" space="preserve">
-          <source>Master key copied</source>
-          <target state="translated">Chave mestra copiada</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" xml:space="preserve">
+          <source>Recovery Key copied to clipboard</source>
+          <target state="new">Recovery Key copied to clipboard</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
           <source>PIN lock must be at least four digits</source>

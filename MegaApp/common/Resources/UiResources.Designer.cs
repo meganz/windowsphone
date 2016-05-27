@@ -772,15 +772,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Export masterkey.
-        /// </summary>
-        public static string ExportMasterKeyText {
-            get {
-                return ResourceManager.GetString("ExportMasterKeyText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Export images to &apos;saved pictures&apos; album after download.
         /// </summary>
         public static string ExportPhotoAlbumText {
@@ -1110,15 +1101,6 @@ namespace MegaApp.Resources {
         public static string ManageLink {
             get {
                 return ResourceManager.GetString("ManageLink", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Master Key.
-        /// </summary>
-        public static string MasterKey {
-            get {
-                return ResourceManager.GetString("MasterKey", resourceCulture);
             }
         }
         
@@ -2311,6 +2293,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Export Recovery Key.
+        /// </summary>
+        public static string UI_ExportRecoveryKeyText {
+            get {
+                return ResourceManager.GetString("UI_ExportRecoveryKeyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File link.
         /// </summary>
         public static string UI_FileLink {
@@ -2415,6 +2406,15 @@ namespace MegaApp.Resources {
         public static string UI_PasteMegaLink {
             get {
                 return ResourceManager.GetString("UI_PasteMegaLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recovery Key.
+        /// </summary>
+        public static string UI_RecoveryKey {
+            get {
+                return ResourceManager.GetString("UI_RecoveryKey", resourceCulture);
             }
         }
         
