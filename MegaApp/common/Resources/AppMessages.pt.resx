@@ -626,14 +626,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Acesso não autorizado</value>
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
-  <data name="ClipboardFailed" xml:space="preserve">
-    <value>Falha ao copiar a Chave Mestra para o clipboard. Por favor, tenta novamente.</value>
-    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported.</comment>
-  </data>
-  <data name="ClipboardFailed_Title" xml:space="preserve">
-    <value>Falha no Clipboard</value>
-    <comment>Message of the dialog displayed when fails to copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
-  </data>
   <data name="CurrentPinLockCodeDoNotMatch" xml:space="preserve">
     <value>O código PIN atual está incorreto ou não combina</value>
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
@@ -641,14 +633,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="CurrentPinLockCodeDoNotMatch_Title" xml:space="preserve">
     <value>O código PIN não combina</value>
     <comment>Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="MasterkeyCopied" xml:space="preserve">
-    <value>Chave Mestra copiada para o clipboard</value>
-    <comment>Message of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported.</comment>
-  </data>
-  <data name="MasterkeyCopied_Title" xml:space="preserve">
-    <value>Chave Mestra copiada</value>
-    <comment>Title of the dialog displayed when copy the user's masterkey to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="PinLockTooShort" xml:space="preserve">
     <value>O código PIN tem de ter pelo menos 4 dígitos</value>

@@ -19,7 +19,7 @@
 	d:DataContext="{d:DesignInstance models:CameraUploadsPageViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="CameraUploadsMenu">
+        <shell:ApplicationBar x:Key="CloudDriveMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
 					Text="refresh"	
@@ -67,6 +67,11 @@
         		Text="cancel" 
         		Click="OnCancelCopyOrMoveClick" 				
 			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
+			/>
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ImportItemMenu">
@@ -79,6 +84,11 @@
         		IconUri="/Assets/AppBar/cancel.png" 
         		Text="cancel" 
         		Click="OnCancelImportClick" 				
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
 			/>
         </shell:ApplicationBar>
 
@@ -105,7 +115,7 @@
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/move-copy.png" 
         		Text="copy/move" 
-        		Click="OnMultiSelectMoveClick" 
+        		Click="OnMultiSelectCopyOrMoveClick" 
 			/>
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/remove.png" 
@@ -202,7 +212,7 @@
                         
                         <Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
-                                x:Name="LstCameraUploads" 	
+                                x:Name="LstCloudDrive" 	
                                 DataContext="{Binding CameraUploads}"								
                                 ItemsSource="{Binding ChildNodes}"
                                 ItemTap="OnCameraUploadsItemTap"
@@ -211,6 +221,7 @@
                                 ItemStateChanged="OnItemStateChanged" 
                                 ScrollStateChanged="OnScrollStateChanged" 
                                 IsCheckModeEnabled="True" 
+                                IsCheckModeActiveChanging="OnCheckModeChanging"
                                 IsCheckModeActiveChanged="OnCheckModeChanged"
                                 CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
                                 ItemCheckedPath="IsMultiSelected" 

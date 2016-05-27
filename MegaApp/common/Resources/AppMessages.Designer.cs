@@ -445,6 +445,42 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to copy Recovery Key to clipboard. Please try again..
+        /// </summary>
+        public static string AM_RecoveryKeyClipboardFailed {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyClipboardFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clipboard failed.
+        /// </summary>
+        public static string AM_RecoveryKeyClipboardFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyClipboardFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recovery Key copied to clipboard.
+        /// </summary>
+        public static string AM_RecoveryKeyCopied {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyCopied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recovery Key copied.
+        /// </summary>
+        public static string AM_RecoveryKeyCopied_Title {
+            get {
+                return ResourceManager.GetString("AM_RecoveryKeyCopied_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Item shared with the Windows Phone app of MEGA..
         /// </summary>
         public static string AM_ShareItemFromMega_Message {
@@ -693,24 +729,6 @@ namespace MegaApp.Resources {
         public static string CleanRubbishBinSuccess {
             get {
                 return ResourceManager.GetString("CleanRubbishBinSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Failed to copy master key to clipboard. Please try again..
-        /// </summary>
-        public static string ClipboardFailed {
-            get {
-                return ResourceManager.GetString("ClipboardFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Clipboard failed.
-        /// </summary>
-        public static string ClipboardFailed_Title {
-            get {
-                return ResourceManager.GetString("ClipboardFailed_Title", resourceCulture);
             }
         }
         
@@ -1494,24 +1512,6 @@ namespace MegaApp.Resources {
         public static string MalformedEmail {
             get {
                 return ResourceManager.GetString("MalformedEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Master key copied to clipboard.
-        /// </summary>
-        public static string MasterkeyCopied {
-            get {
-                return ResourceManager.GetString("MasterkeyCopied", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Master key copied.
-        /// </summary>
-        public static string MasterkeyCopied_Title {
-            get {
-                return ResourceManager.GetString("MasterkeyCopied_Title", resourceCulture);
             }
         }
         
