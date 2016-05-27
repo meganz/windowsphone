@@ -488,10 +488,6 @@ Try to preserve the PIN uppercase word.</comment>
     <value>letöltések</value>
     <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ExportMasterKeyText" xml:space="preserve">
-    <value>Masterkulcs exportálása</value>
-    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
-  </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
     <value>Képek exportálása a 'mentett képek' albumba letöltés után</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
@@ -515,10 +511,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="MakePinLock" xml:space="preserve">
     <value>PIN zár létrehozása</value>
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
-  </data>
-  <data name="MasterKey" xml:space="preserve">
-    <value>MasterKulcs</value>
-    <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
     <value>MEGA SDK</value>
@@ -607,7 +599,7 @@ Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="View" xml:space="preserve">
     <value>megtekintés</value>
-    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</comment>
+    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Recovery Key) - (String as short as possible).</comment>
   </data>
   <data name="DownloadLocation" xml:space="preserve">
     <value>Letöltési hely</value>

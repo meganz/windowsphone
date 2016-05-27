@@ -69,7 +69,7 @@ namespace MegaApp.Classes
                     App.AppInformation.UriLink = UriLinkType.Folder;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
-                //Master Key backup link
+                //Recovery Key backup link
                 else if (tempUri.Contains("https://mega.nz/#backup")) 
                 {
                     App.AppInformation.UriLink = UriLinkType.Backup;
@@ -89,7 +89,7 @@ namespace MegaApp.Classes
                     App.AppInformation.UriLink = UriLinkType.Cancel;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
-                //Recover link - Recover the password with the master key or park the account
+                //Recover link - Recover the password with the Recovery Key or park the account
                 else if (tempUri.Contains("https://mega.nz/#recover")) 
                 {
                     App.AppInformation.UriLink = UriLinkType.Recover;

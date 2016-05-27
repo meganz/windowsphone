@@ -45,19 +45,19 @@
                 <phone:PivotItem x:Name="PivotSettings" Header="{Binding LocalizedUiResources.General, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
                     <ScrollViewer Margin="-12,0,0,0" Height="624">
                         <StackPanel x:Name="ContentPanel" Margin="12,24,12,0">
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.MasterKey, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_RecoveryKey, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">
                                 <TextBlock.Foreground>
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.ExportMasterKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.UI_ExportRecoveryKeyText, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <Grid Margin="0,0,0,40">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
-                                <Button x:Name="BtnViewMasterKey" Content="{Binding LocalizedUiResources.View, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding ViewMasterKeyCommand}"/>
-                                <Button x:Name="BtnCopyMasterKey" Content="{Binding LocalizedUiResources.Clipboard, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding CopyMasterKeyCommand}" Grid.Column="1"/>
+                                <Button x:Name="BtnViewRecoveryKey" Content="{Binding LocalizedUiResources.View, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding ViewRecoveryKeyCommand}"/>
+                                <Button x:Name="BtnCopyRecoveryKey" Content="{Binding LocalizedUiResources.Copy, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Command="{Binding CopyRecoveryKeyCommand}" Grid.Column="1"/>
                             </Grid>
 
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Security, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}">

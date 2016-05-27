@@ -17,10 +17,10 @@ namespace MegaApp.Models
         {
             this.AppVersion = AppService.GetAppVersion();
             this.MegaSdkVersion = AppService.GetMegaSDK_Version();
-            this.ShareMasterKeyCommand = new DelegateCommand(ShareMasterKey);
-            this.CopyMasterKeyCommand = new DelegateCommand(CopyMasterkey);
+            this.ShareRecoveryKeyCommand = new DelegateCommand(ShareRecoveryKey);
+            this.CopyRecoveryKeyCommand = new DelegateCommand(CopyRecoveryKey);
             this.ChangePinLockCommand = new DelegateCommand(ChangePinLock);
-            this.ViewMasterKeyCommand = new DelegateCommand(ViewMasterKey);
+            this.ViewRecoveryKeyCommand = new DelegateCommand(ViewRecoveryKey);
 
             #if WINDOWS_PHONE_80
             this.SelectDownloadLocationCommand = null;
@@ -52,9 +52,9 @@ namespace MegaApp.Models
 
         #region Commands
 
-        public ICommand ShareMasterKeyCommand { get; set; }
-        public ICommand CopyMasterKeyCommand { get; private set; }
-        public ICommand ViewMasterKeyCommand { get; private set; }
+        public ICommand ShareRecoveryKeyCommand { get; set; }
+        public ICommand CopyRecoveryKeyCommand { get; private set; }
+        public ICommand ViewRecoveryKeyCommand { get; private set; }
         public ICommand ChangePinLockCommand { get; private set; }
         public ICommand SelectDownloadLocationCommand { get; private set; }
         public ICommand MegaSdkCommand { get; private set; }
@@ -64,13 +64,13 @@ namespace MegaApp.Models
 
         #region Methods
 
-        private void ShareMasterKey(object obj)
+        private void ShareRecoveryKey(object obj)
         {
             var shareStatusTask = new ShareStatusTask {Status = MegaSdk.exportMasterKey()};
             shareStatusTask.Show();
         }
 
-        private void CopyMasterkey(object obj)
+        private void CopyRecoveryKey(object obj)
         {
             CopyClipboard();
         }
@@ -81,29 +81,29 @@ namespace MegaApp.Models
             {
                 Clipboard.SetText(MegaSdk.exportMasterKey());
                 new CustomMessageDialog(
-                           AppMessages.MasterkeyCopied_Title,
-                           AppMessages.MasterkeyCopied,
+                           AppMessages.AM_RecoveryKeyCopied_Title,
+                           AppMessages.AM_RecoveryKeyCopied,
                            App.AppInformation,
                            MessageDialogButtons.Ok).ShowDialog();
             }
             catch (Exception)
             {
                 new CustomMessageDialog(
-                           AppMessages.ClipboardFailed_Title,
-                           AppMessages.ClipboardFailed,
+                           AppMessages.AM_RecoveryKeyClipboardFailed_Title,
+                           AppMessages.AM_RecoveryKeyClipboardFailed,
                            App.AppInformation,
                            MessageDialogButtons.Ok).ShowDialog();
             }
         }
         
-        private void ViewMasterKey(object obj)
+        private void ViewRecoveryKey(object obj)
         {
-            DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
+            DialogService.ShowViewRecoveryKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
         public void ProcessBackupLink()
         {
-            DialogService.ShowViewMasterKey(MegaSdk.exportMasterKey(), CopyClipboard);
+            DialogService.ShowViewRecoveryKey(MegaSdk.exportMasterKey(), CopyClipboard);
         }
 
         private void ChangePinLock(object obj)
