@@ -19,7 +19,7 @@
 	d:DataContext="{d:DesignInstance models:CameraUploadsPageViewModel}">
 
     <userControls:MegaPhoneApplicationPage.Resources>
-        <shell:ApplicationBar x:Key="CameraUploadsMenu">
+        <shell:ApplicationBar x:Key="CloudDriveMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
 					Text="refresh"	
@@ -105,7 +105,7 @@
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/move-copy.png" 
         		Text="copy/move" 
-        		Click="OnMultiSelectMoveClick" 
+        		Click="OnMultiSelectCopyOrMoveClick" 
 			/>
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/remove.png" 
@@ -202,7 +202,7 @@
                         
                         <Grid x:Name="CameraUploadsContentPanel" Grid.Row="1" Margin="12,0,0,0">
                             <telerikPrimitives:RadDataBoundListBox 
-                                x:Name="LstCameraUploads" 	
+                                x:Name="LstCloudDrive" 	
                                 DataContext="{Binding CameraUploads}"								
                                 ItemsSource="{Binding ChildNodes}"
                                 ItemTap="OnCameraUploadsItemTap"
@@ -211,6 +211,7 @@
                                 ItemStateChanged="OnItemStateChanged" 
                                 ScrollStateChanged="OnScrollStateChanged" 
                                 IsCheckModeEnabled="True" 
+                                IsCheckModeActiveChanging="OnCheckModeChanging"
                                 IsCheckModeActiveChanged="OnCheckModeChanged"
                                 CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
                                 ItemCheckedPath="IsMultiSelected" 
