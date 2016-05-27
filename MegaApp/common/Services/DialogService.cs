@@ -1167,9 +1167,9 @@ namespace MegaApp.Services
             return await customMessageDialog.ShowDialogAsync();
         }
 
-        public static void ShowViewMasterKey(string masterkey, Action copyAction)
+        public static void ShowViewRecoveryKey(string recoveryKey, Action copyAction)
         {
-            var customMessageDialog = new CustomMessageDialog(UiResources.MasterKey, masterkey, App.AppInformation,
+            var customMessageDialog = new CustomMessageDialog(UiResources.UI_RecoveryKey, recoveryKey, App.AppInformation,
                 new[]
                 {
                     new DialogButton(UiResources.Copy, copyAction),
