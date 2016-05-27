@@ -1143,7 +1143,7 @@ namespace MegaApp.Models
         public bool IsMultiSelectActive
         {
             get { return _isMultiSelectActive; }
-            private set { SetField(ref _isMultiSelectActive, value); }
+            set { SetField(ref _isMultiSelectActive, value); }
         }
 
         private DataTemplate _emptyContentTemplate;

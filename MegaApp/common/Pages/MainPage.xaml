@@ -89,6 +89,11 @@
         		Text="cancel" 
         		Click="OnCancelCopyOrMoveClick" 				
 			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
+			/>
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ImportItemMenu">
