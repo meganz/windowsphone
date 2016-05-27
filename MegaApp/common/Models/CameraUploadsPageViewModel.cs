@@ -87,7 +87,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Copy, UiResources.Move, UiResources.Cancel, },
+                        new[] { UiResources.Copy, UiResources.Move, UiResources.Cancel, UiResources.AddFolder },
                         null);
                     break;
                 }
@@ -114,7 +114,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Import, UiResources.Cancel},
+                        new[] { UiResources.Import, UiResources.Cancel, UiResources.AddFolder },
                         null);
                     break;
                 }
