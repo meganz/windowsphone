@@ -139,7 +139,7 @@
   </data>
   <data name="View" xml:space="preserve">
     <value>ver</value>
-    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Master Key) - (String as short as possible).</comment>
+    <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Recovery Key) - (String as short as possible).</comment>
   </data>
   <data name="SelectFolder" xml:space="preserve">
     <value>Selec. carpeta</value>
@@ -228,10 +228,6 @@
   <data name="Downloads" xml:space="preserve">
     <value>descargas</value>
     <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="ExportMasterKeyText" xml:space="preserve">
-    <value>Exportar clave maestra</value>
-    <comment>Text 'Export MasterKey' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the MasterKey.</comment>
   </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
     <value>Exportar imáges al álbum 'imágenes guardadas' después de descargar</value>
@@ -1160,10 +1156,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="AccountTypeLite" xml:space="preserve">
     <value>LITE</value>
     <comment>Label for the name of the 'LITE' account type - (NO-TRANSLATION).</comment>
-  </data>
-  <data name="MasterKey" xml:space="preserve">
-    <value>Clave Maestra</value>
-    <comment>Label for any 'MasterKey' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
     <value>MEGA SDK</value>
