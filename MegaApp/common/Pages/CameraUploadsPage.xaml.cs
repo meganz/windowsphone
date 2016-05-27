@@ -373,7 +373,7 @@ namespace MegaApp.Pages
         {
             if(!CheckTappedItem(e.Item)) return;
 
-            LstCameraUploads.SelectedItem = null;
+            LstCloudDrive.SelectedItem = null;
 
             _cameraUploadsPageViewModel.CameraUploads.OnChildNodeTapped((IMegaNode)e.Item.DataContext);
         }
@@ -454,8 +454,8 @@ namespace MegaApp.Pages
 
         private void CancelCopyOrMoveAction()
         {
-            LstCameraUploads.IsCheckModeActive = false;
-            LstCameraUploads.CheckedItems.Clear();
+            LstCloudDrive.IsCheckModeActive = false;
+            LstCloudDrive.CheckedItems.Clear();
 
             _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode;
 
@@ -584,6 +584,11 @@ namespace MegaApp.Pages
 
         private void CopyOrMoveItemTapAction()
         {
+            // Extra null reference exceptions checks
+            if (_cameraUploadsPageViewModel == null ||
+                _cameraUploadsPageViewModel.CameraUploads == null ||
+                _cameraUploadsPageViewModel.CameraUploads.FocusedNode == null) return;
+
             _cameraUploadsPageViewModel.CameraUploads.SelectedNodes.Add(_cameraUploadsPageViewModel.CameraUploads.FocusedNode);
             _cameraUploadsPageViewModel.CameraUploads.PreviousDisplayMode = _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode;
             _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = DriveDisplayMode.CopyOrMoveItem;
@@ -662,7 +667,7 @@ namespace MegaApp.Pages
 
         private void GoToAction(IMegaNode bringIntoViewNode)
         {
-            LstCameraUploads.BringIntoView(bringIntoViewNode);
+            LstCloudDrive.BringIntoView(bringIntoViewNode);
         }
 
         private void OnSortClick(object sender, EventArgs e)
@@ -683,7 +688,7 @@ namespace MegaApp.Pages
 
         private void ChangeMultiSelectMode()
         {
-            LstCameraUploads.IsCheckModeActive = !LstCameraUploads.IsCheckModeActive;
+            LstCloudDrive.IsCheckModeActive = !LstCloudDrive.IsCheckModeActive;
         }
 
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
@@ -694,6 +699,12 @@ namespace MegaApp.Pages
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
             SetApplicationBarData();
+        }
+
+        private void OnCheckModeChanging(object sender, IsCheckModeActiveChangingEventArgs e)
+        {
+            if(_cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem)
+                e.Cancel = true;
         }
 
         private void ChangeCheckModeAction(bool onOff, RadDataBoundListBox listBox, object item)
@@ -727,15 +738,15 @@ namespace MegaApp.Pages
             _cameraUploadsPageViewModel.CameraUploads.MultipleDownload();
         }
 
-        private void OnMultiSelectMoveClick(object sender, EventArgs e)
+        private void OnMultiSelectCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            MultiSelectMoveAction();
+            MultiSelectCopyOrMoveAction();
         }
 
-        private void MultiSelectMoveAction()
+        private void MultiSelectCopyOrMoveAction()
         {
             if (!_cameraUploadsPageViewModel.CameraUploads.SelectMultipleItemsForMove()) return;
 
