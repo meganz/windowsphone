@@ -44,7 +44,17 @@ namespace MegaApp
         /// </summary>
         public static AppInformation AppInformation { get; private set; }        
         public static String IpAddress { get; set; }
+
+        /// <summary>
+        /// Main MegaSDK instance of the app
+        /// </summary>
         public static MegaSDK MegaSdk { get; set; }
+
+        /// <summary>
+        /// MegaSDK instance for the folder links management
+        /// </summary>
+        public static MegaSDK MegaSdkFolderLinks { get; set; }
+        
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static MainPageViewModel MainPageViewModel { get; set; }
         public static SavedForOfflineViewModel SavedForOfflineViewModel { get; set; }
@@ -281,8 +291,13 @@ namespace MegaApp
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
             
-            // Initialize MegaSDK 
+            // Initialize the main MegaSDK instance
             MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+
+            // Initialize the MegaSDK instance for Folder Links
+            MegaSdkFolderLinks = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
                 AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
                 ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             

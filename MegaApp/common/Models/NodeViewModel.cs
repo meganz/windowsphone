@@ -705,7 +705,8 @@ namespace MegaApp.Models
                 this.ModificationTime = this.CreationTime;
 
             if(!App.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
-                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares)
+                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares &&
+                this.ParentContainerType != ContainerType.FolderLink)
                 CheckAndUpdateSFO(megaNode);
         }        
 

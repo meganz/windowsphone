@@ -417,6 +417,9 @@
     <Compile Include="..\common\MegaApi\LoginRequestListener.cs">
       <Link>MegaApi\LoginRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\LoginToFolderRequestListener.cs">
+      <Link>MegaApi\LoginToFolderRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
     </Compile>
@@ -503,6 +506,9 @@
     </Compile>
     <Compile Include="..\common\Models\FileNodeViewModel.cs">
       <Link>Models\FileNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\FolderLinkViewModel.cs">
+      <Link>Models\FolderLinkViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\FolderNodeViewModel.cs">
       <Link>Models\FolderNodeViewModel.cs</Link>
@@ -609,6 +615,10 @@
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
       <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\FolderLinkPage.xaml.cs">
+      <Link>Pages\FolderLinkPage.xaml.cs</Link>
+      <DependentUpon>FolderLinkPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\InitCameraUploadsPage.xaml.cs">
       <Link>Pages\InitCameraUploadsPage.xaml.cs</Link>
@@ -2179,6 +2189,10 @@
     </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\FolderLinkPage.xaml">
+      <Link>Pages\FolderLinkPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\InitCameraUploadsPage.xaml">

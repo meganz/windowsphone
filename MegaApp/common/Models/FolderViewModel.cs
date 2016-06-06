@@ -75,6 +75,9 @@ namespace MegaApp.Models
                 case ContainerType.ContactInShares:
                     this.CurrentDisplayMode = DriveDisplayMode.ContactInShares;
                     break;
+                case ContainerType.FolderLink:
+                    this.CurrentDisplayMode = DriveDisplayMode.FolderLink;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("containerType");
             }
@@ -141,7 +144,8 @@ namespace MegaApp.Models
         public void LoadChildNodes()
         {
             // User must be online to perform this operation
-            if (!IsUserOnline()) return;
+            if ((this.Type != ContainerType.FolderLink) && !IsUserOnline()) 
+                return;
 
             // First cancel any other loading task that is busy
             CancelLoad();
@@ -285,7 +289,14 @@ namespace MegaApp.Models
             var inputDialog = new CustomInputDialog(UiResources.UI_OpenMegaLink, UiResources.UI_PasteMegaLink, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
-                this.MegaSdk.getPublicNode(args.InputText, new GetPublicNodeRequestListener(this));
+                if (!String.IsNullOrWhiteSpace(args.InputText))
+                {
+                    App.ActiveImportLink = args.InputText;
+                    if (App.ActiveImportLink.Contains("https://mega.nz/#!"))
+                        App.MegaSdk.getPublicNode(App.ActiveImportLink,new GetPublicNodeRequestListener(this));
+                    else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch);
+                }
             };
             inputDialog.ShowDialog();
         }
@@ -488,6 +499,14 @@ namespace MegaApp.Models
                         {
                             this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListRubbishBinEmptyContent"];
                             this.EmptyInformationText = UiResources.EmptyOffline.ToLower();
+                        });
+                        break;
+
+                    case ContainerType.FolderLink:
+                        OnUiThread(() =>
+                        {
+                            this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
+                            this.EmptyInformationText = UiResources.EmptyFolder.ToLower();
                         });
                         break;
                 }
