@@ -66,8 +66,17 @@ namespace MegaApp.Classes
                 //Folder link - Open folder link to import or download
                 else if (tempUri.Contains("https://mega.nz/#F!"))
                 {
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "folderlink",
+                            System.Net.HttpUtility.UrlEncode(tempUri)
+                        }
+                    };
+
+                    App.ActiveImportLink = tempUri;
                     App.AppInformation.UriLink = UriLinkType.Folder;
-                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
+                    return NavigateService.BuildNavigationUri(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch, extraParams);
                 }
                 //Recovery Key backup link
                 else if (tempUri.Contains("https://mega.nz/#backup")) 

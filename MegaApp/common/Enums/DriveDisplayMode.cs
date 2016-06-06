@@ -10,6 +10,7 @@
         InShares,
         OutShares,
         ContactInShares,
-        SavedForOffline
+        SavedForOffline,
+        FolderLink
     }
 }

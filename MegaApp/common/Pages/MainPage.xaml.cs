@@ -224,8 +224,15 @@ namespace MegaApp.Pages
             // If the user is trying to open a MEGA link
             if (App.ActiveImportLink != null)
             {
-                App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                if (App.ActiveImportLink.Contains("https://mega.nz/#!"))
+                {
+                    App.MegaSdk.getPublicNode(App.ActiveImportLink,
+                        new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                }
+                else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
+                {
+                    NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch);
+                }
             }
         }
 

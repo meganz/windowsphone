@@ -50,6 +50,8 @@ namespace MegaApp.UserControls
                     if (lastPage == null) return;
                     if(lastPage.Source.ToString().Contains(page.Name))
                         ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                    else if (navParam == NavigationParameter.ImportLinkLaunch)
+                        ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
                 }
                 else
                 {
