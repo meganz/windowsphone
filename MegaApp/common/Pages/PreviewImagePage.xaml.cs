@@ -20,14 +20,20 @@ namespace MegaApp.Pages
   
     public partial class PreviewImagePage : MegaPhoneApplicationPage
     {
-        private PreviewImageViewModel _previewImageViewModel;
+        private readonly PreviewImageViewModel _previewImageViewModel;
+        private readonly FolderViewModel _foderViewModel;
+
         private Timer _overlayTimer;
 
         public PreviewImagePage()
         {
-            InitializeComponent();
+            _foderViewModel = NavigateService.GetNavigationData<FolderViewModel>();
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, _foderViewModel);
 
-            this.ApplicationBar = (ApplicationBar) Resources["PreviewApplicationBar"];
+            this.DataContext = _previewImageViewModel;
+
+            InitializeComponent();
+            SetApplicationBar();
 
             if(AppService.IsLowMemoryDevice())
                 SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
@@ -37,7 +43,34 @@ namespace MegaApp.Pages
             MemoryControl.Visibility = Visibility.Visible;
             MemoryControl.StartMemoryCounter();
         }
-        
+
+        public void SetApplicationBar(bool isEnabled = true)
+        {
+            // Set the Application Bar to one of the available menu resources in this page
+            SetAppbarResources();
+
+            // Change and translate the current application bar
+            _previewImageViewModel.ChangeMenu(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isEnabled);
+        }
+
+        private void SetAppbarResources()
+        {
+            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
+            {
+                ApplicationBar = null;
+            }
+            else
+            {
+                if (_foderViewModel.Type == ContainerType.FolderLink)
+                    this.ApplicationBar = (ApplicationBar)Resources["FolderLinkPreviewApplicationBar"];
+                else
+                    this.ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
+            }            
+        }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
@@ -69,18 +102,7 @@ namespace MegaApp.Pages
                 }
                 return;
                 #endif
-            }
-
-            var folder = NavigateService.GetNavigationData<FolderViewModel>();
-
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, folder);
-            _previewImageViewModel.TranslateAppBarItems(
-                        ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
-                        ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Previous, UiResources.Download, UiResources.UI_GetLink, UiResources.Next.ToLower() },
-                        new[] { UiResources.Rename, UiResources.Remove });
-            
-            this.DataContext = _previewImageViewModel;
+            }            
 
             base.OnNavigatedTo(e);
         }        
@@ -106,6 +128,11 @@ namespace MegaApp.Pages
         {
             if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
                 _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+        }
+
+        private void OnImportClick(object sender, EventArgs e)
+        {
+
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
@@ -199,19 +226,7 @@ namespace MegaApp.Pages
 
         private void OnSlideViewTap(object sender, GestureEventArgs e)
         {
-            SetApplicationBar();
-        }
-
-        private void SetApplicationBar()
-        {
-            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
-            {
-                ApplicationBar = null;
-            }
-            else
-            {
-                ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
-            }
+            SetAppbarResources();
         }
     }
 }

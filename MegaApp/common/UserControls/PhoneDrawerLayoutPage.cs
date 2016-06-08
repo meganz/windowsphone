@@ -48,10 +48,11 @@ namespace MegaApp.UserControls
                 {
                     var lastPage = backStack.FirstOrDefault();
                     if (lastPage == null) return;
-                    if(lastPage.Source.ToString().Contains(page.Name))
+                    if(lastPage.Source.ToString().Contains(page.Name) || navParam == NavigationParameter.FileLinkLaunch ||
+                        navParam == NavigationParameter.FolderLinkLaunch)
+                    {
                         ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
-                    else if (navParam == NavigationParameter.ImportLinkLaunch)
-                        ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+                    }
                 }
                 else
                 {

@@ -37,6 +37,11 @@ namespace MegaApp.Pages
 
             // Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            LabelSize.Text = String.Concat(UiResources.UI_Size, ":");
+            LabelContent.Text = String.Concat(UiResources.UI_Content, ":");
+            LabelAdded.Text = String.Concat(UiResources.UI_Added, ":");
+            LabelModified.Text = String.Concat(UiResources.UI_Modified, ":");
         }
 
         // Code to execute when a Network change is detected.
@@ -80,20 +85,27 @@ namespace MegaApp.Pages
 
         private void SetAppbarResources()
         {
-            if(_nodeViewModel.IsFolder)
+            if(_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
             {
-                if(_nodeViewModel.IsExported)
-                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFolderDetailsMenu"];
-                else
-                    this.ApplicationBar = (ApplicationBar)Resources["FolderDetailsMenu"];
+                this.ApplicationBar = (ApplicationBar)Resources["FolderLinkNodeDetailsMenu"];
             }
-            else //Node is a File
+            else
             {
-                if(_nodeViewModel.IsExported)
-                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFileDetailsMenu"];
-                else
-                    this.ApplicationBar = (ApplicationBar)Resources["FileDetailsMenu"];
-            }
+                if (_nodeViewModel.IsFolder)
+                {
+                    if (_nodeViewModel.IsExported)
+                        this.ApplicationBar = (ApplicationBar)Resources["ExportedFolderDetailsMenu"];
+                    else
+                        this.ApplicationBar = (ApplicationBar)Resources["FolderDetailsMenu"];
+                }
+                else //Node is a File
+                {
+                    if (_nodeViewModel.IsExported)
+                        this.ApplicationBar = (ApplicationBar)Resources["ExportedFileDetailsMenu"];
+                    else
+                        this.ApplicationBar = (ApplicationBar)Resources["FileDetailsMenu"];
+                }
+            }            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -144,6 +156,11 @@ namespace MegaApp.Pages
             _nodeDetailsViewModel.Download();            
         }
 
+        private void OnImportClick(object sender, EventArgs e)
+        {
+
+        }
+
         private async void OnRemoveClick(object sender, EventArgs e)
         {   
             NodeActionResult result = await _nodeDetailsViewModel.Remove();
@@ -180,6 +197,6 @@ namespace MegaApp.Pages
         {
             if(this.isBtnAvailableOfflineSwitchLoaded)
                 _nodeDetailsViewModel.SaveForOffline(e.NewState);
-        }
+        }        
     }
 }

@@ -64,7 +64,7 @@ namespace MegaApp.Models
 
         private void GetThumbnail()
         {
-            if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+            if (Convert.ToBoolean(MegaSdk.isLoggedIn()) || ParentContainerType == ContainerType.FolderLink)
                 this.MegaSdk.getThumbnail(OriginalMNode, ThumbnailPath, new GetThumbnailRequestListener(this));
         }
 

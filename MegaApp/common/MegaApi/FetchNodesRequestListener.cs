@@ -22,8 +22,7 @@ namespace MegaApp.MegaApi
     class FetchNodesRequestListener : PublicLinkRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
-        private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;
-        private readonly FolderLinkViewModel _folderLinkViewModel;
+        private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;        
 
         // Timer for ignore the received API_EAGAIN (-3) during login
         private DispatcherTimer timerAPI_EAGAIN;
@@ -31,28 +30,28 @@ namespace MegaApp.MegaApi
 
         public FetchNodesRequestListener(MainPageViewModel mainPageViewModel,
             CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
+            : base()
         {
             this._mainPageViewModel = mainPageViewModel;
-            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
-            this._folderLinkViewModel = null;
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
 
             createTimer();
         }
 
         public FetchNodesRequestListener(CameraUploadsPageViewModel cameraUploadsPageViewModel)
+            : base()
         {
             this._mainPageViewModel = null;
-            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;
-            this._folderLinkViewModel = null;
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
 
             createTimer();
         }
 
         public FetchNodesRequestListener(FolderLinkViewModel folderLinkViewModel)
+            : base(folderLinkViewModel)
         {
             this._mainPageViewModel = null;
-            this._cameraUploadsPageViewModel = null;
-            this._folderLinkViewModel = folderLinkViewModel;
+            this._cameraUploadsPageViewModel = null;            
 
             createTimer();
         }

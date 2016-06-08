@@ -16,12 +16,10 @@ namespace MegaApp.MegaApi
 {
     class LoginToFolderRequestListener : PublicLinkRequestListener
     {
-        private readonly FolderLinkViewModel _folderLinkViewModel;
-
         public LoginToFolderRequestListener(FolderLinkViewModel folderLinkViewModel)
             : base(folderLinkViewModel)
         {
-            _folderLinkViewModel = folderLinkViewModel;
+            
         }
 
         #region Base Properties

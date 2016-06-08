@@ -25,12 +25,14 @@
 				<TextBlock TextWrapping="Wrap" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Bold" Margin="0,30,0,20" FontFamily="Portable User Interface"/>
 			</Border>
 		</DataTemplate>
-		<telerik:RadSlideAnimation
+		
+        <telerik:RadSlideAnimation
 				x:Name="OverlayContentDisplayAnimation"
 				StartPoint="0,-80"
 				EndPoint="0,0"
 				Duration="00:00:0.1" />
-		<shell:ApplicationBar x:Name="PreviewApplicationBar" Opacity="0.5">
+		
+        <shell:ApplicationBar x:Name="PreviewApplicationBar" Opacity="0.5">
 			<shell:ApplicationBar.MenuItems>
 				<shell:ApplicationBarMenuItem Text="rename" Click="OnRenameItemClick"/>
 				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
@@ -40,7 +42,15 @@
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
-	</UserControls:MegaPhoneApplicationPage.Resources>	
+        
+        <shell:ApplicationBar x:Name="FolderLinkPreviewApplicationBar" Opacity="0.5">            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/move.png" Text="import" Click="OnImportClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>
+        </shell:ApplicationBar>
+        
+    </UserControls:MegaPhoneApplicationPage.Resources>	
 
 	<Grid x:Name="LayoutRoot" Background="Transparent">        
         

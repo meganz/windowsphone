@@ -166,12 +166,12 @@ namespace MegaApp.Pages
                     if (NavigateService.CanGoBack())
                         NavigateService.GoBack();
                     else
-                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
                 }
                 catch (InvalidOperationException exception)
                 {
                     if (exception.Message.Contains("NavigateService - GoBack"))
-                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
+                        NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
                 }
                 finally
                 {
@@ -311,12 +311,12 @@ namespace MegaApp.Pages
                 if (NavigateService.CanGoBack())
                     NavigateService.GoBack();
                 else
-                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
             catch (InvalidOperationException exception)
             {
                 if (exception.Message.Contains("NavigateService - GoBack"))
-                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
         }
 
