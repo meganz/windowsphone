@@ -18,11 +18,15 @@ namespace MegaApp.Models
 {
     public class FolderLinkViewModel : BaseSdkViewModel
     {
-        public event EventHandler<CommandStatusArgs> CommandStatusChanged;        
+        public event EventHandler<CommandStatusArgs> CommandStatusChanged;
+        public readonly FolderLinkPage _folderLinkPage;
 
-        public FolderLinkViewModel(MegaSDK megaSdk, AppInformation appInformation)
+        public FolderLinkViewModel(MegaSDK megaSdk, AppInformation appInformation, 
+            FolderLinkPage folderLinkPage)
             :base(megaSdk)
-        {            
+        {
+            this._folderLinkPage = folderLinkPage;
+
             InitializeModel();
         }
 

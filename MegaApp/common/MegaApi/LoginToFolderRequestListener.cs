@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
@@ -13,11 +14,12 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class LoginToFolderRequestListener : BaseRequestListener
+    class LoginToFolderRequestListener : PublicLinkRequestListener
     {
         private readonly FolderLinkViewModel _folderLinkViewModel;
 
         public LoginToFolderRequestListener(FolderLinkViewModel folderLinkViewModel)
+            : base(folderLinkViewModel)
         {
             _folderLinkViewModel = folderLinkViewModel;
         }
@@ -26,7 +28,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.PM_Login; }
+            get { return ProgressMessages.PM_OpenFolderLink; }
         }
 
         protected override bool ShowProgressMessage
@@ -36,12 +38,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.LoginFailed; }
+            get { return AppMessages.AM_OpenLinkFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.LoginFailed_Title.ToUpper(); }
+            get { return AppMessages.AM_OpenLinkFailed_Title.ToUpper(); }
         }
 
         protected override bool ShowErrorMessage
@@ -96,18 +98,31 @@ namespace MegaApp.MegaApi
                 ProgressService.SetProgressIndicator(false);
             });
 
+            // If folder link is well structured
             if (e.getErrorCode() == MErrorType.API_OK)
             {
                 OnSuccesAction(api, request);
             }
             else
             {
+                // Set the empty state and disable the app bar buttons
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                    _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                });
+
                 switch(e.getErrorCode())
                 {
                     case MErrorType.API_EARGS:
+                        if (_decryptionAlert)
+                            ShowDecryptionKeyNotValidAlert(api, request); //If the user have written the key
+                        else
+                            ShowLinkNoValidAlert(); //Handle length or Key length no valid
                         break;
 
-                    case MErrorType.API_EINCOMPLETE:
+                    case MErrorType.API_EINCOMPLETE: //No key
+                        ShowDecryptionAlert(api, request);
                         break;
                 }
             }

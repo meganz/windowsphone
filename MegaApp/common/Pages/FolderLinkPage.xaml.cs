@@ -29,11 +29,11 @@ namespace MegaApp.Pages
 {
     public partial class FolderLinkPage : MegaPhoneApplicationPage
     {
-        private readonly FolderLinkViewModel _folderLinkViewModel;
+        private FolderLinkViewModel _folderLinkViewModel;
 
         public FolderLinkPage()
         {
-            _folderLinkViewModel = new FolderLinkViewModel(App.MegaSdkFolderLinks, App.AppInformation);
+            _folderLinkViewModel = new FolderLinkViewModel(App.MegaSdkFolderLinks, App.AppInformation, this);
             this.DataContext = _folderLinkViewModel;
             
             InitializeComponent();
@@ -163,7 +163,7 @@ namespace MegaApp.Pages
 
                 try
                 {
-                    if (NavigateService.PreviousPage != null)
+                    if (NavigateService.CanGoBack())
                         NavigateService.GoBack();
                     else
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
@@ -191,8 +191,11 @@ namespace MegaApp.Pages
             return true;
         }
 
-        private void SetApplicationBarData(bool isNetworkConnected = true)
+        public void SetApplicationBarData(bool isEnabled = true)
         {
+            if(_folderLinkViewModel == null)
+                _folderLinkViewModel = new FolderLinkViewModel(App.MegaSdkFolderLinks, App.AppInformation, this);
+
             // Set the Application Bar to one of the available menu resources in this page
             SetAppbarResources(_folderLinkViewModel.FolderLink.CurrentDisplayMode);
 
@@ -201,7 +204,11 @@ namespace MegaApp.Pages
                 this.ApplicationBar.Buttons, this.ApplicationBar.MenuItems);
 
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
-                this.ApplicationBar.MenuItems, isNetworkConnected);
+                this.ApplicationBar.MenuItems, isEnabled);
+
+            // Button "cancel" should be enabled always
+            if(_folderLinkViewModel.FolderLink.CurrentDisplayMode == DriveDisplayMode.FolderLink)
+                ((ApplicationBarIconButton)this.ApplicationBar.Buttons[2]).IsEnabled = true;
         }
 
         private void SetAppbarResources(DriveDisplayMode driveDisplayMode)
@@ -301,7 +308,7 @@ namespace MegaApp.Pages
 
             try
             {
-                if (NavigateService.PreviousPage != null)
+                if (NavigateService.CanGoBack())
                     NavigateService.GoBack();
                 else
                     NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportLinkLaunch);
@@ -394,19 +401,9 @@ namespace MegaApp.Pages
             App.MegaSdkFolderLinks.retryPendingConnections();
 
             DialogService.ShowSortDialog(_folderLinkViewModel.FolderLink);
-        }
-
-        private void OnDownloadItemTap(object sender, ContextMenuItemSelectedEventArgs e)
-        {
-
         }        
 
         private void OnImportItemTap(object sender, ContextMenuItemSelectedEventArgs e)
-        {
-
-        }
-
-        private void OnViewDetailsItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
 
         }

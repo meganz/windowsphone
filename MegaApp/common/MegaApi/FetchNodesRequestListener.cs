@@ -19,7 +19,7 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FetchNodesRequestListener : BaseRequestListener
+    class FetchNodesRequestListener : PublicLinkRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
         private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;
@@ -277,7 +277,61 @@ namespace MegaApp.MegaApi
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Stop());
-            base.onRequestFinish(api, request, e);
+
+            // If is a folder link fetch nodes
+            if (_folderLinkViewModel != null)
+                onRequestFinishFolderLink(api, request, e);
+            else
+                base.onRequestFinish(api, request, e);                
+        }
+
+        private void onRequestFinishFolderLink(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                //If getFlag() returns true, the folder link key is invalid.
+                if (request.getFlag())
+                {
+                    // First logout from the folder
+                    api.logout();
+
+                    // Set the empty state and disable the app bar buttons
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                        _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                    });
+
+                    //If the user have written the key
+                    if (_decryptionAlert)
+                        ShowDecryptionKeyNotValidAlert(api, request);
+                    else
+                        ShowLinkNoValidAlert();
+                }
+                else
+                {
+                    OnSuccesAction(api, request);
+                }
+            }
+            else
+            {
+                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                        _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                    });
+
+                    ShowUnavailableFolderLinkAlert();
+                }
+            }
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)

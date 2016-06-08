@@ -438,6 +438,9 @@
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\PublicLinkRequestListener.cs">
+      <Link>MegaApi\PublicLinkRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
       <Link>MegaApi\RemoveContactRequestListener.cs</Link>
     </Compile>
