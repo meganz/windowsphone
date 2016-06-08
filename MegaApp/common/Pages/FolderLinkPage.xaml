@@ -170,7 +170,7 @@
             							Opening="OnMenuOpening">
                                     <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnDownloadItem" 
-                                            Tapped="OnDownloadItemTap"
+                                            Command="{Binding DownloadItemCommand}"
                                             Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
                                             />
                                     <telerikPrimitives:RadContextMenuItem 
@@ -180,7 +180,7 @@
                                             />
                                     <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnViewDetails" 
-                                            Tapped="OnViewDetailsItemTap"
+                                            Command="{Binding ViewDetailsCommand}"
                                             Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
                                             />                                    
                                 </telerikPrimitives:RadContextMenu>
