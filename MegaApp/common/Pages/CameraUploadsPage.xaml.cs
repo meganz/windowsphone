@@ -205,7 +205,8 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.DisablePassword:
                     break;
-                case NavigationParameter.ImportLinkLaunch:
+                case NavigationParameter.FileLinkLaunch:
+                case NavigationParameter.FolderLinkLaunch:
                 case NavigationParameter.None:
                 {
                     if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))

@@ -142,7 +142,7 @@ namespace MegaApp.Pages
             }
         }
 
-        private bool CheckActiveAndOnlineSession()
+        private bool CheckActiveAndOnlineSession(NavigationMode navigationMode = NavigationMode.New)
         {
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
@@ -167,6 +167,23 @@ namespace MegaApp.Pages
                             string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
                             NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
                                 new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUri) } });
+                        }
+                    }
+                    else if (App.AppInformation.UriLink == UriLinkType.Folder)
+                    {
+                        App.AppInformation.UriLink = UriLinkType.None;
+                        if(navigationMode == NavigationMode.Back)
+                        {
+                            App.ActiveImportLink = null;
+                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                            return false;
+                        }
+                        
+                        if (NavigationContext.QueryString.ContainsKey("folderlink"))
+                        {
+                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["folderlink"]);
+                            NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch,
+                                new Dictionary<string, string> { { "folderlink", HttpUtility.UrlEncode(tempUri) } });
                         }
                     }
                     else if(App.AppInformation.UriLink != UriLinkType.None)
@@ -196,9 +213,9 @@ namespace MegaApp.Pages
             return true;
         }
         
-        private bool CheckSessionAndPinLock()
+        private bool CheckSessionAndPinLock(NavigationMode navigationMode = NavigationMode.New)
         {
-            if (!CheckActiveAndOnlineSession()) return false;
+            if (!CheckActiveAndOnlineSession(navigationMode)) return false;
             if (!CheckPinLock()) return false;
             return true;
         }
@@ -231,7 +248,7 @@ namespace MegaApp.Pages
                 }
                 else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
                 {
-                    NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch);
+                    NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
                 }
             }
         }
@@ -279,7 +296,7 @@ namespace MegaApp.Pages
 
             // Need to check it always and no only in StartupMode, 
             // because this is the first page loaded
-            if (!CheckSessionAndPinLock()) return;
+            if (!CheckSessionAndPinLock(e.NavigationMode)) return;
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -340,6 +357,9 @@ namespace MegaApp.Pages
                         
             if (e.NavigationMode == NavigationMode.Back)
             {
+                if (navParam == NavigationParameter.FolderLinkLaunch)
+                    App.ActiveImportLink = null;
+
                 navParam = NavigationParameter.Browsing;
             }
 
@@ -404,7 +424,8 @@ namespace MegaApp.Pages
                 case NavigationParameter.DisablePassword:
                     break;
                 case NavigationParameter.AutoCameraUpload:
-                case NavigationParameter.ImportLinkLaunch:
+                case NavigationParameter.FileLinkLaunch:
+                case NavigationParameter.FolderLinkLaunch:
                 case NavigationParameter.Normal:
                 case NavigationParameter.None:
                     {

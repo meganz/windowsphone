@@ -46,7 +46,7 @@ namespace MegaApp.Classes
 
                     App.ActiveImportLink = tempUri;
                     App.AppInformation.UriLink = UriLinkType.File;
-                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.FileLinkLaunch, extraParams);
                 }                
                 // Confirm account link
                 else if (tempUri.Contains("https://mega.nz/#confirm"))
@@ -76,7 +76,7 @@ namespace MegaApp.Classes
 
                     App.ActiveImportLink = tempUri;
                     App.AppInformation.UriLink = UriLinkType.Folder;
-                    return NavigateService.BuildNavigationUri(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch, extraParams);
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.FolderLinkLaunch, extraParams);
                 }
                 //Recovery Key backup link
                 else if (tempUri.Contains("https://mega.nz/#backup")) 

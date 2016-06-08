@@ -34,7 +34,7 @@ namespace MegaApp.MegaApi
         protected static FolderLinkViewModel _folderLinkViewModel { get; private set; }
 
         /// <summary>
-        /// 
+        /// Constructor of the base listener for folder and file links
         /// </summary>
         /// <param name="folderLinkViewModel">
         /// Only used if the request type is "TYPE_LOGIN" (login to folder) in case of a folder link.
@@ -43,7 +43,7 @@ namespace MegaApp.MegaApi
         public PublicLinkRequestListener(FolderLinkViewModel folderLinkViewModel = null)
         {
             // Only if the received parameter is not null, substitute the static class variable.
-            if (folderLinkViewModel != null)
+            if(_folderLinkViewModel == null || folderLinkViewModel != null)
                 _folderLinkViewModel = folderLinkViewModel;
         }
 

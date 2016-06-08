@@ -295,7 +295,7 @@ namespace MegaApp.Models
                     if (App.ActiveImportLink.Contains("https://mega.nz/#!"))
                         App.MegaSdk.getPublicNode(App.ActiveImportLink,new GetPublicNodeRequestListener(this));
                     else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
-                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.ImportLinkLaunch);
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
                 }
             };
             inputDialog.ShowDialog();
