@@ -154,7 +154,8 @@ namespace MegaApp.Pages
 
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        _cameraUploadsPageViewModel.CameraUploads);
                 }
 #endif
             }

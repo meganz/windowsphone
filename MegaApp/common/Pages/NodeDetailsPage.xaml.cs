@@ -21,7 +21,7 @@ namespace MegaApp.Pages
     public partial class NodeDetailsPage : MegaPhoneApplicationPage
     {
         private readonly NodeDetailsViewModel _nodeDetailsViewModel;
-        private readonly NodeViewModel _nodeViewModel;
+        private readonly NodeViewModel _nodeViewModel;        
 
         private bool isBtnAvailableOfflineSwitchLoaded = false;
 
@@ -138,7 +138,8 @@ namespace MegaApp.Pages
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        new FolderViewModel(App.MegaSdk, App.AppInformation, _nodeViewModel.ParentContainerType));
                 }
 #endif
                 return;

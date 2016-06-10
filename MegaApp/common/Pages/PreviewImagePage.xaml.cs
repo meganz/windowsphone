@@ -21,14 +21,14 @@ namespace MegaApp.Pages
     public partial class PreviewImagePage : MegaPhoneApplicationPage
     {
         private readonly PreviewImageViewModel _previewImageViewModel;
-        private readonly FolderViewModel _foderViewModel;
+        private readonly FolderViewModel _folderViewModel;
 
         private Timer _overlayTimer;
 
         public PreviewImagePage()
         {
-            _foderViewModel = NavigateService.GetNavigationData<FolderViewModel>();
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, _foderViewModel);
+            _folderViewModel = NavigateService.GetNavigationData<FolderViewModel>();
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, _folderViewModel);
 
             this.DataContext = _previewImageViewModel;
 
@@ -65,7 +65,7 @@ namespace MegaApp.Pages
             }
             else
             {
-                if (_foderViewModel.Type == ContainerType.FolderLink)
+                if (_folderViewModel.Type == ContainerType.FolderLink)
                     this.ApplicationBar = (ApplicationBar)Resources["FolderLinkPreviewApplicationBar"];
                 else
                     this.ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
@@ -98,7 +98,8 @@ namespace MegaApp.Pages
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        this._folderViewModel);
                 }
                 return;
                 #endif

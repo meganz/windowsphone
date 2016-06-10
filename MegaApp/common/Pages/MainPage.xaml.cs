@@ -246,7 +246,7 @@ namespace MegaApp.Pages
                     App.MegaSdk.getPublicNode(App.ActiveImportLink,
                         new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
                 }
-                else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
+                else if (App.ActiveImportLink.Contains("https://mega.nz/#F!") && App.AppInformation.HasFetchedNodes)
                 {
                     NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
                 }
@@ -341,7 +341,8 @@ namespace MegaApp.Pages
 
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        _mainPageViewModel.ActiveFolderView);
                 }
 #endif
                 if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None ||
@@ -544,6 +545,12 @@ namespace MegaApp.Pages
                     App.AppInformation.UriLink = UriLinkType.None;
                     NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string> { { "Pivot", "2" } });
+                    return true;
+
+                case UriLinkType.Folder:
+                    App.AppInformation.UriLink = UriLinkType.None;
+                    if(App.ActiveImportLink != null)
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
                     return true;
             }
 

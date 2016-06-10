@@ -8,6 +8,7 @@ using System.Windows.Input;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
+using MegaApp.Interfaces;
 using MegaApp.MegaApi;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -70,6 +71,10 @@ namespace MegaApp.Models
                         App.AppInformation, this.MegaSdk.getRootNode(), ContainerType.FolderLink);
                 }
 
+                // Store the absolute root node of the folder link
+                if (this.FolderLinkRootNode == null)
+                    this.FolderLinkRootNode = this.FolderLink.FolderRootNode;
+
                 this.FolderLink.LoadChildNodes();
             });
         }
@@ -131,6 +136,17 @@ namespace MegaApp.Models
         {
             get { return _folderLink; }
             private set { SetField(ref _folderLink, value); }
+        }
+
+        /// <summary>
+        /// Property to store the absolute root node of the folder link.
+        /// <para>Used for example to download/import all the folder link.</para>
+        /// </summary>        
+        private IMegaNode _folderLinkRootNode;
+        public IMegaNode FolderLinkRootNode
+        {
+            get { return _folderLinkRootNode; }
+            set { SetField(ref _folderLinkRootNode, value); }
         }
 
         #endregion
