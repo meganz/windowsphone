@@ -21,6 +21,7 @@ using System.Windows.Input;
 using Telerik.Windows.Controls;
 using Windows.Storage;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
@@ -590,7 +591,7 @@ namespace MegaApp.Models
             }            
         }
 
-        public async void MultipleDownload(StorageFolder downloadFolder = null)
+        public async void MultipleDownload(String downloadPath = null)
         {
             int count = ChildNodes.Count(n => n.IsMultiSelected);
 
@@ -622,9 +623,10 @@ namespace MegaApp.Models
                 SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
             }
             #elif WINDOWS_PHONE_81
-            if (downloadFolder == null)
-            {                
-                if (!await FolderService.SelectDownloadFolder()) return;
+            if (downloadPath == null)
+            {
+                if (!await FolderService.SelectDownloadFolder()) { return; }
+                else { downloadPath = AppService.GetSelectedDownloadDirectoryPath(); }
             }
             #endif
 
@@ -635,29 +637,14 @@ namespace MegaApp.Models
 
             // First count the number of downloads before proceeding to the transfers.
             int downloadCount = 0;
-            var downloadNodes = new List<IMegaNode>();
-
             foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
             {
-                // If selected file is a folder then also select it childnodes to download
                 var folderNode = node as FolderNodeViewModel;
                 if (folderNode != null)
-                {
-                    List<NodeViewModel> recursiveNodes = NodeService.GetRecursiveNodes(MegaSdk, AppInformation, folderNode);
-                    foreach (var recursiveNode in recursiveNodes)
-                    {
-                        downloadNodes.Add(recursiveNode);
-                        downloadCount++;
-                    }
-                }
+                    downloadCount += NodeService.GetRecursiveNodes(MegaSdk, AppInformation, folderNode).Count;
                 else
-                {
-                    // No folder then just add node to transferlist
-                    downloadNodes.Add(node);
                     downloadCount++;
-                }
-
-            }
+            }            
 
             if (! await AppService.DownloadLimitCheck(downloadCount))
             {
@@ -665,13 +652,8 @@ namespace MegaApp.Models
                 return;
             }
 
-            downloadNodes.ForEach(n =>
-            {
-                if (downloadFolder != null)
-                    n.Transfer.DownloadFolderPath = downloadFolder.Path;
-                App.MegaTransfers.Add(n.Transfer);
-                n.Transfer.StartTransfer();
-            });
+            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+                node.Download(App.MegaTransfers, downloadPath);
 
             ProgressService.SetProgressIndicator(false);
 

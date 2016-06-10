@@ -196,7 +196,7 @@ namespace MegaApp.Services
             return false;
         }
 
-        public static void ContinueFolderOpenPicker(FolderPickerContinuationEventArgs args)
+        public static void ContinueFolderOpenPicker(FolderPickerContinuationEventArgs args, FolderViewModel folderViewModel)
         {
             if ((args.ContinuationData["Operation"] as string) != "SelectDownloadFolder" || args.Folder == null)
             {
@@ -231,8 +231,8 @@ namespace MegaApp.Services
             }
 
             App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-                        
-            App.MainPageViewModel.ActiveFolderView.MultipleDownload(args.Folder);
+
+            folderViewModel.MultipleDownload(args.Folder.Path);
 
             ResetFolderPicker();
         }

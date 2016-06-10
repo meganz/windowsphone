@@ -134,14 +134,41 @@ namespace MegaApp.Pages
                 return;
             }
 
+            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
+
+            if (App.AppInformation.IsStartupModeActivate)
+            {
+                // Needed on every UI interaction
+                App.MegaSdkFolderLinks.retryPendingConnections();
+
+                App.AppInformation.IsStartupModeActivate = false;
+
+#if WINDOWS_PHONE_81
+                // Check to see if any files have been picked
+                var app = Application.Current as App;                
+
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        _folderLinkViewModel.FolderLink);
+                }
+#endif                
+            }
+
+            // Initialize the application bar of this page
+            SetApplicationBarData();
+
+            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            {
+                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                return;
+            }
+
             if(e.NavigationMode != NavigationMode.Back)
             {
                 App.MegaSdkFolderLinks.loginToFolder(App.ActiveImportLink,
                     new LoginToFolderRequestListener(_folderLinkViewModel));
             }
-
-            // Initialize the application bar of this page
-            SetApplicationBarData();
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -286,7 +313,10 @@ namespace MegaApp.Pages
 
         private void OnDownloadFolderLinkClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdkFolderLinks.retryPendingConnections();
 
+            _folderLinkViewModel.FolderLinkRootNode.Download(App.MegaTransfers);
         }
 
         private void OnImportFolderLinkClick(object sender, EventArgs e)
@@ -451,7 +481,10 @@ namespace MegaApp.Pages
         
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdk.retryPendingConnections();
 
+            _folderLinkViewModel.FolderLink.MultipleDownload();
         }
 
         private void OnMultiSelectImportClick(object sender, EventArgs e)
