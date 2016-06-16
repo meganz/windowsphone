@@ -19,6 +19,8 @@ namespace MegaApp.Classes
             // URI association launch for MEGA.
             if (tempUri.Contains("mega://"))
             {
+                App.LinkInformation.Reset();
+
                 // Process the URI
                 tempUri = tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty);
 
@@ -28,7 +30,9 @@ namespace MegaApp.Classes
                     tempUri = tempUri.Replace("mega://#", "https://mega.nz/#");
                 else if (tempUri.StartsWith("mega://"))
                     tempUri = tempUri.Replace("mega://", "https://mega.nz/#");
-                                
+
+                App.LinkInformation.ActiveLink = tempUri;
+
                 //File link - Open file link to import or download
                 if (tempUri.Contains("https://mega.nz/#!"))
                 {
@@ -44,8 +48,8 @@ namespace MegaApp.Classes
                     if (tempUri.EndsWith("/"))
                         tempUri = tempUri.Remove(tempUri.Length - 1, 1);
 
-                    App.ActiveImportLink = tempUri;
-                    App.AppInformation.UriLink = UriLinkType.File;
+                    App.LinkInformation.ActiveLink = tempUri;
+                    App.LinkInformation.UriLink = UriLinkType.File;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.FileLinkLaunch, extraParams);
                 }                
                 // Confirm account link
@@ -60,7 +64,7 @@ namespace MegaApp.Classes
                         }
                     };
 
-                    App.AppInformation.UriLink = UriLinkType.Confirm;                    
+                    App.LinkInformation.UriLink = UriLinkType.Confirm;                    
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch, extraParams);
                 }
                 //Folder link - Open folder link to import or download
@@ -74,48 +78,52 @@ namespace MegaApp.Classes
                         }
                     };
 
-                    App.ActiveImportLink = tempUri;
-                    App.AppInformation.UriLink = UriLinkType.Folder;
+                    App.LinkInformation.ActiveLink = tempUri;
+                    App.LinkInformation.UriLink = UriLinkType.Folder;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.FolderLinkLaunch, extraParams);
                 }
                 //Recovery Key backup link
                 else if (tempUri.Contains("https://mega.nz/#backup")) 
                 {
-                    App.AppInformation.UriLink = UriLinkType.Backup;
+                    App.LinkInformation.UriLink = UriLinkType.Backup;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string>(1) { { "backup", String.Empty } });
                 }
                 //New sign up link - Incoming share or contact request (no MEGA account)
                 else if (tempUri.Contains("https://mega.nz/#newsignup")) 
                 {
-                    App.AppInformation.UriLink = UriLinkType.NewSignUp;
+                    App.LinkInformation.UriLink = UriLinkType.NewSignUp;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string>(1) { { "newsignup", System.Net.HttpUtility.UrlEncode(tempUri) } });
                 }
                 //Confirm cancel a MEGA account
                 else if (tempUri.Contains("https://mega.nz/#cancel")) 
                 {
-                    App.AppInformation.UriLink = UriLinkType.Cancel;
+                    App.LinkInformation.UriLink = UriLinkType.Cancel;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
                 //Recover link - Recover the password with the Recovery Key or park the account
                 else if (tempUri.Contains("https://mega.nz/#recover")) 
                 {
-                    App.AppInformation.UriLink = UriLinkType.Recover;
+                    App.LinkInformation.UriLink = UriLinkType.Recover;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
                 //Verify the change of the email address of the MEGA account
                 else if (tempUri.Contains("https://mega.nz/#verify"))
                 {
-                    App.AppInformation.UriLink = UriLinkType.Verify;
+                    App.LinkInformation.UriLink = UriLinkType.Verify;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.Normal);
                 }
                 //Contact request to an email with an associated account of MEGA
                 else if (tempUri.Contains("https://mega.nz/#fm/ipc"))
                 {
-                    App.AppInformation.UriLink = UriLinkType.FmIpc;
+                    App.LinkInformation.UriLink = UriLinkType.FmIpc;
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string>(1) { { "fm/ipc", String.Empty } });
+                }
+                else
+                {
+                    App.LinkInformation.Reset();
                 }
             }
 

@@ -126,7 +126,31 @@ namespace MegaApp.Pages
 
             // Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged += 
-                new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+                new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);            
+
+            if (App.AppInformation.IsStartupModeActivate)
+            {
+                // Needed on every UI interaction
+                App.MegaSdkFolderLinks.retryPendingConnections();
+
+                if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+                {
+                    NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
+                    return;
+                }
+
+                App.AppInformation.IsStartupModeActivate = false;
+
+                #if WINDOWS_PHONE_81
+                // Check to see if some folder has been picked
+                var app = Application.Current as App;
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        _folderLinkViewModel.FolderLink);
+                }
+                #endif                
+            }
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -134,40 +158,33 @@ namespace MegaApp.Pages
                 return;
             }
 
-            NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
-
-            if (App.AppInformation.IsStartupModeActivate)
-            {
-                // Needed on every UI interaction
-                App.MegaSdkFolderLinks.retryPendingConnections();
-
-                App.AppInformation.IsStartupModeActivate = false;
-
-#if WINDOWS_PHONE_81
-                // Check to see if any files have been picked
-                var app = Application.Current as App;                
-
-                if (app != null && app.FolderPickerContinuationArgs != null)
-                {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
-                        _folderLinkViewModel.FolderLink);
-                }
-#endif                
-            }
-
             // Initialize the application bar of this page
             SetApplicationBarData();
 
-            if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
+            if (!App.AppInformation.HasFetchedNodesFolderLink)
             {
-                NavigateService.NavigateTo(typeof(PasswordPage), NavigationParameter.Normal, this.GetType());
-                return;
-            }
-
-            if(e.NavigationMode != NavigationMode.Back)
-            {
-                App.MegaSdkFolderLinks.loginToFolder(App.ActiveImportLink,
+                App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
                     new LoginToFolderRequestListener(_folderLinkViewModel));
+            }
+            else
+            {
+                if(e.NavigationMode != NavigationMode.Back)
+                {
+                    switch (App.LinkInformation.LinkAction)
+                    {
+                        case LinkAction.Download:
+                            _folderLinkViewModel.FolderLink.MultipleDownload(App.LinkInformation.DownloadPath);
+                            break;
+
+                        case LinkAction.Import:
+                            break;
+
+                        case LinkAction.None:
+                        default:
+                            _folderLinkViewModel.LoadFolders();
+                            break;
+                    }
+                }                
             }
         }
 
@@ -186,7 +203,7 @@ namespace MegaApp.Pages
 
             if(!e.Cancel)
             {
-                App.ActiveImportLink = null;
+                App.LinkInformation.Reset();
 
                 try
                 {
@@ -316,6 +333,11 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
 
+            App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
+            App.LinkInformation.LinkAction = LinkAction.Download;
+
+            if (!_folderLinkViewModel.IsUserOnline()) return;
+
             _folderLinkViewModel.FolderLinkRootNode.Download(App.MegaTransfers);
         }
 
@@ -334,7 +356,7 @@ namespace MegaApp.Pages
 
         private void CancelAction()
         {
-            App.ActiveImportLink = null;
+            App.LinkInformation.Reset();
 
             try
             {
@@ -482,8 +504,13 @@ namespace MegaApp.Pages
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            App.MegaSdkFolderLinks.retryPendingConnections();
 
+            App.LinkInformation.SelectedNodes = _folderLinkViewModel.FolderLink.ChildNodes.Where(n => n.IsMultiSelected).ToList();
+            App.LinkInformation.LinkAction = LinkAction.Download;
+
+            if (!_folderLinkViewModel.IsUserOnline()) return;
+            
             _folderLinkViewModel.FolderLink.MultipleDownload();
         }
 

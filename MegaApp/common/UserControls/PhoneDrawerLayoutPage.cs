@@ -31,22 +31,30 @@ namespace MegaApp.UserControls
         {
             bool isMainPage = page == typeof(MainPage);
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
+            var lastPage = backStack.FirstOrDefault();
 
             // If the previous page is the PasswordPage (PIN lock page), delete it from the stack
             var navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             if (navParam == NavigationParameter.PasswordLogin)
             {
-                var lastPage = backStack.FirstOrDefault();
                 if (lastPage == null) return;
                 if (lastPage.Source.ToString().Contains(typeof(PasswordPage).Name))
                     ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
-            } 
+            }
+
+            // If the previous page is the "FolderLinkPage" delete it from the stack if the
+            // current page is not "PreviewImagePage" or "NodeDetailsPage".
+            if (page != typeof(PreviewImagePage) || page != typeof(NodeDetailsPage))
+            {
+                if (lastPage == null) return;
+                if (lastPage.Source.ToString().Contains(typeof(FolderLinkPage).Name))
+                    ((PhoneApplicationFrame)Application.Current.RootVisual).RemoveBackEntry();
+            }
 
             if (isMainPage)
             {
                 if (navigateTo)
                 {
-                    var lastPage = backStack.FirstOrDefault();
                     if (lastPage == null) return;
                     if(lastPage.Source.ToString().Contains(page.Name) || navParam == NavigationParameter.FileLinkLaunch ||
                         navParam == NavigationParameter.FolderLinkLaunch)

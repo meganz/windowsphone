@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MegaApp.Enums;
 
 namespace MegaApp.Classes
 {
@@ -19,8 +18,7 @@ namespace MegaApp.Classes
             this.HasPinLockIntroduced = false;
 
             this.HasFetchedNodes = false;
-
-            this.UriLink = UriLinkType.None;
+            this.HasFetchedNodesFolderLink = false;
         }
         
         public bool PickerOrAsyncDialogIsOpen { get; set; }
@@ -31,7 +29,6 @@ namespace MegaApp.Classes
         public bool HasPinLockIntroduced { get; set; }
 
         public bool HasFetchedNodes { get; set; }
-
-        public UriLinkType UriLink { get; set; }
+        public bool HasFetchedNodesFolderLink { get; set; }
     }
 }

@@ -223,6 +223,9 @@
     <Compile Include="..\common\Classes\HamburgerMenuItem.cs">
       <Link>Classes\HamburgerMenuItem.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\LinkInformation.cs">
+      <Link>Classes\LinkInformation.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\MemoryInformation.cs">
       <Link>Classes\MemoryInformation.cs</Link>
     </Compile>
@@ -330,6 +333,9 @@
     </Compile>
     <Compile Include="..\common\Enums\HamburgerMenuItemType.cs">
       <Link>Enums\HamburgerMenuItemType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\LinkAction.cs">
+      <Link>Enums\LinkAction.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>

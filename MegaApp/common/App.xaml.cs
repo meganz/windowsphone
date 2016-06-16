@@ -68,9 +68,10 @@ namespace MegaApp
 
         public static String ShortCutBase64Handle { get; set; }
 
-        public static String ActiveImportLink { get; set; }
-
-        public static MNode PublicNode { get; set; }
+        /// <summary>
+        /// Provides easy access to usefull links information
+        /// </summary>
+        public static LinkInformation LinkInformation { get; set; }
 
         // DataBase Name
         public static String DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "MEGA.sqlite"));
@@ -275,6 +276,9 @@ namespace MegaApp
 
             // Initialize the application information
             AppInformation = new AppInformation();
+
+            // Initialize the links information
+            LinkInformation = new LinkInformation();
 
             //The next line enables a custom logger, if this function is not used OutputDebugString() is called
             //in the native library and log messages are only readable with the native debugger attached.

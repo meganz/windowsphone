@@ -210,10 +210,10 @@ namespace MegaApp.Services
             {
                 String base64Handle = (String)args.ContinuationData["NodeData"];
                 NodeViewModel node;
-                if (App.PublicNode != null && base64Handle.Equals(App.PublicNode.getBase64Handle()))
+                if (App.LinkInformation.PublicNode != null && base64Handle.Equals(App.LinkInformation.PublicNode.getBase64Handle()))
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.PublicNode, ContainerType.PublicLink);
-                    App.PublicNode = null;
+                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.LinkInformation.PublicNode, ContainerType.PublicLink);
+                    App.LinkInformation.Reset();
                 }
                 else
                 {

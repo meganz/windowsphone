@@ -138,8 +138,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            App.ActiveImportLink = request.getLink();
-            MNode publicNode = App.PublicNode = request.getPublicMegaNode();
+            App.LinkInformation.ActiveLink = request.getLink();
+            MNode publicNode = App.LinkInformation.PublicNode = request.getPublicMegaNode();
 
             if (publicNode != null)
             {

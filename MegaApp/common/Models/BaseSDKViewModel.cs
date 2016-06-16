@@ -7,6 +7,8 @@ using System.Windows;
 using Microsoft.Phone.Shell;
 using mega;
 using MegaApp.Classes;
+using MegaApp.Enums;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 using IApplicationBar = MegaApp.Interfaces.IApplicationBar;
@@ -22,21 +24,45 @@ namespace MegaApp.Models
 
         #region Methods
 
-        public bool IsUserOnline()
+        /// <summary>
+        /// Returns if there is a network available and the user is online (logged in).
+        /// <para>If there is not a network available, show the corresponding error message if enabled.</para>
+        /// <para>If the user is not logged in, also Navigates to the "LoginPage".</para>
+        /// </summary>        
+        /// <param name="showMessageDialog">
+        /// Boolean parameter to indicate if show error messages.
+        /// <para>Default value is false.</para>
+        /// </param>
+        /// <returns>True if the user is online. False in other case.</returns>
+        public bool IsUserOnline(bool showMessageDialog = false)
         {
-            if (!NetworkService.IsNetworkAvailable()) return false;
+            if (!NetworkService.IsNetworkAvailable(showMessageDialog)) return false;
 
             bool isOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
-
             if (!isOnline)
-                OnUiThread(() =>
+            {
+                if (showMessageDialog)
                 {
-                    new CustomMessageDialog(
+                    OnUiThread(() =>
+                    {
+                        var customMessageDialog = new CustomMessageDialog(
                             AppMessages.UserNotOnline_Title,
                             AppMessages.UserNotOnline,
                             App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                });
+                            MessageDialogButtons.Ok);
+
+                        customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
+
+                        customMessageDialog.ShowDialog();
+                    });
+                }
+                else
+                {
+                    OnUiThread(() =>
+                        NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal));
+                }
+            }
 
             return isOnline;
         }
