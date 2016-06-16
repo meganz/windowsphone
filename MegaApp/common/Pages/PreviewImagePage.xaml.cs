@@ -128,7 +128,16 @@ namespace MegaApp.Pages
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
             if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
+            {
+                // If the preview is from a folder link set the link information
+                if (_previewImageViewModel.SelectedPreview.ParentContainerType == ContainerType.FolderLink)
+                {
+                    App.LinkInformation.SelectedNodes.Add(_previewImageViewModel.SelectedPreview);
+                    App.LinkInformation.LinkAction = LinkAction.Download;
+                }
+
                 _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+            }                
         }
 
         private void OnImportClick(object sender, EventArgs e)

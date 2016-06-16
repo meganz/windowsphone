@@ -292,11 +292,18 @@ namespace MegaApp.Models
             {
                 if (!String.IsNullOrWhiteSpace(args.InputText))
                 {
-                    App.ActiveImportLink = args.InputText;
-                    if (App.ActiveImportLink.Contains("https://mega.nz/#!"))
-                        App.MegaSdk.getPublicNode(App.ActiveImportLink,new GetPublicNodeRequestListener(this));
-                    else if (App.ActiveImportLink.Contains("https://mega.nz/#F!"))
+                    App.LinkInformation.ActiveLink = args.InputText;
+
+                    if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                    {
+                        App.LinkInformation.UriLink = UriLinkType.File;
+                        App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink, new GetPublicNodeRequestListener(this));
+                    }                        
+                    else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
+                    {
+                        App.LinkInformation.UriLink = UriLinkType.Folder;
                         NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
+                    }                        
                 }
             };
             inputDialog.ShowDialog();
@@ -593,9 +600,12 @@ namespace MegaApp.Models
 
         public async void MultipleDownload(String downloadPath = null)
         {
-            int count = ChildNodes.Count(n => n.IsMultiSelected);
+            if (this.Type == ContainerType.FolderLink)
+                this.SelectedNodes = App.LinkInformation.SelectedNodes;
+            else
+                this.SelectedNodes = ChildNodes.Where(n => n.IsMultiSelected).ToList();            
 
-            if (count < 1) return;
+            if (this.SelectedNodes.Count < 1) return;
 
             // Only 1 Folder Picker can be open at 1 time
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
@@ -637,7 +647,7 @@ namespace MegaApp.Models
 
             // First count the number of downloads before proceeding to the transfers.
             int downloadCount = 0;
-            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            foreach (var node in SelectedNodes)
             {
                 var folderNode = node as FolderNodeViewModel;
                 if (folderNode != null)
@@ -652,13 +662,13 @@ namespace MegaApp.Models
                 return;
             }
 
-            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            foreach (var node in SelectedNodes)
                 node.Download(App.MegaTransfers, downloadPath);
 
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
+            //OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
         }
 
         public bool SelectMultipleItemsForMove()
@@ -759,8 +769,8 @@ namespace MegaApp.Models
 
         private void ViewDetails(object obj)
         {
-            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation,
-                App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
+            NodeViewModel node = NodeService.CreateNew(this.MegaSdk, App.AppInformation,
+                this.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
 
             OnUiThread(() => NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node));
         }

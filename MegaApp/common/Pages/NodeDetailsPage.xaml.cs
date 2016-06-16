@@ -154,6 +154,12 @@ namespace MegaApp.Pages
 
         private void OnDownloadClick(object sender, EventArgs e)
         {
+            if (_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
+            {
+                App.LinkInformation.SelectedNodes.Add(_nodeViewModel);
+                App.LinkInformation.LinkAction = LinkAction.Download;
+            }
+
             _nodeDetailsViewModel.Download();            
         }
 
