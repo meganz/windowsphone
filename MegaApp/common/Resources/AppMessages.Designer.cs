@@ -481,6 +481,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to share item(s) from MEGA. Please try again..
+        /// </summary>
+        public static string AM_ShareFromMegaFailed_Message {
+            get {
+                return ResourceManager.GetString("AM_ShareFromMegaFailed_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error sharing item(s).
+        /// </summary>
+        public static string AM_ShareFromMegaFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ShareFromMegaFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Item shared with the Windows Phone app of MEGA..
         /// </summary>
         public static string AM_ShareItemFromMega_Message {
