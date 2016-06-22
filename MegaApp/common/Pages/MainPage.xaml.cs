@@ -414,9 +414,13 @@ namespace MegaApp.Pages
                 case NavigationParameter.AutoCameraUpload:
                 case NavigationParameter.FileLinkLaunch:
                 case NavigationParameter.FolderLinkLaunch:
+                case NavigationParameter.ImportFolderLink:
                 case NavigationParameter.Normal:
                 case NavigationParameter.None:
                     {
+                        if (navParam == NavigationParameter.ImportFolderLink)
+                            SetImportMode();
+
                         if(navParam != NavigationParameter.Normal)
                             if (!CheckPinLock()) return;
 
@@ -1257,7 +1261,10 @@ namespace MegaApp.Pages
 
             if (App.LinkInformation.ActiveLink != null)
             {
-                _mainPageViewModel.ActiveFolderView.ImportLink(App.LinkInformation.ActiveLink);                
+                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                    _mainPageViewModel.ActiveFolderView.ImportLink(App.LinkInformation.ActiveLink);
+                else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
+                    _mainPageViewModel.ActiveFolderView.ImportFolderLink();
             }
             else
             {
@@ -1268,7 +1275,7 @@ namespace MegaApp.Pages
                     MessageDialogButtons.Ok).ShowDialog();
             }
 
-            App.LinkInformation.Reset();
+            App.LinkInformation.Reset(false);
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();

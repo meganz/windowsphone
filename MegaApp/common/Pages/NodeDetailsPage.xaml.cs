@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
+using mega;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.MegaApi;
@@ -165,7 +166,13 @@ namespace MegaApp.Pages
 
         private void OnImportClick(object sender, EventArgs e)
         {
+            if (_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
+            {
+                App.LinkInformation.SelectedNodes.Add(_nodeViewModel);
+                App.LinkInformation.LinkAction = LinkAction.Import;
 
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink);
+            }
         }
 
         private async void OnRemoveClick(object sender, EventArgs e)

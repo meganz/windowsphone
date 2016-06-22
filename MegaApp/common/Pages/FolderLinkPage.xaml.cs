@@ -343,7 +343,13 @@ namespace MegaApp.Pages
 
         private void OnImportFolderLinkClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdkFolderLinks.retryPendingConnections();
 
+            App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
+            App.LinkInformation.LinkAction = LinkAction.Import;
+
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink);
         }
 
         private void OnCancelFolderLinkClick(object sender, EventArgs e)
@@ -453,11 +459,6 @@ namespace MegaApp.Pages
             App.MegaSdkFolderLinks.retryPendingConnections();
 
             DialogService.ShowSortDialog(_folderLinkViewModel.FolderLink);
-        }        
-
-        private void OnImportItemTap(object sender, ContextMenuItemSelectedEventArgs e)
-        {
-
         }
 
         private void OnMultiSelectClick(object sender, EventArgs e)
@@ -516,7 +517,13 @@ namespace MegaApp.Pages
 
         private void OnMultiSelectImportClick(object sender, EventArgs e)
         {
+            // Needed on every UI interaction
+            App.MegaSdkFolderLinks.retryPendingConnections();
 
+            App.LinkInformation.SelectedNodes = _folderLinkViewModel.FolderLink.ChildNodes.Where(n => n.IsMultiSelected).ToList();
+            App.LinkInformation.LinkAction = LinkAction.Import;
+
+            NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink);
         }
 
         private void OnSelectAllClick(object sender, EventArgs e)

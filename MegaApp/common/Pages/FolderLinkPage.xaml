@@ -175,7 +175,7 @@
                                             />
                                     <telerikPrimitives:RadContextMenuItem 
                                             x:Name="BtnImportItem" 
-                                            Tapped="OnImportItemTap"
+                                            Command="{Binding ImportItemCommand}"
                                             Content="{Binding LocalizedUiResources.Import, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
                                             />
                                     <telerikPrimitives:RadContextMenuItem 

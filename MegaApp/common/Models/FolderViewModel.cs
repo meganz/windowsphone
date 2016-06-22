@@ -47,6 +47,7 @@ namespace MegaApp.Models
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+            this.ImportItemCommand = new DelegateCommand(this.ImportItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.GetLinkCommand = new DelegateCommand(this.GetLink);
@@ -96,6 +97,7 @@ namespace MegaApp.Models
         public ICommand RenameItemCommand { get; private set; }
         public ICommand RemoveItemCommand { get; private set; }
         public ICommand DownloadItemCommand { get; private set; }
+        public ICommand ImportItemCommand { get; private set; }
         public ICommand CreateShortCutCommand { get; private set; }
         public ICommand MultiSelectCommand { get; set; }
         public ICommand ViewDetailsCommand { get; private set; }
@@ -307,6 +309,45 @@ namespace MegaApp.Models
                 }
             };
             inputDialog.ShowDialog();
+        }
+
+        public void ImportFolderLink()
+        {
+            // If no selected nodes, there is nothing to import
+            if (App.LinkInformation.SelectedNodes.Count < 1) return;
+
+            App.LinkInformation.FolderPaths.Clear();
+            App.LinkInformation.FoldersToImport.Clear();
+
+            List<MNode> folderNodesToImport = new List<MNode>();
+            foreach (var node in App.LinkInformation.SelectedNodes)
+            {
+                if (node.IsFolder)
+                {
+                    folderNodesToImport.Add(node.OriginalMNode);
+
+                    var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
+                    if (nodePath.CompareTo("/") == 0)
+                        nodePath = String.Concat(nodePath, node.Name);
+
+                    if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
+                        App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
+                }
+                else
+                {
+                    App.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
+                        new CopyNodeRequestListener());
+                }
+            }
+
+            if (!App.LinkInformation.FoldersToImport.ContainsKey(FolderRootNode.Base64Handle))
+                App.LinkInformation.FoldersToImport.Add(FolderRootNode.Base64Handle, folderNodesToImport);
+
+            foreach (var folderNode in folderNodesToImport)
+            {
+                App.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
+                    new CreateFolderRequestListener(true));
+            }
         }
 
         public void ImportLink(string link)
@@ -765,6 +806,14 @@ namespace MegaApp.Models
         private void DownloadItem(object obj)
         {
             FocusedNode.Download(App.MegaTransfers);
+        }
+
+        private void ImportItem(object obj)
+        {
+            App.LinkInformation.SelectedNodes.Add(FocusedNode);
+            App.LinkInformation.LinkAction = LinkAction.Import;
+
+            OnUiThread(() => NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink));
         }
 
         private void ViewDetails(object obj)
