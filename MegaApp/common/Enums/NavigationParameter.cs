@@ -14,6 +14,7 @@
         BreadCrumb          = 60,
         FileLinkLaunch      = 70,
         FolderLinkLaunch    = 75,
+        ImportFolderLink    = 76,
         Uploads             = 80,
         Downloads           = 90,
         DisablePassword     = 100,

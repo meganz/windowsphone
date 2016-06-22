@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,13 @@ namespace MegaApp.MegaApi
 {
     class CreateFolderRequestListener: BaseRequestListener
     {
+        private readonly bool _isImportFolderProcess;
+
+        public CreateFolderRequestListener(bool isImportFolderProcess = false)
+        {
+            this._isImportFolderProcess = isImportFolderProcess;
+        }
+
         #region Base Properties
 
         protected override string ProgressMessage
@@ -26,7 +34,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ShowProgressMessage
         {
-            get { return true; }
+            get { return !_isImportFolderProcess; }
         }
 
         protected override string ErrorMessage
@@ -41,7 +49,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ShowErrorMessage
         {
-            get { return true; }
+            get { return !_isImportFolderProcess; }
         }
 
         protected override string SuccessMessage
@@ -56,7 +64,7 @@ namespace MegaApp.MegaApi
 
         protected override bool ShowSuccesMessage
         {
-            get { return true; }
+            get { return !_isImportFolderProcess; }
         }
 
         protected override bool NavigateOnSucces
@@ -80,5 +88,84 @@ namespace MegaApp.MegaApi
         }
 
         #endregion
+
+        protected override void OnSuccesAction(MegaSDK api, MRequest request)
+        {
+            if(_isImportFolderProcess)
+            {
+                MNode parentNode = api.getNodeByHandle(request.getParentHandle());
+                MNode newFolderNode = api.getNodeByHandle(request.getNodeHandle());
+
+                if(!App.LinkInformation.FoldersToImport.ContainsKey(parentNode.getBase64Handle()))
+                    return;
+
+                var megaNodes = App.LinkInformation.FoldersToImport[parentNode.getBase64Handle()];
+
+                MNode nodeToImport;
+                foreach(var node in megaNodes)
+                {
+                    String nodePath = App.LinkInformation.FolderPaths[node.getBase64Handle()];                    
+                    
+                    if (String.Compare(newFolderNode.getName(), nodePath.Split('/').Last()) == 0)
+                    {
+                        nodeToImport = node;
+                        ImportNodeContents(nodeToImport, newFolderNode);
+
+                        //List<MNode> tempNodesArray = megaNodes;
+                        foreach (var tempNode in megaNodes)
+                        {
+                            if(nodeToImport.getBase64Handle() == tempNode.getBase64Handle())
+                            {
+                                megaNodes.Remove(tempNode);
+                                App.LinkInformation.FoldersToImport.Remove(parentNode.getBase64Handle());
+                                App.LinkInformation.FoldersToImport.Add(parentNode.getBase64Handle(), megaNodes);
+                                break;
+                            }
+                        }
+
+                        if (megaNodes.Count == 0)
+                            App.LinkInformation.FoldersToImport.Remove(parentNode.getBase64Handle());
+
+                        App.LinkInformation.FolderPaths.Remove(nodeToImport.getBase64Handle());
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void ImportNodeContents(MNode nodeToImport, MNode parentNode)
+        {
+            var childNodes = App.MegaSdkFolderLinks.getChildren(nodeToImport);
+            var childNodesSize = childNodes.size();
+
+            List<MNode> folderNodesToImport = new List<MNode>();
+            for (int i = 0; i < childNodesSize; i++)
+            {
+                var node = childNodes.get(i);
+                if(node.isFolder())
+                {
+                    folderNodesToImport.Add(node);                    
+
+                    if(!App.LinkInformation.FolderPaths.ContainsKey(node.getBase64Handle()))
+                    {
+                        App.LinkInformation.FolderPaths.Add(node.getBase64Handle(),
+                            App.MegaSdkFolderLinks.getNodePath(node));
+                    }
+                }
+                else
+                {
+                    App.MegaSdk.copyNode(node, parentNode, new CopyNodeRequestListener());
+                }
+            }
+
+            if (!App.LinkInformation.FoldersToImport.ContainsKey(parentNode.getBase64Handle()))
+                App.LinkInformation.FoldersToImport.Add(parentNode.getBase64Handle(), folderNodesToImport);
+
+            foreach (var node in folderNodesToImport)
+            {
+                App.MegaSdk.createFolder(node.getName(), parentNode, 
+                    new CreateFolderRequestListener(true));
+            }
+        }
     }
 }
