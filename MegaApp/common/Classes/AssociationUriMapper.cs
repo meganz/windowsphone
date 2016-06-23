@@ -23,13 +23,7 @@ namespace MegaApp.Classes
 
                 // Process the URI
                 tempUri = tempUri.Replace(@"/Protocol?encodedLaunchUri=", String.Empty);
-
-                if (tempUri.StartsWith("mega:///#"))
-                    tempUri = tempUri.Replace("mega:///#", "https://mega.nz/#");
-                else if (tempUri.StartsWith("mega://#"))
-                    tempUri = tempUri.Replace("mega://#", "https://mega.nz/#");
-                else if (tempUri.StartsWith("mega://"))
-                    tempUri = tempUri.Replace("mega://", "https://mega.nz/#");
+                tempUri = UriService.ReformatUri(tempUri);
 
                 App.LinkInformation.ActiveLink = tempUri;
 

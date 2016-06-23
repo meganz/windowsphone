@@ -294,7 +294,7 @@ namespace MegaApp.Models
             {
                 if (!String.IsNullOrWhiteSpace(args.InputText))
                 {
-                    App.LinkInformation.ActiveLink = args.InputText;
+                    App.LinkInformation.ActiveLink = UriService.ReformatUri(args.InputText);
 
                     if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
                     {
@@ -311,14 +311,20 @@ namespace MegaApp.Models
             inputDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Method to import the selected nodes or the entire content of a folder link.
+        /// </summary>
         public void ImportFolderLink()
         {
             // If no selected nodes, there is nothing to import
             if (App.LinkInformation.SelectedNodes.Count < 1) return;
 
+            // First clear the dictionaries from possible previous import processes
             App.LinkInformation.FolderPaths.Clear();
             App.LinkInformation.FoldersToImport.Clear();
 
+            // Explore the child nodes. Store the folders in a new list and add them to
+            // the corresponding dictionary. Copy the file nodes.
             List<MNode> folderNodesToImport = new List<MNode>();
             foreach (var node in App.LinkInformation.SelectedNodes)
             {
@@ -326,6 +332,7 @@ namespace MegaApp.Models
                 {
                     folderNodesToImport.Add(node.OriginalMNode);
 
+                    // Need to fix the path in case of import an entire folder link.
                     var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
                     if (nodePath.CompareTo("/") == 0)
                         nodePath = String.Concat(nodePath, node.Name);
@@ -336,13 +343,15 @@ namespace MegaApp.Models
                 else
                 {
                     App.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
-                        new CopyNodeRequestListener());
+                        new CopyNodeRequestListener(true));
                 }
             }
 
+            // Add the list with the new folder nodes to import to the corresponding dictionary.
             if (!App.LinkInformation.FoldersToImport.ContainsKey(FolderRootNode.Base64Handle))
                 App.LinkInformation.FoldersToImport.Add(FolderRootNode.Base64Handle, folderNodesToImport);
 
+            // Create all the new folder nodes.
             foreach (var folderNode in folderNodesToImport)
             {
                 App.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
@@ -352,7 +361,19 @@ namespace MegaApp.Models
 
         public void ImportLink(string link)
         {
-            if (String.IsNullOrEmpty(link) || String.IsNullOrWhiteSpace(link)) return;
+            if (String.IsNullOrWhiteSpace(link))
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.ImportFileFailed_Title,
+                        AppMessages.AM_InvalidLink,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
+                return;
+            }
 
             if (this.FolderRootNode == null)
             {
