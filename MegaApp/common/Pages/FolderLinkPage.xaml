@@ -54,16 +54,16 @@
         <shell:ApplicationBar x:Key="MultiSelectMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
-					Text="cancel"	
-					Click="OnMultiSelectClick"			
-				/>
-                <shell:ApplicationBarMenuItem
 					Text="select all"	
 					Click="OnSelectAllClick"			
 				/>
                 <shell:ApplicationBarMenuItem
 					Text="deselect all"	
 					Click="OnDeselectAllClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="cancel"	
+					Click="OnMultiSelectClick"			
 				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 

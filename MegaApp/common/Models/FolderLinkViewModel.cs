@@ -110,7 +110,7 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, UiResources.Import },
-                        new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll});
+                        new[] { UiResources.SelectAll, UiResources.DeselectAll, UiResources.Cancel });
                     break;
                 }
                 default:

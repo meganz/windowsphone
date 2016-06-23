@@ -601,8 +601,11 @@ namespace MegaApp.Models
                 ContactRequest contactRequest = new ContactRequest(outgoingContactRequestsList.get(i));
                 this.SentContactRequests.Add(contactRequest);
 
-                MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath, 
-                    new GetContactAvatarRequestListener(contactRequest));
+                if(!String.IsNullOrWhiteSpace(contactRequest.Email))
+                {
+                    MegaSdk.getUserAvatar(MegaSdk.getContact(contactRequest.Email), contactRequest.AvatarPath,
+                        new GetContactAvatarRequestListener(contactRequest));
+                }                
             }
 
             SetEmptyContentTemplate(false);
