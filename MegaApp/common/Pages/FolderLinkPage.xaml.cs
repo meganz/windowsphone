@@ -170,20 +170,10 @@ namespace MegaApp.Pages
             {
                 if(e.NavigationMode != NavigationMode.Back)
                 {
-                    switch (App.LinkInformation.LinkAction)
-                    {
-                        case LinkAction.Download:
+                    _folderLinkViewModel.LoadFolders();
+
+                    if (App.LinkInformation.LinkAction == LinkAction.Download)
                             _folderLinkViewModel.FolderLink.MultipleDownload(App.LinkInformation.DownloadPath);
-                            break;
-
-                        case LinkAction.Import:
-                            break;
-
-                        case LinkAction.None:
-                        default:
-                            _folderLinkViewModel.LoadFolders();
-                            break;
-                    }
                 }                
             }
         }
