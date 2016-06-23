@@ -75,6 +75,11 @@
 
         <shell:ApplicationBar x:Key="CopyOrMoveItemMenu">
             <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/folder_add.png" 
+        		Text="add folder" 
+        		Click="OnAddFolderClick" 
+			/>
+            <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/copy.png" 
         		Text="copy" 
         		Click="OnAcceptCopyClick" 
@@ -89,14 +94,14 @@
         		Text="cancel" 
         		Click="OnCancelCopyOrMoveClick" 				
 			/>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="ImportItemMenu">
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/folder_add.png" 
         		Text="add folder" 
         		Click="OnAddFolderClick" 
 			/>
-        </shell:ApplicationBar>
-
-        <shell:ApplicationBar x:Key="ImportItemMenu">
             <shell:ApplicationBarIconButton 
         		IconUri="/Assets/AppBar/check.png" 
         		Text="import" 
@@ -107,19 +112,10 @@
         		Text="cancel" 
         		Click="OnCancelImportClick" 				
 			/>
-            <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/folder_add.png" 
-        		Text="add folder" 
-        		Click="OnAddFolderClick" 
-			/>
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="MultiSelectMenu">
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem
-					Text="cancel"	
-					Click="OnMultiSelectClick"			
-				/>
                 <shell:ApplicationBarMenuItem
 					Text="select all"	
 					Click="OnSelectAllClick"			
@@ -127,6 +123,10 @@
                 <shell:ApplicationBarMenuItem
 					Text="deselect all"	
 					Click="OnDeselectAllClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="cancel"	
+					Click="OnMultiSelectClick"			
 				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 

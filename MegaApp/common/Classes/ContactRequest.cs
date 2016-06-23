@@ -65,7 +65,11 @@ namespace MegaApp.Classes
 
         public String AvatarLetter
         {
-            get { return Email.Substring(0, 1).ToUpper(); }
+            get 
+            {
+                if (String.IsNullOrWhiteSpace(Email)) return null;
+                return Email.Substring(0, 1).ToUpper(); 
+            }
         }
 
         public String Email
