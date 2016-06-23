@@ -706,6 +706,7 @@ namespace MegaApp.Pages
 
         public void SetImportMode()
         {
+            App.LinkInformation.UriLink = UriLinkType.None;
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
             SetApplicationBarData();
         }
@@ -1269,7 +1270,7 @@ namespace MegaApp.Pages
             else
             {
                 new CustomMessageDialog(
-                    AppMessages.ImportFileFailed_Title,
+                    AppMessages.AM_ImportLinkFailed_Title,
                     AppMessages.AM_InvalidLink,
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();

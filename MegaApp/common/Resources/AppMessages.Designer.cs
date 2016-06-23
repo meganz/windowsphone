@@ -346,6 +346,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to import folder. Please try again..
+        /// </summary>
+        public static string AM_ImportFolderFailed {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Folder import failed.
+        /// </summary>
+        public static string AM_ImportFolderFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Link import failed.
+        /// </summary>
+        public static string AM_ImportLinkFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Invalid link.
         /// </summary>
         public static string AM_InvalidLink {

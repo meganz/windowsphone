@@ -6,11 +6,27 @@ namespace MegaApp.MegaApi
 {
     class CopyNodeRequestListener : BaseRequestListener
     {
+        /// <summary>
+        /// Variable to store if is a copy node request sent during import a folder.
+        /// </summary>
+        private readonly bool _isImportFolderProcess;
+
+        /// <summary>
+        /// Constructor of the listener for a copy node request.
+        /// </summary>
+        /// <param name="isImportFolderProcess">
+        /// Value to indicate if is a copy node request sent during import a folder
+        /// </param>
+        public CopyNodeRequestListener(bool isImportFolderProcess = false)
+        {
+            this._isImportFolderProcess = isImportFolderProcess;
+        }
+
         #region Base Properties
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.PM_CopyNode; }
+            get { return _isImportFolderProcess ? ProgressMessages.ImportFile : ProgressMessages.PM_CopyNode; }
         }
 
         protected override bool ShowProgressMessage
@@ -20,12 +36,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.AM_CopyFailed; }
+            get { return _isImportFolderProcess ? AppMessages.AM_ImportFileFailedNoErrorCode : AppMessages.AM_CopyFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.AM_CopyFailed_Title; }
+            get { return _isImportFolderProcess ? AppMessages.ImportFileFailed_Title : AppMessages.AM_CopyFailed_Title; }
         }
 
         protected override bool ShowErrorMessage
