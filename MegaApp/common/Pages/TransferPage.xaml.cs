@@ -23,6 +23,8 @@ namespace MegaApp.Pages
 
         public TransferPage()
         {
+            TransfersService.UpdateMegaTransfersList();
+
             _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
             this.DataContext = _transfersViewModel;
             

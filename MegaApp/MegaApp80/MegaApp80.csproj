@@ -763,6 +763,9 @@
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\TransfersService.cs">
+      <Link>Services\TransfersService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\UiService.cs">
       <Link>Services\UiService.cs</Link>
     </Compile>

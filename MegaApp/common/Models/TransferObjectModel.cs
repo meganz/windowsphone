@@ -21,8 +21,8 @@ namespace MegaApp.Models
 {
     public class TransferObjectModel : BaseSdkViewModel, MTransferListenerInterface
     {
-        public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, TransferType transferType, string filePath) 
-            :base(megaSdk)
+        public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, TransferType transferType, 
+            string filePath, string downloadFolderPath = null) :base(megaSdk)
         {
             switch (transferType)
             {
@@ -39,6 +39,7 @@ namespace MegaApp.Models
             }
             Type = transferType;
             FilePath = filePath;
+            DownloadFolderPath = downloadFolderPath;
             Status = TransferStatus.NotStarted;
             SelectedNode = selectedNode;
             CancelButtonState = true;
@@ -63,7 +64,8 @@ namespace MegaApp.Models
                 case TransferType.Download:
                 {
                     this.IsSaveForOfflineTransfer = isSaveForOffline;
-                    this.MegaSdk.startDownload(SelectedNode.OriginalMNode, FilePath, this);
+                    this.MegaSdk.startDownloadWithAppData(SelectedNode.OriginalMNode, 
+                        FilePath, DownloadFolderPath, this);
                     break;
                 }
                 case TransferType.Upload:
@@ -416,17 +418,7 @@ namespace MegaApp.Models
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         // Stop all upload transfers
-                        if (App.MegaTransfers.Count > 0)
-                        {
-                            foreach (var item in App.MegaTransfers)
-                            {
-                                var transferItem = (TransferObjectModel)item;
-                                if (transferItem == null) continue;
-
-                                if (transferItem.Type == TransferType.Upload)
-                                    transferItem.CancelTransfer();
-                            }
-                        }
+                        api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
 
                         // Disable the "camera upload" service
                         MediaService.SetAutoCameraUpload(false);
@@ -499,6 +491,8 @@ namespace MegaApp.Models
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
+            Transfer = transfer;
+
             if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -512,13 +506,14 @@ namespace MegaApp.Models
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 
+                Transfer = transfer;
+                CancelButtonState = true;
+                TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
+                IsBusy = true;
                 TotalBytes = transfer.getTotalBytes();
                 TransferedBytes = transfer.getTransferredBytes();
-
                 TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-                //TransferTime.Stop();
-                //CalculateTransferSpeed(TransferTime.Elapsed, transfer.getDeltaSize());
-                //ransferTime.Restart();
                 
                 if (TransferedBytes > 0)
                 {
@@ -535,14 +530,6 @@ namespace MegaApp.Models
                     }
                 }
             });
-        }
-
-        private void CalculateTransferSpeed(TimeSpan elepsedTransferTime, ulong transferedBytes)
-        {
-            double bytesPerSecond = transferedBytes / elepsedTransferTime.TotalSeconds;
-            double bitsPerSecond = bytesPerSecond * 8;
-
-            TransferSpeed = ((ulong) bitsPerSecond).ToStringAndSuffixPerSecond();
         }
 
         #endregion

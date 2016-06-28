@@ -68,18 +68,8 @@ namespace MegaApp.MegaApi
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     // Stop all upload transfers
-                    if (App.MegaTransfers.Count > 0)
-                    {
-                        foreach (var item in App.MegaTransfers)
-                        {
-                            var transferItem = (TransferObjectModel)item;
-                            if (transferItem == null) continue;
+                    api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
 
-                            if (transferItem.Type == TransferType.Upload)
-                                transferItem.CancelTransfer();
-                        }
-                    }
-                                        
                     // Disable the "camera upload" service
                     MediaService.SetAutoCameraUpload(false);
                     SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);

@@ -176,10 +176,7 @@ namespace MegaApp.Pages
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            int numPendingTransfers = App.MegaTransfers.Count(t => (t.Status == TransferStatus.Queued ||
-                t.Status == TransferStatus.Downloading || t.Status == TransferStatus.Uploading ||
-                t.Status == TransferStatus.Paused || t.Status == TransferStatus.Pausing));
-
+            int numPendingTransfers = App.MegaSdk.getTransfers().size();
             if (numPendingTransfers > 0)
             {
                 var result = await new CustomMessageDialog(
@@ -190,13 +187,8 @@ namespace MegaApp.Pages
 
                 if (result == MessageDialogResult.CancelNo) return;
 
-                foreach (var item in App.MegaTransfers)
-                {
-                    var transfer = (TransferObjectModel)item;
-                    if (transfer == null) continue;
-
-                    transfer.CancelTransfer();
-                }
+                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_DOWNLOAD);
+                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
             }
 
         	_myAccountPageViewModel.Logout();
