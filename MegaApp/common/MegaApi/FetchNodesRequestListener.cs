@@ -119,6 +119,8 @@ namespace MegaApp.MegaApi
         {
             App.AppInformation.HasFetchedNodes = true;
 
+            api.enableTransferResumption();            
+
             // If the user is trying to open a shortcut
             if (App.ShortCutBase64Handle != null)
             {

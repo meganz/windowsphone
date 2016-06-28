@@ -604,22 +604,9 @@ namespace MegaApp.Models
             else
             {
                 // Search if the file has a pending transfer for offline and cancel it on this case
-                foreach (var item in App.MegaTransfers.Downloads)
-                {
-                    WaitHandle waitEventRequest = new AutoResetEvent(false);
+                TransfersService.UpdateMegaTransfersList();
+                TransfersService.CancelPendingNodeOfflineTransfers(nodePath);
 
-                    var transferItem = (TransferObjectModel)item;
-                    if (transferItem == null || transferItem.Transfer == null) continue;
-
-                    if (String.Compare(nodePath, transferItem.Transfer.getPath()) == 0 &&
-                        transferItem.IsAliveTransfer())
-                    {
-                        MegaSdk.cancelTransfer(transferItem.Transfer,
-                            new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
-                        waitEventRequest.WaitOne();
-                    }
-                }
-                
                 FileService.DeleteFile(nodePath);                
             }
 
@@ -646,21 +633,8 @@ namespace MegaApp.Models
             String newSfoPath = Path.Combine(sfoPath, nodeName);
 
             // Search if the folder has a pending transfer for offline and cancel it on this case
-            foreach (var item in App.MegaTransfers.Downloads)
-            {
-                WaitHandle waitEventRequest = new AutoResetEvent(false);
-
-                var transferItem = (TransferObjectModel)item;
-                if (transferItem == null || transferItem.Transfer == null) continue;
-
-                if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
-                    transferItem.IsAliveTransfer())
-                {
-                    MegaSdk.cancelTransfer(transferItem.Transfer,
-                        new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
-                    waitEventRequest.WaitOne();
-                }
-            }
+            TransfersService.UpdateMegaTransfersList();
+            TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"));
 
             IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
             if (childFolders != null)
