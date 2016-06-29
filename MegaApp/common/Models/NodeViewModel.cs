@@ -576,7 +576,8 @@ namespace MegaApp.Models
             }
             else
             {                
-                transferQueu.Add(node.Transfer);                
+                transferQueu.Add(node.Transfer);
+                node.Transfer.DownloadFolderPath = sfoPath;
                 node.Transfer.StartTransfer(true);
             }
 

@@ -58,10 +58,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding UploadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding MegaTransfers.Uploads.Count, ConverterParameter=1, Converter={StaticResource CountToVisibilityInverseConverter}}"/>
                         </StackPanel>
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding UploadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center"/>
                         </StackPanel>
 
@@ -87,10 +87,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding DownloadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding MegaTransfers.Downloads.Count, ConverterParameter=1, Converter={StaticResource CountToVisibilityInverseConverter}}"/>
                         </StackPanel>
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding DownloadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center"/>
                         </StackPanel>                        
 
