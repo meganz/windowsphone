@@ -22,17 +22,17 @@
         <shell:ApplicationBar x:Key="SavedForOfflineMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
-					Text="refresh"	
-					Click="OnRefreshClick"			
-				/>
+                    Text="refresh"	
+                    Click="OnRefreshClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="sort"	
-					Click="OnSortClick"			
-				/>
+                    Text="sort"	
+                    Click="OnSortClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="select"	
-					Click="OnMultiSelectClick"			
-				/>
+                    Text="select"
+                    Click="OnMultiSelectClick"
+                />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
         
@@ -52,17 +52,16 @@
                 />
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/share_icon.png" 
-        		Text="share" 
-        		Click="OnMultiSelectShareClick" 
-			/>
+                IconUri="/Assets/AppBar/share_icon.png" 
+                Text="share" 
+                Click="OnMultiSelectShareClick" 
+            />
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/remove.png" 
-        		Text="remove" 
-        		Click="OnMultiSelectRemoveClick" 
-			/>
+                IconUri="/Assets/AppBar/remove.png" 
+                Text="remove" 
+                Click="OnMultiSelectRemoveClick" 
+            />
         </shell:ApplicationBar>
-
     </userControls:MegaPhoneApplicationPage.Resources>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
