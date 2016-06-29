@@ -43,7 +43,7 @@ namespace MegaApp.Models
                 this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListDownloadEmptyContent"];
                 this.DownloadsEmptyInformationText = UiResources.NoDownloads.ToLower();
 
-                OnPropertyChanged("InIsNetworkAvailableBinding");
+                OnPropertyChanged("IsNetworkAvailableBinding");
             });
         }
 
@@ -57,7 +57,7 @@ namespace MegaApp.Models
                 this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
                 this.DownloadsEmptyInformationText = UiResources.NoInternetConnection.ToLower();
 
-                OnPropertyChanged("InIsNetworkAvailableBinding");
+                OnPropertyChanged("IsNetworkAvailableBinding");
             });
         }
 
@@ -67,32 +67,10 @@ namespace MegaApp.Models
 
         public TransferQueu MegaTransfers { get; set; }
 
-        public bool InIsNetworkAvailableBinding
+        public bool IsNetworkAvailableBinding
         {
             get { return NetworkService.IsNetworkAvailable(); }
         }
-
-        //public bool HasUploads
-        //{
-        //    get 
-        //    {
-        //        if (NetworkService.IsNetworkAvailable())
-        //            return MegaTransfers.Uploads.Count > 0;
-        //        else
-        //            return false;
-        //    }
-        //}
-
-        //public bool HasDownloads
-        //{
-        //    get 
-        //    { 
-        //        if(NetworkService.IsNetworkAvailable())
-        //            return MegaTransfers.Downloads.Count > 0; 
-        //        else
-        //            return false;
-        //    }
-        //}
 
         private DataTemplate _uploadsEmptyContentTemplate;
         public DataTemplate UploadsEmptyContentTemplate
