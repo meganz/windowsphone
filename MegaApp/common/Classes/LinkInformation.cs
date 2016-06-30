@@ -41,11 +41,13 @@ namespace MegaApp.Classes
             this.DownloadPath = null;
             this.SelectedNodes.Clear();
 
+            this.HasFetchedNodesFolderLink = false;
+
             if (clearDictionaries)
-            {                
+            {
                 this.FoldersToImport.Clear();
                 this.FolderPaths.Clear();
-            }            
+            }
         }
 
         #region Properties
@@ -79,6 +81,11 @@ namespace MegaApp.Classes
         /// The download path for the selected nodes in case of download operation.
         /// </summary>
         public String DownloadPath { get; set; }
+
+        /// <summary>
+        /// Indicates if the app has already fetched nodes of the folder link.
+        /// </summary>
+        public bool HasFetchedNodesFolderLink { get; set; }
 
         /// <summary>
         /// Dictionary to store the subfolders to import from a folder link.

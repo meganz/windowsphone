@@ -161,7 +161,7 @@ namespace MegaApp.Pages
             // Initialize the application bar of this page
             SetApplicationBarData();
 
-            if (!App.AppInformation.HasFetchedNodesFolderLink)
+            if (!App.LinkInformation.HasFetchedNodesFolderLink)
             {
                 App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
                     new LoginToFolderRequestListener(_folderLinkViewModel));

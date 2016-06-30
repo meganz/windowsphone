@@ -18,7 +18,6 @@ namespace MegaApp.Classes
             this.HasPinLockIntroduced = false;
 
             this.HasFetchedNodes = false;
-            this.HasFetchedNodesFolderLink = false;
         }
         
         public bool PickerOrAsyncDialogIsOpen { get; set; }
@@ -29,6 +28,5 @@ namespace MegaApp.Classes
         public bool HasPinLockIntroduced { get; set; }
 
         public bool HasFetchedNodes { get; set; }
-        public bool HasFetchedNodesFolderLink { get; set; }
     }
 }
