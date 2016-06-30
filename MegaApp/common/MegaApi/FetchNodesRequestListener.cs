@@ -258,7 +258,7 @@ namespace MegaApp.MegaApi
 
         private void FetchNodesFolderLink(MegaSDK api, MRequest request)
         {
-            App.AppInformation.HasFetchedNodesFolderLink = true;
+            App.LinkInformation.HasFetchedNodesFolderLink = true;
 
             var folderLinkRootNode = _folderLinkViewModel.FolderLink.FolderRootNode ??
                 NodeService.CreateNew(api, App.AppInformation, api.getRootNode(), ContainerType.FolderLink);
