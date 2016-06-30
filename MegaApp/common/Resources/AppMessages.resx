@@ -1241,4 +1241,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <value>Link import failed</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
+  <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
+    <value>Failed to share item(s) from MEGA. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
+    <value>Error sharing item(s)</value>
+    <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
+  </data>
 </root>
