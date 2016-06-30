@@ -295,6 +295,9 @@ namespace MegaApp
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
             
+            // Set the ID for statistics
+            MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
+
             // Initialize the main MegaSDK instance
             MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
                 AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),

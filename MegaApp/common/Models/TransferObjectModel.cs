@@ -327,17 +327,21 @@ namespace MegaApp.Models
                                         IsSelectedForOffline = true
                                     };
 
-                                    // If is a public node (link) the destination folder is the SFO root, so the parent handle
-                                    // is the handle of the root node.
-                                    if (node.ParentContainerType != ContainerType.PublicLink)
-                                        sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
-                                    else
-                                        sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
+                                    // Checking to try avoid NullRefenceExceptions (Possible bug #4761)
+                                    if(sfoNode != null)
+                                    {
+                                        // If is a public node (link) the destination folder is the SFO root, so the parent handle
+                                        // is the handle of the root node.
+                                        if (node.ParentContainerType != ContainerType.PublicLink)
+                                            sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
+                                        else
+                                            sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
 
-                                    if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
-                                        SavedForOffline.Insert(sfoNode);
-                                    else
-                                        SavedForOffline.UpdateNode(sfoNode);
+                                        if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
+                                            SavedForOffline.Insert(sfoNode);
+                                        else
+                                            SavedForOffline.UpdateNode(sfoNode);
+                                    }                                    
 
                                     Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
 

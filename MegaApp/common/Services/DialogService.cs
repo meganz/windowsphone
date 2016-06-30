@@ -1212,29 +1212,40 @@ namespace MegaApp.Services
         {
             if (storageItems == null || storageItems.Count < 1) return;
 
-            DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
-            dataTransferManager.DataRequested += (sender, args) =>
+            try
             {
-                DataPackage requestData = args.Request.Data;
-                requestData.Properties.ApplicationName = AppResources.ApplicationTitle;
-
-                if(storageItems.Count() > 1)
+                DataTransferManager dataTransferManager = DataTransferManager.GetForCurrentView();
+                dataTransferManager.DataRequested += (sender, args) =>
                 {
-                    requestData.Properties.Title = AppMessages.AM_ShareMultipleItemsFromMega_Title;
-                    requestData.Properties.Description = AppMessages.AM_ShareMultipleItemsFromMega_Message;
-                    requestData.SetText(AppMessages.AM_ShareMultipleItemsFromMega_Message);                    
-                }
-                else
-                {
-                    requestData.Properties.Title = AppMessages.AM_ShareItemFromMega_Title;
-                    requestData.Properties.Description = AppMessages.AM_ShareItemFromMega_Message;
-                    requestData.SetText(AppMessages.AM_ShareItemFromMega_Message);
-                }                
+                    DataPackage requestData = args.Request.Data;
+                    requestData.Properties.ApplicationName = AppResources.ApplicationTitle;
 
-                requestData.SetStorageItems(storageItems);
-            };
+                    if (storageItems.Count > 1)
+                    {
+                        requestData.Properties.Title = AppMessages.AM_ShareMultipleItemsFromMega_Title;
+                        requestData.Properties.Description = AppMessages.AM_ShareMultipleItemsFromMega_Message;
+                        requestData.SetText(AppMessages.AM_ShareMultipleItemsFromMega_Message);
+                    }
+                    else
+                    {
+                        requestData.Properties.Title = AppMessages.AM_ShareItemFromMega_Title;
+                        requestData.Properties.Description = AppMessages.AM_ShareItemFromMega_Message;
+                        requestData.SetText(AppMessages.AM_ShareItemFromMega_Message);
+                    }
 
-            DataTransferManager.ShowShareUI();
+                    requestData.SetStorageItems(storageItems);
+                };
+
+                DataTransferManager.ShowShareUI();
+            }
+            catch (NotSupportedException) 
+            {
+                new CustomMessageDialog(
+                    AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
+                    AppMessages.AM_ShareFromMegaFailed_Message,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok).ShowDialog();
+            }
         }
     }
 }
