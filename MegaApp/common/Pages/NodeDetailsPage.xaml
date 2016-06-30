@@ -23,7 +23,7 @@
 
     <userControls:MegaPhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="FileDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -32,7 +32,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ExportedFileDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -42,7 +42,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="FolderDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -52,7 +52,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ExportedFolderDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -63,8 +63,8 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="FolderLinkNodeDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />            
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/move.png" Text="import" Click="OnImportClick" />            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/import.png" Text="import" Click="OnImportClick" />            
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
 

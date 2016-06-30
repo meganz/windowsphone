@@ -38,15 +38,15 @@
 				<shell:ApplicationBarMenuItem Text="remove" Click="OnRemoveClick"/>
 			</shell:ApplicationBar.MenuItems>
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>	
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="view original" Click="OnViewOriginalClick"/>	
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick"/>					
 			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>			
 		</shell:ApplicationBar>
         
         <shell:ApplicationBar x:Name="FolderLinkPreviewApplicationBar" Opacity="0.5">            
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/back.png" Text="previous" Click="OnPreviousClick"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="view original" Click="OnViewOriginalClick"/>
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/move.png" Text="import" Click="OnImportClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="view original" Click="OnViewOriginalClick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/import.png" Text="import" Click="OnImportClick"/>
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/next.png" Text="next" Click="OnNextClick"/>
         </shell:ApplicationBar>
         

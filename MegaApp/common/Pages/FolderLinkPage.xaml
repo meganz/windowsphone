@@ -35,12 +35,12 @@
 				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/cloud.download.png" 
+        		IconUri="/Assets/AppBar/download.png" 
         		Text="download" 
         		Click="OnDownloadFolderLinkClick" 
 			/>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/move.png" 
+        		IconUri="/Assets/AppBar/import.png" 
         		Text="import" 
         		Click="OnImportFolderLinkClick" 				
 			/>
@@ -67,12 +67,12 @@
 				/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/cloud.download.png" 
+        		IconUri="/Assets/AppBar/download.png" 
         		Text="download" 
         		Click="OnMultiSelectDownloadClick" 				
 			/>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/move.png" 
+        		IconUri="/Assets/AppBar/import.png" 
         		Text="import" 
         		Click="OnMultiSelectImportClick" 				
 			/>            
