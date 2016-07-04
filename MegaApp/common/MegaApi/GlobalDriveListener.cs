@@ -345,7 +345,7 @@ namespace MegaApp.MegaApi
                 if (user == null) continue;
 
                 // If the change is on the current user                
-                if(user.getHandle().Equals(api.getMyUser().getHandle()))
+                if(user.getHandle().Equals(api.getMyUser().getHandle()) && !Convert.ToBoolean(user.isOwnChange()))
                 {
                     if (App.UserData == null)
                         App.UserData = new UserDataViewModel { UserEmail = user.getEmail() };
