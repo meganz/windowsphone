@@ -86,6 +86,14 @@ namespace MegaApp.Pages
             }
         }
 
+        /// <summary>
+        /// Set the user avatar color.
+        /// </summary>        
+        private void SetAvatarColor()
+        {
+            _myAccountPageViewModel.AccountDetails.AvatarColor = App.UserData.AvatarColor;
+        }
+
         private void UpdateGUI(bool isNetworkConnected = true)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -106,6 +114,7 @@ namespace MegaApp.Pages
                     _myAccountPageViewModel.SetOfflineContentTemplate();
                 }
 
+                SetAvatarColor();
                 SetApplicationBarData(isNetworkConnected);
             });
         }
@@ -156,6 +165,8 @@ namespace MegaApp.Pages
                 UpdateGUI(false);
                 return;
             }
+
+            SetAvatarColor();
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
