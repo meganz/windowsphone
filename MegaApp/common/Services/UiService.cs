@@ -144,7 +144,7 @@ namespace MegaApp.Services
             // Regex match the string
             var match = _hexColorMatchRegex.Match(hexColorString);
 
-            // I no success the match return the MEGA red color.
+            // If no matches return the MEGA red color.
             if (!match.Success)
                 return (Color)Application.Current.Resources["MegaRedColor"];
 
