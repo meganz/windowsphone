@@ -88,7 +88,9 @@ namespace MegaApp.Classes
 
                 TimeSpan span = DateTime.Now - creation;
 
-                if(span.TotalSeconds < 60)
+                if (span.TotalSeconds < 0)
+                    return String.Format(UiResources.TimeSecondsAgo, 0);
+                else if(span.TotalSeconds < 60)
                     return String.Format(UiResources.TimeSecondsAgo, Convert.ToInt32(span.TotalSeconds));
                 else if (span.TotalMinutes < 60)
                     return String.Format(UiResources.TimeMinutesAgo, Convert.ToInt32(span.TotalMinutes));

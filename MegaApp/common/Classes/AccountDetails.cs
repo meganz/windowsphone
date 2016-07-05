@@ -30,28 +30,6 @@ namespace MegaApp.Classes
             CacheSize = AppService.GetAppCacheSize();
         }
 
-        /*private string _userEmail;
-        public string UserEmail
-        {
-            get { return _userEmail; }
-            set
-            {
-                _userEmail = value;
-                OnPropertyChanged("UserEmail");
-            }
-        }
-
-        private string _userName;
-        public string UserName
-        {
-            get { return _userName; }
-            set
-            {
-                _userName = value;
-                OnPropertyChanged("UserName");
-            }
-        }*/
-
         private bool _isDataLoaded;
         public bool IsDataLoaded
         {
@@ -172,17 +150,6 @@ namespace MegaApp.Classes
                 OnPropertyChanged("AccountTypeUri");
             }
         }
-
-        /*private Uri _avatarUri;
-        public Uri AvatarUri
-        {
-            get { return _avatarUri; }
-            set
-            {
-                _avatarUri = value;
-                OnPropertyChanged("AvatarUri");
-            }
-        }*/
 
         private String _proExpirationDate;
         public String ProExpirationDate
