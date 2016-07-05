@@ -4531,7 +4531,7 @@
             </summary>
             <param name="extendedTileData">The extended tile data.</param>
             <param name="navigationUri">The navigation URI.</param>
-            <param name="skipCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
+            <param name="skipUnpinnedTilesResourcesCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateTile(Telerik.Windows.Controls.ITileData,System.Uri,System.Boolean)">
             <summary>
@@ -4548,7 +4548,7 @@
             <param name="tileData">The extended tile data.</param>
             <param name="navigationUri">The navigation URI.</param>
             <param name="supportsWideTile">If set to <c>true</c> wide tile size is supported.</param>
-            <param name="skipCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
+            <param name="skipUnpinnedTilesResourcesCleanup">If set to <c>true</c> the data saved on disc for the unpinned tiles will not be removed.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.RadExtendedTileData,System.Uri)">
             <summary>
@@ -4557,13 +4557,14 @@
             <param name="extendedTileData">The extended tile data.</param>
             <param name="navigationUri">The navigation URI.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.RadExtendedTileData,System.Uri,System.Boolean)">
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.RadExtendedTileData,System.Uri,System.Boolean,System.Boolean)">
             <summary>
             Creates a tile and pins it to the phone home screen, or updates the tile with new data if tile with same Uri is found.
             </summary>
             <param name="extendedTileData">The extended tile data.</param>
             <param name="navigationUri">The navigation URI.</param>
-            <param name="skipCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
+            <param name="skipUnpinnedTilesResourcesCleanup">If set to <c>true</c> the data saved on disc for the unpinned tiles will not be removed.</param>
+            <param name="skipSavedTileDataCleanup">If set to <c>true</c> the data saved on disc for this particular tile will not be removed.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.ITileData,System.Uri,System.Boolean)">
             <summary>
@@ -4573,21 +4574,22 @@
             <param name="navigationUri">The navigation URI.</param>
             <param name="supportsWideTile">If set to <c>true</c> wide tile size is supported.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.ITileData,System.Uri,System.Boolean,System.Boolean)">
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.CreateOrUpdateTile(Telerik.Windows.Controls.ITileData,System.Uri,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Creates a tile and pins it to the phone home screen, or updates the tile with new data if tile with same Uri is found.
             </summary>
             <param name="tileData">The extended tile data.</param>
             <param name="navigationUri">The navigation URI.</param>
             <param name="supportsWideTile">If set to <c>true</c> wide tile size is supported.</param>
-            <param name="skipCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
+            <param name="skipUnpinnedTilesResourcesCleanup">If set to <c>true</c> the data saved for the unpinned tiles on disc will not be removed.</param>
+            <param name="skipSavedTileDataCleanup">If set to <c>true</c> the tile data saved on disc will not be removed.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData)">
             <summary>
             Updates the tile info.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData,System.Boolean)">
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.RadExtendedTileData,System.Boolean,System.Boolean)">
             <summary>
             Updates the tile info.
             </summary>
@@ -4597,7 +4599,7 @@
             Updates the tile info.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.ITileData,System.Boolean)">
+        <member name="M:Telerik.Windows.Controls.LiveTileHelper.UpdateTile(Microsoft.Phone.Shell.ShellTile,Telerik.Windows.Controls.ITileData,System.Boolean,System.Boolean)">
             <summary>
             Updates the tile info.
             </summary>
