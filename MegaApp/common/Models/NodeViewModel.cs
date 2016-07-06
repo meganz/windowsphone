@@ -715,8 +715,11 @@ namespace MegaApp.Models
             this.IsAvailableOffline = false;
             this.IsSelectedForOffline = false;
 
-            var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
-                    App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
+            var nodePath = App.MegaSdk.getNodePath(megaNode);
+            if (String.IsNullOrWhiteSpace(nodePath)) return;
+
+            var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, 
+                AppResources.DownloadsDirectory, nodePath.Remove(0, 1).Replace("/", "\\"));
 
             if(SavedForOffline.ExistsNodeByLocalPath(nodeOfflineLocalPath))            
             {
