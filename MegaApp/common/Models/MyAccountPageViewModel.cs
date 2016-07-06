@@ -28,9 +28,6 @@ namespace MegaApp.Models
             AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
             UpgradeAccount = new UpgradeAccountViewModel();
             IsAccountUpdate = false;
-
-            if (String.IsNullOrWhiteSpace(AccountDetails.AvatarPath) || !File.Exists(AccountDetails.AvatarPath)) return;
-            AccountDetails.AvatarUri = new Uri(AccountDetails.AvatarPath);            
         }
 
         #region Methods
