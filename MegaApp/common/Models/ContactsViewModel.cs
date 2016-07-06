@@ -476,7 +476,8 @@ namespace MegaApp.Models
                                     Handle = contactsList.get(i).getHandle(),
                                     Email = contactsList.get(i).getEmail(),
                                     Timestamp = contactsList.get(i).getTimestamp(),
-                                    Visibility = contactsList.get(i).getVisibility()
+                                    Visibility = contactsList.get(i).getVisibility(),
+                                    AvatarColor = UiService.GetColorFromHex(App.MegaSdk.getUserAvatarColor(contactsList.get(i)))
                                 };
 
                                 MegaContactsList.Add(_megaContact);
@@ -572,7 +573,7 @@ namespace MegaApp.Models
             {
                 // To avoid null values
                 if (incomingContactRequestsList.get(i) == null) continue;
-
+                
                 ContactRequest contactRequest = new ContactRequest(incomingContactRequestsList.get(i));
                 this.ReceivedContactRequests.Add(contactRequest);
 

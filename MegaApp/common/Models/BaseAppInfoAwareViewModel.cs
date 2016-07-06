@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -37,6 +38,9 @@ namespace MegaApp.Models
                 if(String.IsNullOrWhiteSpace(UserData.UserName))
                     Deployment.Current.Dispatcher.BeginInvoke(() => UserData.Firstname = UiResources.MyAccount);
 
+                if(UserData.AvatarColor == null || UserData.AvatarColor.ToString().Equals("#00000000"))
+                    UserData.AvatarColor = (Color)Application.Current.Resources["MegaRedColor"];
+
                 App.UserData = UserData;
             }
             else
@@ -59,6 +63,12 @@ namespace MegaApp.Models
 
                 if (accountChange)
                     UserData.UserEmail = App.MegaSdk.getMyEmail();
+
+                if (accountChange || UserData.AvatarColor == null || UserData.AvatarColor.ToString().Equals("#00000000") ||
+                    UserData.AvatarColor.Equals((Color)Application.Current.Resources["MegaRedColor"]))
+                {
+                    UserData.AvatarColor = UiService.GetColorFromHex(App.MegaSdk.getUserAvatarColor(App.MegaSdk.getMyUser()));
+                }
 
                 if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
                     App.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
