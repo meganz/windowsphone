@@ -170,6 +170,9 @@ namespace MegaApp.Models
                 LoadingCancelTokenSource.Cancel();
         }
 
+        /// <summary>
+        /// Clear the incoming shared folders list.
+        /// </summary>
         public void ClearIncomingSharedFolders()
         {
             InShares.ClearChildNodes();
@@ -182,6 +185,9 @@ namespace MegaApp.Models
             });
         }
 
+        /// <summary>
+        /// Gets the incoming shared folders and fills the list.
+        /// </summary>
         public void GetIncomingSharedFolders()
         {
             // User must be online to perform this operation
@@ -221,44 +227,53 @@ namespace MegaApp.Models
             {
                 try
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    int inSharesListSize = inSharesList.size();
+                    for (int i = 0; i < inSharesListSize; i++)
                     {
-                        for (int i = 0; i < inSharesList.size(); i++)
+                        // If the task has been cancelled, stop processing
+                        if (LoadingCancelToken.IsCancellationRequested)
+                            LoadingCancelToken.ThrowIfCancellationRequested();
+
+                        MNode inSharedFolder = inSharesList.get(i);                        
+                        if (inSharedFolder != null)
                         {
-                            // If the task has been cancelled, stop processing
-                            if (LoadingCancelToken.IsCancellationRequested)
-                                LoadingCancelToken.ThrowIfCancellationRequested();
+                            var _inSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation,
+                            inSharedFolder, ContainerType.InShares, InShares.ChildNodes);
 
-                            // To avoid null values
-                            if (inSharesList.get(i) == null) continue;
-
-                            var _inSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, inSharesList.get(i), ContainerType.InShares, InShares.ChildNodes);
-                            _inSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
-                            InShares.ChildNodes.Add(_inSharedFolder);
+                            if (_inSharedFolder != null)
+                            {
+                                _inSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
+                                OnUiThread(() => InShares.ChildNodes.Add(_inSharedFolder));
+                            }
                         }
+                    }
 
-                        // Show the user that processing the childnodes is done
-                        InShares.SetProgressIndication(false);
-
-                        // Set empty content to folder instead of loading view
-                        InShares.SetEmptyContentTemplate(false);
-
-                        OnUiThread(() =>
-                        {
-                            OnPropertyChanged("HasInSharedFolders");
-                            OnPropertyChanged("NumberOfInSharedFolders");
-                            OnPropertyChanged("NumberOfInSharedFoldersText");                            
-                        });
+                    OnUiThread(() =>
+                    {
+                        OnPropertyChanged("HasInSharedFolders");
+                        OnPropertyChanged("NumberOfInSharedFolders");
+                        OnPropertyChanged("NumberOfInSharedFoldersText");
                     });
                 }
                 catch (OperationCanceledException)
                 {
                     // Do nothing. Just exit this background process because a cancellation exception has been thrown
                 }
+                finally
+                {
+                    // Show the user that processing the childnodes is done
+                    InShares.SetProgressIndication(false);
+
+                    // Set empty content to folder instead of loading view
+                    InShares.SetEmptyContentTemplate(false);
+                }
 
             }, LoadingCancelToken, TaskCreationOptions.PreferFairness, TaskScheduler.Current);
         }
 
+        /// <summary>
+        /// Clear the outgoing shared folders list.
+        /// </summary>
         public void ClearOutgoingSharedFolders()
         {
             OutShares.ClearChildNodes();
@@ -271,6 +286,9 @@ namespace MegaApp.Models
             });
         }
 
+        /// <summary>
+        /// Gets the outgoing shared folders and fills the list.
+        /// </summary>
         public void GetOutgoingSharedFolders()
         {
             // User must be online to perform this operation
@@ -303,57 +321,61 @@ namespace MegaApp.Models
 
                 return;
             }
-
+            
             OnUiThread(() => OutShares.ChildNodes.Clear());
 
             Task.Factory.StartNew(() =>
             {
                 try
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    ulong lastFolderHandle = 0;
+                    int outSharesListSize = outSharesList.size();
+                    for (int i = 0; i < outSharesListSize; i++)
                     {
-                        ulong lastFolderHandle = 0;
-                        for (int i = 0; i < outSharesList.size(); i++)
+                        // If the task has been cancelled, stop processing
+                        if (LoadingCancelToken.IsCancellationRequested)
+                            LoadingCancelToken.ThrowIfCancellationRequested();
+
+                        MShare outSharedFolder = outSharesList.get(i);
+
+                        // To avoid null values and public links
+                        if ((outSharedFolder != null) && MegaSdk.isOutShare(MegaSdk.getNodeByHandle(outSharedFolder.getNodeHandle())))
                         {
-                            // If the task has been cancelled, stop processing
-                            if (LoadingCancelToken.IsCancellationRequested)
-                                LoadingCancelToken.ThrowIfCancellationRequested();
-
-                            MShare sharedNode = outSharesList.get(i);
-
-                            // To avoid null values and public links
-                            if ((outSharesList.get(i) != null) && MegaSdk.isOutShare(MegaSdk.getNodeByHandle(outSharesList.get(i).getNodeHandle())))
+                            // To avoid repeated values, folders shared with more than one user                            
+                            if (lastFolderHandle != outSharedFolder.getNodeHandle())
                             {
-                                // To avoid repeated values, folders shared with more than one user
-                                MNode node = MegaSdk.getNodeByHandle(outSharesList.get(i).getNodeHandle());
-                                if(lastFolderHandle != sharedNode.getNodeHandle())
-                                {
-                                    lastFolderHandle = sharedNode.getNodeHandle();
+                                lastFolderHandle = outSharedFolder.getNodeHandle();
 
-                                    var _outSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, MegaSdk.getNodeByHandle(lastFolderHandle), ContainerType.OutShares, OutShares.ChildNodes);
+                                var _outSharedFolder = NodeService.CreateNew(this.MegaSdk, this.AppInformation, 
+                                    MegaSdk.getNodeByHandle(lastFolderHandle), ContainerType.OutShares, OutShares.ChildNodes);
+
+                                if(_outSharedFolder != null)
+                                {
                                     _outSharedFolder.DefaultImagePathData = VisualResources.FolderTypePath_shared;
-                                    OutShares.ChildNodes.Add(_outSharedFolder);                                    
+                                    OnUiThread(() => OutShares.ChildNodes.Add(_outSharedFolder));
                                 }
                             }
                         }
+                    }
 
-                        // Show the user that processing the childnodes is done
-                        OutShares.SetProgressIndication(false);
-
-                        // Set empty content to folder instead of loading view
-                        OutShares.SetEmptyContentTemplate(false);
-
-                        OnUiThread(() =>
-                        {
-                            OnPropertyChanged("HasOutSharedFolders");
-                            OnPropertyChanged("NumberOfOutSharedFolders");
-                            OnPropertyChanged("NumberOfOutSharedFoldersText");
-                        });                        
+                    OnUiThread(() =>
+                    {
+                        OnPropertyChanged("HasOutSharedFolders");
+                        OnPropertyChanged("NumberOfOutSharedFolders");
+                        OnPropertyChanged("NumberOfOutSharedFoldersText");
                     });
                 }
                 catch (OperationCanceledException)
                 {
                     // Do nothing. Just exit this background process because a cancellation exception has been thrown
+                }
+                finally
+                {
+                    // Show the user that processing the childnodes is done
+                    OutShares.SetProgressIndication(false);
+
+                    // Set empty content to folder instead of loading view
+                    OutShares.SetEmptyContentTemplate(false);
                 }
 
             }, LoadingCancelToken, TaskCreationOptions.PreferFairness, TaskScheduler.Current);
