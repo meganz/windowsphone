@@ -91,7 +91,7 @@
                             </Ellipse>
                             <Ellipse x:Name="AvatarLetterBackgroud" HorizontalAlignment="Center" Height="180" VerticalAlignment="Center" Width="180">
                                 <Ellipse.Fill>
-                                    <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                    <SolidColorBrush Color="{Binding SelectedContact.AvatarColor}"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                             <TextBlock x:Name="AvatarLetter" Margin="0,0,0,8" Text="{Binding SelectedContact.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
@@ -194,7 +194,7 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse x:Name="HamburgerAvatarLetterBackgroud" Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
                             <Ellipse.Fill>
-                                <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                <SolidColorBrush Color="{Binding UserData.AvatarColor}"/>
                             </Ellipse.Fill>
                         </Ellipse>
                         <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding UserData.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
