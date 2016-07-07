@@ -525,20 +525,20 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" || 
-                args.Files == null || args.Files.Count <= 0)
-            {
-                ResetFilePicker();
-                return;
-            }
-
-            if (!App.CloudDrive.IsUserOnline()) return;
-
-            ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
-
             bool exceptionCatched = false;
             try
             {
+                if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" ||
+                args.Files == null || args.Files.Count <= 0)
+                {
+                    ResetFilePicker();
+                    return;
+                }
+
+                if (!App.CloudDrive.IsUserOnline()) return;
+
+                ProgressService.SetProgressIndicator(true, ProgressMessages.PrepareUploads);
+
                 // Set upload directory only once for speed improvement and if not exists, create dir
                 var uploadDir = AppService.GetUploadDirectoryPath(true);
 

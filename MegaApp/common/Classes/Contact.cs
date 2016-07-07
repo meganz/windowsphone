@@ -4,6 +4,7 @@ using System.Linq;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using Windows.Storage;
 using mega;
 using MegaApp.Models;
@@ -66,6 +67,16 @@ namespace MegaApp.Classes
                 else
                     return Email.Substring(0, 1).ToUpper();
             }
+        }
+
+        /// <summary>
+        /// Background color for the avatar in case of the contact has not an avatar image.
+        /// </summary>
+        private Color _avatarColor;
+        public Color AvatarColor
+        {
+            get { return _avatarColor; }
+            set { SetField(ref _avatarColor, value); }
         }
 
         private bool _hasAvatarImage;
