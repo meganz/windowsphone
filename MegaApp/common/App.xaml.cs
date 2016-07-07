@@ -280,7 +280,10 @@ namespace MegaApp
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-            
+
+            // Set the ID for statistics
+            MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
+
             // Initialize MegaSDK 
             MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
                 AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),

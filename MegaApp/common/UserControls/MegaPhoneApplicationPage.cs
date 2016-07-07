@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.IO.IsolatedStorage;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using MegaApp.Services;
@@ -23,9 +24,13 @@ namespace MegaApp.UserControls
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            // Deinitialize ShakeGestures to disable shake detection
-            ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
-            ShakeGesturesHelper.Instance.Active = false;
+            try
+            {
+                // Deinitialize ShakeGestures to disable shake detection
+                ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
+                ShakeGesturesHelper.Instance.Active = false;
+            }
+            catch (IsolatedStorageException) { /* Possible bug #4760 */ }            
                         
             base.OnNavigatedFrom(e);
         }
@@ -34,10 +39,14 @@ namespace MegaApp.UserControls
         {
             base.OnNavigatedTo(e);
 
-            // Initialize ShakeGestures to display debug settings
-            ShakeGesturesHelper.Instance.ShakeGesture += InstanceOnShakeGesture;
-            ShakeGesturesHelper.Instance.MinimumRequiredMovesForShake = 12;
-            ShakeGesturesHelper.Instance.Active = true;
+            try
+            {
+                // Initialize ShakeGestures to display debug settings
+                ShakeGesturesHelper.Instance.ShakeGesture += InstanceOnShakeGesture;
+                ShakeGesturesHelper.Instance.MinimumRequiredMovesForShake = 12;
+                ShakeGesturesHelper.Instance.Active = true;
+            }
+            catch (IsolatedStorageException) { /* Possible bug #4760 */ }            
 
             if (DebugService.DebugSettings.IsDebugMode && DebugService.DebugSettings.ShowDebugAlert)
                 DialogService.ShowDebugModeAlert();

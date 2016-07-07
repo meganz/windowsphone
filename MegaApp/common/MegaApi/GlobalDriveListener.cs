@@ -345,7 +345,7 @@ namespace MegaApp.MegaApi
                 if (user == null) continue;
 
                 // If the change is on the current user                
-                if(user.getHandle().Equals(api.getMyUser().getHandle()))
+                if(user.getHandle().Equals(api.getMyUser().getHandle()) && !Convert.ToBoolean(user.isOwnChange()))
                 {
                     if (App.UserData == null)
                         App.UserData = new UserDataViewModel { UserEmail = user.getEmail() };
@@ -424,8 +424,9 @@ namespace MegaApp.MegaApi
                                     contactViewModel.GetMegaContacts();
                                 });
                             }
-                            else // If the contact has been changed (UPDATE CONTACT SCENARIO)
-                            {                                
+                            // If the contact has been changed (UPDATE CONTACT SCENARIO) and is not an own change
+                            else if (!Convert.ToBoolean(user.isOwnChange())) 
+                            {
                                 if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
                                     !String.IsNullOrWhiteSpace(existingContact.AvatarPath))
                                 {
@@ -451,16 +452,17 @@ namespace MegaApp.MegaApi
                                         new GetContactDataRequestListener(existingContact));
                                 }
                             }
-                        }                        
+                        }
+                        // If is a new contact (ADD CONTACT SCENARIO - REQUEST ACCEPTED)
                         else if (user.getVisibility().Equals(MUserVisibility.VISIBILITY_VISIBLE))
                         {
-                            // If is a new contact (ADD CONTACT SCENARIO - REQUEST ACCEPTED)
                             var _megaContact = new Contact()
                             {
                                 Handle = user.getHandle(),
                                 Email = user.getEmail(),
                                 Timestamp = user.getTimestamp(),
-                                Visibility = user.getVisibility()
+                                Visibility = user.getVisibility(),
+                                AvatarColor = UiService.GetColorFromHex(App.MegaSdk.getUserAvatarColor(user))
                             };
 
                             Deployment.Current.Dispatcher.BeginInvoke(() => 
@@ -475,7 +477,7 @@ namespace MegaApp.MegaApi
                         }
                         else
                         {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => 
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
                                 contactViewModel.GetMegaContacts());
                         }
                     }

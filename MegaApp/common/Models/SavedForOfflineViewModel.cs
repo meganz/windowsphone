@@ -61,8 +61,8 @@ namespace MegaApp.Models
                         this.TranslateAppBarItems(
                             iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                             menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                            new[] { UiResources.Remove, UiResources.Share },
-                            new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll });
+                            new[] { UiResources.Share, UiResources.Remove },
+                            new[] { UiResources.SelectAll, UiResources.DeselectAll, UiResources.Cancel });
                         break;
                     }                
                 default:
