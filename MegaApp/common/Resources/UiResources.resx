@@ -277,10 +277,6 @@
     <value>folder</value>
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Size:</value>
-    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>No transfers</value>
     <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
@@ -1252,5 +1248,30 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_MemoryStatistics" xml:space="preserve">
     <value>Memory statistics</value>
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Added" xml:space="preserve">
+    <value>Added</value>
+    <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_AvailableOffline" xml:space="preserve">
+    <value>Available Offline</value>
+    <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Content" xml:space="preserve">
+    <value>Content</value>
+    <comment>Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Modified" xml:space="preserve">
+    <value>Modified</value>
+    <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Size</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
   </data>
 </root>

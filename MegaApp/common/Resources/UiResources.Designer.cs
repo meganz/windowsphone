@@ -1906,15 +1906,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Size:.
-        /// </summary>
-        public static string Size {
-            get {
-                return ResourceManager.GetString("Size", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Skip.
         /// </summary>
         public static string Skip {
@@ -2203,6 +2194,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Added.
+        /// </summary>
+        public static string UI_Added {
+            get {
+                return ResourceManager.GetString("UI_Added", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Available Offline.
+        /// </summary>
+        public static string UI_AvailableOffline {
+            get {
+                return ResourceManager.GetString("UI_AvailableOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel subscription.
         /// </summary>
         public static string UI_CancelSubscription {
@@ -2244,6 +2253,15 @@ namespace MegaApp.Resources {
         public static string UI_ConfirmAccount {
             get {
                 return ResourceManager.GetString("UI_ConfirmAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Content.
+        /// </summary>
+        public static string UI_Content {
+            get {
+                return ResourceManager.GetString("UI_Content", resourceCulture);
             }
         }
         
@@ -2383,6 +2401,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Modified.
+        /// </summary>
+        public static string UI_Modified {
+            get {
+                return ResourceManager.GetString("UI_Modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Open link.
         /// </summary>
         public static string UI_OpenLink {
@@ -2424,6 +2451,15 @@ namespace MegaApp.Resources {
         public static string UI_RemoveLink {
             get {
                 return ResourceManager.GetString("UI_RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Size.
+        /// </summary>
+        public static string UI_Size {
+            get {
+                return ResourceManager.GetString("UI_Size", resourceCulture);
             }
         }
         

@@ -140,7 +140,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Copy, UiResources.Move, UiResources.Cancel, UiResources.AddFolder },
+                        new[] { UiResources.AddFolder, UiResources.Copy, UiResources.Move, UiResources.Cancel },
                         null);
                     break;
                 }
@@ -150,7 +150,7 @@ namespace MegaApp.Models
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
                         new[] { UiResources.Download, String.Format("{0}/{1}", UiResources.Copy, UiResources.Move), UiResources.Remove },
-                        new[] { UiResources.Cancel, UiResources.SelectAll, UiResources.DeselectAll});
+                        new[] { UiResources.SelectAll, UiResources.DeselectAll, UiResources.Cancel });
                     break;
                 }
                 case DriveDisplayMode.RubbishBin:
@@ -167,7 +167,7 @@ namespace MegaApp.Models
                     this.TranslateAppBarItems(
                         iconButtons.Cast<ApplicationBarIconButton>().ToList(),
                         menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Import, UiResources.Cancel, UiResources.AddFolder},
+                        new[] { UiResources.AddFolder, UiResources.Import, UiResources.Cancel },
                         null);
                     break;
                 }

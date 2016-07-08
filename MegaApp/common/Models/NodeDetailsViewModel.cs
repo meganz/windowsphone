@@ -27,6 +27,8 @@ namespace MegaApp.Models
         {
             this._nodeDetailsPage = nodeDetailsPage;
             this._node = node;
+
+            IsFolderLinkNode = (node.ParentContainerType == ContainerType.FolderLink);
         }
 
         public void Initialize(GlobalDriveListener globalDriveListener)
@@ -43,43 +45,54 @@ namespace MegaApp.Models
 
         public void ChangeMenu(IList iconButtons, IList menuItems)
         {
-            if (this._node.IsFolder)
+            if (this.IsFolderLinkNode)
             {
-                if (this._node.IsExported)
-                {
-                    this.TranslateAppBarItems(
-                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
-                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
-                        new[] { UiResources.Rename, UiResources.CreateShortCut, UiResources.UI_RemoveLink });
-                }
-                else
-                {
-                    this.TranslateAppBarItems(
-                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
-                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
-                        new[] { UiResources.Rename, UiResources.CreateShortCut });
-                }
+                this.TranslateAppBarItems(
+                    iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                    menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                    new[] { UiResources.Download, UiResources.Import },
+                    null);
             }
-            else //Node is a File
+            else
             {
-                if (this._node.IsExported)
+                if (this._node.IsFolder)
                 {
-                    this.TranslateAppBarItems(
-                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
-                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
-                        new[] { UiResources.Rename, UiResources.UI_RemoveLink });
+                    if (this._node.IsExported)
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
+                            new[] { UiResources.Rename, UiResources.CreateShortCut, UiResources.UI_RemoveLink });
+                    }
+                    else
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
+                            new[] { UiResources.Rename, UiResources.CreateShortCut });
+                    }
                 }
-                else
+                else //Node is a File
                 {
-                    this.TranslateAppBarItems(
-                        iconButtons.Cast<ApplicationBarIconButton>().ToList(),
-                        menuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
-                        new[] { UiResources.Rename });
-                }            
+                    if (this._node.IsExported)
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.Download, UiResources.ManageLink, UiResources.Remove },
+                            new[] { UiResources.Rename, UiResources.UI_RemoveLink });
+                    }
+                    else
+                    {
+                        this.TranslateAppBarItems(
+                            iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                            menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                            new[] { UiResources.Download, UiResources.UI_GetLink, UiResources.Remove },
+                            new[] { UiResources.Rename });
+                    }
+                }
             }
         }
 
@@ -161,6 +174,16 @@ namespace MegaApp.Models
         {
             get { return _node; }
             set { SetField(ref _node, value); }
+        }
+
+        /// <summary>
+        /// Property that indicates if the node is content in a folder link
+        /// </summary>
+        private bool _isFolderLinkNode;
+        public bool IsFolderLinkNode
+        {
+            get { return _isFolderLinkNode; }
+            set { SetField(ref _isFolderLinkNode, value); }
         }
 
         #endregion
