@@ -206,11 +206,6 @@
           <target state="translated">klasör</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/Size" translate="yes" space="preserve">
-          <source>Size:</source>
-          <target state="translated">Boyut:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/NoTransfers" translate="yes" space="preserve">
           <source>No transfers</source>
           <target state="translated">Aktarma yok</target>
@@ -1417,6 +1412,36 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Memory statistics</source>
           <target state="new">Memory statistics</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Modified" translate="yes" xml:space="preserve">
+          <source>Modified</source>
+          <target state="new">Modified</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Size" translate="yes" xml:space="preserve">
+          <source>Size</source>
+          <target state="new">Size</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Content" translate="yes" xml:space="preserve">
+          <source>Content</source>
+          <target state="new">Content</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Added" translate="yes" xml:space="preserve">
+          <source>Added</source>
+          <target state="new">Added</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_AvailableOffline" translate="yes" xml:space="preserve">
+          <source>Available Offline</source>
+          <target state="new">Available Offline</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_DebugMode" translate="yes" xml:space="preserve">
           <source>Debug mode</source>
