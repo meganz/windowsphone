@@ -182,7 +182,7 @@ namespace MegaApp.Pages
 
             try
             {
-                if (NavigateService.PreviousPage != null)
+                if (NavigateService.CanGoBack())
                     NavigateService.GoBack();
                 else
                     NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
