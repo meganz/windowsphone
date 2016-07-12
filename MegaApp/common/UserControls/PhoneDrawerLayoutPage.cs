@@ -111,7 +111,14 @@ namespace MegaApp.UserControls
             if (this.PageDrawerLayout != null)
                 this.PageDrawerLayout.CloseIfOpen();
 
-            ProcessBackstack(this.GetType(), false);
+            bool processBackStack = true;
+            // If the source page is the "SharedItemsPage" and the destination page is the "PreviewImagePage"
+            // don't process the back stack to allow come back to the "SharedItemsPage"
+            if (this.GetType().Equals(typeof(SharedItemsPage)) && ((e.Content as PreviewImagePage) != null))
+                processBackStack = false;
+            
+            if(processBackStack)
+                ProcessBackstack(this.GetType(), false);
 
             base.OnNavigatedFrom(e);
         }

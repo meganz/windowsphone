@@ -179,7 +179,19 @@ namespace MegaApp.Pages
         {   
             NodeActionResult result = await _nodeDetailsViewModel.Remove();
             if (result == NodeActionResult.Cancelled) return;
-            NavigateService.GoBack();            
+
+            try
+            {
+                if (NavigateService.CanGoBack())
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("NavigateService - GoBack"))
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
