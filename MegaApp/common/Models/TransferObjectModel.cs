@@ -19,7 +19,7 @@ using MegaApp.Services;
 
 namespace MegaApp.Models
 {
-    public class TransferObjectModel : BaseSdkViewModel, MTransferListenerInterface
+    public class TransferObjectModel : BaseSdkViewModel
     {
         public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, TransferType transferType, 
             string filePath, string downloadFolderPath = null) :base(megaSdk)
@@ -37,6 +37,7 @@ namespace MegaApp.Models
                         break;
                     }
             }
+
             Type = transferType;
             FilePath = filePath;
             DownloadFolderPath = downloadFolderPath;
@@ -64,13 +65,13 @@ namespace MegaApp.Models
                 case TransferType.Download:
                 {
                     this.IsSaveForOfflineTransfer = isSaveForOffline;
-                    this.MegaSdk.startDownloadWithAppData(SelectedNode.OriginalMNode, 
-                        FilePath, DownloadFolderPath, this);
+                    this.MegaSdk.startDownloadWithAppData(SelectedNode.OriginalMNode, FilePath, 
+                        TransfersService.CreateTransferAppDataString(isSaveForOffline, DownloadFolderPath));
                     break;
                 }
                 case TransferType.Upload:
                 {
-                    this.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode, this);
+                    this.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode);
                     break; 
                 }
                 default:
@@ -140,7 +141,7 @@ namespace MegaApp.Models
         }
 
         #if WINDOWS_PHONE_81
-        private async Task<bool> FinishDownload(String sourcePath, String newFileName)
+        public async Task<bool> FinishDownload(String sourcePath, String newFileName)
         {
             if (!SavedForOffline.ExistsNodeByLocalPath(sourcePath))
             {
@@ -166,7 +167,7 @@ namespace MegaApp.Models
         public string DownloadFolderPath { get; set; }
         public TransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
-        public MTransfer Transfer { get; private set; }
+        public MTransfer Transfer { get; set; }
 
         private bool _isDefaultImage;
         public bool IsDefaultImage
@@ -208,7 +209,7 @@ namespace MegaApp.Models
         public Uri TransferButtonIcon
         {
             get { return _transferButtonIcon; }
-            private set
+            set
             {
                 _transferButtonIcon = value;
                 OnPropertyChanged("TransferButtonIcon");
@@ -263,277 +264,11 @@ namespace MegaApp.Models
         public string TransferSpeed
         {
             get { return _transferSpeed; }
-            private set
+            set
             {
                 _transferSpeed = value;
                 OnPropertyChanged("TransferSpeed");
             }
-        }
-
-        #endregion
-
-        #region MTransferListenerInterface
-
-        //Will be called only for transfers started by startStreaming
-        //Return true to continue getting data, false to stop the streaming
-        public bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
-        {
-            return false;
-        }
-
-        #if WINDOWS_PHONE_80
-        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        #elif WINDOWS_PHONE_81
-        public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        #endif
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                
-                TotalBytes = transfer.getTotalBytes();
-                TransferedBytes = transfer.getTransferredBytes();
-                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-                IsBusy = false;
-                CancelButtonState = false;                
-            });
-
-            switch (e.getErrorCode())
-            {
-                case MErrorType.API_OK:
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        TransferedBytes = TotalBytes;
-                        TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
-                        TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
-                    });                    
-                    
-                    switch(Type)
-                    {
-                        case TransferType.Download:
-                            if (IsSaveForOfflineTransfer) //If is a save for offline download transfer
-                            {
-                                var node = SelectedNode as NodeViewModel;
-                                if (node != null)
-                                {
-                                    // Need get the path on the transfer finish because  the file name can be changed
-                                    // if already exists in the destiny path.
-                                    var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
-
-                                    var sfoNode = new SavedForOffline
-                                    {
-                                        Fingerprint = MegaSdk.getNodeFingerprint(node.OriginalMNode),
-                                        Base64Handle = node.OriginalMNode.getBase64Handle(),
-                                        LocalPath = newOfflineLocalPath,
-                                        IsSelectedForOffline = true
-                                    };
-
-                                    // Checking to try avoid NullRefenceExceptions (Possible bug #4761)
-                                    if(sfoNode != null)
-                                    {
-                                        // If is a public node (link) the destination folder is the SFO root, so the parent handle
-                                        // is the handle of the root node.
-                                        if (node.ParentContainerType != ContainerType.PublicLink)
-                                            sfoNode.ParentBase64Handle = (MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
-                                        else
-                                            sfoNode.ParentBase64Handle = MegaSdk.getRootNode().getBase64Handle();
-
-                                        if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
-                                            SavedForOffline.Insert(sfoNode);
-                                        else
-                                            SavedForOffline.UpdateNode(sfoNode);
-                                    }                                    
-
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
-
-                                    #if WINDOWS_PHONE_80
-                                    //If is download transfer of an image file
-                                    var imageNode = node as ImageNodeViewModel;
-                                    if (imageNode != null)
-                                    {
-                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
-
-                                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                                        if (exportToPhotoAlbum)
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
-                                    }
-#endif
-                                }
-                            }
-                            else //If is a standard download transfer (no for save for offline)
-                            {
-                                //If is download transfer of an image file 
-                                var imageNode = SelectedNode as ImageNodeViewModel;
-                                if (imageNode != null)
-                                {
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(FilePath));
-
-                                    if (AutoLoadImageOnFinish)
-                                    {
-                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                        {
-                                            if (imageNode.OriginalMNode.hasPreview()) return;
-                                            imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
-                                            imageNode.IsBusy = false;
-                                        });
-                                    }
-                                    
-                                    #if WINDOWS_PHONE_81
-                                    if(!await FinishDownload(FilePath,imageNode.Name))
-                                    {
-                                        Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                                        break;
-                                    }
-                                    #endif
-                                }
-                                #if WINDOWS_PHONE_81
-                                else //If is a download transfer of other file type 
-                                {
-                                    var node = SelectedNode as FileNodeViewModel;
-                                    if (node != null)
-                                    {
-                                        
-                                        if (!await FinishDownload(FilePath, node.Name))
-                                        {
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                                            break;
-                                        }                                        
-                                    }
-                                }
-                                #endif
-                            }
-
-                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Downloaded);
-                            break;
-                     
-                        case TransferType.Upload:
-                            Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Uploaded);
-                            break;
-                        
-                        default:
-                            throw new ArgumentOutOfRangeException();                    
-                    }
-                    
-                    break;
-                }
-                case MErrorType.API_EOVERQUOTA:
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        // Stop all upload transfers
-                        api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
-
-                        // Disable the "camera upload" service
-                        MediaService.SetAutoCameraUpload(false);
-                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
-                        DialogService.ShowOverquotaAlert();
-                    });
-
-                    break;
-                }
-                case MErrorType.API_EINCOMPLETE:
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Canceled);
-                    break;
-                }
-                default:
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() => Status = TransferStatus.Error);
-                    switch (Type)
-                    {
-                        case TransferType.Download:
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                new CustomMessageDialog(
-                                    AppMessages.DownloadNodeFailed_Title,
-                                    String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            });
-                                
-                            break;
-
-                        case TransferType.Upload:
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                new CustomMessageDialog(
-                                    AppMessages.UploadNodeFailed_Title,
-                                    String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            });
-                                
-                            break;
-
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-
-                    break;
-                }
-            }
-        }
-
-        public void onTransferStart(MegaSDK api, MTransfer transfer)
-        {
-            Transfer = transfer;
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                Status = TransferStatus.Queued;
-                CancelButtonState = true;
-                TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                IsBusy = true;
-                TotalBytes = transfer.getTotalBytes();
-                TransferedBytes = transfer.getTransferredBytes();
-                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-            });
-        }
-
-        public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
-        {
-            Transfer = transfer;
-
-            if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
-            }            
-        }
-
-        public void onTransferUpdate(MegaSDK api, MTransfer transfer)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
-                
-                Transfer = transfer;
-                CancelButtonState = true;
-                TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                IsBusy = true;
-                TotalBytes = transfer.getTotalBytes();
-                TransferedBytes = transfer.getTransferredBytes();
-                TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-                
-                if (TransferedBytes > 0)
-                {
-                    switch (Type)
-                    {
-                        case TransferType.Download:
-                            Status = TransferStatus.Downloading;
-                            break;
-                        case TransferType.Upload:
-                            Status = TransferStatus.Uploading;
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-            });
         }
 
         #endregion

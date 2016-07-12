@@ -604,9 +604,8 @@ namespace MegaApp.Models
             }                
             else
             {
-                // Search if the file has a pending transfer for offline and cancel it on this case
-                TransfersService.UpdateMegaTransfersList();
-                TransfersService.CancelPendingNodeOfflineTransfers(nodePath);
+                // Search if the file has a pending transfer for offline and cancel it on this case                
+                TransfersService.CancelPendingNodeOfflineTransfers(nodePath, this.IsFolder);
 
                 FileService.DeleteFile(nodePath);                
             }
@@ -633,9 +632,8 @@ namespace MegaApp.Models
         {
             String newSfoPath = Path.Combine(sfoPath, nodeName);
 
-            // Search if the folder has a pending transfer for offline and cancel it on this case
-            TransfersService.UpdateMegaTransfersList();
-            TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"));
+            // Search if the folder has a pending transfer for offline and cancel it on this case            
+            TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"), this.IsFolder);
 
             IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
             if (childFolders != null)

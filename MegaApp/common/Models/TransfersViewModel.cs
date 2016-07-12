@@ -65,7 +65,12 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public TransferQueu MegaTransfers { get; set; }
+        private TransferQueu _megaTransfers;
+        public TransferQueu MegaTransfers
+        {
+            get { return _megaTransfers; }
+            set { SetField(ref _megaTransfers, value); }
+        }
 
         public bool IsNetworkAvailableBinding
         {
