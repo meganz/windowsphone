@@ -54,6 +54,8 @@ namespace MegaApp
 
         public static GlobalDriveListener GlobalDriveListener { get; private set; }
 
+        public static GlobalTransferListener GlobalTransferListener { get; private set; }
+
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         public static String ShortCutBase64Handle { get; set; }
@@ -296,6 +298,9 @@ namespace MegaApp
             MegaSdk.addGlobalListener(GlobalDriveListener);
             // Add a global request listener to process all.
             MegaSdk.addRequestListener(this);
+            // Add a global transfer listener to process all transfers.
+            GlobalTransferListener = new GlobalTransferListener();
+            MegaSdk.addTransferListener(GlobalTransferListener);
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
             // Initialize Folders

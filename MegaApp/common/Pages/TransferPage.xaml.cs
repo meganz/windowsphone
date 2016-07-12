@@ -23,8 +23,6 @@ namespace MegaApp.Pages
 
         public TransferPage()
         {
-            TransfersService.UpdateMegaTransfersList();
-
             _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
             this.DataContext = _transfersViewModel;
             
@@ -121,6 +119,9 @@ namespace MegaApp.Pages
 
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
+
+            TransfersService.UpdateMegaTransfersList(App.MegaTransfers);
+            _transfersViewModel.MegaTransfers = App.MegaTransfers;
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
