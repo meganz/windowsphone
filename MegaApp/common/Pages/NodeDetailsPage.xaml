@@ -23,7 +23,7 @@
 
     <userControls:MegaPhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="FileDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -32,7 +32,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ExportedFileDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -42,7 +42,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="FolderDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="get link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -52,7 +52,7 @@
         </shell:ApplicationBar>
 
         <shell:ApplicationBar x:Key="ExportedFolderDetailsMenu">
-            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.download.png" Text="download" Click="OnDownloadClick" />
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/link.png" Text="manage link" Click="OnGetLinkClick" />
             <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/remove.png" Text="remove" Click="OnRemoveClick" />
             <shell:ApplicationBar.MenuItems>
@@ -60,6 +60,11 @@
                 <shell:ApplicationBarMenuItem Text="create shortcut" Click="OnCreateShortcutClick" />
                 <shell:ApplicationBarMenuItem Text="remove link" Click="OnRemoveLinkClick" />
             </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+
+        <shell:ApplicationBar x:Key="FolderLinkNodeDetailsMenu">
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/download.png" Text="download" Click="OnDownloadClick" />            
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/import.png" Text="import" Click="OnImportClick" />            
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
 
@@ -113,8 +118,8 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="TextAvailableOffline" Grid.Row="1" Margin="36,24,0,24" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Available offline" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}"/>
-                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding Node.IsSelectedForOfflineText}" IsChecked="{Binding Node.IsSelectedForOffline}" Loaded="BtnAvailableOfflineSwitch_Loaded" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface">
+                <TextBlock x:Name="TextAvailableOffline" Grid.Row="1" Margin="36,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding LocalizedUiResources.UI_AvailableOffline, Mode=OneWay, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Visibility="{Binding IsFolderLinkNode, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"/>
+                <telerikPrimitives:RadToggleSwitch x:Name="BtnAvailableOfflineSwitch" Grid.Column="1" VerticalAlignment="Center" Content="{Binding Node.IsSelectedForOfflineText}" IsChecked="{Binding Node.IsSelectedForOffline}" Loaded="BtnAvailableOfflineSwitch_Loaded" CheckedChanged="BtnAvailableOfflineSwitch_CheckedChanged" Margin="36,0" FontFamily="Portable User Interface" Visibility="{Binding IsFolderLinkNode, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}">
                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
                         <Style TargetType="telerikToggleSwitch:ToggleSwitchButton">
                             <Setter Property="CheckBackground">
@@ -133,10 +138,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="12,0">
-                    <TextBlock Margin="0,6" Text="Size:" TextWrapping="Wrap"/>
-                    <TextBlock Margin="0,6" Text="Content:" TextWrapping="Wrap" Visibility="{Binding Node.IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                    <TextBlock Margin="0,6" Text="Added:" TextWrapping="Wrap"/>                    
-                    <TextBlock Margin="0,6" Text="Modified:" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="LabelSize" Margin="0,6" Text="Size:" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="LabelContent" Margin="0,6" Text="Content:" TextWrapping="Wrap" Visibility="{Binding Node.IsFolder, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock x:Name="LabelAdded" Margin="0,6" Text="Added:" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="LabelModified" Margin="0,6" Text="Modified:" TextWrapping="Wrap"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Margin="12,0">
                     <TextBlock Margin="0,6" Text="{Binding Node.SizeText}" TextWrapping="Wrap"/>

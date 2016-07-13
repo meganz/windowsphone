@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -14,10 +15,14 @@ namespace MegaApp.Models
 {
     class PreviewImageViewModel : BaseAppInfoAwareViewModel
     {
-        public PreviewImageViewModel(MegaSDK megaSdk, AppInformation appInformation, FolderViewModel folder)
+        private readonly FolderViewModel _foderViewModel;
+
+        public PreviewImageViewModel(MegaSDK megaSdk, AppInformation appInformation, FolderViewModel folderViewModel)
             : base(megaSdk, appInformation)
         {
-            if(folder == null)
+            _foderViewModel = folderViewModel;
+
+            if (_foderViewModel == null)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
@@ -32,9 +37,9 @@ namespace MegaApp.Models
             }
 
             PreviewItems = new ObservableCollection<ImageNodeViewModel>(
-                folder.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
+                _foderViewModel.ChildNodes.Where(n => n is ImageNodeViewModel).Cast<ImageNodeViewModel>());
 
-            folder.ChildNodes.CollectionChanged += (sender, args) =>
+            _foderViewModel.ChildNodes.CollectionChanged += (sender, args) =>
             {
                 if (args.Action != NotifyCollectionChangedAction.Remove) return;
 
@@ -44,7 +49,27 @@ namespace MegaApp.Models
                     removedNode.OriginalMNode.getBase64Handle()));
             };
 
-            SelectedPreview = (ImageNodeViewModel)folder.FocusedNode;
+            SelectedPreview = (ImageNodeViewModel)_foderViewModel.FocusedNode;
+        }
+
+        public void ChangeMenu(IList iconButtons, IList menuItems)
+        {
+            if (_foderViewModel.Type == ContainerType.FolderLink)
+            {
+                this.TranslateAppBarItems(
+                    iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                    menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                    new[] { UiResources.Previous, UiResources.Download, UiResources.Import, UiResources.Next.ToLower() },
+                    null);
+            }
+            else
+            {
+                this.TranslateAppBarItems(
+                    iconButtons.Cast<ApplicationBarIconButton>().ToList(),
+                    menuItems.Cast<ApplicationBarMenuItem>().ToList(),
+                    new[] { UiResources.Previous, UiResources.Download, UiResources.UI_GetLink, UiResources.Next.ToLower() },
+                    new[] { UiResources.Rename, UiResources.Remove });
+            }            
         }
 
         #region Properties

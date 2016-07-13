@@ -16,10 +16,9 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class GetPublicNodeRequestListener: BaseRequestListener
+    class GetPublicNodeRequestListener: PublicLinkRequestListener
     {
         private readonly FolderViewModel _folderViewModel;
-        private bool _decryptionAlert;
         
         public GetPublicNodeRequestListener(FolderViewModel folderViewModel)
         {
@@ -90,120 +89,6 @@ namespace MegaApp.MegaApi
 
         #endregion
 
-        #region Private Methods
-
-        /// <summary>
-        /// Show a message indicating that the link is not valid.
-        /// </summary>
-        private void ShowLinkNoValidAlert()
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                new CustomMessageDialog(
-                    ErrorMessageTitle,
-                    AppMessages.AM_InvalidLink,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
-        }
-
-        /// <summary>
-        /// Show a message indicating that the file link is no longer available and 
-        /// explaining the reasons that could be causing it.
-        /// </summary>
-        private void ShowUnavailableLinkAlert()
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                new CustomMessageDialog(
-                    AppMessages.AM_LinkUnavailableTitle,
-                    AppMessages.AM_FileLinkUnavailable,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
-        }
-
-        /// <summary>
-        /// Show a message indicating that the encrypted file link can't be opened 
-        /// because it doesn't include the key to see its contents.
-        /// <para>Also asks introduce the decryption key.</para>
-        /// </summary>
-        /// <param name="api">MegaSDK object that started the request</param>
-        /// <param name="request">Information about the request.</param>
-        private void ShowDecryptionAlert(MegaSDK api, MRequest request)
-        {
-            _decryptionAlert = true;            
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                var inputDialog = new CustomInputDialog(
-                    AppMessages.AM_DecryptionKeyAlertTitle,
-                    AppMessages.AM_DecryptionKeyAlertMessage,
-                    App.AppInformation);
-
-                inputDialog.OkButtonTapped += (sender, args) =>
-                    OpenLink(api, request, args.InputText);
-
-                inputDialog.ShowDialog();
-            });
-        }
-
-        /// <summary>
-        /// Show a message indicating that the introduced decryption key is not valid.
-        /// <para>Also asks introduce the correct decryption key.</para>
-        /// </summary>
-        /// <param name="api">MegaSDK object that started the request</param>
-        /// <param name="request">Information about the request.</param>
-        private void ShowDecryptionKeyNotValidAlert(MegaSDK api, MRequest request)
-        {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                var inputDialog = new CustomInputDialog(
-                    AppMessages.AM_DecryptionKeyNotValid,
-                    AppMessages.AM_DecryptionKeyAlertMessage,
-                    App.AppInformation);
-
-                inputDialog.OkButtonTapped += (sender, args) =>
-                    OpenLink(api, request, args.InputText);
-
-                inputDialog.ShowDialog();
-            });
-        }
-
-        /// <summary>
-        /// Open a MEGA file link providing its decryption key.        
-        /// </summary>        
-        /// <param name="api">MegaSDK object that started the request</param>
-        /// <param name="request">Information about the request.</param>
-        /// <param name="decryptionKey">Decryption key of the link.</param>
-        private void OpenLink(MegaSDK api, MRequest request, String decryptionKey)
-        {
-            string[] splittedLink = SplitLink(request.getLink());
-
-            // If the decryption key already includes the "!" character, delete it.
-            if (decryptionKey.StartsWith("!"))
-                decryptionKey = decryptionKey.Substring(1);
-
-            api.getPublicNode(String.Format("{0}!{1}!{2}", splittedLink[0],
-                splittedLink[1], decryptionKey), this);
-        }
-
-        /// <summary>
-        /// Split the MEGA link in its three parts, separated by the "!" chartacter.
-        /// <para>1. MEGA Url address.</para>
-        /// <para>2. Node handle.</para>
-        /// <para>3. Decryption key.</para>
-        /// </summary>        
-        /// <param name="link">Link to split.</param>
-        /// <returns>Char array with the parts of the link.</returns>
-        private string[] SplitLink(string link)
-        {
-            string delimStr = "!";
-            return link.Split(delimStr.ToCharArray(), 3);
-        }
-
-        #endregion
-
         #region Override Methods
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
@@ -241,7 +126,7 @@ namespace MegaApp.MegaApi
                         break;
 
                     case MErrorType.API_ENOENT:
-                        ShowUnavailableLinkAlert();
+                        ShowUnavailableFileLinkAlert();
                         break;
 
                     case MErrorType.API_EINCOMPLETE:
@@ -253,8 +138,8 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            App.ActiveImportLink = request.getLink();
-            MNode publicNode = App.PublicNode = request.getPublicMegaNode();
+            App.LinkInformation.ActiveLink = request.getLink();
+            MNode publicNode = App.LinkInformation.PublicNode = request.getPublicMegaNode();
 
             if (publicNode != null)
             {
