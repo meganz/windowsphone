@@ -223,6 +223,9 @@
     <Compile Include="..\common\Classes\HamburgerMenuItem.cs">
       <Link>Classes\HamburgerMenuItem.cs</Link>
     </Compile>
+    <Compile Include="..\common\Classes\LinkInformation.cs">
+      <Link>Classes\LinkInformation.cs</Link>
+    </Compile>
     <Compile Include="..\common\Classes\MemoryInformation.cs">
       <Link>Classes\MemoryInformation.cs</Link>
     </Compile>
@@ -330,6 +333,9 @@
     </Compile>
     <Compile Include="..\common\Enums\HamburgerMenuItemType.cs">
       <Link>Enums\HamburgerMenuItemType.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Enums\LinkAction.cs">
+      <Link>Enums\LinkAction.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\MediaType.cs">
       <Link>Enums\MediaType.cs</Link>
@@ -493,6 +499,9 @@
     <Compile Include="..\common\MegaApi\LoginRequestListener.cs">
       <Link>MegaApi\LoginRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\LoginToFolderRequestListener.cs">
+      <Link>MegaApi\LoginToFolderRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\LogOutRequestListener.cs">
       <Link>MegaApi\LogOutRequestListener.cs</Link>
     </Compile>
@@ -510,6 +519,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\PauseTransferRequestListener.cs">
       <Link>MegaApi\PauseTransferRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\PublicLinkRequestListener.cs">
+      <Link>MegaApi\PublicLinkRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
       <Link>MegaApi\RemoveContactRequestListener.cs</Link>
@@ -579,6 +591,9 @@
     </Compile>
     <Compile Include="..\common\Models\FileNodeViewModel.cs">
       <Link>Models\FileNodeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\FolderLinkViewModel.cs">
+      <Link>Models\FolderLinkViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\FolderNodeViewModel.cs">
       <Link>Models\FolderNodeViewModel.cs</Link>
@@ -685,6 +700,10 @@
     <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
       <Link>Pages\DownloadPage.xaml.cs</Link>
       <DependentUpon>DownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\common\Pages\FolderLinkPage.xaml.cs">
+      <Link>Pages\FolderLinkPage.xaml.cs</Link>
+      <DependentUpon>FolderLinkPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\InitCameraUploadsPage.xaml.cs">
       <Link>Pages\InitCameraUploadsPage.xaml.cs</Link>
@@ -842,6 +861,9 @@
     <Compile Include="..\common\Services\UiService.cs">
       <Link>Services\UiService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\UriService.cs">
+      <Link>Services\UriService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\ValidationService.cs">
       <Link>Services\ValidationService.cs</Link>
     </Compile>
@@ -904,17 +926,14 @@
     <Content Include="..\common\Assets\AppBar\clear.cache.png">
       <Link>Assets\AppBar\clear.cache.png</Link>
     </Content>
-    <Content Include="..\common\Assets\AppBar\cloud.download.png">
-      <Link>Assets\AppBar\cloud.download.png</Link>
-    </Content>
-    <Content Include="..\common\Assets\AppBar\cloud.upload.png">
-      <Link>Assets\AppBar\cloud.upload.png</Link>
-    </Content>
     <Content Include="..\common\Assets\AppBar\copy.png">
       <Link>Assets\AppBar\copy.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\delete.png">
       <Link>Assets\AppBar\delete.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\download.png">
+      <Link>Assets\AppBar\download.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\edit.png">
       <Link>Assets\AppBar\edit.png</Link>
@@ -924,6 +943,9 @@
     </Content>
     <Content Include="..\common\Assets\AppBar\folder_add.png">
       <Link>Assets\AppBar\folder_add.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\import.png">
+      <Link>Assets\AppBar\import.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\link.png">
       <Link>Assets\AppBar\link.png</Link>
@@ -981,6 +1003,9 @@
     </Content>
     <Content Include="..\common\Assets\AppBar\transport.play.png">
       <Link>Assets\AppBar\transport.play.png</Link>
+    </Content>
+    <Content Include="..\common\Assets\AppBar\upload.png">
+      <Link>Assets\AppBar\upload.png</Link>
     </Content>
     <Content Include="..\common\Assets\Images\01A_storage.png">
       <Link>Assets\Images\01A_storage.png</Link>
@@ -1431,6 +1456,10 @@
     </Page>
     <Page Include="..\common\Pages\DownloadPage.xaml">
       <Link>Pages\DownloadPage.xaml</Link>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\common\Pages\FolderLinkPage.xaml">
+      <Link>Pages\FolderLinkPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\InitCameraUploadsPage.xaml">

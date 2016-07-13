@@ -142,39 +142,45 @@ namespace MegaApp.Pages
             }
         }
 
-        private bool CheckActiveAndOnlineSession()
+        private bool CheckActiveAndOnlineSession(NavigationMode navigationMode = NavigationMode.New)
         {
             bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
             {
                 if (!SettingsService.HasValidSession())
                 {
-                    if(App.AppInformation.UriLink == UriLinkType.Confirm)
+                    if (App.LinkInformation.UriLink == UriLinkType.Confirm && NavigationContext.QueryString.ContainsKey("confirm"))
                     {
-                        App.AppInformation.UriLink = UriLinkType.None;
-                        if(NavigationContext.QueryString.ContainsKey("confirm"))
-                        {
-                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
-                            NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
-                                new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUri) } });
-                        }
+                        string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);
+                        NavigateService.NavigateTo(typeof(ConfirmAccountPage), NavigationParameter.UriLaunch,
+                            new Dictionary<string, string> { { "confirm", HttpUtility.UrlEncode(tempUri) } });
                     }
-                    else if (App.AppInformation.UriLink == UriLinkType.NewSignUp)
+                    else if (App.LinkInformation.UriLink == UriLinkType.NewSignUp && NavigationContext.QueryString.ContainsKey("newsignup"))
                     {
-                        App.AppInformation.UriLink = UriLinkType.None;
-                        if (NavigationContext.QueryString.ContainsKey("newsignup"))
-                        {
-                            string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
-                            NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
-                                new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUri) } });
-                        }
+                        string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
+                        NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.UriLaunch,
+                            new Dictionary<string, string> { { "Pivot", "1" }, { "newsignup", HttpUtility.UrlEncode(tempUri) } });
                     }
-                    else if(App.AppInformation.UriLink != UriLinkType.None)
+                    else if (App.LinkInformation.UriLink == UriLinkType.Folder && NavigationContext.QueryString.ContainsKey("folderlink"))
+                    {
+                        if(navigationMode == NavigationMode.Back)
+                        {
+                            App.LinkInformation.Reset();
+                            NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
+                            return false;
+                        }
+
+                        string tempUri = HttpUtility.UrlDecode(NavigationContext.QueryString["folderlink"]);
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch,
+                            new Dictionary<string, string> { { "folderlink", HttpUtility.UrlEncode(tempUri) } });
+                    }
+                    else if (App.LinkInformation.UriLink != UriLinkType.None)
                     {
                         NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal);
                     }
                     else
-                    {                        
+                    {
+                        App.LinkInformation.Reset();
                         NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.Normal);
                     }
                     
@@ -196,9 +202,9 @@ namespace MegaApp.Pages
             return true;
         }
         
-        private bool CheckSessionAndPinLock()
+        private bool CheckSessionAndPinLock(NavigationMode navigationMode = NavigationMode.New)
         {
-            if (!CheckActiveAndOnlineSession()) return false;
+            if (!CheckActiveAndOnlineSession(navigationMode)) return false;
             if (!CheckPinLock()) return false;
             return true;
         }
@@ -222,10 +228,15 @@ namespace MegaApp.Pages
             }
 
             // If the user is trying to open a MEGA link
-            if (App.ActiveImportLink != null)
+            if (App.LinkInformation.ActiveLink != null)
             {
-                App.MegaSdk.getPublicNode(App.ActiveImportLink,
-                    new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                //Only need to check if is a file link.
+                //The folder links are checked in the "SpecialNavigation" method
+                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                {
+                    App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
+                        new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                }
             }
         }
 
@@ -272,7 +283,7 @@ namespace MegaApp.Pages
 
             // Need to check it always and no only in StartupMode, 
             // because this is the first page loaded
-            if (!CheckSessionAndPinLock()) return;
+            if (!CheckSessionAndPinLock(e.NavigationMode)) return;
 
             if (!NetworkService.IsNetworkAvailable())
             {
@@ -317,7 +328,8 @@ namespace MegaApp.Pages
 
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        _mainPageViewModel.ActiveFolderView);
                 }
 #endif
                 if (navParam == NavigationParameter.PasswordLogin || navParam == NavigationParameter.None ||
@@ -333,6 +345,9 @@ namespace MegaApp.Pages
                         
             if (e.NavigationMode == NavigationMode.Back)
             {
+                if (navParam == NavigationParameter.FolderLinkLaunch)
+                    App.LinkInformation.Reset();
+
                 navParam = NavigationParameter.Browsing;
             }
 
@@ -397,10 +412,15 @@ namespace MegaApp.Pages
                 case NavigationParameter.DisablePassword:
                     break;
                 case NavigationParameter.AutoCameraUpload:
-                case NavigationParameter.ImportLinkLaunch:
+                case NavigationParameter.FileLinkLaunch:
+                case NavigationParameter.FolderLinkLaunch:
+                case NavigationParameter.ImportFolderLink:
                 case NavigationParameter.Normal:
                 case NavigationParameter.None:
                     {
+                        if (navParam == NavigationParameter.ImportFolderLink)
+                            SetImportMode();
+
                         if(navParam != NavigationParameter.Normal)
                             if (!CheckPinLock()) return;
 
@@ -464,11 +484,11 @@ namespace MegaApp.Pages
             }
 
             // Manage URI links
-            switch(App.AppInformation.UriLink)
+            switch (App.LinkInformation.UriLink)
             {
                 case UriLinkType.NewSignUp:
                 case UriLinkType.Confirm:
-                    App.AppInformation.UriLink = UriLinkType.None;
+                    App.LinkInformation.UriLink = UriLinkType.None;
                     if (NavigationContext.QueryString.ContainsKey("newsignup") || 
                         NavigationContext.QueryString.ContainsKey("confirm"))
                     {
@@ -507,15 +527,25 @@ namespace MegaApp.Pages
                     break;
 
                 case UriLinkType.Backup:
-                    App.AppInformation.UriLink = UriLinkType.None;
+                    App.LinkInformation.UriLink = UriLinkType.None;
                     NavigateService.NavigateTo(typeof(SettingsPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string> { { "backup", String.Empty } });                        
                     return true;
 
                 case UriLinkType.FmIpc:
-                    App.AppInformation.UriLink = UriLinkType.None;
+                    App.LinkInformation.UriLink = UriLinkType.None;
                     NavigateService.NavigateTo(typeof(ContactsPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string> { { "Pivot", "2" } });
+                    return true;
+
+                case UriLinkType.Folder:
+                    App.LinkInformation.UriLink = UriLinkType.None;
+                    if (App.LinkInformation.ActiveLink != null && 
+                        App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!") && 
+                        App.AppInformation.HasFetchedNodes)
+                    {
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
+                    }                        
                     return true;
             }
 
@@ -676,6 +706,7 @@ namespace MegaApp.Pages
 
         public void SetImportMode()
         {
+            App.LinkInformation.UriLink = UriLinkType.None;
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.ImportItem;
             SetApplicationBarData();
         }
@@ -1229,20 +1260,23 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            if(App.ActiveImportLink != null)
+            if (App.LinkInformation.ActiveLink != null)
             {
-                _mainPageViewModel.ActiveFolderView.ImportLink(App.ActiveImportLink);                
+                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                    _mainPageViewModel.ActiveFolderView.ImportLink(App.LinkInformation.ActiveLink);
+                else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
+                    _mainPageViewModel.ActiveFolderView.ImportFolderLink();
             }
             else
             {
                 new CustomMessageDialog(
-                    AppMessages.ImportFileFailed_Title,
+                    AppMessages.AM_ImportLinkFailed_Title,
                     AppMessages.AM_InvalidLink,
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
             }
 
-            App.ActiveImportLink = null;
+            App.LinkInformation.Reset(false);
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
@@ -1253,7 +1287,7 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            App.ActiveImportLink = null;
+            App.LinkInformation.Reset();
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();

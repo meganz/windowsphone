@@ -20,14 +20,20 @@ namespace MegaApp.Pages
   
     public partial class PreviewImagePage : MegaPhoneApplicationPage
     {
-        private PreviewImageViewModel _previewImageViewModel;
+        private readonly PreviewImageViewModel _previewImageViewModel;
+        private readonly FolderViewModel _folderViewModel;
+
         private Timer _overlayTimer;
 
         public PreviewImagePage()
         {
-            InitializeComponent();
+            _folderViewModel = NavigateService.GetNavigationData<FolderViewModel>();
+            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, _folderViewModel);
 
-            this.ApplicationBar = (ApplicationBar) Resources["PreviewApplicationBar"];
+            this.DataContext = _previewImageViewModel;
+
+            InitializeComponent();
+            SetApplicationBar();
 
             if(AppService.IsLowMemoryDevice())
                 SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
@@ -37,7 +43,34 @@ namespace MegaApp.Pages
             MemoryControl.Visibility = Visibility.Visible;
             MemoryControl.StartMemoryCounter();
         }
-        
+
+        public void SetApplicationBar(bool isEnabled = true)
+        {
+            // Set the Application Bar to one of the available menu resources in this page
+            SetAppbarResources();
+
+            // Change and translate the current application bar
+            _previewImageViewModel.ChangeMenu(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems);
+
+            UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
+                this.ApplicationBar.MenuItems, isEnabled);
+        }
+
+        private void SetAppbarResources()
+        {
+            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
+            {
+                ApplicationBar = null;
+            }
+            else
+            {
+                if (_folderViewModel.Type == ContainerType.FolderLink)
+                    this.ApplicationBar = (ApplicationBar)Resources["FolderLinkPreviewApplicationBar"];
+                else
+                    this.ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
+            }            
+        }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
@@ -65,22 +98,12 @@ namespace MegaApp.Pages
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        this._folderViewModel);
                 }
                 return;
                 #endif
-            }
-
-            var folder = NavigateService.GetNavigationData<FolderViewModel>();
-
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, folder);
-            _previewImageViewModel.TranslateAppBarItems(
-                        ApplicationBar.Buttons.Cast<ApplicationBarIconButton>().ToList(),
-                        ApplicationBar.MenuItems.Cast<ApplicationBarMenuItem>().ToList(),
-                        new[] { UiResources.Previous, UiResources.Download, UiResources.UI_GetLink, UiResources.Next.ToLower() },
-                        new[] { UiResources.Rename, UiResources.Remove });
-            
-            this.DataContext = _previewImageViewModel;
+            }            
 
             base.OnNavigatedTo(e);
         }        
@@ -105,7 +128,31 @@ namespace MegaApp.Pages
         private void OnViewOriginalClick(object sender, EventArgs e)
         {
             if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
+            {
+                // If the preview is from a folder link set the link information
+                if (_previewImageViewModel.SelectedPreview.ParentContainerType == ContainerType.FolderLink)
+                {
+                    App.LinkInformation.SelectedNodes.Add(_previewImageViewModel.SelectedPreview);
+                    App.LinkInformation.LinkAction = LinkAction.Download;
+                }
+
                 _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+            }                
+        }
+
+        private void OnImportClick(object sender, EventArgs e)
+        {
+            if (_previewImageViewModel != null && _previewImageViewModel.SelectedPreview != null)
+            {
+                // If the preview is from a folder link set the link information
+                if (_previewImageViewModel.SelectedPreview.ParentContainerType == ContainerType.FolderLink)
+                {
+                    App.LinkInformation.SelectedNodes.Add(_previewImageViewModel.SelectedPreview);
+                    App.LinkInformation.LinkAction = LinkAction.Import;
+                }
+
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink);
+            }
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
@@ -199,19 +246,7 @@ namespace MegaApp.Pages
 
         private void OnSlideViewTap(object sender, GestureEventArgs e)
         {
-            SetApplicationBar();
-        }
-
-        private void SetApplicationBar()
-        {
-            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
-            {
-                ApplicationBar = null;
-            }
-            else
-            {
-                ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];
-            }
+            SetAppbarResources();
         }
     }
 }

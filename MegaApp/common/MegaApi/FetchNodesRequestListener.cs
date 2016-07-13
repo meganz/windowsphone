@@ -19,7 +19,7 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    class FetchNodesRequestListener : BaseRequestListener
+    class FetchNodesRequestListener : PublicLinkRequestListener
     {
         private readonly MainPageViewModel _mainPageViewModel;
         private readonly CameraUploadsPageViewModel _cameraUploadsPageViewModel;        
@@ -30,10 +30,34 @@ namespace MegaApp.MegaApi
 
         public FetchNodesRequestListener(MainPageViewModel mainPageViewModel,
             CameraUploadsPageViewModel cameraUploadsPageViewModel = null)
+            : base()
         {
             this._mainPageViewModel = mainPageViewModel;
             this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
 
+            createTimer();
+        }
+
+        public FetchNodesRequestListener(CameraUploadsPageViewModel cameraUploadsPageViewModel)
+            : base()
+        {
+            this._mainPageViewModel = null;
+            this._cameraUploadsPageViewModel = cameraUploadsPageViewModel;            
+
+            createTimer();
+        }
+
+        public FetchNodesRequestListener(FolderLinkViewModel folderLinkViewModel)
+            : base(folderLinkViewModel)
+        {
+            this._mainPageViewModel = null;
+            this._cameraUploadsPageViewModel = null;            
+
+            createTimer();
+        }
+
+        private void createTimer()
+        {
             timerAPI_EAGAIN = new DispatcherTimer();
             timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
             timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
@@ -117,6 +141,16 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            if (_mainPageViewModel != null)
+                FetchNodesMainPage(api, request);
+            else if (_cameraUploadsPageViewModel != null)
+                FetchNodesCameraUploadsPage(api, request);
+            else if (_folderLinkViewModel != null)
+                FetchNodesFolderLink(api, request);
+        }
+
+        private void FetchNodesMainPage(MegaSDK api, MRequest request)
+        {
             App.AppInformation.HasFetchedNodes = true;
 
             api.enableTransferResumption();            
@@ -152,67 +186,42 @@ namespace MegaApp.MegaApi
                 }
                 else shortCutError = true;
 
-                if(shortCutError)
+                if (shortCutError)
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        new CustomMessageDialog(
-                                AppMessages.ShortCutFailed_Title,
-                                AppMessages.ShortCutFailed,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
+                        new CustomMessageDialog(AppMessages.ShortCutFailed_Title,
+                            AppMessages.ShortCutFailed, App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
                     });
                 }
             }
             else
             {
-                if(_mainPageViewModel != null)
-                {
-                    var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
-                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode(), ContainerType.CloudDrive);
-                    var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
-                        NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode(), ContainerType.RubbishBin);
+                var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
+                    NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRootNode(), ContainerType.CloudDrive);
+                var rubbishBinRootNode = _mainPageViewModel.RubbishBin.FolderRootNode ??
+                    NodeService.CreateNew(api, _mainPageViewModel.AppInformation, api.getRubbishNode(), ContainerType.RubbishBin);
 
-                    var autoResetEvent = new AutoResetEvent(false);
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
-                        _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
-                        autoResetEvent.Set();
-                    });
-                    autoResetEvent.WaitOne();
-                }
-                else
+                var autoResetEvent = new AutoResetEvent(false);
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
-                        NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation,
-                        NodeService.FindCameraUploadNode(api, api.getRootNode()), ContainerType.CloudDrive);
-                    
-                    var autoResetEvent = new AutoResetEvent(false);
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        _cameraUploadsPageViewModel.CameraUploads.FolderRootNode = cameraUploadsRootNode;
-                        autoResetEvent.Set();
-                    });
-                    autoResetEvent.WaitOne();
-                }
+                    _mainPageViewModel.CloudDrive.FolderRootNode = cloudDriveRootNode;
+                    _mainPageViewModel.RubbishBin.FolderRootNode = rubbishBinRootNode;
+                    autoResetEvent.Set();
+                });
+                autoResetEvent.WaitOne();                
             }
 
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                if (_mainPageViewModel != null)
-                {
-                    _mainPageViewModel.LoadFolders();
-                    _mainPageViewModel.GetAccountDetails();
+                _mainPageViewModel.LoadFolders();
+                _mainPageViewModel.GetAccountDetails();
 
-                    // Enable MainPage appbar buttons
-                    _mainPageViewModel.SetCommandStatus(true);
+                // Enable MainPage appbar buttons
+                _mainPageViewModel.SetCommandStatus(true);
 
-                    if (_mainPageViewModel.SpecialNavigation()) return;
-                }
-
-                if (_cameraUploadsPageViewModel != null) 
-                    _cameraUploadsPageViewModel.LoadFolders();                
+                if (_mainPageViewModel.SpecialNavigation()) return;                
             });
 
             // KEEP ALWAYS AT THE END OF THE METHOD, AFTER THE "LoadForlders" call
@@ -229,10 +238,103 @@ namespace MegaApp.MegaApi
             });
         }
 
+        private void FetchNodesCameraUploadsPage(MegaSDK api, MRequest request)
+        {
+            App.AppInformation.HasFetchedNodes = true;            
+
+            var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
+                NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation,
+                NodeService.FindCameraUploadNode(api, api.getRootNode()), ContainerType.CloudDrive);
+
+            var autoResetEvent = new AutoResetEvent(false);
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _cameraUploadsPageViewModel.CameraUploads.FolderRootNode = cameraUploadsRootNode;
+                autoResetEvent.Set();
+            });
+            autoResetEvent.WaitOne();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                _cameraUploadsPageViewModel.LoadFolders());
+        }
+
+        private void FetchNodesFolderLink(MegaSDK api, MRequest request)
+        {
+            App.LinkInformation.HasFetchedNodesFolderLink = true;
+
+            var folderLinkRootNode = _folderLinkViewModel.FolderLink.FolderRootNode ??
+                NodeService.CreateNew(api, App.AppInformation, api.getRootNode(), ContainerType.FolderLink);
+
+            var autoResetEvent = new AutoResetEvent(false);
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                _folderLinkViewModel.FolderLink.FolderRootNode = folderLinkRootNode;
+                autoResetEvent.Set();
+            });
+            autoResetEvent.WaitOne();
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                _folderLinkViewModel.LoadFolders());
+        }
+
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Stop());
-            base.onRequestFinish(api, request, e);
+
+            // If is a folder link fetch nodes
+            if (_folderLinkViewModel != null)
+                onRequestFinishFolderLink(api, request, e);
+            else
+                base.onRequestFinish(api, request, e);                
+        }
+
+        private void onRequestFinishFolderLink(MegaSDK api, MRequest request, MError e)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.SetProgressIndicator(false);
+            });
+
+            if (e.getErrorCode() == MErrorType.API_OK)
+            {
+                //If getFlag() returns true, the folder link key is invalid.
+                if (request.getFlag())
+                {
+                    // First logout from the folder
+                    api.logout();
+
+                    // Set the empty state and disable the app bar buttons
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                        _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                    });
+
+                    //If the user have written the key
+                    if (_decryptionAlert)
+                        ShowDecryptionKeyNotValidAlert(api, request);
+                    else
+                        ShowLinkNoValidAlert();
+                }
+                else
+                {
+                    OnSuccesAction(api, request);
+                }
+            }
+            else
+            {
+                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                        _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                    });
+
+                    ShowUnavailableFolderLinkAlert();
+                }
+            }
         }
 
         public override void onRequestStart(MegaSDK api, MRequest request)
