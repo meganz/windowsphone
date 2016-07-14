@@ -504,9 +504,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">pobrań</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ExportRecoveryKeyText" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ExportRecoveryKeyText" translate="yes" space="preserve">
           <source>Export Recovery Key</source>
-          <target state="new">Export Recovery Key</target>
+          <target state="translated">Eksportuj klucz zapasowy</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
@@ -539,9 +539,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Utwórz PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_RecoveryKey" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="new">Recovery Key</target>
+          <target state="translated">Klucz zapasowy</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
@@ -931,8 +931,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
-          <source>Get 2 months free if you subscribe to a one-year Pro plan</source>
-          <target state="translated">Odbierz 2 miesiące za darmo jeżeli wykupić konto Pro na jeden rok.</target>
+          <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
+          <target state="needs-review-translation">Odbierz 2 miesiące za darmo jeżeli wykupić konto PRO na jeden rok.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1069,8 +1069,8 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
-          <source>You can be a Pro user!</source>
-          <target state="translated">Możesz zostać użytkownikiem Pro!</target>
+          <source>You can be a PRO user!</source>
+          <target state="needs-review-translation">Możesz zostać użytkownikiem PRO!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1408,45 +1408,45 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Otwórz link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DebugMode" translate="yes" space="preserve">
+          <source>Debug mode</source>
+          <target state="translated">Tryb Debug</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" space="preserve">
           <source>Memory statistics</source>
-          <target state="new">Memory statistics</target>
+          <target state="translated">Szczegóły pamięci</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Modified" translate="yes" xml:space="preserve">
-          <source>Modified</source>
-          <target state="new">Modified</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
-NOTE: Keep the capital letter if possible.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Size" translate="yes" xml:space="preserve">
-          <source>Size</source>
-          <target state="new">Size</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
-NOTE: Keep the capital letter if possible.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Content" translate="yes" xml:space="preserve">
-          <source>Content</source>
-          <target state="new">Content</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
-NOTE: Keep the capital letter if possible.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_Added" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Added" translate="yes" space="preserve">
           <source>Added</source>
-          <target state="new">Added</target>
+          <target state="translated">Dodano</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_AvailableOffline" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_AvailableOffline" translate="yes" space="preserve">
           <source>Available Offline</source>
-          <target state="new">Available Offline</target>
+          <target state="translated">Dostępne Offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DebugMode" translate="yes" xml:space="preserve">
-          <source>Debug mode</source>
-          <target state="new">Debug mode</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Content" translate="yes" space="preserve">
+          <source>Content</source>
+          <target state="translated">Zawartość</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Modified" translate="yes" space="preserve">
+          <source>Modified</source>
+          <target state="translated">Zmodyfikowany</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Size" translate="yes" space="preserve">
+          <source>Size</source>
+          <target state="translated">Rozmiar</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
       </group>
     </body>

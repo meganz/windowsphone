@@ -494,7 +494,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</comment>
   </data>
   <data name="QuestionAskedDownloadOption" xml:space="preserve">
-    <value>หลังจากที่ดาวน์โหลดเสร็จแล้ว คุณต้องการส่งออกไฟล์ภาพไปยังอัลบั้มรูปถ่ายของคุณโดยอัตโนมัติหรือไม่ คุณยังสามารถเปลี่ยนการตั้งค่านี้ได้ภายหลังที่หน้าการตั้งค่า ส่วนไฟล์ประเภทอื่นๆ จะถูกจัดเก็บไว้ในในโฟลเดอร์บนเครื่องของแอพ</value>
+    <value>หลังจากที่ดาวน์โหลดเสร็จแล้ว คุณต้องการส่งออกไฟล์ภาพไปยังอัลบั้มรูปถ่ายของคุณโดยอัตโนมัติหรือไม่ คุณยังสามารถเปลี่ยนการตั้งค่านี้ได้ภายหลังที่หน้าการตั้งค่า ส่วนไฟล์ประเภทอื่นๆ จะถูกจัดเก็บไว้ในในโฟลเดอร์บนเครื่องของแอป</value>
     <comment>Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</comment>
   </data>
   <data name="PausingTransfersFailed" xml:space="preserve">
@@ -652,7 +652,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="MemoryLimitError" xml:space="preserve">
-    <value>มีเนื้อที่ในอุปกรณ์ไม่เพียงพอสำหรับดำเนินการนี้ และแอพจะปิดตัวลงทันที</value>
+    <value>มีเนื้อที่ในอุปกรณ์ไม่เพียงพอสำหรับดำเนินการนี้ แอปจะปิดตัวลงทันที</value>
     <comment>Message of the dialog displayed when the app exceeds the memory limit quota of the device.</comment>
   </data>
   <data name="MemoryLimitError_Title" xml:space="preserve">
@@ -901,7 +901,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>ใบรับรอง SSL/TLS ของเราไม่สามารถตรวจสอบได้ คุณอาจจะได้รับผลกระทบจากการโจมตีแบบ man-in-the-middle</value>
+    <value>ใบรับรอง SSL/TLS ของเราไม่สามารถตรวจสอบได้ คุณอาจจะได้รับผลกระทบจากการลักลอบดักข้อมูล</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -1134,14 +1134,14 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
 - ไฟล์ถูกลบออกเพราะมีการละเมิด ToS/AUP
-- URL ไม่ถูกต้อง - ลิงค์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
 - ไฟล์ถูกลบโดยผู้ใช้</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
 - โฟลเดอร์ถูกลบออกเพราะมีการละเมิด ToS/AUP
-- URL ไม่ถูกต้อง - ลิงค์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
 - โฟลเดอร์ถูกลบโดยผู้ใช้</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
@@ -1165,5 +1165,91 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
     <value>ไม่ได้รับอนุญาตให้เข้าถึง</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
+    <value>ไม่สามารถคัดลอกคีย์สำหรับกู้คืนไปยังคลิปบอร์ดของคุณได้ กรุณาลองใหม่อีกครั้ง</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
+    <value>คัดลอกไปคลิปบอร์ดไม่สำเร็จ</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied" xml:space="preserve">
+    <value>คีย์สำหรับกู้คืนถูกคัดลอกไปที่คลิปบอร์ดแล้ว</value>
+    <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
+    <value>คีย์สำหรับกู้คืนถูกคัดลอกแล้ว</value>
+    <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyFailed" xml:space="preserve">
+    <value>ไม่สามารถคัดลอกรายได้ กรุณาลองใหม่อีกครั้ง</value>
+    <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
+  </data>
+  <data name="AM_CopyFailed_Title" xml:space="preserve">
+    <value>คัดลอกไม่สำเร็จ</value>
+    <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Message" xml:space="preserve">
+    <value>รายการบันทึก ({0}) จะถูกลบออกจากส่วนออฟไลน์</value>
+    <comment>Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Title" xml:space="preserve">
+    <value>ปิดใช้งานโหมดดีบัก</value>
+    <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Message" xml:space="preserve">
+    <value>รายการบันทึกจะถูกสร้างในส่วนออฟไลน์ ({0})</value>
+    <comment>Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Title" xml:space="preserve">
+    <value>เปิดใช้งานโหมดดีบัก</value>
+    <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
+    <value>โหมดดีบักถูกเปิดใช้งาน คุณต้องการที่จะปิดการใช้งานหรือไม่</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
+    <value>โหมดดีบัก</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
+    <value>รายการนี้ถูกแชร์โดยแอป MEGA บน Windows Phone</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
+    <value>รายการที่แชร์จาก MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
+    <value>รายการนี้ถูกแชร์โดยแอป MEGA บน Windows Phone</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
+    <value>รายการที่แชร์จาก MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderFailed" xml:space="preserve">
+    <value>Failed to import folder. Please try again.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
+  </data>
+  <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
+    <value>Folder import failed</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
+    <value>Link import failed</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
+    <value>Failed to share item(s) from MEGA. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
+    <value>Error sharing item(s)</value>
+    <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
 </root>

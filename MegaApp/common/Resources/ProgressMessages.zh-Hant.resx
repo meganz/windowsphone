@@ -307,4 +307,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>正在開啟資料夾連結...</value>
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
+  <data name="PM_CopyNode" xml:space="preserve">
+    <value>複製中...</value>
+    <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ImportFolder" xml:space="preserve">
+    <value>正在匯入資料夾...</value>
+    <comment>Progress indicator message when importing a folder - (String as short as possible).</comment>
+  </data>
 </root>
