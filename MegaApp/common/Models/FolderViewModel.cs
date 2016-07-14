@@ -299,7 +299,7 @@ namespace MegaApp.Models
                     if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
                     {
                         App.LinkInformation.UriLink = UriLinkType.File;
-                        App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink, new GetPublicNodeRequestListener(this));
+                        this.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink, new GetPublicNodeRequestListener(this));
                     }                        
                     else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
                     {
@@ -342,7 +342,7 @@ namespace MegaApp.Models
                 }
                 else
                 {
-                    App.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
+                    this.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
                         new CopyNodeRequestListener(true));
                 }
             }
@@ -354,7 +354,7 @@ namespace MegaApp.Models
             // Create all the new folder nodes.
             foreach (var folderNode in folderNodesToImport)
             {
-                App.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
+                this.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
                     new CreateFolderRequestListener(true));
             }
         }
@@ -644,7 +644,7 @@ namespace MegaApp.Models
         {
             this.FocusedNode = node;
 
-            var existingNode = SavedForOffline.ReadNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            var existingNode = SavedForOffline.ReadNodeByFingerprint(this.MegaSdk.getNodeFingerprint(node.OriginalMNode));
             if(existingNode != null && !String.IsNullOrWhiteSpace(existingNode.LocalPath) && 
                 FileService.FileExists(existingNode.LocalPath))
             {                
@@ -713,7 +713,7 @@ namespace MegaApp.Models
             {
                 var folderNode = node as FolderNodeViewModel;
                 if (folderNode != null)
-                    downloadCount += NodeService.GetRecursiveNodes(MegaSdk, AppInformation, folderNode).Count;
+                    downloadCount += NodeService.GetRecursiveNodes(this.MegaSdk, AppInformation, folderNode).Count;
                 else
                     downloadCount++;
             }            
