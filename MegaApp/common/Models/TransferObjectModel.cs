@@ -279,11 +279,7 @@ namespace MegaApp.Models
             return false;
         }
 
-        #if WINDOWS_PHONE_80
-        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        #elif WINDOWS_PHONE_81
-        public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        #endif
+        public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)        
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -356,7 +352,7 @@ namespace MegaApp.Models
                                         if (exportToPhotoAlbum)
                                             Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
                                     }
-#endif
+                                    #endif
                                 }
                             }
                             else //If is a standard download transfer (no for save for offline)
