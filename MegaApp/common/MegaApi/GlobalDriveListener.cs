@@ -416,13 +416,11 @@ namespace MegaApp.MegaApi
                         if(existingContact != null)
                         {
                             // If the contact is no longer a contact (REMOVE CONTACT SCENARIO)
-                            if (!existingContact.Visibility.Equals(user.getVisibility()) && !(user.getVisibility().Equals(MUserVisibility.VISIBILITY_VISIBLE)))
+                            if (!existingContact.Visibility.Equals(user.getVisibility()) && 
+                                !(user.getVisibility().Equals(MUserVisibility.VISIBILITY_VISIBLE)))
                             {
                                 Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                {
-                                    contactViewModel.MegaContactsList.Remove(existingContact);
-                                    contactViewModel.GetMegaContacts();
-                                });
+                                    contactViewModel.MegaContactsList.Remove(existingContact));
                             }
                             // If the contact has been changed (UPDATE CONTACT SCENARIO) and is not an own change
                             else if (!Convert.ToBoolean(user.isOwnChange())) 
@@ -474,11 +472,6 @@ namespace MegaApp.MegaApi
                                 new GetContactDataRequestListener(_megaContact));
                             api.getUserAvatar(user, _megaContact.AvatarPath, 
                                 new GetContactAvatarRequestListener(_megaContact));                            
-                        }
-                        else
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                contactViewModel.GetMegaContacts());
                         }
                     }
 
