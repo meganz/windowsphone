@@ -22,47 +22,46 @@
         <shell:ApplicationBar x:Key="SavedForOfflineMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
-					Text="refresh"	
-					Click="OnRefreshClick"			
-				/>
+                    Text="refresh"	
+                    Click="OnRefreshClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="sort"	
-					Click="OnSortClick"			
-				/>
+                    Text="sort"	
+                    Click="OnSortClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="select"	
-					Click="OnMultiSelectClick"			
-				/>
+                    Text="select"
+                    Click="OnMultiSelectClick"
+                />
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
         
         <shell:ApplicationBar x:Key="MultiSelectMenu">
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem
-					Text="cancel"	
-					Click="OnMultiSelectClick"			
-				/>
+                    Text="select all"
+                    Click="OnSelectAllClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="select all"	
-					Click="OnSelectAllClick"			
-				/>
+                    Text="deselect all"
+                    Click="OnDeselectAllClick"
+                />
                 <shell:ApplicationBarMenuItem
-					Text="deselect all"	
-					Click="OnDeselectAllClick"			
-				/>
-            </shell:ApplicationBar.MenuItems>            
+                    Text="cancel"
+                    Click="OnMultiSelectClick"
+                />
+            </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/remove.png" 
-        		Text="remove" 
-        		Click="OnMultiSelectRemoveClick" 
-			/>
+                IconUri="/Assets/AppBar/share_icon.png" 
+                Text="share" 
+                Click="OnMultiSelectShareClick" 
+            />
             <shell:ApplicationBarIconButton 
-        		IconUri="/Assets/AppBar/open.png" 
-        		Text="share" 
-        		Click="OnMultiSelectShareClick" 
-			/>
+                IconUri="/Assets/AppBar/remove.png" 
+                Text="remove" 
+                Click="OnMultiSelectRemoveClick" 
+            />
         </shell:ApplicationBar>
-
     </userControls:MegaPhoneApplicationPage.Resources>
     
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -212,7 +211,7 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse x:Name="HamburgerAvatarLetterBackgroud" Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
                             <Ellipse.Fill>
-                                <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                <SolidColorBrush Color="{Binding UserData.AvatarColor}"/>
                             </Ellipse.Fill>
                         </Ellipse>
                         <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding UserData.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>

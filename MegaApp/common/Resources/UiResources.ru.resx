@@ -150,7 +150,7 @@
     <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
   </data>
   <data name="Copy" xml:space="preserve">
-    <value>Скопировать</value>
+    <value>Копировать</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmailWatermark" xml:space="preserve">
@@ -194,7 +194,7 @@
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
-    <value>следующий</value>
+    <value>далее</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Open" xml:space="preserve">
@@ -248,10 +248,6 @@
   <data name="SingleFolder" xml:space="preserve">
     <value>Папка</value>
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>Размер:</value>
-    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>Нет передач</value>
@@ -1205,15 +1201,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenMegaLink" xml:space="preserve">
-    <value>Open MEGA link</value>
+    <value>Открыть MEGA-ссылку</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
   <data name="UI_PasteMegaLink" xml:space="preserve">
-    <value>Paste MEGA link:</value>
+    <value>Вставить MEGA-ссылку</value>
     <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
-    <value>Import to {0}</value>
+    <value>Импорт в {0}</value>
     <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
 Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
   </data>
@@ -1236,5 +1232,46 @@ Preserve the {0} code because is for include the name of the destination folder 
   <data name="UI_OpenLink" xml:space="preserve">
     <value>Открыть ссылку</value>
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
+    <value>Экспорт ключа восстановления</value>
+    <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
+  </data>
+  <data name="UI_RecoveryKey" xml:space="preserve">
+    <value>Ключ Восстановления</value>
+    <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DebugMode" xml:space="preserve">
+    <value>Режим отладки</value>
+    <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MemoryStatistics" xml:space="preserve">
+    <value>Использование ОЗУ</value>
+    <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Added" xml:space="preserve">
+    <value>Добавлено</value>
+    <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_AvailableOffline" xml:space="preserve">
+    <value>Доступно локально</value>
+    <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Content" xml:space="preserve">
+    <value>Контент</value>
+    <comment>Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Modified" xml:space="preserve">
+    <value>Изменено</value>
+    <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Размер</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
   </data>
 </root>

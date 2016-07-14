@@ -1149,20 +1149,106 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
-    <value>Open link failed [{0}]</value>
+    <value>Buka link gagal [{0}]</value>
     <comment>Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>Open link failed</value>
+    <value>Gagal membuka link</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
-    <value>You don't have access to the selected download path. Please select a different download path and try again.</value>
+    <value>Anda tidak memiliki akses ke download path yang terpilih. Harap pilih download path yang berbeda dan coba kembali.</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
     <value>Akses tidak sah</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
+    <value>Gagal mengkopi Recovery Key ke clipboard anda. Harap coba kembali.</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
+    <value>Cliboard gagal</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied" xml:space="preserve">
+    <value>Recovery Key terkopi ke clipboard</value>
+    <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
+    <value>Recovery key terkopi</value>
+    <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyFailed" xml:space="preserve">
+    <value>Gagal mengkopi item. Harap coba kembali.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
+  </data>
+  <data name="AM_CopyFailed_Title" xml:space="preserve">
+    <value>Copy gagal</value>
+    <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Message" xml:space="preserve">
+    <value>Log ({0}) akan dihapus dari seksi Offline</value>
+    <comment>Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Title" xml:space="preserve">
+    <value>Matikan mode DEBUG</value>
+    <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Message" xml:space="preserve">
+    <value>Sebuah log akan dibuat pada seksi Offline ({0}).</value>
+    <comment>Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Title" xml:space="preserve">
+    <value>Nyalakan mode DEBUG</value>
+    <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
+    <value>Debug mode telah diaktifkan. Apakah anda ingin meng-nonaktifkan?</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
+    <value>Mode debug</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
+    <value>Item dibagikan oleh Windows Phone MEGA app.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
+    <value>Item dibagikan dari MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
+    <value>Items dibagikan oleh Windows Phone MEGA app.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
+    <value>Items dibagikan dari MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderFailed" xml:space="preserve">
+    <value>Gagal mengimpor folder. Harap coba kembali.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
+  </data>
+  <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
+    <value>Folder import gagal</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
+    <value>Import link gagal</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
+    <value>Gagal membagikan item(s) dari MEGA. Harap coba kembali.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
+    <value>Gagal membagi item(s)</value>
+    <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
 </root>

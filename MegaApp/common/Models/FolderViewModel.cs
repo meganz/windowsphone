@@ -21,6 +21,7 @@ using System.Windows.Input;
 using Telerik.Windows.Controls;
 using Windows.Storage;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
@@ -46,6 +47,7 @@ namespace MegaApp.Models
             this.RemoveItemCommand = new DelegateCommand(this.RemoveItem);
             this.RenameItemCommand = new DelegateCommand(this.RenameItem);
             this.DownloadItemCommand = new DelegateCommand(this.DownloadItem);
+            this.ImportItemCommand = new DelegateCommand(this.ImportItem);
             this.CreateShortCutCommand = new DelegateCommand(this.CreateShortCut);
             this.ChangeViewCommand = new DelegateCommand(this.ChangeView);
             this.GetLinkCommand = new DelegateCommand(this.GetLink);
@@ -75,6 +77,9 @@ namespace MegaApp.Models
                 case ContainerType.ContactInShares:
                     this.CurrentDisplayMode = DriveDisplayMode.ContactInShares;
                     break;
+                case ContainerType.FolderLink:
+                    this.CurrentDisplayMode = DriveDisplayMode.FolderLink;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException("containerType");
             }
@@ -92,6 +97,7 @@ namespace MegaApp.Models
         public ICommand RenameItemCommand { get; private set; }
         public ICommand RemoveItemCommand { get; private set; }
         public ICommand DownloadItemCommand { get; private set; }
+        public ICommand ImportItemCommand { get; private set; }
         public ICommand CreateShortCutCommand { get; private set; }
         public ICommand MultiSelectCommand { get; set; }
         public ICommand ViewDetailsCommand { get; private set; }
@@ -141,7 +147,8 @@ namespace MegaApp.Models
         public void LoadChildNodes()
         {
             // User must be online to perform this operation
-            if (!IsUserOnline()) return;
+            if ((this.Type != ContainerType.FolderLink) && !IsUserOnline()) 
+                return;
 
             // First cancel any other loading task that is busy
             CancelLoad();
@@ -285,14 +292,88 @@ namespace MegaApp.Models
             var inputDialog = new CustomInputDialog(UiResources.UI_OpenMegaLink, UiResources.UI_PasteMegaLink, this.AppInformation);
             inputDialog.OkButtonTapped += (sender, args) =>
             {
-                this.MegaSdk.getPublicNode(args.InputText, new GetPublicNodeRequestListener(this));
+                if (!String.IsNullOrWhiteSpace(args.InputText))
+                {
+                    App.LinkInformation.ActiveLink = UriService.ReformatUri(args.InputText);
+
+                    if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                    {
+                        App.LinkInformation.UriLink = UriLinkType.File;
+                        this.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink, new GetPublicNodeRequestListener(this));
+                    }                        
+                    else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
+                    {
+                        App.LinkInformation.UriLink = UriLinkType.Folder;
+                        NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
+                    }                        
+                }
             };
             inputDialog.ShowDialog();
         }
 
+        /// <summary>
+        /// Method to import the selected nodes or the entire content of a folder link.
+        /// </summary>
+        public void ImportFolderLink()
+        {
+            // If no selected nodes, there is nothing to import
+            if (App.LinkInformation.SelectedNodes.Count < 1) return;
+
+            // First clear the dictionaries from possible previous import processes
+            App.LinkInformation.FolderPaths.Clear();
+            App.LinkInformation.FoldersToImport.Clear();
+
+            // Explore the child nodes. Store the folders in a new list and add them to
+            // the corresponding dictionary. Copy the file nodes.
+            List<MNode> folderNodesToImport = new List<MNode>();
+            foreach (var node in App.LinkInformation.SelectedNodes)
+            {
+                if (node.IsFolder)
+                {
+                    folderNodesToImport.Add(node.OriginalMNode);
+
+                    // Need to fix the path in case of import an entire folder link.
+                    var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
+                    if (nodePath.CompareTo("/") == 0)
+                        nodePath = String.Concat(nodePath, node.Name);
+
+                    if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
+                        App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
+                }
+                else
+                {
+                    this.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
+                        new CopyNodeRequestListener(true));
+                }
+            }
+
+            // Add the list with the new folder nodes to import to the corresponding dictionary.
+            if (!App.LinkInformation.FoldersToImport.ContainsKey(FolderRootNode.Base64Handle))
+                App.LinkInformation.FoldersToImport.Add(FolderRootNode.Base64Handle, folderNodesToImport);
+
+            // Create all the new folder nodes.
+            foreach (var folderNode in folderNodesToImport)
+            {
+                this.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
+                    new CreateFolderRequestListener(true));
+            }
+        }
+
         public void ImportLink(string link)
         {
-            if (String.IsNullOrEmpty(link) || String.IsNullOrWhiteSpace(link)) return;
+            if (String.IsNullOrWhiteSpace(link))
+            {
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.ImportFileFailed_Title,
+                        AppMessages.AM_InvalidLink,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+
+                return;
+            }
 
             if (this.FolderRootNode == null)
             {
@@ -490,6 +571,14 @@ namespace MegaApp.Models
                             this.EmptyInformationText = UiResources.EmptyOffline.ToLower();
                         });
                         break;
+
+                    case ContainerType.FolderLink:
+                        OnUiThread(() =>
+                        {
+                            this.EmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaNodeListEmptyContent"];
+                            this.EmptyInformationText = UiResources.EmptyFolder.ToLower();
+                        });
+                        break;
                 }
             }
         }
@@ -555,7 +644,7 @@ namespace MegaApp.Models
         {
             this.FocusedNode = node;
 
-            var existingNode = SavedForOffline.ReadNodeByFingerprint(MegaSdk.getNodeFingerprint(node.OriginalMNode));
+            var existingNode = SavedForOffline.ReadNodeByFingerprint(this.MegaSdk.getNodeFingerprint(node.OriginalMNode));
             if(existingNode != null && !String.IsNullOrWhiteSpace(existingNode.LocalPath) && 
                 FileService.FileExists(existingNode.LocalPath))
             {                
@@ -571,11 +660,14 @@ namespace MegaApp.Models
             }            
         }
 
-        public async void MultipleDownload(StorageFolder downloadFolder = null)
+        public async void MultipleDownload(String downloadPath = null)
         {
-            int count = ChildNodes.Count(n => n.IsMultiSelected);
+            if (this.Type == ContainerType.FolderLink)
+                this.SelectedNodes = App.LinkInformation.SelectedNodes;
+            else
+                this.SelectedNodes = ChildNodes.Where(n => n.IsMultiSelected).ToList();            
 
-            if (count < 1) return;
+            if (this.SelectedNodes.Count < 1) return;
 
             // Only 1 Folder Picker can be open at 1 time
             if (this.AppInformation.PickerOrAsyncDialogIsOpen) return;
@@ -603,9 +695,10 @@ namespace MegaApp.Models
                 SettingsService.SaveSetting(SettingsResources.QuestionAskedDownloadOption, true);
             }
             #elif WINDOWS_PHONE_81
-            if (downloadFolder == null)
-            {                
-                if (!await FolderService.SelectDownloadFolder()) return;
+            if (downloadPath == null)
+            {
+                if (!await FolderService.SelectDownloadFolder()) { return; }
+                else { downloadPath = AppService.GetSelectedDownloadDirectoryPath(); }
             }
             #endif
 
@@ -616,29 +709,14 @@ namespace MegaApp.Models
 
             // First count the number of downloads before proceeding to the transfers.
             int downloadCount = 0;
-            var downloadNodes = new List<IMegaNode>();
-
-            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            foreach (var node in SelectedNodes)
             {
-                // If selected file is a folder then also select it childnodes to download
                 var folderNode = node as FolderNodeViewModel;
                 if (folderNode != null)
-                {
-                    List<NodeViewModel> recursiveNodes = NodeService.GetRecursiveNodes(MegaSdk, AppInformation, folderNode);
-                    foreach (var recursiveNode in recursiveNodes)
-                    {
-                        downloadNodes.Add(recursiveNode);
-                        downloadCount++;
-                    }
-                }
+                    downloadCount += NodeService.GetRecursiveNodes(this.MegaSdk, AppInformation, folderNode).Count;
                 else
-                {
-                    // No folder then just add node to transferlist
-                    downloadNodes.Add(node);
                     downloadCount++;
-                }
-
-            }
+            }            
 
             if (! await AppService.DownloadLimitCheck(downloadCount))
             {
@@ -646,18 +724,13 @@ namespace MegaApp.Models
                 return;
             }
 
-            downloadNodes.ForEach(n =>
-            {
-                if (downloadFolder != null)
-                    n.Transfer.DownloadFolderPath = downloadFolder.Path;
-                App.MegaTransfers.Add(n.Transfer);
-                n.Transfer.StartTransfer();
-            });
+            foreach (var node in SelectedNodes)
+                node.Download(App.MegaTransfers, downloadPath);
 
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
+            //OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
         }
 
         public bool SelectMultipleItemsForMove()
@@ -756,10 +829,18 @@ namespace MegaApp.Models
             FocusedNode.Download(App.MegaTransfers);
         }
 
+        private void ImportItem(object obj)
+        {
+            App.LinkInformation.SelectedNodes.Add(FocusedNode);
+            App.LinkInformation.LinkAction = LinkAction.Import;
+
+            OnUiThread(() => NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink));
+        }
+
         private void ViewDetails(object obj)
         {
-            NodeViewModel node = NodeService.CreateNew(App.MegaSdk, App.AppInformation,
-                App.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
+            NodeViewModel node = NodeService.CreateNew(this.MegaSdk, App.AppInformation,
+                this.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
 
             OnUiThread(() => NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node));
         }

@@ -41,7 +41,9 @@ namespace MegaApp.Models
             _isDebugMode = true;
             SettingsService.SaveSetting(SettingsResources.DebugModeIsEnabled, true);
             MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_MAX);
-            File.Create(AppService.GetFileLogPath());
+            try { File.Create(AppService.GetFileLogPath()); }
+            catch (IOException)
+            { /* No problem, because it will be created when writes the first line if not exists. */ }
 
             if (App.SavedForOfflineViewModel != null)
                 App.SavedForOfflineViewModel.SavedForOffline.Refresh();

@@ -53,7 +53,7 @@
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
-          <target state="translated">Скопировать</target>
+          <target state="translated">Копировать</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CreateAccount" translate="yes" space="preserve">
@@ -133,7 +133,7 @@
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
-          <target state="translated">следующий</target>
+          <target state="translated">далее</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Open" translate="yes" space="preserve">
@@ -143,7 +143,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
           <source>Open MEGA link</source>
-          <target state="translated">Open MEGA link</target>
+          <target state="translated">Открыть MEGA-ссылку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
@@ -205,11 +205,6 @@
           <source>folder</source>
           <target state="translated">Папка</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Size" translate="yes" space="preserve">
-          <source>Size:</source>
-          <target state="translated">Размер:</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoTransfers" translate="yes" space="preserve">
           <source>No transfers</source>
@@ -509,9 +504,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">скачки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ExportRecoveryKeyText" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ExportRecoveryKeyText" translate="yes" space="preserve">
           <source>Export Recovery Key</source>
-          <target state="new">Export Recovery Key</target>
+          <target state="translated">Экспорт ключа восстановления</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</note>
         </trans-unit>
         <trans-unit id="Resx/ExportPhotoAlbumText" translate="yes" space="preserve">
@@ -544,9 +539,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">создать PIN-блок</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_RecoveryKey" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="new">Recovery Key</target>
+          <target state="translated">Ключ Восстановления</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
@@ -936,8 +931,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
-          <source>Get 2 months free if you subscribe to a one-year Pro plan</source>
-          <target state="translated">Выберите годовой Про план и получите 2 бесплатных месяца</target>
+          <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
+          <target state="needs-review-translation">Выберите годовой Про план и получите 2 бесплатных месяца</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1008,7 +1003,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
           <source>Paste MEGA link:</source>
-          <target state="translated">Paste MEGA link:</target>
+          <target state="translated">Вставить MEGA-ссылку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
@@ -1074,8 +1069,8 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
-          <source>You can be a Pro user!</source>
-          <target state="translated">Вы можете стать Про пользователем!</target>
+          <source>You can be a PRO user!</source>
+          <target state="needs-review-translation">Вы можете стать Про пользователем!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1095,7 +1090,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">
           <source>Import to {0}</source>
-          <target state="translated">Import to {0}</target>
+          <target state="translated">Импорт в {0}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
 Preserve the {0} code because is for include the name of the destination folder in runtime.</note>
         </trans-unit>
@@ -1413,15 +1408,45 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Открыть ссылку</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_DebugMode" translate="yes" space="preserve">
+          <source>Debug mode</source>
+          <target state="translated">Режим отладки</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" space="preserve">
           <source>Memory statistics</source>
-          <target state="new">Memory statistics</target>
+          <target state="translated">Использование ОЗУ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_DebugMode" translate="yes" xml:space="preserve">
-          <source>Debug mode</source>
-          <target state="new">Debug mode</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Added" translate="yes" space="preserve">
+          <source>Added</source>
+          <target state="translated">Добавлено</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_AvailableOffline" translate="yes" space="preserve">
+          <source>Available Offline</source>
+          <target state="translated">Доступно локально</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Content" translate="yes" space="preserve">
+          <source>Content</source>
+          <target state="translated">Контент</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Modified" translate="yes" space="preserve">
+          <source>Modified</source>
+          <target state="translated">Изменено</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Size" translate="yes" space="preserve">
+          <source>Size</source>
+          <target state="translated">Размер</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
       </group>
     </body>

@@ -346,6 +346,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to import folder. Please try again..
+        /// </summary>
+        public static string AM_ImportFolderFailed {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Folder import failed.
+        /// </summary>
+        public static string AM_ImportFolderFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Link import failed.
+        /// </summary>
+        public static string AM_ImportLinkFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Invalid link.
         /// </summary>
         public static string AM_InvalidLink {
@@ -477,6 +504,24 @@ namespace MegaApp.Resources {
         public static string AM_RecoveryKeyCopied_Title {
             get {
                 return ResourceManager.GetString("AM_RecoveryKeyCopied_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to share item(s) from MEGA. Please try again..
+        /// </summary>
+        public static string AM_ShareFromMegaFailed_Message {
+            get {
+                return ResourceManager.GetString("AM_ShareFromMegaFailed_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error sharing item(s).
+        /// </summary>
+        public static string AM_ShareFromMegaFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ShareFromMegaFailed_Title", resourceCulture);
             }
         }
         

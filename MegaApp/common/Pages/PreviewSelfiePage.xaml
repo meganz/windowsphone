@@ -21,7 +21,7 @@
 
 	<userControls:MegaPhoneApplicationPage.ApplicationBar>
 		<shell:ApplicationBar>				
-			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/cloud.upload.png" Text="upload" Click="OnUploadClick" />			
+			<shell:ApplicationBarIconButton IconUri="/Assets/AppBar/upload.png" Text="upload" Click="OnUploadClick" />			
 		</shell:ApplicationBar>
 	</userControls:MegaPhoneApplicationPage.ApplicationBar>
 </userControls:MegaPhoneApplicationPage>
