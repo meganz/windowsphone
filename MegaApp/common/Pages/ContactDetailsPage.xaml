@@ -22,9 +22,9 @@
 
     <userControls:MegaPhoneApplicationPage.Resources>
         <shell:ApplicationBar x:Key="ContactDetailsMenu">
-            <shell:ApplicationBarIconButton x:Name="BtnMessage" IconUri="/Assets/AppBar/start conversation.png" Text="message" Click="OnMessageClick" IsEnabled="False"/>
+            <!--<shell:ApplicationBarIconButton x:Name="BtnMessage" IconUri="/Assets/AppBar/start conversation.png" Text="message" Click="OnMessageClick" IsEnabled="False"/>
             <shell:ApplicationBarIconButton x:Name="BtnSendFiles" IconUri="/Assets/AppBar/send file.png" Text="send files" Click="OnSendFilesClick" IsEnabled="False"/>
-            <shell:ApplicationBarIconButton x:Name="BtnShareFolders" IconUri="/Assets/AppBar/share folder.png" Text="share folder" Click="OnShareFolderClick" IsEnabled="False"/>            
+            <shell:ApplicationBarIconButton x:Name="BtnShareFolders" IconUri="/Assets/AppBar/share folder.png" Text="share folder" Click="OnShareFolderClick" IsEnabled="False"/>-->
         </shell:ApplicationBar>
     </userControls:MegaPhoneApplicationPage.Resources>
 
