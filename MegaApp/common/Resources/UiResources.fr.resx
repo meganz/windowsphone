@@ -138,7 +138,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Espace de stockage</value>
+    <value>Stockage nuagique</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -249,16 +249,12 @@
     <value>dossier</value>
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="Size" xml:space="preserve">
-    <value>Taille :</value>
-    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>Aucun transfert</value>
     <comment>Label shown when the app has no information about the transfers to show into 'transfers' page - (String as short as possible).</comment>
   </data>
   <data name="Upload" xml:space="preserve">
-    <value>envoyer</value>
+    <value>téléversement</value>
     <comment>Label for any 'Upload' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Transfers" xml:space="preserve">
@@ -286,7 +282,7 @@
     <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Upload" xml:space="preserve">
-    <value>Upload en cours...</value>
+    <value>Téléversement...</value>
     <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="Download" xml:space="preserve">
@@ -322,11 +318,11 @@
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
-    <value>Non</value>
+    <value>Désactivé</value>
     <comment>Label for any 'Off' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="On" xml:space="preserve">
-    <value>Oui</value>
+    <value>Activé</value>
     <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Done" xml:space="preserve">
@@ -381,7 +377,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="FileUpload" xml:space="preserve">
-    <value>Envoyer un fichier</value>
+    <value>Téléverser un fichier</value>
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Import" xml:space="preserve">
@@ -405,11 +401,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for 'Take photo' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="UploadOptionsTitle" xml:space="preserve">
-    <value>Options d'uploads</value>
+    <value>Options de téléversement</value>
     <comment>Label used like title for the upload file dialog (upload file, photo, selfie, etc.).</comment>
   </data>
   <data name="ImageUpload" xml:space="preserve">
-    <value>Envoyer une image</value>
+    <value>Téléverser une image</value>
     <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Storage" xml:space="preserve">
@@ -582,7 +578,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Total' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
   <data name="Uploads" xml:space="preserve">
-    <value>envois</value>
+    <value>téléversements</value>
     <comment>Label for any 'Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Used" xml:space="preserve">
@@ -638,7 +634,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Uploaded" xml:space="preserve">
-    <value>uploadé</value>
+    <value>téléversé</value>
     <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
@@ -702,7 +698,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Envoi des Photos de la Caméra</value>
+    <value>Téléversement de l'appareil</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -726,7 +722,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>Réglages uploads apparel photo</value>
+    <value>Régler - téléversement appareil photo</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
@@ -742,7 +738,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Activer l'Envoi des Photos de la Caméra</value>
+    <value>Activer téléversement photos</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -810,7 +806,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>Gagnez 2 mois gratuits en prenant un abonnement d'un an à un plan Pro.</value>
+    <value>Gagnez 2 mois gratuits en prenant un abonnement d'un an à un plan PRO.</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
@@ -897,7 +893,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label shown when the app has no available payment methods to the selected subscription plan.</comment>
   </data>
   <data name="CreditCard" xml:space="preserve">
-    <value>Carte de Crédut</value>
+    <value>Carte de crédit</value>
     <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PhoneBill" xml:space="preserve">
@@ -917,7 +913,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>Vous pouvez devenir un utilisateur Pro !</value>
+    <value>Vous pouvez devenir un utilisateur PRO !</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
@@ -1049,7 +1045,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
 Preserve the {0} code because is for include a number in runtime.</comment>
   </data>
   <data name="AutoUpload" xml:space="preserve">
-    <value>Uplaod Automatique</value>
+    <value>Téléversement automatique</value>
     <comment>Label for "Auto Upload" settings pivot</comment>
   </data>
   <data name="General" xml:space="preserve">
@@ -1073,7 +1069,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
-    <value>Réglages uploads</value>
+    <value>Paramètres de téléversement</value>
     <comment>Label for the auto camera upload setting options</comment>
   </data>
   <data name="Incoming" xml:space="preserve">
@@ -1085,7 +1081,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>Souhaitez-vous activer les Uploads Automatiques de la Caméra?</value>
+    <value>Voulez-vous activer le service de téléversement automatique de l'appareil photo?</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
@@ -1109,7 +1105,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>Aucun fichier dans votre espace de stockage</value>
+    <value>Aucun fichier dans votre stockage nuagique</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1133,7 +1129,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
-    <value>Aucun upload</value>
+    <value>Aucun téléversement</value>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
@@ -1185,7 +1181,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
-    <value>Supprimer le lien</value>
+    <value>Retirer le lien</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
@@ -1205,15 +1201,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenMegaLink" xml:space="preserve">
-    <value>Open MEGA link</value>
+    <value>Ouvrir lien MEGA</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
   <data name="UI_PasteMegaLink" xml:space="preserve">
-    <value>Paste MEGA link:</value>
+    <value>Coller le lien MEGA :</value>
     <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
-    <value>Import to {0}</value>
+    <value>Importer vers {0}</value>
     <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
 Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
   </data>
@@ -1222,19 +1218,60 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_DecryptionKey" xml:space="preserve">
-    <value>Clef de déchiffrement</value>
+    <value>Clé de déchiffrement</value>
     <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FileLink" xml:space="preserve">
-    <value>File link</value>
+    <value>Lien fichier</value>
     <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FolderLink" xml:space="preserve">
-    <value>Folder link</value>
+    <value>Lien dossier</value>
     <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenLink" xml:space="preserve">
     <value>Ouvrir lien</value>
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
+    <value>Exporter la Clef de Récupération</value>
+    <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
+  </data>
+  <data name="UI_RecoveryKey" xml:space="preserve">
+    <value>Clef de Récupération</value>
+    <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DebugMode" xml:space="preserve">
+    <value>Mode débogage</value>
+    <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MemoryStatistics" xml:space="preserve">
+    <value>Statistiques sur la mémoire</value>
+    <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Added" xml:space="preserve">
+    <value>Ajouté</value>
+    <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_AvailableOffline" xml:space="preserve">
+    <value>Disponible Hors-Ligne</value>
+    <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Content" xml:space="preserve">
+    <value>Contenu</value>
+    <comment>Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Modified" xml:space="preserve">
+    <value>Modifié</value>
+    <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Taille</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
   </data>
 </root>

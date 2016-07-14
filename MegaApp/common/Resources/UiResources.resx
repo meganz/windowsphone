@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -276,10 +276,6 @@
   <data name="SingleFolder" xml:space="preserve">
     <value>folder</value>
     <comment>Label for any 'Folder' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Size" xml:space="preserve">
-    <value>Size:</value>
-    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NoTransfers" xml:space="preserve">
     <value>No transfers</value>
@@ -525,7 +521,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
-    <value>Export images to 'saved pictures' album after download</value>
+    <value>Export images to &apos;saved pictures&apos; album after download</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
   </data>
   <data name="FilesAscendingSortOption" xml:space="preserve">
@@ -702,7 +698,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the easy access. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourPrivacy1" xml:space="preserve">
-    <value>keep your files safe with MEGA's</value>
+    <value>keep your files safe with MEGA&apos;s</value>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
@@ -862,7 +858,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>Get 2 months free if you subscribe to a one-year Pro plan</value>
+    <value>Get 2 months free if you subscribe to a one-year PRO plan</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
@@ -973,7 +969,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>You can be a Pro user!</value>
+    <value>You can be a PRO user!</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
@@ -985,7 +981,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
-    <value>You're running out of space!</value>
+    <value>You&apos;re running out of space!</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
@@ -1252,5 +1248,30 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_MemoryStatistics" xml:space="preserve">
     <value>Memory statistics</value>
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Added" xml:space="preserve">
+    <value>Added</value>
+    <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_AvailableOffline" xml:space="preserve">
+    <value>Available Offline</value>
+    <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Content" xml:space="preserve">
+    <value>Content</value>
+    <comment>Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Modified" xml:space="preserve">
+    <value>Modified</value>
+    <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Size</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
   </data>
 </root>
