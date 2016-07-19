@@ -163,8 +163,24 @@ namespace MegaApp.Pages
 
             if (!App.LinkInformation.HasFetchedNodesFolderLink)
             {
-                App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
-                    new LoginToFolderRequestListener(_folderLinkViewModel));
+                if (!String.IsNullOrWhiteSpace(App.LinkInformation.ActiveLink))
+                {
+                    App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
+                        new LoginToFolderRequestListener(_folderLinkViewModel));
+                }
+                else
+                {
+                    var customMessageDialog = new CustomMessageDialog(
+                        AppMessages.AM_OpenLinkFailed_Title, 
+                        AppMessages.AM_InvalidLink, 
+                        App.AppInformation,
+                        MessageDialogButtons.Ok);
+
+                    customMessageDialog.OkOrYesButtonTapped += (sender, args) => CancelAction();
+
+                    customMessageDialog.ShowDialog();
+                    return;
+                }
             }
             else
             {
