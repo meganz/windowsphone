@@ -323,6 +323,21 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
 
+            // Extra check to avoid NullReferenceException
+            if(_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.AM_DownloadFailed_Title,
+                    AppMessages.AM_DownloadFolderLinkFailed,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok);
+
+                customMessageDialog.OkOrYesButtonTapped += (new_sender, args) => CancelAction();
+
+                customMessageDialog.ShowDialog();
+                return;
+            }
+
             App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
             App.LinkInformation.LinkAction = LinkAction.Download;
 
@@ -335,6 +350,21 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
+
+            // Extra check to avoid NullReferenceException
+            if (_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.AM_ImportFailed_Title,
+                    AppMessages.AM_ImportFolderLinkFailed,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok);
+
+                customMessageDialog.OkOrYesButtonTapped += (new_sender, args) => CancelAction();
+
+                customMessageDialog.ShowDialog();
+                return;
+            }
 
             App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
             App.LinkInformation.LinkAction = LinkAction.Import;
@@ -350,7 +380,7 @@ namespace MegaApp.Pages
             CancelAction();
         }
 
-        private void CancelAction()
+        public void CancelAction()
         {
             App.LinkInformation.Reset();
 
