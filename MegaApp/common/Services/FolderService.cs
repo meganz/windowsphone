@@ -218,7 +218,7 @@ namespace MegaApp.Services
                 else
                 {
                     node = NodeService.CreateNew(folderViewModel.MegaSdk, App.AppInformation, 
-                        folderViewModel.MegaSdk.getNodeByBase64Handle(base64Handle), ContainerType.CloudDrive);
+                        folderViewModel.MegaSdk.getNodeByBase64Handle(base64Handle), folderViewModel.Type);
                 }
                
                 if(node != null)
