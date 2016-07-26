@@ -88,6 +88,28 @@ namespace MegaApp.MegaApi
         }
 
         /// <summary>
+        /// Show a message indicating that the file link is no longer available
+        /// because the the associated user account has been terminated due to multiple 
+        /// violations of our Terms of Service.
+        /// </summary>
+        protected void ShowAssociatedUserAccountTerminatedFileLinkAlert()
+        {
+            GenericFileLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_AssociatedUserAccountTerminated);
+        }
+
+        /// <summary>
+        /// Show a message indicating that the folder link is no longer available
+        /// because the the associated user account has been terminated due to multiple 
+        /// violations of our Terms of Service.
+        /// </summary>
+        protected void ShowAssociatedUserAccountTerminatedFolderLinkAlert()
+        {
+            GenericFolderLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_AssociatedUserAccountTerminated);
+        }
+
+        /// <summary>
         /// Generic method to show dialog with a file link alert message.
         /// </summary>
         /// <param name="title">Title of the alert dialog.</param>

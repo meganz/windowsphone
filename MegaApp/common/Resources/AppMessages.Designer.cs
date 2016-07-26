@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The associated user account has been terminated due to multiple violations of our Terms of Service..
+        /// </summary>
+        public static string AM_AssociatedUserAccountTerminated {
+            get {
+                return ResourceManager.GetString("AM_AssociatedUserAccountTerminated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind..
         /// </summary>
         public static string AM_CancelSubscription {

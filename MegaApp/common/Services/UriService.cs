@@ -23,13 +23,18 @@ namespace MegaApp.Services
             if (Uri.EndsWith("/"))
                 Uri = Uri.Remove(Uri.Length - 1, 1);
 
-            // Reformat the URL begining
-            if (Uri.StartsWith("mega:///#"))
-                return Uri.Replace("mega:///#", "https://mega.nz/#");
-            else if (Uri.StartsWith("mega://#"))
-                return Uri.Replace("mega://#", "https://mega.nz/#");
-            else if (Uri.StartsWith("mega://"))
-                return Uri.Replace("mega://", "https://mega.nz/#");
+            // Reformat the URL begining            
+            if(Uri.Contains("#"))
+            {
+                String uriBegin = Uri.Split('#').First();
+                return Uri.Replace(uriBegin, "https://mega.nz/");
+            }
+            else
+            {
+                // Support for old links
+                if (Uri.StartsWith("mega://"))
+                    return Uri.Replace("mega://", "https://mega.nz/#");
+            }
 
             return Uri;
         }

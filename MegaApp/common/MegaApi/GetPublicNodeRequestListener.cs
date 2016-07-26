@@ -125,6 +125,10 @@ namespace MegaApp.MegaApi
                             ShowFileLinkNoValidAlert();
                         break;
 
+                    case MErrorType.API_ETOOMANY:       // Taken down link and the link owner's account is blocked
+                        ShowAssociatedUserAccountTerminatedFileLinkAlert();
+                        break;
+
                     case MErrorType.API_ENOENT:         // Link not exists or has been deleted by user
                     case MErrorType.API_EBLOCKED:       // Taken down link
                         ShowUnavailableFileLinkAlert();
