@@ -1419,6 +1419,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <target state="new">Could not import the folder link. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" xml:space="preserve">
+          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
+          <target state="new">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
           <source>Import failed</source>
           <target state="new">Import failed</target>
