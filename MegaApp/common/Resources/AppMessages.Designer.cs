@@ -124,6 +124,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The associated user account has been terminated due to multiple violations of our Terms of Service..
+        /// </summary>
+        public static string AM_AssociatedUserAccountTerminated {
+            get {
+                return ResourceManager.GetString("AM_AssociatedUserAccountTerminated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind..
         /// </summary>
         public static string AM_CancelSubscription {
@@ -277,6 +286,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Download failed.
+        /// </summary>
+        public static string AM_DownloadFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_DownloadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not download the folder link. Please try again..
+        /// </summary>
+        public static string AM_DownloadFolderLinkFailed {
+            get {
+                return ResourceManager.GetString("AM_DownloadFolderLinkFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to download the file. Please try again..
         /// </summary>
         public static string AM_DownloadNodeFailedNoErrorCode {
@@ -328,6 +355,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Import failed.
+        /// </summary>
+        public static string AM_ImportFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File import failed [{0}].
         /// </summary>
         public static string AM_ImportFileFailed {
@@ -360,6 +396,15 @@ namespace MegaApp.Resources {
         public static string AM_ImportFolderFailed_Title {
             get {
                 return ResourceManager.GetString("AM_ImportFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not import the folder link. Please try again..
+        /// </summary>
+        public static string AM_ImportFolderLinkFailed {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderLinkFailed", resourceCulture);
             }
         }
         
@@ -472,7 +517,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to copy Recovery Key to clipboard. Please try again..
+        ///   Busca una cadena traducida similar a Failed to copy the Recovery Key to your clipboard. Please try again..
         /// </summary>
         public static string AM_RecoveryKeyClipboardFailed {
             get {
@@ -526,7 +571,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Item shared with the Windows Phone app of MEGA..
+        ///   Busca una cadena traducida similar a Item shared by the Windows Phone MEGA app..
         /// </summary>
         public static string AM_ShareItemFromMega_Message {
             get {
@@ -544,7 +589,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Items shared with the Windows Phone app of MEGA..
+        ///   Busca una cadena traducida similar a Items shared by the Windows Phone MEGA app..
         /// </summary>
         public static string AM_ShareMultipleItemsFromMega_Message {
             get {

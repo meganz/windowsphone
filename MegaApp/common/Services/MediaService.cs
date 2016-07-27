@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Media.Imaging;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
@@ -170,7 +171,11 @@ namespace MegaApp.Services
                 ScheduledActionService.Remove("ScheduledCameraUploadTaskAgent");
             }
 
-            if (!onOff) return false;
+            if (!onOff)
+            {
+                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disable CAMERA UPLOADS service");
+                return false;
+            }
 
             resourceIntensiveTask = new ResourceIntensiveTask("ScheduledCameraUploadTaskAgent")
             {
@@ -179,16 +184,17 @@ namespace MegaApp.Services
                 Description = AppMessages.ResourceIntensiveTaskDescription
             };
 
-            
             // Place the call to Add in a try block in case the user has disabled agents.
             try
             {
                 ScheduledActionService.Add(resourceIntensiveTask);
                 
                 // If debugging is enabled, use LaunchForTest to launch the agent in one minute.
-#if DEBUG
+                #if DEBUG
                 ScheduledActionService.LaunchForTest("ScheduledCameraUploadTaskAgent", TimeSpan.FromSeconds(5));
-#endif
+                #endif
+
+                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Enable CAMERA UPLOADS service");
                 return true;
             }
             catch (InvalidOperationException exception)
@@ -199,17 +205,23 @@ namespace MegaApp.Services
                         AppMessages.BackgroundAgentDisabled, App.AppInformation).ShowDialog();
                 }
             }
-            catch (SchedulerServiceException)
-            {
-               // Do nothing
-            }
+            catch (SchedulerServiceException) { /* Do nothing */ }
+            catch (ArgumentException) { /* Do nothing -  Possible Bug #4942 */ }
 
+            MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service");
             return false;
         }
 
         public static bool GetAutoCameraUploadStatus()
         {
-            var resourceIntensiveTask = ScheduledActionService.Find("ScheduledCameraUploadTaskAgent") as ResourceIntensiveTask;
+            ResourceIntensiveTask resourceIntensiveTask = null;
+
+            try
+            {
+                resourceIntensiveTask = ScheduledActionService.Find("ScheduledCameraUploadTaskAgent") as ResourceIntensiveTask;
+            }
+            catch (InvalidOperationException) { /* Do nothing - Possible Bug #4941 */ }
+            catch (SchedulerServiceException) { /* Do nothing */ }
 
             return resourceIntensiveTask != null && resourceIntensiveTask.IsScheduled;
         }
