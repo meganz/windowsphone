@@ -62,6 +62,13 @@ namespace MegaApp.Models
                 {
                     nodePath = this.Name;
                 }
+                else if(ParentContainerType == ContainerType.InShares)
+                {
+                    // If is an incoming shared item, we need to remove the contact email address 
+                    // from the node path. Is the first part of the node path and the separator 
+                    // character is ":". (EXAMPLE: contact@domain.com:nodePath)
+                    nodePath = nodePath.Substring(nodePath.IndexOf(":") + 1).Replace("/", "\\");
+                }
                 else
                 {
                     // If node container is Rubbish Bin

@@ -169,6 +169,22 @@ namespace MegaApp.Pages
                 UpdateGUI(false);
                 return;
             }
+
+            if (PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
+            {
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+
+                #if WINDOWS_PHONE_81
+                // Check to see if any folder has been picked
+                var app = Application.Current as App;
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        this._sharedItemsViewModel.ActiveSharedFolderView);
+                }
+                #endif
+            }
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
