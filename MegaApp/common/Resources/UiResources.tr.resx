@@ -806,7 +806,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>Bir yıllık Pro plana abone olursanız 2 ay da ücretsiz</value>
+    <value>Bir yıllık PRO plana abone olursanız 2 ay da ücretsiz</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
@@ -913,7 +913,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>Pro kullanıcı olabilirsiniz!</value>
+    <value>PRO kullanıcı olabilirsiniz!</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
@@ -1232,5 +1232,46 @@ Preserve the {0} code because is for include the name of the destination folder 
   <data name="UI_OpenLink" xml:space="preserve">
     <value>Bağlantıyı aç</value>
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
+    <value>Kurtarma Anahtarını Dışa Aktar</value>
+    <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
+  </data>
+  <data name="UI_RecoveryKey" xml:space="preserve">
+    <value>Kurtarma Anahtarı</value>
+    <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_DebugMode" xml:space="preserve">
+    <value>Hata ayıklama modu</value>
+    <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_MemoryStatistics" xml:space="preserve">
+    <value>Bellek istatistikleri</value>
+    <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Added" xml:space="preserve">
+    <value>Eklendi</value>
+    <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_AvailableOffline" xml:space="preserve">
+    <value>Çevrimdışı Kullanılabilir</value>
+    <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Content" xml:space="preserve">
+    <value>Paylaşılan İçerik</value>
+    <comment>Label for any 'Content' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Modified" xml:space="preserve">
+    <value>Düzenlendi</value>
+    <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Boyut</value>
+    <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
+NOTE: Keep the capital letter if possible.</comment>
   </data>
 </root>
