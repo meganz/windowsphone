@@ -243,7 +243,9 @@ namespace MegaApp.Models
                     case ContainerType.RubbishBin:
                         this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRubbishNode(), this.Type);
                         break;
-                    case ContainerType.CloudDrive:                    
+
+                    case ContainerType.CloudDrive:
+                    case ContainerType.FolderLink:
                         this.FolderRootNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, this.MegaSdk.getRootNode(), this.Type);
                         break;
                 }
@@ -328,22 +330,26 @@ namespace MegaApp.Models
             List<MNode> folderNodesToImport = new List<MNode>();
             foreach (var node in App.LinkInformation.SelectedNodes)
             {
-                if (node.IsFolder)
+                // Extra check to avoid NullReferenceException
+                if (node != null)
                 {
-                    folderNodesToImport.Add(node.OriginalMNode);
+                    if (node.IsFolder)
+                    {
+                        folderNodesToImport.Add(node.OriginalMNode);
 
-                    // Need to fix the path in case of import an entire folder link.
-                    var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
-                    if (nodePath.CompareTo("/") == 0)
-                        nodePath = String.Concat(nodePath, node.Name);
+                        // Need to fix the path in case of import an entire folder link.
+                        var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
+                        if (nodePath.CompareTo("/") == 0)
+                            nodePath = String.Concat(nodePath, node.Name);
 
-                    if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
-                        App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
-                }
-                else
-                {
-                    this.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode, 
-                        new CopyNodeRequestListener(true));
+                        if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
+                            App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
+                    }
+                    else
+                    {
+                        this.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode,
+                            new CopyNodeRequestListener(true));
+                    }
                 }
             }
 
@@ -354,8 +360,12 @@ namespace MegaApp.Models
             // Create all the new folder nodes.
             foreach (var folderNode in folderNodesToImport)
             {
-                this.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode, 
-                    new CreateFolderRequestListener(true));
+                // Extra check to avoid NullReferenceException
+                if (folderNode != null)
+                {
+                    this.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode,
+                        new CreateFolderRequestListener(true));
+                }                
             }
         }
 

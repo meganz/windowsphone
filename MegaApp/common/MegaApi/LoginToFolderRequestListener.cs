@@ -116,10 +116,10 @@ namespace MegaApp.MegaApi
                         if (_decryptionAlert)
                             ShowDecryptionKeyNotValidAlert(api, request); //If the user have written the key
                         else
-                            ShowLinkNoValidAlert(); //Handle length or Key length no valid
+                            ShowFolderLinkNoValidAlert(); //Handle length or Key length no valid
                         break;
 
-                    case MErrorType.API_EINCOMPLETE: //No key
+                    case MErrorType.API_EINCOMPLETE: //Link has not decryption key
                         ShowDecryptionAlert(api, request);
                         break;
                 }
