@@ -107,7 +107,7 @@ namespace MegaApp.MegaApi
                     if (_decryptionAlert)
                         ShowDecryptionKeyNotValidAlert(api, request);
                     else
-                        ShowLinkNoValidAlert();
+                        ShowFileLinkNoValidAlert();
                 }
                 else
                 {
@@ -122,15 +122,24 @@ namespace MegaApp.MegaApi
                         if (_decryptionAlert)
                             ShowDecryptionKeyNotValidAlert(api, request);
                         else
-                            ShowLinkNoValidAlert();
+                            ShowFileLinkNoValidAlert();
                         break;
 
-                    case MErrorType.API_ENOENT:
+                    case MErrorType.API_ETOOMANY:       // Taken down link and the link owner's account is blocked
+                        ShowAssociatedUserAccountTerminatedFileLinkAlert();
+                        break;
+
+                    case MErrorType.API_ENOENT:         // Link not exists or has been deleted by user
+                    case MErrorType.API_EBLOCKED:       // Taken down link
                         ShowUnavailableFileLinkAlert();
                         break;
 
-                    case MErrorType.API_EINCOMPLETE:
+                    case MErrorType.API_EINCOMPLETE:    // Link has not decryption key
                         ShowDecryptionAlert(api, request);
+                        break;
+
+                    default:
+                        ShowFileLinkNoValidAlert();
                         break;
                 }
             }
