@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Media;
 using mega;
 using MegaApp.Enums;
+using MegaApp.Classes;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
@@ -107,25 +108,62 @@ namespace MegaApp.MegaApi
                 _createAccountViewModel.ControlState = true;
                 _loginPage.SetApplicationBar(true);                
             });
-
-            //Valid and operative #newsignup link
+            
             if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
             {
-                if(e.getErrorCode() == MErrorType.API_OK)
+                switch(e.getErrorCode())
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        _createAccountViewModel.Email = request.getEmail();
-                        
-                        if (!String.IsNullOrWhiteSpace(_createAccountViewModel.Email))
-                            this._loginPage.txtEmail_CreateAccount.IsReadOnly = true;                        
-                    });
-                }                
-            }
+                    case MErrorType.API_OK: // Valid and operative #newsignup link
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            _createAccountViewModel.Email = request.getEmail();
 
-            //Successfull create account process
+                            if (!String.IsNullOrWhiteSpace(_createAccountViewModel.Email))
+                                this._loginPage.txtEmail_CreateAccount.IsReadOnly = true;
+                        });
+                        break;
+
+                    case MErrorType.API_EARGS: // Invalid #newsignup link
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                AppMessages.AM_InvalidLink,
+                                AppMessages.AM_NewSignUpInvalidLink,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        });
+                        break;
+
+                    default: // Default error processing
+                        base.onRequestFinish(api, request, e);
+                        break;
+                }
+            }
+            
             if (request.getType() == MRequestType.TYPE_CREATE_ACCOUNT)
-                base.onRequestFinish(api, request, e);
+            {
+                switch(e.getErrorCode())
+                {
+                    case MErrorType.API_OK: // Successfull create account process
+                        base.onRequestFinish(api, request, e);
+                        break;
+
+                    case MErrorType.API_EEXIST: // Email already registered
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                ErrorMessageTitle,
+                                AppMessages.AM_EmailAlreadyRegistered,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        });
+                        break;
+
+                    default: // Default error processing
+                        base.onRequestFinish(api, request, e);
+                        break;
+                }
+            }
         }
 
         #endregion
