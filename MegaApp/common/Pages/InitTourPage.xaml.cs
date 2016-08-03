@@ -18,8 +18,15 @@ namespace MegaApp.Pages
 {
     public partial class InitTourPage : MegaPhoneApplicationPage
     {
+        /// <summary>
+        /// Flag to try to avoid display duplicate alerts
+        /// </summary>
+        private bool isAlertAlreadyDisplayed;
+
         public InitTourPage()
         {
+            isAlertAlreadyDisplayed = false;    // Default value
+
             InitializeComponent();
 
             // Determine the visibility of the dark background.
@@ -43,6 +50,10 @@ namespace MegaApp.Pages
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
 
+            // Try to avoid display duplicate alerts
+            if (isAlertAlreadyDisplayed) return;
+            isAlertAlreadyDisplayed = true;
+
             switch(navParam)
             {
                 case NavigationParameter.CreateAccount:
@@ -60,6 +71,15 @@ namespace MegaApp.Pages
                         AppMessages.SessionIDError_Title,
                         AppMessages.SessionIDError,
                         App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                    break;
+
+                case NavigationParameter.API_EBLOCKED:
+                    // Show a message notifying the error
+                    new CustomMessageDialog(
+                        AppMessages.AM_AccountBlocked_Title,
+                        AppMessages.AM_AccountBlocked, 
+                        App.AppInformation, 
                         MessageDialogButtons.Ok).ShowDialog();
                     break;
 

@@ -1281,4 +1281,20 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <value>The link you are using for a new signup is not valid.</value>
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
+  <data name="AM_AccountBlocked" xml:space="preserve">
+    <value>Your account has been blocked. Please contact support@mega.co.nz</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_AccountNotConfirmed" xml:space="preserve">
+    <value>Account has not been confirmed yet.</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
+  </data>
+  <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
+    <value>Too many failed login attempts. Please try again later.</value>
+    <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.</comment>
+  </data>
+  <data name="AM_AccountBlocked_Title" xml:space="preserve">
+    <value>Account blocked</value>
+    <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
 </root>
