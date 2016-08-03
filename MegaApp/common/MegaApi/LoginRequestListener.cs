@@ -129,18 +129,29 @@ namespace MegaApp.MegaApi
                 if (_loginPage != null)
                     Deployment.Current.Dispatcher.BeginInvoke(() => _loginPage.SetApplicationBar(true));
 
-                // E-mail unassociated with a MEGA account or Wrong password
-                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                switch (e.getErrorCode())
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        new CustomMessageDialog(
-                                ErrorMessageTitle,
-                                AppMessages.WrongEmailPasswordLogin,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                    });
-                    return;
+                    case MErrorType.API_ENOENT: // E-mail unassociated with a MEGA account or Wrong password
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.WrongEmailPasswordLogin,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());                        
+                        return;
+
+                    case MErrorType.API_ETOOMANY: // Too many failed login attempts
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_TooManyFailedLoginAttempts,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
+                        return;
+
+                    case MErrorType.API_EINCOMPLETE: // Account not confirmed
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_AccountNotConfirmed,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
+                        return;
+
+                    case MErrorType.API_EBLOCKED: // Account blocked
+                        base.onRequestFinish(api, request, e);
+                        return;
                 }
             }            
 

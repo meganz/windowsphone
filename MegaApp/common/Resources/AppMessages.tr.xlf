@@ -1443,6 +1443,26 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <target state="new">The link you are using for a new signup is not valid.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" xml:space="preserve">
+          <source>Too many failed login attempts. Please try again later.</source>
+          <target state="new">Too many failed login attempts. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" xml:space="preserve">
+          <source>Account blocked</source>
+          <target state="new">Account blocked</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" xml:space="preserve">
+          <source>Account has not been confirmed yet.</source>
+          <target state="new">Account has not been confirmed yet.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked" translate="yes" xml:space="preserve">
+          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
+          <target state="new">Your account has been blocked. Please contact support@mega.co.nz</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
           <source>Import failed</source>
           <target state="new">Import failed</target>

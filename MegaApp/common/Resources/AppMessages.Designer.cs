@@ -106,6 +106,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your account has been blocked. Please contact support@mega.co.nz.
+        /// </summary>
+        public static string AM_AccountBlocked {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account blocked.
+        /// </summary>
+        public static string AM_AccountBlocked_Title {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account has not been confirmed yet..
+        /// </summary>
+        public static string AM_AccountNotConfirmed {
+            get {
+                return ResourceManager.GetString("AM_AccountNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?.
         /// </summary>
         public static string AM_AlreadyLoggedInAlert {
@@ -630,6 +657,15 @@ namespace MegaApp.Resources {
         public static string AM_ShareMultipleItemsFromMega_Title {
             get {
                 return ResourceManager.GetString("AM_ShareMultipleItemsFromMega_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Too many failed login attempts. Please try again later..
+        /// </summary>
+        public static string AM_TooManyFailedLoginAttempts {
+            get {
+                return ResourceManager.GetString("AM_TooManyFailedLoginAttempts", resourceCulture);
             }
         }
         
