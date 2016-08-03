@@ -298,9 +298,12 @@ namespace MegaApp.Services
 
         public static void LogoutActions()
         {
-            // Disable the "camera upload" service
-            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (LOGOUT)");
-            MediaService.SetAutoCameraUpload(false);
+            // Disable the "camera upload" service if is enabled
+            if(MediaService.GetAutoCameraUploadStatus())
+            {
+                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (LOGOUT)");
+                MediaService.SetAutoCameraUpload(false);
+            }            
             
             // Clear settings, cache, previews, thumbnails, etc.
             SettingsService.ClearSettings();
