@@ -34,11 +34,11 @@ namespace MegaApp.MegaApi
             return false;
         }
 
-        //#if WINDOWS_PHONE_80
-        //public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        //#elif WINDOWS_PHONE_81
+        #if WINDOWS_PHONE_80
+        public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
+        #elif WINDOWS_PHONE_81
         public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
-        //#endif
+        #endif
         {
             foreach(var megaTransfer in Transfers)
             {
@@ -76,7 +76,7 @@ namespace MegaApp.MegaApi
                                             var node = megaTransfer.SelectedNode as NodeViewModel;
                                             if (node != null)
                                             {
-                                                // Need get the path on the transfer finish because  the file name can be changed
+                                                // Need get the path on the transfer finish because the file name can be changed
                                                 // if already exists in the destiny path.
                                                 var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
 
@@ -240,8 +240,13 @@ namespace MegaApp.MegaApi
                 TransferObjectModel megaTransfer;
                 if (transfer.getType() == MTransferType.TYPE_DOWNLOAD)
                 {
+                    // If is a public node
+                    MNode node = transfer.getPublicMegaNode();
+                    if(node == null) // If not
+                        node = api.getNodeByHandle(transfer.getNodeHandle());
+
                     megaTransfer = new TransferObjectModel(api,
-                        NodeService.CreateNew(api, App.AppInformation, api.getNodeByHandle(transfer.getNodeHandle()), ContainerType.CloudDrive),
+                        NodeService.CreateNew(api, App.AppInformation, node, ContainerType.CloudDrive),
                         TransferType.Download, transfer.getPath());
                 }
                 else
