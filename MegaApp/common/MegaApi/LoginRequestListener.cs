@@ -134,12 +134,13 @@ namespace MegaApp.MegaApi
                     case MErrorType.API_ENOENT: // E-mail unassociated with a MEGA account or Wrong password
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
                             new CustomMessageDialog(ErrorMessageTitle, AppMessages.WrongEmailPasswordLogin,
-                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());                        
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
                         return;
 
-                    case MErrorType.API_ETOOMANY: // Too many failed login attempts
+                    case MErrorType.API_ETOOMANY: // Too many failed login attempts. Wait one hour.
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_TooManyFailedLoginAttempts,
+                            new CustomMessageDialog(ErrorMessageTitle,
+                                String.Format(AppMessages.AM_TooManyFailedLoginAttempts, DateTime.Now.AddHours(1).ToString("HH:mm:ss")),
                                 App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
                         return;
 
