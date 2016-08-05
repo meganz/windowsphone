@@ -42,8 +42,13 @@ namespace MegaApp.Services
                 TransferObjectModel megaTransfer;
                 if (transfer.getType() == MTransferType.TYPE_DOWNLOAD)
                 {
+                    // If is a public node
+                    MNode node = transfer.getPublicMegaNode();
+                    if (node == null) // If not
+                        node = App.MegaSdk.getNodeByHandle(transfer.getNodeHandle());
+
                     megaTransfer = new TransferObjectModel(App.MegaSdk,
-                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getNodeByHandle(transfer.getNodeHandle()), ContainerType.CloudDrive),
+                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
                         TransferType.Download, transfer.getPath());
                 }
                 else
@@ -83,6 +88,10 @@ namespace MegaApp.Services
             // Default values
             megaTransfer.IsSaveForOfflineTransfer = false;
             megaTransfer.DownloadFolderPath = null;
+
+            // Only the downloads can contain app data
+            if (transfer.getType() != MTransferType.TYPE_DOWNLOAD)
+                return false;
 
             // Get the transfer "AppData"
             String transferAppData = transfer.getAppData();
