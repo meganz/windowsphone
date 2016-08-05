@@ -47,6 +47,43 @@ namespace MegaApp.Models
             });
         }
 
+        public void SetEmptyContentTemplate(bool paused, int direction)
+        {
+            OnUiThread(() =>
+            {
+                switch(direction)
+                {
+                    case (int)MTransferType.TYPE_DOWNLOAD:
+                        if(paused)
+                        {
+                            this.DownloadsEmptyContentTemplate = null;
+                            this.DownloadsEmptyInformationText = String.Empty;
+                        }
+                        else
+                        {
+                            this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListDownloadEmptyContent"];
+                            this.DownloadsEmptyInformationText = UiResources.NoDownloads.ToLower();
+                        }
+                        break;
+                    
+                    case (int)MTransferType.TYPE_UPLOAD:
+                        if(paused)
+                        {
+                            this.UploadsEmptyContentTemplate = null;
+                            this.UploadsEmptyInformationText = String.Empty;
+                        }
+                        else
+                        {
+                            this.UploadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListUploadEmptyContent"];
+                            this.UploadsEmptyInformationText = UiResources.NoUploads.ToLower();
+                        }
+                        break;
+                }
+
+                OnPropertyChanged("IsNetworkAvailableBinding");
+            });
+        }
+
         public void SetOfflineContentTemplate()
         {
             OnUiThread(() =>
