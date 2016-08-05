@@ -661,7 +661,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Too many failed login attempts. Please try again later..
+        ///   Busca una cadena traducida similar a You have attempted to log in too many times. Please wait until {0} and try again..
         /// </summary>
         public static string AM_TooManyFailedLoginAttempts {
             get {

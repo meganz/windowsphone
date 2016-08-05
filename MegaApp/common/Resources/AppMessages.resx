@@ -1290,8 +1290,9 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
   </data>
   <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
-    <value>Too many failed login attempts. Please try again later.</value>
-    <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.</comment>
+    <value>You have attempted to log in too many times. Please wait until {0} and try again.</value>
+    <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
     <value>Account blocked</value>
