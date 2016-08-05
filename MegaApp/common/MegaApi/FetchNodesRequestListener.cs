@@ -141,6 +141,10 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            // Enable transfer resumption for the current MegaSDK instance which is
+            // doing the fetch nodes request (app, folder link, etc.)
+            api.enableTransferResumption();
+
             if (_mainPageViewModel != null)
                 FetchNodesMainPage(api, request);
             else if (_cameraUploadsPageViewModel != null)
@@ -152,8 +156,6 @@ namespace MegaApp.MegaApi
         private void FetchNodesMainPage(MegaSDK api, MRequest request)
         {
             App.AppInformation.HasFetchedNodes = true;
-
-            api.enableTransferResumption();            
 
             // If the user is trying to open a shortcut
             if (App.ShortCutBase64Handle != null)
@@ -240,7 +242,7 @@ namespace MegaApp.MegaApi
 
         private void FetchNodesCameraUploadsPage(MegaSDK api, MRequest request)
         {
-            App.AppInformation.HasFetchedNodes = true;            
+            App.AppInformation.HasFetchedNodes = true;
 
             var cameraUploadsRootNode = _cameraUploadsPageViewModel.CameraUploads.FolderRootNode ??
                 NodeService.CreateNew(api, _cameraUploadsPageViewModel.AppInformation,

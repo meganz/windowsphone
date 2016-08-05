@@ -64,14 +64,16 @@ namespace MegaApp.Models
             {
                 case TransferType.Download:
                 {
+                    // Download all nodes with the App instance of the SDK and authorize nodes to be downloaded with this SDK instance.
+                    // Needed to allow transfers resumption of folder link nodes.
+                    App.MegaSdk.startDownloadWithAppData(this.MegaSdk.authorizeNode(SelectedNode.OriginalMNode), 
+                        FilePath, TransfersService.CreateTransferAppDataString(isSaveForOffline, DownloadFolderPath));
                     this.IsSaveForOfflineTransfer = isSaveForOffline;
-                    this.MegaSdk.startDownloadWithAppData(SelectedNode.OriginalMNode, FilePath, 
-                        TransfersService.CreateTransferAppDataString(isSaveForOffline, DownloadFolderPath));
                     break;
                 }
                 case TransferType.Upload:
                 {
-                    this.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode);
+                    App.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode);
                     break; 
                 }
                 default:
@@ -88,7 +90,7 @@ namespace MegaApp.Models
                 return;
             }
             Status = TransferStatus.Canceling;
-            MegaSdk.cancelTransfer(Transfer);
+            App.MegaSdk.cancelTransfer(Transfer);
         }
 
         private void SetThumbnail()
