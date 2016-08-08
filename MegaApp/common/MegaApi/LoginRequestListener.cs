@@ -173,6 +173,9 @@ namespace MegaApp.MegaApi
         {
             SettingsService.SaveMegaLoginData(_loginViewModel.Email, 
                 _loginViewModel.SessionKey);
+
+            // Validate product subscription license on background thread
+            Task.Run(() => LicenseService.ValidateLicenses());
         }
 
         #endregion

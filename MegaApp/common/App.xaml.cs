@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -137,7 +139,10 @@ namespace MegaApp
                 }
             }
 
-            SetupMockIAP();
+#if DEBUG
+            // Setup Mocking IAP library (only in debug mode)
+            LicenseService.SetupMockIap();
+#endif
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -304,6 +309,8 @@ namespace MegaApp
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
+            // Clear upload folder. Temporary uploads files are not necessary to keep
+            AppService.ClearUploadCache();
             // Clear settings values we do no longer use
             AppService.ClearObsoleteSettings();
             // Save the app version information for future use (like deleting settings)
@@ -458,32 +465,6 @@ namespace MegaApp
 
                 throw;
             }
-        }
-
-        private void SetupMockIAP()
-        {
-#if DEBUG
-            MockIAP.Init();
-            MockIAP.ClearCache();
-
-            MockIAP.RunInMockMode(true);
-            MockIAP.SetListingInformation(1, "en-us", "A description", "1", "TestApp");
-
-            // Add some more items manually.
-            ProductListing p = new ProductListing
-            {
-                Name = "Pro1Monthly",
-                ImageUri = null,
-                ProductId = "Pro1Monthly",
-                ProductType = Windows.ApplicationModel.Store.ProductType.Durable,
-                Keywords = new string[] { "Pro1Monthly" },
-                Description = "Pro1Monthly",
-                FormattedPrice = "1.0",
-                Tag = string.Empty
-            };
-            
-            MockIAP.AddProductListing("Pro1Monthly", p);
-#endif
         }
 
 

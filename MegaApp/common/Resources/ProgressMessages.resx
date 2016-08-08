@@ -311,4 +311,8 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <value>Copying...</value>
     <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
   </data>
+  <data name="ValidatePurchase" xml:space="preserve">
+    <value>Validating...</value>
+    <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
+  </data>
 </root>

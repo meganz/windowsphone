@@ -1369,6 +1369,46 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="new">Error sharing item(s)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/PurchaseSucceeded_Title" translate="yes" xml:space="preserve">
+          <source>Purchase succeeded</source>
+          <target state="new">Purchase succeeded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseValidationFailed_Title" translate="yes" xml:space="preserve">
+          <source>Purchase validation failed</source>
+          <target state="new">Purchase validation failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseValidationFailed" translate="yes" xml:space="preserve">
+          <source>Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues.</source>
+          <target state="new">Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseSucceeded" translate="yes" xml:space="preserve">
+          <source>Your MEGA subcription purchase has succeeded.</source>
+          <target state="new">Your MEGA subcription purchase has succeeded.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseFailed_Title" translate="yes" xml:space="preserve">
+          <source>Purchase failed or cancelled</source>
+          <target state="new">Purchase failed or cancelled</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseFailed" translate="yes" xml:space="preserve">
+          <source>Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support.</source>
+          <target state="new">Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyPurchased_Title" translate="yes" xml:space="preserve">
+          <source>Already purchased</source>
+          <target state="new">Already purchased</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AlreadyPurchased" translate="yes" xml:space="preserve">
+          <source>Your MEGA subscription purchase has failed because you already have purchased this item.</source>
+          <target state="new">Your MEGA subscription purchase has failed because you already have purchased this item.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" xml:space="preserve">
           <source>Failed to share item(s) from MEGA. Please try again.</source>
           <target state="new">Failed to share item(s) from MEGA. Please try again.</target>

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
@@ -197,10 +192,27 @@ namespace MegaApp.MegaApi
                             PaymentMethodPathData = VisualResources.CreditCardPathData
                         };
                         product.PaymentMethods.Add(creditCardPaymentMethod);
-                    }                    
+                    }
+
+                    // If CC payment method is active, include it into the product
+                    if (_upgradeAccount.InAppPaymentMethodAvailable)
+                    {
+                        var inAppPaymentMethod = new PaymentMethod
+                        {
+                            PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE,
+                            Name = String.Format(UiResources.InAppPurchase + " - " + UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
+                            PaymentMethodPathData = VisualResources.PhoneBillingPathData
+                        };
+                        product.PaymentMethods.Add(inAppPaymentMethod);
+                    }      
 
                     _upgradeAccount.Products.Add(product);
-                    
+
+#if DEBUG
+                    // Fill the Mocking IAP product listing with actual NEGA product id's
+                    LicenseService.AddProductToMockIap(product);
+#endif
+
                     // Plans show only the information off the annualy plans
                     if (request.getPricing().getMonths(i) == 12)
                     {
@@ -211,28 +223,25 @@ namespace MegaApp.MegaApi
                             Amount = product.Amount,
                             Currency = product.Currency,
                             GbStorage = product.GbStorage,
-                            GbTransfer = product.GbTransfer / 12,
+                            GbTransfer = product.GbTransfer/12,
                             ProductPathData = product.ProductPathData,
                             ProductColor = product.ProductColor,
                             IsNewOffer = product.IsNewOffer
                         };
-                                                
+
                         // Show only the plans that are equal or upper to the current user account type
-                        if(_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE ||
-                           _accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE ||
-                           (accountType >= _accountDetails.AccountType && accountType != MAccountType.ACCOUNT_TYPE_LITE))
+                        if (_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE || _accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE || (accountType >= _accountDetails.AccountType && accountType != MAccountType.ACCOUNT_TYPE_LITE))
                         {
                             _upgradeAccount.Plans.Add(plan);
-                        }                        
+                        }
 
                         // Check if the user has a product/plan already purchased and fill the structure to show it
                         if (accountType == _accountDetails.AccountType && request.getPricing().getMonths(i) == 12)
                         {
                             _upgradeAccount.ProductPurchased = product;
-                            _upgradeAccount.ProductPurchased.GbTransfer = request.getPricing().getGBTransfer(i) / 12;
+                            _upgradeAccount.ProductPurchased.GbTransfer = request.getPricing().getGBTransfer(i)/12;
                             _upgradeAccount.ProductPurchased.IsNewOffer = false;
                             _upgradeAccount.ProductPurchased.Purchased = true;
-                            
                         }
                     }
                 }
