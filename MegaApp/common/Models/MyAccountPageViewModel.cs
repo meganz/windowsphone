@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using Windows.Storage;
 using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
@@ -72,8 +67,9 @@ namespace MegaApp.Models
             }            
         }
 
-        public void GetPricing()
+        public async void GetPricing()
         {
+            this.UpgradeAccount.InAppPaymentMethodAvailable = await LicenseService.IsAvailable();
             MegaSdk.getPaymentMethods(new GetPaymentMethodsRequestListener(UpgradeAccount));
             MegaSdk.getPricing(new GetPricingRequestListener(AccountDetails, UpgradeAccount));            
         }
