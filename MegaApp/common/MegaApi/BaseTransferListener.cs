@@ -36,17 +36,7 @@ namespace MegaApp.MegaApi
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
                         // Stop all upload transfers
-                        if (App.MegaTransfers.Count > 0)
-                        {
-                            foreach (var item in App.MegaTransfers)
-                            {
-                                var transferItem = (TransferObjectModel)item;
-                                if (transferItem == null) continue;
-
-                                if (transferItem.Type == TransferType.Upload)
-                                    transferItem.CancelTransfer();
-                            }
-                        }
+                        api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
 
                         // Disable the "camera upload" service
                         MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");

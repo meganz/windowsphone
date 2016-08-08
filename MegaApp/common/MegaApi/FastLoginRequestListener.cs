@@ -134,6 +134,9 @@ namespace MegaApp.MegaApi
             {
                 _mainPageViewModel.GetAccountDetails();
                 _mainPageViewModel.FetchNodes();
+
+                // Validate product subscription license on background thread
+                Task.Run(() => LicenseService.ValidateLicenses());
             });
         }
 

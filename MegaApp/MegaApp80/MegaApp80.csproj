@@ -462,6 +462,9 @@
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\ValidateAccountRequestListener.cs">
+      <Link>MegaApi\ValidateAccountRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\AboutViewModel.cs">
       <Link>Models\AboutViewModel.cs</Link>
     </Compile>
@@ -917,9 +920,6 @@
     </Content>
     <Content Include="..\common\Assets\AppBar\share.png">
       <Link>Assets\AppBar\share.png</Link>
-    </Content>
-    <Content Include="..\common\Assets\AppBar\share_icon.png">
-      <Link>Assets\AppBar\share_icon.png</Link>
     </Content>
     <Content Include="..\common\Assets\AppBar\start conversation.png">
       <Link>Assets\AppBar\start conversation.png</Link>
