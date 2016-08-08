@@ -61,9 +61,9 @@ namespace MegaApp.Pages
         {
             this.ApplicationBar = (ApplicationBar)Resources["ContactDetailsMenu"];
 
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Message.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.SendFile.ToLower();
-            ((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.ShareFolders.ToLower();
+            //((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Message.ToLower();
+            //((ApplicationBarIconButton)ApplicationBar.Buttons[1]).Text = UiResources.SendFile.ToLower();
+            //((ApplicationBarIconButton)ApplicationBar.Buttons[2]).Text = UiResources.ShareFolders.ToLower();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

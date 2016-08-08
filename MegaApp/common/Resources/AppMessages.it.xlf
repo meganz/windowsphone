@@ -651,15 +651,15 @@ Per favore, cerca di salvare/copiare il file nella memoria interna del dispositi
           <target state="translated">Accesso non autorizzato</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clipboard failed</source>
-          <target state="new">Clipboard failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" xml:space="preserve">
-          <source>Failed to copy Recovery Key to clipboard. Please try again.</source>
-          <target state="new">Failed to copy Recovery Key to clipboard. Please try again.</target>
+        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
+          <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
+          <target state="needs-review-translation">Copia della chiave di recupero negli appunti fallita. Per favore, riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
+          <source>Clipboard failed</source>
+          <target state="translated">Appunti fallito</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN lock is not correct or does not match</source>
@@ -671,15 +671,15 @@ Per favore, cerca di salvare/copiare il file nella memoria interna del dispositi
           <target state="translated">Codice PIN corrente non corrispondente</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" xml:space="preserve">
-          <source>Recovery Key copied</source>
-          <target state="new">Recovery Key copied</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="new">Recovery Key copied to clipboard</target>
+          <target state="translated">Chiave di recupero copiata negli appunti</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
+          <source>Recovery Key copied</source>
+          <target state="translated">Chiave di recupero copiata</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
           <source>PIN lock must be at least four digits</source>
@@ -1310,18 +1310,18 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
           <source>Open link failed [{0}]</source>
-          <target state="translated">Open link failed [{0}]</target>
+          <target state="translated">Apertura del link fallita [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
           <source>Open link failed</source>
-          <target state="translated">Open link failed</target>
+          <target state="translated">Apertura del link fallita</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
-          <target state="needs-review-translation">Non hai accesso al percorso di download selezionato. Per favore, seleziona un percorso di download differente e riprova.</target>
+          <target state="translated">Non hai accesso al percorso di download selezionato. Per favore, seleziona un percorso di download differente e riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
@@ -1329,45 +1329,82 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Accesso non autorizzato</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_CopyFailed_Title" translate="yes" xml:space="preserve">
-          <source>Copy failed</source>
-          <target state="new">Copy failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_CopyFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_CopyFailed" translate="yes" space="preserve">
           <source>Failed to copy item. Please try again.</source>
-          <target state="new">Failed to copy item. Please try again.</target>
+          <target state="translated">Copia dell'oggetto fallita. Per favore, riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a node failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_CopyFailed_Title" translate="yes" space="preserve">
+          <source>Copy failed</source>
+          <target state="translated">Copia fallita</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
+          <source>The log ({0}) will be deleted from the Offline section.</source>
+          <target state="translated">Il log ({0}) verrà cancellato dalla sezione Offline.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DisableDebugMode_Title" translate="yes" space="preserve">
+          <source>Disable DEBUG mode</source>
+          <target state="translated">Disattiva modalità DEBUG</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is disabled - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
+          <source>A log will be created in the Offline section ({0}).</source>
+          <target state="translated">Un log verrà creato nella sezione Offline ({0}).</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" space="preserve">
           <source>Enable DEBUG mode</source>
-          <target state="new">Enable DEBUG mode</target>
+          <target state="translated">Attiva modalità DEBUG</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is enabled - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" xml:space="preserve">
-          <source>Debug mode</source>
-          <target state="new">Debug mode</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
           <source>Debug mode is enabled. Do you want to disable it?</source>
-          <target state="new">Debug mode is enabled. Do you want to disable it?</target>
+          <target state="translated">La modalità debug è attivata. Vuoi disabilitarla?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" space="preserve">
+          <source>Debug mode</source>
+          <target state="translated">Modalità debug</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
+          <source>Item shared by the Windows Phone MEGA app.</source>
+          <target state="needs-review-translation">Oggetto condiviso dall'app di MEGA per Windows Phone.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
           <source>Item shared from MEGA</source>
-          <target state="new">Item shared from MEGA</target>
+          <target state="translated">Oggetto condiviso da MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
+          <source>Items shared by the Windows Phone MEGA app.</source>
+          <target state="needs-review-translation">Oggetto condiviso dall'app di MEGA per Windows Phone.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
           <source>Items shared from MEGA</source>
-          <target state="new">Items shared from MEGA</target>
+          <target state="translated">Oggetti condivisi da MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" xml:space="preserve">
-          <source>Error sharing item(s)</source>
-          <target state="new">Error sharing item(s)</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_ImportFolderFailed" translate="yes" space="preserve">
+          <source>Failed to import folder. Please try again.</source>
+          <target state="translated">Importazione della cartella fallita. Per favore, riprova.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFolderFailed_Title" translate="yes" space="preserve">
+          <source>Folder import failed</source>
+          <target state="translated">Importazione della cartella fallita</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
+          <source>Link import failed</source>
+          <target state="translated">Importazione del link fallita</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PurchaseSucceeded_Title" translate="yes" xml:space="preserve">
           <source>Purchase succeeded</source>
@@ -1411,35 +1448,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" xml:space="preserve">
           <source>Failed to share item(s) from MEGA. Please try again.</source>
-          <target state="new">Failed to share item(s) from MEGA. Please try again.</target>
+          <target state="translated">Errore nella condivisione da MEGA. Per favore, riprova.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" xml:space="preserve">
-          <source>Items shared with the Windows Phone app of MEGA.</source>
-          <target state="new">Items shared with the Windows Phone app of MEGA.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" xml:space="preserve">
-          <source>Item shared with the Windows Phone app of MEGA.</source>
-          <target state="new">Item shared with the Windows Phone app of MEGA.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" xml:space="preserve">
-          <source>A log will be created in the Offline section ({0}).</source>
-          <target state="new">A log will be created in the Offline section ({0}).</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
-Preserve the ({0}) code because is for include the file name in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_DisableDebugMode_Title" translate="yes" xml:space="preserve">
-          <source>Disable DEBUG mode</source>
-          <target state="new">Disable DEBUG mode</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is disabled - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" xml:space="preserve">
-          <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="new">The log ({0}) will be deleted from the Offline section.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
-Preserve the ({0}) code because is for include the file name in runtime.</note>
+        <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing item(s)</source>
+          <target state="translated">Errore nella condivisione dello/degli oggetto/i</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

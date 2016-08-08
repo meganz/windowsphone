@@ -1,0 +1,194 @@
+﻿<userControls:MegaPhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Core"
+    xmlns:userControls="clr-namespace:MegaApp.UserControls"
+    xmlns:models="clr-namespace:MegaApp.Models"
+    x:Class="MegaApp.Pages.FolderLinkPage"
+    SupportedOrientations="Portrait" 
+	Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource PhoneChromeColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource PhoneForegroundColor}"
+	d:DataContext="{d:DesignInstance models:FolderLinkViewModel}">
+
+    <userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="FolderLinkMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					Text="refresh"	
+					Click="OnRefreshClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="sort"	
+					Click="OnSortClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="select"	
+					Click="OnMultiSelectClick"			
+				/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/download.png" 
+        		Text="download" 
+        		Click="OnDownloadFolderLinkClick" 
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/import.png" 
+        		Text="import" 
+        		Click="OnImportFolderLinkClick" 				
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/cancel.png" 
+        		Text="cancel" 
+        		Click="OnCancelFolderLinkClick" 				
+			/>
+        </shell:ApplicationBar>        
+
+        <shell:ApplicationBar x:Key="MultiSelectMenu">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem
+					Text="select all"	
+					Click="OnSelectAllClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="deselect all"	
+					Click="OnDeselectAllClick"			
+				/>
+                <shell:ApplicationBarMenuItem
+					Text="cancel"	
+					Click="OnMultiSelectClick"			
+				/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/download.png" 
+        		Text="download" 
+        		Click="OnMultiSelectDownloadClick" 				
+			/>
+            <shell:ApplicationBarIconButton 
+        		IconUri="/Assets/AppBar/import.png" 
+        		Text="import" 
+        		Click="OnMultiSelectImportClick" 				
+			/>            
+        </shell:ApplicationBar>
+    </userControls:MegaPhoneApplicationPage.Resources>    
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="84"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="HeaderGrid" Background="{StaticResource PhoneChromeBrush}" Margin="0,-6,0,0" DataContext="{Binding FolderLink}">
+            <StackPanel Margin="0,0,24,24" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button x:Name="BtnGoToTop" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" Margin="0,0,24,0" Tap="OnGoToTopTap" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}, Mode=OneWay}">
+                    <Path Stretch="UniformToFill" Data="{Binding LocalizedVisualResources.GoToTopPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Width="20" Height="16" Margin="0,0,0,2">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+                <Button x:Name="BtnGoToBottom" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" Margin="0,0,24,0" Tap="OnGoToBottomTap" Visibility="{Binding ChildNodes.Count, ConverterParameter=100, Converter={StaticResource CountToVisibilityConverter}, Mode=OneWay}">
+                    <Path Stretch="UniformToFill" Data="{Binding LocalizedVisualResources.GoToBottomPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Width="20" Height="16" Margin="0,0,0,-2">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+                <Button x:Name="BtnChangeView" Command="{Binding ChangeViewCommand}" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" Visibility="{Binding HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                    <Path Stretch="UniformToFill" Data="{Binding NextViewButtonPathData}" Width="22" Height="22">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+                <Button x:Name="BtnChangeViewDisabled" HorizontalAlignment="Right" Style="{StaticResource AppBarButtonStyle}" VerticalAlignment="Bottom" Width="48" Height="48" IsEnabled="False" Visibility="{Binding HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}">
+                    <Path Stretch="UniformToFill" Data="{Binding LocalizedVisualResources.LargeThumbnailViewPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Width="22" Height="22">
+                        <Path.Fill>
+                            <SolidColorBrush Color="{StaticResource PhoneDisabledColor}"/>
+                        </Path.Fill>
+                    </Path>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <phone:Pivot x:Name="MainPivot" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Grid.Row="1" Style="{StaticResource PivotStyle}" Margin="0">
+            <phone:PivotItem x:Name="FolderLinkPivot" CacheMode="{x:Null}" Margin="0,-10,0,0" Header="{Binding LocalizedUiResources.UI_FolderLink, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}">
+                <Grid x:Name="FolderLinkRoot" Background="Transparent" Margin="0,0,12,0">
+                    <!--ContentPanel - place additional content here-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Margin="0">
+                        <Grid Margin="24,0,12,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="16"/>
+                                <RowDefinition Height="24"/>
+                            </Grid.RowDefinitions>
+                            <ProgressBar VerticalAlignment="Center" IsIndeterminate="True" Foreground="{StaticResource MegaRedSolidColorBrush}" Height="8" Grid.ColumnSpan="2" Visibility="{Binding FolderLink.IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <userControls:BreadCrumb x:Name="FolderLinkBreadCrumb" ItemsSource="{Binding FolderLink.BreadCrumbs}" ItemsSourceType="{Binding FolderLink.Type}"  Margin="0,0,6,0" Grid.Row="1" Grid.Column="0" />
+                            <TextBlock Text="{Binding FolderLink.EmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding FolderLink.HasChildNodesBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                            <TextBlock Text="{Binding FolderLink.FolderRootNode.Information}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Margin="0" Grid.Row="1" Visibility="{Binding FolderLink.HasChildNodesBinding, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        </Grid>
+                    </StackPanel>
+                    <Grid x:Name="FolderLinkContentPanel" Grid.Row="1" Margin="12,0,0,0">
+                        <telerikPrimitives:RadDataBoundListBox 
+            					x:Name="LstCloudDrive" 	
+            					DataContext="{Binding FolderLink}"								
+            					ItemsSource="{Binding ChildNodes}"
+            					ItemTap="OnFolderLinkItemTap"
+            					ItemTemplateSelector="{Binding NodeTemplateSelector}" 
+            					telerik:InteractionEffectManager.IsInteractionEnabled="True"             					
+            					ItemStateChanged="OnItemStateChanged" 
+            					ScrollStateChanged="OnScrollStateChanged" 
+            					IsCheckModeEnabled="True"                                 
+            					IsCheckModeActiveChanged="OnCheckModeChanged"                                
+            					CheckBoxStyle="{Binding MultiSelectCheckBoxStyle}" 
+            					ItemCheckedPath="IsMultiSelected" 
+            					IsCheckModeActive="{Binding IsMultiSelectActive, Mode=TwoWay}" 
+            					RealizedItemsBufferScale="3" 
+            					DataVirtualizationMode="Automatic" 
+            					EmptyContentDisplayMode="DataSourceEmpty" 
+            					EmptyContent="" 
+            					EmptyContentTemplate="{Binding EmptyContentTemplate}" 
+            					VirtualizationStrategyDefinition="{Binding VirtualizationStrategy}"
+            					IsAsyncBalanceEnabled="True">
+                            <telerikPrimitives:RadContextMenu.ContextMenu>
+                                <telerikPrimitives:RadContextMenu 
+            							OpenGesture="Hold" 
+            							x:Name="FolderLinkMenu" 
+            							Opening="OnMenuOpening">
+                                    <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnDownloadItem" 
+                                            Command="{Binding DownloadItemCommand}"
+                                            Content="{Binding LocalizedUiResources.Download, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                            />
+                                    <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnImportItem" 
+                                            Command="{Binding ImportItemCommand}"
+                                            Content="{Binding LocalizedUiResources.Import, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                            />
+                                    <telerikPrimitives:RadContextMenuItem 
+                                            x:Name="BtnViewDetails" 
+                                            Command="{Binding ViewDetailsCommand}"
+                                            Content="{Binding LocalizedUiResources.ViewDetails, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" 
+                                            />                                    
+                                </telerikPrimitives:RadContextMenu>
+                            </telerikPrimitives:RadContextMenu.ContextMenu>
+                        </telerikPrimitives:RadDataBoundListBox>
+                    </Grid>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+</userControls:MegaPhoneApplicationPage>

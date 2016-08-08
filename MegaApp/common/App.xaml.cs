@@ -46,7 +46,17 @@ namespace MegaApp
         /// </summary>
         public static AppInformation AppInformation { get; private set; }        
         public static String IpAddress { get; set; }
+
+        /// <summary>
+        /// Main MegaSDK instance of the app
+        /// </summary>
         public static MegaSDK MegaSdk { get; set; }
+
+        /// <summary>
+        /// MegaSDK instance for the folder links management
+        /// </summary>
+        public static MegaSDK MegaSdkFolderLinks { get; set; }
+        
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static MainPageViewModel MainPageViewModel { get; set; }
         public static SavedForOfflineViewModel SavedForOfflineViewModel { get; set; }
@@ -60,9 +70,10 @@ namespace MegaApp
 
         public static String ShortCutBase64Handle { get; set; }
 
-        public static String ActiveImportLink { get; set; }
-
-        public static MNode PublicNode { get; set; }
+        /// <summary>
+        /// Provides easy access to usefull links information
+        /// </summary>
+        public static LinkInformation LinkInformation { get; set; }
 
         // DataBase Name
         public static String DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "MEGA.sqlite"));
@@ -271,6 +282,9 @@ namespace MegaApp
             // Initialize the application information
             AppInformation = new AppInformation();
 
+            // Initialize the links information
+            LinkInformation = new LinkInformation();
+
             //The next line enables a custom logger, if this function is not used OutputDebugString() is called
             //in the native library and log messages are only readable with the native debugger attached.
             //The default behavior of MegaLogger() is to print logs using Debug.WriteLine() but it could
@@ -285,12 +299,17 @@ namespace MegaApp
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-
+            
             // Set the ID for statistics
             MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
 
-            // Initialize MegaSDK 
+            // Initialize the main MegaSDK instance
             MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
+                AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
+                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
+
+            // Initialize the MegaSDK instance for Folder Links
+            MegaSdkFolderLinks = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
                 AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
                 ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
             

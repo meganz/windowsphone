@@ -12,11 +12,16 @@ namespace MegaApp.Services
     {
         public static Type PreviousPage { get; private set; }
 
+        public static bool CanGoBack()
+        {
+            return ((PhoneApplicationFrame)Application.Current.RootVisual).CanGoBack;
+        }
+
         public static void GoBack()
         {            
             try
             {
-                if (((PhoneApplicationFrame)Application.Current.RootVisual).CanGoBack)
+                if (CanGoBack())
                     ((PhoneApplicationFrame)Application.Current.RootVisual).GoBack();
             }
             catch (InvalidOperationException)

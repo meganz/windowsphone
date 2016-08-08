@@ -1149,12 +1149,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
-    <value>Open link failed [{0}]</value>
+    <value>Otváranie odkazu zlyhalo [{0}]</value>
     <comment>Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>Open link failed</value>
+    <value>Otváranie odkazu zlyhalo</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
@@ -1164,5 +1164,91 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
     <value>Neautorizovaný prístup</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
+    <value>Kľúč pre obnovu sa nepodarilo skopírovať do pamäte. Prosím skúste to znovu.</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
+    <value>Schránka zlyhala</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied" xml:space="preserve">
+    <value>Kľúč pre obnovu skopírovaný do schránky</value>
+    <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
+    <value>Kľúč pre obnovu skopírovaný</value>
+    <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyFailed" xml:space="preserve">
+    <value>Chyba pri kopírovaní položky. Prosím skúste to znovu.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
+  </data>
+  <data name="AM_CopyFailed_Title" xml:space="preserve">
+    <value>Kopírovanie zlyhalo</value>
+    <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Message" xml:space="preserve">
+    <value>Log ({0}) bude odstránený z Offline sekcie.</value>
+    <comment>Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Title" xml:space="preserve">
+    <value>Zakázať DEBUG mód</value>
+    <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Message" xml:space="preserve">
+    <value>V offline sekcii bude vytvorený log ({0}).</value>
+    <comment>Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Title" xml:space="preserve">
+    <value>Povoliť DEBUG mód</value>
+    <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
+    <value>Mód ladenia je zapnutý. Chcete ho zakázať?</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
+    <value>Debug mód</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
+    <value>Položka zdieľaná cez Windows Phone MEGA aplikáciu.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
+    <value>Položka zdieľaná z MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
+    <value>Položky zdieľané cez Windows Phone MEGA aplikáciu.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
+    <value>Položky zdieľané z MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderFailed" xml:space="preserve">
+    <value>Zlyhal import priečinka. Prosím skúste to znovu.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
+  </data>
+  <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
+    <value>Import priečinka zlyhal</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
+    <value>Importovanie odkazu zlyhalo</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
+    <value>Zlyhalo zdieľanie položky (položiek) z MEGA. Prosím, skúste to znovu.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
+    <value>Chyba zdieľania položiek</value>
+    <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
 </root>

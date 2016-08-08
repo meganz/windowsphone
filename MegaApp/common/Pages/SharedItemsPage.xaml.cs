@@ -116,14 +116,14 @@ namespace MegaApp.Pages
             {
                 _sharedItemsViewModel.IsInSharedItemsRootListView = true;
                 _sharedItemsViewModel.InShares.BreadCrumbs.Clear();
-                _sharedItemsViewModel.InShares.SetOfflineContentTemplate();
+                _sharedItemsViewModel.GetIncomingSharedFolders();
             }
 
             if (breadCrumb.Equals(OutgoingSharedBreadCrumb))
             {
                 _sharedItemsViewModel.IsOutSharedItemsRootListView = true;
                 _sharedItemsViewModel.OutShares.BreadCrumbs.Clear();
-                _sharedItemsViewModel.OutShares.SetOfflineContentTemplate();
+                _sharedItemsViewModel.GetOutgoingSharedFolders();
             }
         }
 
@@ -168,6 +168,22 @@ namespace MegaApp.Pages
             {
                 UpdateGUI(false);
                 return;
+            }
+
+            if (PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
+            {
+                // Needed on every UI interaction
+                App.MegaSdk.retryPendingConnections();
+
+                #if WINDOWS_PHONE_81
+                // Check to see if any folder has been picked
+                var app = Application.Current as App;
+                if (app != null && app.FolderPickerContinuationArgs != null)
+                {
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        this._sharedItemsViewModel.ActiveSharedFolderView);
+                }
+                #endif
             }
         }
 
@@ -378,9 +394,20 @@ namespace MegaApp.Pages
         private void OnPivotLoaded(object sender, RoutedEventArgs e)
         {
             if (sender == IncomingPivotItem)
-                _sharedItemsViewModel.GetIncomingSharedFolders();
+            {
+                if (_sharedItemsViewModel.IsInSharedItemsRootListView)
+                    _sharedItemsViewModel.GetIncomingSharedFolders();
+                else
+                    _sharedItemsViewModel.InShares.Refresh();
+            }
+
             if (sender == OutgoingPivotItem)
-                _sharedItemsViewModel.GetOutgoingSharedFolders();
+            {
+                if (_sharedItemsViewModel.IsOutSharedItemsRootListView)
+                    _sharedItemsViewModel.GetOutgoingSharedFolders();
+                else
+                    _sharedItemsViewModel.OutShares.Refresh();
+            }
         }
 
         protected override void OnDrawerClosed(object sender)

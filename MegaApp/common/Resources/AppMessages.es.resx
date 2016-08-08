@@ -1166,4 +1166,90 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Acceso no autorizado</value>
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
+  <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
+    <value>No se ha podido copiar la Clave de Recuperación al portapapeles. Por favor, inténtalo de nuevo.</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
+    <value>Fallo al copiar</value>
+    <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied" xml:space="preserve">
+    <value>Clave de Recuperación copiada al portapapeles</value>
+    <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
+  </data>
+  <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
+    <value>Clave de Recuperación copiada</value>
+    <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
+  </data>
+  <data name="AM_CopyFailed" xml:space="preserve">
+    <value>No se ha podido copiar el elemento. Por favor, inténtelo de nuevo.</value>
+    <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
+  </data>
+  <data name="AM_CopyFailed_Title" xml:space="preserve">
+    <value>Copia fallida</value>
+    <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Message" xml:space="preserve">
+    <value>El log ({0}) se eliminará de la sección Offline.</value>
+    <comment>Alert message shown when the DEBUG mode is disabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_DisableDebugMode_Title" xml:space="preserve">
+    <value>Desactivar modo DEBUG</value>
+    <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Message" xml:space="preserve">
+    <value>Se creará un log en la sección Offline ({0}).</value>
+    <comment>Alert message shown when the DEBUG mode is enabled.
+Preserve the ({0}) code because is for include the file name in runtime.</comment>
+  </data>
+  <data name="AM_EnableDebugMode_Title" xml:space="preserve">
+    <value>Activar modo DEBUG</value>
+    <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
+    <value>El modo depuración está activo. ¿Quieres desactivarlo?</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</comment>
+  </data>
+  <data name="AM_DebugModeEnabled_Title" xml:space="preserve">
+    <value>Modo depuración</value>
+    <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
+    <value>Elemento compartido con la aplicación de MEGA de Windows Phone.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
+    <value>Ítem compartido desde MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
+    <value>Elementos compartidos con la aplicación de MEGA de Windows Phone.</value>
+    <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
+    <value>Ítems compartidos desde MEGA</value>
+    <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderFailed" xml:space="preserve">
+    <value>Fallo al importar carpeta. Por favor, inténtelo de nuevo.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
+  </data>
+  <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
+    <value>Importación de carpeta fallida</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
+    <value>Importación de enlace fallida</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
+    <value>Fallo al compartir elemento(s) de MEGA. Por favor, inténtelo de nuevo.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
+  </data>
+  <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
+    <value>Error compartiendo elemento(s)</value>
+    <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
+  </data>
 </root>

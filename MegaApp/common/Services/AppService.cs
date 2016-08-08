@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Database;
 using MegaApp.Extensions;
@@ -49,7 +50,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("eaf07d9");
+            return String.Format("970e65b");
         }
 
         public static string GetAppUserAgent()
@@ -177,7 +178,8 @@ namespace MegaApp.Services
         public static void ClearThumbnailCache()
         {
             string thumbnailDir = GetThumbnailDirectoryPath();
-            if (Directory.Exists(thumbnailDir))
+            if (!String.IsNullOrWhiteSpace(thumbnailDir) && !FolderService.HasIllegalChars(thumbnailDir) && 
+                Directory.Exists(thumbnailDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(thumbnailDir));
             }
@@ -186,7 +188,8 @@ namespace MegaApp.Services
         public static void ClearPreviewCache()
         {
             string previewDir = GetPreviewDirectoryPath();
-            if (Directory.Exists(previewDir))
+            if (!String.IsNullOrWhiteSpace(previewDir) && !FolderService.HasIllegalChars(previewDir) && 
+                Directory.Exists(previewDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(previewDir));
             } 
@@ -195,16 +198,18 @@ namespace MegaApp.Services
         public static void ClearDownloadCache()
         {
             string downloadDir = GetDownloadDirectoryPath();
-            if (Directory.Exists(downloadDir))
+            if (!String.IsNullOrWhiteSpace(downloadDir) && !FolderService.HasIllegalChars(downloadDir) && 
+                Directory.Exists(downloadDir))
             {
-                FolderService.Clear(downloadDir);                
+                FolderService.Clear(downloadDir);
             }
         }
 
         public static void ClearUploadCache()
         {
             string uploadDir = GetUploadDirectoryPath();
-            if (Directory.Exists(uploadDir))
+            if (!String.IsNullOrWhiteSpace(uploadDir) && !FolderService.HasIllegalChars(uploadDir) && 
+                Directory.Exists(uploadDir))
             {
                 FileService.ClearFiles(Directory.GetFiles(uploadDir));
             }
@@ -212,7 +217,12 @@ namespace MegaApp.Services
 
         public static void ClearLocalCache()
         {
-            FileService.ClearFiles(Directory.GetFiles(ApplicationData.Current.LocalFolder.Path));
+            string localCacheDir = ApplicationData.Current.LocalFolder.Path;
+            if (!String.IsNullOrWhiteSpace(localCacheDir) && !FolderService.HasIllegalChars(localCacheDir) &&
+                Directory.Exists(localCacheDir))
+            {
+                FileService.ClearFiles(Directory.GetFiles(localCacheDir));
+            }            
         }
 
         public static string GetUploadDirectoryPath(bool checkIfExists = false)
@@ -289,10 +299,11 @@ namespace MegaApp.Services
         public static void LogoutActions()
         {
             // Disable the "camera upload" service
+            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (LOGOUT)");
             MediaService.SetAutoCameraUpload(false);
-            SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
+            
             // Clear settings, cache, previews, thumbnails, etc.
+            SettingsService.ClearSettings();
             SettingsService.ClearMegaLoginData();
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {

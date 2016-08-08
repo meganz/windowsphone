@@ -331,7 +331,16 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logging in....
+        ///   Busca una cadena traducida similar a Importing folder....
+        /// </summary>
+        public static string PM_ImportFolder {
+            get {
+                return ResourceManager.GetString("PM_ImportFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Logging in....
         /// </summary>
         public static string PM_Login {
             get {

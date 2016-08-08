@@ -64,7 +64,7 @@ namespace MegaApp.Models
 
         private void GetThumbnail()
         {
-            if (Convert.ToBoolean(MegaSdk.isLoggedIn()))
+            if (Convert.ToBoolean(MegaSdk.isLoggedIn()) || ParentContainerType == ContainerType.FolderLink)
                 this.MegaSdk.getThumbnail(OriginalMNode, ThumbnailPath, new GetThumbnailRequestListener(this));
         }
 
@@ -680,7 +680,8 @@ namespace MegaApp.Models
                 this.ModificationTime = this.CreationTime;
 
             if(!App.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
-                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares)
+                this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares &&
+                this.ParentContainerType != ContainerType.FolderLink)
                 CheckAndUpdateSFO(megaNode);
         }        
 

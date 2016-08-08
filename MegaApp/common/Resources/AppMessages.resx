@@ -636,7 +636,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Failed to copy Recovery Key to clipboard. Please try again.</value>
+    <value>Failed to copy the Recovery Key to your clipboard. Please try again.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1214,7 +1214,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Message" xml:space="preserve">
-    <value>Item shared with the Windows Phone app of MEGA.</value>
+    <value>Item shared by the Windows Phone MEGA app.</value>
     <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
@@ -1222,12 +1222,24 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
-    <value>Items shared with the Windows Phone app of MEGA.</value>
+    <value>Items shared by the Windows Phone MEGA app.</value>
     <comment>Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareMultipleItemsFromMega_Title" xml:space="preserve">
     <value>Items shared from MEGA</value>
     <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderFailed" xml:space="preserve">
+    <value>Failed to import folder. Please try again.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
+  </data>
+  <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
+    <value>Folder import failed</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
+    <value>Link import failed</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
     <value>Failed to share item(s) from MEGA. Please try again.</value>

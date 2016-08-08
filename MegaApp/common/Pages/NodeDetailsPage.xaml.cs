@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
+using mega;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.MegaApi;
@@ -21,7 +22,7 @@ namespace MegaApp.Pages
     public partial class NodeDetailsPage : MegaPhoneApplicationPage
     {
         private readonly NodeDetailsViewModel _nodeDetailsViewModel;
-        private readonly NodeViewModel _nodeViewModel;
+        private readonly NodeViewModel _nodeViewModel;        
 
         private bool isBtnAvailableOfflineSwitchLoaded = false;
 
@@ -37,6 +38,11 @@ namespace MegaApp.Pages
 
             // Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged += new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
+
+            LabelSize.Text = String.Concat(UiResources.UI_Size, ":");
+            LabelContent.Text = String.Concat(UiResources.UI_Content, ":");
+            LabelAdded.Text = String.Concat(UiResources.UI_Added, ":");
+            LabelModified.Text = String.Concat(UiResources.UI_Modified, ":");
         }
 
         // Code to execute when a Network change is detected.
@@ -80,20 +86,27 @@ namespace MegaApp.Pages
 
         private void SetAppbarResources()
         {
-            if(_nodeViewModel.IsFolder)
+            if(_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
             {
-                if(_nodeViewModel.IsExported)
-                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFolderDetailsMenu"];
-                else
-                    this.ApplicationBar = (ApplicationBar)Resources["FolderDetailsMenu"];
+                this.ApplicationBar = (ApplicationBar)Resources["FolderLinkNodeDetailsMenu"];
             }
-            else //Node is a File
+            else
             {
-                if(_nodeViewModel.IsExported)
-                    this.ApplicationBar = (ApplicationBar)Resources["ExportedFileDetailsMenu"];
-                else
-                    this.ApplicationBar = (ApplicationBar)Resources["FileDetailsMenu"];
-            }
+                if (_nodeViewModel.IsFolder)
+                {
+                    if (_nodeViewModel.IsExported)
+                        this.ApplicationBar = (ApplicationBar)Resources["ExportedFolderDetailsMenu"];
+                    else
+                        this.ApplicationBar = (ApplicationBar)Resources["FolderDetailsMenu"];
+                }
+                else //Node is a File
+                {
+                    if (_nodeViewModel.IsExported)
+                        this.ApplicationBar = (ApplicationBar)Resources["ExportedFileDetailsMenu"];
+                    else
+                        this.ApplicationBar = (ApplicationBar)Resources["FileDetailsMenu"];
+                }
+            }            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -126,7 +139,8 @@ namespace MegaApp.Pages
                 var app = Application.Current as App;
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
-                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs);
+                    FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
+                        new FolderViewModel(App.MegaSdk, App.AppInformation, _nodeViewModel.ParentContainerType));
                 }
 #endif
                 return;
@@ -141,14 +155,43 @@ namespace MegaApp.Pages
 
         private void OnDownloadClick(object sender, EventArgs e)
         {
+            if (_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
+            {
+                App.LinkInformation.SelectedNodes.Add(_nodeViewModel);
+                App.LinkInformation.LinkAction = LinkAction.Download;
+            }
+
             _nodeDetailsViewModel.Download();            
+        }
+
+        private void OnImportClick(object sender, EventArgs e)
+        {
+            if (_nodeViewModel.ParentContainerType == ContainerType.FolderLink)
+            {
+                App.LinkInformation.SelectedNodes.Add(_nodeViewModel);
+                App.LinkInformation.LinkAction = LinkAction.Import;
+
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.ImportFolderLink);
+            }
         }
 
         private async void OnRemoveClick(object sender, EventArgs e)
         {   
             NodeActionResult result = await _nodeDetailsViewModel.Remove();
             if (result == NodeActionResult.Cancelled) return;
-            NavigateService.GoBack();            
+
+            try
+            {
+                if (NavigateService.CanGoBack())
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("NavigateService - GoBack"))
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
+            }
         }
 
         private void OnGetLinkClick(object sender, EventArgs e)
@@ -180,6 +223,6 @@ namespace MegaApp.Pages
         {
             if(this.isBtnAvailableOfflineSwitchLoaded)
                 _nodeDetailsViewModel.SaveForOffline(e.NewState);
-        }
+        }        
     }
 }

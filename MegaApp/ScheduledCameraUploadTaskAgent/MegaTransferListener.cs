@@ -38,12 +38,12 @@ namespace ScheduledCameraUploadTaskAgent
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            api.retryPendingConnections();
+            
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
-            api.retryPendingConnections();
+            
         }
     }
 }
