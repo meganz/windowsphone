@@ -435,15 +435,19 @@ namespace MegaApp.Pages
             _paymentViewModel.BillingDetails.CountryCode = countries.ElementAt(this.LstCountries.SelectedIndex).Item1;
         }
 
-        private void OnSelectedPaymentMethod(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
+        private async void OnSelectedPaymentMethod(object sender, Telerik.Windows.Controls.ListBoxItemTapEventArgs e)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
             switch(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType)
             {
+                case MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE:
+                    await LicenseService.PurchaseProduct(_paymentViewModel.SelectedProduct);
+                    break;
+
                 case MPaymentMethod.PAYMENT_METHOD_CENTILI:
                 case MPaymentMethod.PAYMENT_METHOD_FORTUMO:
-                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener(((PaymentMethod)LstPaymentMethods.SelectedItem).PaymentMethodType));
+                    App.MegaSdk.getPaymentId(_paymentViewModel.SelectedProduct.Handle, new GetPaymentUrlRequestListener(((PaymentMethod) LstPaymentMethods.SelectedItem).PaymentMethodType));
                     break;
 
                 case MPaymentMethod.PAYMENT_METHOD_CREDIT_CARD:
@@ -451,7 +455,7 @@ namespace MegaApp.Pages
                     _paymentViewModel.ProductSelectionIsEnabled = false;
                     _paymentViewModel.PaymentMethodSelectionIsEnabled = false;
                     _paymentViewModel.CreditCardPaymentIsEnabled = true;
-                    ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IsEnabled = true;
+                    ((ApplicationBarIconButton) ApplicationBar.Buttons[0]).IsEnabled = true;
                     break;
             }
         }

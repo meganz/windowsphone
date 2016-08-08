@@ -1418,6 +1418,11 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Memory statistics</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/InAppPurchase" translate="yes" xml:space="preserve">
+          <source>In app purchase</source>
+          <target state="new">In app purchase</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
+          </trans-unit>
         <trans-unit id="Resx/UI_Added" translate="yes" space="preserve">
           <source>Added</source>
           <target state="translated">Added</target>
