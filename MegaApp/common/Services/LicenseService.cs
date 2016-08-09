@@ -4,7 +4,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Storage;
 using mega;
