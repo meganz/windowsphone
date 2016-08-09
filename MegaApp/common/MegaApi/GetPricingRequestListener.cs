@@ -194,7 +194,7 @@ namespace MegaApp.MegaApi
                         product.PaymentMethods.Add(creditCardPaymentMethod);
                     }
 
-                    // If CC payment method is active, include it into the product
+                    // If in-app payment method is active, include it into the product
                     if (_upgradeAccount.InAppPaymentMethodAvailable)
                     {
                         var inAppPaymentMethod = new PaymentMethod
