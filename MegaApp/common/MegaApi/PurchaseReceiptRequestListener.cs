@@ -8,7 +8,7 @@ namespace MegaApp.MegaApi
     {
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.ValidatePurchase; }
+            get { return ProgressMessages.PM_ValidatePurchase; }
         }
 
         protected override bool ShowProgressMessage
