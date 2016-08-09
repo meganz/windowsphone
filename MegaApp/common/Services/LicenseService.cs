@@ -75,9 +75,9 @@ namespace MegaApp.Services
                 CurrentApp.LicenseInformation.ProductLicenses[productId].IsActive)
             {
                 new CustomMessageDialog(
-                        AppMessages.AlreadyPurchased_Title,
-                        AppMessages.AlreadyPurchased,
-                        App.AppInformation).ShowDialog();
+                    AppMessages.AM_AlreadyPurchased_Title,
+                    AppMessages.AM_AlreadyPurchased,
+                    App.AppInformation).ShowDialog();
                 return;
             }
 
@@ -158,9 +158,9 @@ namespace MegaApp.Services
             catch
             {
                 new CustomMessageDialog(
-                        AppMessages.PurchaseFailed_Title,
-                        AppMessages.PurchaseFailed,
-                        App.AppInformation).ShowDialog();
+                    AppMessages.AM_PurchaseFailed_Title,
+                    AppMessages.AM_PurchaseFailed,
+                    App.AppInformation).ShowDialog();
             }
         }
 
