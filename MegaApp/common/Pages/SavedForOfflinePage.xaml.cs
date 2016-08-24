@@ -252,8 +252,11 @@ namespace MegaApp.Pages
         {
             if (onOff)
             {
-                if (item != null)
-                    listBox.CheckedItems.Add(item);
+                if (item != null && !listBox.CheckedItems.Contains(item))
+                {
+                    try { listBox.CheckedItems.Add(item); }
+                    catch (InvalidOperationException) { /* Item already checked. Do nothing. */ }
+                }
 
                 if (_savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
                     _savedForOfflineViewModel.SavedForOffline.PreviousDisplayMode = _savedForOfflineViewModel.SavedForOffline.CurrentDisplayMode;

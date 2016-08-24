@@ -106,6 +106,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your account has been blocked. Please contact support@mega.co.nz.
+        /// </summary>
+        public static string AM_AccountBlocked {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account blocked.
+        /// </summary>
+        public static string AM_AccountBlocked_Title {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account has not been confirmed yet..
+        /// </summary>
+        public static string AM_AccountNotConfirmed {
+            get {
+                return ResourceManager.GetString("AM_AccountNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?.
         /// </summary>
         public static string AM_AlreadyLoggedInAlert {
@@ -120,6 +147,15 @@ namespace MegaApp.Resources {
         public static string AM_AlreadyLoggedInAlert_Title {
             get {
                 return ResourceManager.GetString("AM_AlreadyLoggedInAlert_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The associated user account has been terminated due to multiple violations of our Terms of Service..
+        /// </summary>
+        public static string AM_AssociatedUserAccountTerminated {
+            get {
+                return ResourceManager.GetString("AM_AssociatedUserAccountTerminated", resourceCulture);
             }
         }
         
@@ -277,11 +313,38 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Download failed.
+        /// </summary>
+        public static string AM_DownloadFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_DownloadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Could not download the folder link. Please try again..
+        /// </summary>
+        public static string AM_DownloadFolderLinkFailed {
+            get {
+                return ResourceManager.GetString("AM_DownloadFolderLinkFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to download the file. Please try again..
         /// </summary>
         public static string AM_DownloadNodeFailedNoErrorCode {
             get {
                 return ResourceManager.GetString("AM_DownloadNodeFailedNoErrorCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This e-mail address has already registered an account with MEGA..
+        /// </summary>
+        public static string AM_EmailAlreadyRegistered {
+            get {
+                return ResourceManager.GetString("AM_EmailAlreadyRegistered", resourceCulture);
             }
         }
         
@@ -328,6 +391,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Import failed.
+        /// </summary>
+        public static string AM_ImportFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ImportFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a File import failed [{0}].
         /// </summary>
         public static string AM_ImportFileFailed {
@@ -364,11 +436,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Could not import the folder link. Please try again..
+        /// </summary>
+        public static string AM_ImportFolderLinkFailed {
+            get {
+                return ResourceManager.GetString("AM_ImportFolderLinkFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Link import failed.
         /// </summary>
         public static string AM_ImportLinkFailed_Title {
             get {
                 return ResourceManager.GetString("AM_ImportLinkFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again..
+        /// </summary>
+        public static string AM_IncompleteConfirmationLink {
+            get {
+                return ResourceManager.GetString("AM_IncompleteConfirmationLink", resourceCulture);
             }
         }
         
@@ -436,6 +526,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The link you are using for a new signup is not valid..
+        /// </summary>
+        public static string AM_NewSignUpInvalidLink {
+            get {
+                return ResourceManager.GetString("AM_NewSignUpInvalidLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Open link failed [{0}].
         /// </summary>
         public static string AM_OpenLinkFailed {
@@ -472,7 +571,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to copy Recovery Key to clipboard. Please try again..
+        ///   Busca una cadena traducida similar a Failed to copy the Recovery Key to your clipboard. Please try again..
         /// </summary>
         public static string AM_RecoveryKeyClipboardFailed {
             get {
@@ -526,7 +625,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Item shared with the Windows Phone app of MEGA..
+        ///   Busca una cadena traducida similar a Item shared by the Windows Phone MEGA app..
         /// </summary>
         public static string AM_ShareItemFromMega_Message {
             get {
@@ -544,7 +643,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Items shared with the Windows Phone app of MEGA..
+        ///   Busca una cadena traducida similar a Items shared by the Windows Phone MEGA app..
         /// </summary>
         public static string AM_ShareMultipleItemsFromMega_Message {
             get {
@@ -558,6 +657,15 @@ namespace MegaApp.Resources {
         public static string AM_ShareMultipleItemsFromMega_Title {
             get {
                 return ResourceManager.GetString("AM_ShareMultipleItemsFromMega_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have attempted to log in too many times. Please wait until {0} and try again..
+        /// </summary>
+        public static string AM_TooManyFailedLoginAttempts {
+            get {
+                return ResourceManager.GetString("AM_TooManyFailedLoginAttempts", resourceCulture);
             }
         }
         
