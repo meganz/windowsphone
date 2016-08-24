@@ -50,18 +50,21 @@ namespace MegaApp.MegaApi
         #region Private Methods
 
         /// <summary>
-        /// Show a message indicating that the link is not valid.
+        /// Show a message indicating that the file link is not valid.
         /// </summary>
-        protected void ShowLinkNoValidAlert()
+        protected void ShowFileLinkNoValidAlert()
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                new CustomMessageDialog(
-                    ErrorMessageTitle,
-                    AppMessages.AM_InvalidLink,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
+            GenericFileLinkAlert(ErrorMessageTitle,
+                AppMessages.AM_InvalidLink);
+        }
+
+        /// <summary>
+        /// Show a message indicating that the folder link is not valid.
+        /// </summary>
+        protected void ShowFolderLinkNoValidAlert()
+        {
+            GenericFolderLinkAlert(ErrorMessageTitle,
+                AppMessages.AM_InvalidLink);
         }
 
         /// <summary>
@@ -70,14 +73,8 @@ namespace MegaApp.MegaApi
         /// </summary>
         protected void ShowUnavailableFileLinkAlert()
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                new CustomMessageDialog(
-                    AppMessages.AM_LinkUnavailableTitle,
-                    AppMessages.AM_FileLinkUnavailable,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
-            });
+            GenericFileLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_FileLinkUnavailable);
         }
 
         /// <summary>
@@ -86,13 +83,63 @@ namespace MegaApp.MegaApi
         /// </summary>
         protected void ShowUnavailableFolderLinkAlert()
         {
+            GenericFolderLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_FolderLinkUnavailable);
+        }
+
+        /// <summary>
+        /// Show a message indicating that the file link is no longer available
+        /// because the the associated user account has been terminated due to multiple 
+        /// violations of our Terms of Service.
+        /// </summary>
+        protected void ShowAssociatedUserAccountTerminatedFileLinkAlert()
+        {
+            GenericFileLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_AssociatedUserAccountTerminated);
+        }
+
+        /// <summary>
+        /// Show a message indicating that the folder link is no longer available
+        /// because the the associated user account has been terminated due to multiple 
+        /// violations of our Terms of Service.
+        /// </summary>
+        protected void ShowAssociatedUserAccountTerminatedFolderLinkAlert()
+        {
+            GenericFolderLinkAlert(AppMessages.AM_LinkUnavailableTitle,
+                AppMessages.AM_AssociatedUserAccountTerminated);
+        }
+
+        /// <summary>
+        /// Generic method to show dialog with a file link alert message.
+        /// </summary>
+        /// <param name="title">Title of the alert dialog.</param>
+        /// <param name="message">Message of the alert dialog.</param>
+        private void GenericFileLinkAlert(String title, String message)
+        {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                new CustomMessageDialog(
-                    AppMessages.AM_LinkUnavailableTitle,
-                    AppMessages.AM_FolderLinkUnavailable,
-                    App.AppInformation,
+                new CustomMessageDialog(title, message, App.AppInformation, 
                     MessageDialogButtons.Ok).ShowDialog();
+            });
+        }
+
+        /// <summary>
+        /// Generic method to show dialog with a folder link alert message.
+        /// </summary>
+        /// <param name="title">Title of the alert dialog.</param>
+        /// <param name="message">Message of the alert dialog.</param>
+        private void GenericFolderLinkAlert(String title, String message)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    title, message, App.AppInformation, 
+                    MessageDialogButtons.Ok);
+
+                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                    _folderLinkViewModel._folderLinkPage.CancelAction();
+
+                customMessageDialog.ShowDialog();
             });
         }
 

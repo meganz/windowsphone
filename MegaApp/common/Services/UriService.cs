@@ -19,12 +19,22 @@ namespace MegaApp.Services
         /// <returns>Final URL.</returns>
         public static String ReformatUri(String Uri)
         {
-            if (Uri.StartsWith("mega:///#"))
-                return Uri.Replace("mega:///#", "https://mega.nz/#");
-            else if (Uri.StartsWith("mega://#"))
-                return Uri.Replace("mega://#", "https://mega.nz/#");
-            else if (Uri.StartsWith("mega://"))
-                return Uri.Replace("mega://", "https://mega.nz/#");
+            // Avoid the last "/" character introduced by some browsers
+            if (Uri.EndsWith("/"))
+                Uri = Uri.Remove(Uri.Length - 1, 1);
+
+            // Reformat the URL begining            
+            if(Uri.Contains("#"))
+            {
+                String uriBegin = Uri.Split('#').First();
+                return Uri.Replace(uriBegin, "https://mega.nz/");
+            }
+            else
+            {
+                // Support for old links
+                if (Uri.StartsWith("mega://"))
+                    return Uri.Replace("mega://", "https://mega.nz/#");
+            }
 
             return Uri;
         }

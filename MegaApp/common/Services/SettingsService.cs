@@ -197,8 +197,12 @@ namespace MegaApp.Services
                 {
                     try
                     {
-                        var file = await settings.GetFileAsync(key);
-                        await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        // Checking to try avoid "FileNotFoundException"
+                        if (FileService.FileExists(Path.Combine(settings.Path, key)))
+                        {
+                            var file = await settings.GetFileAsync(key);
+                            await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        }
                     }
                     catch (FileNotFoundException) { /* Do nothing */ }
                 }));
@@ -305,6 +309,11 @@ namespace MegaApp.Services
             catch (ArgumentNullException) { return false; }
         }
 
+        /// <summary>
+        /// Save all the login data settings
+        /// </summary>
+        /// <param name="email">User account email</param>
+        /// <param name="session">User session ID</param>
         public static void SaveMegaLoginData(string email, string session)
         {
             SaveSetting(SettingsResources.UserMegaEmailAddress, email);
@@ -314,16 +323,35 @@ namespace MegaApp.Services
             SaveSettingToFile(SettingsResources.UserMegaSession, session);
         }
 
+        /// <summary>
+        /// Clear all the login data settings
+        /// </summary>
         public static void ClearMegaLoginData()
         {
             DeleteSetting(SettingsResources.UserMegaEmailAddress);
             DeleteSetting(SettingsResources.UserMegaSession);
+
+            DeleteFileSetting(SettingsResources.UserMegaSession);
+        }
+
+        /// <summary>
+        /// Clear all the user settings.
+        /// </summary>
+        public static void ClearSettings()
+        {
+            DeleteSetting(SettingsResources.AskDownloadLocationIsEnabled);
+            DeleteSetting(SettingsResources.CameraUploadsConnectionType);
+            DeleteSetting(SettingsResources.CameraUploadsFileType);
+            DeleteSetting(SettingsResources.CameraUploadsFirstInit);
+            DeleteSetting(SettingsResources.CameraUploadsIsEnabled);
+            DeleteSetting(SettingsResources.DebugModeIsEnabled);
+            DeleteSetting(SettingsResources.DefaultDownloadLocation);
+            DeleteSetting(SettingsResources.ExportImagesToPhotoAlbum);            
+            DeleteSetting(SettingsResources.QuestionAskedDownloadOption);
             DeleteSetting(SettingsResources.UserPinLockIsEnabled);
             DeleteSetting(SettingsResources.UserPinLock);
-
-            DeleteSetting(SettingsResources.CameraUploadsFirstInit);
-
-            DeleteSetting(SettingsResources.DebugModeIsEnabled);
+                        
+            DeleteFileSetting("LastUploadDate");
         }
     }
 }

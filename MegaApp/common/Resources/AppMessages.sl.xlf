@@ -1281,7 +1281,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
-          <source>This could be due to the following reasons:- The file has been removed because of a ToS/AUP violation.- Invalid URL – the link you are trying to access does not exist.- The file has been deleted by the user.</source>
+          <source>This could be due to the following reasons:
+- The file has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The file has been deleted by the user.</source>
           <target state="needs-review-translation">To se lahko zgodi iz sledečih razlogov:
 - Datoteka je bila odstranjena zaradi kršitve pravil uporabe
 - Napačen URL naslov - povezava, ki jo želite odpreti, ne obstaja
@@ -1289,7 +1292,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
-          <source>This could be due to the following reasons:- The folder link has been removed because of a ToS/AUP violation.- Invalid URL – the link you are trying to access does not exist.- The folder link has been deleted by the user.</source>
+          <source>This could be due to the following reasons:
+- The folder link has been removed because of a ToS/AUP violation.
+- Invalid URL – the link you are trying to access does not exist.
+- The folder link has been deleted by the user.</source>
           <target state="needs-review-translation">To se lahko zgodi iz naslednjih razlogov:
 - Povezava na mapo je bila odstranjena zaradi kršitve pravil storitve
 - Napačen URL - povezava, ki jo želite odpreti, ne obstaja
@@ -1408,6 +1414,67 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <source>Error sharing item(s)</source>
           <target state="translated">Napaka pri deljenju predmeta/ov</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" xml:space="preserve">
+          <source>Could not import the folder link. Please try again.</source>
+          <target state="new">Could not import the folder link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" xml:space="preserve">
+          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
+          <target state="new">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" xml:space="preserve">
+          <source>This e-mail address has already registered an account with MEGA.</source>
+          <target state="new">This e-mail address has already registered an account with MEGA.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" xml:space="preserve">
+          <source>The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again.</source>
+          <target state="new">The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" xml:space="preserve">
+          <source>The link you are using for a new signup is not valid.</source>
+          <target state="new">The link you are using for a new signup is not valid.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" xml:space="preserve">
+          <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
+          <target state="new">You have attempted to log in too many times. Please wait until {0} and try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" xml:space="preserve">
+          <source>Account blocked</source>
+          <target state="new">Account blocked</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" xml:space="preserve">
+          <source>Account has not been confirmed yet.</source>
+          <target state="new">Account has not been confirmed yet.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked" translate="yes" xml:space="preserve">
+          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
+          <target state="new">Your account has been blocked. Please contact support@mega.co.nz</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
+          <source>Import failed</source>
+          <target state="new">Import failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" xml:space="preserve">
+          <source>Could not download the folder link. Please try again.</source>
+          <target state="new">Could not download the folder link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" xml:space="preserve">
+          <source>Download failed</source>
+          <target state="new">Download failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

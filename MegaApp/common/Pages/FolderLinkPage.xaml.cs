@@ -163,8 +163,24 @@ namespace MegaApp.Pages
 
             if (!App.LinkInformation.HasFetchedNodesFolderLink)
             {
-                App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
-                    new LoginToFolderRequestListener(_folderLinkViewModel));
+                if (!String.IsNullOrWhiteSpace(App.LinkInformation.ActiveLink))
+                {
+                    App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
+                        new LoginToFolderRequestListener(_folderLinkViewModel));
+                }
+                else
+                {
+                    var customMessageDialog = new CustomMessageDialog(
+                        AppMessages.AM_OpenLinkFailed_Title, 
+                        AppMessages.AM_InvalidLink, 
+                        App.AppInformation,
+                        MessageDialogButtons.Ok);
+
+                    customMessageDialog.OkOrYesButtonTapped += (sender, args) => CancelAction();
+
+                    customMessageDialog.ShowDialog();
+                    return;
+                }
             }
             else
             {
@@ -323,6 +339,21 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
 
+            // Extra check to avoid NullReferenceException
+            if(_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.AM_DownloadFailed_Title,
+                    AppMessages.AM_DownloadFolderLinkFailed,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok);
+
+                customMessageDialog.OkOrYesButtonTapped += (new_sender, args) => CancelAction();
+
+                customMessageDialog.ShowDialog();
+                return;
+            }
+
             App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
             App.LinkInformation.LinkAction = LinkAction.Download;
 
@@ -335,6 +366,21 @@ namespace MegaApp.Pages
         {
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
+
+            // Extra check to avoid NullReferenceException
+            if (_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
+            {
+                var customMessageDialog = new CustomMessageDialog(
+                    AppMessages.AM_ImportFailed_Title,
+                    AppMessages.AM_ImportFolderLinkFailed,
+                    App.AppInformation,
+                    MessageDialogButtons.Ok);
+
+                customMessageDialog.OkOrYesButtonTapped += (new_sender, args) => CancelAction();
+
+                customMessageDialog.ShowDialog();
+                return;
+            }
 
             App.LinkInformation.SelectedNodes.Add(_folderLinkViewModel.FolderLinkRootNode);
             App.LinkInformation.LinkAction = LinkAction.Import;
@@ -350,7 +396,7 @@ namespace MegaApp.Pages
             CancelAction();
         }
 
-        private void CancelAction()
+        public void CancelAction()
         {
             App.LinkInformation.Reset();
 
@@ -478,8 +524,11 @@ namespace MegaApp.Pages
         {
             if (onOff)
             {
-                if (item != null)
-                    listBox.CheckedItems.Add(item);
+                if (item != null && !listBox.CheckedItems.Contains(item))
+                {
+                    try { listBox.CheckedItems.Add(item); }
+                    catch (InvalidOperationException) { /* Item already checked. Do nothing. */ }
+                }
 
                 if (_folderLinkViewModel.FolderLink.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
                     _folderLinkViewModel.FolderLink.PreviousDisplayMode = _folderLinkViewModel.FolderLink.CurrentDisplayMode;

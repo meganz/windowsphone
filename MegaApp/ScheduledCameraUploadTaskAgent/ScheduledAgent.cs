@@ -25,6 +25,9 @@ namespace ScheduledCameraUploadTaskAgent
         /// </remarks>
         static ScheduledAgent()
         {
+            // Enable a custom logger
+            MegaSDK.setLoggerObject(new MegaLogger());
+
             // Subscribe to the managed exception handler
             Deployment.Current.Dispatcher.BeginInvoke(delegate
             {
@@ -61,6 +64,10 @@ namespace ScheduledCameraUploadTaskAgent
                 return;
             }
 
+            // Log message to indicate that the service is invoked and the last exit reason
+            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " + 
+                task.LastExitReason.ToString());
+            
             // Initialisation SDK succeeded
             // Fast login with session token that was saved during MEGA app initial login
             FastLogin();
@@ -178,6 +185,8 @@ namespace ScheduledCameraUploadTaskAgent
         /// </summary>
         private async void Upload()
         {
+            MegaSdk.retryPendingConnections();
+
             // Get the date of the last uploaded file
             // Needed so that we do not upload the same file twice
             var lastUploadDate = SettingsService.LoadSettingFromFile<DateTime>("LastUploadDate");
@@ -187,13 +196,14 @@ namespace ScheduledCameraUploadTaskAgent
             {
                 var selectDate = lastUploadDate;
                 // Find all pictures taken after the last upload date
-                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).ToList();
+                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).OrderBy(p => p.Date).ToList();
 
 
                 if (!pictures.Any())
                 {
                     // No pictures is not an error. Maybe all pictures have already been uploaded
                     // Just finish the task for this run
+                    MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "No new items to upload");
                     this.NotifyComplete();
                     return;
                 }
@@ -203,6 +213,7 @@ namespace ScheduledCameraUploadTaskAgent
                 {
                     // No camera upload node found or created
                     // Just finish this run and try again next time
+                    MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "No camera uploads folder");
                     this.NotifyComplete();
                     return;
                 }
@@ -229,13 +240,10 @@ namespace ScheduledCameraUploadTaskAgent
                             // Check if the fingerprint is already in the subfolders of the Camera Uploads
                             var mNode = MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
 
-                            // Get the files create/modified date
-                            lastUploadDate = picture.Date;
-
                             // If node already exists then save the node date and proceed with the next node
                             if (mNode != null)
                             {
-                                SettingsService.SaveSettingToFile("LastUploadDate", lastUploadDate);
+                                SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", picture.Date);
                                 continue; // skip to next picture
                             }
 
@@ -263,11 +271,12 @@ namespace ScheduledCameraUploadTaskAgent
 
                                 try
                                 {
-                                    // Use selectdate against access modified closure 
                                     if (args.Succeeded)
-                                        SettingsService.SaveSettingToFile("LastUploadDate", selectDate);
+                                        SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", picture.Date);
+                                        
                                     // Clean up after upload
                                     File.Delete(newFilePath);
+
                                     // Start a new upload action
                                     Upload();
                                 }
@@ -287,6 +296,7 @@ namespace ScheduledCameraUploadTaskAgent
                     {
                         // Something went wrong (could be memory limit)
                         // Just finish this run and try again next time
+                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
                         this.NotifyComplete();
                         return;
                     }

@@ -317,7 +317,7 @@ namespace MegaApp.MegaApi
                     if (_decryptionAlert)
                         ShowDecryptionKeyNotValidAlert(api, request);
                     else
-                        ShowLinkNoValidAlert();
+                        ShowFolderLinkNoValidAlert();
                 }
                 else
                 {
@@ -326,15 +326,26 @@ namespace MegaApp.MegaApi
             }
             else
             {
-                if (e.getErrorCode() == MErrorType.API_ENOENT)
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
-                        _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
-                    });
+                    _folderLinkViewModel.FolderLink.SetEmptyContentTemplate(false);
+                    _folderLinkViewModel._folderLinkPage.SetApplicationBarData(false);
+                });
 
-                    ShowUnavailableFolderLinkAlert();
+                switch(e.getErrorCode())
+                {
+                    case MErrorType.API_ETOOMANY:   // Taken down link and the link owner's account is blocked
+                        ShowAssociatedUserAccountTerminatedFolderLinkAlert();
+                        break;
+
+                    case MErrorType.API_ENOENT:     // Link not exists or has been deleted by user
+                    case MErrorType.API_EBLOCKED:   // Taken down link
+                        ShowUnavailableFolderLinkAlert();                        
+                        break;
+
+                    default:
+                        ShowFolderLinkNoValidAlert();
+                        break;
                 }
             }
         }
