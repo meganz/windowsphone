@@ -169,7 +169,7 @@ namespace ScheduledCameraUploadTaskAgent
                 }
 
                 // Enable the transfers resumption for the Camera Uploads service
-                MegaSdk.enableTransferResumption();
+                //MegaSdk.enableTransferResumption();
 
                 // If fetching nodes succeeded
                 // Begin uploading files
