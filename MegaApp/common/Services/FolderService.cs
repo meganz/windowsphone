@@ -47,8 +47,8 @@ namespace MegaApp.Services
                 }
                 else
                 {
-                    foreach (var filename in childFiles)
-                        if (!FileService.IsPendingTransferFile(filename)) num++;
+                    foreach (var filePath in childFiles)
+                        if (!FileService.IsPendingTransferFile(Path.GetFileName(filePath))) num++;
                 }
 
                 return num;
