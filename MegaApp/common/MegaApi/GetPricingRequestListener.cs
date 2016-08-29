@@ -194,13 +194,13 @@ namespace MegaApp.MegaApi
                         product.PaymentMethods.Add(creditCardPaymentMethod);
                     }
 
-                    // If CC payment method is active, include it into the product
+                    // If in-app payment method is active, include it into the product
                     if (_upgradeAccount.InAppPaymentMethodAvailable)
                     {
                         var inAppPaymentMethod = new PaymentMethod
                         {
                             PaymentMethodType = MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE,
-                            Name = String.Format(UiResources.InAppPurchase + " - " + UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
+                            Name = String.Format(UiResources.UI_InAppPurchase + " - " + UiResources.PhoneBill + " (" + UiResources.Punctual.ToLower() + ")"),
                             PaymentMethodPathData = VisualResources.PhoneBillingPathData
                         };
                         product.PaymentMethods.Add(inAppPaymentMethod);

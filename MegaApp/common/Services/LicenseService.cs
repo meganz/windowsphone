@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Linq;
-using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Storage;
 using mega;
@@ -76,8 +75,8 @@ namespace MegaApp.Services
                 CurrentApp.LicenseInformation.ProductLicenses[productId].IsActive)
             {
                 new CustomMessageDialog(
-                        AppMessages.AlreadyPurchased_Title,
-                        AppMessages.AlreadyPurchased,
+                    AppMessages.AM_AlreadyPurchased_Title,
+                    AppMessages.AM_AlreadyPurchased,
                         App.AppInformation).ShowDialog();
                 return;
             }
@@ -159,8 +158,8 @@ namespace MegaApp.Services
             catch
             {
                 new CustomMessageDialog(
-                        AppMessages.PurchaseFailed_Title,
-                        AppMessages.PurchaseFailed,
+                    AppMessages.AM_PurchaseFailed_Title,
+                    AppMessages.AM_PurchaseFailed,
                         App.AppInformation).ShowDialog();
             }
         }
@@ -172,7 +171,7 @@ namespace MegaApp.Services
         private static void SendLicenseToMega(string receipt)
         {
             // Validate and activate the MEGA Windows Store (int 13) subscription on the MEGA license server
-            App.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE,
+            App.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE, 
                 receipt, new PurchaseReceiptRequestListener(receipt));
         }
 

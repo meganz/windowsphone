@@ -26,7 +26,7 @@ namespace MegaApp.MegaApi
 
         protected override string ProgressMessage
         {
-            get { return ProgressMessages.ValidatePurchase; }
+            get { return ProgressMessages.PM_ValidatePurchase; }
         }
 
         protected override bool ShowProgressMessage
@@ -36,12 +36,12 @@ namespace MegaApp.MegaApi
 
         protected override string ErrorMessage
         {
-            get { return AppMessages.PurchaseValidationFailed; }
+            get { return AppMessages.AM_PurchaseValidationFailed; }
         }
 
         protected override string ErrorMessageTitle
         {
-            get { return AppMessages.PurchaseValidationFailed_Title; }
+            get { return AppMessages.AM_PurchaseValidationFailed_Title; }
         }
 
         protected override bool ShowErrorMessage
@@ -51,12 +51,12 @@ namespace MegaApp.MegaApi
 
         protected override string SuccessMessage
         {
-            get { return AppMessages.PurchaseSucceeded; }
+            get { return AppMessages.AM_PurchaseSucceeded; }
         }
 
         protected override string SuccessMessageTitle
         {
-            get { return AppMessages.PurchaseSucceeded_Title; }
+            get { return AppMessages.AM_PurchaseSucceeded_Title; }
         }
 
         protected override bool ShowSuccesMessage
