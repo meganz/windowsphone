@@ -15,6 +15,8 @@ namespace ScheduledCameraUploadTaskAgent
 {
     public class ScheduledAgent : ScheduledTaskAgent
     {
+        private static ScheduledAgent scheduledAgent { get; set; }
+
         /// <summary>
         /// MEGA Software Development Kit reference
         /// </summary>
@@ -64,11 +66,19 @@ namespace ScheduledCameraUploadTaskAgent
                 return;
             }
 
+            // Initialisation SDK succeeded
+            scheduledAgent = this;
+
             // Log message to indicate that the service is invoked and the last exit reason
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " + 
                 task.LastExitReason.ToString());
+
+            // Add notifications listener
+            MegaSdk.addGlobalListener(new MegaGlobalListener());
             
-            // Initialisation SDK succeeded
+            // Add transfers listener
+            MegaSdk.addTransferListener(new MegaTransferListener());
+                        
             // Fast login with session token that was saved during MEGA app initial login
             FastLogin();
         }
@@ -173,11 +183,7 @@ namespace ScheduledCameraUploadTaskAgent
                 }
 
                 // Enable the transfers resumption for the Camera Uploads service
-                //MegaSdk.enableTransferResumption();
-
-                // If fetching nodes succeeded
-                // Begin uploading files
-                Upload();
+                MegaSdk.enableTransferResumption();
             };
 
             // Init fetch nodes
@@ -187,7 +193,7 @@ namespace ScheduledCameraUploadTaskAgent
         /// <summary>
         /// Upload files to MEGA Cloud Service
         /// </summary>
-        private async void Upload()
+        public static async void Upload()
         {
             MegaSdk.retryPendingConnections();
 
@@ -208,17 +214,17 @@ namespace ScheduledCameraUploadTaskAgent
                     // No pictures is not an error. Maybe all pictures have already been uploaded
                     // Just finish the task for this run
                     MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "No new items to upload");
-                    this.NotifyComplete();
+                    scheduledAgent.NotifyComplete();
                     return;
                 }
 
-                var cameraUploadNode = await GetCameraUploadsNode();
+                var cameraUploadNode = await scheduledAgent.GetCameraUploadsNode();
                 if (cameraUploadNode == null)
                 {
                     // No camera upload node found or created
                     // Just finish this run and try again next time
                     MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "No camera uploads folder");
-                    this.NotifyComplete();
+                    scheduledAgent.NotifyComplete();
                     return;
                 }
 
@@ -265,34 +271,10 @@ namespace ScheduledCameraUploadTaskAgent
                                 await imageStream.CopyToAsync(fs);
                                 await fs.FlushAsync();
                                 fs.Close();
-                            }
-                            
-                            var transferListener = new MegaTransferListener();
-                            
-                            // Take action after the transfer is finished. 
-                            transferListener.TransferFinished += (sender, args) =>
-                            {
-
-                                try
-                                {
-                                    if (args.Succeeded)
-                                        SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", picture.Date);
-                                        
-                                    // Clean up after upload
-                                    File.Delete(newFilePath);
-
-                                    // Start a new upload action
-                                    Upload();
-                                }
-                                catch (Exception)
-                                {
-                                    // File could not be found for delete or setting could not be saved
-                                    // Just continue the run
-                                }
-                            };
+                            }                            
 
                             // Init the upload
-                            MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime, transferListener);
+                            MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime);                            
                             break;
                         }
                     }
@@ -301,13 +283,11 @@ namespace ScheduledCameraUploadTaskAgent
                         // Something went wrong (could be memory limit)
                         // Just finish this run and try again next time
                         MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
-                        this.NotifyComplete();
+                        scheduledAgent.NotifyComplete();
                         return;
                     }
                 }
-
             }
-
         }
        
         /// <summary>
