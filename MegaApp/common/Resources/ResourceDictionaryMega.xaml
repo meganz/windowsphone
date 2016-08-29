@@ -780,7 +780,7 @@
 
                 <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="64" Stretch="UniformToFill" Margin="0,0,8,0">
                     <Rectangle.Fill>
-                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        <SolidColorBrush Color="{Binding AvatarColor}"/>
                     </Rectangle.Fill>
                 </Rectangle>
                 <Ellipse Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="40" Height="40" >
@@ -790,7 +790,7 @@
                 </Ellipse>
                 <TextBlock Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="0,0,9,1" Text="{Binding AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
                     <TextBlock.Foreground>
-                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                        <SolidColorBrush Color="{Binding AvatarColor}"/>
                     </TextBlock.Foreground>
                 </TextBlock>
                 <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill" Visibility="{Binding HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
