@@ -64,6 +64,8 @@ namespace MegaApp
 
         public static GlobalDriveListener GlobalDriveListener { get; private set; }
 
+        public static GlobalTransferListener GlobalTransferListener { get; private set; }
+
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
         public static String ShortCutBase64Handle { get; set; }
@@ -315,6 +317,9 @@ namespace MegaApp
             MegaSdk.addGlobalListener(GlobalDriveListener);
             // Add a global request listener to process all.
             MegaSdk.addRequestListener(this);
+            // Add a global transfer listener to process all transfers.
+            GlobalTransferListener = new GlobalTransferListener();
+            MegaSdk.addTransferListener(GlobalTransferListener);
             // Initialize the transfer listing
             MegaTransfers = new TransferQueu();
             // Initialize Folders
@@ -323,8 +328,6 @@ namespace MegaApp
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
             // Initialize Debug Settings
             DebugService.DebugSettings = new DebugSettingsViewModel();
-            // Clear upload folder. Temporary uploads files are not necessary to keep
-            AppService.ClearUploadCache();
             // Clear settings values we do no longer use
             AppService.ClearObsoleteSettings();
             // Save the app version information for future use (like deleting settings)

@@ -15,8 +15,6 @@ namespace MegaApp.Classes
     {
         public TransferQueu()
         {
-            QueuePaused = true;
-
             Uploads = new ObservableCollection<TransferObjectModel>();
             Downloads = new ObservableCollection<TransferObjectModel>();
 
@@ -163,7 +161,5 @@ namespace MegaApp.Classes
         public ObservableCollection<TransferObjectModel> Uploads { get; private set; }
 
         public ObservableCollection<TransferObjectModel> Downloads { get; private set; }
-
-        public bool QueuePaused { get; set; }
     }
 }

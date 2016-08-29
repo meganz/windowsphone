@@ -406,9 +406,6 @@
     <Compile Include="..\common\MegaApi\BaseRequestListener.cs">
       <Link>MegaApi\BaseRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\BaseTransferListener.cs">
-      <Link>MegaApi\BaseTransferListener.cs</Link>
-    </Compile>
     <Compile Include="..\common\MegaApi\CancelSubscriptionRequestListener.cs">
       <Link>MegaApi\CancelSubscriptionRequestListener.cs</Link>
     </Compile>
@@ -483,6 +480,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
       <Link>MegaApi\GlobalDriveListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\GlobalTransferListener.cs">
+      <Link>MegaApi\GlobalTransferListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\ImportFileRequestListener.cs">
       <Link>MegaApi\ImportFileRequestListener.cs</Link>
@@ -854,6 +854,9 @@
     </Compile>
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\TransfersService.cs">
+      <Link>Services\TransfersService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\UiService.cs">
       <Link>Services\UiService.cs</Link>
