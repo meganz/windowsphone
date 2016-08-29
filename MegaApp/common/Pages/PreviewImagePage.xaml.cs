@@ -59,13 +59,13 @@ namespace MegaApp.Pages
 
         private void SetAppbarResources()
         {
-            if (SlideViewAndFilmStrip.IsOverlayContentDisplayed)
+            if (SlideViewAndFilmStrip != null && SlideViewAndFilmStrip.IsOverlayContentDisplayed)
             {
                 ApplicationBar = null;
             }
             else
             {
-                if (_folderViewModel.Type == ContainerType.FolderLink)
+                if (_folderViewModel != null && _folderViewModel.Type == ContainerType.FolderLink)
                     this.ApplicationBar = (ApplicationBar)Resources["FolderLinkPreviewApplicationBar"];
                 else
                     this.ApplicationBar = (ApplicationBar)Resources["PreviewApplicationBar"];

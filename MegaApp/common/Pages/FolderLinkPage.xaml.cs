@@ -524,8 +524,11 @@ namespace MegaApp.Pages
         {
             if (onOff)
             {
-                if (item != null)
-                    listBox.CheckedItems.Add(item);
+                if (item != null && !listBox.CheckedItems.Contains(item))
+                {
+                    try { listBox.CheckedItems.Add(item); }
+                    catch (InvalidOperationException) { /* Item already checked. Do nothing. */ }
+                }
 
                 if (_folderLinkViewModel.FolderLink.CurrentDisplayMode != DriveDisplayMode.MultiSelect)
                     _folderLinkViewModel.FolderLink.PreviousDisplayMode = _folderLinkViewModel.FolderLink.CurrentDisplayMode;
