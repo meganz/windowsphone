@@ -197,8 +197,12 @@ namespace MegaApp.Services
                 {
                     try
                     {
-                        var file = await settings.GetFileAsync(key);
-                        await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        // Checking to try avoid "FileNotFoundException"
+                        if (FileService.FileExists(Path.Combine(settings.Path, key)))
+                        {
+                            var file = await settings.GetFileAsync(key);
+                            await file.DeleteAsync(StorageDeleteOption.PermanentDelete);
+                        }
                     }
                     catch (FileNotFoundException) { /* Do nothing */ }
                 }));

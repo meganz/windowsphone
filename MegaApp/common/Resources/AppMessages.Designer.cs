@@ -106,6 +106,33 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your account has been blocked. Please contact support@mega.co.nz.
+        /// </summary>
+        public static string AM_AccountBlocked {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account blocked.
+        /// </summary>
+        public static string AM_AccountBlocked_Title {
+            get {
+                return ResourceManager.GetString("AM_AccountBlocked_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Account has not been confirmed yet..
+        /// </summary>
+        public static string AM_AccountNotConfirmed {
+            get {
+                return ResourceManager.GetString("AM_AccountNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?.
         /// </summary>
         public static string AM_AlreadyLoggedInAlert {
@@ -331,6 +358,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This e-mail address has already registered an account with MEGA..
+        /// </summary>
+        public static string AM_EmailAlreadyRegistered {
+            get {
+                return ResourceManager.GetString("AM_EmailAlreadyRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a A log will be created in the Offline section ({0})..
         /// </summary>
         public static string AM_EnableDebugMode_Message {
@@ -436,6 +472,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again..
+        /// </summary>
+        public static string AM_IncompleteConfirmationLink {
+            get {
+                return ResourceManager.GetString("AM_IncompleteConfirmationLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Invalid link.
         /// </summary>
         public static string AM_InvalidLink {
@@ -495,6 +540,15 @@ namespace MegaApp.Resources {
         public static string AM_LoadSettingsFailed_Title {
             get {
                 return ResourceManager.GetString("AM_LoadSettingsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The link you are using for a new signup is not valid..
+        /// </summary>
+        public static string AM_NewSignUpInvalidLink {
+            get {
+                return ResourceManager.GetString("AM_NewSignUpInvalidLink", resourceCulture);
             }
         }
         
@@ -675,6 +729,15 @@ namespace MegaApp.Resources {
         public static string AM_ShareMultipleItemsFromMega_Title {
             get {
                 return ResourceManager.GetString("AM_ShareMultipleItemsFromMega_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You have attempted to log in too many times. Please wait until {0} and try again..
+        /// </summary>
+        public static string AM_TooManyFailedLoginAttempts {
+            get {
+                return ResourceManager.GetString("AM_TooManyFailedLoginAttempts", resourceCulture);
             }
         }
         

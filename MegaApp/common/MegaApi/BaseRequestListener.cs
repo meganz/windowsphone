@@ -11,6 +11,7 @@ using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
+using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -63,6 +64,14 @@ namespace MegaApp.MegaApi
                 if (NavigateOnSucces)
                     Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
             }
+            else if (e.getErrorCode() == MErrorType.API_EBLOCKED) 
+            {
+                // If the account has been blocked
+                api.logout(new LogOutRequestListener(false));
+
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED));
+            }
             else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -80,10 +89,13 @@ namespace MegaApp.MegaApi
                         }
                     }
                                         
-                    // Disable the "camera upload" service
-                    MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
-                    MediaService.SetAutoCameraUpload(false);
-                    SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+                    // Disable the "camera upload" service if is enabled
+                    if (MediaService.GetAutoCameraUploadStatus())
+                    {
+                        MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
+                        MediaService.SetAutoCameraUpload(false);
+                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+                    }
 
                     DialogService.ShowOverquotaAlert();
                 });
