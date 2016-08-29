@@ -61,6 +61,11 @@
           <target state="signed-off">{A8659687-3710-4B8D-8D0E-CAF3C3B44434}</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Resource key to store if the app should ask always to select a download option or not - (NO-TRANSLATION).</note>
           </trans-unit>
+        <trans-unit id="Resx/Receipts" translate="yes" xml:space="preserve">
+          <source>{7C40A458-94B3-44D5-9FDB-DA6F73ADDE99}</source>
+          <target state="new">{7C40A458-94B3-44D5-9FDB-DA6F73ADDE99}</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Rersource key to store the IAP Windows Store receipts Id's - (NO-TRANSLATION).</note>
+        </trans-unit>
         <trans-unit id="Resx/LastAppVersion" translate="no" xml:space="preserve">
           <source>{13C908CC-E5A1-4D3F-80F2-D18BF2075619}</source>
           <target state="signed-off">{13C908CC-E5A1-4D3F-80F2-D18BF2075619}</target>

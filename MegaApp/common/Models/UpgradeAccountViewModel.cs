@@ -86,5 +86,16 @@ namespace MegaApp.Models
                 OnPropertyChanged("CreditCardPaymentMethodAvailable");
             }
         }
+
+        private bool _inAppPaymentMethodAvailable;
+        public bool InAppPaymentMethodAvailable
+        {
+            get { return _inAppPaymentMethodAvailable; }
+            set
+            {
+                _inAppPaymentMethodAvailable = value;
+                OnPropertyChanged("InAppPaymentMethodAvailable");
+            }
+        }
     }
 }

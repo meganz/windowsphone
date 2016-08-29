@@ -447,6 +447,9 @@
     <Compile Include="..\common\MegaApi\PublicLinkRequestListener.cs">
       <Link>MegaApi\PublicLinkRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\PurchaseReceiptRequestListener.cs">
+      <Link>MegaApi\PurchaseReceiptRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
       <Link>MegaApi\RemoveContactRequestListener.cs</Link>
     </Compile>
@@ -760,6 +763,9 @@
     </Compile>
     <Compile Include="..\common\Services\ImageService.cs">
       <Link>Services\ImageService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\LicenseService.cs">
+      <Link>Services\LicenseService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
