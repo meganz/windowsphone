@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Storage;
@@ -171,12 +172,12 @@ namespace MegaApp.Services
         private static void SendLicenseToMega(string receipt)
         {
             // Validate and activate the MEGA Windows Store (int 13) subscription on the MEGA license server
-            App.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE, 
-                receipt, new PurchaseReceiptRequestListener());
+            App.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE,
+                receipt, new PurchaseReceiptRequestListener(receipt));
         }
 
         /// <summary>
-        /// Validate if purchased subscription products are activated as account for the user
+        /// Validate if purchased subscription products are activated for the account of the user
         /// </summary>
         public static void ValidateLicenses()
         {
@@ -194,8 +195,8 @@ namespace MegaApp.Services
                 {
                     // only validate active licenses
                     if(!productLicense.Value.IsActive) continue;
-                    // Check active license to current account status
-                    App.MegaSdk.getAccountDetails(new ValidateAccountRequestListener(productLicense.Value.ProductId));
+                    // Check active license to current account license status
+                    LicenseCheck(productLicense.Value.ProductId);
                 }
             }
             catch
@@ -206,18 +207,24 @@ namespace MegaApp.Services
         }
 
         /// <summary>
-        /// Retry to validate a Windows Store product purchase on MEGA license server
+        /// Check if the license for the selected product is already active. If not revalidate the receipt at MEGA license server
         /// </summary>
-        /// <param name="productId">Product id to revalidate</param>
-        public static async void RetryLicense(string productId)
+        /// <param name="productId">Produc identifier to check license validation status</param>
+        private static async void LicenseCheck(string productId)
         {
             try
             {
                 // Retrieve the original Windows Store receipt
                 var receipt = await CurrentApp.GetProductReceiptAsync(productId);
                 if (string.IsNullOrEmpty(receipt)) return;
-                // Validate on MEGA license server
-                SendLicenseToMega(receipt);
+
+                var xDoc = XDocument.Parse(receipt, LoadOptions.None);
+                var uniqueId = xDoc.Root.Descendants().First().Attribute("Id").Value;
+
+                var currentIds = SettingsService.LoadSetting(SettingsResources.Receipts, string.Empty);
+                var currentIdsList = currentIds.Split(';');
+                var isValidated = currentIdsList.Any(id => id.Equals(uniqueId));
+                if (!isValidated) SendLicenseToMega(receipt);
             }
             catch
             {
