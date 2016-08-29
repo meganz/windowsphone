@@ -206,9 +206,6 @@ namespace MegaApp.Pages
 
         private void OnPauseAllClick(object sender, EventArgs e)
         {        
-            //// Exit if no transfers
-            //if (App.MegaTransfers.Count < 1) return;
-
             if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
             {
                 App.MegaSdk.pauseTransfersDirection(true, (int)MTransferType.TYPE_DOWNLOAD,
@@ -225,9 +222,6 @@ namespace MegaApp.Pages
 
         private void OnStartResumeAllClick(object sender, EventArgs e)
         {
-            //// Exit if no transfers
-            //if (App.MegaTransfers.Count < 1) return;
-
             if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
             {
                 App.MegaSdk.pauseTransfersDirection(false, (int)MTransferType.TYPE_DOWNLOAD,

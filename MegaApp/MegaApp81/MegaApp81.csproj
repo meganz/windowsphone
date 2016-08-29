@@ -523,6 +523,9 @@
     <Compile Include="..\common\MegaApi\PublicLinkRequestListener.cs">
       <Link>MegaApi\PublicLinkRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\PurchaseReceiptRequestListener.cs">
+      <Link>MegaApi\PurchaseReceiptRequestListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
       <Link>MegaApi\RemoveContactRequestListener.cs</Link>
     </Compile>
@@ -836,6 +839,9 @@
     </Compile>
     <Compile Include="..\common\Services\ImageService.cs">
       <Link>Services\ImageService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\LicenseService.cs">
+      <Link>Services\LicenseService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
@@ -1564,30 +1570,37 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Chart, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Controls.Chart.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Data, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Controls.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Input, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Controls.Input.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Controls.Primitives, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Controls.Primitives.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Core, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Telerik.Windows.Data, Version=2016.2.504.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\RCWP\2016.2.504.3040\Telerik.Windows.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -2901,6 +2914,7 @@
       <Link>Resources\AppMessages.ar.xlf</Link>
       <Generator>XliffResxGenerator</Generator>
       <LastGenOutput>AppMessages.ar.resx</LastGenOutput>
+      <SubType>Designer</SubType>
     </XliffResource>
     <XliffResource Include="..\common\Resources\AppMessages.bg.xlf">
       <Link>Resources\AppMessages.bg.xlf</Link>
