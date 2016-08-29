@@ -81,13 +81,17 @@ namespace ScheduledCameraUploadTaskAgent
         {
             try
             {
+                String folderCameraUploadService = Path.Combine(ApplicationData.Current.LocalFolder.Path, "CameraUploadService");
+                if (!Directory.Exists(folderCameraUploadService))
+                    Directory.CreateDirectory(folderCameraUploadService);
+
                 MegaSdk = new MegaSDK(
                 "Z5dGhQhL",
                 String.Format("{0}/{1}/{2}",
                     GetBackgroundAgentUserAgent(),
                     DeviceStatus.DeviceManufacturer,
                     DeviceStatus.DeviceName),
-                ApplicationData.Current.LocalFolder.Path,
+                folderCameraUploadService,
                 new MegaRandomNumberProvider());
 
                 return MegaSdk != null;
@@ -167,6 +171,9 @@ namespace ScheduledCameraUploadTaskAgent
                     this.NotifyComplete();
                     return;
                 }
+
+                // Enable the transfers resumption for the Camera Uploads service
+                //MegaSdk.enableTransferResumption();
 
                 // If fetching nodes succeeded
                 // Begin uploading files
