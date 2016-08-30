@@ -1226,7 +1226,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FolderLink" xml:space="preserve">
-    <value>Đường link thư mục</value>
+    <value>Đường dẫn liên kết thư mục</value>
     <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenLink" xml:space="preserve">
@@ -1273,5 +1273,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Kích thước</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>In app purchase</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

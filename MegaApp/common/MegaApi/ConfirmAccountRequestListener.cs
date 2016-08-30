@@ -107,75 +107,64 @@ namespace MegaApp.MegaApi
                 ProgressService.SetProgressIndicator(false);
                 this._confirmAccountViewModel.ControlState = true;
 
-                switch (e.getErrorCode())
+                if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
                 {
-                    case MErrorType.API_OK: //Request finish successfully
-                        {
-                            //Valid and operative confirmation link
-                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
-                            {
-                                this._confirmAccountViewModel.Email = request.getEmail();
-                            }
-
-                            //Successfull confirmation process
-                            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                            {
-                                var customMessageDialog = new CustomMessageDialog(
-                                    SuccessMessageTitle, SuccessMessage,
-                                    App.AppInformation, MessageDialogButtons.Ok);
-
-                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-                                    OnSuccesAction(api, request);
-
-                                customMessageDialog.ShowDialog();
-                            }
+                    switch (e.getErrorCode())
+                    {
+                        case MErrorType.API_OK: // Valid and operative confirmation link
+                            this._confirmAccountViewModel.Email = request.getEmail();
                             break;
-                        }
 
-                    case MErrorType.API_ENOENT: //Useful errors for users
-                        {
-                            //Already confirmed account
-                            if (request.getType() == MRequestType.TYPE_QUERY_SIGNUP_LINK)
-                            {
-                                var customMessageDialog = new CustomMessageDialog(
-                                    AppMessages.AlreadyConfirmedAccount_Title,
-                                    AppMessages.AlreadyConfirmedAccount,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok);
-
-                                customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
-                                    NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
-
-                                customMessageDialog.ShowDialog();
-                            }
-
-                            //Wrong password
-                            if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
-                            {
-                                new CustomMessageDialog(
-                                    AppMessages.WrongPassword_Title,
-                                    AppMessages.WrongPassword,
-                                    App.AppInformation,
-                                    MessageDialogButtons.Ok).ShowDialog();
-                            }
-
+                        case MErrorType.API_ENOENT: // Already confirmed account
+                            ShowErrorMesageAndNavigate(AppMessages.AlreadyConfirmedAccount_Title,
+                                AppMessages.AlreadyConfirmedAccount);
                             break;
-                        }
 
-                    case MErrorType.API_EOVERQUOTA:
-                        base.onRequestFinish(api, request, e);
-                        break;
+                        case MErrorType.API_EINCOMPLETE: // Incomplete confirmation link
+                            ShowErrorMesageAndNavigate(AppMessages.ConfirmAccountFailed_Title,
+                                AppMessages.AM_IncompleteConfirmationLink);
+                            break;
 
-                    default: //Other error
-                        {
+                        case MErrorType.API_EOVERQUOTA:
+                            base.onRequestFinish(api, request, e);
+                            break;
+
+                        default: // Other error
+                            ShowDefaultErrorMessage(e);
+                            break;
+                    }
+                }
+                else if (request.getType() == MRequestType.TYPE_CONFIRM_ACCOUNT)
+                {
+                    switch (e.getErrorCode())
+                    {
+                        case MErrorType.API_OK: // Successfull confirmation process
+                            var customMessageDialog = new CustomMessageDialog(
+                                SuccessMessageTitle, SuccessMessage,
+                                App.AppInformation, MessageDialogButtons.Ok);
+                            
+                            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                                OnSuccesAction(api, request);
+                            
+                                customMessageDialog.ShowDialog();
+                            break;
+
+                        case MErrorType.API_ENOENT: // Wrong password
                             new CustomMessageDialog(
-                                ErrorMessageTitle,
-                                String.Format(ErrorMessage, e.getErrorString()),
+                                AppMessages.WrongPassword_Title,
+                                AppMessages.WrongPassword,
                                 App.AppInformation,
                                 MessageDialogButtons.Ok).ShowDialog();
                             break;
-                        }
 
+                        case MErrorType.API_EOVERQUOTA:
+                            base.onRequestFinish(api, request, e);
+                            break;
+
+                        default: // Other error
+                            ShowDefaultErrorMessage(e);
+                            break;
+                    }
                 }
             });
         }
@@ -189,6 +178,24 @@ namespace MegaApp.MegaApi
 
             api.login(request.getEmail(), request.getPassword(),
                 new LoginRequestListener(new LoginViewModel(api)));
+        }
+
+        private void ShowErrorMesageAndNavigate(String title, String message)
+        {
+            var customMessageDialog = new CustomMessageDialog(
+                title, message, App.AppInformation, MessageDialogButtons.Ok);
+
+            customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
+                NavigateService.NavigateTo(NavigateToPage, NavigationParameter);
+
+            customMessageDialog.ShowDialog();
+        }
+
+        private void ShowDefaultErrorMessage(MError e)
+        {
+            new CustomMessageDialog(ErrorMessageTitle,
+                String.Format(ErrorMessage, e.getErrorString()),
+                App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
         }
 
         #endregion

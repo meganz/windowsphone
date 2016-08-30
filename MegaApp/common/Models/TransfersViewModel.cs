@@ -43,7 +43,44 @@ namespace MegaApp.Models
                 this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListDownloadEmptyContent"];
                 this.DownloadsEmptyInformationText = UiResources.NoDownloads.ToLower();
 
-                OnPropertyChanged("InIsNetworkAvailableBinding");
+                OnPropertyChanged("IsNetworkAvailableBinding");
+            });
+        }
+
+        public void SetEmptyContentTemplate(bool paused, int direction)
+        {
+            OnUiThread(() =>
+            {
+                switch(direction)
+                {
+                    case (int)MTransferType.TYPE_DOWNLOAD:
+                        if(paused)
+                        {
+                            this.DownloadsEmptyContentTemplate = null;
+                            this.DownloadsEmptyInformationText = String.Empty;
+                        }
+                        else
+                        {
+                            this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListDownloadEmptyContent"];
+                            this.DownloadsEmptyInformationText = UiResources.NoDownloads.ToLower();
+                        }
+                        break;
+                    
+                    case (int)MTransferType.TYPE_UPLOAD:
+                        if(paused)
+                        {
+                            this.UploadsEmptyContentTemplate = null;
+                            this.UploadsEmptyInformationText = String.Empty;
+                        }
+                        else
+                        {
+                            this.UploadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["MegaTransferListUploadEmptyContent"];
+                            this.UploadsEmptyInformationText = UiResources.NoUploads.ToLower();
+                        }
+                        break;
+                }
+
+                OnPropertyChanged("IsNetworkAvailableBinding");
             });
         }
 
@@ -57,7 +94,7 @@ namespace MegaApp.Models
                 this.DownloadsEmptyContentTemplate = (DataTemplate)Application.Current.Resources["OfflineEmptyContent"];
                 this.DownloadsEmptyInformationText = UiResources.NoInternetConnection.ToLower();
 
-                OnPropertyChanged("InIsNetworkAvailableBinding");
+                OnPropertyChanged("IsNetworkAvailableBinding");
             });
         }
 
@@ -65,34 +102,17 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public TransferQueu MegaTransfers { get; set; }
+        private TransferQueu _megaTransfers;
+        public TransferQueu MegaTransfers
+        {
+            get { return _megaTransfers; }
+            set { SetField(ref _megaTransfers, value); }
+        }
 
-        public bool InIsNetworkAvailableBinding
+        public bool IsNetworkAvailableBinding
         {
             get { return NetworkService.IsNetworkAvailable(); }
         }
-
-        //public bool HasUploads
-        //{
-        //    get 
-        //    {
-        //        if (NetworkService.IsNetworkAvailable())
-        //            return MegaTransfers.Uploads.Count > 0;
-        //        else
-        //            return false;
-        //    }
-        //}
-
-        //public bool HasDownloads
-        //{
-        //    get 
-        //    { 
-        //        if(NetworkService.IsNetworkAvailable())
-        //            return MegaTransfers.Downloads.Count > 0; 
-        //        else
-        //            return false;
-        //    }
-        //}
 
         private DataTemplate _uploadsEmptyContentTemplate;
         public DataTemplate UploadsEmptyContentTemplate

@@ -50,7 +50,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("970e65b");
+            return String.Format("d4b462e");
         }
 
         public static string GetAppUserAgent()
@@ -298,9 +298,12 @@ namespace MegaApp.Services
 
         public static void LogoutActions()
         {
-            // Disable the "camera upload" service
-            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (LOGOUT)");
-            MediaService.SetAutoCameraUpload(false);
+            // Disable the "camera upload" service if is enabled
+            if(MediaService.GetAutoCameraUploadStatus())
+            {
+                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (LOGOUT)");
+                MediaService.SetAutoCameraUpload(false);
+            }            
             
             // Clear settings, cache, previews, thumbnails, etc.
             SettingsService.ClearSettings();

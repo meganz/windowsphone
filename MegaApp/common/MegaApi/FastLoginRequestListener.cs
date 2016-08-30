@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Pages;
@@ -107,6 +108,35 @@ namespace MegaApp.MegaApi
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Stop());
+
+            if (e.getErrorCode() != MErrorType.API_OK)
+            {
+                switch (e.getErrorCode())
+                {
+                    case MErrorType.API_ENOENT: // E-mail unassociated with a MEGA account or Wrong password
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.WrongEmailPasswordLogin,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
+                        return;
+
+                    case MErrorType.API_ETOOMANY: // Too many failed login attempts
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_TooManyFailedLoginAttempts,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
+                        return;
+
+                    case MErrorType.API_EINCOMPLETE: // Account not confirmed
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            new CustomMessageDialog(ErrorMessageTitle, AppMessages.AM_AccountNotConfirmed,
+                                App.AppInformation, MessageDialogButtons.Ok).ShowDialog());
+                        return;
+
+                    case MErrorType.API_EBLOCKED: // Account blocked
+                        base.onRequestFinish(api, request, e);
+                        return;
+                }
+            }            
+
             base.onRequestFinish(api, request, e);
         }
 
@@ -134,6 +164,9 @@ namespace MegaApp.MegaApi
             {
                 _mainPageViewModel.GetAccountDetails();
                 _mainPageViewModel.FetchNodes();
+
+                // Validate product subscription license on background thread
+                Task.Run(() => LicenseService.ValidateLicenses());
             });
         }
 

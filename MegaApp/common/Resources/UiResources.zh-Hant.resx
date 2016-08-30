@@ -122,7 +122,7 @@
     <comment>Label for any 'Add' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AddFolder" xml:space="preserve">
-    <value>添加資料夾</value>
+    <value>新增資料夾</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AgreeCreateAccount" xml:space="preserve">
@@ -929,7 +929,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
-    <value>添加聯絡人</value>
+    <value>新增聯絡人</value>
     <comment>Label for any 'Add contact' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreateContact" xml:space="preserve">
@@ -1273,5 +1273,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>大小</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>應用程式內購買</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

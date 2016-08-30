@@ -121,22 +121,9 @@ namespace MegaApp.Models
             }
             else
             {
-                // Search if the file has a pending transfer for offline and cancel it on this case
-                foreach (var item in App.MegaTransfers.Downloads)
-                {
-                    var transferItem = (TransferObjectModel)item;
-                    if (transferItem == null || transferItem.Transfer == null) continue;
+                // Search if the file has a pending transfer for offline and cancel it on this case                
+                TransfersService.CancelPendingNodeOfflineTransfers(this.NodePath, this.IsFolder);
 
-                    WaitHandle waitEventRequestTransfer = new AutoResetEvent(false);
-                    if (String.Compare(this.NodePath, transferItem.Transfer.getPath()) == 0 &&
-                        transferItem.IsAliveTransfer())
-                    {
-                        App.MegaSdk.cancelTransfer(transferItem.Transfer,
-                            new CancelTransferRequestListener((AutoResetEvent)waitEventRequestTransfer));
-                        waitEventRequestTransfer.WaitOne();
-                    }
-                }
-                
                 FileService.DeleteFile(this.NodePath);
             }
 
@@ -153,23 +140,9 @@ namespace MegaApp.Models
         {
             String newSfoPath = Path.Combine(sfoPath, nodeName);
 
-            // Search if the folder has a pending transfer for offline and cancel it on this case
-            foreach (var item in App.MegaTransfers.Downloads)
-            {
-                WaitHandle waitEventRequest = new AutoResetEvent(false);
-
-                var transferItem = (TransferObjectModel)item;
-                if (transferItem == null || transferItem.Transfer == null) continue;
-
-                if (String.Compare(String.Concat(newSfoPath, "\\"), transferItem.Transfer.getParentPath()) == 0 &&
-                    transferItem.IsAliveTransfer())
-                {
-                    App.MegaSdk.cancelTransfer(transferItem.Transfer,
-                        new CancelTransferRequestListener((AutoResetEvent)waitEventRequest));
-                    waitEventRequest.WaitOne();
-                }
-            }
-
+            // Search if the folder has a pending transfer for offline and cancel it on this case            
+            TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"), this.IsFolder);
+            
             IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
             if (childFolders != null)
             {

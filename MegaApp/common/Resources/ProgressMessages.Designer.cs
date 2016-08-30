@@ -394,6 +394,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Validating....
+        /// </summary>
+        public static string PM_ValidatePurchase {
+            get {
+                return ResourceManager.GetString("PM_ValidatePurchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Preparing downloads....
         /// </summary>
         public static string PrepareDownloads {

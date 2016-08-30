@@ -49,7 +49,7 @@
             </Grid>
 
             <!--Pivot Control-->
-            <phone:Pivot x:Name="TransfersPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">
+            <phone:Pivot x:Name="TransfersPivot" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0" SelectionChanged="OnPivotSelectionChanged">
                 <!--Pivot item one-->
                 <phone:PivotItem x:Name="UploadsPivot" Margin="12,0,12,0" Header="{Binding LocalizedUiResources.Uploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}">
                     <Grid Background="Transparent" >
@@ -58,17 +58,19 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding UploadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding MegaTransfers.Uploads.Count, ConverterParameter=1, Converter={StaticResource CountToVisibilityInverseConverter}}"/>
                         </StackPanel>
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding UploadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center"/>
                         </StackPanel>
 
                         <Grid x:Name="UploadsContentPanel" Grid.Row="1" Margin="12,12,0,0">
                             <telerikPrimitives:RadDataBoundListBox                                 
                                 x:Name="LstUploads"
-                                ItemsSource="{Binding MegaTransfers.Uploads}"                                
+                                ItemsSource="{Binding MegaTransfers.Uploads}"
+                                EmptyContentDisplayMode="DataSourceEmpty" 
+                                EmptyContent=""
                                 EmptyContentTemplate="{Binding UploadsEmptyContentTemplate}" 
                                 ItemTemplate="{StaticResource MegaTransferItemContent}" 
                                 FontFamily="Portable User Interface"
@@ -87,10 +89,10 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding DownloadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center" Visibility="{Binding MegaTransfers.Downloads.Count, ConverterParameter=1, Converter={StaticResource CountToVisibilityInverseConverter}}"/>
                         </StackPanel>
-                        <StackPanel Visibility="{Binding InIsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <StackPanel Visibility="{Binding IsNetworkAvailableBinding, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <TextBlock Grid.Row="0" Margin="24,16,24,5" Text="{Binding DownloadsEmptyInformationText}" HorizontalAlignment="Right" TextAlignment="Right" FontSize="{StaticResource InformationFontSize}" Grid.Column="1" VerticalAlignment="Center"/>
                         </StackPanel>                        
 
@@ -98,6 +100,8 @@
                             <telerikPrimitives:RadDataBoundListBox 
                                 x:Name="LstDownloads"
                                 ItemsSource="{Binding MegaTransfers.Downloads}"
+                                EmptyContentDisplayMode="DataSourceEmpty" 
+                                EmptyContent=""
                                 EmptyContentTemplate="{Binding DownloadsEmptyContentTemplate}" 
                                 ItemTemplate="{StaticResource MegaTransferItemContent}" 
                                 FontFamily="Portable User Interface" 
