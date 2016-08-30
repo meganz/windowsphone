@@ -792,7 +792,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">Súbory z fotoaparátu</target>
+          <target state="translated">Upload z fotoaparátu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -842,7 +842,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Povoliť nahrávanie z fotoaparátu</target>
+          <target state="translated">Povoliť upload z fotoaparátu</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -932,7 +932,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="needs-review-translation">Získajte 2 mesiace zdarma, ak si predplatíte jednoročný plán PRO</target>
+          <target state="translated">Získajte 2 mesiace zdarma, ak si predplatíte jednoročný plán PRO</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1070,7 +1070,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="needs-review-translation">Môžete byť PRO užívateľ!</target>
+          <target state="translated">Môžete byť PRO užívateľ!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1448,9 +1448,9 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
           <source>In app purchase</source>
-          <target state="new">In app purchase</target>
+          <target state="translated">Nákupy v aplikácii</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

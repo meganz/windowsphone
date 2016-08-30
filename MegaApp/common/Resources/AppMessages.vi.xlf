@@ -333,7 +333,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetailsFailed_Title" translate="yes" space="preserve">
           <source>Retrieving account details failed</source>
-          <target state="translated">Lấy thông tin chi tiết tài khoản bị thất bại</target>
+          <target state="translated">Truy vấn thông tin chi tiết tài khoản bị thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
@@ -607,10 +607,10 @@ Preserve the {0} code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
-          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="translated">Bạn chưa có chọn một thư mục mặc định để lưu các tệp tin tải về.
+          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
+          <target state="needs-review-translation">Bạn chưa có chọn địa điểm để lưu lại các dữ liệu và tệp tin mà bạn tải xuống.
 
-Để tiến hành download, xin chọn một thư mục đích hoặc tới phần tùy chỉnh để chọn ra một thư mục để lưu các tải về sau này.</target>
+Để tiếp tục việc tải xuống, xin chọn một vị trí thư mục hoặc vào mục thiết đặt để chọn ra địa điểm để mặc định chứa dữ liệu cho việc tải xuống.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -653,12 +653,12 @@ Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của b�
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="needs-review-translation">Sao chép Mã Khóa Phục Hồi vào bộ nhớ bị thất bại. Xin thử lại.</target>
+          <target state="translated">Sao chép Mã Khóa Phục Hồi vào bộ nhớ bị thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
           <source>Clipboard failed</source>
-          <target state="translated">Clipboard không hoạt động</target>
+          <target state="translated">Bộ nhớ không hoạt động</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Điều này có thể xảy bởi các lý do sau:
+          <target state="translated">Điều này có thể xảy bởi các lý do sau:
 - Tệp tin vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
 - Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
 - Người cung cấp đã xóa tệp tin này.</target>
@@ -1297,7 +1297,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Điều này có thể xảy bởi các lý do sau:
+          <target state="translated">Điều này có thể xảy bởi các lý do sau:
 - Thư mục vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
 - Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
 - Người cung cấp đã xóa thư mục này.</target>
@@ -1373,7 +1373,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
           <source>Item shared by the Windows Phone MEGA app.</source>
-          <target state="needs-review-translation">Mục này được chia sẻ từ app MEGA cho Windows Phone.</target>
+          <target state="translated">Mục này được chia sẻ từ app MEGA cho Windows Phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
@@ -1383,7 +1383,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
           <source>Items shared by the Windows Phone MEGA app.</source>
-          <target state="needs-review-translation">Các mục này được chia sẻ từ app MEGA cho Windows Phone.</target>
+          <target state="translated">Các mục này được chia sẻ từ app MEGA cho Windows Phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
@@ -1393,134 +1393,129 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed" translate="yes" space="preserve">
           <source>Failed to import folder. Please try again.</source>
-          <target state="translated">Failed to import folder. Please try again.</target>
+          <target state="translated">Chuyển nhập thư mục thất bại. Xin thử lại sau.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed_Title" translate="yes" space="preserve">
           <source>Folder import failed</source>
-          <target state="translated">Folder import failed</target>
+          <target state="translated">Chuyển nhập thư mục thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
           <source>Link import failed</source>
-          <target state="translated">Link import failed</target>
+          <target state="translated">Chuyển nhập liên kết thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" xml:space="preserve">
-          <source>Could not import the folder link. Please try again.</source>
-          <target state="new">Could not import the folder link. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" xml:space="preserve">
-          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="new">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" xml:space="preserve">
-          <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="new">This e-mail address has already registered an account with MEGA.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" xml:space="preserve">
-          <source>The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again.</source>
-          <target state="new">The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" xml:space="preserve">
-          <source>The link you are using for a new signup is not valid.</source>
-          <target state="new">The link you are using for a new signup is not valid.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" xml:space="preserve">
-          <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
-          <target state="new">You have attempted to log in too many times. Please wait until {0} and try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
-Preserve the {0} code because is for include the exact time until the user has to wait.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" xml:space="preserve">
-          <source>Account blocked</source>
-          <target state="new">Account blocked</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" xml:space="preserve">
-          <source>Account has not been confirmed yet.</source>
-          <target state="new">Account has not been confirmed yet.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AccountBlocked" translate="yes" xml:space="preserve">
-          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
-          <target state="new">Your account has been blocked. Please contact support@mega.co.nz</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
-          <source>Import failed</source>
-          <target state="new">Import failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" xml:space="preserve">
-          <source>Could not download the folder link. Please try again.</source>
-          <target state="new">Could not download the folder link. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Download failed</source>
-          <target state="new">Download failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" xml:space="preserve">
-          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="new">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. Please try again.</source>
-          <target state="translated">Failed to share item(s) from MEGA. Please try again.</target>
+          <target state="translated">Chia sẻ từ ứng dụng MEGA thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" space="preserve">
           <source>Error sharing item(s)</source>
-          <target state="translated">Error sharing item(s)</target>
+          <target state="translated">Việc chia sẻ bị lỗi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" xml:space="preserve">
-          <source>Purchase validation failed</source>
-          <target state="new">Purchase validation failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
+          <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
+          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" xml:space="preserve">
-          <source>Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues.</source>
-          <target state="new">Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" xml:space="preserve">
-          <source>Purchase succeeded</source>
-          <target state="new">Purchase succeeded</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" xml:space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="new">Your MEGA subcription purchase has succeeded.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" xml:space="preserve">
-          <source>Purchase failed or cancelled</source>
-          <target state="new">Purchase failed or cancelled</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" xml:space="preserve">
-          <source>Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="new">Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
           <source>Already purchased</source>
-          <target state="new">Already purchased</target>
+          <target state="translated">Đã được mua</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" xml:space="preserve">
-          <source>Your MEGA subscription purchase has failed because you already have purchased this item.</source>
-          <target state="new">Your MEGA subscription purchase has failed because you already have purchased this item.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
+        <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
+          <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
+          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
+          <source>Purchase failed or cancelled</source>
+          <target state="translated">Giao dịch thất bại hoặc bị huỷ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
+          <source>Your MEGA subcription purchase has succeeded.</source>
+          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
+          <source>Purchase succeeded</source>
+          <target state="translated">Mua hàng thành công</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
+          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
+          <source>Purchase validation failed</source>
+          <target state="translated">Purchase validation failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
+          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
+          <target state="translated">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
+          <source>Download failed</source>
+          <target state="translated">Lỗi tải xuống</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
+          <source>Could not download the folder link. Please try again.</source>
+          <target state="translated">Không tải được đường dẫn liên kết thư mục. Xin thử lại sau.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
+          <source>Import failed</source>
+          <target state="translated">Chuyển nhập thất bại</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
+          <source>Could not import the folder link. Please try again.</source>
+          <target state="translated">Chuyển nhập đường liên kết thư mục thất bại. Xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
+          <source>This e-mail address has already registered an account with MEGA.</source>
+          <target state="translated">Địa chỉ email này đã đăng ký từ trước với MEGA.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
+          <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
+          <target state="needs-review-translation">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
+          <source>The link you are using for a new signup is not valid.</source>
+          <target state="translated">Đường liên kết bạn đang sử dụng không có hợp lệ cho việc đăng ký mới.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
+          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
+          <target state="translated">Tài khoản của bạn đã bị khóa. Xin liên hệ support@mega.co.nz để được giải quyết.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
+          <source>Your account has not been confirmed yet.</source>
+          <target state="needs-review-translation">Tài khoản của bạn chưa được xác thực.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
+          <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
+          <target state="translated">Bạn đã nhập sai thông tin đăng nhập quá nhiều lần. Xin vui lòng chời tới {0} rồi thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
+          <source>Account blocked</source>
+          <target state="translated">Tài khoản bị chặn</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
       </group>
     </body>

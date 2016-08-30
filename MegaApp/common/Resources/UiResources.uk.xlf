@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
           <source>your e-mail address</source>
-          <target state="translated">ваша електронна адреса</target>
+          <target state="translated">ваша адреса е-пошти</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
@@ -842,7 +842,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">Увімкнути завантаження з камери</target>
+          <target state="translated">Увімкнути відвантаження з камери</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -882,7 +882,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ChooseRenewalPeriod" translate="yes" space="preserve">
           <source>Choose renewal period below</source>
-          <target state="translated">Оберіть період поновлення нижче</target>
+          <target state="translated">Оберіть нижче період поновлення</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed choose a renewal period for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/City" translate="yes" space="preserve">
@@ -912,7 +912,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnterPaymentDetails" translate="yes" space="preserve">
           <source>Enter your payment details below</source>
-          <target state="translated">Введіть платіжні реквізити нижче</target>
+          <target state="translated">Введіть нижче платіжні реквізити</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that is needed to type his payment data details for upgrade his account.</note>
         </trans-unit>
         <trans-unit id="Resx/ExpiresOn" translate="yes" space="preserve">
@@ -932,7 +932,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="needs-review-translation">Отримайте 2 місяці безкоштовно, якщо підпишетесь на річний план</target>
+          <target state="translated">Отримайте 2 місяці безкоштовно, якщо підпишетесь на річний план</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1070,7 +1070,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="needs-review-translation">Станьте PRO користувачем!</target>
+          <target state="translated">Станьте PRO користувачем!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1101,7 +1101,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/CreateContact" translate="yes" space="preserve">
           <source>Type e-mail address:</source>
-          <target state="translated">Введіть адресу електронної пошти:</target>
+          <target state="translated">Введіть адресу е-пошти:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to add a contact to type the email address of the new contact.</note>
         </trans-unit>
         <trans-unit id="Resx/Search" translate="yes" space="preserve">
@@ -1285,7 +1285,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" space="preserve">
           <source>Do you want to enable the Auto Camera Uploads service?</source>
-          <target state="translated">Ви бажаєте включити службу автоматичного завантаження з камери?</target>
+          <target state="translated">Бажаєте включити службу автоматичного відвантаження з камери?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
@@ -1448,9 +1448,9 @@ NOTE: Keep the capital letter if possible.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
           <source>In app purchase</source>
-          <target state="new">In app purchase</target>
+          <target state="translated">Внутрішні покупки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>

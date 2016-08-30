@@ -481,7 +481,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before a text label into the 'settings' page indicating the default download location.</comment>
   </data>
   <data name="Downloads" xml:space="preserve">
-    <value>скачки</value>
+    <value>скачивания</value>
     <comment>Label for any 'Downloads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ExportPhotoAlbumText" xml:space="preserve">
@@ -1273,5 +1273,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Размер</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>Покупки в приложении</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
