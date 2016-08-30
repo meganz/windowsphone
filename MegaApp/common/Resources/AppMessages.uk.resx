@@ -139,7 +139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
   </data>
   <data name="ConfirmNeeded" xml:space="preserve">
-    <value>Перевірте вашу електронну пошту і натисніть ланку для входу і підтвердження акаунту</value>
+    <value>Перевірте вашу е-пошту і натисніть ланку для входу і підтвердження акаунту</value>
     <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
   </data>
   <data name="ConfirmNeeded_Title" xml:space="preserve">
@@ -332,11 +332,11 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Message of the dialog displayed when required fields for confirm account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsCreateAccount" xml:space="preserve">
-    <value>Будь ласка, заповніть ваше ім'я, адресу електронної пошти та пароль</value>
+    <value>Будь ласка, заповніть ваше ім'я, адресу е-пошти та пароль</value>
     <comment>Message of the dialog displayed when required fields for create account are not filled in.</comment>
   </data>
   <data name="RequiredFieldsLogin" xml:space="preserve">
-    <value>Будь ласка, введіть свою адресу електронної пошти та пароль MEGA.</value>
+    <value>Будь ласка, введіть свою адресу е-пошти та пароль MEGA.</value>
     <comment>Message of the dialog displayed when required fields for login are not filled in.</comment>
   </data>
   <data name="RequiredFields_Title" xml:space="preserve">
@@ -591,9 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Не вибрано теку завантажень за обумовлюванням.
+    <value>Ви не вибрали усталене місце завантаження ваших файлів.
 
-Щоб продовжити завантаження, будь ласка, виберіть теку або виберіть у налаштуваннях типову теку завантаження. </value>
+Щоб продовжити завантаження, будь ласка, виберіть теку або перейдіть у налаштування, щоб встановити усталене місце завантаження.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -698,11 +698,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to select files failed - (String as short as possible).</comment>
   </data>
   <data name="MalformedEmail" xml:space="preserve">
-    <value>Невірний формат електронної пошти. Будь ласка, спробуйте ще раз.</value>
+    <value>Невірний формат е-пошти. Будь ласка, спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when the user types a malformed email address.</comment>
   </data>
   <data name="WrongEmailPasswordLogin" xml:space="preserve">
-    <value>Електронну пошту не пов'язано з акаунтом MEGA або невірний пароль. Будь ласка, спробуйте ще раз.</value>
+    <value>Е-пошту не пов'язано з акаунтом MEGA або невірний пароль. Будь ласка, спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</comment>
   </data>
   <data name="DeleteNodeQuestion" xml:space="preserve">
@@ -854,7 +854,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>Для того щоб автоматичне завантаження з камери працювало коректно, вам потрібно активувати опцію «Залишатися у системі». Бажаєте увімкнути її зараз?</value>
+    <value>Для того щоб автоматичне відвантаження з камери працювало коректно, вам потрібно активувати опцію «Залишатися у системі». Бажаєте увімкнути її зараз?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -888,7 +888,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>MEGA автоматичне завантаження з камери</value>
+    <value>MEGA автоматичне відвантаження з камери</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
@@ -1232,7 +1232,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderFailed" xml:space="preserve">
-    <value>Failed to import folder. Please try again.</value>
+    <value>Невдалий імпорт теки. Будь ласка, спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
@@ -1244,11 +1244,92 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
-    <value>Failed to share item(s) from MEGA. Please try again.</value>
+    <value>Не вдалося поділитися елементами з MEGA. Будь ласка, спробуйте ще раз.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
     <value>Помилка спільного використання</value>
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyPurchased" xml:space="preserve">
+    <value>Your purchase of a MEGA subscription has failed because you have already purchased this item.</value>
+    <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
+  </data>
+  <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
+    <value>Вже придбано</value>
+    <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseFailed" xml:space="preserve">
+    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
+  </data>
+  <data name="AM_PurchaseFailed_Title" xml:space="preserve">
+    <value>Purchase failed or cancelled</value>
+    <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
+  </data>
+  <data name="AM_PurchaseSucceeded" xml:space="preserve">
+    <value>Your MEGA subcription purchase has succeeded.</value>
+    <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
+    <value>Вдала покупка</value>
+    <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseValidationFailed" xml:space="preserve">
+    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
+  </data>
+  <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
+    <value>Невдале підтвердження покупки</value>
+    <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
+  </data>
+  <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
+    <value>Дію відповідного облікового запису було припинено через численні порушення наших Умов надання послуг.</value>
+    <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
+  </data>
+  <data name="AM_DownloadFailed_Title" xml:space="preserve">
+    <value>Завантаження не вдалася</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">
+    <value>Не вдалося завантажити ланку теки. Будь ласка, спробуйте ще раз.</value>
+    <comment>Message of the dialog displayed when fails the process/request to download a folder link.</comment>
+  </data>
+  <data name="AM_ImportFailed_Title" xml:space="preserve">
+    <value>Не вдалося виконати імпорт</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
+    <value>Не можливо імпортувати ланку теки. Будь ласка, спробуйте ще раз.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
+  </data>
+  <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
+    <value>Ця адреса електронної пошти вже зареєстрована в MEGA.</value>
+    <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
+  </data>
+  <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
+    <value>Ланка підтвердження акаунту, що ви використовуєте не повна. Будь ласка, перевірте довжину ланки і переконайтесь що скопіювали її повністю, та спробуйте ще раз.</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
+  </data>
+  <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
+    <value>Посилання, яке ви використовуєте для нового входу не дійсне.</value>
+    <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
+  </data>
+  <data name="AM_AccountBlocked" xml:space="preserve">
+    <value>Ваш обліковий запис було заблоковано. Будь ласка, зв'яжіться з support@mega.co.nz</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_AccountNotConfirmed" xml:space="preserve">
+    <value>Ваш акаунт ще не підтверджений.</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
+  </data>
+  <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
+    <value>Ви зробили забагато спроб входу. Будь ласка, зачекайте {0} і спробуйте ще раз.</value>
+    <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
+  </data>
+  <data name="AM_AccountBlocked_Title" xml:space="preserve">
+    <value>Обліковий запис заблоковано</value>
+    <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
 </root>

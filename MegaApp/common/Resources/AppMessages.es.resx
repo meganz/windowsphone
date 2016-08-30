@@ -520,7 +520,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
     <value>No has seleccionado una ubicación de descarga predeterminada para los archivos.
 
-Para continuar con la descarga, por favor selecciona una carpeta de destino o ve a preferencias para configurar la ubicación de descarga predeterminada.</value>
+Para continuar con la descarga, por favor selecciona una carpeta de destino o ve a ajustes para configurar la ubicación de descarga predeterminada.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
@@ -1251,5 +1251,86 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
   <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
     <value>Error compartiendo elemento(s)</value>
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
+  </data>
+  <data name="AM_AlreadyPurchased" xml:space="preserve">
+    <value>Your purchase of a MEGA subscription has failed because you have already purchased this item.</value>
+    <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
+  </data>
+  <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
+    <value>Ya comprado</value>
+    <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseFailed" xml:space="preserve">
+    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
+  </data>
+  <data name="AM_PurchaseFailed_Title" xml:space="preserve">
+    <value>Purchase failed or cancelled</value>
+    <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
+  </data>
+  <data name="AM_PurchaseSucceeded" xml:space="preserve">
+    <value>Your MEGA subcription purchase has succeeded.</value>
+    <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
+    <value>Compra con éxito</value>
+    <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
+  </data>
+  <data name="AM_PurchaseValidationFailed" xml:space="preserve">
+    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
+  </data>
+  <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
+    <value>Validación de compra fallida</value>
+    <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
+  </data>
+  <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
+    <value>La cuenta de usuario asociada ha sido dada de baja debido a múltiples violaciones de nuestros Términos de Empleo.</value>
+    <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
+  </data>
+  <data name="AM_DownloadFailed_Title" xml:space="preserve">
+    <value>Descarga fallida</value>
+    <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">
+    <value>No se pudo descargar el enlace de carpeta. Por favor, inténtalo de nuevo.</value>
+    <comment>Message of the dialog displayed when fails the process/request to download a folder link.</comment>
+  </data>
+  <data name="AM_ImportFailed_Title" xml:space="preserve">
+    <value>Importación fallida</value>
+    <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
+    <value>No se pudo importar el enlace de carpeta. Por favor, inténtalo de nuevo.</value>
+    <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
+  </data>
+  <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
+    <value>Está dirección de correo electrónico ya fue utilizada para el registro de una cuenta con MEGA.</value>
+    <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
+  </data>
+  <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
+    <value>El enlace de confirmación de cuenta que estás usando está incompleto. Por favor, comprueba la longitud del enlace y asegúrate de haberlo copiado completo antes de intentarlo de nuevo.</value>
+    <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
+  </data>
+  <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
+    <value>El enlace de alta nueva que estás usando no es válido.</value>
+    <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
+  </data>
+  <data name="AM_AccountBlocked" xml:space="preserve">
+    <value>Tu cuenta ha sido bloqueada. Por favor, contacta con support@mega.nz</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_AccountNotConfirmed" xml:space="preserve">
+    <value>Tu cuenta no ha sido confirmada aún.</value>
+    <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
+  </data>
+  <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
+    <value>Has intentado acceder demasiadas veces.Por favor, espera hasta las {0} e inténtalo de nuevo.</value>
+    <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
+  </data>
+  <data name="AM_AccountBlocked_Title" xml:space="preserve">
+    <value>Cuenta bloqueada</value>
+    <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
 </root>

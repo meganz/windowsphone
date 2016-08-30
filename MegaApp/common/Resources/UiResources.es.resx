@@ -1098,7 +1098,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>Estoy de acuerdo con las</value>
+    <value>Estoy de acuerdo con los</value>
     <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
   </data>
   <data name="AddFolder" xml:space="preserve">
@@ -1215,7 +1215,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
   </data>
   <data name="UI_Decrypt" xml:space="preserve">
-    <value>Desencriptar</value>
+    <value>Descifrar</value>
     <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_DecryptionKey" xml:space="preserve">
@@ -1274,5 +1274,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Tamaño</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>Compras en la aplicación</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>
