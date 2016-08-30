@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,6 @@ namespace MegaApp.MegaApi
     class PauseTransferRequestListener: BaseRequestListener
     {
         private bool _pause;
-
-        public PauseTransferRequestListener(bool pause)
-        {
-            _pause = pause;
-        }
 
         #region Base Properties
 
@@ -88,12 +84,41 @@ namespace MegaApp.MegaApi
 
         #region Override Methods
 
+        public override void onRequestStart(MegaSDK api, MRequest request)
+        {
+            //Get if transfers were paused (true) or resumed (false)
+            _pause = request.getFlag();
+
+            base.onRequestStart(api, request);
+        }
+
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
+            //Get if transfers were paused (true) or resumed (false)
+            _pause = request.getFlag();
+
+            ObservableCollection<TransferObjectModel> transfersList;
+            switch(request.getNumber())
+            {
+                case (int)MTransferType.TYPE_DOWNLOAD:
+                    transfersList = App.MegaTransfers.Downloads;
+                    break;
+
+                case (int)MTransferType.TYPE_UPLOAD:
+                    transfersList = App.MegaTransfers.Uploads;
+                    break;
+
+                default:
+                    transfersList = App.MegaTransfers;
+                    break;
+            }
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                foreach (var item in App.MegaTransfers)
+                var numTransfers = transfersList.Count;
+                for (int i=0; i<numTransfers; i++)
                 {
+                    var item = transfersList.ElementAt(i);
                     if (item == null) continue;
 
                     if (item.TransferedBytes < item.TotalBytes || item.TransferedBytes == 0)
@@ -103,11 +128,12 @@ namespace MegaApp.MegaApi
                             case TransferStatus.Downloading:
                             case TransferStatus.Uploading:
                             case TransferStatus.Queued:
-                                {
-                                    if(_pause)
-                                        item.Status = TransferStatus.Paused;
-                                    break;
-                                }
+                            {
+                                if (_pause)
+                                    item.Status = TransferStatus.Paused;
+                                break;
+                            }
+                                    
                             case TransferStatus.Paused:
                             {
                                 if (!_pause)

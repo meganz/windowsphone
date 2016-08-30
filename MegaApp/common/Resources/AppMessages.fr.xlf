@@ -24,7 +24,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
           <source>Your account has been created, confirmed and activated. You will be logged in automatically.</source>
-          <target state="translated">Votre compte a été créé, confirmé et activé. Vous allez être automatiquement authentifié(e).</target>
+          <target state="translated">Votre compte a été créé, confirmé et activé. Vous serez connecté automatiquement.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" space="preserve">
@@ -34,7 +34,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
           <source>Check your e-mail and click the link to login and confirm your account</source>
-          <target state="translated">Vérifiez votre adresse e-mail et cliquez sur le lien pour vous authentifier et confirmer votre compte.</target>
+          <target state="translated">Veuillez vérifier vos courriels et cliquer sur le lien pour vous connecter et confirmer votre compte.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
@@ -44,7 +44,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreateAccountFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
-          <target state="translated">Échec de la création du compte MEGA. Veuillez essayer à nouveau. [{0}]</target>
+          <target state="translated">Échec de création du compte de stockage nuagique MEGA. Veuillez ressayer. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -102,7 +102,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadNodeFailed_Title" translate="yes" space="preserve">
           <source>Download failed</source>
-          <target state="translated">Échec du téléchargement</target>
+          <target state="translated">Échec de téléchargement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/FetchingNodesFailed" translate="yes" space="preserve">
@@ -147,7 +147,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaved" translate="yes" space="preserve">
           <source>Image successfully exported to 'saved pictures' album</source>
-          <target state="translated">Image exporté avec succès dans l'album 'images enregistrées'</target>
+          <target state="translated">Image exporté avec succès dans l'album « images enregistrées »</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaved_Title" translate="yes" space="preserve">
@@ -157,12 +157,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="translated">Erreur lors de l'exportation de l'image vers l'album 'images enregistrées'. Veuillez ressayer.</target>
+          <target state="translated">Erreur d'exportation de l'image vers l'album « images enregistrées ». Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
           <source>Failed to save image</source>
-          <target state="translated">Impossible de sauvegarder l'image</target>
+          <target state="translated">Échec d'enregistrement de l'image</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
@@ -174,7 +174,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Échec de l'importation de(s) fichier(s)</target>
+          <target state="translated">Échec d'importation de fichier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
@@ -189,7 +189,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
-          <target state="translated">Échec de l'authentification sur l'Espace de Stockage MEGA. Veuillez essayer à nouveau [{0}]</target>
+          <target state="translated">Échec de connexion au stockage nuagique MEGA. Veuillez ressayer. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the login to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -225,17 +225,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/PictureSaved" translate="yes" space="preserve">
           <source>The image was saved to your photo album</source>
-          <target state="translated">L'image est sauvegardée dans votre album photo</target>
+          <target state="translated">L'image a été enregistrée dans votre album photo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
         </trans-unit>
         <trans-unit id="Resx/PictureSaved_Title" translate="yes" space="preserve">
           <source>Picture saved</source>
-          <target state="translated">Image sauvegardée</target>
+          <target state="translated">Image enregistrée</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when save successfully a single picture in the photo album - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0}?</source>
-          <target state="translated">Êtes-vous sûr(e) de bien vouloir supprimer {0}?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0}?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
         </trans-unit>
@@ -281,12 +281,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
           <source>Please fill in your name, e-mail address and password</source>
-          <target state="translated">Veuillez renseigner votre nom, adresse e-mail et mot de passe</target>
+          <target state="translated">Veuillez saisir vos nom, adresse courriel et mot de passe</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for create account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
           <source>Please fill in your e-mail address and your MEGA password.</source>
-          <target state="translated">Veuillez renseigner votre adresse e-mail et votre mot de passe MEGA.</target>
+          <target state="translated">Veuillez saisir votre adresse courriel et votre mot de passe MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFields_Title" translate="yes" space="preserve">
@@ -296,12 +296,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
           <source>Export current image to 'saved pictures' album?</source>
-          <target state="translated">Exporter l'image actuel vers l'album des 'images enregistrées'?</target>
+          <target state="translated">Exporter l'image actuel dans l'album « images enregistrées »?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
           <source>Save image to photos</source>
-          <target state="translated">Sauvegarder les images vers les photos</target>
+          <target state="translated">Enregistrer l'image dans les photos</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
@@ -311,7 +311,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
           <source>Not online</source>
-          <target state="translated">Non connecté(e)</target>
+          <target state="translated">N'est pas en ligne</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is online and is trying to do any operation that requires connection - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetThumbnailFailed" translate="yes" space="preserve">
@@ -338,12 +338,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
           <source>You have successfully logged out</source>
-          <target state="translated">Vous avez été déconnecté(e) avec succès</target>
+          <target state="translated">Vous avez été déconnecté avec succès</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user logged out successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LoggedOut_Title" translate="yes" space="preserve">
           <source>Logged out</source>
-          <target state="translated">Déconnecté(e)</target>
+          <target state="translated">Déconnecté</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user logged out successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
@@ -359,7 +359,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0} items?</source>
-          <target state="translated">Êtes-vous sûr(e) de bien vouloir supprimer {0} éléments?</target>
+          <target state="translated">Voulez-vous vraiment retirer {0} éléments?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
         </trans-unit>
@@ -391,7 +391,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} to the rubbish bin?</source>
-          <target state="translated">Êtes-vous sûr(e) de bien vouloir déplacer {0} vers la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment déplacer {0} vers la corbeille?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
         </trans-unit>
@@ -412,7 +412,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} items to the rubbish bin?</source>
-          <target state="translated">Êtes-vous sûr(e) de bien vouloir déplacer ces {0} éléments dans la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment déplacer {0} éléments vers la corbeille?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente vont être annulés. Êtes-vous sûr(e) que vous voulez vous déconnecter?</target>
+          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment vous déconnecter?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -445,7 +445,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
-          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente vont être annulés. Êtes-vous sûr(e) que vous voulez vous quitter?</target>
+          <target state="translated">Vous avez {0} transferts en attente. Les transferts en attente seront annulés. Voulez-vous vraiment quitter?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -482,7 +482,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage_Title" translate="yes" space="preserve">
           <source>Download count</source>
-          <target state="translated">Nombre de téléchargement(s)</target>
+          <target state="translated">Nombre de téléchargements</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
@@ -573,12 +573,12 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed" translate="yes" space="preserve">
           <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Impossible de charger les fichiers et les dossiers de MEGA. Veuillez ressayer ou cliquer sur raffraîchir</target>
+          <target state="translated">Impossible de charger les fichiers et les dossiers à partir de MEGA. Veuillez ressayer ou cliquer sur Actualiser.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
           <source>Failed to load</source>
-          <target state="translated">Impossible de charger</target>
+          <target state="translated">Échec de chargement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockCodesDoNotMatch" translate="yes" space="preserve">
@@ -593,24 +593,24 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError" translate="yes" space="preserve">
           <source>You have been logged out on this device from another location</source>
-          <target state="translated">Vous avez été déconnecté(e) de cet appareil depuis un autre endroit</target>
+          <target state="translated">Vous avez été déconnecté de cet appareil à partir d'un autre endroit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
-          <target state="translated">Opération refusée. Vous allez dépasser la limite de stockage de votre compte. Voulez-vous mettre à niveau votre compte?</target>
+          <target state="translated">L'opération n'est pas autorisée. Vous dépasseriez la limite de stockage de votre compte. Souhaitez-vous surclasser votre compte?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
           <source>Overquota Alert!</source>
-          <target state="translated">Alerte du Dépassement du Quota</target>
+          <target state="translated">Alerte de dépassement de quota !</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
-          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location.</source>
-          <target state="translated">Vous n'avez pas sélectionné l'emplacement par défaut pour le téléchargement de vos fichiers.
+          <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
+          <target state="needs-review-translation">Vous n'avez pas sélectionné un emplacement de téléchargement par défaut pour vos fichiers.
 
-Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou rendez-vous dans les préférences afin de définir un emplacement par défaut des téléchargements.</target>
+Pour poursuivre le téléchargement, veuillez sélectionner un dossier de destination ou aller dans les paramètres afin de définir votre emplacement de téléchargement par défaut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -626,7 +626,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
           <source>Logged out</source>
-          <target state="translated">Déconnecté(e)</target>
+          <target state="translated">Déconnecté</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileFailed" translate="yes" space="preserve">
@@ -642,7 +642,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
           <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">Vous n'avez pas la permission de copier ce type de fichier dans le dossier de destination. Il se peut que vous essayez de sauvegarder/copier un fichier d'un type non supporté dans la carte SD. </target>
+          <target state="translated">Vous n'avez pas les droits pour copier ce type de fichier dans le dossier de destination. Enregistrez/copiez-vous un fichier d'un type non pris en charge sur une carte SD?
+Veuillez essayez d'enregistrer/copier le fichier dans la mémoire interne de l'appareil.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -652,7 +653,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="needs-review-translation">Échec de copie de la clé de récupération dans le presse-papiers. Veuillez ressayer.</target>
+          <target state="translated">Échec de copie de la clé de récupération dans le presse-papiers. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -672,12 +673,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="translated">Clef de Récupération copiée dans le presse-papier</target>
+          <target state="translated">Clé de récupération copiée dans le presse-papiers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">Clef de Récupération copiée</target>
+          <target state="translated">Clé de récupération copiée</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -749,7 +750,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
-          <target state="translated">Impossible de sélectionner le(s) fichier(s). Veuillez essayer à nouveau [{0}]</target>
+          <target state="translated">Échec de sélection des fichiers. Veuillez ressayer [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -760,17 +761,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
           <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">E-mail invalide. Veuillez réessayer.</target>
+          <target state="translated">Adresse courriel mal formée. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
           <source>Incorrect e-mail address or password. Please try again.</source>
-          <target state="translated">Mot de passe ou adresse e-mail incorrect. Veuillez essayer à nouveau.</target>
+          <target state="translated">Mot de passe ou adresse courriel erronés. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete {0}?</source>
-          <target state="translated">Êtes-vous certain(e) de bien vouloir supprimer définitivement {0}?</target>
+          <target state="translated">Voulez-vous vraiment supprimer {0} définitivement?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
         </trans-unit>
@@ -825,13 +826,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
           <source>Failed to save settings. Please, try again [{0}]</source>
-          <target state="translated">Impossible de sauvegarder les paramètres. Veuillez essayer à nouveau [{0}]</target>
+          <target state="translated">Échec d'enregistrement des paramètres. Veuillez ressayer [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error saving settings</source>
-          <target state="translated">Erreur lors de la sauvegarde des réglages</target>
+          <target state="translated">Erreur d'enregistrement des paramètres</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
@@ -846,7 +847,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
           <source>The credit card information is not correct. The credit card will not be charged.</source>
-          <target state="translated">Les informations de la carte de crédit n'est pas correcte.  La carte de crédit ne sera pas facturée.</target>
+          <target state="translated">Les informations de la carte de crédit sont incorrectes. La carte de crédit ne sera pas facturée.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
@@ -876,7 +877,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">Merci pour votre retour ! Êtes-vous certain(e) de bien vouloir annuler votre abonnement MEGA?</target>
+          <target state="translated">Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
@@ -901,27 +902,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
           <source>Cancel Subscription</source>
-          <target state="translated">Annuler l'Abonnement</target>
+          <target state="translated">Annuler l'abonnement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
           <source>Please give us your feedback. Thanks.</source>
-          <target state="translated">Merci de nous expliquer pourquoi. Merci.</target>
+          <target state="translated">Veuillez nous donner vos commentaires. Merci.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
           <source>The operation failed. Your credit card has not been charged.</source>
-          <target state="translated">L'opération ne s'est pas terminée correctement. La carte de crédit ne sera pas facturée.</target>
+          <target state="translated">Échec d'opération. Votre carte de crédit n'a pas été facturée.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
           <source>Error upgrading account</source>
-          <target state="translated">Erreur lors de la mise-à-jour du compte</target>
+          <target state="translated">Erreur de mise à niveau du compte</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
           <source>Account successfully upgraded!</source>
-          <target state="translated">Mis-à-jour du compte effectué avec succès !</target>
+          <target state="translated">Le compte a été surclassé avec succès !</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" space="preserve">
@@ -953,22 +954,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
           <source>Background agents for MEGA have been disabled by the user</source>
-          <target state="translated">Les agents de MEGA en tâche de fond ont été désactivés par l'utilisateur</target>
+          <target state="translated">Les agents d'arrière-plan de MEGA ont été désactivés par l'utilisateur</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
           <source>Background agents disabled</source>
-          <target state="translated">Agents en tâche de fond désactivés</target>
+          <target state="translated">Les agents d'arrière-plan sont désactivés</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">Afin que les Uploads Automatiques de la Caméra fonctionnent correctement, nous devez activer l'option "Rester authentifié(e)". Souhaitez-vous activer cette option?</target>
+          <target state="translated">Afin que le téléversement automatique de la caméra fonctionne correctement, vous devez activer l'option « Rester connecté ». Souhaitez-vous activer cette option?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
           <source>Auto Camera Uploads prerequisites</source>
-          <target state="translated">Prérequis du téléversement automatique de l'appareil photo</target>
+          <target state="translated">Prérequis du téléversement automatique de la caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
@@ -1005,7 +1006,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="translated">Téléversement automatique MEGA de l'appareil photo</target>
+          <target state="translated">MEGA Téléversement automatique de la caméra</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
@@ -1020,12 +1021,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Notre certificat SSL/TLS n'a pas pu être vérifié. Il se peut que vous soyez affecté(e) par une attaque de l'homme-au-milieu.</target>
+          <target state="translated">Notre certificat SSL/TLS ne peut pas être vérifié. Vous pourriez être affecté par une attaque de l'homme du milieu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
           <source>Logged out</source>
-          <target state="translated">Déconnecté(e)</target>
+          <target state="translated">Déconnecté</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
@@ -1072,7 +1073,8 @@ Preserve the {0} code because is for include the number of contacts to be remove
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
           <source>The new and the old password must not match.</source>
-          <target state="translated">Le nouveau et le mot de passe ne peuvent pas être le même.</target>
+          <target state="translated">Le nouveau mot de passe et l'ancien
+doivent être différent.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
@@ -1109,7 +1111,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">Êtes-vous certain(e) de bien vouloir supprimer de façon permanente tous les fichiers de la corbeille?</target>
+          <target state="translated">Voulez-vous vraiment supprimer définitivement tous les fichiers de la corbeille?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
@@ -1119,7 +1121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
           <source>You are trying to add your own email as a contact.</source>
-          <target state="translated">Vous êtes en train d'essayer d'ajouter votre propre e-mail en tant que contact.</target>
+          <target state="translated">Vous tentez d'ajouter votre propre adresse courriel comme contact.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
@@ -1178,7 +1180,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
           <source>Invalid link</source>
-          <target state="translated">Lien non valide</target>
+          <target state="translated">Lien invalide</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
@@ -1188,7 +1190,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Échec de l'importation de(s) fichier(s)</target>
+          <target state="translated">Échec d'importation de fichier</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 </note>
@@ -1200,7 +1202,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">Erreur lors de la préparation du ou des fichier(s)</target>
+          <target state="translated">Erreur de préparation des fichiers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
@@ -1210,17 +1212,17 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
           <source>Failed to load</source>
-          <target state="translated">Impossible de charger</target>
+          <target state="translated">Échec de chargement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Impossible de charger les éléments partagés entrants depuis MEGA. Veuillez essayer à nouveau ou cliquer sur rafraîchir.</target>
+          <target state="translated">Échec de chargement des éléments partagés entrants à partir de MEGA. Veuillez ressayer ou cliquer sur Actualiser.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Impossible de charger les éléments partagés sortants depuis MEGA. Veuillez essayer à nouveau ou cliquer sur rafraîchir.</target>
+          <target state="translated">Échec de chargement des éléments partagés sortants à partir de MEGA. Veuillez ressayer ou cliquer sur Actualiser.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
@@ -1247,7 +1249,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Impossible de copier le lien MEGA dans votre presse-papier.</target>
+          <target state="translated">Échec de copie du lien MEGA dans votre presse-papiers.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
@@ -1257,27 +1259,27 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
-          <target state="translated">Si vous acceptez, vous serez déconnecté(e) de votre compte et toutes les données Hors-ligne seront effacées. Voulez-vous continuer?</target>
+          <target state="translated">Si vous acceptez, le compte actuel sera déconnecté et toutes les données Hors ligne seront effacées. Voulez-vous poursuivre?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
           <source>You are logged in with another account</source>
-          <target state="translated">Vous êtes authentifié(e) avec un autre compte</target>
+          <target state="translated">Vous êtes connecté avec un autre compte</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
-          <target state="translated">Pour accéder à ce dossier/fichier, vous aurez besoin de sa Clef de Déchiffrement. Si vous ne possédez pas cette clef, veuillez contacter le créateur de ce lien.</target>
+          <target state="translated">Afin d'accéder à ce dossier/fichier, il vous faudra sa clé de déchiffrement. Si vous ne possédez pas la clé, veuillez contacter le créateur du lien.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
           <source>Enter decryption key</source>
-          <target state="translated">Entrez la clé de déchiffrage</target>
+          <target state="translated">Saisir la clé de déchiffrement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
           <source>Invalid decryption key</source>
-          <target state="translated">Clef de déchiffrement invalide</target>
+          <target state="translated">Clé de déchiffrement invalide</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
@@ -1285,9 +1287,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Cela peut être dû aux raisons suivantes :
-- Le fichier a été supprimé en raison d'une violation des Conditions d'Utilisation de MEGA.
-- URL invalide - le lien que vous essayez d'accéder n'existe pas.
+          <target state="translated">Les causes possibles sont les suivantes :
+- Le fichier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
+- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
@@ -1296,10 +1298,10 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Cela peut être dû aux raisons suivantes :
-- Le dossier a été supprimé en raison d'une violation des Conditions d'Utilisation de MEGA.
-- URL invalide - le lien que vous essayez d'accéder n'existe pas.
-- Le lien du dossier a été supprimé par l'utilisateur.</target>
+          <target state="translated">Les causes possibles sont les suivantes :
+- Le lien de dossier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
+- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
+- Le lien de dossier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
@@ -1346,7 +1348,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Title" translate="yes" space="preserve">
           <source>Disable DEBUG mode</source>
-          <target state="translated">Désactiver le mode de DEBOGGAGE</target>
+          <target state="translated">Désactiver le mode DÉBOGAGE</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is disabled - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
@@ -1357,7 +1359,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" space="preserve">
           <source>Enable DEBUG mode</source>
-          <target state="translated">Activer le mode de DEBOGGAGE</target>
+          <target state="translated">Activer le mode DÉBOGAGE</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is enabled - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
@@ -1372,7 +1374,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
           <source>Item shared by the Windows Phone MEGA app.</source>
-          <target state="needs-review-translation">Élément partagé avec l'application MEGA pour Windows Phone.</target>
+          <target state="translated">Élément partagé avec l'application MEGA pour Windows Phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
@@ -1382,7 +1384,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
           <source>Items shared by the Windows Phone MEGA app.</source>
-          <target state="needs-review-translation">Éléments partagés avec l'application MEGA pour Windows Phone.</target>
+          <target state="translated">Éléments partagés avec l'application MEGA pour Windows Phone.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
@@ -1412,33 +1414,109 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" space="preserve">
           <source>Error sharing item(s)</source>
-          <target state="translated">Erreur de partage</target>
+          <target state="translated">Erreur de partage des éléments</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" xml:space="preserve">
-          <source>Could not import the folder link. Please try again.</source>
-          <target state="new">Could not import the folder link. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
+        <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
+          <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
+          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
+          <source>Already purchased</source>
+          <target state="translated">Already purchased</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
+          <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
+          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
+          <source>Purchase failed or cancelled</source>
+          <target state="translated">Purchase failed or cancelled</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
+          <source>Your MEGA subcription purchase has succeeded.</source>
+          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
+          <source>Purchase succeeded</source>
+          <target state="translated">Purchase succeeded</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
+          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
+          <source>Purchase validation failed</source>
+          <target state="translated">Purchase validation failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="new">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">Le compte relié a été résilié à la suite de violations multiples de nos conditions générales d'utilisation.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" xml:space="preserve">
-          <source>Import failed</source>
-          <target state="new">Import failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
+          <source>Download failed</source>
+          <target state="translated">Échec de téléchargement</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not download the folder link. Please try again.</source>
-          <target state="new">Could not download the folder link. Please try again.</target>
+          <target state="translated">Impossible de téléchareger le lien de dossier. Veuillez ressayer.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" xml:space="preserve">
-          <source>Download failed</source>
-          <target state="new">Download failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</note>
+        <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
+          <source>Import failed</source>
+          <target state="translated">Échec de l'importation</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
+          <source>Could not import the folder link. Please try again.</source>
+          <target state="translated">Impossible d'importer le lien de dossier. Veuillez ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
+          <source>This e-mail address has already registered an account with MEGA.</source>
+          <target state="translated">Un compte MEGA a déjà été enregistré avec cette adresse courriel.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
+          <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
+          <target state="needs-review-translation">Le lien de confirmation de compte que vous utilisez est incomplet. Veuillez vérifier la longueur du lien, vous assurer d'avoir copié le lien entier et ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
+          <source>The link you are using for a new signup is not valid.</source>
+          <target state="translated">Le lien que vous utilisez pour une nouvelle inscription est invalide.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
+          <source>Your account has been blocked. Please contact support@mega.co.nz</source>
+          <target state="translated">Votre compte a été bloqué. Veuillez contacter support@mega.co.nz</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
+          <source>Your account has not been confirmed yet.</source>
+          <target state="needs-review-translation">Votre compte n'a pas encore été confirmé.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
+          <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
+          <target state="translated">Vous avez tenté de vous connecter trop de fois. Veuillez patienter jusqu'à {0} et ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
+Preserve the {0} code because is for include the exact time until the user has to wait.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
+          <source>Account blocked</source>
+          <target state="translated">Compte bloqué</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
       </group>
     </body>

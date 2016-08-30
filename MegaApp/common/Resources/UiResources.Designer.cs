@@ -844,7 +844,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Get 2 months free if you subscribe to a one-year Pro plan.
+        ///   Busca una cadena traducida similar a Get 2 months free if you subscribe to a one-year PRO plan.
         /// </summary>
         public static string Get2MonthsFree {
             get {
@@ -853,7 +853,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You can be a Pro user!.
+        ///   Busca una cadena traducida similar a You can be a PRO user!.
         /// </summary>
         public static string GetProAccount {
             get {
@@ -2361,6 +2361,15 @@ namespace MegaApp.Resources {
         public static string UI_ImportLinkBorderText {
             get {
                 return ResourceManager.GetString("UI_ImportLinkBorderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a In app purchase.
+        /// </summary>
+        public static string UI_InAppPurchase {
+            get {
+                return ResourceManager.GetString("UI_InAppPurchase", resourceCulture);
             }
         }
         

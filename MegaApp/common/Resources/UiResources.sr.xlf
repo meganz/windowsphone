@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
           <source>your first name</source>
-          <target state="translated">your first name</target>
+          <target state="translated">Ваше име</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -143,7 +143,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
           <source>Open MEGA link</source>
-          <target state="translated">Open MEGA link</target>
+          <target state="translated">Отвори MEGA линк</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
@@ -541,7 +541,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RecoveryKey" translate="yes" space="preserve">
           <source>Recovery Key</source>
-          <target state="translated">Recovery Key</target>
+          <target state="translated">Резервни Кључ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
@@ -932,7 +932,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="needs-review-translation">Добијте 2 месеца бесплатно ако се претплатите на једногодишњи Про налог</target>
+          <target state="translated">Добијте 2 месеца бесплатно ако се претплатите на једногодишњи Про налог</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1003,7 +1003,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
           <source>Paste MEGA link:</source>
-          <target state="translated">Paste MEGA link:</target>
+          <target state="translated">Налепи MEGA линк:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
@@ -1070,7 +1070,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="needs-review-translation">Можете бити Про корисник!</target>
+          <target state="translated">Можете бити Про корисник!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1370,7 +1370,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
           <source>your last name</source>
-          <target state="translated">your last name</target>
+          <target state="translated">Ваше презиме</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
@@ -1410,23 +1410,23 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_DebugMode" translate="yes" space="preserve">
           <source>Debug mode</source>
-          <target state="translated">Debug mode</target>
+          <target state="translated">Debug мод</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_MemoryStatistics" translate="yes" space="preserve">
           <source>Memory statistics</source>
-          <target state="translated">Memory statistics</target>
+          <target state="translated">Статистика меморије</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Added" translate="yes" space="preserve">
           <source>Added</source>
-          <target state="translated">Added</target>
+          <target state="translated">Додато</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_AvailableOffline" translate="yes" space="preserve">
           <source>Available Offline</source>
-          <target state="translated">Available Offline</target>
+          <target state="translated">Доступно офлјан</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
@@ -1438,7 +1438,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Modified" translate="yes" space="preserve">
           <source>Modified</source>
-          <target state="translated">Modified</target>
+          <target state="translated">Измењено</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
@@ -1447,6 +1447,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Величина</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
+          <source>In app purchase</source>
+          <target state="translated">In app purchase</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

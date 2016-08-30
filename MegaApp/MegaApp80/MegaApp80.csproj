@@ -330,9 +330,6 @@
     <Compile Include="..\common\MegaApi\BaseRequestListener.cs">
       <Link>MegaApi\BaseRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\BaseTransferListener.cs">
-      <Link>MegaApi\BaseTransferListener.cs</Link>
-    </Compile>
     <Compile Include="..\common\MegaApi\CancelSubscriptionRequestListener.cs">
       <Link>MegaApi\CancelSubscriptionRequestListener.cs</Link>
     </Compile>
@@ -408,6 +405,9 @@
     <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
       <Link>MegaApi\GlobalDriveListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\MegaApi\GlobalTransferListener.cs">
+      <Link>MegaApi\GlobalTransferListener.cs</Link>
+    </Compile>
     <Compile Include="..\common\MegaApi\ImportFileRequestListener.cs">
       <Link>MegaApi\ImportFileRequestListener.cs</Link>
     </Compile>
@@ -446,6 +446,9 @@
     </Compile>
     <Compile Include="..\common\MegaApi\PublicLinkRequestListener.cs">
       <Link>MegaApi\PublicLinkRequestListener.cs</Link>
+    </Compile>
+    <Compile Include="..\common\MegaApi\PurchaseReceiptRequestListener.cs">
+      <Link>MegaApi\PurchaseReceiptRequestListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\RemoveContactRequestListener.cs">
       <Link>MegaApi\RemoveContactRequestListener.cs</Link>
@@ -761,6 +764,9 @@
     <Compile Include="..\common\Services\ImageService.cs">
       <Link>Services\ImageService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\LicenseService.cs">
+      <Link>Services\LicenseService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
     </Compile>
@@ -781,6 +787,9 @@
     </Compile>
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\TransfersService.cs">
+      <Link>Services\TransfersService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\UiService.cs">
       <Link>Services\UiService.cs</Link>
@@ -4550,7 +4559,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.13.0">
+    <SDKReference Include="SQLite.WP80, Version=3.14.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

@@ -29,7 +29,7 @@ namespace MegaApp.Services
 
                 string extension = Path.GetExtension(filename);
 
-                if (extension == null) return false;
+                if (string.IsNullOrEmpty(extension)) return false;
 
                 switch (extension.ToLower())
                 {

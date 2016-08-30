@@ -737,7 +737,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
           <source>end-to-end encryption.</source>
-          <target state="translated">단대단 암호화.</target>
+          <target state="translated">종단간 암호화.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" space="preserve">
@@ -932,7 +932,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
-          <target state="needs-review-translation">PRO 요금제를 1년 구독하면 2개월을 무료로 드립니다</target>
+          <target state="translated">PRO 요금제를 1년 구독하면 2개월을 무료로 드립니다</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</note>
         </trans-unit>
         <trans-unit id="Resx/LastName" translate="yes" space="preserve">
@@ -1070,7 +1070,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/GetProAccount" translate="yes" space="preserve">
           <source>You can be a PRO user!</source>
-          <target state="needs-review-translation">PRO 이용자가 될 수 있습니다!</target>
+          <target state="translated">PRO 이용자가 될 수 있습니다!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountQuestion" translate="yes" space="preserve">
@@ -1447,6 +1447,11 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">크기</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
+          <source>In app purchase</source>
+          <target state="translated">In app purchase</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
