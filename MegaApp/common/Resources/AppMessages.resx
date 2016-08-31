@@ -1301,10 +1301,6 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <value>Could not import the folder link. Please try again.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
-  <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>The associated user account has been terminated due to multiple violations of our Terms of Service.</value>
-    <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
-  </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
     <value>This e-mail address has already registered an account with MEGA.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
