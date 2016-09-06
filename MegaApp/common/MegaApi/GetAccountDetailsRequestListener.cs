@@ -135,20 +135,30 @@ namespace MegaApp.MegaApi
                             // If there is a valid subscription get the renew time
                             if (request.getMAccountDetails().getSubscriptionStatus() == MSubscriptionStatus.SUBSCRIPTION_STATUS_VALID)
                             {
-                                if(request.getMAccountDetails().getSubscriptionRenewTime() != 0)
-                                    date = start.AddSeconds(request.getMAccountDetails().getSubscriptionRenewTime());
-                                else
-                                    date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
-                                                                
-                                _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                try
+                                {
+                                    if (request.getMAccountDetails().getSubscriptionRenewTime() != 0)
+                                        date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getSubscriptionRenewTime()));
+                                    else
+                                        date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));
+
+                                    _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                }
+                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }                                                                
+                                
                                 _accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
                                 _accountDetails.IsValidSubscription = true;
                             }
                             // Else get the expiration time for the current PRO status
                             else
                             {
-                                date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
-                                _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                try 
+                                {
+                                    date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));                                    
+                                    _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                }
+                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }
+                                
                                 _accountDetails.IsValidSubscription = false;
                             }                            
                         }
