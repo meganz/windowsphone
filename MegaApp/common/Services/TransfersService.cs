@@ -62,21 +62,23 @@ namespace MegaApp.Services
 
                 if(megaTransfer != null)
                 {
-                    GetTransferAppData(transfer, megaTransfer);
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        GetTransferAppData(transfer, megaTransfer);
 
-                    megaTransfer.Transfer = transfer;
-                    megaTransfer.Status = TransferStatus.Queued;
-                    megaTransfer.CancelButtonState = true;
-                    megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                    megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                    megaTransfer.IsBusy = true;
-                    megaTransfer.TotalBytes = transfer.getTotalBytes();
-                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                    megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
+                        megaTransfer.Transfer = transfer;
+                        megaTransfer.Status = TransferStatus.Queued;
+                        megaTransfer.CancelButtonState = true;
+                        megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                        megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
+                        megaTransfer.IsBusy = true;
+                        megaTransfer.TotalBytes = transfer.getTotalBytes();
+                        megaTransfer.TransferedBytes = transfer.getTransferredBytes();
+                        megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
 
-                    Deployment.Current.Dispatcher.BeginInvoke(() => MegaTransfers.Add(megaTransfer));
-
-                    App.GlobalTransferListener.Transfers.Add(megaTransfer);
+                        MegaTransfers.Add(megaTransfer);
+                        App.GlobalTransferListener.Transfers.Add(megaTransfer);
+                    });                    
                 }
             }
         }
