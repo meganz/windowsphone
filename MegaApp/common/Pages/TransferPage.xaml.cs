@@ -21,7 +21,7 @@ namespace MegaApp.Pages
 {
     public partial class TransferPage : PhoneDrawerLayoutPage
     {
-        private readonly TransfersViewModel _transfersViewModel;
+        private TransfersViewModel _transfersViewModel;
 
         public TransferPage()
         {
@@ -110,6 +110,12 @@ namespace MegaApp.Pages
 
         private void SetDownloadsPivotGUI(bool paused)
         {
+            if (ApplicationBar == null)
+                ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
+
+            if (_transfersViewModel == null)
+                _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnPauseAllClick;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnStartResumeAllClick;
 
@@ -139,6 +145,12 @@ namespace MegaApp.Pages
 
         private void SetUploadsPivotGUI(bool paused)
         {
+            if(ApplicationBar == null)
+                ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
+
+            if(_transfersViewModel == null)
+                _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnPauseAllClick;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnStartResumeAllClick;
 
