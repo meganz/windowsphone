@@ -237,7 +237,7 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                TransferObjectModel megaTransfer;
+                TransferObjectModel megaTransfer = null;
                 if (transfer.getType() == MTransferType.TYPE_DOWNLOAD)
                 {
                     // If is a public node
@@ -245,9 +245,12 @@ namespace MegaApp.MegaApi
                     if(node == null) // If not
                         node = api.getNodeByHandle(transfer.getNodeHandle());
 
-                    megaTransfer = new TransferObjectModel(api,
-                        NodeService.CreateNew(api, App.AppInformation, node, ContainerType.CloudDrive),
-                        TransferType.Download, transfer.getPath());
+                    if (node != null)
+                    {
+                        megaTransfer = new TransferObjectModel(api,
+                            NodeService.CreateNew(api, App.AppInformation, node, ContainerType.CloudDrive),
+                            TransferType.Download, transfer.getPath());
+                    }
                 }
                 else
                 {
@@ -255,20 +258,23 @@ namespace MegaApp.MegaApi
                         TransferType.Upload, transfer.getPath());
                 }
 
-                TransfersService.GetTransferAppData(transfer, megaTransfer);
+                if(megaTransfer != null)
+                {
+                    TransfersService.GetTransferAppData(transfer, megaTransfer);
 
-                megaTransfer.Transfer = transfer;
-                megaTransfer.Status = TransferStatus.Queued;
-                megaTransfer.CancelButtonState = true;
-                megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                megaTransfer.IsBusy = true;
-                megaTransfer.TotalBytes = transfer.getTotalBytes();
-                megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();                
+                    megaTransfer.Transfer = transfer;
+                    megaTransfer.Status = TransferStatus.Queued;
+                    megaTransfer.CancelButtonState = true;
+                    megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                    megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
+                    megaTransfer.IsBusy = true;
+                    megaTransfer.TotalBytes = transfer.getTotalBytes();
+                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
+                    megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
 
-                App.MegaTransfers.Add(megaTransfer);
-                Transfers.Add(megaTransfer);
+                    App.MegaTransfers.Add(megaTransfer);
+                    Transfers.Add(megaTransfer);
+                }
             });
         }
 
