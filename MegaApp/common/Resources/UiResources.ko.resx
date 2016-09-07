@@ -658,7 +658,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
-    <value>단대단 암호화.</value>
+    <value>종단간 암호화.</value>
     <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy_Title" xml:space="preserve">
@@ -1273,5 +1273,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>크기</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>In app purchase</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

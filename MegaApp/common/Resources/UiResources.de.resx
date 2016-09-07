@@ -658,7 +658,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
-    <value>Ende-zu-Ende-Verschlüsselung.</value>
+    <value>lückenlose Verschlüsselung.</value>
     <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy_Title" xml:space="preserve">
@@ -1081,7 +1081,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>Do you want to enable the Auto Camera Uploads service?</value>
+    <value>Wollen Sie automatische Kamera-Uploads aktivieren?</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
@@ -1234,28 +1234,28 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Export Recovery Key</value>
+    <value>Rettungsschlüssel exportieren</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
-    <value>Recovery Key</value>
+    <value>Rettungsschlüssel</value>
     <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_DebugMode" xml:space="preserve">
-    <value>Debug mode</value>
+    <value>Debugmodus</value>
     <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_MemoryStatistics" xml:space="preserve">
-    <value>Memory statistics</value>
+    <value>Speichernutzung</value>
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Added" xml:space="preserve">
-    <value>Added</value>
+    <value>Erstellt</value>
     <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_AvailableOffline" xml:space="preserve">
-    <value>Available Offline</value>
+    <value>Offline verfügbar</value>
     <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1265,7 +1265,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Modified</value>
+    <value>Geändert</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1273,5 +1273,9 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Größe</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>In app purchase</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

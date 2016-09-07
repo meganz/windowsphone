@@ -164,7 +164,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting a payment Url - (String as short as possible).</comment>
   </data>
   <data name="GetPreview" xml:space="preserve">
-    <value>Récupération de l'aperçu en cours...</value>
+    <value>Récupération de l'aperçu...</value>
     <comment>Progress indicator message when getting a preview - (String as short as possible).</comment>
   </data>
   <data name="GetUserData" xml:space="preserve">
@@ -172,7 +172,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when getting account details - (String as short as possible).</comment>
   </data>
   <data name="ImportFile" xml:space="preserve">
-    <value>Importation du fichier en cours...</value>
+    <value>Importation du fichier...</value>
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
@@ -188,11 +188,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
-    <value>Construction de la vue en cours...</value>
+    <value>Assemblage de la vue...</value>
     <comment>Progress indicator message when building a nodes view - (String as short as possible).</comment>
   </data>
   <data name="MoveNode" xml:space="preserve">
-    <value>Déplacement en cours...</value>
+    <value>Déplacement...</value>
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
@@ -220,11 +220,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
-    <value>Suppression en cours...</value>
+    <value>Suppression...</value>
     <comment>Progress indicator message when removing a node (file or folder) - (String as short as possible).</comment>
   </data>
   <data name="RenameNode" xml:space="preserve">
-    <value>Renommage en cours...</value>
+    <value>Renommage...</value>
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
@@ -244,7 +244,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Sauvegarde locale en cours ...</value>
+    <value>Enregistrement hors ligne...</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
@@ -272,23 +272,23 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when confirming a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateAccount" xml:space="preserve">
-    <value>Création du compte en cours...</value>
+    <value>Création du compte...</value>
     <comment>Progress indicator message when creating a MEGA account - (String as short as possible).</comment>
   </data>
   <data name="PM_CreateFolder" xml:space="preserve">
-    <value>Création du dossier en cours...</value>
+    <value>Création du dossier...</value>
     <comment>Progress indicator message when creating a folder - (String as short as possible).</comment>
   </data>
   <data name="PM_GetLink" xml:space="preserve">
-    <value>Récupération du lien en cours...</value>
+    <value>Récupération du lien...</value>
     <comment>Progress indicator message when getting a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_Login" xml:space="preserve">
-    <value>Connexion en cours...</value>
+    <value>Connexion...</value>
     <comment>Progress indicator message when logging in - (String as short as possible).</comment>
   </data>
   <data name="PM_Logout" xml:space="preserve">
-    <value>Déconnexion en cours...</value>
+    <value>Déconnexion...</value>
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
@@ -308,11 +308,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_CopyNode" xml:space="preserve">
-    <value>Copie en cours...</value>
+    <value>Copie...</value>
     <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="PM_ImportFolder" xml:space="preserve">
     <value>Importation du dossier...</value>
     <comment>Progress indicator message when importing a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ValidatePurchase" xml:space="preserve">
+    <value>Validation...</value>
+    <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
 </root>

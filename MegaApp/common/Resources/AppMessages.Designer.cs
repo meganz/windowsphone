@@ -151,6 +151,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your MEGA subscription purchase has failed because you already have purchased this item..
+        /// </summary>
+        public static string AM_AlreadyPurchased {
+            get {
+                return ResourceManager.GetString("AM_AlreadyPurchased", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Already purchased.
+        /// </summary>
+        public static string AM_AlreadyPurchased_Title {
+            get {
+                return ResourceManager.GetString("AM_AlreadyPurchased_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The associated user account has been terminated due to multiple violations of our Terms of Service..
         /// </summary>
         public static string AM_AssociatedUserAccountTerminated {
@@ -567,6 +585,60 @@ namespace MegaApp.Resources {
         public static string AM_PrepareFilesForUploadFailed_Title {
             get {
                 return ResourceManager.GetString("AM_PrepareFilesForUploadFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support..
+        /// </summary>
+        public static string AM_PurchaseFailed {
+            get {
+                return ResourceManager.GetString("AM_PurchaseFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Purchase failed or cancelled.
+        /// </summary>
+        public static string AM_PurchaseFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_PurchaseFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has succeeded..
+        /// </summary>
+        public static string AM_PurchaseSucceeded {
+            get {
+                return ResourceManager.GetString("AM_PurchaseSucceeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Purchase succeeded.
+        /// </summary>
+        public static string AM_PurchaseSucceeded_Title {
+            get {
+                return ResourceManager.GetString("AM_PurchaseSucceeded_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues..
+        /// </summary>
+        public static string AM_PurchaseValidationFailed {
+            get {
+                return ResourceManager.GetString("AM_PurchaseValidationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Purchase validation failed.
+        /// </summary>
+        public static string AM_PurchaseValidationFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_PurchaseValidationFailed_Title", resourceCulture);
             }
         }
         
