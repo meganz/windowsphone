@@ -106,51 +106,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a FREE.
-        /// </summary>
-        public static string AccountTypeFree {
-            get {
-                return ResourceManager.GetString("AccountTypeFree", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a LITE.
-        /// </summary>
-        public static string AccountTypeLite {
-            get {
-                return ResourceManager.GetString("AccountTypeLite", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a PRO I.
-        /// </summary>
-        public static string AccountTypePro1 {
-            get {
-                return ResourceManager.GetString("AccountTypePro1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a PRO II.
-        /// </summary>
-        public static string AccountTypePro2 {
-            get {
-                return ResourceManager.GetString("AccountTypePro2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a PRO III.
-        /// </summary>
-        public static string AccountTypePro3 {
-            get {
-                return ResourceManager.GetString("AccountTypePro3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Acknowledgements.
         /// </summary>
         public static string Acknowledgements {
@@ -822,15 +777,6 @@ namespace MegaApp.Resources {
         public static string FreeSpace {
             get {
                 return ResourceManager.GetString("FreeSpace", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a From.
-        /// </summary>
-        public static string From {
-            get {
-                return ResourceManager.GetString("From", resourceCulture);
             }
         }
         
@@ -2343,6 +2289,24 @@ namespace MegaApp.Resources {
         public static string UI_FolderLink {
             get {
                 return ResourceManager.GetString("UI_FolderLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Free.
+        /// </summary>
+        public static string UI_Free {
+            get {
+                return ResourceManager.GetString("UI_Free", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a From {0:N} {1}/month.
+        /// </summary>
+        public static string UI_FromBasePrice {
+            get {
+                return ResourceManager.GetString("UI_FromBasePrice", resourceCulture);
             }
         }
         

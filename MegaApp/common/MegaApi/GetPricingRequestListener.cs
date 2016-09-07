@@ -95,10 +95,9 @@ namespace MegaApp.MegaApi
                     var freePlan = new ProductBase
                     {
                         AccountType = MAccountType.ACCOUNT_TYPE_FREE,
-                        Name = UiResources.AccountTypeFree,
+                        Name = AppResources.AccountTypeFree,
                         ProductColor = Color.FromArgb(255, 19, 224, 60),
-                        ProductPathData = VisualResources.CrestFreeAccountPathData,
-                        IsFree = true
+                        ProductPathData = VisualResources.CrestFreeAccountPathData
                     };
 
                     _upgradeAccount.Plans.Add(freePlan);
@@ -111,9 +110,6 @@ namespace MegaApp.MegaApi
                 {
                     var accountType = (MAccountType) Enum.Parse(typeof (MAccountType),
                         request.getPricing().getProLevel(i).ToString());
-
-                    //if (accountType == _accountDetails.AccountType)
-                    //    continue;
                     
                     var product = new Product
                     {
@@ -129,11 +125,11 @@ namespace MegaApp.MegaApi
                     switch (accountType)
                     {
                         case MAccountType.ACCOUNT_TYPE_FREE:
-                            product.Name = UiResources.AccountTypeFree;
+                            product.Name = AppResources.AccountTypeFree;
                             product.ProductPathData = VisualResources.CrestFreeAccountPathData;
                             break;
                         case MAccountType.ACCOUNT_TYPE_LITE:
-                            product.Name = UiResources.AccountTypeLite;
+                            product.Name = AppResources.AccountTypeLite;
                             product.ProductColor = Color.FromArgb(255, 255, 165, 0);
                             product.ProductPathData = VisualResources.CrestLiteAccountPathData;
                             product.IsNewOffer = true;
@@ -163,17 +159,17 @@ namespace MegaApp.MegaApi
                             }
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROI:
-                            product.Name = UiResources.AccountTypePro1;
+                            product.Name = AppResources.AccountTypePro1;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
                             product.ProductPathData = VisualResources.CrestProIAccountPathData;                            
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROII:
-                            product.Name = UiResources.AccountTypePro2;
+                            product.Name = AppResources.AccountTypePro2;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
                             product.ProductPathData = VisualResources.CrestProIIAccountPathData;                            
                             break;
                         case MAccountType.ACCOUNT_TYPE_PROIII:
-                            product.Name = UiResources.AccountTypePro3;
+                            product.Name = AppResources.AccountTypePro3;
                             product.ProductColor = Color.FromArgb(255, 217, 0, 7);
                             product.ProductPathData = VisualResources.CrestProIIIAccountPathData;                            
                             break;
