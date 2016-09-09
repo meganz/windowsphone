@@ -33,15 +33,17 @@ namespace ScheduledCameraUploadTaskAgent
 
                 // Clean up after upload
                 File.Delete(transfer.getPath());
-
-                // Start a new upload action
-                ScheduledAgent.Upload();
             }
             catch (Exception)
             {
                 // File could not be found for delete or setting could not be saved
                 // Just continue the run
-            }            
+            }
+            finally
+            {
+                // Start a new upload action
+                ScheduledAgent.Upload();
+            }
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)
