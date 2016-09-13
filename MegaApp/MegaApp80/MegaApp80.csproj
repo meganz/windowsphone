@@ -2361,6 +2361,10 @@
       <Project>{258d42d3-2556-46b1-ae8f-da6c9f49cffe}</Project>
       <Name>mega</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ScheduledCameraUploadTaskAgent\ScheduledCameraUploadTaskAgent.csproj">
+      <Project>{ff8eef06-d0c6-41ba-952c-a4b441c61a67}</Project>
+      <Name>ScheduledCameraUploadTaskAgent</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\common\Resources\AppMessages.ar.resx">

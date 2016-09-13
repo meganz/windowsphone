@@ -321,26 +321,6 @@
           <target state="translated">Corbeille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AccountTypeFree" translate="yes" space="preserve">
-          <source>FREE</source>
-          <target state="translated">FREE</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AccountTypePro1" translate="yes" space="preserve">
-          <source>PRO I</source>
-          <target state="translated">PRO I</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO I' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AccountTypePro2" translate="yes" space="preserve">
-          <source>PRO II</source>
-          <target state="translated">PRO II</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO II' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AccountTypePro3" translate="yes" space="preserve">
-          <source>PRO III</source>
-          <target state="translated">PRO III</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
-        </trans-unit>
         <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" space="preserve">
           <source>confirm your PIN lock</source>
           <target state="translated">confirmer votre code PIN de verrouillage</target>
@@ -413,11 +393,6 @@ Try to preserve the PIN uppercase word.</note>
           <source>Storage</source>
           <target state="translated">Stockage</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AccountTypeLite" translate="yes" space="preserve">
-          <source>LITE</source>
-          <target state="translated">LITE</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'LITE' account type - (NO-TRANSLATION).</note>
         </trans-unit>
         <trans-unit id="Resx/Accept" translate="yes" space="preserve">
           <source>accept</source>
@@ -925,10 +900,12 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Prénom</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/From" translate="yes" space="preserve">
-          <source>From</source>
-          <target state="translated">À partir de</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FromBasePrice" translate="yes" xml:space="preserve">
+          <source>From {0:N} {1}/month</source>
+          <target state="new">From {0:N} {1}/month</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/Get2MonthsFree" translate="yes" space="preserve">
           <source>Get 2 months free if you subscribe to a one-year PRO plan</source>
@@ -1452,6 +1429,11 @@ NOTE: Keep the capital letter if possible.</note>
           <source>In app purchase</source>
           <target state="translated">Achat intégré</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Free" translate="yes" xml:space="preserve">
+          <source>Free</source>
+          <target state="new">Free</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

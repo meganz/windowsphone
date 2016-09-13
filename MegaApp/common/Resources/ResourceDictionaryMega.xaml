@@ -1127,13 +1127,9 @@
                     </Run>
                 </Paragraph>
             </RichTextBox>
-            <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding ProductColorBrush}" Visibility="{Binding IsFree, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <RichTextBox Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding ProductColorBrush}">
                 <Paragraph>
-                    <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                     <Run Text="{Binding BasePrice}"/>
-                    <Run Text="/"/>
-                    <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
-                    <Run Text="*"/>
                 </Paragraph>
             </RichTextBox>
             <Border Grid.Column="1" Grid.RowSpan="3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="{Binding IsNewOffer, Converter={StaticResource BooleanToVisibilityConverter}}">

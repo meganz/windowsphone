@@ -102,7 +102,7 @@ namespace MegaApp.MegaApi
                         if (_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
                         {
                             _accountDetails.IsFreeAccount = true;
-                            _accountDetails.AccountTypeText = UiResources.AccountTypeFree;
+                            _accountDetails.AccountTypeText = AppResources.AccountTypeFree;
                             _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                         }
                         else
@@ -110,19 +110,19 @@ namespace MegaApp.MegaApi
                             switch (_accountDetails.AccountType)
                             {
                                 case MAccountType.ACCOUNT_TYPE_LITE:
-                                    _accountDetails.AccountTypeText = UiResources.AccountTypeLite;
+                                    _accountDetails.AccountTypeText = AppResources.AccountTypeLite;
                                     //_accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);                        
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROI:
-                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro1;
+                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro1;
                                     _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROII:
-                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro2;
+                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro2;
                                     _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROIII:
-                                    _accountDetails.AccountTypeText = UiResources.AccountTypePro3;
+                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro3;
                                     _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                             }
@@ -135,20 +135,30 @@ namespace MegaApp.MegaApi
                             // If there is a valid subscription get the renew time
                             if (request.getMAccountDetails().getSubscriptionStatus() == MSubscriptionStatus.SUBSCRIPTION_STATUS_VALID)
                             {
-                                if(request.getMAccountDetails().getSubscriptionRenewTime() != 0)
-                                    date = start.AddSeconds(request.getMAccountDetails().getSubscriptionRenewTime());
-                                else
-                                    date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
-                                                                
-                                _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                try
+                                {
+                                    if (request.getMAccountDetails().getSubscriptionRenewTime() != 0)
+                                        date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getSubscriptionRenewTime()));
+                                    else
+                                        date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));
+
+                                    _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                }
+                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }                                                                
+                                
                                 _accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
                                 _accountDetails.IsValidSubscription = true;
                             }
                             // Else get the expiration time for the current PRO status
                             else
                             {
-                                date = start.AddSeconds(request.getMAccountDetails().getProExpiration());
-                                _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                try 
+                                {
+                                    date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));                                    
+                                    _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                }
+                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }
+                                
                                 _accountDetails.IsValidSubscription = false;
                             }                            
                         }

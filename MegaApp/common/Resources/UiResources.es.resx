@@ -366,10 +366,6 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
-  <data name="AccountTypeFree" xml:space="preserve">
-    <value>FREE</value>
-    <comment>Label for the name of the 'FREE' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
   <data name="RubbishBinRoot" xml:space="preserve">
     <value>Papelera</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
@@ -765,10 +761,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Almacenamiento</value>
     <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
-  <data name="From" xml:space="preserve">
-    <value>Desde</value>
-    <comment>Label for any 'From' button, link, text, title, etc. For example "From 9,99 €/month"- (String as short as possible).</comment>
-  </data>
   <data name="Get2MonthsFree" xml:space="preserve">
     <value>Obtén 2 meses gratis al suscribirte a un plan PRO anual</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
@@ -1136,22 +1128,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="UI_Logout" xml:space="preserve">
     <value>Desconectar</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="AccountTypePro1" xml:space="preserve">
-    <value>PRO I</value>
-    <comment>Label for the name of the 'PRO I' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
-  <data name="AccountTypePro2" xml:space="preserve">
-    <value>PRO II</value>
-    <comment>Label for the name of the 'PRO II' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
-  <data name="AccountTypePro3" xml:space="preserve">
-    <value>PRO III</value>
-    <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
-  </data>
-  <data name="AccountTypeLite" xml:space="preserve">
-    <value>LITE</value>
-    <comment>Label for the name of the 'LITE' account type - (NO-TRANSLATION).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
     <value>MEGA SDK</value>
