@@ -73,7 +73,9 @@ namespace MegaApp.Models
                 }
                 case TransferType.Upload:
                 {
-                    App.MegaSdk.startUpload(FilePath, SelectedNode.OriginalMNode);
+                    // Start uploads with the flag of temporary source activated to always automatically delete the 
+                    // uploaded file from the upload temporary folder in the sandbox of the app
+                    App.MegaSdk.startUploadWithDataTempSource(FilePath, SelectedNode.OriginalMNode, String.Empty, true);
                     break; 
                 }
                 default:

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -10,8 +11,6 @@ namespace ScheduledCameraUploadTaskAgent
 {
     class MegaTransferListener: MTransferListenerInterface
     {
-        public event EventHandler<SucceededEventArgs> TransferFinished;
-
         private Timer _timer;
 
         public bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
@@ -22,10 +21,25 @@ namespace ScheduledCameraUploadTaskAgent
         public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
             _timer.Dispose();
-
-            if (TransferFinished == null) return;
-
-            TransferFinished(this, new SucceededEventArgs(e.getErrorCode() == MErrorType.API_OK));
+            
+            try
+            {
+                if (e.getErrorCode() == MErrorType.API_OK)
+                {
+                    ulong mtime = api.getNodeByHandle(transfer.getNodeHandle()).getModificationTime();
+                    DateTime pictureDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(mtime));                    
+                    SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", pictureDate);
+                }
+            }
+            catch (Exception)
+            {
+                // Setting could not be saved. Just continue the run
+            }
+            finally
+            {
+                // Start a new upload action
+                ScheduledAgent.Upload();
+            }
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)

@@ -343,16 +343,16 @@ namespace MegaApp.Pages
             switch (_paymentViewModel.Plan.AccountType)
             {                
                 case MAccountType.ACCOUNT_TYPE_LITE:
-                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypeLite.ToUpper());
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), AppResources.AccountTypeLite.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROI:
-                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro1.ToUpper());
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), AppResources.AccountTypePro1.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROII:
-                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro2.ToUpper());
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), AppResources.AccountTypePro2.ToUpper());
                     break;
                 case MAccountType.ACCOUNT_TYPE_PROIII:
-                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), UiResources.AccountTypePro3.ToUpper());
+                    PageTitle.Text = String.Format(UiResources.SelectedPlan.ToUpper(), AppResources.AccountTypePro3.ToUpper());
                     break;
             }
         }        

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using mega;
+using MegaApp.Resources;
 
 namespace MegaApp.Classes
 {
@@ -23,8 +24,7 @@ namespace MegaApp.Classes
         [DataMember] public String ProductPathData { get; set; }
         [DataMember] public Color ProductColor { get; set; }        
         [DataMember] public bool IsNewOffer { get; set; }
-        [DataMember] public bool Purchased { get; set; }
-        [DataMember] public bool IsFree { get; set; }
+        [DataMember] public bool Purchased { get; set; }        
 
         public SolidColorBrush ProductColorBrush 
         {
@@ -36,7 +36,6 @@ namespace MegaApp.Classes
         {
             IsNewOffer = false;
             Purchased = false;
-            IsFree = false;
         }
 
         public String Storage
@@ -71,7 +70,7 @@ namespace MegaApp.Classes
             get
             {
                 if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)                
-                    return "Limited";
+                    return UiResources.Limited;
                 else
                     return String.Format("{0} TB", GbTransfer/1024);
             }
@@ -82,9 +81,9 @@ namespace MegaApp.Classes
             get
             {
                 if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
-                    return "Free";
+                    return UiResources.UI_Free;
                 else
-                    return String.Format("{0:N} {1}", (double)(Amount/12) / 100, Currency);
+                    return String.Format(UiResources.UI_FromBasePrice, (double)(Amount/12) / 100, Currency);
             }
         }
     }

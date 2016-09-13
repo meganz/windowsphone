@@ -88,11 +88,8 @@
                         </Paragraph>
                     </RichTextBox>
                     <RichTextBox x:Name="BasePrice" Grid.Column="1" Grid.Row="2" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{Binding Plan.ProductColorBrush}" Visibility="{Binding ProductSelectionIsEnabled, Converter={StaticResource BooleanToVisibilityConverter}}">
-                        <Paragraph>
-                            <Run Text="{Binding LocalizedUiResources.From, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
+                        <Paragraph>                            
                             <Run x:Name="TxtBasePrice" Text="{Binding Plan.BasePrice}"/>
-                            <Run Text="/"/>
-                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}"/>
                             <Run Text="*"/>
                         </Paragraph>
                     </RichTextBox>
