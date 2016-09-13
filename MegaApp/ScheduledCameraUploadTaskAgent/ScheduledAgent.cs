@@ -274,7 +274,7 @@ namespace ScheduledCameraUploadTaskAgent
                             }                            
 
                             // Init the upload
-                            MegaSdk.startUploadWithMtime(newFilePath, cameraUploadNode, mtime);                            
+                            MegaSdk.startUploadWithMtimeTempSource(newFilePath, cameraUploadNode, mtime, true);                            
                             break;
                         }
                     }

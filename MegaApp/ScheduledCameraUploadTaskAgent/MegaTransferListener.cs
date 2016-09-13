@@ -29,15 +29,11 @@ namespace ScheduledCameraUploadTaskAgent
                     ulong mtime = api.getNodeByHandle(transfer.getNodeHandle()).getModificationTime();
                     DateTime pictureDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(mtime));                    
                     SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", pictureDate);
-                }                    
-
-                // Clean up after upload
-                File.Delete(transfer.getPath());
+                }
             }
             catch (Exception)
             {
-                // File could not be found for delete or setting could not be saved
-                // Just continue the run
+                // Setting could not be saved. Just continue the run
             }
             finally
             {
