@@ -58,11 +58,11 @@
 		</Grid>
 	</Grid>
 
-	<userControls:MegaPhoneApplicationPage.ApplicationBar>
-		<shell:ApplicationBar>			
+	<userControls:MegaPhoneApplicationPage.Resources>
+        <shell:ApplicationBar x:Key="MediaAlbumMenu">			
 			<shell:ApplicationBarIconButton x:Name="BtnAccept" IconUri="/Assets/AppBar/check.png" Text="accept" Click="OnAcceptClick" IsEnabled="False" />
 			<shell:ApplicationBarIconButton x:Name="BtnClearSelection" IconUri="/Assets/AppBar/refresh.png" Text="clear selection" Click="OnClearSelectionClick" IsEnabled="False" />						
 		</shell:ApplicationBar>
-	</userControls:MegaPhoneApplicationPage.ApplicationBar>
+	</userControls:MegaPhoneApplicationPage.Resources>
 
 </userControls:MegaPhoneApplicationPage>
