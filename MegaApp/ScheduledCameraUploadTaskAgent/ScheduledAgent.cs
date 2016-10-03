@@ -208,7 +208,6 @@ namespace ScheduledCameraUploadTaskAgent
                 // Find all pictures taken after the last upload date
                 var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).OrderBy(p => p.Date).ToList();
 
-
                 if (!pictures.Any())
                 {
                     // No pictures is not an error. Maybe all pictures have already been uploaded
@@ -242,7 +241,7 @@ namespace ScheduledCameraUploadTaskAgent
                             // Calculate time for fingerprint check
                             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                             TimeSpan diff = picture.Date.ToUniversalTime() - origin;
-                            ulong mtime = (ulong)Math.Floor(diff.TotalSeconds);
+                            ulong mtime = (ulong) Math.Floor(diff.TotalSeconds);
 
                             // Get the unique fingerprint of the file
                             string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
@@ -256,6 +255,7 @@ namespace ScheduledCameraUploadTaskAgent
                                 SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", picture.Date);
                                 continue; // skip to next picture
                             }
+
 
                             // Create a temporary local path to save the picture for upload
                             string newFilePath = Path.Combine(
@@ -271,19 +271,27 @@ namespace ScheduledCameraUploadTaskAgent
                                 await imageStream.CopyToAsync(fs);
                                 await fs.FlushAsync();
                                 fs.Close();
-                            }                            
+                            }
 
                             // Init the upload
-                            MegaSdk.startUploadWithMtimeTempSource(newFilePath, cameraUploadNode, mtime, true);                            
+                            MegaSdk.startUploadWithMtimeTempSource(newFilePath, cameraUploadNode, mtime, true);
                             break;
                         }
                     }
-                    catch (Exception)
+                    catch (OutOfMemoryException e)
                     {
                         // Something went wrong (could be memory limit)
                         // Just finish this run and try again next time
                         MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
+                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, e.Message);
                         scheduledAgent.NotifyComplete();
+                    }
+                    catch (Exception e)
+                    {
+                        // Log the error and try again
+                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
+                        ErrorProcessingService.ProcessFileError(e.Message, picture.Name, picture.Date);
+                        Upload();
                         return;
                     }
                 }

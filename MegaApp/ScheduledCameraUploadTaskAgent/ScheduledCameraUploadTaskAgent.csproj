@@ -87,6 +87,7 @@
     <Compile Include="..\common\MegaApi\MegaRandomNumberProvider.cs">
       <Link>MegaRandomNumberProvider.cs</Link>
     </Compile>
+    <Compile Include="ErrorProcessingService.cs" />
     <Compile Include="MegaGlobalListener.cs" />
     <Compile Include="MegaInputStream.cs" />
     <Compile Include="MegaLogger.cs" />

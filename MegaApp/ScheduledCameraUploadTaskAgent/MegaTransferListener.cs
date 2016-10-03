@@ -20,7 +20,8 @@ namespace ScheduledCameraUploadTaskAgent
 
         public void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         {
-            _timer.Dispose();
+            if(_timer != null) 
+                _timer.Dispose();
             
             try
             {
@@ -29,6 +30,14 @@ namespace ScheduledCameraUploadTaskAgent
                     ulong mtime = api.getNodeByHandle(transfer.getNodeHandle()).getModificationTime();
                     DateTime pictureDate = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Convert.ToDouble(mtime));                    
                     SettingsService.SaveSettingToFile<DateTime>("LastUploadDate", pictureDate);
+                    
+                    // If file upload succeeded. Clear the error information for a clean sheet.
+                    ErrorProcessingService.Clear();
+                }
+                else
+                {
+                   // An error occured. Process it.
+                   ErrorProcessingService.ProcessFileError(e.getErrorString(), transfer.getFileName());
                 }
             }
             catch (Exception)
