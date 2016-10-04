@@ -566,7 +566,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Used' button, link, text, title, etc. (i.e. used space) - (String as short as possible).</comment>
   </data>
   <data name="UsedSpace" xml:space="preserve">
-    <value>Đã dùng cho lưu trữ</value>
+    <value>Được dùng cho lưu trữ</value>
     <comment>Text placed just before the amount used space into the 'my account' page - (String as short as possible).</comment>
   </data>
   <data name="Version" xml:space="preserve">
@@ -881,7 +881,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Punctual' payments - (String as short as possible).</comment>
   </data>
   <data name="Recurring" xml:space="preserve">
-    <value>Tự động thanh toán</value>
+    <value>Thanh toán định kỳ</value>
     <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
   </data>
   <data name="Limited" xml:space="preserve">
@@ -1251,7 +1251,17 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_InAppPurchase" xml:space="preserve">
-    <value>In app purchase</value>
+    <value>Ứng dụng mua hàng</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>Giá từ {0:N} {1}/tháng</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>Miễn phí</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>

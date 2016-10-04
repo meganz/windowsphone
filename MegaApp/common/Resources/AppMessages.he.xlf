@@ -609,7 +609,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">לא בחרת תיקיית ברירת מחדל להורדות.
+          <target state="translated">לא בחרת תיקיית ברירת מחדל להורדות.
 
 על מנת להמשיך עם ההורדה, אנא בחר תיקיית יעד או היכנס להגדות על מנת להגדיר תיקיית ברירת מחדל.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -1421,42 +1421,42 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <target state="translated">רכישת המנוי שלך של MEGA נכשלה מכיוון וכבר רכשת מוצר זה.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
           <source>Already purchased</source>
-          <target state="translated">Already purchased</target>
+          <target state="translated">כבר נרכש</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">רכישת המנוי שלך של MEGA נכשלה או בוטלה. אנא נסה שוב או צור קשר עם התמיכה של חנות האפליקציות של ווינדוס.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
           <source>Purchase failed or cancelled</source>
-          <target state="translated">Purchase failed or cancelled</target>
+          <target state="translated">הרכישה נכשלה או התבטלה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <source>Your MEGA subscription purchase has succeeded.</source>
+          <target state="needs-review-translation">רכישת המנוי שלך של MEGA הצליחה.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
           <source>Purchase succeeded</source>
-          <target state="translated">Purchase succeeded</target>
+          <target state="translated">הרכישה הצליחה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">רכישת המנוי שלך של MEGA לא עברה את תהליך האימות בשרת שלנו. באתחול האפליקציה אנו ננסה לאמת מחדש את רכישת המנוי שלך. אם הבעיה ממשיכה, אנא צור קשר עם התמיכה של MEGA.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
           <source>Purchase validation failed</source>
-          <target state="translated">Purchase validation failed</target>
+          <target state="translated">לא הצלחנו לאמת את הרכישה</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
@@ -1491,7 +1491,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="needs-review-translation">הקישור לאישור החשבון שלך איננו שלם. אנא בדוק את אורך הקישור ו-ודא כי הינך מעתיק את כל הקישור ונסה שוב.</target>
+          <target state="translated">הקישור לאישור החשבון שלך איננו שלם. אנא בדוק את אורך הקישור ו-ודא כי הינך מעתיק את כל הקישור ונסה שוב.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
@@ -1506,7 +1506,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="needs-review-translation">חשבונך טרם אושר.</target>
+          <target state="translated">חשבונך טרם אושר.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">

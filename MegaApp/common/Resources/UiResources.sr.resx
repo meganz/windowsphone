@@ -1210,7 +1210,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Export Recovery Key</value>
+    <value>Кључ за повраћај извоза</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
@@ -1251,7 +1251,17 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_InAppPurchase" xml:space="preserve">
-    <value>In app purchase</value>
+    <value>Куповина у апликацији</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>Од {0:N} {1}/месечно</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>Слободно</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>

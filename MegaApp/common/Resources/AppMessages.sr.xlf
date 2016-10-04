@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">File import failed [{0}]</target>
+          <target state="translated">Увоз фајла неуспешан [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -608,9 +608,9 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">You have not selected a default download location for your files.
+          <target state="translated">Нисте изабрали подразумевану локацију за преузимање ваших фајлова.
 
-To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+Да наставите са преузмањем, молимо изаберите дестинацијски фолдер или идите у подешавања да би подесили подразумевану локацију за преузимање.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -652,7 +652,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Failed to copy the Recovery Key to your clipboard. Please try again.</target>
+          <target state="translated">Неуспешно копирање Кључа за повраћај у клипборд. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -672,12 +672,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="translated">Recovery Key copied to clipboard</target>
+          <target state="translated">Кључ за повраћај копиран у клипборд</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">Recovery Key copied</target>
+          <target state="translated">Кључ за повраћај копиран</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -871,7 +871,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</target>
+          <target state="translated">Отказујете своју MEGA претплату. Молимо реците нам ако можемо нешто да урадимо да Вам помогнемо да промените мишљење.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -1134,7 +1134,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">Немате приступ путањи '{0}'. Молимо изаберите другу и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1145,7 +1145,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Име фајла '{0}' није исправно или има неисправне карактере. Молимо промените га и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1156,7 +1156,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">The path of the file/folder '{0}' is too long. Please change it and try again.</target>
+          <target state="translated">Путања фајла/фолдера '{0}' је предугачка. Молимо промените је и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1167,13 +1167,13 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Име путање фолдера '{0}' није исправно или има неисправне карактере. Молимо промените га и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
           <source>Invalid name or path</source>
-          <target state="translated">Invalid name or path</target>
+          <target state="translated">Неисправно име или пут</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
@@ -1183,7 +1183,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">Failed to select the folder. Please try again or select another folder.</target>
+          <target state="translated">Неуспешно одабирање фолдера. Молимо покушајте поново или изаберите други фолдер.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
@@ -1195,17 +1195,17 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">Failed to prepare file(s) for upload. Please try again.</target>
+          <target state="translated">Неуспешна припрема фајла(ова) за отпремање. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">Error preparing file(s)</target>
+          <target state="translated">Грешка приликом припреме фајла(ова)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to download the file. Please try again.</source>
-          <target state="translated">Failed to download the file. Please try again.</target>
+          <target state="translated">Преузимање фајла неуспешно. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
@@ -1215,39 +1215,39 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Неуспешно учитавање долазећих подељених ставки са MEGA. Молимо покушајте поново или кликните на освежи.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Неуспешно учитавање одлазећих подељених ставки са MEGA. Молимо покушајте поново или кликните на освежи.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
           <source>Failed to delete settings. Please try again. [{0}]</source>
-          <target state="translated">Failed to delete settings. Please try again. [{0}]</target>
+          <target state="translated">Неуспешно брисање подешавања. Молимо покушајте поново.[{0}] </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error deleting settings</source>
-          <target state="translated">Error deleting settings</target>
+          <target state="translated">Грешка приликом брисања подешавања</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
           <source>Failed to load settings. Please try again. [{0}]</source>
-          <target state="translated">Failed to load settings. Please try again. [{0}]</target>
+          <target state="translated">Неуспешно учитавање подешавања. Молимо покушајте поново.[{0}] </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error loading settings</source>
-          <target state="translated">Error loading settings</target>
+          <target state="translated">Грешка приликом учитавања подешавања</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Failed to copy the MEGA link to your clipboard.</target>
+          <target state="translated">Неуспешно копирање MEGA линка у Ваш клипборд.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
@@ -1267,7 +1267,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
-          <target state="translated">To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</target>
+          <target state="translated">Да бисте приступили овом фолдеру/фајлу, требаће вам његов Декрипцијски кључ. Ако немате кључ, контактирајте креатора линка.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
@@ -1277,7 +1277,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
           <source>Invalid decryption key</source>
-          <target state="translated">Invalid decryption key</target>
+          <target state="translated">Неисправан кључ за декриптовање</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
@@ -1309,7 +1309,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
           <source>Open link failed [{0}]</source>
-          <target state="translated">Open link failed [{0}]</target>
+          <target state="translated">Отварање линка неуспешно [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1320,7 +1320,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
-          <target state="translated">You don't have access to the selected download path. Please select a different download path and try again.</target>
+          <target state="translated">Немате приступ изабраној путањи преузимања. Молимо изаберите другу путању преузимања и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
@@ -1330,7 +1330,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyFailed" translate="yes" space="preserve">
           <source>Failed to copy item. Please try again.</source>
-          <target state="translated">Failed to copy item. Please try again.</target>
+          <target state="translated">Копирање ставке неуспешно. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyFailed_Title" translate="yes" space="preserve">
@@ -1340,7 +1340,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
           <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="translated">The log ({0}) will be deleted from the Offline section.</target>
+          <target state="translated">Запис ({0}) ће бити обрисан из офлајн секције.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1351,7 +1351,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
           <source>A log will be created in the Offline section ({0}).</source>
-          <target state="translated">A log will be created in the Offline section ({0}).</target>
+          <target state="translated">Запис ће бити креиран у офлајн секцији. ({0}).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1362,7 +1362,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
           <source>Debug mode is enabled. Do you want to disable it?</source>
-          <target state="translated">Debug mode is enabled. Do you want to disable it?</target>
+          <target state="translated">Мод за дебуговање омогућен. Да ли желите да га онемогућите?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" space="preserve">
@@ -1372,32 +1372,32 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
           <source>Item shared by the Windows Phone MEGA app.</source>
-          <target state="translated">Item shared by the Windows Phone MEGA app.</target>
+          <target state="translated">Ставка подељена преко Windows Phone MEGA апликације.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
           <source>Item shared from MEGA</source>
-          <target state="translated">Item shared from MEGA</target>
+          <target state="translated">Ставка подељена од MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
           <source>Items shared by the Windows Phone MEGA app.</source>
-          <target state="translated">Items shared by the Windows Phone MEGA app.</target>
+          <target state="translated">Ставке подељена преко Windows Phone MEGA апликације.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
           <source>Items shared from MEGA</source>
-          <target state="translated">Items shared from MEGA</target>
+          <target state="translated">Ставке подељене од MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed" translate="yes" space="preserve">
           <source>Failed to import folder. Please try again.</source>
-          <target state="translated">Failed to import folder. Please try again.</target>
+          <target state="translated">Увоз фолера неуспешан. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed_Title" translate="yes" space="preserve">
           <source>Folder import failed</source>
-          <target state="translated">Folder import failed</target>
+          <target state="translated">Увоз фолдера неуспешан</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
@@ -1407,57 +1407,57 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. Please try again.</source>
-          <target state="translated">Failed to share item(s) from MEGA. Please try again.</target>
+          <target state="translated">Неуспешно дељење ставке(и) са MEGA. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" space="preserve">
           <source>Error sharing item(s)</source>
-          <target state="translated">Error sharing item(s)</target>
+          <target state="translated">Грешка приликом дељења ставке(и)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <target state="translated">Ваша куповина MEGA претплате није успешна јер сте већ купили ову ставку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
           <source>Already purchased</source>
-          <target state="translated">Already purchased</target>
+          <target state="translated">Већ купљено</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">Ваша куповина MEGA претплате је неуспешна или је прекинута. Молимо покушајте поново или контактирајте Windows Store подршку.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
           <source>Purchase failed or cancelled</source>
-          <target state="translated">Purchase failed or cancelled</target>
+          <target state="translated">Куповина неуспешна или отказана.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <source>Your MEGA subscription purchase has succeeded.</source>
+          <target state="needs-review-translation">Ваша MEGA претплата куповина успешна.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
           <source>Purchase succeeded</source>
-          <target state="translated">Purchase succeeded</target>
+          <target state="translated">Куповина успешна</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">Ваша куповина MEGA претплате није прошла валидацију на нашем серверз лиценца. Приликом поновног покретања ове апликације покушаћемо да валидирамо Ваше лиценце претплате. Молимо контактирајте MEGA подршку ако се грешка настави.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
           <source>Purchase validation failed</source>
-          <target state="translated">Purchase validation failed</target>
+          <target state="translated">Валидација куповине неуспешна</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">Повезани кориснички налог је угашен због више нарушивања наших Услова Коришћења Услуга.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1467,7 +1467,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not download the folder link. Please try again.</source>
-          <target state="translated">Could not download the folder link. Please try again.</target>
+          <target state="translated">Није могуће преузети линк фолдера. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
@@ -1477,7 +1477,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not import the folder link. Please try again.</source>
-          <target state="translated">Could not import the folder link. Please try again.</target>
+          <target state="translated">Није могуће увести линк фолдера. Молимо покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
@@ -1487,12 +1487,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="needs-review-translation">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
+          <target state="translated">Линк за потврду налога који користите није потпун. Молимо проверите дужину линка и уверите се да сте ископирали цео линк и пробајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
           <source>The link you are using for a new signup is not valid.</source>
-          <target state="translated">The link you are using for a new signup is not valid.</target>
+          <target state="translated">Линк који користите за нову пријаву није исправан.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
@@ -1502,12 +1502,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="needs-review-translation">Your account has not been confirmed yet.</target>
+          <target state="translated">Ваш налог још увек није потврђен.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
           <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
-          <target state="translated">You have attempted to log in too many times. Please wait until {0} and try again.</target>
+          <target state="translated">Превише пута сте пробали да се пријавите. Молимо сачекајте до {0} и покушајте поново.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
 Preserve the {0} code because is for include the exact time until the user has to wait.</note>
         </trans-unit>

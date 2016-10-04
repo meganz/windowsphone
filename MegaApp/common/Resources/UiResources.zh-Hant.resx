@@ -686,11 +686,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="SharedItems" xml:space="preserve">
-    <value>共享的項目</value>
+    <value>共享檔案</value>
     <comment>Label for any 'Shared items' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Sort" xml:space="preserve">
-    <value>種類</value>
+    <value>排序</value>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
@@ -1025,7 +1025,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for "Auto Upload" settings pivot</comment>
   </data>
   <data name="General" xml:space="preserve">
-    <value>一班</value>
+    <value>綜述</value>
     <comment>Label for "General" settings pivot</comment>
   </data>
   <data name="Developer" xml:space="preserve">
@@ -1253,5 +1253,15 @@ NOTE: Keep the capital letter if possible.</comment>
   <data name="UI_InAppPurchase" xml:space="preserve">
     <value>應用程式內購買</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>從 {0:N} {1}/月</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>免費</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>

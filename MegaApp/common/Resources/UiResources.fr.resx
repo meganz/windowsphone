@@ -138,7 +138,7 @@
     <comment>Label for any 'Cancel' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Stockage nuagique</value>
+    <value>Disque nuagique</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Confirm" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="MegaShareLinkMessage" xml:space="preserve">
-    <value>Je veux partager ce fichier du service nuagique MEGA avec toi</value>
+    <value>Je veux partager ce fichier du service nuagique MEGA avec vous</value>
     <comment>Text used as title of the message to share a MEGA link.</comment>
   </data>
   <data name="Move" xml:space="preserve">
@@ -274,7 +274,7 @@
     <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Error" xml:space="preserve">
-    <value>Erreur pendant le transfert</value>
+    <value>Erreur de transfert</value>
     <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
   </data>
   <data name="Transfer_NotStarted" xml:space="preserve">
@@ -310,7 +310,7 @@
     <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
   <data name="SpecialThankYou" xml:space="preserve">
-    <value>Nous voudrions remercier en tout particulier les sociétés, personnes suivantes qui ont permis de créer  cette application :</value>
+    <value>Nous souhaitons remercier tout particulièrement les sociétés et personnes suivantes qui ont permis la création de cette appli :</value>
     <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
   <data name="RubbishBinName" xml:space="preserve">
@@ -326,7 +326,7 @@
     <comment>Label for any 'On' (On/Off) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Done" xml:space="preserve">
-    <value>fini</value>
+    <value>terminé</value>
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
@@ -338,7 +338,7 @@
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>confirmer votre code PIN de verrouillage</value>
+    <value>confirmer votre NIP</value>
     <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
@@ -348,7 +348,7 @@ Try to preserve the PIN uppercase word.</comment>
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="PinLockWatermark" xml:space="preserve">
-    <value>votre code PIN de verrouillage</value>
+    <value>votre NIP</value>
     <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
@@ -377,7 +377,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Select photo' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelfieMode" xml:space="preserve">
-    <value>Mode égoportrait (selfie)</value>
+    <value>Mode égoportrait</value>
     <comment>Label for 'Selfie mode' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="TakePhoto" xml:space="preserve">
@@ -405,7 +405,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Annually" xml:space="preserve">
-    <value>Annuel</value>
+    <value>Annuellement</value>
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
@@ -413,7 +413,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Toujours demander pour l'emplacement des téléchargements</value>
+    <value>Toujours demander l'emplacement des téléchargements</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Available" xml:space="preserve">
@@ -421,7 +421,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>Bande Passante</value>
+    <value>de bande passante</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -433,11 +433,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Cancel all' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Capture" xml:space="preserve">
-    <value>prendre en photo</value>
+    <value>prendre une photo</value>
     <comment>Label for any 'Capture' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChangePinLock" xml:space="preserve">
-    <value>Changer le code PIN de verrouillage</value>
+    <value>Changer de NIP</value>
     <comment>Label for any 'Change PIN Lock' button, link, text, title, etc. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="CleanUpTransfers" xml:space="preserve">
@@ -453,7 +453,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Clear selection' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Clipboard" xml:space="preserve">
-    <value>presse-papier</value>
+    <value>presse-papiers</value>
     <comment>Label for any 'Clipboard' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocationText" xml:space="preserve">
@@ -469,7 +469,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should export automatically images to the device photo album after download.</comment>
   </data>
   <data name="FilesAscendingSortOption" xml:space="preserve">
-    <value>fichiers (ordre croissant)</value>
+    <value>fichiers (croissant)</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by type - (String as short as possible).</comment>
   </data>
   <data name="FilesDescendingSortOption" xml:space="preserve">
@@ -485,7 +485,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by size (from bigger to smaller) - (String as short as possible).</comment>
   </data>
   <data name="MakePinLock" xml:space="preserve">
-    <value>Créer un code PIN de verrouillage</value>
+    <value>Créer un NIP</value>
     <comment>Text placed just before the form to 'Make a PIN Lock'. Try to preserve the PIN uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="MEGA_SDK" xml:space="preserve">
@@ -497,11 +497,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NameAscendingSortOption" xml:space="preserve">
-    <value>nom (ordre croissant)</value>
+    <value>Nom (croissant)</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</comment>
   </data>
   <data name="NameDescendingSortOption" xml:space="preserve">
-    <value>nom (ordre descendant)</value>
+    <value>Nom (décroissant)</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by name - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
@@ -509,7 +509,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NewPinLockWatermark" xml:space="preserve">
-    <value>votre nouveau code PIN de vérouillage</value>
+    <value>votre nouveau NIP</value>
     <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
@@ -526,7 +526,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
-    <value>mettre tout en pause</value>
+    <value>tout mettre en pause</value>
     <comment>Label for any 'Pause all' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PrivacyPolicy" xml:space="preserve">
@@ -542,7 +542,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
-    <value>démarrer / reprendre tout</value>
+    <value>tout démarrer/reprendre</value>
     <comment>Label for any 'Start/resume all' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Subscribe" xml:space="preserve">
@@ -574,7 +574,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Text placed just before the version number into the 'about' page - (String as short as possible).</comment>
   </data>
   <data name="View" xml:space="preserve">
-    <value>voir</value>
+    <value>visualiser</value>
     <comment>Label for any 'View' button, link, text, title, etc. (i.e. View Recovery Key) - (String as short as possible).</comment>
   </data>
   <data name="DownloadLocation" xml:space="preserve">
@@ -622,7 +622,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess2" xml:space="preserve">
-    <value>accès entièrement chiffré</value>
+    <value>d'un accès entièrement chiffré</value>
     <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess3" xml:space="preserve">
@@ -638,7 +638,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
-    <value>chiffrement de bout en bout.</value>
+    <value>le chiffrement de bout en bout de MEGA.</value>
     <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy_Title" xml:space="preserve">
@@ -646,11 +646,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the privacy. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpace1" xml:space="preserve">
-    <value>inscrivez-vous maintenant et disposez</value>
+    <value>inscrivez-vous maintenant et obtenez</value>
     <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpace2" xml:space="preserve">
-    <value>50Go d'espace de stockage gratuit</value>
+    <value>50 Go de stockage gratuit</value>
     <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
   </data>
   <data name="InitTourSpace_Title" xml:space="preserve">
@@ -658,11 +658,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the title of the init tour page dedicated to the space. Keep MEGA in uppercase and the rest in lowercase, without any punctuation marks. - (String as short as possible).</comment>
   </data>
   <data name="InitTourSpeed1" xml:space="preserve">
-    <value>les transferts sont rapides</value>
+    <value>les transferts sont rapides.</value>
     <comment>Label 'transfers are fast.' for the first part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed2" xml:space="preserve">
-    <value>partagez vos fichiers rapidement avec tout le monde.</value>
+    <value>partagez des fichiers rapidement avec tout le monde.</value>
     <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpeed_Title" xml:space="preserve">
@@ -678,7 +678,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Téléversement de la caméra</value>
+    <value>Téléversement caméra</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -702,7 +702,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>Configurer Téléversement de la caméra</value>
+    <value>Configurer le téléversement de la caméra</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
@@ -718,7 +718,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Activer Téléversement de la caméra</value>
+    <value>Activer le téléversement de la caméra</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -730,7 +730,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Dismiss" xml:space="preserve">
-    <value>Cacher</value>
+    <value>Fermer</value>
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Send" xml:space="preserve">
@@ -742,11 +742,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Address' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="BillingDetails" xml:space="preserve">
-    <value>Informations de facture</value>
+    <value>Infos de facturation</value>
     <comment>Label for any 'Billing details' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChooseRenewalPeriod" xml:space="preserve">
-    <value>Choisissez la période de renouvellement ci-dessous</value>
+    <value>Choisir la période de renouvellement ci-dessous</value>
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="City" xml:space="preserve">
@@ -762,7 +762,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CreditCardRecurringPayments" xml:space="preserve">
-    <value>Paiements récurrents via Carte de Cérdit</value>
+    <value>Paiements périodiques par carte de crédit</value>
     <comment>Label to indicate the user that the Credit Card payments are recurring.</comment>
   </data>
   <data name="CVV" xml:space="preserve">
@@ -770,7 +770,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'CVV' text when register a credit card - (String as short as possible).</comment>
   </data>
   <data name="EnterPaymentDetails" xml:space="preserve">
-    <value>Renseignez vos informations de paiement ci-dessous</value>
+    <value>Saisir vos infos de paiement ci-dessous</value>
     <comment>Label to indicate the user that is needed to type his payment data details for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
@@ -782,11 +782,11 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Get2MonthsFree" xml:space="preserve">
-    <value>Gagnez 2 mois gratuits en prenant un abonnement d'un an à un plan PRO.</value>
+    <value>Obtenez 2 mois gratuits avec un abonnement PRO d'un an</value>
     <comment>Label to indicate the user that he obtains 2 free months with a one-year pro plan subscription.</comment>
   </data>
   <data name="LastName" xml:space="preserve">
-    <value>Nom de famille</value>
+    <value>Nom</value>
     <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Month" xml:space="preserve">
@@ -794,19 +794,19 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Month' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Optional" xml:space="preserve">
-    <value>Optionnel</value>
+    <value>Facultatif</value>
     <comment>Label for any 'Optional' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OptionalParenthesis" xml:space="preserve">
-    <value>(Optionnel)</value>
+    <value>(Facultatif)</value>
     <comment>Label for any 'Optional' text between parenthesis. - (String as short as possible).</comment>
   </data>
   <data name="PaymentDetails" xml:space="preserve">
-    <value>Informations paiement</value>
+    <value>Infos de paiement</value>
     <comment>Label for any 'Payment details' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PostalCode" xml:space="preserve">
-    <value>Code Postal</value>
+    <value>Code postal</value>
     <comment>Label for any 'Postal Code' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Province" xml:space="preserve">
@@ -848,7 +848,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
 Preserve the {0} code because is for include the name/type in runtime.</comment>
   </data>
   <data name="AccountRenewalNotice" xml:space="preserve">
-    <value>Votre abonnement {0} sera automatiquement refacturé à la date anniversaire de votre {0} à moins que vous vous connectez à votre compte et annulez votre abonnement avant la date de renouvellement.</value>
+    <value>Votre abonnement {0} sera automatiquement refacturé à la date anniversaire de votre {0}, sauf si vous vous connectez à votre compte et annulez l'abonnement avant la date de renouvellement.</value>
     <comment>Label to indicate the renewal period of the purchased subscription. 
 Preserve the {0} code because is for include the renewal period string (Monthly or Annually) in runtime.</comment>
   </data>
@@ -857,7 +857,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Awesome" xml:space="preserve">
-    <value>Génial !</value>
+    <value>Super !</value>
     <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChoosePaymentMethod" xml:space="preserve">
@@ -873,7 +873,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Credit Card' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="PhoneBill" xml:space="preserve">
-    <value>Facture Téléphonique</value>
+    <value>Facture de téléphone</value>
     <comment>Label for any Phone Bill or Mobile payment button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Punctual" xml:space="preserve">
@@ -881,19 +881,19 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Punctual' payments - (String as short as possible).</comment>
   </data>
   <data name="Recurring" xml:space="preserve">
-    <value>Récurrent</value>
+    <value>Périodiques</value>
     <comment>Label for 'Recurring' payments - (String as short as possible).</comment>
   </data>
   <data name="Limited" xml:space="preserve">
-    <value>Limité</value>
+    <value>Limités</value>
     <comment>Label for any 'Limited' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="GetProAccount" xml:space="preserve">
-    <value>Vous pouvez devenir un utilisateur PRO !</value>
+    <value>Vous pourriez être un utilisateur PRO !</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, notifying the user the possibility of upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountQuestion" xml:space="preserve">
-    <value>Voulez-vous mettre à jour votre compte?</value>
+    <value>Voulez-vous surclasser votre compte?</value>
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
@@ -901,7 +901,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
-    <value>Vous commencez à manquer d'espace libre !</value>
+    <value>Vous êtes à court d'espace</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
@@ -913,7 +913,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Text to show when a user wants to add a contact to type the email address of the new contact.</comment>
   </data>
   <data name="Search" xml:space="preserve">
-    <value>Rechercher</value>
+    <value>Chercher</value>
     <comment>Label for any 'Search' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Select" xml:space="preserve">
@@ -929,7 +929,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ShareFolders" xml:space="preserve">
-    <value>Dossiers partagés</value>
+    <value>Partager les dossiers</value>
     <comment>Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Profile" xml:space="preserve">
@@ -937,11 +937,11 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Profile' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MEGAContacts" xml:space="preserve">
-    <value>contacts MEGA</value>
+    <value>Contacts MEGA</value>
     <comment>Label for any 'Yes' button, link, text, title, etc. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="SharedFolders" xml:space="preserve">
-    <value>Dossiers patargés</value>
+    <value>Dossiers partagés</value>
     <comment>Label for any 'Shared folders' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Status" xml:space="preserve">
@@ -953,23 +953,23 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
   </data>
   <data name="SentRequests" xml:space="preserve">
-    <value>Envoyer les demandes</value>
+    <value>Demandes envoyées</value>
     <comment>Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</comment>
   </data>
   <data name="Accepted" xml:space="preserve">
-    <value>Accepté(es)</value>
+    <value>Acceptés</value>
     <comment>Label for any 'Accepted' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Deleted" xml:space="preserve">
-    <value>Supprimé(es)</value>
+    <value>Supprimés</value>
     <comment>Label for any 'Deleted' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Denied" xml:space="preserve">
-    <value>Refusé</value>
+    <value>Refusés</value>
     <comment>Label for any 'Denied' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ignored" xml:space="preserve">
-    <value>Ignoré(es)</value>
+    <value>Ignorés</value>
     <comment>Label for any 'Ignored' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pending" xml:space="preserve">
@@ -977,7 +977,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Pending' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Reminded" xml:space="preserve">
-    <value>En rappel</value>
+    <value>Rappelé</value>
     <comment>Label for any 'Reminded' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Unknown" xml:space="preserve">
@@ -985,7 +985,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Unknown' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="Decline" xml:space="preserve">
-    <value>Décliner</value>
+    <value>Refuser</value>
     <comment>Label for any 'Decline' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Delete" xml:space="preserve">
@@ -1081,7 +1081,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>Aucun fichier dans votre stockage nuagique</value>
+    <value>Aucun fichier dans votre disque nuagique</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1093,7 +1093,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>Aucun dossier partagés</value>
+    <value>Aucun dossier partagé</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
@@ -1125,15 +1125,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>Récupérer le lien</value>
+    <value>Obtenir le lien</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
-    <value>Connexion</value>
+    <value>Se Connecter</value>
     <comment>Label for any 'Login' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Logout" xml:space="preserve">
-    <value>Se Déconnecter</value>
+    <value>Déconnexion</value>
     <comment>Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_UpgradeAccount" xml:space="preserve">
@@ -1141,7 +1141,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ChangePassword" xml:space="preserve">
-    <value>Changer de mot de passe</value>
+    <value>Changer le mot de passe</value>
     <comment>Label for any 'Change password' button, menu, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelSubscription" xml:space="preserve">
@@ -1157,7 +1157,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
-    <value>Retirer le lien</value>
+    <value>Supprimer le lien</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
@@ -1173,11 +1173,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Tout déselectionner</value>
+    <value>Tout dessélectionner</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenMegaLink" xml:space="preserve">
-    <value>Ouvrir lien MEGA</value>
+    <value>Ouvrir le lien MEGA</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
   <data name="UI_PasteMegaLink" xml:space="preserve">
@@ -1198,11 +1198,11 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FileLink" xml:space="preserve">
-    <value>Lien fichier</value>
+    <value>Lien de fichier</value>
     <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FolderLink" xml:space="preserve">
-    <value>Lien dossier</value>
+    <value>Lien de dossier</value>
     <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenLink" xml:space="preserve">
@@ -1222,11 +1222,11 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_MemoryStatistics" xml:space="preserve">
-    <value>Statistiques sur la mémoire</value>
+    <value>Statistiques mémoire</value>
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Added" xml:space="preserve">
-    <value>Ajouté</value>
+    <value>Ajoutés</value>
     <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1241,7 +1241,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Modifié</value>
+    <value>Modifiés</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1253,5 +1253,15 @@ NOTE: Keep the capital letter if possible.</comment>
   <data name="UI_InAppPurchase" xml:space="preserve">
     <value>Achat intégré</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>À partir de {0:N} {1}/mois</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>Gratuit</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>
