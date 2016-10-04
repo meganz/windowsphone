@@ -140,29 +140,32 @@ namespace MegaApp.Models
         {
             String newSfoPath = Path.Combine(sfoPath, nodeName);
 
-            // Search if the folder has a pending transfer for offline and cancel it on this case            
-            TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"), this.IsFolder);
-            
-            IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
-            if (childFolders != null)
+            if(FolderService.FolderExists(newSfoPath))
             {
-                foreach (var folder in childFolders)
+                // Search if the folder has a pending transfer for offline and cancel it on this case            
+                TransfersService.CancelPendingNodeOfflineTransfers(String.Concat(newSfoPath, "\\"), this.IsFolder);
+
+                IEnumerable<string> childFolders = Directory.GetDirectories(newSfoPath);
+                if (childFolders != null)
                 {
-                    if (folder != null)
+                    foreach (var folder in childFolders)
                     {
-                        await RecursiveRemoveForOffline(newSfoPath, folder);
-                        SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, folder));
+                        if (folder != null)
+                        {
+                            await RecursiveRemoveForOffline(newSfoPath, folder);
+                            SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, folder));
+                        }
                     }
                 }
-            }
 
-            IEnumerable<string> childFiles = Directory.GetFiles(newSfoPath);
-            if (childFiles != null)
-            {
-                foreach (var file in childFiles)
+                IEnumerable<string> childFiles = Directory.GetFiles(newSfoPath);
+                if (childFiles != null)
                 {
-                    if (file != null)
-                        SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, file));
+                    foreach (var file in childFiles)
+                    {
+                        if (file != null)
+                            SavedForOffline.DeleteNodeByLocalPath(Path.Combine(newSfoPath, file));
+                    }
                 }
             }
         }
