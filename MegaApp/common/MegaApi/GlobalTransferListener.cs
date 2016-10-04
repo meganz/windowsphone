@@ -48,7 +48,7 @@ namespace MegaApp.MegaApi
 
             // Extra checking during finding to avoid NullReferenceException
             var megaTransfer = transfersList.FirstOrDefault(t => 
-                (t != null) && (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
+                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
             
             if(megaTransfer != null)
             {
@@ -304,7 +304,7 @@ namespace MegaApp.MegaApi
 
             // Extra checking during finding to avoid NullReferenceException
             var megaTransfer = transfersList.FirstOrDefault(t => 
-                (t != null) && (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
+                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
 
             if(megaTransfer != null)
             {
