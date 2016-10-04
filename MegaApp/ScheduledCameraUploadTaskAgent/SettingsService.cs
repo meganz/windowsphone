@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Storage;
+using mega;
 
 namespace ScheduledCameraUploadTaskAgent
 {
@@ -31,9 +32,11 @@ namespace ScheduledCameraUploadTaskAgent
                             result = (T)dataContractSerializer.ReadObject(stream);
                         }
                     }
-                    catch (FileNotFoundException)
+                    catch (Exception e)
                     {
-                        // Do nothing and return the default type value
+                        // Do nothing. Write a log entry and return the default type value
+                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, 
+                            String.Format("Error loading setting from file ({0}).", e.GetType().ToString()));
                     }
                 })); 
             }

@@ -1251,7 +1251,17 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_InAppPurchase" xml:space="preserve">
-    <value>In app purchase</value>
+    <value>شراء داخل التطبيق</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>من {0:N} {1}/شهريا</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>مجانا</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>

@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">Bạn chưa có chọn địa điểm để lưu lại các dữ liệu và tệp tin mà bạn tải xuống.
+          <target state="translated">Bạn chưa có chọn địa điểm để lưu lại các dữ liệu và tệp tin mà bạn tải xuống.
 
 Để tiếp tục việc tải xuống, xin chọn một vị trí thư mục hoặc vào mục thiết đặt để chọn ra địa điểm để mặc định chứa dữ liệu cho việc tải xuống.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -1418,7 +1418,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <target state="translated">Giao dịch muua hạng thành viên MEGA bị thất bại vì quý khách đã mua mặt hàng này rồi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
@@ -1428,7 +1428,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">Việc thanh toán giao dịch cho tài khoản MEGA của quý khách bị thất bại hoặc bị hủy. Xin thử lại hoặc liên lạc với đội trợ giúp từ cửa hàng Windows Store.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
@@ -1437,8 +1437,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <source>Your MEGA subscription purchase has succeeded.</source>
+          <target state="needs-review-translation">Gói hạng thành viên MEGA đã được thanh toán thành công.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
@@ -1448,17 +1448,17 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">Mục mua hạng thành viên MEGA của quý khách chưa được thông qua máy chủ của chúng tôi để chứng thực. Xin thử khởi động lại ứng dụng, chúng tôi sẽ thử chứng thực lại hạng thành viên của quý khách. Xin vui lòng liên hệ MEGA để nhận hỗ trợ nếu lỗi này tiếp diễn.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
           <source>Purchase validation failed</source>
-          <target state="translated">Purchase validation failed</target>
+          <target state="translated">Xác thực giao dịch thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">Tài khoản của chủ sở hữu mục này đã bị ngưng hoạt động do vi phạm Điều Khoản Dịch Vụ của chúng tôi.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1488,7 +1488,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="needs-review-translation">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
+          <target state="translated">Đường liên kết xác thực tài khoản bạn đang sử dụng bị viết thiếu. Xin kiểu tra kỹ lại và chắc rằng bạn đã copy lại chính xác toàn bộ đường liên kết, sau đó thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
@@ -1503,7 +1503,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="needs-review-translation">Tài khoản của bạn chưa được xác thực.</target>
+          <target state="translated">Tài khoản của bạn chưa được xác thực.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">

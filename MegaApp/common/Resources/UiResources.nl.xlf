@@ -900,9 +900,9 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">voornaam</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FromBasePrice" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FromBasePrice" translate="yes" space="preserve">
           <source>From {0:N} {1}/month</source>
-          <target state="new">From {0:N} {1}/month</target>
+          <target state="translated">Vanaf {0:N} {1} per maand</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</note>
@@ -1427,12 +1427,12 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
           <source>In app purchase</source>
-          <target state="translated">In app purchase</target>
+          <target state="translated">In app aankoop</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Free" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Free" translate="yes" space="preserve">
           <source>Free</source>
-          <target state="new">Free</target>
+          <target state="translated">Gratis</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
         </trans-unit>
       </group>

@@ -1254,4 +1254,14 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Nakup v aplikaciji</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>Od {0:N} {1} mesečno</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>Brezplačno</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
+  </data>
 </root>

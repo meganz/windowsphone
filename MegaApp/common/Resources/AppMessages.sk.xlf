@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">Nevybrali ste si žiadne štandardné miesto pre sťahovanie vašich súborov.
+          <target state="translated">Nevybrali ste si žiadne štandardné miesto pre sťahovanie vašich súborov.
 
 Pre pokračovanie so sťahovaním si prosím vyberte cielový priečinok, alebo choďte do nastavení a tam si zvoľte svoj štandardné miesto pre sťahovanie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -697,7 +697,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CacheCleared_Title" translate="yes" space="preserve">
           <source>Cache cleared</source>
-          <target state="translated">Medzipamäť vyčistená</target>
+          <target state="translated">Dočasná pamäť vyčistená</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the cache memory is successfully cleared by user request.</note>
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
@@ -1417,7 +1417,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="needs-review-translation">Váš nákup MEGA predplatného zlyhal, pretože ste si túto položku už predtým zakúpili.</target>
+          <target state="translated">Váš nákup MEGA predplatného zlyhal, pretože ste si túto položku už predtým zakúpili.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
@@ -1427,7 +1427,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">Váš nákup MEGA predplatného zlyhal, alebo bol zrušený. Prosím skúste to znovu alebo kontaktujte podporu pre Obchod Windows.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
@@ -1436,8 +1436,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="translated">Váš nákup MEGA predplatného bol úspešný,</target>
+          <source>Your MEGA subscription purchase has succeeded.</source>
+          <target state="needs-review-translation">Váš nákup MEGA predplatného bol úspešný,</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
@@ -1447,7 +1447,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">Váš nákup MEGA predplatného neprešiel overením na našom licenčnom serveri. Po reštarte tejto aplikácie  skúsime vaše predplatné overiť znovu. Prosím kontaktujte MEGA podporu, ak problém pretrváva.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1487,7 +1487,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="needs-review-translation">Odkaz na potvrdenie účtu, ktorý používate, nie je kompletný. Prosím skontrolujte dĺžku odkazu a uistite sa, že ste skopírovali celý odkaz a skúste to znovu.</target>
+          <target state="translated">Odkaz na potvrdenie účtu, ktorý používate, nie je kompletný. Prosím skontrolujte dĺžku odkazu a uistite sa, že ste skopírovali celý odkaz a skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
@@ -1502,7 +1502,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="needs-review-translation">Váš účet ešte nebol potvrdený.</target>
+          <target state="translated">Váš účet ešte nebol potvrdený.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">

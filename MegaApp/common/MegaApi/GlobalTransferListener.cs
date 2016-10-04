@@ -40,7 +40,16 @@ namespace MegaApp.MegaApi
         public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         #endif
         {
-            var megaTransfer = Transfers.FirstOrDefault(t => t.Transfer.getTag() == transfer.getTag());
+            // Extra checking to avoid NullReferenceException
+            if (transfer == null) return;
+
+            // Use a temp variable to avoid InvalidOperationException
+            var transfersList = Transfers.ToList();
+
+            // Extra checking during finding to avoid NullReferenceException
+            var megaTransfer = transfersList.FirstOrDefault(t => 
+                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
+            
             if(megaTransfer != null)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
@@ -287,7 +296,16 @@ namespace MegaApp.MegaApi
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
         {
-            var megaTransfer = Transfers.FirstOrDefault(t => t.Transfer.getTag() == transfer.getTag());
+            // Extra checking to avoid NullReferenceException
+            if (transfer == null) return;
+
+            // Use a temp variable to avoid InvalidOperationException
+            var transfersList = Transfers.ToList();
+
+            // Extra checking during finding to avoid NullReferenceException
+            var megaTransfer = transfersList.FirstOrDefault(t => 
+                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
+
             if(megaTransfer != null)
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>

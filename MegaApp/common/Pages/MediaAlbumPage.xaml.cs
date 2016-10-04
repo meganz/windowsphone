@@ -21,7 +21,8 @@ namespace MegaApp.Pages
 {
     public partial class MediaAlbumPage : MegaPhoneApplicationPage
     {
-       private readonly MediaAlbumViewModel _mediaAlbumViewModel;
+       private MediaAlbumViewModel _mediaAlbumViewModel;
+
        public MediaAlbumPage()
         {
             _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk, 
@@ -36,6 +37,15 @@ namespace MegaApp.Pages
         
         private void SetApplicationBar()
         {
+            if (ApplicationBar == null)
+                ApplicationBar = (ApplicationBar)Resources["MediaAlbumMenu"];
+
+            if(_mediaAlbumViewModel == null)
+            {
+                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                    NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
+            }
+
             // Change and translate the current application bar
             _mediaAlbumViewModel.ChangeMenu(this.ApplicationBar.Buttons,
                 this.ApplicationBar.MenuItems);
@@ -43,6 +53,9 @@ namespace MegaApp.Pages
 
         private void SetControlState(bool state)
         {
+            if (ApplicationBar == null)
+                ApplicationBar = (ApplicationBar)Resources["MediaAlbumMenu"];
+
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
                 this.ApplicationBar.MenuItems, state);
         }
@@ -120,6 +133,12 @@ namespace MegaApp.Pages
 
         private void OnLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
+            if (_mediaAlbumViewModel == null)
+            {
+                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                    NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
+            }
+
             if (_mediaAlbumViewModel.Pictures == null) return;
 
             var lastPicture = _mediaAlbumViewModel.Pictures.LastOrDefault();

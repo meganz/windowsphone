@@ -370,12 +370,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</comment>
   </data>
   <data name="GetAccountDetailsFailed" xml:space="preserve">
-    <value>無法檢索您的賬戶信息，請重試。[{0}]</value>
+    <value>無法載入您的帳戶資料，請重試。[{0}]</value>
     <comment>Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="GetAccountDetailsFailed_Title" xml:space="preserve">
-    <value>恢復賬戶信息失敗</value>
+    <value>恢復帳戶資料失敗</value>
     <comment>Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</comment>
   </data>
   <data name="LoggedOut" xml:space="preserve">
@@ -771,7 +771,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStoreFailed" xml:space="preserve">
-    <value>信用卡信息不正確。您的信用卡將不會被扣款。</value>
+    <value>信用卡資料不正確。您的信用卡將不會被扣款。</value>
     <comment>Message of the dialog displayed when the process/request to store a user credit card failed.</comment>
   </data>
   <data name="CreditCardStoreFailed_Title" xml:space="preserve">
@@ -1256,35 +1256,35 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyPurchased" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed because you have already purchased this item.</value>
+    <value>您的MEGA訂閱購買失敗，因為您已經購得此項目了。</value>
     <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
-    <value>Already purchased</value>
+    <value>已購買</value>
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <value>您的MEGA訂閱購買失敗或已取消。請再試一次，或與Windows應用商店的客服聯繫。</value>
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
-    <value>Purchase failed or cancelled</value>
+    <value>購買失敗或已取消</value>
     <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseSucceeded" xml:space="preserve">
-    <value>Your MEGA subcription purchase has succeeded.</value>
+    <value>您的MEGA訂閱購買成功。</value>
     <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
-    <value>Purchase succeeded</value>
+    <value>已成功購得</value>
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>您的MEGA訂閱購買未於我們的授權伺服器上通過驗證。重新開啟此應用程式後，我們將試著再次驗證您的購買憑證。如果此錯誤仍然存在，請聯絡MEGA支援中心。</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
-    <value>Purchase validation failed</value>
+    <value>購買驗證失敗</value>
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">

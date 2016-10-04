@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="needs-review-translation">You have not selected a default download location for your files.
+          <target state="translated">You have not selected a default download location for your files.
 
 To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
@@ -881,7 +881,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</target>
+          <target state="translated">Das Abonnement konnte nicht storniert werden. Bitte setzen Sie sich mit support@mega.nz in Verbindung.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
@@ -1020,7 +1020,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</target>
+          <target state="translated">Unser SSL/TLS-Schlüssel scheint manipuliert worden zu sein. Möglicherweise sind Sie Opfer eines Man-in-the-middle-Angriffs geworden.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1030,7 +1030,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</target>
+          <target state="translated">Der Hintergrundprozess für automatischen Kameraupload wurde aufgrund eines Fehlers deaktiviert. Sie können ihn in den Einstellungen neu aktivieren.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
@@ -1134,7 +1134,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">You don't have access to the path '{0}'. Please select another one and try again.</target>
+          <target state="translated">Sie haben keinen Zugriff auf den Pfad '{0}'. Bitte wählen Sie einen anderen und versuchen Sie es noch einmal.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1145,7 +1145,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Der Dateiname '{0}' ist ungültig oder enthält verbotene Zeichen. Bitte ändern Sie ihn und versuchen Sie es erneut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1167,7 +1167,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</target>
+          <target state="translated">Der Name oder Pfad des Ordners '{0}' ist ungültig oder enthält verbotene Zeichen. Bitte ändern Sie ihn und versuchen Sie es erneut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1215,17 +1215,17 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load incoming shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Freigegebene Dateien und Ordner konnten nicht geladen werden. Bitte versuchen Sie es noch einmal.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</target>
+          <target state="translated">Datei- und Ordnerfreigaben konnten nicht geladen werden. Bitte versuchen Sie es noch einmal.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
           <source>Failed to delete settings. Please try again. [{0}]</source>
-          <target state="translated">Failed to delete settings. Please try again. [{0}]</target>
+          <target state="translated">Die Einstellungen konnten nicht gelöscht werden. Bitte versuchen Sie es erneut. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1267,7 +1267,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
-          <target state="translated">To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</target>
+          <target state="translated">Um auf diesen Ordner oder diese Datei zugreifen zu können, benötigen Sie den passenden Schlüssel. Sollten Sie diesen Schlüssel nicht zur Hand haben, so setzen Sie sich bitte mit dem Ersteller des Links in Verbindung.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
@@ -1320,7 +1320,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
-          <target state="translated">You don't have access to the selected download path. Please select a different download path and try again.</target>
+          <target state="translated">Sie haben keinen Zugriff auf das gewählte Zielverzeichnis. Bitte wählen Sie ein anderes Verzeichnis.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
@@ -1340,7 +1340,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
           <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="translated">The log ({0}) will be deleted from the Offline section.</target>
+          <target state="translated">Die Logdatei ({0}) wird aus dem Offline-Bereich gelöscht.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1351,7 +1351,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
           <source>A log will be created in the Offline section ({0}).</source>
-          <target state="translated">A log will be created in the Offline section ({0}).</target>
+          <target state="translated">Eine Logdatei wird im Offline-Bereich abgelegt ({0}).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1417,47 +1417,47 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed because you have already purchased this item.</target>
+          <target state="translated">Ihr Kauf ist fehlgeschlagen, da Sie dasselbe PRO-Paket bereits erworben haben.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
           <source>Already purchased</source>
-          <target state="translated">Already purchased</target>
+          <target state="translated">Bereits gekauft</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="needs-review-translation">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">Ihr Kauf ist fehlgeschlagen oder wurde storniert. Bitte versuchen Sie es erneut oder setzen Sie sich mit dem Kundendienst von Windows Store in Verbindung.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
           <source>Purchase failed or cancelled</source>
-          <target state="translated">Purchase failed or cancelled</target>
+          <target state="translated">Transaktion fehlgeschlagen oder storniert</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
-          <source>Your MEGA subcription purchase has succeeded.</source>
-          <target state="translated">Your MEGA subcription purchase has succeeded.</target>
+          <source>Your MEGA subscription purchase has succeeded.</source>
+          <target state="needs-review-translation">Ihr Kauf war erfolgreich.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
           <source>Purchase succeeded</source>
-          <target state="translated">Purchase succeeded</target>
+          <target state="translated">Kauf erfolgreich</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
           <source>Purchase validation failed</source>
-          <target state="translated">Purchase validation failed</target>
+          <target state="translated">Die Überprüfung Ihrer Transaktion ist fehlgeschlagen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">The associated user account has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">Der Benutzer wurde wegen wiederholter Missachtung unserer Nutzungsbedingungen gesperrt.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1467,17 +1467,17 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not download the folder link. Please try again.</source>
-          <target state="translated">Could not download the folder link. Please try again.</target>
+          <target state="translated">Der Ordnerlink konnte nicht heruntergeladen werden.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
           <source>Import failed</source>
-          <target state="translated">Import failed</target>
+          <target state="translated">Import fehlgeschlagen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not import the folder link. Please try again.</source>
-          <target state="translated">Could not import the folder link. Please try again.</target>
+          <target state="translated">Der Ordnerlink konnte nicht importiert werden. Bitte versuchen Sie es erneut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
@@ -1487,12 +1487,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="needs-review-translation">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
+          <target state="translated">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
           <source>The link you are using for a new signup is not valid.</source>
-          <target state="translated">The link you are using for a new signup is not valid.</target>
+          <target state="translated">Der Anmelde-Link ist ungültig.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
@@ -1502,12 +1502,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="needs-review-translation">Your account has not been confirmed yet.</target>
+          <target state="translated">Ihr Account wurde noch nicht bestätigt.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
           <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
-          <target state="translated">You have attempted to log in too many times. Please wait until {0} and try again.</target>
+          <target state="translated">Zuviele Fehlversuche. Bitte warten Sie bis {0} und versuchen Sie es dann erneut.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
 Preserve the {0} code because is for include the exact time until the user has to wait.</note>
         </trans-unit>

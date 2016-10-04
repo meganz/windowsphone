@@ -647,7 +647,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="CacheCleared_Title" xml:space="preserve">
-    <value>Medzipamäť vyčistená</value>
+    <value>Dočasná pamäť vyčistená</value>
     <comment>Title of the dialog displayed when the cache memory is successfully cleared by user request.</comment>
   </data>
   <data name="MemoryLimitError" xml:space="preserve">
@@ -1260,7 +1260,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <value>Váš nákup MEGA predplatného zlyhal, alebo bol zrušený. Prosím skúste to znovu alebo kontaktujte podporu pre Obchod Windows.</value>
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
@@ -1276,7 +1276,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>Váš nákup MEGA predplatného neprešiel overením na našom licenčnom serveri. Po reštarte tejto aplikácie  skúsime vaše predplatné overiť znovu. Prosím kontaktujte MEGA podporu, ak problém pretrváva.</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">

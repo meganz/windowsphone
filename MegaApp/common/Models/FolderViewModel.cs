@@ -307,7 +307,18 @@ namespace MegaApp.Models
                     {
                         App.LinkInformation.UriLink = UriLinkType.Folder;
                         NavigateService.NavigateTo(typeof(FolderLinkPage), NavigationParameter.FolderLinkLaunch);
-                    }                        
+                    }
+                    else
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                AppMessages.AM_OpenLinkFailed_Title, 
+                                AppMessages.AM_InvalidLink, 
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        });
+                    }
                 }
             };
             inputDialog.ShowDialog();
