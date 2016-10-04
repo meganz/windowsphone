@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using mega;
 
 namespace ScheduledCameraUploadTaskAgent
@@ -12,6 +7,15 @@ namespace ScheduledCameraUploadTaskAgent
     class MegaTransferListener: MTransferListenerInterface
     {
         private Timer _timer;
+
+        // Event raised so that the task agent can abort itself on Quoata exceeded
+        public event EventHandler QuotaExceeded;
+
+        protected virtual void OnQuotaExceeded(EventArgs e)
+        {
+            if (QuotaExceeded != null)
+                QuotaExceeded(this, e);
+        }
 
         public bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
         {
@@ -23,6 +27,14 @@ namespace ScheduledCameraUploadTaskAgent
             if(_timer != null) 
                 _timer.Dispose();
             
+            if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            {
+                //Stop the Camera Upload Service
+                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
+                OnQuotaExceeded(EventArgs.Empty);
+                return;
+            }
+
             try
             {
                 if (e.getErrorCode() == MErrorType.API_OK)
@@ -34,10 +46,22 @@ namespace ScheduledCameraUploadTaskAgent
                     // If file upload succeeded. Clear the error information for a clean sheet.
                     ErrorProcessingService.Clear();
                 }
-                else
+                else 
                 {
-                   // An error occured. Process it.
-                   ErrorProcessingService.ProcessFileError(e.getErrorString(), transfer.getFileName());
+                    // An error occured. Log and process it.
+                    switch (e.getErrorCode())
+                    {
+                        case MErrorType.API_EFAILED:
+                        case MErrorType.API_EEXIST:
+                        case MErrorType.API_EARGS:
+                        case MErrorType.API_EREAD:
+                        case MErrorType.API_EWRITE:
+                        {
+                            ErrorProcessingService.ProcessFileError(e.getErrorString(), transfer.getFileName());
+                            break;
+                        }
+                    }
+                  
                 }
             }
             catch (Exception)

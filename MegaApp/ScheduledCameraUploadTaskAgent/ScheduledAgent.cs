@@ -71,13 +71,22 @@ namespace ScheduledCameraUploadTaskAgent
 
             // Log message to indicate that the service is invoked and the last exit reason
             MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " + 
-                task.LastExitReason.ToString());
+                task.LastExitReason);
 
             // Add notifications listener
             MegaSdk.addGlobalListener(new MegaGlobalListener());
+
+            // Abort the service when Quota exceeded error is raised in the transferlistener
+            // Abort will stop the service and it will not be launched again until the user
+            // activates it in the main application
+            var megaTransferListener = new MegaTransferListener();
+            megaTransferListener.QuotaExceeded += (sender, args) =>
+            {
+                scheduledAgent.Abort();
+            };
             
             // Add transfers listener
-            MegaSdk.addTransferListener(new MegaTransferListener());
+            MegaSdk.addTransferListener(megaTransferListener);
                         
             // Fast login with session token that was saved during MEGA app initial login
             FastLogin();
