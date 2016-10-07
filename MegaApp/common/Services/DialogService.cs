@@ -1236,15 +1236,30 @@ namespace MegaApp.Services
                     requestData.SetStorageItems(storageItems);
                 };
 
-                DataTransferManager.ShowShareUI();
+                try { DataTransferManager.ShowShareUI(); }
+                catch (Exception) /* P.Bug #5447*/
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
+                            AppMessages.AM_ShareFromMegaAppBusy_Message,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });                    
+                }
             }
             catch (NotSupportedException) 
             {
-                new CustomMessageDialog(
-                    AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
-                    AppMessages.AM_ShareFromMegaFailed_Message,
-                    App.AppInformation,
-                    MessageDialogButtons.Ok).ShowDialog();
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
+                        AppMessages.AM_ShareFromMegaFailed_Message,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+                
             }
         }
     }

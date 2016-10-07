@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Account has not been confirmed yet..
+        ///   Busca una cadena traducida similar a Your account has not been confirmed yet..
         /// </summary>
         public static string AM_AccountNotConfirmed {
             get {
@@ -151,7 +151,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your MEGA subscription purchase has failed because you already have purchased this item..
+        ///   Busca una cadena traducida similar a Your purchase of a MEGA subscription has failed because you have already purchased this item..
         /// </summary>
         public static string AM_AlreadyPurchased {
             get {
@@ -472,7 +472,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The confirmation account link that you are using is incomplete. Please check the link length, be sure that you have copied the entire link and try again..
+        ///   Busca una cadena traducida similar a The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again..
         /// </summary>
         public static string AM_IncompleteConfirmationLink {
             get {
@@ -589,7 +589,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has failed or has been cancelled. Please try again or contact Windows Store support..
+        ///   Busca una cadena traducida similar a Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support..
         /// </summary>
         public static string AM_PurchaseFailed {
             get {
@@ -607,7 +607,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has succeeded..
+        ///   Busca una cadena traducida similar a Your MEGA subscription purchase has succeeded..
         /// </summary>
         public static string AM_PurchaseSucceeded {
             get {
@@ -625,7 +625,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your MEGA subcription purchase has not passed validation at our license server. On restart of this app we will retry to validate your subscription licenses. Please contact MEGA support if error continues..
+        ///   Busca una cadena traducida similar a Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues..
         /// </summary>
         public static string AM_PurchaseValidationFailed {
             get {
@@ -675,6 +675,15 @@ namespace MegaApp.Resources {
         public static string AM_RecoveryKeyCopied_Title {
             get {
                 return ResourceManager.GetString("AM_RecoveryKeyCopied_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to share item(s) from MEGA. The destination application seems busy. Please try again later..
+        /// </summary>
+        public static string AM_ShareFromMegaAppBusy_Message {
+            get {
+                return ResourceManager.GetString("AM_ShareFromMegaAppBusy_Message", resourceCulture);
             }
         }
         
@@ -1948,7 +1957,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to preferences in order to set up your default download location..
+        ///   Busca una cadena traducida similar a You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location..
         /// </summary>
         public static string NoDownloadLocationSelected {
             get {
