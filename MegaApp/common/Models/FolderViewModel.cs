@@ -830,7 +830,8 @@ namespace MegaApp.Models
 
         private async void RemoveItem(object obj)
         {
-            await FocusedNode.RemoveAsync(false);
+            if (FocusedNode != null)
+                await FocusedNode.RemoveAsync(false);
         }
 
         private void RenameItem(object obj)
