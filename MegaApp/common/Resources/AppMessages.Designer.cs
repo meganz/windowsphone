@@ -409,6 +409,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to retrieve node details. Please try again..
+        /// </summary>
+        public static string AM_GetNodeDetailsFailed {
+            get {
+                return ResourceManager.GetString("AM_GetNodeDetailsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a View details failed.
+        /// </summary>
+        public static string AM_GetNodeDetailsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_GetNodeDetailsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Import failed.
         /// </summary>
         public static string AM_ImportFailed_Title {

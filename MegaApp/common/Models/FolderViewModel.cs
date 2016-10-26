@@ -864,7 +864,21 @@ namespace MegaApp.Models
             NodeViewModel node = NodeService.CreateNew(this.MegaSdk, App.AppInformation,
                 this.MegaSdk.getNodeByBase64Handle(FocusedNode.Base64Handle), this.Type);
 
-            OnUiThread(() => NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node));
+            OnUiThread(() =>
+            {
+                if (node != null)
+                {
+                    NavigateService.NavigateTo(typeof(NodeDetailsPage), NavigationParameter.Normal, node);
+                }
+                else
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_GetNodeDetailsFailed_Title,
+                        AppMessages.AM_GetNodeDetailsFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                }
+            });
         }
 
         private void CreateShortCut(object obj)
