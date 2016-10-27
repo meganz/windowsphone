@@ -791,21 +791,32 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdk.retryPendingConnections();
 
-            // If the user is moving nodes, don't show the contextual menu
-            if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem) 
-                e.Cancel = true;
+            try
+            {
+                if (_mainPageViewModel != null && _mainPageViewModel.ActiveFolderView != null)
+                {
+                    // If the user is moving nodes, don't show the contextual menu
+                    if (_mainPageViewModel.ActiveFolderView.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem)
+                        e.Cancel = true;
 
-            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
-            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
-            {
-                // We don't want to open the menu if the focused element is not a list box item.
-                // If the list box is empty focusedItem will be null.
-                e.Cancel = true;
+                    var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+                    if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
+                    {
+                        // We don't want to open the menu if the focused element is not a list box item.
+                        // If the list box is empty focusedItem will be null.
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode)focusedListBoxItem.DataContext;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
-            else
-            {
-                _mainPageViewModel.ActiveFolderView.FocusedNode = (IMegaNode) focusedListBoxItem.DataContext;                
-            }
+            catch (Exception) { e.Cancel = true; }
         }
 
         private void OnListLoaded(object sender, RoutedEventArgs e)
