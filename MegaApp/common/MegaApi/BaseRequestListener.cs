@@ -82,7 +82,7 @@ namespace MegaApp.MegaApi
                     // Disable the "camera upload" service if is enabled
                     if (MediaService.GetAutoCameraUploadStatus())
                     {
-                        MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
                     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using mega;
+using MegaApp.Services;
 
 namespace ScheduledCameraUploadTaskAgent
 {
@@ -30,7 +31,7 @@ namespace ScheduledCameraUploadTaskAgent
             if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 //Stop the Camera Upload Service
-                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
                 OnQuotaExceeded(EventArgs.Empty);
                 return;
             }
@@ -57,7 +58,8 @@ namespace ScheduledCameraUploadTaskAgent
                         case MErrorType.API_EREAD:
                         case MErrorType.API_EWRITE:
                         {
-                            ErrorProcessingService.ProcessFileError(e.getErrorString(), transfer.getFileName());
+                            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, e.getErrorString());
+                            ErrorProcessingService.ProcessFileError(transfer.getFileName());
                             break;
                         }
                     }

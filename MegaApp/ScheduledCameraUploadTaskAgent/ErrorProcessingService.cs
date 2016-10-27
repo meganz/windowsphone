@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using mega;
 using Microsoft.Xna.Framework.Media;
 
 namespace ScheduledCameraUploadTaskAgent
@@ -11,17 +10,16 @@ namespace ScheduledCameraUploadTaskAgent
     public static class ErrorProcessingService
     {
         private const int MaxNumberOfErrors = 10;
-        
+
         /// <summary>
         /// Process an error occurring on service upload
         /// </summary>
-        /// <param name="errorString">The error message</param>
         /// <param name="fileName">The file that failed</param>
         /// <param name="dateTime">The datetime of the file that failed, if available</param>
-        public static void ProcessFileError(string errorString, string fileName, DateTime? dateTime = null)
+        public static void ProcessFileError(string fileName, DateTime? dateTime = null)
         {
             // Process the error of the current file transfer
-            var errorCount = LogFileError(errorString, fileName);
+            var errorCount = SetFileError(fileName);
 
             // Skip the current file if it has failed to upload a number of times (MaxNumberOfErrors).
             if (errorCount < MaxNumberOfErrors) return;
@@ -31,19 +29,14 @@ namespace ScheduledCameraUploadTaskAgent
         }
 
         /// <summary>
-        /// Log a file upload error to log file and save the filename and error count of that specific file
+        /// Save the filename and error count of that specific file
         /// </summary>
-        /// <param name="errorString">The error message</param>
         /// <param name="fileName">The file that failed</param>
         /// <returns></returns>
-        private static int LogFileError(string errorString, string fileName)
+        private static int SetFileError(string fileName)
         {
             try
             {
-                // Log the error
-                MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
-                MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, errorString, fileName);
-
                 // Load filename last error
                 var lastErrorFileName = SettingsService.LoadSettingFromFile<string>("ErrorFileName");
 

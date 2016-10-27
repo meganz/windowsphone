@@ -843,6 +843,9 @@
     <Compile Include="..\common\Services\LicenseService.cs">
       <Link>Services\LicenseService.cs</Link>
     </Compile>
+    <Compile Include="..\common\Services\LogService.cs">
+      <Link>Services\LogService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\MediaService.cs">
       <Link>Services\MediaService.cs</Link>
     </Compile>
