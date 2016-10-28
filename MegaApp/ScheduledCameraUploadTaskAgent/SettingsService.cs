@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
+using MegaApp.Services;
 
 namespace ScheduledCameraUploadTaskAgent
 {
@@ -34,9 +35,8 @@ namespace ScheduledCameraUploadTaskAgent
                     }
                     catch (Exception e)
                     {
-                        // Do nothing. Write a log entry and return the default type value
-                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, 
-                            String.Format("Error loading setting from file ({0}).", e.GetType().ToString()));
+                        // Do nothing. Write a log entry and return the default type value                        
+                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error loading setting from file", e);
                     }
                 })); 
             }

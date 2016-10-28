@@ -21,12 +21,12 @@ namespace MegaApp.Models
             if (_isDebugMode)
             {
                 ShowDebugAlert = true;
-                MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_MAX);
+                LogService.SetLogLevel(MLogLevel.LOG_LEVEL_MAX);
             }
             else
             {
                 ShowDebugAlert = false;
-                MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
+                LogService.SetLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
             }
         }
 
@@ -40,7 +40,7 @@ namespace MegaApp.Models
         {
             _isDebugMode = true;
             SettingsService.SaveSetting(SettingsResources.DebugModeIsEnabled, true);
-            MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_MAX);
+            LogService.SetLogLevel(MLogLevel.LOG_LEVEL_MAX);
             try { File.Create(AppService.GetFileLogPath()); }
             catch (IOException)
             { /* No problem, because it will be created when writes the first line if not exists. */ }
@@ -57,7 +57,7 @@ namespace MegaApp.Models
         {
             _isDebugMode = false;
             SettingsService.SaveSetting(SettingsResources.DebugModeIsEnabled, false);
-            MegaSDK.setLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
+            LogService.SetLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
             FileService.DeleteFile(AppService.GetFileLogPath());
 
             if (App.SavedForOfflineViewModel != null)

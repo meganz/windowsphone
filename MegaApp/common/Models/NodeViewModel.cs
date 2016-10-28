@@ -146,6 +146,8 @@ namespace MegaApp.Models
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
+            if (this.OriginalMNode == null) return NodeActionResult.Failed;
+
             // Looking for the absolute parent of the node to remove
             MNode parentNode;
             MNode absoluteParentNode = this.OriginalMNode;

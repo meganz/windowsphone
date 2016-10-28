@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Windows;
 using Windows.Storage;
 using mega;
 using MegaApp.MegaApi;
+using MegaApp.Services;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Media;
@@ -28,7 +30,7 @@ namespace ScheduledCameraUploadTaskAgent
         static ScheduledAgent()
         {
             // Enable a custom logger
-            MegaSDK.setLoggerObject(new MegaLogger());
+            LogService.SetLoggerObject(new MegaLogger());
 
             // Subscribe to the managed exception handler
             Deployment.Current.Dispatcher.BeginInvoke(delegate
@@ -70,7 +72,7 @@ namespace ScheduledCameraUploadTaskAgent
             scheduledAgent = this;
 
             // Log message to indicate that the service is invoked and the last exit reason
-            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " + 
+            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Service invoked. Last exit reason: " +  
                 task.LastExitReason);
 
             // Add notifications listener
@@ -211,17 +213,36 @@ namespace ScheduledCameraUploadTaskAgent
             var lastUploadDate = SettingsService.LoadSettingFromFile<DateTime>("LastUploadDate");
 
             // Open the phone's Media Library
-            using (var mediaLibrary = new MediaLibrary())
+            MediaLibrary mediaLibrary;
+            try { mediaLibrary = new MediaLibrary(); }
+            catch(Exception e)
             {
+                // Error opening the Media Library
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error opening the Media Library", e);                
+                scheduledAgent.NotifyComplete();
+                return;
+            }
+            
+            using (mediaLibrary)
+            {
+                List<Picture> pictures;
+
                 var selectDate = lastUploadDate;
                 // Find all pictures taken after the last upload date
-                var pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).OrderBy(p => p.Date).ToList();
+                try { pictures = mediaLibrary.Pictures.Where(p => p.Date > selectDate).OrderBy(p => p.Date).ToList(); }
+                catch (Exception e)
+                {
+                    // Error getting the pictures taken after the last upload date
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error getting pictures from the media library", e);                    
+                    scheduledAgent.NotifyComplete();
+                    return;
+                }
 
                 if (!pictures.Any())
                 {
                     // No pictures is not an error. Maybe all pictures have already been uploaded
                     // Just finish the task for this run
-                    MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "No new items to upload");
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "No new items to upload");
                     scheduledAgent.NotifyComplete();
                     return;
                 }
@@ -231,7 +252,7 @@ namespace ScheduledCameraUploadTaskAgent
                 {
                     // No camera upload node found or created
                     // Just finish this run and try again next time
-                    MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "No camera uploads folder");
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "No camera uploads folder");
                     scheduledAgent.NotifyComplete();
                     return;
                 }
@@ -265,10 +286,8 @@ namespace ScheduledCameraUploadTaskAgent
                                 continue; // skip to next picture
                             }
 
-
                             // Create a temporary local path to save the picture for upload
-                            string newFilePath = Path.Combine(
-                                Path.Combine(ApplicationData.Current.LocalFolder.Path, @"uploads\"), picture.Name);
+                            string newFilePath = Path.Combine(scheduledAgent.GetTemporaryUploadFolder(), picture.Name);
 
                             // Reset back to start
                             // Because fingerprint action has moved the position
@@ -291,15 +310,14 @@ namespace ScheduledCameraUploadTaskAgent
                     {
                         // Something went wrong (could be memory limit)
                         // Just finish this run and try again next time
-                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
-                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, e.Message);
+                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload", e);                        
                         scheduledAgent.NotifyComplete();
                     }
                     catch (Exception e)
                     {
-                        // Log the error and try again
-                        MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload");
-                        ErrorProcessingService.ProcessFileError(e.Message, picture.Name, picture.Date);
+                        // Send log, process the error and try again
+                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error during the item upload", e);
+                        ErrorProcessingService.ProcessFileError(picture.Name, picture.Date);
                         Upload();
                         return;
                     }
@@ -361,6 +379,21 @@ namespace ScheduledCameraUploadTaskAgent
             return null;
         }
 
+        /// <summary>
+        /// Get the temporary upload folder path
+        /// </summary>
+        /// <returns>Temporary upload folder path</returns>
+        private string GetTemporaryUploadFolder()
+        {
+            var uploadDir = Path.Combine(ApplicationData.Current.LocalFolder.Path, @"uploads\");
+
+            // Check if the temporary upload folder exists or create it if not exists
+            if (!Directory.Exists(uploadDir))
+                Directory.CreateDirectory(uploadDir);
+
+            return uploadDir;
+        }
+
         private static string GetBackgroundAgentUserAgent()
         {
             return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "1.0.0.0");
@@ -375,7 +408,5 @@ namespace ScheduledCameraUploadTaskAgent
         //    };
         //    toast.Show();
         //}
-
-     
     }
 }
