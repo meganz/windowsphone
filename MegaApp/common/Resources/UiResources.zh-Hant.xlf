@@ -288,7 +288,7 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinName" translate="yes" space="preserve">
           <source>Rubbish bin</source>
-          <target state="translated">垃圾夾</target>
+          <target state="translated">垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Off" translate="yes" space="preserve">
@@ -318,7 +318,7 @@
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
           <source>Rubbish Bin</source>
-          <target state="translated">垃圾夾</target>
+          <target state="translated">垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" space="preserve">
@@ -582,7 +582,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SortByMenuTitle" translate="yes" space="preserve">
           <source>Sort by</source>
-          <target state="translated">排列順序</target>
+          <target state="translated">排序</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the sort menu.</note>
         </trans-unit>
         <trans-unit id="Resx/StartResumeAll" translate="yes" space="preserve">
@@ -677,7 +677,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Queued" translate="yes" space="preserve">
           <source>Queued</source>
-          <target state="translated">序列</target>
+          <target state="translated">已入排程</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is queued - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Transfer_Uploaded" translate="yes" space="preserve">
@@ -787,7 +787,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">清空垃圾夾</target>
+          <target state="translated">清空垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1317,7 +1317,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">清除垃圾夾</target>
+          <target state="translated">空的垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1352,7 +1352,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
-          <target state="translated">選擇全部</target>
+          <target state="translated">全選</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Select' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DeselectAll" translate="yes" space="preserve">
@@ -1403,7 +1403,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_AvailableOffline" translate="yes" space="preserve">
           <source>Available Offline</source>
-          <target state="translated">離線使用</target>
+          <target state="translated">離線可用</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</note>
         </trans-unit>

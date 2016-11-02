@@ -1439,7 +1439,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
           <source>Your MEGA subscription purchase has succeeded.</source>
-          <target state="needs-review-translation">تم بنجاح شراء الاشتراك في MEGA </target>
+          <target state="translated">تم بنجاح شراء الاشتراك في MEGA </target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
@@ -1518,20 +1518,20 @@ Preserve the {0} code because is for include the exact time until the user has t
           <target state="translated">حساب محظور</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
-          <target state="new">Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</target>
+          <target state="translated">فشل في مشاركة ملف/ملفات من MEGA. وجهة التطبيق تبدو مشغولة، الرجاء المحاولة لاحقا.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" xml:space="preserve">
-          <source>View details failed</source>
-          <target state="new">View details failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="new">Failed to retrieve node details. Please try again.</target>
+          <target state="translated">فشل في استعادة تفاصيل النقطة. الرجاء المحاولة ثانية.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
+          <source>View details failed</source>
+          <target state="translated">فشل إظهار التفاصيل</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

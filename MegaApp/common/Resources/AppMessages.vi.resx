@@ -1309,7 +1309,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
-    <value>Đường liên kết xác thực tài khoản bạn đang sử dụng bị viết thiếu. Xin kiểu tra kỹ lại và chắc rằng bạn đã copy lại chính xác toàn bộ đường liên kết, sau đó thử lại.</value>
+    <value>Đường liên kết xác thực tài khoản bạn đang sử dụng bị viết thiếu. Xin kiểm tra kỹ lại và chắc rằng bạn đã copy lại chính xác toàn bộ đường liên kết, sau đó thử lại.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
@@ -1332,5 +1332,17 @@ Preserve the {0} code because is for include the exact time until the user has t
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
     <value>Tài khoản bị chặn</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
+    <value>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
+    <value>Failed to retrieve node details. Please try again.</value>
+    <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
+    <value>View details failed</value>
+    <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
 </root>

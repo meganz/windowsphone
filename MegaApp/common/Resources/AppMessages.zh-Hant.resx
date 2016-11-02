@@ -414,11 +414,11 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinFailed" xml:space="preserve">
-    <value>移动至垃圾箱失敗，请重試。</value>
+    <value>移至垃圾桶失敗，请重試。</value>
     <comment>Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</comment>
   </data>
   <data name="MoveToRubbishBinFailed_Title" xml:space="preserve">
-    <value>移动至垃圾箱失敗</value>
+    <value>移至垃圾桶失敗</value>
     <comment>Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinQuestion" xml:space="preserve">
@@ -427,7 +427,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</comment>
   </data>
   <data name="MoveToRubbishBinQuestion_Title" xml:space="preserve">
-    <value>要移至垃圾箱嗎？</value>
+    <value>要移至垃圾桶嗎？</value>
     <comment>Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MoveToRubbishBinSuccess" xml:space="preserve">
@@ -448,7 +448,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
     <comment>Title of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</comment>
   </data>
   <data name="MultiMoveToRubbishBinSucces" xml:space="preserve">
-    <value>移动 {0}個項目至垃圾箱</value>
+    <value>已移動 {0}個檔案至垃圾桶</value>
     <comment>Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</comment>
   </data>
@@ -475,7 +475,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit - (String as short as possible).</comment>
   </data>
   <data name="AlreadyConfirmedAccount" xml:space="preserve">
-    <value>您的賬戶已確認。您現在可以登錄了。</value>
+    <value>您的帳戶已確認啟用。您現在可以登入使用了。</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</comment>
   </data>
   <data name="AlreadyConfirmedAccount_Title" xml:space="preserve">
@@ -1335,5 +1335,17 @@ Preserve the {0} code because is for include the exact time until the user has t
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
     <value>帳號鎖定</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
+    <value>無法從MEGA共享檔案。目標應用程式似乎很忙。請稍後再試。</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
+    <value>無法取得節點詳情。 請再試一次。</value>
+    <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
+    <value>查看詳情失敗</value>
+    <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
 </root>

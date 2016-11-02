@@ -314,7 +314,7 @@
     <comment>Text placed into the 'acknowledgements' page introducing the list of acknowledgements.</comment>
   </data>
   <data name="RubbishBinName" xml:space="preserve">
-    <value>垃圾夾</value>
+    <value>垃圾桶</value>
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Off" xml:space="preserve">
@@ -334,7 +334,7 @@
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
-    <value>垃圾夾</value>
+    <value>垃圾桶</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="ConfirmPinLockWatermark" xml:space="preserve">
@@ -538,7 +538,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="SortByMenuTitle" xml:space="preserve">
-    <value>排列順序</value>
+    <value>排序</value>
     <comment>Label used like title for the sort menu.</comment>
   </data>
   <data name="StartResumeAll" xml:space="preserve">
@@ -610,7 +610,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Queued" xml:space="preserve">
-    <value>序列</value>
+    <value>已入排程</value>
     <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="Transfer_Uploaded" xml:space="preserve">
@@ -694,7 +694,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>清空垃圾夾</value>
+    <value>清空垃圾桶</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -1089,7 +1089,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>清除垃圾夾</value>
+    <value>空的垃圾桶</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1169,7 +1169,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>選擇全部</value>
+    <value>全選</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
@@ -1231,7 +1231,7 @@ Preserve the {0} code because is for include the name of the destination folder 
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_AvailableOffline" xml:space="preserve">
-    <value>離線使用</value>
+    <value>離線可用</value>
     <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
