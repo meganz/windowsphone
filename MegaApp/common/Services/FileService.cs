@@ -6,6 +6,7 @@ using System.Windows;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using MegaApp.Classes;
+using MegaApp.Extensions;
 using MegaApp.Resources;
 
 #if WINDOWS_PHONE_81
@@ -99,7 +100,22 @@ namespace MegaApp.Services
 
                 newFileName = newFileName ?? file.Name;
 
+                // Get file properties to determine the size in MB
+                var bp = await file.GetBasicPropertiesAsync();
+                var mb = (bp.Size/1024)/1024;
+                
+                if (mb >= 50)
+                {
+                    // If the file is larger than 50 MB, we will copy it using a small buffered value in a buffered stream
+                    var destFile = await folder.CreateFileAsync(newFileName, CreationCollisionOption.GenerateUniqueName);
+                    if (destFile == null) return false;
+
+                    await CopyLargeFile(file, destFile);
+                    return true;
+                }
+                // If the file is smaller than 50 MB, let the OS decide how to copy and buffer size
                 copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName); 
+                
             }
             catch (UnauthorizedAccessException) 
             {
@@ -127,6 +143,22 @@ namespace MegaApp.Services
             }
 
             return copy != null;
+        }
+
+        /// <summary>
+        /// Copy a large file with a buffered stream to avoid E_FAIL error on StorageFile copy
+        /// </summary>
+        /// <param name="fileSource">StorageFile to copy</param>
+        /// <param name="fileDest">Destination StorageFile</param>
+        private static async Task CopyLargeFile(StorageFile fileSource, StorageFile fileDest)
+        {
+            using (var streamSource = await fileSource.OpenStreamForReadAsync())
+            {
+                using (var streamDest = await fileDest.OpenStreamForWriteAsync())
+                {
+                    await streamSource.CopyToAsync(streamDest, 4096);
+                }
+            }
         }
 
         // Move a file. Copies the file and remove the source file if the copy was successful
