@@ -311,17 +311,28 @@ namespace MegaApp.Pages
             // Needed on every UI interaction
             App.MegaSdkFolderLinks.retryPendingConnections();
 
-            var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
-            if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
+            try
             {
-                // We don't want to open the menu if the focused element is not a list box item.
-                // If the list box is empty focusedItem will be null.
-                e.Cancel = true;
+                if (_folderLinkViewModel != null && _folderLinkViewModel.FolderLink != null)
+                {
+                    var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
+                    if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is IMegaNode))
+                    {
+                        // We don't want to open the menu if the focused element is not a list box item.
+                        // If the list box is empty focusedItem will be null.
+                        e.Cancel = true;
+                    }
+                    else
+                    {
+                        _folderLinkViewModel.FolderLink.FocusedNode = (IMegaNode)focusedListBoxItem.DataContext;
+                    }
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
-            else
-            {
-                _folderLinkViewModel.FolderLink.FocusedNode = (IMegaNode)focusedListBoxItem.DataContext;
-            }
+            catch (Exception) { e.Cancel = true; }
         }        
 
         private void OnRefreshClick(object sender, EventArgs e)

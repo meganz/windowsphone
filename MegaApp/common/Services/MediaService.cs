@@ -173,7 +173,7 @@ namespace MegaApp.Services
 
             if (!onOff)
             {
-                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Disable CAMERA UPLOADS service");
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disable CAMERA UPLOADS service");
                 return false;
             }
 
@@ -194,7 +194,7 @@ namespace MegaApp.Services
                 ScheduledActionService.LaunchForTest("ScheduledCameraUploadTaskAgent", TimeSpan.FromSeconds(5));
                 #endif
 
-                MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Enable CAMERA UPLOADS service");
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Enable CAMERA UPLOADS service");
                 return true;
             }
             catch (InvalidOperationException exception)
@@ -208,7 +208,7 @@ namespace MegaApp.Services
             catch (SchedulerServiceException) { /* Do nothing */ }
             catch (ArgumentException) { /* Do nothing -  Possible Bug #4942 */ }
 
-            MegaSDK.log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service");
+            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service");
             return false;
         }
 

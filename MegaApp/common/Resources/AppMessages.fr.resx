@@ -1059,7 +1059,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</comment>
   </data>
   <data name="AM_CancelSubscriptionConfirmation" xml:space="preserve">
-    <value>Nous vous remercions de votre rétroaction ! Voulez-vous vraiment annuler votre abonnement MEGA?</value>
+    <value>Nous vous remercions de vos commentaires ! Voulez-vous vraiment annuler votre abonnement MEGA?</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
@@ -1333,5 +1333,17 @@ Preserve the {0} code because is for include the exact time until the user has t
   <data name="AM_AccountBlocked_Title" xml:space="preserve">
     <value>Compte bloqué</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
+  </data>
+  <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
+    <value>Échec de partage des éléments de MEGA. L'application de destination semble occupée. Veuillez ressayer plus tard.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
+    <value>Échec de récupération des détails du nœud. Veuillez ressayer.</value>
+    <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
+    <value>Échec de visualisation des details</value>
+    <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
 </root>

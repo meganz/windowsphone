@@ -1333,4 +1333,16 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>Account bloccato</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
+  <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
+    <value>Condivisione di oggetto/i da MEGA fallita. L'app di destionazione sembra occupata. Riprova più tardi.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
+    <value>Ricezione dei dettagli del nodo fallita. Riprova.</value>
+    <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
+    <value>Visione dettagli fallita</value>
+    <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
+  </data>
 </root>

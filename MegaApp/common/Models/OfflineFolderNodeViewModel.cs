@@ -57,17 +57,22 @@ namespace MegaApp.Models
 
         public void SetFolderInfo()
         {
-            if (!Directory.Exists(this.NodePath)) Directory.CreateDirectory(this.NodePath);
-
-            int childFolders = FolderService.GetNumChildFolders(this.NodePath);
-            int childFiles = FolderService.GetNumChildFiles(this.NodePath, true);
-
-            OnUiThread(() =>
+            try
             {
-                this.Information = String.Format("{0} {1} | {2} {3}",
-                    childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
-                    childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
-            });
+                try { if (!Directory.Exists(this.NodePath)) Directory.CreateDirectory(this.NodePath); }
+                catch(IOException) { /* DO NOTHING - P. bug #5551: Cannot create directory because already exists. */ }
+
+                int childFolders = FolderService.GetNumChildFolders(this.NodePath);
+                int childFiles = FolderService.GetNumChildFiles(this.NodePath, true);
+
+                OnUiThread(() =>
+                {
+                    this.Information = String.Format("{0} {1} | {2} {3}",
+                        childFolders, childFolders == 1 ? UiResources.SingleFolder.ToLower() : UiResources.MultipleFolders.ToLower(),
+                        childFiles, childFiles == 1 ? UiResources.SingleFile.ToLower() : UiResources.MultipleFiles.ToLower());
+                });
+            }
+            catch (Exception) { }
         }
 
         #endregion

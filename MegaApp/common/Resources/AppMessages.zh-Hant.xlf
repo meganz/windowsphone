@@ -382,12 +382,12 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to move item to rubbish bin. Please try again</source>
-          <target state="translated">移动至垃圾箱失敗，请重試。</target>
+          <target state="translated">移至垃圾桶失敗，请重試。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" space="preserve">
           <source>Move to rubbish bin failed</source>
-          <target state="translated">移动至垃圾箱失敗</target>
+          <target state="translated">移至垃圾桶失敗</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
@@ -398,7 +398,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move to rubbish bin?</source>
-          <target state="translated">要移至垃圾箱嗎？</target>
+          <target state="translated">要移至垃圾桶嗎？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
@@ -424,7 +424,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
           <source>{0} items moved to the rubbish bin</source>
-          <target state="translated">移动 {0}個項目至垃圾箱</target>
+          <target state="translated">已移動 {0}個檔案至垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -457,7 +457,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
           <source>The account is already confirmed. You can now login.</source>
-          <target state="translated">您的賬戶已確認。您現在可以登錄了。</target>
+          <target state="translated">您的帳戶已確認啟用。您現在可以登入使用了。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
@@ -1441,7 +1441,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
           <source>Your MEGA subscription purchase has succeeded.</source>
-          <target state="needs-review-translation">您的MEGA訂閱購買成功。</target>
+          <target state="translated">您的MEGA訂閱購買成功。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
@@ -1519,6 +1519,21 @@ Preserve the {0} code because is for include the exact time until the user has t
           <source>Account blocked</source>
           <target state="translated">帳號鎖定</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
+          <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
+          <target state="translated">無法從MEGA共享檔案。目標應用程式似乎很忙。請稍後再試。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to retrieve node details. Please try again.</source>
+          <target state="translated">無法取得節點詳情。 請再試一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
+          <source>View details failed</source>
+          <target state="translated">查看詳情失敗</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

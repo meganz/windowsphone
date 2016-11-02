@@ -1336,4 +1336,16 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>החשבון נחסם</value>
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
+  <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
+    <value>כישלון בשיתוף הקובץ(ים) מ-MEGA. אפליקציית היעד נראית עסוקה. אנא נסה שוב מאוחר יותר.</value>
+    <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
+    <value>כישלון בהצגת פרטים. אנא נסה שוב.</value>
+    <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
+  </data>
+  <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
+    <value>צפייה בפרטים נכשלה</value>
+    <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
+  </data>
 </root>
