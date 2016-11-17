@@ -1337,11 +1337,11 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
-    <value>Failed to retrieve node details. Please try again.</value>
+    <value>Zlyhalo získavanie detailov o uzle. Prosím skúste to znovu.</value>
     <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
-    <value>View details failed</value>
+    <value>Zobrazenie detailov zlyhalo</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
 </root>
