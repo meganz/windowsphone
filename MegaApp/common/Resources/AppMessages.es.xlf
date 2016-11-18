@@ -964,12 +964,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">Para que las subidas de la cámara funcionen correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</target>
+          <target state="translated">Para que 'camera uploads' funcione correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
           <source>Auto Camera Uploads prerequisites</source>
-          <target state="translated">Prerequisitos de las subidas de la cámara</target>
+          <target state="translated">Prerequisitos del 'camera uploads'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
@@ -1006,7 +1006,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="translated">Subidas automáticas de la cámara</target>
+          <target state="translated">Camera uploads automáticas</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
@@ -1031,12 +1031,12 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">El servicio de subidas de la cámara ha fallado. Puedes volver a activarlo en la pantalla de configuración.</target>
+          <target state="translated">El servicio de 'camera uploads' ha fallado. Puedes volver a activarlo en la pantalla de configuración.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
           <source>Auto Camera Upload failed</source>
-          <target state="translated">Error en el servicio de subidas de la cámara</target>
+          <target state="translated">Error en el servicio 'camera uploads'</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
@@ -1258,7 +1258,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
-          <target state="translated">Si aceptas, se cerrará la sesión actual y los datos en Offline serán borrados. ¿Quieres continuar?</target>
+          <target state="translated">Si aceptas, se cerrará la sesión actual y los datos en 'sin conexión' serán borrados. ¿Quieres continuar?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
@@ -1341,7 +1341,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
           <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="translated">El log ({0}) se eliminará de la sección Offline.</target>
+          <target state="translated">El log ({0}) se eliminará de la sección 'sin conexión'.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
@@ -1352,7 +1352,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
           <source>A log will be created in the Offline section ({0}).</source>
-          <target state="translated">Se creará un log en la sección Offline ({0}).</target>
+          <target state="translated">Se creará un log en la sección 'sin conexión' ({0}).</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
