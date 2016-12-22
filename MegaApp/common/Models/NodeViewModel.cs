@@ -265,6 +265,7 @@ namespace MegaApp.Models
             // Extra check to try avoid null values
             if (String.IsNullOrWhiteSpace(downloadPath))
             {
+                OnUiThread(() => ProgressService.SetProgressIndicator(false));
                 await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
                     AppMessages.SelectFolderFailedNoErrorCode, App.AppInformation, 
                     MessageDialogButtons.Ok).ShowDialogAsync();
@@ -274,13 +275,18 @@ namespace MegaApp.Models
             // Check for illegal characters in the download path
             if (FolderService.HasIllegalChars(downloadPath))
             {
+                OnUiThread(() => ProgressService.SetProgressIndicator(false));
                 await new CustomMessageDialog(AppMessages.SelectFolderFailed_Title,
                     String.Format(AppMessages.InvalidFolderNameOrPath, downloadPath),
-                    this.AppInformation).ShowDialogAsync();
+                    this.AppInformation).ShowDialogAsync();                
                 return;
             }
 
-            if (!await CheckDownloadPath(downloadPath)) return;
+            if (!await CheckDownloadPath(downloadPath))
+            {
+                OnUiThread(() => ProgressService.SetProgressIndicator(false));
+                return;
+            }
                         
             // If selected file is a folder then also select it childnodes to download
             bool result;
@@ -307,6 +313,15 @@ namespace MegaApp.Models
                 new CustomMessageDialog(AppMessages.AM_DowloadPathUnauthorizedAccess_Title,
                     AppMessages.AM_DowloadPathUnauthorizedAccess,
                     this.AppInformation).ShowDialog();
+                return false;
+            }
+            catch (Exception e)
+            {
+                String exceptionMessage = e.GetType().Name + " - " + e.Message;
+                new CustomMessageDialog(AppMessages.AM_DownloadFailed_Title,
+                    String.Format(AppMessages.AM_DownloadPathUnknownError, exceptionMessage),
+                    this.AppInformation).ShowDialog();
+                return false;
             }
 
             if (!pathExists) 
