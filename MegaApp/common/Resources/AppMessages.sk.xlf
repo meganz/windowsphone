@@ -1523,13 +1523,19 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="translated">Failed to retrieve node details. Please try again.</target>
+          <target state="translated">Zlyhalo získavanie detailov o uzle. Prosím skúste to znovu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
           <source>View details failed</source>
-          <target state="translated">View details failed</target>
+          <target state="translated">Zobrazenie detailov zlyhalo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" xml:space="preserve">
+          <source>Unknown error in the download path. Please try again and if continues failing contact support@mega.nz. [{0}]</source>
+          <target state="new">Unknown error in the download path. Please try again and if continues failing contact support@mega.nz. [{0}]</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
       </group>
     </body>

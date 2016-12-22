@@ -358,6 +358,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Unknown error in the download path. Please try again and if continues failing contact support@mega.nz. [{0}].
+        /// </summary>
+        public static string AM_DownloadPathUnknownError {
+            get {
+                return ResourceManager.GetString("AM_DownloadPathUnknownError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a This e-mail address has already registered an account with MEGA..
         /// </summary>
         public static string AM_EmailAlreadyRegistered {

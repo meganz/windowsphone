@@ -170,7 +170,7 @@
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
-    <value>Prerequisitos de las subidas de la cámara</value>
+    <value>Prerequisitos del 'camera uploads'</value>
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion_Title" xml:space="preserve">
@@ -182,7 +182,7 @@
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>Subidas automáticas de la cámara</value>
+    <value>Camera uploads automáticas</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
@@ -270,11 +270,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>El servicio de subidas de la cámara ha fallado. Puedes volver a activarlo en la pantalla de configuración.</value>
+    <value>El servicio de 'camera uploads' ha fallado. Puedes volver a activarlo en la pantalla de configuración.</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>Error en el servicio de subidas de la cámara</value>
+    <value>Error en el servicio 'camera uploads'</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
@@ -304,7 +304,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>Para que las subidas de la cámara funcionen correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</value>
+    <value>Para que 'camera uploads' funcione correctamente, es necesario habilitar la opción "Permanecer conectado". ¿Quieres activar esta opción?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="BackgroundAgentDisabled" xml:space="preserve">
@@ -1112,7 +1112,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
-    <value>Si aceptas, se cerrará la sesión actual y los datos en Offline serán borrados. ¿Quieres continuar?</value>
+    <value>Si aceptas, se cerrará la sesión actual y los datos en 'sin conexión' serán borrados. ¿Quieres continuar?</value>
     <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
@@ -1191,7 +1191,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DisableDebugMode_Message" xml:space="preserve">
-    <value>El log ({0}) se eliminará de la sección Offline.</value>
+    <value>El log ({0}) se eliminará de la sección 'sin conexión'.</value>
     <comment>Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
@@ -1200,7 +1200,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
   </data>
   <data name="AM_EnableDebugMode_Message" xml:space="preserve">
-    <value>Se creará un log en la sección Offline ({0}).</value>
+    <value>Se creará un log en la sección 'sin conexión' ({0}).</value>
     <comment>Alert message shown when the DEBUG mode is enabled.
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
@@ -1344,5 +1344,10 @@ Preserve the {0} code because is for include the exact time until the user has t
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
     <value>Falló el ver detalles</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>Error desconocido en la ruta de descarga. Por favor, vuelve a intentarlo y si continua fallando contacta con support@mega.nz. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
 </root>
