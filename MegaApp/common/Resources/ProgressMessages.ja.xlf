@@ -13,17 +13,17 @@
         </trans-unit>
         <trans-unit id="Resx/CancelTransfer" translate="yes" space="preserve">
           <source>Cancelling transfer...</source>
-          <target state="translated">Cancelling transfer...</target>
+          <target state="translated">転送キャンセル中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when canceling a transfer - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ChangePassword" translate="yes" space="preserve">
           <source>Changing password...</source>
-          <target state="translated">Changing password...</target>
+          <target state="translated">パスワードを変更中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when changing the MEGA account password - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBin" translate="yes" space="preserve">
           <source>Clearing the rubbish bin...</source>
-          <target state="translated">Clearing the rubbish bin...</target>
+          <target state="translated">ゴミ箱をクリア中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when emptying the rubbish bin - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CloseAllSessions" translate="yes" space="preserve">
@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/PM_CloseSession" translate="yes" space="preserve">
           <source>Closing session...</source>
-          <target state="translated">Closing session...</target>
+          <target state="translated">セッション閉鎖中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when clossing a session - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ConfirmAccount" translate="yes" space="preserve">
@@ -120,12 +120,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/InviteContactAdd" translate="yes" space="preserve">
           <source>Sending contact request...</source>
-          <target state="translated">Sending contact request...</target>
+          <target state="translated">知り合いリクエストを送信中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when sending a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactDelete" translate="yes" space="preserve">
           <source>Deleting contact request...</source>
-          <target state="translated">Deleting contact request...</target>
+          <target state="translated">知り合いリクエストを削除中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when deleting a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactRemind" translate="yes" space="preserve">
@@ -155,7 +155,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/NodeToTrash" translate="yes" space="preserve">
           <source>Moving to Rubbish bin...</source>
-          <target state="translated">Moving to Rubbish bin...</target>
+          <target state="translated">ゴミ箱に移動中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PauseTransfers" translate="yes" space="preserve">
@@ -175,7 +175,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/RemoveContact" translate="yes" space="preserve">
           <source>Removing contact...</source>
-          <target state="translated">Removing contact...</target>
+          <target state="translated">知り合いを削除中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a contact - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveFromOffline" translate="yes" space="preserve">
@@ -185,7 +185,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_RemoveLink" translate="yes" space="preserve">
           <source>Removing link...</source>
-          <target state="translated">Removing link...</target>
+          <target state="translated">リンク削除中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when removing a link to export a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNode" translate="yes" space="preserve">
@@ -205,12 +205,12 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestDeny" translate="yes" space="preserve">
           <source>Denying contact request...</source>
-          <target state="translated">Denying contact request...</target>
+          <target state="translated">知り合いリクエストを拒否中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when denying a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ReplyContactRequestIgnore" translate="yes" space="preserve">
           <source>Ignoring contact request...</source>
-          <target state="translated">Ignoring contact request...</target>
+          <target state="translated">知り合いリクエストを無視中...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when ignoring a contact request - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResumeTransfers" translate="yes" space="preserve">
@@ -240,22 +240,22 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
         </trans-unit>
         <trans-unit id="Resx/PM_OpenFolderLink" translate="yes" space="preserve">
           <source>Opening folder link...</source>
-          <target state="translated">Opening folder link...</target>
+          <target state="translated">フォルダリンクを開いています...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when opening a folder link to import/download - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_CopyNode" translate="yes" space="preserve">
           <source>Copying...</source>
-          <target state="translated">Copying...</target>
+          <target state="translated">コピー中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when copying a node to a different parent - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PM_ImportFolder" translate="yes" space="preserve">
           <source>Importing folder...</source>
-          <target state="translated">Importing folder...</target>
+          <target state="translated">フォルダインポート中</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when importing a folder - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PM_ValidatePurchase" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/PM_ValidatePurchase" translate="yes" space="preserve">
           <source>Validating...</source>
-          <target state="new">Validating...</target>
+          <target state="translated">確認しています</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Progress indicator message when validating purchase receipt - (String as short as possible).</note>
         </trans-unit>
       </group>

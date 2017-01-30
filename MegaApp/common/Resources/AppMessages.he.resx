@@ -268,7 +268,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</comment>
   </data>
   <data name="MoveEqualsParent" xml:space="preserve">
-    <value>תיקיית היעד ותיקיית המקור זהו. העברה בוטלה.</value>
+    <value>תיקיית היעד ותיקיית המקור זהו. ההעברה בוטלה.</value>
     <comment>Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</comment>
   </data>
   <data name="MoveEqualsParent_Title" xml:space="preserve">
@@ -1347,5 +1347,10 @@ Preserve the {0} code because is for include the exact time until the user has t
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
     <value>צפייה בפרטים נכשלה</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>אירעה שגיאה בנתיב ההורדה. אנא נסה שוב. אם ההורדה ממשיכה להיכשל, אנא צור קשר עם מרכז התמיכה שלנו support@mega.nz. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
 </root>

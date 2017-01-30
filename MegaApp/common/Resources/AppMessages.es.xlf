@@ -598,7 +598,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
-          <target state="translated">Operación no permitida, excederá el límite de almacenamiento de su cuenta. Desea mejorar su tipo de cuenta?</target>
+          <target state="translated">Operación no permitida, excederás el límite de almacenamiento de tu cuenta. ¿Deseas hacerte PRO?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
@@ -917,7 +917,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
           <source>Error upgrading account</source>
-          <target state="translated">Error mejorando la cuenta</target>
+          <target state="translated">Error al pasar la cuenta a PRO</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
@@ -927,7 +927,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" space="preserve">
           <source>Account upgraded</source>
-          <target state="translated">Cuenta mejorada</target>
+          <target state="translated">Cuenta PRO activada</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
@@ -1258,7 +1258,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
-          <target state="translated">Si aceptas, se cerrará la sesión actual y los datos en 'sin conexión' serán borrados. ¿Quieres continuar?</target>
+          <target state="translated">Si aceptas, se cerrará la sesión actual y los datos en la sección Sin conexión serán borrados. ¿Quieres continuar?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
@@ -1532,12 +1532,12 @@ Preserve the {0} code because is for include the exact time until the user has t
           <target state="translated">Falló el ver detalles</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" xml:space="preserve">
-          <source>Unknown error in the download path. Please try again and if continues failing contact support@mega.nz. [{0}]</source>
-          <target state="translated">Error desconocido en la ruta de descarga. Por favor, vuelve a intentarlo y si continua fallando contacta con support@mega.nz. [{0}]</target>
+        <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
+          <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
+          <target state="needs-review-translation">Hay un error desconocido en la ruta de descarga. Inténtalo de nuevo y, si sigue fallando, por favor contacta con support@mega.nz. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-          </trans-unit>
+        </trans-unit>
       </group>
     </body>
   </file>

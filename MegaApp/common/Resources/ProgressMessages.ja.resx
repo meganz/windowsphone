@@ -118,11 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>Cancelling transfer...</value>
+    <value>転送キャンセル中</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
-    <value>Clearing the rubbish bin...</value>
+    <value>ゴミ箱をクリア中...</value>
     <comment>Progress indicator message when emptying the rubbish bin - (String as short as possible).</comment>
   </data>
   <data name="CreditCardStore" xml:space="preserve">
@@ -176,11 +176,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when importing a file - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAdd" xml:space="preserve">
-    <value>Sending contact request...</value>
+    <value>知り合いリクエストを送信中...</value>
     <comment>Progress indicator message when sending a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactDelete" xml:space="preserve">
-    <value>Deleting contact request...</value>
+    <value>知り合いリクエストを削除中</value>
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
@@ -196,7 +196,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when moving a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="NodeToTrash" xml:space="preserve">
-    <value>Moving to Rubbish bin...</value>
+    <value>ゴミ箱に移動中...</value>
     <comment>Progress indicator message when moving a node to the rubbish bin (trash) - (String as short as possible).</comment>
   </data>
   <data name="PauseTransfers" xml:space="preserve">
@@ -212,7 +212,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when preparing uploads - (String as short as possible).</comment>
   </data>
   <data name="RemoveContact" xml:space="preserve">
-    <value>Removing contact...</value>
+    <value>知り合いを削除中</value>
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
@@ -232,11 +232,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denying contact request...</value>
+    <value>知り合いリクエストを拒否中...</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignoring contact request...</value>
+    <value>知り合いリクエストを無視中...</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
@@ -256,7 +256,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
-    <value>Changing password...</value>
+    <value>パスワードを変更中</value>
     <comment>Progress indicator message when changing the MEGA account password - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseAllSessions" xml:space="preserve">
@@ -264,7 +264,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when clossing all sessions - (String as short as possible).</comment>
   </data>
   <data name="PM_CloseSession" xml:space="preserve">
-    <value>Closing session...</value>
+    <value>セッション閉鎖中</value>
     <comment>Progress indicator message when clossing a session - (String as short as possible).</comment>
   </data>
   <data name="PM_ConfirmAccount" xml:space="preserve">
@@ -292,7 +292,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when logging out - (String as short as possible).</comment>
   </data>
   <data name="PM_RemoveLink" xml:space="preserve">
-    <value>Removing link...</value>
+    <value>リンク削除中</value>
     <comment>Progress indicator message when removing a link to export a node - (String as short as possible).</comment>
   </data>
   <data name="PM_UpgradeAccount" xml:space="preserve">
@@ -304,15 +304,19 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFolderLink" xml:space="preserve">
-    <value>Opening folder link...</value>
+    <value>フォルダリンクを開いています...</value>
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_CopyNode" xml:space="preserve">
-    <value>Copying...</value>
+    <value>コピー中</value>
     <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="PM_ImportFolder" xml:space="preserve">
-    <value>Importing folder...</value>
+    <value>フォルダインポート中</value>
     <comment>Progress indicator message when importing a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ValidatePurchase" xml:space="preserve">
+    <value>確認しています</value>
+    <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
 </root>
