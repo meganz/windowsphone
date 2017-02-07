@@ -695,7 +695,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Sort' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>空のゴミ箱</value>
+    <value>ゴミ箱を空にする</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -858,7 +858,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Annual' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="Awesome" xml:space="preserve">
-    <value>Awesome!</value>
+    <value>すごい！</value>
     <comment>Label for any 'Awesome' text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ChoosePaymentMethod" xml:space="preserve">
@@ -1034,7 +1034,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for "Developer" type of acknowledgement</comment>
   </data>
   <data name="ViewDetails" xml:space="preserve">
-    <value>View details</value>
+    <value>詳細を見る</value>
     <comment>Label for any 'View details' button, link, text, title, etc. (i.e. View contact details) - (String as short as possible).</comment>
   </data>
   <data name="PhotosOnly" xml:space="preserve">
@@ -1046,15 +1046,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
-    <value>Upload settings</value>
+    <value>アップロード設定</value>
     <comment>Label for the auto camera upload setting options</comment>
   </data>
   <data name="Incoming" xml:space="preserve">
-    <value>Incoming</value>
+    <value>受信</value>
     <comment>Label for any 'Incoming' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Outgoing" xml:space="preserve">
-    <value>Outgoing</value>
+    <value>送信</value>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
@@ -1066,7 +1066,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Your new password</value>
+    <value>新パスワード</value>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
@@ -1098,7 +1098,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
-    <value>No downloads</value>
+    <value>ダウンロードなし</value>
     <comment>Label for the background of an empty downloads page - (String as short as possible).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
@@ -1106,11 +1106,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
-    <value>No uploads</value>
+    <value>アップロードなし</value>
     <comment>Label for the background of an empty uploads page - (String as short as possible).</comment>
   </data>
   <data name="DefaultDownloadLocation" xml:space="preserve">
-    <value>Please select a default download folder.</value>
+    <value>デフォルトダウンロードフォルダを選択してください。</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
@@ -1122,7 +1122,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Create account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateFolder" xml:space="preserve">
-    <value>Folder name:</value>
+    <value>フォルダ名</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
@@ -1154,7 +1154,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close all sessions' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseSession" xml:space="preserve">
-    <value>Close session</value>
+    <value>セッションを閉じる</value>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
@@ -1162,15 +1162,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>your first name</value>
+    <value>名前</value>
     <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
   </data>
   <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>your last name</value>
+    <value>名字</value>
     <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
-    <value>Select all</value>
+    <value>すべて選択</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
@@ -1186,7 +1186,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
-    <value>Import to {0}</value>
+    <value>{0}にインポート</value>
     <comment>Label for the dialog shown when a user are trying to import a MEGA link - (String as short as possible).
 Preserve the {0} code because is for include the name of the destination folder in runtime.</comment>
   </data>
@@ -1195,15 +1195,15 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_DecryptionKey" xml:space="preserve">
-    <value>Decryption key</value>
+    <value>復号化鍵</value>
     <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FileLink" xml:space="preserve">
-    <value>File link</value>
+    <value>ファイルリンク</value>
     <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FolderLink" xml:space="preserve">
-    <value>Folder link</value>
+    <value>フォルダリンク</value>
     <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenLink" xml:space="preserve">
@@ -1211,15 +1211,15 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Export Recovery Key</value>
+    <value>リカバリーキーをエクスポート</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
-    <value>Recovery Key</value>
+    <value>リカバリーキー</value>
     <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_DebugMode" xml:space="preserve">
-    <value>Debug mode</value>
+    <value>デバッグモード</value>
     <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_MemoryStatistics" xml:space="preserve">
@@ -1227,7 +1227,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Added" xml:space="preserve">
-    <value>Added</value>
+    <value>追加時刻</value>
     <comment>Label for any 'Added' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1242,7 +1242,7 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_Modified" xml:space="preserve">
-    <value>Modified</value>
+    <value>編集時刻</value>
     <comment>Label for any 'Modified' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1250,5 +1250,19 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>サイズ</value>
     <comment>Label for any 'Size' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
+  </data>
+  <data name="UI_FromBasePrice" xml:space="preserve">
+    <value>From {0:N} {1}/month</value>
+    <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
+Keep the code {0:N} because is for include price of the product in runtime.
+Keep the code {1} because is for include currency in runtime.</comment>
+  </data>
+  <data name="UI_InAppPurchase" xml:space="preserve">
+    <value>In app purchase</value>
+    <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Free" xml:space="preserve">
+    <value>無料</value>
+    <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
 </root>

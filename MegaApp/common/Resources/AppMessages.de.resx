@@ -591,9 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.
+    <value>Sie haben kein Standardziel für Ihre Downloads festgelegt.
 
-To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
+Bitte wählen Sie einen Zielordner oder konfigurieren Sie ein Standardziel in den Einstellungen.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1333,15 +1333,20 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
-    <value>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</value>
+    <value>Die MEGA-Objekte konnten nicht geteilt werden. Die Zielapplikation scheint beschäftigt zu sein. Bitte versuchen Sie es später wieder.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
-    <value>Failed to retrieve node details. Please try again.</value>
+    <value>Fehler bei der Anforderung der Details. Bitte versuchen Sie es erneut.</value>
     <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
-    <value>View details failed</value>
+    <value>Detailansicht nicht verfügbar</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>Ihr Downloadpfad ist fehlerhaft. Versuchen Sie es bitte noch einmal, oder kontaktieren Sie uns unter support@mega.nz. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
 </root>

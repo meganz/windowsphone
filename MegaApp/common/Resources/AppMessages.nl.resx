@@ -1346,4 +1346,9 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>Weergeven details mislukt</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>Er is een onbekende fout opgetreden in het download pad. Probeer aub opnieuw en als het opnieuw fout gaat neem aub contact op met support@mega.nz. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
 </root>

@@ -1344,4 +1344,9 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>자세한 내용 보기 실패</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>다운로드 경로에 알 수 없는 오류가 발생했습니다. 다시 시도하시고 계속 실패할 경우, support@mega.nz로 연락주세요. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
 </root>
