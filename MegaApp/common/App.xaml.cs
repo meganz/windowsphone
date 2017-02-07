@@ -331,8 +331,6 @@ namespace MegaApp
             AppService.InitializeAppFolders();
             // Set the current resolution that we use later on for our image selection
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
-            // Initialize Debug Settings
-            DebugService.DebugSettings = new DebugSettingsViewModel();
             // Clear settings values we do no longer use
             AppService.ClearObsoleteSettings();
             // Save the app version information for future use (like deleting settings)
