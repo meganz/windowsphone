@@ -1345,4 +1345,9 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>Не удалось</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_DownloadPathUnknownError" xml:space="preserve">
+    <value>Неизвестная ошибка в пути загрузки. Пожалуйста, попробуйте еще раз, и, если она появится снова, пожалуйста свяжитесь с нами: support@mega.nz. [{0}]</value>
+    <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
+Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
 </root>

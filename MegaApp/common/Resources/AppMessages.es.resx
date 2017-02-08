@@ -154,7 +154,7 @@
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountSuccessfully_Title" xml:space="preserve">
-    <value>Cuenta mejorada</value>
+    <value>Cuenta PRO activada</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</comment>
   </data>
   <data name="GetPaymentMethodsFailed_Title" xml:space="preserve">
@@ -326,7 +326,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</comment>
   </data>
   <data name="UpgradeAccountFailed_Title" xml:space="preserve">
-    <value>Error mejorando la cuenta</value>
+    <value>Error al pasar la cuenta a PRO</value>
     <comment>Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</comment>
   </data>
   <data name="UpgradeAccountFailed" xml:space="preserve">
@@ -528,7 +528,7 @@ Para continuar con la descarga, por favor selecciona una carpeta de destino o ve
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="OverquotaAlert" xml:space="preserve">
-    <value>Operación no permitida, excederá el límite de almacenamiento de su cuenta. Desea mejorar su tipo de cuenta?</value>
+    <value>Operación no permitida, excederás el límite de almacenamiento de tu cuenta. ¿Deseas hacerte PRO?</value>
     <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
   </data>
   <data name="SessionIDError" xml:space="preserve">
@@ -1112,7 +1112,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
-    <value>Si aceptas, se cerrará la sesión actual y los datos en 'sin conexión' serán borrados. ¿Quieres continuar?</value>
+    <value>Si aceptas, se cerrará la sesión actual y los datos en la sección Sin conexión serán borrados. ¿Quieres continuar?</value>
     <comment>Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert_Title" xml:space="preserve">
@@ -1346,7 +1346,7 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadPathUnknownError" xml:space="preserve">
-    <value>Error desconocido en la ruta de descarga. Por favor, vuelve a intentarlo y si continua fallando contacta con support@mega.nz. [{0}]</value>
+    <value>Hay un error desconocido en la ruta de descarga. Inténtalo de nuevo y, si sigue fallando, por favor contacta con support@mega.nz. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
