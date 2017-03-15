@@ -346,15 +346,18 @@ namespace MegaApp.Models
                 {
                     if (node.IsFolder)
                     {
-                        folderNodesToImport.Add(node.OriginalMNode);
-
                         // Need to fix the path in case of import an entire folder link.
                         var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
-                        if (nodePath.CompareTo("/") == 0)
-                            nodePath = String.Concat(nodePath, node.Name);
+                        if(!string.IsNullOrWhiteSpace(nodePath))
+                        {
+                            if (nodePath.CompareTo("/") == 0)
+                                nodePath = String.Concat(nodePath, node.Name);
 
-                        if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
-                            App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
+                            folderNodesToImport.Add(node.OriginalMNode);
+
+                            if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
+                                App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
+                        }
                     }
                     else
                     {
