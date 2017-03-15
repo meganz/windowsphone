@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">Anda memiliki {0] pending transfers. Pending transfers akan dibatalkan. Anda yakin ingin logout?</target>
+          <target state="translated">Anda memiliki {0} pending transfers. Pending transfers akan dibatalkan. Anda yakin ingin logout?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
