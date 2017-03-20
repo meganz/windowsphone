@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.IO.IsolatedStorage;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
@@ -30,7 +31,8 @@ namespace MegaApp.UserControls
                 ShakeGesturesHelper.Instance.ShakeGesture -= InstanceOnShakeGesture;
                 ShakeGesturesHelper.Instance.Active = false;
             }
-            catch (IsolatedStorageException) { /* Possible bug #4760 */ }            
+            catch (IsolatedStorageException)    { /* Possible bug #4760 */ }
+            catch (BadImageFormatException)     { /* Possible bug #6401 */ }
                         
             base.OnNavigatedFrom(e);
         }
@@ -46,7 +48,8 @@ namespace MegaApp.UserControls
                 ShakeGesturesHelper.Instance.MinimumRequiredMovesForShake = 12;
                 ShakeGesturesHelper.Instance.Active = true;
             }
-            catch (IsolatedStorageException) { /* Possible bug #4760 */ }            
+            catch (IsolatedStorageException)    { /* Possible bug #4760 */ }
+            catch (BadImageFormatException)     { /* Possible bug #6401 */ }
 
             if (DebugService.DebugSettings.IsDebugMode && DebugService.DebugSettings.ShowDebugAlert)
                 DialogService.ShowDebugModeAlert();

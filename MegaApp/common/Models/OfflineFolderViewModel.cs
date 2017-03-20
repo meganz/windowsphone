@@ -426,14 +426,28 @@ namespace MegaApp.Models
         /// <param name="obj">Object that triggers the action.</param>
         private async void Share(object obj)
         {
-            List<StorageFile> storageItems = new List<StorageFile>();
-
-            if (FocusedNode != null)
+            try
             {
-                StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(FocusedNode.NodePath);
-                storageItems.Add(selectedNode);
-                
-                DialogService.ShowShareMediaTask(storageItems);
+                List<StorageFile> storageItems = new List<StorageFile>();
+
+                if (storageItems != null && FocusedNode != null)
+                {
+                    StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(FocusedNode.NodePath);
+                    storageItems.Add(selectedNode);
+
+                    DialogService.ShowShareMediaTask(storageItems);
+                }
+            }
+            catch(Exception)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
+                        AppMessages.AM_ShareFromMegaFailed_Message,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
             }
         }
 

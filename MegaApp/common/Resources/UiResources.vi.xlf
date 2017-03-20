@@ -308,7 +308,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_Logout" translate="yes" space="preserve">
           <source>Logout</source>
-          <target state="translated">Đăng xuất</target>
+          <target state="translated">Đăng Xuất</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Logout' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/HomeRoot" translate="yes" space="preserve">
@@ -425,8 +425,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
-          <source>Bandwidth</source>
-          <target state="translated">Băng thông</target>
+          <source>Transfer quota</source>
+          <target state="needs-review-translation">Băng thông</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -872,7 +872,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardNumber" translate="yes" space="preserve">
           <source>Credit Card Number</source>
-          <target state="translated">Số trên Thẻ Tín Dụng</target>
+          <target state="translated">Số Thẻ Tín Dụng</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Credit Card Number' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardRecurringPayments" translate="yes" space="preserve">
@@ -985,7 +985,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
           <source>Renews on</source>
-          <target state="translated">Đầu chu kỳ</target>
+          <target state="translated">Ngày đầu chu kỳ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Renews on' text into the my account page, indicating the renewal date of a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountPurchased" translate="yes" space="preserve">
@@ -1227,7 +1227,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/Developer" translate="yes" space="preserve">
           <source>Developer</source>
-          <target state="translated">Nhà phát triển</target>
+          <target state="translated">Nhà Phát Triển</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for "Developer" type of acknowledgement</note>
         </trans-unit>
         <trans-unit id="Resx/ViewDetails" translate="yes" space="preserve">

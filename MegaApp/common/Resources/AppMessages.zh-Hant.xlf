@@ -1219,12 +1219,12 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">無法載入MEGA的傳入共享項目。請重試，或點擊重新整理。</target>
+          <target state="translated">無法載入MEGA的傳入共享檔案。請重試，或點擊重新整理。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">無法載入MEGA的傳出共享項目。請重試，或點擊重新整理。</target>
+          <target state="translated">無法載入MEGA的傳出共享檔案。請重試，或點擊重新整理。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
@@ -1460,8 +1460,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
-          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">該用戶帳號已因屢次違反我們的服務條款而被停權。</target>
+          <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
+          <target state="needs-review-translation">由於多次違反我們的服務條款，因此創建此連結的帳戶已被停權。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1537,7 +1537,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="needs-review-translation">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
+          <target state="needs-review-translation">下載路徑中出現未知的錯誤。請重試，如果仍失敗，請聯繫support@mega.nz。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>

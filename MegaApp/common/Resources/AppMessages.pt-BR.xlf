@@ -1458,8 +1458,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
-          <source>The associated user account has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">A conta de usuário associada foi encerrada devido a várias violações de nossos Termos de Serviço.</target>
+          <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
+          <target state="needs-review-translation">A conta que criou este link foi encerrada devido a várias violações dos nossos Termos de Serviço.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">

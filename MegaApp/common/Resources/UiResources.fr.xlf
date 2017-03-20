@@ -391,7 +391,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Storage" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">Stockage</target>
+          <target state="translated">Espace de stockage</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Accept" translate="yes" space="preserve">
@@ -425,8 +425,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
-          <source>Bandwidth</source>
-          <target state="translated">de bande passante</target>
+          <source>Transfer quota</source>
+          <target state="needs-review-translation">de bande passante</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -727,7 +727,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace2" translate="yes" space="preserve">
           <source>50 GB of free space.</source>
-          <target state="translated">50 Go de stockage gratuit</target>
+          <target state="translated">50 Go d'espace de stockage gratuits</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourSpace_Title" translate="yes" space="preserve">
@@ -970,7 +970,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/StorageShort" translate="yes" space="preserve">
           <source>Storage</source>
-          <target state="translated">Stockage</target>
+          <target state="translated">Espace de stockage</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/Year" translate="yes" space="preserve">
@@ -1057,12 +1057,12 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
         </trans-unit>
         <trans-unit id="Resx/UpgradeNow" translate="yes" space="preserve">
           <source>Upgrade now!</source>
-          <target state="translated">Passez Pro maintenant !</target>
+          <target state="translated">Surclasser le compte maintenant !</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WarningOutOfSpace" translate="yes" space="preserve">
           <source>You're running out of space!</source>
-          <target state="translated">Vous êtes à court d'espace</target>
+          <target state="translated">Vous êtes à court d'espace !</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Warning message in Cloud Drive when the user is running out of space</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ImportLinkBorderText" translate="yes" space="preserve">

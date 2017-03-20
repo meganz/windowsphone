@@ -1081,11 +1081,11 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
     <comment>Title of the dialog displayed when fails the process/request to load something (nodes, out shares, in shares, etc.) - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadInSharesFailed" xml:space="preserve">
-    <value>無法載入MEGA的傳入共享項目。請重試，或點擊重新整理。</value>
+    <value>無法載入MEGA的傳入共享檔案。請重試，或點擊重新整理。</value>
     <comment>Message of the dialog displayed when fails the process/request to load the incoming shared items.</comment>
   </data>
   <data name="AM_LoadOutSharesFailed" xml:space="preserve">
-    <value>無法載入MEGA的傳出共享項目。請重試，或點擊重新整理。</value>
+    <value>無法載入MEGA的傳出共享檔案。請重試，或點擊重新整理。</value>
     <comment>Message of the dialog displayed when fails the process/request to load the outgoing shared items.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed" xml:space="preserve">
@@ -1288,7 +1288,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>該用戶帳號已因屢次違反我們的服務條款而被停權。</value>
+    <value>由於多次違反我們的服務條款，因此創建此連結的帳戶已被停權。</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1349,7 +1349,7 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadPathUnknownError" xml:space="preserve">
-    <value>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</value>
+    <value>下載路徑中出現未知的錯誤。請重試，如果仍失敗，請聯繫support@mega.nz。 [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>

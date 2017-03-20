@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CancelTransfer" xml:space="preserve">
-    <value>Cancelling transfer...</value>
+    <value>正在取消传输</value>
     <comment>Progress indicator message when canceling a transfer - (String as short as possible).</comment>
   </data>
   <data name="CleanRubbishBin" xml:space="preserve">
@@ -184,7 +184,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when deleting a contact request - (String as short as possible).</comment>
   </data>
   <data name="InviteContactRemind" xml:space="preserve">
-    <value>Reminding contact about the request...</value>
+    <value>提醒联系人联系请求</value>
     <comment>Progress indicator message when reminding a contact request - (String as short as possible).</comment>
   </data>
   <data name="LoadNodes" xml:space="preserve">
@@ -216,7 +216,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Removing from offline...</value>
+    <value>从脱机中删除</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
@@ -232,11 +232,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
-    <value>Denying contact request...</value>
+    <value>正在拒绝联系请求</value>
     <comment>Progress indicator message when denying a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestIgnore" xml:space="preserve">
-    <value>Ignoring contact request...</value>
+    <value>正在忽略连接请求</value>
     <comment>Progress indicator message when ignoring a contact request - (String as short as possible).</comment>
   </data>
   <data name="ResumeTransfers" xml:space="preserve">
@@ -244,15 +244,15 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when resuming transfers - (String as short as possible).</comment>
   </data>
   <data name="SaveForOffline" xml:space="preserve">
-    <value>Saving for offline...</value>
+    <value>正在保存脱机内容</value>
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servers too busy. Please wait…</value>
+    <value>服务器忙，请等待</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
-    <value>Canceling subscription...</value>
+    <value>取消订阅</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
@@ -300,19 +300,23 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFileLink" xml:space="preserve">
-    <value>Opening file link...</value>
+    <value>打开文件链接</value>
     <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFolderLink" xml:space="preserve">
-    <value>Opening folder link...</value>
+    <value>正在打开文件夹链接</value>
     <comment>Progress indicator message when opening a folder link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_CopyNode" xml:space="preserve">
-    <value>Copying...</value>
+    <value>复制中</value>
     <comment>Progress indicator message when copying a node to a different parent - (String as short as possible).</comment>
   </data>
   <data name="PM_ImportFolder" xml:space="preserve">
-    <value>Importing folder...</value>
+    <value>正在导入文件夹</value>
     <comment>Progress indicator message when importing a folder - (String as short as possible).</comment>
+  </data>
+  <data name="PM_ValidatePurchase" xml:space="preserve">
+    <value>激活中</value>
+    <comment>Progress indicator message when validating purchase receipt - (String as short as possible).</comment>
   </data>
 </root>

@@ -393,7 +393,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for 'Image upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Storage" xml:space="preserve">
-    <value>Stockage</value>
+    <value>Espace de stockage</value>
     <comment>Label for any 'Storage' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Accept" xml:space="preserve">
@@ -650,7 +650,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'register now and get' for the first part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourSpace2" xml:space="preserve">
-    <value>50 Go de stockage gratuit</value>
+    <value>50 Go d'espace de stockage gratuits</value>
     <comment>Label '50 GB of free space.' for the second part of the sentence 'register now and get 50 GB of free space.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string.</comment>
   </data>
   <data name="InitTourSpace_Title" xml:space="preserve">
@@ -831,7 +831,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'State' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="StorageShort" xml:space="preserve">
-    <value>Stockage</value>
+    <value>Espace de stockage</value>
     <comment>Label abreviated for any 'Storage' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="Year" xml:space="preserve">
@@ -897,11 +897,11 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for the dialog shown randomly when a user logs into a free account, asking if the user wants to upgrade the account - (String as short as possible).</comment>
   </data>
   <data name="UpgradeNow" xml:space="preserve">
-    <value>Passez Pro maintenant !</value>
+    <value>Surclasser le compte maintenant !</value>
     <comment>Label for the 'Upgrade now!' button of the dialog shown randomly when a user logs into a free account - (String as short as possible).</comment>
   </data>
   <data name="WarningOutOfSpace" xml:space="preserve">
-    <value>Vous êtes à court d'espace</value>
+    <value>Vous êtes à court d'espace !</value>
     <comment>Warning message in Cloud Drive when the user is running out of space</comment>
   </data>
   <data name="AddContact" xml:space="preserve">
