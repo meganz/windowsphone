@@ -190,7 +190,7 @@
     <comment>Label for any 'Folders' (multiple folders) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="MyAccount" xml:space="preserve">
-    <value>私のアカウント</value>
+    <value>アカウント設定</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
@@ -422,7 +422,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>データ帯域</value>
+    <value>転送容量制限</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -930,7 +930,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Send file' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ShareFolders" xml:space="preserve">
-    <value>フォルダ共有</value>
+    <value>フォルダを共有する</value>
     <comment>Label for any 'Share folders' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Profile" xml:space="preserve">
@@ -1042,7 +1042,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
-    <value>External power source connected</value>
+    <value>外部電源が接続されました。</value>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
@@ -1062,7 +1062,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
-    <value>フォルダ共有</value>
+    <value>フォルダを共有する</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewPasswordWatermark" xml:space="preserve">
@@ -1082,7 +1082,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
-    <value>No files in your cloud drive</value>
+    <value>クラウドドライブにあるファイルなし</value>
     <comment>Label for the background of an empty cloud drive page - (String as short as possible).</comment>
   </data>
   <data name="EmptyOffline" xml:space="preserve">
@@ -1094,7 +1094,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
-    <value>No shared folders</value>
+    <value>共有フォルダなし</value>
     <comment>Label for the background of an empty shared folders page - (String as short as possible).</comment>
   </data>
   <data name="NoDownloads" xml:space="preserve">
@@ -1114,7 +1114,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
   <data name="UI_ConfirmAccount" xml:space="preserve">
-    <value>Confirm account</value>
+    <value>アカウントを確認</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CreateAccount" xml:space="preserve">
@@ -1174,15 +1174,15 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="DeselectAll" xml:space="preserve">
-    <value>Deselect all</value>
+    <value>すべて選択解除</value>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenMegaLink" xml:space="preserve">
-    <value>Open MEGA link</value>
+    <value>MEGAリンクを開く</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
   <data name="UI_PasteMegaLink" xml:space="preserve">
-    <value>Paste MEGA link:</value>
+    <value>MEGAリンクを貼り付け:</value>
     <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
@@ -1223,7 +1223,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Debug mode' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_MemoryStatistics" xml:space="preserve">
-    <value>Memory statistics</value>
+    <value>記憶統計</value>
     <comment>Label for any 'Memory statistics' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Added" xml:space="preserve">
@@ -1232,7 +1232,7 @@ Preserve the {0} code because is for include the name of the destination folder 
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_AvailableOffline" xml:space="preserve">
-    <value>Available Offline</value>
+    <value>オフラインでも入手可能</value>
     <comment>Label for any 'Available Offline' button, link, text, title, etc. - (String as short as possible).
 NOTE: Keep the capital letter if possible.</comment>
   </data>
@@ -1258,7 +1258,7 @@ Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</comment>
   </data>
   <data name="UI_InAppPurchase" xml:space="preserve">
-    <value>In app purchase</value>
+    <value>アプリ内購入</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Free" xml:space="preserve">

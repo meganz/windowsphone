@@ -871,11 +871,11 @@ Preserve the {0} code because is for include email of the contact to be removed 
     <comment>Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddFailed" xml:space="preserve">
-    <value>The contact invitation could not be sent. Please try again.</value>
+    <value>知り合いの招待が送信できませんでした。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed.</comment>
   </data>
   <data name="InviteContactAddFailed_Title" xml:space="preserve">
-    <value>Failed to invite the contact</value>
+    <value>知り合いを招待エラー</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</comment>
   </data>
   <data name="InviteContactAddSuccessfully" xml:space="preserve">
@@ -896,7 +896,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Message of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="AccountUpdated_Title" xml:space="preserve">
-    <value>Updated account</value>
+    <value>アカウント・アップデート済み</value>
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
@@ -916,16 +916,16 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
-    <value>Failed to remove the contact {0}. Please try again. [{0}]</value>
+    <value>知り合いの{0}を削除に失敗でした。もう一度やり直してください。[{0}]</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="DeleteContactFailed_Title" xml:space="preserve">
-    <value>Failed to remove the contact</value>
+    <value>知り合いを削除失敗でした。</value>
     <comment>Message of the dialog displayed when the process/request to remove a contact failed - (String as short as possible).</comment>
   </data>
   <data name="DeleteMultipleContactsQuestion" xml:space="preserve">
-    <value>Do you want to remove {0} contacts?</value>
+    <value>{0}人の知り合いを削除しますか</value>
     <comment>Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</comment>
   </data>
@@ -946,7 +946,7 @@ Preserve the {0} code because is for include the number of contacts to be remove
     <comment>Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</comment>
   </data>
   <data name="RequiredFieldsChangePassword" xml:space="preserve">
-    <value>Please fill in your old MEGA password and your new MEGA password.</value>
+    <value>過去のMEGAパスワードと新しいMEGAパスワードを入力してください。</value>
     <comment>Message of the dialog displayed when required fields for change password are not filled in.</comment>
   </data>
   <data name="CloseAllSessionsFailed" xml:space="preserve">
@@ -976,15 +976,15 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</comment>
   </data>
   <data name="CleanRubbishBinSuccess" xml:space="preserve">
-    <value>The rubbish bin has been cleared successfully.</value>
+    <value>ゴミ箱がクリア成功です。</value>
     <comment>Message of the dialog displayed when empty the rubbish bin succesfully.</comment>
   </data>
   <data name="InviteContactAddFailedOwnEmail" xml:space="preserve">
-    <value>You are trying to add your own email as a contact.</value>
+    <value>ご自分のメールアドレスを知り合いとして追加しようとしています。</value>
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>Failed to remove link. Please try again.</value>
+    <value>リンクを削除にエラーがおこりました。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
@@ -1010,7 +1010,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
   <data name="InvalidFileName_Title" xml:space="preserve">
-    <value>Invalid file name</value>
+    <value>ファイル名前無効</value>
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
@@ -1019,7 +1019,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
   <data name="PathTooLong_Title" xml:space="preserve">
-    <value>Path too long</value>
+    <value>無効なパス</value>
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
@@ -1036,11 +1036,11 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to select the folder. Please try again or select another folder.</value>
+    <value>フォルダを選択失敗。もう一度やり直すか他のフォルダを選択してください。</value>
     <comment>Message of the dialog displayed when the process to select a folder failed.</comment>
   </data>
   <data name="AM_ImportFileFailed" xml:space="preserve">
-    <value>File import failed [{0}]</value>
+    <value>ファイルインポートに失敗しました[{0}]</value>
     <comment>Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
@@ -1061,15 +1061,15 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
 </comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed" xml:space="preserve">
-    <value>Failed to prepare file(s) for upload. Please try again.</value>
+    <value>ファイルはアップロード準備に失敗しました。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process to prepare a file(s) for upload failed.</comment>
   </data>
   <data name="AM_PrepareFilesForUploadFailed_Title" xml:space="preserve">
-    <value>Error preparing file(s)</value>
+    <value>ファイルの準備にエラー</value>
     <comment>Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadNodeFailedNoErrorCode" xml:space="preserve">
-    <value>Failed to download the file. Please try again.</value>
+    <value>ダウンロードエラー。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process/request to download a node failed.</comment>
   </data>
   <data name="AM_LoadFailed_Title" xml:space="preserve">
@@ -1090,24 +1090,24 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_DeleteSettingsFailed_Title" xml:space="preserve">
-    <value>Error deleting settings</value>
+    <value>設定を削除エラー</value>
     <comment>Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_LoadSettingsFailed" xml:space="preserve">
-    <value>Failed to load settings. Please try again. [{0}]</value>
+    <value>設定をロードエラー。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_LoadSettingsFailed_Title" xml:space="preserve">
-    <value>Error loading settings</value>
+    <value>設定ロードエラー</value>
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Failed to copy the MEGA link to your clipboard.</value>
+    <value>クリップボードにMEGAリンクをコピーエラー。</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
-    <value>Error copying link</value>
+    <value>リンクをコピーエラー</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
@@ -1145,7 +1145,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
-    <value>Unavailable link</value>
+    <value>利用できないリンク</value>
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
@@ -1154,7 +1154,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>Open link failed</value>
+    <value>リンクを開いて失敗でした</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
@@ -1166,7 +1166,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Failed to copy the Recovery Key to your clipboard. Please try again.</value>
+    <value>クリップボードにリカバリーキーをコピーして失敗でした。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1182,7 +1182,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
-    <value>Failed to copy item. Please try again.</value>
+    <value>アイテムをコピーエラー。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when the process/request to copy a node failed.</comment>
   </data>
   <data name="AM_CopyFailed_Title" xml:space="preserve">
@@ -1195,7 +1195,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_DisableDebugMode_Title" xml:space="preserve">
-    <value>Disable DEBUG mode</value>
+    <value>デバッグモードを無効にする</value>
     <comment>Alert title shown when the DEBUG mode is disabled - (String as short as possible).</comment>
   </data>
   <data name="AM_EnableDebugMode_Message" xml:space="preserve">
@@ -1204,7 +1204,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
 Preserve the ({0}) code because is for include the file name in runtime.</comment>
   </data>
   <data name="AM_EnableDebugMode_Title" xml:space="preserve">
-    <value>Enable DEBUG mode</value>
+    <value>デバッグモードを有効にする</value>
     <comment>Alert title shown when the DEBUG mode is enabled - (String as short as possible).</comment>
   </data>
   <data name="AM_DebugModeEnabled_Message" xml:space="preserve">
@@ -1220,7 +1220,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareItemFromMega_Title" xml:space="preserve">
-    <value>Item shared from MEGA</value>
+    <value>MEGAから共有されたアイテム</value>
     <comment>Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareMultipleItemsFromMega_Message" xml:space="preserve">
@@ -1236,11 +1236,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
-    <value>Folder import failed</value>
+    <value>フォルダインポート失敗</value>
     <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
-    <value>Link import failed</value>
+    <value>リンクインポート失敗</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
@@ -1256,7 +1256,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
-    <value>Already purchased</value>
+    <value>もう購入されました</value>
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
@@ -1264,7 +1264,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
-    <value>Purchase failed or cancelled</value>
+    <value>購入は失敗するかキャンセルされました。</value>
     <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseSucceeded" xml:space="preserve">
@@ -1272,7 +1272,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
-    <value>Purchase succeeded</value>
+    <value>購入成功です</value>
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
@@ -1284,7 +1284,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>The associated user account has been terminated due to multiple violations of our Terms of Service.</value>
+    <value>The account that created this link has been terminated due to multiple violations of our Terms of Service.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1300,7 +1300,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
-    <value>Could not import the folder link. Please try again.</value>
+    <value>フォルダリンクがインポートできませんでした。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
@@ -1316,7 +1316,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
-    <value>Your account has been blocked. Please contact support@mega.co.nz</value>
+    <value>あなたのアカウントはブロックされています。support@mega.nzへ連絡して下さい。</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
@@ -1341,7 +1341,7 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
-    <value>View details failed</value>
+    <value>詳細をみる失敗</value>
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadPathUnknownError" xml:space="preserve">
