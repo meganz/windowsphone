@@ -216,7 +216,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when removing a contact - (String as short as possible).</comment>
   </data>
   <data name="RemoveFromOffline" xml:space="preserve">
-    <value>Removing from offline...</value>
+    <value>オフラインから削除中...</value>
     <comment>Progress indicator message when removing folders/files from offline - (String as short as possible).</comment>
   </data>
   <data name="RemoveNode" xml:space="preserve">
@@ -228,7 +228,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when renaming a node - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestAccept" xml:space="preserve">
-    <value>Accepting contact request...</value>
+    <value>知り合いリクエストを受け入れています...</value>
     <comment>Progress indicator message when accepting a contact request - (String as short as possible).</comment>
   </data>
   <data name="ReplyContactRequestDeny" xml:space="preserve">
@@ -248,11 +248,11 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when saving folders/files for offline - (String as short as possible).</comment>
   </data>
   <data name="ServersTooBusy" xml:space="preserve">
-    <value>Servers too busy. Please wait…</value>
+    <value>サーバーがビジーです。少々お待ちください。</value>
     <comment>Progress indicator message when servers are too busy - (String as short as possible).</comment>
   </data>
   <data name="PM_CancelSubscription" xml:space="preserve">
-    <value>Canceling subscription...</value>
+    <value>契約をキャンセル中</value>
     <comment>Progress indicator message when canceling a subscription - (String as short as possible).</comment>
   </data>
   <data name="PM_ChangePassword" xml:space="preserve">
@@ -300,7 +300,7 @@ Preserve the [{0}] code because is for include current number of fetched nodes.<
     <comment>Progress indicator message when upgrading an account - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFileLink" xml:space="preserve">
-    <value>Opening file link...</value>
+    <value>ファイルリンクを開いています...</value>
     <comment>Progress indicator message when opening a file link to import/download - (String as short as possible).</comment>
   </data>
   <data name="PM_OpenFolderLink" xml:space="preserve">
