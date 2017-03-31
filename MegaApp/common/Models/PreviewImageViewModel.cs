@@ -54,7 +54,9 @@ namespace MegaApp.Models
 
         public void ChangeMenu(IList iconButtons, IList menuItems)
         {
-            if (_foderViewModel.Type == ContainerType.FolderLink)
+            if (iconButtons == null || menuItems == null) return;
+
+            if (_foderViewModel != null && _foderViewModel.Type == ContainerType.FolderLink)
             {
                 this.TranslateAppBarItems(
                     iconButtons.Cast<ApplicationBarIconButton>().ToList(),

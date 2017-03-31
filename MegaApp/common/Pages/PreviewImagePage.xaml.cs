@@ -33,7 +33,7 @@ namespace MegaApp.Pages
             this.DataContext = _previewImageViewModel;
 
             InitializeComponent();
-            SetApplicationBar();
+            SetApplicationBar((_folderViewModel == null) ? false : true);
 
             if(AppService.IsLowMemoryDevice())
                 SlideViewAndFilmStrip.ItemRealizationMode = SlideViewItemRealizationMode.ViewportItem;
