@@ -198,6 +198,17 @@ namespace MegaApp.MegaApi
                     });
                 }
             }
+            // If the user is trying to open a MEGA link
+            else if (App.LinkInformation.ActiveLink != null)
+            {
+                //Only need to check if is a file link.
+                //The folder links are checked in the "SpecialNavigation" method
+                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                {
+                    App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
+                        new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
+                }
+            }
             else
             {
                 var cloudDriveRootNode = _mainPageViewModel.CloudDrive.FolderRootNode ??
