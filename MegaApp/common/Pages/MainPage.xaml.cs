@@ -429,10 +429,11 @@ namespace MegaApp.Pages
                     }
             }
 
-            if(checkSpecialNavigation)            
+            if(checkSpecialNavigation)
+            {
                 if (this.SpecialNavigation()) return;
-
-            CheckNavigationParameters();
+                CheckNavigationParameters();
+            }
         }
 
         private bool Load()
