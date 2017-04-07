@@ -1435,6 +1435,16 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Free</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" xml:space="preserve">
+          <source>Link without key</source>
+          <target state="new">Link without key</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" xml:space="preserve">
+          <source>Link with key</source>
+          <target state="new">Link with key</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
       </group>
     </body>
   </file>

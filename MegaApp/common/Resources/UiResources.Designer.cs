@@ -250,7 +250,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Bandwidth.
+        ///   Busca una cadena traducida similar a Transfer quota.
         /// </summary>
         public static string Bandwidth {
             get {
@@ -2343,6 +2343,24 @@ namespace MegaApp.Resources {
         public static string UI_LastNameWatermark {
             get {
                 return ResourceManager.GetString("UI_LastNameWatermark", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Link with key.
+        /// </summary>
+        public static string UI_LinkWithKey {
+            get {
+                return ResourceManager.GetString("UI_LinkWithKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Link without key.
+        /// </summary>
+        public static string UI_LinkWithoutKey {
+            get {
+                return ResourceManager.GetString("UI_LinkWithoutKey", resourceCulture);
             }
         }
         
