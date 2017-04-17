@@ -117,6 +117,25 @@ namespace MegaApp.Classes
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string>(1) { { "fm/ipc", String.Empty } });
                 }
+                //Internal node link
+                else if (tempUri.Contains("https://mega.nz/#"))
+                {
+                    var extraParams = new Dictionary<string, string>(1)
+                    {
+                        {
+                            "localfolderlink",
+                            System.Net.HttpUtility.UrlEncode(tempUri)
+                        }
+                    };
+
+                    // Needed to get the file link properly
+                    if (tempUri.EndsWith("/"))
+                        tempUri = tempUri.Remove(tempUri.Length - 1, 1);
+
+                    App.LinkInformation.ActiveLink = tempUri;
+                    App.LinkInformation.UriLink = UriLinkType.InternalNode;
+                    return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.InternalNodeLaunch, extraParams);
+                }
                 //Invalid link
                 else
                 {

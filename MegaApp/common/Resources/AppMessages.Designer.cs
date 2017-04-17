@@ -169,7 +169,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The associated user account has been terminated due to multiple violations of our Terms of Service..
+        ///   Busca una cadena traducida similar a The account that created this link has been terminated due to multiple violations of our Terms of Service..
         /// </summary>
         public static string AM_AssociatedUserAccountTerminated {
             get {
@@ -358,7 +358,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Unknown error in the download path. Please try again and if continues failing contact support@mega.nz. [{0}].
+        ///   Busca una cadena traducida similar a There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}].
         /// </summary>
         public static string AM_DownloadPathUnknownError {
             get {
@@ -504,6 +504,24 @@ namespace MegaApp.Resources {
         public static string AM_IncompleteConfirmationLink {
             get {
                 return ResourceManager.GetString("AM_IncompleteConfirmationLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log in to the properly account and try again..
+        /// </summary>
+        public static string AM_InternalNodeNotFound {
+            get {
+                return ResourceManager.GetString("AM_InternalNodeNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a File/folder not found.
+        /// </summary>
+        public static string AM_InternalNodeNotFound_Title {
+            get {
+                return ResourceManager.GetString("AM_InternalNodeNotFound_Title", resourceCulture);
             }
         }
         
