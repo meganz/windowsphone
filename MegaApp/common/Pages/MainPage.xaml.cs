@@ -438,6 +438,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.DisablePassword:
                     break;
                 case NavigationParameter.AutoCameraUpload:
+                case NavigationParameter.InternalNodeLaunch:
                 case NavigationParameter.FileLinkLaunch:
                 case NavigationParameter.FolderLinkLaunch:
                 case NavigationParameter.ImportFolderLink:
