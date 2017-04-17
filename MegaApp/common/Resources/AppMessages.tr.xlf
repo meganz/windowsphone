@@ -1546,8 +1546,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" xml:space="preserve">
-          <source>The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log in to the properly account and try again.</source>
-          <target state="new">The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log in to the properly account and try again.</target>
+          <source>The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</source>
+          <target state="new">The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
       </group>

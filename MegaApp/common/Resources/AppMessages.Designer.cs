@@ -508,7 +508,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log in to the properly account and try again..
+        ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again..
         /// </summary>
         public static string AM_InternalNodeNotFound {
             get {
