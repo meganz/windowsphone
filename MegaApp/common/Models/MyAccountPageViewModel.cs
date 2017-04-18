@@ -13,14 +13,14 @@ namespace MegaApp.Models
 {
     public class MyAccountPageViewModel : BaseAppInfoAwareViewModel
     {
-        public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation, MyAccountPage myAccountPage)
+        public MyAccountPageViewModel(MegaSDK megaSdk, AppInformation appInformation)
             : base(megaSdk, appInformation)
         {
             InitializeMenu(HamburgerMenuItemType.MyAccount);
 
             UpdateUserData();
 
-            AccountDetails = new AccountDetailsViewModel(myAccountPage) {UserEmail = megaSdk.getMyEmail()};
+            AccountDetails = new AccountDetailsViewModel() { UserEmail = megaSdk.getMyEmail() };
             UpgradeAccount = new UpgradeAccountViewModel();
             IsAccountUpdate = false;
         }
@@ -112,7 +112,12 @@ namespace MegaApp.Models
         private AccountDetailsViewModel _accountDetails;
         public AccountDetailsViewModel AccountDetails
         {
-            get { return _accountDetails; }
+            get 
+            { 
+                if(_accountDetails != null) return _accountDetails;
+                _accountDetails = new AccountDetailsViewModel() { UserEmail = this.MegaSdk.getMyEmail() };
+                return _accountDetails;
+            }
             set
             {
                 _accountDetails = value;                
@@ -137,7 +142,12 @@ namespace MegaApp.Models
         private UpgradeAccountViewModel _upgradeAccount;
         public UpgradeAccountViewModel UpgradeAccount
         {
-            get { return _upgradeAccount; }
+            get 
+            { 
+                if(_upgradeAccount != null) return _upgradeAccount;
+                _upgradeAccount = new UpgradeAccountViewModel();
+                return _upgradeAccount;
+            }
             set
             {
                 _upgradeAccount = value;

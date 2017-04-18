@@ -16,14 +16,13 @@ using Telerik.Windows.Controls;
 
 namespace MegaApp.Classes
 {
-    public class AccountDetailsViewModel: UserDataViewModel
+    public class AccountDetailsViewModel : UserDataViewModel
     {
-        private readonly MyAccountPage _myAccountPage;
+        // Event triggered when changes the subscriptions number with credit card
+        public event EventHandler CreditCardSubscriptionsChanged;
 
-        public AccountDetailsViewModel(MyAccountPage myAccountPage)
+        public AccountDetailsViewModel()
         {
-            _myAccountPage = myAccountPage;
-
             IsFreeAccount = true; // Default value
             IsDataLoaded = false; // Default value
 
@@ -230,7 +229,11 @@ namespace MegaApp.Classes
             set
             {
                 _creditCardSubscriptions = value;
-                Deployment.Current.Dispatcher.BeginInvoke(() => _myAccountPage.SetApplicationBarData());
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    if (CreditCardSubscriptionsChanged != null)
+                        CreditCardSubscriptionsChanged.Invoke(this, EventArgs.Empty);
+                });
                 OnPropertyChanged("CreditCardSubscriptions");
             }
         }

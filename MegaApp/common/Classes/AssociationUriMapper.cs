@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Navigation;
 using MegaApp.Enums;
 using MegaApp.Pages;
+using MegaApp.Resources;
 using MegaApp.Services;
 
 namespace MegaApp.Classes
@@ -115,9 +117,20 @@ namespace MegaApp.Classes
                     return NavigateService.BuildNavigationUri(typeof(MainPage), NavigationParameter.UriLaunch,
                         new Dictionary<string, string>(1) { { "fm/ipc", String.Empty } });
                 }
+                //Invalid link
                 else
                 {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.AM_LoadFailed_Title,
+                            AppMessages.AM_InvalidLink,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+
                     App.LinkInformation.Reset();
+                    return new Uri("/Pages/MainPage.xaml", UriKind.Relative);
                 }
             }
 
