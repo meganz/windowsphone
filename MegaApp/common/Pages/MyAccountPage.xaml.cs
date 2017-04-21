@@ -26,8 +26,10 @@ namespace MegaApp.Pages
 
         public MyAccountPage()
         {
-            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation, this);
+            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation);
             this.DataContext = _myAccountPageViewModel;
+
+            _myAccountPageViewModel.AccountDetails.CreditCardSubscriptionsChanged += OnCreditCardSubscriptionsChanged;
             
             InitializeComponent();
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.MyAccount);
@@ -55,6 +57,11 @@ namespace MegaApp.Pages
                 default:
                     break;
             }
+        }
+
+        private void OnCreditCardSubscriptionsChanged(object sender, EventArgs e)
+        {
+            SetApplicationBarData(NetworkService.IsNetworkAvailable());
         }
 
         public void SetApplicationBarData(bool isNetworkConnected = true)
@@ -91,7 +98,8 @@ namespace MegaApp.Pages
         /// </summary>        
         private void SetAvatarColor()
         {
-            _myAccountPageViewModel.AccountDetails.AvatarColor = App.UserData.AvatarColor;
+            if(_myAccountPageViewModel != null && _myAccountPageViewModel.AccountDetails != null)
+                _myAccountPageViewModel.AccountDetails.AvatarColor = App.UserData.AvatarColor;
         }
 
         private void UpdateGUI(bool isNetworkConnected = true)
