@@ -219,7 +219,25 @@ namespace MegaApp.Models
             // User must be online to perform this operation
             if (!IsUserOnline()) return NodeActionResult.NotOnline;
 
-            this.MegaSdk.exportNode(this.OriginalMNode, new ExportNodeRequestListener());
+            if (this.OriginalMNode.isExported())
+            {
+                DialogService.ShowShareLink(this);
+                return NodeActionResult.Succeeded;
+            }
+            else
+            {
+                this.MegaSdk.exportNode(this.OriginalMNode, new ExportNodeRequestListener(this));
+                return NodeActionResult.IsBusy;
+            }
+        }
+
+        public NodeActionResult SetLinkExpirationTime(long expireTime)
+        {
+            // User must be online to perform this operation
+            if (!IsUserOnline()) return NodeActionResult.NotOnline;
+            if (expireTime < 0) return NodeActionResult.Failed;
+
+            this.MegaSdk.exportNodeWithExpireTime(this.OriginalMNode, expireTime, new ExportNodeRequestListener(this));
 
             return NodeActionResult.IsBusy;
         }
@@ -890,10 +908,44 @@ namespace MegaApp.Models
 
         public TransferObjectModel Transfer { get; set; }
 
-        public MNode OriginalMNode { get; private set; }
+        public MNode OriginalMNode { get; set; }
 
         #endregion
 
         #endregion
+
+        #region Properties
+
+        public AccountDetailsViewModel AccountDetails
+        {
+            get { return AccountService.AccountDetails; }
+        }
+
+        public bool LinkWithExpirationTime
+        {
+            get{ return (LinkExpirationTime > 0) ? true : false; }
+        }
+
+        public long LinkExpirationTime
+        {
+            get { return OriginalMNode.getExpirationTime(); }
+        }
+
+        public DateTime? LinkExpirationDate
+        {
+            get
+            {
+                DateTime? _linkExpirationDate;
+                if (LinkExpirationTime > 0)
+                    _linkExpirationDate = OriginalDateTime.AddSeconds(LinkExpirationTime);
+                else
+                    _linkExpirationDate = null;
+
+                return _linkExpirationDate;
+            }
+        }
+
+    #endregion
+
     }
 }

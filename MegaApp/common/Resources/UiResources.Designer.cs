@@ -2428,6 +2428,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a (PRO ONLY).
+        /// </summary>
+        public static string UI_ProOnly {
+            get {
+                return ResourceManager.GetString("UI_ProOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Recovery Key.
         /// </summary>
         public static string UI_RecoveryKey {
@@ -2442,6 +2451,15 @@ namespace MegaApp.Resources {
         public static string UI_RemoveLink {
             get {
                 return ResourceManager.GetString("UI_RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Set expiry date.
+        /// </summary>
+        public static string UI_SetExpirationDate {
+            get {
+                return ResourceManager.GetString("UI_SetExpirationDate", resourceCulture);
             }
         }
         

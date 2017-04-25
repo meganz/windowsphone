@@ -162,7 +162,6 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                _mainPageViewModel.GetAccountDetails();
                 _mainPageViewModel.FetchNodes();
 
                 // Validate product subscription license on background thread

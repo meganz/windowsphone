@@ -17,6 +17,13 @@ namespace MegaApp.MegaApi
 {
     class ExportNodeRequestListener: BaseRequestListener
     {
+        private readonly NodeViewModel _node;
+
+        public ExportNodeRequestListener(NodeViewModel node)
+        {
+            _node = node;
+        }
+
         #region Base Properties
 
         protected override string ProgressMessage
@@ -85,8 +92,12 @@ namespace MegaApp.MegaApi
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                DialogService.ShowShareLink(api.getNodeByHandle(request.getNodeHandle())));
+            Deployment.Current.Dispatcher.BeginInvoke(() => 
+            {
+                _node.OriginalMNode = api.getNodeByHandle(request.getNodeHandle());
+                DialogService.ShowShareLink(_node);
+            });
+            
         }
 
         #endregion

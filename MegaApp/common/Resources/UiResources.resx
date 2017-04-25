@@ -1272,4 +1272,12 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Link without key</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(PRO ONLY)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>Set expiry date</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

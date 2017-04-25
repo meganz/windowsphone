@@ -16,7 +16,7 @@ using Microsoft.Phone.Shell;
 
 namespace MegaApp.Models
 {
-    public class MainPageViewModel : BaseAppInfoAwareViewModel, MRequestListenerInterface
+    public class MainPageViewModel : BaseAppInfoAwareViewModel
     {
         public event EventHandler<CommandStatusArgs> CommandStatusChanged;
         private readonly MainPage _mainPage;
@@ -57,6 +57,8 @@ namespace MegaApp.Models
 
         public void Initialize(GlobalDriveListener globalDriveListener)
         {
+            AccountService.GetAccountDetailsFinish += OnGetAccountDetailsFinish;
+
             // Add folders to global drive listener to receive notifications
             globalDriveListener.Folders.Add(this.CloudDrive);
             globalDriveListener.Folders.Add(this.RubbishBin);
@@ -64,6 +66,8 @@ namespace MegaApp.Models
 
         public void Deinitialize(GlobalDriveListener globalDriveListener)
         {
+            AccountService.GetAccountDetailsFinish -= OnGetAccountDetailsFinish;
+
             // Add folders to global drive listener to receive notifications
             globalDriveListener.Folders.Remove(this.CloudDrive);
             globalDriveListener.Folders.Remove(this.RubbishBin);
@@ -178,7 +182,7 @@ namespace MegaApp.Models
 
         public void GetAccountDetails()
         {
-            MegaSdk.getAccountDetails(this);
+            AccountService.GetAccountDetails();
             UpdateUserData();
         }
 
@@ -267,6 +271,40 @@ namespace MegaApp.Models
             // The Cloud Drive is always the first active folder on initalization
             this.ActiveFolderView = this.CloudDrive;
         }
+
+        private void OnGetAccountDetailsFinish(object sender, EventArgs e)
+        {
+            int usedSpacePercent;
+            if ((AccountService.AccountDetails.TotalSpace > 0) && (AccountService.AccountDetails.UsedSpace > 0))
+                usedSpacePercent = (int)(AccountService.AccountDetails.UsedSpace * 100 / AccountService.AccountDetails.TotalSpace);
+            else
+                usedSpacePercent = 0;
+
+            // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
+            if (usedSpacePercent <= 95)
+            {
+                if (AccountService.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
+                {
+                    Task.Run(() =>
+                    {
+                        Visibility visibility = GetRandomVisibility(5);
+                        Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
+
+                        if (visibility == Visibility.Visible)
+                            this.TimerGetProAccountVisibility(30000);
+                    });
+                }
+            }
+            // Else show a warning message indicating the user is running out of space
+            else
+            {
+                Task.Run(() =>
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
+                    this.TimerWarningOutOfSpaceVisibility(15000);
+                });
+            }
+        }
         
         #endregion
 
@@ -301,75 +339,6 @@ namespace MegaApp.Models
         {
             get { return _sourceFolderView; }
             set { SetField(ref _sourceFolderView, value); }
-        }
-
-        #endregion
-
-        #region MRequestListenerInterface
-
-        public void onRequestFinish(MegaSDK api, MRequest request, MError e)
-        {
-            if (e.getErrorCode() == MErrorType.API_OK)
-            {
-                switch (request.getType())
-                {
-                    case MRequestType.TYPE_ACCOUNT_DETAILS:
-
-                        ulong TotalSpace = request.getMAccountDetails().getStorageMax();
-                        ulong UsedSpace = request.getMAccountDetails().getStorageUsed();
-                        int usedSpacePercent;
-
-                        if ((TotalSpace > 0) && (UsedSpace > 0))
-                            usedSpacePercent = (int)(UsedSpace * 100 / TotalSpace);
-                        else
-                            usedSpacePercent = 0;
-
-                        // If used space is less than 95% and is a free account, the 5% of the times show a message to upgrade the account
-                        if (usedSpacePercent <= 95)
-                        {
-                            if (request.getMAccountDetails().getProLevel() == MAccountType.ACCOUNT_TYPE_FREE)
-                            {
-                                Task.Run(() =>
-                                {
-                                    Visibility visibility = GetRandomVisibility(5);
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeGetProAccountBorderVisibility(visibility));
-
-                                    if (visibility == Visibility.Visible)
-                                        this.TimerGetProAccountVisibility(30000);
-                                });
-                            }
-                        }
-                        // Else show a warning message indicating the user is running out of space
-                        else
-                        {
-                            Task.Run(() =>
-                            {
-                                Deployment.Current.Dispatcher.BeginInvoke(() => _mainPage.ChangeWarningOutOfSpaceBorderVisibility(Visibility.Visible));
-                                this.TimerWarningOutOfSpaceVisibility(15000);
-                            });
-                        }
-
-                        break;
-
-                    default:
-                        break;
-                }
-            }            
-        }
-
-        public void onRequestStart(MegaSDK api, MRequest request)
-        {
-            // Not necessary
-        }
-
-        public void onRequestTemporaryError(MegaSDK api, MRequest request, MError e)
-        {
-            // Not necessary
-        }
-
-        public void onRequestUpdate(MegaSDK api, MRequest request)
-        {
-            // Not necessary
         }
 
         #endregion

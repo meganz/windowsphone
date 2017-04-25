@@ -31,7 +31,7 @@ namespace MegaApp.Services
         /// Shows a dialog to allow copy a node link to the clipboard or share it using other app
         /// </summary>
         /// <param name="node">Node to share the link</param>
-        public static void ShowShareLink(MNode node)
+        public static void ShowShareLink(NodeViewModel node)
         {
             var dialog = new RadModalWindow()
             {
@@ -85,7 +85,7 @@ namespace MegaApp.Services
 
             var messageText = new TextBlock
             {
-                Text = node.getPublicLink(true),
+                Text = node.OriginalMNode.getPublicLink(true),
                 Margin = new Thickness(0, 20, 0, 12),
                 TextWrapping = TextWrapping.Wrap,
                 HorizontalAlignment = HorizontalAlignment.Stretch,
@@ -96,14 +96,14 @@ namespace MegaApp.Services
                 Content = Resources.UiResources.UI_LinkWithoutKey,
                 Margin = new Thickness(0, -12, 0, 0)
             };
-            linkWithoutKey.Checked += (sender, args) => messageText.Text = node.getPublicLink(false);
+            linkWithoutKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getPublicLink(false);
 
             var decryptionKey = new RadioButton
             {
                 Content = Resources.UiResources.UI_DecryptionKey,
                 Margin = new Thickness(0, -12, 0, 0)
             };
-            decryptionKey.Checked += (sender, args) => messageText.Text = node.getBase64Key();
+            decryptionKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getBase64Key();
 
             var linkWithKey = new RadioButton
             {
@@ -111,12 +111,82 @@ namespace MegaApp.Services
                 Margin = new Thickness(0, -12, 0, 0),
                 IsChecked = true
             };
-            linkWithKey.Checked += (sender, args) => messageText.Text = node.getPublicLink(true);
+            linkWithKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getPublicLink(true);
 
             stackPanel.Children.Add(linkWithoutKey);
             stackPanel.Children.Add(decryptionKey);
             stackPanel.Children.Add(linkWithKey);
 
+            var stackPanelLinkWithExpirationDate = new StackPanel
+            {
+                Orientation = Orientation.Horizontal
+            };
+
+            var linkWithExpirationDateLabel = new TextBlock
+            {
+                Text = string.Format("{0} {1}", Resources.UiResources.UI_SetExpirationDate, Resources.UiResources.UI_ProOnly),
+                Margin = new Thickness(0, 20, 0, 8),
+                TextWrapping = TextWrapping.Wrap,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+
+            var enableLinkExpirationDateSwitch = new RadToggleSwitch
+            {
+                IsEnabled = AccountService.AccountDetails.IsProAccount,
+                IsChecked = node.LinkWithExpirationTime,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+
+            var expirationDatePicker = new RadDatePicker
+            {
+                IsEnabled = enableLinkExpirationDateSwitch.IsChecked && AccountService.AccountDetails.IsProAccount,
+                DisplayValueFormat = "dd‎/MM‎/yyyy",
+                SelectorFormat = "D/M/Y",
+                Value = node.LinkExpirationDate,
+                MinValue = DateTime.Today.AddDays(1),
+                VerticalAlignment = VerticalAlignment.Center,
+                OkButtonText = Resources.UiResources.Accept.ToLower(),
+                OkButtonIconUri = new Uri("/Assets/AppBar/check.png", UriKind.Relative),
+                CancelButtonText = Resources.UiResources.Cancel.ToLower(),
+                CancelButtonIconUri = new Uri("/Assets/AppBar/cancel.png", UriKind.Relative)
+            };
+            expirationDatePicker.PopupClosed += (sender, args) =>
+            {
+                if (expirationDatePicker.Value == null)
+                    enableLinkExpirationDateSwitch.IsChecked = false;
+            };
+            expirationDatePicker.ValueChanged += (sender, args) =>
+            {
+                if (expirationDatePicker.Value == null)
+                {
+                    enableLinkExpirationDateSwitch.IsChecked = false;
+                    if (node.LinkExpirationTime > 0)
+                        node.SetLinkExpirationTime(0);
+                }
+                else if (node.LinkExpirationDate == null ||
+                    !node.LinkExpirationDate.Value.Date.ToUniversalTime().Equals(expirationDatePicker.Value.Value.Date.ToUniversalTime()))
+                {
+                    DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                    DateTime select = expirationDatePicker.Value.Value;
+                    TimeSpan diff = select.Date.ToUniversalTime() - origin.Date.ToUniversalTime();                    
+                    node.SetLinkExpirationTime((long)Math.Floor(diff.TotalSeconds));
+                }
+            };
+
+            enableLinkExpirationDateSwitch.CheckedChanged += (sender, args) =>
+            {
+                expirationDatePicker.IsEnabled = enableLinkExpirationDateSwitch.IsChecked;
+                if (enableLinkExpirationDateSwitch.IsChecked)
+                    expirationDatePicker.Value = node.LinkExpirationDate;
+                else
+                    expirationDatePicker.Value = null;
+            };
+
+            stackPanelLinkWithExpirationDate.Children.Add(enableLinkExpirationDateSwitch);
+            stackPanelLinkWithExpirationDate.Children.Add(expirationDatePicker);
+
+            stackPanel.Children.Add(linkWithExpirationDateLabel);
+            stackPanel.Children.Add(stackPanelLinkWithExpirationDate);
             stackPanel.Children.Add(messageText);
 
             // Add content to the view
