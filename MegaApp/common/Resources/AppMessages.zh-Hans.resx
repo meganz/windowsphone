@@ -882,7 +882,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
-    <value>已邀请联络人</value>
+    <value>邀请联系人</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
@@ -1347,5 +1347,13 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>下载路径出现未知错误。请再次尝试，如果继续失败，请联系support@mega.nz. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound" xml:space="preserve">
+    <value>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
+    <value>File/folder not found</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
 </root>

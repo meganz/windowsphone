@@ -1353,4 +1353,12 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
+  <data name="AM_InternalNodeNotFound" xml:space="preserve">
+    <value>找不到您嘗試開啟的檔案 / 資料夾。 您可能已登入另一個帳戶。請登入正確的帳戶，然後再試一次。</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
+    <value>找不到檔案 / 資料夾</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
+  </data>
 </root>

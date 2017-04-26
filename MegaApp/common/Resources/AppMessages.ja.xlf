@@ -1005,7 +1005,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="translated">MEGA automatic camera uploads</target>
+          <target state="translated">MEGA自動的カメラアップロード</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
@@ -1357,7 +1357,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" space="preserve">
           <source>Enable DEBUG mode</source>
-          <target state="translated">デバッグモードを有効にする</target>
+          <target state="translated">デバッグモードを有効にします</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is enabled - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
@@ -1457,7 +1457,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="needs-review-translation">The account that created this link has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">The account that created this link has been terminated due to multiple violations of our Terms of Service.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1502,7 +1502,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="translated">Your account has not been confirmed yet.</target>
+          <target state="translated">あなたのアカウントはまだ確認されていません。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
@@ -1533,19 +1533,19 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="needs-review-translation">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
+          <target state="translated">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" xml:space="preserve">
-          <source>File/folder not found</source>
-          <target state="new">File/folder not found</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" xml:space="preserve">
-          <source>The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</source>
-          <target state="new">The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</target>
+        <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
+          <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
+          <target state="needs-review-translation">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
+          <source>File/folder not found</source>
+          <target state="translated">File/folder not found</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -421,7 +421,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>пропускної здатності</value>
+    <value>Обмеження передач</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -1263,5 +1263,21 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_Free" xml:space="preserve">
     <value>Безкоштовно</value>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithKey" xml:space="preserve">
+    <value>Ланка з ключем</value>
+    <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithoutKey" xml:space="preserve">
+    <value>Ланка без ключа</value>
+    <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(ТІЛЬКИ PRO)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>Встановіть дату завершення</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

@@ -427,7 +427,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">転送容量制限</target>
+          <target state="translated">転送容量制限</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -1298,7 +1298,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
           <source>Operating system restrictions</source>
-          <target state="translated">Operating system restrictions</target>
+          <target state="translated">OS限定</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
@@ -1436,25 +1436,25 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">無料</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
+          <source>Link with key</source>
+          <target state="translated">キーを含むリンク</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
           <source>Link without key</source>
-          <target state="new">Link without key</target>
+          <target state="translated">キーなしのリンク</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" xml:space="preserve">
-          <source>Set expiry date</source>
-          <target state="new">Set expiry date</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_ProOnly" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
           <source>(PRO ONLY)</source>
-          <target state="new">(PRO ONLY)</target>
+          <target state="translated">(プロのみ)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" xml:space="preserve">
-          <source>Link with key</source>
-          <target state="new">Link with key</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
+          <source>Set expiry date</source>
+          <target state="translated">失効日を選ぶ</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
