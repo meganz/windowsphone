@@ -208,6 +208,38 @@ namespace MegaApp.MegaApi
                     App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
                         new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
                 }
+                // Internal file/folder link
+                else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
+                {
+                    var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
+                    var megaNode = App.MegaSdk.getNodeByBase64Handle(nodeHandle);
+                    if (megaNode != null)
+                    {
+                        ContainerType containerType = (App.MegaSdk.isInRubbish(megaNode)) ?
+                            containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
+
+                        var node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, megaNode, containerType);
+
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            if (node.IsFolder)
+                                _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                            else
+                                node.Download(App.MegaTransfers);
+                        });
+                    }
+                    else
+                    {
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                AppMessages.AM_InternalNodeNotFound_Title,
+                                AppMessages.AM_InternalNodeNotFound,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        });
+                    }
+                }
             }
             else
             {

@@ -250,7 +250,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Bandwidth.
+        ///   Busca una cadena traducida similar a Transfer quota.
         /// </summary>
         public static string Bandwidth {
             get {
@@ -2347,6 +2347,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Link with key.
+        /// </summary>
+        public static string UI_LinkWithKey {
+            get {
+                return ResourceManager.GetString("UI_LinkWithKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Link without key.
+        /// </summary>
+        public static string UI_LinkWithoutKey {
+            get {
+                return ResourceManager.GetString("UI_LinkWithoutKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Login.
         /// </summary>
         public static string UI_Login {
@@ -2410,6 +2428,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a (PRO ONLY).
+        /// </summary>
+        public static string UI_ProOnly {
+            get {
+                return ResourceManager.GetString("UI_ProOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Recovery Key.
         /// </summary>
         public static string UI_RecoveryKey {
@@ -2424,6 +2451,15 @@ namespace MegaApp.Resources {
         public static string UI_RemoveLink {
             get {
                 return ResourceManager.GetString("UI_RemoveLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Set expiry date.
+        /// </summary>
+        public static string UI_SetExpirationDate {
+            get {
+                return ResourceManager.GetString("UI_SetExpirationDate", resourceCulture);
             }
         }
         

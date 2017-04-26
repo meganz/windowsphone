@@ -405,7 +405,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Acknowledgements' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Annually" xml:space="preserve">
-    <value>Annuellement</value>
+    <value>Annuel</value>
     <comment>Label for any 'Annually' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="AppVersionText" xml:space="preserve">
@@ -421,7 +421,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="Bandwidth" xml:space="preserve">
-    <value>de bande passante</value>
+    <value>de quota de transfert</value>
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -618,7 +618,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
-    <value>disposez</value>
+    <value>obtenez</value>
     <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess2" xml:space="preserve">
@@ -823,7 +823,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label to indicate the user that is needed select a membership (monthly or annualy) for upgrade his account.</comment>
   </data>
   <data name="SettingsShort" xml:space="preserve">
-    <value>Réglages</value>
+    <value>Paramètres</value>
     <comment>Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</comment>
   </data>
   <data name="State" xml:space="preserve">
@@ -945,7 +945,7 @@ Preserve the {0} code because is for include the renewal period string (Monthly 
     <comment>Label for any 'Shared folders' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Statut</value>
+    <value>État</value>
     <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="ReceivedRequests" xml:space="preserve">
@@ -1089,7 +1089,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the background of an empty transfers page - (String as short as possible).</comment>
   </data>
   <data name="EmptyRubbishBin" xml:space="preserve">
-    <value>Vider la Corbeille</value>
+    <value>Vider la corbeille</value>
     <comment>Label for the background of an empty rubbish bin page - (String as short as possible).</comment>
   </data>
   <data name="EmptySharedFolders" xml:space="preserve">
@@ -1263,5 +1263,21 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_Free" xml:space="preserve">
     <value>Gratuit</value>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithKey" xml:space="preserve">
+    <value>Lien avec clé</value>
+    <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithoutKey" xml:space="preserve">
+    <value>Lien sans clé</value>
+    <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(PRO SEULEMENT)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>Définir une date d'expiration</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

@@ -12,6 +12,7 @@
         UriLaunch           = 40,
         Browsing            = 50,
         BreadCrumb          = 60,
+        InternalNodeLaunch  = 65,
         FileLinkLaunch      = 70,
         FolderLinkLaunch    = 75,
         ImportFolderLink    = 76,

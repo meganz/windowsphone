@@ -426,7 +426,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">Liikennöintiä</target>
+          <target state="translated">Liikennöintiä</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -1434,6 +1434,26 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Free</source>
           <target state="translated">Ilmainen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
+          <source>Link with key</source>
+          <target state="translated">Linkki avaimen kanssa</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
+          <source>Link without key</source>
+          <target state="translated">Linkki ilman avainta</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
+          <source>(PRO ONLY)</source>
+          <target state="translated">(VAIN PRO)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
+          <source>Set expiry date</source>
+          <target state="translated">Aseta vanhentumispäivä</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

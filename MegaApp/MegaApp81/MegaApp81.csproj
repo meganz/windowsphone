@@ -816,6 +816,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Services\AccountService.cs">
+      <Link>Services\AccountService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\AnimationService.cs">
       <Link>Services\AnimationService.cs</Link>
     </Compile>
@@ -3816,7 +3819,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.17.0">
+    <SDKReference Include="SQLite.WP80, Version=3.18.0">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

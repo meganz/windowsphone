@@ -2,15 +2,16 @@
 {
     public enum UriLinkType
     {
-        None        = 0,
-        File        = 1,
-        Folder      = 2,
-        Confirm     = 3,
-        Backup      = 4,
-        NewSignUp   = 5,
-        FmIpc       = 6,
-        Verify      = 7,
-        Recover     = 8,
-        Cancel      = 9
+        None            = 0,
+        File            = 1,
+        Folder          = 2,
+        InternalNode    = 3,
+        Confirm         = 4,
+        Backup          = 5,
+        NewSignUp       = 6,
+        FmIpc           = 7,
+        Verify          = 8,
+        Recover         = 9,
+        Cancel          = 10
     }
 }

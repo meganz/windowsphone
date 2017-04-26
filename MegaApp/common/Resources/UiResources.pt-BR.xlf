@@ -427,7 +427,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">Cota de transferência</target>
+          <target state="translated">Cota de transferência</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -1368,7 +1368,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_DecryptionKey" translate="yes" space="preserve">
           <source>Decryption key</source>
-          <target state="translated">chave de decodificação</target>
+          <target state="translated">Chave de decodificação</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FileLink" translate="yes" space="preserve">
@@ -1435,6 +1435,26 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Free</source>
           <target state="translated">Grátis</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
+          <source>Link with key</source>
+          <target state="translated">Fazer a ligação com a chave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
+          <source>Link without key</source>
+          <target state="translated">Fazer a ligação sem chave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
+          <source>(PRO ONLY)</source>
+          <target state="translated">(SOMENTE PRO)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
+          <source>Set expiry date</source>
+          <target state="translated">Definir data de validade</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

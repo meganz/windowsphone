@@ -1195,7 +1195,7 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Decrypt' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_DecryptionKey" xml:space="preserve">
-    <value>chave de decodificação</value>
+    <value>Chave de decodificação</value>
     <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FileLink" xml:space="preserve">
@@ -1264,5 +1264,21 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_Free" xml:space="preserve">
     <value>Grátis</value>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithKey" xml:space="preserve">
+    <value>Fazer a ligação com a chave</value>
+    <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithoutKey" xml:space="preserve">
+    <value>Fazer a ligação sem chave</value>
+    <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(SOMENTE PRO)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>Definir data de validade</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
 </root>

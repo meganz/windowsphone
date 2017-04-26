@@ -426,7 +426,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">Cuota de transferencia</target>
+          <target state="translated">Cuota de transferencia</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -713,7 +713,7 @@ para mostrar</target>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
           <source>end-to-end encryption.</source>
-          <target state="translated">encriptado punto-a-punto.</target>
+          <target state="translated">encriptado punto a punto.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" space="preserve">
@@ -1435,6 +1435,26 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Free</source>
           <target state="translated">Gratis</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
+          <source>Link with key</source>
+          <target state="translated">Enlace con clave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
+          <source>Link without key</source>
+          <target state="translated">Enlace sin clave</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
+          <source>(PRO ONLY)</source>
+          <target state="translated">(SOLO PRO)</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
+          <source>Set expiry date</source>
+          <target state="translated">Fijar la caducidad</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -27,40 +27,242 @@ namespace MegaApp.Services
 {
     static class DialogService
     {
-        public static void ShowShareLink(string link)
+        /// <summary>
+        /// Shows a dialog to allow copy a node link to the clipboard or share it using other app
+        /// </summary>
+        /// <param name="node">Node to share the link</param>
+        public static void ShowShareLink(NodeViewModel node)
         {
-            var customMessageDialog = new CustomMessageDialog(UiResources.MegaLinkTitle, link, App.AppInformation,
-                new []
-                {
-                    new DialogButton(UiResources.Share, () =>
-                    {
-                        var shareLinkTask = new ShareLinkTask {LinkUri = new Uri(link), Title = UiResources.MegaShareLinkMessage};
-                        shareLinkTask.Show();
-                    }),
-                    new DialogButton(UiResources.Copy, () =>
-                    {
-                        try
-                        {
-                            Clipboard.SetText(link);
-                            new CustomMessageDialog(
-                                AppMessages.LinkCopiedToClipboard_Title,
-                                AppMessages.LinkCopiedToClipboard,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                        }
-                        catch(Exception)
-                        {
-                            new CustomMessageDialog(
-                                AppMessages.AM_CopyLinkToClipboardFailed_Title,
-                                AppMessages.AM_CopyLinkToClipboardFailed,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                        }
-                    }),
-                    DialogButton.GetCancelButton(), 
-                });
+            var dialog = new RadModalWindow()
+            {
+                IsFullScreen = false,
+                Background = new SolidColorBrush(Color.FromArgb(155, 31, 31, 31)),
+                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                VerticalContentAlignment = VerticalAlignment.Top,
+                HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                IsAnimationEnabled = true,
+                IsClosedOnOutsideTap = false,
+                OpenAnimation = AnimationService.GetOpenMessageDialogAnimation(),
+                CloseAnimation = AnimationService.GetCloseMessageDialogAnimation()
+            };
 
-            customMessageDialog.ShowDialog();
+            dialog.WindowOpening += (sender, args) => DialogOpening(args);
+            dialog.WindowClosed += (sender, args) => DialogClosed();
+
+            var mainGrid = new Grid()
+            {
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),                
+                Width = Double.NaN,
+                Margin = new Thickness(24, 0, 24, 0),
+                RowDefinitions =
+                {
+                    new RowDefinition() { Height = GridLength.Auto}, // Title row
+                    new RowDefinition() { Height = GridLength.Auto}, // Content row
+                    new RowDefinition() { Height = GridLength.Auto}, // Buttons row
+                }
+            };
+
+            // Create title label
+            var title = new TextBlock()
+            {
+                Text = UiResources.MegaLinkTitle.ToUpper(),
+                FontFamily = new FontFamily("Segoe WP Semibold"),
+                FontSize = Convert.ToDouble(Application.Current.Resources["PhoneFontSizeMedium"]),
+                Foreground = new SolidColorBrush((Color)Application.Current.Resources["PhoneForegroundColor"]),
+                Margin = new Thickness(0, 24, 0, 0),
+                HorizontalAlignment = HorizontalAlignment.Left,
+                TextWrapping = TextWrapping.Wrap
+            };
+
+            // Add title to the view
+            mainGrid.Children.Add(title);
+            Grid.SetRow(title, 0);
+
+            var stackPanel = new StackPanel
+            {
+                Margin = new Thickness(0, 20, 0, 0)
+            };
+
+            var messageText = new TextBlock
+            {
+                Text = node.OriginalMNode.getPublicLink(true),
+                Margin = new Thickness(0, 20, 0, 12),
+                TextWrapping = TextWrapping.Wrap,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+
+            var linkWithoutKey = new RadioButton
+            {
+                Content = Resources.UiResources.UI_LinkWithoutKey,
+                Margin = new Thickness(0, -12, 0, 0)
+            };
+            linkWithoutKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getPublicLink(false);
+
+            var decryptionKey = new RadioButton
+            {
+                Content = Resources.UiResources.UI_DecryptionKey,
+                Margin = new Thickness(0, -12, 0, 0)
+            };
+            decryptionKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getBase64Key();
+
+            var linkWithKey = new RadioButton
+            {
+                Content = Resources.UiResources.UI_LinkWithKey,
+                Margin = new Thickness(0, -12, 0, 0),
+                IsChecked = true
+            };
+            linkWithKey.Checked += (sender, args) => messageText.Text = node.OriginalMNode.getPublicLink(true);
+
+            stackPanel.Children.Add(linkWithoutKey);
+            stackPanel.Children.Add(decryptionKey);
+            stackPanel.Children.Add(linkWithKey);
+
+            var stackPanelLinkWithExpirationDate = new StackPanel
+            {
+                Orientation = Orientation.Horizontal
+            };
+
+            var linkWithExpirationDateLabel = new TextBlock
+            {
+                Text = string.Format("{0} {1}", Resources.UiResources.UI_SetExpirationDate, Resources.UiResources.UI_ProOnly),
+                Margin = new Thickness(0, 20, 0, 8),
+                TextWrapping = TextWrapping.Wrap,
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+            };
+
+            var enableLinkExpirationDateSwitch = new RadToggleSwitch
+            {
+                IsEnabled = AccountService.AccountDetails.IsProAccount,
+                IsChecked = node.LinkWithExpirationTime,
+                VerticalAlignment = VerticalAlignment.Center
+            };
+
+            var expirationDatePicker = new RadDatePicker
+            {
+                IsEnabled = enableLinkExpirationDateSwitch.IsChecked && AccountService.AccountDetails.IsProAccount,
+                DisplayValueFormat = "dd‎/MM‎/yyyy",
+                SelectorFormat = "D/M/Y",
+                Value = node.LinkExpirationDate,
+                MinValue = DateTime.Today.AddDays(1),
+                VerticalAlignment = VerticalAlignment.Center,
+                OkButtonText = Resources.UiResources.Accept.ToLower(),
+                OkButtonIconUri = new Uri("/Assets/AppBar/check.png", UriKind.Relative),
+                CancelButtonText = Resources.UiResources.Cancel.ToLower(),
+                CancelButtonIconUri = new Uri("/Assets/AppBar/cancel.png", UriKind.Relative)
+            };
+            expirationDatePicker.PopupClosed += (sender, args) =>
+            {
+                if (expirationDatePicker.Value == null)
+                    enableLinkExpirationDateSwitch.IsChecked = false;
+            };
+            expirationDatePicker.ValueChanged += (sender, args) =>
+            {
+                if (expirationDatePicker.Value == null)
+                {
+                    enableLinkExpirationDateSwitch.IsChecked = false;
+                    if (node.LinkExpirationTime > 0)
+                        node.SetLinkExpirationTime(0);
+                }
+                else if (node.LinkExpirationDate == null ||
+                    !node.LinkExpirationDate.Value.Date.ToUniversalTime().Equals(expirationDatePicker.Value.Value.Date.ToUniversalTime()))
+                {
+                    DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                    DateTime select = expirationDatePicker.Value.Value;
+                    TimeSpan diff = select.Date.ToUniversalTime() - origin.Date.ToUniversalTime();                    
+                    node.SetLinkExpirationTime((long)Math.Floor(diff.TotalSeconds));
+                }
+            };
+
+            enableLinkExpirationDateSwitch.CheckedChanged += (sender, args) =>
+            {
+                expirationDatePicker.IsEnabled = enableLinkExpirationDateSwitch.IsChecked;
+                if (enableLinkExpirationDateSwitch.IsChecked)
+                    expirationDatePicker.Value = node.LinkExpirationDate;
+                else
+                    expirationDatePicker.Value = null;
+            };
+
+            stackPanelLinkWithExpirationDate.Children.Add(enableLinkExpirationDateSwitch);
+            stackPanelLinkWithExpirationDate.Children.Add(expirationDatePicker);
+
+            stackPanel.Children.Add(linkWithExpirationDateLabel);
+            stackPanel.Children.Add(stackPanelLinkWithExpirationDate);
+            stackPanel.Children.Add(messageText);
+
+            // Add content to the view
+            mainGrid.Children.Add(stackPanel);
+            Grid.SetRow(stackPanel, 1);
+
+            // Create response controls panel
+            var buttonsGrid = new Grid()
+            {
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Margin = new Thickness(-12, 0, -12, 24)
+            };
+            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            buttonsGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
+            mainGrid.Children.Add(buttonsGrid);
+            Grid.SetRow(buttonsGrid, 2);
+
+            var copyButton = new Button()
+            {
+                Content = UiResources.Copy.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch
+            };
+            copyButton.Tap += (sender, args) =>
+            {
+                dialog.IsOpen = false;
+                try
+                {
+                    Clipboard.SetText(messageText.Text);
+                    new CustomMessageDialog(
+                        AppMessages.LinkCopiedToClipboard_Title,
+                        AppMessages.LinkCopiedToClipboard,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                }
+                catch (Exception)
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_CopyLinkToClipboardFailed_Title,
+                        AppMessages.AM_CopyLinkToClipboardFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                }
+            };
+
+            var shareButton = new Button()
+            {
+                Content = UiResources.Share.ToLower(),
+                HorizontalAlignment = HorizontalAlignment.Stretch
+            };
+            shareButton.Tap += (sender, args) =>
+            {
+                dialog.IsOpen = false;
+                var shareLinkTask = new ShareLinkTask 
+                {
+                    LinkUri = new Uri(messageText.Text), 
+                    Title = UiResources.MegaShareLinkMessage 
+                };
+                shareLinkTask.Show();
+            };
+
+            buttonsGrid.Children.Add(copyButton);
+            buttonsGrid.Children.Add(shareButton);
+            Grid.SetColumn(copyButton, 0);
+            Grid.SetColumn(shareButton, 1);
+
+            // Used to color the dialog content backgroud
+            var border = new Border
+            {
+                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
+                HorizontalAlignment = HorizontalAlignment.Stretch,
+                Child = mainGrid,
+            };
+
+            dialog.Content = border;
+
+            dialog.IsOpen = true;
         }
 
         #if WINDOWS_PHONE_80
