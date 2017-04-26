@@ -20,8 +20,6 @@ namespace MegaApp.Models
 
             UpdateUserData();
 
-            AccountDetails = new AccountDetailsViewModel() { UserEmail = megaSdk.getMyEmail() };
-            UpgradeAccount = new UpgradeAccountViewModel();
             IsAccountUpdate = false;
         }
 
@@ -50,9 +48,9 @@ namespace MegaApp.Models
 
         public void GetAccountDetails()
         {
-            if(!_accountDetails.IsDataLoaded)
+            if(!AccountDetails.IsDataLoaded)
             {
-                MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails));                
+                AccountService.GetAccountDetails();
                 MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
 
                 OnUiThread(() =>
@@ -63,7 +61,7 @@ namespace MegaApp.Models
                     AccountDetails.Lastname = UserData.Lastname;
                 });                
 
-                _accountDetails.IsDataLoaded = true;
+                AccountDetails.IsDataLoaded = true;
             }            
         }
 
@@ -109,20 +107,9 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private AccountDetailsViewModel _accountDetails;
         public AccountDetailsViewModel AccountDetails
         {
-            get 
-            { 
-                if(_accountDetails != null) return _accountDetails;
-                _accountDetails = new AccountDetailsViewModel() { UserEmail = this.MegaSdk.getMyEmail() };
-                return _accountDetails;
-            }
-            set
-            {
-                _accountDetails = value;                
-                OnPropertyChanged("AccountDetails");
-            }
+            get { return AccountService.AccountDetails; }
         }
 
         private DataTemplate _emptyContentTemplate;
@@ -139,20 +126,9 @@ namespace MegaApp.Models
             private set { SetField(ref _emptyInformationText, value); }
         }
 
-        private UpgradeAccountViewModel _upgradeAccount;
         public UpgradeAccountViewModel UpgradeAccount
         {
-            get 
-            { 
-                if(_upgradeAccount != null) return _upgradeAccount;
-                _upgradeAccount = new UpgradeAccountViewModel();
-                return _upgradeAccount;
-            }
-            set
-            {
-                _upgradeAccount = value;
-                OnPropertyChanged("UpgradeAccount");
-            }
+            get { return AccountService.UpgradeAccount; }
         }
 
         private bool _isAccountUpdate;

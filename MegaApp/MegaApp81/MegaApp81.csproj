@@ -816,6 +816,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="..\common\Services\AccountService.cs">
+      <Link>Services\AccountService.cs</Link>
+    </Compile>
     <Compile Include="..\common\Services\AnimationService.cs">
       <Link>Services\AnimationService.cs</Link>
     </Compile>

@@ -16,10 +16,13 @@ namespace MegaApp.MegaApi
     class GetAccountDetailsRequestListener : BaseRequestListener
     {
         private readonly AccountDetailsViewModel _accountDetails;
+        private event EventHandler _getAccountDetailsFinish;
 
-        public GetAccountDetailsRequestListener(AccountDetailsViewModel accountDetails)
+        public GetAccountDetailsRequestListener(AccountDetailsViewModel accountDetails, 
+            EventHandler getAccountDetailsFinish = null)
         {
             _accountDetails = accountDetails;
+            _getAccountDetailsFinish = getAccountDetailsFinish;
         }
 
         protected override string ProgressMessage
@@ -162,6 +165,9 @@ namespace MegaApp.MegaApi
                                 _accountDetails.IsValidSubscription = false;
                             }                            
                         }
+
+                        if (_getAccountDetailsFinish != null)
+                            _getAccountDetailsFinish.Invoke(this, EventArgs.Empty);
                     });
 
                     break;
