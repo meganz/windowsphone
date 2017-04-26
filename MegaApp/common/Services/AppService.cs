@@ -50,7 +50,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("5068300");
+            return String.Format("ef630b3");
         }
 
         public static string GetAppUserAgent()
