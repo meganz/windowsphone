@@ -885,7 +885,7 @@ Preserve the {0} code because is for include email of the contact to be removed 
 Preserve the [{0}] code because is for include the contact email in runtime.</comment>
   </data>
   <data name="InviteContactAddSuccessfully_Title" xml:space="preserve">
-    <value>Contact invité</value>
+    <value>Le contact a été invité</value>
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
@@ -1306,7 +1306,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
-    <value>Un compte MEGA a déjà été enregistré avec cette adresse courriel.</value>
+    <value>Un compte MEGA a déjà été créé avec cette adresse courriel.</value>
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
@@ -1314,7 +1314,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
-    <value>Le lien que vous utilisez pour une nouvelle inscription est invalide.</value>
+    <value>Le lien que vous utilisez pour une nouvelle adhésion est invalide.</value>
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
@@ -1350,5 +1350,13 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>Une erreur inconnue est présente dans le chemin de téléchargement. Veuillez ressayer. Si l'échec persiste, contactez support@mega.nz. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound" xml:space="preserve">
+    <value>Le fichier ou dossier du lien que vous tentez d'ouvrir n'a pas été trouvé. Vous êtes probablement connecté à un compte différent. Veuillez vous connecter au bon compte et ressayer.</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
+    <value>Le fichier ou dossier est introuvable</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
 </root>

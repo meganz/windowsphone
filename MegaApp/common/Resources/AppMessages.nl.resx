@@ -465,7 +465,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
     <comment>Title of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout - (String as short as possible).</comment>
   </data>
   <data name="PendingTransfersExit" xml:space="preserve">
-    <value>Je hebt {0} overdrachten in afwachting. Overdrachten  In afwachting van worden geannuleerd. Weet u zeker dat u wilt afsluiten?</value>
+    <value>U heeft {0} overdrachten in afwachting. Overdrachten  In afwachting van worden geannuleerd. Weet u zeker dat u wilt afsluiten?</value>
     <comment>Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</comment>
   </data>
@@ -588,7 +588,7 @@ Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschr
     <comment>Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</comment>
   </data>
   <data name="OverquotaAlert_Title" xml:space="preserve">
-    <value>Overquota Alert!</value>
+    <value>Over tegoed Waarschuwing!</value>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
@@ -713,7 +713,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 Preserve the {0} code because is for include name of the node to be removed in runtime.</comment>
   </data>
   <data name="DeleteNodeQuestion_Title" xml:space="preserve">
-    <value>verwijder item?</value>
+    <value>Verwijder item?</value>
     <comment>Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</comment>
   </data>
   <data name="GetUserDataFailed" xml:space="preserve">
@@ -902,7 +902,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Onze SSL/TLS-certificaat kan niet worden geverifieerd. Je zou kunnen worden getroffen door een man-in-the-middle-aanval.</value>
+    <value>Onze SSL/TLS-certificaat kan niet worden geverifieerd. U zou kunnen worden getroffen door een man-in-the-middle-aanval.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -994,11 +994,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>Je gaat je MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om je te helpen van gedachten te veranderen.</value>
+    <value>U gaat uw MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>Je hebt geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</value>
+    <value>U heeft geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1168,7 +1168,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed" xml:space="preserve">
-    <value>Kopiëren van de coderingssleutel naar uw klembord is mislukt. Probeer alstublieft opnieuw.</value>
+    <value>Kopiëren van de Herstel Sleutel naar uw klembord is mislukt. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyClipboardFailed_Title" xml:space="preserve">
@@ -1176,11 +1176,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_RecoveryKeyCopied" xml:space="preserve">
-    <value>Herstelsleutel is gekopieerd naar het klembord</value>
+    <value>Herstel Sleutel is gekopieerd naar het klembord</value>
     <comment>Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</comment>
   </data>
   <data name="AM_RecoveryKeyCopied_Title" xml:space="preserve">
-    <value>Herstelsleutel gekopieerd</value>
+    <value>Herstel Sleutel gekopieerd</value>
     <comment>Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyFailed" xml:space="preserve">
@@ -1254,7 +1254,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyPurchased" xml:space="preserve">
-    <value>Je aankoop van een MEGA abonnement is gefaald omdat je dit product al hebt gekocht.</value>
+    <value>Uw aankoop van een MEGA abonnement heeft gefaald omdat u dit product al heeft gekocht.</value>
     <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
@@ -1262,7 +1262,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
-    <value>Je aankoop van een MEGA abonnement is gefaald of is geannuleerd. Probeer het alstublieft opnieuw of neem contact op met de Windows Store helpdesk.</value>
+    <value>Uw aankoop van een MEGA abonnement heeft gefaald of is geannuleerd. Probeer het alstublieft opnieuw of neem contact op met de Windows Store helpdesk.</value>
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
@@ -1270,7 +1270,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseSucceeded" xml:space="preserve">
-    <value>Je MEGA abonnement aankoop is geslaagd.</value>
+    <value>Uw MEGA abonnement aankoop is geslaagd</value>
     <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
@@ -1278,7 +1278,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Je aankoop van een MEGA abonnement is niet door de bevestiging van onze licentie server gekomen. Zodra je deze app herstart zullen we proberen je abonnement licentie opnieuw te valideren. Neem alstublieft contact op met het MEGA ondersteuningsteam als de fout zich blijft voordoen.</value>
+    <value>Uw aankoop van een MEGA abonnement is niet door de bevestiging van onze licentie server gekomen. Zodra u deze applicatie herstart zullen we proberen uw abonnement licentie opnieuw te valideren. Neem alstublieft contact op met het MEGA ondersteuningsteam als de fout zich blijft voordoen.</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
@@ -1286,7 +1286,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>Het bijbehorende gebruikersaccount is beëindigd wegens meerdere schendingen van onze Servicevoorwaarden.</value>
+    <value>De account die deze link gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1322,7 +1322,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
-    <value>Je account is nog niet bevestigd.</value>
+    <value>Uw account is nog niet bevestigd.</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
   </data>
   <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
@@ -1335,11 +1335,11 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
-    <value>Mislukt om item(s) van MEGA te delen. De bestemmingsapplicatie lijkt druk. Probeer het alsjeblieft later opnieuw.</value>
+    <value>Mislukt om item(s) van MEGA te delen. De bestemmingsapplicatie lijkt druk. Probeer het a.u.b. later opnieuw.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
-    <value>Mislukt om de node details te verkrijgen. Probeer het alsjeblieft opnieuw.</value>
+    <value>Mislukt om de node details te verkrijgen. Probeer a.u.b. nogmaals.</value>
     <comment>Message of the dialog displayed when the process/request to get node details failed.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed_Title" xml:space="preserve">
@@ -1350,5 +1350,13 @@ Preserve the {0} code because is for include the exact time until the user has t
     <value>Er is een onbekende fout opgetreden in het download pad. Probeer aub opnieuw en als het opnieuw fout gaat neem aub contact op met support@mega.nz. [{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound" xml:space="preserve">
+    <value>Het bestand/map van de link die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
+  </data>
+  <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
+    <value>Bestand/map niet gevonden</value>
+    <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
 </root>

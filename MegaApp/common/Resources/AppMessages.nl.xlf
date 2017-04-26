@@ -445,7 +445,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersExit" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to exit?</source>
-          <target state="translated">Je hebt {0} overdrachten in afwachting. Overdrachten  In afwachting van worden geannuleerd. Weet u zeker dat u wilt afsluiten?</target>
+          <target state="translated">U heeft {0} overdrachten in afwachting. Overdrachten  In afwachting van worden geannuleerd. Weet u zeker dat u wilt afsluiten?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to exit the application and has pending transfers. Asks for confirmation to exit.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -604,7 +604,7 @@ Handeling niet toegestaan, u zult het opslag limiet van van uw rekening overschr
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
           <source>Overquota Alert!</source>
-          <target state="translated">Overquota Alert!</target>
+          <target state="translated">Over tegoed Waarschuwing!</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
@@ -654,7 +654,7 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Kopiëren van de coderingssleutel naar uw klembord is mislukt. Probeer alstublieft opnieuw.</target>
+          <target state="translated">Kopiëren van de Herstel Sleutel naar uw klembord is mislukt. Probeer alstublieft opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -674,12 +674,12 @@ Gelieve, probeert op te slaan/kopieer het bestand naar intern geheugen van uw ap
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="translated">Herstelsleutel is gekopieerd naar het klembord</target>
+          <target state="translated">Herstel Sleutel is gekopieerd naar het klembord</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">Herstelsleutel gekopieerd</target>
+          <target state="translated">Herstel Sleutel gekopieerd</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -778,7 +778,7 @@ Preserve the {0} code because is for include name of the node to be removed in r
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" space="preserve">
           <source>Delete item?</source>
-          <target state="translated">verwijder item?</target>
+          <target state="translated">Verwijder item?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetUserDataFailed" translate="yes" space="preserve">
@@ -873,7 +873,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">Je gaat je MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om je te helpen van gedachten te veranderen.</target>
+          <target state="translated">U gaat uw MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -1022,7 +1022,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">Onze SSL/TLS-certificaat kan niet worden geverifieerd. Je zou kunnen worden getroffen door een man-in-the-middle-aanval.</target>
+          <target state="translated">Onze SSL/TLS-certificaat kan niet worden geverifieerd. U zou kunnen worden getroffen door een man-in-the-middle-aanval.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1136,7 +1136,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">Je hebt geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</target>
+          <target state="translated">U heeft geen toegang tot het pad '{0}'. Selecteer alstublieft een andere en probeer het opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
@@ -1419,7 +1419,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="translated">Je aankoop van een MEGA abonnement is gefaald omdat je dit product al hebt gekocht.</target>
+          <target state="translated">Uw aankoop van een MEGA abonnement heeft gefaald omdat u dit product al heeft gekocht.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
@@ -1429,7 +1429,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="translated">Je aankoop van een MEGA abonnement is gefaald of is geannuleerd. Probeer het alstublieft opnieuw of neem contact op met de Windows Store helpdesk.</target>
+          <target state="translated">Uw aankoop van een MEGA abonnement heeft gefaald of is geannuleerd. Probeer het alstublieft opnieuw of neem contact op met de Windows Store helpdesk.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
@@ -1439,7 +1439,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
           <source>Your MEGA subscription purchase has succeeded.</source>
-          <target state="translated">Je MEGA abonnement aankoop is geslaagd.</target>
+          <target state="translated">Uw MEGA abonnement aankoop is geslaagd</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
@@ -1449,7 +1449,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Je aankoop van een MEGA abonnement is niet door de bevestiging van onze licentie server gekomen. Zodra je deze app herstart zullen we proberen je abonnement licentie opnieuw te valideren. Neem alstublieft contact op met het MEGA ondersteuningsteam als de fout zich blijft voordoen.</target>
+          <target state="translated">Uw aankoop van een MEGA abonnement is niet door de bevestiging van onze licentie server gekomen. Zodra u deze applicatie herstart zullen we proberen uw abonnement licentie opnieuw te valideren. Neem alstublieft contact op met het MEGA ondersteuningsteam als de fout zich blijft voordoen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1459,7 +1459,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="needs-review-translation">Het bijbehorende gebruikersaccount is beëindigd wegens meerdere schendingen van onze Servicevoorwaarden.</target>
+          <target state="translated">De account die deze link gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1504,7 +1504,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="translated">Je account is nog niet bevestigd.</target>
+          <target state="translated">Uw account is nog niet bevestigd.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
@@ -1520,12 +1520,12 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
-          <target state="translated">Mislukt om item(s) van MEGA te delen. De bestemmingsapplicatie lijkt druk. Probeer het alsjeblieft later opnieuw.</target>
+          <target state="translated">Mislukt om item(s) van MEGA te delen. De bestemmingsapplicatie lijkt druk. Probeer het a.u.b. later opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="translated">Mislukt om de node details te verkrijgen. Probeer het alsjeblieft opnieuw.</target>
+          <target state="translated">Mislukt om de node details te verkrijgen. Probeer a.u.b. nogmaals.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
@@ -1535,19 +1535,19 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="needs-review-translation">Er is een onbekende fout opgetreden in het download pad. Probeer aub opnieuw en als het opnieuw fout gaat neem aub contact op met support@mega.nz. [{0}]</target>
+          <target state="translated">Er is een onbekende fout opgetreden in het download pad. Probeer aub opnieuw en als het opnieuw fout gaat neem aub contact op met support@mega.nz. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" xml:space="preserve">
-          <source>File/folder not found</source>
-          <target state="new">File/folder not found</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" xml:space="preserve">
-          <source>The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</source>
-          <target state="new">The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again.</target>
+        <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
+          <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
+          <target state="needs-review-translation">Het bestand/map van de link die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
+          <source>File/folder not found</source>
+          <target state="translated">Bestand/map niet gevonden</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

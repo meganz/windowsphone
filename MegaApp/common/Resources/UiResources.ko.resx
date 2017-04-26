@@ -1264,4 +1264,20 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <value>무료</value>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
+  <data name="UI_LinkWithKey" xml:space="preserve">
+    <value>키가 있는 링크</value>
+    <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithoutKey" xml:space="preserve">
+    <value>키가 없는 링크</value>
+    <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(PRO 전용)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>만료일 설정</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>

@@ -406,7 +406,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Annually" translate="yes" space="preserve">
           <source>Annually</source>
-          <target state="translated">Annuellement</target>
+          <target state="translated">Annuel</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Annually' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AppVersionText" translate="yes" space="preserve">
@@ -426,7 +426,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Bandwidth" translate="yes" space="preserve">
           <source>Transfer quota</source>
-          <target state="needs-review-translation">de bande passante</target>
+          <target state="translated">de quota de transfert</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
@@ -687,7 +687,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess1" translate="yes" space="preserve">
           <source>get</source>
-          <target state="translated">disposez</target>
+          <target state="translated">obtenez</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess2" translate="yes" space="preserve">
@@ -960,7 +960,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/SettingsShort" translate="yes" space="preserve">
           <source>Settings</source>
-          <target state="translated">Réglages</target>
+          <target state="translated">Paramètres</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label abreviated for any 'Settings' button, link, text, title, etc. - (String as short as possible - MAX 10 characteres).</note>
         </trans-unit>
         <trans-unit id="Resx/State" translate="yes" space="preserve">
@@ -1123,7 +1123,7 @@ Preserve the {0} code because is for include the name of the destination folder 
         </trans-unit>
         <trans-unit id="Resx/Status" translate="yes" space="preserve">
           <source>Status</source>
-          <target state="translated">Statut</target>
+          <target state="translated">État</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ReceivedRequests" translate="yes" space="preserve">
@@ -1317,7 +1317,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Vider la Corbeille</target>
+          <target state="translated">Vider la corbeille</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty rubbish bin page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptySharedFolders" translate="yes" space="preserve">
@@ -1435,25 +1435,25 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">Gratuit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
+          <source>Link with key</source>
+          <target state="translated">Lien avec clé</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
           <source>Link without key</source>
-          <target state="new">Link without key</target>
+          <target state="translated">Lien sans clé</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" xml:space="preserve">
-          <source>Set expiry date</source>
-          <target state="new">Set expiry date</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_ProOnly" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
           <source>(PRO ONLY)</source>
-          <target state="new">(PRO ONLY)</target>
+          <target state="translated">(PRO SEULEMENT)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LinkWithKey" translate="yes" xml:space="preserve">
-          <source>Link with key</source>
-          <target state="new">Link with key</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
+          <source>Set expiry date</source>
+          <target state="translated">Définir une date d'expiration</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

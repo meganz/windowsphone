@@ -1264,4 +1264,20 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <value>Бесплатно</value>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
+  <data name="UI_LinkWithKey" xml:space="preserve">
+    <value>Ссылка с ключом</value>
+    <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LinkWithoutKey" xml:space="preserve">
+    <value>Ссылка без ключа</value>
+    <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ProOnly" xml:space="preserve">
+    <value>(ТОЛЬКО PRO)</value>
+    <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
+  </data>
+  <data name="UI_SetExpirationDate" xml:space="preserve">
+    <value>Задать срок годности</value>
+    <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
 </root>
