@@ -108,7 +108,11 @@ namespace MegaApp.Pages
             SetControlState(true);
 
             App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.PictureSelected);
+
+            if (NavigateService.CanGoBack())
+                NavigateService.GoBack();
+            else
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
         }
 
         private void OnClearSelectionClick(object sender, System.EventArgs e)

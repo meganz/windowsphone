@@ -134,8 +134,6 @@ namespace MegaApp.Services
                             App.MegaTransfers.Insert(0, uploadTransfer);
                             uploadTransfer.StartTransfer();
                         }
-
-                        NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
                     }
                     catch (Exception)
                     {

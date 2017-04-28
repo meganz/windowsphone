@@ -754,7 +754,6 @@ namespace MegaApp.Models
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            //OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
         }
 
         public bool SelectMultipleItemsForMove()

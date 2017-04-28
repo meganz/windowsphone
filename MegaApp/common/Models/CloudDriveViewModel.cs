@@ -329,7 +329,6 @@ namespace MegaApp.Models
                     uploadTransfer.StartTransfer();
                 }
                 NoFolderUpAction = true;
-                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
             catch (Exception)
             {

@@ -258,11 +258,7 @@ namespace MegaApp.Models
         public virtual void Download(TransferQueu transferQueu, string downloadPath = null)
         {
             if (!IsUserOnline()) return;
-            //NavigateService.NavigateTo(typeof(DownloadPage), NavigationParameter.Normal, this);
-            
             SaveForOffline(transferQueu);
-
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
         }
 #elif WINDOWS_PHONE_81
         public async void Download(TransferQueu transferQueu, string downloadPath = null)
@@ -307,18 +303,15 @@ namespace MegaApp.Models
             }
                         
             // If selected file is a folder then also select it childnodes to download
-            bool result;
             if(this.IsFolder)
-                result = await RecursiveDownloadFolder(transferQueu, downloadPath, this);
+                await RecursiveDownloadFolder(transferQueu, downloadPath, this);
             else
-                result = await DownloadFile(transferQueu, downloadPath, this);
+                await DownloadFile(transferQueu, downloadPath, this);
 
             OnUiThread(() => ProgressService.SetProgressIndicator(false));
 
             // TODO Remove this global declaration in method
-            App.CloudDrive.NoFolderUpAction = true;
-            if (!result || !transferQueu.Any(t => t.IsAliveTransfer())) return;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads);
+            App.CloudDrive.NoFolderUpAction = true;            
         }
 
         private async Task<bool> CheckDownloadPath(String downloadPath)

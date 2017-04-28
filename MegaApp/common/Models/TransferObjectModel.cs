@@ -130,20 +130,6 @@ namespace MegaApp.Models
             }            
         }
 
-        public bool IsAliveTransfer()
-        {
-            switch(this.Status)
-            {
-                case TransferStatus.Canceled:
-                case TransferStatus.Downloaded:
-                case TransferStatus.Uploaded:
-                case TransferStatus.Error:
-                    return false;
-            }
-
-            return true;
-        }
-
         #if WINDOWS_PHONE_81
         public async Task<bool> FinishDownload(String sourcePath, String newFileName)
         {

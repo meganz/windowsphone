@@ -223,7 +223,6 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            bool exceptionCatched = false;
             try
             {
                 if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" ||
@@ -268,8 +267,6 @@ namespace MegaApp.Pages
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
-
-                        exceptionCatched = true;
                     }
                 }
             }
@@ -280,17 +277,11 @@ namespace MegaApp.Pages
                     String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
-                
-                exceptionCatched = true;
             }
             finally
             {
                 ResetFilePicker();
-
                 ProgressService.SetProgressIndicator(false);
-
-                if (!exceptionCatched)
-                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
         }
 

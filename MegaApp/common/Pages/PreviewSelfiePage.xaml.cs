@@ -62,7 +62,14 @@ namespace MegaApp.Pages
                 uploadTransfer.StartTransfer();
 
                 App.CloudDrive.NoFolderUpAction = true;
-                this.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.SelfieSelected));
+
+                // Remove the `PhotoCameraPage` from the back stack and go back
+                NavigationService.RemoveBackEntry();
+
+                if (NavigateService.CanGoBack())
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
             catch (Exception)
             {
