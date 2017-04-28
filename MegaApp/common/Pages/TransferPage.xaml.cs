@@ -186,15 +186,6 @@ namespace MegaApp.Pages
             if (navParam == NavigationParameter.Downloads)
                 TransfersPivot.SelectedItem = DownloadsPivot;
 
-            if (navParam == NavigationParameter.PictureSelected)
-                NavigationService.RemoveBackEntry();
-
-            if (navParam == NavigationParameter.AlbumSelected || navParam == NavigationParameter.SelfieSelected)
-            {
-                NavigationService.RemoveBackEntry();
-                NavigationService.RemoveBackEntry();
-            }
-
             if (!NetworkService.IsNetworkAvailable())
             {
                 UpdateGUI(false);

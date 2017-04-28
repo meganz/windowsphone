@@ -420,12 +420,6 @@ namespace MegaApp.Pages
                         _mainPageViewModel.LoadFolders();
                     break;
 
-                case NavigationParameter.PictureSelected:
-                    break;
-                case NavigationParameter.AlbumSelected:
-                    break;
-                case NavigationParameter.SelfieSelected:
-                    break;
                 case NavigationParameter.UriLaunch:
                     checkSpecialNavigation = Load();
                     break;

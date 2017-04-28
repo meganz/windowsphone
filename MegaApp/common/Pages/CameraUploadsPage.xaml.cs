@@ -184,12 +184,6 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.PasswordLogin:
                     break;
-                case NavigationParameter.PictureSelected:
-                    break;
-                case NavigationParameter.AlbumSelected:
-                    break;
-                case NavigationParameter.SelfieSelected:
-                    break;
                 case NavigationParameter.UriLaunch:
                     break;
                 case NavigationParameter.Browsing:
