@@ -7,6 +7,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
@@ -14,8 +17,6 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
@@ -57,7 +58,7 @@ namespace MegaApp.Pages
                     fs.Close();
                 }
 
-                var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
                 App.MegaTransfers.Insert(0, uploadTransfer);
                 uploadTransfer.StartTransfer();
 

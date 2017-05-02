@@ -19,7 +19,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             this.Information = this.Size.ToStringAndSuffix();
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, MTransferType.TYPE_DOWNLOAD, LocalFilePath);
         }
 
         #region Override Methods

@@ -129,7 +129,7 @@ namespace MegaApp.Services
                             }
                             var uploadTransfer = new TransferObjectModel(currentFolder.MegaSdk,
                                 currentFolder.FolderRootNode,
-                                TransferType.Upload,
+                                MTransferType.TYPE_UPLOAD,
                                 newFilePath);
                             App.MegaTransfers.Insert(0, uploadTransfer);
                             uploadTransfer.StartTransfer();

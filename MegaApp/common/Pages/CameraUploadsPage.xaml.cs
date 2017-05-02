@@ -250,7 +250,7 @@ namespace MegaApp.Pages
                             fs.Close();
                         }
                         var uploadTransfer = new TransferObjectModel(
-                            App.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, TransferType.Upload, newFilePath);
+                            App.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
                         App.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }

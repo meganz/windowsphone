@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
 using MegaApp.Enums;
 using MegaApp.Models;
 
@@ -34,10 +35,10 @@ namespace MegaApp.Classes
 
                     switch (transferObject.Type)
                     {
-                        case TransferType.Download:
+                        case MTransferType.TYPE_DOWNLOAD:
                             DownloadSort(transferObject);
                             break;
-                        case TransferType.Upload:
+                        case MTransferType.TYPE_UPLOAD:
                             UploadSort(transferObject);
                             break;
                     }
@@ -51,10 +52,10 @@ namespace MegaApp.Classes
 
                     switch (transferObject.Type)
                     {
-                        case TransferType.Download:
+                        case MTransferType.TYPE_DOWNLOAD:
                             Downloads.Remove(transferObject);
                             break;
-                        case TransferType.Upload:
+                        case MTransferType.TYPE_UPLOAD:
                             Uploads.Remove(transferObject);
                             break;
                     }

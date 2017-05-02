@@ -78,7 +78,7 @@ namespace MegaApp.MegaApi
 
                             switch (megaTransfer.Type)
                             {
-                                case TransferType.Download:
+                                case MTransferType.TYPE_DOWNLOAD:
                                     if (megaTransfer.IsSaveForOfflineTransfer) //If is a save for offline download transfer
                                     {
                                         var node = megaTransfer.SelectedNode as NodeViewModel;
@@ -170,7 +170,7 @@ namespace MegaApp.MegaApi
                                     Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Downloaded);
                                     break;
 
-                                case TransferType.Upload:
+                                case MTransferType.TYPE_UPLOAD:
                                     Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Uploaded);
                                     break;
 
@@ -206,7 +206,7 @@ namespace MegaApp.MegaApi
                             Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
                             switch (megaTransfer.Type)
                             {
-                                case TransferType.Download:
+                                case MTransferType.TYPE_DOWNLOAD:
                                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                                     {
                                         new CustomMessageDialog(
@@ -218,7 +218,7 @@ namespace MegaApp.MegaApi
 
                                     break;
 
-                                case TransferType.Upload:
+                                case MTransferType.TYPE_UPLOAD:
                                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                                     {
                                         new CustomMessageDialog(
@@ -254,13 +254,13 @@ namespace MegaApp.MegaApi
                 {
                     megaTransfer = new TransferObjectModel(api,
                         NodeService.CreateNew(api, App.AppInformation, node, ContainerType.CloudDrive),
-                        TransferType.Download, transfer.getPath());
+                        MTransferType.TYPE_DOWNLOAD, transfer.getPath());
                 }
             }
             else
             {
                 megaTransfer = new TransferObjectModel(api, App.MainPageViewModel.CloudDrive.FolderRootNode,
-                    TransferType.Upload, transfer.getPath());
+                    MTransferType.TYPE_UPLOAD, transfer.getPath());
             }
 
             if (megaTransfer != null)
@@ -324,10 +324,10 @@ namespace MegaApp.MegaApi
                     {
                         switch (megaTransfer.Type)
                         {
-                            case TransferType.Download:
+                            case MTransferType.TYPE_DOWNLOAD:
                                 megaTransfer.Status = TransferStatus.Downloading;
                                 break;
-                            case TransferType.Upload:
+                            case MTransferType.TYPE_UPLOAD:
                                 megaTransfer.Status = TransferStatus.Uploading;
                                 break;
                             default:

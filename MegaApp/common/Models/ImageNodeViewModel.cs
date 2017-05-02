@@ -20,7 +20,7 @@ namespace MegaApp.Models
             : base(megaSdk, appInformation, megaNode, parentContainerType, parentCollection, childCollection)
         {
             // Image node downloads to the image path of the full original image
-            this.Transfer = new TransferObjectModel(MegaSdk, this, TransferType.Download, LocalFilePath);
+            this.Transfer = new TransferObjectModel(MegaSdk, this, MTransferType.TYPE_DOWNLOAD, LocalFilePath);
 
             this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
 

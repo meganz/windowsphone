@@ -51,13 +51,13 @@ namespace MegaApp.Services
                     {
                         megaTransfer = new TransferObjectModel(App.MegaSdk,
                             NodeService.CreateNew(App.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
-                            TransferType.Download, transfer.getPath());
+                            MTransferType.TYPE_DOWNLOAD, transfer.getPath());
                     }
                 }
                 else
                 {
                     megaTransfer = new TransferObjectModel(App.MegaSdk, App.MainPageViewModel.CloudDrive.FolderRootNode,
-                        TransferType.Upload, transfer.getPath());
+                        MTransferType.TYPE_UPLOAD, transfer.getPath());
                 }
 
                 if(megaTransfer != null)

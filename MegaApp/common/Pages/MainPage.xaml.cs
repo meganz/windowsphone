@@ -609,7 +609,7 @@ namespace MegaApp.Pages
                             await fs.FlushAsync();
                             fs.Close();
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
                         App.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }

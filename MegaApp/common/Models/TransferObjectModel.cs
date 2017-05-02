@@ -21,17 +21,17 @@ namespace MegaApp.Models
 {
     public class TransferObjectModel : BaseSdkViewModel
     {
-        public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, TransferType transferType, 
+        public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, MTransferType transferType, 
             string filePath, string downloadFolderPath = null) :base(megaSdk)
         {
             switch (transferType)
             {
-                case TransferType.Download:
+                case MTransferType.TYPE_DOWNLOAD:
                     {
                         DisplayName = selectedNode.Name;
                         break;
                     }
-                case TransferType.Upload:
+                case MTransferType.TYPE_UPLOAD:
                     {
                         DisplayName = Path.GetFileName(filePath);
                         break;
@@ -62,7 +62,7 @@ namespace MegaApp.Models
         {
             switch (Type)
             {
-                case TransferType.Download:
+                case MTransferType.TYPE_DOWNLOAD:
                 {
                     // Download all nodes with the App instance of the SDK and authorize nodes to be downloaded with this SDK instance.
                     // Needed to allow transfers resumption of folder link nodes.
@@ -71,7 +71,7 @@ namespace MegaApp.Models
                     this.IsSaveForOfflineTransfer = isSaveForOffline;
                     break;
                 }
-                case TransferType.Upload:
+                case MTransferType.TYPE_UPLOAD:
                 {
                     // Start uploads with the flag of temporary source activated to always automatically delete the 
                     // uploaded file from the upload temporary folder in the sandbox of the app
@@ -99,7 +99,7 @@ namespace MegaApp.Models
         {
             switch (Type)
             {
-                case TransferType.Download:
+                case MTransferType.TYPE_DOWNLOAD:
                     {
                         IsDefaultImage = true;
                         FileTypePathData = ImageService.GetDefaultFileTypePathData(SelectedNode.Name);
@@ -110,7 +110,7 @@ namespace MegaApp.Models
                         }
                         break;
                     }
-                case TransferType.Upload:
+                case MTransferType.TYPE_UPLOAD:
                     {
                         if (ImageService.IsImage(FilePath))
                         {
@@ -155,7 +155,7 @@ namespace MegaApp.Models
         public string DisplayName { get; set; }
         public string FilePath { get; private set; }
         public string DownloadFolderPath { get; set; }
-        public TransferType Type { get; set; }
+        public MTransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
         public MTransfer Transfer { get; set; }
 
