@@ -25,7 +25,6 @@
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <converters:TransferStatusToReadableTextConverter x:Key="TransferStatusToReadableTextConverter"/>
-    <converters:TransferStatusToIndeterminateConverter x:Key="TransferStatusToIndeterminateConverter"/>
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
     <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
     <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>

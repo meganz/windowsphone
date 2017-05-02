@@ -292,9 +292,6 @@
     <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
       <Link>Converters\TextToUpperCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\common\Converters\TransferStatusToIndeterminateConverter.cs">
-      <Link>Converters\TransferStatusToIndeterminateConverter.cs</Link>
-    </Compile>
     <Compile Include="..\common\Converters\TransferStatusToReadableTextConverter.cs">
       <Link>Converters\TransferStatusToReadableTextConverter.cs</Link>
     </Compile>
@@ -586,9 +583,6 @@
     <Compile Include="..\common\Models\DelegateCommand.cs">
       <Link>Models\DelegateCommand.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\DownloadNodeViewModel.cs">
-      <Link>Models\DownloadNodeViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\FileNodeViewModel.cs">
       <Link>Models\FileNodeViewModel.cs</Link>
     </Compile>
@@ -696,10 +690,6 @@
     <Compile Include="..\common\Pages\ContactsPage.xaml.cs">
       <Link>Pages\ContactsPage.xaml.cs</Link>
       <DependentUpon>ContactsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
-      <Link>Pages\DownloadPage.xaml.cs</Link>
-      <DependentUpon>DownloadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\FolderLinkPage.xaml.cs">
       <Link>Pages\FolderLinkPage.xaml.cs</Link>
@@ -1461,10 +1451,6 @@
     </Page>
     <Page Include="..\common\Pages\ContactsPage.xaml">
       <Link>Pages\ContactsPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\DownloadPage.xaml">
-      <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\FolderLinkPage.xaml">
