@@ -82,7 +82,7 @@ namespace MegaApp.MegaApi
                     // Disable the "camera upload" service if is enabled
                     if (MediaService.GetAutoCameraUploadStatus())
                     {
-                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disk quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Storage quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
                     }

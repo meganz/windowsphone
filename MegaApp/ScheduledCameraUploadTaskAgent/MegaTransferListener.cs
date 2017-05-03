@@ -9,16 +9,16 @@ namespace ScheduledCameraUploadTaskAgent
     {
         private Timer _timer;
 
-        // Event raised so that the task agent can abort itself when disk quota is exceeded
-        public event EventHandler DiskQuotaExceeded;
+        // Event raised so that the task agent can abort itself when storage quota is exceeded
+        public event EventHandler StorageQuotaExceeded;
 
         // Event raised so that the task agent can finish itself when transfer quota is exceeded
         public event EventHandler TransferQuotaExceeded;
 
-        protected virtual void OnDiskQuotaExceeded(EventArgs e)
+        protected virtual void OnStorageQuotaExceeded(EventArgs e)
         {
-            if (DiskQuotaExceeded != null)
-                DiskQuotaExceeded(this, e);
+            if (StorageQuotaExceeded != null)
+                StorageQuotaExceeded(this, e);
         }
 
         protected virtual void OnTransferQuotaExceeded(EventArgs e)
@@ -40,8 +40,8 @@ namespace ScheduledCameraUploadTaskAgent
             if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 //Stop the Camera Upload Service
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disk quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
-                OnDiskQuotaExceeded(EventArgs.Empty);
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Storage quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
+                OnStorageQuotaExceeded(EventArgs.Empty);
                 return;
             }
 
