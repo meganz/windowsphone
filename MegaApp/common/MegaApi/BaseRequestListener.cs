@@ -72,7 +72,7 @@ namespace MegaApp.MegaApi
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED));
             }
-            else if(e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA) //Storage overquota error
             {
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
@@ -82,7 +82,7 @@ namespace MegaApp.MegaApi
                     // Disable the "camera upload" service if is enabled
                     if (MediaService.GetAutoCameraUploadStatus())
                     {
-                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disk quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
                     }

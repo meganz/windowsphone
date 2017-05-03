@@ -180,7 +180,7 @@ namespace MegaApp.MegaApi
 
                             break;
                         }
-                    case MErrorType.API_EOVERQUOTA:
+                    case MErrorType.API_EOVERQUOTA: // Storage overquota error
                         {
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
@@ -287,11 +287,15 @@ namespace MegaApp.MegaApi
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
-            }            
+                if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+
+                // Transfer overquota error
+                if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+                    DialogService.ShowTransferOverquotaWarning(); 
+            });
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)

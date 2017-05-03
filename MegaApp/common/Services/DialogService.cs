@@ -340,6 +340,22 @@ namespace MegaApp.Services
             customMessageDialog.ShowDialog();
         }
 
+        public static void ShowTransferOverquotaWarning()
+        {
+            var upgradeAccountButton = new DialogButton(
+                UiResources.UI_UpgradeAccount, () =>
+                {
+                    ((PhoneApplicationFrame)Application.Current.RootVisual).Navigate(
+                        new Uri("/Pages/MyAccountPage.xaml?Pivot=1", UriKind.RelativeOrAbsolute));
+                });
+
+            var customMessageDialog = new CustomMessageDialog(AppMessages.AM_TransferOverquotaWarning_Title,
+                AppMessages.AM_TransferOverquotaWarning, App.AppInformation,
+                new[] { upgradeAccountButton, new DialogButton(UiResources.Dismiss, null) });
+
+            customMessageDialog.ShowDialog();
+        }
+
         public static void DialogOpening(CancelEventArgs args)
         {
             // Do not show dialog when another dialog is already open

@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -230,7 +230,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to get a image preview failed - (String as short as possible).</comment>
   </data>
   <data name="ImageSaved" xml:space="preserve">
-    <value>Image successfully exported to &apos;saved pictures&apos; album</value>
+    <value>Image successfully exported to 'saved pictures' album</value>
     <comment>Message of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaved_Title" xml:space="preserve">
@@ -238,7 +238,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when a image is saved/exported successfully saved to the 'saved pictures' album of the phone device - (String as short as possible).</comment>
   </data>
   <data name="ImageSaveError" xml:space="preserve">
-    <value>Error exporting image to  &apos;saved pictures&apos; album. Please try again</value>
+    <value>Error exporting image to  'saved pictures' album. Please try again</value>
     <comment>Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</comment>
   </data>
   <data name="ImageSaveError_Title" xml:space="preserve">
@@ -350,7 +350,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when any required field is not filled in - (String as short as possible).</comment>
   </data>
   <data name="SaveImageQuestion" xml:space="preserve">
-    <value>Export current image to &apos;saved pictures&apos; album?</value>
+    <value>Export current image to 'saved pictures' album?</value>
     <comment>Message of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it.</comment>
   </data>
   <data name="SaveImageQuestion_Title" xml:space="preserve">
@@ -628,7 +628,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>You don&apos;t have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device&apos;s internal memory instead.</value>
+    <value>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -887,7 +887,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>In order for the automatic Camera Uploads to work correctly, you need to enable the option &quot;Stay logged in&quot;. Do you want to enable this option?</value>
+    <value>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
@@ -933,7 +933,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the account is updated (upgraded or downgraded).</comment>
   </data>
   <data name="SSLKeyError" xml:space="preserve">
-    <value>Our SSL/TLS certificate can&apos;t be verified. You could be affected by a man-in-the-middle attack.</value>
+    <value>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</value>
     <comment>Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="SSLKeyError_Title" xml:space="preserve">
@@ -1025,7 +1025,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
-    <value>You don&apos;t have access to the path &apos;{0}&apos;. Please select another one and try again.</value>
+    <value>You don't have access to the path '{0}'. Please select another one and try again.</value>
     <comment>Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</comment>
   </data>
@@ -1034,7 +1034,7 @@ Preserve the '{0}' code because is for include the file/folder path in runtime.<
     <comment>Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</comment>
   </data>
   <data name="InvalidFileName" xml:space="preserve">
-    <value>The name of the file &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again.</value>
+    <value>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1043,7 +1043,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="PathTooLong" xml:space="preserve">
-    <value>The path of the file/folder &apos;{0}&apos; is too long. Please change it and try again.</value>
+    <value>The path of the file/folder '{0}' is too long. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</comment>
   </data>
@@ -1052,7 +1052,7 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
     <comment>Title of the dialog displayed in cases that the file/folder path is too long - (String as short as possible).</comment>
   </data>
   <data name="InvalidFolderNameOrPath" xml:space="preserve">
-    <value>The name or path of the folder &apos;{0}&apos; is not valid or has illegal characters. Please change it and try again.</value>
+    <value>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</value>
     <comment>Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</comment>
   </data>
@@ -1172,7 +1172,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
-    <value>You don&apos;t have access to the selected download path. Please select a different download path and try again.</value>
+    <value>You don't have access to the selected download path. Please select a different download path and try again.</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess_Title" xml:space="preserve">
@@ -1354,5 +1354,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
     <value>File/folder not found</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
+  </data>
+  <data name="AM_TransferOverquotaWarning" xml:space="preserve">
+    <value>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</value>
+    <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
+  </data>
+  <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
+    <value>Depleted transfer quota</value>
+    <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
 </root>
