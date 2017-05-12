@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using Windows.Storage;
 using mega;
-using System.Threading.Tasks;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
@@ -20,13 +22,13 @@ namespace MegaApp.Services
         /// <summary>
         /// Global transfers queue
         /// </summary>
-        private static TransferQueu _megaTransfers;
-        public static TransferQueu MegaTransfers
+        private static TransferQueue _megaTransfers;
+        public static TransferQueue MegaTransfers
         {
             get
             {
                 if (_megaTransfers != null) return _megaTransfers;
-                _megaTransfers = new TransferQueu();
+                _megaTransfers = new TransferQueue();
                 return _megaTransfers;
             }
         }
@@ -45,11 +47,13 @@ namespace MegaApp.Services
             }
         }
 
+        #region Public Methods
+
         /// <summary>
         /// Update the transfers list/queue.
         /// </summary>
         /// <param name="MegaTransfers">Transfers list/queue to update.</param>
-        public static void UpdateMegaTransfersList(TransferQueu MegaTransfers)
+        public static void UpdateMegaTransfersList(TransferQueue MegaTransfers)
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
@@ -190,5 +194,8 @@ namespace MegaApp.Services
                 }
             }
         }
+
+        #endregion
+
     }
 }

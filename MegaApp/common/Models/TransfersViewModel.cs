@@ -14,7 +14,7 @@ namespace MegaApp.Models
 {
     class TransfersViewModel: BaseAppInfoAwareViewModel
     {
-        public TransfersViewModel(MegaSDK megaSdk, AppInformation appInformation, TransferQueu megaTransfers)
+        public TransfersViewModel(MegaSDK megaSdk, AppInformation appInformation, TransferQueue megaTransfers)
             : base(megaSdk, appInformation)
         {
             MegaTransfers = megaTransfers;
@@ -102,8 +102,8 @@ namespace MegaApp.Models
 
         #region Properties
 
-        private TransferQueu _megaTransfers;
-        public TransferQueu MegaTransfers
+        private TransferQueue _megaTransfers;
+        public TransferQueue MegaTransfers
         {
             get { return _megaTransfers; }
             set { SetField(ref _megaTransfers, value); }

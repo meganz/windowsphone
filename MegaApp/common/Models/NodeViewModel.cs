@@ -255,13 +255,13 @@ namespace MegaApp.Models
         }
 
 #if WINDOWS_PHONE_80
-        public virtual void Download(TransferQueu transferQueu, string downloadPath = null)
+        public virtual void Download(TransferQueue transferQueue, string downloadPath = null)
         {
             if (!IsUserOnline()) return;
             SaveForOffline(transferQueu);
         }
 #elif WINDOWS_PHONE_81
-        public async void Download(TransferQueu transferQueu, string downloadPath = null)
+        public async void Download(TransferQueue transferQueue, string downloadPath = null)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return;
@@ -304,9 +304,9 @@ namespace MegaApp.Models
                         
             // If selected file is a folder then also select it childnodes to download
             if(this.IsFolder)
-                await RecursiveDownloadFolder(transferQueu, downloadPath, this);
+                await RecursiveDownloadFolder(transferQueue, downloadPath, this);
             else
-                await DownloadFile(transferQueu, downloadPath, this);
+                await DownloadFile(transferQueue, downloadPath, this);
 
             OnUiThread(() => ProgressService.SetProgressIndicator(false));
 
@@ -395,7 +395,7 @@ namespace MegaApp.Models
             return true;
         }
 
-        private async Task<bool> RecursiveDownloadFolder(TransferQueu transferQueu, String downloadPath, NodeViewModel folderNode)
+        private async Task<bool> RecursiveDownloadFolder(TransferQueue transferQueue, String downloadPath, NodeViewModel folderNode)
         {            
             if (String.IsNullOrWhiteSpace(folderNode.Name))
             {
@@ -433,9 +433,9 @@ namespace MegaApp.Models
 
                     bool partialResult;
                     if (childNode.IsFolder)
-                        partialResult = await RecursiveDownloadFolder(transferQueu, newDownloadPath, childNode);
+                        partialResult = await RecursiveDownloadFolder(transferQueue, newDownloadPath, childNode);
                     else
-                        partialResult = await DownloadFile(transferQueu, newDownloadPath, childNode);
+                        partialResult = await DownloadFile(transferQueue, newDownloadPath, childNode);
 
                     // Only change the global result if the partial result indicates an error
                     if (!partialResult) result = partialResult;
@@ -456,7 +456,7 @@ namespace MegaApp.Models
             }
         }
 
-        private async Task<bool> DownloadFile(TransferQueu transferQueu, String downloadPath, NodeViewModel fileNode)
+        private async Task<bool> DownloadFile(TransferQueue transferQueue, String downloadPath, NodeViewModel fileNode)
         {
             if (String.IsNullOrWhiteSpace(fileNode.Name))
             {
@@ -479,7 +479,7 @@ namespace MegaApp.Models
                     return false;
 
                 fileNode.Transfer.ExternalDownloadPath = downloadPath;
-                transferQueu.Add(fileNode.Transfer);
+                transferQueue.Add(fileNode.Transfer);
                 fileNode.Transfer.StartTransfer();
             }
             catch (Exception e)
@@ -507,7 +507,7 @@ namespace MegaApp.Models
         }
 #endif
 
-        public async Task<bool> SaveForOffline(TransferQueu transferQueu)
+        public async Task<bool> SaveForOffline(TransferQueue transferQueue)
         {
             // User must be online to perform this operation
             if (!IsUserOnline()) return false;
@@ -534,9 +534,9 @@ namespace MegaApp.Models
                 FolderService.CreateFolder(parentNodePath);
 
             if (this.IsFolder)
-                await RecursiveSaveForOffline(transferQueu, parentNodePath, this);
+                await RecursiveSaveForOffline(transferQueue, parentNodePath, this);
             else
-                await SaveFileForOffline(transferQueu, parentNodePath, this);
+                await SaveFileForOffline(transferQueue, parentNodePath, this);
             
             this.IsAvailableOffline = this.IsSelectedForOffline = true;
 
@@ -555,7 +555,7 @@ namespace MegaApp.Models
             return true;
         }
 
-        private async Task RecursiveSaveForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node)
+        private async Task RecursiveSaveForOffline(TransferQueue transferQueue, String sfoPath, NodeViewModel node)
         {
             if (!FolderService.FolderExists(sfoPath))
                 FolderService.CreateFolder(sfoPath);
@@ -583,13 +583,13 @@ namespace MegaApp.Models
                 if (childNode == null) continue;
 
                 if (childNode.IsFolder)
-                    await RecursiveSaveForOffline(transferQueu, newSfoPath, childNode);
+                    await RecursiveSaveForOffline(transferQueue, newSfoPath, childNode);
                 else
-                    await SaveFileForOffline(transferQueu, newSfoPath, childNode);
+                    await SaveFileForOffline(transferQueue, newSfoPath, childNode);
             }
         }
 
-        private async Task<bool> SaveFileForOffline(TransferQueu transferQueu, String sfoPath, NodeViewModel node)
+        private async Task<bool> SaveFileForOffline(TransferQueue transferQueue, String sfoPath, NodeViewModel node)
         {
             if (FileService.FileExists(Path.Combine(sfoPath, node.Name))) return true;
 
@@ -603,8 +603,8 @@ namespace MegaApp.Models
                 SavedForOffline.Insert(node.OriginalMNode, true);
             }
             else
-            {                
-                transferQueu.Add(node.Transfer);
+            {
+                transferQueue.Add(node.Transfer);
                 node.Transfer.ExternalDownloadPath = sfoPath;
                 node.Transfer.StartTransfer(true);
             }

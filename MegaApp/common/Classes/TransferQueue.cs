@@ -12,15 +12,36 @@ using MegaApp.Models;
 
 namespace MegaApp.Classes
 {
-    public class TransferQueu: ObservableCollection<TransferObjectModel>
+    public class TransferQueue : ObservableCollection<TransferObjectModel>
     {
-        public TransferQueu()
+        public TransferQueue()
         {
             Uploads = new ObservableCollection<TransferObjectModel>();
             Downloads = new ObservableCollection<TransferObjectModel>();
 
             Uploads.CollectionChanged += UploadsOnCollectionChanged;
             Downloads.CollectionChanged += DownloadsOnCollectionChanged;
+        }
+
+        /// <summary>
+        /// Select and return all transfers in the queue.
+        /// </summary>
+        /// <returns>Download and upload transfers combined in one list.</returns>
+        public IList<TransferObjectModel> SelectAll()
+        {
+            var result = new List<TransferObjectModel>(this.Downloads.Count + this.Uploads.Count);
+            result.AddRange(this.Downloads);
+            result.AddRange(this.Uploads);
+            return result;
+        }
+
+        /// <summary>
+        /// Clear the complete queue
+        /// </summary>
+        public void Clear()
+        {
+            this.Downloads.Clear();
+            this.Uploads.Clear();
         }
 
         protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
