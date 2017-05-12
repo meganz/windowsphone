@@ -26,7 +26,7 @@ namespace MegaApp.Pages
 
        public MediaAlbumPage()
         {
-            _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk, 
+            _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk, 
                 NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             this.DataContext = _mediaAlbumViewModel;
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace MegaApp.Pages
 
             if(_mediaAlbumViewModel == null)
             {
-                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk,
                     NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             }
 
@@ -96,8 +96,8 @@ namespace MegaApp.Pages
                             await fs.FlushAsync();
                             fs.Close();
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
+                        var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                        TransfersService.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }
                 }
@@ -135,7 +135,7 @@ namespace MegaApp.Pages
         {
             if (_mediaAlbumViewModel == null)
             {
-                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk,
                     NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             }
 

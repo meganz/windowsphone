@@ -18,7 +18,7 @@ namespace MegaApp.Pages
         
         public SettingsPage()
         {
-            _settingsViewModel = new SettingsViewModel(App.MegaSdk, App.AppInformation);
+            _settingsViewModel = new SettingsViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _settingsViewModel;
                         
             Deployment.Current.Dispatcher.BeginInvoke(() =>

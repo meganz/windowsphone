@@ -555,7 +555,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
@@ -569,7 +569,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
@@ -583,7 +583,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
@@ -597,7 +597,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
@@ -611,7 +611,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
@@ -625,7 +625,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
@@ -639,7 +639,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
@@ -653,7 +653,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
@@ -728,7 +728,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_ASC);
@@ -742,7 +742,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_DEFAULT_DESC);
@@ -756,7 +756,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_DESC);
@@ -770,7 +770,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_SIZE_ASC);
@@ -784,7 +784,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_DESC);
@@ -798,7 +798,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_MODIFICATION_ASC);
@@ -812,7 +812,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_ASC);
@@ -826,7 +826,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     UiService.SetSortOrder(folder.FolderRootNode.Base64Handle, (int)MSortOrderType.ORDER_ALPHABETICAL_DESC);
@@ -901,7 +901,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     Task.Run(() => contacts.SortContacts(ListSortMode.Ascending));       
@@ -914,7 +914,7 @@ namespace MegaApp.Services
                 TapAction = () =>
                 {
                     // Needed on every UI interaction
-                    App.MegaSdk.retryPendingConnections();
+                    SdkService.MegaSdk.retryPendingConnections();
 
                     sortRadWindow.IsOpen = false;
                     Task.Run(() => contacts.SortContacts(ListSortMode.Descending));
@@ -1058,7 +1058,7 @@ namespace MegaApp.Services
 
             customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
             {
-                 App.MegaSdk.creditCardCancelSubscriptions(reason, new CancelSubscriptionRequestListener());
+                 SdkService.MegaSdk.creditCardCancelSubscriptions(reason, new CancelSubscriptionRequestListener());
             };
 
             customMessageDialog.ShowDialog();
@@ -1332,7 +1332,7 @@ namespace MegaApp.Services
                         return;
                     }
 
-                    App.MegaSdk.changePassword(currentPassword.Password, newPassword.Password, new ChangePasswordRequestListener());
+                    SdkService.MegaSdk.changePassword(currentPassword.Password, newPassword.Password, new ChangePasswordRequestListener());
                 }
                 else
                 {

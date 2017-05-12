@@ -165,7 +165,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
+                SdkService.MegaSdk.retryPendingConnections();
                 
                 if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                 {
@@ -474,7 +474,7 @@ namespace MegaApp.Pages
         //        fs.Close();
         //    }
 
-        //    var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
+        //    var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
         //    App.MegaTransfers.Insert(0, uploadTransfer);
         //    uploadTransfer.StartTransfer();
             

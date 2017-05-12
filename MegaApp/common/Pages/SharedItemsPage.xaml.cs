@@ -27,7 +27,7 @@ namespace MegaApp.Pages
 
         public SharedItemsPage()
         {
-            _sharedItemsViewModel = new SharedItemsViewModel(App.MegaSdk, App.AppInformation);
+            _sharedItemsViewModel = new SharedItemsViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _sharedItemsViewModel;
 
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if(!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    if (!Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
@@ -105,7 +105,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToHome((BreadCrumb)sender);
         }
@@ -130,7 +130,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToFolder((BreadCrumb)sender, (IMegaNode)e.Item);
         }
@@ -173,7 +173,7 @@ namespace MegaApp.Pages
             if (PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
+                SdkService.MegaSdk.retryPendingConnections();
 
                 #if WINDOWS_PHONE_81
                 // Check to see if any folder has been picked
@@ -247,7 +247,7 @@ namespace MegaApp.Pages
             {
                 // In this case, if is an OutShare root node, no go to the folder up
                 if (_sharedItemsViewModel.OutShares.FolderRootNode == null || 
-                    App.MegaSdk.isOutShare(_sharedItemsViewModel.OutShares.FolderRootNode.OriginalMNode))
+                    SdkService.MegaSdk.isOutShare(_sharedItemsViewModel.OutShares.FolderRootNode.OriginalMNode))
                 {
                     return false;
                 }                    
@@ -261,7 +261,7 @@ namespace MegaApp.Pages
         private void OnRefreshClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (SharedItemsPivot.SelectedItem == IncomingPivotItem)
             {
@@ -282,7 +282,7 @@ namespace MegaApp.Pages
         private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             DialogService.ShowSortDialog(_sharedItemsViewModel.ActiveSharedFolderView);
         }
@@ -290,7 +290,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -323,7 +323,7 @@ namespace MegaApp.Pages
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             switch (e.NewState)
             {
@@ -357,7 +357,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox)sender, e.TappedItem);
 
@@ -460,7 +460,7 @@ namespace MegaApp.Pages
         private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (item == null || item.DataContext == null) return false;
             if (!(item.DataContext is IMegaNode)) return false;

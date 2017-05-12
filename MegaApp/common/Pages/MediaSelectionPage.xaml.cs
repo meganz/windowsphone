@@ -28,7 +28,7 @@ namespace MegaApp.Pages
        
         public MediaSelectionPage()
         {
-            _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
+            _mediaSelectionPageModel = new MediaSelectionPageModel(SdkService.MegaSdk);
             this.DataContext = _mediaSelectionPageModel;
 
             InitializeComponent();
@@ -89,8 +89,8 @@ namespace MegaApp.Pages
                             await fs.FlushAsync();
                             fs.Close();
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
+                        var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                        TransfersService.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }
                 }

@@ -13,11 +13,11 @@ using MegaApp.Services;
 
 namespace MegaApp.MegaApi
 {
-    public class GlobalDriveListener: MGlobalListenerInterface
+    public class GlobalListener: MGlobalListenerInterface
     {
         private readonly AppInformation _appInformation;
 
-        public GlobalDriveListener(AppInformation appInformation)
+        public GlobalListener(AppInformation appInformation)
         {
             _appInformation = appInformation;
             this.Nodes = new List<NodeDetailsViewModel>();
@@ -460,7 +460,7 @@ namespace MegaApp.MegaApi
                                 Email = user.getEmail(),
                                 Timestamp = user.getTimestamp(),
                                 Visibility = user.getVisibility(),
-                                AvatarColor = UiService.GetColorFromHex(App.MegaSdk.getUserAvatarColor(user))
+                                AvatarColor = UiService.GetColorFromHex(SdkService.MegaSdk.getUserAvatarColor(user))
                             };
 
                             Deployment.Current.Dispatcher.BeginInvoke(() => 

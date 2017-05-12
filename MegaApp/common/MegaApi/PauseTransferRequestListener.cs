@@ -101,15 +101,15 @@ namespace MegaApp.MegaApi
             switch(request.getNumber())
             {
                 case (int)MTransferType.TYPE_DOWNLOAD:
-                    transfersList = App.MegaTransfers.Downloads;
+                    transfersList = TransfersService.MegaTransfers.Downloads;
                     break;
 
                 case (int)MTransferType.TYPE_UPLOAD:
-                    transfersList = App.MegaTransfers.Uploads;
+                    transfersList = TransfersService.MegaTransfers.Uploads;
                     break;
 
                 default:
-                    transfersList = App.MegaTransfers;
+                    transfersList = TransfersService.MegaTransfers;
                     break;
             }
 

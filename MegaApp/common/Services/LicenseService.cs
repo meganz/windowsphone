@@ -171,7 +171,7 @@ namespace MegaApp.Services
         private static void SendLicenseToMega(string receipt)
         {
             // Validate and activate the MEGA Windows Store (int 13) subscription on the MEGA license server
-            App.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE, 
+            SdkService.MegaSdk.submitPurchaseReceipt((int)MPaymentMethod.PAYMENT_METHOD_WINDOWS_STORE, 
                 receipt, new PurchaseReceiptRequestListener(receipt));
         }
 

@@ -26,7 +26,7 @@ namespace MegaApp.Pages
 
         public ContactDetailsPage()
         {
-            _contactDetailsViewModel = new ContactDetailsViewModel(App.MegaSdk, App.AppInformation);
+            _contactDetailsViewModel = new ContactDetailsViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _contactDetailsViewModel;
 
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             _contactDetailsViewModel.GetContactSharedFolders();
             _contactDetailsViewModel.IsInSharedItemsRootListView = true;
@@ -52,7 +52,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
             
             ((ContactDetailsViewModel)this.DataContext).InShares.BrowseToFolder((IMegaNode)e.Item);            
         }        
@@ -68,14 +68,14 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _contactDetailsViewModel.Deinitialize(App.GlobalDriveListener);
+            _contactDetailsViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            _contactDetailsViewModel.Initialize(App.GlobalDriveListener);
+            _contactDetailsViewModel.Initialize(App.GlobalListener);
             _contactDetailsViewModel.SelectedContact = (Contact)PhoneApplicationService.Current.State["SelectedContact"];
         }
 
@@ -147,7 +147,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -177,7 +177,7 @@ namespace MegaApp.Pages
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             switch (e.NewState)
             {
@@ -211,7 +211,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox)sender, e.TappedItem);
 
@@ -285,7 +285,7 @@ namespace MegaApp.Pages
         private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (item == null || item.DataContext == null) return false;
             if (!(item.DataContext is IMegaNode)) return false;

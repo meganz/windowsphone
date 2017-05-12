@@ -55,22 +55,22 @@ namespace MegaApp.Models
 
         #region Public Methods
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
             AccountService.GetAccountDetailsFinish += OnGetAccountDetailsFinish;
 
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Add(this.CloudDrive);
-            globalDriveListener.Folders.Add(this.RubbishBin);
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Add(this.CloudDrive);
+            globalListener.Folders.Add(this.RubbishBin);
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
             AccountService.GetAccountDetailsFinish -= OnGetAccountDetailsFinish;
 
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Remove(this.CloudDrive);
-            globalDriveListener.Folders.Remove(this.RubbishBin);
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Remove(this.CloudDrive);
+            globalListener.Folders.Remove(this.RubbishBin);
         }
 
         public void SetCommandStatus(bool status)

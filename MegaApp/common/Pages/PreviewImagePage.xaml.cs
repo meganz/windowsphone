@@ -28,7 +28,7 @@ namespace MegaApp.Pages
         public PreviewImagePage()
         {
             _folderViewModel = NavigateService.GetNavigationData<FolderViewModel>();
-            _previewImageViewModel = new PreviewImageViewModel(App.MegaSdk, App.AppInformation, _folderViewModel);
+            _previewImageViewModel = new PreviewImageViewModel(SdkService.MegaSdk, App.AppInformation, _folderViewModel);
 
             this.DataContext = _previewImageViewModel;
 
@@ -83,7 +83,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
+                SdkService.MegaSdk.retryPendingConnections();
 
                 if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                 {
@@ -136,7 +136,7 @@ namespace MegaApp.Pages
                     App.LinkInformation.LinkAction = LinkAction.Download;
                 }
 
-                _previewImageViewModel.SelectedPreview.Download(App.MegaTransfers);
+                _previewImageViewModel.SelectedPreview.Download(TransfersService.MegaTransfers);
             }                
         }
 

@@ -15,7 +15,7 @@ namespace MegaApp.UserControls
             base.OnBackKeyPress(e);
 
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Check to see if any dialog is open
             // Cancel backpress event so that the dialog can close first

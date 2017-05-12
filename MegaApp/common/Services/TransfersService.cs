@@ -18,6 +18,34 @@ namespace MegaApp.Services
     static class TransfersService
     {
         /// <summary>
+        /// Global transfers queue
+        /// </summary>
+        private static TransferQueu _megaTransfers;
+        public static TransferQueu MegaTransfers
+        {
+            get
+            {
+                if (_megaTransfers != null) return _megaTransfers;
+                _megaTransfers = new TransferQueu();
+                return _megaTransfers;
+            }
+        }
+
+        /// <summary>
+        /// Global transfer listener
+        /// </summary>
+        private static GlobalTransferListener _globalTransferListener;
+        public static GlobalTransferListener GlobalTransferListener
+        {
+            get
+            {
+                if (_globalTransferListener != null) return _globalTransferListener;
+                _globalTransferListener = new GlobalTransferListener();
+                return _globalTransferListener;
+            }
+        }
+
+        /// <summary>
         /// Update the transfers list/queue.
         /// </summary>
         /// <param name="MegaTransfers">Transfers list/queue to update.</param>
@@ -30,10 +58,10 @@ namespace MegaApp.Services
                 MegaTransfers.Uploads.Clear();
             });
 
-            App.GlobalTransferListener.Transfers.Clear();
+            TransfersService.GlobalTransferListener.Transfers.Clear();
             
             // Get transfers and fill the transfers list again.
-            var transfers = App.MegaSdk.getTransfers();
+            var transfers = SdkService.MegaSdk.getTransfers();
             var numTransfers = transfers.size();
             for (int i = 0; i < numTransfers; i++)
             {
@@ -45,18 +73,18 @@ namespace MegaApp.Services
                     // If is a public node
                     MNode node = transfer.getPublicMegaNode();
                     if (node == null) // If not
-                        node = App.MegaSdk.getNodeByHandle(transfer.getNodeHandle());
+                        node = SdkService.MegaSdk.getNodeByHandle(transfer.getNodeHandle());
 
                     if (node != null)
                     {
-                        megaTransfer = new TransferObjectModel(App.MegaSdk,
-                            NodeService.CreateNew(App.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
+                        megaTransfer = new TransferObjectModel(SdkService.MegaSdk,
+                            NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
                             MTransferType.TYPE_DOWNLOAD, transfer.getPath());
                     }
                 }
                 else
                 {
-                    megaTransfer = new TransferObjectModel(App.MegaSdk, App.MainPageViewModel.CloudDrive.FolderRootNode,
+                    megaTransfer = new TransferObjectModel(SdkService.MegaSdk, App.MainPageViewModel.CloudDrive.FolderRootNode,
                         MTransferType.TYPE_UPLOAD, transfer.getPath());
                 }
 
@@ -77,7 +105,7 @@ namespace MegaApp.Services
                         megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
 
                         MegaTransfers.Add(megaTransfer);
-                        App.GlobalTransferListener.Transfers.Add(megaTransfer);
+                        TransfersService.GlobalTransferListener.Transfers.Add(megaTransfer);
                     });                    
                 }
             }
@@ -95,7 +123,7 @@ namespace MegaApp.Services
         {
             // Default values
             megaTransfer.IsSaveForOfflineTransfer = false;
-            megaTransfer.DownloadFolderPath = null;
+            megaTransfer.ExternalDownloadPath = null;
 
             // Only the downloads can contain app data
             if (transfer.getType() != MTransferType.TYPE_DOWNLOAD)
@@ -115,7 +143,7 @@ namespace MegaApp.Services
             megaTransfer.IsSaveForOfflineTransfer = Convert.ToBoolean(splittedAppData[0]);
 
             if(splittedAppData.Count() >= 2)
-                megaTransfer.DownloadFolderPath = splittedAppData[1];
+                megaTransfer.ExternalDownloadPath = splittedAppData[1];
 
             return true;
         }
@@ -139,7 +167,7 @@ namespace MegaApp.Services
         /// <param name="isFolder">Boolean value which indicates if the node is a folder or not.</param>
         public static void CancelPendingNodeOfflineTransfers(String nodePath, bool isFolder)
         {
-            var megaTransfers = App.MegaSdk.getTransfers(MTransferType.TYPE_DOWNLOAD);
+            var megaTransfers = SdkService.MegaSdk.getTransfers(MTransferType.TYPE_DOWNLOAD);
             var numMegaTransfers = megaTransfers.size();
 
             for (int i = 0; i < numMegaTransfers; i++)
@@ -156,7 +184,7 @@ namespace MegaApp.Services
                 WaitHandle waitEventRequestTransfer = new AutoResetEvent(false);
                 if (String.Compare(nodePath, transferPathToCompare) == 0)
                 {
-                    App.MegaSdk.cancelTransfer(transfer, 
+                    SdkService.MegaSdk.cancelTransfer(transfer, 
                         new CancelTransferRequestListener((AutoResetEvent)waitEventRequestTransfer));
                     waitEventRequestTransfer.WaitOne();
                 }

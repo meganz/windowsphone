@@ -90,7 +90,7 @@ namespace MegaApp.MegaApi
 
                                             var sfoNode = new SavedForOffline
                                             {
-                                                Fingerprint = App.MegaSdk.getNodeFingerprint(node.OriginalMNode),
+                                                Fingerprint = SdkService.MegaSdk.getNodeFingerprint(node.OriginalMNode),
                                                 Base64Handle = node.OriginalMNode.getBase64Handle(),
                                                 LocalPath = newOfflineLocalPath,
                                                 IsSelectedForOffline = true
@@ -99,9 +99,9 @@ namespace MegaApp.MegaApi
                                             // If is a public node (link) the destination folder is the SFO root, so the parent handle
                                             // is the handle of the root node.
                                             if (node.ParentContainerType != ContainerType.PublicLink)
-                                                sfoNode.ParentBase64Handle = (App.MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
+                                                sfoNode.ParentBase64Handle = (SdkService.MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
                                             else
-                                                sfoNode.ParentBase64Handle = App.MegaSdk.getRootNode().getBase64Handle();
+                                                sfoNode.ParentBase64Handle = SdkService.MegaSdk.getRootNode().getBase64Handle();
 
                                             if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
                                                 SavedForOffline.Insert(sfoNode);
@@ -115,7 +115,7 @@ namespace MegaApp.MegaApi
                                             var imageNode = node as ImageNodeViewModel;
                                             if (imageNode != null)
                                             {
-                                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.FilePath));
+                                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
 
                                                 bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
                                                 if (exportToPhotoAlbum)
@@ -130,7 +130,7 @@ namespace MegaApp.MegaApi
                                         var imageNode = megaTransfer.SelectedNode as ImageNodeViewModel;
                                         if (imageNode != null)
                                         {
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.FilePath));
+                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
 
                                             if (megaTransfer.AutoLoadImageOnFinish)
                                             {
@@ -143,7 +143,7 @@ namespace MegaApp.MegaApi
                                             }
 
                                             #if WINDOWS_PHONE_81
-                                            if (!await megaTransfer.FinishDownload(megaTransfer.FilePath, imageNode.Name))
+                                            if (!await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name))
                                             {
                                                 Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
                                                 break;
@@ -157,7 +157,7 @@ namespace MegaApp.MegaApi
                                             if (node != null)
                                             {
 
-                                                if (!await megaTransfer.FinishDownload(megaTransfer.FilePath, node.Name))
+                                                if (!await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name))
                                                 {
                                                     Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
                                                     break;
@@ -279,7 +279,7 @@ namespace MegaApp.MegaApi
                     megaTransfer.TransferedBytes = transfer.getTransferredBytes();
                     megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
 
-                    App.MegaTransfers.Add(megaTransfer);
+                    TransfersService.MegaTransfers.Add(megaTransfer);
                     Transfers.Add(megaTransfer);
                 });                
             }

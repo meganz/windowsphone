@@ -165,7 +165,7 @@ namespace MegaApp.Models
 
                         if (FileService.IsPendingTransferFile(fileInfo.Name))
                         {
-                            if (!(App.MegaTransfers.Downloads.Count > 0))
+                            if (!(TransfersService.MegaTransfers.Downloads.Count > 0))
                                 FileService.DeleteFile(fileInfo.FullName);
                             continue;
                         }

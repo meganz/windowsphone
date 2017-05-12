@@ -105,7 +105,7 @@ namespace MegaApp.UserControls
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Check if Hamburger Menu is open in view. If open. First slide out before navigating
             if (this.PageDrawerLayout != null)
@@ -150,7 +150,7 @@ namespace MegaApp.UserControls
             if (e.Cancel) return;
 
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
             
             // Check if Hamburger Menu is open in view. If open. First slide out before exit
             if (this.PageDrawerLayout != null)
@@ -166,13 +166,13 @@ namespace MegaApp.UserControls
             // Do stuff when drawer is closed that is necessary on all pages
             
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
         }
 
         protected virtual void OnDrawerOpened(object sender)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Remove application bar from display when sliding in the hamburger menu
             // This is necessary on all pages
@@ -182,7 +182,7 @@ namespace MegaApp.UserControls
         protected virtual void OnHamburgerMenuItemTap(object sender, ListBoxItemTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             var menuItem = e.Item.DataContext as HamburgerMenuItem;
 
@@ -204,7 +204,7 @@ namespace MegaApp.UserControls
         protected virtual void OnHamburgerTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (this.PageDrawerLayout != null)
                 this.PageDrawerLayout.OpenDrawer();

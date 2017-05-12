@@ -15,7 +15,7 @@ namespace MegaApp.Pages
 
         public InitCameraUploadsPage()
         {
-            _cameraUploadsViewModel = new CameraUploadsViewModel(App.MegaSdk, App.AppInformation);
+            _cameraUploadsViewModel = new CameraUploadsViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _cameraUploadsViewModel;
 
             InitializeComponent();

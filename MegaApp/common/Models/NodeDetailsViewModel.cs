@@ -23,7 +23,7 @@ namespace MegaApp.Models
         private readonly NodeDetailsPage _nodeDetailsPage;        
 
         public NodeDetailsViewModel(NodeDetailsPage nodeDetailsPage, NodeViewModel node)
-            : base(App.MegaSdk)
+            : base(SdkService.MegaSdk)
         {
             this._nodeDetailsPage = nodeDetailsPage;
             this._node = node;
@@ -31,16 +31,16 @@ namespace MegaApp.Models
             IsFolderLinkNode = (node.ParentContainerType == ContainerType.FolderLink);
         }
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Nodes.Add(this);
+            // Add folders to global listener to receive notifications
+            globalListener.Nodes.Add(this);
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Nodes.Remove(this);
+            // Add folders to global listener to receive notifications
+            globalListener.Nodes.Remove(this);
         }
 
         public void ChangeMenu(IList iconButtons, IList menuItems)
@@ -114,7 +114,7 @@ namespace MegaApp.Models
 
         public void Download()
         {
-            _node.Download(App.MegaTransfers);
+            _node.Download(TransfersService.MegaTransfers);
         }
 
         public async Task<NodeActionResult> Remove()
@@ -152,8 +152,8 @@ namespace MegaApp.Models
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                     ProgressService.SetProgressIndicator(true, ProgressMessages.SaveForOffline));
 
-                _node.IsSelectedForOffline = true;                
-                await _node.SaveForOffline(App.MegaTransfers);
+                _node.IsSelectedForOffline = true;
+                await _node.SaveForOffline(TransfersService.MegaTransfers);
             }
             else
             {

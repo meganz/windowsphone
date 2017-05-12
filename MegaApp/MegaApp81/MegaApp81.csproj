@@ -472,8 +472,8 @@
     <Compile Include="..\common\MegaApi\GetUserDataRequestListener.cs">
       <Link>MegaApi\GetUserDataRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
-      <Link>MegaApi\GlobalDriveListener.cs</Link>
+    <Compile Include="..\common\MegaApi\GlobalListener.cs">
+      <Link>MegaApi\GlobalListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GlobalTransferListener.cs">
       <Link>MegaApi\GlobalTransferListener.cs</Link>
@@ -850,6 +850,9 @@
     </Compile>
     <Compile Include="..\common\Services\ProgressService.cs">
       <Link>Services\ProgressService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\SdkService.cs">
+      <Link>Services\SdkService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>

@@ -22,26 +22,41 @@ namespace MegaApp.Models
     public class TransferObjectModel : BaseSdkViewModel
     {
         public TransferObjectModel(MegaSDK megaSdk, IMegaNode selectedNode, MTransferType transferType, 
-            string filePath, string downloadFolderPath = null) :base(megaSdk)
+            string transferPath, string externalDownloadPath = null) :base(megaSdk)
+        {
+            Initialize(selectedNode, transferType, transferPath, externalDownloadPath);
+        }
+
+        private async void Initialize(IMegaNode selectedNode, MTransferType transferType,
+            string transferPath, string externalDownloadPath = null)
         {
             switch (transferType)
             {
                 case MTransferType.TYPE_DOWNLOAD:
-                    {
-                        DisplayName = selectedNode.Name;
-                        break;
-                    }
+                    DisplayName = selectedNode.Name;
+                    TotalBytes = selectedNode.Size;
+                    break;
+
                 case MTransferType.TYPE_UPLOAD:
+                    DisplayName = Path.GetFileName(transferPath);
+                    if (FileService.FileExists(transferPath))
                     {
-                        DisplayName = Path.GetFileName(filePath);
-                        break;
+                        var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
+                        if (srcFile != null)
+                        {
+                            var fileProperties = await srcFile.GetBasicPropertiesAsync();
+                            this.TotalBytes = fileProperties.Size;
+                        }
                     }
+                    break;
             }
 
             Type = transferType;
-            FilePath = filePath;
-            DownloadFolderPath = downloadFolderPath;
+            TransferPath = transferPath;
+            ExternalDownloadPath = externalDownloadPath;
             Status = TransferStatus.NotStarted;
+            TransferedBytes = 0;
+            TransferSpeed = string.Empty;
             SelectedNode = selectedNode;
             CancelButtonState = true;
             TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
@@ -66,8 +81,8 @@ namespace MegaApp.Models
                 {
                     // Download all nodes with the App instance of the SDK and authorize nodes to be downloaded with this SDK instance.
                     // Needed to allow transfers resumption of folder link nodes.
-                    App.MegaSdk.startDownloadWithAppData(this.MegaSdk.authorizeNode(SelectedNode.OriginalMNode), 
-                        FilePath, TransfersService.CreateTransferAppDataString(isSaveForOffline, DownloadFolderPath));
+                    SdkService.MegaSdk.startDownloadWithAppData(this.MegaSdk.authorizeNode(SelectedNode.OriginalMNode),
+                        TransferPath, TransfersService.CreateTransferAppDataString(isSaveForOffline, ExternalDownloadPath));
                     this.IsSaveForOfflineTransfer = isSaveForOffline;
                     break;
                 }
@@ -75,7 +90,7 @@ namespace MegaApp.Models
                 {
                     // Start uploads with the flag of temporary source activated to always automatically delete the 
                     // uploaded file from the upload temporary folder in the sandbox of the app
-                    App.MegaSdk.startUploadWithDataTempSource(FilePath, SelectedNode.OriginalMNode, String.Empty, true);
+                    SdkService.MegaSdk.startUploadWithDataTempSource(TransferPath, SelectedNode.OriginalMNode, String.Empty, true);
                     break; 
                 }
                 default:
@@ -92,7 +107,7 @@ namespace MegaApp.Models
                 return;
             }
             Status = TransferStatus.Canceling;
-            App.MegaSdk.cancelTransfer(Transfer);
+            SdkService.MegaSdk.cancelTransfer(Transfer);
         }
 
         private void SetThumbnail()
@@ -112,15 +127,15 @@ namespace MegaApp.Models
                     }
                 case MTransferType.TYPE_UPLOAD:
                     {
-                        if (ImageService.IsImage(FilePath))
+                        if (ImageService.IsImage(TransferPath))
                         {
                             IsDefaultImage = false;
-                            ThumbnailUri = new Uri(FilePath);
+                            ThumbnailUri = new Uri(TransferPath);
                         }                            
                         else
                         {
                             IsDefaultImage = true;
-                            FileTypePathData = ImageService.GetDefaultFileTypePathData(FilePath);
+                            FileTypePathData = ImageService.GetDefaultFileTypePathData(TransferPath);
                         }
                             
                         break;
@@ -136,13 +151,13 @@ namespace MegaApp.Models
             if (!SavedForOffline.ExistsNodeByLocalPath(sourcePath))
             {
                 return await FileService.MoveFile(sourcePath,
-                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                    ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                     null), newFileName);
             }
             else
             {
                 return await FileService.CopyFile(sourcePath,
-                    DownloadFolderPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                    ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
                     null), newFileName);
             }
         }
@@ -153,8 +168,8 @@ namespace MegaApp.Models
         #region Properties
 
         public string DisplayName { get; set; }
-        public string FilePath { get; private set; }
-        public string DownloadFolderPath { get; set; }
+        public string TransferPath { get; private set; }
+        public string ExternalDownloadPath { get; set; }
         public MTransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
         public MTransfer Transfer { get; set; }

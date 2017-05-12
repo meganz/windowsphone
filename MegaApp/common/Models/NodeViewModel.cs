@@ -475,10 +475,10 @@ namespace MegaApp.Models
                         
             try
             {
-                if (!await CheckDownloadPath(Path.GetDirectoryName(fileNode.Transfer.FilePath)))
+                if (!await CheckDownloadPath(Path.GetDirectoryName(fileNode.Transfer.TransferPath)))
                     return false;
 
-                fileNode.Transfer.DownloadFolderPath = downloadPath;
+                fileNode.Transfer.ExternalDownloadPath = downloadPath;
                 transferQueu.Add(fileNode.Transfer);
                 fileNode.Transfer.StartTransfer();
             }
@@ -486,11 +486,11 @@ namespace MegaApp.Models
             {
                 String message;
                 if (e is ArgumentException || e is NotSupportedException)
-                    message = String.Format(AppMessages.InvalidFileName, fileNode.Transfer.FilePath);
+                    message = String.Format(AppMessages.InvalidFileName, fileNode.Transfer.TransferPath);
                 else if (e is PathTooLongException)
-                    message = String.Format(AppMessages.PathTooLong, fileNode.Transfer.FilePath);
+                    message = String.Format(AppMessages.PathTooLong, fileNode.Transfer.TransferPath);
                 else if (e is UnauthorizedAccessException)
-                    message = String.Format(AppMessages.FolderUnauthorizedAccess, Path.GetDirectoryName(fileNode.Transfer.FilePath));
+                    message = String.Format(AppMessages.FolderUnauthorizedAccess, Path.GetDirectoryName(fileNode.Transfer.TransferPath));
                 else
                     message = String.Format(AppMessages.DownloadNodeFailed, e.Message);
 
@@ -512,7 +512,7 @@ namespace MegaApp.Models
             // User must be online to perform this operation
             if (!IsUserOnline()) return false;
 
-            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
+            MNode parentNode = SdkService.MegaSdk.getParentNode(this.OriginalMNode);
 
             String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                     AppResources.DownloadsDirectory.Replace("\\", ""));
@@ -522,7 +522,7 @@ namespace MegaApp.Models
             {
                 parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                     AppResources.DownloadsDirectory.Replace("\\", ""),
-                    (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+                    (SdkService.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
             }
             else 
             {
@@ -549,7 +549,7 @@ namespace MegaApp.Models
                 if (!SavedForOffline.ExistsNodeByLocalPath(folderPathToAdd))
                     SavedForOffline.Insert(parentNode);
 
-                parentNode = App.MegaSdk.getParentNode(parentNode);
+                parentNode = SdkService.MegaSdk.getParentNode(parentNode);
             }
 
             return true;
@@ -605,7 +605,7 @@ namespace MegaApp.Models
             else
             {                
                 transferQueu.Add(node.Transfer);
-                node.Transfer.DownloadFolderPath = sfoPath;
+                node.Transfer.ExternalDownloadPath = sfoPath;
                 node.Transfer.StartTransfer(true);
             }
 
@@ -614,11 +614,11 @@ namespace MegaApp.Models
 
         public async Task RemoveForOffline()
         {
-            MNode parentNode = App.MegaSdk.getParentNode(this.OriginalMNode);
+            MNode parentNode = SdkService.MegaSdk.getParentNode(this.OriginalMNode);
 
             String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                 AppResources.DownloadsDirectory.Replace("\\", ""),
-                (App.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
+                (SdkService.MegaSdk.getNodePath(parentNode)).Remove(0, 1).Replace("/", "\\"));
 
             String sfoRootPath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
                     AppResources.DownloadsDirectory.Replace("\\", ""));
@@ -705,7 +705,7 @@ namespace MegaApp.Models
             else
                 this.ModificationTime = this.CreationTime;
 
-            if(!App.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
+            if(!SdkService.MegaSdk.isInShare(megaNode) && this.ParentContainerType != ContainerType.PublicLink &&
                 this.ParentContainerType != ContainerType.InShares && this.ParentContainerType != ContainerType.ContactInShares &&
                 this.ParentContainerType != ContainerType.FolderLink)
                 CheckAndUpdateSFO(megaNode);
@@ -716,7 +716,7 @@ namespace MegaApp.Models
             this.IsAvailableOffline = false;
             this.IsSelectedForOffline = false;
 
-            var nodePath = App.MegaSdk.getNodePath(megaNode);
+            var nodePath = SdkService.MegaSdk.getNodePath(megaNode);
             if (String.IsNullOrWhiteSpace(nodePath)) return;
 
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, 

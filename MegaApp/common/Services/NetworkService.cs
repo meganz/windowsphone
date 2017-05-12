@@ -72,7 +72,7 @@ namespace MegaApp.Services
             // If the primary IP has changed
             if (ipAddresses[0] != App.IpAddress)
             {
-                App.MegaSdk.reconnect();        // Refresh all open connections
+                SdkService.MegaSdk.reconnect();        // Refresh all open connections
                 App.IpAddress = ipAddresses[0]; // Storage the new primary IP address
             }
         }
