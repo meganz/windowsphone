@@ -99,7 +99,7 @@ namespace MegaApp.Services
                         GetTransferAppData(transfer, megaTransfer);
 
                         megaTransfer.Transfer = transfer;
-                        megaTransfer.Status = TransferStatus.Queued;
+                        megaTransfer.TransferState = MTransferState.STATE_NONE;
                         megaTransfer.CancelButtonState = true;
                         megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
                         megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
@@ -113,6 +113,109 @@ namespace MegaApp.Services
                     });                    
                 }
             }
+        }
+
+        /// <summary>
+        /// Add a <see cref="MTransfer"/> to the corresponding transfers list if it is not already included.
+        /// </summary>
+        /// <param name="megaTransfers"><see cref="TransferQueue"/> which contains the transfers list(s).</param>
+        /// <param name="transfer"><see cref="MTransfer"/> to be added to the corresponding transfer list.</param>
+        /// <returns>The <see cref="TransferObjectModel"/> corresponding to the <see cref="MTransfer"/>.</returns>
+        public static TransferObjectModel AddTransferToList(TransferQueue megaTransfers, MTransfer transfer)
+        {
+            // Folder transfers are not included into the transfers list.
+            if (transfer != null || transfer.isFolderTransfer() == true) return null;
+
+            // Search if the transfer already exists into the transfers list.
+            var megaTransfer = SearchTransfer(megaTransfers.SelectAll(), transfer);
+            if (megaTransfer != null) return megaTransfer;
+
+            // If doesn't exist create a new one and add it to the transfers list
+            megaTransfer = CreateTransferObjectModel(transfer);            
+            if (megaTransfer != null)                
+                megaTransfers.Add(megaTransfer);
+
+            return megaTransfer;
+        }
+
+        /// <summary>
+        /// Search into a transfers list the <see cref="TransferObjectModel"/> corresponding to a <see cref="MTransfer"/>.
+        /// </summary>
+        /// <param name="transfersList">Transfers list where search the transfer.</param>
+        /// <param name="transfer">Transfer to search.</param>
+        /// <returns>The transfer object if exists or NULL in other case.</returns>
+        public static TransferObjectModel SearchTransfer(IList<TransferObjectModel> transfersList, MTransfer transfer)
+        {
+            // Folder transfers are not included into the transfers list.
+            if (transfer == null || transfer.isFolderTransfer()) return null;
+
+            var megaTransfer = transfersList.FirstOrDefault(
+                t => (t.Transfer != null && t.Transfer.getTag() == transfer.getTag()) ||
+                t.TransferPath.Equals(transfer.getPath()));
+
+            return megaTransfer;
+        }
+
+        /// <summary>
+        /// Create a <see cref="TransferObjectModel"/> from a <see cref="MTransfer"/>.
+        /// </summary>
+        /// <param name="transfer"></param>
+        /// <returns>The new <see cref="TransferObjectModel"/></returns>
+        public static TransferObjectModel CreateTransferObjectModel(MTransfer transfer)
+        {
+            if (transfer == null) return null;
+
+            try
+            {
+                TransferObjectModel megaTransfer = null;
+
+                switch (transfer.getType())
+                {
+                    case MTransferType.TYPE_DOWNLOAD:
+                        MNode node = transfer.getPublicMegaNode() ?? // If is a public node
+                            SdkService.MegaSdk.getNodeByHandle(transfer.getNodeHandle()); // If not
+
+                        if (node == null) return null;
+
+                        megaTransfer = new TransferObjectModel(SdkService.MegaSdk,
+                            NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
+                            MTransferType.TYPE_DOWNLOAD, transfer.getPath());
+                        break;
+
+                    case MTransferType.TYPE_UPLOAD:
+                        var parentNode = SdkService.MegaSdk.getNodeByHandle(transfer.getParentHandle());
+
+                        if (parentNode == null) return null;
+
+                        megaTransfer = new TransferObjectModel(SdkService.MegaSdk,
+                            NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, parentNode, ContainerType.CloudDrive),
+                            MTransferType.TYPE_UPLOAD, transfer.getPath());
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                if (megaTransfer != null)
+                {
+                    GetTransferAppData(transfer, megaTransfer);
+
+                    megaTransfer.Transfer = transfer;
+                    megaTransfer.TransferState = transfer.getState();
+                    megaTransfer.TransferPriority = transfer.getPriority();
+                    megaTransfer.IsBusy = false;
+                    megaTransfer.TotalBytes = transfer.getTotalBytes();
+                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
+                    megaTransfer.TransferSpeed = string.Empty;
+                    megaTransfer.TransferMeanSpeed = 0;
+
+                    megaTransfer.TransferState = !SdkService.MegaSdk.areTransfersPaused((int)transfer.getType())
+                        ? MTransferState.STATE_QUEUED : MTransferState.STATE_PAUSED;
+                }
+
+                return megaTransfer;
+            }
+            catch (Exception) { return null; }
         }
 
         /// <summary>

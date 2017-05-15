@@ -258,7 +258,7 @@ namespace MegaApp.Models
         public virtual void Download(TransferQueue transferQueue, string downloadPath = null)
         {
             if (!IsUserOnline()) return;
-            SaveForOffline(transferQueu);
+            SaveForOffline(transferQueue);
         }
 #elif WINDOWS_PHONE_81
         public async void Download(TransferQueue transferQueue, string downloadPath = null)

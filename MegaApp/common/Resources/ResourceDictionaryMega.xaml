@@ -24,7 +24,7 @@
     <!-- CONVERTERS -->
     <converters:FileTypeToImageConverter x:Key="FileTypeToImageConverter"/>
     <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-    <converters:TransferStatusToReadableTextConverter x:Key="TransferStatusToReadableTextConverter"/>
+    <converters:TransferStateToReadableTextConverter x:Key="TransferStateToReadableTextConverter"/>
     <converters:NodeDisplayModeToColorBrushConverter x:Key="NodeDisplayModeToColorBrushConverter"/>
     <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
     <converters:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
@@ -931,7 +931,7 @@
                     <SolidColorBrush Color="White" Opacity="0.3"/>
                 </ProgressBar.Background>
             </ProgressBar>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Status, Converter={StaticResource TransferStatusToReadableTextConverter}}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TypeAndState, Converter={StaticResource TransferStateToReadableTextConverter}}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
                 <TextBlock.Foreground>
                     <SolidColorBrush Color="White" Opacity="0.3"/>
                 </TextBlock.Foreground>

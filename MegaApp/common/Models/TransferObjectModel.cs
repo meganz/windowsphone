@@ -30,6 +30,8 @@ namespace MegaApp.Models
         private async void Initialize(IMegaNode selectedNode, MTransferType transferType,
             string transferPath, string externalDownloadPath = null)
         {
+            this.TypeAndState = new object[2];
+
             switch (transferType)
             {
                 case MTransferType.TYPE_DOWNLOAD:
@@ -54,7 +56,7 @@ namespace MegaApp.Models
             Type = transferType;
             TransferPath = transferPath;
             ExternalDownloadPath = externalDownloadPath;
-            Status = TransferStatus.NotStarted;
+            TransferState = MTransferState.STATE_NONE;
             TransferedBytes = 0;
             TransferSpeed = string.Empty;
             SelectedNode = selectedNode;
@@ -100,14 +102,23 @@ namespace MegaApp.Models
 
         public void CancelTransfer(object p = null)
         {
-            if (!IsBusy)
+            // If the transfer is an upload and is being prepared (copying file to the upload temporary folder)
+            //if (this.Type == MTransferType.TYPE_UPLOAD && this.PreparingUploadCancelToken != null)
+            //{
+            //    this.PreparingUploadCancelToken.Cancel();
+            //    return;
+            //}
+
+            // If the transfer is ready but not started for some reason
+            if (!this.IsBusy && this.TransferState == MTransferState.STATE_NONE)
             {
-                if(Status == TransferStatus.NotStarted)
-                    Status = TransferStatus.Canceled;
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, string.Format("Transfer ({0}) canceled: {1}",
+                    this.Type == MTransferType.TYPE_UPLOAD ? "UPLOAD" : "DOWNLOAD", this.DisplayName));
+                this.TransferState = MTransferState.STATE_CANCELLED;
                 return;
             }
-            Status = TransferStatus.Canceling;
-            SdkService.MegaSdk.cancelTransfer(Transfer);
+
+            SdkService.MegaSdk.cancelTransfer(this.Transfer);
         }
 
         private void SetThumbnail()
@@ -170,9 +181,28 @@ namespace MegaApp.Models
         public string DisplayName { get; set; }
         public string TransferPath { get; private set; }
         public string ExternalDownloadPath { get; set; }
-        public MTransferType Type { get; set; }
         public IMegaNode SelectedNode { get; private set; }
-        public MTransfer Transfer { get; set; }
+
+        private MTransferType _type;
+        public MTransferType Type
+        {
+            get { return _type; }
+            set
+            {
+                SetField(ref _type, value);
+                this.TypeAndState[0] = value;
+                OnPropertyChanged("TypeAndState");
+            }
+        }
+
+        public object[] TypeAndState { get; set; }
+
+        private MTransfer _transfer;
+        public MTransfer Transfer
+        {
+            get { return _transfer; }
+            set { SetField(ref _transfer, value); }
+        }
 
         private bool _isDefaultImage;
         public bool IsDefaultImage
@@ -232,15 +262,28 @@ namespace MegaApp.Models
             }
         }
 
-        private TransferStatus _transferStatus;
-        public TransferStatus Status
+        private MTransferState _transferState;
+        public MTransferState TransferState
         {
-            get { return _transferStatus; }
+            get { return _transferState; }
             set
             {
-                _transferStatus = value;
-                OnPropertyChanged("Status");
+                if (_transferState == value) return;
+
+                SetField(ref _transferState, value);
+
+                this.IsBusy = (value == MTransferState.STATE_ACTIVE) ? true : false;
+                this.TypeAndState[1] = value;
+
+                OnPropertyChanged("TypeAndState");
             }
+        }
+
+        private ulong _transferPriority;
+        public ulong TransferPriority
+        {
+            get { return _transferPriority; }
+            set { SetField(ref _transferPriority, value); }
         }
 
         private ulong _totalBytes;
@@ -273,6 +316,17 @@ namespace MegaApp.Models
             {
                 _transferSpeed = value;
                 OnPropertyChanged("TransferSpeed");
+            }
+        }
+
+        private ulong _transferMeanSpeed;
+        public ulong TransferMeanSpeed
+        {
+            get { return _transferMeanSpeed; }
+            set
+            {
+                SetField(ref _transferMeanSpeed, value);
+                OnPropertyChanged("EstimatedTime");
             }
         }
 

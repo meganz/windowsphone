@@ -292,8 +292,8 @@
     <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
       <Link>Converters\TextToUpperCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\common\Converters\TransferStatusToReadableTextConverter.cs">
-      <Link>Converters\TransferStatusToReadableTextConverter.cs</Link>
+    <Compile Include="..\common\Converters\TransferStateToReadableTextConverter.cs">
+      <Link>Converters\TransferStateToReadableTextConverter.cs</Link>
     </Compile>
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
@@ -348,9 +348,6 @@
     </Compile>
     <Compile Include="..\common\Enums\NodeDisplayMode.cs">
       <Link>Enums\NodeDisplayMode.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Enums\TransferStatus.cs">
-      <Link>Enums\TransferStatus.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\UriLinkType.cs">
       <Link>Enums\UriLinkType.cs</Link>

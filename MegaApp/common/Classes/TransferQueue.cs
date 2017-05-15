@@ -126,7 +126,7 @@ namespace MegaApp.Classes
 
         private void UploadsOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (!e.PropertyName.Equals("Status")) return;
+            if (!e.PropertyName.Equals("TransferState")) return;
 
             UploadSort((TransferObjectModel) sender);
         }
@@ -140,7 +140,7 @@ namespace MegaApp.Classes
 
             for (var i = 0; i <= Uploads.Count - 1; i++)
             {
-                if ((int)transferObject.Status <= (int)Uploads[i].Status)
+                if ((int)transferObject.TransferState <= (int)Uploads[i].TransferState)
                 {
                     Uploads.Insert(i, transferObject);
                     inserted = true;
@@ -161,7 +161,7 @@ namespace MegaApp.Classes
 
             for (var i = 0; i <= Downloads.Count - 1; i++)
             {
-                if ((int)transferObject.Status <= (int)Downloads[i].Status)
+                if ((int)transferObject.TransferState <= (int)Downloads[i].TransferState)
                 {
                     Downloads.Insert(i, transferObject);
                     inserted = true;
@@ -175,7 +175,7 @@ namespace MegaApp.Classes
 
         private void DownloadsOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (!e.PropertyName.Equals("Status")) return;
+            if (!e.PropertyName.Equals("TransferState")) return;
 
             DownloadSort((TransferObjectModel)sender);
         }

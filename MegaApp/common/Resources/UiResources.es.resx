@@ -833,10 +833,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Cancelar todas las transferencias</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Uploaded" xml:space="preserve">
-    <value>subido</value>
-    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
-  </data>
   <data name="InitTourSpeed2" xml:space="preserve">
     <value>comparte archivos rápidamente con todo el mundo.</value>
     <comment>Label 'quickly share files with everyone.' for the second part of the sentence 'transfers are fast. quickly share files with everyone.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
@@ -897,14 +893,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>obtén</value>
     <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
-  <data name="Transfer_Queued" xml:space="preserve">
-    <value>En cola</value>
-    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Downloaded" xml:space="preserve">
-    <value>Descargada</value>
-    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
-  </data>
   <data name="Resume" xml:space="preserve">
     <value>Reanudar</value>
     <comment>Label for any 'Resume' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -912,14 +900,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="Pause" xml:space="preserve">
     <value>Pausa</value>
     <comment>Label for any 'Pause' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Pausing" xml:space="preserve">
-    <value>Pausando...</value>
-    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Paused" xml:space="preserve">
-    <value>En pausa</value>
-    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="MultiSelect" xml:space="preserve">
     <value>Selección múltiple</value>
@@ -936,30 +916,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="Download" xml:space="preserve">
     <value>descarga</value>
     <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>Subiendo...</value>
-    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>Lista</value>
-    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>Error en la transferencia</value>
-    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>Descargando...</value>
-    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Cancelando...</value>
-    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>Cancelada</value>
-    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="Transfers" xml:space="preserve">
     <value>Transferencias</value>
