@@ -1395,6 +1395,26 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="new">Uploading...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_Completed" translate="yes" xml:space="preserve">
+          <source>Completed</source>
+          <target state="new">Completed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" xml:space="preserve">
+          <source>No completed transfers</source>
+          <target state="new">No completed transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelUploads" translate="yes" xml:space="preserve">
+          <source>Cancel uploads</source>
+          <target state="new">Cancel uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelDownloads" translate="yes" xml:space="preserve">
+          <source>Cancel downloads</source>
+          <target state="new">Cancel downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" xml:space="preserve">
           <source>Uploaded</source>
           <target state="new">Uploaded</target>

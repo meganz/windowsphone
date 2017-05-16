@@ -50,68 +50,68 @@ namespace MegaApp.Services
         #region Public Methods
 
         /// <summary>
-        /// Update the transfers list/queue.
+        /// Moves a transfer to the completed transfers list.
         /// </summary>
-        /// <param name="MegaTransfers">Transfers list/queue to update.</param>
-        public static void UpdateMegaTransfersList(TransferQueue MegaTransfers)
+        /// <param name="megaTransfers"><see cref="TransferQueue"/> which contains the transfers list(s).</param>
+        /// <param name="megaTransfer"><see cref="TransferObjectModel"/> of the transfer to move.</param>
+        public static void MoveMegaTransferToCompleted(TransferQueue megaTransfers, TransferObjectModel megaTransfer)
         {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            switch (megaTransfer.Type)
             {
-                MegaTransfers.Clear();
-                MegaTransfers.Downloads.Clear();
-                MegaTransfers.Uploads.Clear();
-            });
+                case MTransferType.TYPE_DOWNLOAD:
+                    megaTransfers.Downloads.Remove(megaTransfer);
+                    break;
+                case MTransferType.TYPE_UPLOAD:
+                    megaTransfers.Uploads.Remove(megaTransfer);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("megaTransfer.Type", megaTransfer.Type, null);
+            }
 
-            TransfersService.GlobalTransferListener.Transfers.Clear();
-            
-            // Get transfers and fill the transfers list again.
-            var transfers = SdkService.MegaSdk.getTransfers();
+            megaTransfers.Completed.Add(megaTransfer);
+        }
+
+        /// <summary>
+        /// Update a transfers list.
+        /// </summary>
+        /// <param name="megaTransfers"><see cref="TransferQueue"/> which contains the transfers list(s).</param>
+        /// <param name="type">Type of the transfers list to update (Download or Upload).</param>
+        /// <param name="cleanTransfers">Boolean value which indicates if clean the transfers list before update or not.</param>
+        public static void UpdateMegaTransferList(TransferQueue megaTransfers, MTransferType type, bool cleanTransfers = false)
+        {
+            // List to store the uploads that are pending on preparation (copy file to the temporary upload folder), 
+            // because they have not already added to the SDK queue
+            List<TransferObjectModel> uploadsInPreparation = new List<TransferObjectModel>();
+
+            if (cleanTransfers)
+            {
+                switch (type)
+                {
+                    case MTransferType.TYPE_DOWNLOAD:
+                        megaTransfers.Downloads.Clear();
+                        break;
+
+                    case MTransferType.TYPE_UPLOAD:
+                        // Store the uploads pending on preparation and clear the list
+                        uploadsInPreparation = megaTransfers.Uploads.Where(t => t.PreparingUploadCancelToken != null).ToList();
+                        megaTransfers.Uploads.Clear();
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException("type", type, null);
+                }
+            }
+
+            var transfers = SdkService.MegaSdk.getTransfers(type);
             var numTransfers = transfers.size();
             for (int i = 0; i < numTransfers; i++)
+                AddTransferToList(megaTransfers, transfers.get(i));
+
+            // Restore the uploads in preparation
+            if (type == MTransferType.TYPE_UPLOAD)
             {
-                var transfer = transfers.get(i);
-
-                TransferObjectModel megaTransfer = null;
-                if (transfer.getType() == MTransferType.TYPE_DOWNLOAD)
-                {
-                    // If is a public node
-                    MNode node = transfer.getPublicMegaNode();
-                    if (node == null) // If not
-                        node = SdkService.MegaSdk.getNodeByHandle(transfer.getNodeHandle());
-
-                    if (node != null)
-                    {
-                        megaTransfer = new TransferObjectModel(SdkService.MegaSdk,
-                            NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, node, ContainerType.CloudDrive),
-                            MTransferType.TYPE_DOWNLOAD, transfer.getPath());
-                    }
-                }
-                else
-                {
-                    megaTransfer = new TransferObjectModel(SdkService.MegaSdk, App.MainPageViewModel.CloudDrive.FolderRootNode,
-                        MTransferType.TYPE_UPLOAD, transfer.getPath());
-                }
-
-                if(megaTransfer != null)
-                {
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        GetTransferAppData(transfer, megaTransfer);
-
-                        megaTransfer.Transfer = transfer;
-                        megaTransfer.TransferState = MTransferState.STATE_NONE;
-                        megaTransfer.CancelButtonState = true;
-                        megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                        megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                        megaTransfer.IsBusy = true;
-                        megaTransfer.TotalBytes = transfer.getTotalBytes();
-                        megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                        megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-
-                        MegaTransfers.Add(megaTransfer);
-                        TransfersService.GlobalTransferListener.Transfers.Add(megaTransfer);
-                    });                    
-                }
+                foreach (var upload in uploadsInPreparation)
+                    megaTransfers.Add(upload);
             }
         }
 
@@ -124,7 +124,7 @@ namespace MegaApp.Services
         public static TransferObjectModel AddTransferToList(TransferQueue megaTransfers, MTransfer transfer)
         {
             // Folder transfers are not included into the transfers list.
-            if (transfer != null || transfer.isFolderTransfer() == true) return null;
+            if (transfer == null || transfer.isFolderTransfer()) return null;
 
             // Search if the transfer already exists into the transfers list.
             var megaTransfer = SearchTransfer(megaTransfers.SelectAll(), transfer);

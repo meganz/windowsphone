@@ -325,7 +325,7 @@ namespace MegaApp.Models
                         fs.Close();
                     }
                     var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
-                    TransfersService.MegaTransfers.Insert(0, uploadTransfer);
+                    TransfersService.MegaTransfers.Add(uploadTransfer);
                     uploadTransfer.StartTransfer();
                 }
                 NoFolderUpAction = true;

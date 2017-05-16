@@ -131,7 +131,7 @@ namespace MegaApp.Services
                                 currentFolder.FolderRootNode,
                                 MTransferType.TYPE_UPLOAD,
                                 newFilePath);
-                            TransfersService.MegaTransfers.Insert(0, uploadTransfer);
+                            TransfersService.MegaTransfers.Add(uploadTransfer);
                             uploadTransfer.StartTransfer();
                         }
                     }

@@ -1284,4 +1284,20 @@ NOTE: Keep the capital letter if possible.</comment>
     <value>Uploading...</value>
     <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
+  <data name="UI_CancelDownloads" xml:space="preserve">
+    <value>Cancel downloads</value>
+    <comment>Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelUploads" xml:space="preserve">
+    <value>Cancel uploads</value>
+    <comment>Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Completed" xml:space="preserve">
+    <value>Completed</value>
+    <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NoCompletedTransfers" xml:space="preserve">
+    <value>No completed transfers</value>
+    <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
 </root>

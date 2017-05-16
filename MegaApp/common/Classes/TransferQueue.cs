@@ -4,23 +4,69 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using mega;
-using MegaApp.Enums;
 using MegaApp.Models;
 
 namespace MegaApp.Classes
 {
-    public class TransferQueue : ObservableCollection<TransferObjectModel>
+    public class TransferQueue
     {
         public TransferQueue()
         {
             Uploads = new ObservableCollection<TransferObjectModel>();
             Downloads = new ObservableCollection<TransferObjectModel>();
+            Completed = new ObservableCollection<TransferObjectModel>();
 
-            Uploads.CollectionChanged += UploadsOnCollectionChanged;
-            Downloads.CollectionChanged += DownloadsOnCollectionChanged;
+            Uploads.CollectionChanged += OnCollectionChanged;
+            Downloads.CollectionChanged += OnCollectionChanged;
+            Completed.CollectionChanged += OnCollectionChanged;
+        }
+
+        /// <summary>
+        /// Add a transfer to the Transfer Queue.
+        /// </summary>
+        /// <param name="transferObjectModel">Transfer to add</param>
+        public void Add(TransferObjectModel transferObjectModel)
+        {
+            // Folder transfers are not included into the transfers list.
+            if (transferObjectModel.IsFolderTransfer) return;
+
+            switch (transferObjectModel.Type)
+            {
+                case MTransferType.TYPE_DOWNLOAD:
+                    Sort(this.Downloads, transferObjectModel);
+                    break;
+                case MTransferType.TYPE_UPLOAD:
+                    Sort(this.Uploads, transferObjectModel);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        /// <summary>
+        /// Remove a transfer to the Transfer Queue.
+        /// </summary>
+        /// <param name="transferObjectModel">Transfer to remove</param>
+        public void Remove(TransferObjectModel transferObjectModel)
+        {
+            if (transferObjectModel.TransferState == MTransferState.STATE_COMPLETED)
+            {
+                this.Completed.Remove(transferObjectModel);
+                return;
+            }
+
+            switch (transferObjectModel.Type)
+            {
+                case MTransferType.TYPE_DOWNLOAD:
+                    this.Downloads.Remove(transferObjectModel);
+                    break;
+                case MTransferType.TYPE_UPLOAD:
+                    this.Uploads.Remove(transferObjectModel);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         /// <summary>
@@ -44,144 +90,81 @@ namespace MegaApp.Classes
             this.Uploads.Clear();
         }
 
-        protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
+        private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            base.OnCollectionChanged(e);
-
-            if (e.Action == NotifyCollectionChangedAction.Add)
+            switch (e.Action)
             {
-                foreach (var item in e.NewItems)
-                {
-                    var transferObject = (TransferObjectModel) item;
+                case NotifyCollectionChangedAction.Add:
+                    foreach (var item in e.NewItems)
+                        ((TransferObjectModel)item).PropertyChanged += OnStatusPropertyChanged;
+                    break;
 
-                    switch (transferObject.Type)
-                    {
-                        case MTransferType.TYPE_DOWNLOAD:
-                            DownloadSort(transferObject);
-                            break;
-                        case MTransferType.TYPE_UPLOAD:
-                            UploadSort(transferObject);
-                            break;
-                    }
-                }
-            }
-            if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (var item in e.OldItems)
-                {
-                    var transferObject = (TransferObjectModel)item;
-
-                    switch (transferObject.Type)
-                    {
-                        case MTransferType.TYPE_DOWNLOAD:
-                            Downloads.Remove(transferObject);
-                            break;
-                        case MTransferType.TYPE_UPLOAD:
-                            Uploads.Remove(transferObject);
-                            break;
-                    }
-                }
+                case NotifyCollectionChangedAction.Remove:
+                    foreach (var item in e.OldItems)
+                        ((TransferObjectModel)item).PropertyChanged -= OnStatusPropertyChanged;
+                    break;
             }
         }
 
-        private void DownloadsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (var item in e.NewItems)
-                {
-                    ((TransferObjectModel)item).PropertyChanged += DownloadsOnPropertyChanged;
-                }
-            }
-
-            if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (var item in e.OldItems)
-                {
-                    ((TransferObjectModel)item).PropertyChanged -= DownloadsOnPropertyChanged;
-                }
-            }
-        }
-
-        private void UploadsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (var item in e.NewItems)
-                {
-                    ((TransferObjectModel)item).PropertyChanged += UploadsOnPropertyChanged;
-                }
-            }
-
-            if (e.Action == NotifyCollectionChangedAction.Remove)
-            {
-                foreach (var item in e.OldItems)
-                {
-                    ((TransferObjectModel)item).PropertyChanged -= UploadsOnPropertyChanged;
-                }
-            }
-        }
-      
-       
-
-        private void UploadsOnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void OnStatusPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (!e.PropertyName.Equals("TransferState")) return;
 
-            UploadSort((TransferObjectModel) sender);
+            var transferObjectModel = sender as TransferObjectModel;
+            if (transferObjectModel == null) return;
+            Sort(transferObjectModel.Type == MTransferType.TYPE_DOWNLOAD ? this.Downloads : this.Uploads, transferObjectModel);
         }
 
-        private void UploadSort(TransferObjectModel transferObject)
+        public static void Sort(ObservableCollection<TransferObjectModel> transferList,
+            TransferObjectModel transferObject)
         {
-            if (Uploads.Contains(transferObject))
-                if (!Uploads.Remove(transferObject)) return;
+            bool handled = false;
+            var existing = transferList.FirstOrDefault(
+                t => t.TransferPath.Equals(transferObject.TransferPath));
+            bool move = existing != null;
+            var index = transferList.IndexOf(existing);
+            var count = transferList.Count - 1;
 
-            var inserted = false;
-
-            for (var i = 0; i <= Uploads.Count - 1; i++)
+            for (var i = 0; i <= count; i++)
             {
-                if ((int)transferObject.TransferState <= (int)Uploads[i].TransferState)
+                if ((int)transferObject.TransferPriority > (int)transferList[i].TransferPriority) continue;
+
+                if (move)
                 {
-                    Uploads.Insert(i, transferObject);
-                    inserted = true;
-                    break;
+                    if (index != i)
+                    {
+                        transferList.RemoveAt(index);
+                        transferList.Insert(i, transferObject);
+                    }
                 }
+                else
+                {
+                    transferList.Insert(i, transferObject);
+                }
+                handled = true;
+                break;
             }
 
-            if (!inserted)
-                Uploads.Add(transferObject);
-        }
+            if (handled) return;
 
-        private void DownloadSort(TransferObjectModel transferObject)
-        {
-            if (Downloads.Contains(transferObject))
-                if (!Downloads.Remove(transferObject)) return;
-
-            var inserted = false;
-
-            for (var i = 0; i <= Downloads.Count - 1; i++)
+            if (move)
             {
-                if ((int)transferObject.TransferState <= (int)Downloads[i].TransferState)
+                if (index != count)
                 {
-                    Downloads.Insert(i, transferObject);
-                    inserted = true;
-                    break;
+                    transferList.RemoveAt(index);
+                    transferList.Insert(count, transferObject);
                 }
             }
-
-            if (!inserted)
-                Downloads.Add(transferObject);
-        }
-
-        private void DownloadsOnPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (!e.PropertyName.Equals("TransferState")) return;
-
-            DownloadSort((TransferObjectModel)sender);
+            else
+            {
+                transferList.Add(transferObject);
+            }
         }
 
         public ObservableCollection<TransferObjectModel> Uploads { get; private set; }
 
         public ObservableCollection<TransferObjectModel> Downloads { get; private set; }
+
+        public ObservableCollection<TransferObjectModel> Completed { get; private set; }
     }
 }

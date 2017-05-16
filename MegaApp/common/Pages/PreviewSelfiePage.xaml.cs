@@ -59,7 +59,7 @@ namespace MegaApp.Pages
                 }
 
                 var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
-                TransfersService.MegaTransfers.Insert(0, uploadTransfer);
+                TransfersService.MegaTransfers.Add(uploadTransfer);
                 uploadTransfer.StartTransfer();
 
                 App.CloudDrive.NoFolderUpAction = true;

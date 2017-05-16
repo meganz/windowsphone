@@ -965,6 +965,16 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="MegaTransferListCompletedEmptyContent">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Path Data="{Binding LocalizedVisualResources.TransfersPathData, Mode=OneWay, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="256" Height="256" Stretch="Uniform" Opacity="0.3">
+                <Path.Fill>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+
     <DataTemplate x:Key="MegaSharedFoldersListEmptyContent">
         <!--<selectors:CustomMultiResolutionImage HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Stretch="None" Source="/Assets/Images/contacts_empty.png" Opacity="0.3"/>-->        
         <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">

@@ -178,6 +178,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to cancel all the pending downloads?.
+        /// </summary>
+        public static string AM_CancelDownloadsQuestion {
+            get {
+                return ResourceManager.GetString("AM_CancelDownloadsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind..
         /// </summary>
         public static string AM_CancelSubscription {
@@ -192,6 +201,15 @@ namespace MegaApp.Resources {
         public static string AM_CancelSubscriptionConfirmation {
             get {
                 return ResourceManager.GetString("AM_CancelSubscriptionConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to cancel all the pending uploads?.
+        /// </summary>
+        public static string AM_CancelUploadsQuestion {
+            get {
+                return ResourceManager.GetString("AM_CancelUploadsQuestion", resourceCulture);
             }
         }
         

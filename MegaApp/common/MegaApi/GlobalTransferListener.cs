@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
@@ -20,11 +16,6 @@ namespace MegaApp.MegaApi
 {
     public class GlobalTransferListener: MTransferListenerInterface
     {
-        public GlobalTransferListener()
-        {
-            this.Transfers = new List<TransferObjectModel>();
-        }
-
         #region MTransferListenerInterface
 
         //Will be called only for transfers started by startStreaming
@@ -103,24 +94,30 @@ namespace MegaApp.MegaApi
                                     else
                                         SavedForOffline.UpdateNode(sfoNode);
 
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => 
+                                    {
+                                        node.IsAvailableOffline = node.IsSelectedForOffline = true;
+                                        TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer);
+                                    });
 
                                     #if WINDOWS_PHONE_80
                                     //If is download transfer of an image file
                                     var imageNode = node as ImageNodeViewModel;
                                     if (imageNode != null)
                                     {
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
 
-                                    bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                                    if (exportToPhotoAlbum)
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                                        if (exportToPhotoAlbum)
+                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
                                     }
                                     #endif
                                 }
                             }
                             else //If is a standard download transfer (no for save for offline)
                             {
+                                bool result = true;
+
                                 //If is download transfer of an image file 
                                 var imageNode = megaTransfer.SelectedNode as ImageNodeViewModel;
                                 if (imageNode != null)
@@ -138,11 +135,7 @@ namespace MegaApp.MegaApi
                                     }
 
                                     #if WINDOWS_PHONE_81
-                                    if (!await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name))
-                                    {
-                                        Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.TransferState = MTransferState.STATE_FAILED);
-                                        break;
-                                    }
+                                    result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name);
                                     #endif
                                 }
                                 #if WINDOWS_PHONE_81                                    
@@ -150,20 +143,23 @@ namespace MegaApp.MegaApi
                                 {
                                     var node = megaTransfer.SelectedNode as FileNodeViewModel;
                                     if (node != null)
-                                    {
-
-                                        if (!await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name))
-                                        {
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.TransferState = MTransferState.STATE_FAILED);
-                                            break;
-                                        }
-                                    }
+                                        result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name);
                                 }
                                 #endif
+
+                                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                {
+                                    if (!result)
+                                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                                    else
+                                        TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer);
+                                });
                             }
                         break;
 
                         case MTransferType.TYPE_UPLOAD:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer));
                             break;
 
                         default:
@@ -301,12 +297,6 @@ namespace MegaApp.MegaApi
                 megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
             });
         }
-
-        #endregion
-
-        #region Properties
-
-        public IList<TransferObjectModel> Transfers { get; private set; }        
 
         #endregion
     }

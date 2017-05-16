@@ -153,7 +153,7 @@ namespace MegaApp.Models
                     ProgressService.SetProgressIndicator(true, ProgressMessages.SaveForOffline));
 
                 _node.IsSelectedForOffline = true;
-                await _node.SaveForOffline(TransfersService.MegaTransfers);
+                await _node.SaveForOffline();
             }
             else
             {

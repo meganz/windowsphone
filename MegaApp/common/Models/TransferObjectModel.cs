@@ -27,7 +27,7 @@ namespace MegaApp.Models
             Initialize(selectedNode, transferType, transferPath, externalDownloadPath);
         }
 
-        private async void Initialize(IMegaNode selectedNode, MTransferType transferType,
+        private void Initialize(IMegaNode selectedNode, MTransferType transferType,
             string transferPath, string externalDownloadPath = null)
         {
             this.TypeAndState = new object[2];
@@ -43,12 +43,15 @@ namespace MegaApp.Models
                     DisplayName = Path.GetFileName(transferPath);
                     if (FileService.FileExists(transferPath))
                     {
-                        var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
-                        if (srcFile != null)
+                        Task.Run(async() =>
                         {
-                            var fileProperties = await srcFile.GetBasicPropertiesAsync();
-                            this.TotalBytes = fileProperties.Size;
-                        }
+                            var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
+                            if (srcFile != null)
+                            {
+                                var fileProperties = await srcFile.GetBasicPropertiesAsync();
+                                this.TotalBytes = fileProperties.Size;
+                            }
+                        });
                     }
                     break;
             }
@@ -103,11 +106,11 @@ namespace MegaApp.Models
         public void CancelTransfer(object p = null)
         {
             // If the transfer is an upload and is being prepared (copying file to the upload temporary folder)
-            //if (this.Type == MTransferType.TYPE_UPLOAD && this.PreparingUploadCancelToken != null)
-            //{
-            //    this.PreparingUploadCancelToken.Cancel();
-            //    return;
-            //}
+            if (this.Type == MTransferType.TYPE_UPLOAD && this.PreparingUploadCancelToken != null)
+            {
+                this.PreparingUploadCancelToken.Cancel();
+                return;
+            }
 
             // If the transfer is ready but not started for some reason
             if (!this.IsBusy && this.TransferState == MTransferState.STATE_NONE)
@@ -195,6 +198,8 @@ namespace MegaApp.Models
             }
         }
 
+        public CancellationTokenSource PreparingUploadCancelToken;
+
         public object[] TypeAndState { get; set; }
 
         private MTransfer _transfer;
@@ -202,6 +207,14 @@ namespace MegaApp.Models
         {
             get { return _transfer; }
             set { SetField(ref _transfer, value); }
+        }
+
+        public bool IsFolderTransfer 
+        {
+            get 
+            { 
+                return (this.Transfer != null) ? this.Transfer.isFolderTransfer() : !Path.HasExtension(this.TransferPath); 
+            }
         }
 
         private bool _isDefaultImage;

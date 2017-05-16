@@ -1363,4 +1363,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Depleted transfer quota</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
+  <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
+    <value>Are you sure you want to cancel all the pending downloads?</value>
+    <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
+  </data>
+  <data name="AM_CancelUploadsQuestion" xml:space="preserve">
+    <value>Are you sure you want to cancel all the pending uploads?</value>
+    <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
+  </data>
 </root>

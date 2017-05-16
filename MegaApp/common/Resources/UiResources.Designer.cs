@@ -2059,11 +2059,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancel downloads.
+        /// </summary>
+        public static string UI_CancelDownloads {
+            get {
+                return ResourceManager.GetString("UI_CancelDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel subscription.
         /// </summary>
         public static string UI_CancelSubscription {
             get {
                 return ResourceManager.GetString("UI_CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancel uploads.
+        /// </summary>
+        public static string UI_CancelUploads {
+            get {
+                return ResourceManager.GetString("UI_CancelUploads", resourceCulture);
             }
         }
         
@@ -2091,6 +2109,15 @@ namespace MegaApp.Resources {
         public static string UI_CloseSession {
             get {
                 return ResourceManager.GetString("UI_CloseSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Completed.
+        /// </summary>
+        public static string UI_Completed {
+            get {
+                return ResourceManager.GetString("UI_Completed", resourceCulture);
             }
         }
         
@@ -2298,6 +2325,15 @@ namespace MegaApp.Resources {
         public static string UI_Modified {
             get {
                 return ResourceManager.GetString("UI_Modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No completed transfers.
+        /// </summary>
+        public static string UI_NoCompletedTransfers {
+            get {
+                return ResourceManager.GetString("UI_NoCompletedTransfers", resourceCulture);
             }
         }
         
