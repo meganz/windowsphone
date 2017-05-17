@@ -27,7 +27,7 @@ namespace MegaApp.Models
             Initialize(selectedNode, transferType, transferPath, externalDownloadPath);
         }
 
-        private void Initialize(IMegaNode selectedNode, MTransferType transferType,
+        private async void Initialize(IMegaNode selectedNode, MTransferType transferType,
             string transferPath, string externalDownloadPath = null)
         {
             this.TypeAndState = new object[2];
@@ -43,15 +43,12 @@ namespace MegaApp.Models
                     DisplayName = Path.GetFileName(transferPath);
                     if (FileService.FileExists(transferPath))
                     {
-                        Task.Run(async() =>
+                        var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
+                        if (srcFile != null)
                         {
-                            var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
-                            if (srcFile != null)
-                            {
-                                var fileProperties = await srcFile.GetBasicPropertiesAsync();
-                                this.TotalBytes = fileProperties.Size;
-                            }
-                        });
+                            var fileProperties = await srcFile.GetBasicPropertiesAsync();
+                            this.TotalBytes = fileProperties.Size;
+                        }
                     }
                     break;
             }
@@ -246,33 +243,14 @@ namespace MegaApp.Models
         public bool CancelButtonState
         {
             get { return _cancelButtonState; }
-            set
-            {
-                _cancelButtonState = value;
-                OnPropertyChanged("CancelButtonState");
-            }
+            set { SetField(ref _cancelButtonState, value); }
         }
 
         private Uri _transferButtonIcon;
         public Uri TransferButtonIcon
         {
             get { return _transferButtonIcon; }
-            set
-            {
-                _transferButtonIcon = value;
-                OnPropertyChanged("TransferButtonIcon");
-            }
-        }
-
-        private SolidColorBrush _transferButtonForegroundColor;
-        public SolidColorBrush TransferButtonForegroundColor
-        {
-            get { return _transferButtonForegroundColor; }
-            set
-            {
-                _transferButtonForegroundColor = value;
-                OnPropertyChanged("TransferButtonForegroundColor");
-            }
+            set { SetField(ref _transferButtonIcon, value); }
         }
 
         private MTransferState _transferState;
@@ -281,8 +259,6 @@ namespace MegaApp.Models
             get { return _transferState; }
             set
             {
-                if (_transferState == value) return;
-
                 SetField(ref _transferState, value);
 
                 this.IsBusy = (value == MTransferState.STATE_ACTIVE) ? true : false;
@@ -303,33 +279,21 @@ namespace MegaApp.Models
         public ulong TotalBytes
         {
             get { return _totalBytes; }
-            set
-            {
-                _totalBytes = value;
-                OnPropertyChanged("TotalBytes");
-            }
+            set { SetField(ref _totalBytes, value); }
         }
 
         private ulong _transferedBytes;
         public ulong TransferedBytes
         {
             get { return _transferedBytes; }
-            set
-            {
-                _transferedBytes = value;
-                OnPropertyChanged("TransferedBytes");
-            }
+            set { SetField(ref _transferedBytes, value); }
         }
 
         private string _transferSpeed;
         public string TransferSpeed
         {
             get { return _transferSpeed; }
-            set
-            {
-                _transferSpeed = value;
-                OnPropertyChanged("TransferSpeed");
-            }
+            set { SetField(ref _transferSpeed, value); }
         }
 
         private ulong _transferMeanSpeed;

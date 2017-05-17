@@ -59,7 +59,6 @@ namespace MegaApp.MegaApi
                     {
                         megaTransfer.TransferedBytes = megaTransfer.TotalBytes;
                         megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
-                        megaTransfer.TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
                     });
                 
                     switch (megaTransfer.Type)
@@ -240,7 +239,6 @@ namespace MegaApp.MegaApi
 
                     megaTransfer.CancelButtonState = true;
                     megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                    megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
                 }
             });
         }
@@ -294,7 +292,6 @@ namespace MegaApp.MegaApi
 
                 megaTransfer.CancelButtonState = true;
                 megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
             });
         }
 

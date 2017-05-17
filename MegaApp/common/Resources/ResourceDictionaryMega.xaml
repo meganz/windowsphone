@@ -901,12 +901,33 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Path Data="{Binding FileTypePathData}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Width="64" Height="64" Stretch="Uniform" Margin="0,0,8,0" Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Path 
+                Margin="0,0,8,0" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.RowSpan="3" 
+                Width="64" 
+                Height="64" 
+                Stretch="Uniform" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Data="{Binding FileTypePathData}" 
+                Visibility="{Binding IsDefaultImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Path.Fill>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Path.Fill>
             </Path>
-            <Image HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" VerticalAlignment="Center" Margin="0,0,8,0" Width="64" Height="64" Stretch="UniformToFill" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Image 
+                Margin="0,0,8,0" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Grid.RowSpan="3" 
+                Width="64" 
+                Height="64"
+                Stretch="UniformToFill" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Image.Source>
                     <BitmapImage 
 						UriSource="{Binding ThumbnailUri, ConverterParameter=0, Converter={StaticResource UriToResolutionUriConverter}}"
@@ -917,31 +938,84 @@
                         />
                 </Image.Source>
             </Image>
-            <Border Margin="0,0,8,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="3" Width="64" Height="64" BorderThickness="2" Canvas.ZIndex="1" Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Border 
+                Margin="0,0,8,0" 
+                Grid.RowSpan="3" 
+                Width="64" 
+                Height="64" 
+                BorderThickness="2" 
+                Canvas.ZIndex="1"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Visibility="{Binding IsDefaultImage, ConverterParameter=False, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}"/>
                 </Border.BorderBrush>
             </Border>
-            <TextBlock HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1" Text="{Binding DisplayName}" VerticalAlignment="Bottom" FontSize="22" TextTrimming="WordEllipsis" FontFamily="Segoe UI" Margin="0,0,0,-6"/>
-            <ProgressBar VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="{StaticResource PhoneFontSizeNormal}" Margin="-10,0,-12,0" Minimum="0" Maximum="{Binding TotalBytes}" Value="{Binding TransferedBytes}" IsIndeterminate="False" FontFamily="Portable User Interface">
+            <TextBlock 
+                Margin="0,0,0,-6"
+                Grid.Row="0" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left"                 
+                VerticalAlignment="Bottom" 
+                FontSize="22" 
+                FontFamily="Segoe UI" 
+                TextTrimming="WordEllipsis" 
+                Text="{Binding DisplayName}"/>
+            <ProgressBar 
+                Grid.Row="1"
+                Grid.Column="1" 
+                Margin="-10,0,-12,0" 
+                VerticalAlignment="Center" 
+                FontSize="{StaticResource PhoneFontSizeNormal}" 
+                Minimum="0" 
+                Maximum="{Binding TotalBytes}" 
+                Value="{Binding TransferedBytes}" 
+                IsIndeterminate="False" 
+                FontFamily="Portable User Interface">
                 <ProgressBar.Foreground>
                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                 </ProgressBar.Foreground>
                 <ProgressBar.Background>
-                    <SolidColorBrush Color="White" Opacity="0.3"/>
+                    <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
                 </ProgressBar.Background>
             </ProgressBar>
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TypeAndState, Converter={StaticResource TransferStateToReadableTextConverter}}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="White" Opacity="0.3"/>
-                </TextBlock.Foreground>
-            </TextBlock>
-            <TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="{Binding TransferSpeed}" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" FontFamily="Segoe UI" FontSize="16" Margin="0,-6,0,0">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="White" Opacity="0.3"/>
-                </TextBlock.Foreground>
-            </TextBlock>
-            <telerikPrimitives:RadImageButton IsEnabled="{Binding CancelButtonState}" Command="{Binding CancelTransferCommand}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" ButtonType="Custom" ButtonShape="Ellipse" RestStateImageSource="{Binding TransferButtonIcon}" Foreground="{Binding TransferButtonForegroundColor}" FontFamily="Portable User Interface" Margin="0,0,-12,0"/>
+            <TextBlock 
+                Margin="0,-6,0,0" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                FontSize="16" 
+                FontFamily="Segoe UI" 
+                TextWrapping="Wrap" 
+                Text="{Binding TypeAndState, Converter={StaticResource TransferStateToReadableTextConverter}}" 
+                Opacity="0.3"/>
+            <TextBlock 
+                Margin="0,-6,0,0" 
+                Grid.Row="2" 
+                Grid.Column="1" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                FontSize="16" 
+                FontFamily="Segoe UI" 
+                TextWrapping="Wrap" 
+                Text="{Binding TransferSpeed}" 
+                Opacity="0.3"/>
+            <telerikPrimitives:RadImageButton 
+                Margin="0,0,-12,0"
+                Grid.Row="0" 
+                Grid.Column="2" 
+                Grid.RowSpan="3" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                ButtonType="Custom" 
+                ButtonShape="Ellipse" 
+                FontFamily="Portable User Interface"
+                IsEnabled="{Binding CancelButtonState}" 
+                Command="{Binding CancelTransferCommand}"
+                RestStateImageSource="{Binding TransferButtonIcon}" 
+                Foreground="{StaticResource PhoneForegroundBrush}"/>
         </Grid>
     </DataTemplate>
 
