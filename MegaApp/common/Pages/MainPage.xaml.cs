@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -593,33 +595,97 @@ namespace MegaApp.Pages
                 // Set upload directory only once for speed improvement and if not exists, create dir
                 var uploadDir = AppService.GetUploadDirectoryPath(true);
 
+                // Create a dictionary to store the files and its corresponding transfer object.            
+                var uploads = new Dictionary<StorageFile, TransferObjectModel>();
+
                 // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
                 IReadOnlyList<StorageFile> pickedFiles = args.Files;
+
+                // First create the transfers object and fill the dictionary
                 foreach (StorageFile file in pickedFiles)
                 {
                     if (file == null) continue; // To avoid null references
 
+                    TransferObjectModel uploadTransfer = null;
                     try
                     {
-                        string newFilePath = Path.Combine(uploadDir, file.Name);
-                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        uploadTransfer = new TransferObjectModel(SdkService.MegaSdk,
+                            App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD,
+                            Path.Combine(uploadDir, file.Name));
+
+                        if (uploadTransfer != null)
                         {
-                            var stream = await file.OpenStreamForReadAsync();
-                            await stream.CopyToAsync(fs);
-                            await fs.FlushAsync();
-                            fs.Close();
+                            uploadTransfer.DisplayName = file.Name;
+                            uploadTransfer.TotalBytes = (await file.GetBasicPropertiesAsync()).Size;
+                            uploadTransfer.PreparingUploadCancelToken = new CancellationTokenSource();
+                            uploadTransfer.TransferState = MTransferState.STATE_NONE;
+                            uploads.Add(file, uploadTransfer);
+                            TransfersService.MegaTransfers.Add(uploadTransfer);
                         }
-                        var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
-                        TransfersService.MegaTransfers.Add(uploadTransfer);
-                        uploadTransfer.StartTransfer();
                     }
                     catch (Exception)
                     {
-                        new CustomMessageDialog(
-                            AppMessages.PrepareFileForUploadFailed_Title,
-                            String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Transfer (UPLOAD) failed: " + file.Name);
+
+                        if (uploadTransfer != null) 
+                            uploadTransfer.TransferState = MTransferState.STATE_FAILED;
+
+                        new CustomMessageDialog(AppMessages.PrepareFileForUploadFailed_Title,
+                            string.Format(AppMessages.PrepareFileForUploadFailed, file.Name), 
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                }
+
+                // Second finish preparing transfers copying the files to the temporary upload folder
+                foreach (var upload in uploads)
+                {
+                    if (upload.Key == null || upload.Value == null) continue; // To avoid null references
+
+                    TransferObjectModel uploadTransfer = null;
+                    try
+                    {
+                        uploadTransfer = upload.Value;
+
+                        // If the upload isn´t already cancelled then copy the file to the temporary upload folder
+                        if(uploadTransfer.PreparingUploadCancelToken != null &&
+                            uploadTransfer.PreparingUploadCancelToken.Token.IsCancellationRequested == false)
+                        {
+                            using (var fs = new FileStream(Path.Combine(uploadDir, upload.Key.Name), FileMode.Create))
+                            {
+                                // Set buffersize to avoid copy failure of large files
+                                var stream = await upload.Key.OpenStreamForReadAsync();
+                                await stream.CopyToAsync(fs, 8192, uploadTransfer.PreparingUploadCancelToken.Token);
+                                await fs.FlushAsync(uploadTransfer.PreparingUploadCancelToken.Token);
+                            }
+
+                            uploadTransfer.StartTransfer();
+                        }
+                        else
+                        {
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer (UPLOAD) canceled: " + upload.Key.Name);
+                            uploadTransfer.TransferState = MTransferState.STATE_CANCELLED;
+                        }
+                    }
+                    // If the upload is cancelled during the preparation process, 
+                    // changes the status and delete the corresponding temporary file
+                    catch (TaskCanceledException)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer (UPLOAD) canceled: " + upload.Key.Name);
+                        FileService.DeleteFile(uploadTransfer.TransferPath);
+                        uploadTransfer.TransferState = MTransferState.STATE_CANCELLED;
+                    }
+                    catch (Exception)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Transfer (UPLOAD) failed: " + upload.Key.Name);
+                        uploadTransfer.TransferState = MTransferState.STATE_FAILED;
+
+                        new CustomMessageDialog(AppMessages.PrepareFileForUploadFailed_Title,
+                            string.Format(AppMessages.PrepareFileForUploadFailed, upload.Key.Name),
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                    finally
+                    {
+                        uploadTransfer.PreparingUploadCancelToken = null;
                     }
                 }
             }
