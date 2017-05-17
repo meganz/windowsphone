@@ -201,43 +201,47 @@ namespace MegaApp.MegaApi
             // If the user is trying to open a MEGA link
             else if (App.LinkInformation.ActiveLink != null)
             {
-                //Only need to check if is a file link.
-                //The folder links are checked in the "SpecialNavigation" method
-                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                // Only need to check if is a "file link" or an "internal node link".
+                // The "folder links" are checked in the "SpecialNavigation" method
+                if (!App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
                 {
-                    SdkService.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
-                        new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
-                }
-                // Internal file/folder link
-                else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
-                {
-                    var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
-                    var megaNode = SdkService.MegaSdk.getNodeByBase64Handle(nodeHandle);
-                    if (megaNode != null)
+                    // Public file link
+                    if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
                     {
-                        ContainerType containerType = (SdkService.MegaSdk.isInRubbish(megaNode)) ?
-                            containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
-
-                        var node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, megaNode, containerType);
-
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            if (node.IsFolder)
-                                _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
-                            else
-                                node.Download(TransfersService.MegaTransfers);
-                        });
+                        SdkService.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
+                            new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
                     }
-                    else
+                    // Internal file/folder link
+                    else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
                     {
-                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
+                        var megaNode = SdkService.MegaSdk.getNodeByBase64Handle(nodeHandle);
+                        if (megaNode != null)
                         {
-                            new CustomMessageDialog(
-                                AppMessages.AM_InternalNodeNotFound_Title,
-                                AppMessages.AM_InternalNodeNotFound,
-                                App.AppInformation,
-                                MessageDialogButtons.Ok).ShowDialog();
-                        });
+                            ContainerType containerType = (SdkService.MegaSdk.isInRubbish(megaNode)) ?
+                                containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
+
+                            var node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, megaNode, containerType);
+
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                if (node.IsFolder)
+                                    _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                                else
+                                    node.Download(TransfersService.MegaTransfers);
+                            });
+                        }
+                        else
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                new CustomMessageDialog(
+                                    AppMessages.AM_InternalNodeNotFound_Title,
+                                    AppMessages.AM_InternalNodeNotFound,
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                            });
+                        }
                     }
                 }
             }
