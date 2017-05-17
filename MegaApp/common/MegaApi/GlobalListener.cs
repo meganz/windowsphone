@@ -306,6 +306,8 @@ namespace MegaApp.MegaApi
 
         public void onAccountUpdate(MegaSDK api)
         {
+            AccountService.GetAccountDetails();
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 var customMessageDialog = new CustomMessageDialog(
