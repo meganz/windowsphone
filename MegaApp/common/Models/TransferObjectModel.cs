@@ -60,7 +60,6 @@ namespace MegaApp.Models
             TransferedBytes = 0;
             TransferSpeed = string.Empty;
             SelectedNode = selectedNode;
-            CancelButtonState = true;
             TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
             AutoLoadImageOnFinish = false;
             CancelTransferCommand = new DelegateCommand(CancelTransfer);
@@ -239,11 +238,20 @@ namespace MegaApp.Models
 
         public bool IsSaveForOfflineTransfer { get; set; }
 
-        private bool _cancelButtonState;
         public bool CancelButtonState
         {
-            get { return _cancelButtonState; }
-            set { SetField(ref _cancelButtonState, value); }
+            get 
+            { 
+                switch(this.TransferState)
+                {
+                    case MTransferState.STATE_CANCELLED:
+                    case MTransferState.STATE_COMPLETED:
+                    case MTransferState.STATE_FAILED:
+                        return false;
+                    default:
+                        return true;
+                }
+            }
         }
 
         private Uri _transferButtonIcon;
@@ -265,6 +273,7 @@ namespace MegaApp.Models
                 this.TypeAndState[1] = value;
 
                 OnPropertyChanged("TypeAndState");
+                OnPropertyChanged("CancelButtonState");
             }
         }
 

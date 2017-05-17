@@ -48,8 +48,6 @@ namespace MegaApp.MegaApi
                 megaTransfer.TotalBytes = transfer.getTotalBytes();
                 megaTransfer.TransferedBytes = transfer.getTransferredBytes();
                 megaTransfer.TransferSpeed = string.Empty;
-                megaTransfer.IsBusy = false;
-                megaTransfer.CancelButtonState = false;
             });
 
             switch (e.getErrorCode())
@@ -129,7 +127,6 @@ namespace MegaApp.MegaApi
                                         {
                                             if (imageNode.OriginalMNode.hasPreview()) return;
                                             imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
-                                            imageNode.IsBusy = false;
                                         });
                                     }
 
@@ -236,8 +233,6 @@ namespace MegaApp.MegaApi
                     megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
                     megaTransfer.TotalBytes = transfer.getTotalBytes();
                     megaTransfer.TransferPriority = transfer.getPriority();
-
-                    megaTransfer.CancelButtonState = true;
                     megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
                 }
             });
@@ -289,8 +284,6 @@ namespace MegaApp.MegaApi
                 megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
                 megaTransfer.TransferMeanSpeed = transfer.getMeanSpeed();
                 megaTransfer.TransferPriority = transfer.getPriority();
-
-                megaTransfer.CancelButtonState = true;
                 megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
             });
         }
