@@ -1549,6 +1549,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Bestand/map niet gevonden</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" xml:space="preserve">
+          <source>Depleted transfer quota</source>
+          <target state="new">Depleted transfer quota</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to cancel all the pending uploads?</source>
+          <target state="new">Are you sure you want to cancel all the pending uploads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to cancel all the pending downloads?</source>
+          <target state="new">Are you sure you want to cancel all the pending downloads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" xml:space="preserve">
+          <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
+          <target state="new">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
+        </trans-unit>
       </group>
     </body>
   </file>

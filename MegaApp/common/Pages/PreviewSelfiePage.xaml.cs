@@ -7,6 +7,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
@@ -14,8 +17,6 @@ using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 
 namespace MegaApp.Pages
 {
@@ -57,12 +58,19 @@ namespace MegaApp.Pages
                     fs.Close();
                 }
 
-                var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                App.MegaTransfers.Insert(0, uploadTransfer);
+                var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                TransfersService.MegaTransfers.Add(uploadTransfer);
                 uploadTransfer.StartTransfer();
 
                 App.CloudDrive.NoFolderUpAction = true;
-                this.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.SelfieSelected));
+
+                // Remove the `PhotoCameraPage` from the back stack and go back
+                NavigationService.RemoveBackEntry();
+
+                if (NavigateService.CanGoBack())
+                    NavigateService.GoBack();
+                else
+                    NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
             }
             catch (Exception)
             {

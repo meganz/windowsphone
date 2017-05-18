@@ -15,8 +15,8 @@ namespace MegaApp.Models
 {
     public class SavedForOfflineViewModel : BaseAppInfoAwareViewModel
     {
-        public SavedForOfflineViewModel() 
-            : base(App.MegaSdk, App.AppInformation)
+        public SavedForOfflineViewModel()
+            : base(SdkService.MegaSdk, App.AppInformation)
         {
             this.SavedForOffline = new OfflineFolderViewModel();
 

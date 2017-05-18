@@ -23,23 +23,22 @@ namespace MegaApp.Models
 
             InitializeMenu(HamburgerMenuItemType.CameraUploads);          
         }
-        
 
         #region Public Methods
 
-        public async void Initialize(GlobalDriveListener globalDriveListener)
+        public async void Initialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Add(this.CameraUploads);
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Add(this.CameraUploads);
 
             // Create Camera Uploads folder node if not exists
             await this.CameraUploads.CreateRootNodeIfNotExists();
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Remove(this.CameraUploads);
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Remove(this.CameraUploads);
         }
 
         public void FetchNodes()

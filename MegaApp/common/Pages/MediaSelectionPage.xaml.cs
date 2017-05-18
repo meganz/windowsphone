@@ -7,17 +7,18 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Microsoft.Xna.Framework.Media;
+using Telerik.Windows.Controls;
+using Telerik.Windows.Data;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using Microsoft.Xna.Framework.Media;
-using Telerik.Windows.Controls;
-using Telerik.Windows.Data;
 
 namespace MegaApp.Pages
 {
@@ -27,7 +28,7 @@ namespace MegaApp.Pages
        
         public MediaSelectionPage()
         {
-            _mediaSelectionPageModel = new MediaSelectionPageModel(App.MegaSdk);
+            _mediaSelectionPageModel = new MediaSelectionPageModel(SdkService.MegaSdk);
             this.DataContext = _mediaSelectionPageModel;
 
             InitializeComponent();
@@ -88,8 +89,8 @@ namespace MegaApp.Pages
                             await fs.FlushAsync();
                             fs.Close();
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
+                        var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                        TransfersService.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }
                 }
@@ -108,7 +109,11 @@ namespace MegaApp.Pages
             SetControlState(true);
 
             App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.PictureSelected);
+
+            if (NavigateService.CanGoBack())
+                NavigateService.GoBack();
+            else
+                NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.Normal);
         }
 
         private void OnClearSelectionClick(object sender, System.EventArgs e)

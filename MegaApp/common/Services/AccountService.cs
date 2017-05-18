@@ -15,7 +15,7 @@ namespace MegaApp.Services
             get
             {
                 if (_accountDetails != null) return _accountDetails;
-                _accountDetails = new AccountDetailsViewModel() { UserEmail = App.MegaSdk.getMyEmail() };
+                _accountDetails = new AccountDetailsViewModel() { UserEmail = SdkService.MegaSdk.getMyEmail() };
                 return _accountDetails;
             }
         }
@@ -33,7 +33,7 @@ namespace MegaApp.Services
 
         public static void GetAccountDetails()
         {
-            App.MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails, GetAccountDetailsFinish));
+            SdkService.MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails, GetAccountDetailsFinish));
         }
     }
 }

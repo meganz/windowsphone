@@ -61,9 +61,9 @@ namespace MegaApp.Interfaces
         /// <summary>
         /// Dowload the node to the specified download destionation
         /// </summary>
-        /// <param name="transferQueu">Global app transfer queu to add the download to</param>
+        /// <param name="transferQueue">Global app transfer queue to add the download to</param>
         /// <param name="downloadPath">Download destionation location</param>
-        void Download(TransferQueu transferQueu, string downloadPath = null);
+        void Download(TransferQueue transferQueue, string downloadPath = null);
 
         /// <summary>
         /// Update core date associated with the SDK MNode object

@@ -208,27 +208,27 @@ namespace MegaApp.MegaApi
                     // Public file link
                     if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
                     {
-                        App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
+                        SdkService.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
                             new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
                     }
                     // Internal file/folder link
                     else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
                     {
                         var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
-                        var megaNode = App.MegaSdk.getNodeByBase64Handle(nodeHandle);
+                        var megaNode = SdkService.MegaSdk.getNodeByBase64Handle(nodeHandle);
                         if (megaNode != null)
                         {
-                            ContainerType containerType = (App.MegaSdk.isInRubbish(megaNode)) ?
+                            ContainerType containerType = (SdkService.MegaSdk.isInRubbish(megaNode)) ?
                                 containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
 
-                            var node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, megaNode, containerType);
+                            var node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, megaNode, containerType);
 
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
                             {
                                 if (node.IsFolder)
                                     _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
                                 else
-                                    node.Download(App.MegaTransfers);
+                                    node.Download(TransfersService.MegaTransfers);
                             });
                         }
                         else

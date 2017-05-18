@@ -261,30 +261,6 @@
     <value>העברות</value>
     <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>בוטל</value>
-    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>מבטל...</value>
-    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>מוריד...</value>
-    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>שגיאה בהעברה</value>
-    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>מוכן</value>
-    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>מעלה...</value>
-    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
-  </data>
   <data name="Download" xml:space="preserve">
     <value>הורד</value>
     <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -300,14 +276,6 @@
   <data name="MultiSelect" xml:space="preserve">
     <value>בחירה מרובה</value>
     <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Paused" xml:space="preserve">
-    <value>הושהה</value>
-    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Pausing" xml:space="preserve">
-    <value>משהה...</value>
-    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
   <data name="SpecialThankYou" xml:space="preserve">
     <value>ברצוננו להודות באופן מיוחד לחברות/אנשים הבאים שבזכותן קיימת האפליקציה הזאת:</value>
@@ -604,18 +572,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="CancelAllTransfers" xml:space="preserve">
     <value>בטל את כל ההעברות</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Downloaded" xml:space="preserve">
-    <value>הורד</value>
-    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Queued" xml:space="preserve">
-    <value>בתור</value>
-    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Uploaded" xml:space="preserve">
-    <value>הועלה</value>
-    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
     <value>קבל</value>

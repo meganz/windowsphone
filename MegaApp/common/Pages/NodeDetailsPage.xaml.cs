@@ -119,12 +119,12 @@ namespace MegaApp.Pages
                 return;
             }
 
-            _nodeDetailsViewModel.Initialize(App.GlobalDriveListener);
+            _nodeDetailsViewModel.Initialize(App.GlobalListener);
 
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
+                SdkService.MegaSdk.retryPendingConnections();
 
                 if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                 {
@@ -140,7 +140,7 @@ namespace MegaApp.Pages
                 if (app != null && app.FolderPickerContinuationArgs != null)
                 {
                     FolderService.ContinueFolderOpenPicker(app.FolderPickerContinuationArgs,
-                        new FolderViewModel(App.MegaSdk, App.AppInformation, _nodeViewModel.ParentContainerType));
+                        new FolderViewModel(SdkService.MegaSdk, App.AppInformation, _nodeViewModel.ParentContainerType));
                 }
 #endif
                 return;
@@ -149,7 +149,7 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _nodeDetailsViewModel.Deinitialize(App.GlobalDriveListener);
+            _nodeDetailsViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 

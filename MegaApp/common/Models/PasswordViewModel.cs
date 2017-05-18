@@ -43,7 +43,7 @@ namespace MegaApp.Models
 
         public void Logout()
         {
-            App.MegaSdk.logout(new LogOutRequestListener());
+            SdkService.MegaSdk.logout(new LogOutRequestListener());
         }
 
         #endregion

@@ -26,7 +26,7 @@ namespace MegaApp.Pages
 
         public MyAccountPage()
         {
-            _myAccountPageViewModel = new MyAccountPageViewModel(App.MegaSdk, App.AppInformation);
+            _myAccountPageViewModel = new MyAccountPageViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _myAccountPageViewModel;
 
             _myAccountPageViewModel.AccountDetails.CreditCardSubscriptionsChanged += OnCreditCardSubscriptionsChanged;
@@ -108,7 +108,7 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if(!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    if(!Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
@@ -129,14 +129,14 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _myAccountPageViewModel.Deinitialize(App.GlobalDriveListener);
+            _myAccountPageViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            _myAccountPageViewModel.Initialize(App.GlobalDriveListener);
+            _myAccountPageViewModel.Initialize(App.GlobalListener);
 
             // Get last page (previous page)            
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
@@ -195,7 +195,7 @@ namespace MegaApp.Pages
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            int numPendingTransfers = App.MegaSdk.getTransfers().size();
+            int numPendingTransfers = SdkService.MegaSdk.getTransfers().size();
             if (numPendingTransfers > 0)
             {
                 var result = await new CustomMessageDialog(
@@ -206,8 +206,8 @@ namespace MegaApp.Pages
 
                 if (result == MessageDialogResult.CancelNo) return;
 
-                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_DOWNLOAD);
-                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
+                SdkService.MegaSdk.cancelTransfers((int)MTransferType.TYPE_DOWNLOAD);
+                SdkService.MegaSdk.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
             }
 
         	_myAccountPageViewModel.Logout();
@@ -298,7 +298,7 @@ namespace MegaApp.Pages
         private void OnMyAccountTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MainDrawerLayout.CloseDrawer();
         }

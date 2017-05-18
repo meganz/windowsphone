@@ -88,16 +88,16 @@ namespace MegaApp.Models
 
         #region Methods
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
-            // Add contacts to global drive listener to receive notifications
-            globalDriveListener.ContactsDetails.Add(this);
+            // Add contacts to global listener to receive notifications
+            globalListener.ContactsDetails.Add(this);
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Remove contacts of global drive listener
-            globalDriveListener.ContactsDetails.Remove(this);
+            // Remove contacts of global listener
+            globalListener.ContactsDetails.Remove(this);
         }
 
         private void CreateLoadCancelOption()

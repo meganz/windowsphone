@@ -33,7 +33,7 @@ namespace MegaApp.Pages
 
         public FolderLinkPage()
         {
-            _folderLinkViewModel = new FolderLinkViewModel(App.MegaSdkFolderLinks, App.AppInformation, this);
+            _folderLinkViewModel = new FolderLinkViewModel(SdkService.MegaSdkFolderLinks, App.AppInformation, this);
             this.DataContext = _folderLinkViewModel;
             
             InitializeComponent();
@@ -87,7 +87,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             CheckAndBrowseToHome((BreadCrumb)sender);
         }
@@ -100,7 +100,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             CheckAndBrowseToFolder((BreadCrumb)sender, (IMegaNode)e.Item);
         }
@@ -116,7 +116,7 @@ namespace MegaApp.Pages
             DeviceNetworkInformation.NetworkAvailabilityChanged -= 
                 new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
 
-            _folderLinkViewModel.Deinitialize(App.GlobalDriveListener);
+            _folderLinkViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
@@ -131,7 +131,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdkFolderLinks.retryPendingConnections();
+                SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
                 if (!App.AppInformation.HasPinLockIntroduced && SettingsService.LoadSetting<bool>(SettingsResources.UserPinLockIsEnabled))
                 {
@@ -165,7 +165,7 @@ namespace MegaApp.Pages
             {
                 if (!String.IsNullOrWhiteSpace(App.LinkInformation.ActiveLink))
                 {
-                    App.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
+                    SdkService.MegaSdkFolderLinks.loginToFolder(App.LinkInformation.ActiveLink,
                         new LoginToFolderRequestListener(_folderLinkViewModel));
                 }
                 else
@@ -244,7 +244,7 @@ namespace MegaApp.Pages
         public void SetApplicationBarData(bool isEnabled = true)
         {
             if(_folderLinkViewModel == null)
-                _folderLinkViewModel = new FolderLinkViewModel(App.MegaSdkFolderLinks, App.AppInformation, this);
+                _folderLinkViewModel = new FolderLinkViewModel(SdkService.MegaSdkFolderLinks, App.AppInformation, this);
 
             // Set the Application Bar to one of the available menu resources in this page
             SetAppbarResources(_folderLinkViewModel.FolderLink.CurrentDisplayMode);
@@ -299,7 +299,7 @@ namespace MegaApp.Pages
         private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             if (item == null || item.DataContext == null) return false;
             if (!(item.DataContext is IMegaNode)) return false;
@@ -309,7 +309,7 @@ namespace MegaApp.Pages
         private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             try
             {
@@ -340,7 +340,7 @@ namespace MegaApp.Pages
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             _folderLinkViewModel.FolderLink.Refresh();
         }
@@ -348,7 +348,7 @@ namespace MegaApp.Pages
         private void OnDownloadFolderLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             // Extra check to avoid NullReferenceException
             if(_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
@@ -370,13 +370,13 @@ namespace MegaApp.Pages
 
             if (!_folderLinkViewModel.IsUserOnline()) return;
 
-            _folderLinkViewModel.FolderLinkRootNode.Download(App.MegaTransfers);
+            _folderLinkViewModel.FolderLinkRootNode.Download(TransfersService.MegaTransfers);
         }
 
         private void OnImportFolderLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             // Extra check to avoid NullReferenceException
             if (_folderLinkViewModel == null || _folderLinkViewModel.FolderLinkRootNode == null)
@@ -402,7 +402,7 @@ namespace MegaApp.Pages
         private void OnCancelFolderLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             CancelAction();
         }
@@ -444,7 +444,7 @@ namespace MegaApp.Pages
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             switch (e.NewState)
             {
@@ -478,7 +478,7 @@ namespace MegaApp.Pages
         private void OnGoToTopTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             if (!_folderLinkViewModel.FolderLink.HasChildNodes()) return;
 
@@ -488,7 +488,7 @@ namespace MegaApp.Pages
         private void OnGoToBottomTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             if (!_folderLinkViewModel.FolderLink.HasChildNodes()) return;
 
@@ -503,7 +503,7 @@ namespace MegaApp.Pages
         private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             DialogService.ShowSortDialog(_folderLinkViewModel.FolderLink);
         }
@@ -511,7 +511,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -524,7 +524,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox)sender, e.TappedItem);
 
@@ -555,7 +555,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             App.LinkInformation.SelectedNodes = _folderLinkViewModel.FolderLink.ChildNodes.Where(n => n.IsMultiSelected).ToList();
             App.LinkInformation.LinkAction = LinkAction.Download;
@@ -568,7 +568,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectImportClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdkFolderLinks.retryPendingConnections();
+            SdkService.MegaSdkFolderLinks.retryPendingConnections();
 
             App.LinkInformation.SelectedNodes = _folderLinkViewModel.FolderLink.ChildNodes.Where(n => n.IsMultiSelected).ToList();
             App.LinkInformation.LinkAction = LinkAction.Import;

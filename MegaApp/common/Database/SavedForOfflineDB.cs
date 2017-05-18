@@ -10,6 +10,7 @@ using Windows.Storage;
 using mega;
 using MegaApp.Models;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Database
 {
@@ -143,14 +144,14 @@ namespace MegaApp.Database
         public static void UpdateNode(MNode megaNode, bool isSelectedForOffline = false)
         {
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
-                    App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
+                    SdkService.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
 
             var sfoNode = new SavedForOffline()
             {
-                Fingerprint = App.MegaSdk.getNodeFingerprint(megaNode),
+                Fingerprint = SdkService.MegaSdk.getNodeFingerprint(megaNode),
                 Base64Handle = megaNode.getBase64Handle(),
                 LocalPath = nodeOfflineLocalPath,
-                ParentBase64Handle = (App.MegaSdk.getParentNode(megaNode)).getBase64Handle(),
+                ParentBase64Handle = (SdkService.MegaSdk.getParentNode(megaNode)).getBase64Handle(),
                 IsSelectedForOffline = isSelectedForOffline
             };
 
@@ -167,14 +168,14 @@ namespace MegaApp.Database
         public static void Insert(MNode megaNode, bool isSelectedForOffline = false)
         {
             var nodeOfflineLocalPath = Path.Combine(ApplicationData.Current.LocalFolder.Path, AppResources.DownloadsDirectory,
-                    App.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
+                    SdkService.MegaSdk.getNodePath(megaNode).Remove(0, 1).Replace("/", "\\"));
 
             var sfoNode = new SavedForOffline()
             {
-                Fingerprint = App.MegaSdk.getNodeFingerprint(megaNode),
+                Fingerprint = SdkService.MegaSdk.getNodeFingerprint(megaNode),
                 Base64Handle = megaNode.getBase64Handle(),
                 LocalPath = nodeOfflineLocalPath,
-                ParentBase64Handle = (App.MegaSdk.getParentNode(megaNode)).getBase64Handle(),
+                ParentBase64Handle = (SdkService.MegaSdk.getParentNode(megaNode)).getBase64Handle(),
                 IsSelectedForOffline = isSelectedForOffline
             };
 

@@ -129,13 +129,11 @@ namespace MegaApp.Services
                             }
                             var uploadTransfer = new TransferObjectModel(currentFolder.MegaSdk,
                                 currentFolder.FolderRootNode,
-                                TransferType.Upload,
+                                MTransferType.TYPE_UPLOAD,
                                 newFilePath);
-                            App.MegaTransfers.Insert(0, uploadTransfer);
+                            TransfersService.MegaTransfers.Add(uploadTransfer);
                             uploadTransfer.StartTransfer();
                         }
-
-                        NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
                     }
                     catch (Exception)
                     {

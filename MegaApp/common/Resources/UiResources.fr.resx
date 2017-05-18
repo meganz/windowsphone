@@ -261,30 +261,6 @@
     <value>transferts</value>
     <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>Annulé</value>
-    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Annulation...</value>
-    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>Téléchargement...</value>
-    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>Erreur de transfert</value>
-    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>Prêt</value>
-    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>Téléversement...</value>
-    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
-  </data>
   <data name="Download" xml:space="preserve">
     <value>téléchargement</value>
     <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -300,14 +276,6 @@
   <data name="MultiSelect" xml:space="preserve">
     <value>Sélection mulitple</value>
     <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Paused" xml:space="preserve">
-    <value>En pause</value>
-    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Pausing" xml:space="preserve">
-    <value>Mise en pause...</value>
-    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
   <data name="SpecialThankYou" xml:space="preserve">
     <value>Nous souhaitons remercier tout particulièrement les sociétés et personnes suivantes qui ont permis la création de cette appli :</value>
@@ -604,18 +572,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="CancelAllTransfers" xml:space="preserve">
     <value>Annuler tous les transferts</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Downloaded" xml:space="preserve">
-    <value>Téléchargé</value>
-    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Queued" xml:space="preserve">
-    <value>En attente</value>
-    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Uploaded" xml:space="preserve">
-    <value>téléversé</value>
-    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
     <value>obtenez</value>

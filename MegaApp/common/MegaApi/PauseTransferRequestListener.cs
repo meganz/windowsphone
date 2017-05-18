@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using mega;
 using MegaApp.Enums;
-using MegaApp.Models;
 using MegaApp.Resources;
-using MegaApp.Services;
-using Telerik.Windows.Controls;
 
 namespace MegaApp.MegaApi
 {
     class PauseTransferRequestListener: BaseRequestListener
     {
+        public event EventHandler PauseTransfersFinished;
+
         private bool _pause;
 
         #region Base Properties
@@ -97,53 +90,8 @@ namespace MegaApp.MegaApi
             //Get if transfers were paused (true) or resumed (false)
             _pause = request.getFlag();
 
-            ObservableCollection<TransferObjectModel> transfersList;
-            switch(request.getNumber())
-            {
-                case (int)MTransferType.TYPE_DOWNLOAD:
-                    transfersList = App.MegaTransfers.Downloads;
-                    break;
-
-                case (int)MTransferType.TYPE_UPLOAD:
-                    transfersList = App.MegaTransfers.Uploads;
-                    break;
-
-                default:
-                    transfersList = App.MegaTransfers;
-                    break;
-            }
-
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-            {
-                var numTransfers = transfersList.Count;
-                for (int i=0; i<numTransfers; i++)
-                {
-                    var item = transfersList.ElementAt(i);
-                    if (item == null) continue;
-
-                    if (item.TransferedBytes < item.TotalBytes || item.TransferedBytes == 0)
-                    {
-                        switch (item.Status)
-                        {
-                            case TransferStatus.Downloading:
-                            case TransferStatus.Uploading:
-                            case TransferStatus.Queued:
-                            {
-                                if (_pause)
-                                    item.Status = TransferStatus.Paused;
-                                break;
-                            }
-                                    
-                            case TransferStatus.Paused:
-                            {
-                                if (!_pause)
-                                    item.Status = TransferStatus.Queued;
-                                break;
-                            }
-                        }
-                    }
-                }
-            });
+            if (this.PauseTransfersFinished != null)
+                this.PauseTransfersFinished.Invoke(this, EventArgs.Empty);
         }
 
         #endregion
