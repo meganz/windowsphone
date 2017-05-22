@@ -1236,4 +1236,68 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <value>Välj utgångsdatum</value>
     <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
+  <data name="UI_TransferStateCanceled" xml:space="preserve">
+    <value>Avbruten</value>
+    <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateCompleting" xml:space="preserve">
+    <value>Completing...</value>
+    <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateDownloaded" xml:space="preserve">
+    <value>Nedladdad</value>
+    <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateDownloading" xml:space="preserve">
+    <value>Laddar ner: [X]%</value>
+    <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateError" xml:space="preserve">
+    <value>Fel på överföring</value>
+    <comment>Label for the state of a failed  transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateNotStarted" xml:space="preserve">
+    <value>Klar</value>
+    <comment>Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStatePaused" xml:space="preserve">
+    <value>Pausad</value>
+    <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStatePreparing" xml:space="preserve">
+    <value>Preparing...</value>
+    <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateQueued" xml:space="preserve">
+    <value>Köad</value>
+    <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateRetrying" xml:space="preserve">
+    <value>Retrying...</value>
+    <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateUploaded" xml:space="preserve">
+    <value>Uppladad</value>
+    <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateUploading" xml:space="preserve">
+    <value>Laddar upp...</value>
+    <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelDownloads" xml:space="preserve">
+    <value>Cancel downloads</value>
+    <comment>Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelUploads" xml:space="preserve">
+    <value>Cancel uploads</value>
+    <comment>Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Completed" xml:space="preserve">
+    <value>Färdig</value>
+    <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NoCompletedTransfers" xml:space="preserve">
+    <value>No completed transfers</value>
+    <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
 </root>

@@ -1400,85 +1400,85 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">만료일 설정</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" xml:space="preserve">
-          <source>Uploading...</source>
-          <target state="new">Uploading...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_TransferStateCanceled" translate="yes" space="preserve">
+          <source>Canceled</source>
+          <target state="translated">취소됨</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Completed" translate="yes" xml:space="preserve">
-          <source>Completed</source>
-          <target state="new">Completed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" xml:space="preserve">
-          <source>No completed transfers</source>
-          <target state="new">No completed transfers</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_CancelUploads" translate="yes" xml:space="preserve">
-          <source>Cancel uploads</source>
-          <target state="new">Cancel uploads</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_CancelDownloads" translate="yes" xml:space="preserve">
-          <source>Cancel downloads</source>
-          <target state="new">Cancel downloads</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" xml:space="preserve">
-          <source>Uploaded</source>
-          <target state="new">Uploaded</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" xml:space="preserve">
-          <source>Retrying...</source>
-          <target state="new">Retrying...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" xml:space="preserve">
-          <source>Queued</source>
-          <target state="new">Queued</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" xml:space="preserve">
-          <source>Preparing...</source>
-          <target state="new">Preparing...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStatePaused" translate="yes" xml:space="preserve">
-          <source>Paused</source>
-          <target state="new">Paused</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateNotStarted" translate="yes" xml:space="preserve">
-          <source>Ready</source>
-          <target state="new">Ready</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateError" translate="yes" xml:space="preserve">
-          <source>Error on transfer</source>
-          <target state="new">Error on transfer</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a failed  transfer - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" xml:space="preserve">
-          <source>Downloading...</source>
-          <target state="new">Downloading...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" xml:space="preserve">
-          <source>Downloaded</source>
-          <target state="new">Downloaded</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
           <source>Completing...</source>
-          <target state="new">Completing...</target>
+          <target state="translated">Completing...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_TransferStateCanceled" translate="yes" xml:space="preserve">
-          <source>Canceled</source>
-          <target state="new">Canceled</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
+          <source>Downloaded</source>
+          <target state="translated">다운로드됨</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
+          <source>Downloading...</source>
+          <target state="translated">다운로드중: [X]%</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
+          <source>Error on transfer</source>
+          <target state="translated">전송 중 오류</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a failed  transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateNotStarted" translate="yes" space="preserve">
+          <source>Ready</source>
+          <target state="translated">준비</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStatePaused" translate="yes" space="preserve">
+          <source>Paused</source>
+          <target state="translated">일시정지됨</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
+          <source>Preparing...</source>
+          <target state="translated">Preparing...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
+          <source>Queued</source>
+          <target state="translated">대기열</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
+          <source>Retrying...</source>
+          <target state="translated">Retrying...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
+          <source>Uploaded</source>
+          <target state="translated">업로드된 날짜</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
+          <source>Uploading...</source>
+          <target state="translated">업로드 중...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
+          <source>Cancel downloads</source>
+          <target state="translated">Cancel downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelUploads" translate="yes" space="preserve">
+          <source>Cancel uploads</source>
+          <target state="translated">Cancel uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Completed" translate="yes" space="preserve">
+          <source>Completed</source>
+          <target state="translated">완료</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" space="preserve">
+          <source>No completed transfers</source>
+          <target state="translated">No completed transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
