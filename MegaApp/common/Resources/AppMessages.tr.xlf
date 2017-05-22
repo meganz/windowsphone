@@ -1288,7 +1288,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="translated">Bu aşağıdaki nedenlerden dolayı olabilir:
+          <target state="needs-review-translation">Bu aşağıdaki nedenlerden dolayı olabilir:
 - Dosya hizmet kullanım şartları/kabul edilebilir kullanım politikaları ihlali nedeniyle kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantı yok.
 - Dosya kullanıcı tarafından silindi.</target>
@@ -1299,7 +1299,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="translated">Bu aşağıdaki nedenlerden dolayı olabilir:
+          <target state="needs-review-translation">Bu aşağıdaki nedenlerden dolayı olabilir:
 - Klasör bağlantısı ToS/AUP ihlali nedeniyle kaldırıldı.
 - Geçersiz URL – erişmeye çalıştığınız bağlantı yok.
 - Klasör bağlantısı kullanıcı tarafından silindi.</target>
@@ -1542,13 +1542,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="needs-review-translation">Açmaya çalıştığınız dosya/klasör linki bulunamadı. Büyük ihtimalle farklı bir hesapta hesaptasınız. Lütfen, doğru hesaba giriş yapıp tekrar deneyin.</target>
+          <target state="translated">Açmaya çalıştığınız dosya/klasör linki bulunamadı. Büyük ihtimalle farklı bir hesapta hesaptasınız. Lütfen, doğru hesaba giriş yapıp tekrar deneyin.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
           <source>File/folder not found</source>
           <target state="translated">Dosya/klasör bulunamadı</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
+          <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
+          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
+          <source>Depleted transfer quota</source>
+          <target state="translated">Depleted transfer quota</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to cancel all the pending downloads?</source>
+          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to cancel all the pending uploads?</source>
+          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
       </group>
     </body>

@@ -250,8 +250,8 @@
     <Compile Include="..\common\Classes\ResolutionHelper.cs">
       <Link>Classes\ResolutionHelper.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\TransferQueu.cs">
-      <Link>Classes\TransferQueu.cs</Link>
+    <Compile Include="..\common\Classes\TransferQueue.cs">
+      <Link>Classes\TransferQueue.cs</Link>
     </Compile>
     <Compile Include="..\common\Classes\UserData.cs">
       <Link>Classes\UserData.cs</Link>
@@ -292,11 +292,8 @@
     <Compile Include="..\common\Converters\TextToUpperCaseConverter.cs">
       <Link>Converters\TextToUpperCaseConverter.cs</Link>
     </Compile>
-    <Compile Include="..\common\Converters\TransferStatusToIndeterminateConverter.cs">
-      <Link>Converters\TransferStatusToIndeterminateConverter.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Converters\TransferStatusToReadableTextConverter.cs">
-      <Link>Converters\TransferStatusToReadableTextConverter.cs</Link>
+    <Compile Include="..\common\Converters\TransferStateToReadableTextConverter.cs">
+      <Link>Converters\TransferStateToReadableTextConverter.cs</Link>
     </Compile>
     <Compile Include="..\common\Converters\UriToResolutionUriConverter.cs">
       <Link>Converters\UriToResolutionUriConverter.cs</Link>
@@ -351,12 +348,6 @@
     </Compile>
     <Compile Include="..\common\Enums\NodeDisplayMode.cs">
       <Link>Enums\NodeDisplayMode.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Enums\TransferStatus.cs">
-      <Link>Enums\TransferStatus.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Enums\TransferType.cs">
-      <Link>Enums\TransferType.cs</Link>
     </Compile>
     <Compile Include="..\common\Enums\UriLinkType.cs">
       <Link>Enums\UriLinkType.cs</Link>
@@ -478,8 +469,8 @@
     <Compile Include="..\common\MegaApi\GetUserDataRequestListener.cs">
       <Link>MegaApi\GetUserDataRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\MegaApi\GlobalDriveListener.cs">
-      <Link>MegaApi\GlobalDriveListener.cs</Link>
+    <Compile Include="..\common\MegaApi\GlobalListener.cs">
+      <Link>MegaApi\GlobalListener.cs</Link>
     </Compile>
     <Compile Include="..\common\MegaApi\GlobalTransferListener.cs">
       <Link>MegaApi\GlobalTransferListener.cs</Link>
@@ -589,9 +580,6 @@
     <Compile Include="..\common\Models\DelegateCommand.cs">
       <Link>Models\DelegateCommand.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\DownloadNodeViewModel.cs">
-      <Link>Models\DownloadNodeViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\FileNodeViewModel.cs">
       <Link>Models\FileNodeViewModel.cs</Link>
     </Compile>
@@ -667,6 +655,9 @@
     <Compile Include="..\common\Models\SongSelectionViewModel.cs">
       <Link>Models\SongSelectionViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\TransferListViewModel.cs">
+      <Link>Models\TransferListViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\TransferObjectModel.cs">
       <Link>Models\TransferObjectModel.cs</Link>
     </Compile>
@@ -699,10 +690,6 @@
     <Compile Include="..\common\Pages\ContactsPage.xaml.cs">
       <Link>Pages\ContactsPage.xaml.cs</Link>
       <DependentUpon>ContactsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\common\Pages\DownloadPage.xaml.cs">
-      <Link>Pages\DownloadPage.xaml.cs</Link>
-      <DependentUpon>DownloadPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\FolderLinkPage.xaml.cs">
       <Link>Pages\FolderLinkPage.xaml.cs</Link>
@@ -863,6 +850,9 @@
     </Compile>
     <Compile Include="..\common\Services\ProgressService.cs">
       <Link>Services\ProgressService.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Services\SdkService.cs">
+      <Link>Services\SdkService.cs</Link>
     </Compile>
     <Compile Include="..\common\Services\SettingsService.cs">
       <Link>Services\SettingsService.cs</Link>
@@ -1464,10 +1454,6 @@
     </Page>
     <Page Include="..\common\Pages\ContactsPage.xaml">
       <Link>Pages\ContactsPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\DownloadPage.xaml">
-      <Link>Pages\DownloadPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\FolderLinkPage.xaml">

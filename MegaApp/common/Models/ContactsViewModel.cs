@@ -406,16 +406,16 @@ namespace MegaApp.Models
             });
         }
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
-            // Add contacts to global drive listener to receive notifications
-            globalDriveListener.Contacts.Add(this);            
+            // Add contacts to global listener to receive notifications
+            globalListener.Contacts.Add(this);            
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Remove contacts of global drive listener
-            globalDriveListener.Contacts.Remove(this);
+            // Remove contacts of global listener
+            globalListener.Contacts.Remove(this);
         }
 
         private void CreateLoadCancelOption()
@@ -477,7 +477,7 @@ namespace MegaApp.Models
                                     Email = contactsList.get(i).getEmail(),
                                     Timestamp = contactsList.get(i).getTimestamp(),
                                     Visibility = contactsList.get(i).getVisibility(),
-                                    AvatarColor = UiService.GetColorFromHex(App.MegaSdk.getUserAvatarColor(contactsList.get(i)))
+                                    AvatarColor = UiService.GetColorFromHex(SdkService.MegaSdk.getUserAvatarColor(contactsList.get(i)))
                                 };
 
                                 MegaContactsList.Add(_megaContact);
@@ -636,7 +636,7 @@ namespace MegaApp.Models
                     return;
                 }
 
-                if (args.InputText.Equals(App.MegaSdk.getMyEmail()))
+                if (args.InputText.Equals(SdkService.MegaSdk.getMyEmail()))
                 {
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {

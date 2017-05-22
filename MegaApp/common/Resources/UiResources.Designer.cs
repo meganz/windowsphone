@@ -2032,105 +2032,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Canceled.
-        /// </summary>
-        public static string Transfer_Canceled {
-            get {
-                return ResourceManager.GetString("Transfer_Canceled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Canceling....
-        /// </summary>
-        public static string Transfer_Canceling {
-            get {
-                return ResourceManager.GetString("Transfer_Canceling", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Downloading....
-        /// </summary>
-        public static string Transfer_Download {
-            get {
-                return ResourceManager.GetString("Transfer_Download", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Downloaded.
-        /// </summary>
-        public static string Transfer_Downloaded {
-            get {
-                return ResourceManager.GetString("Transfer_Downloaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Error on transfer.
-        /// </summary>
-        public static string Transfer_Error {
-            get {
-                return ResourceManager.GetString("Transfer_Error", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Ready.
-        /// </summary>
-        public static string Transfer_NotStarted {
-            get {
-                return ResourceManager.GetString("Transfer_NotStarted", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Paused.
-        /// </summary>
-        public static string Transfer_Paused {
-            get {
-                return ResourceManager.GetString("Transfer_Paused", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Pausing....
-        /// </summary>
-        public static string Transfer_Pausing {
-            get {
-                return ResourceManager.GetString("Transfer_Pausing", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Queued.
-        /// </summary>
-        public static string Transfer_Queued {
-            get {
-                return ResourceManager.GetString("Transfer_Queued", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Uploading....
-        /// </summary>
-        public static string Transfer_Upload {
-            get {
-                return ResourceManager.GetString("Transfer_Upload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a uploaded.
-        /// </summary>
-        public static string Transfer_Uploaded {
-            get {
-                return ResourceManager.GetString("Transfer_Uploaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a transfers.
         /// </summary>
         public static string Transfers {
@@ -2158,11 +2059,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cancel downloads.
+        /// </summary>
+        public static string UI_CancelDownloads {
+            get {
+                return ResourceManager.GetString("UI_CancelDownloads", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel subscription.
         /// </summary>
         public static string UI_CancelSubscription {
             get {
                 return ResourceManager.GetString("UI_CancelSubscription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancel uploads.
+        /// </summary>
+        public static string UI_CancelUploads {
+            get {
+                return ResourceManager.GetString("UI_CancelUploads", resourceCulture);
             }
         }
         
@@ -2190,6 +2109,15 @@ namespace MegaApp.Resources {
         public static string UI_CloseSession {
             get {
                 return ResourceManager.GetString("UI_CloseSession", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Completed.
+        /// </summary>
+        public static string UI_Completed {
+            get {
+                return ResourceManager.GetString("UI_Completed", resourceCulture);
             }
         }
         
@@ -2401,6 +2329,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No completed transfers.
+        /// </summary>
+        public static string UI_NoCompletedTransfers {
+            get {
+                return ResourceManager.GetString("UI_NoCompletedTransfers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Open link.
         /// </summary>
         public static string UI_OpenLink {
@@ -2469,6 +2406,114 @@ namespace MegaApp.Resources {
         public static string UI_Size {
             get {
                 return ResourceManager.GetString("UI_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Canceled.
+        /// </summary>
+        public static string UI_TransferStateCanceled {
+            get {
+                return ResourceManager.GetString("UI_TransferStateCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Completing....
+        /// </summary>
+        public static string UI_TransferStateCompleting {
+            get {
+                return ResourceManager.GetString("UI_TransferStateCompleting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Downloaded.
+        /// </summary>
+        public static string UI_TransferStateDownloaded {
+            get {
+                return ResourceManager.GetString("UI_TransferStateDownloaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Downloading....
+        /// </summary>
+        public static string UI_TransferStateDownloading {
+            get {
+                return ResourceManager.GetString("UI_TransferStateDownloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error on transfer.
+        /// </summary>
+        public static string UI_TransferStateError {
+            get {
+                return ResourceManager.GetString("UI_TransferStateError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ready.
+        /// </summary>
+        public static string UI_TransferStateNotStarted {
+            get {
+                return ResourceManager.GetString("UI_TransferStateNotStarted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Paused.
+        /// </summary>
+        public static string UI_TransferStatePaused {
+            get {
+                return ResourceManager.GetString("UI_TransferStatePaused", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Preparing....
+        /// </summary>
+        public static string UI_TransferStatePreparing {
+            get {
+                return ResourceManager.GetString("UI_TransferStatePreparing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Queued.
+        /// </summary>
+        public static string UI_TransferStateQueued {
+            get {
+                return ResourceManager.GetString("UI_TransferStateQueued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Retrying....
+        /// </summary>
+        public static string UI_TransferStateRetrying {
+            get {
+                return ResourceManager.GetString("UI_TransferStateRetrying", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Uploaded.
+        /// </summary>
+        public static string UI_TransferStateUploaded {
+            get {
+                return ResourceManager.GetString("UI_TransferStateUploaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Uploading....
+        /// </summary>
+        public static string UI_TransferStateUploading {
+            get {
+                return ResourceManager.GetString("UI_TransferStateUploading", resourceCulture);
             }
         }
         

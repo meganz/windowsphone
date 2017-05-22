@@ -44,16 +44,16 @@ namespace MegaApp.Models
 
         #region Public Methods
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Add(this.FolderLink);            
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Add(this.FolderLink);            
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Add folders to global drive listener to receive notifications
-            globalDriveListener.Folders.Remove(this.FolderLink);            
+            // Add folders to global listener to receive notifications
+            globalListener.Folders.Remove(this.FolderLink);            
         }
 
         public void SetCommandStatus(bool status)

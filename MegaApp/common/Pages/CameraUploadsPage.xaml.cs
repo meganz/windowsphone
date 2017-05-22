@@ -29,7 +29,7 @@ namespace MegaApp.Pages
         public CameraUploadsPage()
         {
             // Set the main viewmodel of this page
-            _cameraUploadsPageViewModel = new CameraUploadsPageViewModel(App.MegaSdk, App.AppInformation);
+            _cameraUploadsPageViewModel = new CameraUploadsPageViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _cameraUploadsPageViewModel;
             
             InitializeComponent();
@@ -70,7 +70,7 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    if (!Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
@@ -93,7 +93,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToHome((BreadCrumb)sender);
         }
@@ -106,7 +106,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToFolder((BreadCrumb) sender, (IMegaNode) e.Item);
         }
@@ -118,7 +118,7 @@ namespace MegaApp.Pages
       
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _cameraUploadsPageViewModel.Deinitialize(App.GlobalDriveListener);
+            _cameraUploadsPageViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
@@ -134,14 +134,14 @@ namespace MegaApp.Pages
 
             if(e.NavigationMode == NavigationMode.Reset) return;
 
-            _cameraUploadsPageViewModel.Initialize(App.GlobalDriveListener);
+            _cameraUploadsPageViewModel.Initialize(App.GlobalListener);
 
             NavigationParameter navParam = NavigateService.ProcessQueryString(NavigationContext.QueryString);
             
             if(PhoneApplicationService.Current.StartupMode == StartupMode.Activate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();
+                SdkService.MegaSdk.retryPendingConnections();
 
 #if WINDOWS_PHONE_81
                 // Check to see if any files have been picked
@@ -174,7 +174,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.Normal:
                     // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                    if (Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                         _cameraUploadsPageViewModel.FetchNodes();
                     else
                         _cameraUploadsPageViewModel.LoadFolders();
@@ -184,18 +184,12 @@ namespace MegaApp.Pages
                     break;
                 case NavigationParameter.PasswordLogin:
                     break;
-                case NavigationParameter.PictureSelected:
-                    break;
-                case NavigationParameter.AlbumSelected:
-                    break;
-                case NavigationParameter.SelfieSelected:
-                    break;
                 case NavigationParameter.UriLaunch:
                     break;
                 case NavigationParameter.Browsing:
                     // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                    if (Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                         _cameraUploadsPageViewModel.FetchNodes();
                     break;
                 case NavigationParameter.BreadCrumb:
@@ -223,7 +217,6 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            bool exceptionCatched = false;
             try
             {
                 if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" ||
@@ -257,8 +250,8 @@ namespace MegaApp.Pages
                             fs.Close();
                         }
                         var uploadTransfer = new TransferObjectModel(
-                            App.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, TransferType.Upload, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
+                            SdkService.MegaSdk, _cameraUploadsPageViewModel.CameraUploads.FolderRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                        TransfersService.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }
                     catch (Exception)
@@ -268,8 +261,6 @@ namespace MegaApp.Pages
                             String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
                             App.AppInformation,
                             MessageDialogButtons.Ok).ShowDialog();
-
-                        exceptionCatched = true;
                     }
                 }
             }
@@ -280,17 +271,11 @@ namespace MegaApp.Pages
                     String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
-                
-                exceptionCatched = true;
             }
             finally
             {
                 ResetFilePicker();
-
                 ProgressService.SetProgressIndicator(false);
-
-                if (!exceptionCatched)
-                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
         }
 
@@ -383,7 +368,7 @@ namespace MegaApp.Pages
         private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (item == null || item.DataContext == null) return false;
             if (!(item.DataContext is IMegaNode)) return false;
@@ -393,7 +378,7 @@ namespace MegaApp.Pages
         private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // If the user is moving nodes, don't show the contextual menu
             if (_cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode == DriveDisplayMode.CopyOrMoveItem)
@@ -415,7 +400,7 @@ namespace MegaApp.Pages
         private void OnRefreshClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             _cameraUploadsPageViewModel.CameraUploads.Refresh();
         }
@@ -423,7 +408,7 @@ namespace MegaApp.Pages
         private void OnAddFolderClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
          
             _cameraUploadsPageViewModel.CameraUploads.AddFolder();
         }
@@ -431,7 +416,7 @@ namespace MegaApp.Pages
         private void OnOpenLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
            _cameraUploadsPageViewModel.CameraUploads.OpenLink();
         }
@@ -439,7 +424,7 @@ namespace MegaApp.Pages
         private void OnCloudUploadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             DialogService.ShowUploadOptions(_cameraUploadsPageViewModel.CameraUploads);
         }
@@ -447,7 +432,7 @@ namespace MegaApp.Pages
         private void OnCancelCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CancelCopyOrMoveAction();
 
@@ -483,7 +468,7 @@ namespace MegaApp.Pages
         private void OnAcceptCopyClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             AcceptCopyAction();
 
@@ -530,7 +515,7 @@ namespace MegaApp.Pages
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             AcceptMoveAction();
             
@@ -577,7 +562,7 @@ namespace MegaApp.Pages
         private void OnCopyOrMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             this.CopyOrMoveItemTapAction();
           
@@ -616,7 +601,7 @@ namespace MegaApp.Pages
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             switch (e.NewState)
             {
@@ -650,7 +635,7 @@ namespace MegaApp.Pages
         private void OnGoToTopTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (!_cameraUploadsPageViewModel.CameraUploads.HasChildNodes()) return;
 
@@ -660,7 +645,7 @@ namespace MegaApp.Pages
         private void OnGoToBottomTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (!_cameraUploadsPageViewModel.CameraUploads.HasChildNodes()) return;
 
@@ -675,7 +660,7 @@ namespace MegaApp.Pages
         private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             DialogService.ShowSortDialog(_cameraUploadsPageViewModel.CameraUploads);
         }
@@ -683,7 +668,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -696,7 +681,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
@@ -733,7 +718,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
            
             MultipleDownloadAction();
         }
@@ -746,7 +731,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MultiSelectCopyOrMoveAction();
         }
@@ -761,7 +746,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MultiSelectRemoveAction();
         }
@@ -778,9 +763,9 @@ namespace MegaApp.Pages
         private void OnImportLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
-            //App.MegaSdk.getPublicNode(
+            //SdkService.MegaSdk.getPublicNode(
             //    _mainPageViewModel.ActiveImportLink, new GetPublicNodeRequestListener(_cameraUploadsPageViewModel.CameraUploads));
 
             _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
@@ -791,7 +776,7 @@ namespace MegaApp.Pages
         private void OnCancelImportClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             //_mainPageViewModel.ActiveImportLink = null;
             _cameraUploadsPageViewModel.CameraUploads.CurrentDisplayMode = DriveDisplayMode.CloudDrive;

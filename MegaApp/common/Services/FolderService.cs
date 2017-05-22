@@ -212,7 +212,7 @@ namespace MegaApp.Services
                 NodeViewModel node;
                 if (App.LinkInformation.PublicNode != null && base64Handle.Equals(App.LinkInformation.PublicNode.getBase64Handle()))
                 {
-                    node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.LinkInformation.PublicNode, ContainerType.PublicLink);
+                    node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, App.LinkInformation.PublicNode, ContainerType.PublicLink);
                     App.LinkInformation.Reset();
                 }
                 else
@@ -224,7 +224,7 @@ namespace MegaApp.Services
                 if(node != null)
                 {
                     App.AppInformation.PickerOrAsyncDialogIsOpen = false;
-                    node.Download(App.MegaTransfers, args.Folder.Path);
+                    node.Download(TransfersService.MegaTransfers, args.Folder.Path);
                 }                    
 
                 ResetFolderPicker();

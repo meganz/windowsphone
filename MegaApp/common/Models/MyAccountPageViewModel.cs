@@ -34,16 +34,16 @@ namespace MegaApp.Models
             });
         }
 
-        public void Initialize(GlobalDriveListener globalDriveListener)
+        public void Initialize(GlobalListener globalListener)
         {
-            // Add contacts to global drive listener to receive notifications
-            globalDriveListener.Accounts.Add(this);
+            // Add contacts to global listener to receive notifications
+            globalListener.Accounts.Add(this);
         }
 
-        public void Deinitialize(GlobalDriveListener globalDriveListener)
+        public void Deinitialize(GlobalListener globalListener)
         {
-            // Remove contacts of global drive listener
-            globalDriveListener.Accounts.Remove(this);
+            // Remove contacts of drive listener
+            globalListener.Accounts.Remove(this);
         }
 
         public void GetAccountDetails()

@@ -152,7 +152,7 @@ namespace MegaApp.MegaApi
         private void ImportNodeContents(MNode nodeToImport, MNode parentNode)
         {
             // Obtain the child nodes and the number of them.
-            var childNodes = App.MegaSdkFolderLinks.getChildren(nodeToImport);
+            var childNodes = SdkService.MegaSdkFolderLinks.getChildren(nodeToImport);
             var childNodesSize = childNodes.size();
 
             // Explore the child nodes. Store the folders in a new list and add them to
@@ -168,12 +168,12 @@ namespace MegaApp.MegaApi
                     if(!App.LinkInformation.FolderPaths.ContainsKey(node.getBase64Handle()))
                     {
                         App.LinkInformation.FolderPaths.Add(node.getBase64Handle(),
-                            App.MegaSdkFolderLinks.getNodePath(node));
+                            SdkService.MegaSdkFolderLinks.getNodePath(node));
                     }
                 }
                 else
                 {
-                    App.MegaSdk.copyNode(node, parentNode, new CopyNodeRequestListener(true));
+                    SdkService.MegaSdk.copyNode(node, parentNode, new CopyNodeRequestListener(true));
                 }
             }
 
@@ -184,7 +184,7 @@ namespace MegaApp.MegaApi
             // Create all the new folder nodes.
             foreach (var node in folderNodesToImport)
             {
-                App.MegaSdk.createFolder(node.getName(), parentNode, 
+                SdkService.MegaSdk.createFolder(node.getName(), parentNode, 
                     new CreateFolderRequestListener(true));
             }
         }

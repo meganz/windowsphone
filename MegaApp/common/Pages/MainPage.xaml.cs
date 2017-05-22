@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -34,7 +36,7 @@ namespace MegaApp.Pages
         public MainPage()
         {
             // Set the main viewmodel of this page
-            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(App.MegaSdk, App.AppInformation, this);
+            App.MainPageViewModel = _mainPageViewModel = new MainPageViewModel(SdkService.MegaSdk, App.AppInformation, this);
             this.DataContext = _mainPageViewModel;
             
             InitializeComponent();
@@ -101,7 +103,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnHomeTap(object sender, EventArgs eventArgs)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToHome((BreadCrumb)sender);
         }
@@ -123,7 +125,7 @@ namespace MegaApp.Pages
         private void BreadCrumbControlOnOnBreadCrumbTap(object sender, BreadCrumbTapEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CheckAndBrowseToFolder((BreadCrumb) sender, (IMegaNode) e.Item);
         }
@@ -144,7 +146,7 @@ namespace MegaApp.Pages
 
         private bool CheckActiveAndOnlineSession(NavigationMode navigationMode = NavigationMode.New)
         {
-            bool isAlreadyOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+            bool isAlreadyOnline = Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn());
             if (!isAlreadyOnline)
             {
                 if (!SettingsService.HasValidSession())
@@ -223,44 +225,48 @@ namespace MegaApp.Pages
                             MessageDialogButtons.Ok).ShowDialog();
 
                     _mainPageViewModel.CloudDrive.BrowseToFolder(
-                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, App.MegaSdk.getRootNode(), ContainerType.CloudDrive));
+                        NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, SdkService.MegaSdk.getRootNode(), ContainerType.CloudDrive));
                 }
             }
 
             // If the user is trying to open a MEGA link
             if (App.LinkInformation.ActiveLink != null)
             {
-                //Only need to check if is a file link.
-                //The folder links are checked in the "SpecialNavigation" method
-                if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
+                // Only need to check if is a "file link" or an "internal node link".
+                // The "folder links" are checked in the "SpecialNavigation" method
+                if (!App.LinkInformation.ActiveLink.Contains("https://mega.nz/#F!"))
                 {
-                    App.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
-                        new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
-                }
-                // Internal file/folder link
-                else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
-                {
-                    var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
-                    var megaNode = App.MegaSdk.getNodeByBase64Handle(nodeHandle);
-                    if (megaNode != null)
+                    // Public file link
+                    if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#!"))
                     {
-                        ContainerType containerType = (App.MegaSdk.isInRubbish(megaNode)) ?
-                            containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
-
-                        var node = NodeService.CreateNew(App.MegaSdk, App.AppInformation, megaNode, containerType);
-
-                        if (node.IsFolder)
-                            _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
-                        else
-                            node.Download(App.MegaTransfers);
+                        SdkService.MegaSdk.getPublicNode(App.LinkInformation.ActiveLink,
+                            new GetPublicNodeRequestListener(_mainPageViewModel.CloudDrive));
                     }
-                    else
+                    // Internal file/folder link
+                    else if (App.LinkInformation.ActiveLink.Contains("https://mega.nz/#"))
                     {
-                        new CustomMessageDialog(
-                            AppMessages.AM_InternalNodeNotFound_Title,
-                            AppMessages.AM_InternalNodeNotFound,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        var nodeHandle = App.LinkInformation.ActiveLink.Split("#".ToCharArray())[1];
+                        var megaNode = SdkService.MegaSdk.getNodeByBase64Handle(nodeHandle);
+                        if (megaNode != null)
+                        {
+                            ContainerType containerType = (SdkService.MegaSdk.isInRubbish(megaNode)) ?
+                                containerType = ContainerType.RubbishBin : containerType = ContainerType.CloudDrive;
+
+                            var node = NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, megaNode, containerType);
+
+                            if (node.IsFolder)
+                                _mainPageViewModel.ActiveFolderView.BrowseToFolder(node);
+                            else
+                                node.Download(TransfersService.MegaTransfers);
+                        }
+                        else
+                        {
+                            new CustomMessageDialog(
+                                AppMessages.AM_InternalNodeNotFound_Title,
+                                AppMessages.AM_InternalNodeNotFound,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        }
                     }
                 }
             }
@@ -268,7 +274,7 @@ namespace MegaApp.Pages
 
         private bool OpenShortCut()
         {
-            MNode shortCutMegaNode = App.MegaSdk.getNodeByBase64Handle(App.ShortCutBase64Handle);
+            MNode shortCutMegaNode = SdkService.MegaSdk.getNodeByBase64Handle(App.ShortCutBase64Handle);
             App.ShortCutBase64Handle = null;
 
             if (shortCutMegaNode != null)
@@ -276,13 +282,13 @@ namespace MegaApp.Pages
                 // Looking for the absolute parent of the shortcut node to see the type
                 MNode parentNode;
                 MNode absoluteParentNode = shortCutMegaNode;
-                while ((parentNode = App.MegaSdk.getParentNode(absoluteParentNode)) != null)
+                while ((parentNode = SdkService.MegaSdk.getParentNode(absoluteParentNode)) != null)
                     absoluteParentNode = parentNode;
 
                 if (absoluteParentNode.getType() == MNodeType.TYPE_ROOT)
                 {
                     _mainPageViewModel.CloudDrive.BrowseToFolder(
-                        NodeService.CreateNew(App.MegaSdk, App.AppInformation, shortCutMegaNode, ContainerType.CloudDrive));
+                        NodeService.CreateNew(SdkService.MegaSdk, App.AppInformation, shortCutMegaNode, ContainerType.CloudDrive));
                 }
                 else return false;
             }
@@ -296,7 +302,7 @@ namespace MegaApp.Pages
             // Un-Subscribe to the NetworkAvailabilityChanged event
             DeviceNetworkInformation.NetworkAvailabilityChanged -= new EventHandler<NetworkNotificationEventArgs>(NetworkAvailabilityChanged);
 
-            _mainPageViewModel.Deinitialize(App.GlobalDriveListener);
+            _mainPageViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
@@ -330,7 +336,7 @@ namespace MegaApp.Pages
                 }
             }
 
-            _mainPageViewModel.Initialize(App.GlobalDriveListener);
+            _mainPageViewModel.Initialize(App.GlobalListener);
             
             App.CloudDrive.ListBox = LstCloudDrive;
 
@@ -339,7 +345,7 @@ namespace MegaApp.Pages
             if (App.AppInformation.IsStartupModeActivate)
             {
                 // Needed on every UI interaction
-                App.MegaSdk.retryPendingConnections();                
+                SdkService.MegaSdk.retryPendingConnections();                
 
                 App.AppInformation.IsStartupModeActivate = false;
 
@@ -406,7 +412,7 @@ namespace MegaApp.Pages
                 case NavigationParameter.Browsing:
                     // Check if nodes has been fetched. Because when starting app from OS photo setting to go to 
                     // Auto Camera Upload settings fetching has been skipped in the mainpage
-                    if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
+                    if (Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()) && !App.AppInformation.HasFetchedNodes)
                     {
                         _mainPageViewModel.FetchNodes();
                         return;
@@ -420,12 +426,6 @@ namespace MegaApp.Pages
                         _mainPageViewModel.LoadFolders();
                     break;
 
-                case NavigationParameter.PictureSelected:
-                    break;
-                case NavigationParameter.AlbumSelected:
-                    break;
-                case NavigationParameter.SelfieSelected:
-                    break;
                 case NavigationParameter.UriLaunch:
                     checkSpecialNavigation = Load();
                     break;
@@ -465,9 +465,9 @@ namespace MegaApp.Pages
 
         private bool Load()
         {
-            if (CheckActiveAndOnlineSession() && !Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+            if (CheckActiveAndOnlineSession() && !Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
             {
-                App.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
+                SdkService.MegaSdk.fastLogin(SettingsService.LoadSetting<string>(SettingsResources.UserMegaSession),
                     new FastLoginRequestListener(_mainPageViewModel));
                 return false;
             }
@@ -529,7 +529,7 @@ namespace MegaApp.Pages
                         customMessageDialog.OkOrYesButtonTapped += (sender, args) =>
                         {
                             // First log out of the current account
-                            App.MegaSdk.logout(new LogOutRequestListener(false));
+                            SdkService.MegaSdk.logout(new LogOutRequestListener(false));
 
                             if (NavigationContext.QueryString.ContainsKey("newsignup"))
                             {
@@ -583,7 +583,6 @@ namespace MegaApp.Pages
 #if WINDOWS_PHONE_81
         private async void ContinueFileOpenPicker(FileOpenPickerContinuationEventArgs args)
         {
-            bool exceptionCatched = false;
             try
             {
                 if (args == null || (args.ContinuationData["Operation"] as string) != "SelectedFiles" ||
@@ -600,35 +599,97 @@ namespace MegaApp.Pages
                 // Set upload directory only once for speed improvement and if not exists, create dir
                 var uploadDir = AppService.GetUploadDirectoryPath(true);
 
+                // Create a dictionary to store the files and its corresponding transfer object.            
+                var uploads = new Dictionary<StorageFile, TransferObjectModel>();
+
                 // Get picked files only once for speed improvement and to try avoid ArgumentException in the loop
                 IReadOnlyList<StorageFile> pickedFiles = args.Files;
+
+                // First create the transfers object and fill the dictionary
                 foreach (StorageFile file in pickedFiles)
                 {
                     if (file == null) continue; // To avoid null references
 
+                    TransferObjectModel uploadTransfer = null;
                     try
                     {
-                        string newFilePath = Path.Combine(uploadDir, file.Name);
-                        using (var fs = new FileStream(newFilePath, FileMode.Create))
+                        uploadTransfer = new TransferObjectModel(SdkService.MegaSdk,
+                            App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD,
+                            Path.Combine(uploadDir, file.Name));
+
+                        if (uploadTransfer != null)
                         {
-                            var stream = await file.OpenStreamForReadAsync();
-                            await stream.CopyToAsync(fs);
-                            await fs.FlushAsync();
-                            fs.Close();
+                            uploadTransfer.DisplayName = file.Name;
+                            uploadTransfer.TotalBytes = (await file.GetBasicPropertiesAsync()).Size;
+                            uploadTransfer.PreparingUploadCancelToken = new CancellationTokenSource();
+                            uploadTransfer.TransferState = MTransferState.STATE_NONE;
+                            uploads.Add(file, uploadTransfer);
+                            TransfersService.MegaTransfers.Add(uploadTransfer);
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
-                        uploadTransfer.StartTransfer();
                     }
                     catch (Exception)
                     {
-                        new CustomMessageDialog(
-                            AppMessages.PrepareFileForUploadFailed_Title,
-                            String.Format(AppMessages.PrepareFileForUploadFailed, file.Name),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Transfer (UPLOAD) failed: " + file.Name);
 
-                        exceptionCatched = true;
+                        if (uploadTransfer != null) 
+                            uploadTransfer.TransferState = MTransferState.STATE_FAILED;
+
+                        new CustomMessageDialog(AppMessages.PrepareFileForUploadFailed_Title,
+                            string.Format(AppMessages.PrepareFileForUploadFailed, file.Name), 
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                }
+
+                // Second finish preparing transfers copying the files to the temporary upload folder
+                foreach (var upload in uploads)
+                {
+                    if (upload.Key == null || upload.Value == null) continue; // To avoid null references
+
+                    TransferObjectModel uploadTransfer = null;
+                    try
+                    {
+                        uploadTransfer = upload.Value;
+
+                        // If the upload isn´t already cancelled then copy the file to the temporary upload folder
+                        if(uploadTransfer.PreparingUploadCancelToken != null &&
+                            uploadTransfer.PreparingUploadCancelToken.Token.IsCancellationRequested == false)
+                        {
+                            using (var fs = new FileStream(Path.Combine(uploadDir, upload.Key.Name), FileMode.Create))
+                            {
+                                // Set buffersize to avoid copy failure of large files
+                                var stream = await upload.Key.OpenStreamForReadAsync();
+                                await stream.CopyToAsync(fs, 8192, uploadTransfer.PreparingUploadCancelToken.Token);
+                                await fs.FlushAsync(uploadTransfer.PreparingUploadCancelToken.Token);
+                            }
+
+                            uploadTransfer.StartTransfer();
+                        }
+                        else
+                        {
+                            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer (UPLOAD) canceled: " + upload.Key.Name);
+                            uploadTransfer.TransferState = MTransferState.STATE_CANCELLED;
+                        }
+                    }
+                    // If the upload is cancelled during the preparation process, 
+                    // changes the status and delete the corresponding temporary file
+                    catch (TaskCanceledException)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer (UPLOAD) canceled: " + upload.Key.Name);
+                        FileService.DeleteFile(uploadTransfer.TransferPath);
+                        uploadTransfer.TransferState = MTransferState.STATE_CANCELLED;
+                    }
+                    catch (Exception)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Transfer (UPLOAD) failed: " + upload.Key.Name);
+                        uploadTransfer.TransferState = MTransferState.STATE_FAILED;
+
+                        new CustomMessageDialog(AppMessages.PrepareFileForUploadFailed_Title,
+                            string.Format(AppMessages.PrepareFileForUploadFailed, upload.Key.Name),
+                            App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
+                    }
+                    finally
+                    {
+                        uploadTransfer.PreparingUploadCancelToken = null;
                     }
                 }
             }
@@ -639,19 +700,12 @@ namespace MegaApp.Pages
                     String.Format(AppMessages.AM_PrepareFilesForUploadFailed),
                     App.AppInformation,
                     MessageDialogButtons.Ok).ShowDialog();
-
-                exceptionCatched = true;
             }
             finally
             {
                 ResetFilePicker();
-
                 ProgressService.SetProgressIndicator(false);
-
                 App.CloudDrive.NoFolderUpAction = true;
-
-                if(!exceptionCatched)
-                    NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
         }
 
@@ -807,7 +861,7 @@ namespace MegaApp.Pages
         private bool CheckTappedItem(RadDataBoundListBoxItem item)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (item == null || item.DataContext == null) return false;
             if (!(item.DataContext is IMegaNode)) return false;
@@ -817,7 +871,7 @@ namespace MegaApp.Pages
         private void OnMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             try
             {
@@ -865,7 +919,7 @@ namespace MegaApp.Pages
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             _mainPageViewModel.ActiveFolderView.Refresh();
         }
@@ -873,7 +927,7 @@ namespace MegaApp.Pages
         private void OnAddFolderClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
          
             // Only allow add folder on the Cloud Drive section
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
@@ -883,7 +937,7 @@ namespace MegaApp.Pages
         private void OnOpenLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Only allow opening of links on the Cloud Drive section
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
@@ -893,7 +947,7 @@ namespace MegaApp.Pages
         private void OnCloudUploadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Only allow uploads on the Cloud Drive section
             if (MainPivot.SelectedItem.Equals(CloudDrivePivot))
@@ -903,7 +957,7 @@ namespace MegaApp.Pages
         private void OnCancelCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             CancelCopyOrMoveAction();
 
@@ -954,7 +1008,7 @@ namespace MegaApp.Pages
         private void OnAcceptCopyClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             AcceptCopyAction();
 
@@ -1002,7 +1056,7 @@ namespace MegaApp.Pages
         private void OnAcceptMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             AcceptMoveAction();
             
@@ -1050,7 +1104,7 @@ namespace MegaApp.Pages
         private void OnCopyOrMoveItemTap(object sender, ContextMenuItemSelectedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             this.CopyOrMoveItemTapAction();
           
@@ -1094,7 +1148,7 @@ namespace MegaApp.Pages
         private void OnScrollStateChanged(object sender, ScrollStateChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             switch (e.NewState)
             {
@@ -1128,7 +1182,7 @@ namespace MegaApp.Pages
         private void OnGoToTopTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (!_mainPageViewModel.ActiveFolderView.HasChildNodes()) return;
             
@@ -1138,7 +1192,7 @@ namespace MegaApp.Pages
         private void OnGoToBottomTap(object sender, GestureEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (!_mainPageViewModel.ActiveFolderView.HasChildNodes()) return;
 
@@ -1157,7 +1211,7 @@ namespace MegaApp.Pages
         private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
            
             DialogService.ShowSortDialog(_mainPageViewModel.ActiveFolderView);
         }
@@ -1165,7 +1219,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -1182,7 +1236,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
             
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadDataBoundListBox) sender, e.TappedItem);
 
@@ -1226,7 +1280,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectDownloadClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
            
             MultipleDownloadAction();
         }
@@ -1239,7 +1293,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectCopyOrMoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MultiSelectCopyOrMoveAction();
         }
@@ -1272,7 +1326,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectRemoveClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MultiSelectRemoveAction();
         }
@@ -1300,7 +1354,7 @@ namespace MegaApp.Pages
         private void OnImportLinkClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (App.LinkInformation.ActiveLink != null)
             {
@@ -1327,7 +1381,7 @@ namespace MegaApp.Pages
         private void OnCancelImportClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             App.LinkInformation.Reset();
 

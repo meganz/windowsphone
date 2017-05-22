@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using mega;
@@ -20,11 +16,6 @@ namespace MegaApp.MegaApi
 {
     public class GlobalTransferListener: MTransferListenerInterface
     {
-        public GlobalTransferListener()
-        {
-            this.Transfers = new List<TransferObjectModel>();
-        }
-
         #region MTransferListenerInterface
 
         //Will be called only for transfers started by startStreaming
@@ -40,258 +31,236 @@ namespace MegaApp.MegaApi
         public async void onTransferFinish(MegaSDK api, MTransfer transfer, MError e)
         #endif
         {
-            // Extra checking to avoid NullReferenceException
-            if (transfer == null) return;
+            // Search the corresponding transfer in the transfers list
+            var megaTransfer = TransfersService.SearchTransfer(TransfersService.MegaTransfers.SelectAll(), transfer);
+            if (megaTransfer == null) return;
 
-            // Use a temp variable to avoid InvalidOperationException
-            var transfersList = Transfers.ToList();
-
-            // Extra checking during finding to avoid NullReferenceException
-            var megaTransfer = transfersList.FirstOrDefault(t => 
-                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
-            
-            if(megaTransfer != null)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                
+                megaTransfer.Transfer = transfer;
+                megaTransfer.TransferState = transfer.getState();
+                megaTransfer.TransferPriority = transfer.getPriority();
 
-                    TransfersService.GetTransferAppData(transfer, megaTransfer);
+                TransfersService.GetTransferAppData(transfer, megaTransfer);
 
-                    megaTransfer.TotalBytes = transfer.getTotalBytes();
-                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                    megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-                    megaTransfer.IsBusy = false;
-                    megaTransfer.CancelButtonState = false;
-                });
+                megaTransfer.TotalBytes = transfer.getTotalBytes();
+                megaTransfer.TransferedBytes = transfer.getTransferredBytes();
+                megaTransfer.TransferSpeed = string.Empty;
+            });
 
-                switch (e.getErrorCode())
-                {
-                    case MErrorType.API_OK:
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            switch (e.getErrorCode())
+            {
+                case MErrorType.API_OK:
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        megaTransfer.TransferedBytes = megaTransfer.TotalBytes;
+                        megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
+                    });
+                
+                    switch (megaTransfer.Type)
+                    {
+                        case MTransferType.TYPE_DOWNLOAD:
+                            if (megaTransfer.IsSaveForOfflineTransfer) //If is a save for offline download transfer
                             {
-                                megaTransfer.TransferedBytes = megaTransfer.TotalBytes;
-                                megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/completed transfers.Screen-WXGA.png", UriKind.Relative);
-                                megaTransfer.TransferButtonForegroundColor = (SolidColorBrush)Application.Current.Resources["MegaRedSolidColorBrush"];
-                            });
+                                var node = megaTransfer.SelectedNode as NodeViewModel;
+                                if (node != null)
+                                {
+                                    // Need get the path on the transfer finish because the file name can be changed
+                                    // if already exists in the destiny path.
+                                    var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
 
-                            switch (megaTransfer.Type)
-                            {
-                                case TransferType.Download:
-                                    if (megaTransfer.IsSaveForOfflineTransfer) //If is a save for offline download transfer
+                                    var sfoNode = new SavedForOffline
                                     {
-                                        var node = megaTransfer.SelectedNode as NodeViewModel;
-                                        if (node != null)
-                                        {
-                                            // Need get the path on the transfer finish because the file name can be changed
-                                            // if already exists in the destiny path.
-                                            var newOfflineLocalPath = Path.Combine(transfer.getParentPath(), transfer.getFileName()).Replace("/", "\\");
+                                        Fingerprint = SdkService.MegaSdk.getNodeFingerprint(node.OriginalMNode),
+                                        Base64Handle = node.OriginalMNode.getBase64Handle(),
+                                        LocalPath = newOfflineLocalPath,
+                                        IsSelectedForOffline = true
+                                    };
 
-                                            var sfoNode = new SavedForOffline
-                                            {
-                                                Fingerprint = App.MegaSdk.getNodeFingerprint(node.OriginalMNode),
-                                                Base64Handle = node.OriginalMNode.getBase64Handle(),
-                                                LocalPath = newOfflineLocalPath,
-                                                IsSelectedForOffline = true
-                                            };
+                                    // If is a public node (link) the destination folder is the SFO root, so the parent handle
+                                    // is the handle of the root node.
+                                    if (node.ParentContainerType != ContainerType.PublicLink)
+                                        sfoNode.ParentBase64Handle = (SdkService.MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
+                                    else
+                                        sfoNode.ParentBase64Handle = SdkService.MegaSdk.getRootNode().getBase64Handle();
 
-                                            // If is a public node (link) the destination folder is the SFO root, so the parent handle
-                                            // is the handle of the root node.
-                                            if (node.ParentContainerType != ContainerType.PublicLink)
-                                                sfoNode.ParentBase64Handle = (App.MegaSdk.getParentNode(node.OriginalMNode)).getBase64Handle();
-                                            else
-                                                sfoNode.ParentBase64Handle = App.MegaSdk.getRootNode().getBase64Handle();
+                                    if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
+                                        SavedForOffline.Insert(sfoNode);
+                                    else
+                                        SavedForOffline.UpdateNode(sfoNode);
 
-                                            if (!(SavedForOffline.ExistsNodeByLocalPath(sfoNode.LocalPath)))
-                                                SavedForOffline.Insert(sfoNode);
-                                            else
-                                                SavedForOffline.UpdateNode(sfoNode);
-
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => node.IsAvailableOffline = node.IsSelectedForOffline = true);
-
-                                            #if WINDOWS_PHONE_80
-                                            //If is download transfer of an image file
-                                            var imageNode = node as ImageNodeViewModel;
-                                            if (imageNode != null)
-                                            {
-                                                Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.FilePath));
-
-                                                bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
-                                                if (exportToPhotoAlbum)
-                                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
-                                            }
-                                            #endif
-                                        }
-                                    }
-                                    else //If is a standard download transfer (no for save for offline)
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => 
                                     {
-                                        //If is download transfer of an image file 
-                                        var imageNode = megaTransfer.SelectedNode as ImageNodeViewModel;
-                                        if (imageNode != null)
-                                        {
-                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.FilePath));
-
-                                            if (megaTransfer.AutoLoadImageOnFinish)
-                                            {
-                                                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                                {
-                                                    if (imageNode.OriginalMNode.hasPreview()) return;
-                                                    imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
-                                                    imageNode.IsBusy = false;
-                                                });
-                                            }
-
-                                            #if WINDOWS_PHONE_81
-                                            if (!await megaTransfer.FinishDownload(megaTransfer.FilePath, imageNode.Name))
-                                            {
-                                                Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
-                                                break;
-                                            }
-                                            #endif
-                                        }
-                                        #if WINDOWS_PHONE_81
-                                        else //If is a download transfer of other file type 
-                                        {
-                                            var node = megaTransfer.SelectedNode as FileNodeViewModel;
-                                            if (node != null)
-                                            {
-
-                                                if (!await megaTransfer.FinishDownload(megaTransfer.FilePath, node.Name))
-                                                {
-                                                    Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                        #endif
-                                    }
-
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Downloaded);
-                                    break;
-
-                                case TransferType.Upload:
-                                    Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Uploaded);
-                                    break;
-
-                                default:
-                                    throw new ArgumentOutOfRangeException();
-                            }
-
-                            break;
-                        }
-                    case MErrorType.API_EOVERQUOTA:
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                // Stop all upload transfers
-                                api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
-
-                                // Disable the "camera upload" service
-                                MediaService.SetAutoCameraUpload(false);
-                                SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
-
-                                DialogService.ShowOverquotaAlert();
-                            });
-
-                            break;
-                        }
-                    case MErrorType.API_EINCOMPLETE:
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Canceled);
-                            break;
-                        }
-                    default:
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.Status = TransferStatus.Error);
-                            switch (megaTransfer.Type)
-                            {
-                                case TransferType.Download:
-                                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                                    {
-                                        new CustomMessageDialog(
-                                            AppMessages.DownloadNodeFailed_Title,
-                                            String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
-                                            App.AppInformation,
-                                            MessageDialogButtons.Ok).ShowDialog();
+                                        node.IsAvailableOffline = node.IsSelectedForOffline = true;
+                                        TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer);
                                     });
 
-                                    break;
-
-                                case TransferType.Upload:
-                                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                    #if WINDOWS_PHONE_80
+                                    //If is download transfer of an image file
+                                    var imageNode = node as ImageNodeViewModel;
+                                    if (imageNode != null)
                                     {
-                                        new CustomMessageDialog(
-                                            AppMessages.UploadNodeFailed_Title,
-                                            String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
-                                            App.AppInformation,
-                                            MessageDialogButtons.Ok).ShowDialog();
-                                    });
+                                        Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
 
-                                    break;
-
-                                default:
-                                    throw new ArgumentOutOfRangeException();
+                                        bool exportToPhotoAlbum = SettingsService.LoadSetting<bool>(SettingsResources.ExportImagesToPhotoAlbum, false);
+                                        if (exportToPhotoAlbum)
+                                            Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.SaveImageToCameraRoll(false));
+                                    }
+                                    #endif
+                                }
                             }
+                            else //If is a standard download transfer (no for save for offline)
+                            {
+                                bool result = true;
+
+                                //If is download transfer of an image file 
+                                var imageNode = megaTransfer.SelectedNode as ImageNodeViewModel;
+                                if (imageNode != null)
+                                {
+                                    Deployment.Current.Dispatcher.BeginInvoke(() => imageNode.ImageUri = new Uri(megaTransfer.TransferPath));
+
+                                    if (megaTransfer.AutoLoadImageOnFinish)
+                                    {
+                                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                        {
+                                            if (imageNode.OriginalMNode.hasPreview()) return;
+                                            imageNode.PreviewImageUri = new Uri(imageNode.PreviewPath);
+                                        });
+                                    }
+
+                                    #if WINDOWS_PHONE_81
+                                    result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name);
+                                    #endif
+                                }
+                                #if WINDOWS_PHONE_81                                    
+                                else //If is a download transfer of other file type 
+                                {
+                                    var node = megaTransfer.SelectedNode as FileNodeViewModel;
+                                    if (node != null)
+                                        result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name);
+                                }
+                                #endif
+
+                                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                {
+                                    if (!result)
+                                        megaTransfer.TransferState = MTransferState.STATE_FAILED;
+                                    else
+                                        TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer);
+                                });
+                            }
+                        break;
+
+                        case MTransferType.TYPE_UPLOAD:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                                TransfersService.MoveMegaTransferToCompleted(TransfersService.MegaTransfers, megaTransfer));
+                            break;
+
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                    break;
+
+                case MErrorType.API_EOVERQUOTA: // Storage overquota error
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        // Stop all upload transfers
+                        api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
+
+                        // Disable the "camera upload" service
+                        MediaService.SetAutoCameraUpload(false);
+                        SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+
+                        DialogService.ShowOverquotaAlert();
+                    });
+                    break;
+
+                case MErrorType.API_EINCOMPLETE:
+                    Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.TransferState = MTransferState.STATE_CANCELLED);
+                    break;
+
+                default:
+                    Deployment.Current.Dispatcher.BeginInvoke(() => megaTransfer.TransferState = MTransferState.STATE_FAILED);
+                    switch (megaTransfer.Type)
+                    {
+                        case MTransferType.TYPE_DOWNLOAD:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                new CustomMessageDialog(
+                                    AppMessages.DownloadNodeFailed_Title,
+                                    String.Format(AppMessages.DownloadNodeFailed, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                            });
 
                             break;
-                        }
-                }
+
+                        case MTransferType.TYPE_UPLOAD:
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                new CustomMessageDialog(
+                                    AppMessages.UploadNodeFailed_Title,
+                                    String.Format(AppMessages.UploadNodeFailed, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                            });
+
+                            break;
+
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                    break;
             }
         }
 
         public void onTransferStart(MegaSDK api, MTransfer transfer)
         {
-            TransferObjectModel megaTransfer = null;
-            if (transfer.getType() == MTransferType.TYPE_DOWNLOAD)
-            {
-                // If is a public node
-                MNode node = transfer.getPublicMegaNode();
-                if (node == null) // If not
-                    node = api.getNodeByHandle(transfer.getNodeHandle());
+            // Extra checking to avoid NullReferenceException
+            if (transfer == null) return;
 
-                if (node != null)
-                {
-                    megaTransfer = new TransferObjectModel(api,
-                        NodeService.CreateNew(api, App.AppInformation, node, ContainerType.CloudDrive),
-                        TransferType.Download, transfer.getPath());
-                }
-            }
-            else
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                megaTransfer = new TransferObjectModel(api, App.MainPageViewModel.CloudDrive.FolderRootNode,
-                    TransferType.Upload, transfer.getPath());
-            }
-
-            if (megaTransfer != null)
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                var megaTransfer = TransfersService.AddTransferToList(TransfersService.MegaTransfers, transfer);
+                if (megaTransfer != null)
                 {
                     TransfersService.GetTransferAppData(transfer, megaTransfer);
 
                     megaTransfer.Transfer = transfer;
-                    megaTransfer.Status = TransferStatus.Queued;
-                    megaTransfer.CancelButtonState = true;
-                    megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                    megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                    megaTransfer.IsBusy = true;
+                    megaTransfer.IsBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
+                    megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
                     megaTransfer.TotalBytes = transfer.getTotalBytes();
-                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                    megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-
-                    App.MegaTransfers.Add(megaTransfer);
-                    Transfers.Add(megaTransfer);
-                });                
-            }
+                    megaTransfer.TransferPriority = transfer.getPriority();
+                    megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                }
+            });
         }
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+            // Extra checking to avoid NullReferenceException
+            if (transfer == null) return;
+
+            // Search the corresponding transfer in the transfers list
+            var megaTransfer = TransfersService.SearchTransfer(TransfersService.MegaTransfers.SelectAll(), transfer);
+            if (megaTransfer == null) return;
+
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]));
-            }            
+                if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+
+                megaTransfer.Transfer = transfer;
+                megaTransfer.IsBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
+                megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
+                megaTransfer.TransferPriority = transfer.getPriority();
+
+                // Transfer overquota error
+                if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+                    DialogService.ShowTransferOverquotaWarning(); 
+            });
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)
@@ -299,50 +268,25 @@ namespace MegaApp.MegaApi
             // Extra checking to avoid NullReferenceException
             if (transfer == null) return;
 
-            // Use a temp variable to avoid InvalidOperationException
-            var transfersList = Transfers.ToList();
+            // Search the corresponding transfer in the transfers list
+            var megaTransfer = TransfersService.SearchTransfer(TransfersService.MegaTransfers.SelectAll(), transfer);
+            if (megaTransfer == null) return;
 
-            // Extra checking during finding to avoid NullReferenceException
-            var megaTransfer = transfersList.FirstOrDefault(t => 
-                (t.Transfer != null) && (t.Transfer.getTag() == transfer.getTag()));
-
-            if(megaTransfer != null)
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
 
-                    megaTransfer.CancelButtonState = true;
-                    megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
-                    megaTransfer.TransferButtonForegroundColor = new SolidColorBrush(Colors.White);
-                    megaTransfer.IsBusy = true;
-                    megaTransfer.TotalBytes = transfer.getTotalBytes();
-                    megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                    megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-
-                    if (megaTransfer.TransferedBytes > 0)
-                    {
-                        switch (megaTransfer.Type)
-                        {
-                            case TransferType.Download:
-                                megaTransfer.Status = TransferStatus.Downloading;
-                                break;
-                            case TransferType.Upload:
-                                megaTransfer.Status = TransferStatus.Uploading;
-                                break;
-                            default:
-                                throw new ArgumentOutOfRangeException();
-                        }
-                    }
-                });
-            }
+                megaTransfer.Transfer = transfer;
+                megaTransfer.IsBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
+                megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
+                megaTransfer.TotalBytes = transfer.getTotalBytes();
+                megaTransfer.TransferedBytes = transfer.getTransferredBytes();
+                megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
+                megaTransfer.TransferMeanSpeed = transfer.getMeanSpeed();
+                megaTransfer.TransferPriority = transfer.getPriority();
+                megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+            });
         }
-
-        #endregion
-
-        #region Properties
-
-        public IList<TransferObjectModel> Transfers { get; private set; }        
 
         #endregion
     }

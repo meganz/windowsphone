@@ -23,7 +23,7 @@ namespace MegaApp.Pages
         private readonly ConfirmAccountViewModel _confirmAccountViewModel;
         public ConfirmAccountPage()
         {
-            _confirmAccountViewModel = new ConfirmAccountViewModel(App.MegaSdk);
+            _confirmAccountViewModel = new ConfirmAccountViewModel(SdkService.MegaSdk);
             this.DataContext = _confirmAccountViewModel;
 
             InitializeComponent();
@@ -33,8 +33,8 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                App.MegaSdk.logout(new LogOutRequestListener(false));
+            if (Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
+                SdkService.MegaSdk.logout(new LogOutRequestListener(false));
 
             // Remove all pages from the stack (including the MainPage).
             // If user presses back button should go to InitTourPage or exit the application            
@@ -45,7 +45,7 @@ namespace MegaApp.Pages
                 && NavigationContext.QueryString.ContainsKey("confirm"))
             {
                 _confirmAccountViewModel.ConfirmCode = HttpUtility.UrlDecode(NavigationContext.QueryString["confirm"]);                
-                App.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode,
+                SdkService.MegaSdk.querySignupLink(_confirmAccountViewModel.ConfirmCode,
                     new ConfirmAccountRequestListener(_confirmAccountViewModel));
             }
         }

@@ -21,7 +21,6 @@ using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Microsoft.Phone.Info;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using MockIAPLib;
@@ -47,26 +46,13 @@ namespace MegaApp
         public static AppInformation AppInformation { get; private set; }        
         public static String IpAddress { get; set; }
 
-        /// <summary>
-        /// Main MegaSDK instance of the app
-        /// </summary>
-        public static MegaSDK MegaSdk { get; set; }
-
-        /// <summary>
-        /// MegaSDK instance for the folder links management
-        /// </summary>
-        public static MegaSDK MegaSdkFolderLinks { get; set; }
-        
         public static CloudDriveViewModel CloudDrive { get; set; }
         public static MainPageViewModel MainPageViewModel { get; set; }
         public static SavedForOfflineViewModel SavedForOfflineViewModel { get; set; }
-        public static TransferQueu MegaTransfers { get; set; }
-
+        
         public static UserDataViewModel UserData { get; set; }
 
-        public static GlobalDriveListener GlobalDriveListener { get; private set; }
-
-        public static GlobalTransferListener GlobalTransferListener { get; private set; }
+        public static GlobalListener GlobalListener { get; private set; }
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
 
@@ -287,54 +273,34 @@ namespace MegaApp
             // Initialize the links information
             LinkInformation = new LinkInformation();
 
-            //The next line enables a custom logger, if this function is not used OutputDebugString() is called
-            //in the native library and log messages are only readable with the native debugger attached.
-            //The default behavior of MegaLogger() is to print logs using Debug.WriteLine() but it could
-            //be used to sends log to a file, for example.
-            LogService.SetLoggerObject(new MegaLogger());
+            // Initialize SDK parameters
+            SdkService.InitializeSdkParams();
 
-            //You can select the maximum output level for debug messages.
-            //By default FATAL, ERROR, WARNING and INFO will be enabled
-            //DEBUG and MAX can only be enabled in Debug builds, they are ignored in Release builds
-            LogService.SetLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
-
-            //You can send messages to the logger using LogService.Log(), those messages will be received
-            //in the active logger
-            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
-            
-            // Set the ID for statistics
-            MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
-
-            // Initialize the main MegaSDK instance
-            MegaSdk = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
-                AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
-                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
-
-            // Initialize the MegaSDK instance for Folder Links
-            MegaSdkFolderLinks = new MegaSDK(AppResources.AppKey, String.Format("{0}/{1}/{2}",
-                AppService.GetAppUserAgent(), DeviceStatus.DeviceManufacturer, DeviceStatus.DeviceName),
-                ApplicationData.Current.LocalFolder.Path, new MegaRandomNumberProvider());
-            
             // Initialize the main drive
-            CloudDrive = new CloudDriveViewModel(MegaSdk, AppInformation);
-            // Add notifications listener. Needs a DriveViewModel
-            GlobalDriveListener = new GlobalDriveListener(AppInformation);
-            MegaSdk.addGlobalListener(GlobalDriveListener);
+            CloudDrive = new CloudDriveViewModel(SdkService.MegaSdk, AppInformation);
+            
+            // Add a global notifications listener.
+            GlobalListener = new GlobalListener(AppInformation);
+            SdkService.MegaSdk.addGlobalListener(GlobalListener);
+            
             // Add a global request listener to process all.
-            MegaSdk.addRequestListener(this);
+            SdkService.MegaSdk.addRequestListener(this);
+            
             // Add a global transfer listener to process all transfers.
-            GlobalTransferListener = new GlobalTransferListener();
-            MegaSdk.addTransferListener(GlobalTransferListener);
-            // Initialize the transfer listing
-            MegaTransfers = new TransferQueu();
+            SdkService.MegaSdk.addTransferListener(TransfersService.GlobalTransferListener);
+            
             // Initialize Folders
             AppService.InitializeAppFolders();
+            
             // Set the current resolution that we use later on for our image selection
             AppService.CurrentResolution = ResolutionHelper.CurrentResolution;
+            
             // Clear settings values we do no longer use
             AppService.ClearObsoleteSettings();
+            
             // Save the app version information for future use (like deleting settings)
             AppService.SaveAppInformation();
+            
             // Set MEGA red as Accent Color
             ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = (Color)Resources["MegaRedColor"];
 

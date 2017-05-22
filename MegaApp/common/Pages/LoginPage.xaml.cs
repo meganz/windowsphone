@@ -48,8 +48,8 @@ namespace MegaApp.Pages
         {
             base.OnNavigatedTo(e);
 
-            if (Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
-                App.MegaSdk.logout(new LogOutRequestListener(false));
+            if (Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
+                SdkService.MegaSdk.logout(new LogOutRequestListener(false));
 
             if (NavigationContext.QueryString.ContainsKey("Pivot"))
             {
@@ -70,7 +70,7 @@ namespace MegaApp.Pages
                 _loginAndCreateAccountViewModelContainer.CreateAccountViewModel.NewSignUpCode = 
                     HttpUtility.UrlDecode(NavigationContext.QueryString["newsignup"]);
 
-                App.MegaSdk.querySignupLink(_loginAndCreateAccountViewModelContainer.CreateAccountViewModel.NewSignUpCode,
+                SdkService.MegaSdk.querySignupLink(_loginAndCreateAccountViewModelContainer.CreateAccountViewModel.NewSignUpCode,
                     new CreateAccountRequestListener(_loginAndCreateAccountViewModelContainer.CreateAccountViewModel, this));
             }
         }

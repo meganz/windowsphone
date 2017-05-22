@@ -50,7 +50,7 @@ namespace MegaApp.Services
 
         public static string GetMegaSDK_Version()
         {
-            return String.Format("ef630b3");
+            return String.Format("e8eeea7");
         }
 
         public static string GetAppUserAgent()
@@ -126,18 +126,34 @@ namespace MegaApp.Services
         public static ulong GetAppCacheSize()
         {
             var files = new List<string>();
-            
-            files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath()));
-            files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath()));            
-            files.AddRange(Directory.GetFiles(GetUploadDirectoryPath()));
 
-            files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath()));
+            try { files.AddRange(Directory.GetFiles(GetThumbnailDirectoryPath())); }
+            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting thumbnails cache.", e); }
+            
+            try { files.AddRange(Directory.GetFiles(GetPreviewDirectoryPath())); }
+            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting previews cache.", e); }
+
+            try { files.AddRange(Directory.GetFiles(GetUploadDirectoryPath())); } 
+            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting uploads cache.", e); }
+
+            try { files.AddRange(GetDownloadDirectoryFiles(GetDownloadDirectoryPath())); } 
+            catch (Exception e) { LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting uploads cache.", e); }
             
             ulong totalSize = 0;
             foreach (var file in files)
             {
-                var fileInfo = new FileInfo(file);
-                totalSize += (ulong)fileInfo.Length;
+                if(FileService.FileExists(file))
+                {
+                    try
+                    {
+                        var fileInfo = new FileInfo(file);
+                        totalSize += (ulong)fileInfo.Length;
+                    }
+                    catch (Exception e)
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error getting app cache size.", e);
+                    }
+                }
             }
 
             return totalSize;
@@ -146,15 +162,22 @@ namespace MegaApp.Services
         private static List<string> GetDownloadDirectoryFiles(string path)
         {
             var files = new List<string>();
-            files.AddRange(Directory.GetFiles(path));
 
-            var folders = new List<string>();
-            folders.AddRange(Directory.GetDirectories(path));
-            foreach (var folder in folders)
+            if(FolderService.FolderExists(path))
             {
-                files.AddRange(GetDownloadDirectoryFiles(folder));
-            }
+                try
+                {
+                    files.AddRange(Directory.GetFiles(path));
 
+                    var folders = new List<string>();
+                    folders.AddRange(Directory.GetDirectories(path));
+                    
+                    foreach (var folder in folders)
+                        files.AddRange(GetDownloadDirectoryFiles(folder));
+                }
+                catch (Exception e) { throw e.GetBaseException(); }
+            }
+            
             return files;
         }
 

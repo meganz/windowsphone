@@ -261,30 +261,6 @@
     <value>přenosy</value>
     <comment>Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</comment>
   </data>
-  <data name="Transfer_Canceled" xml:space="preserve">
-    <value>Zrušeno</value>
-    <comment>Label for the status of a canceled transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Canceling" xml:space="preserve">
-    <value>Rušení...</value>
-    <comment>Label for the status of a transfer when is being canceling - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Download" xml:space="preserve">
-    <value>Stahování...</value>
-    <comment>Label for the status of a transfer when is being downloading - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Error" xml:space="preserve">
-    <value>Chyba při přenosu</value>
-    <comment>Label for the status of a failed  transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_NotStarted" xml:space="preserve">
-    <value>Připraveno</value>
-    <comment>Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Upload" xml:space="preserve">
-    <value>Nahrávání...</value>
-    <comment>Label for the status of a transfer when is being uploading - (String as short as possible).</comment>
-  </data>
   <data name="Download" xml:space="preserve">
     <value>stáhnout</value>
     <comment>Label for any 'Download' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -300,14 +276,6 @@
   <data name="MultiSelect" xml:space="preserve">
     <value>Vícenásobný výběr</value>
     <comment>Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Paused" xml:space="preserve">
-    <value>Pozastaveno</value>
-    <comment>Label for the status of a paused transfer - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Pausing" xml:space="preserve">
-    <value>Pozastavování...</value>
-    <comment>Label for the status of a transfer when is being pausing - (String as short as possible).</comment>
   </data>
   <data name="SpecialThankYou" xml:space="preserve">
     <value>Zvláště chceme poděkovat následujícím společnostem nebo lidem za umožnění vytvoření této aplikace:</value>
@@ -605,18 +573,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="CancelAllTransfers" xml:space="preserve">
     <value>Zrušit všechny přenosy</value>
     <comment>Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Downloaded" xml:space="preserve">
-    <value>Staženo</value>
-    <comment>Label for the status of a download transfer when is finished - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Queued" xml:space="preserve">
-    <value>Zařazeno do fronty</value>
-    <comment>Label for the status of a transfer when is queued - (String as short as possible).</comment>
-  </data>
-  <data name="Transfer_Uploaded" xml:space="preserve">
-    <value>nahráno</value>
-    <comment>Label for the status of an upload transfer when is finished - (String as short as possible).</comment>
   </data>
   <data name="InitTourAccess1" xml:space="preserve">
     <value>získejte</value>
@@ -1280,5 +1236,69 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_SetExpirationDate" xml:space="preserve">
     <value>Nastavit datum vypršení</value>
     <comment>Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateCanceled" xml:space="preserve">
+    <value>Zrušeno</value>
+    <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateCompleting" xml:space="preserve">
+    <value>Completing...</value>
+    <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateDownloaded" xml:space="preserve">
+    <value>Staženo</value>
+    <comment>Label for the state of a download transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateDownloading" xml:space="preserve">
+    <value>Stahování...</value>
+    <comment>Label for the state of a transfer when is being downloading - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateError" xml:space="preserve">
+    <value>Chyba při přenosu</value>
+    <comment>Label for the state of a failed  transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateNotStarted" xml:space="preserve">
+    <value>Připraveno</value>
+    <comment>Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStatePaused" xml:space="preserve">
+    <value>Pozastaveno</value>
+    <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStatePreparing" xml:space="preserve">
+    <value>Preparing...</value>
+    <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateQueued" xml:space="preserve">
+    <value>Zařazeno do fronty</value>
+    <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateRetrying" xml:space="preserve">
+    <value>Retrying...</value>
+    <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateUploaded" xml:space="preserve">
+    <value>Nahráno</value>
+    <comment>Label for the state of an upload transfer when is finished - (String as short as possible).</comment>
+  </data>
+  <data name="UI_TransferStateUploading" xml:space="preserve">
+    <value>Nahrávání...</value>
+    <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelDownloads" xml:space="preserve">
+    <value>Cancel downloads</value>
+    <comment>Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_CancelUploads" xml:space="preserve">
+    <value>Cancel uploads</value>
+    <comment>Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Completed" xml:space="preserve">
+    <value>Dokončeno</value>
+    <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NoCompletedTransfers" xml:space="preserve">
+    <value>No completed transfers</value>
+    <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
   </data>
 </root>

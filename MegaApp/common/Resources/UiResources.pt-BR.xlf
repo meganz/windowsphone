@@ -222,36 +222,6 @@ Abrir link MEGA</target>
           <target state="translated">transferências</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Transfers' button, link, text, title, etc. (i.e. total space) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/Transfer_Canceled" translate="yes" space="preserve">
-          <source>Canceled</source>
-          <target state="translated">Cancelado</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a canceled transfer - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Canceling" translate="yes" space="preserve">
-          <source>Canceling...</source>
-          <target state="translated">Cancelando...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being canceling - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Download" translate="yes" space="preserve">
-          <source>Downloading...</source>
-          <target state="translated">Baixando...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being downloading - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Error" translate="yes" space="preserve">
-          <source>Error on transfer</source>
-          <target state="translated">Erro na transferência</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a failed  transfer - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_NotStarted" translate="yes" space="preserve">
-          <source>Ready</source>
-          <target state="translated">Pronto</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is ready but not started for some reason - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Upload" translate="yes" space="preserve">
-          <source>Uploading...</source>
-          <target state="translated">Enviando...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being uploading - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/Download" translate="yes" space="preserve">
           <source>download</source>
           <target state="translated">download</target>
@@ -271,16 +241,6 @@ Abrir link MEGA</target>
           <source>Multi select</source>
           <target state="translated">Multi seleção</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Multi select' button, link, text, title, etc. for multiple selection - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Paused" translate="yes" space="preserve">
-          <source>Paused</source>
-          <target state="translated">Pausado</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a paused transfer - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Pausing" translate="yes" space="preserve">
-          <source>Pausing...</source>
-          <target state="translated">Pausando...</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is being pausing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SpecialThankYou" translate="yes" space="preserve">
           <source>We want to special thank the following companies/people for making this app possible:</source>
@@ -670,21 +630,6 @@ Try to preserve the PIN uppercase word.</note>
           <source>Cancel all transfers</source>
           <target state="translated">Cancelar todas as transferências</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel all transfers' button or menu option - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Downloaded" translate="yes" space="preserve">
-          <source>Downloaded</source>
-          <target state="translated">Baixado</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a download transfer when is finished - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Queued" translate="yes" space="preserve">
-          <source>Queued</source>
-          <target state="translated">Na fila</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of a transfer when is queued - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/Transfer_Uploaded" translate="yes" space="preserve">
-          <source>uploaded</source>
-          <target state="translated">enviado</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for the status of an upload transfer when is finished - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess1" translate="yes" space="preserve">
           <source>get</source>
@@ -1455,6 +1400,86 @@ NOTE: Keep the capital letter if possible.</note>
           <source>Set expiry date</source>
           <target state="translated">Definir data de validade</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateCanceled" translate="yes" space="preserve">
+          <source>Canceled</source>
+          <target state="translated">Cancelado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a canceled transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
+          <source>Completing...</source>
+          <target state="translated">Completing...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
+          <source>Downloaded</source>
+          <target state="translated">Baixado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a download transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
+          <source>Downloading...</source>
+          <target state="translated">Baixando...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
+          <source>Error on transfer</source>
+          <target state="translated">Erro na transferência</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a failed  transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateNotStarted" translate="yes" space="preserve">
+          <source>Ready</source>
+          <target state="translated">Pronto</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is ready but not started for some reason - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStatePaused" translate="yes" space="preserve">
+          <source>Paused</source>
+          <target state="translated">Pausado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a paused transfer - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
+          <source>Preparing...</source>
+          <target state="translated">Preparing...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
+          <source>Queued</source>
+          <target state="translated">Na fila</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is queued - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
+          <source>Retrying...</source>
+          <target state="translated">Retrying...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
+          <source>Uploaded</source>
+          <target state="translated">Enviado</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of an upload transfer when is finished - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_TransferStateUploading" translate="yes" space="preserve">
+          <source>Uploading...</source>
+          <target state="translated">Enviando...</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being uploading - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
+          <source>Cancel downloads</source>
+          <target state="translated">Cancel downloads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_CancelUploads" translate="yes" space="preserve">
+          <source>Cancel uploads</source>
+          <target state="translated">Cancel uploads</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_Completed" translate="yes" space="preserve">
+          <source>Completed</source>
+          <target state="translated">Completo</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" space="preserve">
+          <source>No completed transfers</source>
+          <target state="translated">No completed transfers</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -25,7 +25,7 @@ namespace MegaApp.Pages
 
         public TransferPage()
         {
-            _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+            _transfersViewModel = new TransfersViewModel(SdkService.MegaSdk, App.AppInformation);
             this.DataContext = _transfersViewModel;
             
             InitializeComponent();
@@ -62,19 +62,21 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    if (!Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
                     }
 
-                    _transfersViewModel.SetEmptyContentTemplate();
-                    LstUploads.ItemsSource = _transfersViewModel.MegaTransfers.Uploads;
-                    LstDownloads.ItemsSource = _transfersViewModel.MegaTransfers.Downloads;
+                    _transfersViewModel.Uploads.SetEmptyContentTemplate();
+                    _transfersViewModel.Downloads.SetEmptyContentTemplate();
+                    LstUploads.ItemsSource = _transfersViewModel.Uploads.Items;
+                    LstDownloads.ItemsSource = _transfersViewModel.Downloads.Items;
                 }
                 else
                 {
-                    _transfersViewModel.SetOfflineContentTemplate();
+                    _transfersViewModel.Uploads.SetOfflineContentTemplate();
+                    _transfersViewModel.Downloads.SetOfflineContentTemplate();
                     LstUploads.ItemsSource = null;
                     LstDownloads.ItemsSource = null;
                 }
@@ -85,24 +87,23 @@ namespace MegaApp.Pages
 
         private void SetApplicationBarData(bool isNetworkConnected = true)
         {
-            this.ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
-
             if(TransfersPivot.SelectedItem != null)
             {
                 if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
-                    SetDownloadsPivotGUI(App.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_DOWNLOAD));
+                    SetDownloadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_DOWNLOAD));
                 else if (TransfersPivot.SelectedItem.Equals(UploadsPivot))
-                    SetUploadsPivotGUI(App.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
+                    SetUploadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
+                else if (TransfersPivot.SelectedItem.Equals(CompletedPivot))
+                    SetCompletedPivotGUI();
             }
             else
             {
+                this.ApplicationBar = (ApplicationBar)Resources["ActiveTransfersMenu"];
                 ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IconUri = new Uri("/Assets/Appbar/transport.pause.png", UriKind.Relative);
                 ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.Pause.ToLower();
+                ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.CancelAllTransfers.ToLower();
+                ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.CleanUpTransfers.ToLower();
             }
-            
-            
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.CancelAllTransfers.ToLower();
-            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.CleanUpTransfers.ToLower();
 
             UiService.ChangeAppBarStatus(this.ApplicationBar.Buttons,
                 this.ApplicationBar.MenuItems, isNetworkConnected);
@@ -110,11 +111,10 @@ namespace MegaApp.Pages
 
         private void SetDownloadsPivotGUI(bool paused)
         {
-            if (ApplicationBar == null)
-                ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
+            this.ApplicationBar = (ApplicationBar)Resources["ActiveTransfersMenu"];
 
             if (_transfersViewModel == null)
-                _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+                _transfersViewModel = new TransfersViewModel(SdkService.MegaSdk, App.AppInformation);
 
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnPauseAllClick;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnStartResumeAllClick;
@@ -127,8 +127,6 @@ namespace MegaApp.Pages
 
                 ImgDownloadsPaused.Visibility = Visibility.Visible;
                 LstDownloads.Opacity = 0.3;
-
-                _transfersViewModel.SetEmptyContentTemplate(true, (int)MTransferType.TYPE_DOWNLOAD);
             }
             else
             {
@@ -138,18 +136,20 @@ namespace MegaApp.Pages
 
                 ImgDownloadsPaused.Visibility = Visibility.Collapsed;
                 LstDownloads.Opacity = 1;
-
-                _transfersViewModel.SetEmptyContentTemplate(false, (int)MTransferType.TYPE_DOWNLOAD);
             }
+
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.CancelAllTransfers.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.CleanUpTransfers.ToLower();
+
+            _transfersViewModel.Downloads.SetEmptyContentTemplate();
         }
 
         private void SetUploadsPivotGUI(bool paused)
         {
-            if(ApplicationBar == null)
-                ApplicationBar = (ApplicationBar)Resources["TransferMenu"];
+            this.ApplicationBar = (ApplicationBar)Resources["ActiveTransfersMenu"];
 
             if(_transfersViewModel == null)
-                _transfersViewModel = new TransfersViewModel(App.MegaSdk, App.AppInformation, App.MegaTransfers);
+                _transfersViewModel = new TransfersViewModel(SdkService.MegaSdk, App.AppInformation);
 
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnPauseAllClick;
             ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Click -= OnStartResumeAllClick;
@@ -162,8 +162,6 @@ namespace MegaApp.Pages
 
                 ImgUploadsPaused.Visibility = Visibility.Visible;
                 LstUploads.Opacity = 0.3;
-
-                _transfersViewModel.SetEmptyContentTemplate(true, (int)MTransferType.TYPE_UPLOAD);
             }
             else
             {
@@ -173,9 +171,25 @@ namespace MegaApp.Pages
 
                 ImgUploadsPaused.Visibility = Visibility.Collapsed;
                 LstUploads.Opacity = 1;
-
-                _transfersViewModel.SetEmptyContentTemplate(false, (int)MTransferType.TYPE_UPLOAD);
             }
+
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[0]).Text = UiResources.CancelAllTransfers.ToLower();
+            ((ApplicationBarMenuItem)ApplicationBar.MenuItems[1]).Text = UiResources.CleanUpTransfers.ToLower();
+
+            _transfersViewModel.Uploads.SetEmptyContentTemplate();
+        }
+
+        private void SetCompletedPivotGUI()
+        {
+            this.ApplicationBar = (ApplicationBar)Resources["CompletedTransfersMenu"];
+
+            if (_transfersViewModel == null)
+                _transfersViewModel = new TransfersViewModel(SdkService.MegaSdk, App.AppInformation);
+
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).IconUri = new Uri("/Assets/AppBar/remove.png", UriKind.Relative);
+            ((ApplicationBarIconButton)ApplicationBar.Buttons[0]).Text = UiResources.CleanUpTransfers.ToLower();
+
+            _transfersViewModel.Completed.SetEmptyContentTemplate();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -186,15 +200,6 @@ namespace MegaApp.Pages
             if (navParam == NavigationParameter.Downloads)
                 TransfersPivot.SelectedItem = DownloadsPivot;
 
-            if (navParam == NavigationParameter.PictureSelected)
-                NavigationService.RemoveBackEntry();
-
-            if (navParam == NavigationParameter.AlbumSelected || navParam == NavigationParameter.SelfieSelected)
-            {
-                NavigationService.RemoveBackEntry();
-                NavigationService.RemoveBackEntry();
-            }
-
             if (!NetworkService.IsNetworkAvailable())
             {
                 UpdateGUI(false);
@@ -202,10 +207,9 @@ namespace MegaApp.Pages
             }
 
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
-            TransfersService.UpdateMegaTransfersList(App.MegaTransfers);
-            _transfersViewModel.MegaTransfers = App.MegaTransfers;
+            _transfersViewModel.Update();
         }
 
         protected override void OnBackKeyPress(CancelEventArgs e)
@@ -217,62 +221,61 @@ namespace MegaApp.Pages
         }
 
         private void OnPauseAllClick(object sender, EventArgs e)
-        {        
+        {
+            if (_transfersViewModel.ActiveViewModel.PauseOrResumeCommand.CanExecute(sender))
+                _transfersViewModel.ActiveViewModel.PauseOrResumeCommand.Execute(sender);
+
             if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
-            {
-                App.MegaSdk.pauseTransfersDirection(true, (int)MTransferType.TYPE_DOWNLOAD,
-                    new PauseTransferRequestListener());
                 SetDownloadsPivotGUI(true);
-            }                
             else if (TransfersPivot.SelectedItem.Equals(UploadsPivot))
-            {
-                App.MegaSdk.pauseTransfersDirection(true, (int)MTransferType.TYPE_UPLOAD,
-                    new PauseTransferRequestListener());
                 SetUploadsPivotGUI(true);
-            }
         }
 
         private void OnStartResumeAllClick(object sender, EventArgs e)
         {
+            if (_transfersViewModel.ActiveViewModel.PauseOrResumeCommand.CanExecute(sender))
+                _transfersViewModel.ActiveViewModel.PauseOrResumeCommand.Execute(sender);
+
             if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
-            {
-                App.MegaSdk.pauseTransfersDirection(false, (int)MTransferType.TYPE_DOWNLOAD,
-                    new PauseTransferRequestListener());
                 SetDownloadsPivotGUI(false);
-            }
             else if (TransfersPivot.SelectedItem.Equals(UploadsPivot))
-            {
-                App.MegaSdk.pauseTransfersDirection(false, (int)MTransferType.TYPE_UPLOAD,
-                    new PauseTransferRequestListener());
                 SetUploadsPivotGUI(false);
-            }
         }
 
         private void OnCancelAllClick(object sender, EventArgs e)
         {
+            if (_transfersViewModel.ActiveViewModel.CancelCommand.CanExecute(sender))
+                _transfersViewModel.ActiveViewModel.CancelCommand.Execute(sender);
+
             if (TransfersPivot.SelectedItem.Equals(DownloadsPivot))
-            {
-                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_DOWNLOAD);
                 SetDownloadsPivotGUI(false);
-            }                
             else if (TransfersPivot.SelectedItem.Equals(UploadsPivot))
-            {
-                App.MegaSdk.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
                 SetUploadsPivotGUI(false);
-            }
         }
 
         private void OnCleanUpTransfersClick(object sender, EventArgs e)
         {
-            TransfersService.UpdateMegaTransfersList(App.MegaTransfers);
+            if (_transfersViewModel.ActiveViewModel.CleanCommand.CanExecute(sender))
+                _transfersViewModel.ActiveViewModel.CleanCommand.Execute(sender);
         }
 
         private void OnPivotSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (e.AddedItems[0] == DownloadsPivot)
-                SetDownloadsPivotGUI(App.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_DOWNLOAD));
-            else if (e.AddedItems[0] == UploadsPivot)
-                SetUploadsPivotGUI(App.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
+            switch (TransfersPivot.SelectedIndex)
+            {
+                case 0:
+                    SetUploadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_UPLOAD));
+                    this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Uploads;
+                    break;
+                case 1:
+                    SetDownloadsPivotGUI(SdkService.MegaSdk.areTransfersPaused((int)MTransferType.TYPE_DOWNLOAD));
+                    this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Downloads;
+                    break;
+                case 2:
+                    SetCompletedPivotGUI();
+                    this._transfersViewModel.ActiveViewModel = this._transfersViewModel.Completed;
+                    break;
+            }
         }
 
         protected override void OnDrawerClosed(object sender)

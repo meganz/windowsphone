@@ -1286,7 +1286,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="translated">Esto podría deberse a los siguientes motivos:
+          <target state="needs-review-translation">Esto podría deberse a los siguientes motivos:
 - El archivo ha sido eliminado debido a una violación de los TdS/PUA.
 - URL no válida - el enlace al que intentas acceder no existe.
 - El archivo ha sido desactivado por el usuario.</target>
@@ -1297,7 +1297,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="translated">Esto podría deberse a los siguientes motivos:
+          <target state="needs-review-translation">Esto podría deberse a los siguientes motivos:
 - El enlace de la carpeta ha sido eliminado debido a una violación de los TdS/PdU.
 - URL no válida - el enlace al que intentas acceder no existe.
 - El enlace de la carpeta ha sido desactivado por el usuario.</target>
@@ -1540,13 +1540,33 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="needs-review-translation">No se encontró el archivo/carpeta del enlace que estás intentando abrir. Es probable que hayas iniciado sesión en una cuenta diferente. Inicia sesión en la cuenta correcta e inténtalo de nuevo.</target>
+          <target state="translated">No se encontró el archivo/carpeta del enlace que estás intentando abrir. Es probable que hayas iniciado sesión en una cuenta diferente. Inicia sesión en la cuenta correcta e inténtalo de nuevo.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
           <source>File/folder not found</source>
           <target state="translated">Archivo/Carpeta no encontrado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
+          <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
+          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
+          <source>Depleted transfer quota</source>
+          <target state="translated">Depleted transfer quota</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to cancel all the pending downloads?</source>
+          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
+          <source>Are you sure you want to cancel all the pending uploads?</source>
+          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
       </group>
     </body>

@@ -38,7 +38,7 @@ namespace MegaApp.Models
         {
             if (!NetworkService.IsNetworkAvailable(showMessageDialog)) return false;
 
-            bool isOnline = Convert.ToBoolean(App.MegaSdk.isLoggedIn());
+            bool isOnline = Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn());
             if (!isOnline)
             {
                 if (showMessageDialog)

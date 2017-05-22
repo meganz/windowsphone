@@ -5,6 +5,7 @@ using Microsoft.Phone.Shell;
 using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
+using MegaApp.Services;
 
 namespace MegaApp.Containers
 {
@@ -14,10 +15,10 @@ namespace MegaApp.Containers
         public CreateAccountViewModel CreateAccountViewModel { get; private set; }
 
         public LoginAndCreateAccountViewModelContainer(LoginPage loginPage)
-            :base(App.MegaSdk)
+            :base(SdkService.MegaSdk)
         {
-            LoginViewModel = new LoginViewModel(App.MegaSdk, loginPage);
-            CreateAccountViewModel = new CreateAccountViewModel(App.MegaSdk, loginPage);
+            LoginViewModel = new LoginViewModel(SdkService.MegaSdk, loginPage);
+            CreateAccountViewModel = new CreateAccountViewModel(SdkService.MegaSdk, loginPage);
         }
 
         public void ChangeMenu(IList iconButtons, IList menuItems)

@@ -24,7 +24,7 @@ namespace MegaApp.Pages
         public SongSelectionPage()
         {
 
-            var songSelectioViewModel = new SongSelectionViewModel(App.MegaSdk);
+            var songSelectioViewModel = new SongSelectionViewModel(SdkService.MegaSdk);
             this.DataContext = songSelectioViewModel;
 
             InitializeComponent();

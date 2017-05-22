@@ -9,13 +9,22 @@ namespace ScheduledCameraUploadTaskAgent
     {
         private Timer _timer;
 
-        // Event raised so that the task agent can abort itself on Quoata exceeded
-        public event EventHandler QuotaExceeded;
+        // Event raised so that the task agent can abort itself when storage quota is exceeded
+        public event EventHandler StorageQuotaExceeded;
 
-        protected virtual void OnQuotaExceeded(EventArgs e)
+        // Event raised so that the task agent can finish itself when transfer quota is exceeded
+        public event EventHandler TransferQuotaExceeded;
+
+        protected virtual void OnStorageQuotaExceeded(EventArgs e)
         {
-            if (QuotaExceeded != null)
-                QuotaExceeded(this, e);
+            if (StorageQuotaExceeded != null)
+                StorageQuotaExceeded(this, e);
+        }
+
+        protected virtual void OnTransferQuotaExceeded(EventArgs e)
+        {
+            if (TransferQuotaExceeded != null)
+                TransferQuotaExceeded(this, e);
         }
 
         public bool onTransferData(MegaSDK api, MTransfer transfer, byte[] data)
@@ -31,8 +40,8 @@ namespace ScheduledCameraUploadTaskAgent
             if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
             {
                 //Stop the Camera Upload Service
-                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Disabling CAMERA UPLOADS service (API_EOVERQUOTA)");
-                OnQuotaExceeded(EventArgs.Empty);
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Storage quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
+                OnStorageQuotaExceeded(EventArgs.Empty);
                 return;
             }
 
@@ -87,7 +96,12 @@ namespace ScheduledCameraUploadTaskAgent
 
         public void onTransferTemporaryError(MegaSDK api, MTransfer transfer, MError e)
         {
-            
+            // Transfer overquota error
+            if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Transfer quota exceeded (API_EOVERQUOTA)");
+                OnTransferQuotaExceeded(EventArgs.Empty);
+            }
         }
 
         public void onTransferUpdate(MegaSDK api, MTransfer transfer)

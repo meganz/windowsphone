@@ -6,16 +6,17 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Microsoft.Xna.Framework.Media;
+using Telerik.Windows.Controls;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 using MegaApp.UserControls;
-using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
-using Microsoft.Xna.Framework.Media;
-using Telerik.Windows.Controls;
 
 namespace MegaApp.Pages
 {
@@ -25,7 +26,7 @@ namespace MegaApp.Pages
 
        public MediaAlbumPage()
         {
-            _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk, 
+            _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk, 
                 NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             this.DataContext = _mediaAlbumViewModel;
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace MegaApp.Pages
 
             if(_mediaAlbumViewModel == null)
             {
-                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk,
                     NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             }
 
@@ -95,8 +96,8 @@ namespace MegaApp.Pages
                             await fs.FlushAsync();
                             fs.Close();
                         }
-                        var uploadTransfer = new TransferObjectModel(App.MegaSdk, App.CloudDrive.CurrentRootNode, TransferType.Upload, newFilePath);
-                        App.MegaTransfers.Add(uploadTransfer);
+                        var uploadTransfer = new TransferObjectModel(SdkService.MegaSdk, App.CloudDrive.CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                        TransfersService.MegaTransfers.Add(uploadTransfer);
                         uploadTransfer.StartTransfer();
                     }
                 }
@@ -115,7 +116,6 @@ namespace MegaApp.Pages
             SetControlState(true);
 
             App.CloudDrive.NoFolderUpAction = true;
-            NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.AlbumSelected);
         }
 
         private void OnClearSelectionClick(object sender, System.EventArgs e)
@@ -135,7 +135,7 @@ namespace MegaApp.Pages
         {
             if (_mediaAlbumViewModel == null)
             {
-                _mediaAlbumViewModel = new MediaAlbumViewModel(App.MegaSdk,
+                _mediaAlbumViewModel = new MediaAlbumViewModel(SdkService.MegaSdk,
                     NavigateService.GetNavigationData<BaseMediaViewModel<PictureAlbum>>());
             }
 

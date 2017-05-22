@@ -347,7 +347,7 @@ namespace MegaApp.Models
                     if (node.IsFolder)
                     {
                         // Need to fix the path in case of import an entire folder link.
-                        var nodePath = App.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
+                        var nodePath = SdkService.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
                         if(!string.IsNullOrWhiteSpace(nodePath))
                         {
                             if (nodePath.CompareTo("/") == 0)
@@ -424,7 +424,7 @@ namespace MegaApp.Models
             var downloadNode = NodeService.CreateNew(this.MegaSdk, this.AppInformation, publicNode, ContainerType.PublicLink);
 
             if(downloadNode != null)
-                downloadNode.Download(App.MegaTransfers);
+                downloadNode.Download(TransfersService.MegaTransfers);
         }
 
         public void OnChildNodeTapped(IMegaNode node)
@@ -680,7 +680,7 @@ namespace MegaApp.Models
                 if (node.IsImage)
                     OnUiThread(() => NavigateService.NavigateTo(typeof(PreviewImagePage), NavigationParameter.Normal, this));
                 else
-                    this.FocusedNode.Download(App.MegaTransfers);
+                    this.FocusedNode.Download(TransfersService.MegaTransfers);
             }            
         }
 
@@ -749,12 +749,11 @@ namespace MegaApp.Models
             }
 
             foreach (var node in SelectedNodes)
-                node.Download(App.MegaTransfers, downloadPath);
+                node.Download(TransfersService.MegaTransfers, downloadPath);
 
             ProgressService.SetProgressIndicator(false);
 
             this.IsMultiSelectActive = false;
-            //OnUiThread(() => NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Downloads));
         }
 
         public bool SelectMultipleItemsForMove()
@@ -851,7 +850,7 @@ namespace MegaApp.Models
 
         private void DownloadItem(object obj)
         {
-            FocusedNode.Download(App.MegaTransfers);
+            FocusedNode.Download(TransfersService.MegaTransfers);
         }
 
         private void ImportItem(object obj)

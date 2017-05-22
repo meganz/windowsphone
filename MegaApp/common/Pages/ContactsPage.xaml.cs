@@ -25,7 +25,7 @@ namespace MegaApp.Pages
 
         public ContactsPage()
         {
-            _contactsViewModel = new ContactsViewModel(App.MegaSdk, App.AppInformation, this);
+            _contactsViewModel = new ContactsViewModel(SdkService.MegaSdk, App.AppInformation, this);
             this.DataContext = _contactsViewModel;
 
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace MegaApp.Pages
             {
                 if (isNetworkConnected)
                 {
-                    if (!Convert.ToBoolean(App.MegaSdk.isLoggedIn()))
+                    if (!Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
                     {
                         NavigateService.NavigateTo(typeof(MainPage), NavigationParameter.None);
                         return;
@@ -125,14 +125,14 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _contactsViewModel.Deinitialize(App.GlobalDriveListener);
+            _contactsViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            _contactsViewModel.Initialize(App.GlobalDriveListener);
+            _contactsViewModel.Initialize(App.GlobalListener);
 
             // Check if the navigation destiny is a specific pivot item
             if (NavigationContext.QueryString.ContainsKey("Pivot"))
@@ -180,7 +180,7 @@ namespace MegaApp.Pages
         private void OnAddContactClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             _contactsViewModel.AddContact();
         }
@@ -188,13 +188,13 @@ namespace MegaApp.Pages
         private void OnSearchContactClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
         }
 
         private void OnRefreshClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             if (ContactsPivot.SelectedItem == MegaContacts)
                 _contactsViewModel.GetMegaContacts();
@@ -207,7 +207,7 @@ namespace MegaApp.Pages
         private void OnSortClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             DialogService.ShowSortContactsDialog(_contactsViewModel);
         }
@@ -215,7 +215,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeMultiSelectMode();
         }
@@ -229,7 +229,7 @@ namespace MegaApp.Pages
         private void OnCheckModeChanged(object sender, IsCheckModeActiveChangedEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             ChangeCheckModeAction(e.CheckBoxesVisible, (RadJumpList)sender, e.TappedItem);
 
@@ -260,7 +260,7 @@ namespace MegaApp.Pages
         private void OnMultiSelectDeleteContactClick(object sender, EventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             MultiSelectDeleteContactAction();
         }
@@ -324,7 +324,7 @@ namespace MegaApp.Pages
         private void OnContactsMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
             if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is Contact))
@@ -342,7 +342,7 @@ namespace MegaApp.Pages
         private void OnContactRequestsMenuOpening(object sender, ContextMenuOpeningEventArgs e)
         {
             // Needed on every UI interaction
-            App.MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             var focusedListBoxItem = e.FocusedElement as RadDataBoundListBoxItem;
             if (focusedListBoxItem == null || !(focusedListBoxItem.DataContext is ContactRequest))

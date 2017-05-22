@@ -178,6 +178,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to cancel all the pending downloads?.
+        /// </summary>
+        public static string AM_CancelDownloadsQuestion {
+            get {
+                return ResourceManager.GetString("AM_CancelDownloadsQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind..
         /// </summary>
         public static string AM_CancelSubscription {
@@ -192,6 +201,15 @@ namespace MegaApp.Resources {
         public static string AM_CancelSubscriptionConfirmation {
             get {
                 return ResourceManager.GetString("AM_CancelSubscriptionConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Are you sure you want to cancel all the pending uploads?.
+        /// </summary>
+        public static string AM_CancelUploadsQuestion {
+            get {
+                return ResourceManager.GetString("AM_CancelUploadsQuestion", resourceCulture);
             }
         }
         
@@ -508,7 +526,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open is not found. Probably you are logged in into a different account. Please, log into the properly account and try again..
+        ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again..
         /// </summary>
         public static string AM_InternalNodeNotFound {
             get {
@@ -792,6 +810,24 @@ namespace MegaApp.Resources {
         public static string AM_TooManyFailedLoginAttempts {
             get {
                 return ResourceManager.GetString("AM_TooManyFailedLoginAttempts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted..
+        /// </summary>
+        public static string AM_TransferOverquotaWarning {
+            get {
+                return ResourceManager.GetString("AM_TransferOverquotaWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Depleted transfer quota.
+        /// </summary>
+        public static string AM_TransferOverquotaWarning_Title {
+            get {
+                return ResourceManager.GetString("AM_TransferOverquotaWarning_Title", resourceCulture);
             }
         }
         

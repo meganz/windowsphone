@@ -324,12 +324,11 @@ namespace MegaApp.Models
                         await fs.FlushAsync();
                         fs.Close();
                     }
-                    var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, TransferType.Upload, newFilePath);
-                    App.MegaTransfers.Insert(0, uploadTransfer);
+                    var uploadTransfer = new TransferObjectModel(MegaSdk, CurrentRootNode, MTransferType.TYPE_UPLOAD, newFilePath);
+                    TransfersService.MegaTransfers.Add(uploadTransfer);
                     uploadTransfer.StartTransfer();
                 }
                 NoFolderUpAction = true;
-                NavigateService.NavigateTo(typeof(TransferPage), NavigationParameter.Normal);
             }
             catch (Exception)
             {
