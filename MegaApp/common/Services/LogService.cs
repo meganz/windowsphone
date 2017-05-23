@@ -53,8 +53,15 @@ namespace MegaApp.Services
         public static void Log(MLogLevel logLevel, string message, Exception e,
             [CallerFilePath] string file = "", [CallerLineNumber] int line = 0)
         {
-            MegaSDK.log(logLevel, String.Format("{0} [{1} - {2}] ({3}:{4})",
-                message, e.GetType().ToString(), e.Message, Path.GetFileName(file), line));
+            if (e == null)
+            {
+                Log(logLevel, message, file, line);
+                return;
+            }
+
+            MegaSDK.log(logLevel, String.Format("{0} [{1} - {2}] ({3}:{4})", message,
+                e.GetType().ToString(), e.Message.Replace(Environment.NewLine, " "),
+                Path.GetFileName(file), line));
         }
     }
 }
