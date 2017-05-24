@@ -58,6 +58,14 @@ namespace MegaApp.Services
 
             // Set the ID for statistics
             MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
+
+            // Set the language code used by the app
+            var appLanguageCode = AppService.GetAppLanguageCode();
+            if (!MegaSdk.setLanguage(appLanguageCode))
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
+                    string.Format("Invalid app language code '{0}'", appLanguageCode));
+            }
         }
 
         /// <summary>

@@ -1241,7 +1241,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a canceled transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateCompleting" xml:space="preserve">
-    <value>Completing...</value>
+    <value>Melengkapi ...</value>
     <comment>Label for the state of a transfer when is being completing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateDownloaded" xml:space="preserve">
@@ -1265,7 +1265,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a paused transfer - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStatePreparing" xml:space="preserve">
-    <value>Preparing...</value>
+    <value>Mempersiapkan...</value>
     <comment>Label for the state of a transfer when is being preparing - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateQueued" xml:space="preserve">
@@ -1273,7 +1273,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is queued - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateRetrying" xml:space="preserve">
-    <value>Retrying...</value>
+    <value>Mencoba lagi ...</value>
     <comment>Label for the state of a transfer when is being retrying - (String as short as possible).</comment>
   </data>
   <data name="UI_TransferStateUploaded" xml:space="preserve">
@@ -1285,11 +1285,11 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for the state of a transfer when is being uploading - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelDownloads" xml:space="preserve">
-    <value>Cancel downloads</value>
+    <value>Batalkan unduhan</value>
     <comment>Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CancelUploads" xml:space="preserve">
-    <value>Cancel uploads</value>
+    <value>Batalkan upload</value>
     <comment>Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Completed" xml:space="preserve">
@@ -1297,7 +1297,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Completed' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
-    <value>No completed transfers</value>
+    <value>Tidak ada transfer selesai</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
   </data>
 </root>
