@@ -1359,19 +1359,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</value>
+    <value>Tus transferencias en cola exceden la cuota de transferencia actual disponible para tu cuenta y, por lo tanto, podrían interrumpirse.</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>Depleted transfer quota</value>
+    <value>Cuota de transferencia agotada</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending downloads?</value>
+    <value>¿Seguro que quieres cancelar todas las descargas pendientes?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending uploads?</value>
+    <value>¿Seguro que quieres cancelar todas las subidas pendientes?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
 </root>
