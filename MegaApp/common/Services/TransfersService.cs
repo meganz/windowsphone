@@ -158,8 +158,10 @@ namespace MegaApp.Services
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR,
-                    string.Format("Error searching transfer '{0}'", transfer.getFileName()), e);
+                var fileName = transfer.getFileName();
+                var message = (fileName == null) ? "Error searching transfer" :
+                    string.Format("Error searching transfer. File: '{0}'", fileName);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, message, e);
                 return null;
             }
 

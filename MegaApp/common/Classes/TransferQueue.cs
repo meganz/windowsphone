@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using mega;
 using MegaApp.Models;
+using MegaApp.Services;
 
 namespace MegaApp.Classes
 {
@@ -118,46 +119,57 @@ namespace MegaApp.Classes
         public static void Sort(ObservableCollection<TransferObjectModel> transferList,
             TransferObjectModel transferObject)
         {
-            bool handled = false;
-            var existing = transferList.FirstOrDefault(
-                t => t.TransferPath.Equals(transferObject.TransferPath));
-            bool move = existing != null;
-            var index = transferList.IndexOf(existing);
-            var count = transferList.Count - 1;
+            if (transferList == null || transferObject == null) return;
 
-            for (var i = 0; i <= count; i++)
+            try
             {
-                if ((int)transferObject.TransferPriority > (int)transferList[i].TransferPriority) continue;
+                bool handled = false;
+                var existing = TransfersService.SearchTransfer(transferList, transferObject.Transfer);
+                bool move = existing != null;
+                var index = transferList.IndexOf(existing);
+                var count = transferList.Count - 1;
+
+                for (var i = 0; i <= count; i++)
+                {
+                    if ((int)transferObject.TransferPriority > (int)transferList[i].TransferPriority) continue;
+
+                    if (move)
+                    {
+                        if (index != i)
+                        {
+                            transferList.RemoveAt(index);
+                            transferList.Insert(i, transferObject);
+                        }
+                    }
+                    else
+                    {
+                        transferList.Insert(i, transferObject);
+                    }
+                    handled = true;
+                    break;
+                }
+
+                if (handled) return;
 
                 if (move)
                 {
-                    if (index != i)
+                    if (index != count)
                     {
                         transferList.RemoveAt(index);
-                        transferList.Insert(i, transferObject);
+                        transferList.Insert(count, transferObject);
                     }
                 }
                 else
                 {
-                    transferList.Insert(i, transferObject);
-                }
-                handled = true;
-                break;
-            }
-
-            if (handled) return;
-
-            if (move)
-            {
-                if (index != count)
-                {
-                    transferList.RemoveAt(index);
-                    transferList.Insert(count, transferObject);
+                    transferList.Add(transferObject);
                 }
             }
-            else
+            catch (Exception e)
             {
-                transferList.Add(transferObject);
+                var message = (transferObject.DisplayName == null) ? "Error sorting transfer" :
+                    string.Format("Error sorting transfer. File: '{0}'", transferObject.DisplayName);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, message, e);
+                return;
             }
         }
 
