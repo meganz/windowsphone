@@ -27,7 +27,7 @@ namespace MegaApp.Models
             Initialize(selectedNode, transferType, transferPath, externalDownloadPath);
         }
 
-        private async void Initialize(IMegaNode selectedNode, MTransferType transferType,
+        private void Initialize(IMegaNode selectedNode, MTransferType transferType,
             string transferPath, string externalDownloadPath = null)
         {
             this.TypeAndState = new object[2];
@@ -43,12 +43,24 @@ namespace MegaApp.Models
                     DisplayName = Path.GetFileName(transferPath);
                     if (FileService.FileExists(transferPath))
                     {
-                        var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
-                        if (srcFile != null)
+                        Task.Run(async() =>
                         {
-                            var fileProperties = await srcFile.GetBasicPropertiesAsync();
-                            this.TotalBytes = fileProperties.Size;
-                        }
+                            try
+                            {
+                                var srcFile = await StorageFile.GetFileFromPathAsync(transferPath);
+                                if (srcFile != null)
+                                {
+                                    var fileProperties = await srcFile.GetBasicPropertiesAsync();
+                                    this.TotalBytes = fileProperties.Size;
+                                }
+                            }
+                            catch (Exception e)
+                            {
+                                var message = (this.DisplayName == null) ? "Error getting transfer size" :
+                                    string.Format("Error getting transfer size. File: '{0}'", this.DisplayName);
+                                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, message, e);
+                            }
+                        });
                     }
                     break;
             }
