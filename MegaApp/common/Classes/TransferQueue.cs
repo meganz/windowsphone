@@ -123,17 +123,9 @@ namespace MegaApp.Classes
 
             try
             {
-                TransferObjectModel existing = null;
-                if (transferObject.Transfer != null)
-                {
-                    existing = TransfersService.SearchTransfer(transferList, transferObject.Transfer);
-                }
-                else if (transferObject.Type == MTransferType.TYPE_UPLOAD && transferObject.CancelTransferCommand != null)
-                {
-                    // If the transfer is an upload in preparation
-                    existing = transferList.FirstOrDefault(
-                        t => (t.TransferPath != null && t.TransferPath.Equals(transferObject.TransferPath)));
-                }
+                var existing = (transferObject.Transfer != null) ?
+                    TransfersService.SearchTransfer(transferList, transferObject.Transfer) :
+                    transferList.FirstOrDefault(t => (t.TransferPath != null && t.TransferPath.Equals(transferObject.TransferPath)));
 
                 bool handled = false;
                 bool move = existing != null;
