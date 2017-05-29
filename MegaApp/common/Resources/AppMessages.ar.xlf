@@ -1556,17 +1556,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">حصص النقل المستنفدة</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">هل تريد بالتأكيد إلغاء جميع عمليات التحميل المعلقة؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">هل تريد بالتأكيد إلغاء جميع عمليات الرفع المعلقة؟</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
       </group>

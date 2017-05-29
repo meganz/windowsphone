@@ -27,9 +27,12 @@ namespace MegaApp.MegaApi
             _loginViewModel = loginViewModel;
             _loginPage = loginPage;
 
-            timerAPI_EAGAIN = new DispatcherTimer();
-            timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
-            timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);            
+            Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                timerAPI_EAGAIN = new DispatcherTimer();
+                timerAPI_EAGAIN.Tick += timerTickAPI_EAGAIN;
+                timerAPI_EAGAIN.Interval = new TimeSpan(0, 0, 10);
+            });
         }
 
         // Method which is call when the timer event is triggered
@@ -37,7 +40,8 @@ namespace MegaApp.MegaApi
         {
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                timerAPI_EAGAIN.Stop();
+                if (timerAPI_EAGAIN != null)
+                    timerAPI_EAGAIN.Stop();
                 ProgressService.SetProgressIndicator(true, ProgressMessages.ServersTooBusy);
             });
         }
@@ -117,7 +121,8 @@ namespace MegaApp.MegaApi
 
                 _loginViewModel.ControlState = true;
 
-                timerAPI_EAGAIN.Stop();                
+                if (timerAPI_EAGAIN != null)
+                    timerAPI_EAGAIN.Stop();                
             });            
 
             if (e.getErrorCode() == MErrorType.API_OK)
@@ -171,7 +176,11 @@ namespace MegaApp.MegaApi
             if (e.getErrorCode() == MErrorType.API_EAGAIN && this.isFirstAPI_EAGAIN)
             {
                 this.isFirstAPI_EAGAIN = false;
-                Deployment.Current.Dispatcher.BeginInvoke(() => timerAPI_EAGAIN.Start());
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    if (timerAPI_EAGAIN != null)
+                        timerAPI_EAGAIN.Start();
+                });
             }
 
             base.onRequestTemporaryError(api, request, e);
