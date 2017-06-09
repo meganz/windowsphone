@@ -11,12 +11,21 @@ namespace MegaApp.Services
     static class LogService
     {
         /// <summary>
-        /// Set a MegaLogger implementation to receive logs
+        /// Add a MegaLogger implementation to receive logs
         /// </summary>
         /// <param name="megaLogger">MegaLogger implementation</param>
-        public static void SetLoggerObject(MLoggerInterface megaLogger)
+        public static void AddLoggerObject(MLoggerInterface megaLogger)
         {
-            MegaSDK.setLoggerObject(megaLogger);
+            MegaSDK.addLoggerObject(megaLogger);
+        }
+
+        /// <summary>
+        /// Remove a MegaLogger implementation to stop receiving SDK logs
+        /// </summary>
+        /// <param name="megaLogger">MegaLogger implementation</param>
+        public static void RemoveLoggerObject(MLoggerInterface megaLogger)
+        {
+            MegaSDK.removeLoggerObject(megaLogger);
         }
 
         /// <summary>

@@ -30,7 +30,7 @@ namespace ScheduledCameraUploadTaskAgent
         static ScheduledAgent()
         {
             // Enable a custom logger
-            LogService.SetLoggerObject(new MegaLogger());
+            LogService.AddLoggerObject(new MegaLogger());
 
             // Subscribe to the managed exception handler
             Deployment.Current.Dispatcher.BeginInvoke(delegate
