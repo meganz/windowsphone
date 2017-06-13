@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using mega;
 
-namespace ScheduledCameraUploadTaskAgent
+namespace ScheduledCameraUploadTaskAgent.MegaApi
 {
     public class MegaGlobalListener : MGlobalListenerInterface
     {

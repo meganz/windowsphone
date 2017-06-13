@@ -85,20 +85,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\common\MegaApi\MegaRandomNumberProvider.cs">
-      <Link>MegaRandomNumberProvider.cs</Link>
+      <Link>MegaApi\MegaRandomNumberProvider.cs</Link>
     </Compile>
-    <Compile Include="..\common\Services\LogService.cs">
-      <Link>LogService.cs</Link>
-    </Compile>
-    <Compile Include="ErrorProcessingService.cs" />
-    <Compile Include="MegaGlobalListener.cs" />
+    <Compile Include="Services\ErrorProcessingService.cs" />
+    <Compile Include="Services\LogService.cs" />
+    <Compile Include="MegaApi\MegaGlobalListener.cs" />
     <Compile Include="MegaInputStream.cs" />
-    <Compile Include="MegaLogger.cs" />
-    <Compile Include="MegaRequestListener.cs" />
-    <Compile Include="MegaTransferListener.cs" />
+    <Compile Include="MegaApi\MegaLogger.cs" />
+    <Compile Include="MegaApi\MegaRequestListener.cs" />
+    <Compile Include="MegaApi\MegaTransferListener.cs" />
     <Compile Include="ScheduledAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsService.cs" />
+    <Compile Include="Services\SdkService.cs" />
+    <Compile Include="Services\SettingsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MegaSDK\bindings\wp8\vs2013\mega.vcxproj">
@@ -106,6 +105,7 @@
       <Name>mega</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <ProjectExtensions />

@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.Xna.Framework.Media;
 
-namespace ScheduledCameraUploadTaskAgent
+namespace ScheduledCameraUploadTaskAgent.Services
 {
     /// <summary>
     /// Service that processes errors of the Camera Upload Service

@@ -14,7 +14,7 @@ using System.Windows;
 using Windows.Storage;
 using mega;
 
-namespace ScheduledCameraUploadTaskAgent
+namespace ScheduledCameraUploadTaskAgent.MegaApi
 {
     class MegaLogger : MLoggerInterface
     {

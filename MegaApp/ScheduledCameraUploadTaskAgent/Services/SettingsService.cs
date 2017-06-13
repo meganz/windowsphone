@@ -5,9 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.Storage;
 using mega;
-using MegaApp.Services;
 
-namespace ScheduledCameraUploadTaskAgent
+namespace ScheduledCameraUploadTaskAgent.Services
 {
     static class SettingsService
     {
