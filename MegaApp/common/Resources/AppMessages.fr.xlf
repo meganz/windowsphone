@@ -1569,6 +1569,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Voulez-vous vraiment annuler les téléversements en attente?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" xml:space="preserve">
+          <source>Contact details failed</source>
+          <target state="new">Contact details failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" xml:space="preserve">
+          <source>Upload options</source>
+          <target state="new">Upload options</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" xml:space="preserve">
+          <source>Failed to show the upload options. Please try again later.</source>
+          <target state="new">Failed to show the upload options. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" xml:space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="new">Failed to view the contact details. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
