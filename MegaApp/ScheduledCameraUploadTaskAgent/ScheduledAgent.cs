@@ -5,32 +5,26 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Windows.Storage;
-using mega;
-using MegaApp.MegaApi;
-using MegaApp.Services;
 using Microsoft.Phone.Info;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Xna.Framework.Media;
+using Windows.Storage;
+using mega;
+using ScheduledCameraUploadTaskAgent.MegaApi;
+using ScheduledCameraUploadTaskAgent.Services;
 
 namespace ScheduledCameraUploadTaskAgent
 {
-    public class ScheduledAgent : ScheduledTaskAgent
+    public partial class ScheduledAgent : ScheduledTaskAgent
     {
         private static ScheduledAgent scheduledAgent { get; set; }
-
-        /// <summary>
-        /// MEGA Software Development Kit reference
-        /// </summary>
-        private static MegaSDK MegaSdk { get; set; }
 
         /// <remarks>
         /// ScheduledAgent constructor, initializes the UnhandledException handler
         /// </remarks>
         static ScheduledAgent()
         {
-            // Enable a custom logger
-            LogService.SetLoggerObject(new MegaLogger());
+            SdkService.InitializeSdkParams();
 
             // Subscribe to the managed exception handler
             Deployment.Current.Dispatcher.BeginInvoke(delegate
@@ -60,14 +54,6 @@ namespace ScheduledCameraUploadTaskAgent
         /// </remarks>
         protected override void OnInvoke(ScheduledTask task)
         {
-            if (!InitializeSdk())
-            {
-                // If initialisation of SDK failed
-                // Notify complete and retry next task run
-                this.NotifyComplete();
-                return;
-            }
-
             // Initialisation SDK succeeded
             scheduledAgent = this;
 
@@ -76,7 +62,7 @@ namespace ScheduledCameraUploadTaskAgent
                 task.LastExitReason);
 
             // Add notifications listener
-            MegaSdk.addGlobalListener(new MegaGlobalListener());
+            SdkService.MegaSdk.addGlobalListener(new MegaGlobalListener());
 
             // Abort the service when storage quota exceeded error is raised in the transferlistener
             // Abort will stop the service and it will not be launched again until the user
@@ -94,41 +80,11 @@ namespace ScheduledCameraUploadTaskAgent
             };
             
             // Add transfers listener
-            MegaSdk.addTransferListener(megaTransferListener);
+            SdkService.MegaSdk.addTransferListener(megaTransferListener);
                         
             // Fast login with session token that was saved during MEGA app initial login
             FastLogin();
         }
-
-        /// <summary>
-        /// Initialize the MegaSDK to be able to perform uploads
-        /// </summary>
-        /// <returns>True if creation succeeded and False if creation failed</returns>
-        private static bool InitializeSdk()
-        {
-            try
-            {
-                String folderCameraUploadService = Path.Combine(ApplicationData.Current.LocalFolder.Path, "CameraUploadService");
-                if (!Directory.Exists(folderCameraUploadService))
-                    Directory.CreateDirectory(folderCameraUploadService);
-
-                MegaSdk = new MegaSDK(
-                "Z5dGhQhL",
-                String.Format("{0}/{1}/{2}",
-                    GetBackgroundAgentUserAgent(),
-                    DeviceStatus.DeviceManufacturer,
-                    DeviceStatus.DeviceName),
-                folderCameraUploadService,
-                new MegaRandomNumberProvider());
-
-                return MegaSdk != null;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
 
         /// <summary>
         /// Fast login to MEGA account with user session token
@@ -178,7 +134,7 @@ namespace ScheduledCameraUploadTaskAgent
             };
 
             // Init fastlogin
-            MegaSdk.fastLogin(sessionToken, fastLoginListener);
+            SdkService.MegaSdk.fastLogin(sessionToken, fastLoginListener);
         }
 
         /// <summary>
@@ -200,11 +156,11 @@ namespace ScheduledCameraUploadTaskAgent
                 }
 
                 // Enable the transfers resumption for the Camera Uploads service
-                MegaSdk.enableTransferResumption();
+                SdkService.MegaSdk.enableTransferResumption();
             };
 
             // Init fetch nodes
-            MegaSdk.fetchNodes(fetchNodesListener);
+            SdkService.MegaSdk.fetchNodes(fetchNodesListener);
         }
         
         /// <summary>
@@ -212,7 +168,7 @@ namespace ScheduledCameraUploadTaskAgent
         /// </summary>
         public static async void Upload()
         {
-            MegaSdk.retryPendingConnections();
+            SdkService.MegaSdk.retryPendingConnections();
 
             // Get the date of the last uploaded file
             // Needed so that we do not upload the same file twice
@@ -280,10 +236,10 @@ namespace ScheduledCameraUploadTaskAgent
                             ulong mtime = (ulong) Math.Floor(diff.TotalSeconds);
 
                             // Get the unique fingerprint of the file
-                            string fingerprint = MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
+                            string fingerprint = SdkService.MegaSdk.getFileFingerprint(new MegaInputStream(imageStream), mtime);
 
                             // Check if the fingerprint is already in the subfolders of the Camera Uploads
-                            var mNode = MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
+                            var mNode = SdkService.MegaSdk.getNodeByFingerprint(fingerprint, cameraUploadNode);
 
                             // If node already exists then save the node date and proceed with the next node
                             if (mNode != null)
@@ -308,7 +264,7 @@ namespace ScheduledCameraUploadTaskAgent
                             }
 
                             // Init the upload
-                            MegaSdk.startUploadWithMtimeTempSource(newFilePath, cameraUploadNode, mtime, true);
+                            SdkService.MegaSdk.startUploadWithMtimeTempSource(newFilePath, cameraUploadNode, mtime, true);
                             break;
                         }
                     }
@@ -338,7 +294,7 @@ namespace ScheduledCameraUploadTaskAgent
         private async Task<MNode> GetCameraUploadsNode()
         {
             // First try to retrieve the Cloud Drive root node
-            var rootNode = MegaSdk.getRootNode();
+            var rootNode = SdkService.MegaSdk.getRootNode();
             if (rootNode == null) return null;
 
             // Locate the camera upload node
@@ -358,7 +314,7 @@ namespace ScheduledCameraUploadTaskAgent
             };
             
             // Init folder creation
-            MegaSdk.createFolder("Camera Uploads", rootNode, createFolderListener);
+            SdkService.MegaSdk.createFolder("Camera Uploads", rootNode, createFolderListener);
 
             return await tcs.Task;
         }
@@ -370,7 +326,7 @@ namespace ScheduledCameraUploadTaskAgent
         /// <returns>Camera Uploads folder node in</returns>
         private MNode FindCameraUploadNode(MNode rootNode)
         {
-            var childs = MegaSdk.getChildren(rootNode);
+            var childs = SdkService.MegaSdk.getChildren(rootNode);
 
             for (int x = 0; x < childs.size(); x++)
             {
@@ -400,7 +356,7 @@ namespace ScheduledCameraUploadTaskAgent
             return uploadDir;
         }
 
-        private static string GetBackgroundAgentUserAgent()
+        public static string GetBackgroundAgentUserAgent()
         {
             return String.Format("MEGAWindowsPhoneBackgroundAgent/{0}", "1.0.0.0");
         }

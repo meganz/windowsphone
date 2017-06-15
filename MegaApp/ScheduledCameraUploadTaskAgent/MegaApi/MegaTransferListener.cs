@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
 using mega;
-using MegaApp.Services;
+using ScheduledCameraUploadTaskAgent.Services;
 
-namespace ScheduledCameraUploadTaskAgent
+namespace ScheduledCameraUploadTaskAgent.MegaApi
 {
     class MegaTransferListener: MTransferListenerInterface
     {
