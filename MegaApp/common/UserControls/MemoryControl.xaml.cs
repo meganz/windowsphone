@@ -34,10 +34,10 @@ namespace MegaApp.UserControls
         {
             Dispatcher.BeginInvoke(() =>
             {
-                TxtAppMemory.Text = String.Format("RAM: {0}", memInfo.AppMemoryUsage.ToStringAndSuffix());
-                TxtAppMemoryLimit.Text = String.Format("MAX: {0}", memInfo.AppMemoryLimit.ToStringAndSuffix());
-                TxtAppMemoryPeak.Text = String.Format("PEAK: {0}", memInfo.AppMemoryPeak.ToStringAndSuffix());
-                TxtDeviceMemory.Text = String.Format("PHONE: {0}", memInfo.DeviceMemory.ToStringAndSuffix());
+                TxtAppMemory.Text = String.Format("RAM: {0}", memInfo.AppMemoryUsage.ToStringAndSuffix(2));
+                TxtAppMemoryLimit.Text = String.Format("MAX: {0}", memInfo.AppMemoryLimit.ToStringAndSuffix(2));
+                TxtAppMemoryPeak.Text = String.Format("PEAK: {0}", memInfo.AppMemoryPeak.ToStringAndSuffix(2));
+                TxtDeviceMemory.Text = String.Format("PHONE: {0}", memInfo.DeviceMemory.ToStringAndSuffix(2));
             });
         }
 

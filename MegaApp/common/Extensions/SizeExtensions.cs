@@ -12,7 +12,7 @@ namespace MegaApp.Extensions
     {
         private static readonly string[] SizeSuffixesBytes = { "bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
 
-        public static string ToStringAndSuffix(this UInt64 value)
+        public static string ToStringAndSuffix(this UInt64 value, int numDecimaDigits = 0)
         {
             try
             {
@@ -21,7 +21,9 @@ namespace MegaApp.Extensions
                 int mag = (int)Math.Log(value, 1024);
                 decimal adjustedSize = (decimal)value / (1L << (mag * 10));
 
-                return String.Format("{0:n2} {1}", adjustedSize, SizeSuffixesBytes[mag]);
+                var formatString = "{0:n" + numDecimaDigits + "} {1}";
+
+                return String.Format(formatString, adjustedSize, SizeSuffixesBytes[mag]);
             }
             catch (Exception e) 
             {
@@ -83,7 +85,7 @@ namespace MegaApp.Extensions
             }
         }
 
-        public static ulong FromKBToBytes (this UInt64 value)
+        public static ulong FromKBToBytes(this UInt64 value)
         {
             return value*1024;
         }
@@ -95,7 +97,7 @@ namespace MegaApp.Extensions
 
         public static ulong FromGBToBytes(this UInt64 value)
         {
-            return (value * 1024).FromMBToBytes().FromKBToBytes();
+            return (value * 1024).FromMBToBytes();
         }
     }
 }

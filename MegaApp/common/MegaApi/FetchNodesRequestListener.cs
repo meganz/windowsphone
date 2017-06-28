@@ -407,7 +407,7 @@ namespace MegaApp.MegaApi
                 if (_mainPageViewModel != null) _mainPageViewModel.SetCommandStatus(false);                
 
                 ProgressService.SetProgressIndicator(true,
-                   String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix()));
+                   String.Format(ProgressMessages.FetchingNodes, request.getTransferredBytes().ToStringAndSuffix(2)));
             });
         }
 
@@ -429,7 +429,7 @@ namespace MegaApp.MegaApi
             {
                 ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
                 ProgressService.SetProgressIndicator(true, String.Format(ProgressMessages.FetchingNodes,
-                    request.getTransferredBytes().ToStringAndSuffix()));
+                    request.getTransferredBytes().ToStringAndSuffix(2)));
             });
             
             if (AppMemoryController.IsThresholdExceeded(75UL.FromMBToBytes()))

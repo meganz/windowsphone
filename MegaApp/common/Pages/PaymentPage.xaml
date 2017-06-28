@@ -101,7 +101,7 @@
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
                                 </Run.Foreground>
                             </Run>
-                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}">
+                            <Run Text="{Binding SelectedProduct.PricePeriod, Converter={StaticResource TextToLowerCaseConverter}}">
                                 <Run.Foreground>
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
                                 </Run.Foreground>

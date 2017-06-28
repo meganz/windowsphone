@@ -19,7 +19,7 @@ namespace MegaApp.Models
             : base(parentCollection, childCollection)
         {
             Update(fileInfo);
-            this.Information = this.Size.ToStringAndSuffix();
+            this.Information = this.Size.ToStringAndSuffix(2);
 
             this.IsDefaultImage = true;
             this.DefaultImagePathData = ImageService.GetDefaultFileTypePathData(this.Name);
@@ -46,7 +46,7 @@ namespace MegaApp.Models
             this.Name = fileInfo.Name;
             this.NodePath = fileInfo.FullName;
             this.Size = Convert.ToUInt64(fileInfo.Length);
-            this.SizeText = this.Size.ToStringAndSuffix();
+            this.SizeText = this.Size.ToStringAndSuffix(2);
             this.IsFolder = false;
             this.CreationTime = fileInfo.CreationTime.ToString("dd MMM yyyy");
             this.ModificationTime = fileInfo.LastWriteTime.ToString("dd MMM yyyy");
