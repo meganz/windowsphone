@@ -1352,27 +1352,43 @@ Preserve the {0} code because is for include the exact time until the user has t
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_InternalNodeNotFound" xml:space="preserve">
-    <value>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</value>
+    <value>O arquivo/pasta que você está tentando abrir não foi encontrado. Você provavelmente está logado em uma conta diferente. Por favor, faça o login na conta correta e tente novamente.</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
   </data>
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
-    <value>File/folder not found</value>
+    <value>Arquivo/pasta não encontrado</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</value>
+    <value>Sua transferência em fila excede a atual cota de transferência disponível para sua conta e, portanto, pode ser interrompida.</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>Depleted transfer quota</value>
+    <value>Cota de transferência esgotada</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending downloads?</value>
+    <value>Tem certeza de que deseja cancelar todos os downloads pendentes?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending uploads?</value>
+    <value>Tem certeza de que deseja cancelar todos os envios pendentes?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
+    <value>Falha ao visualizar os detalhes de contato. Por favor, tente novamente mais tarde.</value>
+    <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
+    <value>Falha ao mostrar as informações do contato</value>
+    <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
+    <value>Falha ao mostrar as opções de envio. Por favor, tente novamente mais tarde.</value>
+    <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
+    <value>Opções de upload</value>
+    <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
 </root>

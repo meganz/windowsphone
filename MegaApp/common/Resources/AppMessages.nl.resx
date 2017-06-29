@@ -139,7 +139,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</comment>
   </data>
   <data name="ConfirmNeeded" xml:space="preserve">
-    <value>Controleer uw e-mail en klik op de link om in te loggen en bevestig uw account</value>
+    <value>Controleer uw e-mail en klik op de koppeling om in te loggen en bevestig uw account</value>
     <comment>Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</comment>
   </data>
   <data name="ConfirmNeeded_Title" xml:space="preserve">
@@ -181,7 +181,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
   </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
-    <value>Het ophalen van de download link is mislukt. Probeer alstublieft opnieuw.</value>
+    <value>Het ophalen van de download koppeling is mislukt. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
   </data>
   <data name="DownloadLinkFailed_Title" xml:space="preserve">
@@ -214,11 +214,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to create a folder failed - (String as short as possible).</comment>
   </data>
   <data name="GetLinkFailed" xml:space="preserve">
-    <value>Ophalen van link is mislukt</value>
+    <value>Ophalen van koppeling is mislukt</value>
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Verkrijgen van link mislukt</value>
+    <value>Verkrijgen van koppeling is mislukt</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -986,7 +986,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</comment>
   </data>
   <data name="RemoveLinkFailed" xml:space="preserve">
-    <value>Link verwijderen is mislukt. Probeer alstublieft opnieuw.</value>
+    <value>Koppeling verwijderen is mislukt. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when the process/request to remove a link to a node failed.</comment>
   </data>
   <data name="NoInternetConnectionMessage" xml:space="preserve">
@@ -994,7 +994,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</comment>
   </data>
   <data name="AM_CancelSubscription" xml:space="preserve">
-    <value>U gaat uw MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</value>
+    <value>U gaat uw MEGA abonnement opzeggen. Laat het ons alstublieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</value>
     <comment>Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</comment>
   </data>
   <data name="FolderUnauthorizedAccess" xml:space="preserve">
@@ -1034,7 +1034,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</comment>
   </data>
   <data name="AM_InvalidLink" xml:space="preserve">
-    <value>Ongeldige link</value>
+    <value>Ongeldige koppeling</value>
     <comment>Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</comment>
   </data>
   <data name="SelectFolderFailedNoErrorCode" xml:space="preserve">
@@ -1105,11 +1105,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process to load settings failed - (String as short as possible).</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed" xml:space="preserve">
-    <value>Kopiëren van de MEGA link naar uw klembord mislukt.</value>
+    <value>Kopiëren van de MEGA koppeling naar uw klembord mislukt</value>
     <comment>Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</comment>
   </data>
   <data name="AM_CopyLinkToClipboardFailed_Title" xml:space="preserve">
-    <value>Fout bij het kopiëren van de link</value>
+    <value>Fout bij het kopiëren van de koppeling</value>
     <comment>Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyLoggedInAlert" xml:space="preserve">
@@ -1121,7 +1121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</comment>
   </data>
   <data name="AM_DecryptionKeyAlertMessage" xml:space="preserve">
-    <value>Om toegang te krijgen tot deze map / bestand heeft u de decoderingssleutel nodig. Als u de sleutel niet heeft, neem contact op met de maker van de link.</value>
+    <value>Om toegang te krijgen tot deze map / bestand heeft u de decoderingssleutel nodig. Als u de sleutel niet heeft, neem contact op met de maker van de koppeling.</value>
     <comment>Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</comment>
   </data>
   <data name="AM_DecryptionKeyAlertTitle" xml:space="preserve">
@@ -1135,28 +1135,28 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Dat kan te maken hebben met de volgende redenen:
 - Het bestand is verwijderd omdat de algemene voorwaarden geschonden zijn.
-- Ongeldige URL - de link die u probeert te bezoeken bestaat niet.
+- Ongeldige URL - de koppeling die u probeert te bezoeken bestaat niet.
 - Het bestand is verwijderd door de gebruiker.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Dat kan te maken hebben met de volgende redenen:
-- De folder link is verwijderd omdat de algemene voorwaarden geschonden zijn.
-- Ongeldige URL - de link die u probeert te bezoeken bestaat niet.
-- De folder link is verwijderd door de gebruiker.</value>
+- De mapkoppeling is verwijderd omdat de algemene voorwaarden geschonden zijn.
+- Ongeldige URL - de koppeling die u probeert te bezoeken bestaat niet.
+- De mapkoppeling is verwijderd door de gebruiker.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
-    <value>Link niet beschikbaar</value>
+    <value>Koppeling niet beschikbaar</value>
     <comment>Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</comment>
   </data>
   <data name="AM_OpenLinkFailed" xml:space="preserve">
-    <value>Openen link mislukte [{0}]</value>
+    <value>Openen koppeling mislukte [{0}]</value>
     <comment>Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_OpenLinkFailed_Title" xml:space="preserve">
-    <value>Openen link mislukt</value>
+    <value>Openen koppeling mislukt</value>
     <comment>Title of the dialog displayed when the process to open a link failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DowloadPathUnauthorizedAccess" xml:space="preserve">
@@ -1242,7 +1242,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
-    <value>Importeren link mislukt</value>
+    <value>Importeren van koppeling is mislukt</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
@@ -1286,7 +1286,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>De account die deze link gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</value>
+    <value>De account die deze koppeling gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1294,7 +1294,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">
-    <value>Kan de link van de map niet downloaden. Probeer alstublieft opnieuw.</value>
+    <value>Kan de koppeling van de map niet downloaden. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when fails the process/request to download a folder link.</comment>
   </data>
   <data name="AM_ImportFailed_Title" xml:space="preserve">
@@ -1302,7 +1302,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
-    <value>Kan de map-link niet importeren. Probeer alstublieft opnieuw.</value>
+    <value>Kan de map-koppeling niet importeren. Probeer alstublieft opnieuw.</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
@@ -1310,11 +1310,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
-    <value>De account bevestigingslink die u gebruikt is onvolledig. Check alstublieft de lengte van de link en zorg ervoor dat u de volledige link heeft gekopieerd, probeer het dan opnieuw.</value>
+    <value>De account bevestigingskoppeling die u gebruikt is onvolledig. Check alstublieft de lengte van de koppeling en zorg ervoor dat u de volledige koppeling heeft gekopieerd, probeer het dan opnieuw.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
-    <value>De link die u gebruikt voor een nieuwe aanmelding is niet geldig.</value>
+    <value>De koppeling die u gebruikt voor een nieuwe aanmelding is niet geldig.</value>
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
@@ -1352,7 +1352,7 @@ Preserve the {0} code because is for include the exact time until the user has t
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_InternalNodeNotFound" xml:space="preserve">
-    <value>Het bestand/map van de link die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</value>
+    <value>Het bestand/map van de koppeling die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
   </data>
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
@@ -1374,5 +1374,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
     <value>Weet u zeker dat u alle wachtende uploads wilt annuleren?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
+    <value>Weergeven van gegevens is mislukt. Probeer het later nog eens.</value>
+    <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
+    <value>Contactgegevens mislukt</value>
+    <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
+    <value>De upload opties weergeven zijn mislukt. Probeer later nog eens.</value>
+    <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
+    <value>Upload opties</value>
+    <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
 </root>

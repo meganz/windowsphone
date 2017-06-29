@@ -1407,7 +1407,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCompleting" translate="yes" space="preserve">
           <source>Completing...</source>
-          <target state="translated">Completing...</target>
+          <target state="translated">Abschluss...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being completing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloaded" translate="yes" space="preserve">
@@ -1437,7 +1437,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStatePreparing" translate="yes" space="preserve">
           <source>Preparing...</source>
-          <target state="translated">Preparing...</target>
+          <target state="translated">Vorbereitung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being preparing - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateQueued" translate="yes" space="preserve">
@@ -1447,7 +1447,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateRetrying" translate="yes" space="preserve">
           <source>Retrying...</source>
-          <target state="translated">Retrying...</target>
+          <target state="translated">Wiederholung...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being retrying - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateUploaded" translate="yes" space="preserve">
@@ -1462,12 +1462,12 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelDownloads" translate="yes" space="preserve">
           <source>Cancel downloads</source>
-          <target state="translated">Cancel downloads</target>
+          <target state="translated">Downloads stornieren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel downloads' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CancelUploads" translate="yes" space="preserve">
           <source>Cancel uploads</source>
-          <target state="translated">Cancel uploads</target>
+          <target state="translated">Uploads stornieren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cancel uploads' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Completed" translate="yes" space="preserve">
@@ -1477,7 +1477,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_NoCompletedTransfers" translate="yes" space="preserve">
           <source>No completed transfers</source>
-          <target state="translated">No completed transfers</target>
+          <target state="translated">Keine abgeschlossenen Transfers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
         </trans-unit>
       </group>

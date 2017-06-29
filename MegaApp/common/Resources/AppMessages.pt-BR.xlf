@@ -1541,53 +1541,53 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
+          <target state="translated">O arquivo/pasta que você está tentando abrir não foi encontrado. Você provavelmente está logado em uma conta diferente. Por favor, faça o login na conta correta e tente novamente.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
           <source>File/folder not found</source>
-          <target state="translated">File/folder not found</target>
+          <target state="translated">Arquivo/pasta não encontrado</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">Sua transferência em fila excede a atual cota de transferência disponível para sua conta e, portanto, pode ser interrompida.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">Cota de transferência esgotada</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">Tem certeza de que deseja cancelar todos os downloads pendentes?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">Tem certeza de que deseja cancelar todos os envios pendentes?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="translated">Falha ao visualizar os detalhes de contato. Por favor, tente novamente mais tarde.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="new">Contact details failed</target>
+          <target state="translated">Falha ao mostrar as informações do contato</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" xml:space="preserve">
-          <source>Upload options</source>
-          <target state="new">Upload options</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="new">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">Falha ao mostrar as opções de envio. Por favor, tente novamente mais tarde.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" xml:space="preserve">
-          <source>Failed to view the contact details. Please try again later.</source>
-          <target state="new">Failed to view the contact details. Please try again later.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
+          <source>Upload options</source>
+          <target state="translated">Opções de upload</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

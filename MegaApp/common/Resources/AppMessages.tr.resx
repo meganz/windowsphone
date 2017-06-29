@@ -1376,4 +1376,20 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Tüm bekleyen yüklemeleri sonlandırmak istediğinize emin misiniz?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
+  <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
+    <value>Kişi bilgilerini görüntüleme başarısız oldu. Lütfen daha sonra tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
+    <value>Kişi bilgileri görüntülenemedi</value>
+    <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
+    <value>Yükleme seçeneklerini gösterirken hata oluştu. Lütfen daha sonra tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
+    <value>Yükleme seçenekleri</value>
+    <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
 </root>

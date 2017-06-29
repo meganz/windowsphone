@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AgreeTermsOfService" xml:space="preserve">
-    <value>Trebuie să fii de acord cu termenii serviciului nostru</value>
+    <value>Trebuie să fii de acord cu termenii de utilizare a serviciului nostru</value>
     <comment>Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</comment>
   </data>
   <data name="ConfirmAccountFailed" xml:space="preserve">
@@ -591,9 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.
+    <value>Nu ai selectate o locaţie implicită de descărcare pentru fişierele tale.
 
-To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
+Penrtu a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1260,7 +1260,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <value>Achiziţionarea unui abonament MEGA a eşuat sau a fost anulată. Te rugăm să încerci din nou sau să contactezi asistenţa Windows Store.</value>
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
@@ -1276,7 +1276,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>Achiziţionarea unui abonament MEGA nu a trecut validarea la serverul nostru de licenţă. La repornirea acestei aplicaţii vom reîncerca să validăm licenţele de abonament. Te rugăm să contactezi suportul MEGA dacă eroarea continuă.</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
@@ -1284,7 +1284,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>The account that created this link has been terminated due to multiple violations of our Terms of Service.</value>
+    <value>Contul care a creat acest link a fost desfiinţat din cauza mai multor încălcări ale Termenilor de utilizare a serviciului nostru.</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1308,7 +1308,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
-    <value>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</value>
+    <value>Linkul de confirmare a contului pe care îl foloseşti este incomplet. Te rugăm să verifici lungimea linkului şi să te asiguri că ai copiat întregul linkul, apoi încearcă din nou.</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
@@ -1372,5 +1372,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
     <value>Are you sure you want to cancel all the pending uploads?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
+    <value>Failed to view the contact details. Please try again later.</value>
+    <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
+    <value>Contact details failed</value>
+    <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
+    <value>Failed to show the upload options. Please try again later.</value>
+    <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
+    <value>Opţiuni de încărcare</value>
+    <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
 </root>

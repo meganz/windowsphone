@@ -8,7 +8,7 @@
       <group id="Resx">
         <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
           <source>You must agree with our Terms of Service</source>
-          <target state="translated">Trebuie să fii de acord cu termenii serviciului nostru</target>
+          <target state="translated">Trebuie să fii de acord cu termenii de utilizare a serviciului nostru</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
@@ -608,9 +608,9 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">You have not selected a default download location for your files.
+          <target state="translated">Nu ai selectate o locaţie implicită de descărcare pentru fişierele tale.
 
-To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
+Penrtu a continua cu descărcarea, te rugăm să selectezi un folder de destinaţie sau să mergi la setări pentru a configura locaţia implicită de descărcare.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -1427,7 +1427,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="translated">Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</target>
+          <target state="translated">Achiziţionarea unui abonament MEGA a eşuat sau a fost anulată. Te rugăm să încerci din nou sau să contactezi asistenţa Windows Store.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
@@ -1447,7 +1447,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</target>
+          <target state="translated">Achiziţionarea unui abonament MEGA nu a trecut validarea la serverul nostru de licenţă. La repornirea acestei aplicaţii vom reîncerca să validăm licenţele de abonament. Te rugăm să contactezi suportul MEGA dacă eroarea continuă.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1457,7 +1457,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">The account that created this link has been terminated due to multiple violations of our Terms of Service.</target>
+          <target state="translated">Contul care a creat acest link a fost desfiinţat din cauza mai multor încălcări ale Termenilor de utilizare a serviciului nostru.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1487,7 +1487,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="translated">The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</target>
+          <target state="translated">Linkul de confirmare a contului pe care îl foloseşti este incomplet. Te rugăm să verifici lungimea linkului şi să te asiguri că ai copiat întregul linkul, apoi încearcă din nou.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
@@ -1567,25 +1567,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="new">Contact details failed</target>
+          <target state="translated">Contact details failed</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" xml:space="preserve">
-          <source>Upload options</source>
-          <target state="new">Upload options</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="new">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">Failed to show the upload options. Please try again later.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" xml:space="preserve">
-          <source>Failed to view the contact details. Please try again later.</source>
-          <target state="new">Failed to view the contact details. Please try again later.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
+          <source>Upload options</source>
+          <target state="translated">Opţiuni de încărcare</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>
