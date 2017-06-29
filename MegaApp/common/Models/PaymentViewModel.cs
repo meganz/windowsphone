@@ -134,6 +134,16 @@ namespace MegaApp.Models
             {
                 _selectedProduct = value;
                 OnPropertyChanged("SelectedProduct");
+                OnPropertyChanged("TransferQuota");
+            }
+        }
+
+        public String TransferQuota
+        {
+            get 
+            {
+                return (SelectedProduct != null) ? 
+                    SelectedProduct.Transfer : Plan.Transfer;
             }
         }
                 

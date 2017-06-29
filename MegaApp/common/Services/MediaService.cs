@@ -166,7 +166,15 @@ namespace MegaApp.Services
             // the schedule.
             if (resourceIntensiveTask != null)
             {
-                ScheduledActionService.Remove("ScheduledCameraUploadTaskAgent");
+                try
+                {
+                    ScheduledActionService.Remove("ScheduledCameraUploadTaskAgent");
+                }
+                catch (InvalidOperationException e)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error disabling CAMERA UPLOADS service", e);
+                    return false;
+                }
             }
 
             if (!onOff)
@@ -183,6 +191,7 @@ namespace MegaApp.Services
             };
 
             // Place the call to Add in a try block in case the user has disabled agents.
+            Exception exception;
             try
             {
                 ScheduledActionService.Add(resourceIntensiveTask);
@@ -195,18 +204,19 @@ namespace MegaApp.Services
                 LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Enable CAMERA UPLOADS service");
                 return true;
             }
-            catch (InvalidOperationException exception)
+            catch (InvalidOperationException e)
             {
-                if (exception.Message.Contains("BNS Error: The action is disabled"))
+                exception = e;
+                if (e.Message.Contains("BNS Error: The action is disabled"))
                 {
                     new CustomMessageDialog(AppMessages.BackgroundAgentDisabled_Title,
                         AppMessages.BackgroundAgentDisabled, App.AppInformation).ShowDialog();
                 }
             }
-            catch (SchedulerServiceException) { /* Do nothing */ }
-            catch (ArgumentException) { /* Do nothing -  Possible Bug #4942 */ }
+            catch (SchedulerServiceException e) { exception = e; }
+            catch (ArgumentException e) { exception = e; }
 
-            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service");
+            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error enabling CAMERA UPLOADS service", exception);
             return false;
         }
 

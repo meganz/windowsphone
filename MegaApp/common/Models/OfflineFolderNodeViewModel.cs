@@ -47,7 +47,7 @@ namespace MegaApp.Models
             this.Name = folderInfo.Name;
             this.NodePath = folderInfo.FullName;
             this.Size = 0;
-            this.SizeText = this.Size.ToStringAndSuffix();
+            this.SizeText = this.Size.ToStringAndSuffix(2);
             this.IsFolder = true;
             this.CreationTime = folderInfo.CreationTime.ToString("dd MMM yyyy");
             this.ModificationTime = folderInfo.LastWriteTime.ToString("dd MMM yyyy");
