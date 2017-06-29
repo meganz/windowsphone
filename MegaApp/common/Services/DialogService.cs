@@ -378,136 +378,171 @@ namespace MegaApp.Services
 
         public static void ShowUploadOptions(FolderViewModel folder)
         {
-            App.CloudDrive.CurrentRootNode = (NodeViewModel)folder.FolderRootNode;            
+            if (App.CloudDrive == null)
+                App.CloudDrive = new CloudDriveViewModel(SdkService.MegaSdk, App.AppInformation);
 
-            var uploadRadWindow = new RadModalWindow()
+            bool error = false;            
+            try
             {
-                IsFullScreen = true,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
-                WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
-                HorizontalContentAlignment= HorizontalAlignment.Stretch,
-                VerticalContentAlignment = VerticalAlignment.Top,
-                IsAnimationEnabled = true,
-                OpenAnimation = AnimationService.GetOpenDialogAnimation(),
-                CloseAnimation = AnimationService.GetCloseDialogAnimation(),
-                Margin = new Thickness(0)
-            };
+                if (folder != null && folder.FolderRootNode != null)
+                {
+                    App.CloudDrive.CurrentRootNode = (NodeViewModel)folder.FolderRootNode;
 
-            uploadRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
-            uploadRadWindow.WindowClosed += (sender, args) => DialogClosed();
+                    var uploadRadWindow = new RadModalWindow()
+                    {
+                        IsFullScreen = true,
+                        Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
+                        WindowSizeMode = WindowSizeMode.FitToPlacementTarget,
+                        HorizontalContentAlignment = HorizontalAlignment.Stretch,
+                        VerticalContentAlignment = VerticalAlignment.Top,
+                        IsAnimationEnabled = true,
+                        OpenAnimation = AnimationService.GetOpenDialogAnimation(),
+                        CloseAnimation = AnimationService.GetCloseDialogAnimation(),
+                        Margin = new Thickness(0)
+                    };
 
-            var grid = new Grid()
-            {
-                HorizontalAlignment = HorizontalAlignment.Stretch,
-                VerticalAlignment = VerticalAlignment.Stretch,
-                Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
-                Margin = new Thickness(24, 0, 24, 0)
-            };
-            grid.ColumnDefinitions.Add(new ColumnDefinition()
-            {
-                Width = new GridLength(1, GridUnitType.Auto)
-            });
-            grid.ColumnDefinitions.Add(new ColumnDefinition()
-            {
-                Width = new GridLength(1, GridUnitType.Auto)
-            });
-            grid.RowDefinitions.Add(new RowDefinition()
-            {
-                Height = GridLength.Auto
-            });
-            grid.RowDefinitions.Add(new RowDefinition()
-            {
-                Height = GridLength.Auto
-            });
-            grid.RowDefinitions.Add(new RowDefinition()
-            {
-                Height = GridLength.Auto
-            });
+                    uploadRadWindow.WindowOpening += (sender, args) => DialogOpening(args);
+                    uploadRadWindow.WindowClosed += (sender, args) => DialogClosed();
 
-            var headerText = new TextBlock()
-            {
-                Text = UiResources.UploadOptionsTitle.ToUpper(),
-                HorizontalAlignment = HorizontalAlignment.Left,
-                FontSize = (double)Application.Current.Resources["PhoneFontSizeMedium"],
-                FontFamily = new FontFamily("Segoe WP SemiBold"),
-                Margin = new Thickness(-1, 16, 0, 14)
-            };
-            
-            grid.Children.Add(headerText);
-            Grid.SetColumn(headerText, 0);
-            Grid.SetColumnSpan(headerText, 2);
-            Grid.SetRow(headerText, 0);
+                    var grid = new Grid()
+                    {
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        VerticalAlignment = VerticalAlignment.Stretch,
+                        Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneChromeColor"]),
+                        Margin = new Thickness(24, 0, 24, 0)
+                    };
+                    grid.ColumnDefinitions.Add(new ColumnDefinition()
+                    {
+                        Width = new GridLength(1, GridUnitType.Auto)
+                    });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition()
+                    {
+                        Width = new GridLength(1, GridUnitType.Auto)
+                    });
+                    grid.RowDefinitions.Add(new RowDefinition()
+                    {
+                        Height = GridLength.Auto
+                    });
+                    grid.RowDefinitions.Add(new RowDefinition()
+                    {
+                        Height = GridLength.Auto
+                    });
+                    grid.RowDefinitions.Add(new RowDefinition()
+                    {
+                        Height = GridLength.Auto
+                    });
 
-            var hubCamera = UiService.CreateHubTile(UiResources.TakePhoto, 
-                new Uri("/Assets/Images/take photos" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
-                new Thickness(0, 0, 12, 12));
+                    var headerText = new TextBlock()
+                    {
+                        Text = UiResources.UploadOptionsTitle.ToUpper(),
+                        HorizontalAlignment = HorizontalAlignment.Left,
+                        FontSize = (double)Application.Current.Resources["PhoneFontSizeMedium"],
+                        FontFamily = new FontFamily("Segoe WP SemiBold"),
+                        Margin = new Thickness(-1, 16, 0, 14)
+                    };
+
+                    grid.Children.Add(headerText);
+                    Grid.SetColumn(headerText, 0);
+                    Grid.SetColumnSpan(headerText, 2);
+                    Grid.SetRow(headerText, 0);
+
+                    var hubCamera = UiService.CreateHubTile(UiResources.TakePhoto,
+                        new Uri("/Assets/Images/take photos" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                        new Thickness(0, 0, 12, 12));
+
+                    hubCamera.Tap += (sender, args) =>
+                    {
+                        uploadRadWindow.IsOpen = false;
+                        MediaService.CaptureCameraImage(folder);
+                    };
+
+                    var hubSelfie = UiService.CreateHubTile(UiResources.SelfieMode,
+                        new Uri("/Assets/Images/selfie_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                        new Thickness(0, 0, 0, 12));
+
+                    hubSelfie.Tap += (sender, args) =>
+                    {
+                        uploadRadWindow.IsOpen = false;
+                        NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
+                    };
+
+                    #if WINDOWS_PHONE_80
+                    var hubPicture = UiService.CreateHubTile(UiResources.ImageUpload,
+                        new Uri("/Assets/Images/picture_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
+                        new Thickness(0, 0, 12, 0));
+
+                    hubPicture.Tap += (sender, args) =>
+                    {
+                        uploadRadWindow.IsOpen = false;
+                        NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
+                    };
+                    #elif WINDOWS_PHONE_81
+                    var hubFile = UiService.CreateHubTile(UiResources.FileUpload, 
+                        new Uri("/Assets/Images/file upload" +ImageService.GetResolutionExtension() + ".png", UriKind.Relative), 
+                        new Thickness(0, 0, 12, 0));
            
-            hubCamera.Tap += (sender, args) =>
-            {
-                uploadRadWindow.IsOpen = false;
-                MediaService.CaptureCameraImage(folder);
-            };
+                    hubFile.Tap += (sender, args) =>
+                    {
+                        uploadRadWindow.IsOpen = false;
+                        App.FileOpenOrFolderPickerOpenend = true;
+                        FileService.SelectMultipleFiles();
+                    };
+                    #endif
 
-            var hubSelfie = UiService.CreateHubTile(UiResources.SelfieMode, 
-                new Uri("/Assets/Images/selfie_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
-                new Thickness(0, 0, 0, 12));
-           
-            hubSelfie.Tap += (sender, args) =>
-            {
-                uploadRadWindow.IsOpen = false;
-                NavigateService.NavigateTo(typeof(PhotoCameraPage), NavigationParameter.Normal);
-            };
+                    grid.Children.Add(hubCamera);
+                    grid.Children.Add(hubSelfie);
+                    #if WINDOWS_PHONE_80
+                    grid.Children.Add(hubPicture);
+                    #elif WINDOWS_PHONE_81
+                    grid.Children.Add(hubFile);
+                    #endif
 
-            #if WINDOWS_PHONE_80
-            var hubPicture = UiService.CreateHubTile(UiResources.ImageUpload,
-                new Uri("/Assets/Images/picture_upload" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative),
-                new Thickness(0, 0, 12, 0));            
-            
-            hubPicture.Tap += (sender, args) =>
-            {
-                uploadRadWindow.IsOpen = false;
-                NavigateService.NavigateTo(typeof(MediaSelectionPage), NavigationParameter.Normal);
-            };
-            #elif WINDOWS_PHONE_81
-            var hubFile = UiService.CreateHubTile(UiResources.FileUpload, 
-                new Uri("/Assets/Images/file upload" +ImageService.GetResolutionExtension() + ".png", UriKind.Relative), 
-                new Thickness(0, 0, 12, 0));
-           
-            hubFile.Tap += (sender, args) =>
-            {
-                uploadRadWindow.IsOpen = false;
-                App.FileOpenOrFolderPickerOpenend = true;
-                FileService.SelectMultipleFiles();
-            };
-            #endif
+                    Grid.SetColumn(hubCamera, 0);
+                    Grid.SetColumn(hubSelfie, 1);
+                    #if WINDOWS_PHONE_80
+                    Grid.SetColumn(hubPicture, 0);
+                    #elif WINDOWS_PHONE_81
+                    Grid.SetColumn(hubFile, 0);
+                    #endif
 
-            grid.Children.Add(hubCamera);
-            grid.Children.Add(hubSelfie);
-            #if WINDOWS_PHONE_80
-                grid.Children.Add(hubPicture);
-            #elif WINDOWS_PHONE_81
-            grid.Children.Add(hubFile);
-            #endif
-         
-            Grid.SetColumn(hubCamera, 0);
-            Grid.SetColumn(hubSelfie, 1);
-            #if WINDOWS_PHONE_80
-                Grid.SetColumn(hubPicture, 0);
-            #elif WINDOWS_PHONE_81
-            Grid.SetColumn(hubFile, 0);
-            #endif
-           
-            Grid.SetRow(hubCamera, 1);
-            Grid.SetRow(hubSelfie, 1);
-            #if WINDOWS_PHONE_80
-                Grid.SetRow(hubPicture, 2);
-            #elif WINDOWS_PHONE_81
-            Grid.SetRow(hubFile, 2);
-            #endif
-         
-            uploadRadWindow.Content = grid;
+                    Grid.SetRow(hubCamera, 1);
+                    Grid.SetRow(hubSelfie, 1);
+                    #if WINDOWS_PHONE_80
+                    Grid.SetRow(hubPicture, 2);
+                    #elif WINDOWS_PHONE_81
+                    Grid.SetRow(hubFile, 2);
+                    #endif
 
-            uploadRadWindow.IsOpen = true;
+                    uploadRadWindow.Content = grid;
+
+                    uploadRadWindow.IsOpen = true;
+                }
+                else
+                {
+                    error = true;
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error opening the upload options dialog");
+                }
+                
+            }
+            catch(Exception e)
+            {
+                error = true;
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error opening the upload options dialog", e);
+            }
+            finally
+            {
+                if(error)
+                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    {
+                        new CustomMessageDialog(
+                            AppMessages.AM_ShowUploadOptionsFailed_Title.ToUpper(),
+                            AppMessages.AM_ShowUploadOptionsFailed,
+                            App.AppInformation,
+                            MessageDialogButtons.Ok).ShowDialog();
+                    });
+                }
+            }
         }
 
         public static void ShowSortDialog(FolderViewModel folder)

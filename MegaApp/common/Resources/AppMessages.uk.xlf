@@ -1457,7 +1457,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">Дію відповідного облікового запису було припинено через численні порушення наших Умов надання послуг.</target>
+          <target state="translated">Дію облікового запису було припинено через численні порушення Умов надання послуг.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1566,6 +1566,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Are you sure you want to cancel all the pending uploads?</source>
           <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
+          <source>Contact details failed</source>
+          <target state="translated">Contact details failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
+          <source>Failed to show the upload options. Please try again later.</source>
+          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
+          <source>Upload options</source>
+          <target state="translated">Варіанти завантаження</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

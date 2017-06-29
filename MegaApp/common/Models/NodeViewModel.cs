@@ -696,7 +696,7 @@ namespace MegaApp.Models
             this.ParentContainerType = parentContainerType;
             this.Name = megaNode.getName();
             this.Size = MegaSdk.getSize(megaNode);
-            this.SizeText = this.Size.ToStringAndSuffix();
+            this.SizeText = this.Size.ToStringAndSuffix(2);
             this.IsExported = megaNode.isExported();
             this.CreationTime = ConvertDateToString(megaNode.getCreationTime()).ToString("dd MMM yyyy");
 

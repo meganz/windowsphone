@@ -83,7 +83,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_GetLink" translate="yes" space="preserve">
           <source>Get link</source>
-          <target state="translated">Bekijk link</target>
+          <target state="translated">Haal de koppeling op</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoadingPreview" translate="yes" space="preserve">
@@ -98,7 +98,7 @@
         </trans-unit>
         <trans-unit id="Resx/MegaLinkTitle" translate="yes" space="preserve">
           <source>MEGA link:</source>
-          <target state="translated">Mega link:</target>
+          <target state="translated">Mega koppeling:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MegaShareLinkMessage" translate="yes" space="preserve">
@@ -143,7 +143,7 @@
         </trans-unit>
         <trans-unit id="Resx/UI_OpenMegaLink" translate="yes" space="preserve">
           <source>Open MEGA link</source>
-          <target state="translated">Open MEGA link</target>
+          <target state="translated">Open MEGA koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
@@ -273,7 +273,7 @@
         </trans-unit>
         <trans-unit id="Resx/HomeRoot" translate="yes" space="preserve">
           <source>Home</source>
-          <target state="translated">Home</target>
+          <target state="translated">Startpagina</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RubbishBinRoot" translate="yes" space="preserve">
@@ -321,7 +321,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkOptions" translate="yes" space="preserve">
           <source>Link options</source>
-          <target state="translated">Link opties</target>
+          <target state="translated">Koppelingsopties</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectPhoto" translate="yes" space="preserve">
@@ -637,7 +637,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess2" translate="yes" space="preserve">
           <source>fully encrypted access</source>
-          <target state="translated">volledig versleutelde toegang</target>
+          <target state="translated">volledig gecodeerde toegang</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourAccess3" translate="yes" space="preserve">
@@ -657,7 +657,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy2" translate="yes" space="preserve">
           <source>end-to-end encryption.</source>
-          <target state="translated">eind-naar-eind encryptie.</target>
+          <target state="translated">eind-tot-eind encryptie.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</note>
         </trans-unit>
         <trans-unit id="Resx/InitTourPrivacy_Title" translate="yes" space="preserve">
@@ -925,7 +925,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
         </trans-unit>
         <trans-unit id="Resx/UI_PasteMegaLink" translate="yes" space="preserve">
           <source>Paste MEGA link:</source>
-          <target state="translated">Plak MEGA link:</target>
+          <target state="translated">Plak MEGA koppeling:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for dialog message to import/download a MEGA link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RenewsOn" translate="yes" space="preserve">
@@ -1232,12 +1232,12 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ManageLink" translate="yes" space="preserve">
           <source>Manage link</source>
-          <target state="translated">Beheer link</target>
+          <target state="translated">Koppeling beheren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_RemoveLink" translate="yes" space="preserve">
           <source>Remove link</source>
-          <target state="translated">Verwijder link</target>
+          <target state="translated">Verwijder koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/OSRestrictions" translate="yes" space="preserve">
@@ -1317,17 +1317,17 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FileLink" translate="yes" space="preserve">
           <source>File link</source>
-          <target state="translated">Bestandslink</target>
+          <target state="translated">Bestands-koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FolderLink" translate="yes" space="preserve">
           <source>Folder link</source>
-          <target state="translated">Mapkoppeling</target>
+          <target state="translated">Map koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_OpenLink" translate="yes" space="preserve">
           <source>Open link</source>
-          <target state="translated">Open link</target>
+          <target state="translated">Open koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_DebugMode" translate="yes" space="preserve">
@@ -1382,12 +1382,12 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LinkWithKey" translate="yes" space="preserve">
           <source>Link with key</source>
-          <target state="translated">Link met code</target>
+          <target state="translated">Koppeling met code</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_LinkWithoutKey" translate="yes" space="preserve">
           <source>Link without key</source>
-          <target state="translated">Link zonder sleutel</target>
+          <target state="translated">Koppeling zonder sleutel</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">

@@ -1374,4 +1374,20 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>¿Seguro que quieres cancelar todas las subidas pendientes?</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
+  <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
+    <value>Error al cargar los detalles del contacto. Por favor, inténtalo de nuevo más tarde.</value>
+    <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
+  </data>
+  <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
+    <value>Fallo en los Detalles del contacto</value>
+    <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
+    <value>Error al mostrar las opciones de subida. Por favor, inténtalo más tarde.</value>
+    <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
+  </data>
+  <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
+    <value>Opciones de subida</value>
+    <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
 </root>

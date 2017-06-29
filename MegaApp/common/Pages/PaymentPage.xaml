@@ -79,7 +79,7 @@
                     </RichTextBox>
 					<RichTextBox Grid.Column="1" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="{StaticResource PhoneFontSizeMedium}">
                         <Paragraph>
-                            <Run x:Name="PlanBandwidth" Text="{Binding Plan.Transfer}"/>
+                            <Run x:Name="PlanBandwidth" Text="{Binding TransferQuota}"/>
                             <Run Text="{Binding LocalizedUiResources.Bandwidth, Source={StaticResource LocalizedStrings}}">
                                 <Run.Foreground>
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
@@ -101,7 +101,7 @@
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
                                 </Run.Foreground>
                             </Run>
-                            <Run Text="{Binding LocalizedUiResources.Month, Source={StaticResource LocalizedStrings}, Converter={StaticResource TextToLowerCaseConverter}}">
+                            <Run Text="{Binding SelectedProduct.PricePeriod, Converter={StaticResource TextToLowerCaseConverter}}">
                                 <Run.Foreground>
                                     <SolidColorBrush Color="{StaticResource PhoneForegroundColor}" Opacity="0.3"/>
                                 </Run.Foreground>

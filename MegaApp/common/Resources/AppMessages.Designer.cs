@@ -805,6 +805,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to show the upload options. Please try again later..
+        /// </summary>
+        public static string AM_ShowUploadOptionsFailed {
+            get {
+                return ResourceManager.GetString("AM_ShowUploadOptionsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Upload options.
+        /// </summary>
+        public static string AM_ShowUploadOptionsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ShowUploadOptionsFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a You have attempted to log in too many times. Please wait until {0} and try again..
         /// </summary>
         public static string AM_TooManyFailedLoginAttempts {
@@ -828,6 +846,24 @@ namespace MegaApp.Resources {
         public static string AM_TransferOverquotaWarning_Title {
             get {
                 return ResourceManager.GetString("AM_TransferOverquotaWarning_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed to view the contact details. Please try again later..
+        /// </summary>
+        public static string AM_ViewContactDetailsFailed {
+            get {
+                return ResourceManager.GetString("AM_ViewContactDetailsFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contact details failed.
+        /// </summary>
+        public static string AM_ViewContactDetailsFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ViewContactDetailsFailed_Title", resourceCulture);
             }
         }
         

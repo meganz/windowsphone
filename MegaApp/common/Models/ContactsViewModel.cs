@@ -658,11 +658,22 @@ namespace MegaApp.Models
 
         public void ViewContactDetails()
         {
-            if (FocusedContact != null)
+            if (FocusedContact == null || PhoneApplicationService.Current == null)
             {
-                PhoneApplicationService.Current.State["SelectedContact"] = FocusedContact;
-                NavigateService.NavigateTo(typeof(ContactDetailsPage), NavigationParameter.Normal);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error viewing contact details");
+                OnUiThread(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_ViewContactDetailsFailed_Title.ToUpper(),
+                        AppMessages.AM_ViewContactDetailsFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
+                return;
             }
+
+            PhoneApplicationService.Current.State["SelectedContact"] = FocusedContact;
+            NavigateService.NavigateTo(typeof(ContactDetailsPage), NavigationParameter.Normal);
         }
 
         public void ChangeMenu(IList iconButtons, IList menuItems)

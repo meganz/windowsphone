@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 using Microsoft.Phone.Info;
 using Windows.Storage;
 using mega;
 using MegaApp.MegaApi;
 
-namespace MegaApp.Services
+namespace ScheduledCameraUploadTaskAgent.Services
 {
     public static class SdkService
     {
@@ -19,20 +24,6 @@ namespace MegaApp.Services
                 if (_megaSdk != null) return _megaSdk;
                 _megaSdk = CreateSdk();
                 return _megaSdk;
-            }
-        }
-
-        /// <summary>
-        /// MegaSDK instance for the folder links management
-        /// </summary>
-        private static MegaSDK _megaSdkFolderLinks;
-        public static MegaSDK MegaSdkFolderLinks
-        {
-            get
-            {
-                if (_megaSdkFolderLinks != null) return _megaSdkFolderLinks;
-                _megaSdkFolderLinks = CreateSdk();
-                return _megaSdkFolderLinks;
             }
         }
 
@@ -54,18 +45,10 @@ namespace MegaApp.Services
 
             //You can send messages to the logger using MEGASDK.log(), those messages will be received
             //in the active logger
-            LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
+            MegaSDK.log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
 
             // Set the ID for statistics
             MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
-
-            // Set the language code used by the app
-            var appLanguageCode = AppService.GetAppLanguageCode();
-            if (!MegaSdk.setLanguage(appLanguageCode))
-            {
-                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, 
-                    string.Format("Invalid app language code '{0}'", appLanguageCode));
-            }
         }
 
         /// <summary>
@@ -74,11 +57,17 @@ namespace MegaApp.Services
         /// <returns>The new MegaSDK instance</returns>
         private static MegaSDK CreateSdk()
         {
-            // Initialize a MegaSDK instance
+            String folderCameraUploadService = Path.Combine(ApplicationData.Current.LocalFolder.Path, "CameraUploadService");
+            if (!Directory.Exists(folderCameraUploadService))
+                Directory.CreateDirectory(folderCameraUploadService);
+
             return new MegaSDK(
                 "Z5dGhQhL",
-                AppService.GetAppUserAgent(),
-                ApplicationData.Current.LocalFolder.Path,
+                String.Format("{0}/{1}/{2}",
+                    ScheduledAgent.GetBackgroundAgentUserAgent(),
+                    DeviceStatus.DeviceManufacturer,
+                    DeviceStatus.DeviceName),
+                folderCameraUploadService,
                 new MegaRandomNumberProvider());
         }
     }

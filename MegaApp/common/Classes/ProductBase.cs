@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using mega;
+using MegaApp.Extensions;
 using MegaApp.Resources;
 
 namespace MegaApp.Classes
@@ -43,25 +44,9 @@ namespace MegaApp.Classes
             get
             {
                 if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)
-                {
                     return "50 GB";
-                }
                 else
-                {
-                    switch (GbStorage)
-                    {                        
-                        case 200:
-                            return "200 GB";
-                        case 500:
-                            return "500 GB";
-                        case 2048:
-                            return "2 TB";
-                        case 4096:
-                            return "4 TB";
-                    }
-                }
-                
-                return null;
+                    return Convert.ToUInt64(GbStorage).FromGBToBytes().ToStringAndSuffix();
             }
         }
 
@@ -72,7 +57,7 @@ namespace MegaApp.Classes
                 if (AccountType == MAccountType.ACCOUNT_TYPE_FREE)                
                     return UiResources.Limited;
                 else
-                    return String.Format("{0} TB", GbTransfer/1024);
+                    return Convert.ToUInt64(GbTransfer).FromGBToBytes().ToStringAndSuffix();
             }
         }
 

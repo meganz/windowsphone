@@ -2,14 +2,14 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 using mega;
-using MegaApp.MegaApi;
+using ScheduledCameraUploadTaskAgent.MegaApi;
 
-namespace MegaApp.Services
+namespace ScheduledCameraUploadTaskAgent.Services
 {
     /// <summary>
     /// Helper service to send logs to the loggin system
     /// </summary>
-    static class LogService
+    internal static class LogService
     {
         /// <summary>
         /// Main MegaLogger instance

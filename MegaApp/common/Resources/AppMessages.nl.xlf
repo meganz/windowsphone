@@ -34,7 +34,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
           <source>Check your e-mail and click the link to login and confirm your account</source>
-          <target state="translated">Controleer uw e-mail en klik op de link om in te loggen en bevestig uw account</target>
+          <target state="translated">Controleer uw e-mail en klik op de koppeling om in te loggen en bevestig uw account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
@@ -86,7 +86,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
-          <target state="translated">Het ophalen van de download link is mislukt. Probeer alstublieft opnieuw.</target>
+          <target state="translated">Het ophalen van de download koppeling is mislukt. Probeer alstublieft opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when failed to retrieve a download link.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" space="preserve">
@@ -127,12 +127,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
           <source>Failed to get link</source>
-          <target state="translated">Ophalen van link is mislukt</target>
+          <target state="translated">Ophalen van koppeling is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">Verkrijgen van link mislukt</target>
+          <target state="translated">Verkrijgen van koppeling is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -873,7 +873,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">U gaat uw MEGA abonnement opzeggen. Laat het ons alsjeblieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</target>
+          <target state="translated">U gaat uw MEGA abonnement opzeggen. Laat het ons alstublieft weten als er iets is wat we kunnen doen om u te helpen van gedachten te veranderen.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
@@ -1126,7 +1126,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="translated">Link verwijderen is mislukt. Probeer alstublieft opnieuw.</target>
+          <target state="translated">Koppeling verwijderen is mislukt. Probeer alstublieft opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
@@ -1180,7 +1180,7 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
           <source>Invalid link</source>
-          <target state="translated">Ongeldige link</target>
+          <target state="translated">Ongeldige koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
@@ -1249,12 +1249,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Kopiëren van de MEGA link naar uw klembord mislukt.</target>
+          <target state="translated">Kopiëren van de MEGA koppeling naar uw klembord mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
           <source>Error copying link</source>
-          <target state="translated">Fout bij het kopiëren van de link</target>
+          <target state="translated">Fout bij het kopiëren van de koppeling</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
@@ -1269,7 +1269,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
-          <target state="translated">Om toegang te krijgen tot deze map / bestand heeft u de decoderingssleutel nodig. Als u de sleutel niet heeft, neem contact op met de maker van de link.</target>
+          <target state="translated">Om toegang te krijgen tot deze map / bestand heeft u de decoderingssleutel nodig. Als u de sleutel niet heeft, neem contact op met de maker van de koppeling.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
@@ -1289,7 +1289,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been deleted by the user.</source>
           <target state="needs-review-translation">Dat kan te maken hebben met de volgende redenen:
 - Het bestand is verwijderd omdat de algemene voorwaarden geschonden zijn.
-- Ongeldige URL - de link die u probeert te bezoeken bestaat niet.
+- Ongeldige URL - de koppeling die u probeert te bezoeken bestaat niet.
 - Het bestand is verwijderd door de gebruiker.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
         </trans-unit>
@@ -1299,25 +1299,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
           <target state="needs-review-translation">Dat kan te maken hebben met de volgende redenen:
-- De folder link is verwijderd omdat de algemene voorwaarden geschonden zijn.
-- Ongeldige URL - de link die u probeert te bezoeken bestaat niet.
-- De folder link is verwijderd door de gebruiker.</target>
+- De mapkoppeling is verwijderd omdat de algemene voorwaarden geschonden zijn.
+- Ongeldige URL - de koppeling die u probeert te bezoeken bestaat niet.
+- De mapkoppeling is verwijderd door de gebruiker.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
-          <target state="translated">Link niet beschikbaar</target>
+          <target state="translated">Koppeling niet beschikbaar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
           <source>Open link failed [{0}]</source>
-          <target state="translated">Openen link mislukte [{0}]</target>
+          <target state="translated">Openen koppeling mislukte [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
           <source>Open link failed</source>
-          <target state="translated">Openen link mislukt</target>
+          <target state="translated">Openen koppeling mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
@@ -1404,7 +1404,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
           <source>Link import failed</source>
-          <target state="translated">Importeren link mislukt</target>
+          <target state="translated">Importeren van koppeling is mislukt</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" space="preserve">
@@ -1459,7 +1459,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">De account die deze link gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</target>
+          <target state="translated">De account die deze koppeling gecreëerd heeft is beëindigd door meerdere overtredingen van onze Gebruikersvoorwaarden.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1469,7 +1469,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not download the folder link. Please try again.</source>
-          <target state="translated">Kan de link van de map niet downloaden. Probeer alstublieft opnieuw.</target>
+          <target state="translated">Kan de koppeling van de map niet downloaden. Probeer alstublieft opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
@@ -1479,7 +1479,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not import the folder link. Please try again.</source>
-          <target state="translated">Kan de map-link niet importeren. Probeer alstublieft opnieuw.</target>
+          <target state="translated">Kan de map-koppeling niet importeren. Probeer alstublieft opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
@@ -1489,12 +1489,12 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="translated">De account bevestigingslink die u gebruikt is onvolledig. Check alstublieft de lengte van de link en zorg ervoor dat u de volledige link heeft gekopieerd, probeer het dan opnieuw.</target>
+          <target state="translated">De account bevestigingskoppeling die u gebruikt is onvolledig. Check alstublieft de lengte van de koppeling en zorg ervoor dat u de volledige koppeling heeft gekopieerd, probeer het dan opnieuw.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
           <source>The link you are using for a new signup is not valid.</source>
-          <target state="translated">De link die u gebruikt voor een nieuwe aanmelding is niet geldig.</target>
+          <target state="translated">De koppeling die u gebruikt voor een nieuwe aanmelding is niet geldig.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
@@ -1541,7 +1541,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">Het bestand/map van de link die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</target>
+          <target state="translated">Het bestand/map van de koppeling die u probeert te openen werd niet gevonden. U bent waarschijnlijk ingelogd in een andere account. Log in de juiste account en probeer het nogmaals.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
@@ -1568,6 +1568,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Are you sure you want to cancel all the pending uploads?</source>
           <target state="translated">Weet u zeker dat u alle wachtende uploads wilt annuleren?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="translated">Weergeven van gegevens is mislukt. Probeer het later nog eens.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
+          <source>Contact details failed</source>
+          <target state="translated">Contactgegevens mislukt</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
+          <source>Failed to show the upload options. Please try again later.</source>
+          <target state="translated">De upload opties weergeven zijn mislukt. Probeer later nog eens.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
+          <source>Upload options</source>
+          <target state="translated">Upload opties</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

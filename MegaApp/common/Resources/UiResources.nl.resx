@@ -170,7 +170,7 @@
     <comment>Label shown with an animation when the app is loading a preview - (String as short as possible).</comment>
   </data>
   <data name="MegaLinkTitle" xml:space="preserve">
-    <value>Mega link:</value>
+    <value>Mega koppeling:</value>
     <comment>Text placed just before the link that will be shared or copied to clipboard. Try to preserve the MEGA uppercase word. - (String as short as possible).</comment>
   </data>
   <data name="MegaShareLinkMessage" xml:space="preserve">
@@ -298,7 +298,7 @@
     <comment>Label for any 'Done' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="HomeRoot" xml:space="preserve">
-    <value>Home</value>
+    <value>Startpagina</value>
     <comment>Label for the name of the Cloud Drive breadcum root node - (String as short as possible).</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
@@ -337,7 +337,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Import' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="LinkOptions" xml:space="preserve">
-    <value>Link opties</value>
+    <value>Koppelingsopties</value>
     <comment>Label for any 'Link options' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectPhoto" xml:space="preserve">
@@ -578,7 +578,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'get' for the first part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess2" xml:space="preserve">
-    <value>volledig versleutelde toegang</value>
+    <value>volledig gecodeerde toegang</value>
     <comment>Label 'fully encrypted access' for the second part of the sentence 'get fully encrypted access anywhere, anytime.', to build this sentence in three colors into the init tour page. Don't place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourAccess3" xml:space="preserve">
@@ -594,7 +594,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label 'keep your files safe with MEGA's' for the first part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't place '.' at the end of the string.  Keep all in lowercase less the word MEGA in uppercase.</comment>
   </data>
   <data name="InitTourPrivacy2" xml:space="preserve">
-    <value>eind-naar-eind encryptie.</value>
+    <value>eind-tot-eind encryptie.</value>
     <comment>Label 'end-to-end encryption.' for the second part of the sentence 'keep your files safe with MEGA's end-to-end encryption.', to build this sentence in two colors into the init tour page. Don't forget to place '.' at the end of the string. Keep all in lowercase.</comment>
   </data>
   <data name="InitTourPrivacy_Title" xml:space="preserve">
@@ -1025,7 +1025,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="ManageLink" xml:space="preserve">
-    <value>Beheer link</value>
+    <value>Koppeling beheren</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="OSRestrictions" xml:space="preserve">
@@ -1081,7 +1081,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
   <data name="UI_GetLink" xml:space="preserve">
-    <value>Bekijk link</value>
+    <value>Haal de koppeling op</value>
     <comment>Label for any 'Get link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_Login" xml:space="preserve">
@@ -1113,7 +1113,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Close session' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_RemoveLink" xml:space="preserve">
-    <value>Verwijder link</value>
+    <value>Verwijder koppeling</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FirstNameWatermark" xml:space="preserve">
@@ -1133,11 +1133,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Select' button, link, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenMegaLink" xml:space="preserve">
-    <value>Open MEGA link</value>
+    <value>Open MEGA koppeling</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
   <data name="UI_PasteMegaLink" xml:space="preserve">
-    <value>Plak MEGA link:</value>
+    <value>Plak MEGA koppeling:</value>
     <comment>Label for dialog message to import/download a MEGA link - (String as short as possible).</comment>
   </data>
   <data name="UI_ImportLinkBorderText" xml:space="preserve">
@@ -1154,15 +1154,15 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Decryption key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FileLink" xml:space="preserve">
-    <value>Bestandslink</value>
+    <value>Bestands-koppeling</value>
     <comment>Label for any 'File link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FolderLink" xml:space="preserve">
-    <value>Mapkoppeling</value>
+    <value>Map koppeling</value>
     <comment>Label for any 'Folder link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_OpenLink" xml:space="preserve">
-    <value>Open link</value>
+    <value>Open koppeling</value>
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
@@ -1221,11 +1221,11 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Free' button, link, text, title, etc. Is to indicate that is a product free of charges, no costs - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithKey" xml:space="preserve">
-    <value>Link met code</value>
+    <value>Koppeling met code</value>
     <comment>Label for any 'Link with key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_LinkWithoutKey" xml:space="preserve">
-    <value>Link zonder sleutel</value>
+    <value>Koppeling zonder sleutel</value>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">

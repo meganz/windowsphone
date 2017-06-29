@@ -1548,23 +1548,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">您排队中的传输超过您帐户可用的当前传输配额，因此可能会中断。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">消耗的转移配额</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">您确定要取消所有待处理的下载内容吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">您确定要取消所有待处理的上传内容吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
+          <source>Failed to view the contact details. Please try again later.</source>
+          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
+          <source>Contact details failed</source>
+          <target state="translated">Contact details failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
+          <source>Failed to show the upload options. Please try again later.</source>
+          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
+          <source>Upload options</source>
+          <target state="translated">上传方式</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -29,13 +29,21 @@ namespace MegaApp.Classes
             {
                 return Months == 1 ? UiResources.Monthly : UiResources.Annually;
             }
-        }        
+        }
 
         public string Price
         {
             get
             {
                 return String.Format("{0:N} {1}", (double)Amount/100, Currency);
+            }
+        }
+
+        public string PricePeriod
+        {
+            get
+            {
+                return Months == 1 ? UiResources.Month : UiResources.Year;
             }
         }
     }
