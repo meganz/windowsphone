@@ -362,25 +362,54 @@ namespace MegaApp.Models
         /// <returns>Boolean value indicating if all went well or not.</returns>
         public async Task<bool> MultipleShare()
         {
-            int count = ChildNodes.Count(n => n.IsMultiSelected);
-            if (count < 1) return false;
-
-            List<StorageFile> storageItems = new List<StorageFile>(count);
-            foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+            try
             {
-                if (node == null || node.IsFolder) continue;
+                int count = ChildNodes.Count(n => n.IsMultiSelected);
+                if (count < 1)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "No items selected for share.");
+                    return false;
+                }
 
-                StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(node.NodePath);
-                storageItems.Add(selectedNode);
+                List<StorageFile> storageItems = new List<StorageFile>(count);
+                if (storageItems == null)
+                    throw new ArgumentNullException("storageItems", "Error creating the selected items list for share.");
+
+                foreach (var node in ChildNodes.Where(n => n.IsMultiSelected))
+                {
+                    if (node == null || node.IsFolder) continue;
+
+                    StorageFile selectedNode = await StorageFile.GetFileFromPathAsync(node.NodePath);
+                    storageItems.Add(selectedNode);
+                }
+
+                if (storageItems.Count < 1)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO, "No items selected for share.");
+                    return false;
+                }
+
+                DialogService.ShowShareMediaTask(storageItems);
+
+                this.IsMultiSelectActive = false;
+
+                return true;
             }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Failed to share items from MEGA.", e);
+                
+                Deployment.Current.Dispatcher.BeginInvoke(() =>
+                {
+                    new CustomMessageDialog(
+                        AppMessages.AM_ShareFromMegaFailed_Title.ToUpper(),
+                        AppMessages.AM_ShareFromMegaFailed_Message,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                });
 
-            if (storageItems == null || storageItems.Count < 1) return false;
-
-            DialogService.ShowShareMediaTask(storageItems);
-
-            this.IsMultiSelectActive = false;
-
-            return true;
+                return false;
+            }
         }
 
         #endregion
