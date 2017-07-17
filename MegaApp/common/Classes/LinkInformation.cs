@@ -20,19 +20,13 @@ namespace MegaApp.Classes
         public LinkInformation()
         {
             this.SelectedNodes = new List<IMegaNode>();
-            this.FoldersToImport = new Dictionary<string, List<MNode>>();
-            this.FolderPaths = new Dictionary<string, string>();
-
             this.Reset();
         }
 
         /// <summary>
         /// Method to reset all the class properties to the default values.
         /// </summary>
-        /// <param name="clearDictionaries">
-        /// Value which indicates if clear the dictionaries used to import folder links.
-        /// </param>
-        public void Reset(bool clearDictionaries = true)
+        public void Reset()
         {
             this.ActiveLink = null;
             this.UriLink = UriLinkType.None;
@@ -42,12 +36,6 @@ namespace MegaApp.Classes
             this.SelectedNodes.Clear();
 
             this.HasFetchedNodesFolderLink = false;
-
-            if (clearDictionaries)
-            {
-                this.FoldersToImport.Clear();
-                this.FolderPaths.Clear();
-            }
         }
 
         #region Properties
@@ -86,20 +74,6 @@ namespace MegaApp.Classes
         /// Indicates if the app has already fetched nodes of the folder link.
         /// </summary>
         public bool HasFetchedNodesFolderLink { get; set; }
-
-        /// <summary>
-        /// Dictionary to store the subfolders to import from a folder link.
-        /// <para>- Key: Base64Handle of the parent folder.</para>
-        /// <para>- Value: Path of the folder node to import.</para>
-        /// </summary>
-        public Dictionary<String, List<MNode>> FoldersToImport;
-
-        /// <summary>
-        /// Dictionary to store the subfolder node paths to import from a folder link.
-        /// <para>- Key: Base64Handle of folder node to import.</para>
-        /// <para>- Value: Path of the folder node to import.</para>
-        /// </summary>
-        public Dictionary<String, String> FolderPaths;
 
         #endregion
     }
