@@ -239,12 +239,24 @@ namespace MegaApp.Services
             shareButton.Tap += (sender, args) =>
             {
                 dialog.IsOpen = false;
-                var shareLinkTask = new ShareLinkTask 
+                try
                 {
-                    LinkUri = new Uri(messageText.Text), 
-                    Title = UiResources.MegaShareLinkMessage 
-                };
-                shareLinkTask.Show();
+                    var shareLinkTask = new ShareLinkTask
+                    {
+                        LinkUri = new Uri(messageText.Text),
+                        Title = UiResources.MegaShareLinkMessage
+                    };
+                    shareLinkTask.Show();
+                }
+                catch(Exception e)
+                {
+                    LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error sharing a file/folder link", e);
+                    new CustomMessageDialog(
+                        AppMessages.AM_ShareLinkFailed_Title,
+                        AppMessages.AM_ShareLinkFailed,
+                        App.AppInformation,
+                        MessageDialogButtons.Ok).ShowDialog();
+                }
             };
 
             buttonsGrid.Children.Add(copyButton);

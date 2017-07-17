@@ -1587,6 +1587,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">アップロードのオプション</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" xml:space="preserve">
+          <source>Error sharing link</source>
+          <target state="new">Error sharing link</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" xml:space="preserve">
+          <source>Failed to share the file/folder link. Please try again.</source>
+          <target state="new">Failed to share the file/folder link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
