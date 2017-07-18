@@ -1372,7 +1372,7 @@ namespace MegaApp.Pages
                     MessageDialogButtons.Ok).ShowDialog();
             }
 
-            App.LinkInformation.Reset(false);
+            App.LinkInformation.Reset();
 
             _mainPageViewModel.CloudDrive.CurrentDisplayMode = DriveDisplayMode.CloudDrive;
             SetApplicationBarData();
