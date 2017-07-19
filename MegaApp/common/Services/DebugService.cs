@@ -10,7 +10,7 @@ namespace MegaApp.Services
 {
     static class DebugService
     {
-        public static DebugSettingsViewModel _debugSettings;
+        private static DebugSettingsViewModel _debugSettings;
         public static DebugSettingsViewModel DebugSettings 
         { 
             get

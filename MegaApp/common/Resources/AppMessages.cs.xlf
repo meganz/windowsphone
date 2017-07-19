@@ -1589,6 +1589,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Možnosti nahrávání</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" xml:space="preserve">
+          <source>Save the log file</source>
+          <target state="new">Save the log file</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" xml:space="preserve">
+          <source>Do you want to save the log file in an external location to use it later?</source>
+          <target state="new">Do you want to save the log file in an external location to use it later?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
+        </trans-unit>
       </group>
     </body>
   </file>
