@@ -631,7 +631,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>Disponible sin conexión</value>
+    <value>Sin conexión</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
@@ -685,10 +685,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="PhotosOnly" xml:space="preserve">
     <value>Solo Fotos</value>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
-  </data>
-  <data name="AutoUpload" xml:space="preserve">
-    <value>Subida Automática</value>
-    <comment>Label for "Auto Upload" settings pivot</comment>
   </data>
   <data name="Punctual" xml:space="preserve">
     <value>Puntual</value>
@@ -1038,7 +1034,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CloudDriveName" xml:space="preserve">
-    <value>Disco en la Nube</value>
+    <value>Mi nube</value>
     <comment>Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Cancel" xml:space="preserve">

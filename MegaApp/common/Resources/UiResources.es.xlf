@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Disco en la Nube</target>
+          <target state="translated">Mi nube</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -1161,11 +1161,6 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in seconds - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AutoUpload" translate="yes" space="preserve">
-          <source>Auto Upload</source>
-          <target state="translated">Subida Automática</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for "Auto Upload" settings pivot</note>
-        </trans-unit>
         <trans-unit id="Resx/General" translate="yes" space="preserve">
           <source>General</source>
           <target state="translated">General</target>
@@ -1248,7 +1243,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
           <source>Saved for offline use</source>
-          <target state="translated">Disponible sin conexión</target>
+          <target state="translated">Sin conexión</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
