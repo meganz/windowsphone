@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
@@ -102,6 +103,11 @@ namespace MegaApp.Pages
         private void btnCreateAccount_Click(object sender, RoutedEventArgs e)
         {
             NavigateService.NavigateTo(typeof(LoginPage), NavigationParameter.Normal, new Dictionary<string, string> { { "Pivot", "1" } });            
+        }
+
+        private void OnMegaHeaderLogoTapped(object sender, GestureEventArgs e)
+        {
+            DebugService.ChangeStatusAction();
         }
     }
 }

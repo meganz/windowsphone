@@ -82,6 +82,11 @@ namespace MegaApp.Pages
             NavigateService.NavigateTo(typeof(MyAccountPage), NavigationParameter.Normal);
         }
 
+        private void OnSdkVersionTapped(object sender, GestureEventArgs e)
+        {
+            DebugService.ChangeStatusAction();
+        }
+
         #region Override Events
 
         // XAML can not bind them direct from the base class
