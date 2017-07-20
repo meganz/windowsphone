@@ -332,54 +332,14 @@ namespace MegaApp.Models
             // If no selected nodes, there is nothing to import
             if (App.LinkInformation.SelectedNodes.Count < 1) return;
 
-            // First clear the dictionaries from possible previous import processes
-            App.LinkInformation.FolderPaths.Clear();
-            App.LinkInformation.FoldersToImport.Clear();
-
-            // Explore the child nodes. Store the folders in a new list and add them to
-            // the corresponding dictionary. Copy the file nodes.
-            List<MNode> folderNodesToImport = new List<MNode>();
             foreach (var node in App.LinkInformation.SelectedNodes)
             {
                 // Extra check to avoid NullReferenceException
                 if (node != null)
                 {
-                    if (node.IsFolder)
-                    {
-                        // Need to fix the path in case of import an entire folder link.
-                        var nodePath = SdkService.MegaSdkFolderLinks.getNodePath(node.OriginalMNode);
-                        if(!string.IsNullOrWhiteSpace(nodePath))
-                        {
-                            if (nodePath.CompareTo("/") == 0)
-                                nodePath = String.Concat(nodePath, node.Name);
-
-                            folderNodesToImport.Add(node.OriginalMNode);
-
-                            if (!App.LinkInformation.FolderPaths.ContainsKey(node.Base64Handle))
-                                App.LinkInformation.FolderPaths.Add(node.Base64Handle, nodePath);
-                        }
-                    }
-                    else
-                    {
-                        this.MegaSdk.copyNode(node.OriginalMNode, FolderRootNode.OriginalMNode,
-                            new CopyNodeRequestListener(true));
-                    }
+                    this.MegaSdk.copyNode(SdkService.MegaSdkFolderLinks.authorizeNode(node.OriginalMNode),
+                        FolderRootNode.OriginalMNode, new CopyNodeRequestListener(true));
                 }
-            }
-
-            // Add the list with the new folder nodes to import to the corresponding dictionary.
-            if (!App.LinkInformation.FoldersToImport.ContainsKey(FolderRootNode.Base64Handle))
-                App.LinkInformation.FoldersToImport.Add(FolderRootNode.Base64Handle, folderNodesToImport);
-
-            // Create all the new folder nodes.
-            foreach (var folderNode in folderNodesToImport)
-            {
-                // Extra check to avoid NullReferenceException
-                if (folderNode != null)
-                {
-                    this.MegaSdk.createFolder(folderNode.getName(), FolderRootNode.OriginalMNode,
-                        new CreateFolderRequestListener(true));
-                }                
             }
         }
 

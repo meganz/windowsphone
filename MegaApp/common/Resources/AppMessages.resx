@@ -1394,5 +1394,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
     <value>Save the log file</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>    
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Failed to share the file/folder link. Please try again.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Error sharing link</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>
