@@ -321,7 +321,7 @@ namespace MegaApp
             }
         }
 
-        private void CurrentOnContractActivated(object sender, IActivatedEventArgs activatedEventArgs)
+        private async void CurrentOnContractActivated(object sender, IActivatedEventArgs activatedEventArgs)
         {
             FileOpenOrFolderPickerOpenend = false;
 
@@ -336,6 +336,7 @@ namespace MegaApp
             if (folderPickerContinuationArgs != null)
             {
                 CloudDrive.PickerOrDialogIsOpen = false;
+                // If folder selected
                 if(folderPickerContinuationArgs.Folder != null)
                 {
                     if(!StorageApplicationPermissions.FutureAccessList.CheckAccess(folderPickerContinuationArgs.Folder))
@@ -350,6 +351,23 @@ namespace MegaApp
                 
                     if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectDownloadFolder")
                         this.FolderPickerContinuationArgs = folderPickerContinuationArgs;
+
+                    if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectLogFileSaveLocation")
+                    {
+                        // If user has selected an external location to save the log file move it to the selected location
+                        await FileService.MoveFile(AppService.GetFileLogPath(), folderPickerContinuationArgs.Folder.Path);
+                        this.FolderPickerContinuationArgs = null;
+                    }
+                }
+                else // If no folder selected
+                {
+                    if (folderPickerContinuationArgs.ContinuationData["Operation"].ToString() == "SelectLogFileSaveLocation")
+                    {
+                        // If user said 'yes' to save the log file but canceled the selection of an external location, delete it anyway.
+                        FileService.DeleteFile(AppService.GetFileLogPath());
+                        if (App.SavedForOfflineViewModel != null)
+                            App.SavedForOfflineViewModel.SavedForOffline.Refresh();
+                    }
                 }
             }
         }

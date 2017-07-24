@@ -2159,9 +2159,6 @@
     <Content Include="..\common\Assets\Images\VISA_WP.Screen-WXGA.png">
       <Link>Assets\Images\VISA_WP.Screen-WXGA.png</Link>
     </Content>
-    <Content Include="..\common\Assets\References\ShakeGestures.dll">
-      <Link>Assets\References\ShakeGestures.dll</Link>
-    </Content>
     <Content Include="..\common\Assets\Tiles\FolderIconImage.png">
       <Link>Assets\Tiles\FolderIconImage.png</Link>
     </Content>
@@ -2314,7 +2311,6 @@
       <HintPath>..\packages\MockIAPLib.1.0.0.1\lib\wp80\MockIAPLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ShakeGestures, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Sqlite, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\sqlite-net-wp8.3.8.5\lib\windowsphone8\Sqlite.winmd</HintPath>
       <Private>True</Private>

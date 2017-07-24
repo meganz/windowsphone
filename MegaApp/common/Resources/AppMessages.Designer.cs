@@ -742,6 +742,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to save the log file in an external location to use it later?.
+        /// </summary>
+        public static string AM_SaveLogFile {
+            get {
+                return ResourceManager.GetString("AM_SaveLogFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Save the log file.
+        /// </summary>
+        public static string AM_SaveLogFile_Title {
+            get {
+                return ResourceManager.GetString("AM_SaveLogFile_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to share item(s) from MEGA. The destination application seems busy. Please try again later..
         /// </summary>
         public static string AM_ShareFromMegaAppBusy_Message {

@@ -22,7 +22,9 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ContentPresenter ContentTemplate="{StaticResource MegaPageHeaderLogo}"/>        
+        <ContentPresenter 
+            ContentTemplate="{StaticResource MegaPageHeaderLogo}"
+            Tap="OnMegaHeaderLogoTapped"/>
         
         <!--Pivot Control-->
         <phone:Pivot x:Name="InitTour" Grid.Row="1" HeaderTemplate="{StaticResource PivotMegaHeaderTemplate}" Margin="0,-4,0,0">

@@ -114,5 +114,10 @@ namespace MegaApp.Pages
             var control = sender as Control;
             if (control != null) control.TabToNextControl((Panel)control.Parent, this);
         }
+
+        private void OnMegaHeaderLogoTapped(object sender, GestureEventArgs e)
+        {
+            DebugService.ChangeStatusAction();
+        }
     }
 }

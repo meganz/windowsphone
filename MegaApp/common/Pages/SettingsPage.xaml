@@ -159,16 +159,22 @@
                                         <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                     </TextBlock.Foreground>
                                 </TextBlock>
-                                <StackPanel Orientation="Horizontal" Grid.Row="1">
-                                    <HyperlinkButton x:Name="BtnMegaSdk" Content="{Binding LocalizedUiResources.MEGA_SDK, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Command="{Binding MegaSdkCommand}" FontFamily="Portable User Interface" VerticalAlignment="Center" Margin="-12,0,-4,0" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Version, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
-                                    <TextBlock HorizontalAlignment="Left" Text=":" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
-                                </StackPanel>
-                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding MegaSdkVersion}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Row="1" Grid.Column="1">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
+                                <Grid Grid.Row="1" Grid.ColumnSpan="2" Tap="OnSdkVersionTapped">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                        <HyperlinkButton x:Name="BtnMegaSdk" Content="{Binding LocalizedUiResources.MEGA_SDK, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Command="{Binding MegaSdkCommand}" FontFamily="Portable User Interface" VerticalAlignment="Center" Margin="-12,0,-4,0" FontSize="{StaticResource PhoneFontSizeNormal}"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Version, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
+                                        <TextBlock HorizontalAlignment="Left" Text=":" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
+                                    </StackPanel>
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding MegaSdkVersion}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Column="1">
+                                        <TextBlock.Foreground>
+                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
+                                        </TextBlock.Foreground>
+                                    </TextBlock>
+                                </Grid>
                             </Grid>
                             <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Acknowledgements, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
                                 <TextBlock.Foreground>
@@ -201,7 +207,7 @@
                                     <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
                                 </TextBlock.Foreground>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.EnableCameraUploads, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}"/>
                             <StackPanel Margin="0,0,0,40">
                                 <telerikPrimitives:RadToggleSwitch x:Name="BtnCameraUploadsSwitch" VerticalAlignment="Center" Content="{Binding CameraUploadsIsEnabledText}" IsChecked="{Binding CameraUploadsIsEnabled, Mode=TwoWay}" Margin="12,0" FontFamily="Portable User Interface" CheckedChanged="BtnCameraUploadsSwitch_CheckedChanged">
                                     <telerikPrimitives:RadToggleSwitch.ButtonStyle>
