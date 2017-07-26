@@ -619,8 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Vous n'avez pas les droits pour copier ce type de fichier dans le dossier de destination. Enregistrez/copiez-vous un fichier d'un type non pris en charge sur une carte SD?
-Veuillez essayez d'enregistrer/copier le fichier dans la mémoire interne de l'appareil.</value>
+    <value>Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
+Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1133,16 +1133,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Les causes possibles sont les suivantes :
-- Le fichier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
-- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
+    <value>Cela pourrait être causé par les raisons suivantes :
+- Le fichier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Les causes possibles sont les suivantes :
-- Le lien de dossier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
-- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
+    <value>Cela pourrait être causé par les raisons suivantes :
+- Le lien de dossier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le lien de dossier a été supprimé par l'utilisateur.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
@@ -1390,5 +1390,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>Options de téléversement</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Enregistrer le fichier journal</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Échec de partage du lien de fichier ou de dossier. Veuillez ressayer.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Erreur de partage du lien</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

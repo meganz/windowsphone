@@ -187,8 +187,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
-          <source>save</source>
-          <target state="translated">บันทึก</target>
+          <source>Save</source>
+          <target state="needs-review-translation">Save</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -606,8 +606,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
-          <source>about</source>
-          <target state="translated">เกี่ยวกับ</target>
+          <source>About</source>
+          <target state="needs-review-translation">About</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -712,7 +712,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploads" translate="yes" space="preserve">
           <source>Camera Uploads</source>
-          <target state="translated">อัปโหลดจากกล้องถ่ายรูป</target>
+          <target state="translated">อัปโหลดจากกล้อง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Contacts" translate="yes" space="preserve">
@@ -742,7 +742,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsTitle" translate="yes" space="preserve">
           <source>Set up camera uploads</source>
-          <target state="translated">ตั้งค่าการอัปโหลดกล้องถ่ายรูป</target>
+          <target state="translated">ตั้งค่าการอัปโหลดกล้อง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label used like title for the "set up camera uploads" page - (String as short as possible)</note>
         </trans-unit>
         <trans-unit id="Resx/Skip" translate="yes" space="preserve">
@@ -762,7 +762,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/EnableCameraUploads" translate="yes" space="preserve">
           <source>Enable Camera Uploads</source>
-          <target state="translated">เปิดใช้งานอัปโหลดจากกล้องถ่ายรูป</target>
+          <target state="translated">เปิดใช้งานอัปโหลดจากกล้อง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Security" translate="yes" space="preserve">
@@ -847,7 +847,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FromBasePrice" translate="yes" space="preserve">
           <source>From {0:N} {1}/month</source>
-          <target state="translated">From {0:N} {1}/month</target>
+          <target state="translated">จาก {0:N} {1}/เดือน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</note>
@@ -1182,7 +1182,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PowerConnected" translate="yes" space="preserve">
           <source>External power source connected</source>
-          <target state="translated">เชื่อมต่อแหล่งพลังงานภายนอกแล้ว</target>
+          <target state="translated">เชื่อมต่อแหล่งจ่ายไฟภายนอกแล้ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the "External power source connected" auto camera upload settings</note>
         </trans-unit>
         <trans-unit id="Resx/UploadSettings" translate="yes" space="preserve">
@@ -1202,7 +1202,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" space="preserve">
           <source>Do you want to enable the Auto Camera Uploads service?</source>
-          <target state="translated">คุณต้องการที่จะเปิดใช้งานบริการอัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติหรือไม่</target>
+          <target state="translated">คุณต้องการที่จะเปิดใช้งานบริการอัปโหลดจากกล้องโดยอัตโนมัติหรือไม่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
@@ -1241,8 +1241,8 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
-          <source>Saved for offline use</source>
-          <target state="translated">บันทึกไว้เพื่อใช้งานออฟไลน์</target>
+          <source>Saved for offline</source>
+          <target state="needs-review-translation">Saved for offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
@@ -1367,7 +1367,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_InAppPurchase" translate="yes" space="preserve">
           <source>In app purchase</source>
-          <target state="translated">In app purchase</target>
+          <target state="translated">การซื้อภายในแอพ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_Free" translate="yes" space="preserve">
@@ -1387,7 +1387,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_ProOnly" translate="yes" space="preserve">
           <source>(PRO ONLY)</source>
-          <target state="translated">(PRO ONLY)</target>
+          <target state="translated">(PRO เท่านั้น)</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">

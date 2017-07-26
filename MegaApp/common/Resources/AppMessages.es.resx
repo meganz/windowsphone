@@ -491,8 +491,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>No tienes permisos para copiar este tipo de archivo en la carpeta de destino. Probablemente estás intentando guardar/copiar en una tarjeta SD un archivo de un tipo no soportado.
-Por favor, intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</value>
+    <value>No tienes permiso para copiar este tipo de archivo en la carpeta de destino. ¿Está intentando guardar/copiar un archivo no soportado en una tarjeta SD?
+Intenta guardar/copiar el archivo en la memoria interna de tu dispositivo.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileFailed_Title" xml:space="preserve">
@@ -1133,16 +1133,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
     <value>Esto podría deberse a los siguientes motivos:
-- El archivo ha sido eliminado debido a una violación de los TdS/PUA.
-- URL no válida - el enlace al que intentas acceder no existe.
-- El archivo ha sido desactivado por el usuario.</value>
+- El archivo se ha eliminado debido a una violación de los ToS/AUP.
+- La URL no es válida – el enlace al que intentas acceder no existe.
+- El archivo ha sido eliminado por el usuario.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
     <value>Esto podría deberse a los siguientes motivos:
-- El enlace de la carpeta ha sido eliminado debido a una violación de los TdS/PdU.
-- URL no válida - el enlace al que intentas acceder no existe.
-- El enlace de la carpeta ha sido desactivado por el usuario.</value>
+- El enlace de carpeta se ha eliminado debido a una violación de los ToS/AUP.
+- La URL no es válida – el enlace al que intentas acceder no existe.
+- El enlace de carpeta ha sido eliminado por el usuario.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1389,5 +1389,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>Opciones de subida</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>¿Deseas guardar los logs en una ubicación externa para usarlos más tarde?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Guardar logs</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>No se pudo compartir el enlace de archivo/carpeta. Vuelve a intentarlo.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Error al compartir el enlace</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

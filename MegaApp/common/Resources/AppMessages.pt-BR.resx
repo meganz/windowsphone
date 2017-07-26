@@ -619,8 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Você não tem permissão para copiar este tipo de arquivo para a pasta de destino. Provavelmente você está tentando salvar / copiar em um cartão SD um arquivo de um tipo não suportado.
-Por favor, tente salvar / copiar o arquivo para a memória interna do dispositivo.</value>
+    <value>Você não tem permissão para copiar este tipo de arquivo na pasta de destino. Você está tentando salvar/copiar um arquivo com um formato não suportado para um cartão SD?
+Por favor, tente salvar/copiar o arquivo para a memória interna do seu dispositivo.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1133,17 +1133,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Isto pode ter acontecido devido às seguintes razões:
-- O arquivo foi removido devido a uma violação ToS / AUP.
-- URL inválido - o link que você está tentando aceder não existe.
-- O arquivo foi apagado pelo usuário.</value>
+    <value>Isso pode acontecer devido às seguintes razões:
+- O arquivo foi removido devido a uma violação de ToS / AUP.
+- URL inválido - o link que você está tentando acessar não existe.
+- O arquivo foi excluído pelo usuário.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Isto pode ter acontecido devido às seguintes razões:
+    <value>Isso pode acontecer devido às seguintes razões:
 - O link da pasta foi removido devido a uma violação ToS / AUP.
-- URL inválido - o link que está a tentar aceder não existe.
-- O link da pasta foi apagado pelo utilizador.</value>
+- URL inválido - o link que você está tentando acessar não existe.
+- O link da pasta foi excluído pelo usuário.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1390,5 +1390,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>Opções de upload</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>Você quer salvar o arquivo de log em uma localização externa para usá-lo em outro momento?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Salve o arquivo de log</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Falha ao compartilhar o link do arquivo/pasta. Por favor, tente novamente.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Erro ao compartilhar o link</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

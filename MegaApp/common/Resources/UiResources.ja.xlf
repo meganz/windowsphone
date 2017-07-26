@@ -188,8 +188,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
-          <source>save</source>
-          <target state="translated">保存する</target>
+          <source>Save</source>
+          <target state="needs-review-translation">保存</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -607,8 +607,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
-          <source>about</source>
-          <target state="translated">次に関すること</target>
+          <source>About</source>
+          <target state="needs-review-translation">概要</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -848,7 +848,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_FromBasePrice" translate="yes" space="preserve">
           <source>From {0:N} {1}/month</source>
-          <target state="translated">From {0:N} {1}/month</target>
+          <target state="translated">{0:N}から {1}/月</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</note>
@@ -1203,7 +1203,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SetupCameraUploadsQuestion" translate="yes" space="preserve">
           <source>Do you want to enable the Auto Camera Uploads service?</source>
-          <target state="translated">Do you want to enable the Auto Camera Uploads service?</target>
+          <target state="translated">自動カメラアップロードサービスを有効にしますか？　</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label asking user if wants to enable the auto camera uploads service.</note>
         </trans-unit>
         <trans-unit id="Resx/ShareFolder" translate="yes" space="preserve">
@@ -1242,8 +1242,8 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
-          <source>Saved for offline use</source>
-          <target state="translated">Saved for offline use</target>
+          <source>Saved for offline</source>
+          <target state="needs-review-translation">オフライン用に保存されました</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
@@ -1253,7 +1253,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
-          <target state="translated">No items saved for offline</target>
+          <target state="translated">オフライン用に保存された項目はありません</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">

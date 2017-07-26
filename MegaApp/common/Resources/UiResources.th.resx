@@ -234,7 +234,7 @@
     <comment>Text placed into the dialog to type the new name when the user wants to rename a file or folder.</comment>
   </data>
   <data name="Save" xml:space="preserve">
-    <value>บันทึก</value>
+    <value>Save</value>
     <comment>Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Share" xml:space="preserve">
@@ -554,7 +554,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Select folder' button, link, text, title, etc. - (String as short as possible, MAX 14 characters).</comment>
   </data>
   <data name="About" xml:space="preserve">
-    <value>เกี่ยวกับ</value>
+    <value>About</value>
     <comment>Label for any 'About' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Pause" xml:space="preserve">
@@ -634,7 +634,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Help' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>อัปโหลดจากกล้องถ่ายรูป</value>
+    <value>อัปโหลดจากกล้อง</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Contacts" xml:space="preserve">
@@ -658,7 +658,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for any 'Ok' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>ตั้งค่าการอัปโหลดกล้องถ่ายรูป</value>
+    <value>ตั้งค่าการอัปโหลดกล้อง</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Skip" xml:space="preserve">
@@ -674,7 +674,7 @@ Try to preserve the PIN uppercase word.</comment>
     <comment>Label for the 'Wifi only' option in the 'set up camera uploads' page - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>เปิดใช้งานอัปโหลดจากกล้องถ่ายรูป</value>
+    <value>เปิดใช้งานอัปโหลดจากกล้อง</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -993,7 +993,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the "Photos only" auto camera upload settings</comment>
   </data>
   <data name="PowerConnected" xml:space="preserve">
-    <value>เชื่อมต่อแหล่งพลังงานภายนอกแล้ว</value>
+    <value>เชื่อมต่อแหล่งจ่ายไฟภายนอกแล้ว</value>
     <comment>Label for the "External power source connected" auto camera upload settings</comment>
   </data>
   <data name="UploadSettings" xml:space="preserve">
@@ -1009,7 +1009,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>คุณต้องการที่จะเปิดใช้งานบริการอัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติหรือไม่</value>
+    <value>คุณต้องการที่จะเปิดใช้งานบริการอัปโหลดจากกล้องโดยอัตโนมัติหรือไม่</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
@@ -1029,7 +1029,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for the auto camera upload service restrictions.</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>บันทึกไว้เพื่อใช้งานออฟไลน์</value>
+    <value>Saved for offline</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="EmptyCloudDrive" xml:space="preserve">
@@ -1203,11 +1203,11 @@ NOTE: Keep the capital letter if possible.</comment>
 NOTE: Keep the capital letter if possible.</comment>
   </data>
   <data name="UI_InAppPurchase" xml:space="preserve">
-    <value>In app purchase</value>
+    <value>การซื้อภายในแอพ</value>
     <comment>Label for any 'In app purchase' (IAP) button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_FromBasePrice" xml:space="preserve">
-    <value>From {0:N} {1}/month</value>
+    <value>จาก {0:N} {1}/เดือน</value>
     <comment>Label for indicate the base price of a product or plan, for example "From 9,99 €/month" - (String as short as possible).
 Keep the code {0:N} because is for include price of the product in runtime.
 Keep the code {1} because is for include currency in runtime.</comment>
@@ -1225,7 +1225,7 @@ Keep the code {1} because is for include currency in runtime.</comment>
     <comment>Label for any 'Link without key' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ProOnly" xml:space="preserve">
-    <value>(PRO ONLY)</value>
+    <value>(PRO เท่านั้น)</value>
     <comment>Label to indicate that a feature is only available for PRO users. Keep between parentheses and capital letters  - (String as short as possible).</comment>
   </data>
   <data name="UI_SetExpirationDate" xml:space="preserve">

@@ -620,8 +620,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>您沒有複製這種檔案類型到目標資料夾的權限。或許您正在嘗試保存或複製一個不支持的檔案類型到SD卡。請嘗試保存或複製該檔案到你設備的內部存儲器。
-</value>
+    <value>您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援類型的檔案儲存/複製到SD卡中？
+請嘗試將檔案儲存/複製到您的設備的內部記憶體中。</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1135,17 +1135,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>這可能是由於下列原因：
-﹣該檔案由於違反服務條款或產品使用政策已被刪除。
-﹣ 無效的網址: 您試圖訪問的連接不存在。
-﹣ 該檔案已被用戶刪除。</value>
+    <value>檔案連結不存在之可能原因：
+- 因ToS / AUP違規，故該檔案連結已被刪除。
+- 無效的網址 – 您嘗試存取的連結並不存在。
+- 該使用者已將檔案連結刪除。</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>這可能是由於下列原因：
-﹣該資料夾由於違反服務條款或產品使用政策已被刪除。
-﹣ 無效的網址: 您試圖訪問的連接不存在。
-﹣ 該連接的資料夾已被用戶刪除。</value>
+    <value>資料夾連結不存在之可能原因：
+- 因ToS / AUP違規，故該資料夾連結已被刪除。
+- 無效的網址 – 您嘗試存取的連結並不存在。
+- 該使用者已將資料夾連結刪除。</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1392,5 +1392,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>上傳方式</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>要將日誌檔案儲存於外部位置以便稍後使用嗎？</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>儲存日誌檔案</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>無法分享檔案 / 資料夾連結。請再試一次。</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>無法分享連結</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>
