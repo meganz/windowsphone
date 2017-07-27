@@ -642,9 +642,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">您沒有複製這種檔案類型到目標資料夾的權限。或許您正在嘗試保存或複製一個不支持的檔案類型到SD卡。請嘗試保存或複製該檔案到你設備的內部存儲器。
-</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="needs-review-translation">您沒有將此檔案類型複製到目標資料夾的權限。您是否要將不支援類型的檔案儲存/複製到SD卡中？
+請嘗試將檔案儲存/複製到您的設備的內部記憶體中。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1289,22 +1289,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">這可能是由於下列原因：
-﹣該檔案由於違反服務條款或產品使用政策已被刪除。
-﹣ 無效的網址: 您試圖訪問的連接不存在。
-﹣ 該檔案已被用戶刪除。</target>
+          <target state="needs-review-translation">檔案連結不存在之可能原因：
+- 因ToS / AUP違規，故該檔案連結已被刪除。
+- 無效的網址 – 您嘗試存取的連結並不存在。
+- 該使用者已將檔案連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">這可能是由於下列原因：
-﹣該資料夾由於違反服務條款或產品使用政策已被刪除。
-﹣ 無效的網址: 您試圖訪問的連接不存在。
-﹣ 該連接的資料夾已被用戶刪除。</target>
+          <target state="needs-review-translation">資料夾連結不存在之可能原因：
+- 因ToS / AUP違規，故該資料夾連結已被刪除。
+- 無效的網址 – 您嘗試存取的連結並不存在。
+- 該使用者已將資料夾連結刪除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1450,8 +1452,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
-          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">您的MEGA訂閱購買未於我們的授權伺服器上通過驗證。重新開啟此應用程式後，我們將試著再次驗證您的購買憑證。如果此錯誤仍然存在，請聯絡MEGA支援中心。</target>
+          <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">您的MEGA訂閱購買未於我們的授權伺服器上通過驗證。重新開啟此應用程式後，我們將試著再次驗證您的購買憑證。如果此錯誤仍然存在，請聯絡MEGA支援中心。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1591,26 +1593,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">上傳方式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" xml:space="preserve">
-          <source>Save the log file</source>
-          <target state="new">Save the log file</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="new">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">要將日誌檔案儲存於外部位置以便稍後使用嗎？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" xml:space="preserve">
-          <source>Error sharing link</source>
-          <target state="new">Error sharing link</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
-          </trans-unit>
-        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" xml:space="preserve">
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
+          <source>Save the log file</source>
+          <target state="translated">儲存日誌檔案</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="new">Failed to share the file/folder link. Please try again.</target>
+          <target state="translated">無法分享檔案 / 資料夾連結。請再試一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
-          </trans-unit>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing link</source>
+          <target state="translated">無法分享連結</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
       </group>
     </body>
   </file>

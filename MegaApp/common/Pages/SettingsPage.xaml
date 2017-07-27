@@ -199,7 +199,7 @@
                         </StackPanel>
                     </ScrollViewer>
                 </phone:PivotItem>
-                <phone:PivotItem x:Name="PivotAutoUpload" Header="{Binding LocalizedUiResources.AutoUpload, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
+                <phone:PivotItem x:Name="PivotAutoUpload" Header="{Binding LocalizedUiResources.CameraUploads, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,0">
                     <ScrollViewer Margin="-12,0,0,0" Height="624">
                         <StackPanel Margin="12,24,12,0">
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.CameraUploads, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Margin="12,0,0,0" FontSize="{StaticResource PhoneFontSizeLarge}">

@@ -214,15 +214,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Auto Upload.
-        /// </summary>
-        public static string AutoUpload {
-            get {
-                return ResourceManager.GetString("AutoUpload", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a available.
         /// </summary>
         public static string Available {

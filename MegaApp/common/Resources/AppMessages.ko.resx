@@ -619,7 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>이 파일 유형을 목적지 폴더로 복사할 권한이 없습니다. 아마 파일을 SD 카드에 지원되지 않는 유형의 파일을 저장/복사하려고 했을 것입니다. 기기의 내부 메모리에 파일을 저장/복사하시기 바랍니다.</value>
+    <value>이 파일 유형을 대상 폴더로 복사할 권한이 없습니다. 혹시 SD카드에 지원하지 않는 유형의 파일을 저장/복사하려고 하시나요?
+파일을 내부 저장소에 저장/복사하는 것을 시도하세요.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1131,17 +1132,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>이것은 다음과 같은 이유로 발생할 수 있습니다:
-- 파일이 ToS/AUP 위반으로 제거됨.
-- 잘못된 URL - 접속하려는 링크가 존재하지 않음.
-- 이용자에 의해 파일이 삭제됨.</value>
+    <value>다음의 이유로 인해 발생할 수 있습니다:
+- 파일이 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
+- 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
+- 파일이 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>아래의 이유로 발생한 문제일 수 있습니다:
-- 폴더 링크가 ToS/AUP 위반으로 삭제됨.
-- 잘못된 URL - 접속하려는 링크가 존재하지 않음.
-- 폴더 링크가 이용자에 의해 삭제됨.</value>
+    <value>다음의 이유로 인해 발생할 수 있습니다:
+- 폴더 링크가 이용 약관/이용 목적 제한 방침을 위반하여 삭제되었습니다.
+- 잘못된 URL – 접속하려는 링크가 존재하지 않습니다.
+- 폴더 링크가 이용자에 의해 삭제되었습니다.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1388,5 +1389,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>업로드 옵션</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>나중에 사용하기 위해 외부 위치에 로그 파일을 저장하시겠습니까?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>로그 파일 저장</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>파일/폴더 링크 공유 실패. 다시 시도하세요.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>링크 공유 실패</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

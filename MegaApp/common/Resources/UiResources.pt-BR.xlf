@@ -188,8 +188,8 @@ Abrir link MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
-          <source>save</source>
-          <target state="translated">salvar</target>
+          <source>Save</source>
+          <target state="needs-review-translation">Salvar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -290,7 +290,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/PinLock" translate="yes" space="preserve">
           <source>PIN Lock</source>
-          <target state="translated">Travar PIN</target>
+          <target state="translated">Bloqueio com PIN</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -607,8 +607,8 @@ Try to preserve the PIN uppercase word.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
-          <source>about</source>
-          <target state="translated">sobre</target>
+          <source>About</source>
+          <target state="needs-review-translation">Sobre</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -733,7 +733,7 @@ Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearRubbishBin" translate="yes" space="preserve">
           <source>Empty rubbish bin</source>
-          <target state="translated">Lixo vazio</target>
+          <target state="translated">Esvaziar a lixeira</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Ok" translate="yes" space="preserve">
@@ -1161,11 +1161,6 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in seconds - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AutoUpload" translate="yes" space="preserve">
-          <source>Auto Upload</source>
-          <target state="translated">Upload Automatico</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for "Auto Upload" settings pivot</note>
-        </trans-unit>
         <trans-unit id="Resx/General" translate="yes" space="preserve">
           <source>General</source>
           <target state="translated">Geral</target>
@@ -1247,18 +1242,18 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
-          <source>Saved for offline use</source>
-          <target state="translated">Salvo para uso offline</target>
+          <source>Saved for offline</source>
+          <target state="needs-review-translation">Salvo para uso offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your cloud drive</source>
-          <target state="translated">Não há arquivos em sua unidade de nuvem</target>
+          <target state="translated">Não há arquivos na sua nuvem de arquivos</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty cloud drive page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
-          <target state="translated">Não há itens guardados para off-line</target>
+          <target state="translated">Não há itens salvos para uso offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">

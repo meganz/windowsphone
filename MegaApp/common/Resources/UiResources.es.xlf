@@ -33,7 +33,7 @@
         </trans-unit>
         <trans-unit id="Resx/CloudDriveName" translate="yes" space="preserve">
           <source>Cloud Drive</source>
-          <target state="translated">Disco en la Nube</target>
+          <target state="translated">Mi nube</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cloud Drive' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Confirm" translate="yes" space="preserve">
@@ -187,8 +187,8 @@
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed into the dialog to type the new name when the user wants to rename a file or folder.</note>
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
-          <source>save</source>
-          <target state="translated">guardar</target>
+          <source>Save</source>
+          <target state="needs-review-translation">Guardar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -607,8 +607,8 @@ para mostrar</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Upgrade account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
-          <source>about</source>
-          <target state="translated">acerca de </target>
+          <source>About</source>
+          <target state="needs-review-translation">Acerca de</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -1161,11 +1161,6 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Laber to indicate "time ago" in seconds - (String as short as possible).
 Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
-        <trans-unit id="Resx/AutoUpload" translate="yes" space="preserve">
-          <source>Auto Upload</source>
-          <target state="translated">Subida Automática</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for "Auto Upload" settings pivot</note>
-        </trans-unit>
         <trans-unit id="Resx/General" translate="yes" space="preserve">
           <source>General</source>
           <target state="translated">General</target>
@@ -1247,9 +1242,10 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the auto camera upload service restrictions.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
-          <source>Saved for offline use</source>
-          <target state="translated">Disponible sin conexión</target>
+          <source>Saved for offline</source>
+          <target state="needs-review-translation">Sin conexión</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your cloud drive</source>
@@ -1258,7 +1254,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyOffline" translate="yes" space="preserve">
           <source>No items saved for offline</source>
-          <target state="translated">No hay contenido disponible sin conexión</target>
+          <target state="translated">No hay contenido sin conexión</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty transfers page - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyRubbishBin" translate="yes" space="preserve">
@@ -1398,7 +1394,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_SetExpirationDate" translate="yes" space="preserve">
           <source>Set expiry date</source>
-          <target state="translated">Fijar la caducidad</target>
+          <target state="translated">Establecer fecha de caducidad</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Set expiry date' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateCanceled" translate="yes" space="preserve">
