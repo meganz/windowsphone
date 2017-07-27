@@ -641,9 +641,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">Vous n'avez pas les droits pour copier ce type de fichier dans le dossier de destination. Enregistrez/copiez-vous un fichier d'un type non pris en charge sur une carte SD?
-Veuillez essayez d'enregistrer/copier le fichier dans la mémoire interne de l'appareil.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="needs-review-translation">Vous n'avez pas le droit de copier ce type de fichier dans le dossier de destination. Tentez-vous d'enregistrer ou de copier un fichier d'un type non pris en charge vers une carte SD?
+Veuillez plutôt essayer d'enregistrer ou de copier le fichier dans la mémoire interne de votre appareil.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1287,22 +1287,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Les causes possibles sont les suivantes :
-- Le fichier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
-- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
+          <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
+- Le fichier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le fichier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Les causes possibles sont les suivantes :
-- Le lien de dossier a été retiré en raison d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable de MEGA.
-- L'URL est invalide - le lien auquel vous essayez d'accéder n'existe pas.
+          <target state="needs-review-translation">Cela pourrait être causé par les raisons suivantes :
+- Le lien de dossier a été retiré à cause d'une violation des conditions générales d'utilisation ou de la politique d'utilisation acceptable.
+- L'URL est invalide. Le lien auquel vous essayez d'accéder n'existe pas.
 - Le lien de dossier a été supprimé par l'utilisateur.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1448,8 +1450,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
-          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Votre achat d'un abonnement MEGA n'a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d'abonnement. Veuillez contacter l'assistance MEGA si l'erreur persiste.</target>
+          <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">Votre achat d'un abonnement MEGA n'a pas été validé par notre serveur de licences. Lors du redémarrage de cette appli, nous retenterons de valider vos licences d'abonnement. Veuillez contacter l'assistance MEGA si l'erreur persiste.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1588,6 +1590,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Upload options</source>
           <target state="translated">Options de téléversement</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
+          <source>Do you want to save the log file in an external location to use it later?</source>
+          <target state="translated">Voulez-vous enregistrer le fichier journal dans un emplacement externe pour l'utiliser plus tard?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
+          <source>Save the log file</source>
+          <target state="translated">Enregistrer le fichier journal</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
+          <source>Failed to share the file/folder link. Please try again.</source>
+          <target state="translated">Échec de partage du lien de fichier ou de dossier. Veuillez ressayer.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing link</source>
+          <target state="translated">Erreur de partage du lien</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
       </group>
     </body>

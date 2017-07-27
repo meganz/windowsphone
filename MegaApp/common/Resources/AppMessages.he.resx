@@ -620,8 +620,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>אין הרשאות מספקות להעתק הקובץ הנבחר לתיקיית היעד. ככל הנראה הינך מנסה להעתיק/לשמור לתוך כרטיס הזכרון קובץ בעל סיומת לא נתמכת.
-אנא נסה להעתיק/לשמור את הקובץ לזכרון הפנימי של המכשיר.</value>
+    <value>אין לך הרשאות להעתיק קובץ זה לתיקייה שבחרת. האם אתה מנסה לשמור/להעתיק קובץ בכרטיס SD שלא נתמך?
+אנא נסה לשמור/להעתיק את הקבוץ לזכרון הפנימי של הטלפון.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1135,17 +1135,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>זה יכול להיגרם מכמה סיבות:
-- הקובץ נמחק עקב פגיעה בתנאי השימור או זכויות יוצרים.
-- קישור לא תקין - הקישור אליו אתה מנסה להיכנס לא קיים.
-- הקובץ נמחק על ידי המשתמש.</value>
+    <value>זה עלול לקרות מכמה סיבות:
+- הקישור לקובץ נמחק עקב הפרת זכויות יוצרים.
+- כתובת לא נכונה - הקישור אליו אתה מנסה לגשת לא קיים.
+- הקישור לקובץ נמחק על ידי המשתמש.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>זה יכול להיגרם מכמה סיבות:
-- הקובץ נמחק עקב פגיעה בתנאי השימור או זכויות יוצרים.
-- קישור לא תקין - הקישור אליו אתה מנסה להיכנס לא קיים.
-- הקובץ נמחק על ידי המשתמש.</value>
+    <value>זה עלול לקרות מכמה סיבות:
+- הקישור לתיקייה נמחק עקב הפרת זכויות יוצרים.
+- כתובת לא נכונה - הקישור אליו אתה מנסה לגשת לא קיים.
+- הקישור לתיקייה נמחק על ידי המשתמש.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1392,5 +1392,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>אפשרויות העלאה</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>האם תרצה לשמור את קובץ הלוג במיקום חיצוני לשימוש מאוחר יותר?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>שמור קובץ לוג</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>שגיאה בשיתוף קובץ/תיקייה. אנא נסה שוב.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>שגיאה בשיתוף קישור</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

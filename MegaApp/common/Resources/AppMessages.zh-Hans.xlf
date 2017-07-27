@@ -8,33 +8,33 @@
       <group id="Resx">
         <trans-unit id="Resx/AgreeTermsOfService" translate="yes" space="preserve">
           <source>You must agree with our Terms of Service</source>
-          <target state="translated">您必须同意我们的服务条款</target>
+          <target state="translated">您必须同意我们的条款</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to create a new MEGA account without accept previously the 'Terms of Service'.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed" translate="yes" space="preserve">
           <source>Failed to confirm account. Please try again. [{0}]</source>
-          <target state="translated">确认账户失败。请重试。[{0}]</target>
+          <target state="translated">确认账户失败，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the confirmation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountFailed_Title" translate="yes" space="preserve">
           <source>Account confirmation failed</source>
-          <target state="translated">账户确认失败</target>
+          <target state="translated">帐号状态确认失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the confirmation of a MEGA account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces" translate="yes" space="preserve">
           <source>Your account has been created, confirmed and activated. You will be logged in automatically.</source>
-          <target state="translated">您的账户已创建、确认并激活了。您将自动登入。</target>
+          <target state="translated">您的帐户已创建，确认并激活了。您将自动登入。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when confirm a MEGA account succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmAccountSucces_Title" translate="yes" space="preserve">
           <source>Account activated</source>
-          <target state="translated">账户已激活</target>
+          <target state="translated">帐户已激活</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when confirm a MEGA account succesfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded" translate="yes" space="preserve">
           <source>Check your e-mail and click the link to login and confirm your account</source>
-          <target state="translated">请检查您的邮件并点击链接来登录和确认您的账户</target>
+          <target state="translated">检查您的e-mail并点击链接登入以确认您的帐号</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user create a new MEGA account successfully, informing that will receive an e-mail with a link to confirm account.</note>
         </trans-unit>
         <trans-unit id="Resx/ConfirmNeeded_Title" translate="yes" space="preserve">
@@ -44,7 +44,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreateAccountFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive account creation failed. Please try again. [{0}]</source>
-          <target state="translated">MEGA账户创建失败。请重试。 [{0}]</target>
+          <target state="translated">MEGA账户创建失败，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a MEGA account failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -55,7 +55,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CreateFolderFailed" translate="yes" space="preserve">
           <source>Failed to create folder</source>
-          <target state="translated">创建文件夹失败</target>
+          <target state="translated">无法创建文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the creation of a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CreateFolderFailed_Title" translate="yes" space="preserve">
@@ -75,7 +75,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
           <source>Failed to delete item. Please try again [{0}]</source>
-          <target state="translated">删除项目失败. 请再试一次 [{0}]</target>
+          <target state="translated">删除项目失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -86,17 +86,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
-          <target state="translated">检索下载链接失败. 请再试一次.</target>
+          <target state="translated">无法检索下载链接。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when failed to retrieve a download link.</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed_Title" translate="yes" space="preserve">
           <source>Retrieving link failed</source>
-          <target state="translated">恢复链接失败</target>
+          <target state="translated">恢复连接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when failed to retrieve a download link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/DownloadNodeFailed" translate="yes" space="preserve">
           <source>Failed to download file. Please try again. [{0}]</source>
-          <target state="translated">下载文件失败。请重试 [{0}]</target>
+          <target state="translated">下载文件失败，请重试[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -117,7 +117,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/FolderCreateFailed" translate="yes" space="preserve">
           <source>Failed to create folder. Please try again.</source>
-          <target state="translated">创建文件夹失败. 请再试一次.</target>
+          <target state="translated">建立文件夹失败。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to create a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderCreateFailed_Title" translate="yes" space="preserve">
@@ -127,12 +127,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed" translate="yes" space="preserve">
           <source>Failed to get link</source>
-          <target state="translated">生成链接失败</target>
+          <target state="translated">生成连接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">生成链接失败</target>
+          <target state="translated">生成连接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -157,7 +157,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError" translate="yes" space="preserve">
           <source>Error exporting image to  'saved pictures' album. Please try again</source>
-          <target state="translated">导出图像至“已保存图像”相册失败。请重试</target>
+          <target state="translated">导出图像至“已保存图像”相册失败，请重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to save/export an image to the 'saved pictures' album of the phone device.</note>
         </trans-unit>
         <trans-unit id="Resx/ImageSaveError_Title" translate="yes" space="preserve">
@@ -167,7 +167,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailed" translate="yes" space="preserve">
           <source>File import failed [{0}]</source>
-          <target state="translated">文件导入失败</target>
+          <target state="translated">文件导入失败[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import an image.
 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
@@ -179,28 +179,28 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
-          <target state="translated">MEGA链接已复制至剪贴板</target>
+          <target state="translated">MEGA连接已复制到剪贴板</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">已复制到剪贴板</target>
+          <target state="translated">已复制到剪贴簿</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
           <source>MEGA Cloud Drive login failed. Please try again. [{0}]</source>
-          <target state="translated">登录MEGA云端失败。请重试。[{0}]</target>
+          <target state="translated">登录MEGA云盘失败，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the login to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed_Title" translate="yes" space="preserve">
           <source>Login failed</source>
-          <target state="translated">登陆失败</target>
+          <target state="translated">登入失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the login to the MEGA cloud service api fails - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveEqualsParent" translate="yes" space="preserve">
           <source>Destination folder is the same as the source folder. Move cancelled.</source>
-          <target state="translated">目标文件夹和源文件夹相同. 移动取消.</target>
+          <target state="translated">目的地文件夹与来源文件夹相同。移动已取消。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move nodes and the destination folder is the same than the source folder.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveEqualsParent_Title" translate="yes" space="preserve">
@@ -210,7 +210,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MoveFailed" translate="yes" space="preserve">
           <source>Failed to move item. Please try again.</source>
-          <target state="translated">移动项目失败. 请再试一次.</target>
+          <target state="translated">移除项目失败。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move a file failed.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveFailed_Title" translate="yes" space="preserve">
@@ -220,12 +220,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/PasswordsDoNotMatch" translate="yes" space="preserve">
           <source>Passwords do not match. Please try again.</source>
-          <target state="translated">密码不匹配. 请再试一次.</target>
+          <target state="translated">密码错误。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to create a MEGA account and the introduced passwords don't match.</note>
         </trans-unit>
         <trans-unit id="Resx/PictureSaved" translate="yes" space="preserve">
           <source>The image was saved to your photo album</source>
-          <target state="translated">图像已保存到您的相册</target>
+          <target state="translated">图像已保存至您的相册</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when save successfully a single picture in the photo album.</note>
         </trans-unit>
         <trans-unit id="Resx/PictureSaved_Title" translate="yes" space="preserve">
@@ -235,13 +235,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0}?</source>
-          <target state="translated">您确定要移除 {0} 吗？</target>
+          <target state="translated">您确定要移除{0} 吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove definitely an itemfrom the rubbish bin, asking for confirmation to do it.
 Preserve the {0} code because is for include the name of the item to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveItemQuestion_Title" translate="yes" space="preserve">
           <source>Remove?</source>
-          <target state="translated">移除？</target>
+          <target state="translated">要删除吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove definitely an item from the rubbish bin failed, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed" translate="yes" space="preserve">
@@ -251,12 +251,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeFailed_Title" translate="yes" space="preserve">
           <source>Remove failed</source>
-          <target state="translated">移除失败</target>
+          <target state="translated">删除失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">内容被成功删除</target>
+          <target state="translated">成功删除文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -276,7 +276,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsConfirmAccount" translate="yes" space="preserve">
           <source>Please fill in your chosen password.</source>
-          <target state="translated">请填入您选定的密码.</target>
+          <target state="translated">请填入您的密码。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for confirm account are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreateAccount" translate="yes" space="preserve">
@@ -286,12 +286,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsLogin" translate="yes" space="preserve">
           <source>Please fill in your e-mail address and your MEGA password.</source>
-          <target state="translated">请填入您的电子邮件地址和您的MEGA密码.</target>
+          <target state="translated">请填入您的e-mail与您的MEGA密码。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for login are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFields_Title" translate="yes" space="preserve">
           <source>Fill in required fields</source>
-          <target state="translated">完成必填字段</target>
+          <target state="translated">请完成必填字段</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when any required field is not filled in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion" translate="yes" space="preserve">
@@ -301,12 +301,12 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/SaveImageQuestion_Title" translate="yes" space="preserve">
           <source>Save image to photos</source>
-          <target state="translated">保存图片至图片集</target>
+          <target state="translated">储存影像至相片</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to save a image to the 'saved pictures' album, asking for confirmation to do it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline" translate="yes" space="preserve">
           <source>You are not logged into MEGA. Please re-login.</source>
-          <target state="translated">您未登陆MEGA.请重新登陆.</target>
+          <target state="translated">您未登入至MEGA。请再次登入。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is online and is trying to do any operation that requires connection.</note>
         </trans-unit>
         <trans-unit id="Resx/UserNotOnline_Title" translate="yes" space="preserve">
@@ -322,18 +322,18 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetThumbnailFailed_Title" translate="yes" space="preserve">
           <source>Getting thumbnail failed</source>
-          <target state="translated">获取预览失败</target>
+          <target state="translated">加载预览失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a image thumbnail failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve your account details. Please try again. [{0}]</source>
-          <target state="translated">无法检索您的账户信息，请重试。[{0}]</target>
+          <target state="translated">无法载入您的帐户资料，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user account details failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetAccountDetailsFailed_Title" translate="yes" space="preserve">
           <source>Retrieving account details failed</source>
-          <target state="translated">恢复账户信息失败</target>
+          <target state="translated">恢复帐户资料失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user account details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoggedOut" translate="yes" space="preserve">
@@ -348,7 +348,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/LogoutFailed" translate="yes" space="preserve">
           <source>Failed to logout. Please try again. [{0}]</source>
-          <target state="translated">无法登出，请重试。[{0}]</target>
+          <target state="translated">无法登出，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the logout to the MEGA cloud service api fails. 
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -359,7 +359,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MultiSelectRemoveQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to remove {0} items?</source>
-          <target state="translated">您确定要移除 {0}个项目吗？</target>
+          <target state="translated">您确定要移除{0}个项目吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple nodes definitely from the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be removed in runtime.</note>
         </trans-unit>
@@ -370,7 +370,7 @@ Preserve the {0} code because is for include the number of nodes to be removed i
         </trans-unit>
         <trans-unit id="Resx/MultiRemoveSucces" translate="yes" space="preserve">
           <source>{0} items removed</source>
-          <target state="translated">已移除 {0}个项目</target>
+          <target state="translated">已移除{0}个项目</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully multiple nodes definitely from the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -381,28 +381,28 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to move item to rubbish bin. Please try again</source>
-          <target state="translated">移动至垃圾箱失败，请重试。</target>
+          <target state="translated">移至垃圾桶失败，请重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to move nodes to the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinFailed_Title" translate="yes" space="preserve">
           <source>Move to rubbish bin failed</source>
-          <target state="translated">移动至垃圾箱失败</target>
+          <target state="translated">移至垃圾桶失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to move nodes to the rubbish bin failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} to the rubbish bin?</source>
-          <target state="translated">您确定要移动 {0}到垃圾箱吗？</target>
+          <target state="translated">您确定要移动{0}到垃圾箱吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the name of the node to be moved in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinQuestion_Title" translate="yes" space="preserve">
           <source>Move to rubbish bin?</source>
-          <target state="translated">要移至垃圾箱吗？</target>
+          <target state="translated">要移至垃圾桶吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to move a single node to the rubbish bin, asking for confirmation to make the movement - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess" translate="yes" space="preserve">
           <source>Item successfully moved to the rubbish bin</source>
-          <target state="translated">项目已移动至垃圾箱</target>
+          <target state="translated">项目已成功移至垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully one single node to the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/MoveToRubbishBinSuccess_Title" translate="yes" space="preserve">
@@ -412,7 +412,7 @@ Preserve the {0} code because is for include the name of the node to be moved in
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to move {0} items to the rubbish bin?</source>
-          <target state="translated">您确定要将 {0}个项目移至垃圾箱吗？</target>
+          <target state="translated">您确定要将{0}个项目移至垃圾箱吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to move multiple nodes to the rubbish bin, asking for confirmation to make the movement.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -423,7 +423,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/MultiMoveToRubbishBinSucces" translate="yes" space="preserve">
           <source>{0} items moved to the rubbish bin</source>
-          <target state="translated">移动 {0}个项目至垃圾箱</target>
+          <target state="translated">已移动{0}个文件至垃圾桶</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when move successfully multiple nodes to the rubbish bin.
 Preserve the {0} code because is for include the number of nodes to be moved in runtime.</note>
         </trans-unit>
@@ -434,7 +434,7 @@ Preserve the {0} code because is for include the number of nodes to be moved in 
         </trans-unit>
         <trans-unit id="Resx/PendingTransfersLogout" translate="yes" space="preserve">
           <source>You have {0} pending transfers. Pending transfers will be canceled. Are you sure you want to logout?</source>
-          <target state="translated">您有 {0}个待定传输。这些待定传输将被取消。您确定要登出吗？</target>
+          <target state="translated">您有{0}个待定传输。这些待定传输将被取消。您确定要登出吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to logout the application and has pending transfers. Asks for confirmation to logout.
 Preserve the {0} code because is for include the number of pending transfers in runtime.</note>
         </trans-unit>
@@ -456,12 +456,12 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount" translate="yes" space="preserve">
           <source>The account is already confirmed. You can now login.</source>
-          <target state="translated">您的账户已确认。您现在可以登录了。</target>
+          <target state="translated">您的帐户已确认激活。您现在可以登入使用了。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously.</note>
         </trans-unit>
         <trans-unit id="Resx/AlreadyConfirmedAccount_Title" translate="yes" space="preserve">
           <source>Account already confirmed</source>
-          <target state="translated">账户已确认</target>
+          <target state="translated">帐户已确认</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user try to confirm a MEGA account that has been already confirmed previously - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/WrongPassword" translate="yes" space="preserve">
@@ -476,7 +476,7 @@ Preserve the {0} code because is for include the number of pending transfers in 
         </trans-unit>
         <trans-unit id="Resx/DownloadLimitMessage" translate="yes" space="preserve">
           <source>You have selected over {0} items ({1}) to download. Do you want to proceed?</source>
-          <target state="translated">您已经选择了超过 {0} 个项 ({0}) 下载. 您要继续吗?</target>
+          <target state="translated">您已选取超过{0} 下载项目({1})。确定继续?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user would try to download at the same time more nodes than the reliable number of simultaneous downloads for a good app performance. This dialog ask confirmation to start the download process. 
 Preserve the {0} and ({1}) codes because is for include the maximum reliable download number and the precise number of nodes to be downloaded in runtime.</note>
         </trans-unit>
@@ -487,7 +487,7 @@ Preserve the {0} and ({1}) codes because is for include the maximum reliable dow
         </trans-unit>
         <trans-unit id="Resx/QuestionAskedDownloadOption" translate="yes" space="preserve">
           <source>Do you want to automatically export image files to your photo album after download? You can change this setting on the settings page afterwards. Other file types will only be stored in the local storage of the app.</source>
-          <target state="translated">您希望下载完成后自动导出图像至您的相册吗？您之后可以通过设置页面更改这一设置。其他文件类型将只被保存在该应用程序的本地存储。</target>
+          <target state="translated">您希望下载完成后自动导出图像至您的相册吗？您之后可以通过设置页面更改这一设置。其他文件类型将只被保存在app的本地存储。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed the first time that a user want to download a image. Asks if wants to export image files to the photo album after download in future and informs that user can change this option afterwards.</note>
         </trans-unit>
         <trans-unit id="Resx/PausingTransfersFailed" translate="yes" space="preserve">
@@ -573,7 +573,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed" translate="yes" space="preserve">
           <source>Could not load files and folders from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">无法从MEGA加载文件或文件夹。请重试或选择刷新。</target>
+          <target state="translated">无法从MEGA加载文件或文件夹，请重试或者选择刷新。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the nodes of the MEGA cloud service.</note>
         </trans-unit>
         <trans-unit id="Resx/LoadNodesFailed_Title" translate="yes" space="preserve">
@@ -593,12 +593,12 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError" translate="yes" space="preserve">
           <source>You have been logged out on this device from another location</source>
-          <target state="translated">您已从其他位置上登出此设备</target>
+          <target state="translated">您已从其他地点登出此设备</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is logged out from another location and is trying to do any operation that requires a valid session (API_ESID Error).</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert" translate="yes" space="preserve">
           <source>Operation not allowed, you will exceed the storage limit of your account. Do you want to upgrade your account?</source>
-          <target state="translated">操作被禁，您将超过您的账户存储限额。您要升级账户吗？</target>
+          <target state="translated">操作被禁，您将超过您的账户储存限额。您要升级账户吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type.</note>
         </trans-unit>
         <trans-unit id="Resx/OverquotaAlert_Title" translate="yes" space="preserve">
@@ -608,7 +608,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">你还没有选择一个文件的默认下载地址。为了继续进行下载，请选择一个目标文件夹或者去设置中设置你默认的下载位置</target>
+          <target state="translated">您尚未为您的文件选择预设下载位置。若要继续进行下载，请先选择目标文件夹，或至设定中指定您的预设下载位置。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -619,7 +619,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file</source>
-          <target state="translated">准备文件失败</target>
+          <target state="translated">加载文件失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare a file for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SessionIDError_Title" translate="yes" space="preserve">
@@ -639,18 +639,19 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">您没有复制这个文件到目标文件夹的权限。或许您正尝试保存或复制一个不支持的文件类型到SD卡。请尝试保存或复制该文件至您设备的内部存储器。</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
           <source>Unauthorized access</source>
-          <target state="translated">访问未授权</target>
+          <target state="translated">访问未获授权</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">复制恢复密钥至剪切板失败，请重新尝试</target>
+          <target state="translated">复制还原金钥至剪贴簿失败，请重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
@@ -660,22 +661,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
           <source>Current PIN lock is not correct or does not match</source>
-          <target state="translated">目前的PIN码不正确或不匹配</target>
+          <target state="translated">当前的PIN码不正确或不匹配</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code. Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch_Title" translate="yes" space="preserve">
           <source>Current PIN lock no match</source>
-          <target state="translated">与当前PIN码不匹配</target>
+          <target state="translated">与当前的PIN码不匹配</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user is trying to change the PIN lock code and introduces an incorrect code into the field for the current PIN lock code - (String as short as possible). Try to preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="translated">恢复密钥已被复制至粘贴板</target>
+          <target state="translated">已复制还原金钥至剪贴簿</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
           <source>Recovery Key copied</source>
-          <target state="translated">恢复密钥已复制</target>
+          <target state="translated">已复制还原金钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PinLockTooShort" translate="yes" space="preserve">
@@ -700,7 +701,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError" translate="yes" space="preserve">
           <source>Not enough free memory space to complete this operation. The app will shut down now</source>
-          <target state="translated">没有足够的可用内存空间来完成此操作。应用程序即将关闭。</target>
+          <target state="translated">没有足够的可用内存空间来完成此操作。 App 即将关闭。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the app exceeds the memory limit quota of the device.</note>
         </trans-unit>
         <trans-unit id="Resx/MemoryLimitError_Title" translate="yes" space="preserve">
@@ -736,7 +737,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/UploadNodeFailed" translate="yes" space="preserve">
           <source>Failed to upload file. Please try again. [{0}]</source>
-          <target state="translated">上传文件失败，请重试。[{0}]</target>
+          <target state="translated">上传文件失败，请重试。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upload a node failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -747,149 +748,149 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed" translate="yes" space="preserve">
           <source>Failed to select file(s). Please, try again [{0}]</source>
-          <target state="translated">选取文件失败. 请再试一次 [{0}]</target>
+          <target state="translated">选取文件失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select files failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFileFailed_Title" translate="yes" space="preserve">
           <source>File selection failed</source>
-          <target state="translated">选择文件失败</target>
+          <target state="translated">选取文件失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to select files failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/MalformedEmail" translate="yes" space="preserve">
           <source>Malformed e-mail. Please try again.</source>
-          <target state="translated">无法识别的 e-mail. 请再试一次.</target>
+          <target state="translated">无法辨认的e-mail。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user types a malformed email address.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongEmailPasswordLogin" translate="yes" space="preserve">
           <source>Incorrect e-mail address or password. Please try again.</source>
-          <target state="translated">错误的电子邮件或密码. 请再试一次.</target>
+          <target state="translated">不正确的e-mail或密码。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to login with an e-mail that is not associated with a MEGA account or type a wrong password. Preserve the MEGA word in uppercase.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete {0}?</source>
-          <target state="translated">您确定要永久删除 {0}?</target>
+          <target state="translated">您确定要永远删除{0}?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it.
 Preserve the {0} code because is for include name of the node to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteNodeQuestion_Title" translate="yes" space="preserve">
           <source>Delete item?</source>
-          <target state="translated">删除项?</target>
+          <target state="translated">删除项目?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to delete permanently a node, asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetUserDataFailed" translate="yes" space="preserve">
           <source>Failed to retrieve your user data. Please try again. [{0}]</source>
-          <target state="translated">获取您的用户数据失败. 请再试一次. [{0}]</target>
+          <target state="translated">读取您的使用者资料失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the user data failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetUserDataFailed_Title" translate="yes" space="preserve">
           <source>Retrieving user data failed</source>
-          <target state="translated">检索用户数据失败</target>
+          <target state="translated">检索使用者数据失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the user data failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo. Please, try again [{0}]</source>
-          <target state="translated">截取图片失败. 请再试一次 [{0}]</target>
+          <target state="translated">选取照片失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoFailed_Title" translate="yes" space="preserve">
           <source>Photo capture failed</source>
-          <target state="translated">图片截取失败</target>
+          <target state="translated">相片截取失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture photo or video. Please, try again [{0}]</source>
-          <target state="translated">截取图片或视频失败. 请再试一次 [{0}]</target>
+          <target state="translated">选取照片或影片失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture photo or video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CapturePhotoVideoFailed_Title" translate="yes" space="preserve">
           <source>Photo/video capture failed</source>
-          <target state="translated">图片/视频 截取失败</target>
+          <target state="translated">相片/影片截取失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture photo or video failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed" translate="yes" space="preserve">
           <source>Failed to capture video. Please, try again [{0}]</source>
-          <target state="translated">截取视频失败. 请再试一次 [{0}]</target>
+          <target state="translated">选取影片失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to capture video failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CaptureVideoFailed_Title" translate="yes" space="preserve">
           <source>Video capture failed</source>
-          <target state="translated">视频截取失败</target>
+          <target state="translated">影片截取失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to capture video failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed" translate="yes" space="preserve">
           <source>Failed to save settings. Please, try again [{0}]</source>
-          <target state="translated">保存配置失败. 请再试一次 [{0}]</target>
+          <target state="translated">储存设定失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to save settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SaveSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error saving settings</source>
-          <target state="translated">保存设置错误</target>
+          <target state="translated">储存设定错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to save settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed" translate="yes" space="preserve">
           <source>An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</source>
-          <target state="translated">An error occurred when trying to open a shortcut. Maybe it is an invalid shortcut or the destination folder was deleted.</target>
+          <target state="translated">开启捷径时发生错误。也许是个无效的捷径或目的地文件夹已被删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invalid shortcut.</note>
         </trans-unit>
         <trans-unit id="Resx/ShortCutFailed_Title" translate="yes" space="preserve">
           <source>Shortcut error</source>
-          <target state="translated">快捷方式错误</target>
+          <target state="translated">捷径错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user is trying to open an invalid shortcut - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed" translate="yes" space="preserve">
           <source>The credit card information is not correct. The credit card will not be charged.</source>
-          <target state="translated">信用卡信息不正确。您的信用卡将不会被扣款。</target>
+          <target state="translated">信用卡资料不正确。您的信用卡将不会被扣款。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to store a user credit card failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CreditCardStoreFailed_Title" translate="yes" space="preserve">
           <source>Storing credit card failed</source>
-          <target state="translated">储存信用卡已失败</target>
+          <target state="translated">储存信用卡失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to store a user credit card failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCreditCardPayment" translate="yes" space="preserve">
           <source>Please fill in all the required fields and try again.</source>
-          <target state="translated">请填写所有必填栏后再试一次.</target>
+          <target state="translated">请填入所有必填栏位并再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for credit card payment are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormatCreditCardPayment" translate="yes" space="preserve">
           <source>The credit card number, month/year of expiration and the CVV should be numeric. Please check that everything is correct and try again.</source>
-          <target state="translated">信用卡号，过期的月/年及CVV应该是数字，请检查是否正确并再次尝试</target>
+          <target state="translated">信用卡号，有效月/年与CVV验证码应为数字。请检查是否都正确并再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user fill some data with a wrong format during a credit card payment.</note>
         </trans-unit>
         <trans-unit id="Resx/WrongDataFormat_Title" translate="yes" space="preserve">
           <source>Wrong data format</source>
-          <target state="translated">错误的数据格式</target>
+          <target state="translated">错误数据格式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the user types some data with a wrong format - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscription" translate="yes" space="preserve">
           <source>You are about to cancel your MEGA subscription. Please let us know if there is anything we can do to help change your mind.</source>
-          <target state="translated">你正取消你的MEGA订阅。如果有任何我们能做的有助于改变你的决定请让我们知晓</target>
+          <target state="translated">您将取消订阅MEGA。如果我们可以做些什么以改变您的心意，请让我们知道。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription, asking him send a feedback message.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">感谢您的反馈！您确定要取消MEGA签约吗？</target>
+          <target state="translated">感谢您的反馈！您确定要取消您的MEGA订购吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
           <source>The subscription has not been canceled correctly. Please contact support@mega.nz to cancel your subscription.</source>
-          <target state="translated">订阅未被正确删除。请联系support@mega.nz以取消你的订阅</target>
+          <target state="translated">您的订阅购买未完成取消程序。请连系support@mega.nz 以便取消。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed_Title" translate="yes" space="preserve">
           <source>Subscription cancellation failed</source>
-          <target state="translated">取消签约失败</target>
+          <target state="translated">取消订购失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to cancel a subscription failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully" translate="yes" space="preserve">
           <source>The subscription has been cancelled.</source>
-          <target state="translated">签约已被取消.</target>
+          <target state="translated">此笔订购已被取消。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to cancel a subscription finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionSuccessfully_Title" translate="yes" space="preserve">
@@ -899,126 +900,126 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/CancelSubscription_Title" translate="yes" space="preserve">
           <source>Cancel Subscription</source>
-          <target state="translated">取消签约</target>
+          <target state="translated">取消订购</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialogs displayed when a user is trying to cancel a subscription - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsCancelSubscription" translate="yes" space="preserve">
           <source>Please give us your feedback. Thanks.</source>
-          <target state="translated">请提供您的反馈. 谢谢.</target>
+          <target state="translated">请不吝给予指教。谢谢。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for cancel subscription are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed" translate="yes" space="preserve">
           <source>The operation failed. Your credit card has not been charged.</source>
-          <target state="translated">该操作未正确地完成。信用卡将不会被扣款。</target>
+          <target state="translated">该操作尚未正确地完成。信用卡将不会被扣款。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account failed.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountFailed_Title" translate="yes" space="preserve">
           <source>Error upgrading account</source>
-          <target state="translated">升级账户错误</target>
+          <target state="translated">升级帐号错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully" translate="yes" space="preserve">
           <source>Account successfully upgraded!</source>
-          <target state="translated">账户已成功升级！</target>
+          <target state="translated">帐户已成功升级！</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to upgrade an user account finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/UpgradeAccountSuccessfully_Title" translate="yes" space="preserve">
           <source>Account upgraded</source>
-          <target state="translated">账户已升级</target>
+          <target state="translated">帐户已升级</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to upgrade an user account finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the available payment methods. Please try again. [{0}]</source>
-          <target state="translated">获取可用的支付手段失败. 请再试一次. [{0}]</target>
+          <target state="translated">选取可用的付款方式失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment methods failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentMethodsFailed_Title" translate="yes" space="preserve">
           <source>Error getting payment methods</source>
-          <target state="translated">获取支付方式错误</target>
+          <target state="translated">取得付款方式错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment methods failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed" translate="yes" space="preserve">
           <source>Failed to retrieve the payment Url. Please try again. [{0}]</source>
-          <target state="translated">获取支付链接失败. 请再试一次. [{0}]</target>
+          <target state="translated">读取付款链接失败。请再试一次[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get the payment Url failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/GetPaymentUrlFailed_Title" translate="yes" space="preserve">
           <source>Retrieving payment URL failed</source>
-          <target state="translated">检索支付链接失败</target>
+          <target state="translated">检索付款链接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get the payment Url failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled" translate="yes" space="preserve">
           <source>Background agents for MEGA have been disabled by the user</source>
-          <target state="translated">MEGA的后台代理程序已被用户禁用</target>
+          <target state="translated">MEGA背景程序已被使用者停用</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/BackgroundAgentDisabled_Title" translate="yes" space="preserve">
           <source>Background agents disabled</source>
-          <target state="translated">背景代理被禁用</target>
+          <target state="translated">背景程序停用</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases when the user has disabled background agents for this application</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn" translate="yes" space="preserve">
           <source>In order for the automatic Camera Uploads to work correctly, you need to enable the option "Stay logged in". Do you want to enable this option?</source>
-          <target state="translated">为了使自动摄像机上传运行正确，你需要激活这个选项“保持登录”，你想激活这个选项吗？</target>
+          <target state="translated">为了使相机自动上传功能正常执行，您需要激活选项“保持登入”。确定要激活这个选项吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/CameraUploadNeedsStayLoggedIn_Title" translate="yes" space="preserve">
           <source>Auto Camera Uploads prerequisites</source>
-          <target state="translated">自动相机上传的先决条件</target>
+          <target state="translated">相机自动上传条件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion" translate="yes" space="preserve">
           <source>Do you want to remove the contact {0}?</source>
-          <target state="translated">你想删除联系人{0}？</target>
+          <target state="translated">您要移除联系人{0} 吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove a contact, asking for confirmation to make it.
 Preserve the {0} code because is for include email of the contact to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactQuestion_Title" translate="yes" space="preserve">
           <source>Remove contact?</source>
-          <target state="translated">删除联系人？</target>
+          <target state="translated">确定移除连络人？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove a contact asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed" translate="yes" space="preserve">
           <source>The contact invitation could not be sent. Please try again.</source>
-          <target state="translated">联系人邀请不能被发送，请重新尝试</target>
+          <target state="translated">无法发送联系人邀请，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailed_Title" translate="yes" space="preserve">
           <source>Failed to invite the contact</source>
-          <target state="translated">邀请联系人失败</target>
+          <target state="translated">联系人邀请失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully" translate="yes" space="preserve">
           <source>User {0} has been invited and will appear on your contact list once they have accepted the invitation.</source>
-          <target state="translated">用户 {0}已被邀请且一旦他们接受邀请将显示在你的联系人列表中 </target>
+          <target state="translated">已邀请用户{0}。他们接受邀请后，即会出现在您的联系人列表。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).
 Preserve the [{0}] code because is for include the contact email in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddSuccessfully_Title" translate="yes" space="preserve">
           <source>Contact invited</source>
-          <target state="translated">邀请联系人</target>
+          <target state="translated">已发出邀请</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ResourceIntensiveTaskDescription" translate="yes" space="preserve">
           <source>MEGA automatic camera uploads</source>
-          <target state="translated">Mega摄像机自动上传</target>
+          <target state="translated">MEGA相机自动上传</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdate" translate="yes" space="preserve">
           <source>Your account has been updated. Do you want to check the new account details?</source>
-          <target state="translated">您的账户已经被更新，您想查看新的账户信息吗</target>
+          <target state="translated">您的帐户已更新。是否要检查新帐户的详细资讯？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/AccountUpdated_Title" translate="yes" space="preserve">
           <source>Updated account</source>
-          <target state="translated">账户已更新</target>
+          <target state="translated">已更新之帐户</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the account is updated (upgraded or downgraded).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError" translate="yes" space="preserve">
           <source>Our SSL/TLS certificate can't be verified. You could be affected by a man-in-the-middle attack.</source>
-          <target state="translated">我们的SSL/TLS认证不能被验证，你可能会受到中间方攻击的影响</target>
+          <target state="translated">我们的SSL/ TLS凭证无法被认证。您可能受到中间人攻击。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</note>
         </trans-unit>
         <trans-unit id="Resx/SSLKeyError_Title" translate="yes" space="preserve">
@@ -1028,17 +1029,17 @@ Preserve the [{0}] code because is for include the contact email in runtime.</no
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed" translate="yes" space="preserve">
           <source>The Auto Camera Upload background task has failed. You can re-enable it on the settings page.</source>
-          <target state="translated">自动摄像头上传后台任务失败，你可以在设置页重新启动</target>
+          <target state="translated">相片自动上传功能无法使用。您可以在设定页面中重新激活此功能。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AutoCameraUploadFailed_Title" translate="yes" space="preserve">
           <source>Auto Camera Upload failed</source>
-          <target state="translated">摄像机自动上传失败</target>
+          <target state="translated">相机自动上传失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the auto camera upload service failed.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteContactFailed" translate="yes" space="preserve">
           <source>Failed to remove the contact {0}. Please try again. [{0}]</source>
-          <target state="translated">删除联系人{0}失败，请重新尝试</target>
+          <target state="translated">删除联系人失败{0}，请再试一次。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a contact failed. 
 Preserve the {0} code because is for include the contact email in runtime. Preserve the [{1}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
@@ -1049,112 +1050,112 @@ Preserve the {0} code because is for include the contact email in runtime. Prese
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion" translate="yes" space="preserve">
           <source>Do you want to remove {0} contacts?</source>
-          <target state="translated">你想删除{0}联系人吗</target>
+          <target state="translated">您要移除{0} 个联系人吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to remove multiple contacts, asking for confirmation to make it.
 Preserve the {0} code because is for include the number of contacts to be removed in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/DeleteMultipleContactsQuestion_Title" translate="yes" space="preserve">
           <source>Remove contacts?</source>
-          <target state="translated">删除联系人?</target>
+          <target state="translated">移除联系人？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user want to remove multiple contacts asking for confirmation to make it - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordFailed" translate="yes" space="preserve">
           <source>Failed to change password. Please try again.</source>
-          <target state="translated">修改密码失败，请重新尝试</target>
+          <target state="translated">更换密码失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to change the MEGA account password failed.</note>
         </trans-unit>
         <trans-unit id="Resx/ChangePasswordSuccess" translate="yes" space="preserve">
           <source>Your password has been changed.</source>
-          <target state="translated">密码已修改。</target>
+          <target state="translated">你的密码已变更。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when change a MEGA account password succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/NewAndOldPasswordMatch" translate="yes" space="preserve">
           <source>The new and the old password must not match.</source>
-          <target state="translated">新的密码不能与您现在的密码相同.</target>
+          <target state="translated">新的密码不能与您现在的密码相同。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user are trying to change his/her MEGA account password and the new password is equal to the old password.</note>
         </trans-unit>
         <trans-unit id="Resx/RequiredFieldsChangePassword" translate="yes" space="preserve">
           <source>Please fill in your old MEGA password and your new MEGA password.</source>
-          <target state="translated">请填写你得MEGA旧密码和新密码</target>
+          <target state="translated">请填写您的旧MEGA密码和新MEGA密码。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when required fields for change password are not filled in.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
-          <target state="translated">关闭对话失败。请重新尝试[{0}]</target>
+          <target state="translated">无法关闭项目，请再试一次。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill all sessions (except current) failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseAllSessionsSuccess" translate="yes" space="preserve">
           <source>The remaining sessions were successfully closed.</source>
-          <target state="translated">剩余会话被成功关闭</target>
+          <target state="translated">其余项目皆已成功关闭。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill all sessions (except current) successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseSessionFailed" translate="yes" space="preserve">
           <source>Failed to close the session. Please try again. [{0}]</source>
-          <target state="translated">关闭对话失败。请重新尝试[{0}]</target>
+          <target state="translated">无法关闭项目，请再试一次。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to close or kill session failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/CloseSessionSucces" translate="yes" space="preserve">
           <source>The session has been successfully closed.</source>
-          <target state="translated">会话已被成功关闭</target>
+          <target state="translated">此项目已被成功关闭。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when close or kill a session succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinFailed" translate="yes" space="preserve">
           <source>Failed to clear the rubbish bin. Please try again.</source>
-          <target state="translated">清空垃圾箱失败，请重新尝试</target>
+          <target state="translated">清空垃圾桶失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to empty the rubbish bin failed.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to permanently delete all files from the rubbish bin?</source>
-          <target state="translated">你想将垃圾箱里所有文件永久删除吗</target>
+          <target state="translated">您确定要永久删除所有垃圾桶中的文件？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to empty the rubbish bin, asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CleanRubbishBinSuccess" translate="yes" space="preserve">
           <source>The rubbish bin has been cleared successfully.</source>
-          <target state="translated">垃圾箱已经被成功清空</target>
+          <target state="translated">已成功清空垃圾桶。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when empty the rubbish bin succesfully.</note>
         </trans-unit>
         <trans-unit id="Resx/InviteContactAddFailedOwnEmail" translate="yes" space="preserve">
           <source>You are trying to add your own email as a contact.</source>
-          <target state="translated">你正在尝试将你自己的邮箱添加为联系人</target>
+          <target state="translated">邀请失败，您正在将自己加入联系人表单。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to invite a contact failed because the user is trying to his/her own e-mail.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveLinkFailed" translate="yes" space="preserve">
           <source>Failed to remove link. Please try again.</source>
-          <target state="translated">移除链接失败，请再次尝试</target>
+          <target state="translated">移除链接失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to remove a link to a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/NoInternetConnectionMessage" translate="yes" space="preserve">
           <source>You cannot perform this action. Please connect to the Internet and try again.</source>
-          <target state="translated">你不能执行该操作，请连通网络再次尝试</target>
+          <target state="translated">您不能执行此操作。请于连接网络后，再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to perform any online action without an active Internet connection.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the path '{0}'. Please select another one and try again.</source>
-          <target state="translated">你不能访问路径'{0}'，请选择另一个并重新尝试</target>
+          <target state="translated">您无法存取路径'{0}' 。请选择其他路径并再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.
 Preserve the '{0}' code because is for include the file/folder path in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/FolderUnauthorizedAccess_Title" translate="yes" space="preserve">
           <source>Access denied</source>
-          <target state="translated">访问被拒绝</target>
+          <target state="translated">进入遭拒</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the app or the user doesn't have access to a folder path in the device memory. For example to download a file/folder, create a new folder, etc.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName" translate="yes" space="preserve">
           <source>The name of the file '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">文件 '{0}' 名无效或含有非法字符，请修改并再次尝试</target>
+          <target state="translated">文件名称'{0}' 无效，或有不可使用的符号。请于更改后重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a file name is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFileName_Title" translate="yes" space="preserve">
           <source>Invalid file name</source>
-          <target state="translated">无效文件名</target>
+          <target state="translated">无效的文件名</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/PathTooLong" translate="yes" space="preserve">
           <source>The path of the file/folder '{0}' is too long. Please change it and try again.</source>
-          <target state="translated">文件/文件夹 '{0}'路径太长，请修改并重新尝试</target>
+          <target state="translated">文件/文件夹'{0}' 之路径过长。请于修改后重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that the file/folder path is too long.
 Preserve the '{0}' code because is for include the file/folder name in runtime.</note>
         </trans-unit>
@@ -1165,23 +1166,23 @@ Preserve the '{0}' code because is for include the file/folder name in runtime.<
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath" translate="yes" space="preserve">
           <source>The name or path of the folder '{0}' is not valid or has illegal characters. Please change it and try again.</source>
-          <target state="translated">文件夹‘{0}’的名字或者路径无效，或者含有非法字符，请修改后继续尝试</target>
+          <target state="translated">文件夹'{0}' 的名称或路径无效，或有不可用的符号。请于更改后再重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that a folder name or path is not valid or has illegal characters.
 Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/InvalidFolderNameOrPath_Title" translate="yes" space="preserve">
           <source>Invalid name or path</source>
-          <target state="translated">无效文件名或路径</target>
+          <target state="translated">无效的名称或路径</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that the file name or path is not valid or has illegal characters - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InvalidLink" translate="yes" space="preserve">
           <source>Invalid link</source>
-          <target state="translated">无效链接</target>
+          <target state="translated">无效的链接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the user is trying to open an invliad lick (NO KEY).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectFolderFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to select the folder. Please try again or select another folder.</source>
-          <target state="translated">选择文件夹失败，请重新尝试或者选择另外一个文件夹</target>
+          <target state="translated">没有已选的文件夹。请重试或选择其他文件夹。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to select a folder failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFileFailedNoErrorCode" translate="yes" space="preserve">
@@ -1193,17 +1194,17 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed" translate="yes" space="preserve">
           <source>Failed to prepare file(s) for upload. Please try again.</source>
-          <target state="translated">准备上传文件失败，请重新尝试</target>
+          <target state="translated">准备上传文件失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to prepare a file(s) for upload failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PrepareFilesForUploadFailed_Title" translate="yes" space="preserve">
           <source>Error preparing file(s)</source>
-          <target state="translated">准备文件错误</target>
+          <target state="translated">准备上传文件失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to prepare file(s) for upload failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadNodeFailedNoErrorCode" translate="yes" space="preserve">
           <source>Failed to download the file. Please try again.</source>
-          <target state="translated">下载此文件失败，请再次尝试</target>
+          <target state="translated">下载文件失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadFailed_Title" translate="yes" space="preserve">
@@ -1213,69 +1214,69 @@ Preserve the '{0}' code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadInSharesFailed" translate="yes" space="preserve">
           <source>Failed to load incoming shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">加载正在从MEGA导入的共享内容失败，请重新尝试或者点击更新</target>
+          <target state="translated">无法载入MEGA的传入共享文件。请重试，或点击重新整理。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the incoming shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadOutSharesFailed" translate="yes" space="preserve">
           <source>Failed to load outgoing shared items from MEGA. Please try again or click on refresh.</source>
-          <target state="translated">加载从MEGA导出的共享内容失败，请重新尝试或者点击更新</target>
+          <target state="translated">无法载入MEGA的传出共享文件。请重试，或点击重新整理。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to load the outgoing shared items.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed" translate="yes" space="preserve">
           <source>Failed to delete settings. Please try again. [{0}]</source>
-          <target state="translated">删除设置失败，请重新尝试[{0}]</target>
+          <target state="translated">删除设定失败，请再试一次。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to delete settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DeleteSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error deleting settings</source>
-          <target state="translated">删除设置错误</target>
+          <target state="translated">删除设定失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to delete settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed" translate="yes" space="preserve">
           <source>Failed to load settings. Please try again. [{0}]</source>
-          <target state="translated">下载设置失败，请重新尝试[{0}]</target>
+          <target state="translated">载入设定失败，请再试一次。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to load settings failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LoadSettingsFailed_Title" translate="yes" space="preserve">
           <source>Error loading settings</source>
-          <target state="translated">加载设置错误</target>
+          <target state="translated">载入设定失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to load settings failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">复制Mega链接至剪切板失败</target>
+          <target state="translated">复制MEGA链接至剪贴簿失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
           <source>Error copying link</source>
-          <target state="translated">拷贝链接错误</target>
+          <target state="translated">复制链接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert" translate="yes" space="preserve">
           <source>If you agree, the current account will be logged out and all Offline data will be erased. Do you want to continue?</source>
-          <target state="translated">如果你同意，目前的账户将被登出且所有的脱机数据将被删除。你想继续吗？</target>
+          <target state="translated">如果您同意，当前的账户将被登出并且所有离线数据将被删除。是否要继续？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when you try to confirm an account but you are logged in with another one.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyLoggedInAlert_Title" translate="yes" space="preserve">
           <source>You are logged in with another account</source>
-          <target state="translated">您已经使用其他账户登陆了</target>
+          <target state="translated">您已经使用其他账户登录了</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the warning dialog shown when you try to confirm an account but you are logged in with another one - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertMessage" translate="yes" space="preserve">
           <source>To access this folder/file, you will need its Decryption key. If you do not have the key, contact the creator of the link.</source>
-          <target state="translated">你需要解密密钥才能访问这个文件或文件夹。如果你没有密钥，联系链接创建者</target>
+          <target state="translated">要进入此文件夹/文件，您需要它的解密密钥。如果没有密钥，请联系此链接的创建者。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyAlertTitle" translate="yes" space="preserve">
           <source>Enter decryption key</source>
-          <target state="translated">输入解密密钥</target>
+          <target state="translated">请输入解密金钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you tap on a encrypted file/folder link that can't be opened because it doesn't include the key to see its contents - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DecryptionKeyNotValid" translate="yes" space="preserve">
           <source>Invalid decryption key</source>
-          <target state="translated">无效解密密钥</target>
+          <target state="translated">无效的密钥</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when you have written a decryption key not valid - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FileLinkUnavailable" translate="yes" space="preserve">
@@ -1283,53 +1284,54 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">可以由于以下原因导致：
--由于违反ToS/AUP文件被删除
--无效的URL-你正在尝试访问的链接不存在
--文件已经被用户删除</target>
+          <target state="needs-review-translation">该连接已失效，可能的原因： 
+- 因ToS / AUP违规，该链接已被删除。 
+- 无效的网址– 您尝试存取的链接并不存在。 
+- 该文件的上传者已将此链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">可能是由于下面的原因造成：
--由于违反ToS/AUP文件夹链接已经被删除
--无效URL
--你正在尝试读取的链接不存在
--文件夹链接已经被用户删除</target>
+          <target state="needs-review-translation">该连接已失效，可能的原因： 
+- 因ToS / AUP违规，该链接已被删除。 
+- 无效的网址– 您尝试存取的链接并不存在。 
+- 该文件夹的上传者已将此链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
-          <target state="translated">不可用的链接</target>
+          <target state="translated">无效的链接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
           <source>Open link failed [{0}]</source>
-          <target state="translated">打开链接失败</target>
+          <target state="translated">开启文件链接失败[{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to open a link failed.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed_Title" translate="yes" space="preserve">
           <source>Open link failed</source>
-          <target state="translated">打开链接失败</target>
+          <target state="translated">开启链接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to open a link failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess" translate="yes" space="preserve">
           <source>You don't have access to the selected download path. Please select a different download path and try again.</source>
-          <target state="translated">你没有权限选择下载路径，请选择不同的下载路径继续尝试</target>
+          <target state="translated">你无权取得您所选择的下载路径资料。请选择其他不同的下载路径，然后再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DowloadPathUnauthorizedAccess_Title" translate="yes" space="preserve">
           <source>Unauthorized access</source>
-          <target state="translated">访问未授权</target>
+          <target state="translated">访问未获授权</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to download a file/folder failed because the app or the user don't have access permission to the destination folder</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyFailed" translate="yes" space="preserve">
           <source>Failed to copy item. Please try again.</source>
-          <target state="translated">复制失败，请重新尝试</target>
+          <target state="translated">复制失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a node failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyFailed_Title" translate="yes" space="preserve">
@@ -1339,59 +1341,59 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Message" translate="yes" space="preserve">
           <source>The log ({0}) will be deleted from the Offline section.</source>
-          <target state="translated">日志({0})将从脱机部分删除</target>
+          <target state="translated">将从离线模式中删除log记录({0})。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is disabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DisableDebugMode_Title" translate="yes" space="preserve">
           <source>Disable DEBUG mode</source>
-          <target state="translated">禁用 调试 模式</target>
+          <target state="translated">关闭调试模式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is disabled - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Message" translate="yes" space="preserve">
           <source>A log will be created in the Offline section ({0}).</source>
-          <target state="translated">一个日志将在脱机部分[{0}]创建</target>
+          <target state="translated">将于离线模式中留下log记录({0})。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert message shown when the DEBUG mode is enabled.
 Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EnableDebugMode_Title" translate="yes" space="preserve">
           <source>Enable DEBUG mode</source>
-          <target state="translated">开启 调试 模式</target>
+          <target state="translated">开启调试模式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Alert title shown when the DEBUG mode is enabled - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Message" translate="yes" space="preserve">
           <source>Debug mode is enabled. Do you want to disable it?</source>
-          <target state="translated">调试模式已生效。你想关闭它吗？</target>
+          <target state="translated">侦错模式已激活。请问您想关闭它吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable. This alert is to try to avoid that the user forget disable the DEBUG mode and the log file size grows a lot in the offline section.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DebugModeEnabled_Title" translate="yes" space="preserve">
           <source>Debug mode</source>
-          <target state="translated">调试模式</target>
+          <target state="translated">侦错模式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the alert dialog displayed when the app starts and the DEBUG mode is enable - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Message" translate="yes" space="preserve">
           <source>Item shared by the Windows Phone MEGA app.</source>
-          <target state="translated">被Windows 手机Mega应用共享的内容</target>
+          <target state="translated">从MEGA app (Windows手机) 应用程序分享之文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareItemFromMega_Title" translate="yes" space="preserve">
           <source>Item shared from MEGA</source>
-          <target state="translated">来自于Mega的共享信息</target>
+          <target state="translated">MEGA共享文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing one item from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Message" translate="yes" space="preserve">
           <source>Items shared by the Windows Phone MEGA app.</source>
-          <target state="translated">内容已被Windows手机的Mega应用共享</target>
+          <target state="translated">从MEGA app (Windows手机) 应用程序分享之文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message or description for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareMultipleItemsFromMega_Title" translate="yes" space="preserve">
           <source>Items shared from MEGA</source>
-          <target state="translated">从Mega共享的内容</target>
+          <target state="translated">MEGA共享文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed" translate="yes" space="preserve">
           <source>Failed to import folder. Please try again.</source>
-          <target state="translated">导入文件夹失败，请再次尝试</target>
+          <target state="translated">导入文件夹失败，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderFailed_Title" translate="yes" space="preserve">
@@ -1401,22 +1403,22 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportLinkFailed_Title" translate="yes" space="preserve">
           <source>Link import failed</source>
-          <target state="translated">链接导入失败</target>
+          <target state="translated">导入链接失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. Please try again.</source>
-          <target state="translated">共享来自MEGA的内容失败，请重新尝试</target>
+          <target state="translated">无法从MEGA分享项目，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaFailed_Title" translate="yes" space="preserve">
           <source>Error sharing item(s)</source>
-          <target state="translated">共享内容失败</target>
+          <target state="translated">分享项目错误</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed because you have already purchased this item.</source>
-          <target state="translated">您MEGA订阅的购买失败由于您已经购买了这项内容</target>
+          <target state="translated">您的MEGA订阅购买失败，因为您已经购得此项目了。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user already has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AlreadyPurchased_Title" translate="yes" space="preserve">
@@ -1426,37 +1428,37 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</source>
-          <target state="translated">MEGA订阅的购买已经失败或者被取消。请稍后再试或者联系Windows Store客服</target>
+          <target state="translated">您的MEGA订阅购买失败或已取消。请再试一次，或与Windows应用商店的客服联系。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseFailed_Title" translate="yes" space="preserve">
           <source>Purchase failed or cancelled</source>
-          <target state="translated">购买失败或取消</target>
+          <target state="translated">购买失败或已取消</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user tries to purchase an item from the store and it failed</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded" translate="yes" space="preserve">
           <source>Your MEGA subscription purchase has succeeded.</source>
-          <target state="translated">您的Mega订阅已成功</target>
+          <target state="translated">您的MEGA订阅购买成功。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseSucceeded_Title" translate="yes" space="preserve">
           <source>Purchase succeeded</source>
-          <target state="translated">购买成功</target>
+          <target state="translated">已成功购得</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
-          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">你的MEGA订阅的购买未通过我们许可服务器的验证。一旦应用重启我们将试着重新验证你的订阅许可，若仍有错误请联系MEGA客服</target>
+          <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">您的MEGA订阅购买未于我们的授权服务器上通过验证。重新开启此应用程序后，我们将试着再次验证您的购买凭证。如果此错误仍然存​​在，请联系MEGA支持中心。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
           <source>Purchase validation failed</source>
-          <target state="translated">验证购买失败</target>
+          <target state="translated">购买验证失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AssociatedUserAccountTerminated" translate="yes" space="preserve">
           <source>The account that created this link has been terminated due to multiple violations of our Terms of Service.</source>
-          <target state="translated">由于多次违反我们的服务协议，创建这个链接的账户已经被终止</target>
+          <target state="translated">由于多次违反我们的服务条款，因此创建此链接的帐户已被停权。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFailed_Title" translate="yes" space="preserve">
@@ -1466,63 +1468,63 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not download the folder link. Please try again.</source>
-          <target state="translated">不能下载文件夹链接，请重新尝试</target>
+          <target state="translated">无法下载该文件夹链接，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to download a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFailed_Title" translate="yes" space="preserve">
           <source>Import failed</source>
-          <target state="translated">传入失败</target>
+          <target state="translated">导入失败</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ImportFolderLinkFailed" translate="yes" space="preserve">
           <source>Could not import the folder link. Please try again.</source>
-          <target state="translated">不能导入文件夹链接，请重新尝试</target>
+          <target state="translated">无法导入该文件夹链接，请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to import a folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_EmailAlreadyRegistered" translate="yes" space="preserve">
           <source>This e-mail address has already registered an account with MEGA.</source>
-          <target state="translated">该邮箱地址已在MEGA注册。</target>
+          <target state="translated">这个电子邮件信箱在MEGA已被注册。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the users tries to create an account with an email already in use.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_IncompleteConfirmationLink" translate="yes" space="preserve">
           <source>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</source>
-          <target state="translated">你正在使用的账户确认链接不完整。请检查链接长度且确保你已经复制了整个链接然后重新尝试</target>
+          <target state="translated">您所使用的帐户激活确认链接并不完整。请检查该链接之长度，确保已复制了整个链接，然后再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_NewSignUpInvalidLink" translate="yes" space="preserve">
           <source>The link you are using for a new signup is not valid.</source>
-          <target state="translated">你正在使用作为新签约的链接无效</target>
+          <target state="translated">您使用的新注册链接为无效的。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked" translate="yes" space="preserve">
           <source>Your account has been blocked. Please contact support@mega.co.nz</source>
-          <target state="translated">您的账户已被冻结. 请联系 support@mega.co.nz</target>
+          <target state="translated">您的帐户已被封锁。请与support@mega.co.nz 联系。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountNotConfirmed" translate="yes" space="preserve">
           <source>Your account has not been confirmed yet.</source>
-          <target state="translated">您的账户还未被确认</target>
+          <target state="translated">您的帐户尚未确认激活。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TooManyFailedLoginAttempts" translate="yes" space="preserve">
           <source>You have attempted to log in too many times. Please wait until {0} and try again.</source>
-          <target state="translated">你已经尝试登录太多次，请等待{0}并重新尝试</target>
+          <target state="translated">您于短时间内尝试登入的次数过多。请等待至{0} 后再重试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog shown when the user is trying to login and has made several failed attempts.
 Preserve the {0} code because is for include the exact time until the user has to wait.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
           <source>Account blocked</source>
-          <target state="translated">账户被锁</target>
+          <target state="translated">帐号锁定</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
-          <target state="translated">从MEGA中共享内容失败。目标应用似乎忙，请稍后再试</target>
+          <target state="translated">无法从MEGA共享文件。目标应用程序似乎很忙。请稍后再试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="translated">取回节点信息失败。请重新尝试</target>
+          <target state="translated">无法取得节点详情。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
@@ -1532,59 +1534,79 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="translated">下载路径出现未知错误。请再次尝试，如果继续失败，请联系support@mega.nz. [{0}]</target>
+          <target state="translated">下载路径中出现未知的错误。请重试，如果仍失败，请联系support@mega.nz。 [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">找不到您尝试打开的链接的文件/文件夹。 您可能已经登录到其他帐户。 请登录到正确的帐户，然后重试。</target>
+          <target state="translated">找不到您尝试开启的文件/ 文件夹。您可能已登入另一个帐户。请登入正确的帐户，然后再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
           <source>File/folder not found</source>
-          <target state="translated">找不到文件/文件夹</target>
+          <target state="translated">找不到文件/ 文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">您排队中的传输超过您帐户可用的当前传输配额，因此可能会中断。</target>
+          <target state="translated">您进程中的传输量已超过您帐户目前可用的传输配额，因此传输可能会中断。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">消耗的转移配额</target>
+          <target state="translated">传输配额不足</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">您确定要取消所有待处理的下载内容吗？</target>
+          <target state="translated">您确定要取消所有待处理的下载文件吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">您确定要取消所有待处理的上传内容吗？</target>
+          <target state="translated">您确定要取消所有待处理的上传文件吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
           <source>Failed to view the contact details. Please try again later.</source>
-          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <target state="translated">无法查看联系资料。请稍后再试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="translated">Contact details failed</target>
+          <target state="translated">无法查看联系资料。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">无法显示上传选项。请稍后再试。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
           <source>Upload options</source>
           <target state="translated">上传方式</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
+          <source>Do you want to save the log file in an external location to use it later?</source>
+          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
+          <source>Save the log file</source>
+          <target state="translated">Save the log file</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
+          <source>Failed to share the file/folder link. Please try again.</source>
+          <target state="translated">分享链接失败，请再试一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing link</source>
+          <target state="translated">链接分享错误</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
       </group>
     </body>

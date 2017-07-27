@@ -641,9 +641,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">Bạn không có quyền truy cập và sao chép dạng tệp tin này tới thư mục bạn muốn. Có phải bạn đang cố sao chép hay lưu một tệp tin không được hỗ trợ vào thẻ nhớ SD?
-Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của bạn trước.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1286,22 +1286,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Điều này có thể xảy bởi các lý do sau:
-- Tệp tin vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
-- Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
-- Người cung cấp đã xóa tệp tin này.</target>
+          <target state="needs-review-translation">Nguyên nhân có thể là do:
+- Tệp tin đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
+- Sai URL – Điều liên kết bị viết sai hoặc không tồn tại.
+- Tệp tin có thể bị dời đi chỗ khác hoặc bị xóa từ chính chủ.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Điều này có thể xảy bởi các lý do sau:
-- Thư mục vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
-- Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
-- Người cung cấp đã xóa thư mục này.</target>
+          <target state="needs-review-translation">Nguyên nhân có thể là do:
+- Đường liên kết tới thư mục đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
+- URL viết sai hoặc thiếu – đường liên kết không tồn tại hoặc không đúng.
+- Đường liên kết tới thư mục bị xóa bởi chủ sở hữu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1447,8 +1449,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
-          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Mục mua hạng thành viên MEGA của quý khách chưa được thông qua máy chủ của chúng tôi để chứng thực. Xin thử khởi động lại ứng dụng, chúng tôi sẽ thử chứng thực lại hạng thành viên của quý khách. Xin vui lòng liên hệ MEGA để nhận hỗ trợ nếu lỗi này tiếp diễn.</target>
+          <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">Mục mua hạng thành viên MEGA của quý khách chưa được thông qua máy chủ của chúng tôi để chứng thực. Xin thử khởi động lại ứng dụng, chúng tôi sẽ thử chứng thực lại hạng thành viên của quý khách. Xin vui lòng liên hệ MEGA để nhận hỗ trợ nếu lỗi này tiếp diễn.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1520,7 +1522,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
-          <target state="translated">Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</target>
+          <target state="translated">Việc chia sẻ (các) mục từ MEGA tới ứng dụng vừa chọn bị thất bại. Xin thử lại sau.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
@@ -1571,23 +1573,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
           <source>Failed to view the contact details. Please try again later.</source>
-          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <target state="translated">Lấy thông tin danh bạ thất bại. Xin thử lại sau.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="translated">Contact details failed</target>
+          <target state="translated">Có trục trặc hiển thị các thông tin danh bạ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">Có trục trặc hiển thị các tùy chọn tải lên. Xin thử lại sau.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
           <source>Upload options</source>
           <target state="translated">Tùy chỉnh tải lên</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
+          <source>Do you want to save the log file in an external location to use it later?</source>
+          <target state="translated">Bạn có muốn lưu lại tệp log này ở chỗ khác để sử dụng sau?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
+          <source>Save the log file</source>
+          <target state="translated">Lưu lại tệp log</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
+          <source>Failed to share the file/folder link. Please try again.</source>
+          <target state="translated">Việc chia sẻ đườn liên kết tệp tin / thư mục bị thất bại. Xin thử lại.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing link</source>
+          <target state="translated">Việc chia sẻ đường liên kết bị lỗi</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
       </group>
     </body>

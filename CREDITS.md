@@ -11,16 +11,6 @@
 <p>http://www.telerik.com/purchase/license-agreement/phone-dlw-s---20111003</p>
 <hr>
 
-#### Shake Gesture Library
-<p>http://go.microsoft.com/fwlink/?LinkId=219094</p>
-<p>Copyright © Microsoft Corporation.</p>
-###### Description
-<p>Library to detect and process the shake motion of Windows Phone.</p>
-###### License
-<p>Microsoft Public License (MS-PL)</p>
-<p>https://opensource.org/licenses/MS-PL</p>
-<hr>
-
 #### SQLite for Windows Phone and SQLite for Windows Phone 8.1
 <p>http://www.sqlite.org/</p>
 <p>Copyright SQLite Development Team</p>

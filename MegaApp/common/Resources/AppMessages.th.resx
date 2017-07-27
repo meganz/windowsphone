@@ -591,9 +591,9 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>You have not selected a default download location for your files.
+    <value>คุณไม่ได้เลือกตำแหน่งดาวน์โหลดเริ่มต้นสำหรับไฟล์ของคุณ
 
-To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</value>
+หากต้องการดำเนินการดาวน์โหลด กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การตั้งค่าเพื่อตั้งค่าตำแหน่งดาวน์โหลดเริ่มต้นของคุณ</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -619,8 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>คุณไม่ได้รับอนุญาตให้คัดลอกไฟล์ประเภทนี้ลงในโฟลเดอร์ปลายทาง คุณอาจจะลองบันทึก/คัดลอกไฟล์ที่ไม่รองรับลงในการ์ด SD 
-เป็นไปได้ กรุณาบันทึก/คัดลอกไฟล์ลงในหน่วยความจำภายในอุปกรณ์ของคุณ</value>
+    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -855,11 +855,11 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed in cases when the user has disabled background agents for this application</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn" xml:space="preserve">
-    <value>เพื่อให้การอัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติทำงานได้อย่างถูกต้อง คุณต้องเปิดใช้งานตัวเลือก "คงอยู่ในสถานะเข้าสู่ระบบ" คุณต้องการเปิดใช้ตัวเลือกนี้หรือไม่</value>
+    <value>เพื่อให้การอัปโหลดจากกล้องโดยอัตโนมัติทำงานได้อย่างถูกต้อง คุณต้องเปิดใช้งานตัวเลือก "คงอยู่ในสถานะเข้าสู่ระบบ" คุณต้องการเปิดใช้ตัวเลือกนี้หรือไม่</value>
     <comment>Message of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="CameraUploadNeedsStayLoggedIn_Title" xml:space="preserve">
-    <value>ข้อกำหนดเบื้องต้นของการอัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติ</value>
+    <value>ข้อกำหนดเบื้องต้นของการอัปโหลดจากกล้องโดยอัตโนมัติ</value>
     <comment>Title of the dialog displayed when the user wants to enable auto camera uploads but Stay logged in is disabled.</comment>
   </data>
   <data name="DeleteContactQuestion" xml:space="preserve">
@@ -889,7 +889,7 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when the process/request to invite a contact finished successfully - (String as short as possible).</comment>
   </data>
   <data name="ResourceIntensiveTaskDescription" xml:space="preserve">
-    <value>การอัปโหลดจากกล้องถ่ายรูปจาก MEGA โดยอัตโนมัติ</value>
+    <value>การอัปโหลดจากกล้องไป MEGA โดยอัตโนมัติ</value>
     <comment>Descripton of the task that automatic uploads photos tot MEGA. Seen in the background services Settings screen</comment>
   </data>
   <data name="AccountUpdate" xml:space="preserve">
@@ -909,11 +909,11 @@ Preserve the [{0}] code because is for include the contact email in runtime.</co
     <comment>Title of the dialog displayed when MEGA SSL key can't be verified (API_ESSL Error).</comment>
   </data>
   <data name="AutoCameraUploadFailed" xml:space="preserve">
-    <value>การอัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติที่ทำงานอยู่เบื้องหลังไม่สำเร็จ กรุณาเปิดใช้งานใหม่อีกครั้งในหน้าการตั้งค่า</value>
+    <value>การอัปโหลดจากกล้องโดยอัตโนมัติที่ทำงานอยู่เบื้องหลังไม่สำเร็จ กรุณาเปิดใช้งานใหม่อีกครั้งในหน้าการตั้งค่า</value>
     <comment>Message of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="AutoCameraUploadFailed_Title" xml:space="preserve">
-    <value>อัปโหลดจากกล้องถ่ายรูปโดยอัตโนมัติไม่สำเร็จ</value>
+    <value>อัปโหลดจากกล้องโดยอัตโนมัติไม่สำเร็จ</value>
     <comment>Title of the dialog displayed when the auto camera upload service failed.</comment>
   </data>
   <data name="DeleteContactFailed" xml:space="preserve">
@@ -1132,16 +1132,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
-- ไฟล์ถูกลบออกเพราะมีการละเมิด ToS/AUP
-- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+    <value>ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
+- ไฟล์ถูกลบเนื่องจากมีการละเมิด ToS/AUP
+- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - ไฟล์ถูกลบโดยผู้ใช้</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>อาจเกิดจากสาเหตุดังต่อไปนี้:
-- โฟลเดอร์ถูกลบออกเพราะมีการละเมิด ToS/AUP
-- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามจะเข้าถึงไม่มีอยู่
+    <value>ซึ่งอาจเป็นเพราะสาเหตุต่อไปนี้:
+- โฟลเดอร์ถูกลบเนื่องจากมีการละเมิด ToS/AUP
+- URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - โฟลเดอร์ถูกลบโดยผู้ใช้</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
@@ -1233,59 +1233,59 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title for the shared resource or the dialog displayed when the user is sharing multiple items from MEGA with other app of his Windows Phone device - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderFailed" xml:space="preserve">
-    <value>Failed to import folder. Please try again.</value>
+    <value>ไม่สามารถนำเข้าโฟลเดอร์ กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder.</comment>
   </data>
   <data name="AM_ImportFolderFailed_Title" xml:space="preserve">
-    <value>Folder import failed</value>
+    <value>การนำเข้าโฟลเดอร์ล้มเหลว</value>
     <comment>Title of the dialog displayed when fails the process/request to import a folder - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportLinkFailed_Title" xml:space="preserve">
-    <value>Link import failed</value>
+    <value>การนำเข้าลิงก์ล้มเหลว</value>
     <comment>Title of the dialog displayed when fails the process/request to import a link - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Message" xml:space="preserve">
-    <value>Failed to share item(s) from MEGA. Please try again.</value>
+    <value>ไม่สามารถแชร์รายการจาก MEGA กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails.</comment>
   </data>
   <data name="AM_ShareFromMegaFailed_Title" xml:space="preserve">
-    <value>Error sharing item(s)</value>
+    <value>เกิดข้อผิดพลาดในการแชร์รายการ</value>
     <comment>Title of the dialog displayed when the process to share item(s) from MEGA with other app fails - (String as short as possible).</comment>
   </data>
   <data name="AM_AlreadyPurchased" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed because you have already purchased this item.</value>
+    <value>การซื้อสมัครใช้งาน MEGA ล้มเหลว เนื่องจากคุณได้ซื้อรายการนี้ไปแล้ว</value>
     <comment>Message of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_AlreadyPurchased_Title" xml:space="preserve">
-    <value>Already purchased</value>
+    <value>ซื้อแล้ว</value>
     <comment>Title of the dialog displayed when a user already has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseFailed" xml:space="preserve">
-    <value>Your purchase of a MEGA subscription has failed or has been cancelled. Please try again or contact Windows Store support.</value>
+    <value>การซื้อสมัครใช้งาน MEGA ของคุณล้มเหลวหรือถูกยกเลิกแล้ว กรุณาลองอีกครั้งหรือติดต่อฝ่ายสนับสนุนของ Windows Store</value>
     <comment>Message of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseFailed_Title" xml:space="preserve">
-    <value>Purchase failed or cancelled</value>
+    <value>การสั่งซื้อล้มเหลวหรือยกเลิก</value>
     <comment>Title of the dialog displayed when a user tries to purchase an item from the store and it failed</comment>
   </data>
   <data name="AM_PurchaseSucceeded" xml:space="preserve">
-    <value>Your MEGA subscription purchase has succeeded.</value>
+    <value>ซื้อการสมัครรับข้อมูล MEGA ของคุณสำเร็จแล้ว</value>
     <comment>Message of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseSucceeded_Title" xml:space="preserve">
-    <value>Purchase succeeded</value>
+    <value>ซื้อสำเร็จแล้ว</value>
     <comment>Title of the dialog displayed when a user has purchased an item from the store</comment>
   </data>
   <data name="AM_PurchaseValidationFailed" xml:space="preserve">
-    <value>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</value>
+    <value>การซื้อสมัครรับข้อมูล MEGA ของคุณไม่ผ่านการตรวจสอบที่เซิร์ฟเวอร์สิทธิ์การใช้งานของเรา เมื่อรีสตาร์ทแอปนี้เราจะพยายามตรวจสอบใบอนุญาตการสมัครรับข้อมูลของคุณอีกครั้ง กรุณาติดต่อฝ่ายสนับสนุน MEGA หากข้อผิดพลาดยังคงมีอยู่</value>
     <comment>Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_PurchaseValidationFailed_Title" xml:space="preserve">
-    <value>Purchase validation failed</value>
+    <value>การตรวจสอบการซื้อล้มเหลว</value>
     <comment>Title of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</comment>
   </data>
   <data name="AM_AssociatedUserAccountTerminated" xml:space="preserve">
-    <value>The account that created this link has been terminated due to multiple violations of our Terms of Service.</value>
+    <value>บัญชีที่สร้างลิงก์นี้ถูกยุติการใช้งาน เนื่องจากมีการละเมิดข้อกำหนดในการบริการของเราหลายครั้ง</value>
     <comment>Error message shown when you open a file/folder link (or other shared resource) and it's no longer available because the the associated user account has been terminated due to multiple violations of our Terms of Service.</comment>
   </data>
   <data name="AM_DownloadFailed_Title" xml:space="preserve">
@@ -1293,15 +1293,15 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Title of the dialog displayed when the process/request to download a node failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadFolderLinkFailed" xml:space="preserve">
-    <value>Could not download the folder link. Please try again.</value>
+    <value>ไม่สามารถดาวน์โหลดลิงก์โฟลเดอร์ได้ กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when fails the process/request to download a folder link.</comment>
   </data>
   <data name="AM_ImportFailed_Title" xml:space="preserve">
-    <value>Import failed</value>
+    <value>การนำเข้าล้มเหลว</value>
     <comment>Title of the dialog displayed when fails the process/request to import a node - (String as short as possible).</comment>
   </data>
   <data name="AM_ImportFolderLinkFailed" xml:space="preserve">
-    <value>Could not import the folder link. Please try again.</value>
+    <value>ไม่สามารถนำเข้าลิงก์โฟลเดอร์ กรุณาลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when fails the process/request to import a folder link.</comment>
   </data>
   <data name="AM_EmailAlreadyRegistered" xml:space="preserve">
@@ -1309,11 +1309,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the users tries to create an account with an email already in use.</comment>
   </data>
   <data name="AM_IncompleteConfirmationLink" xml:space="preserve">
-    <value>The account confirmation link that you are using is incomplete. Please check the link length and be sure that you have copied the entire link then try again.</value>
+    <value>ลิงก์การยืนยันบัญชีที่คุณใช้ไม่สมบูรณ์ กรุณาตรวจสอบความยาวของลิงก์และตรวจดูว่าได้คัดลอกลิงก์ทั้งหมด แล้วลองอีกครั้ง</value>
     <comment>Message of the dialog displayed when a user try to confirm a MEGA account but the confirm link is incomplete because it has less characters than it should (probably because the user hasn't copied and pasted the entire link).</comment>
   </data>
   <data name="AM_NewSignUpInvalidLink" xml:space="preserve">
-    <value>The link you are using for a new signup is not valid.</value>
+    <value>ลิงก์ที่คุณใช้สำหรับการลงทะเบียนใหม่ไม่ถูกต้อง</value>
     <comment>Message of the warning dialog shown when the user tries to make a new sign up using an invalid link (#newsignup).</comment>
   </data>
   <data name="AM_AccountBlocked" xml:space="preserve">
@@ -1321,11 +1321,11 @@ Preserve the ({0}) code because is for include the file name in runtime.</commen
     <comment>Message of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_AccountNotConfirmed" xml:space="preserve">
-    <value>Your account has not been confirmed yet.</value>
+    <value>บัญชีของคุณยังไม่ได้รับการยืนยัน</value>
     <comment>Message of the dialog shown when the user is trying to login and the account has not been confirmed yet.</comment>
   </data>
   <data name="AM_TooManyFailedLoginAttempts" xml:space="preserve">
-    <value>You have attempted to log in too many times. Please wait until {0} and try again.</value>
+    <value>คุณได้พยายามเข้าสู่ระบบบ่อยเกินไป กรุณารอจนกว่า {0} และลองอีกครั้ง</value>
     <comment>Message of the dialog shown when the user is trying to login and has made several failed attempts.
 Preserve the {0} code because is for include the exact time until the user has to wait.</comment>
   </data>
@@ -1389,5 +1389,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>ตัวเลือกอัปโหลด</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>Do you want to save the log file in an external location to use it later?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Save the log file</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Failed to share the file/folder link. Please try again.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Error sharing link</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

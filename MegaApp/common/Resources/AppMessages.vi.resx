@@ -619,8 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Bạn không có quyền truy cập và sao chép dạng tệp tin này tới thư mục bạn muốn. Có phải bạn đang cố sao chép hay lưu một tệp tin không được hỗ trợ vào thẻ nhớ SD?
-Xin thử sao chép hay lưu tệp tin này vào bộ nhớ trong máy của bạn trước.</value>
+    <value>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1132,17 +1132,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Điều này có thể xảy bởi các lý do sau:
-- Tệp tin vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
-- Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
-- Người cung cấp đã xóa tệp tin này.</value>
+    <value>Nguyên nhân có thể là do:
+- Tệp tin đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
+- Sai URL – Điều liên kết bị viết sai hoặc không tồn tại.
+- Tệp tin có thể bị dời đi chỗ khác hoặc bị xóa từ chính chủ.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Điều này có thể xảy bởi các lý do sau:
-- Thư mục vi phạm Điều Khoản Sử Dụng và Dịch Vụ, nên bị xóa.
-- Cú pháp URL không phù hợp – đường liên kết không tồn tại vì không viết đúng.
-- Người cung cấp đã xóa thư mục này.</value>
+    <value>Nguyên nhân có thể là do:
+- Đường liên kết tới thư mục đã bị xóa bỏ do vi phạm Điều Khoản Sử Dụng Dịch Vụ.
+- URL viết sai hoặc thiếu – đường liên kết không tồn tại hoặc không đúng.
+- Đường liên kết tới thư mục bị xóa bởi chủ sở hữu.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
   <data name="AM_LinkUnavailableTitle" xml:space="preserve">
@@ -1335,7 +1335,7 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog shown when the user is trying to login and the account has been blocked.</comment>
   </data>
   <data name="AM_ShareFromMegaAppBusy_Message" xml:space="preserve">
-    <value>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</value>
+    <value>Việc chia sẻ (các) mục từ MEGA tới ứng dụng vừa chọn bị thất bại. Xin thử lại sau.</value>
     <comment>Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</comment>
   </data>
   <data name="AM_GetNodeDetailsFailed" xml:space="preserve">
@@ -1376,19 +1376,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Failed to view the contact details. Please try again later.</value>
+    <value>Lấy thông tin danh bạ thất bại. Xin thử lại sau.</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
-    <value>Contact details failed</value>
+    <value>Có trục trặc hiển thị các thông tin danh bạ</value>
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Failed to show the upload options. Please try again later.</value>
+    <value>Có trục trặc hiển thị các tùy chọn tải lên. Xin thử lại sau.</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>Tùy chỉnh tải lên</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>Bạn có muốn lưu lại tệp log này ở chỗ khác để sử dụng sau?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Lưu lại tệp log</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Việc chia sẻ đườn liên kết tệp tin / thư mục bị thất bại. Xin thử lại.</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Việc chia sẻ đường liên kết bị lỗi</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>

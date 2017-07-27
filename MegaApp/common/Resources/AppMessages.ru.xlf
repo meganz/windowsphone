@@ -641,9 +641,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You don't have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device's internal memory instead.</source>
-          <target state="translated">Копирование данного типа файлов в папку назначения запрещено. Возможно, вы пытаетесь сохранить/скопировать на SD-карту файл неподдерживаемого типа.
-Пожалуйста, попробуйте сохранить/скопировать файл во внутреннюю память устройства.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="needs-review-translation">У вас нет разрешений на копирование файлов такого типа в папку назначения. Похоже, вы пытаетесь сохранить/скопировать файл неподдерживаемого типа на SD-карту.
+Попробуйте вместо этого сохранить/скопировать файл во внутреннюю память устройства.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1286,22 +1286,24 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">Это могло произойти по следующим причинам:
-- Файл был удален из-за нарушения условий предоставления услуг.
-- Неправильный URL - ссылка, к которой Вы пытаетесь получить доступ, не существует.
-- Файл был удален пользователем.</target>
+          <target state="needs-review-translation">Это может быть вызвано следующими причинами:
+- Ссылка на файл была удалена из-за нарушения Условий обслуживания/Правил использования.
+- Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
+- Ссылка на файл была удалена пользователем.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">Это могло произойти по следующим причинам:
-- Файл был удален из-за нарушения условий предоставления услуг.
-- Неправильный URL - ссылка, к которой Вы пытаетесь получить доступ, не существует.
-- Файл был удален пользователем.</target>
+          <target state="needs-review-translation">Это может быть вызвано следующими причинами:
+- Ссылка на папку была удалена из-за нарушения Условий обслуживания/Правил использования.
+- Недействительный адрес — ссылка, по которой вы пытаетесь перейти, не существует.
+- Ссылка на папку была удалена пользователем.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1447,8 +1449,8 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when a user has purchased an item from the store</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
-          <source>Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="translated">Покупка подписки MEGA  не прошла проверку на нашем сервере лицензий. При перезапуске этого приложения мы повторим проверку лицензий подписки. Пожалуйста, свяжитесь с поддержкой MEGA, если ошибка повторится.</target>
+          <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
+          <target state="needs-review-translation">Покупка подписки MEGA  не прошла проверку на нашем сервере лицензий. При перезапуске этого приложения мы повторим проверку лицензий подписки. Пожалуйста, свяжитесь с поддержкой MEGA, если ошибка повторится.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1587,6 +1589,26 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <source>Upload options</source>
           <target state="translated">Опции загрузки</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
+          <source>Do you want to save the log file in an external location to use it later?</source>
+          <target state="translated">Сохранить лог-файл в другую папку, чтобы использовать позже?</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
+          <source>Save the log file</source>
+          <target state="translated">Сохранить лог-файл</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
+          <source>Failed to share the file/folder link. Please try again.</source>
+          <target state="translated">Не удалось поделиться ссылкой на файл/папку. Попробуйте снова.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
+          <source>Error sharing link</source>
+          <target state="translated">Ошибка</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
       </group>
     </body>

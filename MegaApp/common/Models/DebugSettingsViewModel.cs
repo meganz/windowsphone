@@ -53,15 +53,39 @@ namespace MegaApp.Models
         /// Method to disable the DEBUG mode.
         /// <para>Saves the setting, sets the log level and creates the log file.</para>
         /// </summary>
+#if WINDOWS_PHONE_80
         public void DisableDebugMode()
+#elif WINDOWS_PHONE_81
+        public async void DisableDebugMode()
+#endif
         {
             _isDebugMode = false;
             SettingsService.SaveSetting(SettingsResources.DebugModeIsEnabled, false);
             LogService.SetLogLevel(MLogLevel.LOG_LEVEL_DEBUG);
-            FileService.DeleteFile(AppService.GetFileLogPath());
 
+#if WINDOWS_PHONE_80
+            FileService.DeleteFile(AppService.GetFileLogPath());
             if (App.SavedForOfflineViewModel != null)
                 App.SavedForOfflineViewModel.SavedForOffline.Refresh();
+#elif WINDOWS_PHONE_81
+            // Need force to false to show the options dialog
+            App.AppInformation.PickerOrAsyncDialogIsOpen = false;
+            await DialogService.ShowOptionsDialog(AppMessages.AM_SaveLogFile_Title, AppMessages.AM_SaveLogFile,
+                new[]
+                {
+                    new DialogButton(UiResources.Yes, () =>
+                    {
+                        // Ask the user a save location
+                        FolderService.SelectFolder("SelectLogFileSaveLocation");
+                    }),
+                    new DialogButton(UiResources.No, () =>
+                    {
+                        FileService.DeleteFile(AppService.GetFileLogPath());
+                        if (App.SavedForOfflineViewModel != null)
+                            App.SavedForOfflineViewModel.SavedForOffline.Refresh();
+                    })
+                });
+#endif
         }
 
         #endregion

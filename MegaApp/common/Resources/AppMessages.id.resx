@@ -619,7 +619,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException" xml:space="preserve">
-    <value>Anda tidak memiliki izin untuk men-copy tipe file ini ke folder tujuan. Mungkin anda sedang mencoba untuk menyimpan/ copy tipe file yang tidak didukung ke SD card. Harap coba untuk simpan/ copy file ke internal memori perangkat anda.</value>
+    <value>Anda tidak memiliki izin untuk menyalin jenis file ini ke folder tujuan. Apakah Anda mencoba menyimpan / menyalin file dari jenis yang tidak didukung ke kartu SD?
+Cobalah menyimpan / menyalin file ke memori internal perangkat Anda.</value>
     <comment>Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</comment>
   </data>
   <data name="CopyFileUnauthorizedAccessException_Title" xml:space="preserve">
@@ -1131,16 +1132,16 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Alert title shown when you have written a decryption key not valid - (String as short as possible).</comment>
   </data>
   <data name="AM_FileLinkUnavailable" xml:space="preserve">
-    <value>Ini mungkin terjadi karena beberapa alasan dibawah ini:
-- File telah terhapus karena pelanggaran ToS/AUP
-- URL Salah - link yang anda coba untuk akses tidak tersedia
+    <value>Ini bisa jadi karena alasan berikut:
+- File telah dihapus karena pelanggaran ToS / AUP.
+- URL tidak valid - link yang Anda coba akses tidak ada.
 - File telah dihapus oleh pengguna.</value>
     <comment>Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</comment>
   </data>
   <data name="AM_FolderLinkUnavailable" xml:space="preserve">
-    <value>Ini mungkin terjadi karena beberapa alasan dibawah:
-- Link folder telah dihapus karena pelanggaran ToS/AUP
-- URL Salah - link yang anda coba akses tidak tersedia
+    <value>Ini bisa jadi karena alasan berikut:
+- Link folder telah dihapus karena pelanggaran ToS / AUP.
+- URL tidak valid - link yang Anda coba akses tidak ada.
 - Link folder telah dihapus oleh pengguna.</value>
     <comment>Error message shown when a folder link doesn't exist. Keep "\n"</comment>
   </data>
@@ -1374,19 +1375,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Failed to view the contact details. Please try again later.</value>
+    <value>Gagal melihat detail kontak. Silakan coba lagi nanti.</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
-    <value>Contact details failed</value>
+    <value>Rincian kontak gagal</value>
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Failed to show the upload options. Please try again later.</value>
+    <value>Gagal menampilkan opsi upload. Silakan coba lagi nanti.</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
     <value>Opsi Upload</value>
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
+  </data>
+  <data name="AM_SaveLogFile" xml:space="preserve">
+    <value>Apakah Anda ingin menyimpan file log di lokasi eksternal untuk menggunakannya nanti?</value>
+    <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
+  </data>
+  <data name="AM_SaveLogFile_Title" xml:space="preserve">
+    <value>Save the log file</value>
+    <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ShareLinkFailed" xml:space="preserve">
+    <value>Gagal berbagi link file / folder. Silahkan coba lagi</value>
+    <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
+    <value>Error membagikan link</value>
+    <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
 </root>
