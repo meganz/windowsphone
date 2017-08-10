@@ -57,7 +57,14 @@ namespace MegaApp.Services
             LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Example log message");
 
             // Set the ID for statistics
-            MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
+            try
+            {
+                MegaSDK.setStatsID(Convert.ToBase64String((byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId")));
+            }
+            catch (NotSupportedException e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_WARNING, "Error setting the device unique ID for statistics", e);
+            }
 
             // Set the language code used by the app
             var appLanguageCode = AppService.GetAppLanguageCode();

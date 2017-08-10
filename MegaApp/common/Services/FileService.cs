@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using mega;
 using MegaApp.Classes;
 using MegaApp.Extensions;
 using MegaApp.Resources;
@@ -117,8 +118,9 @@ namespace MegaApp.Services
                 copy = await file.CopyAsync(folder, newFileName, NameCollisionOption.GenerateUniqueName); 
                 
             }
-            catch (UnauthorizedAccessException) 
+            catch (UnauthorizedAccessException e) 
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error copying file by unauthorized access", e);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
@@ -131,6 +133,7 @@ namespace MegaApp.Services
             }
             catch (Exception e) 
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error copying a file", e);
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
@@ -164,11 +167,19 @@ namespace MegaApp.Services
         // Move a file. Copies the file and remove the source file if the copy was successful
         public static async Task<bool> MoveFile(string sourcePath, string destinationFolderPath, string newFileName = null)
         {
-            if(!await CopyFile(sourcePath, destinationFolderPath, newFileName)) return false;
+            try
+            {
+                if (!await CopyFile(sourcePath, destinationFolderPath, newFileName)) return false;
 
-            DeleteFile(sourcePath);
-            
-            return true;
+                DeleteFile(sourcePath);
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error moving a file", e);
+                return false;
+            }
         }
        
         public static async Task<bool> OpenFile(string filePath)
