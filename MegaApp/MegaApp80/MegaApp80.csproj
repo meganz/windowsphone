@@ -456,12 +456,6 @@
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\AboutViewModel.cs">
-      <Link>Models\AboutViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\AcknowledgementsViewModel.cs">
-      <Link>Models\AcknowledgementsViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\common\Models\BaseAppInfoAwareViewModel.cs">
       <Link>Models\BaseAppInfoAwareViewModel.cs</Link>
     </Compile>
@@ -590,14 +584,6 @@
     </Compile>
     <Compile Include="..\common\Models\UpgradeAccountViewModel.cs">
       <Link>Models\UpgradeAccountViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Pages\AboutPage.xaml.cs">
-      <Link>Pages\AboutPage.xaml.cs</Link>
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\common\Pages\AcknowledgementsPage.xaml.cs">
-      <Link>Pages\AcknowledgementsPage.xaml.cs</Link>
-      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
       <Link>Pages\CameraUploadsPage.xaml.cs</Link>
@@ -2181,14 +2167,6 @@
   <ItemGroup>
     <Page Include="..\common\App.xaml">
       <Link>App.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\AboutPage.xaml">
-      <Link>Pages\AboutPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\AcknowledgementsPage.xaml">
-      <Link>Pages\AcknowledgementsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\CameraUploadsPage.xaml">
