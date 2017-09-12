@@ -61,7 +61,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a about.
+        ///   Busca una cadena traducida similar a About.
         /// </summary>
         public static string About {
             get {
@@ -1042,15 +1042,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a MEGA SDK.
-        /// </summary>
-        public static string MEGA_SDK {
-            get {
-                return ResourceManager.GetString("MEGA_SDK", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a MEGA contacts.
         /// </summary>
         public static string MEGAContacts {
@@ -1618,7 +1609,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a save.
+        ///   Busca una cadena traducida similar a Save.
         /// </summary>
         public static string Save {
             get {
@@ -1627,7 +1618,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Saved for offline use.
+        ///   Busca una cadena traducida similar a Saved for offline.
         /// </summary>
         public static string SavedForOffline {
             get {
@@ -2298,6 +2289,15 @@ namespace MegaApp.Resources {
         public static string UI_Logout {
             get {
                 return ResourceManager.GetString("UI_Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a MEGA SDK version.
+        /// </summary>
+        public static string UI_MEGA_SDK_Version {
+            get {
+                return ResourceManager.GetString("UI_MEGA_SDK_Version", resourceCulture);
             }
         }
         

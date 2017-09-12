@@ -121,7 +121,7 @@ namespace MegaApp.Models
 
         private void NavigateToMegaSdk(object obj)
         {
-            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.MegaSdkUrl) };
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_SdkLink) };
             webBrowserTask.Show();
         }
 

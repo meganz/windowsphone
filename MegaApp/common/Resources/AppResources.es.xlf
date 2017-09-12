@@ -31,6 +31,16 @@
           <target state="new">PRO III</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</note>
         </trans-unit>
+        <trans-unit id="Resx/AR_SdkVersion" translate="yes" xml:space="preserve">
+          <source>a978a58</source>
+          <target state="new">a978a58</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Current SDK version used in the app - (NO-TRANSLATION).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AR_SdkLink" translate="yes" xml:space="preserve">
+          <source>https://github.com/meganz/sdk/tree/a978a58c61b9de43448f99981cc26e9a96f9759e</source>
+          <target state="new">https://github.com/meganz/sdk/tree/a978a58c61b9de43448f99981cc26e9a96f9759e</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Link to respository of the current SDK used in the app - (NO-TRANSLATION).</note>
+        </trans-unit>
         <trans-unit id="Resx/AccountTypePro2" translate="yes" xml:space="preserve">
           <source>PRO II</source>
           <target state="new">PRO II</target>
@@ -86,11 +96,6 @@
           <target state="new">mega.microsoftstore.pro1.oneMonth</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Pro1 monthly subscription</note>
         </trans-unit>
-        <trans-unit id="Resx/MegaSdkUrl" translate="no" xml:space="preserve">
-          <source>https://github.com/meganz/sdk</source>
-          <target state="signed-off">https://github.com/meganz/sdk</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">URL to the MEGA SDK repository - (NO-TRANSLATION).</note>
-          </trans-unit>
         <trans-unit id="Resx/PrivacyPolicyUrl" translate="no" xml:space="preserve">
           <source>https://mega.nz/mobile_privacy.html</source>
           <target state="signed-off">https://mega.nz/mobile_privacy.html</target>
