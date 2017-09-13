@@ -660,6 +660,7 @@ namespace MegaApp.Pages
                                 var stream = await upload.Key.OpenStreamForReadAsync();
                                 await stream.CopyToAsync(fs, 8192, uploadTransfer.PreparingUploadCancelToken.Token);
                                 await fs.FlushAsync(uploadTransfer.PreparingUploadCancelToken.Token);
+                                fs.Close();
                             }
 
                             uploadTransfer.StartTransfer();
