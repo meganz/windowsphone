@@ -211,18 +211,18 @@
                         </Grid.ColumnDefinitions>
                         <Ellipse x:Name="HamburgerAvatarLetterBackgroud" Grid.Column="0" HorizontalAlignment="Left" Height="72" Stroke="Black" VerticalAlignment="Center" Width="72" Margin="24,0">
                             <Ellipse.Fill>
-                                <SolidColorBrush Color="{Binding UserData.AvatarColor}"/>
+                                <SolidColorBrush Color="{Binding AccountDetails.AvatarColor}"/>
                             </Ellipse.Fill>
                         </Ellipse>
-                        <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding UserData.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
-                        <Image x:Name="ImgAvatarMenu" Source="{Binding UserData.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill" Visibility="{Binding UserData.HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock x:Name="HamburgerAvatarLetter" Margin="0,0,0,8" Text="{Binding AccountDetails.AvatarLetter}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{StaticResource PhoneFontSizeExtraLarge}" Style="{StaticResource PhoneTextTitle1Style}"/>
+                        <Image x:Name="ImgAvatarMenu" Source="{Binding AccountDetails.AvatarUri}" HorizontalAlignment="Center" Height="72" VerticalAlignment="Center" Width="72" Stretch="UniformToFill" Visibility="{Binding UserData.HasAvatarImage, Converter={StaticResource BooleanToVisibilityConverter}}">
                             <Image.Clip>
                                 <EllipseGeometry Center="36,36" RadiusX="36" RadiusY="36" />
                             </Image.Clip>
                         </Image>
                         <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,-12,12,0">
-                            <TextBlock Text="{Binding UserData.UserName}" TextTrimming="WordEllipsis" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
-                            <TextBlock Text="{Binding UserData.UserEmail}" TextTrimming="WordEllipsis" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserName}" TextTrimming="WordEllipsis" FontFamily="Segoe WP" FontSize="30" Foreground="{StaticResource PhoneDisabledBrush}"/>
+                            <TextBlock Text="{Binding AccountDetails.UserEmail}" TextTrimming="WordEllipsis" FontFamily="Segoe WP SemiLight" FontSize="20" Foreground="{StaticResource PhoneDisabledBrush}"/>
                         </StackPanel>
                     </Grid>
                 </Button>

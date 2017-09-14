@@ -50,8 +50,6 @@ namespace MegaApp
         public static MainPageViewModel MainPageViewModel { get; set; }
         public static SavedForOfflineViewModel SavedForOfflineViewModel { get; set; }
         
-        public static UserDataViewModel UserData { get; set; }
-
         public static GlobalListener GlobalListener { get; private set; }
 
         public static bool FileOpenOrFolderPickerOpenend { get; set; }
