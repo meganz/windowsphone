@@ -80,6 +80,7 @@ namespace MegaApp.Models
             try
             {
                 Clipboard.SetText(MegaSdk.exportMasterKey());
+                MegaSdk.masterKeyExported();
                 new CustomMessageDialog(
                            AppMessages.AM_RecoveryKeyCopied_Title,
                            AppMessages.AM_RecoveryKeyCopied,
