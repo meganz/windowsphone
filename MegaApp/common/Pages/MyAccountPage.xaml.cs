@@ -202,7 +202,9 @@ namespace MegaApp.Pages
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            int numPendingTransfers = SdkService.MegaSdk.getTransfers().size();
+            var transferData = SdkService.MegaSdk.getTransferData();
+            int numPendingTransfers = transferData.getNumDownloads() + transferData.getNumUploads();
+            
             if (numPendingTransfers > 0)
             {
                 var result = await new CustomMessageDialog(

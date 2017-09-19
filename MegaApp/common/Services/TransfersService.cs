@@ -79,39 +79,39 @@ namespace MegaApp.Services
         /// <param name="cleanTransfers">Boolean value which indicates if clean the transfers list before update or not.</param>
         public static void UpdateMegaTransferList(TransferQueue megaTransfers, MTransferType type, bool cleanTransfers = false)
         {
-            // List to store the uploads that are pending on preparation (copy file to the temporary upload folder), 
-            // because they have not already added to the SDK queue
-            List<TransferObjectModel> uploadsInPreparation = new List<TransferObjectModel>();
+            var transferData = SdkService.MegaSdk.getTransferData();
 
-            if (cleanTransfers)
+            switch (type)
             {
-                switch (type)
-                {
-                    case MTransferType.TYPE_DOWNLOAD:
+                case MTransferType.TYPE_DOWNLOAD:
+                    if (cleanTransfers)
                         megaTransfers.Downloads.Clear();
-                        break;
 
-                    case MTransferType.TYPE_UPLOAD:
+                    for (int i = 0; i < transferData.getNumDownloads(); i++)
+                        AddTransferToList(megaTransfers, SdkService.MegaSdk.getTransferByTag(transferData.getDownloadTag(i)));
+                    break;
+
+                case MTransferType.TYPE_UPLOAD:
+                    // List to store the uploads that are pending on preparation (copy file to the temporary upload folder), 
+                    // because they have not already added to the SDK queue
+                    List<TransferObjectModel> uploadsInPreparation = new List<TransferObjectModel>();
+
+                    if (cleanTransfers)
+                    {
                         // Store the uploads pending on preparation and clear the list
                         uploadsInPreparation = megaTransfers.Uploads.Where(t => t.PreparingUploadCancelToken != null).ToList();
                         megaTransfers.Uploads.Clear();
-                        break;
+                    }
 
-                    default:
-                        throw new ArgumentOutOfRangeException("type", type, null);
-                }
-            }
+                    for (int i = 0; i < transferData.getNumUploads(); i++)
+                        AddTransferToList(megaTransfers, SdkService.MegaSdk.getTransferByTag(transferData.getUploadTag(i)));
 
-            var transfers = SdkService.MegaSdk.getTransfers(type);
-            var numTransfers = transfers.size();
-            for (int i = 0; i < numTransfers; i++)
-                AddTransferToList(megaTransfers, transfers.get(i));
+                    foreach (var upload in uploadsInPreparation)
+                        megaTransfers.Add(upload);
+                    break;
 
-            // Restore the uploads in preparation
-            if (type == MTransferType.TYPE_UPLOAD)
-            {
-                foreach (var upload in uploadsInPreparation)
-                    megaTransfers.Add(upload);
+                default:
+                    throw new ArgumentOutOfRangeException("type", type, null);
             }
         }
 
@@ -132,7 +132,7 @@ namespace MegaApp.Services
 
             // If doesn't exist create a new one and add it to the transfers list
             megaTransfer = CreateTransferObjectModel(transfer);            
-            if (megaTransfer != null)                
+            if (megaTransfer != null)
                 megaTransfers.Add(megaTransfer);
 
             return megaTransfer;
@@ -286,12 +286,12 @@ namespace MegaApp.Services
         /// <param name="isFolder">Boolean value which indicates if the node is a folder or not.</param>
         public static void CancelPendingNodeOfflineTransfers(String nodePath, bool isFolder)
         {
-            var megaTransfers = SdkService.MegaSdk.getTransfers(MTransferType.TYPE_DOWNLOAD);
-            var numMegaTransfers = megaTransfers.size();
+            var transferData = SdkService.MegaSdk.getTransferData();
+            var numDownloads = transferData.getNumDownloads();
 
-            for (int i = 0; i < numMegaTransfers; i++)
+            for (int i = 0; i < numDownloads; i++)
             {
-                var transfer = megaTransfers.get(i);
+                var transfer = SdkService.MegaSdk.getTransferByTag(transferData.getDownloadTag(i));
                 if (transfer == null) continue;
                 
                 String transferPathToCompare;

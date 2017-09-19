@@ -28,7 +28,7 @@ namespace ScheduledCameraUploadTaskAgent.MegaApi
             {
                 // If no pending transfers to resume start a new upload
                 // Else it will start when finish the current transfer
-                if(api.getTransfers(MTransferType.TYPE_UPLOAD).size() == 0)
+                if(api.getTransferData().getNumUploads() == 0)
                 {
                     ScheduledAgent.Upload();
                 }
