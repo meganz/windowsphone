@@ -376,8 +376,8 @@ namespace MegaApp.Services
             });
             AppService.ClearAppCache(false);  
           
-            // Delete the User Data
-            App.UserData = null;
+            // Delete Account Details info
+            AccountService.ClearAccountDetails();
         }
     }
 }

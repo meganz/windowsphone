@@ -22,14 +22,22 @@ namespace MegaApp.Pages
 {
     public partial class MyAccountPage : PhoneDrawerLayoutPage
     {
-        private readonly MyAccountPageViewModel _myAccountPageViewModel;
+        private MyAccountPageViewModel _myAccountPageViewModel;
+        private MyAccountPageViewModel myAccountPageViewModel
+        {
+            get
+            {
+                if (_myAccountPageViewModel != null) return _myAccountPageViewModel;
+                _myAccountPageViewModel = new MyAccountPageViewModel(SdkService.MegaSdk, App.AppInformation);
+                return _myAccountPageViewModel;
+            }
+        }
 
         public MyAccountPage()
         {
-            _myAccountPageViewModel = new MyAccountPageViewModel(SdkService.MegaSdk, App.AppInformation);
-            this.DataContext = _myAccountPageViewModel;
+            this.DataContext = myAccountPageViewModel;
 
-            _myAccountPageViewModel.AccountDetails.CreditCardSubscriptionsChanged += OnCreditCardSubscriptionsChanged;
+            myAccountPageViewModel.AccountDetails.CreditCardSubscriptionsChanged += OnCreditCardSubscriptionsChanged;
             
             InitializeComponent();
             InitializePage(MainDrawerLayout, LstHamburgerMenu, HamburgerMenuItemType.MyAccount);
@@ -76,8 +84,8 @@ namespace MegaApp.Pages
             ((ApplicationBarMenuItem)ApplicationBar.MenuItems[2]).Text = UiResources.UI_CloseAllSessions.ToLower();
             
             // Only if is a LITE account show a "cancel subscription" menu option
-            if(_myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
-                _myAccountPageViewModel.AccountDetails.CreditCardSubscriptions != 0)
+            if (myAccountPageViewModel.AccountDetails.AccountType == MAccountType.ACCOUNT_TYPE_LITE &&
+                myAccountPageViewModel.AccountDetails.CreditCardSubscriptions != 0)
             {
                 if(ApplicationBar.MenuItems.Count == 3)
                 {
@@ -98,8 +106,7 @@ namespace MegaApp.Pages
         /// </summary>        
         private void SetAvatarColor()
         {
-            if(_myAccountPageViewModel != null && _myAccountPageViewModel.AccountDetails != null)
-                _myAccountPageViewModel.AccountDetails.AvatarColor = App.UserData.AvatarColor;
+            myAccountPageViewModel.AccountDetails.AvatarColor = AccountService.AccountDetails.AvatarColor;
         }
 
         private void UpdateGUI(bool isNetworkConnected = true)
@@ -114,12 +121,12 @@ namespace MegaApp.Pages
                         return;
                     }
 
-                    _myAccountPageViewModel.GetAccountDetails();
-                    _myAccountPageViewModel.GetPricing();
+                    myAccountPageViewModel.GetAccountDetails();
+                    myAccountPageViewModel.GetPricing();
                 }
                 else
                 {
-                    _myAccountPageViewModel.SetOfflineContentTemplate();
+                    myAccountPageViewModel.SetOfflineContentTemplate();
                 }
 
                 SetAvatarColor();
@@ -129,14 +136,14 @@ namespace MegaApp.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _myAccountPageViewModel.Deinitialize(App.GlobalListener);
+            myAccountPageViewModel.Deinitialize(App.GlobalListener);
             base.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            _myAccountPageViewModel.Initialize(App.GlobalListener);
+            myAccountPageViewModel.Initialize(App.GlobalListener);
 
             // Get last page (previous page)            
             var backStack = ((PhoneApplicationFrame)Application.Current.RootVisual).BackStack;
@@ -150,7 +157,7 @@ namespace MegaApp.Pages
 
             if(NavigateService.ProcessQueryString(NavigationContext.QueryString) == NavigationParameter.AccountUpdate)
             {
-                _myAccountPageViewModel.IsAccountUpdate = true;
+                myAccountPageViewModel.IsAccountUpdate = true;
                 PivotAccountInformation.SelectedItem = PivotSubscription;
             }
             // Check if the navigation destiny is a specific pivot item
@@ -210,7 +217,7 @@ namespace MegaApp.Pages
                 SdkService.MegaSdk.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
             }
 
-        	_myAccountPageViewModel.Logout();
+            myAccountPageViewModel.Logout();
         }
 
         private void OnSettingsClick(object sender, EventArgs e)
@@ -222,28 +229,28 @@ namespace MegaApp.Pages
         {
             App.MainPageViewModel.CloudDrive.ChildNodes.Clear();
             App.MainPageViewModel.RubbishBin.ChildNodes.Clear();
-            _myAccountPageViewModel.ClearCache();
+            myAccountPageViewModel.ClearCache();
         }
 
         private void OnChangePasswordClick(object sender, EventArgs e)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            _myAccountPageViewModel.ChangePassword();
+            myAccountPageViewModel.ChangePassword();
         }
 
         private void OnCancelSubscriptionClick(object sender, EventArgs e)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            _myAccountPageViewModel.CancelSubscription();
+            myAccountPageViewModel.CancelSubscription();
         }
 
         private void OnCloseAllSessionsClick(object sender, EventArgs e)
         {
             if (!NetworkService.IsNetworkAvailable(true)) return;
 
-            _myAccountPageViewModel.CloseAllSessions();
+            myAccountPageViewModel.CloseAllSessions();
         }
 
         private void OnItemTap(object sender, ListBoxItemTapEventArgs e)
@@ -257,17 +264,17 @@ namespace MegaApp.Pages
             }
 
             // Else we need to identify the selected plan and send it along the Monthly and Annual plans of this type to the PaymentPage 
-            for(int i=0; i < _myAccountPageViewModel.UpgradeAccount.Products.Count; i++)
+            for (int i = 0; i < myAccountPageViewModel.UpgradeAccount.Products.Count; i++)
             {
-                if(_myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
+                if (myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).AccountType == ((ProductBase)LstPlans.SelectedItem).AccountType)
                 {
-                    switch(_myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).Months)
+                    switch (myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i).Months)
                     {
                         case 1:
-                            PhoneApplicationService.Current.State["SelectedPlanMonthly"] = _myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
+                            PhoneApplicationService.Current.State["SelectedPlanMonthly"] = myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
                             break;
                         case 12:
-                            PhoneApplicationService.Current.State["SelectedPlanAnnualy"] = _myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
+                            PhoneApplicationService.Current.State["SelectedPlanAnnualy"] = myAccountPageViewModel.UpgradeAccount.Products.ElementAt(i);
                             break;
                         default:
                             break;
@@ -284,9 +291,9 @@ namespace MegaApp.Pages
             if (!NetworkService.IsNetworkAvailable()) return;
 
             if (sender == PivotAccount)
-                _myAccountPageViewModel.GetAccountDetails();
+                myAccountPageViewModel.GetAccountDetails();
             else
-                _myAccountPageViewModel.GetPricing();
+                myAccountPageViewModel.GetPricing();
         }        
                 
         protected override void OnDrawerClosed(object sender)

@@ -36,14 +36,12 @@ namespace MegaApp.Models
 
         public void Initialize(GlobalListener globalListener)
         {
-            // Add contacts to global listener to receive notifications
-            globalListener.Accounts.Add(this);
+            
         }
 
         public void Deinitialize(GlobalListener globalListener)
         {
-            // Remove contacts of drive listener
-            globalListener.Accounts.Remove(this);
+            
         }
 
         public void GetAccountDetails()
@@ -51,16 +49,7 @@ namespace MegaApp.Models
             if(!AccountDetails.IsDataLoaded)
             {
                 AccountService.GetAccountDetails();
-                MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener(AccountDetails));
-
-                OnUiThread(() =>
-                {
-                    AccountDetails.HasAvatarImage = UserData.HasAvatarImage;                    
-                    AccountDetails.AvatarUri = UserData.AvatarUri;                    
-                    AccountDetails.Firstname = UserData.Firstname;
-                    AccountDetails.Lastname = UserData.Lastname;
-                });                
-
+                MegaSdk.creditCardQuerySubscriptions(new GetAccountDetailsRequestListener());
                 AccountDetails.IsDataLoaded = true;
             }            
         }
@@ -106,11 +95,6 @@ namespace MegaApp.Models
         #endregion
 
         #region Properties
-
-        public AccountDetailsViewModel AccountDetails
-        {
-            get { return AccountService.AccountDetails; }
-        }
 
         private DataTemplate _emptyContentTemplate;
         public DataTemplate EmptyContentTemplate

@@ -181,9 +181,6 @@
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
       <Link>Classes\AccountDataPoint.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\AccountDetails.cs">
-      <Link>Classes\AccountDetails.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
       <Link>Classes\AdvancedMenuItem.cs</Link>
     </Compile>
@@ -252,9 +249,6 @@
     </Compile>
     <Compile Include="..\common\Classes\TransferQueue.cs">
       <Link>Classes\TransferQueue.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Classes\UserData.cs">
-      <Link>Classes\UserData.cs</Link>
     </Compile>
     <Compile Include="..\common\Containers\LoginAndCreateAccountViewModelContainer.cs">
       <Link>Containers\LoginAndCreateAccountViewModelContainer.cs</Link>
@@ -532,6 +526,9 @@
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
     </Compile>
+    <Compile Include="..\common\Models\AccountDetailsViewModel.cs">
+      <Link>Models\AccountDetailsViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\common\Models\BaseAppInfoAwareViewModel.cs">
       <Link>Models\BaseAppInfoAwareViewModel.cs</Link>
     </Compile>
@@ -660,6 +657,9 @@
     </Compile>
     <Compile Include="..\common\Models\UpgradeAccountViewModel.cs">
       <Link>Models\UpgradeAccountViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\common\Models\UserDataViewModel.cs">
+      <Link>Models\UserDataViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
       <Link>Pages\CameraUploadsPage.xaml.cs</Link>

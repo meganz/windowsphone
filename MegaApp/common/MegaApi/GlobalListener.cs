@@ -24,7 +24,6 @@ namespace MegaApp.MegaApi
             this.Folders = new List<FolderViewModel>();
             this.Contacts = new List<ContactsViewModel>();
             this.ContactsDetails = new List<ContactDetailsViewModel>();
-            this.Accounts = new List<MyAccountPageViewModel>();
         }
 
         #region MGlobalListenerInterface
@@ -349,62 +348,30 @@ namespace MegaApp.MegaApi
                 // If the change is on the current user                
                 if(user.getHandle().Equals(api.getMyUser().getHandle()) && !Convert.ToBoolean(user.isOwnChange()))
                 {
-                    if (App.UserData == null)
-                        App.UserData = new UserDataViewModel { UserEmail = user.getEmail() };
-
-                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) && 
-                        !String.IsNullOrWhiteSpace(App.UserData.AvatarPath))
+                    if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
+                            !String.IsNullOrWhiteSpace(AccountService.AccountDetails.AvatarPath))
                     {
-                        api.getUserAvatar(user, App.UserData.AvatarPath,
-                            new GetUserAvatarRequestListener(App.UserData));                        
+                        api.getUserAvatar(user, AccountService.AccountDetails.AvatarPath,
+                            new GetUserAvatarRequestListener());
                     }
 
                     if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
                     {
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            App.UserData.UserEmail = user.getEmail());
+                            AccountService.AccountDetails.UserEmail = user.getEmail());
                     }
 
                     if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
                     {
                         api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME,
-                            new GetUserDataRequestListener(App.UserData));
+                            new GetUserDataRequestListener());
                     }
 
                     if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
                     {
                         api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME,
-                            new GetUserDataRequestListener(App.UserData));
-                    }
-
-                    // If there are any MyAccountPageViewModel active
-                    foreach (var account in Accounts)
-                    {
-                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_AVATAR) &&
-                            !String.IsNullOrWhiteSpace(account.AccountDetails.AvatarPath))
-                        {
-                            api.getUserAvatar(user, account.AccountDetails.AvatarPath, 
-                                new GetUserAvatarRequestListener(account.AccountDetails));
-                        }                            
-
-                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_EMAIL))
-                        {
-                            Deployment.Current.Dispatcher.BeginInvoke(() => 
-                                account.AccountDetails.UserEmail = user.getEmail());
-                        }                            
-
-                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_FIRSTNAME))
-                        {
-                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_FIRSTNAME,
-                                new GetUserDataRequestListener(account.AccountDetails));
-                        }
-
-                        if (user.hasChanged((int)MUserChangeType.CHANGE_TYPE_LASTNAME))
-                        {
-                            api.getUserAttribute(user, (int)MUserAttrType.USER_ATTR_LASTNAME,
-                                new GetUserDataRequestListener(account.AccountDetails));
-                        }
-                    }
+                            new GetUserDataRequestListener());
+                    }                    
                 }
                 else // If the change is on a contact
                 {
@@ -540,7 +507,6 @@ namespace MegaApp.MegaApi
         public IList<FolderViewModel> Folders { get; private set; }
         public IList<ContactsViewModel> Contacts { get; private set; } 
         public IList<ContactDetailsViewModel> ContactsDetails { get; private set; }
-        public IList<MyAccountPageViewModel> Accounts { get; private set; }
 
         #endregion
     }

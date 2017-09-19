@@ -909,11 +909,6 @@ namespace MegaApp.Models
 
         #region Properties
 
-        public AccountDetailsViewModel AccountDetails
-        {
-            get { return AccountService.AccountDetails; }
-        }
-
         public bool LinkWithExpirationTime
         {
             get{ return (LinkExpirationTime > 0) ? true : false; }

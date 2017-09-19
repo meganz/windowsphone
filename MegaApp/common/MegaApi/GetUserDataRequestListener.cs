@@ -15,12 +15,7 @@ namespace MegaApp.MegaApi
 {
     class GetUserDataRequestListener : BaseRequestListener
     {
-        private readonly UserDataViewModel _userData;
-
-        public GetUserDataRequestListener(UserDataViewModel userData)
-        {
-            _userData = userData;
-        }
+        #region Override Properties
 
         protected override string ProgressMessage
         {
@@ -82,6 +77,8 @@ namespace MegaApp.MegaApi
             get { throw new NotImplementedException(); }
         }
 
+        #endregion
+
         #region Override Methods
 
         public override void onRequestFinish(MegaSDK api, MRequest request, MError e)
@@ -100,20 +97,12 @@ namespace MegaApp.MegaApi
                     {
                         case (int)MUserAttrType.USER_ATTR_FIRSTNAME:
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                _userData.Firstname = request.getText();
-                                if (App.UserData != null)
-                                    App.UserData.Firstname = _userData.Firstname;
-                            });
+                                AccountService.AccountDetails.Firstname = request.getText());
                             break;
 
                         case (int)MUserAttrType.USER_ATTR_LASTNAME:
                             Deployment.Current.Dispatcher.BeginInvoke(() =>
-                            {
-                                _userData.Lastname = request.getText();
-                                if (App.UserData != null)
-                                    App.UserData.Lastname = _userData.Lastname;
-                            });
+                                AccountService.AccountDetails.Lastname = request.getText());
                             break;
                     }
                 }                
@@ -125,11 +114,7 @@ namespace MegaApp.MegaApi
                     if (request.getParamType() == (int)MUserAttrType.USER_ATTR_FIRSTNAME)
                     {
                         Deployment.Current.Dispatcher.BeginInvoke(() =>
-                        {
-                            _userData.Firstname = UiResources.MyAccount;
-                            if (App.UserData != null)
-                                App.UserData.Firstname = _userData.Firstname;
-                        });                            
+                            AccountService.AccountDetails.Firstname = UiResources.MyAccount);                            
                     }
                 }
             }
