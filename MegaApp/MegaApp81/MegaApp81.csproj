@@ -1429,14 +1429,6 @@
       <Link>App.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\common\Pages\AboutPage.xaml">
-      <Link>Pages\AboutPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\AcknowledgementsPage.xaml">
-      <Link>Pages\AcknowledgementsPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="..\common\Pages\CameraUploadsPage.xaml">
       <Link>Pages\CameraUploadsPage.xaml</Link>
       <SubType>Designer</SubType>
@@ -3801,7 +3793,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.19.3">
+    <SDKReference Include="SQLite.WP80, Version=3.20.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

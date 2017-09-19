@@ -80,6 +80,7 @@ namespace MegaApp.Models
             try
             {
                 Clipboard.SetText(MegaSdk.exportMasterKey());
+                MegaSdk.masterKeyExported();
                 new CustomMessageDialog(
                            AppMessages.AM_RecoveryKeyCopied_Title,
                            AppMessages.AM_RecoveryKeyCopied,
@@ -121,7 +122,7 @@ namespace MegaApp.Models
 
         private void NavigateToMegaSdk(object obj)
         {
-            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.MegaSdkUrl) };
+            var webBrowserTask = new WebBrowserTask { Uri = new Uri(AppResources.AR_SdkLink) };
             webBrowserTask.Show();
         }
 

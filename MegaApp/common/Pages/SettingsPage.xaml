@@ -165,15 +165,29 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Orientation="Horizontal" Grid.Column="0">
-                                        <HyperlinkButton x:Name="BtnMegaSdk" Content="{Binding LocalizedUiResources.MEGA_SDK, Source={StaticResource LocalizedStrings}}" HorizontalAlignment="Left" Command="{Binding MegaSdkCommand}" FontFamily="Portable User Interface" VerticalAlignment="Center" Margin="-12,0,-4,0" FontSize="{StaticResource PhoneFontSizeNormal}"/>
-                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Version, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
-                                        <TextBlock HorizontalAlignment="Left" Text=":" VerticalAlignment="Center" FontFamily="Portable User Interface"/>
+                                        <TextBlock 
+                                            FontFamily="Portable User Interface"
+                                            HorizontalAlignment="Left" 
+                                            Text="{Binding LocalizedUiResources.UI_MEGA_SDK_Version, Source={StaticResource LocalizedStrings}}"
+                                            TextWrapping="Wrap"
+                                            VerticalAlignment="Center"/>
+                                        <TextBlock 
+                                            FontFamily="Portable User Interface"
+                                            HorizontalAlignment="Left" 
+                                            Text=":" 
+                                            VerticalAlignment="Center"/>
                                     </StackPanel>
-                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding MegaSdkVersion}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Column="1">
-                                        <TextBlock.Foreground>
-                                            <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                        </TextBlock.Foreground>
-                                    </TextBlock>
+                                    <HyperlinkButton 
+                                        x:Name="BtnMegaSdk"
+                                        Grid.Column="1"
+                                        Margin="0,0,-10,0" 
+                                        Command="{Binding MegaSdkCommand}" 
+                                        Content="{Binding MegaSdkVersion}" 
+                                        FontFamily="Portable User Interface" 
+                                        FontSize="{StaticResource PhoneFontSizeNormal}"
+                                        Foreground="{StaticResource MegaRedSolidColorBrush}"
+                                        HorizontalAlignment="Right" 
+                                        VerticalAlignment="Center"/>
                                 </Grid>
                             </Grid>
                             <TextBlock HorizontalAlignment="Left" Margin="12,10,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Acknowledgements, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" Style="{StaticResource PhoneTextSubtleStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" FontFamily="Portable User Interface" Grid.Column="1">
@@ -189,12 +203,23 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                <HyperlinkButton Content="GoedWare" HorizontalAlignment="Left" Command="{Binding GoedWareCommand}" VerticalAlignment="Center" Margin="-12,0,-4,0" FontSize="{StaticResource PhoneFontSizeNormal}" FontFamily="Portable User Interface"/>
-                                <TextBlock HorizontalAlignment="Right" Margin="0,0,0,10" TextWrapping="Wrap" Text="{Binding LocalizedUiResources.Developer, Source={StaticResource LocalizedStrings}}" VerticalAlignment="Center" FontFamily="Portable User Interface" Grid.Column="1">
-                                    <TextBlock.Foreground>
-                                        <SolidColorBrush Color="{StaticResource MegaRedColor}"/>
-                                    </TextBlock.Foreground>
-                                </TextBlock>
+                                <TextBlock 
+                                    Grid.Column="0"
+                                    FontFamily="Portable User Interface" 
+                                    HorizontalAlignment="Left" 
+                                    Text="GoedWare"
+                                    TextWrapping="Wrap" 
+                                    VerticalAlignment="Center"/>
+                                <HyperlinkButton 
+                                    Grid.Column="1"
+                                    Margin="0,0,-10,0" 
+                                    Command="{Binding GoedWareCommand}" 
+                                    Content="{Binding LocalizedUiResources.Developer, Source={StaticResource LocalizedStrings}}" 
+                                    FontFamily="Portable User Interface"
+                                    FontSize="{StaticResource PhoneFontSizeNormal}"
+                                    Foreground="{StaticResource MegaRedSolidColorBrush}"
+                                    HorizontalAlignment="Right"                                     
+                                    VerticalAlignment="Center"/>
                             </Grid>
                         </StackPanel>
                     </ScrollViewer>
