@@ -124,7 +124,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/13f844d88a68f6b1d775007ecc09e50bc247d296.
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/7b0d3587849d0d69786df8005f26a0cbd32fdd12.
         /// </summary>
         public static string AR_SdkLink {
             get {
@@ -133,7 +133,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a 13f844d.
+        ///   Busca una cadena traducida similar a 7b0d358.
         /// </summary>
         public static string AR_SdkVersion {
             get {
