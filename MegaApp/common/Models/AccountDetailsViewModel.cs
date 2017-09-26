@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Telerik.Windows.Controls;
 using mega;
+using MegaApp.Classes;
 using MegaApp.Extensions;
-using MegaApp.Models;
 using MegaApp.Pages;
 using MegaApp.Resources;
 using MegaApp.Services;
-using Telerik.Windows.Controls;
 
-namespace MegaApp.Classes
+namespace MegaApp.Models
 {
     public class AccountDetailsViewModel : UserDataViewModel
     {

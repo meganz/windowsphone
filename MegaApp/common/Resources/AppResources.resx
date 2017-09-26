@@ -173,10 +173,6 @@
     <value>https://mega.nz/mobile_privacy.html</value>
     <comment>URL to the 'Privacy Policy' information web page - (NO-TRANSLATION).</comment>
   </data>
-  <data name="MegaSdkUrl" xml:space="preserve">
-    <value>https://github.com/meganz/sdk</value>
-    <comment>URL to the MEGA SDK repository - (NO-TRANSLATION).</comment>
-  </data>
   <data name="GoedWareUrl" xml:space="preserve">
     <value>http://www.goedware.com</value>
     <comment>URL to the GoedWare website - (NO-TRANSLATION).</comment>
@@ -236,5 +232,13 @@
   <data name="AccountTypePro3" xml:space="preserve">
     <value>PRO III</value>
     <comment>Label for the name of the 'PRO III' account type. Try to preserve uppercase - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_SdkLink" xml:space="preserve">
+    <value>https://github.com/meganz/sdk/tree/7b0d3587849d0d69786df8005f26a0cbd32fdd12</value>
+    <comment>Link to respository of the current SDK used in the app - (NO-TRANSLATION).</comment>
+  </data>
+  <data name="AR_SdkVersion" xml:space="preserve">
+    <value>7b0d358</value>
+    <comment>Current SDK version used in the app - (NO-TRANSLATION).</comment>
   </data>
 </root>

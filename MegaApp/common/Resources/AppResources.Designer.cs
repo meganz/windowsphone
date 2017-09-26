@@ -124,6 +124,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk/tree/7b0d3587849d0d69786df8005f26a0cbd32fdd12.
+        /// </summary>
+        public static string AR_SdkLink {
+            get {
+                return ResourceManager.GetString("AR_SdkLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a 7b0d358.
+        /// </summary>
+        public static string AR_SdkVersion {
+            get {
+                return ResourceManager.GetString("AR_SdkVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a windowsphone@mega.nz.
         /// </summary>
         public static string DiagnosticsEmailAddress {
@@ -156,15 +174,6 @@ namespace MegaApp.Resources {
         public static string LogFileName {
             get {
                 return ResourceManager.GetString("LogFileName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a https://github.com/meganz/sdk.
-        /// </summary>
-        public static string MegaSdkUrl {
-            get {
-                return ResourceManager.GetString("MegaSdkUrl", resourceCulture);
             }
         }
         

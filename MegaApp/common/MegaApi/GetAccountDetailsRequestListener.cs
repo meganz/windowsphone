@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using mega;
-using MegaApp.Classes;
 using MegaApp.Enums;
 using MegaApp.Extensions;
+using MegaApp.Models;
 using MegaApp.Resources;
 using MegaApp.Services;
 
@@ -15,15 +15,14 @@ namespace MegaApp.MegaApi
 {
     class GetAccountDetailsRequestListener : BaseRequestListener
     {
-        private readonly AccountDetailsViewModel _accountDetails;
         private event EventHandler _getAccountDetailsFinish;
 
-        public GetAccountDetailsRequestListener(AccountDetailsViewModel accountDetails, 
-            EventHandler getAccountDetailsFinish = null)
+        public GetAccountDetailsRequestListener(EventHandler getAccountDetailsFinish = null)
         {
-            _accountDetails = accountDetails;
             _getAccountDetailsFinish = getAccountDetailsFinish;
         }
+
+        #region Override Properties
 
         protected override string ProgressMessage
         {
@@ -85,6 +84,8 @@ namespace MegaApp.MegaApi
             get { throw new NotImplementedException(); }
         }
 
+        #endregion
+
         #region Override Methods
 
         protected override void OnSuccesAction(MegaSDK api, MRequest request)
@@ -95,42 +96,42 @@ namespace MegaApp.MegaApi
 
                     Deployment.Current.Dispatcher.BeginInvoke(() =>
                     {
-                        _accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
-                        _accountDetails.TotalSpaceSize = _accountDetails.TotalSpace.ToReadableSize();
-                        _accountDetails.TotalSpaceUnits = _accountDetails.TotalSpace.ToReadableUnits();
-                        _accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
-                        _accountDetails.CreateDataPoints();
-                        _accountDetails.AccountType = request.getMAccountDetails().getProLevel();
+                        accountDetails.TotalSpace = request.getMAccountDetails().getStorageMax();
+                        accountDetails.TotalSpaceSize = accountDetails.TotalSpace.ToReadableSize();
+                        accountDetails.TotalSpaceUnits = accountDetails.TotalSpace.ToReadableUnits();
+                        accountDetails.UsedSpace = request.getMAccountDetails().getStorageUsed();
+                        accountDetails.CreateDataPoints();
+                        accountDetails.AccountType = request.getMAccountDetails().getProLevel();
 
-                        if (_accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
+                        if (accountDetails.AccountType == MAccountType.ACCOUNT_TYPE_FREE)
                         {
-                            _accountDetails.IsFreeAccount = true;
-                            _accountDetails.AccountTypeText = AppResources.AccountTypeFree;
-                            _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                            accountDetails.IsFreeAccount = true;
+                            accountDetails.AccountTypeText = AppResources.AccountTypeFree;
+                            accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                         }
                         else
                         {
-                            switch (_accountDetails.AccountType)
+                            switch (accountDetails.AccountType)
                             {
                                 case MAccountType.ACCOUNT_TYPE_LITE:
-                                    _accountDetails.AccountTypeText = AppResources.AccountTypeLite;
-                                    //_accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);                        
+                                    accountDetails.AccountTypeText = AppResources.AccountTypeLite;
+                                    //accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_free" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);                        
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROI:
-                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro1;
-                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    accountDetails.AccountTypeText = AppResources.AccountTypePro1;
+                                    accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro1" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROII:
-                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro2;
-                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    accountDetails.AccountTypeText = AppResources.AccountTypePro2;
+                                    accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro2" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                                 case MAccountType.ACCOUNT_TYPE_PROIII:
-                                    _accountDetails.AccountTypeText = AppResources.AccountTypePro3;
-                                    _accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
+                                    accountDetails.AccountTypeText = AppResources.AccountTypePro3;
+                                    accountDetails.AccountTypeUri = new Uri("/Assets/Images/small_pro3" + ImageService.GetResolutionExtension() + ".png", UriKind.Relative);
                                     break;
                             }
 
-                            _accountDetails.IsFreeAccount = false;
+                            accountDetails.IsFreeAccount = false;
 
                             DateTime date;
                             DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -145,24 +146,24 @@ namespace MegaApp.MegaApi
                                     else
                                         date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));
 
-                                    _accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
+                                    accountDetails.SubscriptionRenewDate = date.ToString("dd-MM-yyyy");
                                 }
-                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }                                                                
-                                
-                                _accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
-                                _accountDetails.IsValidSubscription = true;
+                                catch (ArgumentOutOfRangeException) { /* Do nothing*/ }
+
+                                accountDetails.SubscriptionCycle = request.getMAccountDetails().getSubscriptionCycle();
+                                accountDetails.IsValidSubscription = true;
                             }
                             // Else get the expiration time for the current PRO status
                             else
                             {
                                 try 
                                 {
-                                    date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));                                    
-                                    _accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
+                                    date = start.AddSeconds(Convert.ToDouble(request.getMAccountDetails().getProExpiration()));
+                                    accountDetails.ProExpirationDate = date.ToString("dd-MM-yyyy");
                                 }
                                 catch (ArgumentOutOfRangeException) { /* Do nothing*/ }
-                                
-                                _accountDetails.IsValidSubscription = false;
+
+                                accountDetails.IsValidSubscription = false;
                             }                            
                         }
 
@@ -173,11 +174,16 @@ namespace MegaApp.MegaApi
                     break;
 
                 case MRequestType.TYPE_CREDIT_CARD_QUERY_SUBSCRIPTIONS:
-                    _accountDetails.CreditCardSubscriptions = request.getNumber();
+                    accountDetails.CreditCardSubscriptions = request.getNumber();
                     break;
             }            
         }
 
         #endregion
+
+        private AccountDetailsViewModel accountDetails
+        {
+            get { return AccountService.AccountDetails; }
+        }
     }
 }

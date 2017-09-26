@@ -30,56 +30,46 @@ namespace MegaApp.Models
         {
             if (!NetworkService.IsNetworkAvailable() || !Convert.ToBoolean(SdkService.MegaSdk.isLoggedIn()))
             {
-                if (App.UserData != null)
-                    UserData = App.UserData;
-                else if (UserData == null)
-                    UserData = new UserDataViewModel();
+                if (String.IsNullOrWhiteSpace(AccountDetails.UserName))
+                    Deployment.Current.Dispatcher.BeginInvoke(() => AccountDetails.Firstname = UiResources.MyAccount);
 
-                if(String.IsNullOrWhiteSpace(UserData.UserName))
-                    Deployment.Current.Dispatcher.BeginInvoke(() => UserData.Firstname = UiResources.MyAccount);
-
-                if(UserData.AvatarColor == null || UserData.AvatarColor.ToString().Equals("#00000000"))
-                    UserData.AvatarColor = (Color)Application.Current.Resources["MegaRedColor"];
-
-                App.UserData = UserData;
+                if (AccountDetails.AvatarColor == null || AccountDetails.AvatarColor.ToString().Equals("#00000000"))
+                    AccountDetails.AvatarColor = (Color)Application.Current.Resources["MegaRedColor"];
             }
             else
             {
                 bool accountChange = false;
 
-                if (App.UserData != null)
-                    UserData = App.UserData;
-                else if (UserData == null)
-                    UserData = new UserDataViewModel { UserEmail = SdkService.MegaSdk.getMyEmail() };
-
                 String currentEmail = SdkService.MegaSdk.getMyEmail();
                 if (currentEmail != null && currentEmail.Length != 0)
                 {
-                    if (String.IsNullOrEmpty(UserData.UserEmail))
+                    if (String.IsNullOrEmpty(AccountDetails.UserEmail))
                         accountChange = true;
-                    else if (!UserData.UserEmail.Equals(SdkService.MegaSdk.getMyEmail()))
+                    else if (!AccountDetails.UserEmail.Equals(SdkService.MegaSdk.getMyEmail()))
                         accountChange = true;
                 }
 
                 if (accountChange)
-                    UserData.UserEmail = SdkService.MegaSdk.getMyEmail();
-
-                if (accountChange || UserData.AvatarColor == null || UserData.AvatarColor.ToString().Equals("#00000000") ||
-                    UserData.AvatarColor.Equals((Color)Application.Current.Resources["MegaRedColor"]))
                 {
-                    UserData.AvatarColor = UiService.GetColorFromHex(SdkService.MegaSdk.getUserAvatarColor(SdkService.MegaSdk.getMyUser()));
+                    AccountDetails.UserEmail = SdkService.MegaSdk.getMyEmail();
+                    AccountService.AccountDetails.IsDataLoaded = false;
                 }
 
-                if (accountChange && (!String.IsNullOrEmpty(UserData.AvatarPath) && UserData.AvatarUri == null))
-                    SdkService.MegaSdk.getOwnUserAvatar(UserData.AvatarPath, new GetUserAvatarRequestListener(UserData));
-                
-                if (accountChange || (String.IsNullOrEmpty(UserData.Firstname) || UserData.Firstname.Equals(UiResources.MyAccount)))
-                    SdkService.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_FIRSTNAME, new GetUserDataRequestListener(UserData));
-                    
-                if (accountChange || (String.IsNullOrEmpty(UserData.Lastname)))
-                    SdkService.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_LASTNAME, new GetUserDataRequestListener(UserData));
 
-                App.UserData = UserData;
+                if (accountChange || AccountDetails.AvatarColor == null || AccountDetails.AvatarColor.ToString().Equals("#00000000") ||
+                    AccountDetails.AvatarColor.Equals((Color)Application.Current.Resources["MegaRedColor"]))
+                {
+                    AccountDetails.AvatarColor = UiService.GetColorFromHex(SdkService.MegaSdk.getUserAvatarColor(SdkService.MegaSdk.getMyUser()));
+                }
+
+                if (accountChange && (!String.IsNullOrEmpty(AccountDetails.AvatarPath) && AccountDetails.AvatarUri == null))
+                    SdkService.MegaSdk.getOwnUserAvatar(AccountDetails.AvatarPath, new GetUserAvatarRequestListener());
+
+                if (accountChange || (String.IsNullOrEmpty(AccountDetails.Firstname) || AccountDetails.Firstname.Equals(UiResources.MyAccount)))
+                    SdkService.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_FIRSTNAME, new GetUserDataRequestListener());
+
+                if (accountChange || (String.IsNullOrEmpty(AccountDetails.Lastname)))
+                    SdkService.MegaSdk.getOwnUserAttribute((int)MUserAttrType.USER_ATTR_LASTNAME, new GetUserDataRequestListener());
             }
         }
 
@@ -87,15 +77,9 @@ namespace MegaApp.Models
 
         public AppInformation AppInformation { get; private set; }
 
-        private UserDataViewModel _userData;
-        public UserDataViewModel UserData
+        public AccountDetailsViewModel AccountDetails
         {
-            get { return _userData; }
-            set
-            {
-                _userData = value;
-                OnPropertyChanged("UserData");
-            }
+            get { return AccountService.AccountDetails; }
         }        
 
         #endregion

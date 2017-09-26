@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Media;
 using Windows.Storage;
 using mega;
-using MegaApp.Models;
 using MegaApp.Resources;
 
-namespace MegaApp.Classes
+namespace MegaApp.Models
 {
     public class UserDataViewModel : BaseViewModel
     {

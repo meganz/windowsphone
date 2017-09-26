@@ -1,5 +1,4 @@
 ﻿using System;
-using MegaApp.Classes;
 using MegaApp.MegaApi;
 using MegaApp.Models;
 
@@ -31,9 +30,14 @@ namespace MegaApp.Services
             }
         }
 
+        public static void ClearAccountDetails()
+        {
+            _accountDetails = null;
+        }
+
         public static void GetAccountDetails()
         {
-            SdkService.MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(AccountDetails, GetAccountDetailsFinish));
+            SdkService.MegaSdk.getAccountDetails(new GetAccountDetailsRequestListener(GetAccountDetailsFinish));
         }
     }
 }

@@ -105,9 +105,6 @@
     <Compile Include="..\common\Classes\AccountDataPoint.cs">
       <Link>Classes\AccountDataPoint.cs</Link>
     </Compile>
-    <Compile Include="..\common\Classes\AccountDetails.cs">
-      <Link>Classes\AccountDetails.cs</Link>
-    </Compile>
     <Compile Include="..\common\Classes\AdvancedMenuItem.cs">
       <Link>Classes\AdvancedMenuItem.cs</Link>
     </Compile>
@@ -176,9 +173,6 @@
     </Compile>
     <Compile Include="..\common\Classes\TransferQueue.cs">
       <Link>Classes\TransferQueue.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Classes\UserData.cs">
-      <Link>Classes\UserData.cs</Link>
     </Compile>
     <Compile Include="..\common\Containers\LoginAndCreateAccountViewModelContainer.cs">
       <Link>Containers\LoginAndCreateAccountViewModelContainer.cs</Link>
@@ -456,11 +450,8 @@
     <Compile Include="..\common\MegaApi\UpgradeAccountRequestListener.cs">
       <Link>MegaApi\UpgradeAccountRequestListener.cs</Link>
     </Compile>
-    <Compile Include="..\common\Models\AboutViewModel.cs">
-      <Link>Models\AboutViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\common\Models\AcknowledgementsViewModel.cs">
-      <Link>Models\AcknowledgementsViewModel.cs</Link>
+    <Compile Include="..\common\Models\AccountDetailsViewModel.cs">
+      <Link>Models\AccountDetailsViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Models\BaseAppInfoAwareViewModel.cs">
       <Link>Models\BaseAppInfoAwareViewModel.cs</Link>
@@ -591,13 +582,8 @@
     <Compile Include="..\common\Models\UpgradeAccountViewModel.cs">
       <Link>Models\UpgradeAccountViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\common\Pages\AboutPage.xaml.cs">
-      <Link>Pages\AboutPage.xaml.cs</Link>
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="..\common\Pages\AcknowledgementsPage.xaml.cs">
-      <Link>Pages\AcknowledgementsPage.xaml.cs</Link>
-      <DependentUpon>AcknowledgementsPage.xaml</DependentUpon>
+    <Compile Include="..\common\Models\UserDataViewModel.cs">
+      <Link>Models\UserDataViewModel.cs</Link>
     </Compile>
     <Compile Include="..\common\Pages\CameraUploadsPage.xaml.cs">
       <Link>Pages\CameraUploadsPage.xaml.cs</Link>
@@ -2181,14 +2167,6 @@
   <ItemGroup>
     <Page Include="..\common\App.xaml">
       <Link>App.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\AboutPage.xaml">
-      <Link>Pages\AboutPage.xaml</Link>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\common\Pages\AcknowledgementsPage.xaml">
-      <Link>Pages\AcknowledgementsPage.xaml</Link>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="..\common\Pages\CameraUploadsPage.xaml">
@@ -4551,7 +4529,7 @@
     </XliffResource>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.WP80, Version=3.19.3">
+    <SDKReference Include="SQLite.WP80, Version=3.20.1">
       <Name>SQLite for Windows Phone</Name>
     </SDKReference>
   </ItemGroup>

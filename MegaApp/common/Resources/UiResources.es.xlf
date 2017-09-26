@@ -479,10 +479,10 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Clave de Recuperación</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/MEGA_SDK" translate="yes" space="preserve">
-          <source>MEGA SDK</source>
-          <target state="translated">MEGA SDK</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK' button, link, text, title, etc. Preserve all in uppercase - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" xml:space="preserve">
+          <source>MEGA SDK version</source>
+          <target state="new">MEGA SDK version</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
           <source>Monthly</source>
@@ -1245,7 +1245,6 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <source>Saved for offline</source>
           <target state="needs-review-translation">Sin conexión</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
-          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
           <source>No files in your cloud drive</source>

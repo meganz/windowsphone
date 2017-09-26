@@ -113,7 +113,7 @@ namespace MegaApp.MegaApi
                             }
                             else //If is a standard download transfer (no for save for offline)
                             {
-                                bool result = true;
+                                bool result = false;
 
                                 //If is download transfer of an image file 
                                 var imageNode = megaTransfer.SelectedNode as ImageNodeViewModel;
@@ -131,7 +131,14 @@ namespace MegaApp.MegaApi
                                     }
 
                                     #if WINDOWS_PHONE_81
-                                    result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name);
+                                    try
+                                    {
+                                        result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, imageNode.Name);
+                                    }
+                                    catch (Exception exception)
+                                    {
+                                        LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error finishing a download to an external location", exception);
+                                    }
                                     #endif
                                 }
                                 #if WINDOWS_PHONE_81                                    
@@ -139,7 +146,16 @@ namespace MegaApp.MegaApi
                                 {
                                     var node = megaTransfer.SelectedNode as FileNodeViewModel;
                                     if (node != null)
-                                        result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name);
+                                    {
+                                        try
+                                        {
+                                            result = await megaTransfer.FinishDownload(megaTransfer.TransferPath, node.Name);
+                                        }
+                                        catch (Exception exception)
+                                        {
+                                            LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error finishing a download to an external location", exception);
+                                        }
+                                    }
                                 }
                                 #endif
 

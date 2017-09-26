@@ -170,17 +170,25 @@ namespace MegaApp.Models
         #if WINDOWS_PHONE_81
         public async Task<bool> FinishDownload(String sourcePath, String newFileName)
         {
-            if (!SavedForOffline.ExistsNodeByLocalPath(sourcePath))
+            try
             {
-                return await FileService.MoveFile(sourcePath,
-                    ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                    null), newFileName);
+                if (!SavedForOffline.ExistsNodeByLocalPath(sourcePath))
+                {
+                    return await FileService.MoveFile(sourcePath,
+                        ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                        null), newFileName);
+                }
+                else
+                {
+                    return await FileService.CopyFile(sourcePath,
+                        ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
+                        null), newFileName);
+                }
             }
-            else
+            catch (Exception e)
             {
-                return await FileService.CopyFile(sourcePath,
-                    ExternalDownloadPath ?? SettingsService.LoadSetting<string>(SettingsResources.DefaultDownloadLocation,
-                    null), newFileName);
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error finishing a download to an external location", e);
+                return false;
             }
         }
         #endif
