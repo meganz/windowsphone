@@ -46,6 +46,11 @@ namespace MegaApp.Services
             SystemTray.ProgressIndicator.IsVisible = true;
         }
 
+        public static Color GetProgressBarBackgroundColor()
+        {
+            return SystemTray.BackgroundColor;
+        }
+
         public static void ChangeProgressBarBackgroundColor(Color color)
         {
             SystemTray.BackgroundColor = color;
