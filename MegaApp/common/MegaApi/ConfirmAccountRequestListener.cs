@@ -125,6 +125,7 @@ namespace MegaApp.MegaApi
                                 AppMessages.AM_IncompleteConfirmationLink);
                             break;
 
+                        case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
                         case MErrorType.API_EOVERQUOTA: // Storage overquota error
                             base.onRequestFinish(api, request, e);
                             break;
@@ -157,6 +158,7 @@ namespace MegaApp.MegaApi
                                 MessageDialogButtons.Ok).ShowDialog();
                             break;
 
+                        case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
                         case MErrorType.API_EOVERQUOTA: // Storage overquota error
                             base.onRequestFinish(api, request, e);
                             break;

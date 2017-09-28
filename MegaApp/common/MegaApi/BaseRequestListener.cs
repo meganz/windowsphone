@@ -46,62 +46,71 @@ namespace MegaApp.MegaApi
                 ProgressService.SetProgressIndicator(false);
             });
 
-            if (e.getErrorCode() == MErrorType.API_OK)
+            switch(e.getErrorCode())
             {
-                if (ShowSuccesMessage)
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                case MErrorType.API_OK:
+                    if (ShowSuccesMessage)
                     {
-                        new CustomMessageDialog(
-                            SuccessMessageTitle,
-                            SuccessMessage,
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                    });
+                        Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        {
+                            new CustomMessageDialog(
+                                SuccessMessageTitle,
+                                SuccessMessage,
+                                App.AppInformation,
+                                MessageDialogButtons.Ok).ShowDialog();
+                        });
+                    }
+                    
+                    if (ActionOnSucces)
+                        OnSuccesAction(api, request);
 
-                if (ActionOnSucces)
-                    OnSuccesAction(api, request);
+                    if (NavigateOnSucces)
+                        Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
+                    break;
 
-                if (NavigateOnSucces)
-                    Deployment.Current.Dispatcher.BeginInvoke(() => NavigateService.NavigateTo(NavigateToPage, NavigationParameter));
-            }
-            else if (e.getErrorCode() == MErrorType.API_EBLOCKED) 
-            {
-                // If the account has been blocked
-                api.logout(new LogOutRequestListener(false));
+                case MErrorType.API_EBLOCKED: // If the account has been blocked
+                    api.logout(new LogOutRequestListener(false));
 
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED));
-            }
-            else if (e.getErrorCode() == MErrorType.API_EOVERQUOTA) //Storage overquota error
-            {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
+                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                        NavigateService.NavigateTo(typeof(InitTourPage), NavigationParameter.API_EBLOCKED));
+                    break;
+
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
+                case MErrorType.API_EOVERQUOTA: //Storage overquota error
                     // Stop all upload transfers
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Storage quota exceeded ({0}) - Canceling uploads", e.getErrorCode().ToString()));
                     api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
-                                                            
+
                     // Disable the "camera upload" service if is enabled
                     if (MediaService.GetAutoCameraUploadStatus())
                     {
-                        LogService.Log(MLogLevel.LOG_LEVEL_INFO, "Storage quota exceeded (API_EOVERQUOTA) - Disabling CAMERA UPLOADS service");
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                            string.Format("Storage quota exceeded ({0}) - Disabling CAMERA UPLOADS service", e.getErrorCode().ToString()));
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
                     }
 
-                    DialogService.ShowOverquotaAlert();
-                });
-            }
-            else if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
-            {
-                if (ShowErrorMessage)
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
+                    break;
+
+                default:
+                    if (e.getErrorCode() != MErrorType.API_EINCOMPLETE)
                     {
-                        new CustomMessageDialog(
-                            ErrorMessageTitle,
-                            String.Format(ErrorMessage, e.getErrorString()),
-                            App.AppInformation,
-                            MessageDialogButtons.Ok).ShowDialog();
-                    });
-            }           
+                        if (ShowErrorMessage)
+                        {
+                            Deployment.Current.Dispatcher.BeginInvoke(() =>
+                            {
+                                new CustomMessageDialog(
+                                    ErrorMessageTitle,
+                                    String.Format(ErrorMessage, e.getErrorString()),
+                                    App.AppInformation,
+                                    MessageDialogButtons.Ok).ShowDialog();
+                            });
+                        }
+                    }
+                    break;
+            }
         }
 
         public virtual void onRequestStart(MegaSDK api, MRequest request)
