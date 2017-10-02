@@ -76,10 +76,23 @@ namespace MegaApp.Classes
         /// <returns>Download and upload transfers combined in one list.</returns>
         public IList<TransferObjectModel> SelectAll()
         {
-            var result = new List<TransferObjectModel>(this.Downloads.Count + this.Uploads.Count);
-            result.AddRange(this.Downloads);
-            result.AddRange(this.Uploads);
-            return result;
+            try
+            {
+                // Use temporal variables to avoid ArgumentException if
+                // any new transfer is added during this operation (Possible bug #7676)
+                var downloads = this.Downloads.ToList();
+                var uploads = this.Uploads.ToList();
+
+                var result = new List<TransferObjectModel>(downloads.Count + uploads.Count);
+                result.AddRange(downloads);
+                result.AddRange(uploads);
+                return result;
+            }
+            catch (Exception e)
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error getting the complete transfers list in queue.", e);
+                return null;
+            }
         }
 
         /// <summary>
