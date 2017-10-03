@@ -179,18 +179,23 @@ namespace MegaApp.MegaApi
                     }
                     break;
 
+                case MErrorType.API_EGOINGOVERQUOTA: // Not enough quota
                 case MErrorType.API_EOVERQUOTA: // Storage overquota error
-                    Deployment.Current.Dispatcher.BeginInvoke(() =>
-                    {
-                        // Stop all upload transfers
-                        api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
+                    // Stop all upload transfers
+                    LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                        string.Format("Storage quota exceeded ({0}) - Canceling uploads", e.getErrorCode().ToString()));
+                    api.cancelTransfers((int)MTransferType.TYPE_UPLOAD);
 
-                        // Disable the "camera upload" service
+                    // Disable the "camera upload" service if is enabled
+                    if (MediaService.GetAutoCameraUploadStatus())
+                    {
+                        LogService.Log(MLogLevel.LOG_LEVEL_INFO,
+                            string.Format("Storage quota exceeded ({0}) - Disabling CAMERA UPLOADS service", e.getErrorCode().ToString()));
                         MediaService.SetAutoCameraUpload(false);
                         SettingsService.SaveSetting(SettingsResources.CameraUploadsIsEnabled, false);
+                    }
 
-                        DialogService.ShowOverquotaAlert();
-                    });
+                    Deployment.Current.Dispatcher.BeginInvoke(() => DialogService.ShowOverquotaAlert());
                     break;
 
                 case MErrorType.API_EINCOMPLETE:
