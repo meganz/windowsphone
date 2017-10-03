@@ -268,16 +268,24 @@ namespace MegaApp.MegaApi
             var megaTransfer = TransfersService.SearchTransfer(TransfersService.MegaTransfers.SelectAll(), transfer);
             if (megaTransfer == null) return;
 
+            var isBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
+            var transferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
+            var transferPriority = transfer.getPriority();
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
                 if (DebugService.DebugSettings.IsDebugMode || Debugger.IsAttached)
-                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+                {
+                    if (ProgressService.GetProgressBarBackgroundColor() != (Color)Application.Current.Resources["MegaRedColor"])
+                        ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["MegaRedColor"]);
+                }
 
-                megaTransfer.Transfer = transfer;
-                megaTransfer.IsBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
-                megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
-                megaTransfer.TransferPriority = transfer.getPriority();
-
+                // Only update the values if they have changed to improve the UI performance
+                if (megaTransfer.Transfer != transfer) megaTransfer.Transfer = transfer;
+                if (megaTransfer.IsBusy != isBusy) megaTransfer.IsBusy = isBusy;
+                if (megaTransfer.TransferState != transferState) megaTransfer.TransferState = transferState;
+                if (megaTransfer.TransferPriority != transferPriority) megaTransfer.TransferPriority = transferPriority;
+                
                 // Transfer overquota error
                 if (e.getErrorCode() == MErrorType.API_EOVERQUOTA)
                     DialogService.ShowTransferOverquotaWarning(); 
@@ -293,19 +301,28 @@ namespace MegaApp.MegaApi
             var megaTransfer = TransfersService.SearchTransfer(TransfersService.MegaTransfers.SelectAll(), transfer);
             if (megaTransfer == null) return;
 
+            var isBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
+            var transferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
+            var totalBytes = transfer.getTotalBytes();
+            var transferedBytes = transfer.getTransferredBytes();
+            var transferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
+            var transferMeanSpeed = transfer.getMeanSpeed();
+            var transferPriority = transfer.getPriority();
+
             Deployment.Current.Dispatcher.BeginInvoke(() =>
             {
-                ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
+                if (ProgressService.GetProgressBarBackgroundColor() != (Color)Application.Current.Resources["PhoneChromeColor"])
+                    ProgressService.ChangeProgressBarBackgroundColor((Color)Application.Current.Resources["PhoneChromeColor"]);
 
-                megaTransfer.Transfer = transfer;
-                megaTransfer.IsBusy = api.areTransfersPaused((int)transfer.getType()) ? false : true;
-                megaTransfer.TransferState = api.areTransfersPaused((int)transfer.getType()) ? MTransferState.STATE_QUEUED : transfer.getState();
-                megaTransfer.TotalBytes = transfer.getTotalBytes();
-                megaTransfer.TransferedBytes = transfer.getTransferredBytes();
-                megaTransfer.TransferSpeed = transfer.getSpeed().ToStringAndSuffixPerSecond();
-                megaTransfer.TransferMeanSpeed = transfer.getMeanSpeed();
-                megaTransfer.TransferPriority = transfer.getPriority();
-                megaTransfer.TransferButtonIcon = new Uri("/Assets/Images/cancel transfers.Screen-WXGA.png", UriKind.Relative);
+                // Only update the values if they have changed to improve the UI performance
+                if (megaTransfer.Transfer != transfer) megaTransfer.Transfer = transfer;
+                if (megaTransfer.IsBusy != isBusy) megaTransfer.IsBusy = isBusy;
+                if (megaTransfer.TransferState != transferState) megaTransfer.TransferState = transferState;
+                if (megaTransfer.TotalBytes != totalBytes) megaTransfer.TotalBytes = totalBytes;
+                if (megaTransfer.TransferedBytes != transferedBytes) megaTransfer.TransferedBytes = transferedBytes;
+                if (megaTransfer.TransferSpeed != transferSpeed) megaTransfer.TransferSpeed = transferSpeed;
+                if (megaTransfer.TransferMeanSpeed != transferMeanSpeed) megaTransfer.TransferMeanSpeed = transferMeanSpeed;
+                if (megaTransfer.TransferPriority != transferPriority) megaTransfer.TransferPriority = transferPriority;
             });
         }
 
