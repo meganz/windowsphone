@@ -544,6 +544,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed open the internal file/folder of the link . Please, try again..
+        /// </summary>
+        public static string AM_InternalNodeFailed {
+            get {
+                return ResourceManager.GetString("AM_InternalNodeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Failed open internal file/folder.
+        /// </summary>
+        public static string AM_InternalNodeFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_InternalNodeFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again..
         /// </summary>
         public static string AM_InternalNodeNotFound {

@@ -1411,4 +1411,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Clear folder failed</value>
     <comment>Title of the dialog displayed when the process/request to clear a folder failed - (String as short as possible).</comment>
   </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Failed open the internal file/folder of the link . Please, try again.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Failed open internal file/folder</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
 </root>
