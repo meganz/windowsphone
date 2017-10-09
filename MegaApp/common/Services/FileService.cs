@@ -56,6 +56,8 @@ namespace MegaApp.Services
             }
             catch (Exception e)
             {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting file.", e);
+
                 Deployment.Current.Dispatcher.BeginInvoke(() =>
                 {
                     new CustomMessageDialog(
@@ -83,7 +85,8 @@ namespace MegaApp.Services
 
             foreach (var file in filesToDelete)
             {
-                DeleteFile(file);
+                if (!string.IsNullOrWhiteSpace(file))
+                    DeleteFile(file);
             }            
         }
 

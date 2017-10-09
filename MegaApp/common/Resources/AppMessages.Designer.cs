@@ -214,6 +214,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Failed to clear folder. Please try again..
+        /// </summary>
+        public static string AM_ClearFolderFailed {
+            get {
+                return ResourceManager.GetString("AM_ClearFolderFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clear folder failed.
+        /// </summary>
+        public static string AM_ClearFolderFailed_Title {
+            get {
+                return ResourceManager.GetString("AM_ClearFolderFailed_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Failed to copy item. Please try again..
         /// </summary>
         public static string AM_CopyFailed {
@@ -688,7 +706,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your puchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues..
+        ///   Busca una cadena traducida similar a Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues..
         /// </summary>
         public static string AM_PurchaseValidationFailed {
             get {
@@ -1228,7 +1246,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You don&apos;t have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to the your device&apos;s internal memory instead..
+        ///   Busca una cadena traducida similar a You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device&apos;s internal memory instead..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {
