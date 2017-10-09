@@ -412,24 +412,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a confirm your password.
-        /// </summary>
-        public static string ConfirmPasswordWatermark {
-            get {
-                return ResourceManager.GetString("ConfirmPasswordWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a confirm your PIN lock.
-        /// </summary>
-        public static string ConfirmPinLockWatermark {
-            get {
-                return ResourceManager.GetString("ConfirmPinLockWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Contacts.
         /// </summary>
         public static string Contacts {
@@ -624,15 +606,6 @@ namespace MegaApp.Resources {
         public static string Downloads {
             get {
                 return ResourceManager.GetString("Downloads", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a your e-mail address.
-        /// </summary>
-        public static string EmailWatermark {
-            get {
-                return ResourceManager.GetString("EmailWatermark", resourceCulture);
             }
         }
         
@@ -1168,24 +1141,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Your new password.
-        /// </summary>
-        public static string NewPasswordWatermark {
-            get {
-                return ResourceManager.GetString("NewPasswordWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a your new PIN lock.
-        /// </summary>
-        public static string NewPinLockWatermark {
-            get {
-                return ResourceManager.GetString("NewPinLockWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a next.
         /// </summary>
         public static string Next {
@@ -1348,15 +1303,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a your password.
-        /// </summary>
-        public static string PasswordWatermark {
-            get {
-                return ResourceManager.GetString("PasswordWatermark", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Pause.
         /// </summary>
         public static string Pause {
@@ -1407,24 +1353,6 @@ namespace MegaApp.Resources {
         public static string PhotosOnly {
             get {
                 return ResourceManager.GetString("PhotosOnly", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a PIN Lock.
-        /// </summary>
-        public static string PinLock {
-            get {
-                return ResourceManager.GetString("PinLock", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a your PIN lock.
-        /// </summary>
-        public static string PinLockWatermark {
-            get {
-                return ResourceManager.GetString("PinLockWatermark", resourceCulture);
             }
         }
         
@@ -2113,6 +2041,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Confirm password.
+        /// </summary>
+        public static string UI_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("UI_ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Confirm PIN lock.
+        /// </summary>
+        public static string UI_ConfirmPinLock {
+            get {
+                return ResourceManager.GetString("UI_ConfirmPinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Content.
         /// </summary>
         public static string UI_Content {
@@ -2167,6 +2113,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Email.
+        /// </summary>
+        public static string UI_Email {
+            get {
+                return ResourceManager.GetString("UI_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Export Recovery Key.
         /// </summary>
         public static string UI_ExportRecoveryKeyText {
@@ -2185,11 +2140,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a your first name.
+        ///   Busca una cadena traducida similar a First name.
         /// </summary>
-        public static string UI_FirstNameWatermark {
+        public static string UI_FirstName {
             get {
-                return ResourceManager.GetString("UI_FirstNameWatermark", resourceCulture);
+                return ResourceManager.GetString("UI_FirstName", resourceCulture);
             }
         }
         
@@ -2248,11 +2203,11 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a your last name.
+        ///   Busca una cadena traducida similar a Last name.
         /// </summary>
-        public static string UI_LastNameWatermark {
+        public static string UI_LastName {
             get {
-                return ResourceManager.GetString("UI_LastNameWatermark", resourceCulture);
+                return ResourceManager.GetString("UI_LastName", resourceCulture);
             }
         }
         
@@ -2320,6 +2275,24 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a New password.
+        /// </summary>
+        public static string UI_NewPassword {
+            get {
+                return ResourceManager.GetString("UI_NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a New PIN lock.
+        /// </summary>
+        public static string UI_NewPinLock {
+            get {
+                return ResourceManager.GetString("UI_NewPinLock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No completed transfers.
         /// </summary>
         public static string UI_NoCompletedTransfers {
@@ -2347,11 +2320,29 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Password.
+        /// </summary>
+        public static string UI_Password {
+            get {
+                return ResourceManager.GetString("UI_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Paste MEGA link:.
         /// </summary>
         public static string UI_PasteMegaLink {
             get {
                 return ResourceManager.GetString("UI_PasteMegaLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a PIN Lock.
+        /// </summary>
+        public static string UI_PinLock {
+            get {
+                return ResourceManager.GetString("UI_PinLock", resourceCulture);
             }
         }
         

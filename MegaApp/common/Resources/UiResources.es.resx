@@ -285,11 +285,6 @@
     <value>Nombre (ascendente)</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by name - (String as short as possible).</comment>
   </data>
-  <data name="NewPinLockWatermark" xml:space="preserve">
-    <value>Tu nuevo PIN de bloqueo</value>
-    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
   <data name="NoDataToShow" xml:space="preserve">
     <value>No hay datos
 para mostrar</value>
@@ -350,21 +345,6 @@ para mostrar</value>
   <data name="No" xml:space="preserve">
     <value>No</value>
     <comment>Label for any 'No' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="PinLockWatermark" xml:space="preserve">
-    <value>Tu PIN de bloqueo</value>
-    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLock" xml:space="preserve">
-    <value>Bloqueo con PIN</value>
-    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>Confirma tu PIN de bloqueo</value>
-    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="RubbishBinRoot" xml:space="preserve">
     <value>Papelera</value>
@@ -625,10 +605,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="ShareFolder" xml:space="preserve">
     <value>Compartir carpeta</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Tu nueva contraseña</value>
-    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
     <value>Sin conexión</value>
@@ -969,10 +945,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <value>Vista previa</value>
     <comment>Label for any 'Preview' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>Tu contraseña</value>
-    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
-  </data>
   <data name="Next" xml:space="preserve">
     <value>siguiente</value>
     <comment>Label for any 'Next' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -1016,14 +988,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="EmptyFolder" xml:space="preserve">
     <value>Carpeta vacía</value>
     <comment>Label for the background of an empty forder page - (String as short as possible).</comment>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>Tu dirección de e-mail</value>
-    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>Confirma tu contraseña</value>
-    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copiar</value>
@@ -1108,14 +1072,6 @@ Preserve the {0} code because is for include the name/type of the selected plan 
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Eliminar enlace</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>tu nombre</value>
-    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
-  </data>
-  <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>tu apellido</value>
-    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
     <value>Seleccionar todo</value>

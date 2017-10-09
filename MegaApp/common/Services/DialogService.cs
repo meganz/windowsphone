@@ -1164,7 +1164,7 @@ namespace MegaApp.Services
                 titleLabel.Text = UiResources.ChangePinLock.ToUpper();
                 currentPinLock = new NumericPasswordBox()
                 {
-                    Watermark = UiResources.PinLockWatermark.ToLower(),
+                    Watermark = UiResources.UI_PinLock.ToLower(),
                     ClearButtonVisibility = Visibility.Visible
                 };
                 pinLockStackPanel.Children.Add(currentPinLock);
@@ -1176,14 +1176,14 @@ namespace MegaApp.Services
 
             var pinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.NewPinLockWatermark.ToLower(),
+                Watermark = UiResources.UI_NewPinLock.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
 
 
             var confirmPinLock = new NumericPasswordBox()
             {
-                Watermark = UiResources.ConfirmPinLockWatermark.ToLower(),
+                Watermark = UiResources.UI_ConfirmPinLock.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
 
@@ -1329,21 +1329,21 @@ namespace MegaApp.Services
                         
             var currentPassword = new RadPasswordBox()
             {
-                Watermark = UiResources.PasswordWatermark.ToLower(),
+                Watermark = UiResources.UI_Password.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
             passwordStackPanel.Children.Add(currentPassword);
 
             var newPassword = new RadPasswordBox()
             {
-                Watermark = UiResources.NewPasswordWatermark.ToLower(),
+                Watermark = UiResources.UI_NewPassword.ToLower(),
                 ClearButtonVisibility = Visibility.Visible                
             };
             passwordStackPanel.Children.Add(newPassword);
 
             var confirmPassword = new RadPasswordBox()
             {
-                Watermark = UiResources.ConfirmPasswordWatermark.ToLower(),
+                Watermark = UiResources.UI_ConfirmPassword.ToLower(),
                 ClearButtonVisibility = Visibility.Visible
             };
             passwordStackPanel.Children.Add(confirmPassword);

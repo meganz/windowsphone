@@ -149,9 +149,9 @@
     <value>Confirm account</value>
     <comment>Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>confirm your password</value>
-    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Copy" xml:space="preserve">
     <value>Copy</value>
@@ -165,9 +165,9 @@
     <value>Folder name:</value>
     <comment>Text to show when a user wants to create a new folder to type the name for the new folder.</comment>
   </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>your e-mail address</value>
-    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Email</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
     <value>empty folder</value>
@@ -213,9 +213,9 @@
     <value>my account</value>
     <comment>Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>your first name</value>
-    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>First name</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Next" xml:space="preserve">
     <value>next</value>
@@ -229,9 +229,9 @@
     <value>Open MEGA link</value>
     <comment>Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</comment>
   </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>your password</value>
-    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Password</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Preview</value>
@@ -337,19 +337,14 @@
     <value>Rubbish Bin</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>confirm your PIN lock</value>
-    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirm PIN lock</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
   </data>
-  <data name="PinLock" xml:space="preserve">
+  <data name="UI_PinLock" xml:space="preserve">
     <value>PIN Lock</value>
     <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLockWatermark" xml:space="preserve">
-    <value>your PIN lock</value>
-    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
 Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -516,10 +511,10 @@ Try to preserve the PIN uppercase word.</comment>
     <value>Newest</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
-  <data name="NewPinLockWatermark" xml:space="preserve">
-    <value>your new PIN lock</value>
-    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>New PIN lock</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
     <value>No data to show</value>
@@ -1083,9 +1078,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Share folder</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Your new password</value>
-    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>New password</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_CloseAllSessions" xml:space="preserve">
     <value>Close all sessions</value>
@@ -1143,9 +1138,9 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Please select a default download folder.</value>
     <comment>Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</comment>
   </data>
-  <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>your last name</value>
-    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Last name</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
     <value>Select all</value>
