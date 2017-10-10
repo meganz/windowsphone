@@ -49,15 +49,30 @@
                         <telerikPrimitives:RadPasswordBox x:Name="txtPassword_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_Password, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding CreateAccountViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True" Margin="0,0,0,-12"/>
                         <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_ConfirmPassword, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding CreateAccountViewModel.ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="3" Margin="0,0,0,-12"/>
                         <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
-                            <CheckBox x:Name="chkTermsOfUse" VerticalAlignment="Center" IsEnabled="{Binding CreateAccountViewModel.ControlState}" IsChecked="{Binding CreateAccountViewModel.TermOfService, Mode=TwoWay}" TabIndex="4" Margin="0,0,-24,0"/>
-                            <RichTextBox x:Name="TermsOfUseAgreement" HorizontalAlignment="Left" TextWrapping="Wrap" Width="412">
-                                <Paragraph>
-                                    <Run Text="{Binding LocalizedUiResources.AgreeCreateAccount, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface"/>
-                                    <Hyperlink x:Name="linkTermsOfService" Command="{Binding CreateAccountViewModel.NavigateTermsOfServiceCommand}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface">
-                                        <Run Text="{Binding LocalizedUiResources.TermsOfService, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource MegaRedSolidColorBrush}" FontFamily="Portable User Interface"/>
-                                    </Hyperlink>                                    
-                                </Paragraph>
-                            </RichTextBox>                            
+                            <CheckBox 
+                                x:Name="chkTermsOfUse" 
+                                TabIndex="4" 
+                                IsEnabled="{Binding CreateAccountViewModel.ControlState}" 
+                                IsChecked="{Binding CreateAccountViewModel.TermOfService, Mode=TwoWay}"                                 
+                                VerticalAlignment="Center" >
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock
+                                        Margin="0,2,0,0"
+                                        FontFamily="Portable User Interface"
+                                        FontSize="{StaticResource PhoneFontSizeMedium}" 
+                                        HorizontalAlignment="Left"
+                                        Text="{Binding LocalizedUiResources.UI_AgreeTermsOfService, Source={StaticResource LocalizedStrings}}" />
+                                    <HyperlinkButton 
+                                        x:Name="linkTermsOfService"
+                                        Margin="-12,4,0,0"
+                                        Content="{Binding LocalizedUiResources.UI_ViewTermsOfService, Source={StaticResource LocalizedStrings}}" 
+                                        Command="{Binding CreateAccountViewModel.NavigateTermsOfServiceCommand}"
+                                        FontFamily="Portable User Interface"
+                                        FontSize="{StaticResource PhoneFontSizeMedium}"
+                                        Foreground="{StaticResource MegaRedSolidColorBrush}"
+                                        HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </CheckBox>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>

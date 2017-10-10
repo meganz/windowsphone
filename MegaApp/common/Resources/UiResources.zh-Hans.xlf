@@ -16,10 +16,10 @@
           <target state="translated">新增文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add folder' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AgreeCreateAccount" translate="yes" space="preserve">
-          <source>I agree with the</source>
-          <target state="translated">我同意</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
+        <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" xml:space="preserve">
+          <source>I agree with the Terms of Service</source>
+          <target state="new">I agree with the Terms of Service</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
           <source>MEGA Privacy</source>
@@ -1468,6 +1468,11 @@ NOTE: Keep the capital letter if possible.</note>
           <source>No completed transfers</source>
           <target state="translated">没有已完成的传输</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" xml:space="preserve">
+          <source>View Terms of Service here</source>
+          <target state="new">View Terms of Service here</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
       </group>
     </body>

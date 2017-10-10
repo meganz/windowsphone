@@ -125,9 +125,9 @@
     <value>add folder</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>I agree with the</value>
-    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>I agree with the Terms of Service</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>MEGA Privacy</value>
@@ -1290,5 +1290,9 @@ NOTE: Keep the capital letter if possible.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>No completed transfers</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>View Terms of Service here</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

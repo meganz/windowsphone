@@ -160,15 +160,6 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a I agree with the.
-        /// </summary>
-        public static string AgreeCreateAccount {
-            get {
-                return ResourceManager.GetString("AgreeCreateAccount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Annual.
         /// </summary>
         public static string Annual {
@@ -1960,6 +1951,15 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a I agree with the Terms of Service.
+        /// </summary>
+        public static string UI_AgreeTermsOfService {
+            get {
+                return ResourceManager.GetString("UI_AgreeTermsOfService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Available Offline.
         /// </summary>
         public static string UI_AvailableOffline {
@@ -2505,6 +2505,15 @@ namespace MegaApp.Resources {
         public static string UI_UpgradeAccount {
             get {
                 return ResourceManager.GetString("UI_UpgradeAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a View Terms of Service here.
+        /// </summary>
+        public static string UI_ViewTermsOfService {
+            get {
+                return ResourceManager.GetString("UI_ViewTermsOfService", resourceCulture);
             }
         }
         
