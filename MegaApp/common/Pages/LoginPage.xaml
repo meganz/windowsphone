@@ -33,8 +33,8 @@
             <phone:PivotItem x:Name="PivotItem_Login" Header="{Binding LocalizedUiResources.UI_Login, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
                 <ScrollViewer x:Name="ContentPanel_Login" Grid.Row="1">
                     <StackPanel x:Name="stackLogin" VerticalAlignment="Top">
-                        <telerikPrimitives:RadTextBox x:Name="txtEmail_Login" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding LoginViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding LoginViewModel.ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_Login" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding LoginViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding LoginViewModel.ControlState}" TabIndex="1" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadTextBox x:Name="txtEmail_Login" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_Email, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding LoginViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding LoginViewModel.ControlState}" InputScope="EmailUserName" TabIndex="0" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_Login" Watermark="{Binding LocalizedUiResources.UI_Password, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding LoginViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding LoginViewModel.ControlState}" TabIndex="1" KeyDown="OnKeyDown" Margin="0,0,0,-12"/>
                     </StackPanel>
                 </ScrollViewer>
             </phone:PivotItem>
@@ -43,21 +43,36 @@
             <phone:PivotItem x:Name="PivotItem_CreateAccount" Header="{Binding LocalizedUiResources.UI_CreateAccount, Converter={StaticResource TextToLowerCaseConverter}, Source={StaticResource LocalizedStrings}}" Margin="12,4,12,0">
                 <ScrollViewer x:Name="ContentPanel_CreateAccount" Grid.Row="1">
                     <StackPanel x:Name="stackCreateAccount">
-                        <telerikPrimitives:RadTextBox x:Name="txtFirstName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_FirstNameWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.FirstName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadTextBox x:Name="txtLastName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_LastNameWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.LastName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadTextBox x:Name="txtEmail_CreateAccount" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.EmailWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="1" InputScope="EmailUserName" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_CreateAccount" Watermark="{Binding LocalizedUiResources.PasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding CreateAccountViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True" Margin="0,0,0,-12"/>
-                        <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType_CreateAccount" Watermark="{Binding LocalizedUiResources.ConfirmPasswordWatermark, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding CreateAccountViewModel.ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="3" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadTextBox x:Name="txtFirstName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_FirstName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.FirstName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadTextBox x:Name="txtLastName" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_LastName, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.LastName, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="0" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadTextBox x:Name="txtEmail_CreateAccount" TextWrapping="Wrap" Watermark="{Binding LocalizedUiResources.UI_Email, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Text="{Binding CreateAccountViewModel.Email, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="1" InputScope="EmailUserName" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPassword_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_Password, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Password="{Binding CreateAccountViewModel.Password, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="2" HideWatermarkOnFocus="True" Margin="0,0,0,-12"/>
+                        <telerikPrimitives:RadPasswordBox x:Name="txtPasswordReType_CreateAccount" Watermark="{Binding LocalizedUiResources.UI_ConfirmPassword, Converter={StaticResource TextToLowerCaseConverter}, Mode=OneWay, Source={StaticResource LocalizedStrings}}" ClearButtonVisibility="Visible" FontSize="{StaticResource PhoneFontSizeMediumLarge}" HideWatermarkOnFocus="True" Password="{Binding CreateAccountViewModel.ConfirmPassword, Mode=TwoWay}" IsEnabled="{Binding CreateAccountViewModel.ControlState}" KeyDown="OnKeyDown" TabIndex="3" Margin="0,0,0,-12"/>
                         <StackPanel x:Name="stackTermOfUse" Orientation="Horizontal">
-                            <CheckBox x:Name="chkTermsOfUse" VerticalAlignment="Center" IsEnabled="{Binding CreateAccountViewModel.ControlState}" IsChecked="{Binding CreateAccountViewModel.TermOfService, Mode=TwoWay}" TabIndex="4" Margin="0,0,-24,0"/>
-                            <RichTextBox x:Name="TermsOfUseAgreement" HorizontalAlignment="Left" TextWrapping="Wrap" Width="412">
-                                <Paragraph>
-                                    <Run Text="{Binding LocalizedUiResources.AgreeCreateAccount, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface"/>
-                                    <Hyperlink x:Name="linkTermsOfService" Command="{Binding CreateAccountViewModel.NavigateTermsOfServiceCommand}" FontSize="{StaticResource PhoneFontSizeMedium}" FontFamily="Portable User Interface">
-                                        <Run Text="{Binding LocalizedUiResources.TermsOfService, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource MegaRedSolidColorBrush}" FontFamily="Portable User Interface"/>
-                                    </Hyperlink>                                    
-                                </Paragraph>
-                            </RichTextBox>                            
+                            <CheckBox 
+                                x:Name="chkTermsOfUse" 
+                                TabIndex="4" 
+                                IsEnabled="{Binding CreateAccountViewModel.ControlState}" 
+                                IsChecked="{Binding CreateAccountViewModel.TermOfService, Mode=TwoWay}"                                 
+                                VerticalAlignment="Center" >
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock
+                                        Margin="0,2,0,0"
+                                        FontFamily="Portable User Interface"
+                                        FontSize="{StaticResource PhoneFontSizeMedium}" 
+                                        HorizontalAlignment="Left"
+                                        Text="{Binding LocalizedUiResources.UI_AgreeTermsOfService, Source={StaticResource LocalizedStrings}}" />
+                                    <HyperlinkButton 
+                                        x:Name="linkTermsOfService"
+                                        Margin="-12,4,0,0"
+                                        Content="{Binding LocalizedUiResources.UI_ViewTermsOfService, Source={StaticResource LocalizedStrings}}" 
+                                        Command="{Binding CreateAccountViewModel.NavigateTermsOfServiceCommand}"
+                                        FontFamily="Portable User Interface"
+                                        FontSize="{StaticResource PhoneFontSizeMedium}"
+                                        Foreground="{StaticResource MegaRedSolidColorBrush}"
+                                        HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </CheckBox>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>

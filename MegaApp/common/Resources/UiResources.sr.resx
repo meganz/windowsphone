@@ -125,10 +125,6 @@
     <value>додај фолдер</value>
     <comment>Label for any 'Add folder' button, link, etc. - (String as short as possible).</comment>
   </data>
-  <data name="AgreeCreateAccount" xml:space="preserve">
-    <value>Сагласан сам са</value>
-    <comment>Text placed just before a link labeled 'Term of Service' into the 'create account' page.</comment>
-  </data>
   <data name="AppName" xml:space="preserve">
     <value>MEGA Privacy</value>
     <comment>Label with the application name. Try to preserve uppercase - (NO-TRANSLATION).</comment>
@@ -145,17 +141,9 @@
     <value>потрврди</value>
     <comment>Label for any 'Confirm' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="ConfirmPasswordWatermark" xml:space="preserve">
-    <value>потврдите Вашу лозинку</value>
-    <comment>Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</comment>
-  </data>
   <data name="Copy" xml:space="preserve">
     <value>Копирање</value>
     <comment>Label for any 'Copy' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="EmailWatermark" xml:space="preserve">
-    <value>Ваша e-mail адреса</value>
-    <comment>Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</comment>
   </data>
   <data name="EmptyFolder" xml:space="preserve">
     <value>празан фолдер</value>
@@ -200,10 +188,6 @@
   <data name="Open" xml:space="preserve">
     <value>Отовори</value>
     <comment>Label for any 'Open' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="PasswordWatermark" xml:space="preserve">
-    <value>Ваша лозинка</value>
-    <comment>Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</comment>
   </data>
   <data name="Preview" xml:space="preserve">
     <value>Предпреглед</value>
@@ -304,21 +288,6 @@
   <data name="RubbishBinRoot" xml:space="preserve">
     <value>Канта за смеће</value>
     <comment>Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</comment>
-  </data>
-  <data name="ConfirmPinLockWatermark" xml:space="preserve">
-    <value>потврдите Ваш PIN lock</value>
-    <comment>Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLock" xml:space="preserve">
-    <value>PIN Lock</value>
-    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
-  </data>
-  <data name="PinLockWatermark" xml:space="preserve">
-    <value>Ваш PIN lock</value>
-    <comment>Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="No" xml:space="preserve">
     <value>Не</value>
@@ -471,11 +440,6 @@ Try to preserve the PIN uppercase word.</comment>
   <data name="NewestSortOption" xml:space="preserve">
     <value>најновије</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
-  </data>
-  <data name="NewPinLockWatermark" xml:space="preserve">
-    <value>Ваш нови PIN lock</value>
-    <comment>Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</comment>
   </data>
   <data name="NoDataToShow" xml:space="preserve">
     <value>Нема података за приказивање</value>
@@ -1012,10 +976,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <value>Подели фасциклу</value>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
-  <data name="NewPasswordWatermark" xml:space="preserve">
-    <value>Ваша нова лозинка</value>
-    <comment>Watermark label for the new password field when changing account password - (String as short as possible).</comment>
-  </data>
   <data name="ManageLink" xml:space="preserve">
     <value>Управљање линком</value>
     <comment>Label for any 'Manage link' button, link, text, title, etc. - (String as short as possible).</comment>
@@ -1107,14 +1067,6 @@ Preserve the {0} code because is for include a number in runtime.</comment>
   <data name="UI_RemoveLink" xml:space="preserve">
     <value>Уклони линк</value>
     <comment>Label for any 'Remove link' button, link, text, title, etc. - (String as short as possible).</comment>
-  </data>
-  <data name="UI_FirstNameWatermark" xml:space="preserve">
-    <value>Ваше име</value>
-    <comment>Watermark label for the user's first name field when create account - (String as short as possible).</comment>
-  </data>
-  <data name="UI_LastNameWatermark" xml:space="preserve">
-    <value>Ваше презиме</value>
-    <comment>Watermark label for the user's last name field when create account - (String as short as possible).</comment>
   </data>
   <data name="SelectAll" xml:space="preserve">
     <value>Означи све</value>

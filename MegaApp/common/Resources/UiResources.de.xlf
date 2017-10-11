@@ -16,10 +16,10 @@
           <target state="translated">Ordner hinzufügen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add folder' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AgreeCreateAccount" translate="yes" space="preserve">
-          <source>I agree with the</source>
-          <target state="translated">Ich stimme den</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just before a link labeled 'Term of Service' into the 'create account' page.</note>
+        <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" xml:space="preserve">
+          <source>I agree with the Terms of Service</source>
+          <target state="new">I agree with the Terms of Service</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
           <source>MEGA Privacy</source>
@@ -46,10 +46,10 @@
           <target state="translated">Account aktivieren</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ConfirmPasswordWatermark" translate="yes" space="preserve">
-          <source>confirm your password</source>
-          <target state="translated">Passwortbestätigung</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation password field into 'create account' page or when changing the password  - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_ConfirmPassword" translate="yes" xml:space="preserve">
+          <source>Confirm password</source>
+          <target state="new">Confirm password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
           <source>Copy</source>
@@ -66,10 +66,10 @@
           <target state="translated">Ordnername:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
         </trans-unit>
-        <trans-unit id="Resx/EmailWatermark" translate="yes" space="preserve">
-          <source>your e-mail address</source>
-          <target state="translated">Ihre E-Mail-Adresse</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the e-mail address field when create/confirm account and login - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Email" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="new">Email</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
           <source>empty folder</source>
@@ -126,10 +126,10 @@
           <target state="translated">mein Account</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FirstNameWatermark" translate="yes" space="preserve">
-          <source>your first name</source>
-          <target state="translated">Vorname</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's first name field when create account - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_FirstName" translate="yes" xml:space="preserve">
+          <source>First name</source>
+          <target state="new">First name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
           <source>next</source>
@@ -146,10 +146,10 @@
           <target state="translated">MEGA-Link öffnen</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/PasswordWatermark" translate="yes" space="preserve">
-          <source>your password</source>
-          <target state="translated">Ihr Passwort</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's password field when create/confirm account and login - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_Password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="new">Password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Preview" translate="yes" space="preserve">
           <source>Preview</source>
@@ -281,23 +281,17 @@
           <target state="translated">Papierkorb</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/ConfirmPinLockWatermark" translate="yes" space="preserve">
-          <source>confirm your PIN lock</source>
-          <target state="translated">PIN bestätigen</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the confirmation PIN lock field when creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</note>
-        </trans-unit>
-        <trans-unit id="Resx/PinLock" translate="yes" space="preserve">
+        <trans-unit id="Resx/UI_PinLock" translate="yes" xml:space="preserve">
           <source>PIN Lock</source>
-          <target state="translated">PIN-Lock</target>
+          <target state="new">PIN Lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
 Try to preserve the PIN uppercase word.</note>
         </trans-unit>
-        <trans-unit id="Resx/PinLockWatermark" translate="yes" space="preserve">
-          <source>your PIN lock</source>
-          <target state="translated">Ihre PIN</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the PIN lock field when introducing, creating or changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</note>
+        <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" xml:space="preserve">
+          <source>Confirm PIN lock</source>
+          <target state="new">Confirm PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/No" translate="yes" space="preserve">
           <source>No</source>
@@ -504,11 +498,11 @@ Try to preserve the PIN uppercase word.</note>
           <target state="translated">Neueste</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NewPinLockWatermark" translate="yes" space="preserve">
-          <source>your new PIN lock</source>
-          <target state="translated">Ihre neue PIN-Sperre</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new PIN lock field when changing a PIN lock code  - (String as short as possible).
-Try to preserve the PIN uppercase word.</note>
+        <trans-unit id="Resx/UI_NewPinLock" translate="yes" xml:space="preserve">
+          <source>New PIN lock</source>
+          <target state="new">New PIN lock</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDataToShow" translate="yes" space="preserve">
           <source>No data to show</source>
@@ -1210,10 +1204,10 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Ordner freigeben</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/NewPasswordWatermark" translate="yes" space="preserve">
-          <source>Your new password</source>
-          <target state="translated">Ihr neues Passwort</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the new password field when changing account password - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_NewPassword" translate="yes" xml:space="preserve">
+          <source>New password</source>
+          <target state="new">New password</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
           <source>Close all sessions</source>
@@ -1285,10 +1279,10 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Bitte wählen Sie einen Zielordner für Ihre zukünftigen Downloads.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LastNameWatermark" translate="yes" space="preserve">
-          <source>your last name</source>
-          <target state="translated">Nachname</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Watermark label for the user's last name field when create account - (String as short as possible).</note>
+        <trans-unit id="Resx/UI_LastName" translate="yes" xml:space="preserve">
+          <source>Last name</source>
+          <target state="new">Last name</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
           <source>Select all</source>
@@ -1474,6 +1468,11 @@ NOTE: Keep the capital letter if possible.</note>
           <source>No completed transfers</source>
           <target state="translated">Keine abgeschlossenen Transfers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" xml:space="preserve">
+          <source>View Terms of Service here</source>
+          <target state="new">View Terms of Service here</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
       </group>
     </body>
