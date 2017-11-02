@@ -73,17 +73,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Priečinok vytvorený</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when create a folder successfully - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed" translate="yes" space="preserve">
-          <source>Failed to delete item. Please try again [{0}]</source>
-          <target state="translated">Zlyhalo mazanie súboru. Prosím skúste to znovu. [{0}]</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
-        </trans-unit>
-        <trans-unit id="Resx/DeleteNodeFailed_Title" translate="yes" space="preserve">
-          <source>Deletion failed</source>
-          <target state="translated">Mazanie zlyhalo</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/DownloadLinkFailed" translate="yes" space="preserve">
           <source>Failed to retrieve a download link. Please try again.</source>
           <target state="translated">Zlyhalo získavanie odkazu pre sťahovanie. Prosím skúste to znovu.</target>
@@ -1608,25 +1597,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Error sharing link</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearFolderFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear folder failed</source>
-          <target state="new">Clear folder failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to clear a folder failed - (String as short as possible).</note>
-        </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
           <source>Failed open internal file/folder</source>
           <target state="new">Failed open internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
+          <source>Clear cache failed</source>
+          <target state="new">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+          <source>Failed to clear cache. Please try again.</source>
+          <target state="new">Failed to clear cache. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
+        </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
           <source>Failed open the internal file/folder of the link . Please, try again.</source>
           <target state="new">Failed open the internal file/folder of the link . Please, try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearFolderFailed" translate="yes" xml:space="preserve">
-          <source>Failed to clear folder. Please try again.</source>
-          <target state="new">Failed to clear folder. Please try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to clear a folder failed.</note>
         </trans-unit>
       </group>
     </body>

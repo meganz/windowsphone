@@ -194,10 +194,13 @@ namespace MegaApp.Database
             DataBaseHelper<SavedForOffline>.DeleteNode(node);
         }
 
-        // Delete all node list or delete table 
-        public static void DeleteAllNodes()
+        /// <summary>
+        /// Delete all node list or delete table 
+        /// </summary>
+        /// <returns>TRUE if all went well or FALSE in other case</returns>
+        public static bool DeleteAllNodes()
         {
-            DataBaseHelper<SavedForOffline>.DeleteAllNodes();
+            return DataBaseHelper<SavedForOffline>.DeleteAllNodes();
         }
 
         #endregion

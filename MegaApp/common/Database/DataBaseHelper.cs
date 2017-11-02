@@ -5,7 +5,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using mega;
 using MegaApp.Classes;
+using MegaApp.Services;
 
 namespace MegaApp.Database
 {
@@ -130,7 +132,12 @@ namespace MegaApp.Database
         }
 
         // Delete all node list or delete table 
-        public static void DeleteAllNodes()
+
+        /// <summary>
+        /// Delete all node list or delete table 
+        /// </summary>
+        /// <returns>TRUE if all went well or FALSE in other case</returns>
+        public static bool DeleteAllNodes()
         {
             try
             {
@@ -140,9 +147,15 @@ namespace MegaApp.Database
                     dbConn.CreateTable<T>();
                     dbConn.Dispose();
                     dbConn.Close();
+
+                    return true;
                 }
             }
-            catch (SQLiteException) { }
+            catch (SQLiteException e) 
+            {
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting DB table", e);
+                return false; 
+            }
         }        
     }
 }

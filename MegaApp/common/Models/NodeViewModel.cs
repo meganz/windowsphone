@@ -612,8 +612,10 @@ namespace MegaApp.Models
             return true;
         }
 
-        public async Task RemoveForOffline()
+        public async Task<bool> RemoveForOffline()
         {
+            bool result;
+
             MNode parentNode = SdkService.MegaSdk.getParentNode(this.OriginalMNode);
 
             String parentNodePath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
@@ -628,14 +630,14 @@ namespace MegaApp.Models
             if (this.IsFolder)
             {
                 await RecursiveRemoveForOffline(parentNodePath, this.Name);
-                FolderService.DeleteFolder(nodePath, true);
+                result = FolderService.DeleteFolder(nodePath, true);
             }                
             else
             {
                 // Search if the file has a pending transfer for offline and cancel it on this case                
                 TransfersService.CancelPendingNodeOfflineTransfers(nodePath, this.IsFolder);
 
-                FileService.DeleteFile(nodePath);                
+                result = FileService.DeleteFile(nodePath);                
             }
 
             SavedForOffline.DeleteNodeByLocalPath(nodePath);            
@@ -650,10 +652,12 @@ namespace MegaApp.Models
 
                 if (FolderService.IsEmptyFolder(folderPathToRemove))
                 {
-                    FolderService.DeleteFolder(folderPathToRemove);
+                    result = result & FolderService.DeleteFolder(folderPathToRemove);
                     SavedForOffline.DeleteNodeByLocalPath(folderPathToRemove);
                 }
             }
+
+            return result;
         }
 
         private async Task RecursiveRemoveForOffline(String sfoPath, String nodeName)

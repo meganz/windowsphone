@@ -171,15 +171,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>נוצרה תיקייה</value>
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
   </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>שגיאה במחיקת הפריט. אנא נסה שוב [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>שגיאה במחיקה</value>
-    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
-  </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
     <value>שגיאה בקבלת הקישור להורדה. אנא נסה שוב.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>

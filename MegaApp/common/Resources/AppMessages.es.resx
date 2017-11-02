@@ -933,15 +933,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>No se pudo recuperar un enlace de descarga. Por favor, vuelve a intentarlo.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
   </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>Error al eliminar</value>
-    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
-  </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>No se pudo eliminar el elemento. Por favor, vuelve a intentarlo [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
   <data name="CreateFolderSuccess_Title" xml:space="preserve">
     <value>Carpeta creada</value>
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>

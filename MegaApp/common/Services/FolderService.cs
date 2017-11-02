@@ -67,23 +67,18 @@ namespace MegaApp.Services
             Directory.CreateDirectory(path);            
         }
         
-        public static void DeleteFolder(string path, bool recursive = false)
+        public static bool DeleteFolder(string path, bool recursive = false)
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(path) && Directory.Exists(path))
-                    Directory.Delete(path, recursive);
+                if (String.IsNullOrWhiteSpace(path) && !Directory.Exists(path)) return false;
+                Directory.Delete(path, recursive);
+                return true;
             }
             catch (Exception e)
             {
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                        AppMessages.DeleteNodeFailed_Title,
-                        String.Format(AppMessages.DeleteNodeFailed, e.Message),
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
-                });
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting folder.", e);
+                return false;
             }
         }
 
@@ -116,16 +111,17 @@ namespace MegaApp.Services
             }
         }        
 
-        public static void Clear(string path)
+        public static bool Clear(string path)
         {
             try
             {
                 if (HasIllegalChars(path))
                 {
                     LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error cleaning folder '{0}'.", path));
-                    return;
+                    return false;
                 }
 
+                bool result = true;
                 IEnumerable<string> foldersToDelete = Directory.GetDirectories(path);
                 if (foldersToDelete != null)
                 {
@@ -136,6 +132,7 @@ namespace MegaApp.Services
                             if (HasIllegalChars(folder))
                             {
                                 LogService.Log(MLogLevel.LOG_LEVEL_WARNING, string.Format("Error deleting folder '{0}'.", path));
+                                result = false;
                                 continue;
                             }
 
@@ -144,19 +141,14 @@ namespace MegaApp.Services
                     }
                 }
 
-                FileService.ClearFiles(Directory.GetFiles(path));
+                result = result & FileService.ClearFiles(Directory.GetFiles(path));
+
+                return true;
             }
             catch (Exception e)
             {
-                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error clearing folder.", e);
-
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                        AppMessages.AM_ClearFolderFailed_Title,
-                        AppMessages.AM_ClearFolderFailed, 
-                        App.AppInformation, MessageDialogButtons.Ok).ShowDialog();
-                });
+                LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error cleaning folder.", e);
+                return false;
             }
         }
 
