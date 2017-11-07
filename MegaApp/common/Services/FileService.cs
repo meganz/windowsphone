@@ -47,25 +47,18 @@ namespace MegaApp.Services
             }
         }
 
-        public static void DeleteFile(string path)
+        public static bool DeleteFile(string path)
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(path) && File.Exists(path))
-                    File.Delete(path);
+                if (String.IsNullOrWhiteSpace(path) || !File.Exists(path)) return false;
+                File.Delete(path);
+                return true;
             }
             catch (Exception e)
             {
                 LogService.Log(MLogLevel.LOG_LEVEL_ERROR, "Error deleting file.", e);
-
-                Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    new CustomMessageDialog(
-                        AppMessages.DeleteNodeFailed_Title,
-                        String.Format(AppMessages.DeleteNodeFailed, e.Message),
-                        App.AppInformation,
-                        MessageDialogButtons.Ok).ShowDialog();
-                });
+                return false;
             }
         }
 
@@ -79,15 +72,15 @@ namespace MegaApp.Services
             return false;
         }
 
-        public static void ClearFiles(IEnumerable<string> filesToDelete)
+        public static bool ClearFiles(IEnumerable<string> filesToDelete)
         {
-            if (filesToDelete == null) return;
+            if (filesToDelete == null) return false;
 
+            bool result = true;
             foreach (var file in filesToDelete)
-            {
-                if (!string.IsNullOrWhiteSpace(file))
-                    DeleteFile(file);
-            }            
+                result = result & DeleteFile(file);
+
+            return result;
         }
 
         public static async Task<bool> CopyFile(string sourcePath, string destinationFolderPath, string newFileName = null)

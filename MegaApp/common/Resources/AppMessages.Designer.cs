@@ -214,20 +214,20 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed to clear folder. Please try again..
+        ///   Busca una cadena traducida similar a Failed to clear cache. Please try again..
         /// </summary>
-        public static string AM_ClearFolderFailed {
+        public static string AM_ClearCacheFailed {
             get {
-                return ResourceManager.GetString("AM_ClearFolderFailed", resourceCulture);
+                return ResourceManager.GetString("AM_ClearCacheFailed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Clear folder failed.
+        ///   Busca una cadena traducida similar a Clear cache failed.
         /// </summary>
-        public static string AM_ClearFolderFailed_Title {
+        public static string AM_ClearCacheFailed_Title {
             get {
-                return ResourceManager.GetString("AM_ClearFolderFailed_Title", resourceCulture);
+                return ResourceManager.GetString("AM_ClearCacheFailed_Title", resourceCulture);
             }
         }
         
@@ -1422,24 +1422,6 @@ namespace MegaApp.Resources {
         public static string DeleteMultipleContactsQuestion_Title {
             get {
                 return ResourceManager.GetString("DeleteMultipleContactsQuestion_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Failed to delete item. Please try again [{0}].
-        /// </summary>
-        public static string DeleteNodeFailed {
-            get {
-                return ResourceManager.GetString("DeleteNodeFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Deletion failed.
-        /// </summary>
-        public static string DeleteNodeFailed_Title {
-            get {
-                return ResourceManager.GetString("DeleteNodeFailed_Title", resourceCulture);
             }
         }
         

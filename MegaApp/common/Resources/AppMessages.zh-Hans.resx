@@ -171,15 +171,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>文件夹已创建</value>
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
   </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>删除项目失败。请再试一次[{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>删除失败</value>
-    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
-  </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
     <value>无法检索下载链接。请再试一次。</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>

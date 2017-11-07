@@ -213,71 +213,71 @@ namespace MegaApp.Services
             return files;
         }
 
-        public static void ClearAppCache(bool includeLocalFolder)
+        public static bool ClearAppCache(bool includeLocalFolder)
         {
-            if (includeLocalFolder)
-                ClearLocalCache();
-            ClearThumbnailCache();
-            ClearPreviewCache();
-            ClearDownloadCache();
-            ClearUploadCache();
+            bool result = true;
             
-            ClearAppDatabase();
+            if (includeLocalFolder)
+                result = result & ClearLocalCache();
+
+            result = result & ClearThumbnailCache();
+            result = result & ClearPreviewCache();
+            result = result & ClearDownloadCache();
+            result = result & ClearUploadCache();
+
+            result = result & ClearAppDatabase();
+
+            return result;
         }
 
-        public static void ClearAppDatabase()
+        public static bool ClearAppDatabase()
         {
-            SavedForOffline.DeleteAllNodes();
+            return SavedForOffline.DeleteAllNodes();
         }
 
-        public static void ClearThumbnailCache()
+        public static bool ClearThumbnailCache()
         {
             string thumbnailDir = GetThumbnailDirectoryPath();
-            if (!String.IsNullOrWhiteSpace(thumbnailDir) && !FolderService.HasIllegalChars(thumbnailDir) && 
-                Directory.Exists(thumbnailDir))
-            {
-                FileService.ClearFiles(Directory.GetFiles(thumbnailDir));
-            }
+            if (String.IsNullOrWhiteSpace(thumbnailDir) || FolderService.HasIllegalChars(thumbnailDir) || 
+                !Directory.Exists(thumbnailDir)) return false;
+            
+            return FileService.ClearFiles(Directory.GetFiles(thumbnailDir));
         }
 
-        public static void ClearPreviewCache()
+        public static bool ClearPreviewCache()
         {
             string previewDir = GetPreviewDirectoryPath();
-            if (!String.IsNullOrWhiteSpace(previewDir) && !FolderService.HasIllegalChars(previewDir) && 
-                Directory.Exists(previewDir))
-            {
-                FileService.ClearFiles(Directory.GetFiles(previewDir));
-            } 
+            if (String.IsNullOrWhiteSpace(previewDir) || FolderService.HasIllegalChars(previewDir) ||
+                !Directory.Exists(previewDir)) return false;
+            
+            return FileService.ClearFiles(Directory.GetFiles(previewDir));
         }
 
-        public static void ClearDownloadCache()
+        public static bool ClearDownloadCache()
         {
             string downloadDir = GetDownloadDirectoryPath();
-            if (!String.IsNullOrWhiteSpace(downloadDir) && !FolderService.HasIllegalChars(downloadDir) && 
-                Directory.Exists(downloadDir))
-            {
-                FolderService.Clear(downloadDir);
-            }
+            if (String.IsNullOrWhiteSpace(downloadDir) || FolderService.HasIllegalChars(downloadDir) ||
+                !Directory.Exists(downloadDir)) return false;
+            
+            return FolderService.Clear(downloadDir);
         }
 
-        public static void ClearUploadCache()
+        public static bool ClearUploadCache()
         {
             string uploadDir = GetUploadDirectoryPath();
-            if (!String.IsNullOrWhiteSpace(uploadDir) && !FolderService.HasIllegalChars(uploadDir) && 
-                Directory.Exists(uploadDir))
-            {
-                FileService.ClearFiles(Directory.GetFiles(uploadDir));
-            }
+            if (String.IsNullOrWhiteSpace(uploadDir) || FolderService.HasIllegalChars(uploadDir) ||
+                !Directory.Exists(uploadDir)) return false;
+            
+            return FileService.ClearFiles(Directory.GetFiles(uploadDir));
         }
 
-        public static void ClearLocalCache()
+        public static bool ClearLocalCache()
         {
             string localCacheDir = ApplicationData.Current.LocalFolder.Path;
-            if (!String.IsNullOrWhiteSpace(localCacheDir) && !FolderService.HasIllegalChars(localCacheDir) &&
-                Directory.Exists(localCacheDir))
-            {
-                FileService.ClearFiles(Directory.GetFiles(localCacheDir));
-            }            
+            if (String.IsNullOrWhiteSpace(localCacheDir) || FolderService.HasIllegalChars(localCacheDir) ||
+                !Directory.Exists(localCacheDir)) return false;
+            
+            return FileService.ClearFiles(Directory.GetFiles(localCacheDir));
         }
 
         public static string GetUploadDirectoryPath(bool checkIfExists = false)

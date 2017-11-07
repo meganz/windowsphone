@@ -171,15 +171,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Folder created</value>
     <comment>Title of the dialog displayed when create a folder successfully - (String as short as possible).</comment>
   </data>
-  <data name="DeleteNodeFailed" xml:space="preserve">
-    <value>Failed to delete item. Please try again [{0}]</value>
-    <comment>Message of the dialog displayed when the process/request to delete a node failed.
-Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
-  </data>
-  <data name="DeleteNodeFailed_Title" xml:space="preserve">
-    <value>Deletion failed</value>
-    <comment>Title of the dialog displayed when the process/request to delete a node failed - (String as short as possible).</comment>
-  </data>
   <data name="DownloadLinkFailed" xml:space="preserve">
     <value>Failed to retrieve a download link. Please try again.</value>
     <comment>Message of the dialog displayed when failed to retrieve a download link.</comment>
@@ -1403,14 +1394,6 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <value>Error sharing link</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
-  <data name="AM_ClearFolderFailed" xml:space="preserve">
-    <value>Failed to clear folder. Please try again.</value>
-    <comment>Message of the dialog displayed when the process/request to clear a folder failed.</comment>
-  </data>
-  <data name="AM_ClearFolderFailed_Title" xml:space="preserve">
-    <value>Clear folder failed</value>
-    <comment>Title of the dialog displayed when the process/request to clear a folder failed - (String as short as possible).</comment>
-  </data>
   <data name="AM_InternalNodeFailed" xml:space="preserve">
     <value>Failed open the internal file/folder of the link . Please, try again.</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
@@ -1418,5 +1401,13 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
     <value>Failed open internal file/folder</value>
     <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Failed to clear cache. Please try again.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Clear cache failed</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>
