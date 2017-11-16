@@ -121,7 +121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">生成连接失败</target>
+          <target state="translated">如法获得连接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -245,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">成功删除文件</target>
+          <target state="translated">项目已删除</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -597,7 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">您尚未为您的文件选择预设下载位置。若要继续进行下载，请先选择目标文件夹，或至设定中指定您的预设下载位置。</target>
+          <target state="translated">您尚未为文件选择默认的下载位置。要继续下载，请选择目标文件夹或转到设置，以设置默认的下载位置。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -628,9 +628,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">您没有将此文件类型复制到目标文件夹的权限。您是否要将不支持类型的文件储存/复制到SD卡中？请尝试将文件储存/复制到您的设备的内部记忆体中。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -864,7 +864,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CancelSubscriptionConfirmation" translate="yes" space="preserve">
           <source>Thank you for your feedback! Are you sure you want to cancel your MEGA subscription?</source>
-          <target state="translated">感谢您的反馈！您确定要取消您的MEGA订购吗？</target>
+          <target state="translated">感谢您的建议！您确定要取消您的MEGA订购吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user is trying to cancel a subscription. This sentence is for give thanks to the user for the feedback sent during the cancellation process and asking for confirmation to do it.</note>
         </trans-unit>
         <trans-unit id="Resx/CancelSubscriptionFailed" translate="yes" space="preserve">
@@ -1273,26 +1273,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - The file has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The file has been deleted by the user.</source>
-          <target state="needs-review-translation">该连接已失效，可能的原因： 
-- 因ToS / AUP违规，该链接已被删除。 
-- 无效的网址– 您尝试存取的链接并不存在。 
-- 该文件的上传者已将此链接删除。</target>
+          <target state="needs-review-translation">文件链接不存在之可能原因： - 因ToS / AUP违规，故该文件链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
 - The folder link has been removed because of a ToS/AUP violation.
 - Invalid URL – the link you are trying to access does not exist.
 - The folder link has been deleted by the user.</source>
-          <target state="needs-review-translation">该连接已失效，可能的原因： 
-- 因ToS / AUP违规，该链接已被删除。 
-- 无效的网址– 您尝试存取的链接并不存在。 
-- 该文件夹的上传者已将此链接删除。</target>
+          <target state="needs-review-translation">文件夹链接不存在之可能原因： - 因ToS / AUP违规，故该文件夹链接已被删除。 - 无效的网址– 您尝试存取的链接并不存在。 - 该使用者已将文件夹链接删除。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
-          <target state="translated">无效的链接</target>
+          <target state="translated">不可用的链接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error title shown when you open a file or folder link and it's no longer available - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_OpenLinkFailed" translate="yes" space="preserve">
@@ -1435,7 +1431,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">您的MEGA订阅购买未于我们的授权服务器上通过验证。重新开启此应用程序后，我们将试着再次验证您的购买凭证。如果此错误仍然存​​在，请联系MEGA支持中心。</target>
+          <target state="translated">您的MEGA订阅购买未于我们的授权服务器上通过验证。重新开启此应用程序后，我们将试着再次验证您的购买凭证。如果此错误仍然存​​在，请联系MEGA支持中心。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1501,7 +1497,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_AccountBlocked_Title" translate="yes" space="preserve">
           <source>Account blocked</source>
-          <target state="translated">帐号锁定</target>
+          <target state="translated">帐号被封锁</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog shown when the user is trying to login and the account has been blocked.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
@@ -1537,12 +1533,12 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">您进程中的传输量已超过您帐户目前可用的传输配额，因此传输可能会中断。</target>
+          <target state="translated">您进程中的传输量已超过您帐户目前可用的流量，因此传输可能会中断。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">传输配额不足</target>
+          <target state="translated">流量不足</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
@@ -1577,43 +1573,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">要将日志文件储存于外部位置以便稍后使用吗？</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
           <source>Save the log file</source>
-          <target state="translated">Save the log file</target>
+          <target state="translated">储存日志文件</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="translated">分享链接失败，请再试一次。</target>
+          <target state="translated">无法分享文件/ 文件夹链接。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
           <source>Error sharing link</source>
-          <target state="translated">链接分享错误</target>
+          <target state="translated">无法分享链接</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed open internal file/folder</source>
-          <target state="new">Failed open internal file/folder</target>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">无法打开链接的内部文件/文件夹。请再试一次。</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">无法打开内部文件/文件夹</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear cache failed</source>
-          <target state="new">Clear cache failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="new">Failed to clear cache. Please try again.</target>
+          <target state="translated">无法清除缓存。请再试一次。</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed open the internal file/folder of the link . Please, try again.</source>
-          <target state="new">Failed open the internal file/folder of the link . Please, try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">清除缓存失败</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

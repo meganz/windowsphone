@@ -16,9 +16,9 @@
           <target state="translated">přidat složku</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Add folder' button, link, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_AgreeTermsOfService" translate="yes" space="preserve">
           <source>I agree with the Terms of Service</source>
-          <target state="new">I agree with the Terms of Service</target>
+          <target state="translated">I agree with the Terms of Service</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
         <trans-unit id="Resx/AppName" translate="yes" space="preserve">
@@ -46,9 +46,9 @@
           <target state="translated">Potvrdit účet</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ConfirmPassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ConfirmPassword" translate="yes" space="preserve">
           <source>Confirm password</source>
-          <target state="new">Confirm password</target>
+          <target state="translated">Confirm password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Copy" translate="yes" space="preserve">
@@ -66,9 +66,9 @@
           <target state="translated">Název složky:</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text to show when a user wants to create a new folder to type the name for the new folder.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Email" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Email" translate="yes" space="preserve">
           <source>Email</source>
-          <target state="new">Email</target>
+          <target state="translated">E-mail</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyFolder" translate="yes" space="preserve">
@@ -126,9 +126,9 @@
           <target state="translated">můj účet</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'My account' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_FirstName" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_FirstName" translate="yes" space="preserve">
           <source>First name</source>
-          <target state="new">First name</target>
+          <target state="translated">Křestní jméno</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Next" translate="yes" space="preserve">
@@ -146,9 +146,9 @@
           <target state="translated">Otevřít odkaz MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Open MEGA link' button, link, text, title, etc. Try to preserve the MEGA uppercase word - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_Password" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_Password" translate="yes" space="preserve">
           <source>Password</source>
-          <target state="new">Password</target>
+          <target state="translated">Heslo</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Preview" translate="yes" space="preserve">
@@ -188,7 +188,7 @@
         </trans-unit>
         <trans-unit id="Resx/Save" translate="yes" space="preserve">
           <source>Save</source>
-          <target state="needs-review-translation">Save</target>
+          <target state="translated">Uložit</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Save' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Share" translate="yes" space="preserve">
@@ -281,21 +281,21 @@
           <target state="translated">Koš</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the name of the Rubbish bin breadcum root node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_PinLock" translate="yes" xml:space="preserve">
-          <source>PIN Lock</source>
-          <target state="new">PIN Lock</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
-Try to preserve the PIN uppercase word.</note>
-        </trans-unit>
-        <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ConfirmPinLock" translate="yes" space="preserve">
           <source>Confirm PIN lock</source>
-          <target state="new">Confirm PIN lock</target>
+          <target state="translated">Confirm PIN lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
+        <trans-unit id="Resx/UI_PinLock" translate="yes" space="preserve">
+          <source>PIN Lock</source>
+          <target state="translated">Zámek PIN</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</note>
+        </trans-unit>
         <trans-unit id="Resx/No" translate="yes" space="preserve">
           <source>No</source>
-          <target state="translated">Žádné</target>
+          <target state="translated">Ne</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'No' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Yes" translate="yes" space="preserve">
@@ -386,7 +386,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/Cache" translate="yes" space="preserve">
           <source>cache</source>
-          <target state="translated">mezipaměť</target>
+          <target state="translated">cache</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Cache' (cache memory) button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CancelAll" translate="yes" space="preserve">
@@ -411,7 +411,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/ClearCache" translate="yes" space="preserve">
           <source>clear cache</source>
-          <target state="translated">vymazat mezipaměť</target>
+          <target state="translated">clear cache</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Clean cache' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/ClearSelection" translate="yes" space="preserve">
@@ -474,9 +474,9 @@ Preserve the PIN uppercase word.</note>
           <target state="translated">Obnovovací klíč</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_MEGA_SDK_Version" translate="yes" space="preserve">
           <source>MEGA SDK version</source>
-          <target state="new">MEGA SDK version</target>
+          <target state="translated">Verze SDK MEGA</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Monthly" translate="yes" space="preserve">
@@ -499,9 +499,9 @@ Preserve the PIN uppercase word.</note>
           <target state="translated">nejnovější</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_NewPinLock" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_NewPinLock" translate="yes" space="preserve">
           <source>New PIN lock</source>
-          <target state="new">New PIN lock</target>
+          <target state="translated">New PIN lock</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
 Preserve the PIN uppercase word.</note>
         </trans-unit>
@@ -602,7 +602,7 @@ Preserve the PIN uppercase word.</note>
         </trans-unit>
         <trans-unit id="Resx/About" translate="yes" space="preserve">
           <source>About</source>
-          <target state="needs-review-translation">About</target>
+          <target state="translated">O nás</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'About' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/Pause" translate="yes" space="preserve">
@@ -1205,9 +1205,9 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Sdílet složku</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_NewPassword" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_NewPassword" translate="yes" space="preserve">
           <source>New password</source>
-          <target state="new">New password</target>
+          <target state="translated">New password</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_CloseAllSessions" translate="yes" space="preserve">
@@ -1237,7 +1237,7 @@ Preserve the {0} code because is for include a number in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/SavedForOffline" translate="yes" space="preserve">
           <source>Saved for offline</source>
-          <target state="needs-review-translation">Saved for offline</target>
+          <target state="translated">Saved for offline</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</note>
         </trans-unit>
         <trans-unit id="Resx/EmptyCloudDrive" translate="yes" space="preserve">
@@ -1280,9 +1280,9 @@ Preserve the {0} code because is for include a number in runtime.</note>
           <target state="translated">Vyberte výchozí složku pro stahování.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Default value for the string shown into the preferences page. It will substituted by the path of the folder selected by the user when selecting a default location for downloads.</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_LastName" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_LastName" translate="yes" space="preserve">
           <source>Last name</source>
-          <target state="new">Last name</target>
+          <target state="translated">Příjmení</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/SelectAll" translate="yes" space="preserve">
@@ -1407,7 +1407,7 @@ NOTE: Keep the capital letter if possible.</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateDownloading" translate="yes" space="preserve">
           <source>Downloading...</source>
-          <target state="translated">Stahování...</target>
+          <target state="translated">Downloading...</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the state of a transfer when is being downloading - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/UI_TransferStateError" translate="yes" space="preserve">
@@ -1470,9 +1470,9 @@ NOTE: Keep the capital letter if possible.</note>
           <target state="translated">No completed transfers</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Label for the background of an empty completed transfers page - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/UI_ViewTermsOfService" translate="yes" space="preserve">
           <source>View Terms of Service here</source>
-          <target state="new">View Terms of Service here</target>
+          <target state="translated">View Terms of Service here</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Text used as a link to view the 'Terms of Service' into the 'create account' page.</note>
         </trans-unit>
       </group>

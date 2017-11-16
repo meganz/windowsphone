@@ -544,7 +544,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed open the internal file/folder of the link . Please, try again..
+        ///   Busca una cadena traducida similar a Failed to open the internal file/folder of the link. Please try again..
         /// </summary>
         public static string AM_InternalNodeFailed {
             get {
@@ -553,7 +553,7 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Failed open internal file/folder.
+        ///   Busca una cadena traducida similar a Failed to open the internal file/folder.
         /// </summary>
         public static string AM_InternalNodeFailed_Title {
             get {
@@ -1264,7 +1264,8 @@ namespace MegaApp.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device&apos;s internal memory instead..
+        ///   Busca una cadena traducida similar a You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+        ///Please try to save/copy the file to your device&apos;s internal memory instead..
         /// </summary>
         public static string CopyFileUnauthorizedAccessException {
             get {

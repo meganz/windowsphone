@@ -194,7 +194,7 @@
     <comment>Text placed just before app version number into the 'about' page.</comment>
   </data>
   <data name="AskDownloadLocationText" xml:space="preserve">
-    <value>Siempre pedir ubicación de descarga</value>
+    <value>Preguntar siempre la ruta de descarga</value>
     <comment>Text placed just before a switch button (on/off) into the 'settings' page indicating if the app should ask always for a download location or use a default download location.</comment>
   </data>
   <data name="Cache" xml:space="preserve">
@@ -206,7 +206,7 @@
     <comment>Label for any 'Bandwidth' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Available" xml:space="preserve">
-    <value>Libre</value>
+    <value>disponible</value>
     <comment>Label for available space into the 'my account' page - (String as short as possible, MAX 10 characters).</comment>
   </data>
   <data name="CancelAll" xml:space="preserve">
@@ -274,7 +274,7 @@
     <comment>Label for any 'Monthly' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="NewestSortOption" xml:space="preserve">
-    <value>Más reciente</value>
+    <value>Más nuevo</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in descending order by date (from newer to older) - (String as short as possible).</comment>
   </data>
   <data name="NameDescendingSortOption" xml:space="preserve">
@@ -295,7 +295,7 @@ para mostrar</value>
     <comment>Label shown when the app has no information about the subscription plans to show into 'subscription' page - (String as short as possible).</comment>
   </data>
   <data name="OldestSortOption" xml:space="preserve">
-    <value>Más antigua</value>
+    <value>Más antiguo</value>
     <comment>Label for the menu option to sort the nodes of the cloud drive in ascending order by size (from smaller to bigger) - (String as short as possible).</comment>
   </data>
   <data name="PauseAll" xml:space="preserve">
@@ -339,7 +339,7 @@ para mostrar</value>
     <comment>Label for 'File upload' option of the dialog shown to upload nodes - (String as short as possible).</comment>
   </data>
   <data name="Yes" xml:space="preserve">
-    <value>si</value>
+    <value>sí</value>
     <comment>Label for any 'Yes' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="No" xml:space="preserve">
@@ -375,7 +375,7 @@ para mostrar</value>
     <comment>Label for any 'Rubbish bin' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="ClearRubbishBin" xml:space="preserve">
-    <value>Vaciar papelera</value>
+    <value>Vaciar la Papelera</value>
     <comment>Label for any 'Empty rubbish' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="Send" xml:space="preserve">
@@ -415,7 +415,7 @@ para mostrar</value>
     <comment>Label to indicate the user that is needed choose a renewal period for upgrade his account.</comment>
   </data>
   <data name="ExpiresOn" xml:space="preserve">
-    <value>Expira el</value>
+    <value>Caduca el</value>
     <comment>Label for the 'Expires on' text into the my account page, indicating the expiration date of a PRO account without a valid subscription - (String as short as possible).</comment>
   </data>
   <data name="FirstName" xml:space="preserve">
@@ -491,7 +491,7 @@ para mostrar</value>
     <comment>Label for any 'Status' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SentRequests" xml:space="preserve">
-    <value>Solicitudes enviadas</value>
+    <value>Invitaciones enviadas</value>
     <comment>Label for 'Sent requests' text, title, etc. for sent contact requests - (String as short as possible).</comment>
   </data>
   <data name="Unknown" xml:space="preserve">
@@ -559,7 +559,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Accepted' button, link, text, label, etc. - (String as short as possible).</comment>
   </data>
   <data name="ReceivedRequests" xml:space="preserve">
-    <value>Solicitudes recibidas</value>
+    <value>Invitaciones recibidas</value>
     <comment>Label for 'Received requests' text, title, etc. for received contact requests - (String as short as possible).</comment>
   </data>
   <data name="SendFile" xml:space="preserve">
@@ -599,7 +599,7 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Outgoing' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsQuestion" xml:space="preserve">
-    <value>¿Quieres activar el servicio de 'camera uploads'?</value>
+    <value>¿Quieres activar las Subidas de la cámara?</value>
     <comment>Label asking user if wants to enable the auto camera uploads service.</comment>
   </data>
   <data name="ShareFolder" xml:space="preserve">
@@ -607,11 +607,11 @@ Preserve the {0} code because is for include a number in runtime.</comment>
     <comment>Label for any 'Share folder' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SavedForOffline" xml:space="preserve">
-    <value>Sin conexión</value>
+    <value>Disponible sin conexión</value>
     <comment>Label for any 'Saved for offline' button, link, text, title, etc. - (String as short as possible, LESS THAN 22 CHARS).</comment>
   </data>
   <data name="NoInternetConnection" xml:space="preserve">
-    <value>No hay conexión a internet</value>
+    <value>No tienes conexión a internet</value>
     <comment>Label for the background of an empty state when no internet connection - (String as short as possible).</comment>
   </data>
   <data name="NoUploads" xml:space="preserve">
@@ -746,7 +746,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Dismiss' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Back" xml:space="preserve">
-    <value>Atrás</value>
+    <value>Volver</value>
     <comment>Label for any 'Back' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="Security" xml:space="preserve">
@@ -754,7 +754,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Security' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="EnableCameraUploads" xml:space="preserve">
-    <value>Activar Camera Uploads</value>
+    <value>Activar Subidas de la cámara</value>
     <comment>Label for the switch button to enable or disable the Camera Uploads service - (String as short as possible).</comment>
   </data>
   <data name="WifiOnly" xml:space="preserve">
@@ -770,7 +770,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Skip' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="SetupCameraUploadsTitle" xml:space="preserve">
-    <value>Configurar Camera Uploads</value>
+    <value>Configurar Subidas de la cámara</value>
     <comment>Label used like title for the "set up camera uploads" page - (String as short as possible)</comment>
   </data>
   <data name="Ok" xml:space="preserve">
@@ -790,7 +790,7 @@ Preserve the {0} code because is for include the name/type of the selected plan 
     <comment>Label for any 'Contacts' button, link, text, etc. - (String as short as possible).</comment>
   </data>
   <data name="CameraUploads" xml:space="preserve">
-    <value>Camera Uploads</value>
+    <value>Subidas de la cámara</value>
     <comment>Label for any 'Camera Uploads' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="About" xml:space="preserve">
@@ -1111,11 +1111,11 @@ Preserve the {0} code because is for include the name of the destination folder 
     <comment>Label for any 'Open link' button, link, text, title, etc. - (String as short as possible).</comment>
   </data>
   <data name="UI_ExportRecoveryKeyText" xml:space="preserve">
-    <value>Exportar Clave de Recuperación</value>
+    <value>Exportar Clave de recuperación</value>
     <comment>Text 'Export Recovery Key' placed just before two buttons into the 'settings' page to allow see (copy/paste) and export the Recovery Key.</comment>
   </data>
   <data name="UI_RecoveryKey" xml:space="preserve">
-    <value>Clave de Recuperación</value>
+    <value>Clave de recuperación</value>
     <comment>Label for any 'Recovery Key' button, link, text, title, etc. Preserve uppercase - (String as short as possible).</comment>
   </data>
   <data name="UI_DebugMode" xml:space="preserve">
@@ -1244,5 +1244,56 @@ Keep the code {1} because is for include currency in runtime.</comment>
   <data name="UI_NoCompletedTransfers" xml:space="preserve">
     <value>No hay transferencias completadas</value>
     <comment>Label for the background of an empty completed transfers page - (String as short as possible).</comment>
+  </data>
+  <data name="UI_AgreeTermsOfService" xml:space="preserve">
+    <value>Acepto los Términos de servicio.</value>
+    <comment>Text placed just after a checkbox to indicate that user is agree with the 'Terms of Service' into the 'create account' page.</comment>
+  </data>
+  <data name="UI_ConfirmPassword" xml:space="preserve">
+    <value>Confirmar contraseña</value>
+    <comment>Label for any 'Confirm password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+    <comment>Label for any 'Email' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_FirstName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Label for any 'First name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_Password" xml:space="preserve">
+    <value>Contraseña</value>
+    <comment>Label for any 'Password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ConfirmPinLock" xml:space="preserve">
+    <value>Confirmar PIN</value>
+    <comment>Label for any 'Confirm PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_PinLock" xml:space="preserve">
+    <value>Bloqueo con PIN</value>
+    <comment>Label for any 'PIN Lock' button, link, text, title, etc. - (String as short as possible).
+Try to preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_MEGA_SDK_Version" xml:space="preserve">
+    <value>Versión del SDK de MEGA</value>
+    <comment>Label for any 'MEGA SDK version' button, link, text, title, etc. Preserve the "MEGA SDK" in uppercase - (String as short as possible).</comment>
+  </data>
+  <data name="UI_NewPinLock" xml:space="preserve">
+    <value>Nuevo PIN</value>
+    <comment>Label for any 'New PIN lock' button, link, text, title, etc. - (String as short as possible).
+Preserve the PIN uppercase word.</comment>
+  </data>
+  <data name="UI_NewPassword" xml:space="preserve">
+    <value>Nueva contraseña</value>
+    <comment>Label for any 'New password' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_LastName" xml:space="preserve">
+    <value>Apellidos</value>
+    <comment>Label for any 'Last name' button, link, text, title, etc. - (String as short as possible).</comment>
+  </data>
+  <data name="UI_ViewTermsOfService" xml:space="preserve">
+    <value>Lee los Términos de servicio aquí</value>
+    <comment>Text used as a link to view the 'Terms of Service' into the 'create account' page.</comment>
   </data>
 </root>

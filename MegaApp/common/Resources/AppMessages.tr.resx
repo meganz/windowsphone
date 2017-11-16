@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>Bağlantı alınamadı</value>
+    <value>Bağlantıyı almak imkansız</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -584,9 +584,7 @@ MEGA dosya ve klasörleri yüklenemedi. Tekrar deneyin ya da yenilemeye tıklay�
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>Dosyalarınız için varsayılan indirme dizini seçmediniz.
-
-Bu indirmeye devam etmek için, lütfen indirme dizini seçin veya ayarlarınızdan varsayılan indirme dizini seçin.</value>
+    <value>Dosyalarınız için varsayılan indirme konumunu seçmediniz. İndirme işlemine devam etmek, varsayılan indirme konumunuzu ayarlamak için lütfen bir hedef klasör seçin veya ayarlara gidin.</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1399,5 +1397,21 @@ Preserve the [{0}] code because is for include the error code or the error messa
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
     <value>Bağlantı paylaşımı hatası</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>Bağlantının dahili dosyasını/klasörünü açamadı. Lütfen tekrar deneyin.</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>Dahili dosya/klasör açılamadı</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>Önbellek temizlenemedi. Lütfen tekrar deneyin.</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>Önbellek temizle başarısız</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>

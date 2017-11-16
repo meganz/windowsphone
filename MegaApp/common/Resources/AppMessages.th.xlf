@@ -597,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">คุณไม่ได้เลือกตำแหน่งดาวน์โหลดเริ่มต้นสำหรับไฟล์ของคุณ
-
-หากต้องการดำเนินการดาวน์โหลด กรุณาเลือกโฟลเดอร์ปลายทางหรือไปที่การตั้งค่าเพื่อตั้งค่าตำแหน่งดาวน์โหลดเริ่มต้นของคุณ</target>
+          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -630,9 +628,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">คุณไม่มีสิทธิ์คัดลอกไฟล์ประเภทนี้ไปยังโฟลเดอร์ปลายทาง คุณกำลังลองบันทึก/คัดลอกไฟล์ประเภทที่ไม่สนับสนุนไปยังการ์ด SD หรือไม่ กรุณาลองบันทึก/คัดลอกไฟล์ไปยังหน่วยความจำภายในของอุปกรณ์แทน</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -1280,6 +1278,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - ไฟล์ถูกลบโดยผู้ใช้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
@@ -1291,6 +1290,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - URL ไม่ถูกต้อง - ลิงก์ที่คุณพยายามเข้าถึงไม่มีอยู่
 - โฟลเดอร์ถูกลบโดยผู้ใช้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1437,7 +1437,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">การซื้อสมัครรับข้อมูล MEGA ของคุณไม่ผ่านการตรวจสอบที่เซิร์ฟเวอร์สิทธิ์การใช้งานของเรา เมื่อรีสตาร์ทแอปนี้เราจะพยายามตรวจสอบใบอนุญาตการสมัครรับข้อมูลของคุณอีกครั้ง กรุณาติดต่อฝ่ายสนับสนุน MEGA หากข้อผิดพลาดยังคงมีอยู่</target>
+          <target state="translated">การซื้อสมัครรับข้อมูล MEGA ของคุณไม่ผ่านการตรวจสอบที่เซิร์ฟเวอร์สิทธิ์การใช้งานของเรา เมื่อรีสตาร์ทแอปนี้เราจะพยายามตรวจสอบใบอนุญาตการสมัครรับข้อมูลของคุณอีกครั้ง กรุณาติดต่อฝ่ายสนับสนุน MEGA หากข้อผิดพลาดยังคงมีอยู่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1508,68 +1508,68 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_ShareFromMegaAppBusy_Message" translate="yes" space="preserve">
           <source>Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</source>
-          <target state="translated">Failed to share item(s) from MEGA. The destination application seems busy. Please try again later.</target>
+          <target state="translated">ไม่สามารถแชร์รายการจาก MEGA แอปพลิเคชันปลายทางดูเหมือนว่าไม่ว่าง กรุณาลองใหม่อีกครั้งในภายหลัง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to share item(s) from MEGA with other app fails because the destination app is busy.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="translated">Failed to retrieve node details. Please try again.</target>
+          <target state="translated">ไม่สามารถเรียกรายละเอียดของโหนดได้ กรุณาลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
           <source>View details failed</source>
-          <target state="translated">View details failed</target>
+          <target state="translated">ดูรายละเอียดข้อผิดพลาด</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="translated">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
+          <target state="translated">มีข้อผิดพลาดที่ไม่รู้จักในเส้นทางดาวน์โหลด กรุณาลองอีกครั้งและหากยังคงมีข้อผิดพลาด กรุณาติดต่อ support@mega.nz [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
+          <target state="translated">ไม่พบไฟล์/โฟลเดอร์ของลิงก์ที่คุณพยายามเปิด คุณอาจลงชื่อเข้าใช้บัญชีอื่น กรุณาเข้าสู่บัญชีที่ถูกต้องและลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
           <source>File/folder not found</source>
-          <target state="translated">File/folder not found</target>
+          <target state="translated">ไม่พบไฟล์/โฟลเดอร์</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">การโอนถ่ายที่รออยู่ของคุณเกินโควต้าการโอนปัจจุบันที่มีให้สำหรับบัญชีของคุณและอาจถูกขัดจังหวะได้</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">โควตาการโอนถ่ายหมดแล้ว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">คุณแน่ใจหรือไม่ว่าต้องการยกเลิกดาวน์โหลดที่รอดำเนินการทั้งหมด</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">คุณแน่ใจหรือไม่ว่าต้องการยกเลิกอัปโหลดที่รอดำเนินการทั้งหมด</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
           <source>Failed to view the contact details. Please try again later.</source>
-          <target state="translated">Failed to view the contact details. Please try again later.</target>
+          <target state="translated">ไม่สามารถดูรายละเอียดการติดต่อได้ กรุณาลองใหม่อีกครั้งในภายหลัง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to view a contact details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed_Title" translate="yes" space="preserve">
           <source>Contact details failed</source>
-          <target state="translated">Contact details failed</target>
+          <target state="translated">รายละเอียดการติดต่อล้มเหลว</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed" translate="yes" space="preserve">
           <source>Failed to show the upload options. Please try again later.</source>
-          <target state="translated">Failed to show the upload options. Please try again later.</target>
+          <target state="translated">ไม่สามารถแสดงตัวเลือกการอัปโหลด กรุณาลองใหม่อีกครั้งในภายหลัง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to show the upload options failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShowUploadOptionsFailed_Title" translate="yes" space="preserve">
@@ -1579,43 +1579,43 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile" translate="yes" space="preserve">
           <source>Do you want to save the log file in an external location to use it later?</source>
-          <target state="translated">Do you want to save the log file in an external location to use it later?</target>
+          <target state="translated">คุณต้องการจัดเก็บไฟล์บันทึกในตำแหน่งภายนอกเพื่อใช้งานในภายหลังหรือไม่</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_SaveLogFile_Title" translate="yes" space="preserve">
           <source>Save the log file</source>
-          <target state="translated">Save the log file</target>
+          <target state="translated">จัดเก็บไฟล์บันทึก</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" space="preserve">
           <source>Failed to share the file/folder link. Please try again.</source>
-          <target state="translated">Failed to share the file/folder link. Please try again.</target>
+          <target state="translated">ไม่สามารถแชร์ลิงก์ไฟล์/โฟลเดอร์ กรุณาลองอีกครั้ง</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed_Title" translate="yes" space="preserve">
           <source>Error sharing link</source>
-          <target state="translated">Error sharing link</target>
+          <target state="translated">แชร์ลิงก์ผิดพลาด</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed open internal file/folder</source>
-          <target state="new">Failed open internal file/folder</target>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear cache failed</source>
-          <target state="new">Clear cache failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="new">Failed to clear cache. Please try again.</target>
+          <target state="translated">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed open the internal file/folder of the link . Please, try again.</source>
-          <target state="new">Failed open the internal file/folder of the link . Please, try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

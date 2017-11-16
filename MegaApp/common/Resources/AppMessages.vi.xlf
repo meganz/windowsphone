@@ -121,7 +121,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/GetLinkFailed_Title" translate="yes" space="preserve">
           <source>Link creation failed</source>
-          <target state="translated">Lấy đường liên kết bị thất bại</target>
+          <target state="translated">Không tạo được đường liên kết</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/GetPreviewFailed" translate="yes" space="preserve">
@@ -163,17 +163,17 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/ImportFileFailed_Title" translate="yes" space="preserve">
           <source>File import failed</source>
-          <target state="translated">Chuyển nhập thất bại</target>
+          <target state="translated">Chuyển nhập tệp tin thất bại</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to import an image - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard" translate="yes" space="preserve">
           <source>The MEGA link was copied to your clipboard</source>
-          <target state="translated">Liên kết MEGA link này đã được sao chép vào bộ nhớ</target>
+          <target state="translated">Liên kết MEGA đã được sao chép vào bộ ghi nhớ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a MEGA link to the clipboard finished successfully.</note>
         </trans-unit>
         <trans-unit id="Resx/LinkCopiedToClipboard_Title" translate="yes" space="preserve">
           <source>Copied to clipboard</source>
-          <target state="translated">Đã sao chép vào bộ nhớ</target>
+          <target state="translated">Đã sao chép vào bộ ghi nhớ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard finished successfully - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/LoginFailed" translate="yes" space="preserve">
@@ -245,7 +245,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess" translate="yes" space="preserve">
           <source>Item successfully removed</source>
-          <target state="translated">Đã xóa mục thành công</target>
+          <target state="translated">Đã xóa thành công</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</note>
         </trans-unit>
         <trans-unit id="Resx/RemoveNodeSuccess_Title" translate="yes" space="preserve">
@@ -597,9 +597,7 @@ Preserve the {0} code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/NoDownloadLocationSelected" translate="yes" space="preserve">
           <source>You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</source>
-          <target state="translated">Bạn chưa có chọn địa điểm để lưu lại các dữ liệu và tệp tin mà bạn tải xuống.
-
-Để tiếp tục việc tải xuống, xin chọn một vị trí thư mục hoặc vào mục thiết đặt để chọn ra địa điểm để mặc định chứa dữ liệu cho việc tải xuống.</target>
+          <target state="translated">You have not selected a default download location for your files.To proceed with the download, please select a destination folder or go to settings in order to set up your default download location.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</note>
         </trans-unit>
         <trans-unit id="Resx/PrepareFileForUploadFailed" translate="yes" space="preserve">
@@ -630,9 +628,9 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
-          <target state="needs-review-translation">You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
-Please try to save/copy the file to your device's internal memory instead.</target>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
+          <target state="translated">Không có quyền hạn sao chép dạng tệp tin này vào thư mục vừa lựa chọn. Có phải bạn đang muốn lưu/sao chép một dạng tệp tin không được hỗ trợ vào thẻ nhớ SD không? Xin thử lưu/sao chép tệp đó vào bộ nhớ điện thoại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException_Title" translate="yes" space="preserve">
@@ -642,12 +640,12 @@ Please try to save/copy the file to your device's internal memory instead.</targ
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the Recovery Key to your clipboard. Please try again.</source>
-          <target state="translated">Sao chép Mã Khóa Phục Hồi vào bộ nhớ bị thất bại. Xin thử lại.</target>
+          <target state="translated">Sao chép Mã Khóa Phục Hồi vào bộ ghi nhớ bị thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyClipboardFailed_Title" translate="yes" space="preserve">
           <source>Clipboard failed</source>
-          <target state="translated">Bộ nhớ không hoạt động</target>
+          <target state="translated">Bộ ghi nhớ không hoạt động</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails to copy the user's Recovery Key to the clipboard to be saved or exported - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CurrentPinLockCodeDoNotMatch" translate="yes" space="preserve">
@@ -662,7 +660,7 @@ Please try to save/copy the file to your device's internal memory instead.</targ
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied" translate="yes" space="preserve">
           <source>Recovery Key copied to clipboard</source>
-          <target state="translated">Mã Khóa Phục Hồi đã được lưu vào bộ nhớ</target>
+          <target state="translated">Mã Khóa Phục Hồi đã được lưu vào bộ ghi nhớ</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when copy the user's Recovery Key to the clipboard to be saved or exported.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_RecoveryKeyCopied_Title" translate="yes" space="preserve">
@@ -1237,7 +1235,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed" translate="yes" space="preserve">
           <source>Failed to copy the MEGA link to your clipboard.</source>
-          <target state="translated">Sao chép đường liên kết MEGA vào bộ nhớ không thành công.</target>
+          <target state="translated">Sao chép đường liên kết MEGA vào bộ ghi nhớ không thành công.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when fails the process/request to copy a MEGA link to the clipboard.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CopyLinkToClipboardFailed_Title" translate="yes" space="preserve">
@@ -1280,6 +1278,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - Sai URL – Điều liên kết bị viết sai hoặc không tồn tại.
 - Tệp tin có thể bị dời đi chỗ khác hoặc bị xóa từ chính chủ.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when you open a file link and it's no longer available. It explains the reasons that could be causing it. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_FolderLinkUnavailable" translate="yes" space="preserve">
           <source>This could be due to the following reasons:
@@ -1291,6 +1290,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
 - URL viết sai hoặc thiếu – đường liên kết không tồn tại hoặc không đúng.
 - Đường liên kết tới thư mục bị xóa bởi chủ sở hữu.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Error message shown when a folder link doesn't exist. Keep "\n"</note>
+          <note from="MultilingualUpdate" priority="2" annotates="source">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_LinkUnavailableTitle" translate="yes" space="preserve">
           <source>Unavailable link</source>
@@ -1437,7 +1437,7 @@ Preserve the ({0}) code because is for include the file name in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed" translate="yes" space="preserve">
           <source>Your purchase of a MEGA subscription has not passed validation at our licence server. On restart of this app we will retry to validate your subscription licences. Please contact MEGA support if the error continues.</source>
-          <target state="needs-review-translation">Mục mua hạng thành viên MEGA của quý khách chưa được thông qua máy chủ của chúng tôi để chứng thực. Xin thử khởi động lại ứng dụng, chúng tôi sẽ thử chứng thực lại hạng thành viên của quý khách. Xin vui lòng liên hệ MEGA để nhận hỗ trợ nếu lỗi này tiếp diễn.</target>
+          <target state="translated">Mục mua hạng thành viên MEGA của quý khách chưa được thông qua máy chủ của chúng tôi để chứng thực. Xin thử khởi động lại ứng dụng, chúng tôi sẽ thử chứng thực lại hạng thành viên của quý khách. Xin vui lòng liên hệ MEGA để nhận hỗ trợ nếu lỗi này tiếp diễn.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed in cases that validation of the IAP purchase has failed at the MEGA License server</note>
         </trans-unit>
         <trans-unit id="Resx/AM_PurchaseValidationFailed_Title" translate="yes" space="preserve">
@@ -1514,7 +1514,7 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed" translate="yes" space="preserve">
           <source>Failed to retrieve node details. Please try again.</source>
-          <target state="translated">Failed to retrieve node details. Please try again.</target>
+          <target state="translated">Lấy thông tin chi tiết của nút (node) thất bại. Xin thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to get node details failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_GetNodeDetailsFailed_Title" translate="yes" space="preserve">
@@ -1524,13 +1524,13 @@ Preserve the {0} code because is for include the exact time until the user has t
         </trans-unit>
         <trans-unit id="Resx/AM_DownloadPathUnknownError" translate="yes" space="preserve">
           <source>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</source>
-          <target state="translated">There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</target>
+          <target state="translated">Có một lỗi không xác định được xảy ra ở đường tải về. Xin thử lại, nếu lỗi vẫn cứ tiếp tục diễn ra, xin liên hệ support@mega.nz. [{0}]</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound" translate="yes" space="preserve">
           <source>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</source>
-          <target state="translated">The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</target>
+          <target state="translated">Đường liên kết tới tệp tin / thư mục bạn đang muốn mở không hợp lệ. Có thể là do bạn đăng nhập với tài khoản khác. Xin thử đăng xuất và đăng nhập vào tài khoản sở hữu đường liên kết này và thử lại.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeNotFound_Title" translate="yes" space="preserve">
@@ -1540,22 +1540,22 @@ Preserve the [{0}] code because is for include the error code or the error messa
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning" translate="yes" space="preserve">
           <source>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</source>
-          <target state="translated">Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</target>
+          <target state="translated">Danh sách các phiên truyền tải đang chờ làm quá số lượng băng thông truyền tải cho phép được cấp cho tài khoản này, vì vậy sẽ có một số vấn đề xảy ra.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_TransferOverquotaWarning_Title" translate="yes" space="preserve">
           <source>Depleted transfer quota</source>
-          <target state="translated">Depleted transfer quota</target>
+          <target state="translated">Hết băng thông truyền tải</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelDownloadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending downloads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending downloads?</target>
+          <target state="translated">Bạn có chắc muốn hủy tất cả các phiên truyền tải xuống đang chờ đợi?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending downloads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_CancelUploadsQuestion" translate="yes" space="preserve">
           <source>Are you sure you want to cancel all the pending uploads?</source>
-          <target state="translated">Are you sure you want to cancel all the pending uploads?</target>
+          <target state="translated">Bạn có chắc muốn hủy tất cả các phiên truyền tải tên đang chờ đợi?</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when a user wants to cancel all the pending uploads.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ViewContactDetailsFailed" translate="yes" space="preserve">
@@ -1598,25 +1598,25 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <target state="translated">Việc chia sẻ đường liên kết bị lỗi</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed open internal file/folder</source>
-          <target state="new">Failed open internal file/folder</target>
+        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="translated">Failed to open the internal file/folder of the link. Please try again.</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        </trans-unit>
+        <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" space="preserve">
+          <source>Failed to open the internal file/folder</source>
+          <target state="translated">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
-          <source>Clear cache failed</source>
-          <target state="new">Clear cache failed</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
-        </trans-unit>
-        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" xml:space="preserve">
+        <trans-unit id="Resx/AM_ClearCacheFailed" translate="yes" space="preserve">
           <source>Failed to clear cache. Please try again.</source>
-          <target state="new">Failed to clear cache. Please try again.</target>
+          <target state="translated">Failed to clear cache. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
-        <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed open the internal file/folder of the link . Please, try again.</source>
-          <target state="new">Failed open the internal file/folder of the link . Please, try again.</target>
-          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
+        <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" space="preserve">
+          <source>Clear cache failed</source>
+          <target state="translated">Clear cache failed</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</note>
         </trans-unit>
       </group>
     </body>

@@ -209,7 +209,7 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Message of the dialog displayed when the process/request to get a link to a node failed.</comment>
   </data>
   <data name="GetLinkFailed_Title" xml:space="preserve">
-    <value>リンク取得失敗</value>
+    <value>リンクできません。</value>
     <comment>Title of the dialog displayed when the process/request to get a link to a node failed - (String as short as possible).</comment>
   </data>
   <data name="GetPreviewFailed" xml:space="preserve">
@@ -303,7 +303,7 @@ Preserve the {0} code because is for include the name of the item to be removed 
     <comment>Title of the dialog displayed when the process/request remove definitely an item from the rubbish bin failed - (String as short as possible).</comment>
   </data>
   <data name="RemoveNodeSuccess" xml:space="preserve">
-    <value>アイテムを削除成功</value>
+    <value>取り除きました。</value>
     <comment>Message of the dialog displayed when remove successfully a node definitely from the rubbish bin.</comment>
   </data>
   <data name="RemoveNodeSuccess_Title" xml:space="preserve">
@@ -582,9 +582,7 @@ Preserve the {0} code because is for include the file name in runtime.</comment>
     <comment>Title of the dialog displayed when a user makes and operation that exceeds the storage space limits of the account (overquota error). Asks if user wants to upgrade the account type - (String as short as possible).</comment>
   </data>
   <data name="NoDownloadLocationSelected" xml:space="preserve">
-    <value>あなたのファイルに対するデフォルトのダウンロード場所を選択していません。
-
-ダウンロードを続行するには、保存先フォルダを選択するか、デフォルトのダウンロード場所を設定するために設定に移動してください。</value>
+    <value>あなたのファイルに対するデフォルトのダウンロード場所を選択していません。ダウンロードを続行するには、保存先フォルダを選択するか、デフォルトのダウンロード場所を設定するために設定に移動してください。</value>
     <comment>Message of the dialog displayed when a user want to download some nodes and the app doesn't have configured a default download location. Asks the user to select a location for this download or configure a default location.</comment>
   </data>
   <data name="PrepareFileForUploadFailed" xml:space="preserve">
@@ -1336,44 +1334,44 @@ Preserve the {0} code because is for include the exact time until the user has t
     <comment>Title of the dialog displayed when the process/request to get node details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_DownloadPathUnknownError" xml:space="preserve">
-    <value>There is an unknown error in the download path. Please try again and if it continues to fail, please contact support@mega.nz. [{0}]</value>
+    <value>ダウンロードパスに不明なエラーがあります。もう一度お試しください。それでも問題が解決しない場合は、support@mega.nzまでご連絡ください。[{0}]</value>
     <comment>Message of the dialog displayed when the process/request to download a file/folder failed because an unknown error in the download path.
 Preserve the [{0}] code because is for include the error code or the error message in runtime.</comment>
   </data>
   <data name="AM_InternalNodeNotFound" xml:space="preserve">
-    <value>The file/folder of the link that you are trying to open was not found. You are probably logged in to a different account. Please, log in to the correct account and try again.</value>
+    <value>開こうとされているリンクのファイル/フォルダが見つかりませんでした。他のアカウントにログインしている可能性があります。正しいアカウントにログインしてもう一度お試しください。</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in.</comment>
   </data>
   <data name="AM_InternalNodeNotFound_Title" xml:space="preserve">
-    <value>File/folder not found</value>
+    <value>ファイル/フォルダが見つかりません</value>
     <comment>Title of the dialog displayed when trying to open a link of an internal node and this node is not found in the account in which the user is logged in - (String as short as possible).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning" xml:space="preserve">
-    <value>Your queued transfer exceeds the current transfer quota available for your account and may therefore be interrupted.</value>
+    <value>あなたのキューに入れられた転送は、あなたのアカウントで利用可能な現在の転送容量を超えているため、中断される可能性があります。</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error).</comment>
   </data>
   <data name="AM_TransferOverquotaWarning_Title" xml:space="preserve">
-    <value>Depleted transfer quota</value>
+    <value>転送容量が枯渇しました</value>
     <comment>Message of the dialog displayed when a user exceeds the transfer quota limits of the account (transfer overquota error) - (String as short as possible).</comment>
   </data>
   <data name="AM_CancelDownloadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending downloads?</value>
+    <value>保留中のダウンロードをすべてキャンセルしてもよろしいですか？　</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending downloads.</comment>
   </data>
   <data name="AM_CancelUploadsQuestion" xml:space="preserve">
-    <value>Are you sure you want to cancel all the pending uploads?</value>
+    <value>保留中のアップロードをすべてキャンセルしてもよろしいですか？　</value>
     <comment>Message of the dialog displayed when a user wants to cancel all the pending uploads.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed" xml:space="preserve">
-    <value>Failed to view the contact details. Please try again later.</value>
+    <value>連絡先の詳細の表示に失敗しました。後でもう一度お試しください。</value>
     <comment>Message of the dialog displayed when the process/request to view a contact details failed.</comment>
   </data>
   <data name="AM_ViewContactDetailsFailed_Title" xml:space="preserve">
-    <value>Contact details failed</value>
+    <value>連絡先の詳細が見つかりません</value>
     <comment>Title of the dialog displayed when the process/request to view a contact details failed - (String as short as possible).</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed" xml:space="preserve">
-    <value>Failed to show the upload options. Please try again later.</value>
+    <value>アップロードオプションを表示できませんでした。後でもう一度お試しください。</value>
     <comment>Message of the dialog displayed when the process/request to show the upload options failed.</comment>
   </data>
   <data name="AM_ShowUploadOptionsFailed_Title" xml:space="preserve">
@@ -1381,19 +1379,35 @@ Preserve the [{0}] code because is for include the error code or the error messa
     <comment>Title of the dialog displayed when the process/request to show the upload options failed - (String as short as possible).</comment>
   </data>
   <data name="AM_SaveLogFile" xml:space="preserve">
-    <value>Do you want to save the log file in an external location to use it later?</value>
+    <value>ログファイルを後で使用するために外部の場所に保存しますか？　</value>
     <comment>Message of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app.</comment>
   </data>
   <data name="AM_SaveLogFile_Title" xml:space="preserve">
-    <value>Save the log file</value>
+    <value>ログファイルを保存する</value>
     <comment>Title of the dialog displayed to ask the user if wants to save the generated log file in an external location of the app - (String as short as possible).</comment>
   </data>
   <data name="AM_ShareLinkFailed" xml:space="preserve">
-    <value>Failed to share the file/folder link. Please try again.</value>
+    <value>ファイル/フォルダのリンクを共有できませんでした。もう一度やり直してください。</value>
     <comment>Message of the dialog displayed when fails the process/request to share a file/folder link.</comment>
   </data>
   <data name="AM_ShareLinkFailed_Title" xml:space="preserve">
-    <value>Error sharing link</value>
+    <value>リンクを共有する際にエラーが発生しました</value>
     <comment>Title of the dialog displayed when fails the process/request to share a file/folder link.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed" xml:space="preserve">
+    <value>リンクの内部ファイル/フォルダを開けませんでした。もう一度やり直してください。</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node.</comment>
+  </data>
+  <data name="AM_InternalNodeFailed_Title" xml:space="preserve">
+    <value>内部ファイル/フォルダを開けませんでした。</value>
+    <comment>Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</comment>
+  </data>
+  <data name="AM_ClearCacheFailed" xml:space="preserve">
+    <value>キャッシュをクリアできませんでした。もう一度やり直してください。</value>
+    <comment>Message of the dialog displayed when the process to clear cache failed.</comment>
+  </data>
+  <data name="AM_ClearCacheFailed_Title" xml:space="preserve">
+    <value>キャッシュのクリアに失敗しました</value>
+    <comment>Title of the dialog displayed when the process to clear cache failed - (String as short as possible).</comment>
   </data>
 </root>
