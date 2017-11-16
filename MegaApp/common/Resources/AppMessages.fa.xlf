@@ -631,7 +631,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when the process/request to copy a file failed by a non specific cause - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/CopyFileUnauthorizedAccessException" translate="yes" space="preserve">
-          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?Please try to save/copy the file to your device's internal memory instead.</source>
+          <source>You do not have permission to copy this file type to the destination folder. Are you trying to save/copy a file of an unsupported type to an SD card?
+Please try to save/copy the file to your device's internal memory instead.</source>
           <target state="needs-review-translation">شما اجازه ی  کپی کردن این نوع فایل را به روی پوشه ی مقصد ندارید. احتمالا شما دارید سعی می کنید که یک فایل ازنوعی پشتیبانی نشده را  بر روی کارد SD  ذخیره کنید یا کپی کنید.
 لطفا سعی کنید فایل را در داخل حافظه ی داخلی دستگاه خودتان ذخیره یا کپی نمایید.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process/request to copy a file failed because the app or the user don't have write permission to copy into the destination (i.e. copy into a SD card an unsupported file type).</note>
@@ -1491,8 +1492,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fails the process/request to share a file/folder link.</note>
           </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed_Title" translate="yes" xml:space="preserve">
-          <source>Failed open internal file/folder</source>
-          <target state="new">Failed open internal file/folder</target>
+          <source>Failed to open the internal file/folder</source>
+          <target state="new">Failed to open the internal file/folder</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node - (String as short as possible).</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ClearCacheFailed_Title" translate="yes" xml:space="preserve">
@@ -1506,8 +1507,8 @@ Preserve the [{0}] code because is for include the error code or the error messa
           <note from="MultilingualBuild" annotates="source" priority="2">Message of the dialog displayed when the process to clear cache failed.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_InternalNodeFailed" translate="yes" xml:space="preserve">
-          <source>Failed open the internal file/folder of the link . Please, try again.</source>
-          <target state="new">Failed open the internal file/folder of the link . Please, try again.</target>
+          <source>Failed to open the internal file/folder of the link. Please try again.</source>
+          <target state="new">Failed to open the internal file/folder of the link. Please try again.</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Title of the dialog displayed when fail trying to open a link of an internal node.</note>
         </trans-unit>
         <trans-unit id="Resx/AM_ShareLinkFailed" translate="yes" xml:space="preserve">
